@@ -32,6 +32,7 @@ from sanitise.errors import (
 )
 from sanitise.llm.base import LLMClient, format_validation_error, track_calls
 from sanitise.loader import sha256_hex
+from sanitise.rules import OffsetOutOfRangeError as RulesOffsetError
 from sanitise.schemas import DetectorMeta, DetectorOutput, DetectorResult, SensitiveSpan
 from sanitise.validation import check_span_offsets
 
@@ -107,6 +108,8 @@ async def run_rule_pass(text: str, stages: DetectorStages) -> list[SensitiveSpan
         spans = await asyncio.to_thread(stages.rule_detect, text)
     except PipelineError as exc:
         raise exc.with_stage("rule_pass") from None
+    except RulesOffsetError as exc:
+        raise OffsetOutOfRange(f"rule_detect: {exc}", stage="rule_pass") from None
     except ValidationError as exc:
         raise SchemaValidationFailed(
             f"rule_detect: {format_validation_error(exc)}", stage="rule_pass"
@@ -184,6 +187,8 @@ async def detect_with_trace(
         merged = stages.merge_spans(list(trace.rule_spans), list(trace.llm_spans))
     except PipelineError as exc:
         raise exc.with_stage("merge") from None
+    except RulesOffsetError as exc:
+        raise OffsetOutOfRange(f"merge_spans: {exc}", stage="merge") from None
     except ValidationError as exc:
         raise SchemaValidationFailed(
             f"merge_spans: {format_validation_error(exc)}", stage="merge"

@@ -1,0 +1,56 @@
+{
+  "doc_id": "021c22f3e51c350a",
+  "text": "From: Daniel Whitcomb\nSent: Tuesday, October 9, 2001 3:42 PM\nTo: Laura Fenn\nSubject: Call with regulators\n\nLaura, please call me at (415) 555-0142 before the meeting. You can also write to daniel.whitcomb@example-energy.com. We will meet at 1400 Smith Street, Houston, TX 77002 and I will bring the revised filing. Please do not forward this note outside the group.\n\nDaniel",
+  "spans": [
+    {
+      "text": "Daniel Whitcomb",
+      "category": "NAME",
+      "start": 6,
+      "end": 21
+    },
+    {
+      "text": "Tuesday, October 9, 2001",
+      "category": "DATE",
+      "start": 28,
+      "end": 52
+    },
+    {
+      "text": "Laura Fenn",
+      "category": "NAME",
+      "start": 65,
+      "end": 75
+    },
+    {
+      "text": "Laura",
+      "category": "NAME",
+      "start": 107,
+      "end": 112
+    },
+    {
+      "text": "(415) 555-0142",
+      "category": "PHONE",
+      "start": 132,
+      "end": 146
+    },
+    {
+      "text": "daniel.whitcomb@example-energy.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 223
+    },
+    {
+      "text": "1400 Smith Street, Houston, TX 77002",
+      "category": "ADDRESS",
+      "start": 241,
+      "end": 277
+    },
+    {
+      "text": "Daniel",
+      "category": "NAME",
+      "start": 367,
+      "end": 373
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}
