@@ -1,0 +1,51 @@
+{
+  "doc_id": "5aa4a8607fa435d3",
+  "name": "c03",
+  "text": "Dear Sir, I am a 58 year old male, retired army officer, living in Pune. I have diabetes for 15 years and BP. Recently my creatinine was 2.1 on 05/06/2022. My wife Sunita also has thyroid. My mobile is 9823456710. Please suggest.",
+  "spans": [
+    {
+      "text": "58 year old",
+      "category": "AGE",
+      "start": 17,
+      "end": 28
+    },
+    {
+      "text": "retired army officer",
+      "category": "OCCUPATION",
+      "start": 35,
+      "end": 55
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 67,
+      "end": 71
+    },
+    {
+      "text": "05/06/2022",
+      "category": "DATE",
+      "start": 144,
+      "end": 154
+    },
+    {
+      "text": "My wife",
+      "category": "RELATION",
+      "start": 156,
+      "end": 163
+    },
+    {
+      "text": "Sunita",
+      "category": "NAME",
+      "start": 164,
+      "end": 170
+    },
+    {
+      "text": "9823456710",
+      "category": "PHONE",
+      "start": 202,
+      "end": 212
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

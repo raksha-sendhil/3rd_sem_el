@@ -1,0 +1,45 @@
+{
+  "doc_id": "bb7116be8034c159",
+  "name": "c02",
+  "text": "hi, my daughter is 7yrs old and has had a fever of 102 since monday. she also complains of ear pain. we took her to the pediatrician, dr. john mathews, who gave her amoxicillin. she weighs 22 kg. should i be worried? thanks, sarah",
+  "spans": [
+    {
+      "text": "my daughter",
+      "category": "RELATION",
+      "start": 4,
+      "end": 15
+    },
+    {
+      "text": "7yrs old",
+      "category": "AGE",
+      "start": 19,
+      "end": 27
+    },
+    {
+      "text": "monday",
+      "category": "DATE",
+      "start": 61,
+      "end": 67
+    },
+    {
+      "text": "john mathews",
+      "category": "NAME",
+      "start": 138,
+      "end": 150
+    },
+    {
+      "text": "22 kg",
+      "category": "PHYSICAL",
+      "start": 189,
+      "end": 194
+    },
+    {
+      "text": "sarah",
+      "category": "NAME",
+      "start": 225,
+      "end": 230
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

@@ -1,0 +1,38 @@
+Agent 1 - Sensitive Information Detector: Person A (Deterministic Logic)
+=======================================================================
+
+README.md                 Design, interfaces, layers, decisions the team should confirm, how to run
+pyproject.toml            Dependencies (presidio-analyzer, spacy, pydantic; dev: pytest, ruff)
+
+src/sanitise/schemas.py   Shared schemas, copied verbatim from spec 8.1 (replace with Person C's file)
+src/sanitise/rules/
+  engine.py               rule_detect(): Presidio + spaCy + custom layers, post-filters
+  recognizers.py          Custom regex recognizers grouped into layers: spec / general / healthcare / email
+  categories.py           Presidio entity -> PIICategory mapping, fixed category precedence
+  normalise.py            Trim, dedupe, precedence-based overlap resolution, adjacent merge
+  merge.py                merge_spans(): combine rule spans with LLM quasi-identifiers
+  __main__.py             CLI: python -m sanitise.rules "some text"
+
+tests/                    79 pytest tests (unit + integration against real Presidio/spaCy)
+
+eval/
+  RESULTS.md              Evaluation results: headline, per-layer table, per-category, real-data check, caveats
+  score_rules.py          Scorer (spec 3.2 match rule). --show lists misses, --ablation scores layer by layer
+  build_gold.py           Source of the hand annotations; regenerates data/gold_*
+
+data/gold_draft/          20-document dev set (gold annotations, spec 8.3 format)
+data/gold_heldout/        10-document held-out set (gold annotations)
+
+data/real_chatdoctor_sample/  300 + 1000 real ChatDoctor patient messages (one {"text": ...} per line),
+                          used for the false-alarm check.
+
+Each gold JSON file holds the input document ("text") and the expected spans ("spans"),
+so the gold folders are the full set of test inputs.
+
+Headline (held-out, rule pass only): precision 0.95, recall 0.88, F1 0.91
+
+Run:
+  pip install -e . pytest && python -m spacy download en_core_web_lg
+  pytest -q
+  python eval/score_rules.py data/gold_heldout --show
+  python eval/score_rules.py data/gold_heldout --ablation
