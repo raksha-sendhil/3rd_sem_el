@@ -1,4 +1,4 @@
-# sanitise — Preventing Cumulative Privacy Leakage in RAG
+# Preventing Cumulative Privacy Leakage in RAG
 
 A multi-agent pipeline that rewrites private documents before they are used in
 retrieval-augmented generation. **Phase 2** builds and measures **Agent 1, the
