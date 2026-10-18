@@ -6,7 +6,7 @@ you own, and change a seam only by whole-team agreement.
 | Person | Role                 | Owns                                                                 |
 |--------|----------------------|----------------------------------------------------------------------|
 | A      | Deterministic Logic  | `rules/` package, the seams `agents/detector/rules.py` + `merge.py`, `tests/rules/`, `eval/`, `data/gold_draft/`, `data/gold_heldout/`, `data/real_chatdoctor_sample/`, `docs/rules.md` |
-| B      | Model and Prompt     | `agents/detector/quasi.py` (+ prompt / few-shot modules beside it), custom `parser` / `repair_builder` hooks |
+| B      | Model and Prompt     | `agents/detector/quasi.py` (prompt, few-shot examples, decoding schema, grounding), `tests/quasi/`, `docs/prompt.md` |
 | C      | Platform             | `schemas.py`, `config.py`, `errors.py`, `loader.py`, `validation.py`, `results.py`, `llm/`, `agents/detector/pipeline.py`, `cli/`, `api/`, `tests/` scaffolding, `pyproject.toml` |
 | D      | Data and Evaluation  | `evaluation/`, `tests/evaluation/`, `tools/build_corpus.py`, `data/fixtures/`, `data/gold/`, `docs/evaluation.md`, `docs/annotation_guide.md`, `docs/demo_script.md`, metrics report |
 
@@ -44,10 +44,9 @@ async def detect(doc_id: str, text: str, llm: LLMClient) -> DetectorResult: ...
 def score(pred: list[DetectorOutput], gold: list[DetectorOutput]) -> SpanMetrics: ...
 ```
 
-A's and D's seams now hold their real code. B's `quasi.py` is still a
-**placeholder** with the exact signature and a `TODO(Person B)`, so the CLI,
-API and tests run end to end. Replace the body; keep the signature. Extra
-keyword-only options with defaults are fine (e.g. `rule_detect(text, *, layers=...)`).
+Every seam now holds its real code (A: `rules/`, B: `quasi.py`, D: `evaluation/`).
+Change bodies freely; keep the signatures. Extra keyword-only options with
+defaults are fine (e.g. `rule_detect(text, *, layers=...)`).
 `tests/contract/test_interfaces.py` checks every seam against whatever code is
 in the repo, so run `uv run pytest tests/contract` before pushing.
 
@@ -72,8 +71,12 @@ curl -X POST localhost:8000/v1/detect/rules -H 'content-type: application/json' 
 
 ## Person B — working against MockLLM
 
-Call the model only through `llm.json_call(system, user, QuasiList)`. The
-platform already sends the `QuasiList` JSON schema to Ollama as `format`,
+Design and failure-mode catalogue: [prompt.md](prompt.md).
+
+Call the model only through `llm.json_call(system, user, LLMQuasiList)` (the
+`QuasiList` shape with the category enum narrowed to the four LLM categories;
+its schema title is still "QuasiList"). The
+platform already sends that JSON schema to Ollama as `format`,
 validates the reply, and retries up to 3 times with escalating temperature
 (0.0, 0.2, 0.4, 0.6 by default) and a repair message quoting the validation
 error. To change how that repair message is worded or how raw output is

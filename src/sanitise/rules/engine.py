@@ -126,9 +126,21 @@ _EPONYM_TAIL = re.compile(
 )
 
 
+# A DATE must be anchored to the calendar (annotation guide 3.3): a digit, a month or
+# a weekday. This drops the relative phrases spaCy tags as DATE that _VAGUE_DATE does
+# not list ("the early morning", "quarterly", "each day", "last season").
+_ANCHORED_DATE = re.compile(
+    r"\d|\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\b"
+    r"|\b(?:mon|tues|wednes|thurs|fri|satur|sun)day\b"
+    r"|\b(?:christmas|new year|easter|diwali|deepavali|holi|eid|ramadan|ramzan|pongal|onam"
+    r"|navratri|dussehra|hanukkah|thanksgiving|halloween|independence day|republic day)",
+    re.IGNORECASE,
+)
+
+
 def _keep(category: PIICategory, fragment: str) -> bool:
     f = fragment.strip(" .,;:!?\"'").lower()
-    if category is C.DATE and _VAGUE_DATE.match(f):
+    if category is C.DATE and (_VAGUE_DATE.match(f) or not _ANCHORED_DATE.search(f)):
         return False
     return not (category is C.NAME and f in _NAME_STOPLIST)
 

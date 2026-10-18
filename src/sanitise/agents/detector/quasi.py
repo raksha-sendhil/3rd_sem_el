@@ -1,57 +1,253 @@
-"""Stage 4 - LLM quasi-identifier pass.  OWNER: Person B (Model and Prompt).
+"""Stage 4 - LLM pass.  OWNER: Person B (Model and Prompt).
 
-PLACEHOLDER created by Person C: a deliberately minimal prompt so the wiring
-can be exercised against MockLLM and Ollama on Day 1. Replace the prompt text
-and add few-shot examples; keep the signature and keep calling the model only
-through ``llm.json_call`` (never import an Ollama client here).
+One constrained-JSON call per document. The model receives the raw text plus the
+explicit identifiers the rule pass already found, and returns two kinds of item:
 
-What the platform already provides through ``llm.json_call(system, user, QuasiList)``:
+* **contextual attributes** that rules cannot enumerate - MEDICAL_CONDITION,
+  OCCUPATION and named LOCATION (institutions, small places). These must be
+  quoted verbatim; ``ground()`` finds every occurrence in the document and gives
+  each one exact offsets, so they are scored and later rewritten like rule spans.
+  An attribute that cannot be found in the text is a hallucination and is dropped.
+* **QUASI_COMBO** - a combination of details that together narrow the candidate
+  pool (spec 3.1 stage 4). These have no single position, so start/end stay None.
 
-* the ``QuasiList`` JSON schema is sent to Ollama as ``format`` (constrained decoding);
-* output is parsed and validated against ``QuasiList``; on failure it retries up
-  to ``retries`` times with escalating temperature, feeding the validation error
-  back as a repair instruction (see ``sanitise.llm.base``);
-* after the last failure it raises ``SchemaValidationFailed`` (stage ``llm_pass``).
+Decoding is constrained to ``LLMQuasiList``: the same shape as the frozen
+``QuasiList`` (and the same JSON-schema title, so MockLLM scripts keyed on
+"QuasiList" keep working) but with the category enum narrowed to the four values
+above. The model therefore cannot emit DATE for "pain" or RELATION for a job,
+which were the main failure modes seen with llama3:8b on Day 6.
 
-To change the repair wording or the lenient parser, pass ``repair_builder=`` /
-``parser=`` hooks to the client (see ``sanitise.llm.factory``) rather than
-re-implementing the loop.
+Parsing, validation and the retry/repair loop (up to ``retries`` extra attempts
+with escalating temperature and the validation error fed back) are done once for
+every schema by ``sanitise.llm.base.BaseJSONClient``; this module only adds the
+prompt, the few-shot examples and the post-processing that a schema cannot express.
 """
 
 from __future__ import annotations
 
-import json
+import logging
+import re
+from typing import Literal
+
+from pydantic import BaseModel, ConfigDict, Field
 
 from sanitise.llm.base import LLMClient
-from sanitise.schemas import QuasiList, SensitiveSpan
+from sanitise.schemas import PIICategory, SensitiveSpan
 
-# TODO(Person B): real system prompt + few-shot examples.
-SYSTEM_PROMPT = (
-    "You find quasi-identifiers in a document: combinations of details that could "
-    "re-identify a person even though no single detail is an explicit identifier "
-    "(for example a rare occupation together with a specific condition, or a precise "
-    "timeline together with a small location). Explicit identifiers are already "
-    "listed; do not repeat them. Return only quasi-identifiers you can justify, each "
-    "with a short rationale. Return an empty list if there are none."
+log = logging.getLogger(__name__)
+
+C = PIICategory
+
+# Categories the LLM pass may produce. Everything else is the rule pass's job.
+LLMCategory = Literal["MEDICAL_CONDITION", "OCCUPATION", "LOCATION", "QUASI_COMBO"]
+GROUNDED = {C.MEDICAL_CONDITION, C.OCCUPATION, C.LOCATION}
+MAX_COMBOS = 3  # the gold set never has more than 2 per document
+MAX_ITEMS = 20
+
+
+class LLMQuasiHit(BaseModel):
+    text: str = Field(min_length=1, max_length=300)
+    category: LLMCategory
+    rationale: str = Field(min_length=1, max_length=500)
+
+
+class LLMQuasiList(BaseModel):
+    """The schema handed to Ollama (``format``). Titled "QuasiList" on purpose."""
+
+    model_config = ConfigDict(title="QuasiList")
+    quasi_identifiers: list[LLMQuasiHit]
+
+
+# ------------------------------------------------------------------ prompt
+
+SYSTEM_PROMPT = """\
+You are a privacy analyst. You read one document (a patient's question to a doctor, \
+or a workplace email) and list the details that could re-identify the person it is about.
+A rule-based detector has ALREADY found the explicit identifiers (names, ages, dates, \
+phone numbers, emails, ID numbers, addresses, relations, body measurements). They are \
+listed under ALREADY FOUND. Never repeat them and never return those kinds of detail.
+
+Return two kinds of item.
+
+1. Single details, copied EXACTLY as written in the document (same words, no article, \
+shortest phrase that carries the detail):
+   - MEDICAL_CONDITION: a named diagnosis, disease or specific clinical finding about \
+a specific person, including a suspected one ("Can this be neuropathy?"). NOT plain \
+symptoms (pain, cough, fever, headache, rash, weakness, dizziness, swelling), NOT \
+procedures or surgeries, NOT drugs, NOT general statements about a disease.
+   - OCCUPATION: the job or role of a person in the document ("tea taster", \
+"undergraduate student", "natural gas scheduler"). Keep qualifiers that make it rarer.
+   - LOCATION: a named place that narrows where the person is - a town, city, island, \
+hospital, clinic, school, university or named workplace site - unless it is ALREADY FOUND.
+
+2. QUASI_COMBO: a combination of details about the same person that together narrow \
+the candidate pool to a small group, when each detail alone would not. Only when at \
+least TWO of these apply: a rare or niche occupation; a rare condition or an unusual \
+combination of symptoms; a small or specific location or named institution; a precise \
+timeline (an exact date or duration tied to a place or event); an extreme value (age 90+, \
+unusual height). The text is a short description that names the parts, joined with \
+" + ", for example "rare occupation (glassblower) + small island (Murano) + sarcoidosis". \
+At most two combinations; one per distinct combination. Common combinations (an adult \
+with diabetes in a big city) are not quasi-identifiers.
+
+Every item needs a one-sentence rationale saying why it identifies the person.
+If nothing applies, return {"quasi_identifiers": []}. Do not invent details that are \
+not in the document.
+
+EXAMPLE 1
+DOCUMENT:
+Hello doctor, I am a 45 year old glassblower in Murano. Last year I was diagnosed with \
+sarcoidosis and now I get a dry cough at night. My wife thinks it is the furnace smoke.
+ALREADY FOUND:
+- AGE: 45 year old
+- DATE: Last year
+- RELATION: My wife
+OUTPUT:
+{"quasi_identifiers": [
+ {"text": "glassblower", "category": "OCCUPATION", "rationale": "The writer's job, a rare trade."},
+ {"text": "Murano", "category": "LOCATION", "rationale": "A small island where the writer works."},
+ {"text": "sarcoidosis", "category": "MEDICAL_CONDITION", \
+"rationale": "A named diagnosis for the writer."},
+ {"text": "rare occupation (glassblower) + small island (Murano) + sarcoidosis", \
+"category": "QUASI_COMBO", "rationale": "Few glassblowers on one small island have \
+sarcoidosis, so together these point to one person."}
+]}
+(The dry cough is a plain symptom, so it is not listed.)
+
+EXAMPLE 2
+DOCUMENT:
+Hi team, the Q3 pipeline numbers are attached. I will be out on Friday for my \
+daughter's graduation. Thanks, Raj
+ALREADY FOUND:
+- DATE: Friday
+- RELATION: my daughter
+- NAME: Raj
+OUTPUT:
+{"quasi_identifiers": []}
+
+EXAMPLE 3
+DOCUMENT:
+My 7 year old son goes to Sunrise Montessori in Ooty. Since 2 March he has been very \
+thirsty and the paediatrician at Nilgiri Hospital says it is type 1 diabetes.
+ALREADY FOUND:
+- AGE: 7 year old
+- RELATION: My son
+- LOCATION: Ooty
+- DATE: 2 March
+OUTPUT:
+{"quasi_identifiers": [
+ {"text": "Sunrise Montessori", "category": "LOCATION", \
+"rationale": "The named school the child attends."},
+ {"text": "Nilgiri Hospital", "category": "LOCATION", \
+"rationale": "The named hospital treating the child."},
+ {"text": "type 1 diabetes", "category": "MEDICAL_CONDITION", \
+"rationale": "The child's diagnosis."},
+ {"text": "child age + named school + small town (Ooty) + exact onset date", \
+"category": "QUASI_COMBO", "rationale": "One 7-year-old at a named school in a small \
+town with a known onset date is easy to single out."}
+]}
+"""
+
+
+TASK_REMINDER = (
+    "List the MEDICAL_CONDITION, OCCUPATION and LOCATION details in this document that are "
+    "NOT in ALREADY FOUND (diagnoses and clinical findings, not plain symptoms), then any "
+    "QUASI_COMBO combinations."
 )
 
 
 def build_user_prompt(text: str, explicit: list[SensitiveSpan]) -> str:
-    found = [{"text": s.text, "category": s.category.value} for s in explicit]
-    return f"DOCUMENT:\n{text}\n\nEXPLICIT IDENTIFIERS ALREADY FOUND:\n{json.dumps(found)}"
+    found = "\n".join(f"- {s.category.value}: {s.text}" for s in explicit) or "(none)"
+    return f"DOCUMENT:\n{text}\n\nALREADY FOUND:\n{found}\n\n{TASK_REMINDER}\nOUTPUT:"
+
+
+# ------------------------------------------------------------------ post-processing
+
+_LEADING = re.compile(r"^(?:a|an|the|my|his|her|their|our)\s+", re.IGNORECASE)
+_EDGE_PUNCT = " \t\n\"'`.,;:!?()[]{}"
+
+
+def _clean(phrase: str) -> str:
+    phrase = phrase.strip(_EDGE_PUNCT)
+    while (stripped := _LEADING.sub("", phrase)) != phrase:
+        phrase = stripped
+    return phrase.strip(_EDGE_PUNCT)
+
+
+def find_all(text: str, phrase: str) -> list[tuple[int, int]]:
+    """Every whole-word, case-insensitive occurrence of ``phrase`` in ``text``.
+
+    Internal whitespace may differ (the model often collapses line breaks), so
+    the phrase's words are joined with ``\\s+``.
+    """
+    words = phrase.split()
+    if not words:
+        return []
+    pattern = r"(?<!\w)" + r"\s+".join(re.escape(w) for w in words) + r"(?!\w)"
+    return [(m.start(), m.end()) for m in re.finditer(pattern, text, re.IGNORECASE)]
+
+
+def ground(text: str, phrase: str) -> list[tuple[int, int]]:
+    """Offsets for a single detail quoted by the model; [] when it is not in the text.
+
+    The phrase is tried without a leading article/possessive first (annotation guide
+    3.7: "lighthouse keeper", not "a lighthouse keeper"), then exactly as quoted.
+    """
+    cleaned = _clean(phrase)
+    return (find_all(text, cleaned) if cleaned else []) or find_all(text, phrase)
+
+
+def to_spans(text: str, hits: list[LLMQuasiHit]) -> list[SensitiveSpan]:
+    """Ground single details to offsets, keep combinations offset-less, deduplicate."""
+    spans: list[SensitiveSpan] = []
+    seen_offsets: set[tuple[int, int]] = set()
+    seen_combos: set[str] = set()
+    for hit in hits[:MAX_ITEMS]:
+        category = C(hit.category)
+        rationale = hit.rationale.strip() or "flagged by the LLM pass"
+        if category is C.QUASI_COMBO:
+            key = " ".join(hit.text.lower().split())
+            if key in seen_combos or len(seen_combos) >= MAX_COMBOS:
+                continue
+            seen_combos.add(key)
+            spans.append(
+                SensitiveSpan(
+                    text=hit.text.strip(), category=category, method="llm", rationale=rationale
+                )
+            )
+            continue
+        offsets = ground(text, hit.text)
+        if not offsets:
+            log.info("LLM %s %r is not in the document; dropped", category.value, hit.text)
+            continue
+        for start, end in offsets:
+            if (start, end) in seen_offsets:
+                continue
+            seen_offsets.add((start, end))
+            spans.append(
+                SensitiveSpan(
+                    text=text[start:end],
+                    category=category,
+                    start=start,
+                    end=end,
+                    method="llm",
+                    rationale=rationale,
+                )
+            )
+    return spans
+
+
+# ------------------------------------------------------------------ the seam
 
 
 async def infer_quasi(
     text: str, explicit: list[SensitiveSpan], llm: LLMClient
 ) -> list[SensitiveSpan]:
-    """One constrained-JSON call. Returns spans with method='llm', start/end=None."""
-    result = await llm.json_call(SYSTEM_PROMPT, build_user_prompt(text, explicit), QuasiList)
-    return [
-        SensitiveSpan(
-            text=hit.text,
-            category=hit.category,
-            method="llm",
-            rationale=hit.rationale,
-        )
-        for hit in result.quasi_identifiers
-    ]
+    """One constrained-JSON call. Returns spans with method='llm'.
+
+    QUASI_COMBO spans have start/end None (spec 8.2). Single contextual details
+    (MEDICAL_CONDITION, OCCUPATION, LOCATION) carry the offsets of every place
+    the quoted phrase occurs in ``text``.
+    """
+    result = await llm.json_call(SYSTEM_PROMPT, build_user_prompt(text, explicit), LLMQuasiList)
+    return to_spans(text, result.quasi_identifiers)

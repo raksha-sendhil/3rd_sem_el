@@ -55,8 +55,14 @@
       "category": "LOCATION",
       "start": 258,
       "end": 271
+    },
+    {
+      "text": "exact stroke date + named hospital (Aster Medcity) + age",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "D",
-  "reviewed_by": null
+  "reviewed_by": "C"
 }
