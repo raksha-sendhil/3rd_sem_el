@@ -172,7 +172,11 @@ def render_metrics(console: Console, metrics: SpanMetrics, *, documents: int) ->
         cells = []
         for k in keys:
             v = row.get(k)
-            cells.append("" if v is None else (f"{v:.0f}" if k == "support" else f"{v:.2f}"))
+            cells.append(
+                ""
+                if v is None
+                else (f"{v:.0f}" if k in {"support", "tp", "fp", "fn"} else f"{v:.2f}")
+            )
         table.add_row(cat, *cells)
     console.print()
     console.print(table)

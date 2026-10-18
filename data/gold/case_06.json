@@ -1,0 +1,38 @@
+{
+  "doc_id": "e4444e8ef636477e",
+  "text": "I am a lighthouse keeper on Kavaratti island and I am 47 years old. For the past two months I have had a persistent rash on both hands that gets worse after cleaning the lens with solvent. A dermatologist suggested contact dermatitis but nothing helps. I am the only keeper on the island so I cannot take leave easily. What should I do?",
+  "spans": [
+    {
+      "text": "lighthouse keeper",
+      "category": "OCCUPATION",
+      "start": 7,
+      "end": 24
+    },
+    {
+      "text": "Kavaratti island",
+      "category": "LOCATION",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "47 years old",
+      "category": "AGE",
+      "start": 54,
+      "end": 66
+    },
+    {
+      "text": "contact dermatitis",
+      "category": "MEDICAL_CONDITION",
+      "start": 215,
+      "end": 233
+    },
+    {
+      "text": "rare occupation (lighthouse keeper) + single island location + dermatitis",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

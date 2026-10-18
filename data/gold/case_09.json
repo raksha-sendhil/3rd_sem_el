@@ -1,0 +1,56 @@
+{
+  "doc_id": "822f9db2740b5656",
+  "text": "Hello, I am Arjun Nair, a professional kabaddi player. I am 26 years old, 5 ft 9 inches and 78 kg. Last season I tore my anterior cruciate ligament while playing for a team in Pune. How long should rehab take before I can play again?",
+  "spans": [
+    {
+      "text": "Arjun Nair",
+      "category": "NAME",
+      "start": 12,
+      "end": 22
+    },
+    {
+      "text": "kabaddi player",
+      "category": "OCCUPATION",
+      "start": 39,
+      "end": 53
+    },
+    {
+      "text": "26 years old",
+      "category": "AGE",
+      "start": 60,
+      "end": 72
+    },
+    {
+      "text": "5 ft 9 inches",
+      "category": "PHYSICAL",
+      "start": 74,
+      "end": 87
+    },
+    {
+      "text": "78 kg",
+      "category": "PHYSICAL",
+      "start": 92,
+      "end": 97
+    },
+    {
+      "text": "anterior cruciate ligament",
+      "category": "MEDICAL_CONDITION",
+      "start": 121,
+      "end": 147
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 176,
+      "end": 180
+    },
+    {
+      "text": "professional athlete occupation + team city + ACL injury",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}
