@@ -1,76 +1,27 @@
 [project]
 name = "sanitise"
 version = "0.1.0"
-description = "Preventing cumulative privacy leakage in RAG - a multi-agent document sanitiser. Phase 2: Agent 1, the Sensitive Information Detector."
-readme = "README.md"
+description = "Privacy-preserving RAG - Agent 1 (Sensitive Information Detector)"
 requires-python = ">=3.11"
 dependencies = [
-    # Platform (Person C)
-    "pydantic>=2.7,<3",
-    "pydantic-settings>=2.3",
-    "httpx>=0.27",
-    "fastapi>=0.115",
-    "uvicorn[standard]>=0.30",
-    "typer>=0.12",
-    "rich>=13.7",
-    # Deterministic pass (Person A)
-    "presidio-analyzer>=2.2.355",
-    "spacy>=3.7,<4",
-    # Scoring (Person D)
-    "scikit-learn>=1.5",
+    "pydantic>=2.6",
+    "presidio-analyzer>=2.2",
+    "spacy>=3.7",
 ]
-
-[project.optional-dependencies]
-# `uv sync --extra spacy-model` installs en_core_web_lg (needed by the rule pass).
-spacy-model = ["en-core-web-lg"]
-
-[project.scripts]
-sanitise = "sanitise.cli.main:app"
 
 [dependency-groups]
-dev = [
-    "pytest>=8.2",
-    "pytest-asyncio>=0.23",
-    "ruff>=0.6",
-]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "ruff>=0.5"]
 
 [build-system]
-requires = ["hatchling>=1.25"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/sanitise"]
 
-# ---------------------------------------------------------------- uv
-# spaCy's large English model is not on PyPI; pin the wheel URL so the
-# `spacy-model` extra resolves.
-[tool.uv]
-default-groups = ["dev"]
-
-[tool.uv.sources]
-en-core-web-lg = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl" }
-
-# ---------------------------------------------------------------- pytest
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src", "."]
-asyncio_mode = "auto"
-asyncio_default_fixture_loop_scope = "function"
-markers = [
-    "ollama: needs a running Ollama server with the configured model (run with -m ollama)",
-    "presidio: loads Presidio + en_core_web_lg, slow (run with -m presidio)",
-]
-addopts = "-m 'not ollama and not presidio'"
+markers = ["presidio: needs presidio-analyzer and the en_core_web_lg spaCy model"]
 
-# ---------------------------------------------------------------- ruff
 [tool.ruff]
 line-length = 100
-target-version = "py311"
-src = ["src", "tests"]
-
-[tool.ruff.lint]
-select = ["E", "F", "W", "I", "B", "UP", "ASYNC", "RUF"]
-ignore = [
-    "B008",   # typer / fastapi use call expressions in defaults
-    "UP042",  # the frozen spec defines enums as (str, Enum), not StrEnum
-]

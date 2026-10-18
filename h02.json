@@ -1,0 +1,69 @@
+{
+  "doc_id": "507419a865920ee6",
+  "name": "h02",
+  "text": "hi doc, my grandson is 14 months old and still not walking. he was born premature at 32 weeks at Royal Children's Hospital in Melbourne on 9 July 2022. his mum, my daughter Jess, works as a primary school teacher and is worried. he weighs 9.8 kg.",
+  "spans": [
+    {
+      "text": "my grandson",
+      "category": "RELATION",
+      "start": 8,
+      "end": 19
+    },
+    {
+      "text": "14 months old",
+      "category": "AGE",
+      "start": 23,
+      "end": 36
+    },
+    {
+      "text": "Royal Children's Hospital",
+      "category": "LOCATION",
+      "start": 97,
+      "end": 122
+    },
+    {
+      "text": "Melbourne",
+      "category": "LOCATION",
+      "start": 126,
+      "end": 135
+    },
+    {
+      "text": "9 July 2022",
+      "category": "DATE",
+      "start": 139,
+      "end": 150
+    },
+    {
+      "text": "his mum",
+      "category": "RELATION",
+      "start": 152,
+      "end": 159
+    },
+    {
+      "text": "my daughter",
+      "category": "RELATION",
+      "start": 161,
+      "end": 172
+    },
+    {
+      "text": "Jess",
+      "category": "NAME",
+      "start": 173,
+      "end": 177
+    },
+    {
+      "text": "primary school teacher",
+      "category": "OCCUPATION",
+      "start": 190,
+      "end": 212
+    },
+    {
+      "text": "9.8 kg",
+      "category": "PHYSICAL",
+      "start": 239,
+      "end": 245
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

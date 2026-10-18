@@ -1,142 +1,93 @@
-# Preventing Cumulative Privacy Leakage in RAG
+# sanitise: Agent 1, Person A (Deterministic Logic)
 
-A multi-agent pipeline that rewrites private documents before they are used in
-retrieval-augmented generation. **Phase 2** builds and measures **Agent 1, the
-Sensitive Information Detector**: a document goes in, a validated list of
-sensitive spans comes out, scored against hand-annotated ground truth.
+This is everything in Agent 1 that runs without a model: Presidio, spaCy, the custom regex recognizers, span normalisation and the merge function. It covers stages 2, 3 and 6 of spec §3.1.
 
-Everything runs locally: Ollama (llama3:8b, qwen2.5:7b-instruct fallback),
-Presidio + spaCy, no paid APIs.
+## Interfaces (spec §8.2)
 
-## Quick start
+```python
+from sanitise.rules import rule_detect, merge_spans
 
-With pip (pinned, known-good versions):
+rule_spans = rule_detect(text)                    # list[SensitiveSpan], method="rule"
+final      = merge_spans(rule_spans, llm_spans)   # what Person C puts into DetectorOutput.spans
+```
+
+`rule_detect` guarantees the following for every span it returns:
+- `text == doc[start:end]` holds exactly.
+- The span has no surrounding whitespace or punctuation.
+- Spans never overlap, and they come back sorted by `start`.
+- `rationale` names the recognizer and rule that fired it, e.g. `AgeRecognizer:n_units_old` or `SpacyRecognizer:PERSON`. The document viewer can show it as the "agent decision".
+- If the offsets are inconsistent it raises `OffsetOutOfRangeError`, which C maps to the `OFFSET_OUT_OF_RANGE` error code.
+
+`merge_spans` produces this output:
+- The rule spans come first, sorted by offset.
+- The LLM spans follow, in the order the model returned them, deduplicated on category plus normalised text.
+- An LLM span is dropped when every part of it (split on `+`, `,`, `and`, `with`) already appears in a rule span's text, because it only restates explicit identifiers.
+- A combination that adds new information is kept, e.g. `32 years old + lighthouse keeper`.
+
+## Pipeline: a general core with domain layers on top
+
+The recognizers are built in layers: a general core first, then domain-specific additions. Each layer can be switched on or off:
+
+```python
+rule_detect(text)                                         # all layers (default)
+rule_detect(text, layers=("core", "spec", "general"))     # e.g. no healthcare/email extras
+```
+
+| Layer | What it adds | Why |
+|---|---|---|
+| **core** | Presidio + spaCy `en_core_web_lg` built-ins. PERSON→NAME, PHONE_NUMBER→PHONE (regions US/GB/IN/CA/AU/DE/FR/IL/BR), EMAIL_ADDRESS→EMAIL, LOCATION, DATE_TIME→DATE, SSN/passport/credit card/IBAN/IP…→ID_NUMBER, NRP/URL→OTHER | These are the explicit identifiers in spec §3.1, and they're general to any domain. |
+| **spec** | AGE (`32 years old`, `aged 54`, `my father is 67`), PHYSICAL (`6 ft 3 inches`, `approximately 220 pounds`, `BMI of 31`), RELATION (`my son`, `my mother-in-law`, `Hi Mom`) | These are spec categories Presidio has no recognizer for, and the §6 demo requires them. The patterns match phrasing; they don't encode medical knowledge. |
+| **general** | ADDRESS (street addresses, `City, ST 12345`, P.O. boxes, UK postcodes), labelled ID_NUMBER (`MRN:`, `policy no.`, `CNIC`), OCCUPATION (`works as a …`, `is a retired teacher`) | Presidio misses these explicit identifiers in any domain. |
+| **healthcare** | Named facilities → LOCATION (`Apollo Hospital`, `Cleveland Clinic`) | Specific to ChatDoctor. spaCy tags these ORGANIZATION. |
+| **email** | Enron phone formats (`713/853-1234`, `x3-5761`, `ext. 5512`), signature title lines (`President, Enron Wholesale Services`) | Specific to Enron. Switch this layer off if the fixtures have no emails. |
+
+Each layer adds measurable recall. Results are on the 10 held-out documents (`python eval/score_rules.py data/gold_heldout --ablation`):
+
+| Layers | Precision | Recall | F1 |
+|---|---|---|---|
+| core (Presidio alone) | 0.79 | 0.48 | 0.60 |
+| + spec | 0.91 | 0.74 | 0.82 |
+| + general | 0.94 | 0.82 | 0.87 |
+| + healthcare | 0.94 | 0.86 | 0.90 |
+| + email | 0.95 | 0.88 | 0.91 |
+
+Every layer then goes through the same post-processing:
+
+- **Post-filters**:
+  - Drop durations and relative times that spaCy calls DATE (`for 2 days`, `yesterday`, `this summer`, `6pm`). Anchored dates are kept.
+  - Drop salutations and kinship words that spaCy mislabels as PERSON (`doctor`, `sir`, `Mom`).
+  - Drop eponymous diseases (`Peyronie's disease`).
+- **Normalisation** (`rules/normalise.py`): trim → union same-category overlaps → resolve cross-category overlaps by precedence → merge adjacent same-category spans.
+
+### Category precedence (fixed Day 1)
+
+When spans overlap, the earlier category in this list wins:
+
+`EMAIL > ID_NUMBER > PHONE > ADDRESS > AGE > PHYSICAL > DATE > NAME > OCCUPATION > LOCATION > RELATION > MEDICAL_CONDITION > QUASI_COMBO > OTHER`
+
+When a weaker span only partly overlaps a stronger one, the part nobody claimed is kept, as long as it still carries content. Recall comes first, so coverage is never silently lost.
+
+## Positions the team should confirm (feed into D's annotation guide)
+
+- **Age is treated as sensitive at any value.** This is stricter than HIPAA Safe Harbor, which only covers ages of 90 and over (spec §9).
+- **Durations are not DATE.** `approximately 10 weeks` is left for the LLM pass, which matches the spec demo, where it appears as a QUASI_COMBO.
+- **ORGANIZATION is not requested from Presidio.** In Enron it is almost always "Enron" itself. If an employer should count, it goes to the LLM pass.
+- **MEDICAL_CONDITION is not produced by rules.** That is left to the LLM pass.
+- **Score threshold is 0.35.** It drops Presidio's near-zero guesses (US_BANK_NUMBER 0.05 on any digit run) and keeps phone numbers (0.4).
+
+## Running
 
 ```bash
-py -3.11 -m venv .venv
-source .venv/Scripts/activate    # Git Bash;  PowerShell: .venv\Scripts\Activate.ps1
-pip install -r requirements.txt  # includes spaCy en_core_web_lg (~400 MB)
-pip install -e . --no-deps       # the `sanitise` command
+uv sync                                   # or: pip install -e . pytest
+python -m spacy download en_core_web_lg
+pytest -q                                 # 79 tests, ~20 s (spaCy load dominates)
+python -m sanitise.rules "My son is 32 years old and lives at 42 Elm Street."
 ```
 
-Or with uv: `uv sync --extra spacy-model`.
+`/v1/detect/rules` (Person C) is just `DetectorOutput(doc_id=..., spans=rule_detect(text))`.
 
-Then the model runtime (not a Python package):
+The rule pass takes about 0.7 s on a 2000-character document once spaCy is loaded. Loading takes about 8 s once per process, and `get_analyzer()` caches it.
 
-```bash
-winget install Ollama.Ollama     # or https://ollama.com/download
-ollama pull llama3:8b            # and/or qwen2.5:7b-instruct
-sanitise health                  # is Ollama up and the model pulled?
-cp .env.example .env             # optional; defaults work for a local Ollama
-```
+The EmailRecognizer's domain check is forced to the bundled public-suffix snapshot, so nothing touches the network.
 
-No Ollama yet? Every command takes `--mock` (MockLLM) instead.
-
-```bash
-# The Phase 2 demo command
-uv run sanitise detect --input data/fixtures/case_07.json --verbose
-
-# Same thing without a model, with scripted LLM replies
-uv run sanitise detect -i examples/case_demo.json --verbose --mock-responses examples/mock_responses.json
-
-# Batch: write one <doc_id>.json per document, then score against the gold set
-uv run sanitise detect -i data/fixtures/ --out out/
-uv run sanitise score --gold data/gold/ --pred out/
-
-# HTTP API on http://127.0.0.1:8000 (interactive docs at /docs)
-uv run sanitise serve
-```
-
-`sanitise detect` options: `--verbose`, `--out DIR`, `--rules-only`, `--model NAME`,
-`--mock`, `--mock-responses FILE`, `--index N` (record in a multi-record file),
-`--concurrency N`, `--skip-too-long`, `--json`. Exit codes: `0` ok, `1` pipeline
-error (prints the error envelope), `2` usage error, `3` a stage not implemented yet.
-
-## How Agent 1 works
-
-```text
-document ─► load (doc_id = sha256[:16], ≤ 2000 chars)
-         ─► rule_detect   Presidio + spaCy + regex   → explicit spans with exact offsets   (Person A)
-         ─► infer_quasi   one constrained-JSON call  → quasi-identifier spans, no offsets  (Person B)
-                ↳ validate against QuasiList; on failure retry ≤ 3× with rising temperature
-                  and the validation error fed back as a repair instruction             (Person C, shared loop)
-         ─► merge_spans   union, restatement filter, category precedence                   (Person A)
-         ─► DetectorResult { output, meta: timings, retries, counts }                       (Person C)
-         ─► score         precision / recall / F1 vs gold, overall + per category           (Person D)
-```
-
-`detect()` validates every stage boundary: spans are re-validated with Pydantic,
-rule spans must have `method="rule"` and offsets that match the text, LLM spans
-must have `method="llm"` and a rationale. A violation raises a typed error with
-the stage that caused it, rather than surfacing as a wrong score later.
-
-## HTTP API (spec 8.4)
-
-| Method | Path                | Request                       | Response                              |
-|--------|---------------------|-------------------------------|---------------------------------------|
-| POST   | `/v1/detect`        | `{doc_id?, text, options?}`   | `DetectorResult`                      |
-| POST   | `/v1/detect/rules`  | `{doc_id?, text}`             | `DetectorOutput` — rule pass only     |
-| POST   | `/v1/detect/llm`    | `{doc_id?, text, explicit[]}` | `DetectorOutput` — LLM pass only      |
-| POST   | `/v1/score`         | `{pred[], gold[]}`            | `SpanMetrics`                         |
-| GET    | `/v1/health`        | —                             | `{status, ollama_reachable, model, pipeline_version}` |
-
-`options` = `{llm: bool = true, model?: str, retries?: int}`. `doc_id` defaults to the
-SHA-256-derived id. Errors use the spec 8.5 envelope:
-
-| code                       | HTTP | when                                             |
-|----------------------------|------|--------------------------------------------------|
-| `DOC_TOO_LONG`             | 413  | text over `SANITISE_MAX_DOC_CHARS` (2000)       |
-| `SCHEMA_VALIDATION_FAILED` | 502  | model output never validated after all retries  |
-| `LLM_UNREACHABLE`          | 503  | Ollama down, or model not pulled                |
-| `LLM_TIMEOUT`              | 504  | no answer within `SANITISE_LLM_TIMEOUT_S`       |
-| `OFFSET_OUT_OF_RANGE`      | 500  | a stage produced offsets that do not fit the text |
-
-Malformed request bodies return FastAPI's standard `422`; an unimplemented stage returns `501`.
-
-## Repository layout
-
-```text
-src/sanitise/
-  schemas.py              FROZEN shared contract (spec 8.1 + seam models)          C
-  config.py               pydantic-settings; SANITISE_* env vars / .env           C
-  errors.py               error codes + envelope (spec 8.5)                        C
-  loader.py               stage 1: ChatDoctor / Enron / fixture loading, doc_id    C
-  validation.py           offset checks shared by pipeline and gold loader         C
-  results.py              write predictions, read predictions + gold files          C
-  llm/
-    base.py               LLMClient protocol, retry/repair loop, call accounting   C
-    ollama.py             Ollama client (JSON-schema constrained decoding)         C
-    mock.py               MockLLM — scriptable, same validation path as Ollama     C
-    factory.py            build the configured client                              C
-  agents/detector/
-    pipeline.py           detect() orchestration                                    C
-    rules.py              rule_detect()   — placeholder until Person A lands it    A
-    merge.py              merge_spans()   — placeholder until Person A lands it    A
-    quasi.py              infer_quasi()   — placeholder until Person B lands it    B
-  evaluation/scoring.py   score()         — placeholder until Person D lands it    D
-  cli/                    `sanitise` command (Typer + Rich)                         C
-  api/                    FastAPI app                                               C
-tests/
-  unit/  integration/     platform tests (MockLLM, fake Ollama transport)          C
-  contract/               seam tests run against everyone's current code            C
-data/fixtures/  data/gold/   fixture corpus and gold annotations                    D
-docs/                     ownership, conventions, annotation guide                 all
-examples/                 a demo record and a MockLLM script
-```
-
-See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for who owns what and how to
-work against the seams.
-
-## Development
-
-```bash
-pytest                        # fast suite: no model, no spaCy load
-pytest -m presidio            # Presidio + en_core_web_lg environment check (~1 min)
-pytest -m ollama              # live tests against the real Ollama model (slow on CPU)
-ruff check . && ruff format --check .
-```
-
-**No GPU?** An 8B model on a CPU-only laptop can take minutes per call. Open
-[notebooks/colab_live_test.ipynb](notebooks/colab_live_test.ipynb) in Google
-Colab (T4 GPU runtime): it installs Ollama, pulls both models, and runs the
-test suites, the demo command, the HTTP API and the llama3 vs qwen comparison.
+`src/sanitise/schemas.py` is a verbatim copy of spec §8.1, used to build against. Replace it with Person C's published file at integration.

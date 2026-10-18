@@ -1,0 +1,33 @@
+{
+  "doc_id": "c41203cc3f7b992c",
+  "name": "c07",
+  "text": "My son has been experiencing left-sided abdominal pain and bilateral pelvic pain for approximately 10 weeks. Tests showed enlarged lymph nodes and mild leukocytosis. He is 32 years old, 6 ft 3 inches tall, and weighs approximately 220 pounds.",
+  "spans": [
+    {
+      "text": "My son",
+      "category": "RELATION",
+      "start": 0,
+      "end": 6
+    },
+    {
+      "text": "32 years old",
+      "category": "AGE",
+      "start": 172,
+      "end": 184
+    },
+    {
+      "text": "6 ft 3 inches",
+      "category": "PHYSICAL",
+      "start": 186,
+      "end": 199
+    },
+    {
+      "text": "approximately 220 pounds",
+      "category": "PHYSICAL",
+      "start": 217,
+      "end": 241
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

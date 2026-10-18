@@ -1,0 +1,57 @@
+{
+  "doc_id": "9f06f8ac5b41e5a0",
+  "name": "h05",
+  "text": "Dear doctor, my wife (age 44) has had heavy bleeding for 2 months. She is a police officer and does night duty. Her gynaecologist at Lilavati Hospital, Mumbai, suggested hysterectomy. We are from Thane. Our landline is 022 2541 7788. Her Aadhaar is 4567 8912 3456.",
+  "spans": [
+    {
+      "text": "my wife",
+      "category": "RELATION",
+      "start": 13,
+      "end": 20
+    },
+    {
+      "text": "age 44",
+      "category": "AGE",
+      "start": 22,
+      "end": 28
+    },
+    {
+      "text": "police officer",
+      "category": "OCCUPATION",
+      "start": 76,
+      "end": 90
+    },
+    {
+      "text": "Lilavati Hospital",
+      "category": "LOCATION",
+      "start": 133,
+      "end": 150
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 152,
+      "end": 158
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 196,
+      "end": 201
+    },
+    {
+      "text": "022 2541 7788",
+      "category": "PHONE",
+      "start": 219,
+      "end": 232
+    },
+    {
+      "text": "4567 8912 3456",
+      "category": "ID_NUMBER",
+      "start": 249,
+      "end": 263
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}
