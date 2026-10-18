@@ -1,0 +1,56 @@
+{
+  "doc_id": "aee7058d1e06c7da",
+  "text": "Subject: HR file update\n\nHi Marta,\n\nPlease update the HR file for Kevin Oyelaran, employee E-40871. He moved from the Portland trading desk to Houston on 15 June 2000. His new address is 2210 Bagby Street, Apt 12, Houston, TX 77006 and his phone is 713-555-0199.\n\nThanks,\nHelen Park",
+  "spans": [
+    {
+      "text": "Marta",
+      "category": "NAME",
+      "start": 28,
+      "end": 33
+    },
+    {
+      "text": "Kevin Oyelaran",
+      "category": "NAME",
+      "start": 66,
+      "end": 80
+    },
+    {
+      "text": "E-40871",
+      "category": "ID_NUMBER",
+      "start": 91,
+      "end": 98
+    },
+    {
+      "text": "Portland",
+      "category": "LOCATION",
+      "start": 118,
+      "end": 126
+    },
+    {
+      "text": "15 June 2000",
+      "category": "DATE",
+      "start": 154,
+      "end": 166
+    },
+    {
+      "text": "2210 Bagby Street, Apt 12, Houston, TX 77006",
+      "category": "ADDRESS",
+      "start": 187,
+      "end": 231
+    },
+    {
+      "text": "713-555-0199",
+      "category": "PHONE",
+      "start": 249,
+      "end": 261
+    },
+    {
+      "text": "Helen Park",
+      "category": "NAME",
+      "start": 272,
+      "end": 282
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

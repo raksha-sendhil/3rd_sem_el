@@ -1,0 +1,20 @@
+{
+  "doc_id": "d351e50b65eed8fe",
+  "text": "Hi doctor, I am 17 years old and I have acne on my cheeks and forehead. I have tried face wash but it keeps coming back. What treatments are safe, and does diet matter?",
+  "spans": [
+    {
+      "text": "17 years old",
+      "category": "AGE",
+      "start": 16,
+      "end": 28
+    },
+    {
+      "text": "acne",
+      "category": "MEDICAL_CONDITION",
+      "start": 40,
+      "end": 44
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}
