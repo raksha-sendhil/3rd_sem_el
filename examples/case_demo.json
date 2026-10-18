@@ -1,0 +1,5 @@
+{
+  "instruction": "If you are a doctor, please answer the medical questions based on the patient's description.",
+  "input": "My son has been experiencing left-sided abdominal pain for about ten weeks, and lately bilateral pelvic pain as well. He is 32 years old, 6 ft 3 inches tall, and weighs approximately 220 pounds. He works as a lighthouse keeper near Port Isaac. Blood tests showed mild leukocytosis and the scan mentioned enlarged lymph nodes. What could this be?",
+  "output": "Hi, thanks for your query. These symptoms need a proper evaluation..."
+}

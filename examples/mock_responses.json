@@ -1,0 +1,28 @@
+{
+  "QuasiList": [
+    {
+      "quasi_identifiers": [
+        {
+          "text": "left-sided abdominal + bilateral pelvic pain",
+          "category": "QUASI_COMBO",
+          "rationale": "A specific combination of symptoms narrows the set of matching patients."
+        },
+        {
+          "text": "enlarged lymph nodes + mild leukocytosis",
+          "category": "QUASI_COMBO",
+          "rationale": "Paired findings that, with the symptom profile, act as a clinical fingerprint."
+        },
+        {
+          "text": "approximately 10 weeks of unresolved symptoms",
+          "category": "QUASI_COMBO",
+          "rationale": "A precise timeline can be linked to visit records."
+        },
+        {
+          "text": "lighthouse keeper + Port Isaac",
+          "category": "QUASI_COMBO",
+          "rationale": "A rare occupation in a small village identifies essentially one person."
+        }
+      ]
+    }
+  ]
+}

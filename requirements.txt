@@ -1,0 +1,32 @@
+# Pinned direct dependencies, tested together on Python 3.11.4 (Windows 11).
+# pyproject.toml holds the same list as version ranges; this file is the known-good set.
+#
+#   py -3.11 -m venv .venv
+#   .venv\Scripts\activate            (Git Bash: source .venv/Scripts/activate)
+#   pip install -r requirements.txt
+#   pip install -e . --no-deps        # adds the `sanitise` command
+#
+# Ollama itself is not a Python package: install it from https://ollama.com
+# (or `winget install Ollama.Ollama`), then `ollama pull llama3:8b`.
+
+# ---- Platform (Person C)
+pydantic==2.14.1
+pydantic-settings==2.16.0
+httpx==0.28.1
+fastapi==0.143.3
+uvicorn[standard]==0.54.0
+typer==0.27.3
+rich==15.0.0
+
+# ---- Deterministic pass (Person A)
+presidio-analyzer==2.2.364
+spacy==3.8.16
+en_core_web_lg @ https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.8.0/en_core_web_lg-3.8.0-py3-none-any.whl#sha256=293e9547a655b25499198ab15a525b05b9407a75f10255e405e8c3854329ab63
+
+# ---- Scoring (Person D)
+scikit-learn==1.9.1
+
+# ---- Tests and lint
+pytest==9.1.1
+pytest-asyncio==1.4.0
+ruff==0.17.1
