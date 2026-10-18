@@ -1,0 +1,75 @@
+{
+  "doc_id": "56a1005caf03f9f6",
+  "name": "h09",
+  "text": "Hi Dad,\n\nHappy 60th! Sorry I can't make it to Austin this weekend. Mom said you're having the party at Uncle Joe's place on Lake Travis. I'll call Sunday.\n\nLove,\nSusan\n\nSusan Scott\nEnron Transwestern Pipeline\nsusan.scott@enron.com",
+  "spans": [
+    {
+      "text": "Dad",
+      "category": "RELATION",
+      "start": 3,
+      "end": 6
+    },
+    {
+      "text": "60th",
+      "category": "AGE",
+      "start": 15,
+      "end": 19
+    },
+    {
+      "text": "Austin",
+      "category": "LOCATION",
+      "start": 46,
+      "end": 52
+    },
+    {
+      "text": "Mom",
+      "category": "RELATION",
+      "start": 67,
+      "end": 70
+    },
+    {
+      "text": "Uncle",
+      "category": "RELATION",
+      "start": 103,
+      "end": 108
+    },
+    {
+      "text": "Joe",
+      "category": "NAME",
+      "start": 109,
+      "end": 112
+    },
+    {
+      "text": "Lake Travis",
+      "category": "LOCATION",
+      "start": 124,
+      "end": 135
+    },
+    {
+      "text": "Sunday",
+      "category": "DATE",
+      "start": 147,
+      "end": 153
+    },
+    {
+      "text": "Susan",
+      "category": "NAME",
+      "start": 162,
+      "end": 167
+    },
+    {
+      "text": "Susan Scott",
+      "category": "NAME",
+      "start": 169,
+      "end": 180
+    },
+    {
+      "text": "susan.scott@enron.com",
+      "category": "EMAIL",
+      "start": 209,
+      "end": 230
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

@@ -1,0 +1,57 @@
+{
+  "doc_id": "f7366fc171c16470",
+  "name": "c06",
+  "text": "Hello, I am a 26 yr old female nurse working night shifts at St. Mary's Hospital. I have been having palpitations and dizziness for two weeks. My ECG on 3/14 was normal. My BMI is 19. My sister had similar issues at age 25. Thank you, Emily Carter",
+  "spans": [
+    {
+      "text": "26 yr old",
+      "category": "AGE",
+      "start": 14,
+      "end": 23
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 31,
+      "end": 36
+    },
+    {
+      "text": "St. Mary's Hospital",
+      "category": "LOCATION",
+      "start": 61,
+      "end": 80
+    },
+    {
+      "text": "3/14",
+      "category": "DATE",
+      "start": 153,
+      "end": 157
+    },
+    {
+      "text": "BMI is 19",
+      "category": "PHYSICAL",
+      "start": 173,
+      "end": 182
+    },
+    {
+      "text": "My sister",
+      "category": "RELATION",
+      "start": 184,
+      "end": 193
+    },
+    {
+      "text": "age 25",
+      "category": "AGE",
+      "start": 216,
+      "end": 222
+    },
+    {
+      "text": "Emily Carter",
+      "category": "NAME",
+      "start": 235,
+      "end": 247
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

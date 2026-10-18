@@ -1,0 +1,39 @@
+{
+  "doc_id": "24e2fb5c30693f87",
+  "name": "c05",
+  "text": "My mother, aged 76, had a fall at home last night and now cannot bear weight on her right leg. She has osteoporosis. We live in Leeds and the GP practice is on 14 Kirkstall Road, LS4 2AA. Her NHS number is 943 476 5919. What should we do?",
+  "spans": [
+    {
+      "text": "My mother",
+      "category": "RELATION",
+      "start": 0,
+      "end": 9
+    },
+    {
+      "text": "aged 76",
+      "category": "AGE",
+      "start": 11,
+      "end": 18
+    },
+    {
+      "text": "Leeds",
+      "category": "LOCATION",
+      "start": 128,
+      "end": 133
+    },
+    {
+      "text": "14 Kirkstall Road, LS4 2AA",
+      "category": "ADDRESS",
+      "start": 160,
+      "end": 186
+    },
+    {
+      "text": "943 476 5919",
+      "category": "ID_NUMBER",
+      "start": 206,
+      "end": 218
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

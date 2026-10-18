@@ -1,0 +1,69 @@
+{
+  "doc_id": "8432bde6ddae3ff4",
+  "name": "h03",
+  "text": "Sir I am 62 yrs, retired from railways as a station master. Diabetic since 2005. Last HbA1c on 14/08/2023 was 9.2. My son Vikram lives in Nagpur and handles my treatment. Height 168 cm, weight 80 kg. Patient ID: AIIMS-778213.",
+  "spans": [
+    {
+      "text": "62 yrs",
+      "category": "AGE",
+      "start": 9,
+      "end": 15
+    },
+    {
+      "text": "station master",
+      "category": "OCCUPATION",
+      "start": 44,
+      "end": 58
+    },
+    {
+      "text": "2005",
+      "category": "DATE",
+      "start": 75,
+      "end": 79
+    },
+    {
+      "text": "14/08/2023",
+      "category": "DATE",
+      "start": 95,
+      "end": 105
+    },
+    {
+      "text": "My son",
+      "category": "RELATION",
+      "start": 115,
+      "end": 121
+    },
+    {
+      "text": "Vikram",
+      "category": "NAME",
+      "start": 122,
+      "end": 128
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 138,
+      "end": 144
+    },
+    {
+      "text": "168 cm",
+      "category": "PHYSICAL",
+      "start": 178,
+      "end": 184
+    },
+    {
+      "text": "80 kg",
+      "category": "PHYSICAL",
+      "start": 193,
+      "end": 198
+    },
+    {
+      "text": "AIIMS-778213",
+      "category": "ID_NUMBER",
+      "start": 212,
+      "end": 224
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

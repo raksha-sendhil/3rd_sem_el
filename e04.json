@@ -1,0 +1,63 @@
+{
+  "doc_id": "5753ca081e889ac0",
+  "name": "e04",
+  "text": "Hi Mom,\n\nI'll be flying home to Omaha on December 22nd. Can Dad pick me up at the airport around 6pm? My flight is UA 1123. Tell Grandma I said happy 80th birthday!\n\nLove,\nCara\n\nCara Semperger\nEnron, 503.464.3814",
+  "spans": [
+    {
+      "text": "Mom",
+      "category": "RELATION",
+      "start": 3,
+      "end": 6
+    },
+    {
+      "text": "Omaha",
+      "category": "LOCATION",
+      "start": 32,
+      "end": 37
+    },
+    {
+      "text": "December 22nd",
+      "category": "DATE",
+      "start": 41,
+      "end": 54
+    },
+    {
+      "text": "Dad",
+      "category": "RELATION",
+      "start": 60,
+      "end": 63
+    },
+    {
+      "text": "Grandma",
+      "category": "RELATION",
+      "start": 129,
+      "end": 136
+    },
+    {
+      "text": "80th birthday",
+      "category": "AGE",
+      "start": 150,
+      "end": 163
+    },
+    {
+      "text": "Cara",
+      "category": "NAME",
+      "start": 172,
+      "end": 176
+    },
+    {
+      "text": "Cara Semperger",
+      "category": "NAME",
+      "start": 178,
+      "end": 192
+    },
+    {
+      "text": "503.464.3814",
+      "category": "PHONE",
+      "start": 200,
+      "end": 212
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}
