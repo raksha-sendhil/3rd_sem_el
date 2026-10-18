@@ -1,0 +1,63 @@
+{
+  "doc_id": "28e078afbc951f9b",
+  "name": "e02",
+  "text": "Sally,\n\nAttached is the revised schedule for deal #456172. Please have Kim Ward review the volumes before Friday, March 9, 2001. The counterparty contact is Bob Hall at 503-464-8100, bob.hall@pgn.com.\n\nThanks,\nKate Symes\nEnron North America\n121 SW Salmon Street, Portland, OR 97204",
+  "spans": [
+    {
+      "text": "Sally",
+      "category": "NAME",
+      "start": 0,
+      "end": 5
+    },
+    {
+      "text": "456172",
+      "category": "ID_NUMBER",
+      "start": 51,
+      "end": 57
+    },
+    {
+      "text": "Kim Ward",
+      "category": "NAME",
+      "start": 71,
+      "end": 79
+    },
+    {
+      "text": "Friday, March 9, 2001",
+      "category": "DATE",
+      "start": 106,
+      "end": 127
+    },
+    {
+      "text": "Bob Hall",
+      "category": "NAME",
+      "start": 157,
+      "end": 165
+    },
+    {
+      "text": "503-464-8100",
+      "category": "PHONE",
+      "start": 169,
+      "end": 181
+    },
+    {
+      "text": "bob.hall@pgn.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 199
+    },
+    {
+      "text": "Kate Symes",
+      "category": "NAME",
+      "start": 210,
+      "end": 220
+    },
+    {
+      "text": "121 SW Salmon Street, Portland, OR 97204",
+      "category": "ADDRESS",
+      "start": 241,
+      "end": 281
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

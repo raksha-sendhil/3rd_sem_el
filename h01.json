@@ -1,0 +1,81 @@
+{
+  "doc_id": "e57cb5cbd7c4edc4",
+  "name": "h01",
+  "text": "Hello doctor, I am Rahul Verma from Lucknow, a 37 year old bank manager. I have had chest tightness on and off since 2nd January. My father died of a heart attack at the age of 52. I am 5 ft 9 in and weigh 88 kg. I visited Fortis Hospital last week where Dr. Anil Gupta did an ECG. Please call me on 9415012345.",
+  "spans": [
+    {
+      "text": "Rahul Verma",
+      "category": "NAME",
+      "start": 19,
+      "end": 30
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 36,
+      "end": 43
+    },
+    {
+      "text": "37 year old",
+      "category": "AGE",
+      "start": 47,
+      "end": 58
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 59,
+      "end": 71
+    },
+    {
+      "text": "2nd January",
+      "category": "DATE",
+      "start": 117,
+      "end": 128
+    },
+    {
+      "text": "My father",
+      "category": "RELATION",
+      "start": 130,
+      "end": 139
+    },
+    {
+      "text": "age of 52",
+      "category": "AGE",
+      "start": 170,
+      "end": 179
+    },
+    {
+      "text": "5 ft 9 in",
+      "category": "PHYSICAL",
+      "start": 186,
+      "end": 195
+    },
+    {
+      "text": "88 kg",
+      "category": "PHYSICAL",
+      "start": 206,
+      "end": 211
+    },
+    {
+      "text": "Fortis Hospital",
+      "category": "LOCATION",
+      "start": 223,
+      "end": 238
+    },
+    {
+      "text": "Anil Gupta",
+      "category": "NAME",
+      "start": 259,
+      "end": 269
+    },
+    {
+      "text": "9415012345",
+      "category": "PHONE",
+      "start": 300,
+      "end": 310
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

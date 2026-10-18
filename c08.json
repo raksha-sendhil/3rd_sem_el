@@ -1,0 +1,51 @@
+{
+  "doc_id": "ceef257e3d262879",
+  "name": "c08",
+  "text": "Hi doc. I'm a 19 year old college student and a competitive swimmer. I have had a sore shoulder for a month. My coach thinks it's tendonitis. I'm 180cm and 78kg. I live in Austin, Texas. My insurance member ID is XKP448921.",
+  "spans": [
+    {
+      "text": "19 year old",
+      "category": "AGE",
+      "start": 14,
+      "end": 25
+    },
+    {
+      "text": "college student",
+      "category": "OCCUPATION",
+      "start": 26,
+      "end": 41
+    },
+    {
+      "text": "competitive swimmer",
+      "category": "OCCUPATION",
+      "start": 48,
+      "end": 67
+    },
+    {
+      "text": "180cm",
+      "category": "PHYSICAL",
+      "start": 146,
+      "end": 151
+    },
+    {
+      "text": "78kg",
+      "category": "PHYSICAL",
+      "start": 156,
+      "end": 160
+    },
+    {
+      "text": "Austin, Texas",
+      "category": "LOCATION",
+      "start": 172,
+      "end": 185
+    },
+    {
+      "text": "XKP448921",
+      "category": "ID_NUMBER",
+      "start": 213,
+      "end": 222
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

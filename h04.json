@@ -1,0 +1,69 @@
+{
+  "doc_id": "ce24fe263158fb89",
+  "name": "h04",
+  "text": "Hello, I'm a 30-year-old pharmacist in Toronto. Three days ago I developed a severe headache with neck stiffness. My partner, Daniel, drove me to Sunnybrook Health Sciences Centre. I'm 5'7\" and 140 lbs. Please reply to kelly.nguyen@outlook.com. Thanks, Kelly",
+  "spans": [
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 13,
+      "end": 24
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 25,
+      "end": 35
+    },
+    {
+      "text": "Toronto",
+      "category": "LOCATION",
+      "start": 39,
+      "end": 46
+    },
+    {
+      "text": "My partner",
+      "category": "RELATION",
+      "start": 114,
+      "end": 124
+    },
+    {
+      "text": "Daniel",
+      "category": "NAME",
+      "start": 126,
+      "end": 132
+    },
+    {
+      "text": "Sunnybrook Health Sciences Centre",
+      "category": "LOCATION",
+      "start": 146,
+      "end": 179
+    },
+    {
+      "text": "5'7\"",
+      "category": "PHYSICAL",
+      "start": 185,
+      "end": 189
+    },
+    {
+      "text": "140 lbs",
+      "category": "PHYSICAL",
+      "start": 194,
+      "end": 201
+    },
+    {
+      "text": "kelly.nguyen@outlook.com",
+      "category": "EMAIL",
+      "start": 219,
+      "end": 243
+    },
+    {
+      "text": "Kelly",
+      "category": "NAME",
+      "start": 253,
+      "end": 258
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

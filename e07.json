@@ -1,0 +1,69 @@
+{
+  "doc_id": "97317ba5126cf0f5",
+  "name": "e07",
+  "text": "Jeff,\n\nMy wife Linda and I would love to have you over on Saturday. We are at 5 Briar Hollow Lane, Houston 77027. Our home number is 713-621-0384. Our son Jake just turned 16 and is looking for a summer internship, maybe you could talk to him.\n\nBest,\nRick Buy",
+  "spans": [
+    {
+      "text": "Jeff",
+      "category": "NAME",
+      "start": 0,
+      "end": 4
+    },
+    {
+      "text": "My wife",
+      "category": "RELATION",
+      "start": 7,
+      "end": 14
+    },
+    {
+      "text": "Linda",
+      "category": "NAME",
+      "start": 15,
+      "end": 20
+    },
+    {
+      "text": "Saturday",
+      "category": "DATE",
+      "start": 58,
+      "end": 66
+    },
+    {
+      "text": "5 Briar Hollow Lane, Houston 77027",
+      "category": "ADDRESS",
+      "start": 78,
+      "end": 112
+    },
+    {
+      "text": "713-621-0384",
+      "category": "PHONE",
+      "start": 133,
+      "end": 145
+    },
+    {
+      "text": "Our son",
+      "category": "RELATION",
+      "start": 147,
+      "end": 154
+    },
+    {
+      "text": "Jake",
+      "category": "NAME",
+      "start": 155,
+      "end": 159
+    },
+    {
+      "text": "16",
+      "category": "AGE",
+      "start": 172,
+      "end": 174
+    },
+    {
+      "text": "Rick Buy",
+      "category": "NAME",
+      "start": 251,
+      "end": 259
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

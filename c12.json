@@ -1,0 +1,63 @@
+{
+  "doc_id": "57df60dfc15cda81",
+  "name": "c12",
+  "text": "Hi, my name is Ahmed Khan, 29 years old, working as a civil engineer in Karachi. I was diagnosed with hepatitis B in 2018. My father passed away from liver cancer at 55. My email is ahmed.k@gmail.com. CNIC 42101-1234567-1.",
+  "spans": [
+    {
+      "text": "Ahmed Khan",
+      "category": "NAME",
+      "start": 15,
+      "end": 25
+    },
+    {
+      "text": "29 years old",
+      "category": "AGE",
+      "start": 27,
+      "end": 39
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 68
+    },
+    {
+      "text": "Karachi",
+      "category": "LOCATION",
+      "start": 72,
+      "end": 79
+    },
+    {
+      "text": "2018",
+      "category": "DATE",
+      "start": 117,
+      "end": 121
+    },
+    {
+      "text": "My father",
+      "category": "RELATION",
+      "start": 123,
+      "end": 132
+    },
+    {
+      "text": "55",
+      "category": "AGE",
+      "start": 166,
+      "end": 168
+    },
+    {
+      "text": "ahmed.k@gmail.com",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 199
+    },
+    {
+      "text": "42101-1234567-1",
+      "category": "ID_NUMBER",
+      "start": 206,
+      "end": 221
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}
