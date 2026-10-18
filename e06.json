@@ -1,0 +1,51 @@
+{
+  "doc_id": "3be50c9a7f221baa",
+  "name": "e06",
+  "text": "Team,\n\nReminder that the offsite is on Wednesday, Oct 4 at the Woodlands Resort. Please RSVP to Shirley Crenshaw by Monday. Employee ID numbers are required for registration - mine is 90012457. Directions: take I-45 north to exit 76.\n\nThanks,\nVince Kaminski\nManaging Director, Research",
+  "spans": [
+    {
+      "text": "Wednesday, Oct 4",
+      "category": "DATE",
+      "start": 39,
+      "end": 55
+    },
+    {
+      "text": "Woodlands Resort",
+      "category": "LOCATION",
+      "start": 63,
+      "end": 79
+    },
+    {
+      "text": "Shirley Crenshaw",
+      "category": "NAME",
+      "start": 96,
+      "end": 112
+    },
+    {
+      "text": "Monday",
+      "category": "DATE",
+      "start": 116,
+      "end": 122
+    },
+    {
+      "text": "90012457",
+      "category": "ID_NUMBER",
+      "start": 184,
+      "end": 192
+    },
+    {
+      "text": "Vince Kaminski",
+      "category": "NAME",
+      "start": 243,
+      "end": 257
+    },
+    {
+      "text": "Managing Director",
+      "category": "OCCUPATION",
+      "start": 258,
+      "end": 275
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

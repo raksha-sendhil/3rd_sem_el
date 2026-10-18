@@ -1,0 +1,75 @@
+{
+  "doc_id": "7dc8919346538c56",
+  "name": "e01",
+  "text": "From: Vince J Kaminski\nTo: Stinson Gibner\nDate: 10/23/2000 02:15 PM\n\nStinson,\n\nPlease set up a meeting with Jeff Shankman for Thursday. My cell is (713) 410-5396. I will be in London from Nov 6 through Nov 10.\n\nVince",
+  "spans": [
+    {
+      "text": "Vince J Kaminski",
+      "category": "NAME",
+      "start": 6,
+      "end": 22
+    },
+    {
+      "text": "Stinson Gibner",
+      "category": "NAME",
+      "start": 27,
+      "end": 41
+    },
+    {
+      "text": "10/23/2000 02:15 PM",
+      "category": "DATE",
+      "start": 48,
+      "end": 67
+    },
+    {
+      "text": "Stinson",
+      "category": "NAME",
+      "start": 69,
+      "end": 76
+    },
+    {
+      "text": "Jeff Shankman",
+      "category": "NAME",
+      "start": 108,
+      "end": 121
+    },
+    {
+      "text": "Thursday",
+      "category": "DATE",
+      "start": 126,
+      "end": 134
+    },
+    {
+      "text": "(713) 410-5396",
+      "category": "PHONE",
+      "start": 147,
+      "end": 161
+    },
+    {
+      "text": "London",
+      "category": "LOCATION",
+      "start": 176,
+      "end": 182
+    },
+    {
+      "text": "Nov 6",
+      "category": "DATE",
+      "start": 188,
+      "end": 193
+    },
+    {
+      "text": "Nov 10",
+      "category": "DATE",
+      "start": 202,
+      "end": 208
+    },
+    {
+      "text": "Vince",
+      "category": "NAME",
+      "start": 211,
+      "end": 216
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

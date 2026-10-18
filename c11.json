@@ -1,0 +1,45 @@
+{
+  "doc_id": "779e332b8dcff0b7",
+  "name": "c11",
+  "text": "Hello, my 3 month old baby boy has been vomiting after every feed for 4 days. He was born on 2 August 2023 at 36 weeks. His birth weight was 2.4 kg. We are in Dubai. Please help urgently, my number is 050 123 4567.",
+  "spans": [
+    {
+      "text": "3 month old",
+      "category": "AGE",
+      "start": 10,
+      "end": 21
+    },
+    {
+      "text": "baby boy",
+      "category": "RELATION",
+      "start": 22,
+      "end": 30
+    },
+    {
+      "text": "2 August 2023",
+      "category": "DATE",
+      "start": 93,
+      "end": 106
+    },
+    {
+      "text": "2.4 kg",
+      "category": "PHYSICAL",
+      "start": 141,
+      "end": 147
+    },
+    {
+      "text": "Dubai",
+      "category": "LOCATION",
+      "start": 159,
+      "end": 164
+    },
+    {
+      "text": "050 123 4567",
+      "category": "PHONE",
+      "start": 201,
+      "end": 213
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

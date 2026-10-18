@@ -1,0 +1,63 @@
+{
+  "doc_id": "a212148175168498",
+  "name": "e03",
+  "text": "Louise,\n\nJohn Lavorato asked me to forward this. The trading desk will move to the 31st floor of the Enron Building, 1400 Smith Street, on May 1. Questions go to Tammie Schoppe at x3-5761 or 713-853-5761.\n\nRegards,\nGreg Whalley\nPresident, Enron Wholesale Services",
+  "spans": [
+    {
+      "text": "Louise",
+      "category": "NAME",
+      "start": 0,
+      "end": 6
+    },
+    {
+      "text": "John Lavorato",
+      "category": "NAME",
+      "start": 9,
+      "end": 22
+    },
+    {
+      "text": "1400 Smith Street",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 134
+    },
+    {
+      "text": "May 1",
+      "category": "DATE",
+      "start": 139,
+      "end": 144
+    },
+    {
+      "text": "Tammie Schoppe",
+      "category": "NAME",
+      "start": 162,
+      "end": 176
+    },
+    {
+      "text": "x3-5761",
+      "category": "PHONE",
+      "start": 180,
+      "end": 187
+    },
+    {
+      "text": "713-853-5761",
+      "category": "PHONE",
+      "start": 191,
+      "end": 203
+    },
+    {
+      "text": "Greg Whalley",
+      "category": "NAME",
+      "start": 215,
+      "end": 227
+    },
+    {
+      "text": "President",
+      "category": "OCCUPATION",
+      "start": 228,
+      "end": 237
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}
