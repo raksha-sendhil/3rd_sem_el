@@ -57,8 +57,9 @@ error (prints the error envelope), `2` usage error, `3` a stage not implemented 
 ```text
 document ─► load (doc_id = sha256[:16], ≤ 2000 chars)
          ─► rule_detect   Presidio + spaCy + regex   → explicit spans with exact offsets   (Person A)
-         ─► infer_quasi   one constrained-JSON call  → quasi-identifier spans, no offsets  (Person B)
-                ↳ validate against QuasiList; on failure retry ≤ 3× with rising temperature
+         ─► infer_quasi   one constrained-JSON call  → conditions, jobs, places (quoted, then
+                          grounded to exact offsets) + QUASI_COMBO combinations (no offsets)  (Person B)
+                ↳ validate against the schema; on failure retry ≤ 3× with rising temperature
                   and the validation error fed back as a repair instruction             (Person C, shared loop)
          ─► merge_spans   union, restatement filter, category precedence                   (Person A)
          ─► DetectorResult { output, meta: timings, retries, counts }                       (Person C)
@@ -112,7 +113,7 @@ src/sanitise/
     pipeline.py           detect() orchestration                                    C
     rules.py              rule_detect()   — seam, re-exports sanitise.rules         A
     merge.py              merge_spans()   — seam, re-exports sanitise.rules         A
-    quasi.py              infer_quasi()   — placeholder until Person B lands it    B
+    quasi.py              infer_quasi()   — prompt, few-shot, grounding            B
   rules/                  Presidio + spaCy + regex layers, normalise, merge        A
   evaluation/
     scoring.py            score(), matching, error list, markdown report           D
@@ -148,5 +149,10 @@ ruff check . && ruff format --check .
 
 **No GPU?** An 8B model on a CPU-only laptop can take minutes per call. Open
 [notebooks/colab_live_test.ipynb](notebooks/colab_live_test.ipynb) in Google
-Colab (T4 GPU runtime): it installs Ollama, pulls both models, and runs the
-test suites, the demo command, the HTTP API and the llama3 vs qwen comparison.
+Colab (T4 GPU runtime) and run all cells: it installs Ollama and the models, lets you
+paste any document and see the detected spans highlighted, scores the 20 gold
+documents (`docs/metrics_report.md`), compares llama3:8b with qwen2.5:7b-instruct
+(`docs/model_comparison.md`), and runs the test suites and the HTTP API.
+
+Design notes per layer: [docs/rules.md](docs/rules.md) (A), [docs/prompt.md](docs/prompt.md) (B),
+[docs/evaluation.md](docs/evaluation.md) and [docs/annotation_guide.md](docs/annotation_guide.md) (D).

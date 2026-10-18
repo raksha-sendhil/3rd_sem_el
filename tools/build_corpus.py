@@ -23,6 +23,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FIX_DIR = ROOT / "data" / "fixtures"
+# Every document was reviewed span by span against docs/annotation_guide.md (review
+# protocol, section 5). Rulings from the review are rows D11-D15 of the decision log.
+REVIEWED_BY = "C"
 GOLD_DIR = ROOT / "data" / "gold"
 
 MARK = re.compile(r"\[\[([A-Z_]+)\|(.+?)\]\]", re.S)
@@ -107,7 +110,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
     (
         8,
         "chatdoctor",
-        "Hi doctor. I am [[AGE|29 years old]] and I delivered my baby on [[DATE|21 January 2024]] at "
+        "Hi doctor. I am [[AGE|29 years old]] and I delivered [[RELATION|my baby]] on [[DATE|21 January 2024]] at "
         "[[LOCATION|Fortis Hospital, Mulund]] by emergency C-section. Since "
         "[[DATE|2 February 2024]] I have had fever and a red, swollen stitch line. "
         "[[RELATION|My husband]] says it is normal but I am worried. I work as a "
@@ -154,7 +157,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "enron",
         "Subject: HR file update\n\nHi [[NAME|Marta]],\n\nPlease update the HR file for "
         "[[NAME|Kevin Oyelaran]], employee [[ID_NUMBER|E-40871]]. He moved from the "
-        "[[LOCATION|Portland]] trading desk to Houston on [[DATE|15 June 2000]]. His new address is "
+        "[[LOCATION|Portland]] trading desk to [[LOCATION|Houston]] on [[DATE|15 June 2000]]. His new address is "
         "[[ADDRESS|2210 Bagby Street, Apt 12, Houston, TX 77006]] and his phone is "
         "[[PHONE|713-555-0199]].\n\nThanks,\n[[NAME|Helen Park]]",
         [],
@@ -227,7 +230,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "[[MEDICAL_CONDITION|ischemic stroke]] on [[DATE|14 May 2024]] and now has weakness on his "
         "right side. A neurologist at [[LOCATION|Aster Medcity]] has started physiotherapy. How "
         "long does recovery usually take?",
-        [],
+        ["exact stroke date + named hospital (Aster Medcity) + age"],
     ),
 ]
 
@@ -283,7 +286,7 @@ def main() -> None:
                     "text": text,
                     "spans": spans,
                     "annotator": "D",
-                    "reviewed_by": None,
+                    "reviewed_by": REVIEWED_BY,
                 },
                 indent=2,
                 ensure_ascii=False,

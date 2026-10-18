@@ -27,6 +27,12 @@
       "end": 126
     },
     {
+      "text": "Houston",
+      "category": "LOCATION",
+      "start": 143,
+      "end": 150
+    },
+    {
       "text": "15 June 2000",
       "category": "DATE",
       "start": 154,
@@ -52,5 +58,5 @@
     }
   ],
   "annotator": "D",
-  "reviewed_by": null
+  "reviewed_by": "C"
 }

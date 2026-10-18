@@ -59,6 +59,20 @@ async def test_sends_schema_as_format_and_parses_reply() -> None:
     assert body["format"]["properties"]["quasi_identifiers"]["type"] == "array"
     assert "$defs" not in body["format"]
     assert body["options"]["temperature"] == 0.0
+    assert "seed" not in body["options"]
+
+
+async def test_seed_and_num_predict_from_settings() -> None:
+    seen: list[dict] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.append(json.loads(request.content))
+        return chat_reply(GOOD)
+
+    http = httpx.AsyncClient(base_url="http://ollama.test", transport=httpx.MockTransport(handler))
+    client = OllamaClient.from_settings(Settings(llm_seed=7, llm_num_predict=256), http=http)
+    await client.json_call("s", "u", QuasiList)
+    assert seen[0]["options"]["seed"] == 7 and seen[0]["options"]["num_predict"] == 256
 
 
 async def test_repairs_invalid_output() -> None:

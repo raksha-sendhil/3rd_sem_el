@@ -1,6 +1,6 @@
 # Annotation Guide - Agent 1 (Sensitive Information Detector)
 
-**Owner:** Person D  |  **Version:** 1.0  |  **Status:** DRAFT until the Day 1 session signs off the items marked ⚑
+**Owner:** Person D  |  **Version:** 1.1  |  **Status:** Signed off 18 Oct 2026 (all ⚑ items accepted as proposed; rulings D11-D17 added after review)
 
 This guide is the specification for what the detector is expected to catch. If you annotate
 a case the guide does not cover, decide it, then add the rule to the **Decision log** at the
@@ -8,15 +8,15 @@ bottom. Never silently improvise.
 
 ---
 
-## 0. Decisions to confirm on Day 1 ⚑
+## 0. Day 1 decisions (signed off)
 
 | # | Decision | Proposed position | Why |
 |---|---|---|---|
-| ⚑1 | Offset convention | Python string indices, **end-exclusive**: `text[start:end] == span text` | Matches the spec example (`"my son"` is 0-6). Person A's output must use the same. |
-| ⚑2 | Is age sensitive? | **Yes. Every age is annotated `AGE`.** | HIPAA Safe Harbor allows exact ages under 90, so this is stricter than the regulation. We choose strict because age is a core quasi-identifier and the session monitor needs it as a trackable attribute. Cost: lower precision if the detector is over-eager; recall is the primary figure anyway. |
-| ⚑3 | One-to-one matching | **Yes.** One gold span is credited by at most one prediction. | Stops one large predicted span or duplicate predictions from inflating the score. Not in the original spec, so the team must approve it. |
-| ⚑4 | Category list | The 14 values in `schemas.py`, frozen | Changing it after annotation starts invalidates annotations. |
-| ⚑5 | Plain symptoms | **Not annotated** on their own (see 3.12) | Otherwise nearly every sentence in a medical record becomes a span. |
+| ✔1 | Offset convention | Python string indices, **end-exclusive**: `text[start:end] == span text` | Matches the spec example (`"my son"` is 0-6). Person A's output must use the same. |
+| ✔2 | Is age sensitive? | **Yes. Every age is annotated `AGE`.** | HIPAA Safe Harbor allows exact ages under 90, so this is stricter than the regulation. We choose strict because age is a core quasi-identifier and the session monitor needs it as a trackable attribute. Cost: lower precision if the detector is over-eager; recall is the primary figure anyway. |
+| ✔3 | One-to-one matching | **Yes.** One gold span is credited by at most one prediction. | Stops one large predicted span or duplicate predictions from inflating the score. Not in the original spec, so the team must approve it. |
+| ✔4 | Category list | The 14 values in `schemas.py`, frozen | Changing it after annotation starts invalidates annotations. |
+| ✔5 | Plain symptoms | **Not annotated** on their own (see 3.12) | Otherwise nearly every sentence in a medical record becomes a span. |
 
 ---
 
@@ -61,7 +61,7 @@ bottom. Never silently improvise.
 - ❌ `Enron`, `metformin`, `rajesh.kumar84@examplemail.com` (this is `EMAIL`)
 - Titles are excluded from the span: annotate `Ortega` in "Dr. Ortega".
 
-### 3.2 AGE (⚑2)
+### 3.2 AGE (✔2)
 - ✅ `34 year old` · `6 years old` · `92 years old` · `58 years old`
 - ✅ Annotate the number plus its unit words as written: `32 years old`, not just `32`.
 - ❌ `an elderly man`, `for 10 weeks`, `in her thirties` (vague; see decision log D4)
@@ -107,7 +107,7 @@ Hospitals, schools and universities are `LOCATION` because they narrow where a p
 ### 3.11 DATE ranges
 `from 1 August 2001 to 30 September 2001` is **two** DATE spans, one per date.
 
-### 3.12 MEDICAL_CONDITION (⚑5)
+### 3.12 MEDICAL_CONDITION (✔5)
 Annotate when the text names a diagnosis, disease or specific clinical finding **about a specific person**.
 - ✅ `vertigo` · `type 2 diabetes` · `asthma` (a classmate's) · `multiple myeloma` · `leukocytosis` · `enlarged lymph nodes` · `neuropathy` (even when suspected: "Can this be neuropathy?")
 - ❌ `abdominal pain`, `cough`, `headache`, `fever`, `rash`, `weakness`, `palpitations` (plain symptoms)
@@ -138,9 +138,13 @@ One description per distinct combination. Do not list several overlapping descri
 
 ## 4. Precedence when categories compete for the same characters
 
-Use the **most specific** category:
+Use the **most specific** category. This is the order the detector applies
+(`CATEGORY_PRECEDENCE` in `src/sanitise/rules/categories.py`), so annotators and code agree:
 
-`EMAIL > PHONE > ID_NUMBER > ADDRESS > NAME > AGE > DATE > PHYSICAL > RELATION > OCCUPATION > MEDICAL_CONDITION > LOCATION > OTHER`
+`EMAIL > ID_NUMBER > PHONE > ADDRESS > AGE > PHYSICAL > DATE > NAME > OCCUPATION > LOCATION > RELATION > MEDICAL_CONDITION > QUASI_COMBO > OTHER`
+
+AGE and PHYSICAL rank above DATE because Presidio tags "32 years old" as a date; ID_NUMBER
+ranks above PHONE because long ID numbers look like phone numbers.
 
 Examples: `daniel.whitcomb@example-energy.com` → `EMAIL` only (no `NAME`). A hospital inside an address → part of `ADDRESS`.
 
@@ -161,13 +165,20 @@ Examples: `daniel.whitcomb@example-energy.com` → `EMAIL` only (no `NAME`). A h
 | ID | Date | Question | Ruling | Raised by | Settled by |
 |---|---|---|---|---|---|
 | D1 | Day 1 | Offsets | Python indices, end-exclusive | D | team |
-| D2 | Day 1 | Age sensitive? | Yes, every age is `AGE` | D | team ⚑ |
-| D3 | Day 2 | Plain symptoms | Not annotated alone; only inside QUASI_COMBO | D | ⚑ |
-| D4 | Day 2 | Vague ages (`in her thirties`, `elderly`) | Not annotated. Revisit if real data has many. | D | ⚑ |
-| D5 | Day 2 | Procedures | Not `MEDICAL_CONDITION` | D | ⚑ |
-| D6 | Day 2 | `RELATION` in third person (`His wife`) | Annotated, same as `my wife` | D | ⚑ |
-| D7 | Day 2 | Suspected conditions (`Can this be neuropathy?`) | Annotated | D | ⚑ |
-| D8 | Day 2 | General medical statements | Not annotated | D | ⚑ |
-| D9 | Day 3 | Hospital / school / university category | `LOCATION` | D | ⚑ |
-| D10 | Day 3 | Durations (`10 weeks`) | Not `DATE`; may support a QUASI_COMBO | D | ⚑ |
+| D2 | Day 1 | Age sensitive? | Yes, every age is `AGE` | D | team |
+| D3 | Day 2 | Plain symptoms | Not annotated alone; only inside QUASI_COMBO | D | team |
+| D4 | Day 2 | Vague ages (`in her thirties`, `elderly`) | Not annotated. Revisit if real data has many. | D | team |
+| D5 | Day 2 | Procedures | Not `MEDICAL_CONDITION` | D | team |
+| D6 | Day 2 | `RELATION` in third person (`His wife`) | Annotated, same as `my wife` | D | team |
+| D7 | Day 2 | Suspected conditions (`Can this be neuropathy?`) | Annotated | D | team |
+| D8 | Day 2 | General medical statements | Not annotated | D | team |
+| D9 | Day 3 | Hospital / school / university category | `LOCATION` | D | team |
+| D10 | Day 3 | Durations (`10 weeks`) | Not `DATE`; may support a QUASI_COMBO | D | team |
+| D11 | 18 Oct | Who detects `MEDICAL_CONDITION`? | The LLM pass. Rules cannot tell a diagnosis from a symptom (3.12). The LLM quotes the condition and the pipeline grounds the quote to exact offsets, so it is scored like any positional span | C | team |
+| D12 | 18 Oct | LLM quote not found in the text | Dropped as a hallucination. Applies to MEDICAL_CONDITION, OCCUPATION and LOCATION from the LLM pass | C | team |
+| D13 | 18 Oct | `my baby` (a newborn) | `RELATION`: a kinship term pointing at a specific person (case_08) | C (review) | team |
+| D14 | 18 Oct | A place named on its own and again inside an address | Two spans: `LOCATION` for the standalone mention, inside `ADDRESS` for the other (rule 5, every occurrence; case_13) | C (review) | team |
+| D15 | 18 Oct | Exact date of a medical event + named hospital | `QUASI_COMBO` (precise timeline + named institution), as in case_08; added to case_20 | C (review) | team |
+| D16 | 18 Oct | Relative time tagged as a date (`the early morning`, `quarterly`, `each day`) | Not `DATE`. A date needs a digit, a month, a weekday or a named holiday; the rule pass enforces this | C | team |
+| D17 | 18 Oct | Synthetic fixtures | Accepted for Phase 2. Real ChatDoctor / Enron records may replace them later, annotated by hand | team | team |
 | | | *(add new rows here)* | | | |

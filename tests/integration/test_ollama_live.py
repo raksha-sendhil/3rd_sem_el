@@ -17,11 +17,13 @@ import os
 import pytest
 
 from sanitise.agents.detector.pipeline import detect
+from sanitise.agents.detector.quasi import infer_quasi
 from sanitise.config import Settings
 from sanitise.llm import OllamaClient
 from sanitise.loader import compute_doc_id
+from sanitise.schemas import PIICategory as C
 from sanitise.schemas import QuasiList
-from tests.conftest import SAMPLE_TEXT
+from tests.conftest import SAMPLE_TEXT, fake_rule_detect
 
 pytestmark = pytest.mark.ollama
 
@@ -53,3 +55,15 @@ async def test_detect_end_to_end(ollama: OllamaClient) -> None:
     result = await detect(compute_doc_id(SAMPLE_TEXT), SAMPLE_TEXT, ollama)
     assert result.meta.model == ollama.model
     assert result.meta.llm_ms > 0
+
+
+async def test_infer_quasi_live(ollama: OllamaClient) -> None:
+    """Person B's pass on a real model: allowed categories only, grounded offsets fit."""
+    spans = await infer_quasi(SAMPLE_TEXT, fake_rule_detect(SAMPLE_TEXT), ollama)
+    allowed = {C.MEDICAL_CONDITION, C.OCCUPATION, C.LOCATION, C.QUASI_COMBO}
+    for span in spans:
+        assert span.category in allowed and span.method == "llm" and span.rationale
+        if span.start is not None:
+            assert SAMPLE_TEXT[span.start : span.end] == span.text
+        else:
+            assert span.category is C.QUASI_COMBO
