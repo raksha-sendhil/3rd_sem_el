@@ -1,0 +1,51 @@
+{
+  "doc_id": "0e80c4b1946c3443",
+  "name": "c04",
+  "text": "Hi, I'm Mike, 41, a long-haul truck driver from Ohio. I've had lower back pain for about six weeks, worse after long drives. I'm 6'1\" and about 260 lbs. My doctor at Cleveland Clinic said it may be a herniated disc. Should I get an MRI?",
+  "spans": [
+    {
+      "text": "Mike",
+      "category": "NAME",
+      "start": 8,
+      "end": 12
+    },
+    {
+      "text": "41",
+      "category": "AGE",
+      "start": 14,
+      "end": 16
+    },
+    {
+      "text": "long-haul truck driver",
+      "category": "OCCUPATION",
+      "start": 20,
+      "end": 42
+    },
+    {
+      "text": "Ohio",
+      "category": "LOCATION",
+      "start": 48,
+      "end": 52
+    },
+    {
+      "text": "6'1\"",
+      "category": "PHYSICAL",
+      "start": 129,
+      "end": 133
+    },
+    {
+      "text": "about 260 lbs",
+      "category": "PHYSICAL",
+      "start": 138,
+      "end": 151
+    },
+    {
+      "text": "Cleveland Clinic",
+      "category": "LOCATION",
+      "start": 166,
+      "end": 182
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

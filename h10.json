@@ -1,0 +1,63 @@
+{
+  "doc_id": "9d012a372925f77c",
+  "name": "h10",
+  "text": "All,\n\nPlease welcome Tracy Ngo, who joins the credit group as Senior Analyst effective June 4, 2001. Tracy previously worked at Portland General Electric. She can be reached at extension 3-7154 or tracy.ngo@enron.com. Her office is in ECN 2841.\n\nTim Belden\nVice President, West Power Trading",
+  "spans": [
+    {
+      "text": "Tracy Ngo",
+      "category": "NAME",
+      "start": 21,
+      "end": 30
+    },
+    {
+      "text": "Senior Analyst",
+      "category": "OCCUPATION",
+      "start": 62,
+      "end": 76
+    },
+    {
+      "text": "June 4, 2001",
+      "category": "DATE",
+      "start": 87,
+      "end": 99
+    },
+    {
+      "text": "Tracy",
+      "category": "NAME",
+      "start": 101,
+      "end": 106
+    },
+    {
+      "text": "extension 3-7154",
+      "category": "PHONE",
+      "start": 177,
+      "end": 193
+    },
+    {
+      "text": "tracy.ngo@enron.com",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 216
+    },
+    {
+      "text": "ECN 2841",
+      "category": "ADDRESS",
+      "start": 235,
+      "end": 243
+    },
+    {
+      "text": "Tim Belden",
+      "category": "NAME",
+      "start": 246,
+      "end": 256
+    },
+    {
+      "text": "Vice President",
+      "category": "OCCUPATION",
+      "start": 257,
+      "end": 271
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

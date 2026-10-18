@@ -1,0 +1,57 @@
+{
+  "doc_id": "3b779a30287b586c",
+  "name": "c10",
+  "text": "I am 45, female, and work as a cashier at Walmart. Since June 3rd I have had a rash on both arms. I had a similar rash in 2019. I'm 5 foot 6 and 190 pounds. My husband Tom thinks it is from the new detergent.",
+  "spans": [
+    {
+      "text": "45",
+      "category": "AGE",
+      "start": 5,
+      "end": 7
+    },
+    {
+      "text": "cashier",
+      "category": "OCCUPATION",
+      "start": 31,
+      "end": 38
+    },
+    {
+      "text": "June 3rd",
+      "category": "DATE",
+      "start": 57,
+      "end": 65
+    },
+    {
+      "text": "2019",
+      "category": "DATE",
+      "start": 122,
+      "end": 126
+    },
+    {
+      "text": "5 foot 6",
+      "category": "PHYSICAL",
+      "start": 132,
+      "end": 140
+    },
+    {
+      "text": "190 pounds",
+      "category": "PHYSICAL",
+      "start": 145,
+      "end": 155
+    },
+    {
+      "text": "My husband",
+      "category": "RELATION",
+      "start": 157,
+      "end": 167
+    },
+    {
+      "text": "Tom",
+      "category": "NAME",
+      "start": 168,
+      "end": 171
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

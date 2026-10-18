@@ -1,0 +1,51 @@
+{
+  "doc_id": "6efd8b7de58ea3a9",
+  "name": "c09",
+  "text": "Respected doctor, my father is 67 and had a heart attack in January 2021. He underwent angioplasty at Apollo Hospital, Chennai. Now he gets breathless climbing stairs. His EF is 40%. He was a school principal before retiring. Our contact: +91 44 2829 3333.",
+  "spans": [
+    {
+      "text": "my father",
+      "category": "RELATION",
+      "start": 18,
+      "end": 27
+    },
+    {
+      "text": "67",
+      "category": "AGE",
+      "start": 31,
+      "end": 33
+    },
+    {
+      "text": "January 2021",
+      "category": "DATE",
+      "start": 60,
+      "end": 72
+    },
+    {
+      "text": "Apollo Hospital",
+      "category": "LOCATION",
+      "start": 102,
+      "end": 117
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 119,
+      "end": 126
+    },
+    {
+      "text": "school principal",
+      "category": "OCCUPATION",
+      "start": 192,
+      "end": 208
+    },
+    {
+      "text": "+91 44 2829 3333",
+      "category": "PHONE",
+      "start": 239,
+      "end": 255
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

@@ -1,0 +1,45 @@
+{
+  "doc_id": "a41aab0ba336c1a1",
+  "name": "h08",
+  "text": "Debra,\n\nThe confirmation for trade ID 1093457 still shows the wrong delivery point. Can you fix it before Monday? Also, my new address for the 401k paperwork is 3810 Locke Lane, Houston, TX 77027.\n\nThanks,\nChris Germany\nEnron Capital & Trade Resources\n(713) 853-4743",
+  "spans": [
+    {
+      "text": "Debra",
+      "category": "NAME",
+      "start": 0,
+      "end": 5
+    },
+    {
+      "text": "1093457",
+      "category": "ID_NUMBER",
+      "start": 38,
+      "end": 45
+    },
+    {
+      "text": "Monday",
+      "category": "DATE",
+      "start": 106,
+      "end": 112
+    },
+    {
+      "text": "3810 Locke Lane, Houston, TX 77027",
+      "category": "ADDRESS",
+      "start": 161,
+      "end": 195
+    },
+    {
+      "text": "Chris Germany",
+      "category": "NAME",
+      "start": 206,
+      "end": 219
+    },
+    {
+      "text": "(713) 853-4743",
+      "category": "PHONE",
+      "start": 252,
+      "end": 266
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}
