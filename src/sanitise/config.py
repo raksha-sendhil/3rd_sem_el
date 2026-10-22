@@ -30,6 +30,11 @@ class Settings(BaseSettings):
     fallback_model: str = "qwen2.5:7b-instruct"
     llm_timeout_s: float = Field(default=120.0, gt=0)
     llm_num_ctx: int = Field(default=4096, ge=512)
+    # Fixed sampling seed so repeated runs (and the metrics report) are reproducible.
+    # None lets Ollama pick a random seed.
+    llm_seed: int | None = 42
+    # Upper bound on generated tokens per call, so a runaway generation cannot stall a run.
+    llm_num_predict: int = Field(default=1024, ge=64)
 
     # ---- Validation retry loop: "retries up to three times with an escalating temperature"
     llm_retries: int = Field(default=3, ge=0, le=10)

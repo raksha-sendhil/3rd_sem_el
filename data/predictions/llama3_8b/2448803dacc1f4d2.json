@@ -1,0 +1,118 @@
+{
+  "doc_id": "2448803dacc1f4d2",
+  "original_sha256": "2448803dacc1f4d2732630e22e84d9638f3763f38656dd13e30ae3aa3c8f3319",
+  "output": {
+    "doc_id": "2448803dacc1f4d2",
+    "spans": [
+      {
+        "text": "Anita D'Souza",
+        "category": "NAME",
+        "start": 15,
+        "end": 28,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "anita.dsouza@examplemail.com",
+        "category": "EMAIL",
+        "start": 30,
+        "end": 58,
+        "method": "rule",
+        "confidence": 1.0,
+        "rationale": "EmailRecognizer:EMAIL_ADDRESS"
+      },
+      {
+        "text": "My father",
+        "category": "RELATION",
+        "start": 61,
+        "end": 70,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "Cyril D'Souza",
+        "category": "NAME",
+        "start": 72,
+        "end": 85,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "71 years old",
+        "category": "AGE",
+        "start": 90,
+        "end": 102,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "Sea View Court",
+        "category": "LOCATION",
+        "start": 125,
+        "end": 139,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named location where the father lives."
+      },
+      {
+        "text": "Fort Kochi",
+        "category": "LOCATION",
+        "start": 141,
+        "end": 151,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "ischemic stroke",
+        "category": "MEDICAL_CONDITION",
+        "start": 170,
+        "end": 185,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named diagnosis for the father."
+      },
+      {
+        "text": "14 May 2024",
+        "category": "DATE",
+        "start": 189,
+        "end": 200,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "physiotherapy",
+        "category": "MEDICAL_CONDITION",
+        "start": 284,
+        "end": 297,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A treatment for the father's condition."
+      },
+      {
+        "text": "rare condition (ischemic stroke) + specific location (Fort Kochi) + named institution (Aster Medcity)",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people in Fort Kochi with ischemic stroke receive treatment at Aster Medcity, so these details narrow down the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 30,
+    "llm_ms": 4121,
+    "total_ms": 4151,
+    "retries": 0,
+    "rule_span_count": 7,
+    "llm_span_count": 4
+  }
+}

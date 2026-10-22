@@ -21,7 +21,12 @@ from tests.conftest import SAMPLE_QUASI, SAMPLE_TEXT, fake_rule_detect
 
 
 def params(fn) -> list[str]:
-    return list(inspect.signature(fn).parameters)
+    """Positional parameters. Extra keyword-only options with defaults (e.g.
+    ``rule_detect(text, *, analyzer=None)``) do not break callers, so they are allowed."""
+    sig = inspect.signature(fn).parameters.values()
+    extras = [p for p in sig if p.kind is p.KEYWORD_ONLY and p.default is p.empty]
+    assert not extras, f"{fn.__name__} has required keyword-only parameters: {extras}"
+    return [p.name for p in sig if p.kind is not p.KEYWORD_ONLY]
 
 
 def test_signatures_match_spec() -> None:

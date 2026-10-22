@@ -29,6 +29,8 @@ class OllamaClient(BaseJSONClient):
         base_url: str = "http://localhost:11434",
         timeout_s: float = 120.0,
         num_ctx: int = 4096,
+        seed: int | None = None,
+        num_predict: int | None = None,
         retries: int = 3,
         transport_retries: int = 1,
         temperature: float = 0.0,
@@ -48,6 +50,8 @@ class OllamaClient(BaseJSONClient):
         self.base_url = base_url.rstrip("/")
         self.timeout_s = timeout_s
         self.num_ctx = num_ctx
+        self.seed = seed
+        self.num_predict = num_predict
         self.transport_retries = transport_retries
         self._owns_http = http is None
         self._http = http or httpx.AsyncClient(base_url=self.base_url, timeout=timeout_s)
@@ -72,6 +76,8 @@ class OllamaClient(BaseJSONClient):
             base_url=settings.ollama_base_url,
             timeout_s=settings.llm_timeout_s,
             num_ctx=settings.llm_num_ctx,
+            seed=settings.llm_seed,
+            num_predict=settings.llm_num_predict,
             retries=settings.llm_retries,
             transport_retries=settings.transport_retries,
             temperature=settings.llm_temperature,
@@ -97,7 +103,7 @@ class OllamaClient(BaseJSONClient):
             "messages": messages,
             "stream": False,
             "format": json_schema,
-            "options": {"temperature": temperature, "num_ctx": self.num_ctx},
+            "options": self._options(temperature),
         }
         data = await self._post("/api/chat", payload)
         try:
@@ -106,6 +112,14 @@ class OllamaClient(BaseJSONClient):
             raise LLMUnreachable(
                 f"unexpected response shape from Ollama: {str(data)[:200]}"
             ) from None
+
+    def _options(self, temperature: float) -> dict[str, Any]:
+        options: dict[str, Any] = {"temperature": temperature, "num_ctx": self.num_ctx}
+        if self.seed is not None:
+            options["seed"] = self.seed
+        if self.num_predict is not None:
+            options["num_predict"] = self.num_predict
+        return options
 
     async def _post(self, path: str, payload: dict[str, Any]) -> dict[str, Any]:
         for attempt in range(self.transport_retries + 1):

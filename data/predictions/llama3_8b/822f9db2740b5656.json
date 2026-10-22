@@ -1,0 +1,91 @@
+{
+  "doc_id": "822f9db2740b5656",
+  "original_sha256": "822f9db2740b56565b72532740a9bfdfa034e663d3821a03d5b9ae31148947ad",
+  "output": {
+    "doc_id": "822f9db2740b5656",
+    "spans": [
+      {
+        "text": "Arjun Nair",
+        "category": "NAME",
+        "start": 12,
+        "end": 22,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "professional kabaddi player",
+        "category": "OCCUPATION",
+        "start": 26,
+        "end": 53,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A rare occupation."
+      },
+      {
+        "text": "26 years old",
+        "category": "AGE",
+        "start": 60,
+        "end": 72,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "5 ft 9 inches",
+        "category": "PHYSICAL",
+        "start": 74,
+        "end": 87,
+        "method": "rule",
+        "confidence": 0.8,
+        "rationale": "PhysicalRecognizer:height_imperial"
+      },
+      {
+        "text": "78 kg",
+        "category": "PHYSICAL",
+        "start": 92,
+        "end": 97,
+        "method": "rule",
+        "confidence": 0.8,
+        "rationale": "PhysicalRecognizer:weight"
+      },
+      {
+        "text": "anterior cruciate ligament",
+        "category": "MEDICAL_CONDITION",
+        "start": 121,
+        "end": 147,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named diagnosis for the person."
+      },
+      {
+        "text": "Pune",
+        "category": "LOCATION",
+        "start": 176,
+        "end": 180,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "rare occupation (kabaddi player) + specific location (Pune) + anterior cruciate ligament",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few kabaddi players in Pune have torn their anterior cruciate ligament, so these details together point to one person."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 28,
+    "llm_ms": 3745,
+    "total_ms": 3773,
+    "retries": 0,
+    "rule_span_count": 6,
+    "llm_span_count": 4
+  }
+}

@@ -135,3 +135,31 @@ def test_score_prints_metrics(
 
     as_json = runner.invoke(app, ["score", "--gold", str(gold_dir), "--pred", str(out), "--json"])
     assert SpanMetrics.model_validate_json(as_json.stdout).recall == 0.84
+
+
+def test_score_errors_and_report_with_real_scorer(
+    fake_rules: None, gold_dir: Path, fixture_file: Path, tmp_path: Path
+) -> None:
+    out = tmp_path / "out"
+    runner.invoke(app, ["detect", "-i", str(fixture_file), "--rules-only", "--out", str(out)])
+    report = tmp_path / "report.md"
+    result = runner.invoke(
+        app,
+        [
+            "score",
+            "--gold",
+            str(gold_dir),
+            "--pred",
+            str(out),
+            "--errors",
+            "--report",
+            str(report),
+            "--model",
+            "rules-only",
+        ],
+    )
+    assert result.exit_code == 0, result.output
+    assert "Recall" in result.output
+    assert "MISSED" in result.output or "No errors." in result.output
+    text = report.read_text(encoding="utf-8")
+    assert "**Model:** rules-only" in text and "## Per category" in text

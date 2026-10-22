@@ -1,0 +1,46 @@
+{
+  "doc_id": "d351e50b65eed8fe",
+  "original_sha256": "d351e50b65eed8fe4f41dbc58debf4ff4e82889404b8f9f5db846e9cb58bb65d",
+  "output": {
+    "doc_id": "d351e50b65eed8fe",
+    "spans": [
+      {
+        "text": "17 years old",
+        "category": "AGE",
+        "start": 16,
+        "end": 28,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "acne",
+        "category": "MEDICAL_CONDITION",
+        "start": 40,
+        "end": 44,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named diagnosis for the writer."
+      },
+      {
+        "text": "QUASI_COMBO: acne + teenager (17 years old)",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Acne is common in teenagers, but the combination of acne and age narrows the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 26,
+    "llm_ms": 2063,
+    "total_ms": 2089,
+    "retries": 0,
+    "rule_span_count": 1,
+    "llm_span_count": 2
+  }
+}

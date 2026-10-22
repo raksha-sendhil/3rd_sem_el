@@ -1,0 +1,100 @@
+{
+  "doc_id": "457edfd299f49463",
+  "original_sha256": "457edfd299f49463330869262746d24fd11caf4fb32143e3585fbaae35f46dec",
+  "output": {
+    "doc_id": "457edfd299f49463",
+    "spans": [
+      {
+        "text": "29 years old",
+        "category": "AGE",
+        "start": 16,
+        "end": 28,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "my baby",
+        "category": "RELATION",
+        "start": 45,
+        "end": 52,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "21 January 2024",
+        "category": "DATE",
+        "start": 56,
+        "end": 71,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "Fortis Hospital, Mulund",
+        "category": "LOCATION",
+        "start": 75,
+        "end": 98,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "FacilityRecognizer:facility; SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "emergency C-section",
+        "category": "MEDICAL_CONDITION",
+        "start": 102,
+        "end": 121,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The specific type of delivery the patient had."
+      },
+      {
+        "text": "2 February 2024",
+        "category": "DATE",
+        "start": 129,
+        "end": 144,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "My husband",
+        "category": "RELATION",
+        "start": 194,
+        "end": 204,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "radiographer",
+        "category": "OCCUPATION",
+        "start": 253,
+        "end": 265,
+        "method": "rule",
+        "confidence": 0.75,
+        "rationale": "OccupationRecognizer:works_as"
+      },
+      {
+        "text": "radiographer + emergency C-section + Fortis Hospital, Mulund",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few radiographers deliver by emergency C-section at a specific hospital, so these details together narrow down the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 31,
+    "llm_ms": 3736,
+    "total_ms": 3767,
+    "retries": 0,
+    "rule_span_count": 7,
+    "llm_span_count": 4
+  }
+}

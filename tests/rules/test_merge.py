@@ -21,7 +21,7 @@ def test_union_keeps_rule_spans_then_inferred_in_model_order():
     q1 = llm("lighthouse keeper + Kirkwall")
     q2 = llm("approximately 10 weeks of unresolved symptoms")
     out = merge_spans(RULES, [q1, q2])
-    assert out == RULES + [q1, q2]
+    assert out == [*RULES, q1, q2]
 
 
 def test_drops_quasi_that_restates_one_explicit_identifier():
@@ -36,7 +36,7 @@ def test_drops_combo_whose_every_part_is_explicit():
 
 def test_keeps_combo_that_adds_new_information():
     q = llm("32 years old + lighthouse keeper")
-    assert merge_spans(RULES, [q]) == RULES + [q]
+    assert merge_spans(RULES, [q]) == [*RULES, q]
 
 
 def test_substring_of_explicit_counts_as_restatement():
@@ -45,14 +45,14 @@ def test_substring_of_explicit_counts_as_restatement():
 
 def test_partial_word_is_not_a_restatement():
     q = llm("2 years", C.DATE)  # "2 years" is not a word-bounded piece of "32 years old"
-    assert merge_spans(RULES, [q]) == RULES + [q]
+    assert merge_spans(RULES, [q]) == [*RULES, q]
 
 
 def test_deduplicates_inferred_by_category_and_normalised_text():
     a = llm("Lighthouse keeper in Kirkwall")
     b = llm("lighthouse keeper in kirkwall.")
     c = llm("lighthouse keeper in kirkwall", C.OCCUPATION)
-    assert merge_spans(RULES, [a, b, c]) == RULES + [a, c]
+    assert merge_spans(RULES, [a, b, c]) == [*RULES, a, c]
 
 
 def test_blank_llm_span_dropped():

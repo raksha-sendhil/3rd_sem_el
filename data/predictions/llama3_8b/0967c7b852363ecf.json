@@ -1,0 +1,82 @@
+{
+  "doc_id": "0967c7b852363ecf",
+  "original_sha256": "0967c7b852363ecf003c5a44667cad09ceb9f7bfe24b66ed05c529c91ebb77ab",
+  "output": {
+    "doc_id": "0967c7b852363ecf",
+    "spans": [
+      {
+        "text": "my wife",
+        "category": "RELATION",
+        "start": 8,
+        "end": 15,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "92 years old",
+        "category": "AGE",
+        "start": 19,
+        "end": 31,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "atrial fibrillation",
+        "category": "MEDICAL_CONDITION",
+        "start": 55,
+        "end": 74,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The wife's named diagnosis."
+      },
+      {
+        "text": "St. Thomas Hospital",
+        "category": "LOCATION",
+        "start": 89,
+        "end": 108,
+        "method": "rule",
+        "confidence": 0.7,
+        "rationale": "FacilityRecognizer:facility"
+      },
+      {
+        "text": "farm",
+        "category": "LOCATION",
+        "start": 185,
+        "end": 189,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The specific type of residence."
+      },
+      {
+        "text": "Ooty",
+        "category": "LOCATION",
+        "start": 198,
+        "end": 202,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "rare age (92) + named hospital (St. Thomas) + specific condition (atrial fibrillation) + small town (Ooty)",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people of this age have this condition, and it's even more specific to a named hospital in a small town."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 29,
+    "llm_ms": 3097,
+    "total_ms": 3126,
+    "retries": 0,
+    "rule_span_count": 4,
+    "llm_span_count": 3
+  }
+}
