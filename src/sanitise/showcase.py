@@ -41,6 +41,7 @@ REASONS: dict[PIICategory, str] = {
     C.RELATION: "Points to a specific family member.",
     C.PHYSICAL: "Body measurements help single the person out.",
     C.MEDICAL_CONDITION: "Health information about a specific person.",
+    C.SYMPTOM: "A health complaint a specific person has; part of their medical picture.",
     C.QUASI_COMBO: "Details that identify the person when taken together.",
     C.OTHER: "Another detail that could identify the person.",
 }
@@ -210,9 +211,15 @@ def _big(label: str, value: float, primary: bool = False) -> str:
 
 
 def render_scores(
-    metrics: SpanMetrics, dataset: dict[str, int], system: str = "rules + llama3:8b"
+    metrics: SpanMetrics,
+    dataset: dict[str, int],
+    system: str = "rules + llama3:8b",
+    note: str | None = None,
 ) -> str:
-    """Headline precision / recall / F1, the dataset, and the per-category table."""
+    """Headline precision / recall / F1, the dataset, and the per-category table.
+
+    ``note`` is shown under the title, e.g. which run and gold-set version is scored.
+    """
     cats = metrics.per_category
     tp = int(sum(v.get("tp", 0) for v in cats.values()))
     fp = int(sum(v.get("fp", 0) for v in cats.values()))
@@ -232,6 +239,13 @@ def render_scores(
         f'<div style="color:#6b7280;font-size:12px;margin:2px 0 14px">System: Agent 1 '
         f"({html.escape(system)}) &nbsp;·&nbsp; scored against hand-labelled gold annotations"
         "</div>"
+        + (
+            f'<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:6px;'
+            f'padding:6px 10px;font-size:12px;margin-bottom:12px">{html.escape(note)}</div>'
+            if note
+            else ""
+        )
+        + ""
         '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">'
         f"{_big('Recall', metrics.recall, primary=True)}{_big('Precision', metrics.precision)}"
         f"{_big('F1', metrics.f1)}</div>"

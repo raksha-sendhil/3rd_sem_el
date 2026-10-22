@@ -53,9 +53,9 @@ def test_dataset_summary_matches_the_gold_set() -> None:
         "documents": 20,
         "patient_questions": 16,
         "emails": 4,
-        "gold_spans": 124,
+        "gold_spans": 141,
         "combinations": 12,
-        "nothing_sensitive": 3,
+        "nothing_sensitive": 2,
     }
 
 
@@ -67,7 +67,13 @@ async def test_run_fixtures_then_render_scores(fake_rules: None, tmp_path: Path)
     assert len(results) == 20 and len(list(out.glob("*.json"))) == 20
     metrics = scoring.score(load_predictions(out), load_gold(REPO / "data/gold"))
     page = render_scores(metrics, dataset_summary(REPO / "data/fixtures", REPO / "data/gold"))
-    assert "Recall" in page and "124 hand-labelled" in page and "rules + llama3:8b" in page
+    assert "Recall" in page and "141 hand-labelled" in page and "rules + llama3:8b" in page
+    noted = render_scores(
+        metrics,
+        {**dataset_summary(REPO / "data/fixtures", REPO / "data/gold")},
+        note="saved run of 18 Oct",
+    )
+    assert "saved run of 18 Oct" in noted
     assert f"{metrics.recall:.2f}" in page
 
 

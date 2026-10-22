@@ -27,6 +27,12 @@
       "end": 87
     },
     {
+      "text": "palpitations",
+      "category": "SYMPTOM",
+      "start": 99,
+      "end": 111
+    },
+    {
       "text": "supraventricular tachycardia",
       "category": "MEDICAL_CONDITION",
       "start": 148,

@@ -26,6 +26,7 @@ FROZEN_CATEGORIES = [
     "RELATION",
     "PHYSICAL",
     "MEDICAL_CONDITION",
+    "SYMPTOM",
     "QUASI_COMBO",
     "OTHER",
 ]

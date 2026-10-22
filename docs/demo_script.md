@@ -50,7 +50,7 @@ sanitise score --gold data/gold/ --pred out/ --errors
 ```
 Expected output shape:
 ```
-Precision 0.xx  Recall 0.xx  F1 0.xx  (20 documents, 124 gold spans)
+Precision 0.xx  Recall 0.xx  F1 0.xx  (20 documents, 141 gold spans)
 ```
 Show the model comparison table: the *rules only* row against *rules + LLM* is the
 measured value of the LLM pass.

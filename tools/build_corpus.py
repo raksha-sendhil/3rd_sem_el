@@ -38,7 +38,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "Hi doctor, my name is [[NAME|Priya Raman]]. I am a [[AGE|34 year old]] "
         "[[OCCUPATION|pediatric neurosurgeon]] and I live in [[LOCATION|Coonoor]], a small town "
         "in the hills. For the last three weeks I have had episodes of [[MEDICAL_CONDITION|vertigo]] "
-        "with a ringing in my left ear, usually in the early morning before surgery. "
+        "with a [[SYMPTOM|ringing in my left ear]], usually in the early morning before surgery. "
         "[[RELATION|My sister]] has the same problem. You can reach me on [[PHONE|+91 98450 12345]] "
         "if you need more details. Thank you.",
         ["rare occupation (pediatric neurosurgeon) + small town (Coonoor) + vertigo"],
@@ -48,7 +48,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "chatdoctor",
         "Hello doctor. [[RELATION|My daughter]] is [[AGE|6 years old]] and attends "
         "[[LOCATION|Greenfield Primary School]] in [[LOCATION|Tiruppur]]. Since "
-        "[[DATE|12 September 2023]] she has had a dry cough at night and wheezing after games class. "
+        "[[DATE|12 September 2023]] she has had a [[SYMPTOM|dry cough]] at night and [[SYMPTOM|wheezing]] after games class. "
         "A classmate was diagnosed with [[MEDICAL_CONDITION|asthma]] last year. Should I give her a "
         "cough syrup or see a pediatrician?",
         ["child age + named school + small town + precise onset date"],
@@ -61,7 +61,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "[[DATE|9 March 2022]] after a coronary artery bypass for "
         "[[MEDICAL_CONDITION|coronary artery disease]]. Please reply to "
         "[[EMAIL|rajesh.kumar84@examplemail.com]] with the discharge summary. His blood pressure has "
-        "been around 150/95 since then and he gets breathless climbing stairs. Is this normal?",
+        "been around 150/95 since then and he gets [[SYMPTOM|breathless]] climbing stairs. Is this normal?",
         [],
     ),
     (
@@ -70,7 +70,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "Hi, I am [[NAME|Mohammed Faizal]], [[AGE|58 years old]]. My address is "
         "[[ADDRESS|14/3 Lakeview Apartments, Bannerghatta Road, Bengaluru 560076]]. I was diagnosed "
         "with [[MEDICAL_CONDITION|type 2 diabetes]] in [[DATE|2015]] and take metformin 500 mg twice "
-        "daily. Lately my feet feel numb at night. Can this be [[MEDICAL_CONDITION|neuropathy]]? Is "
+        "daily. Lately my [[SYMPTOM|feet feel numb]] at night. Can this be [[MEDICAL_CONDITION|neuropathy]]? Is "
         "it safe to walk daily?",
         [],
     ),
@@ -79,7 +79,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "chatdoctor",
         "Doctor, [[RELATION|my wife]] is [[AGE|92 years old]] and was diagnosed with "
         "[[MEDICAL_CONDITION|atrial fibrillation]] last month at [[LOCATION|St. Thomas Hospital]]. "
-        "She is forgetful and refuses to take the blood thinner. We live alone on a farm outside "
+        "She is [[SYMPTOM|forgetful]] and refuses to take the blood thinner. We live alone on a farm outside "
         "[[LOCATION|Ooty]]. How can I make sure she takes the tablets?",
         ["extreme age (92) + diagnosis + named hospital + small-town residence"],
     ),
@@ -87,7 +87,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         6,
         "chatdoctor",
         "I am a [[OCCUPATION|lighthouse keeper]] on [[LOCATION|Kavaratti island]] and I am "
-        "[[AGE|47 years old]]. For the past two months I have had a persistent rash on both hands "
+        "[[AGE|47 years old]]. For the past two months I have had a persistent [[SYMPTOM|rash on both hands]] "
         "that gets worse after cleaning the lens with solvent. A dermatologist suggested "
         "[[MEDICAL_CONDITION|contact dermatitis]] but nothing helps. I am the only keeper on the "
         "island so I cannot take leave easily. What should I do?",
@@ -96,11 +96,11 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
     (
         7,
         "chatdoctor",
-        "[[RELATION|My son]] has been experiencing left-sided abdominal pain and bilateral pelvic "
-        "pain for approximately 10 weeks. He is [[AGE|32 years old]], [[PHYSICAL|6 ft 3 inches]] "
+        "[[RELATION|My son]] has been experiencing [[SYMPTOM|left-sided abdominal pain]] and "
+        "[[SYMPTOM|bilateral pelvic pain]] for approximately 10 weeks. He is [[AGE|32 years old]], [[PHYSICAL|6 ft 3 inches]] "
         "tall, and weighs [[PHYSICAL|approximately 220 pounds]]. Blood tests showed "
         "[[MEDICAL_CONDITION|enlarged lymph nodes]] and mild [[MEDICAL_CONDITION|leukocytosis]]. "
-        "The pain is worse after meals and nothing has helped so far. What tests should we ask for "
+        "The [[SYMPTOM|pain]] is worse after meals and nothing has helped so far. What tests should we ask for "
         "next?",
         [
             "left-sided abdominal pain + bilateral pelvic pain (symptom combination)",
@@ -112,7 +112,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "chatdoctor",
         "Hi doctor. I am [[AGE|29 years old]] and I delivered [[RELATION|my baby]] on [[DATE|21 January 2024]] at "
         "[[LOCATION|Fortis Hospital, Mulund]] by emergency C-section. Since "
-        "[[DATE|2 February 2024]] I have had fever and a red, swollen stitch line. "
+        "[[DATE|2 February 2024]] I have had [[SYMPTOM|fever]] and a [[SYMPTOM|red, swollen stitch line]]. "
         "[[RELATION|My husband]] says it is normal but I am worried. I work as a "
         "[[OCCUPATION|radiographer]] so I know infection can be serious. Should I go to emergency?",
         ["precise delivery date + named hospital + age"],
@@ -129,7 +129,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
     (
         10,
         "chatdoctor",
-        "I have had a mild headache for two days after long hours on the computer. I have taken "
+        "I have had a mild [[SYMPTOM|headache]] for two days after long hours on the computer. I have taken "
         "paracetamol once. Is it okay to take it again, and when should I worry about a headache?",
         [],
     ),
@@ -197,7 +197,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "[[RELATION|My husband]] is [[AGE|63 years old]] and was diagnosed with "
         "[[MEDICAL_CONDITION|amyloidosis]] on [[DATE|7 November 2023]] at "
         "[[LOCATION|AIIMS Delhi]]. He used to work as a [[OCCUPATION|tea taster]] in "
-        "[[LOCATION|Darjeeling]]. He has lost his sense of taste and has swelling of the tongue. Is "
+        "[[LOCATION|Darjeeling]]. He has [[SYMPTOM|lost his sense of taste]] and has [[SYMPTOM|swelling of the tongue]]. Is "
         "there a connection with his job?",
         ["rare occupation (tea taster) + rare condition (amyloidosis) + small-city location"],
     ),
@@ -213,7 +213,7 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         19,
         "chatdoctor",
         "Hi doctor, I am a [[AGE|20 year old]] [[OCCUPATION|undergraduate student]] at "
-        "[[LOCATION|IIT Madras]]. Since [[DATE|5 October 2024]] I have had palpitations, and a Holter "
+        "[[LOCATION|IIT Madras]]. Since [[DATE|5 October 2024]] I have had [[SYMPTOM|palpitations]], and a Holter "
         "test last week showed [[MEDICAL_CONDITION|supraventricular tachycardia]]. I train as a "
         "[[OCCUPATION|national-level fencer]] and follow a strict diet. Is it safe to keep "
         "competing?",
@@ -227,8 +227,8 @@ DOCS: list[tuple[int, str, str, list[str]]] = [
         "Hello, this is [[NAME|Anita D'Souza]] ([[EMAIL|anita.dsouza@examplemail.com]]). "
         "[[RELATION|My father]], [[NAME|Cyril D'Souza]], is [[AGE|71 years old]] and lives at "
         "[[ADDRESS|Flat 2B, Sea View Court, Fort Kochi 682001]]. He had an "
-        "[[MEDICAL_CONDITION|ischemic stroke]] on [[DATE|14 May 2024]] and now has weakness on his "
-        "right side. A neurologist at [[LOCATION|Aster Medcity]] has started physiotherapy. How "
+        "[[MEDICAL_CONDITION|ischemic stroke]] on [[DATE|14 May 2024]] and now has "
+        "[[SYMPTOM|weakness on his right side]]. A neurologist at [[LOCATION|Aster Medcity]] has started physiotherapy. How "
         "long does recovery usually take?",
         ["exact stroke date + named hospital (Aster Medcity) + age"],
     ),

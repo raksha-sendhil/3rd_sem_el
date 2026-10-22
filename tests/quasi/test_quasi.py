@@ -51,6 +51,7 @@ def test_schema_sent_to_the_model_is_narrowed_but_keeps_its_name() -> None:
         "NAME",
         "AGE",
         "MEDICAL_CONDITION",
+        "SYMPTOM",
         "OCCUPATION",
         "LOCATION",
         "QUASI_COMBO",
@@ -174,4 +175,21 @@ async def test_names_and_ages_the_rules_missed_are_kept() -> None:
     assert [(s.category, text[s.start : s.end]) for s in spans] == [
         (C.NAME, "Sunaina"),
         (C.AGE, "eleven"),
+    ]
+
+
+async def test_symptoms_get_their_own_label() -> None:
+    text = "My son has had fever and a sore throat since Monday; the doctor says it is tonsillitis."
+    reply = {
+        "quasi_identifiers": [
+            {"text": "fever", "category": "SYMPTOM", "rationale": "A symptom the son has."},
+            {"text": "sore throat", "category": "SYMPTOM", "rationale": "A symptom the son has."},
+            {"text": "tonsillitis", "category": "MEDICAL_CONDITION", "rationale": "Diagnosis."},
+        ]
+    }
+    spans = await quasi.infer_quasi(text, [], MockLLM(by_schema={"QuasiList": [reply]}))
+    assert [(s.category, s.text) for s in spans] == [
+        (C.SYMPTOM, "fever"),
+        (C.SYMPTOM, "sore throat"),
+        (C.MEDICAL_CONDITION, "tonsillitis"),
     ]

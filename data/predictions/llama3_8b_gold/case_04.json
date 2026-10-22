@@ -1,0 +1,44 @@
+{
+  "doc_id": "723b3a163f510a42",
+  "text": "Hi, I am Mohammed Faizal, 58 years old. My address is 14/3 Lakeview Apartments, Bannerghatta Road, Bengaluru 560076. I was diagnosed with type 2 diabetes in 2015 and take metformin 500 mg twice daily. Lately my feet feel numb at night. Can this be neuropathy? Is it safe to walk daily?",
+  "spans": [
+    {
+      "text": "Mohammed Faizal",
+      "category": "NAME",
+      "start": 9,
+      "end": 24
+    },
+    {
+      "text": "58 years old",
+      "category": "AGE",
+      "start": 26,
+      "end": 38
+    },
+    {
+      "text": "14/3 Lakeview Apartments, Bannerghatta Road, Bengaluru 560076",
+      "category": "ADDRESS",
+      "start": 54,
+      "end": 115
+    },
+    {
+      "text": "type 2 diabetes",
+      "category": "MEDICAL_CONDITION",
+      "start": 138,
+      "end": 153
+    },
+    {
+      "text": "2015",
+      "category": "DATE",
+      "start": 157,
+      "end": 161
+    },
+    {
+      "text": "neuropathy",
+      "category": "MEDICAL_CONDITION",
+      "start": 248,
+      "end": 258
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

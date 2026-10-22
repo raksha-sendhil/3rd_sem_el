@@ -1,6 +1,6 @@
 # Annotation Guide - Agent 1 (Sensitive Information Detector)
 
-**Owner:** Person D  |  **Version:** 1.1  |  **Status:** Signed off 18 Oct 2026 (all ⚑ items accepted as proposed; rulings D11-D20 added after review)
+**Owner:** Person D  |  **Version:** 1.2  |  **Status:** Signed off 18 Oct 2026 (all ⚑ items accepted as proposed; rulings D11-D20 added after review). 22 Oct: `SYMPTOM` category added (D21-D23), team sign-off pending
 
 This guide is the specification for what the detector is expected to catch. If you annotate
 a case the guide does not cover, decide it, then add the rule to the **Decision log** at the
@@ -15,8 +15,8 @@ bottom. Never silently improvise.
 | ✔1 | Offset convention | Python string indices, **end-exclusive**: `text[start:end] == span text` | Matches the spec example (`"my son"` is 0-6). Person A's output must use the same. |
 | ✔2 | Is age sensitive? | **Yes. Every age is annotated `AGE`.** | HIPAA Safe Harbor allows exact ages under 90, so this is stricter than the regulation. We choose strict because age is a core quasi-identifier and the session monitor needs it as a trackable attribute. Cost: lower precision if the detector is over-eager; recall is the primary figure anyway. |
 | ✔3 | One-to-one matching | **Yes.** One gold span is credited by at most one prediction. | Stops one large predicted span or duplicate predictions from inflating the score. Not in the original spec, so the team must approve it. |
-| ✔4 | Category list | The 14 values in `schemas.py`, frozen | Changing it after annotation starts invalidates annotations. |
-| ✔5 | Plain symptoms | **Not annotated** on their own (see 3.12) | Otherwise nearly every sentence in a medical record becomes a span. |
+| ✔4 | Category list | The 15 values in `schemas.py` (`SYMPTOM` added 22 Oct, D21) | Changing it after annotation starts invalidates annotations, so adding `SYMPTOM` meant relabelling all 20 gold documents. |
+| ✔5 | Plain symptoms | **Annotated as `SYMPTOM`** (3.14). Changed 22 Oct (D21); until then they were not annotated | A separate category keeps symptoms apart from diagnoses: later stages can keep symptoms (useful for answering questions) while protecting rare diagnoses, and the session monitor can track them separately. |
 
 ---
 
@@ -48,7 +48,8 @@ bottom. Never silently improvise.
 | OCCUPATION | A person's job or role | Generic activity not a job (`I walk daily`) |
 | RELATION | Kinship term that points at a specific person: `my son`, `His wife`, `My father` | Generic mentions (`parents should...`) |
 | PHYSICAL | Height, weight, build | Blood pressure, lab values, test results |
-| MEDICAL_CONDITION | A named diagnosis, disease or specific clinical finding that applies to a specific person | Plain symptoms, procedures, drugs, general medical statements |
+| MEDICAL_CONDITION | A named diagnosis, disease or specific clinical finding that applies to a specific person | Plain symptoms (those are `SYMPTOM`), procedures, drugs, general medical statements |
+| SYMPTOM | A symptom or complaint that a specific person has: `fever`, `dry cough`, `left-sided abdominal pain` (see 3.14) | Negated or only-asked-about symptoms, named diagnoses (`MEDICAL_CONDITION`), general statements |
 | QUASI_COMBO | A combination of attributes that together narrow the candidate pool (see 3.13) | A combination made only of attributes already common in the population |
 | OTHER | Sensitive identifying info that fits nowhere else. Use rarely and write the reason in the decision log | - |
 
@@ -110,10 +111,10 @@ Hospitals, schools and universities are `LOCATION` because they narrow where a p
 ### 3.12 MEDICAL_CONDITION (✔5)
 Annotate when the text names a diagnosis, disease or specific clinical finding **about a specific person**.
 - ✅ `vertigo` · `type 2 diabetes` · `asthma` (a classmate's) · `multiple myeloma` · `leukocytosis` · `enlarged lymph nodes` · `neuropathy` (even when suspected: "Can this be neuropathy?")
-- ❌ `abdominal pain`, `cough`, `headache`, `fever`, `rash`, `weakness`, `palpitations` (plain symptoms)
+- ❌ `abdominal pain`, `cough`, `headache`, `fever`, `rash`, `weakness`, `palpitations`: these are `SYMPTOM` (3.14)
 - ❌ `coronary artery bypass`, `C-section` (procedures)
 - ❌ "vitamin D deficiency is common in people who work indoors" (general statement, no specific person)
-- Symptoms are still captured when they form part of a `QUASI_COMBO` (3.13).
+- A symptom is a `SYMPTOM` span (3.14) and can also be part of a `QUASI_COMBO` (3.13).
 - Qualifiers like `mild` are left out: annotate `leukocytosis`, not `mild leukocytosis`.
 
 ### 3.13 QUASI_COMBO
@@ -134,6 +135,16 @@ Positions are not annotated; write a short description of the combination in `te
 
 One description per distinct combination. Do not list several overlapping descriptions of the same combination.
 
+### 3.14 SYMPTOM (✔5, D21-D23)
+Annotate a symptom or complaint that a **specific person in the document has or had**.
+- ✅ `fever` · `headache` · `dry cough` · `wheezing` · `breathless` · `palpitations` · `forgetful`
+- ✅ Keep the body part or type it affects: `left-sided abdominal pain`, `rash on both hands`, `ringing in my left ear`, `swelling of the tongue`, `weakness on his right side`.
+- Leave out severity and frequency words before it (`mild`, `severe`, `persistent`) and durations (`for two days`): `persistent rash on both hands` → `rash on both hands`.
+- A later mention of the same symptom is annotated again (rule 5): "The `pain` is worse after meals".
+- ❌ Negated or only asked about: `no fever`, "when should I worry about a headache?" (case_10 annotates the first `headache`, which the writer has, not the one in the question).
+- ❌ Named diagnoses and specific clinical findings stay `MEDICAL_CONDITION`: `vertigo`, `leukocytosis`, `enlarged lymph nodes`.
+- ❌ Lab values and measurements (`150/95`), drugs, procedures, general statements ("vitamin D deficiency is common…").
+
 ---
 
 ## 4. Precedence when categories compete for the same characters
@@ -141,10 +152,11 @@ One description per distinct combination. Do not list several overlapping descri
 Use the **most specific** category. This is the order the detector applies
 (`CATEGORY_PRECEDENCE` in `src/sanitise/rules/categories.py`), so annotators and code agree:
 
-`EMAIL > ID_NUMBER > PHONE > ADDRESS > AGE > PHYSICAL > DATE > NAME > OCCUPATION > LOCATION > RELATION > MEDICAL_CONDITION > QUASI_COMBO > OTHER`
+`EMAIL > ID_NUMBER > PHONE > ADDRESS > AGE > PHYSICAL > DATE > NAME > OCCUPATION > LOCATION > RELATION > MEDICAL_CONDITION > SYMPTOM > QUASI_COMBO > OTHER`
 
 AGE and PHYSICAL rank above DATE because Presidio tags "32 years old" as a date; ID_NUMBER
-ranks above PHONE because long ID numbers look like phone numbers.
+ranks above PHONE because long ID numbers look like phone numbers. MEDICAL_CONDITION ranks above
+SYMPTOM so a named finding wins over a symptom on the same words.
 
 Examples: `daniel.whitcomb@example-energy.com` → `EMAIL` only (no `NAME`). A hospital inside an address → part of `ADDRESS`.
 
@@ -166,7 +178,7 @@ Examples: `daniel.whitcomb@example-energy.com` → `EMAIL` only (no `NAME`). A h
 |---|---|---|---|---|---|
 | D1 | Day 1 | Offsets | Python indices, end-exclusive | D | team |
 | D2 | Day 1 | Age sensitive? | Yes, every age is `AGE` | D | team |
-| D3 | Day 2 | Plain symptoms | Not annotated alone; only inside QUASI_COMBO | D | team |
+| D3 | Day 2 | Plain symptoms | Not annotated alone; only inside QUASI_COMBO. **Superseded by D21.** | D | team |
 | D4 | Day 2 | Vague ages (`in her thirties`, `elderly`) | Not annotated. Revisit if real data has many. | D | team |
 | D5 | Day 2 | Procedures | Not `MEDICAL_CONDITION` | D | team |
 | D6 | Day 2 | `RELATION` in third person (`His wife`) | Annotated, same as `my wife` | D | team |
@@ -181,7 +193,10 @@ Examples: `daniel.whitcomb@example-energy.com` → `EMAIL` only (no `NAME`). A h
 | D15 | 18 Oct | Exact date of a medical event + named hospital | `QUASI_COMBO` (precise timeline + named institution), as in case_08; added to case_20 | C (review) | team |
 | D16 | 18 Oct | Relative time tagged as a date (`the early morning`, `quarterly`, `each day`) | Not `DATE`. A date needs a digit, a month, a weekday or a named holiday; the rule pass enforces this | C | team |
 | D17 | 18 Oct | Synthetic fixtures | Accepted for Phase 2. Real ChatDoctor / Enron records may replace them later, annotated by hand | team | team |
-| D18 | 22 Oct | Names and ages the rules miss ("She is Sunaina", "He is eleven") | Still `NAME` / `AGE`. The rule pass now catches "my name is X", "this is X" after a greeting, "Dr. X", "call me X" and ages written in words; the LLM pass may return `NAME` and `AGE` as a safety net | C | team |
-| D19 | 22 Oct | A 10-digit phone number that passes the UK NHS checksum | `PHONE`. A number counts as an NHS `ID_NUMBER` only when "NHS" is written just before it | C | team |
-| D20 | 22 Oct | Hospital department or ward ("pediatrics department") | Part of the place, never `OCCUPATION` | C | team |
+| D18 | 22 Oct | Names and ages the rules miss ("She is Sunaina", "He is eleven") | Still `NAME` / `AGE`. The rule pass now catches "my name is X", "this is X" after a greeting, "Dr. X", "call me X" and ages written in words; the LLM pass may return `NAME` and `AGE` as a safety net | C | C (team sign-off pending) |
+| D19 | 22 Oct | A 10-digit phone number that passes the UK NHS checksum | `PHONE`. A number counts as an NHS `ID_NUMBER` only when "NHS" is written just before it | C | C (team sign-off pending) |
+| D20 | 22 Oct | Hospital department or ward ("pediatrics department") | Part of the place, never `OCCUPATION` | C | C (team sign-off pending) |
+| D21 | 22 Oct | Symptoms as their own category | New category `SYMPTOM` (3.14); supersedes D3. All 20 gold documents relabelled: 17 `SYMPTOM` spans added (124 → 141); case_10 now has one span, so 2 documents have nothing sensitive | C | C (team sign-off pending) |
+| D22 | 22 Oct | `SYMPTOM` span boundaries | Keep the body part or type; leave out severity / frequency words and durations | C | C (team sign-off pending) |
+| D23 | 22 Oct | Negated or hypothetical symptoms (`no fever`, "should I worry about a headache?") | Not annotated | C | C (team sign-off pending) |
 | | | *(add new rows here)* | | | |

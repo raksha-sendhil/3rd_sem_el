@@ -9,6 +9,18 @@
       "end": 6
     },
     {
+      "text": "left-sided abdominal pain",
+      "category": "SYMPTOM",
+      "start": 29,
+      "end": 54
+    },
+    {
+      "text": "bilateral pelvic pain",
+      "category": "SYMPTOM",
+      "start": 59,
+      "end": 80
+    },
+    {
       "text": "32 years old",
       "category": "AGE",
       "start": 115,
@@ -37,6 +49,12 @@
       "category": "MEDICAL_CONDITION",
       "start": 235,
       "end": 247
+    },
+    {
+      "text": "pain",
+      "category": "SYMPTOM",
+      "start": 253,
+      "end": 257
     },
     {
       "text": "left-sided abdominal pain + bilateral pelvic pain (symptom combination)",

@@ -60,7 +60,15 @@ async def test_detect_end_to_end(ollama: OllamaClient) -> None:
 async def test_infer_quasi_live(ollama: OllamaClient) -> None:
     """Person B's pass on a real model: allowed categories only, grounded offsets fit."""
     spans = await infer_quasi(SAMPLE_TEXT, fake_rule_detect(SAMPLE_TEXT), ollama)
-    allowed = {C.NAME, C.AGE, C.MEDICAL_CONDITION, C.OCCUPATION, C.LOCATION, C.QUASI_COMBO}
+    allowed = {
+        C.NAME,
+        C.AGE,
+        C.MEDICAL_CONDITION,
+        C.SYMPTOM,
+        C.OCCUPATION,
+        C.LOCATION,
+        C.QUASI_COMBO,
+    }
     for span in spans:
         assert span.category in allowed and span.method == "llm" and span.rationale
         if span.start is not None:

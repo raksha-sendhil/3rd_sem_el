@@ -1,0 +1,56 @@
+{
+  "doc_id": "6f8d987d5416966f",
+  "text": "My son has been experiencing left-sided abdominal pain and bilateral pelvic pain for approximately 10 weeks. He is 32 years old, 6 ft 3 inches tall, and weighs approximately 220 pounds. Blood tests showed enlarged lymph nodes and mild leukocytosis. The pain is worse after meals and nothing has helped so far. What tests should we ask for next?",
+  "spans": [
+    {
+      "text": "My son",
+      "category": "RELATION",
+      "start": 0,
+      "end": 6
+    },
+    {
+      "text": "32 years old",
+      "category": "AGE",
+      "start": 115,
+      "end": 127
+    },
+    {
+      "text": "6 ft 3 inches",
+      "category": "PHYSICAL",
+      "start": 129,
+      "end": 142
+    },
+    {
+      "text": "approximately 220 pounds",
+      "category": "PHYSICAL",
+      "start": 160,
+      "end": 184
+    },
+    {
+      "text": "enlarged lymph nodes",
+      "category": "MEDICAL_CONDITION",
+      "start": 205,
+      "end": 225
+    },
+    {
+      "text": "leukocytosis",
+      "category": "MEDICAL_CONDITION",
+      "start": 235,
+      "end": 247
+    },
+    {
+      "text": "left-sided abdominal pain + bilateral pelvic pain (symptom combination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    },
+    {
+      "text": "enlarged lymph nodes + leukocytosis + roughly 10 weeks of unresolved symptoms",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

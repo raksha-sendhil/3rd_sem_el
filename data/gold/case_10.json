@@ -1,7 +1,14 @@
 {
   "doc_id": "035af4e1c80cb6e7",
   "text": "I have had a mild headache for two days after long hours on the computer. I have taken paracetamol once. Is it okay to take it again, and when should I worry about a headache?",
-  "spans": [],
+  "spans": [
+    {
+      "text": "headache",
+      "category": "SYMPTOM",
+      "start": 18,
+      "end": 26
+    }
+  ],
   "annotator": "D",
   "reviewed_by": "C"
 }
