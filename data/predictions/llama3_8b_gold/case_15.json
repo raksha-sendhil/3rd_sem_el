@@ -1,0 +1,74 @@
+{
+  "doc_id": "40a1b2392d436f43",
+  "text": "Subject: Leave request\n\nMarta, Samuel Ortega, a natural gas scheduler on the Tulsa desk, will be on medical leave from 1 August 2001 to 30 September 2001 for treatment of multiple myeloma. He is 51 years old. His wife will be the contact: 918-555-0133. Please keep this confidential.",
+  "spans": [
+    {
+      "text": "Marta",
+      "category": "NAME",
+      "start": 24,
+      "end": 29
+    },
+    {
+      "text": "Samuel Ortega",
+      "category": "NAME",
+      "start": 31,
+      "end": 44
+    },
+    {
+      "text": "natural gas scheduler",
+      "category": "OCCUPATION",
+      "start": 48,
+      "end": 69
+    },
+    {
+      "text": "Tulsa",
+      "category": "LOCATION",
+      "start": 77,
+      "end": 82
+    },
+    {
+      "text": "1 August 2001",
+      "category": "DATE",
+      "start": 119,
+      "end": 132
+    },
+    {
+      "text": "30 September 2001",
+      "category": "DATE",
+      "start": 136,
+      "end": 153
+    },
+    {
+      "text": "multiple myeloma",
+      "category": "MEDICAL_CONDITION",
+      "start": 171,
+      "end": 187
+    },
+    {
+      "text": "51 years old",
+      "category": "AGE",
+      "start": 195,
+      "end": 207
+    },
+    {
+      "text": "His wife",
+      "category": "RELATION",
+      "start": 209,
+      "end": 217
+    },
+    {
+      "text": "918-555-0133",
+      "category": "PHONE",
+      "start": 239,
+      "end": 251
+    },
+    {
+      "text": "occupation + small desk location + rare cancer + exact leave dates",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

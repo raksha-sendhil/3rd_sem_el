@@ -33,6 +33,18 @@
       "end": 144
     },
     {
+      "text": "fever",
+      "category": "SYMPTOM",
+      "start": 156,
+      "end": 161
+    },
+    {
+      "text": "red, swollen stitch line",
+      "category": "SYMPTOM",
+      "start": 168,
+      "end": 192
+    },
+    {
       "text": "My husband",
       "category": "RELATION",
       "start": 194,

@@ -44,6 +44,7 @@ COLOURS: dict[PIICategory, str] = {
     C.RELATION: "#e9d5ff",
     C.PHYSICAL: "#fef3c7",
     C.MEDICAL_CONDITION: "#fca5a5",
+    C.SYMPTOM: "#f5d0fe",
     C.QUASI_COMBO: "#d9f99d",
     C.OTHER: "#e5e7eb",
 }

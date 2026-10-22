@@ -33,7 +33,7 @@ The last command writes the metrics report (headline, per-category table, error 
 | Item | State |
 |---|---|
 | Scorer, tests, validator, report generator | Done and tested |
-| 20 fixtures + gold annotations | Done. Reviewed by C (`reviewed_by: "C"`), 3 fixes from the review (D13-D15), `--strict` validation passes: 124 spans, 0 errors |
+| 20 fixtures + gold annotations | Done. Reviewed by C (`reviewed_by: "C"`), 3 fixes from the review (D13-D15); 17 `SYMPTOM` spans added 22 Oct (D21); `--strict` validation passes: 141 spans, 0 errors |
 | Annotation guide | v1.1, signed off; decision log D1-D17 |
 | Demo script | Complete; the `<fill in>` items take the numbers from the Colab run |
 | Metrics report | `docs/metrics_report.md`, generated on Colab by `notebooks/colab_live_test.ipynb` |
@@ -41,8 +41,8 @@ The last command writes the metrics report (headline, per-category table, error 
 ## Notes for the write-up
 
 1. **The fixtures are synthetic** (written in ChatDoctor and Enron style, fictional people). Accepted for Phase 2 (D17). To replace one with a real record, hand-annotate it by following the guide. Do not copy its predicted spans.
-2. **Gold-set composition:** 16 ChatDoctor-style and 4 Enron-style; 3 documents have no sensitive content (cases 10, 14, 18); 11 documents carry 12 quasi-combos in total. All documents are short (longest is 384 characters), whereas real records run longer and are messier, so expect the detector to score worse on real data than on this set.
-3. **The spec's demo shows 143 gold spans; this set has 124.** That figure in the spec was illustrative. Report whatever the harness prints.
+2. **Gold-set composition:** 16 ChatDoctor-style and 4 Enron-style; 2 documents have no sensitive content (cases 14, 18; case_10 has had one `SYMPTOM` span since D21); 11 documents carry 12 quasi-combos in total; 141 gold spans, 17 of them `SYMPTOM`. All documents are short (longest is 384 characters), whereas real records run longer and are messier, so expect the detector to score worse on real data than on this set.
+3. **The spec's demo shows 143 gold spans; this set has 141.** That figure in the spec was illustrative. Report whatever the harness prints.
 4. **Re-generating:** edit the marked-up text in `tools/build_corpus.py` and run `python tools/build_corpus.py`; never hand-edit `data/gold/`.
 
 ## What you need from teammates

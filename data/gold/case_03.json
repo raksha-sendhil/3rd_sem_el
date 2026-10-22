@@ -37,6 +37,12 @@
       "category": "EMAIL",
       "start": 217,
       "end": 247
+    },
+    {
+      "text": "breathless",
+      "category": "SYMPTOM",
+      "start": 341,
+      "end": 351
     }
   ],
   "annotator": "D",

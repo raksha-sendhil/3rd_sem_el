@@ -16,7 +16,7 @@ from pathlib import Path
 
 from sanitise.rules import ALL_LAYERS, rule_detect
 
-SKIP = {"QUASI_COMBO", "MEDICAL_CONDITION"}  # LLM-pass scope
+SKIP = {"QUASI_COMBO", "MEDICAL_CONDITION", "SYMPTOM"}  # LLM-pass scope
 
 
 def overlaps(a, b):

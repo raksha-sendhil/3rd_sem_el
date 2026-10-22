@@ -33,6 +33,18 @@
       "end": 115
     },
     {
+      "text": "dry cough",
+      "category": "SYMPTOM",
+      "start": 130,
+      "end": 139
+    },
+    {
+      "text": "wheezing",
+      "category": "SYMPTOM",
+      "start": 153,
+      "end": 161
+    },
+    {
       "text": "asthma",
       "category": "MEDICAL_CONDITION",
       "start": 212,

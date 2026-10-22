@@ -63,7 +63,7 @@ Every layer then goes through the same post-processing:
 
 When spans overlap, the earlier category in this list wins:
 
-`EMAIL > ID_NUMBER > PHONE > ADDRESS > AGE > PHYSICAL > DATE > NAME > OCCUPATION > LOCATION > RELATION > MEDICAL_CONDITION > QUASI_COMBO > OTHER`
+`EMAIL > ID_NUMBER > PHONE > ADDRESS > AGE > PHYSICAL > DATE > NAME > OCCUPATION > LOCATION > RELATION > MEDICAL_CONDITION > SYMPTOM > QUASI_COMBO > OTHER`
 
 When a weaker span only partly overlaps a stronger one, the part nobody claimed is kept, as long as it still carries content. Recall comes first, so coverage is never silently lost.
 
@@ -72,7 +72,7 @@ When a weaker span only partly overlaps a stronger one, the part nobody claimed 
 - **Age is treated as sensitive at any value.** This is stricter than HIPAA Safe Harbor, which only covers ages of 90 and over (spec §9).
 - **Durations are not DATE.** `approximately 10 weeks` is left for the LLM pass, which matches the spec demo, where it appears as a QUASI_COMBO.
 - **ORGANIZATION is not requested from Presidio.** In Enron it is almost always "Enron" itself. If an employer should count, it goes to the LLM pass.
-- **MEDICAL_CONDITION is not produced by rules.** That is left to the LLM pass.
+- **MEDICAL_CONDITION and SYMPTOM are not produced by rules.** They are left to the LLM pass.
 - **Score threshold is 0.35.** It drops Presidio's near-zero guesses (US_BANK_NUMBER 0.05 on any digit run) and keeps phone numbers (0.4).
 
 ## Running

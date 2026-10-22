@@ -45,6 +45,18 @@
       "end": 142
     },
     {
+      "text": "lost his sense of taste",
+      "category": "SYMPTOM",
+      "start": 151,
+      "end": 174
+    },
+    {
+      "text": "swelling of the tongue",
+      "category": "SYMPTOM",
+      "start": 183,
+      "end": 205
+    },
+    {
       "text": "rare occupation (tea taster) + rare condition (amyloidosis) + small-city location",
       "category": "QUASI_COMBO",
       "start": null,

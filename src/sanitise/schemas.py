@@ -36,6 +36,7 @@ class PIICategory(str, Enum):
     RELATION = "RELATION"
     PHYSICAL = "PHYSICAL"  # height, weight, build
     MEDICAL_CONDITION = "MEDICAL_CONDITION"
+    SYMPTOM = "SYMPTOM"  # added 22 Oct (decision D21): a symptom a person reports
     QUASI_COMBO = "QUASI_COMBO"  # multi-attribute linkage
     OTHER = "OTHER"
 
