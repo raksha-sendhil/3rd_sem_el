@@ -1,0 +1,91 @@
+{
+  "doc_id": "c09ff44b9f658d5d",
+  "original_sha256": "c09ff44b9f658d5d3f03e1712919784ac12e39c06473cb76048ed7cf0db3a0e6",
+  "output": {
+    "doc_id": "c09ff44b9f658d5d",
+    "spans": [
+      {
+        "text": "my husband",
+        "category": "RELATION",
+        "start": 32,
+        "end": 42,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "HC-2291746",
+        "category": "ID_NUMBER",
+        "start": 66,
+        "end": 76,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "LabelledIdRecognizer:labelled_id"
+      },
+      {
+        "text": "3 March 2022",
+        "category": "DATE",
+        "start": 97,
+        "end": 109,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "9 March 2022",
+        "category": "DATE",
+        "start": 128,
+        "end": 140,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "coronary artery bypass",
+        "category": "MEDICAL_CONDITION",
+        "start": 149,
+        "end": 171,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The patient's procedure."
+      },
+      {
+        "text": "coronary artery disease",
+        "category": "MEDICAL_CONDITION",
+        "start": 176,
+        "end": 199,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The patient's diagnosis."
+      },
+      {
+        "text": "rajesh.kumar84@examplemail.com",
+        "category": "EMAIL",
+        "start": 217,
+        "end": 247,
+        "method": "rule",
+        "confidence": 1.0,
+        "rationale": "EmailRecognizer:EMAIL_ADDRESS"
+      },
+      {
+        "text": "breathless climbing stairs",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people with coronary artery disease would have this specific symptom, especially after a bypass surgery."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 356,
+    "llm_ms": 2628,
+    "total_ms": 2984,
+    "retries": 0,
+    "rule_span_count": 5,
+    "llm_span_count": 3
+  }
+}

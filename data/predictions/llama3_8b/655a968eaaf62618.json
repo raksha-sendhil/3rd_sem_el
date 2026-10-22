@@ -1,0 +1,46 @@
+{
+  "doc_id": "655a968eaaf62618",
+  "original_sha256": "655a968eaaf6261806998cc31b90897c870394ab1231ee7788d0ec460a92a77d",
+  "output": {
+    "doc_id": "655a968eaaf62618",
+    "spans": [
+      {
+        "text": "vitamin D deficiency",
+        "category": "MEDICAL_CONDITION",
+        "start": 28,
+        "end": 48,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's suspected medical condition."
+      },
+      {
+        "text": "work indoors",
+        "category": "OCCUPATION",
+        "start": 73,
+        "end": 85,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's job, likely a common occupation."
+      },
+      {
+        "text": "work indoors + vitamin D deficiency",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people who work indoors have vitamin D deficiency, so together these details narrow the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 30,
+    "llm_ms": 2771,
+    "total_ms": 2801,
+    "retries": 0,
+    "rule_span_count": 0,
+    "llm_span_count": 3
+  }
+}

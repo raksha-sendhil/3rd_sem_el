@@ -1,6 +1,6 @@
 # Annotation Guide - Agent 1 (Sensitive Information Detector)
 
-**Owner:** Person D  |  **Version:** 1.1  |  **Status:** Signed off 18 Oct 2026 (all ⚑ items accepted as proposed; rulings D11-D17 added after review)
+**Owner:** Person D  |  **Version:** 1.1  |  **Status:** Signed off 18 Oct 2026 (all ⚑ items accepted as proposed; rulings D11-D20 added after review)
 
 This guide is the specification for what the detector is expected to catch. If you annotate
 a case the guide does not cover, decide it, then add the rule to the **Decision log** at the
@@ -181,4 +181,7 @@ Examples: `daniel.whitcomb@example-energy.com` → `EMAIL` only (no `NAME`). A h
 | D15 | 18 Oct | Exact date of a medical event + named hospital | `QUASI_COMBO` (precise timeline + named institution), as in case_08; added to case_20 | C (review) | team |
 | D16 | 18 Oct | Relative time tagged as a date (`the early morning`, `quarterly`, `each day`) | Not `DATE`. A date needs a digit, a month, a weekday or a named holiday; the rule pass enforces this | C | team |
 | D17 | 18 Oct | Synthetic fixtures | Accepted for Phase 2. Real ChatDoctor / Enron records may replace them later, annotated by hand | team | team |
+| D18 | 22 Oct | Names and ages the rules miss ("She is Sunaina", "He is eleven") | Still `NAME` / `AGE`. The rule pass now catches "my name is X", "this is X" after a greeting, "Dr. X", "call me X" and ages written in words; the LLM pass may return `NAME` and `AGE` as a safety net | C | team |
+| D19 | 22 Oct | A 10-digit phone number that passes the UK NHS checksum | `PHONE`. A number counts as an NHS `ID_NUMBER` only when "NHS" is written just before it | C | team |
+| D20 | 22 Oct | Hospital department or ward ("pediatrics department") | Part of the place, never `OCCUPATION` | C | team |
 | | | *(add new rows here)* | | | |

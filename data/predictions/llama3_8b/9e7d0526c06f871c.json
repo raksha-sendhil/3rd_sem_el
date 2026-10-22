@@ -1,0 +1,82 @@
+{
+  "doc_id": "9e7d0526c06f871c",
+  "original_sha256": "9e7d0526c06f871c2a28e2f4d844594043a9eb169ee590316616b35871cfca4d",
+  "output": {
+    "doc_id": "9e7d0526c06f871c",
+    "spans": [
+      {
+        "text": "Priya Raman",
+        "category": "NAME",
+        "start": 22,
+        "end": 33,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "34 year old",
+        "category": "AGE",
+        "start": 42,
+        "end": 53,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "pediatric neurosurgeon",
+        "category": "OCCUPATION",
+        "start": 54,
+        "end": 76,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's job, a rare and specific profession."
+      },
+      {
+        "text": "Coonoor",
+        "category": "LOCATION",
+        "start": 91,
+        "end": 98,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "My sister",
+        "category": "RELATION",
+        "start": 259,
+        "end": 268,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "+91 98450 12345",
+        "category": "PHONE",
+        "start": 311,
+        "end": 326,
+        "method": "rule",
+        "confidence": 0.4,
+        "rationale": "PhoneRecognizer:PHONE_NUMBER"
+      },
+      {
+        "text": "pediatric neurosurgeon + small town (Coonoor)",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few pediatric neurosurgeons live in a small town like Coonoor, so this combination narrows down the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 4499,
+    "llm_ms": 3343,
+    "total_ms": 7842,
+    "retries": 0,
+    "rule_span_count": 5,
+    "llm_span_count": 3
+  }
+}

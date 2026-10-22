@@ -1,0 +1,82 @@
+{
+  "doc_id": "093017d395c09268",
+  "original_sha256": "093017d395c0926873e28358f3467423503a5f1760322091b72a0600eb12f04d",
+  "output": {
+    "doc_id": "093017d395c09268",
+    "spans": [
+      {
+        "text": "20 year old",
+        "category": "AGE",
+        "start": 18,
+        "end": 29,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "undergraduate student",
+        "category": "OCCUPATION",
+        "start": 30,
+        "end": 51,
+        "method": "rule",
+        "confidence": 0.7,
+        "rationale": "OccupationRecognizer:is_a_occupation"
+      },
+      {
+        "text": "IIT Madras",
+        "category": "LOCATION",
+        "start": 55,
+        "end": 65,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A specific university."
+      },
+      {
+        "text": "5 October 2024",
+        "category": "DATE",
+        "start": 73,
+        "end": 87,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "supraventricular tachycardia",
+        "category": "MEDICAL_CONDITION",
+        "start": 148,
+        "end": 176,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named diagnosis for the writer."
+      },
+      {
+        "text": "national-level fencer",
+        "category": "OCCUPATION",
+        "start": 191,
+        "end": 212,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A rare occupation, especially for a 20-year-old."
+      },
+      {
+        "text": "national-level fencer + undergraduate student + IIT Madras + supraventricular tachycardia",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few national-level fencers at IIT Madras have supraventricular tachycardia, so these details together point to one person."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 46,
+    "llm_ms": 4253,
+    "total_ms": 4299,
+    "retries": 0,
+    "rule_span_count": 3,
+    "llm_span_count": 4
+  }
+}

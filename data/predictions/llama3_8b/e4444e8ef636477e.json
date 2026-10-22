@@ -1,0 +1,64 @@
+{
+  "doc_id": "e4444e8ef636477e",
+  "original_sha256": "e4444e8ef636477e9b615af935e04502ff8deb6219172bc9f6f10f4af936a152",
+  "output": {
+    "doc_id": "e4444e8ef636477e",
+    "spans": [
+      {
+        "text": "lighthouse keeper",
+        "category": "OCCUPATION",
+        "start": 7,
+        "end": 24,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A rare and specific job."
+      },
+      {
+        "text": "Kavaratti",
+        "category": "LOCATION",
+        "start": 28,
+        "end": 37,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "47 years old",
+        "category": "AGE",
+        "start": 54,
+        "end": 66,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "contact dermatitis",
+        "category": "MEDICAL_CONDITION",
+        "start": 215,
+        "end": 233,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named diagnosis for the person."
+      },
+      {
+        "text": "rare occupation (lighthouse keeper) + small island (Kavaratti) + contact dermatitis",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few lighthouse keepers on a small island have contact dermatitis, so together these point to one person."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 29,
+    "llm_ms": 2980,
+    "total_ms": 3008,
+    "retries": 0,
+    "rule_span_count": 2,
+    "llm_span_count": 3
+  }
+}

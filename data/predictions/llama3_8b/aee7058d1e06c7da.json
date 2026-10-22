@@ -1,0 +1,100 @@
+{
+  "doc_id": "aee7058d1e06c7da",
+  "original_sha256": "aee7058d1e06c7da91295a84ae183ffc18fdd280fefa8c4c9666869ca3bb0257",
+  "output": {
+    "doc_id": "aee7058d1e06c7da",
+    "spans": [
+      {
+        "text": "Marta",
+        "category": "NAME",
+        "start": 28,
+        "end": 33,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "Kevin Oyelaran",
+        "category": "NAME",
+        "start": 66,
+        "end": 80,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "Portland",
+        "category": "LOCATION",
+        "start": 118,
+        "end": 126,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "trading desk",
+        "category": "OCCUPATION",
+        "start": 127,
+        "end": 139,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A specific job role within a company."
+      },
+      {
+        "text": "Houston",
+        "category": "LOCATION",
+        "start": 143,
+        "end": 150,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "15 June 2000",
+        "category": "DATE",
+        "start": 154,
+        "end": 166,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "2210 Bagby Street, Apt 12, Houston, TX 77006",
+        "category": "ADDRESS",
+        "start": 187,
+        "end": 231,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "AddressRecognizer:street; AddressRecognizer:city_state_zip"
+      },
+      {
+        "text": "713-555-0199",
+        "category": "PHONE",
+        "start": 249,
+        "end": 261,
+        "method": "rule",
+        "confidence": 0.75,
+        "rationale": "PhoneRecognizer:PHONE_NUMBER"
+      },
+      {
+        "text": "trading desk + Houston",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people work on a trading desk in a specific city, so this combination narrows down the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 47,
+    "llm_ms": 2734,
+    "total_ms": 2781,
+    "retries": 0,
+    "rule_span_count": 7,
+    "llm_span_count": 4
+  }
+}

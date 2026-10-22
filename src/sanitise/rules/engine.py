@@ -145,9 +145,17 @@ def _keep(category: PIICategory, fragment: str) -> bool:
     return not (category is C.NAME and f in _NAME_STOPLIST)
 
 
+# About 1 in 11 ten-digit numbers passes the UK NHS checksum, so without this an Indian
+# mobile number often outranked its PHONE hit as ID_NUMBER. An NHS number is kept only
+# when "NHS" is written shortly before it ("NHS number is 943 476 5919").
+_NHS_CONTEXT = re.compile(r"\bnhs\b", re.IGNORECASE)
+
+
 def _to_span(text: str, r: RecognizerResult) -> SensitiveSpan | None:
     category = ENTITY_TO_CATEGORY.get(r.entity_type)
     if category is None:
+        return None
+    if r.entity_type == "UK_NHS" and not _NHS_CONTEXT.search(text, max(0, r.start - 40), r.start):
         return None
     fragment = text[r.start : r.end]
     if not _keep(category, fragment):

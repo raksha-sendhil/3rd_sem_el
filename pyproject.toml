@@ -88,5 +88,6 @@ ignore = [
 "eval/*.py" = ["E501"]
 # Imports come after the en_core_web_lg skip check.
 "tests/rules/test_rule_detect.py" = ["E402"]
-# Shell lines (!cmd {var}) use loop variables ruff cannot see; shell commands run long.
-"notebooks/*.ipynb" = ["E501", "B007"]
+# Shell lines (!cmd {var}) use loop variables ruff cannot see; shell commands run long;
+# Colab form settings (#@param) come before the imports.
+"notebooks/*.ipynb" = ["E501", "B007", "E402"]
