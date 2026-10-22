@@ -1,25 +1,18 @@
 """Stages 2-3 - deterministic pass.  OWNER: Person A (Deterministic Logic).
 
-PLACEHOLDER created by Person C so the pipeline, CLI and API run end to end on
-Day 1. Replace the body of ``rule_detect`` with Presidio Analyzer (spaCy
-``en_core_web_lg``) plus the custom regex recognizers. Keep the signature.
+The implementation lives in the ``sanitise.rules`` package (Presidio + spaCy +
+custom regex layers, normalisation, category precedence). This module is the
+seam ``detect()`` imports from, so the pipeline does not depend on how that
+package is laid out internally.
 
 Contract (spec 8.2), checked by ``tests/contract/test_interfaces.py`` and again
-at runtime by ``detect()``:
-
-* every span has ``method="rule"`` and exact ``start``/``end`` offsets;
-* ``text[start:end]`` equals ``span.text`` (case/whitespace-insensitive);
-* the function is synchronous and safe to call from a worker thread -
-  ``detect()`` runs it via ``asyncio.to_thread`` so the API stays responsive.
-  Build the ``AnalyzerEngine`` once (lazily, module level) rather than per call.
+at runtime by ``detect()``: every span has ``method="rule"`` and exact
+``start``/``end`` offsets, and the function is synchronous (``detect()`` runs it
+in a worker thread).
 """
 
 from __future__ import annotations
 
-from sanitise.schemas import SensitiveSpan
+from sanitise.rules import rule_detect
 
-
-def rule_detect(text: str) -> list[SensitiveSpan]:
-    """Presidio + spaCy + regex. Every span has exact start/end and method='rule'."""
-    # TODO(Person A): Presidio + spaCy + custom regex recognizers.
-    return []
+__all__ = ["rule_detect"]

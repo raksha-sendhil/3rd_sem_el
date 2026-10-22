@@ -11,7 +11,7 @@ from sanitise.errors import LLMUnreachable
 from sanitise.evaluation import scoring
 from sanitise.llm import MockLLM
 from sanitise.loader import compute_doc_id
-from sanitise.schemas import DetectorOutput, DetectorResult, SpanMetrics
+from sanitise.schemas import DetectorOutput, DetectorResult
 from tests.conftest import SAMPLE_QUASI, SAMPLE_RULE_HITS, SAMPLE_TEXT
 
 
@@ -105,15 +105,23 @@ def test_bad_request_body_is_422(client: TestClient) -> None:
     assert client.post("/v1/detect/llm", json={"text": "x", "explicit": bad}).status_code == 422
 
 
-def test_score(client: TestClient, monkeypatch: pytest.MonkeyPatch) -> None:
+def test_score(client: TestClient) -> None:
+    span = {"text": "Priya", "category": "NAME", "start": 0, "end": 5, "method": "rule"}
+    gold = [{"doc_id": "d", "spans": [span]}]
+    response = client.post("/v1/score", json={"pred": gold, "gold": gold})
+    assert response.status_code == 200
+    body = response.json()
+    assert body["recall"] == body["precision"] == 1 and body["support"] == 1
+
+
+def test_score_not_implemented_is_501(client: TestClient, monkeypatch: pytest.MonkeyPatch) -> None:
+    def not_yet(pred, gold):
+        raise NotImplementedError("not implemented")
+
+    monkeypatch.setattr(scoring, "score", not_yet)
     gold = [{"doc_id": "d", "spans": []}]
     response = client.post("/v1/score", json={"pred": gold, "gold": gold})
-    assert response.status_code == 501  # Person D's placeholder
-
-    metrics = SpanMetrics(precision=1, recall=1, f1=1, support=0, per_category={})
-    monkeypatch.setattr(scoring, "score", lambda pred, gold: metrics)
-    response = client.post("/v1/score", json={"pred": gold, "gold": gold})
-    assert response.status_code == 200 and response.json()["recall"] == 1
+    assert response.status_code == 501
 
 
 def test_health_with_mock_backend(client: TestClient) -> None:

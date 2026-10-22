@@ -1,0 +1,82 @@
+{
+  "doc_id": "1a01088134f2b25a",
+  "original_sha256": "1a01088134f2b25a3d391dcde7593de69956a8cf08898efa05092decb0eee7a0",
+  "output": {
+    "doc_id": "1a01088134f2b25a",
+    "spans": [
+      {
+        "text": "My daughter",
+        "category": "RELATION",
+        "start": 14,
+        "end": 25,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "6 years old",
+        "category": "AGE",
+        "start": 29,
+        "end": 40,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "Greenfield Primary School",
+        "category": "LOCATION",
+        "start": 53,
+        "end": 78,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The named school the child attends."
+      },
+      {
+        "text": "Tiruppur",
+        "category": "LOCATION",
+        "start": 82,
+        "end": 90,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "12 September 2023",
+        "category": "DATE",
+        "start": 98,
+        "end": 115,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "asthma",
+        "category": "MEDICAL_CONDITION",
+        "start": 212,
+        "end": 218,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named diagnosis for the classmate."
+      },
+      {
+        "text": "rare occupation (parent) + small town (Tiruppur) + child age + dry cough at night + wheezing after games class",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "One 6-year-old parent in a small town with a child having a dry cough and wheezing after games class is a rare combination."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 45,
+    "llm_ms": 3311,
+    "total_ms": 3355,
+    "retries": 0,
+    "rule_span_count": 4,
+    "llm_span_count": 3
+  }
+}

@@ -234,6 +234,15 @@ def score(
     check_offsets: bool = typer.Option(
         True, "--check-offsets/--no-check-offsets", help="Verify gold offsets match the gold text."
     ),
+    show_errors: bool = typer.Option(
+        False, "--errors", help="List missed gold spans (leaks), then false positives."
+    ),
+    report: Path | None = typer.Option(
+        None, "--report", help="Write the markdown metrics report to this path."
+    ),
+    report_model: str = typer.Option(
+        "<model>", "--model", "-m", help="Model name for the report header."
+    ),
 ) -> None:
     """Score predictions against the gold set (precision, recall, F1)."""
     try:
@@ -265,6 +274,22 @@ def score(
         sys.stdout.write(metrics.model_dump_json(indent=2) + "\n")
     else:
         render.render_metrics(out, metrics, documents=len(gold))
+
+    if show_errors or report is not None:
+        pred_by_id = {p.doc_id: p for p in pred}
+        matches = [scoring.match_document(pred_by_id.get(g.doc_id), g) for g in gold]
+        if show_errors:
+            names = {
+                json.loads(f.read_text(encoding="utf-8")).get("doc_id"): f.stem
+                for f in sorted(gold_dir.glob("*.json"))
+            }
+            out.print(scoring.format_errors(matches, names), markup=False, highlight=False)
+        if report is not None:
+            report.write_text(
+                scoring.build_report(metrics, matches, len(gold), model=report_model),
+                encoding="utf-8",
+            )
+            err.print(f"[dim]report written to {report}[/]")
 
 
 # ------------------------------------------------------------------ health / serve

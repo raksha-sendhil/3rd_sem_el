@@ -1,0 +1,68 @@
+{
+  "doc_id": "2448803dacc1f4d2",
+  "text": "Hello, this is Anita D'Souza (anita.dsouza@examplemail.com). My father, Cyril D'Souza, is 71 years old and lives at Flat 2B, Sea View Court, Fort Kochi 682001. He had an ischemic stroke on 14 May 2024 and now has weakness on his right side. A neurologist at Aster Medcity has started physiotherapy. How long does recovery usually take?",
+  "spans": [
+    {
+      "text": "Anita D'Souza",
+      "category": "NAME",
+      "start": 15,
+      "end": 28
+    },
+    {
+      "text": "anita.dsouza@examplemail.com",
+      "category": "EMAIL",
+      "start": 30,
+      "end": 58
+    },
+    {
+      "text": "My father",
+      "category": "RELATION",
+      "start": 61,
+      "end": 70
+    },
+    {
+      "text": "Cyril D'Souza",
+      "category": "NAME",
+      "start": 72,
+      "end": 85
+    },
+    {
+      "text": "71 years old",
+      "category": "AGE",
+      "start": 90,
+      "end": 102
+    },
+    {
+      "text": "Flat 2B, Sea View Court, Fort Kochi 682001",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 158
+    },
+    {
+      "text": "ischemic stroke",
+      "category": "MEDICAL_CONDITION",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "14 May 2024",
+      "category": "DATE",
+      "start": 189,
+      "end": 200
+    },
+    {
+      "text": "Aster Medcity",
+      "category": "LOCATION",
+      "start": 258,
+      "end": 271
+    },
+    {
+      "text": "exact stroke date + named hospital (Aster Medcity) + age",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

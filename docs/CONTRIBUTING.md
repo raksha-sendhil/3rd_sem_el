@@ -5,10 +5,18 @@ you own, and change a seam only by whole-team agreement.
 
 | Person | Role                 | Owns                                                                 |
 |--------|----------------------|----------------------------------------------------------------------|
-| A      | Deterministic Logic  | `agents/detector/rules.py`, `agents/detector/merge.py` (+ any recognizer modules beside them) |
-| B      | Model and Prompt     | `agents/detector/quasi.py` (+ prompt / few-shot modules beside it), custom `parser` / `repair_builder` hooks |
+| A      | Deterministic Logic  | `rules/` package, the seams `agents/detector/rules.py` + `merge.py`, `tests/rules/`, `eval/`, `data/gold_draft/`, `data/gold_heldout/`, `data/real_chatdoctor_sample/`, `docs/rules.md` |
+| B      | Model and Prompt     | `agents/detector/quasi.py` (prompt, few-shot examples, decoding schema, grounding), `tests/quasi/`, `docs/prompt.md` |
 | C      | Platform             | `schemas.py`, `config.py`, `errors.py`, `loader.py`, `validation.py`, `results.py`, `llm/`, `agents/detector/pipeline.py`, `cli/`, `api/`, `tests/` scaffolding, `pyproject.toml` |
-| D      | Data and Evaluation  | `evaluation/`, `data/fixtures/`, `data/gold/`, `docs/annotation_guide.md`, metrics report, demo script |
+| D      | Data and Evaluation  | `evaluation/`, `tests/evaluation/`, `tools/build_corpus.py`, `data/fixtures/`, `data/gold/`, `docs/evaluation.md`, `docs/annotation_guide.md`, `docs/demo_script.md`, metrics report |
+
+Paths under `src/sanitise/` are written without that prefix.
+
+**Getting code in.** Work on your own branch inside this repository's folder
+structure, run `pytest`, `pytest -m presidio` and `ruff check .`, then open a
+pull request and have someone else review and merge it. Do not use GitHub's
+"Add files via upload": it drops the folder structure. Never commit your own
+copy of `schemas.py`, `pyproject.toml` or `README.md`.
 
 ## The seams (spec 8.2)
 
@@ -36,9 +44,9 @@ async def detect(doc_id: str, text: str, llm: LLMClient) -> DetectorResult: ...
 def score(pred: list[DetectorOutput], gold: list[DetectorOutput]) -> SpanMetrics: ...
 ```
 
-Each of A's, B's and D's files currently holds a **placeholder** with the
-exact signature and a `TODO(Person X)`, so the CLI, API and tests run end to
-end from Day 1. Replace the body; keep the signature.
+Every seam now holds its real code (A: `rules/`, B: `quasi.py`, D: `evaluation/`).
+Change bodies freely; keep the signatures. Extra keyword-only options with
+defaults are fine (e.g. `rule_detect(text, *, layers=...)`).
 `tests/contract/test_interfaces.py` checks every seam against whatever code is
 in the repo, so run `uv run pytest tests/contract` before pushing.
 
@@ -63,8 +71,12 @@ curl -X POST localhost:8000/v1/detect/rules -H 'content-type: application/json' 
 
 ## Person B — working against MockLLM
 
-Call the model only through `llm.json_call(system, user, QuasiList)`. The
-platform already sends the `QuasiList` JSON schema to Ollama as `format`,
+Design and failure-mode catalogue: [prompt.md](prompt.md).
+
+Call the model only through `llm.json_call(system, user, LLMQuasiList)` (the
+`QuasiList` shape with the category enum narrowed to the four LLM categories;
+its schema title is still "QuasiList"). The
+platform already sends that JSON schema to Ollama as `format`,
 validates the reply, and retries up to 3 times with escalating temperature
 (0.0, 0.2, 0.4, 0.6 by default) and a repair message quoting the validation
 error. To change how that repair message is worded or how raw output is
@@ -97,8 +109,10 @@ To compare models (spec section 9): `sanitise detect -i data/fixtures/ --model q
 `sanitise score --gold data/gold/ --pred out/` loads both directories (gold
 files in the spec 8.3 format; predictions as written by `detect --out`),
 checks every gold offset against the gold text, warns about unpaired
-documents, and then calls `score(pred, gold)`. Until `score` is implemented
-it exits with code 3. Pair documents by `doc_id`, not by list order.
+documents, and then calls `score(pred, gold)` (one-to-one matching; see the
+docstring in `evaluation/scoring.py`). Add `--errors` to list misses and false
+positives, `--report docs/metrics_report.md --model llama3:8b` to write the
+metrics report. More in `docs/evaluation.md`.
 
 `doc_id` is always the first 16 hex characters of the SHA-256 of the document
 text, computed by `sanitise.loader.compute_doc_id`. Use the same function when

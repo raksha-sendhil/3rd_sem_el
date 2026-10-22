@@ -1,0 +1,56 @@
+{
+  "doc_id": "9e7d0526c06f871c",
+  "text": "Hi doctor, my name is Priya Raman. I am a 34 year old pediatric neurosurgeon and I live in Coonoor, a small town in the hills. For the last three weeks I have had episodes of vertigo with a ringing in my left ear, usually in the early morning before surgery. My sister has the same problem. You can reach me on +91 98450 12345 if you need more details. Thank you.",
+  "spans": [
+    {
+      "text": "Priya Raman",
+      "category": "NAME",
+      "start": 22,
+      "end": 33
+    },
+    {
+      "text": "34 year old",
+      "category": "AGE",
+      "start": 42,
+      "end": 53
+    },
+    {
+      "text": "pediatric neurosurgeon",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 76
+    },
+    {
+      "text": "Coonoor",
+      "category": "LOCATION",
+      "start": 91,
+      "end": 98
+    },
+    {
+      "text": "vertigo",
+      "category": "MEDICAL_CONDITION",
+      "start": 175,
+      "end": 182
+    },
+    {
+      "text": "My sister",
+      "category": "RELATION",
+      "start": 259,
+      "end": 268
+    },
+    {
+      "text": "+91 98450 12345",
+      "category": "PHONE",
+      "start": 311,
+      "end": 326
+    },
+    {
+      "text": "rare occupation (pediatric neurosurgeon) + small town (Coonoor) + vertigo",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}
