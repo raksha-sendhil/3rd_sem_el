@@ -1,0 +1,91 @@
+{
+  "doc_id": "8043ce091d7fe3fb",
+  "original_sha256": "8043ce091d7fe3fb2ceee85aafba29449fcef9429befc0e98ca95625b74ecdcb",
+  "output": {
+    "doc_id": "8043ce091d7fe3fb",
+    "spans": [
+      {
+        "text": "My husband",
+        "category": "RELATION",
+        "start": 0,
+        "end": 10,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "63 years old",
+        "category": "AGE",
+        "start": 14,
+        "end": 26,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "amyloidosis",
+        "category": "MEDICAL_CONDITION",
+        "start": 50,
+        "end": 61,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's husband's named diagnosis."
+      },
+      {
+        "text": "7 November 2023",
+        "category": "DATE",
+        "start": 65,
+        "end": 80,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "AIIMS Delhi",
+        "category": "LOCATION",
+        "start": 84,
+        "end": 95,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The named hospital where the husband was diagnosed."
+      },
+      {
+        "text": "tea taster",
+        "category": "OCCUPATION",
+        "start": 118,
+        "end": 128,
+        "method": "rule",
+        "confidence": 0.75,
+        "rationale": "OccupationRecognizer:works_as"
+      },
+      {
+        "text": "Darjeeling",
+        "category": "LOCATION",
+        "start": 132,
+        "end": 142,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "rare occupation (tea taster) + specific location (Darjeeling) + amyloidosis",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few tea tasters in Darjeeling have amyloidosis, so together these point to one person."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 27,
+    "llm_ms": 3125,
+    "total_ms": 3152,
+    "retries": 0,
+    "rule_span_count": 5,
+    "llm_span_count": 3
+  }
+}

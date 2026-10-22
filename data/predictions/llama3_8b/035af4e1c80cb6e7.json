@@ -1,0 +1,37 @@
+{
+  "doc_id": "035af4e1c80cb6e7",
+  "original_sha256": "035af4e1c80cb6e785ad4b33d782b006329464f683975d1e62bef055ec72c249",
+  "output": {
+    "doc_id": "035af4e1c80cb6e7",
+    "spans": [
+      {
+        "text": "computer",
+        "category": "OCCUPATION",
+        "start": 64,
+        "end": 72,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's job, a common occupation."
+      },
+      {
+        "text": "none",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "No combination of details that narrow the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 26,
+    "llm_ms": 2765,
+    "total_ms": 2791,
+    "retries": 0,
+    "rule_span_count": 0,
+    "llm_span_count": 2
+  }
+}

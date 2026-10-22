@@ -3,19 +3,22 @@
 One constrained-JSON call per document. The model receives the raw text plus the
 explicit identifiers the rule pass already found, and returns two kinds of item:
 
-* **contextual attributes** that rules cannot enumerate - MEDICAL_CONDITION,
-  OCCUPATION and named LOCATION (institutions, small places). These must be
-  quoted verbatim; ``ground()`` finds every occurrence in the document and gives
-  each one exact offsets, so they are scored and later rewritten like rule spans.
-  An attribute that cannot be found in the text is a hallucination and is dropped.
+* **single details** - MEDICAL_CONDITION, OCCUPATION and named LOCATION
+  (institutions, small places), which rules cannot enumerate, plus any NAME or AGE
+  the rule pass missed (uncommon names in weak contexts, ages written oddly). These
+  must be quoted verbatim; ``ground()`` finds every occurrence in the document and
+  gives each one exact offsets, so they are scored and later rewritten like rule
+  spans. A detail that cannot be found in the text is a hallucination and is dropped.
 * **QUASI_COMBO** - a combination of details that together narrow the candidate
   pool (spec 3.1 stage 4). These have no single position, so start/end stay None.
 
 Decoding is constrained to ``LLMQuasiList``: the same shape as the frozen
 ``QuasiList`` (and the same JSON-schema title, so MockLLM scripts keyed on
-"QuasiList" keep working) but with the category enum narrowed to the four values
+"QuasiList" keep working) but with the category enum narrowed to the six values
 above. The model therefore cannot emit DATE for "pain" or RELATION for a job,
-which were the main failure modes seen with llama3:8b on Day 6.
+which were the main failure modes seen with llama3:8b on Day 6. (NAME and AGE were
+added after a narrower enum forced the model to label a name it had recognised as
+OCCUPATION.)
 
 Parsing, validation and the retry/repair loop (up to ``retries`` extra attempts
 with escalating temperature and the validation error fed back) are done once for
@@ -39,8 +42,8 @@ log = logging.getLogger(__name__)
 C = PIICategory
 
 # Categories the LLM pass may produce. Everything else is the rule pass's job.
-LLMCategory = Literal["MEDICAL_CONDITION", "OCCUPATION", "LOCATION", "QUASI_COMBO"]
-GROUNDED = {C.MEDICAL_CONDITION, C.OCCUPATION, C.LOCATION}
+LLMCategory = Literal["NAME", "AGE", "MEDICAL_CONDITION", "OCCUPATION", "LOCATION", "QUASI_COMBO"]
+GROUNDED = {C.NAME, C.AGE, C.MEDICAL_CONDITION, C.OCCUPATION, C.LOCATION}
 MAX_COMBOS = 3  # the gold set never has more than 2 per document
 MAX_ITEMS = 20
 
@@ -63,14 +66,21 @@ class LLMQuasiList(BaseModel):
 SYSTEM_PROMPT = """\
 You are a privacy analyst. You read one document (a patient's question to a doctor, \
 or a workplace email) and list the details that could re-identify the person it is about.
-A rule-based detector has ALREADY found the explicit identifiers (names, ages, dates, \
+A rule-based detector has ALREADY found most explicit identifiers (names, ages, dates, \
 phone numbers, emails, ID numbers, addresses, relations, body measurements). They are \
-listed under ALREADY FOUND. Never repeat them and never return those kinds of detail.
+listed under ALREADY FOUND. Never repeat anything listed there. Do not return dates, \
+phone numbers, emails, ID numbers, addresses, relations or body measurements. The \
+detector does sometimes miss NAMES and AGES, so return those when they are not \
+ALREADY FOUND.
 
 Return two kinds of item.
 
 1. Single details, copied EXACTLY as written in the document (same words, no article, \
 shortest phrase that carries the detail):
+   - NAME: a person's name (first name, surname or both) without a title such as Dr. \
+or Mr. Not the name of a company, hospital, drug or disease.
+   - AGE: a person's age as written, including in words ("eleven", "34 year old"). \
+Not a duration ("two weeks").
    - MEDICAL_CONDITION: a named diagnosis, disease or specific clinical finding about \
 a specific person, including a suspected one ("Can this be neuropathy?"). NOT plain \
 symptoms (pain, cough, fever, headache, rash, weakness, dizziness, swelling), NOT \
@@ -146,13 +156,32 @@ OUTPUT:
 "category": "QUASI_COMBO", "rationale": "One 7-year-old at a named school in a small \
 town with a known onset date is easy to single out."}
 ]}
+
+EXAMPLE 4
+DOCUMENT:
+My daughter Ishani is nine and has had asthma since 2021. Her doctor, Dr. Mehra, \
+works in the paediatrics ward of Lakeside Clinic.
+ALREADY FOUND:
+- RELATION: My daughter
+- DATE: 2021
+- NAME: Mehra
+OUTPUT:
+{"quasi_identifiers": [
+ {"text": "Ishani", "category": "NAME", "rationale": "The daughter's first name."},
+ {"text": "nine", "category": "AGE", "rationale": "The daughter's age, written in words."},
+ {"text": "asthma", "category": "MEDICAL_CONDITION", "rationale": "The daughter's diagnosis."},
+ {"text": "Lakeside Clinic", "category": "LOCATION", \
+"rationale": "The named clinic treating her."}
+]}
+(Asthma in a child is common, so there is no QUASI_COMBO. The paediatrics ward is part \
+of the clinic, not anyone's job. Mehra is ALREADY FOUND, so it is not repeated.)
 """
 
 
 TASK_REMINDER = (
-    "List the MEDICAL_CONDITION, OCCUPATION and LOCATION details in this document that are "
-    "NOT in ALREADY FOUND (diagnoses and clinical findings, not plain symptoms), then any "
-    "QUASI_COMBO combinations."
+    "List any NAME or AGE that is NOT in ALREADY FOUND, the MEDICAL_CONDITION, OCCUPATION "
+    "and LOCATION details in this document that are NOT in ALREADY FOUND (diagnoses and "
+    "clinical findings, not plain symptoms), then any QUASI_COMBO combinations."
 )
 
 

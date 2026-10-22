@@ -1,0 +1,82 @@
+{
+  "doc_id": "723b3a163f510a42",
+  "original_sha256": "723b3a163f510a4225e41f04427c067c0050041f28ed32b1d3ca84d21e314f91",
+  "output": {
+    "doc_id": "723b3a163f510a42",
+    "spans": [
+      {
+        "text": "Mohammed Faizal",
+        "category": "NAME",
+        "start": 9,
+        "end": 24,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "58 years old",
+        "category": "AGE",
+        "start": 26,
+        "end": 38,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "Lakeview Apartments",
+        "category": "LOCATION",
+        "start": 59,
+        "end": 78,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "Bannerghatta Road",
+        "category": "LOCATION",
+        "start": 80,
+        "end": 97,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The named road where the person lives."
+      },
+      {
+        "text": "type 2 diabetes",
+        "category": "MEDICAL_CONDITION",
+        "start": 138,
+        "end": 153,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The person's diagnosis."
+      },
+      {
+        "text": "2015",
+        "category": "DATE",
+        "start": 157,
+        "end": 161,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "rare condition (neuropathy) + specific medication (metformin) + named location (Bannerghatta Road)",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people with type 2 diabetes on metformin in this location would have neuropathy."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 31,
+    "llm_ms": 3018,
+    "total_ms": 3049,
+    "retries": 0,
+    "rule_span_count": 4,
+    "llm_span_count": 3
+  }
+}

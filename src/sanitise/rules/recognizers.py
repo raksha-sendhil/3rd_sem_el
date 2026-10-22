@@ -83,6 +83,11 @@ _NUM_WORD = (
 )
 _AGE_UNIT = r"(?:years?|yrs?|months?|mths?|mos?|weeks?|wks?|days?)"
 _DECADE = r"(?:\d0'?s|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties)"
+_AGE_SUBJECT = (
+    r"\b(?:i\s+am|i'm|im|he\s+is|she\s+is|he's|she's|is\s+now|turned"
+    r"|(?:father|mother|dad|mom|mum|son|daughter|husband|wife|brother|sister|grandfather"
+    r"|grandmother|child|baby|patient)\s+is)"
+)
 _NOT_A_QUANTITY = (
     r"(?!\s*(?:%|percent|kgs?|lbs?|pounds?|cm|mm|ft|feet|foot|inch(?:es)?|mg|ml|hours?|hrs?"
     r"|days?|weeks?|months?|times|x\b|'|’|\"|\.\d|/\d))"
@@ -96,13 +101,15 @@ AGE_RULES = [
     ),
     Rule("n_yo", r"\b\d{1,3}\s*(?:y/o|y\.o\.?|yo|yrs?\.?\s*old)(?![a-z])", 0.85),
     Rule("aged_n", r"\b(?:aged?|age:)\s*(?:of\s+|is\s+)?\d{1,3}\b" + _NOT_A_QUANTITY, 0.8),
+    Rule("pronoun_is_n", rf"{_AGE_SUBJECT}\s+(?P<value>\d{{1,3}})\b" + _NOT_A_QUANTITY, 0.6),
+    # "He is eleven," / "she is nine and ...": a number word only counts as an age when
+    # the clause ends right after it, so "she is one of the ..." is not matched.
     Rule(
-        "pronoun_is_n",
-        r"\b(?:i\s+am|i'm|im|he\s+is|she\s+is|he's|she's|is\s+now|turned"
-        r"|(?:father|mother|dad|mom|mum|son|daughter|husband|wife|brother|sister|grandfather"
-        r"|grandmother|child|baby|patient)\s+is)\s+(?P<value>\d{1,3})\b" + _NOT_A_QUANTITY,
+        "pronoun_is_word",
+        rf"{_AGE_SUBJECT}\s+(?P<value>{_NUM_WORD})(?=\s*(?:[,.;:!?)]|$)|\s+(?:and|but|now|yet)\b)",
         0.6,
     ),
+    Rule("aged_word", rf"\baged\s+(?P<value>{_NUM_WORD})\b(?!\s+{_AGE_UNIT})", 0.7),
     Rule("decade", rf"\b(?:my|his|her|their)\s+(?:early\s+|mid[\s-]|late\s+)?{_DECADE}", 0.7),
     Rule(
         "died_at_n",
@@ -111,6 +118,26 @@ AGE_RULES = [
         0.6,
     ),
     Rule("ordinal_birthday", r"\b\d{1,3}(?:st|nd|rd|th)\s+birthday\b", 0.8),
+]
+
+# ---------------------------------------------------------------- NAME
+
+# spaCy misses uncommon names when the context is weak ("my name is Nila"). These
+# phrasings introduce a person's name whatever the name is. Case-sensitive: the name
+# must be capitalised. ("named X" / "called X" are left out: "a drug named Crocin".)
+_NAME_WORD = r"[A-Z][a-z]*(?:['’-][A-Z]?[a-z]+)*"
+_NAME = rf"{_NAME_WORD}(?:\s+{_NAME_WORD}){{0,2}}"
+
+NAME_RULES = [
+    Rule("name_is", rf"\b(?i:name\s+is|name's)\s+(?P<value>{_NAME})", 0.7, flags=0),
+    Rule(
+        "greeting_this_is",
+        rf"\b(?i:hi|hello|hey|dear\s+\w+)\b[\s,!.-]*(?i:this\s+is)\s+(?P<value>{_NAME})",
+        0.7,
+        flags=0,
+    ),
+    Rule("title_name", rf"\b(?:Dr|Mr|Mrs|Ms|Miss|Prof)\.?\s+(?P<value>{_NAME})", 0.7, flags=0),
+    Rule("call_me", rf"\b(?i:call\s+me)\s+(?P<value>{_NAME})", 0.6, flags=0),
 ]
 
 # ---------------------------------------------------------------- PHYSICAL
@@ -432,6 +459,7 @@ LAYERS: dict[str, list[tuple[str, str, list[Rule]]]] = {
         ("RelationRecognizer", "RELATION", RELATION_RULES),
     ],
     "general": [
+        ("NameRecognizer", "NAME", NAME_RULES),
         ("AddressRecognizer", "ADDRESS", ADDRESS_RULES),
         ("LabelledIdRecognizer", "ID_NUMBER", ID_RULES),
         ("OccupationRecognizer", "OCCUPATION", OCCUPATION_RULES),

@@ -1,0 +1,118 @@
+{
+  "doc_id": "021c22f3e51c350a",
+  "original_sha256": "021c22f3e51c350a727bb707688e6755d2edebd3214484519f52e2ecc422eba8",
+  "output": {
+    "doc_id": "021c22f3e51c350a",
+    "spans": [
+      {
+        "text": "Daniel Whitcomb",
+        "category": "NAME",
+        "start": 6,
+        "end": 21,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "Tuesday, October 9, 2001",
+        "category": "DATE",
+        "start": 28,
+        "end": 52,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "Laura Fenn",
+        "category": "NAME",
+        "start": 65,
+        "end": 75,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "regulators",
+        "category": "OCCUPATION",
+        "start": 95,
+        "end": 105,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's job, a specific role."
+      },
+      {
+        "text": "Laura",
+        "category": "NAME",
+        "start": 107,
+        "end": 112,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "(415) 555-0142",
+        "category": "PHONE",
+        "start": 132,
+        "end": 146,
+        "method": "rule",
+        "confidence": 0.4,
+        "rationale": "PhoneRecognizer:PHONE_NUMBER"
+      },
+      {
+        "text": "daniel.whitcomb@example-energy.com",
+        "category": "EMAIL",
+        "start": 189,
+        "end": 223,
+        "method": "rule",
+        "confidence": 1.0,
+        "rationale": "EmailRecognizer:EMAIL_ADDRESS"
+      },
+      {
+        "text": "1400 Smith Street, Houston, TX 77002",
+        "category": "ADDRESS",
+        "start": 241,
+        "end": 277,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "AddressRecognizer:street; AddressRecognizer:city_state_zip"
+      },
+      {
+        "text": "revised filing",
+        "category": "OCCUPATION",
+        "start": 299,
+        "end": 313,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's job, a specific role."
+      },
+      {
+        "text": "Daniel",
+        "category": "NAME",
+        "start": 367,
+        "end": 373,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "revised filing + regulators + Houston, TX",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people in a specific city have a specific job and are working on a revised filing, so together these point to one person."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 42,
+    "llm_ms": 3605,
+    "total_ms": 3648,
+    "retries": 0,
+    "rule_span_count": 8,
+    "llm_span_count": 4
+  }
+}

@@ -11,9 +11,10 @@ rule pass already found, and returns:
 | Kind | Categories | Position |
 |---|---|---|
 | Single contextual details that rules cannot enumerate | `MEDICAL_CONDITION`, `OCCUPATION`, `LOCATION` (named institutions, small places) | The model quotes the words; `ground()` finds every occurrence and gives each exact offsets |
+| Names and ages the rule pass missed (safety net) | `NAME`, `AGE` | Same grounding; `merge_spans` drops any that repeat a rule hit |
 | Quasi-identifier combinations | `QUASI_COMBO` | None (spec 8.2): a combination has no single position |
 
-Rules own every other category. That split follows the annotation guide: a rule cannot
+Rules own every other category, and are the first line for names and ages too. That split follows the annotation guide: a rule cannot
 tell a diagnosis from a plain symptom (3.12), or a rare job from an ordinary one, but a
 language model can (decision log D11).
 
@@ -37,7 +38,7 @@ language model can (decision log D11).
 `json_call` sends the JSON schema of `LLMQuasiList` to Ollama as `format`, so generation
 is grammar-constrained. `LLMQuasiList` has the same shape as the frozen `QuasiList` and the
 same schema title (MockLLM scripts keyed on `"QuasiList"` keep working), but its `category`
-enum is narrowed to the four categories above. The model cannot emit `DATE` for "pain".
+enum is narrowed to the six categories above. The model cannot emit `DATE` for "pain".
 
 ## Repair loop (stage 5)
 
@@ -72,6 +73,8 @@ Calls use `seed=42` and `num_predict=1024` (settings `SANITISE_LLM_SEED`,
 | 8 | Plain symptom labelled `MEDICAL_CONDITION` | (expected) | Definition + counter-example in the prompt; shows up as `EXTRA` in `sanitise score --errors` |
 | 9 | Very slow first call | all | Model loading; the notebook warms up once, `OLLAMA_KEEP_ALIVE=1h` keeps it in GPU memory |
 | 10 | Echoes the ALREADY FOUND list and skips the conditions | qwen2.5:1.5b | `TASK_REMINDER` at the end of the user prompt: case_07 conditions went from 0/2 to 2/2 on the same model. Small models still label plain symptoms as conditions (#8) |
+| 11 | Recognises a name the rules missed but labels it `OCCUPATION` ("She is Sunaina"), or an age written in words only inside a combination ("He is eleven") | llama3:8b | The four-category enum left no correct label. `NAME` and `AGE` added to the enum and prompt, with example 4 (a name and an age in words the rules missed); the rule pass also gained name phrasings and ages in words |
+| 12 | Labels a hospital department as `OCCUPATION` ("pediatrics department") | llama3:8b | Example 4 states that a ward or department is part of the place, not a job |
 
 ## Choosing the model (spec section 9)
 

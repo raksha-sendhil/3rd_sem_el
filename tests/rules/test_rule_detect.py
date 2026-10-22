@@ -217,3 +217,40 @@ def test_unknown_layer_rejected():
 
 def found_layers(text, layers):
     return {(s.text, s.category) for s in rule_detect(text, layers=layers)}
+
+
+@pytest.mark.parametrize(
+    "text, span, cat",
+    [
+        # ages written in words
+        ("He is eleven, and is under the care of a doctor.", "eleven", C.AGE),
+        ("She is nine and has asthma.", "nine", C.AGE),
+        ("My son is twenty-one.", "twenty-one", C.AGE),
+        ("He was aged twelve when it started.", "twelve", C.AGE),
+        # names in phrasings spaCy misses for uncommon names
+        ("Please call me at the earliest, and my name is Nila. Thanks.", "Nila", C.NAME),
+        ("Her name is Sunaina Rao and she is unwell.", "Sunaina Rao", C.NAME),
+        ("Hello, this is Kavya. My father is ill.", "Kavya", C.NAME),
+        ("You can call me Ishani.", "Ishani", C.NAME),
+        # a 10-digit mobile number that passes the UK NHS checksum is still a phone
+        ("phone - 9881023483.", "9881023483", C.PHONE),
+        ("Her NHS number is 943 476 5919.", "943 476 5919", C.ID_NUMBER),
+    ],
+)
+def test_ages_in_words_names_and_nhs_context(text, span, cat):
+    assert (span, cat) in found(text)
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "She is one of the best doctors.",
+        "He is two days late for the test.",
+        "I was prescribed a drug named Crocin.",
+        "A condition called Bell's palsy.",
+        "This is Springleaf Hospital.",
+        "The name is not important.",
+    ],
+)
+def test_no_age_or_name_from_lookalike_phrases(text):
+    assert not {cat for _, cat in found(text)} & {C.AGE, C.NAME}

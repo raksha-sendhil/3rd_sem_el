@@ -19,7 +19,7 @@ ENTITY_TO_CATEGORY: dict[str, PIICategory] = {
     "US_PASSPORT": C.ID_NUMBER,
     "US_DRIVER_LICENSE": C.ID_NUMBER,
     "US_BANK_NUMBER": C.ID_NUMBER,
-    "UK_NHS": C.ID_NUMBER,
+    "UK_NHS": C.ID_NUMBER,  # only with "NHS" written nearby, see engine._to_span
     "MEDICAL_LICENSE": C.ID_NUMBER,
     "CREDIT_CARD": C.ID_NUMBER,
     "IBAN_CODE": C.ID_NUMBER,
@@ -29,6 +29,7 @@ ENTITY_TO_CATEGORY: dict[str, PIICategory] = {
     "URL": C.OTHER,
     # Custom recognizers (recognizers.py) emit the project category names directly
     "AGE": C.AGE,
+    "NAME": C.NAME,
     "PHYSICAL": C.PHYSICAL,
     "RELATION": C.RELATION,
     "OCCUPATION": C.OCCUPATION,

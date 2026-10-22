@@ -47,7 +47,14 @@ def test_schema_sent_to_the_model_is_narrowed_but_keeps_its_name() -> None:
     call = llm.calls[0]
     assert call.schema_name == "QuasiList"  # MockLLM scripts keyed on QuasiList still work
     enum = call.json_schema["properties"]["quasi_identifiers"]["items"]["properties"]["category"]
-    assert set(enum["enum"]) == {"MEDICAL_CONDITION", "OCCUPATION", "LOCATION", "QUASI_COMBO"}
+    assert set(enum["enum"]) == {
+        "NAME",
+        "AGE",
+        "MEDICAL_CONDITION",
+        "OCCUPATION",
+        "LOCATION",
+        "QUASI_COMBO",
+    }
     assert "EXAMPLE 1" in call.system
 
 
@@ -153,3 +160,18 @@ async def test_detect_merges_grounded_llm_spans_with_rule_spans(
     assert not any(s.category is C.OCCUPATION and s.text == "32 years old" for s in spans)
     assert spans[-1].category is C.QUASI_COMBO and spans[-1].start is None
     assert result.meta.llm_span_count == 3  # counted before merge drops the restatement
+
+
+async def test_names_and_ages_the_rules_missed_are_kept() -> None:
+    text = "My daughter has a fever. She is Sunaina and she is eleven."
+    reply = {
+        "quasi_identifiers": [
+            {"text": "Sunaina", "category": "NAME", "rationale": "The daughter's name."},
+            {"text": "eleven", "category": "AGE", "rationale": "The daughter's age."},
+        ]
+    }
+    spans = await quasi.infer_quasi(text, [], MockLLM(by_schema={"QuasiList": [reply]}))
+    assert [(s.category, text[s.start : s.end]) for s in spans] == [
+        (C.NAME, "Sunaina"),
+        (C.AGE, "eleven"),
+    ]

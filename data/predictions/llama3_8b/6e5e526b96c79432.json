@@ -1,0 +1,46 @@
+{
+  "doc_id": "6e5e526b96c79432",
+  "original_sha256": "6e5e526b96c79432cb72650bcddafc2eaf4d6a0397ad661311e63d066cc23b2f",
+  "output": {
+    "doc_id": "6e5e526b96c79432",
+    "spans": [
+      {
+        "text": "Pipeline review",
+        "category": "OCCUPATION",
+        "start": 9,
+        "end": 24,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's job or role in the company."
+      },
+      {
+        "text": "pipeline review",
+        "category": "OCCUPATION",
+        "start": 47,
+        "end": 62,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The writer's job or role in the company."
+      },
+      {
+        "text": "pipeline reviewer + company employee",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people are responsible for reviewing pipelines in a company, so this combination narrows the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 30,
+    "llm_ms": 3154,
+    "total_ms": 3185,
+    "retries": 0,
+    "rule_span_count": 0,
+    "llm_span_count": 3
+  }
+}

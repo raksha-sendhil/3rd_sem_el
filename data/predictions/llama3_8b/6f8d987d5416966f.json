@@ -1,0 +1,82 @@
+{
+  "doc_id": "6f8d987d5416966f",
+  "original_sha256": "6f8d987d5416966f24180a7de7403e6273a1931dff1b6e77320ca4f8f0d640a7",
+  "output": {
+    "doc_id": "6f8d987d5416966f",
+    "spans": [
+      {
+        "text": "My son",
+        "category": "RELATION",
+        "start": 0,
+        "end": 6,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "32 years old",
+        "category": "AGE",
+        "start": 115,
+        "end": 127,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "6 ft 3 inches",
+        "category": "PHYSICAL",
+        "start": 129,
+        "end": 142,
+        "method": "rule",
+        "confidence": 0.8,
+        "rationale": "PhysicalRecognizer:height_imperial"
+      },
+      {
+        "text": "approximately 220 pounds",
+        "category": "PHYSICAL",
+        "start": 160,
+        "end": 184,
+        "method": "rule",
+        "confidence": 0.8,
+        "rationale": "PhysicalRecognizer:weight"
+      },
+      {
+        "text": "enlarged lymph nodes",
+        "category": "MEDICAL_CONDITION",
+        "start": 205,
+        "end": 225,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named clinical finding for the son."
+      },
+      {
+        "text": "mild leukocytosis",
+        "category": "MEDICAL_CONDITION",
+        "start": 230,
+        "end": 247,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named clinical finding for the son."
+      },
+      {
+        "text": "left-sided abdominal pain + bilateral pelvic pain + 10 weeks duration",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The combination of symptoms and duration makes it likely that this is a specific individual."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 35,
+    "llm_ms": 2891,
+    "total_ms": 2926,
+    "retries": 0,
+    "rule_span_count": 4,
+    "llm_span_count": 3
+  }
+}
