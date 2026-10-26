@@ -11,7 +11,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from sanitise.schemas import DetectorOutput, SensitiveSpan
+from sanitise.schemas import DetectorOutput, Pipeline, SanitisedRecord, SensitiveSpan
 
 
 class DetectOptions(BaseModel):
@@ -46,6 +46,47 @@ class DetectLLMRequest(BaseModel):
 class ScoreRequest(BaseModel):
     pred: list[DetectorOutput]
     gold: list[DetectorOutput]
+
+
+# ------------------------------------------------------------------ Phase 3a (plan 6.4)
+
+
+class SanitiseRequest(BaseModel):
+    doc_id: str | None = None
+    text: str
+
+
+class SessionCreated(BaseModel):
+    session_id: str
+
+
+class QueryRequest(BaseModel):
+    query: str = Field(min_length=1)
+    pipeline: Pipeline
+    session_id: str
+    k: int | None = Field(default=None, ge=1, le=20)
+
+
+class CompareRequest(BaseModel):
+    query: str = Field(min_length=1)
+    session_id: str
+    k: int | None = Field(default=None, ge=1, le=20)
+
+
+class AttackRunRequest(BaseModel):
+    session_id: str | None = None
+
+
+class DocumentSummary(BaseModel):
+    doc_id: str
+    preview: str  # first 120 characters of the SANITISED text
+    n_changes: int  # decisions whose action is not "keep"
+
+
+class DocumentView(BaseModel):
+    doc_id: str
+    original: str
+    record: SanitisedRecord
 
 
 class HealthResponse(BaseModel):

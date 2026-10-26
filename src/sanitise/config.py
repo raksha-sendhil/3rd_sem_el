@@ -51,6 +51,13 @@ class Settings(BaseSettings):
     # "output". By default only the patient text is used as the document.
     chatdoctor_include_answer: bool = False
 
+    # ---- Phase 3a: storage, retrieval and attacks (docs/phase3_plan.md). Paths are relative
+    # to the working directory; mock mode ignores them and uses the repository's data/sample/.
+    store_path: str = "data/store.sqlite"
+    attacks_dir: str = "data/attacks"
+    people_path: str = "data/corpus/people.json"
+    retrieval_k: int = Field(default=4, ge=1, le=20)
+
     # ---- HTTP API
     api_host: str = "127.0.0.1"
     api_port: int = 8000

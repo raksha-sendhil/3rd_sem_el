@@ -54,6 +54,10 @@ class LLMClient(Protocol):
 
     async def json_call(self, system: str, user: str, schema: type[M], retries: int = 3) -> M: ...
 
+    async def text_call(self, system: str, user: str) -> str:
+        """Free-text generation (Phase 3a: Agent 3 rewrites and RAG answers are prose)."""
+        ...
+
 
 # ------------------------------------------------------------------ call accounting
 #
@@ -216,9 +220,26 @@ class BaseJSONClient(ABC):
 
     @abstractmethod
     async def _generate(
-        self, messages: list[Message], json_schema: dict[str, Any], temperature: float
+        self, messages: list[Message], json_schema: dict[str, Any] | None, temperature: float
     ) -> str:
-        """Return the model's raw text for ``messages``. Raise ``LLMTimeout``/``LLMUnreachable``."""
+        """Return the model's raw text for ``messages``. Raise ``LLMTimeout``/``LLMUnreachable``.
+
+        ``json_schema`` is None for free-text calls (``text_call``).
+        """
+
+    async def text_call(self, system: str, user: str) -> str:
+        """One free-text generation at the base temperature. No schema, so no repair loop."""
+        messages: list[Message] = [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ]
+        try:
+            raw = await self._generate(messages, None, self.temperature)
+        except BaseException:
+            _record(1, failed=True, model=self.model)
+            raise
+        _record(1, failed=False, model=self.model)
+        return raw.strip()
 
     def temperature_for(self, attempt: int) -> float:
         """Attempt 0 uses the base temperature; each retry escalates by one step."""
