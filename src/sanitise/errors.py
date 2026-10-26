@@ -13,7 +13,22 @@ from typing import Literal
 
 from pydantic import BaseModel
 
-Stage = Literal["load", "rule_pass", "llm_pass", "merge", "validation", "score"]
+Stage = Literal[
+    "load",
+    "rule_pass",
+    "llm_pass",
+    "merge",
+    "validation",
+    "score",
+    # Phase 3a (docs/phase3_plan.md 6.4)
+    "extract",
+    "rewrite",
+    "store",
+    "retrieve",
+    "answer",
+    "attack",
+    "session",
+]
 
 
 class ErrorCode(str, Enum):
@@ -22,6 +37,12 @@ class ErrorCode(str, Enum):
     LLM_UNREACHABLE = "LLM_UNREACHABLE"
     DOC_TOO_LONG = "DOC_TOO_LONG"
     OFFSET_OUT_OF_RANGE = "OFFSET_OUT_OF_RANGE"
+    # Phase 3a (docs/phase3_plan.md 6.4)
+    DOC_NOT_FOUND = "DOC_NOT_FOUND"
+    INDEX_NOT_BUILT = "INDEX_NOT_BUILT"
+    ATTACK_NOT_FOUND = "ATTACK_NOT_FOUND"
+    SESSION_NOT_FOUND = "SESSION_NOT_FOUND"
+    LEAK_CHECK_FAILED = "LEAK_CHECK_FAILED"
 
 
 class ErrorBody(BaseModel):
@@ -107,4 +128,36 @@ class OffsetOutOfRange(PipelineError):
     """A span's offsets fall outside the document or do not match its text."""
 
     code = ErrorCode.OFFSET_OUT_OF_RANGE
+    http_status = 500
+
+
+# ------------------------------------------------------------------ Phase 3a
+
+
+class DocNotFound(PipelineError):
+    code = ErrorCode.DOC_NOT_FOUND
+    http_status = 404
+
+
+class IndexNotBuilt(PipelineError):
+    """The document store is empty: run the batch sanitisation first (or use mock mode)."""
+
+    code = ErrorCode.INDEX_NOT_BUILT
+    http_status = 409
+
+
+class AttackNotFound(PipelineError):
+    code = ErrorCode.ATTACK_NOT_FOUND
+    http_status = 404
+
+
+class SessionNotFound(PipelineError):
+    code = ErrorCode.SESSION_NOT_FOUND
+    http_status = 404
+
+
+class LeakCheckFailed(PipelineError):
+    """The rewrite still contains removed text after the retry and the mask fallback."""
+
+    code = ErrorCode.LEAK_CHECK_FAILED
     http_status = 500

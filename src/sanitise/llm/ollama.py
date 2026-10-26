@@ -96,15 +96,16 @@ class OllamaClient(BaseJSONClient):
     # ---------------------------------------------------------------- transport
 
     async def _generate(
-        self, messages: list[Message], json_schema: dict[str, Any], temperature: float
+        self, messages: list[Message], json_schema: dict[str, Any] | None, temperature: float
     ) -> str:
-        payload = {
+        payload: dict[str, Any] = {
             "model": self.model,
             "messages": messages,
             "stream": False,
-            "format": json_schema,
             "options": self._options(temperature),
         }
+        if json_schema is not None:  # None = free text (text_call)
+            payload["format"] = json_schema
         data = await self._post("/api/chat", payload)
         try:
             return data["message"]["content"]

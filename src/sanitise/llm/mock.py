@@ -43,6 +43,9 @@ from pydantic import BaseModel
 
 from sanitise.llm.base import BaseJSONClient, Message
 
+TEXT_CALL = "text"
+"""``MockCall.schema_name`` (and the ``by_schema`` key) for free-text ``text_call`` calls."""
+
 Scripted = Union[str, dict, list, BaseModel, BaseException, Callable[["MockCall"], Any]]  # noqa: UP007
 
 
@@ -106,12 +109,13 @@ class MockLLM(BaseJSONClient):
         return len(self._queue) + sum(len(q) for q in self._by_schema.values())
 
     async def _generate(
-        self, messages: list[Message], json_schema: dict[str, Any], temperature: float
+        self, messages: list[Message], json_schema: dict[str, Any] | None, temperature: float
     ) -> str:
+        # Free-text calls (text_call) have no schema; script them under the name "text".
         call = MockCall(
-            schema_name=json_schema.get("title", ""),
+            schema_name=json_schema.get("title", "") if json_schema is not None else TEXT_CALL,
             messages=[dict(m) for m in messages],
-            json_schema=json_schema,
+            json_schema=json_schema or {},
             temperature=temperature,
         )
         self.calls.append(call)
@@ -126,7 +130,7 @@ class MockLLM(BaseJSONClient):
         elif self.handler is not None:
             item = self.handler
         else:
-            item = fabricate(json_schema)
+            item = fabricate(json_schema) if json_schema is not None else "mock text"
 
         if callable(item) and not isinstance(item, (BaseModel, type)):
             item = item(call)

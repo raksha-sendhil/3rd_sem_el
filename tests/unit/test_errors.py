@@ -38,6 +38,12 @@ def test_codes_and_statuses() -> None:
         "LLM_UNREACHABLE",
         "DOC_TOO_LONG",
         "OFFSET_OUT_OF_RANGE",
+        # Phase 3a
+        "DOC_NOT_FOUND",
+        "INDEX_NOT_BUILT",
+        "ATTACK_NOT_FOUND",
+        "SESSION_NOT_FOUND",
+        "LEAK_CHECK_FAILED",
     }
     assert (DocTooLong("x").code, DocTooLong.http_status) == (ErrorCode.DOC_TOO_LONG, 413)
     assert (LLMTimeout("x").code, LLMTimeout.http_status) == (ErrorCode.LLM_TIMEOUT, 504)
