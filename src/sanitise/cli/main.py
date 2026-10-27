@@ -319,6 +319,73 @@ def health(model: str | None = typer.Option(None, "--model", "-m")) -> None:
 
 
 @app.command()
+def build(
+    input_path: Path = typer.Option(
+        ..., "--input", "-i", exists=True, help="Corpus directory or file (e.g. data/corpus/docs)."
+    ),
+    store_path: Path | None = typer.Option(
+        None, "--store", help="SQLite store to fill (default: settings.store_path)."
+    ),
+    out_dir: Path | None = typer.Option(
+        None, "--out", "-o", help="Also write <doc_id>.json per document here."
+    ),
+    model: str | None = typer.Option(None, "--model", "-m", help="Ollama model."),
+    mock: bool = typer.Option(
+        False, "--mock", help="Deterministic mock sanitisation (no model needed)."
+    ),
+    resume: bool = typer.Option(
+        True, "--resume/--no-resume", help="Skip documents already in the store."
+    ),
+    index: bool = typer.Option(
+        True, "--index/--no-index", help="Also embed the originals for hybrid retrieval."
+    ),
+) -> None:
+    """Sanitise a corpus (Agents 1-3) into the document store, then build the search index."""
+    from sanitise.agents.pipeline import sanitise
+    from sanitise.build import BuildReport, build_store
+    from sanitise.mock_mode import mock_llm, mock_sanitise
+    from sanitise.rag.dense import build_retriever
+    from sanitise.rag.store import SqliteDocumentStore
+
+    settings = get_settings()
+    store = SqliteDocumentStore(store_path or settings.store_path)
+    docs = list(iter_documents(input_path, settings=settings, skip_too_long=True))
+    err.print(f"[dim]{len(docs)} documents in {input_path}; store {store.path}[/]")
+
+    def progress(i: int, doc: Document, status: str) -> None:
+        colour = {"ok": "green", "skipped": "dim"}.get(status, "red")
+        err.print(f"[{colour}]{i:>4}/{len(docs)}  {doc.doc_id}  {status}[/]")
+
+    async def run() -> BuildReport:
+        llm = mock_llm() if mock else build_llm_client(settings, model=model)
+        try:
+            return await build_store(
+                docs,
+                store,
+                llm,
+                out_dir=out_dir,
+                resume=resume,
+                sanitiser=mock_sanitise if mock else sanitise,
+                progress=progress,
+            )
+        finally:
+            await close_llm_client(llm)
+
+    report = asyncio.run(run())
+    err.print(report.summary())
+    if index and settings.retrieval_mode == "hybrid":
+        build_retriever(
+            store,
+            mode="hybrid",
+            index_dir=settings.index_dir,
+            model_name=settings.embedding_model,
+        )
+    store.close()
+    if report.failed:
+        raise typer.Exit(EXIT_PIPELINE_ERROR)
+
+
+@app.command()
 def serve(
     host: str | None = typer.Option(None, "--host"),
     port: int | None = typer.Option(None, "--port"),

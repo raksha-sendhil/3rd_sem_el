@@ -57,6 +57,11 @@ class Settings(BaseSettings):
     attacks_dir: str = "data/attacks"
     people_path: str = "data/corpus/people.json"
     retrieval_k: int = Field(default=4, ge=1, le=20)
+    # "hybrid" = BM25 + bge-m3 dense vectors (needs `pip install -e .[retrieval]`, falls back
+    # to BM25 with a warning when the packages are missing); "bm25" = keyword search only.
+    retrieval_mode: Literal["hybrid", "bm25"] = "hybrid"
+    index_dir: str = "data/index"
+    embedding_model: str = "BAAI/bge-m3"
 
     # ---- HTTP API
     api_host: str = "127.0.0.1"

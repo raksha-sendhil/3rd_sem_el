@@ -24,6 +24,8 @@ dependencies = [
 [project.optional-dependencies]
 # `uv sync --extra spacy-model` installs en_core_web_lg (needed by the rule pass).
 spacy-model = ["en-core-web-lg"]
+# Dense half of hybrid retrieval (Colab): bge-m3 embeddings in ChromaDB.
+retrieval = ["sentence-transformers>=3.0", "chromadb>=0.5"]
 
 [project.scripts]
 sanitise = "sanitise.cli.main:app"
