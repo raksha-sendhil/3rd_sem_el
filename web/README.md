@@ -5,9 +5,9 @@ HTTP API (`docs/phase3_plan.md`, section 6.4).
 
 | View | What it shows |
 |---|---|
-| Compare | One question sent to both pipelines: the answers, the records used, the time taken, and the exact text the model was given. A table below keeps every question asked in the session. |
-| Attacks | The scripted attacks in `data/attacks` (or `data/sample/attacks`). Running one plays the rounds back one per second, with charts of details revealed and people still matching, and a table view. |
-| Documents | Each stored record, original next to sanitised, with every change marked and the reason for it. |
+| Compare | One question sent to both pipelines: the answers (personal details leaked by Standard RAG marked in red, placeholder tokens in yellow), the records used, the time taken, the session monitor's verdict, and the exact text sent to the model. Later questions in the session collect in a table. |
+| Attacks | The three attacks, one per attacker capability: context dump (one prompt injection), stepwise inference (several innocent prompts) and payload interception (a passive observer of the traffic to the model). Rounds stream in as they finish, with the share of the target's details recovered, the people still matching, and a per-round table. |
+| Documents | Each stored record, original next to sanitised, with every change marked, the reason for it, and the extracted facts. |
 
 ## Run it
 
@@ -45,7 +45,8 @@ cd web && npm run types
 
 ## Design
 
-Built on the IBM Carbon Design System's visual language: IBM Plex Sans and Mono, the
-gray-10 layer on white, square corners, 1px rules, blue-60 for anything you can click.
-Standard RAG is always purple (#6929c4) and Protected RAG always cyan (#1192e8), in every
-chart, swatch and label; the pair was checked for colour-blind separation.
+Styled after risograph printing: warm paper stock, a handful of Riso ink colours that overprint
+where they meet, and condensed poster type (Big Shoulders, with Schibsted Grotesk for text and
+Fragment Mono for tokens and payloads). Standard RAG is always bright red (#e8414f) and
+Protected RAG always blue (#0078bf), in every panel, chart and label; the pair was checked for
+colour-blind separation on the paper colour.

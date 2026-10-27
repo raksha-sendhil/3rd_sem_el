@@ -1,38 +1,25 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { Poster } from "./Poster";
 import { ApiError, api, type CompareResponse, type SessionTrace } from "@/api/client";
 import {
-  AnswerPane,
+  AnswerPanel,
   ArrowRight,
-  ErrorNotice,
-  SeriesLabel,
-  Waiting,
-  WithTokens,
+  Marked,
+  Notice,
+  SIDES,
+  Working,
   useElapsed,
+  useLeakTerms,
 } from "./common";
 
 const EXAMPLES = [
   "Which patient has vertigo?",
   "Who studies at IIT Madras?",
-  "What is the phone number of the kabaddi player?",
-  "Which patient was diagnosed at AIIMS Delhi?",
+  "What is the kabaddi player's phone number?",
+  "Who was diagnosed at AIIMS Delhi?",
 ];
-
-const STEPS = [
-  [
-    "Search",
-    "The question is matched against every record, by keywords and by meaning, and the four closest are picked.",
-  ],
-  [
-    "Build the prompt",
-    "Standard RAG pastes in those records as written. Protected RAG pastes in the same records after Agents 1 to 3 have rewritten them.",
-  ],
-  [
-    "Answer",
-    "The same model answers from what it was given. Anything private it cannot see, it cannot repeat.",
-  ],
-] as const;
 
 export function CompareView() {
   const [query, setQuery] = useState("");
@@ -42,6 +29,8 @@ export function CompareView() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const elapsed = useElapsed(busy);
+  const leaks = useLeakTerms(result?.baseline.doc_ids ?? []);
+  const traceLeaks = useLeakTerms(trace?.rounds.flatMap((r) => r.baseline.doc_ids) ?? []);
 
   async function run(q: string) {
     if (!q.trim() || busy) return;
@@ -65,44 +54,29 @@ export function CompareView() {
     run(query);
   }
 
-  function newSession() {
-    setSessionId(null);
-    setTrace(null);
-    setResult(null);
-  }
-
   return (
     <>
-      <div className="page-head">
-        <h1>Ask both pipelines the same question</h1>
-        <p>
-          Both use the same search, model and prompt. The only difference is what they read:
-          Standard RAG reads the records as they were written, Protected RAG reads the
-          versions rewritten without identifying details.
-        </p>
-      </div>
+      <Notice error={error} />
 
-      <ErrorNotice error={error} />
-
-      <form className="field" onSubmit={submit}>
+      <form className="ask" onSubmit={submit}>
         <input
           aria-label="Question"
-          placeholder="Ask about the records, for example: which patient has vertigo?"
+          placeholder="Ask the records…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
         <button className="btn" type="submit" disabled={busy || !query.trim()}>
-          Compare
+          Ask
           <ArrowRight />
         </button>
       </form>
-      <div className="examples">
-        <span>Try</span>
+      <div className="chips">
         {EXAMPLES.map((ex) => (
           <button
             key={ex}
             type="button"
-            className="link"
+            className="chip"
+            disabled={busy}
             onClick={() => {
               setQuery(ex);
               run(ex);
@@ -113,73 +87,61 @@ export function CompareView() {
         ))}
       </div>
 
-      {!busy && !result && (
-        <ol className="steps" aria-label="How a question is answered">
-          {STEPS.map(([title, text], i) => (
-            <li key={title}>
-              <span className="step-no">{i + 1}</span>
-              <b>{title}</b>
-              <span>{text}</span>
-            </li>
-          ))}
-        </ol>
-      )}
+      {!busy && !result && !trace && <Poster />}
 
       {(busy || result) && (
-        <div className="pair">
-          {(["baseline", "protected"] as const).map((side) => (
-            <section className="pane" key={side}>
-              <SeriesLabel series={side} />
-              {result ? (
-                <AnswerPane answer={result[side]} />
-              ) : (
-                <Waiting label="Waiting for the answer" seconds={elapsed} />
-              )}
-            </section>
+        <div className="duo section" style={{ marginTop: 40 }}>
+          {SIDES.map((side) => (
+            <AnswerPanel key={side} side={side} answer={result?.[side] ?? null} leaks={leaks}>
+              <Working seconds={elapsed} />
+            </AnswerPanel>
           ))}
         </div>
       )}
 
-      {trace && trace.rounds.length > 0 && (
+      {trace && trace.rounds.length > 1 && (
         <section className="section">
-          <div className="detail-head" style={{ borderBottom: 0, paddingBottom: 16 }}>
-            <div>
-              <h2 className="section-title" style={{ marginBottom: 4 }}>
-                This session
-              </h2>
-              <p className="helper">
-                Every question asked in session <span className="mono">{trace.session_id}</span>.
-                An attacker gets to ask many questions in a row, so the session is what a
-                privacy monitor would watch.
-              </p>
-            </div>
-            <button type="button" className="btn btn-ghost" onClick={newSession}>
-              Start a new session
+          <div className="section-head">
+            <h2 className="label">Session</h2>
+            <button
+              type="button"
+              className="link-btn"
+              onClick={() => {
+                setSessionId(null);
+                setTrace(null);
+                setResult(null);
+              }}
+            >
+              New session
             </button>
           </div>
-          <div className="table-scroll">
+          <div className="table-wrap">
             <table className="table">
               <thead>
                 <tr>
                   <th className="num">#</th>
                   <th>Question</th>
-                  <th>Standard RAG answer</th>
-                  <th>Protected RAG answer</th>
+                  <th>Standard RAG</th>
+                  <th>Protected RAG</th>
+                  <th>Verdict</th>
                 </tr>
               </thead>
               <tbody>
                 {[...trace.rounds].reverse().map((r) => (
                   <tr key={r.round}>
                     <td className="num">{r.round}</td>
-                    <td style={{ minWidth: 180 }}>{r.query}</td>
+                    <td style={{ minWidth: 160 }}>{r.query}</td>
                     <td>
-                      <span className="clamp">{r.baseline.answer}</span>
+                      <span className="clamp">
+                        <Marked text={r.baseline.answer} leaks={traceLeaks} />
+                      </span>
                     </td>
                     <td>
                       <span className="clamp">
-                        <WithTokens text={r.protected.answer} />
+                        <Marked text={r.protected.answer} />
                       </span>
                     </td>
+                    <td>{r.protected.monitor?.verdict ?? "allowed"}</td>
                   </tr>
                 ))}
               </tbody>
