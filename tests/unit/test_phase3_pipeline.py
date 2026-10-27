@@ -119,4 +119,4 @@ def test_leak_check_and_mask_fallback() -> None:
 
 def test_generalise_age_bands() -> None:
     assert generalise("32 years old", C.AGE) == "in their 30s"
-    assert generalise("6 years old", C.AGE) == "a young person"
+    assert generalise("6 years old", C.AGE) == "a child"  # Person A's ladder (was the placeholder)
