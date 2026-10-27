@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { AGENTS, KIND } from "@/lib/agents";
 import type { Change } from "./changes";
 
-const H = ["#", "Original", "", "Replacement", "Type", "Rewritten by", "Technique", "Detect conf."];
+const H = ["#", "Original", "", "Replacement", "Type", "Rewritten by", "Technique"];
 
 export const ChangesTable = ({
   docId,
@@ -68,18 +68,6 @@ export const ChangesTable = ({
                   </span>
                 </td>
                 <td className="px-4 py-3 text-xs text-[#4A4760]">{k.label}</td>
-                <td className="px-4 py-3">
-                  {c.conf === null ? (
-                    <span className="font-mono text-xs text-[#A9A5B8]">—</span>
-                  ) : (
-                    <div className="flex items-center gap-2 font-mono text-xs text-[#4A4760]">
-                      <div className="h-1.5 w-14 overflow-hidden rounded-full bg-[#EFECE4]">
-                        <div className="h-full rounded-full bg-[#2D8CFF]" style={{ width: `${c.conf * 100}%` }} />
-                      </div>
-                      {c.conf.toFixed(2)}
-                    </div>
-                  )}
-                </td>
               </tr>
             );
           })}

@@ -1,37 +1,29 @@
 import type { DocumentView } from "@/api/client";
 import { category, type Kind } from "@/lib/agents";
 
-/** One detail Agent 3 replaced, with Agent 1's confidence in it. */
+/** One detail Agent 3 replaced. */
 export type Change = {
   id: number;
   original: string;
   replacement: string;
   type: string;
   kind: Kind;
-  conf: number | null;
   start: number | null;
   end: number | null;
 };
 
 export function changesOf(view: DocumentView): Change[] {
-  const spans = view.record.detector.spans;
   return view.record.rewriter.decisions
     .filter((d) => d.action !== "keep")
-    .map((d, id) => {
-      const span =
-        spans.find((s) => d.start != null && s.start === d.start && s.end === d.end) ??
-        spans.find((s) => s.text === d.span_text);
-      return {
-        id,
-        original: d.span_text,
-        replacement: d.replacement ?? "",
-        type: category(d.category),
-        kind: d.action === "placeholder" ? "token" : "vague",
-        conf: span?.confidence ?? null,
-        start: d.start ?? null,
-        end: d.end ?? null,
-      };
-    });
+    .map((d, id) => ({
+      id,
+      original: d.span_text,
+      replacement: d.replacement ?? "",
+      type: category(d.category),
+      kind: d.action === "placeholder" ? "token" : "vague",
+      start: d.start ?? null,
+      end: d.end ?? null,
+    }));
 }
 
 export type Piece = string | Change;

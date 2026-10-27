@@ -22,16 +22,11 @@ export const Logo = () => (
       <rect x="24" y="26" width="9" height="5" rx="2.5" fill="#fff" />
       <path d="M5 9.5h9" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
     </svg>
-    <div className="leading-tight">
-      <div className="font-display text-lg font-extrabold tracking-tight text-[#17162B]">Sanitise AI</div>
-      <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[#6B6880]">
-        private RAG · live demo
-      </div>
-    </div>
+    <div className="font-display text-lg font-extrabold tracking-tight text-[#17162B]">Sanitise AI</div>
   </div>
 );
 
-/** Whether the API answers; checked every 15 s. */
+/** Whether the API answers; checked every 15 s. Only a failure is shown. */
 function useOnline(): boolean | null {
   const [online, setOnline] = useState<boolean | null>(null);
   useEffect(() => {
@@ -80,18 +75,11 @@ export function Header() {
             );
           })}
         </nav>
-        <div className="ml-auto flex items-center gap-2" data-testid="header-status">
-          {online === false ? (
-            <span className="chip bg-[#FFE8E4] text-[#B42318]" title={API_URL}>
-              <span className="pulse-dot bg-[#FF4D3D]" /> API offline
-            </span>
-          ) : (
-            <span className="chip bg-[#DDF7F2] text-[#08776A]">
-              <span className="pulse-dot bg-[#0FB5A0]" /> 3 agents online
-            </span>
-          )}
-          <span className="chip hidden bg-[#FFF3D1] text-[#8A5A00] sm:inline-flex">sample data</span>
-        </div>
+        {online === false && (
+          <span className="chip ml-auto bg-[#FFE8E4] text-[#B42318]" title={API_URL}>
+            <span className="pulse-dot bg-[#FF4D3D]" /> API unreachable
+          </span>
+        )}
       </div>
     </header>
   );

@@ -44,7 +44,7 @@ export const AttackCharts = ({ data }: { data: ChartPoint[] }) => {
   const top = 10 ** Math.max(1, Math.ceil(Math.log10(Math.max(...pools, 1))));
   const ticks = Array.from({ length: Math.log10(top) + 1 }, (_, i) => 10 ** i);
   return (
-    <div className="grid gap-6 md:grid-cols-2" data-testid="attack-charts-container">
+    <>
       <Frame title="Target details recovered" testid="chart-recovered">
         <ResponsiveContainer>
           <AreaChart data={data} margin={{ left: -18, right: 8, top: 8 }}>
@@ -119,6 +119,6 @@ export const AttackCharts = ({ data }: { data: ChartPoint[] }) => {
           </LineChart>
         </ResponsiveContainer>
       </Frame>
-    </div>
+    </>
   );
 };

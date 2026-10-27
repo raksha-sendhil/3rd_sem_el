@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { toast } from "sonner";
 import { ApiError, api } from "@/api/client";
 import { AnswerPanel, type Run, type Variant } from "@/components/compare/AnswerPanel";
 import { HistoryTable, type HistoryRow } from "@/components/compare/HistoryTable";
 import { PayloadSheet } from "@/components/compare/PayloadSheet";
 import { PipelineGraphic, type Sample } from "@/components/compare/PipelineGraphic";
 import { QuestionBox } from "@/components/compare/QuestionBox";
-import { Legend, PageHead } from "@/components/PageHead";
+import { ErrorNote, Legend, PageHead } from "@/components/PageHead";
 import { seconds } from "@/lib/agents";
 import { loadTerms, stats } from "@/lib/marks";
 
@@ -48,6 +47,7 @@ function usePipelineSample() {
 export default function Compare() {
   const [run, setRun] = useState<Run | null>(null);
   const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [history, setHistory] = useState<HistoryRow[]>([]);
   const [drawer, setDrawer] = useState<Variant | null>(null);
   const session = useRef<string | null>(null);
@@ -57,7 +57,7 @@ export default function Compare() {
   const ask = async (question: string) => {
     if (busy) return;
     setBusy(true);
-    toast("Sent to both pipelines", { description: question });
+    setError(null);
     try {
       session.current ??= (await api.createSession()).session_id;
       const data = await api.compare(question, session.current);
@@ -82,7 +82,7 @@ export default function Compare() {
         ...h,
       ]);
     } catch (e) {
-      toast.error("The run failed", { description: e instanceof ApiError ? e.message : String(e) });
+      setError(e instanceof ApiError ? e.message : String(e));
     } finally {
       setBusy(false);
     }
@@ -112,6 +112,7 @@ export default function Compare() {
         </div>
       </div>
       <QuestionBox onRun={ask} busy={busy} />
+      <ErrorNote error={error} />
       <div className="grid gap-6 lg:grid-cols-2">
         <AnswerPanel variant="standard" run={run} busy={busy} onInspect={() => setDrawer("standard")} />
         <AnswerPanel variant="protected" run={run} busy={busy} onInspect={() => setDrawer("protected")} />

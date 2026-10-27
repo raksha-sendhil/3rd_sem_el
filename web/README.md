@@ -6,8 +6,8 @@ HTTP API (`docs/phase3_plan.md`, section 6.4).
 | Page | What it shows |
 |---|---|
 | Compare (`/`) | One question sent to both pipelines: each answer with leaked details marked red, tokens purple and generalised phrases amber; how many details leaked; the session monitor's verdict on the protected answer; the time taken and records used; and "What the model saw", the exact prompt. Runs collect in a session table with their verdicts. |
-| Attacks (`/attacks`) | The three attacks: context dump, stepwise inference and payload interception. Rounds stream from the API and play back at 1x, 2x or 4x, or one step at a time. Charts of the Secret Recovery Rate and the people still matching, a live transcript (what was disclosed, the pool left and the monitor's verdict per round), and the target's details as each pipeline gives them away. |
-| Documents (`/documents`) | Each stored record before and after the three agents, with counts per agent. Hovering a highlight rings its twin on the other side and in the table of changes. |
+| Attacks (`/attacks`) | The three attacks: context dump, stepwise inference and payload interception. Rounds stream in from the API as each one is answered. Charts of the Secret Recovery Rate and the people still matching, the target card (recovery rate and pool per pipeline), and a live transcript (what was disclosed, the pool left and the monitor's verdict per round). |
+| Documents (`/documents`) | Each stored record before and after the three agents, with counts per agent, the table of changes and the extracted facts. Hovering a highlight rings its twin on the other side and in the table of changes. |
 
 ## Run it
 
@@ -53,8 +53,8 @@ cd web && npm run types
 White cards on a dotted paper background (#f6f4ef), styled with Tailwind. Bricolage Grotesque
 for headings and numbers, Instrument Sans for reading, JetBrains Mono for labels and ids.
 Standard RAG is coral (#ff4d3d) and Protected RAG teal (#0fb5a0) in every panel and chart. The
-agents are blue (Detect), purple (Extract) and amber (Rewrite). Icons come from lucide-react,
-charts from recharts and toasts from sonner.
+agents are blue (Detect), purple (Extract) and amber (Rewrite). Icons come from lucide-react
+and charts from recharts.
 
 Illustrations: put the image files in `public/images/` and set their paths in
 `src/lib/images.ts`. Until then each one shows a placeholder.

@@ -1,21 +1,8 @@
 "use client";
 
-import { Crosshair, Lock } from "lucide-react";
+import { Crosshair } from "lucide-react";
 import type { AttackRound } from "@/api/client";
-import { category } from "@/lib/agents";
-import { scan, type Terms } from "@/lib/marks";
-import { leakOf, pctOf, type Side } from "./meta";
-
-// The target's attributes as evaluation/attacks.py scores them, and the detector categories
-// that hold their values in the records.
-const FIELDS = [
-  { key: "name", label: "Name", cats: ["NAME"] },
-  { key: "age", label: "Age", cats: ["AGE"] },
-  { key: "town", label: "Town", cats: ["LOCATION", "ADDRESS"] },
-  { key: "occupation", label: "Job", cats: ["OCCUPATION"] },
-  { key: "phone", label: "Phone", cats: ["PHONE"] },
-  { key: "condition", label: "Condition", cats: ["MEDICAL_CONDITION", "SYMPTOM"] },
-];
+import { leakOf, pctOf } from "./meta";
 
 const Ring = ({ pct, color, label, testid }: { pct: number; color: string; label: string; testid: string }) => {
   const c = 2 * Math.PI * 34;
@@ -47,50 +34,13 @@ const Ring = ({ pct, color, label, testid }: { pct: number; color: string; label
   );
 };
 
-const Cell = ({ found, value, side }: { found: boolean; value: string; side: Side }) =>
-  found ? (
-    <span className={side === "std" ? "mark-leak" : "mark-vague"}>{value}</span>
-  ) : (
-    <span className="inline-flex items-center gap-1 font-mono text-[11px] text-[#A9A5B8]">
-      <Lock className="h-3 w-3" /> hidden
-    </span>
-  );
-
-export const TargetCard = ({
-  targetId,
-  rows,
-  terms,
-  intercept,
-}: {
-  targetId: string;
-  rows: AttackRound[];
-  terms: Terms;
-  intercept: boolean;
-}) => {
+/** How much of the target each pipeline has given away so far. */
+export const TargetCard = ({ targetId, rows }: { targetId: string; rows: AttackRound[] }) => {
   const last = rows[rows.length - 1];
-  const latest = { std: last ? leakOf(last, "std") : null, prot: last ? leakOf(last, "prot") : null };
-  const said = (side: Side) =>
-    rows
-      .map((r) => {
-        const a = side === "std" ? r.baseline : r.protected;
-        return intercept ? a.payload : a.answer;
-      })
-      .join("\n");
-  const texts = { std: said("std"), prot: said("prot") };
-
-  /** The value the attacker now holds for ``cats``, as it appeared in what they saw. */
-  const valueOf = (side: Side, cats: string[]) => {
-    const types = cats.map(category);
-    return (
-      scan(texts[side], terms, "std").find((s) => s.kind === "leak" && types.includes(s.type ?? ""))?.text ??
-      "revealed"
-    );
-  };
-  const found = (side: Side, key: string) =>
-    (latest[side]?.disclosed ?? []).some((d) => d.replace(/_\d+$/, "") === key);
-
+  const std = last ? leakOf(last, "std") : null;
+  const prot = last ? leakOf(last, "prot") : null;
   return (
-    <aside className="card p-5" data-testid="target-card">
+    <aside className="card flex flex-col p-5 lg:col-span-2 xl:col-span-1" data-testid="target-card">
       <div className="flex items-center gap-3">
         <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#FFF3D1] text-[#8A5A00]">
           <Crosshair className="h-5 w-5" />
@@ -101,40 +51,23 @@ export const TargetCard = ({
         </div>
       </div>
       <div className="mt-5 flex justify-around rounded-2xl bg-[#FBFAF7] py-4">
-        <Ring pct={pctOf(latest.std)} color="#FF4D3D" label="Standard" testid="ring-standard" />
-        <Ring pct={pctOf(latest.prot)} color="#0FB5A0" label="Protected" testid="ring-protected" />
+        <Ring pct={pctOf(std)} color="#FF4D3D" label="Standard" testid="ring-standard" />
+        <Ring pct={pctOf(prot)} color="#0FB5A0" label="Protected" testid="ring-protected" />
       </div>
-      <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-        <div className="rounded-2xl bg-[#FFE8E4] p-3" data-testid="match-standard">
+      <div className="mt-4 grid flex-1 grid-cols-2 gap-3 text-center">
+        <div className="grid place-content-center rounded-2xl bg-[#FFE8E4] p-3" data-testid="match-standard">
           <div className="font-display text-2xl font-extrabold text-[#B42318]">
-            {latest.std?.candidate_pool.toLocaleString() ?? "—"}
+            {std?.candidate_pool.toLocaleString() ?? "—"}
           </div>
           <div className="font-mono text-[10px] text-[#B42318]">still match · std</div>
         </div>
-        <div className="rounded-2xl bg-[#DDF7F2] p-3" data-testid="match-protected">
+        <div className="grid place-content-center rounded-2xl bg-[#DDF7F2] p-3" data-testid="match-protected">
           <div className="font-display text-2xl font-extrabold text-[#08776A]">
-            {latest.prot?.candidate_pool.toLocaleString() ?? "—"}
+            {prot?.candidate_pool.toLocaleString() ?? "—"}
           </div>
           <div className="font-mono text-[10px] text-[#08776A]">still match · prot</div>
         </div>
       </div>
-      <ul className="mt-5 divide-y divide-dashed divide-[#E6E1D6]">
-        {FIELDS.map((f) => (
-          <li
-            key={f.key}
-            className="grid grid-cols-[80px_1fr] gap-2 py-2.5 text-sm"
-            data-testid={`target-detail-${f.key}`}
-          >
-            <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-[#6B6880]">
-              {f.label}
-            </span>
-            <div className="flex flex-col items-start gap-1">
-              <Cell found={found("std", f.key)} value={valueOf("std", f.cats)} side="std" />
-              <Cell found={found("prot", f.key)} value={valueOf("prot", f.cats)} side="prot" />
-            </div>
-          </li>
-        ))}
-      </ul>
     </aside>
   );
 };

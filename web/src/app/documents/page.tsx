@@ -2,12 +2,11 @@
 
 import { FileText, Mail, MessageSquare } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { toast } from "sonner";
 import { ApiError, api, type DocumentSummary, type DocumentView } from "@/api/client";
 import { ChangesTable } from "@/components/documents/ChangesTable";
 import { FactsTable } from "@/components/documents/FactsTable";
 import { changesOf, originalPieces, sanitisedPieces, type Piece } from "@/components/documents/changes";
-import { Illustration, Legend, PageHead } from "@/components/PageHead";
+import { ErrorNote, Illustration, Legend, PageHead } from "@/components/PageHead";
 import { AGENTS } from "@/lib/agents";
 import { IMAGES } from "@/lib/images";
 import { Mark } from "@/lib/marks";
@@ -75,6 +74,7 @@ export default function Documents() {
   const [docId, setDocId] = useState<string | null>(null);
   const [view, setView] = useState<DocumentView | null>(null);
   const [active, setActive] = useState<number | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     api
@@ -83,11 +83,7 @@ export default function Documents() {
         setDocs(list);
         setDocId((cur) => cur ?? list.find((d) => d.n_changes > 0)?.doc_id ?? list[0]?.doc_id ?? null);
       })
-      .catch((e) =>
-        toast.error("Could not load the records", {
-          description: e instanceof ApiError ? e.message : String(e),
-        }),
-      );
+      .catch((e) => setError(e instanceof ApiError ? e.message : String(e)));
   }, []);
 
   useEffect(() => {
@@ -96,11 +92,7 @@ export default function Documents() {
     api
       .document(docId)
       .then((v) => alive && setView(v))
-      .catch((e) =>
-        toast.error("Could not open the record", {
-          description: e instanceof ApiError ? e.message : String(e),
-        }),
-      );
+      .catch((e) => setError(e instanceof ApiError ? e.message : String(e)));
     return () => {
       alive = false;
     };
@@ -109,7 +101,6 @@ export default function Documents() {
   const pick = (d: DocumentSummary) => {
     setDocId(d.doc_id);
     setActive(null);
-    toast(`Opened ${kindOf(d).title}`, { description: d.doc_id });
   };
 
   const changes = useMemo(() => (view ? changesOf(view) : []), [view]);
@@ -150,6 +141,7 @@ export default function Documents() {
         </PageHead>
         <Illustration src={IMAGES.documents} className="rise mx-auto aspect-[16/9] w-full max-w-[460px]" />
       </div>
+      <ErrorNote error={error} />
       <div className="flex gap-3 overflow-x-auto pb-2" data-testid="document-selector">
         {docs.map((d) => {
           const k = kindOf(d);

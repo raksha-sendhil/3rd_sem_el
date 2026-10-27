@@ -30,18 +30,6 @@ export const V = {
   },
 } as const;
 
-const Meter = ({ value, max, color }: { value: number; max: number; color: string }) => (
-  <div className="flex gap-1">
-    {Array.from({ length: max }).map((_, i) => (
-      <span
-        key={i}
-        className="h-2 w-3 rounded-sm transition-colors duration-500"
-        style={{ background: i < value ? color : "#ECE8DF" }}
-      />
-    ))}
-  </div>
-);
-
 const Skeleton = () => (
   <div className="space-y-3 py-2">
     {[92, 78, 85, 40].map((w, i) => (
@@ -111,9 +99,6 @@ export const AnswerPanel = ({
             {answer && !busy && answer.doc_ids.length
               ? answer.doc_ids[0] + (answer.doc_ids.length > 1 ? ` +${answer.doc_ids.length - 1}` : "")
               : "—"}
-          </span>
-          <span className="flex items-center gap-2">
-            exposure <Meter value={busy ? 0 : (s?.leaks ?? 0)} max={9} color={v.color} />
           </span>
         </div>
         <button
