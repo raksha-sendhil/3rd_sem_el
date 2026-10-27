@@ -46,20 +46,31 @@ export default function Home() {
 
   return (
     <>
-      <header className="masthead">
-        <span className="wordmark">sanitise</span>
-        <nav className="tabs" aria-label="Views">
-          {VIEWS.map((v) => (
-            <a key={v.id} href={`#${v.id}`} aria-current={view === v.id ? "page" : undefined}>
-              {v.label}
-            </a>
+      <header className="top">
+        <h1 className="title" aria-label="sanitise">
+          {[..."sanitise"].map((ch, i) => (
+            <span key={i} aria-hidden>
+              {ch}
+            </span>
           ))}
-        </nav>
+        </h1>
         {offline && (
           <span className="offline" title={API_URL}>
             API unreachable
           </span>
         )}
+        <nav className="tabs" aria-label="Views">
+          {VIEWS.map((v) => (
+            <a
+              key={v.id}
+              className="tab"
+              href={`#${v.id}`}
+              aria-current={view === v.id ? "page" : undefined}
+            >
+              {v.label}
+            </a>
+          ))}
+        </nav>
       </header>
       <main className="page">
         {view === "compare" && <CompareView />}

@@ -8,7 +8,7 @@ import {
   type DocumentView,
   type RoutingDecision,
 } from "@/api/client";
-import { Notice, Working, formatMs } from "./common";
+import { Loader, Notice, Win, formatMs } from "./common";
 
 const ACTION: Record<string, string> = {
   placeholder: "Token",
@@ -110,15 +110,15 @@ export function DocumentsView() {
     <>
       <Notice error={error} />
       <div className="library">
-        <div className="doc-list">
+        <Win title="Records" tone="teal" className="doc-list">
           <input
             aria-label="Filter records"
-            placeholder="Filter"
+            placeholder="filter"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
           />
           <div className="doc-items" role="listbox" aria-label="Records">
-            {docs && shown.length === 0 && <div className="empty" style={{ padding: 14 }}>No match</div>}
+            {docs && shown.length === 0 && <div className="empty">No match</div>}
             {shown.map((d) => (
               <button
                 key={d.doc_id}
@@ -128,37 +128,37 @@ export function DocumentsView() {
                 aria-selected={d.doc_id === selected}
                 onClick={() => setSelected(d.doc_id)}
               >
-                <span className="top">
-                  <span className="mono">{d.doc_id}</span>
-                  <span className="n">{d.n_changes}</span>
+                <span className="row">
+                  <span className="id">{d.doc_id}</span>
+                  <span className="tag" data-tone={d.n_changes ? "yellow" : undefined}>
+                    {d.n_changes}
+                  </span>
                 </span>
                 <span className="preview">{d.preview}</span>
               </button>
             ))}
           </div>
-        </div>
+        </Win>
 
-        <div>
-          {selected && !doc && !error && <Working seconds={0} />}
+        <div className="stack">
+          {selected && !doc && !error && <Loader />}
           {doc && rec && (
             <>
               <div className="doc-head">
                 <h2>{doc.doc_id}</h2>
-                <span className="stat">
-                  <b>{changed.length}</b>changed
+                <span className="tag" data-tone="yellow">
+                  {changed.length} changed
                 </span>
-                <span className="stat">
-                  <b>{rec.extractor.facts.length}</b>facts
+                <span className="tag" data-tone="lime">
+                  {rec.extractor.facts.length} facts
                 </span>
-                <span className="stat">
-                  <b>{formatMs(rec.meta.total_ms)}</b>
-                </span>
+                <span className="tag">{formatMs(rec.meta.total_ms)}</span>
                 <span className="keys">
-                  <span className="key">
+                  <span>
                     <span className="token">[TOKEN_1]</span>removed
                   </span>
-                  <span className="key">
-                    <mark data-action="generalise">&nbsp;&nbsp;&nbsp;&nbsp;</mark>made vague
+                  <span>
+                    <mark data-action="generalise">vague</mark>blurred
                   </span>
                 </span>
               </div>
@@ -170,29 +170,20 @@ export function DocumentsView() {
               )}
 
               <div className="duo">
-                <section className="panel" data-series="baseline">
-                  <div className="panel-head">
-                    <span className="label">Original</span>
-                  </div>
-                  <div className="panel-body">
+                <Win title="Original" series="baseline">
+                  <div className="win-body">
                     <p className="doc-text">{markOriginal(doc.original, decisions)}</p>
                   </div>
-                </section>
-                <section className="panel" data-series="protected">
-                  <div className="panel-head">
-                    <span className="label">Sanitised</span>
-                  </div>
-                  <div className="panel-body">
+                </Win>
+                <Win title="Sanitised" series="protected">
+                  <div className="win-body">
                     <p className="doc-text">{markSanitised(rec.rewriter.safe_text, decisions)}</p>
                   </div>
-                </section>
+                </Win>
               </div>
 
               {decisions.length > 0 && (
-                <section className="section" style={{ marginTop: 40 }}>
-                  <h2 className="label" style={{ marginBottom: 14 }}>
-                    Changes
-                  </h2>
+                <Win title="Changes" tone="pink">
                   <div className="table-wrap">
                     <table className="table">
                       <thead>
@@ -207,8 +198,10 @@ export function DocumentsView() {
                       <tbody>
                         {decisions.map((d, i) => (
                           <tr key={i}>
-                            <td>{d.span_text}</td>
-                            <td className="mono">{d.category}</td>
+                            <td style={{ fontWeight: 600 }}>{d.span_text}</td>
+                            <td>
+                              <span className="tag">{d.category}</span>
+                            </td>
                             <td>{ACTION[d.action] ?? d.action}</td>
                             <td>
                               {d.replacement?.startsWith("[") ? (
@@ -223,14 +216,11 @@ export function DocumentsView() {
                       </tbody>
                     </table>
                   </div>
-                </section>
+                </Win>
               )}
 
               {rec.extractor.facts.length > 0 && (
-                <section className="section" style={{ marginTop: 40 }}>
-                  <h2 className="label" style={{ marginBottom: 14 }}>
-                    Facts
-                  </h2>
+                <Win title="Facts" tone="purple">
                   <div className="table-wrap">
                     <table className="table">
                       <thead>
@@ -244,16 +234,31 @@ export function DocumentsView() {
                       <tbody>
                         {rec.extractor.facts.map((f, i) => (
                           <tr key={i}>
-                            <td className="mono">{f.subject}</td>
+                            <td className="term" style={{ fontSize: 18 }}>
+                              {f.subject}
+                            </td>
                             <td>{f.relation.replaceAll("_", " ")}</td>
                             <td>{f.value}</td>
-                            <td>{f.importance}</td>
+                            <td>
+                              <span
+                                className="tag"
+                                data-tone={
+                                  f.importance === "high"
+                                    ? "hot"
+                                    : f.importance === "medium"
+                                      ? "yellow"
+                                      : undefined
+                                }
+                              >
+                                {f.importance}
+                              </span>
+                            </td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
-                </section>
+                </Win>
               )}
             </>
           )}

@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Fragment_Mono, Schibsted_Grotesk } from "next/font/google";
+import { Bricolage_Grotesque, Pixelify_Sans, Silkscreen, VT323 } from "next/font/google";
 import "./globals.css";
 
-const display = Big_Shoulders({
-  subsets: ["latin"],
-  variable: "--font-display",
-  adjustFontFallback: false,
-});
-const text = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-text" });
-const mono = Fragment_Mono({ subsets: ["latin"], weight: "400", variable: "--font-mono" });
+const pixel = Pixelify_Sans({ subsets: ["latin"], variable: "--font-pixel" });
+const label = Silkscreen({ subsets: ["latin"], weight: "400", variable: "--font-label" });
+const text = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-text" });
+const term = VT323({ subsets: ["latin"], weight: "400", variable: "--font-term" });
 
 export const metadata: Metadata = {
   title: "sanitise",
@@ -16,8 +13,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const fonts = [pixel, label, text, term].map((f) => f.variable).join(" ");
   return (
-    <html lang="en" className={`${display.variable} ${text.variable} ${mono.variable}`}>
+    <html lang="en" className={fonts}>
       <body>{children}</body>
     </html>
   );
