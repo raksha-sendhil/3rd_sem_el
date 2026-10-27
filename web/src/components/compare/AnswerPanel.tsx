@@ -4,6 +4,7 @@ import { Database, ShieldAlert, ShieldCheck, Terminal, Timer } from "lucide-reac
 import type { CompareResponse } from "@/api/client";
 import { seconds } from "@/lib/agents";
 import { Highlighted, stats, type Terms } from "@/lib/marks";
+import { Verdict } from "../Verdict";
 
 export type Run = { id: string; question: string; time: string; data: CompareResponse; terms: Terms };
 export type Variant = "standard" | "protected";
@@ -83,12 +84,15 @@ export const AnswerPanel = ({
             </p>
           </div>
         </div>
-        {s && !busy && (
-          <span data-testid={`${variant}-risk-badge`} className="chip bg-white" style={{ color: v.ink }}>
-            {variant === "standard"
-              ? `${s.leaks} details leaked`
-              : `${s.leaks} leaked · ${s.tokens} ${s.tokens === 1 ? "token" : "tokens"}`}
-          </span>
+        {s && !busy && answer && (
+          <div className="flex flex-wrap items-center justify-end gap-2">
+            {variant === "protected" && <Verdict monitor={answer.monitor} />}
+            <span data-testid={`${variant}-risk-badge`} className="chip bg-white" style={{ color: v.ink }}>
+              {variant === "standard"
+                ? `${s.leaks} details leaked`
+                : `${s.leaks} leaked · ${s.tokens} ${s.tokens === 1 ? "token" : "tokens"}`}
+            </span>
+          </div>
         )}
       </div>
       <div

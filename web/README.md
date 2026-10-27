@@ -5,8 +5,8 @@ HTTP API (`docs/phase3_plan.md`, section 6.4).
 
 | Page | What it shows |
 |---|---|
-| Compare (`/`) | One question sent to both pipelines: each answer with leaked details marked red, tokens purple and generalised phrases amber; how many details leaked; the time taken and records used; and "What the model saw", the exact prompt. Runs collect in a session table. |
-| Attacks (`/attacks`) | The three attacks: context dump, stepwise inference and payload interception. Rounds stream from the API and play back at 1x, 2x or 4x, or one step at a time. Charts of the Secret Recovery Rate and the people still matching, a live transcript, and the target's details as each pipeline gives them away. |
+| Compare (`/`) | One question sent to both pipelines: each answer with leaked details marked red, tokens purple and generalised phrases amber; how many details leaked; the session monitor's verdict on the protected answer; the time taken and records used; and "What the model saw", the exact prompt. Runs collect in a session table with their verdicts. |
+| Attacks (`/attacks`) | The three attacks: context dump, stepwise inference and payload interception. Rounds stream from the API and play back at 1x, 2x or 4x, or one step at a time. Charts of the Secret Recovery Rate and the people still matching, a live transcript (what was disclosed, the pool left and the monitor's verdict per round), and the target's details as each pipeline gives them away. |
 | Documents (`/documents`) | Each stored record before and after the three agents, with counts per agent. Hovering a highlight rings its twin on the other side and in the table of changes. |
 
 ## Run it

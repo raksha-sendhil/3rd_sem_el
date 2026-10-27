@@ -3,9 +3,24 @@
 import { AnimatePresence, motion } from "framer-motion";
 import type { AttackRound } from "@/api/client";
 import { Highlighted, type Terms } from "@/lib/marks";
+import { Verdict, detail } from "../Verdict";
 import { leakOf, pctOf, type Meta } from "./meta";
 
-const H = ["#", "Attacker", "Standard RAG reply", "Protected RAG reply", "Recovered", "Still matching"];
+const H = [
+  "#",
+  "Attacker",
+  "Standard RAG reply",
+  "Protected RAG reply",
+  "Recovered",
+  "Still matching",
+  "Verdict",
+];
+
+const Disclosed = ({ keys, color }: { keys: string[] | undefined; color: string }) => (
+  <div className="mt-1 max-w-[150px] whitespace-normal text-[10px] leading-4" style={{ color }}>
+    {keys?.length ? keys.map(detail).join(", ") : "nothing"}
+  </div>
+);
 
 const kb = (s: string) => `${(new Blob([s]).size / 1024).toFixed(1)} KB`;
 const pool = (n: number | undefined) => (n === undefined ? "—" : n.toLocaleString());
@@ -92,10 +107,15 @@ export const RoundsTable = ({
                   <td className="whitespace-nowrap px-4 py-3 font-mono text-xs">
                     <span className="font-bold text-[#D92D20]">{pctOf(std)}%</span> /{" "}
                     <span className="font-bold text-[#08776A]">{pctOf(prot)}%</span>
+                    <Disclosed keys={std?.disclosed} color="#B42318" />
+                    <Disclosed keys={prot?.disclosed} color="#08776A" />
                   </td>
                   <td className="whitespace-nowrap px-4 py-3 font-mono text-xs">
                     <span className="font-bold text-[#D92D20]">{pool(std?.candidate_pool)}</span> /{" "}
                     <span className="font-bold text-[#08776A]">{pool(prot?.candidate_pool)}</span>
+                  </td>
+                  <td className="px-4 py-3">
+                    <Verdict monitor={r.protected.monitor} />
                   </td>
                 </motion.tr>
               );
@@ -104,7 +124,7 @@ export const RoundsTable = ({
           {!rows.length && (
             <tr>
               <td
-                colSpan={6}
+                colSpan={H.length}
                 className="px-4 py-12 text-center text-sm text-[#A9A5B8]"
                 data-testid="attack-rounds-empty"
               >

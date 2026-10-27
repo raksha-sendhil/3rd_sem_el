@@ -1,8 +1,11 @@
 "use client";
 
 import { RotateCcw } from "lucide-react";
+import type { MonitorVerdict } from "@/api/client";
+import { Verdict } from "../Verdict";
 
 export type HistoryRow = {
+  monitor?: MonitorVerdict;
   id: string;
   time: string;
   question: string;
@@ -22,7 +25,16 @@ const Pill = ({ n, bg, color }: { n: number; bg: string; color: string }) => (
   </span>
 );
 
-const HEAD = ["Time", "Question", "Leaked (std)", "Tokens (prot)", "Generalised", "Latency std / prot", ""];
+const HEAD = [
+  "Time",
+  "Question",
+  "Leaked (std)",
+  "Tokens (prot)",
+  "Generalised",
+  "Verdict",
+  "Latency std / prot",
+  "",
+];
 
 export const HistoryTable = ({
   rows,
@@ -75,6 +87,9 @@ export const HistoryTable = ({
               </td>
               <td className="p-2 align-middle">
                 <Pill n={r.vague} bg="#FFF3D1" color="#8A5A00" />
+              </td>
+              <td className="p-2 align-middle">
+                <Verdict monitor={r.monitor} />
               </td>
               <td className="whitespace-nowrap p-2 align-middle font-mono text-xs text-[#4A4760]">
                 {r.std} / {r.prot}

@@ -75,6 +75,7 @@ export default function Compare() {
           leaks: std.leaks,
           tokens: prot.tokens,
           vague: prot.vague,
+          monitor: data.protected.monitor,
           std: seconds(data.baseline.latency_ms),
           prot: seconds(data.protected.latency_ms),
         },

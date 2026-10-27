@@ -16,6 +16,7 @@ export type DocumentSummary = S["DocumentSummary"];
 export type DocumentView = S["DocumentView"];
 export type RoutingDecision = S["RoutingDecision"];
 export type SanitisedRecord = S["SanitisedRecord"];
+export type MonitorVerdict = S["MonitorVerdict"];
 export type PIICategory = S["PIICategory"];
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
