@@ -13,8 +13,13 @@ HTTP API (`docs/phase3_plan.md`, section 6.4).
 
 Needs Node.js 20 or newer.
 
+```powershell
+# Windows PowerShell, from the repo root, with .venv activated
+$env:SANITISE_LLM_BACKEND = "mock"; sanitise serve
+```
+
 ```bash
-# 1. the API, in mock mode (no model needed) from the repo root
+# 1. the API, in mock mode (no model needed) from the repo root (macOS/Linux)
 SANITISE_LLM_BACKEND=mock sanitise serve
 
 # 2. the dashboard
