@@ -10,6 +10,7 @@ from fastapi.testclient import TestClient
 
 from sanitise.api.app import create_app
 from sanitise.config import Settings
+from sanitise.mock_mode import mock_llm
 from tests.conftest import SAMPLE_TEXT
 
 
@@ -49,6 +50,16 @@ def test_attacks(client: TestClient) -> None:
     run = client.post("/v1/attacks/stepwise_s02/run", json={}).json()
     assert len(run["rounds"]) == 4 and run["rounds"][0]["baseline_leakage"] is not None
     assert client.post("/v1/attacks/nope/run").json()["error"]["code"] == "ATTACK_NOT_FOUND"
+
+
+def test_sample_attacks_until_the_real_scripts_exist(fake_rules: None, tmp_path) -> None:
+    settings = Settings(llm_backend="ollama", attacks_dir=str(tmp_path / "attacks"))
+    with TestClient(create_app(settings, llm=mock_llm())) as c:
+        assert {a["attack_id"] for a in c.get("/v1/attacks").json()} == {
+            "context_dump_s01",
+            "stepwise_s02",
+            "interception_s04",
+        }
 
 
 def _events(body: str) -> list[tuple[str, dict]]:
