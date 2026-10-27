@@ -4,8 +4,10 @@
       -> leak_check (A) -> on a leak: reconstruct once more with feedback (B)
       -> still leaking: mask_fallback (A) -> still leaking: LEAK_CHECK_FAILED
 
-``apply_decisions`` is the deterministic rewrite: the original text with every placeholder
-and generalised span substituted in place. Mock mode uses it instead of the model.
+``rewrite`` takes no raw text (spec 10.2): the agent sees the detected spans and the facts,
+never the original wording. ``apply_decisions`` is the deterministic rewrite mock mode uses
+instead of the model: the original text with every placeholder and generalised span
+substituted in place.
 """
 
 from __future__ import annotations
@@ -85,7 +87,6 @@ def removed_decisions(decisions: list[RoutingDecision]) -> list[RoutingDecision]
 
 async def rewrite_with_trace(
     doc_id: str,
-    text: str,
     detected: DetectorOutput,
     extracted: ExtractorOutput,
     llm: LLMClient,
@@ -122,9 +123,9 @@ async def rewrite_with_trace(
 
 async def rewrite(
     doc_id: str,
-    text: str,
     detected: DetectorOutput,
     extracted: ExtractorOutput,
     llm: LLMClient,
 ) -> RewriterOutput:
-    return (await rewrite_with_trace(doc_id, text, detected, extracted, llm)).output
+    """No raw-text parameter, by design: Agent 3 rebuilds the record from facts alone."""
+    return (await rewrite_with_trace(doc_id, detected, extracted, llm)).output

@@ -160,4 +160,4 @@ class LeakCheckFailed(PipelineError):
     """The rewrite still contains removed text after the retry and the mask fallback."""
 
     code = ErrorCode.LEAK_CHECK_FAILED
-    http_status = 500
+    http_status = 409  # spec 10.3: leak check failed, sanitised text withheld

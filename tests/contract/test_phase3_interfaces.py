@@ -39,13 +39,15 @@ SYNC = [
     (rewrite.score_rewrite, ["pred", "gold_routing", "gold_facts"]),
     (qa.score_qa, ["answers", "qa"]),
     (attacks.score_round, ["people", "target_id", "answers_so_far"]),
+    (attacks.target_info, ["people", "answers"]),
 ]
 
 ASYNC = [
     (extractor_prompt.extract_facts, ["text", "subjects", "spans", "llm"]),
     (rewriter_prompt.reconstruct, ["facts", "decisions", "placeholders", "llm", "feedback"]),
     (extractor_pipeline.extract, ["doc_id", "text", "detected", "llm"]),
-    (rewriter_pipeline.rewrite, ["doc_id", "text", "detected", "extracted", "llm"]),
+    # no raw text, by design (Phase 2 spec 10.2): Agent 3 rebuilds from spans and facts
+    (rewriter_pipeline.rewrite, ["doc_id", "detected", "extracted", "llm"]),
     (offline.sanitise, ["doc_id", "text", "llm"]),
     (rag_answer.answer, ["ctx", "query", "pipeline", "session_id", "llm", "k"]),
     (rag_answer.compare, ["ctx", "query", "session_id", "llm", "k"]),

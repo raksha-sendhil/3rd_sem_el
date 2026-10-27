@@ -30,7 +30,7 @@ async def sanitise(doc_id: str, text: str, llm: LLMClient) -> SanitisedRecord:
         subs, extracted = await extract(doc_id, text, detected.output, llm)
         extract_ms = _ms(t)
         t = time.perf_counter()
-        trace = await rewrite_with_trace(doc_id, text, detected.output, extracted, llm)
+        trace = await rewrite_with_trace(doc_id, detected.output, extracted, llm)
         rewrite_ms = _ms(t)
     return SanitisedRecord(
         doc_id=doc_id,

@@ -31,7 +31,7 @@ def tokenize(text: str) -> list[str]:
 
 @runtime_checkable
 class Retriever(Protocol):
-    def search(self, query: str, k: int = 4) -> list[RetrievalHit]: ...
+    def search(self, query: str, k: int = 3) -> list[RetrievalHit]: ...
 
 
 class BM25Retriever:
@@ -50,7 +50,7 @@ class BM25Retriever:
     def __len__(self) -> int:
         return len(self._ids)
 
-    def search(self, query: str, k: int = 4) -> list[RetrievalHit]:
+    def search(self, query: str, k: int = 3) -> list[RetrievalHit]:
         terms = tokenize(query)
         scored = []
         for i, tf in enumerate(self._tf):

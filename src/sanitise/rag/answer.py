@@ -38,6 +38,13 @@ class RagContext:
     sessions: SessionStore = field(default_factory=SessionStore)
 
 
+# Generation settings for the answer (Phase 2 spec 3.3). Both pipelines use the same ones.
+ANSWER_TEMPERATURE = 0.4
+ANSWER_TOP_P = 0.9
+ANSWER_MAX_TOKENS = 512
+DEFAULT_K = 3  # top-3 documents, the base paper's security-motivated choice (spec 3.2)
+
+
 def _ms(start: float) -> int:
     return round((time.perf_counter() - start) * 1000)
 
@@ -48,7 +55,7 @@ async def answer(
     pipeline: Pipeline,
     session_id: str,
     llm: LLMClient,
-    k: int = 4,
+    k: int = DEFAULT_K,
 ) -> RagAnswer:
     t = time.perf_counter()
     if not ctx.store.ids():
@@ -60,7 +67,13 @@ async def answer(
         else:
             contexts = [(h.doc_id, ctx.store.sanitised(h.doc_id).rewriter.safe_text) for h in hits]
         system, user = build_answer_prompt(query, contexts)
-        text = await llm.text_call(system, user)
+        text = await llm.text_call(
+            system,
+            user,
+            temperature=ANSWER_TEMPERATURE,
+            top_p=ANSWER_TOP_P,
+            max_tokens=ANSWER_MAX_TOKENS,
+        )
         verdict = (
             ctx.monitor.check(session_id, query, hits, text)
             if pipeline == "protected"
@@ -82,7 +95,7 @@ async def answer(
 
 
 async def compare(
-    ctx: RagContext, query: str, session_id: str, llm: LLMClient, k: int = 4
+    ctx: RagContext, query: str, session_id: str, llm: LLMClient, k: int = DEFAULT_K
 ) -> CompareResponse:
     """Both pipelines on the same question; the round is appended to the session trace."""
     baseline, protected = await asyncio.gather(

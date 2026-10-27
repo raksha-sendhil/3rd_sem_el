@@ -30,5 +30,13 @@
   {"person_id": "s08", "name": "Sunil Patil", "sex": "M", "age": 29, "age_band": "20-29",
    "town": "Pune", "district": "Pune", "state": "Maharashtra",
    "occupation": "kabaddi player", "occupation_group": "athlete",
-   "conditions": [], "phone": null, "doc_ids": []}
+   "conditions": [], "phone": null, "doc_ids": []},
+  {"person_id": "s09", "name": "Thomas Mathew", "sex": "M", "age": 74, "age_band": "70-79",
+   "town": "Alappuzha", "district": "Alappuzha", "state": "Kerala",
+   "occupation": "retired boatman", "occupation_group": "fisheries worker",
+   "conditions": ["ischemic stroke"], "phone": null, "doc_ids": []},
+  {"person_id": "s10", "name": "Joseph Fernandes", "sex": "M", "age": 69, "age_band": "60-69",
+   "town": "Mangaluru", "district": "Dakshina Kannada", "state": "Karnataka",
+   "occupation": "retired fisherman", "occupation_group": "fisheries worker",
+   "conditions": ["ischemic stroke", "hypertension"], "phone": null, "doc_ids": []}
 ]

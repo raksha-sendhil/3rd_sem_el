@@ -25,6 +25,7 @@ from sanitise.agents.detector.pipeline import detect
 from sanitise.agents.extractor import canonical, importance
 from sanitise.agents.rewriter import leakcheck
 from sanitise.agents.rewriter.pipeline import apply_decisions, plan_decisions, removed_decisions
+from sanitise.agents.rewriter.prompt import draft
 from sanitise.llm.base import LLMClient
 from sanitise.llm.mock import TEXT_CALL, MockCall, MockLLM, fabricate
 from sanitise.loader import sha256_hex
@@ -141,6 +142,19 @@ def _handler(call: MockCall) -> Any:
     if call.schema_name == TEXT_CALL:
         return _canned_answer(call.user)
     return fabricate(call.json_schema)
+
+
+def mock_rewrite(
+    doc_id: str, detected: DetectorOutput, extracted: ExtractorOutput
+) -> RewriterOutput:
+    """Agent 3 without a model or the raw text: the safe fact list, one line per fact."""
+    decisions, tokens = plan_decisions(detected, extracted)
+    return RewriterOutput(
+        doc_id=doc_id,
+        safe_text=draft(extracted.facts, decisions),
+        decisions=decisions,
+        placeholders=tokens,
+    )
 
 
 def mock_llm() -> MockLLM:

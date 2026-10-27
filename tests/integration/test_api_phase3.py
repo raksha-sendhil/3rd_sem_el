@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from collections.abc import Iterator
 
 import pytest
@@ -44,10 +45,45 @@ def test_sessions_compare_and_query(client: TestClient) -> None:
 
 def test_attacks(client: TestClient) -> None:
     attacks = client.get("/v1/attacks").json()
-    assert {a["kind"] for a in attacks} == {"direct", "linkage", "stepwise"}
+    assert {a["kind"] for a in attacks} == {"context_dump", "stepwise", "interception"}
     run = client.post("/v1/attacks/stepwise_s02/run", json={}).json()
     assert len(run["rounds"]) == 4 and run["rounds"][0]["baseline_leakage"] is not None
     assert client.post("/v1/attacks/nope/run").json()["error"]["code"] == "ATTACK_NOT_FOUND"
+
+
+def _events(body: str) -> list[tuple[str, dict]]:
+    out = []
+    for block in body.strip().split("\n\n"):
+        lines = dict(line.split(": ", 1) for line in block.splitlines())
+        out.append((lines["event"], json.loads(lines["data"])))
+    return out
+
+
+def test_attack_stream_sends_each_round_then_the_run(client: TestClient) -> None:
+    with client.stream("GET", "/v1/attacks/stepwise_s02/stream") as response:
+        assert response.headers["content-type"].startswith("text/event-stream")
+        events = _events(response.read().decode())
+    assert [e for e, _ in events] == ["round"] * 4 + ["done"]
+    assert [d["round"] for _, d in events[:4]] == [1, 2, 3, 4]
+    assert len(events[-1][1]["rounds"]) == 4
+    missing = client.get("/v1/attacks/nope/stream")
+    assert missing.json()["error"]["code"] == "ATTACK_NOT_FOUND"
+
+
+def test_interception_run(client: TestClient) -> None:
+    run = client.post("/v1/attacks/interception_s04/run", json={}).json()
+    assert len(run["rounds"]) == 3
+    assert run["baseline_identified_at"] == 1  # the raw record goes over the wire
+
+
+def test_single_stage_extract_and_rewrite(client: TestClient) -> None:
+    facts = client.post("/v1/extract", json={"text": SAMPLE_TEXT}).json()
+    assert facts["facts"]
+    spans = client.post("/v1/detect/rules", json={"text": SAMPLE_TEXT}).json()["spans"]
+    out = client.post(
+        "/v1/rewrite", json={"doc_id": facts["doc_id"], "spans": spans, "facts": facts["facts"]}
+    ).json()
+    assert out["safe_text"] and "07700 900123" not in out["safe_text"]
 
 
 def test_sanitise_endpoint(client: TestClient) -> None:
@@ -68,4 +104,7 @@ def test_openapi_lists_every_new_path(client: TestClient) -> None:
         "/v1/compare",
         "/v1/attacks",
         "/v1/attacks/{attack_id}/run",
+        "/v1/attacks/{attack_id}/stream",
+        "/v1/extract",
+        "/v1/rewrite",
     } <= paths

@@ -11,7 +11,13 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-from sanitise.schemas import DetectorOutput, Pipeline, SanitisedRecord, SensitiveSpan
+from sanitise.schemas import (
+    DetectorOutput,
+    FactTuple,
+    Pipeline,
+    SanitisedRecord,
+    SensitiveSpan,
+)
 
 
 class DetectOptions(BaseModel):
@@ -54,6 +60,19 @@ class ScoreRequest(BaseModel):
 class SanitiseRequest(BaseModel):
     doc_id: str | None = None
     text: str
+
+
+class ExtractRequest(BaseModel):
+    doc_id: str | None = None
+    text: str
+
+
+class RewriteRequest(BaseModel):
+    """Agent 3 alone (Phase 2 spec 10.3): spans and facts in, no raw text."""
+
+    doc_id: str
+    spans: list[SensitiveSpan]
+    facts: list[FactTuple]
 
 
 class SessionCreated(BaseModel):

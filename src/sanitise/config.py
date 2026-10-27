@@ -56,7 +56,7 @@ class Settings(BaseSettings):
     store_path: str = "data/store.sqlite"
     attacks_dir: str = "data/attacks"
     people_path: str = "data/corpus/people.json"
-    retrieval_k: int = Field(default=4, ge=1, le=20)
+    retrieval_k: int = Field(default=3, ge=1, le=20)
     # "hybrid" = BM25 + bge-m3 dense vectors (needs `pip install -e .[retrieval]`, falls back
     # to BM25 with a warning when the packages are missing); "bm25" = keyword search only.
     retrieval_mode: Literal["hybrid", "bm25"] = "hybrid"
