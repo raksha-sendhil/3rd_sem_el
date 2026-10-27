@@ -50,8 +50,8 @@ cd web && npm run types
 
 ## Design
 
-Styled after risograph printing: warm paper stock, a handful of Riso ink colours that overprint
-where they meet, and condensed poster type (Big Shoulders, with Schibsted Grotesk for text and
-Fragment Mono for tokens and payloads). Standard RAG is always bright red (#e8414f) and
-Protected RAG always blue (#0078bf), in every panel, chart and label; the pair was checked for
-colour-blind separation on the paper colour.
+Pixel windows on warm paper: Pixelify Sans for titles, Silkscreen for labels and buttons,
+VT323 for the raw text sent to the model, and Bricolage Grotesque for reading. Each panel is a
+window with a coloured title bar. Standard RAG is always red (#f2412f) and Protected RAG always
+blue (#2f6bff), in every window, chart and label; the pair was checked for colour-blind
+separation.

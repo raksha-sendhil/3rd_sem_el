@@ -4,8 +4,8 @@ import { Fragment, useEffect, useState, type ReactNode } from "react";
 import { api, type RagAnswer } from "@/api/client";
 
 export const SERIES = {
-  baseline: { name: "Standard RAG", color: "#e8414f" },
-  protected: { name: "Protected RAG", color: "#0078bf" },
+  baseline: { name: "Standard RAG", color: "#f2412f" },
+  protected: { name: "Protected RAG", color: "#2f6bff" },
 } as const;
 export type SeriesId = keyof typeof SERIES;
 export const SIDES: SeriesId[] = ["baseline", "protected"];
@@ -13,7 +13,41 @@ export const SIDES: SeriesId[] = ["baseline", "protected"];
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const TOKEN = /^\[[A-Z]+_\d+\]$/;
 
-/** ``text`` with placeholder tokens set as chips and every ``leaks`` term marked in red. */
+/** A pixel window: coloured title bar, three window squares, body. */
+export function Win({
+  title,
+  series,
+  tone,
+  end,
+  children,
+  className = "",
+}: {
+  title: ReactNode;
+  series?: SeriesId;
+  tone?: string;
+  end?: ReactNode;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <section className={`win ${className}`} data-series={series} data-tone={tone}>
+      <div className="win-bar">
+        <span className="win-title">{title}</span>
+        <span className="win-end">
+          {end}
+          <span className="win-dots" aria-hidden>
+            <i />
+            <i />
+            <i />
+          </span>
+        </span>
+      </div>
+      {children}
+    </section>
+  );
+}
+
+/** ``text`` with placeholder tokens as chips and every ``leaks`` term marked. */
 export function Marked({ text, leaks = [] }: { text: string; leaks?: string[] }) {
   const parts = [String.raw`\[[A-Z]+_\d+\]`, ...leaks.map(escape)];
   const pattern = new RegExp(`(${parts.join("|")})`, "gi");
@@ -37,8 +71,14 @@ export function Marked({ text, leaks = [] }: { text: string; leaks?: string[] })
   );
 }
 
+/** How many distinct ``leaks`` terms occur in ``text``. */
+export function countLeaks(text: string, leaks: string[]): number {
+  const lower = text.toLowerCase();
+  return leaks.filter((t) => lower.includes(t.toLowerCase())).length;
+}
+
 /** The personal details in the given records: every span the sanitiser removed or blurred.
- * Seeing one of them in Standard RAG's output means it leaked. */
+ * Any of them appearing in an answer means it was exposed. */
 export function useLeakTerms(docIds: string[]): string[] {
   const key = [...new Set(docIds)].sort().join(",");
   const [terms, setTerms] = useState<string[]>([]);
@@ -77,16 +117,16 @@ export function useElapsed(running: boolean): number {
   return seconds;
 }
 
-export function Working({ seconds }: { seconds: number }) {
+export function Loader({ seconds = 0 }: { seconds?: number }) {
   return (
-    <div className="working" role="status" aria-label="Working">
-      <span className="dots" aria-hidden>
-        <i />
-        <i />
-        <i />
-      </span>
-      {seconds > 0 && <span>{seconds}s</span>}
-    </div>
+    <span className="loader" role="status" aria-label="Working">
+      <i />
+      <i />
+      <i />
+      <i />
+      <i />
+      {seconds > 0 && <small>{seconds}s</small>}
+    </span>
   );
 }
 
@@ -98,75 +138,113 @@ export function Notice({ error }: { error: string | null }) {
   ) : null;
 }
 
-export function ArrowRight() {
+/** A pixel arrow drawn on a 7x7 grid. */
+export function PixelArrow() {
+  const cells = [
+    [3, 0],
+    [4, 1],
+    [0, 2],
+    [1, 2],
+    [2, 2],
+    [3, 2],
+    [4, 2],
+    [5, 2],
+    [0, 3],
+    [1, 3],
+    [2, 3],
+    [3, 3],
+    [4, 3],
+    [5, 3],
+    [6, 3],
+    [0, 4],
+    [1, 4],
+    [2, 4],
+    [3, 4],
+    [4, 4],
+    [5, 4],
+    [4, 5],
+    [3, 6],
+  ];
   return (
-    <svg viewBox="0 0 20 20" aria-hidden>
-      <path d="M3 9h11.2l-4-4L11.6 3.6 18 10l-6.4 6.4-1.4-1.4 4-4H3z" fill="currentColor" />
+    <svg viewBox="0 0 7 7" shapeRendering="crispEdges" aria-hidden>
+      {cells.map(([x, y]) => (
+        <rect key={`${x}-${y}`} x={x} y={y} width={1} height={1} fill="currentColor" />
+      ))}
     </svg>
   );
 }
 
-/** One pipeline's answer, the records it used, and the exact text sent to the model. */
-export function AnswerPanel({
+/** One pipeline's answer: what it exposed, the records used, and the raw payload. */
+export function AnswerWin({
   side,
   answer,
   leaks,
-  children,
+  busy,
+  seconds,
 }: {
   side: SeriesId;
   answer: RagAnswer | null;
   leaks: string[];
-  children?: ReactNode;
+  busy: boolean;
+  seconds: number;
 }) {
   const [open, setOpen] = useState(false);
+  const exposed = answer ? countLeaks(answer.answer, leaks) : null;
   return (
-    <section className="panel" data-series={side}>
-      <div className="panel-head">
-        <span className="label">{SERIES[side].name}</span>
-        {answer && <span className="meta">{formatMs(answer.latency_ms)}</span>}
-      </div>
-      <div className="panel-body">
+    <Win
+      title={SERIES[side].name}
+      series={side}
+      end={
+        exposed !== null && (
+          <span className="tag" data-tone={exposed ? "yellow" : "lime"}>
+            {exposed} exposed
+          </span>
+        )
+      }
+    >
+      <div className="win-body">
         {answer ? (
           <p className="answer">
-            <Marked text={answer.answer} leaks={side === "baseline" ? leaks : []} />
+            <Marked text={answer.answer} leaks={leaks} />
           </p>
         ) : (
-          children
+          <div className="empty-answer">
+            {busy ? <Loader seconds={seconds} /> : <span className="cursor" aria-hidden />}
+          </div>
         )}
       </div>
       {answer && (
         <>
-          <div className="panel-foot">
+          <div className="win-foot">
             {answer.doc_ids.map((id) => (
-              <span className="doc-chip" key={id}>
+              <span className="doc-id" key={id}>
                 {id}
               </span>
             ))}
-            {side === "protected" && (
-              <span
-                className="verdict"
-                data-verdict={answer.monitor?.verdict}
-                title={answer.monitor?.reason}
+            <span className="foot-end">
+              {side === "protected" && (
+                <span className="tag" data-tone="lime" title={answer.monitor?.reason}>
+                  {answer.monitor?.verdict ?? "allowed"}
+                </span>
+              )}
+              {formatMs(answer.latency_ms)}
+              <button
+                type="button"
+                className="mini"
+                aria-expanded={open}
+                onClick={() => setOpen((o) => !o)}
               >
-                {answer.monitor?.verdict ?? "allowed"}
-              </span>
-            )}
-            <button
-              type="button"
-              className="link-btn payload-toggle"
-              aria-expanded={open}
-              onClick={() => setOpen((o) => !o)}
-            >
-              Payload
-            </button>
+                Payload
+              </button>
+            </span>
           </div>
           {open && (
             <pre className="payload">
-              <Marked text={answer.payload} leaks={side === "baseline" ? leaks : []} />
+              <Marked text={answer.payload} leaks={leaks} />
             </pre>
           )}
         </>
       )}
-    </section>
+    </Win>
   );
 }

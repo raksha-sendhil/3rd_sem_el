@@ -1,18 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Poster } from "./Poster";
 import { ApiError, api, type CompareResponse, type SessionTrace } from "@/api/client";
-import {
-  AnswerPanel,
-  ArrowRight,
-  Marked,
-  Notice,
-  SIDES,
-  Working,
-  useElapsed,
-  useLeakTerms,
-} from "./common";
+import { AnswerWin, Marked, Notice, PixelArrow, SIDES, Win, useElapsed, useLeakTerms } from "./common";
 
 const EXAMPLES = [
   "Which patient has vertigo?",
@@ -55,66 +45,76 @@ export function CompareView() {
   }
 
   return (
-    <>
+    <div className="stack">
       <Notice error={error} />
 
-      <form className="ask" onSubmit={submit}>
-        <input
-          aria-label="Question"
-          placeholder="Ask the records…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button className="btn" type="submit" disabled={busy || !query.trim()}>
-          Ask
-          <ArrowRight />
-        </button>
-      </form>
-      <div className="chips">
-        {EXAMPLES.map((ex) => (
-          <button
-            key={ex}
-            type="button"
-            className="chip"
-            disabled={busy}
-            onClick={() => {
-              setQuery(ex);
-              run(ex);
-            }}
-          >
-            {ex}
+      <div>
+        <form className="ask" onSubmit={submit}>
+          <label className="ask-field">
+            <span className="prompt-char" aria-hidden>
+              &gt;
+            </span>
+            <input
+              aria-label="Question"
+              placeholder="ask the records"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </label>
+          <button className="btn" type="submit" disabled={busy || !query.trim()}>
+            Ask
+            <PixelArrow />
           </button>
+        </form>
+        <div className="chips">
+          {EXAMPLES.map((ex) => (
+            <button
+              key={ex}
+              type="button"
+              className="chip"
+              disabled={busy}
+              onClick={() => {
+                setQuery(ex);
+                run(ex);
+              }}
+            >
+              {ex}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="duo" style={{ marginTop: 36 }}>
+        {SIDES.map((side) => (
+          <AnswerWin
+            key={side}
+            side={side}
+            answer={result?.[side] ?? null}
+            leaks={leaks}
+            busy={busy}
+            seconds={elapsed}
+          />
         ))}
       </div>
 
-      {!busy && !result && !trace && <Poster />}
-
-      {(busy || result) && (
-        <div className="duo section" style={{ marginTop: 40 }}>
-          {SIDES.map((side) => (
-            <AnswerPanel key={side} side={side} answer={result?.[side] ?? null} leaks={leaks}>
-              <Working seconds={elapsed} />
-            </AnswerPanel>
-          ))}
-        </div>
-      )}
-
       {trace && trace.rounds.length > 1 && (
-        <section className="section">
-          <div className="section-head">
-            <h2 className="label">Session</h2>
+        <Win
+          title="Session"
+          tone="purple"
+          end={
             <button
               type="button"
-              className="link-btn"
+              className="mini"
               onClick={() => {
                 setSessionId(null);
                 setTrace(null);
                 setResult(null);
               }}
             >
-              New session
+              New
             </button>
-          </div>
+          }
+        >
           <div className="table-wrap">
             <table className="table">
               <thead>
@@ -129,8 +129,8 @@ export function CompareView() {
               <tbody>
                 {[...trace.rounds].reverse().map((r) => (
                   <tr key={r.round}>
-                    <td className="num">{r.round}</td>
-                    <td style={{ minWidth: 160 }}>{r.query}</td>
+                    <td className="num px">{r.round}</td>
+                    <td style={{ minWidth: 160, fontWeight: 600 }}>{r.query}</td>
                     <td>
                       <span className="clamp">
                         <Marked text={r.baseline.answer} leaks={traceLeaks} />
@@ -138,17 +138,21 @@ export function CompareView() {
                     </td>
                     <td>
                       <span className="clamp">
-                        <Marked text={r.protected.answer} />
+                        <Marked text={r.protected.answer} leaks={traceLeaks} />
                       </span>
                     </td>
-                    <td>{r.protected.monitor?.verdict ?? "allowed"}</td>
+                    <td>
+                      <span className="tag" data-tone="lime">
+                        {r.protected.monitor?.verdict ?? "allowed"}
+                      </span>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </section>
+        </Win>
       )}
-    </>
+    </div>
   );
 }

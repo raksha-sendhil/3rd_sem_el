@@ -12,12 +12,13 @@ import {
   type RoundLeakage,
 } from "@/api/client";
 import {
-  ArrowRight,
+  Loader,
   Marked,
   Notice,
+  PixelArrow,
   SERIES,
   SIDES,
-  Working,
+  Win,
   useElapsed,
   useLeakTerms,
   type SeriesId,
@@ -25,10 +26,15 @@ import {
 import { LeakageChart } from "./LeakageChart";
 
 const ORDER: AttackKind[] = ["context_dump", "stepwise", "interception"];
+const TONE: Record<AttackKind, string> = {
+  context_dump: "pink",
+  stepwise: "teal",
+  interception: "orange",
+};
 const COUNT: Record<AttackKind, (n: number) => string> = {
   context_dump: (n) => (n === 1 ? "1 prompt" : `${n} prompts`),
   stepwise: (n) => `${n} prompts`,
-  interception: (n) => `${n} intercepted requests, no prompts`,
+  interception: (n) => `${n} requests, no prompts`,
 };
 
 const pct = (v: number) => `${Math.round(v * 100)}%`;
@@ -97,216 +103,255 @@ export function AttacksView() {
       SeriesId,
       number[]
     >;
-  const maxPool = Math.max(1, ...rounds.flatMap((r) => SIDES.map((s) => leakOf(r, s)?.candidate_pool ?? 0)));
-  const poolStep = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500].find((st) => maxPool / st <= 5) ?? 1000;
-  const poolTop = Math.ceil(maxPool / poolStep) * poolStep;
-  const poolTicks = Array.from({ length: poolTop / poolStep + 1 }, (_, i) => i * poolStep);
+  const maxPool = Math.max(
+    1,
+    ...rounds.flatMap((r) => SIDES.map((s) => leakOf(r, s)?.candidate_pool ?? 0)),
+  );
+  const step = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500].find((st) => maxPool / st <= 5) ?? 1000;
+  const poolTop = Math.ceil(maxPool / step) * step;
+  const poolTicks = Array.from({ length: poolTop / step + 1 }, (_, i) => i * step);
 
   return (
     <>
       <Notice error={error} />
-
-      <div className="attack-cards">
-        {attacks?.map((a, i) => (
-          <button
-            key={a.attack_id}
-            type="button"
-            className="attack-card"
-            data-kind={a.kind}
-            aria-pressed={a.attack_id === selected}
-            onClick={() => {
-              if (busy) return;
-              reset();
-              setSelected(a.attack_id);
-            }}
-          >
-            <span className="no">{String(i + 1).padStart(2, "0")}</span>
-            <span className="name">{a.name}</span>
-            <span className="count">{COUNT[a.kind](a.queries.length)}</span>
-          </button>
-        ))}
-      </div>
-
-      {attack && (
-        <div className="attack-run">
-          <div>
-            <div className="label-sm" style={{ marginBottom: 6 }}>
-              {intercept ? "Requests observed" : "Prompts"}
-            </div>
-            <ol className="prompts">
-              {attack.queries.map((q) => (
-                <li key={q}>{q}</li>
-              ))}
-            </ol>
-          </div>
-          <button type="button" className="btn" onClick={start} disabled={busy}>
-            {rounds.length ? "Again" : "Run"}
-            <ArrowRight />
-          </button>
-        </div>
-      )}
-
-      {(busy || rounds.length > 0) && (
-        <div className="scoreboard">
-          {SIDES.map((s) => {
-            const latest = rounds.length ? leakOf(rounds[rounds.length - 1], s) : null;
-            const at = rounds.find((r) => leakOf(r, s)?.identified)?.round;
+      <div className="arena">
+        <ol className="steps">
+          {attacks?.map((a) => {
+            const current = a.attack_id === selected;
             return (
-              <div className="score" data-series={s} key={s}>
-                <span className="big">
-                  {latest ? Math.round(latest.recovery_rate * 100) : 0}
-                  <small>%</small>
-                </span>
-                <span className="who">
-                  <span className="swatch" data-series={s} aria-hidden />
-                  <b>{SERIES[s].name}</b>
-                </span>
-                <span className="status">
-                  {at ? (
-                    <span className="stamp">Identified · round {at}</span>
-                  ) : run ? (
-                    "Not identified"
-                  ) : (
-                    <Working seconds={elapsed} />
-                  )}
-                </span>
-                <span className="sub">
-                  {latest ? `recovered · ${people(latest.candidate_pool)}` : "recovered"}
-                </span>
-              </div>
+              <li className="step" key={a.attack_id} data-kind={a.kind} aria-current={current}>
+                <span className="step-node" aria-hidden />
+                <button
+                  type="button"
+                  className="step-pick"
+                  onClick={() => {
+                    if (busy || current) return;
+                    reset();
+                    setSelected(a.attack_id);
+                  }}
+                >
+                  <span className="step-name">{a.name}</span>
+                  <span className="step-count" style={{ display: "block" }}>
+                    {COUNT[a.kind](a.queries.length)}
+                  </span>
+                </button>
+                {current && (
+                  <button type="button" className="btn btn-lime" onClick={start} disabled={busy}>
+                    {rounds.length ? "Run again" : "Run attack"}
+                    <PixelArrow />
+                  </button>
+                )}
+              </li>
             );
           })}
-        </div>
-      )}
+        </ol>
 
-      {scored && (
-        <section className="section">
-          <div className="section-head">
-            <div className="legend" aria-label="Legend">
-              {SIDES.map((s) => (
-                <span key={s}>
-                  <span className="swatch" data-series={s} aria-hidden />
-                  {SERIES[s].name}
-                </span>
-              ))}
-            </div>
-            <div className="toggle" role="group" aria-label="Show as">
-              <button type="button" aria-pressed={!asTable} onClick={() => setAsTable(false)}>
-                Chart
-              </button>
-              <button type="button" aria-pressed={asTable} onClick={() => setAsTable(true)}>
-                Table
-              </button>
-            </div>
-          </div>
-          {asTable ? (
-            <div className="table-wrap">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th className="num">Round</th>
-                    <th>{intercept ? "Request" : "Prompt"}</th>
-                    {SIDES.map((s) => (
-                      <th key={s}>
-                        <span className="side swatch" data-series={s} aria-hidden />
-                        {SERIES[s].name}
-                      </th>
-                    ))}
-                    <th>Verdict</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rounds.map((r) => (
-                    <tr key={r.round}>
-                      <td className="num">{r.round}</td>
-                      <td style={{ minWidth: 200 }}>{r.query}</td>
-                      {SIDES.map((s) => {
-                        const l = leakOf(r, s)!;
-                        return (
-                          <td key={s} style={{ minWidth: 170 }}>
-                            <b>{pct(l.recovery_rate)}</b> · {people(l.candidate_pool)}
-                            <div className="mono" style={{ color: "var(--ink-2)" }}>
-                              {l.disclosed.join(", ") || "nothing"}
-                            </div>
-                          </td>
-                        );
-                      })}
-                      <td>{r.protected.monitor?.verdict ?? "allowed"}</td>
-                    </tr>
+        {attack && (
+          <div className="stack">
+            <Win title={attack.name} tone={TONE[attack.kind]}>
+              <div className="win-body">
+                <ol className="prompts">
+                  {attack.queries.map((q, i) => (
+                    <li key={q}>
+                      <b>{String(i + 1).padStart(2, "0")}</b>
+                      <span>{q}</span>
+                    </li>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div className="charts">
-              <LeakageChart
-                title="Target's details recovered"
-                rounds={total}
-                values={series((l) => l.recovery_rate)}
-                yMax={1}
-                ticks={[0, 0.25, 0.5, 0.75, 1]}
-                format={pct}
-              />
-              <LeakageChart
-                title="People who still match"
-                rounds={total}
-                values={series((l) => l.candidate_pool)}
-                yMax={poolTop}
-                ticks={poolTicks}
-                format={(v) => String(v)}
-              />
-            </div>
-          )}
-        </section>
-      )}
-
-      {rounds.length > 0 && (
-        <section className="section">
-          {rounds.map((r) => (
-            <div className="round enter" key={r.round}>
-              <div className="round-no">{String(r.round).padStart(2, "0")}</div>
-              <div className="round-query">
-                <span className="label-sm">{intercept ? "Someone asks" : "Attacker asks"}</span>
-                {r.query}
+                </ol>
               </div>
-              {SIDES.map((s) => {
-                const l = leakOf(r, s);
-                const said = intercept ? r[s].payload : r[s].answer;
-                return (
-                  <section className="panel" data-series={s} key={s}>
-                    <div className="panel-head">
-                      <span className="label">
-                        {SERIES[s].name}
-                        {intercept && " → model"}
-                      </span>
-                    </div>
-                    <div className="panel-body">
-                      <div className={intercept ? "wire" : "answer"}>
-                        <Marked text={said} leaks={s === "baseline" ? leaks : []} />
-                      </div>
-                    </div>
-                    {l && (
-                      <div className="found">
-                        {l.disclosed.length ? (
-                          l.disclosed.map((d) => (
-                            <span className="tag" key={d}>
-                              {d.replace(/_\d+$/, "")}
+            </Win>
+
+            {(busy || rounds.length > 0) && (
+              <div className="scores">
+                {SIDES.map((s) => {
+                  const latest = rounds.length ? leakOf(rounds[rounds.length - 1], s) : null;
+                  const at = rounds.find((r) => leakOf(r, s)?.identified)?.round;
+                  const filled = Math.round((latest?.recovery_rate ?? 0) * 10);
+                  return (
+                    <Win key={s} title={SERIES[s].name} series={s}>
+                      <div className="win-body">
+                        <div className="score-num">
+                          {latest ? Math.round(latest.recovery_rate * 100) : 0}
+                          <small>%</small>
+                        </div>
+                        <div className="meter" aria-hidden>
+                          {Array.from({ length: 10 }, (_, i) => (
+                            <i key={i} data-on={i < filled} />
+                          ))}
+                        </div>
+                        <div className="score-row">
+                          {at ? (
+                            <span className="tag" data-tone="hot">
+                              Identified · R{at}
                             </span>
-                          ))
-                        ) : (
-                          <span>nothing about the target</span>
-                        )}
-                        <span className="pool">{people(l.candidate_pool)}</span>
+                          ) : run ? (
+                            <span className="tag" data-tone="lime">
+                              Not identified
+                            </span>
+                          ) : (
+                            <Loader seconds={elapsed} />
+                          )}
+                          <span>{latest ? people(latest.candidate_pool) : ""}</span>
+                        </div>
                       </div>
-                    )}
-                  </section>
-                );
-              })}
-            </div>
-          ))}
-          {busy && rounds.length < total && <Working seconds={elapsed} />}
-        </section>
-      )}
+                    </Win>
+                  );
+                })}
+              </div>
+            )}
+
+            {scored && (
+              <>
+                <div className="bar-row">
+                  <div className="legend" aria-label="Legend">
+                    {SIDES.map((s) => (
+                      <span key={s}>
+                        <span className="sq" data-series={s} aria-hidden />
+                        {SERIES[s].name}
+                      </span>
+                    ))}
+                  </div>
+                  <span style={{ display: "inline-flex", gap: 8 }}>
+                    <button
+                      type="button"
+                      className="mini"
+                      aria-pressed={!asTable}
+                      onClick={() => setAsTable(false)}
+                    >
+                      Chart
+                    </button>
+                    <button
+                      type="button"
+                      className="mini"
+                      aria-pressed={asTable}
+                      onClick={() => setAsTable(true)}
+                    >
+                      Table
+                    </button>
+                  </span>
+                </div>
+                {asTable ? (
+                  <Win title="Session trace" tone="purple">
+                    <div className="table-wrap">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th className="num">Round</th>
+                            <th>{intercept ? "Request" : "Prompt"}</th>
+                            {SIDES.map((s) => (
+                              <th key={s}>{SERIES[s].name}</th>
+                            ))}
+                            <th>Verdict</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {rounds.map((r) => (
+                            <tr key={r.round}>
+                              <td className="num px">{r.round}</td>
+                              <td style={{ minWidth: 200 }}>{r.query}</td>
+                              {SIDES.map((s) => {
+                                const l = leakOf(r, s)!;
+                                return (
+                                  <td key={s} style={{ minWidth: 170 }}>
+                                    <b>{pct(l.recovery_rate)}</b> · {people(l.candidate_pool)}
+                                    <div className="sub">{l.disclosed.join(", ") || "nothing"}</div>
+                                  </td>
+                                );
+                              })}
+                              <td>
+                                <span className="tag" data-tone="lime">
+                                  {r.protected.monitor?.verdict ?? "allowed"}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </Win>
+                ) : (
+                  <div className="charts">
+                    <Win title="Details recovered" tone="yellow">
+                      <div className="win-body">
+                        <LeakageChart
+                          label="Share of the target's details recovered, per round"
+                          rounds={total}
+                          values={series((l) => l.recovery_rate)}
+                          yMax={1}
+                          ticks={[0, 0.25, 0.5, 0.75, 1]}
+                          format={pct}
+                        />
+                      </div>
+                    </Win>
+                    <Win title="People still matching" tone="lime">
+                      <div className="win-body">
+                        <LeakageChart
+                          label="People still matching what was revealed, per round"
+                          rounds={total}
+                          values={series((l) => l.candidate_pool)}
+                          yMax={poolTop}
+                          ticks={poolTicks}
+                          format={(v) => String(v)}
+                        />
+                      </div>
+                    </Win>
+                  </div>
+                )}
+              </>
+            )}
+
+            {rounds.map((r) => (
+              <Win
+                key={r.round}
+                className="enter"
+                title={`Round ${String(r.round).padStart(2, "0")}`}
+                tone={TONE[attack.kind]}
+              >
+                <div className="win-body">
+                  <span className="lbl" style={{ color: "var(--ink-2)" }}>
+                    {intercept ? "A user asks, the attacker listens" : "Attacker asks"}
+                  </span>
+                  <p className="query-line">{r.query}</p>
+                </div>
+                <div className="round-sides">
+                  {SIDES.map((s) => {
+                    const l = leakOf(r, s);
+                    return (
+                      <div className="half" key={s}>
+                        <div className="half-name">
+                          <span className="sq" data-series={s} aria-hidden />
+                          {SERIES[s].name}
+                          {intercept && " → model"}
+                        </div>
+                        <div className={intercept ? "wire" : "answer"}>
+                          <Marked text={intercept ? r[s].payload : r[s].answer} leaks={leaks} />
+                        </div>
+                        {l && (
+                          <div className="found">
+                            {l.disclosed.length ? (
+                              l.disclosed.map((d) => (
+                                <span className="tag" data-tone="ink" key={d}>
+                                  {d.replace(/_\d+$/, "")}
+                                </span>
+                              ))
+                            ) : (
+                              <span className="tag" data-tone="lime">
+                                nothing
+                              </span>
+                            )}
+                            <span className="pool">{people(l.candidate_pool)}</span>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </Win>
+            ))}
+            {busy && rounds.length < total && <Loader seconds={elapsed} />}
+          </div>
+        )}
+      </div>
     </>
   );
 }
