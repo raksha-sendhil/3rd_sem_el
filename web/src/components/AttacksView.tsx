@@ -1,314 +1,312 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ApiError,
   api,
+  streamAttack,
   type AttackDefinition,
+  type AttackKind,
+  type AttackRound,
   type AttackRun,
   type RoundLeakage,
 } from "@/api/client";
 import {
   ArrowRight,
-  ErrorNotice,
+  Marked,
+  Notice,
   SERIES,
-  SeriesLabel,
-  Waiting,
-  WithTokens,
+  SIDES,
+  Working,
   useElapsed,
+  useLeakTerms,
   type SeriesId,
 } from "./common";
 import { LeakageChart } from "./LeakageChart";
 
-const KIND: Record<string, string> = {
-  direct: "Asks outright for the person's name and contact details.",
-  linkage: "Combines a few ordinary details that together point to one person.",
-  stepwise: "Asks a series of small questions, each one adding a detail.",
+const ORDER: AttackKind[] = ["context_dump", "stepwise", "interception"];
+const COUNT: Record<AttackKind, (n: number) => string> = {
+  context_dump: (n) => (n === 1 ? "1 prompt" : `${n} prompts`),
+  stepwise: (n) => `${n} prompts`,
+  interception: (n) => `${n} intercepted requests, no prompts`,
 };
 
-const SIDES: SeriesId[] = ["baseline", "protected"];
-const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
-const stillMatch = (n: number) => (n === 1 ? "1 person still matches" : `${n} people still match`);
+const pct = (v: number) => `${Math.round(v * 100)}%`;
+const people = (n: number) => (n === 1 ? "1 person matches" : `${n} people match`);
 
-function leakage(run: AttackRun, side: SeriesId, i: number): RoundLeakage | null {
-  const r = run.rounds[i];
+function leakOf(r: AttackRound, side: SeriesId): RoundLeakage | null {
   return (side === "baseline" ? r.baseline_leakage : r.protected_leakage) ?? null;
 }
 
 export function AttacksView() {
   const [attacks, setAttacks] = useState<AttackDefinition[] | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
+  const [rounds, setRounds] = useState<AttackRound[]>([]);
   const [run, setRun] = useState<AttackRun | null>(null);
-  const [shown, setShown] = useState(0);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [asTable, setAsTable] = useState(false);
+  const stop = useRef<(() => void) | null>(null);
   const elapsed = useElapsed(busy);
+  const leaks = useLeakTerms(rounds.flatMap((r) => r.baseline.doc_ids));
 
   useEffect(() => {
     api
       .attacks()
       .then((list) => {
-        setAttacks(list);
-        setSelected((s) => s ?? list[0]?.attack_id ?? null);
+        const sorted = [...list].sort((a, b) => ORDER.indexOf(a.kind) - ORDER.indexOf(b.kind));
+        setAttacks(sorted);
+        setSelected((s) => s ?? sorted[0]?.attack_id ?? null);
       })
       .catch((e) => setError(e instanceof ApiError ? e.message : String(e)));
+    return () => stop.current?.();
   }, []);
 
-  // play the rounds back one per second, so the audience can follow them
-  useEffect(() => {
-    if (!run || shown >= run.rounds.length) return;
-    const timer = setTimeout(() => setShown((n) => n + 1), shown === 0 ? 150 : 1000);
-    return () => clearTimeout(timer);
-  }, [run, shown]);
-
   const attack = attacks?.find((a) => a.attack_id === selected) ?? null;
+  const intercept = attack?.kind === "interception";
 
-  function select(id: string) {
-    if (busy) return;
-    setSelected(id);
+  function reset() {
+    stop.current?.();
+    setRounds([]);
     setRun(null);
-    setShown(0);
+    setBusy(false);
     setError(null);
   }
 
-  async function start() {
+  function start() {
     if (!attack) return;
+    reset();
     setBusy(true);
-    setError(null);
-    setRun(null);
-    setShown(0);
-    try {
-      setRun(await api.runAttack(attack.attack_id));
-    } catch (e) {
-      setError(e instanceof ApiError ? e.message : String(e));
-    } finally {
-      setBusy(false);
-    }
+    stop.current = streamAttack(attack.attack_id, {
+      round: (r) => setRounds((rs) => [...rs, r]),
+      done: (result) => {
+        setRun(result);
+        setBusy(false);
+      },
+      fail: (message) => {
+        setError(message);
+        setBusy(false);
+      },
+    });
   }
 
-  const visible = run ? run.rounds.slice(0, shown) : [];
+  const total = attack?.queries.length ?? 0;
+  const scored = rounds.length > 0 && rounds.every((r) => r.baseline_leakage);
   const series = (pick: (l: RoundLeakage) => number) =>
-    Object.fromEntries(
-      SIDES.map((s) => [s, visible.map((_, i) => pick(leakage(run!, s, i)!))]),
-    ) as Record<SeriesId, number[]>;
-  const hasLeakage = run !== null && run.rounds.every((r) => r.baseline_leakage);
-  const maxDisclosed = hasLeakage
-    ? Math.max(3, ...run.rounds.flatMap((_, i) => SIDES.map((s) => leakage(run, s, i)!.disclosed.length)))
-    : 0;
-  const maxPool = hasLeakage
-    ? Math.max(1, ...run.rounds.flatMap((_, i) => SIDES.map((s) => leakage(run, s, i)!.candidate_pool)))
-    : 0;
-  const done = run !== null && shown >= run.rounds.length;
+    Object.fromEntries(SIDES.map((s) => [s, rounds.map((r) => pick(leakOf(r, s)!))])) as Record<
+      SeriesId,
+      number[]
+    >;
+  const maxPool = Math.max(1, ...rounds.flatMap((r) => SIDES.map((s) => leakOf(r, s)?.candidate_pool ?? 0)));
+  const poolStep = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500].find((st) => maxPool / st <= 5) ?? 1000;
+  const poolTop = Math.ceil(maxPool / poolStep) * poolStep;
+  const poolTicks = Array.from({ length: poolTop / poolStep + 1 }, (_, i) => i * poolStep);
 
   return (
     <>
-      <div className="page-head">
-        <h1>Try to identify a person</h1>
-        <p>
-          Each attack is a scripted line of questioning aimed at one person in the records. It
-          runs against both pipelines. An attack succeeds when the answers narrow everyone
-          down to that one person.
-        </p>
+      <Notice error={error} />
+
+      <div className="attack-cards">
+        {attacks?.map((a, i) => (
+          <button
+            key={a.attack_id}
+            type="button"
+            className="attack-card"
+            data-kind={a.kind}
+            aria-pressed={a.attack_id === selected}
+            onClick={() => {
+              if (busy) return;
+              reset();
+              setSelected(a.attack_id);
+            }}
+          >
+            <span className="no">{String(i + 1).padStart(2, "0")}</span>
+            <span className="name">{a.name}</span>
+            <span className="count">{COUNT[a.kind](a.queries.length)}</span>
+          </button>
+        ))}
       </div>
 
-      <ErrorNotice error={error} />
-
-      <div className="split">
-        <div className="list" role="listbox" aria-label="Attacks">
-          {attacks === null && !error && <div className="empty">Loading attacks</div>}
-          {attacks?.map((a) => (
-            <button
-              key={a.attack_id}
-              type="button"
-              role="option"
-              className="list-item"
-              aria-selected={a.attack_id === selected}
-              onClick={() => select(a.attack_id)}
-            >
-              <span className="title">
-                {a.name}
-                <span className="helper">{plural(a.queries.length, "question")}</span>
-              </span>
-              <span className="meta" style={{ display: "block" }}>
-                {KIND[a.kind] ?? a.kind}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        {attack && (
+      {attack && (
+        <div className="attack-run">
           <div>
-            <div className="detail-head">
-              <div>
-                <div className="eyebrow">
-                  {attack.kind} attack, target person{" "}
-                  <span className="mono">{attack.target_person_id}</span>
-                </div>
-                <h2>{attack.name}</h2>
-                <ol className="questions">
-                  {attack.queries.map((q) => (
-                    <li key={q}>{q}</li>
-                  ))}
-                </ol>
+            <div className="label-sm" style={{ marginBottom: 6 }}>
+              {intercept ? "Requests observed" : "Prompts"}
+            </div>
+            <ol className="prompts">
+              {attack.queries.map((q) => (
+                <li key={q}>{q}</li>
+              ))}
+            </ol>
+          </div>
+          <button type="button" className="btn" onClick={start} disabled={busy}>
+            {rounds.length ? "Again" : "Run"}
+            <ArrowRight />
+          </button>
+        </div>
+      )}
+
+      {(busy || rounds.length > 0) && (
+        <div className="scoreboard">
+          {SIDES.map((s) => {
+            const latest = rounds.length ? leakOf(rounds[rounds.length - 1], s) : null;
+            const at = rounds.find((r) => leakOf(r, s)?.identified)?.round;
+            return (
+              <div className="score" data-series={s} key={s}>
+                <span className="big">
+                  {latest ? Math.round(latest.recovery_rate * 100) : 0}
+                  <small>%</small>
+                </span>
+                <span className="who">
+                  <span className="swatch" data-series={s} aria-hidden />
+                  <b>{SERIES[s].name}</b>
+                </span>
+                <span className="status">
+                  {at ? (
+                    <span className="stamp">Identified · round {at}</span>
+                  ) : run ? (
+                    "Not identified"
+                  ) : (
+                    <Working seconds={elapsed} />
+                  )}
+                </span>
+                <span className="sub">
+                  {latest ? `recovered · ${people(latest.candidate_pool)}` : "recovered"}
+                </span>
               </div>
-              <button type="button" className="btn" onClick={start} disabled={busy}>
-                {run ? "Run again" : "Run attack"}
-                <ArrowRight />
+            );
+          })}
+        </div>
+      )}
+
+      {scored && (
+        <section className="section">
+          <div className="section-head">
+            <div className="legend" aria-label="Legend">
+              {SIDES.map((s) => (
+                <span key={s}>
+                  <span className="swatch" data-series={s} aria-hidden />
+                  {SERIES[s].name}
+                </span>
+              ))}
+            </div>
+            <div className="toggle" role="group" aria-label="Show as">
+              <button type="button" aria-pressed={!asTable} onClick={() => setAsTable(false)}>
+                Chart
+              </button>
+              <button type="button" aria-pressed={asTable} onClick={() => setAsTable(true)}>
+                Table
               </button>
             </div>
-
-            {busy && (
-              <Waiting
-                label={`Asking ${plural(attack.queries.length, "question")} of both pipelines`}
-                seconds={elapsed}
+          </div>
+          {asTable ? (
+            <div className="table-wrap">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th className="num">Round</th>
+                    <th>{intercept ? "Request" : "Prompt"}</th>
+                    {SIDES.map((s) => (
+                      <th key={s}>
+                        <span className="side swatch" data-series={s} aria-hidden />
+                        {SERIES[s].name}
+                      </th>
+                    ))}
+                    <th>Verdict</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rounds.map((r) => (
+                    <tr key={r.round}>
+                      <td className="num">{r.round}</td>
+                      <td style={{ minWidth: 200 }}>{r.query}</td>
+                      {SIDES.map((s) => {
+                        const l = leakOf(r, s)!;
+                        return (
+                          <td key={s} style={{ minWidth: 170 }}>
+                            <b>{pct(l.recovery_rate)}</b> · {people(l.candidate_pool)}
+                            <div className="mono" style={{ color: "var(--ink-2)" }}>
+                              {l.disclosed.join(", ") || "nothing"}
+                            </div>
+                          </td>
+                        );
+                      })}
+                      <td>{r.protected.monitor?.verdict ?? "allowed"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="charts">
+              <LeakageChart
+                title="Target's details recovered"
+                rounds={total}
+                values={series((l) => l.recovery_rate)}
+                yMax={1}
+                ticks={[0, 0.25, 0.5, 0.75, 1]}
+                format={pct}
               />
-            )}
+              <LeakageChart
+                title="People who still match"
+                rounds={total}
+                values={series((l) => l.candidate_pool)}
+                yMax={poolTop}
+                ticks={poolTicks}
+                format={(v) => String(v)}
+              />
+            </div>
+          )}
+        </section>
+      )}
 
-            {run && (
-              <>
-                <div className="tiles">
-                  {SIDES.map((s) => {
-                    const at =
-                      s === "baseline" ? run.baseline_identified_at : run.protected_identified_at;
-                    const revealed = at !== null && at !== undefined && at <= shown;
-                    const lastLeak = shown > 0 ? leakage(run, s, shown - 1) : null;
-                    return (
-                      <div className="tile" key={s}>
-                        <SeriesLabel series={s} />
-                        <div className="tile-value">
-                          {revealed ? `Identified at question ${at}` : done ? "Not identified" : "..."}
-                        </div>
-                        <div className="tile-note">
-                          {lastLeak
-                            ? `${stillMatch(lastLeak.candidate_pool)} after question ${shown}`
-                            : " "}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {hasLeakage && (
-                  <section className="section" style={{ marginTop: 40 }}>
-                    <div className="detail-head" style={{ borderBottom: 0, paddingBottom: 0 }}>
-                      <div className="legend" aria-label="Legend">
-                        {SIDES.map((s) => (
-                          <span key={s}>
-                            <span className="swatch" data-series={s} aria-hidden />
-                            {SERIES[s].name}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="switcher" role="group" aria-label="Show as">
-                        <button type="button" aria-pressed={!asTable} onClick={() => setAsTable(false)}>
-                          Chart
-                        </button>
-                        <button type="button" aria-pressed={asTable} onClick={() => setAsTable(true)}>
-                          Table
-                        </button>
+      {rounds.length > 0 && (
+        <section className="section">
+          {rounds.map((r) => (
+            <div className="round enter" key={r.round}>
+              <div className="round-no">{String(r.round).padStart(2, "0")}</div>
+              <div className="round-query">
+                <span className="label-sm">{intercept ? "Someone asks" : "Attacker asks"}</span>
+                {r.query}
+              </div>
+              {SIDES.map((s) => {
+                const l = leakOf(r, s);
+                const said = intercept ? r[s].payload : r[s].answer;
+                return (
+                  <section className="panel" data-series={s} key={s}>
+                    <div className="panel-head">
+                      <span className="label">
+                        {SERIES[s].name}
+                        {intercept && " → model"}
+                      </span>
+                    </div>
+                    <div className="panel-body">
+                      <div className={intercept ? "wire" : "answer"}>
+                        <Marked text={said} leaks={s === "baseline" ? leaks : []} />
                       </div>
                     </div>
-                    {asTable ? (
-                      <div className="table-scroll" style={{ marginTop: 16 }}>
-                        <table className="table">
-                          <thead>
-                            <tr>
-                              <th rowSpan={2}>Question</th>
-                              {SIDES.map((s) => (
-                                <th colSpan={2} key={s} className="group">
-                                  {SERIES[s].name}
-                                </th>
-                              ))}
-                            </tr>
-                            <tr>
-                              {SIDES.flatMap((s) => [
-                                <th className="num" key={s + "d"}>
-                                  Details revealed
-                                </th>,
-                                <th className="num" key={s + "p"}>
-                                  People matching
-                                </th>,
-                              ])}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {visible.map((r, i) => (
-                              <tr key={r.round}>
-                                <td>Q{r.round}</td>
-                                {SIDES.flatMap((s) => {
-                                  const l = leakage(run, s, i)!;
-                                  return [
-                                    <td className="num" key={s + "d"}>
-                                      {l.disclosed.length}
-                                    </td>,
-                                    <td className="num" key={s + "p"}>
-                                      {l.candidate_pool}
-                                    </td>,
-                                  ];
-                                })}
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    ) : (
-                      <div className="charts">
-                        <LeakageChart
-                          title="Details revealed about the target"
-                          sub="Name, age, town, job and so on, counted after each question"
-                          rounds={run.rounds.length}
-                          values={series((l) => l.disclosed.length)}
-                          yMax={maxDisclosed}
-                          unit={(v) => plural(v, "detail")}
-                        />
-                        <LeakageChart
-                          title="People who still match"
-                          sub="Identified once this reaches 1"
-                          rounds={run.rounds.length}
-                          values={series((l) => l.candidate_pool)}
-                          yMax={maxPool}
-                          unit={(v) => (v === 1 ? "1 person" : `${v} people`)}
-                        />
+                    {l && (
+                      <div className="found">
+                        {l.disclosed.length ? (
+                          l.disclosed.map((d) => (
+                            <span className="tag" key={d}>
+                              {d.replace(/_\d+$/, "")}
+                            </span>
+                          ))
+                        ) : (
+                          <span>nothing about the target</span>
+                        )}
+                        <span className="pool">{people(l.candidate_pool)}</span>
                       </div>
                     )}
                   </section>
-                )}
-
-                <section className="section">
-                  <h2 className="section-title">Questions and answers</h2>
-                  {visible.map((r, i) => (
-                    <div className="round round-enter" key={r.round}>
-                      <div className="round-no">Q{r.round}</div>
-                      <div className="round-query">{r.query}</div>
-                      <div className="round-pad" aria-hidden />
-                      {SIDES.map((s) => {
-                        const l = leakage(run, s, i);
-                        return (
-                          <div key={s}>
-                            <SeriesLabel series={s} compact />
-                            <p className="answer" style={{ marginTop: 8 }}>
-                              <WithTokens text={r[s].answer} />
-                            </p>
-                            {l && (
-                              <div className="round-leak">
-                                {l.disclosed.length
-                                  ? `Revealed: ${l.disclosed.join(", ")}. `
-                                  : "Revealed nothing about the target. "}
-                                {stillMatch(l.candidate_pool)}.
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ))}
-                </section>
-              </>
-            )}
-          </div>
-        )}
-      </div>
+                );
+              })}
+            </div>
+          ))}
+          {busy && rounds.length < total && <Working seconds={elapsed} />}
+        </section>
+      )}
     </>
   );
 }

@@ -1,58 +1,70 @@
 "use client";
 
 import { Fragment, useEffect, useState, type ReactNode } from "react";
-import type { RagAnswer } from "@/api/client";
+import { api, type RagAnswer } from "@/api/client";
 
 export const SERIES = {
-  baseline: { name: "Standard RAG", sub: "reads the original records", color: "#6929c4" },
-  protected: { name: "Protected RAG", sub: "reads the sanitised records", color: "#1192e8" },
+  baseline: { name: "Standard RAG", color: "#e8414f" },
+  protected: { name: "Protected RAG", color: "#0078bf" },
 } as const;
 export type SeriesId = keyof typeof SERIES;
+export const SIDES: SeriesId[] = ["baseline", "protected"];
 
-const TOKEN = /(\[[A-Z]+_\d+\])/g;
+const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const TOKEN = /^\[[A-Z]+_\d+\]$/;
 
-/** Text with placeholder tokens such as [PERSON_1] set apart. */
-export function WithTokens({ text }: { text: string }) {
+/** ``text`` with placeholder tokens set as chips and every ``leaks`` term marked in red. */
+export function Marked({ text, leaks = [] }: { text: string; leaks?: string[] }) {
+  const parts = [String.raw`\[[A-Z]+_\d+\]`, ...leaks.map(escape)];
+  const pattern = new RegExp(`(${parts.join("|")})`, "gi");
   return (
     <>
-      {text.split(TOKEN).map((part, i) =>
-        i % 2 === 1 ? (
-          <span key={i} className="token">
+      {text.split(pattern).map((part, i) => {
+        if (i % 2 === 0) return <Fragment key={i}>{part}</Fragment>;
+        if (TOKEN.test(part))
+          return (
+            <span key={i} className="token">
+              {part}
+            </span>
+          );
+        return (
+          <mark key={i} className="leak">
             {part}
-          </span>
-        ) : (
-          <Fragment key={i}>{part}</Fragment>
-        ),
-      )}
+          </mark>
+        );
+      })}
     </>
   );
 }
 
-export function SeriesLabel({ series, compact }: { series: SeriesId; compact?: boolean }) {
-  return (
-    <div>
-      <div className="series-label">
-        <span className="swatch" data-series={series} aria-hidden />
-        {SERIES[series].name}
-      </div>
-      {!compact && <div className="series-sub">{SERIES[series].sub}</div>}
-    </div>
-  );
-}
-
-export function ArrowRight() {
-  return (
-    <svg className="arrow" viewBox="0 0 16 16" aria-hidden>
-      <path d="M9.3 3.3 8.6 4l3.5 3.5H2v1h10.1L8.6 12l.7.7L14 8z" fill="currentColor" />
-    </svg>
-  );
+/** The personal details in the given records: every span the sanitiser removed or blurred.
+ * Seeing one of them in Standard RAG's output means it leaked. */
+export function useLeakTerms(docIds: string[]): string[] {
+  const key = [...new Set(docIds)].sort().join(",");
+  const [terms, setTerms] = useState<string[]>([]);
+  useEffect(() => {
+    let alive = true;
+    const ids = key ? key.split(",") : [];
+    Promise.all(ids.map((id) => api.document(id).catch(() => null))).then((views) => {
+      if (!alive) return;
+      const found = new Set<string>();
+      for (const v of views)
+        for (const d of v?.record.rewriter.decisions ?? [])
+          if (d.action !== "keep" && d.span_text.trim().length > 2) found.add(d.span_text.trim());
+      setTerms([...found].sort((a, b) => b.length - a.length));
+    });
+    return () => {
+      alive = false;
+    };
+  }, [key]);
+  return terms;
 }
 
 export function formatMs(ms: number): string {
   return ms < 1000 ? `${ms} ms` : `${(ms / 1000).toFixed(1)} s`;
 }
 
-/** Seconds since `running` became true; resets when it turns false. */
+/** Seconds since ``running`` became true. */
 export function useElapsed(running: boolean): number {
   const [seconds, setSeconds] = useState(0);
   useEffect(() => {
@@ -65,65 +77,96 @@ export function useElapsed(running: boolean): number {
   return seconds;
 }
 
-export function Waiting({ label, seconds }: { label: string; seconds: number }) {
+export function Working({ seconds }: { seconds: number }) {
   return (
-    <div className="waiting" role="status">
-      {label}
-      {seconds > 0 && `, ${seconds} s`}
-      <div className="progress" />
+    <div className="working" role="status" aria-label="Working">
+      <span className="dots" aria-hidden>
+        <i />
+        <i />
+        <i />
+      </span>
+      {seconds > 0 && <span>{seconds}s</span>}
     </div>
   );
 }
 
-export function ErrorNotice({ error }: { error: string | null }) {
-  if (!error) return null;
-  return (
+export function Notice({ error }: { error: string | null }) {
+  return error ? (
     <div className="notice" role="alert">
-      <b>Request failed</b>
-      <span>{error}</span>
+      {error}
     </div>
+  ) : null;
+}
+
+export function ArrowRight() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden>
+      <path d="M3 9h11.2l-4-4L11.6 3.6 18 10l-6.4 6.4-1.4-1.4 4-4H3z" fill="currentColor" />
+    </svg>
   );
 }
 
-/** One pipeline's answer with its retrieval facts and the literal model input. */
-export function AnswerPane({ answer }: { answer: RagAnswer }) {
-  const monitor = answer.monitor;
-  const rows: [string, ReactNode][] = [
-    [
-      "Records used",
-      answer.doc_ids.length ? (
-        <span className="mono">{answer.doc_ids.join("  ")}</span>
-      ) : (
-        "none"
-      ),
-    ],
-    ["Time", formatMs(answer.latency_ms)],
-    [
-      "Session monitor",
-      monitor
-        ? `${monitor.verdict}${monitor.reason ? `, ${monitor.reason}` : ""}`
-        : "not installed",
-    ],
-  ];
+/** One pipeline's answer, the records it used, and the exact text sent to the model. */
+export function AnswerPanel({
+  side,
+  answer,
+  leaks,
+  children,
+}: {
+  side: SeriesId;
+  answer: RagAnswer | null;
+  leaks: string[];
+  children?: ReactNode;
+}) {
+  const [open, setOpen] = useState(false);
   return (
-    <>
-      <p className="answer">
-        <WithTokens text={answer.answer} />
-      </p>
-      <dl className="facts">
-        {rows.map(([k, v]) => (
-          <Fragment key={k}>
-            <dt>{k}</dt>
-            <dd>{v}</dd>
-          </Fragment>
-        ))}
-      </dl>
-      <details className="disclosure">
-        <summary>What the model was given ({answer.payload.length} characters)</summary>
-        <pre className="payload">
-          <WithTokens text={answer.payload} />
-        </pre>
-      </details>
-    </>
+    <section className="panel" data-series={side}>
+      <div className="panel-head">
+        <span className="label">{SERIES[side].name}</span>
+        {answer && <span className="meta">{formatMs(answer.latency_ms)}</span>}
+      </div>
+      <div className="panel-body">
+        {answer ? (
+          <p className="answer">
+            <Marked text={answer.answer} leaks={side === "baseline" ? leaks : []} />
+          </p>
+        ) : (
+          children
+        )}
+      </div>
+      {answer && (
+        <>
+          <div className="panel-foot">
+            {answer.doc_ids.map((id) => (
+              <span className="doc-chip" key={id}>
+                {id}
+              </span>
+            ))}
+            {side === "protected" && (
+              <span
+                className="verdict"
+                data-verdict={answer.monitor?.verdict}
+                title={answer.monitor?.reason}
+              >
+                {answer.monitor?.verdict ?? "allowed"}
+              </span>
+            )}
+            <button
+              type="button"
+              className="link-btn payload-toggle"
+              aria-expanded={open}
+              onClick={() => setOpen((o) => !o)}
+            >
+              Payload
+            </button>
+          </div>
+          {open && (
+            <pre className="payload">
+              <Marked text={answer.payload} leaks={side === "baseline" ? leaks : []} />
+            </pre>
+          )}
+        </>
+      )}
+    </section>
   );
 }

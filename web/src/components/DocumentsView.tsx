@@ -8,17 +8,17 @@ import {
   type DocumentView,
   type RoutingDecision,
 } from "@/api/client";
-import { ErrorNotice, Waiting, formatMs } from "./common";
+import { Notice, Working, formatMs } from "./common";
 
-const ACTION_LABEL: Record<string, string> = {
-  placeholder: "Replaced with a token",
-  generalise: "Made vague",
+const ACTION: Record<string, string> = {
+  placeholder: "Token",
+  generalise: "Vague",
   keep: "Kept",
 };
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-/** The original text with every changed span marked at its offsets. */
+/** The original with every changed span marked at its offsets. */
 function markOriginal(text: string, decisions: RoutingDecision[]): ReactNode[] {
   const spans = decisions
     .filter((d) => d.action !== "keep" && d.start != null && d.end != null)
@@ -26,10 +26,10 @@ function markOriginal(text: string, decisions: RoutingDecision[]): ReactNode[] {
   const out: ReactNode[] = [];
   let at = 0;
   for (const d of spans) {
-    if (d.start! < at) continue; // overlapping span, already covered
+    if (d.start! < at) continue; // overlaps a span already marked
     out.push(<Fragment key={`t${at}`}>{text.slice(at, d.start!)}</Fragment>);
     out.push(
-      <mark key={`m${d.start}`} data-action={d.action} title={`${d.category} becomes ${d.replacement}`}>
+      <mark key={`m${d.start}`} data-action={d.action} title={`${d.category} → ${d.replacement}`}>
         {text.slice(d.start!, d.end!)}
       </mark>,
     );
@@ -39,23 +39,28 @@ function markOriginal(text: string, decisions: RoutingDecision[]): ReactNode[] {
   return out;
 }
 
-/** The sanitised text with the tokens and vague phrases that replaced a detail marked. */
+/** The sanitised text with its tokens and vague phrases marked. */
 function markSanitised(text: string, decisions: RoutingDecision[]): ReactNode[] {
-  const action = new Map<string, string>();
-  for (const d of decisions) {
-    if (d.action !== "keep" && d.replacement) action.set(d.replacement.toLowerCase(), d.action);
-  }
-  const phrases = [...action.keys()].sort((a, b) => b.length - a.length).map(escape);
-  const pattern = new RegExp(`(\\[[A-Z]+_\\d+\\]${phrases.length ? "|" + phrases.join("|") : ""})`, "gi");
-  return text.split(pattern).map((part, i) =>
-    i % 2 === 1 ? (
-      <mark key={i} data-action={action.get(part.toLowerCase()) ?? "placeholder"}>
+  const vague = [
+    ...new Set(
+      decisions
+        .filter((d) => d.action === "generalise" && d.replacement)
+        .map((d) => d.replacement!.toLowerCase()),
+    ),
+  ].sort((a, b) => b.length - a.length);
+  const parts = [String.raw`\[[A-Z]+_\d+\]`, ...vague.map(escape)];
+  return text.split(new RegExp(`(${parts.join("|")})`, "gi")).map((part, i) => {
+    if (i % 2 === 0) return <Fragment key={i}>{part}</Fragment>;
+    return part.startsWith("[") ? (
+      <span key={i} className="token">
+        {part}
+      </span>
+    ) : (
+      <mark key={i} data-action="generalise">
         {part}
       </mark>
-    ) : (
-      <Fragment key={i}>{part}</Fragment>
-    ),
-  );
+    );
+  });
 }
 
 export function DocumentsView() {
@@ -70,18 +75,24 @@ export function DocumentsView() {
       .documents()
       .then((list) => {
         setDocs(list);
-        setSelected((s) => s ?? list.find((d) => d.n_changes > 0)?.doc_id ?? list[0]?.doc_id ?? null);
+        setSelected(
+          (s) => s ?? list.find((d) => d.n_changes > 0)?.doc_id ?? list[0]?.doc_id ?? null,
+        );
       })
       .catch((e) => setError(e instanceof ApiError ? e.message : String(e)));
   }, []);
 
   useEffect(() => {
     if (!selected) return;
+    let alive = true;
     setDoc(null);
     api
       .document(selected)
-      .then(setDoc)
-      .catch((e) => setError(e instanceof ApiError ? e.message : String(e)));
+      .then((d) => alive && setDoc(d))
+      .catch((e) => alive && setError(e instanceof ApiError ? e.message : String(e)));
+    return () => {
+      alive = false;
+    };
   }, [selected]);
 
   const shown = useMemo(() => {
@@ -97,130 +108,92 @@ export function DocumentsView() {
 
   return (
     <>
-      <div className="page-head">
-        <h1>Every record, stored twice</h1>
-        <p>
-          The original goes to Standard RAG. Protected RAG gets a version rewritten from the
-          facts in it, with names and numbers replaced by tokens and other telling details made
-          vague.
-        </p>
-      </div>
-
-      <ErrorNotice error={error} />
-
-      <div className="split">
-        <div className="list-scroll">
-          <div className="field filter">
-            <input
-              aria-label="Filter records"
-              placeholder="Filter by id or text"
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-            />
-          </div>
-          <div className="list" role="listbox" aria-label="Records">
-            {docs === null && !error && <div className="empty">Loading records</div>}
-            {docs && shown.length === 0 && <div className="empty">No record matches.</div>}
+      <Notice error={error} />
+      <div className="library">
+        <div className="doc-list">
+          <input
+            aria-label="Filter records"
+            placeholder="Filter"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+          />
+          <div className="doc-items" role="listbox" aria-label="Records">
+            {docs && shown.length === 0 && <div className="empty" style={{ padding: 14 }}>No match</div>}
             {shown.map((d) => (
               <button
                 key={d.doc_id}
                 type="button"
                 role="option"
-                className="list-item"
+                className="doc-item"
                 aria-selected={d.doc_id === selected}
                 onClick={() => setSelected(d.doc_id)}
               >
-                <span className="title">
+                <span className="top">
                   <span className="mono">{d.doc_id}</span>
-                  <span className="helper">
-                    {d.n_changes === 0 ? "unchanged" : `${d.n_changes} changed`}
-                  </span>
+                  <span className="n">{d.n_changes}</span>
                 </span>
-                <span className="meta clamp" style={{ WebkitLineClamp: 2 }}>
-                  {d.preview}
-                </span>
+                <span className="preview">{d.preview}</span>
               </button>
             ))}
           </div>
         </div>
 
         <div>
-          {selected && !doc && !error && <Waiting label="Loading the record" seconds={0} />}
+          {selected && !doc && !error && <Working seconds={0} />}
           {doc && rec && (
             <>
-              <div className="detail-head" style={{ display: "block" }}>
-                <div className="eyebrow">Record</div>
-                <h2 className="mono" style={{ fontSize: 20 }}>
-                  {doc.doc_id}
-                </h2>
-                <div className="stats">
-                  <span>
-                    Details changed <b>{changed.length}</b>
+              <div className="doc-head">
+                <h2>{doc.doc_id}</h2>
+                <span className="stat">
+                  <b>{changed.length}</b>changed
+                </span>
+                <span className="stat">
+                  <b>{rec.extractor.facts.length}</b>facts
+                </span>
+                <span className="stat">
+                  <b>{formatMs(rec.meta.total_ms)}</b>
+                </span>
+                <span className="keys">
+                  <span className="key">
+                    <span className="token">[TOKEN_1]</span>removed
                   </span>
-                  <span>
-                    Facts extracted <b>{rec.extractor.facts.length}</b>
+                  <span className="key">
+                    <mark data-action="generalise">&nbsp;&nbsp;&nbsp;&nbsp;</mark>made vague
                   </span>
-                  <span>
-                    Rewrites after a failed leak check <b>{rec.meta.leak_retries}</b>
-                  </span>
-                  <span>
-                    Time to sanitise <b>{formatMs(rec.meta.total_ms)}</b>
-                  </span>
-                  <span>
-                    Model <b>{rec.meta.model}</b>
-                  </span>
-                </div>
-                <div className="doc-legend">
-                  <span>
-                    <span className="key" data-action="placeholder" aria-hidden />
-                    {ACTION_LABEL.placeholder}
-                  </span>
-                  <span>
-                    <span className="key" data-action="generalise" aria-hidden />
-                    {ACTION_LABEL.generalise}
-                  </span>
-                </div>
+                </span>
               </div>
 
               {(rec.residual_leaks ?? []).length > 0 && (
-                <div className="notice" style={{ marginTop: 24 }}>
-                  <b>Leak check</b>
-                  <span>
-                    {(rec.residual_leaks ?? []).length} detail(s) could not be removed by rewriting and
-                    were masked instead.
-                  </span>
-                </div>
+                <Notice
+                  error={`${(rec.residual_leaks ?? []).length} detail(s) survived rewriting and were masked.`}
+                />
               )}
 
-              <div className="pair" style={{ marginTop: 0, borderTop: 0 }}>
-                <section className="pane">
-                  <div className="series-label">
-                    <span className="swatch" data-series="baseline" aria-hidden />
-                    Original
+              <div className="duo">
+                <section className="panel" data-series="baseline">
+                  <div className="panel-head">
+                    <span className="label">Original</span>
                   </div>
-                  <div className="series-sub">what Standard RAG reads</div>
-                  <p className="doc-text" style={{ marginTop: 16 }}>
-                    {markOriginal(doc.original, decisions)}
-                  </p>
+                  <div className="panel-body">
+                    <p className="doc-text">{markOriginal(doc.original, decisions)}</p>
+                  </div>
                 </section>
-                <section className="pane">
-                  <div className="series-label">
-                    <span className="swatch" data-series="protected" aria-hidden />
-                    Sanitised
+                <section className="panel" data-series="protected">
+                  <div className="panel-head">
+                    <span className="label">Sanitised</span>
                   </div>
-                  <div className="series-sub">what Protected RAG reads</div>
-                  <p className="doc-text" style={{ marginTop: 16 }}>
-                    {markSanitised(rec.rewriter.safe_text, decisions)}
-                  </p>
+                  <div className="panel-body">
+                    <p className="doc-text">{markSanitised(rec.rewriter.safe_text, decisions)}</p>
+                  </div>
                 </section>
               </div>
 
-              <section className="section" style={{ marginTop: 24 }}>
-                <h2 className="section-title">What was changed and why</h2>
-                {decisions.length === 0 ? (
-                  <p className="helper">Nothing in this record was found to be identifying.</p>
-                ) : (
-                  <div className="table-scroll">
+              {decisions.length > 0 && (
+                <section className="section" style={{ marginTop: 40 }}>
+                  <h2 className="label" style={{ marginBottom: 14 }}>
+                    Changes
+                  </h2>
+                  <div className="table-wrap">
                     <table className="table">
                       <thead>
                         <tr>
@@ -228,7 +201,7 @@ export function DocumentsView() {
                           <th>Kind</th>
                           <th>Action</th>
                           <th>Became</th>
-                          <th>Reason</th>
+                          <th>Why</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -236,21 +209,29 @@ export function DocumentsView() {
                           <tr key={i}>
                             <td>{d.span_text}</td>
                             <td className="mono">{d.category}</td>
-                            <td>{ACTION_LABEL[d.action] ?? d.action}</td>
-                            <td>{d.replacement ?? "unchanged"}</td>
-                            <td className="helper">{d.reason}</td>
+                            <td>{ACTION[d.action] ?? d.action}</td>
+                            <td>
+                              {d.replacement?.startsWith("[") ? (
+                                <span className="token">{d.replacement}</span>
+                              ) : (
+                                (d.replacement ?? "")
+                              )}
+                            </td>
+                            <td style={{ color: "var(--ink-2)" }}>{d.reason}</td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
-                )}
-              </section>
+                </section>
+              )}
 
-              <section className="section">
-                <details className="disclosure">
-                  <summary>Facts the rewrite was built from ({rec.extractor.facts.length})</summary>
-                  <div className="table-scroll" style={{ marginTop: 12 }}>
+              {rec.extractor.facts.length > 0 && (
+                <section className="section" style={{ marginTop: 40 }}>
+                  <h2 className="label" style={{ marginBottom: 14 }}>
+                    Facts
+                  </h2>
+                  <div className="table-wrap">
                     <table className="table">
                       <thead>
                         <tr>
@@ -272,8 +253,8 @@ export function DocumentsView() {
                       </tbody>
                     </table>
                   </div>
-                </details>
-              </section>
+                </section>
+              )}
             </>
           )}
         </div>
