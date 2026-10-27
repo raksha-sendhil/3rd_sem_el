@@ -3,11 +3,11 @@
 A Next.js page that shows Standard RAG and Protected RAG side by side. It talks only to the
 HTTP API (`docs/phase3_plan.md`, section 6.4).
 
-| View | What it shows |
+| Page | What it shows |
 |---|---|
-| Compare | One question sent to both pipelines: the answers (personal details leaked by Standard RAG marked in red, placeholder tokens in yellow), the records used, the time taken, the session monitor's verdict, and the exact text sent to the model. Later questions in the session collect in a table. |
-| Attacks | The three attacks, one per attacker capability: context dump (one prompt injection), stepwise inference (several innocent prompts) and payload interception (a passive observer of the traffic to the model). Rounds stream in as they finish, with the share of the target's details recovered, the people still matching, and a per-round table. |
-| Documents | Each stored record, original next to sanitised, with every change marked, the reason for it, and the extracted facts. |
+| Compare (`/`) | One question sent to both pipelines: each answer with leaked details marked red, tokens purple and generalised phrases amber; how many details leaked; the time taken and records used; and "What the model saw", the exact prompt. Runs collect in a session table. |
+| Attacks (`/attacks`) | The three attacks: context dump, stepwise inference and payload interception. Rounds stream from the API and play back at 1x, 2x or 4x, or one step at a time. Charts of the Secret Recovery Rate and the people still matching, a live transcript, and the target's details as each pipeline gives them away. |
+| Documents (`/documents`) | Each stored record before and after the three agents, with counts per agent. Hovering a highlight rings its twin on the other side and in the table of changes. |
 
 ## Run it
 
@@ -50,8 +50,11 @@ cd web && npm run types
 
 ## Design
 
-Pixel windows on warm paper: Pixelify Sans for titles, Silkscreen for labels and buttons,
-VT323 for the raw text sent to the model, and Bricolage Grotesque for reading. Each panel is a
-window with a coloured title bar. Standard RAG is always red (#f2412f) and Protected RAG always
-blue (#2f6bff), in every window, chart and label; the pair was checked for colour-blind
-separation.
+White cards on a dotted paper background (#f6f4ef), styled with Tailwind. Bricolage Grotesque
+for headings and numbers, Instrument Sans for reading, JetBrains Mono for labels and ids.
+Standard RAG is coral (#ff4d3d) and Protected RAG teal (#0fb5a0) in every panel and chart. The
+agents are blue (Detect), purple (Extract) and amber (Rewrite). Icons come from lucide-react,
+charts from recharts and toasts from sonner.
+
+Illustrations: put the image files in `public/images/` and set their paths in
+`src/lib/images.ts`. Until then each one shows a placeholder.

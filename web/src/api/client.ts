@@ -15,6 +15,8 @@ export type SessionTrace = S["SessionTrace"];
 export type DocumentSummary = S["DocumentSummary"];
 export type DocumentView = S["DocumentView"];
 export type RoutingDecision = S["RoutingDecision"];
+export type SanitisedRecord = S["SanitisedRecord"];
+export type PIICategory = S["PIICategory"];
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
   /\/$/,
@@ -58,6 +60,7 @@ const documentCache = new Map<string, Promise<DocumentView>>();
 
 export const api = {
   health: () => call<S["HealthResponse"]>("GET", "/v1/health"),
+  sanitise: (text: string) => call<SanitisedRecord>("POST", "/v1/sanitise", { text }),
   createSession: () => call<{ session_id: string }>("POST", "/v1/sessions", {}),
   session: (id: string) => call<SessionTrace>("GET", `/v1/sessions/${id}`),
   compare: (query: string, session_id: string) =>
