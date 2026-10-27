@@ -202,9 +202,12 @@ def create_app(
         return request.app.state.rag
 
     def attack_sources() -> tuple[Path, Path]:
-        if mock:
+        """D's attack scripts and person table; the sample ones (over the 20 fixtures) in mock
+        mode or until D's scripts are in place."""
+        attacks_dir = Path(settings.attacks_dir)
+        if mock or not any(attacks_dir.glob("*.json")):
             return SAMPLE_DIR / "attacks", SAMPLE_DIR / "people.json"
-        return Path(settings.attacks_dir), Path(settings.people_path)
+        return attacks_dir, Path(settings.people_path)
 
     @app.post("/v1/sanitise", response_model=SanitisedRecord)
     async def post_sanitise(body: SanitiseRequest, request: Request) -> SanitisedRecord:
