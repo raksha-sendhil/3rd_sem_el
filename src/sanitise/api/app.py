@@ -55,7 +55,7 @@ from sanitise.llm.ollama import OllamaClient
 from sanitise.loader import compute_doc_id
 from sanitise.mock_mode import SAMPLE_DIR, build_mock_context, mock_llm, mock_sanitise
 from sanitise.rag.answer import RagContext, answer, compare
-from sanitise.rag.retrieve import BM25Retriever
+from sanitise.rag.dense import build_retriever
 from sanitise.rag.store import SqliteDocumentStore
 from sanitise.schemas import (
     PIPELINE_VERSION,
@@ -171,10 +171,14 @@ def create_app(
                         request.app.state.rag = await build_mock_context(request.app.state.llm)
                     else:
                         store = SqliteDocumentStore(settings.store_path)
-                        originals = {i: store.original(i) for i in store.ids()}
-                        request.app.state.rag = RagContext(
-                            store=store, retriever=BM25Retriever(originals)
+                        retriever = await asyncio.to_thread(
+                            build_retriever,
+                            store,
+                            mode=settings.retrieval_mode,
+                            index_dir=settings.index_dir,
+                            model_name=settings.embedding_model,
                         )
+                        request.app.state.rag = RagContext(store=store, retriever=retriever)
         return request.app.state.rag
 
     def attack_sources() -> tuple[Path, Path]:

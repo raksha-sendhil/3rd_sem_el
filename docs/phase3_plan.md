@@ -547,15 +547,20 @@ D annotates with it): `age`, `sex`, `lives_in`, `works_as`, `studies_at`, `treat
 [{"person_id": "p017", "name": "Priya Raman", "sex": "F", "age": 34, "age_band": "30-39",
   "town": "Coonoor", "district": "Nilgiris", "state": "Tamil Nadu",
   "occupation": "pediatric neurosurgeon", "occupation_group": "doctor",
-  "conditions": ["vertigo"], "phone": "+91 98450 12345", "doc_ids": ["c0412", "c0413"]}]
+  "conditions": ["vertigo"], "phone": "+91 98450 12345",
+  "doc_ids": ["9e7d0526c06f871c", "4b1f0c2a77e5d913"]}]
 ```
 
-**Corpus documents** (`data/corpus/docs/c0412.json`): `{"doc_id": "...", "source":
-"synthetic-chatdoctor", "person_id": "p017", "text": "..."}`. `person_id` is used only by the
-scorers; it is never indexed or shown to the model.
+**Corpus documents** (`data/corpus/docs/<name>.json`, any file name): `{"doc_id": "...",
+"source": "synthetic-chatdoctor", "person_id": "p017", "text": "..."}`. `person_id` is used only
+by the scorers; it is never indexed or shown to the model. **`doc_id` is always
+`compute_doc_id(text)`** (first 16 hex characters of the SHA-256 of the text, as in Phase 2;
+`from sanitise.loader import compute_doc_id`). The loader recomputes it from the text, so any
+other id would not match the store; `doc_ids` in the person table and the QA set use the same ids.
 
 **QA set** (`data/qa/qa.json`): `[{"qa_id": "q01", "question": "What did the doctor suggest for
-the lighthouse keeper's rash?", "expected": ["contact dermatitis"], "doc_ids": ["c0207"]}]`.
+the lighthouse keeper's rash?", "expected": ["contact dermatitis"],
+"doc_ids": ["5c0e9d2f31a8b746"]}]`.
 An answer is correct when every string in `expected` appears in it (case-insensitive) or in
 its generalised form.
 
