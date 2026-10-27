@@ -709,6 +709,10 @@ ruff check . && ruff format --check .
   `$env:SANITISE_LLM_BACKEND="mock"; sanitise serve`). It sanitises the 20 fixtures
   deterministically at startup and loads sample people and attacks from `data/sample/`, so
   every endpoint in 6.4 answers. API docs at `http://localhost:8000/docs`.
+* **Real backend on Colab:** `notebooks/backend.ipynb` clones `main`, installs everything,
+  evaluates Agents 1-3 on the 20 fixtures (cell ②, prints a report), builds the store and
+  search index from the corpus with `sanitise build` (cell ③, resumes after a disconnect), and
+  starts the API behind a public tunnel for the dashboard (cell ④).
 * Settings come from `SANITISE_*` environment variables or a `.env` file
   (`src/sanitise/config.py`, `.env.example`).
 
