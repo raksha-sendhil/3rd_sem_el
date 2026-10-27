@@ -109,7 +109,13 @@ class MockLLM(BaseJSONClient):
         return len(self._queue) + sum(len(q) for q in self._by_schema.values())
 
     async def _generate(
-        self, messages: list[Message], json_schema: dict[str, Any] | None, temperature: float
+        self,
+        messages: list[Message],
+        json_schema: dict[str, Any] | None,
+        temperature: float,
+        *,
+        top_p: float | None = None,
+        max_tokens: int | None = None,
     ) -> str:
         # Free-text calls (text_call) have no schema; script them under the name "text".
         call = MockCall(

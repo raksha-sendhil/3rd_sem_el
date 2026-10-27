@@ -27,10 +27,12 @@ from pathlib import Path
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 
-from sanitise.agents.detector.pipeline import detect_llm, detect_rules, detect_with_trace
+from sanitise.agents.detector.pipeline import detect, detect_llm, detect_rules, detect_with_trace
+from sanitise.agents.extractor.pipeline import extract
 from sanitise.agents.pipeline import sanitise
+from sanitise.agents.rewriter.pipeline import rewrite
 from sanitise.api.models import (
     AttackRunRequest,
     CompareRequest,
@@ -39,13 +41,22 @@ from sanitise.api.models import (
     DetectRulesRequest,
     DocumentSummary,
     DocumentView,
+    ExtractRequest,
     HealthResponse,
     QueryRequest,
+    RewriteRequest,
     SanitiseRequest,
     ScoreRequest,
     SessionCreated,
 )
-from sanitise.attacks.runner import get_attack, load_attacks, load_people, run_attack
+from sanitise.attacks.runner import (
+    get_attack,
+    iter_attack,
+    load_attacks,
+    load_people,
+    run_attack,
+    summarise,
+)
 from sanitise.config import Settings, get_settings
 from sanitise.errors import PipelineError
 from sanitise.evaluation import scoring
@@ -53,7 +64,14 @@ from sanitise.llm.base import BaseJSONClient
 from sanitise.llm.factory import build_llm_client, close_llm_client
 from sanitise.llm.ollama import OllamaClient
 from sanitise.loader import compute_doc_id
-from sanitise.mock_mode import SAMPLE_DIR, build_mock_context, mock_llm, mock_sanitise
+from sanitise.mock_mode import (
+    SAMPLE_DIR,
+    build_mock_context,
+    mock_facts,
+    mock_llm,
+    mock_rewrite,
+    mock_sanitise,
+)
 from sanitise.rag.answer import RagContext, answer, compare
 from sanitise.rag.dense import build_retriever
 from sanitise.rag.store import SqliteDocumentStore
@@ -65,7 +83,9 @@ from sanitise.schemas import (
     CompareResponse,
     DetectorOutput,
     DetectorResult,
+    ExtractorOutput,
     RagAnswer,
+    RewriterOutput,
     SanitisedRecord,
     SessionTrace,
     SpanMetrics,
@@ -192,6 +212,25 @@ def create_app(
         run = mock_sanitise if mock else sanitise
         return await run(doc_id, body.text, client_for(request))
 
+    @app.post("/v1/extract", response_model=ExtractorOutput)
+    async def post_extract(body: ExtractRequest, request: Request) -> ExtractorOutput:
+        """Agent 2 alone. It needs Agent 1's spans to find the subjects, so Agent 1 runs first."""
+        doc_id = body.doc_id or compute_doc_id(body.text)
+        llm = client_for(request)
+        detected = await detect(doc_id, body.text, llm)
+        if mock:
+            return ExtractorOutput(doc_id=doc_id, facts=mock_facts(detected.output))
+        _, extracted = await extract(doc_id, body.text, detected.output, llm)
+        return extracted
+
+    @app.post("/v1/rewrite", response_model=RewriterOutput)
+    async def post_rewrite(body: RewriteRequest, request: Request) -> RewriterOutput:
+        detected = DetectorOutput(doc_id=body.doc_id, spans=body.spans)
+        extracted = ExtractorOutput(doc_id=body.doc_id, facts=body.facts)
+        if mock:
+            return mock_rewrite(body.doc_id, detected, extracted)
+        return await rewrite(body.doc_id, detected, extracted, client_for(request))
+
     @app.get("/v1/documents", response_model=list[DocumentSummary])
     async def get_documents(
         request: Request, limit: int = 50, offset: int = 0
@@ -261,6 +300,38 @@ def create_app(
             load_people(people_path),
             client_for(request),
             body.session_id if body else None,
+        )
+
+    @app.get("/v1/attacks/{attack_id}/stream")
+    async def get_attack_stream(
+        attack_id: str, request: Request, session_id: str | None = None
+    ) -> StreamingResponse:
+        """Server-Sent Events: one ``round`` event per finished round, then ``done`` with the
+        full ``AttackRun`` (or ``error`` with the error envelope)."""
+        attacks_dir, people_path = attack_sources()
+        attack = get_attack(load_attacks(attacks_dir), attack_id)
+        ctx = await rag_for(request)
+        people = load_people(people_path)
+        llm = client_for(request)
+        sid = session_id or ctx.sessions.create()
+
+        def event(name: str, data: str) -> str:
+            return f"event: {name}\ndata: {data}\n\n"
+
+        async def events() -> AsyncIterator[str]:
+            rounds = []
+            try:
+                async for round_ in iter_attack(ctx, attack, people, llm, sid):
+                    rounds.append(round_)
+                    yield event("round", round_.model_dump_json())
+                yield event("done", summarise(attack, sid, rounds).model_dump_json())
+            except PipelineError as exc:
+                yield event("error", exc.to_envelope().model_dump_json())
+
+        return StreamingResponse(
+            events(),
+            media_type="text/event-stream",
+            headers={"cache-control": "no-cache", "x-accel-buffering": "no"},
         )
 
     @app.get("/v1/health", response_model=HealthResponse)

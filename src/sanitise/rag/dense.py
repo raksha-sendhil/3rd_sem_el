@@ -115,7 +115,7 @@ class HybridRetriever:
     ) -> None:
         self.sparse, self.dense, self.rrf_k, self.depth = sparse, dense, rrf_k, depth
 
-    def search(self, query: str, k: int = 4) -> list[RetrievalHit]:
+    def search(self, query: str, k: int = 3) -> list[RetrievalHit]:
         sparse = [h.doc_id for h in self.sparse.search(query, self.depth)]
         dense = [d for d, _ in self.dense.search(query, self.depth)]
         sparse_rank = {d: r for r, d in enumerate(sparse, start=1)}

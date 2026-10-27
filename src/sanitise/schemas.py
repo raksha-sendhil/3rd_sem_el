@@ -193,7 +193,10 @@ RELATIONS: tuple[str, ...] = (
 
 Pipeline = Literal["baseline", "protected"]
 Verdict = Literal["allowed", "generalised", "blocked"]
-AttackKind = Literal["direct", "linkage", "stepwise"]
+# Phase 2 spec section 4: one attack per attacker capability. context_dump: one prompt-injection
+# query; stepwise: innocent queries over time; interception: a passive observer of the traffic
+# to the model, who never prompts (its rounds are scored on the payload, not the answer).
+AttackKind = Literal["context_dump", "stepwise", "interception"]
 
 
 class Subject(BaseModel):
@@ -263,6 +266,8 @@ class RoundLeakage(BaseModel):
     disclosed: list[str]  # target attributes revealed so far: "age", "town", "name", ...
     candidate_pool: int  # people still consistent with what was revealed
     identified: bool  # pool <= 1, or a direct identifier of the target appeared
+    # Secret Recovery Rate (Sun et al., 2026): target fields recovered / total target fields
+    recovery_rate: float = Field(default=0.0, ge=0.0, le=1.0)
 
 
 class AttackRound(BaseModel):

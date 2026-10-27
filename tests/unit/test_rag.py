@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import pytest
 
-from sanitise.attacks.runner import load_attacks, load_people, run_attack
+from sanitise.attacks.runner import _observed, load_attacks, load_people, run_attack
 from sanitise.errors import DocNotFound, IndexNotBuilt, SessionNotFound
-from sanitise.evaluation.attacks import score_round
+from sanitise.evaluation.attacks import score_round, target_info
 from sanitise.evaluation.facts import score_facts
 from sanitise.evaluation.qa import score_qa
 from sanitise.evaluation.rewrite import score_rewrite
@@ -75,7 +75,7 @@ async def test_empty_store_and_unknown_session() -> None:
 
 async def test_run_sample_attack(ctx: RagContext) -> None:
     attacks = load_attacks(SAMPLE_DIR / "attacks")
-    assert set(attacks) == {"direct_s01", "linkage_s01", "stepwise_s02"}
+    assert set(attacks) == {"context_dump_s01", "interception_s04", "stepwise_s02"}
     run = await run_attack(
         ctx, attacks["stepwise_s02"], load_people(SAMPLE_DIR / "people.json"), mock_llm()
     )
@@ -98,6 +98,32 @@ def test_score_round_counts_disclosure_and_pool() -> None:
     assert "name" in named.disclosed and named.identified
     town = score_round(people, "s01", [_answer("protected", "q", "Someone in Coonoor.")])
     assert town.disclosed == ["town"] and town.candidate_pool == 3
+    assert town.recovery_rate == pytest.approx(1 / 6)  # name, age, town, job, phone, vertigo
+
+
+def test_interception_is_scored_on_the_payload_not_the_answer() -> None:
+    people = load_people(SAMPLE_DIR / "people.json")
+    attack = load_attacks(SAMPLE_DIR / "attacks")["interception_s04"]
+    sent = _answer("baseline", "q", "The records do not say.").model_copy(
+        update={"payload": "CONTEXT: Cyril D'Souza, 71, Fort Kochi, ischemic stroke"}
+    )
+    seen = score_round(people, "s04", _observed(attack, [sent]))
+    assert seen.identified and {"name", "town"} <= set(seen.disclosed)
+    dump = load_attacks(SAMPLE_DIR / "attacks")["context_dump_s01"]
+    assert score_round(people, "s04", _observed(dump, [sent])).disclosed == []
+
+
+def test_target_info_counts_true_values_over_everyone() -> None:
+    people = load_people(SAMPLE_DIR / "people.json")
+    said = [_answer("baseline", "q", "Priya Raman from Coonoor; Arjun Nair is 26 years old.")]
+    assert target_info(people, said) >= 4
+    assert target_info(people, [_answer("protected", "q", "[PERSON_1] lives in a town.")]) == 0
+
+
+async def test_answers_use_the_spec_generation_settings(ctx: RagContext) -> None:
+    llm = mock_llm()
+    await answer(ctx, "vertigo", "protected", ctx.sessions.create(), llm)
+    assert llm.calls[-1].temperature == 0.4
 
 
 def test_placeholder_scorers() -> None:

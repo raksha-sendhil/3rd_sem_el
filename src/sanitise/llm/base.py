@@ -54,8 +54,20 @@ class LLMClient(Protocol):
 
     async def json_call(self, system: str, user: str, schema: type[M], retries: int = 3) -> M: ...
 
-    async def text_call(self, system: str, user: str) -> str:
-        """Free-text generation (Phase 3a: Agent 3 rewrites and RAG answers are prose)."""
+    async def text_call(
+        self,
+        system: str,
+        user: str,
+        *,
+        temperature: float | None = None,
+        top_p: float | None = None,
+        max_tokens: int | None = None,
+    ) -> str:
+        """Free-text generation (Phase 3a: Agent 3 rewrites and RAG answers are prose).
+
+        The keyword options override the client's defaults for this call only (the RAG answer
+        uses the spec's generation settings; Agent 3 keeps the deterministic defaults).
+        """
         ...
 
 
@@ -220,21 +232,43 @@ class BaseJSONClient(ABC):
 
     @abstractmethod
     async def _generate(
-        self, messages: list[Message], json_schema: dict[str, Any] | None, temperature: float
+        self,
+        messages: list[Message],
+        json_schema: dict[str, Any] | None,
+        temperature: float,
+        *,
+        top_p: float | None = None,
+        max_tokens: int | None = None,
     ) -> str:
         """Return the model's raw text for ``messages``. Raise ``LLMTimeout``/``LLMUnreachable``.
 
-        ``json_schema`` is None for free-text calls (``text_call``).
+        ``json_schema`` is None for free-text calls (``text_call``). ``top_p`` and
+        ``max_tokens`` are None unless a ``text_call`` overrides them.
         """
 
-    async def text_call(self, system: str, user: str) -> str:
-        """One free-text generation at the base temperature. No schema, so no repair loop."""
+    async def text_call(
+        self,
+        system: str,
+        user: str,
+        *,
+        temperature: float | None = None,
+        top_p: float | None = None,
+        max_tokens: int | None = None,
+    ) -> str:
+        """One free-text generation, at the base temperature unless overridden. No schema, so
+        no repair loop."""
         messages: list[Message] = [
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ]
         try:
-            raw = await self._generate(messages, None, self.temperature)
+            raw = await self._generate(
+                messages,
+                None,
+                self.temperature if temperature is None else temperature,
+                top_p=top_p,
+                max_tokens=max_tokens,
+            )
         except BaseException:
             _record(1, failed=True, model=self.model)
             raise

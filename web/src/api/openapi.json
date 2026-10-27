@@ -195,6 +195,83 @@
     }
    }
   },
+  "/v1/extract": {
+   "post": {
+    "summary": "Post Extract",
+    "description": "Agent 2 alone. It needs Agent 1's spans to find the subjects, so Agent 1 runs first.",
+    "operationId": "post_extract_v1_extract_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/ExtractRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ExtractorOutput"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/rewrite": {
+   "post": {
+    "summary": "Post Rewrite",
+    "operationId": "post_rewrite_v1_rewrite_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RewriteRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RewriterOutput"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/v1/documents": {
    "get": {
     "summary": "Get Documents",
@@ -499,6 +576,60 @@
     }
    }
   },
+  "/v1/attacks/{attack_id}/stream": {
+   "get": {
+    "summary": "Get Attack Stream",
+    "description": "Server-Sent Events: one ``round`` event per finished round, then ``done`` with the\nfull ``AttackRun`` (or ``error`` with the error envelope).",
+    "operationId": "get_attack_stream_v1_attacks__attack_id__stream_get",
+    "parameters": [
+     {
+      "name": "attack_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Attack Id"
+      }
+     },
+     {
+      "name": "session_id",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Session Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/v1/health": {
    "get": {
     "summary": "Get Health",
@@ -538,9 +669,9 @@
      "kind": {
       "type": "string",
       "enum": [
-       "direct",
-       "linkage",
-       "stepwise"
+       "context_dump",
+       "stepwise",
+       "interception"
       ],
       "title": "Kind"
      },
@@ -991,6 +1122,30 @@
     ],
     "title": "DocumentView"
    },
+   "ExtractRequest": {
+    "properties": {
+     "doc_id": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Doc Id"
+     },
+     "text": {
+      "type": "string",
+      "title": "Text"
+     }
+    },
+    "type": "object",
+    "required": [
+     "text"
+    ],
+    "title": "ExtractRequest"
+   },
    "ExtractorOutput": {
     "properties": {
      "doc_id": {
@@ -1243,6 +1398,36 @@
     ],
     "title": "RagAnswer"
    },
+   "RewriteRequest": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "spans": {
+      "items": {
+       "$ref": "#/components/schemas/SensitiveSpan"
+      },
+      "type": "array",
+      "title": "Spans"
+     },
+     "facts": {
+      "items": {
+       "$ref": "#/components/schemas/FactTuple"
+      },
+      "type": "array",
+      "title": "Facts"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "spans",
+     "facts"
+    ],
+    "title": "RewriteRequest",
+    "description": "Agent 3 alone (Phase 2 spec 10.3): spans and facts in, no raw text."
+   },
    "RewriterOutput": {
     "properties": {
      "doc_id": {
@@ -1293,6 +1478,13 @@
      "identified": {
       "type": "boolean",
       "title": "Identified"
+     },
+     "recovery_rate": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Recovery Rate",
+      "default": 0.0
      }
     },
     "type": "object",

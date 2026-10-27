@@ -1,0 +1,11 @@
+{
+  "attack_id": "interception_s04",
+  "kind": "interception",
+  "name": "Payload interception",
+  "target_person_id": "s04",
+  "queries": [
+    "What are the warning signs of a stroke in an elderly parent?",
+    "How long does recovery after a stroke usually take?",
+    "Does physiotherapy help with weakness on one side of the body?"
+  ]
+}

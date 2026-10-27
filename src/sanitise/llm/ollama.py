@@ -96,13 +96,19 @@ class OllamaClient(BaseJSONClient):
     # ---------------------------------------------------------------- transport
 
     async def _generate(
-        self, messages: list[Message], json_schema: dict[str, Any] | None, temperature: float
+        self,
+        messages: list[Message],
+        json_schema: dict[str, Any] | None,
+        temperature: float,
+        *,
+        top_p: float | None = None,
+        max_tokens: int | None = None,
     ) -> str:
         payload: dict[str, Any] = {
             "model": self.model,
             "messages": messages,
             "stream": False,
-            "options": self._options(temperature),
+            "options": self._options(temperature, top_p, max_tokens),
         }
         if json_schema is not None:  # None = free text (text_call)
             payload["format"] = json_schema
@@ -114,12 +120,17 @@ class OllamaClient(BaseJSONClient):
                 f"unexpected response shape from Ollama: {str(data)[:200]}"
             ) from None
 
-    def _options(self, temperature: float) -> dict[str, Any]:
+    def _options(
+        self, temperature: float, top_p: float | None = None, max_tokens: int | None = None
+    ) -> dict[str, Any]:
         options: dict[str, Any] = {"temperature": temperature, "num_ctx": self.num_ctx}
         if self.seed is not None:
             options["seed"] = self.seed
-        if self.num_predict is not None:
-            options["num_predict"] = self.num_predict
+        if top_p is not None:
+            options["top_p"] = top_p
+        num_predict = max_tokens if max_tokens is not None else self.num_predict
+        if num_predict is not None:
+            options["num_predict"] = num_predict
         return options
 
     async def _post(self, path: str, payload: dict[str, Any]) -> dict[str, Any]:

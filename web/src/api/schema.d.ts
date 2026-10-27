@@ -89,6 +89,43 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/extract": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Post Extract
+         * @description Agent 2 alone. It needs Agent 1's spans to find the subjects, so Agent 1 runs first.
+         */
+        post: operations["post_extract_v1_extract_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/rewrite": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Post Rewrite */
+        post: operations["post_rewrite_v1_rewrite_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/documents": {
         parameters: {
             query?: never;
@@ -225,6 +262,27 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/attacks/{attack_id}/stream": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get Attack Stream
+         * @description Server-Sent Events: one ``round`` event per finished round, then ``done`` with the
+         *     full ``AttackRun`` (or ``error`` with the error envelope).
+         */
+        get: operations["get_attack_stream_v1_attacks__attack_id__stream_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/health": {
         parameters: {
             query?: never;
@@ -262,7 +320,7 @@ export interface components {
              * Kind
              * @enum {string}
              */
-            kind: "direct" | "linkage" | "stepwise";
+            kind: "context_dump" | "stepwise" | "interception";
             /** Name */
             name: string;
             /** Target Person Id */
@@ -411,6 +469,13 @@ export interface components {
             original: string;
             record: components["schemas"]["SanitisedRecord"];
         };
+        /** ExtractRequest */
+        ExtractRequest: {
+            /** Doc Id */
+            doc_id?: string | null;
+            /** Text */
+            text: string;
+        };
         /** ExtractorOutput */
         ExtractorOutput: {
             /** Doc Id */
@@ -511,6 +576,18 @@ export interface components {
             /** Latency Ms */
             latency_ms: number;
         };
+        /**
+         * RewriteRequest
+         * @description Agent 3 alone (Phase 2 spec 10.3): spans and facts in, no raw text.
+         */
+        RewriteRequest: {
+            /** Doc Id */
+            doc_id: string;
+            /** Spans */
+            spans: components["schemas"]["SensitiveSpan"][];
+            /** Facts */
+            facts: components["schemas"]["FactTuple"][];
+        };
         /** RewriterOutput */
         RewriterOutput: {
             /** Doc Id */
@@ -532,6 +609,11 @@ export interface components {
             candidate_pool: number;
             /** Identified */
             identified: boolean;
+            /**
+             * Recovery Rate
+             * @default 0
+             */
+            recovery_rate: number;
         };
         /** RoutingDecision */
         RoutingDecision: {
@@ -855,6 +937,72 @@ export interface operations {
             };
         };
     };
+    post_extract_v1_extract_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ExtractRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ExtractorOutput"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    post_rewrite_v1_rewrite_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["RewriteRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RewriterOutput"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
     get_documents_v1_documents_get: {
         parameters: {
             query?: {
@@ -1077,6 +1225,39 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["AttackRun"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_attack_stream_v1_attacks__attack_id__stream_get: {
+        parameters: {
+            query?: {
+                session_id?: string | null;
+            };
+            header?: never;
+            path: {
+                attack_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
                 };
             };
             /** @description Validation Error */
