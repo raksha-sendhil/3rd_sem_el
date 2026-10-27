@@ -4,21 +4,18 @@ export const AGENTS = {
     step: "Agent 1",
     color: "#2D8CFF",
     bg: "#E3F0FF",
-    blurb: "Finds every identifier and telling detail",
   },
   extract: {
     name: "Extract",
     step: "Agent 2",
     color: "#6D4AFF",
     bg: "#EEE9FF",
-    blurb: "Pulls out the facts each record states",
   },
   rewrite: {
     name: "Rewrite",
     step: "Agent 3",
     color: "#E08E00",
     bg: "#FFF3D1",
-    blurb: "Swaps identifiers for tokens and blurs telling details",
   },
 } as const;
 

@@ -134,11 +134,6 @@ export default function Attacks() {
     ],
     [visible],
   );
-  // the target's field count, recovered from any round that disclosed something
-  const scored = rounds
-    .flatMap((r) => [leakOf(r, "std"), leakOf(r, "prot")])
-    .find((l) => l && l.recovery_rate > 0);
-  const facts = scored ? Math.round(scored.disclosed.length / scored.recovery_rate) : null;
 
   return (
     <div className="space-y-8">
@@ -153,10 +148,7 @@ export default function Attacks() {
             <span className="text-[#6D4AFF]">Watch who gives in.</span>
           </>
         }
-      >
-        Three ways an attacker goes after one person. Each round shows how much of their profile
-        they have and how many people still fit.
-      </PageHead>
+      />
       <AttackPicker attacks={attacks} value={id} onChange={select} />
       {attack && (
         <>
@@ -174,7 +166,7 @@ export default function Attacks() {
           />
           <div className="grid gap-6 xl:grid-cols-[1fr_340px]">
             <div className="min-w-0 space-y-6">
-              <AttackCharts data={chart} facts={facts} />
+              <AttackCharts data={chart} />
               <RoundsTable
                 attackId={attack.attack_id}
                 meta={metaOf(attack)}

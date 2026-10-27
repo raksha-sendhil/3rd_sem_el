@@ -23,9 +23,7 @@ export const PageHead = ({
     <h1 className="font-display text-4xl font-extrabold leading-[1.02] tracking-tight text-[#17162B] sm:text-5xl lg:text-6xl">
       {title}
     </h1>
-    {children && (
-      <div className="mt-5 max-w-xl text-sm leading-relaxed text-[#4A4760] sm:text-base">{children}</div>
-    )}
+    {children}
   </div>
 );
 

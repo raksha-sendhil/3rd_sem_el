@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { toast } from "sonner";
 import { ApiError, api, type DocumentSummary, type DocumentView } from "@/api/client";
 import { ChangesTable } from "@/components/documents/ChangesTable";
+import { FactsTable } from "@/components/documents/FactsTable";
 import { changesOf, originalPieces, sanitisedPieces, type Piece } from "@/components/documents/changes";
 import { Illustration, Legend, PageHead } from "@/components/PageHead";
 import { AGENTS } from "@/lib/agents";
@@ -26,25 +27,18 @@ function kindOf(d: DocumentSummary) {
 
 const Pane = ({
   title,
-  sub,
-  color,
   bg,
   children,
   testid,
 }: {
   title: string;
-  sub: string;
-  color: string;
   bg: string;
   children: ReactNode;
   testid: string;
 }) => (
   <div className="card overflow-hidden" data-testid={testid}>
-    <div className="flex items-center justify-between px-5 py-3" style={{ background: bg }}>
+    <div className="px-5 py-3" style={{ background: bg }}>
       <h3 className="font-display text-base font-bold text-[#17162B]">{title}</h3>
-      <span className="font-mono text-[11px] font-semibold" style={{ color }}>
-        {sub}
-      </span>
     </div>
     <div className="whitespace-pre-wrap px-5 py-5 font-mono text-[13px] leading-[2] text-[#2A2840]">
       {children}
@@ -69,7 +63,6 @@ const AgentStrip = ({ counts }: { counts: Record<keyof typeof AGENTS, number> })
               {a.step}
             </div>
             <div className="font-display text-base font-bold text-[#17162B]">{a.name}</div>
-            <div className="text-xs text-[#6B6880]">{a.blurb}</div>
           </div>
         </div>
       );
@@ -153,11 +146,9 @@ export default function Documents() {
             </>
           }
         >
-          Every record is rewritten once, ahead of time. Hover any highlight to see its twin on the
-          other side.
           <Legend />
         </PageHead>
-        <Illustration src={IMAGES.documents} className="rise mx-auto aspect-[4/3] w-full max-w-[520px]" />
+        <Illustration src={IMAGES.documents} className="rise mx-auto aspect-[16/9] w-full max-w-[460px]" />
       </div>
       <div className="flex gap-3 overflow-x-auto pb-2" data-testid="document-selector">
         {docs.map((d) => {
@@ -198,11 +189,19 @@ export default function Documents() {
               rewrite: changes.length,
             }}
           />
+          {!!view.record.residual_leaks?.length && (
+            <div
+              role="alert"
+              className="rounded-2xl border border-[#FFB4AB] bg-[#FFE8E4] px-5 py-3 text-sm font-medium text-[#B42318]"
+            >
+              {view.record.residual_leaks.length === 1
+                ? "1 detail survived the rewrite and was masked"
+                : `${view.record.residual_leaks.length} details survived the rewrite and were masked`}
+            </div>
+          )}
           <div className="grid gap-6 lg:grid-cols-2" data-testid="document-diff-viewer">
             <Pane
               title="Original"
-              sub="what Standard RAG reads"
-              color="#B42318"
               bg="#FFE8E4"
               testid="document-original-pane"
             >
@@ -210,8 +209,6 @@ export default function Documents() {
             </Pane>
             <Pane
               title="Sanitised"
-              sub="what Protected RAG reads"
-              color="#08776A"
               bg="#DDF7F2"
               testid="document-sanitised-pane"
             >
@@ -219,6 +216,7 @@ export default function Documents() {
             </Pane>
           </div>
           <ChangesTable docId={view.doc_id} changes={changes} active={active} onHover={setActive} />
+          <FactsTable facts={view.record.extractor.facts} />
         </>
       )}
     </div>

@@ -105,8 +105,6 @@ export default function Compare() {
             </>
           }
         >
-          Standard RAG hands the model your raw records. Protected RAG only ever sees versions
-          rewritten by three agents — names become tokens, telling details go vague.
           <Legend />
         </PageHead>
         <div className="card rise p-4 sm:p-6" style={{ animationDelay: "120ms" }}>

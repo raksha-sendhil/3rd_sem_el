@@ -32,39 +32,20 @@ const tip = {
   },
 };
 
-const Frame = ({
-  title,
-  sub,
-  children,
-  testid,
-}: {
-  title: string;
-  sub: string;
-  children: ReactNode;
-  testid: string;
-}) => (
+const Frame = ({ title, children, testid }: { title: string; children: ReactNode; testid: string }) => (
   <div className="card p-5" data-testid={testid}>
-    <h3 className="font-display text-base font-bold text-[#17162B]">{title}</h3>
-    <p className="mb-3 font-mono text-[11px] text-[#6B6880]">{sub}</p>
+    <h3 className="mb-3 font-display text-base font-bold text-[#17162B]">{title}</h3>
     <div className="h-56">{children}</div>
   </div>
 );
 
-export const AttackCharts = ({ data, facts }: { data: ChartPoint[]; facts: number | null }) => {
+export const AttackCharts = ({ data }: { data: ChartPoint[] }) => {
   const pools = data.flatMap((d) => [d.stdMatch ?? 1, d.protMatch ?? 1]);
   const top = 10 ** Math.max(1, Math.ceil(Math.log10(Math.max(...pools, 1))));
   const ticks = Array.from({ length: Math.log10(top) + 1 }, (_, i) => 10 ** i);
   return (
     <div className="grid gap-6 md:grid-cols-2" data-testid="attack-charts-container">
-      <Frame
-        title="Target details recovered"
-        sub={
-          facts
-            ? `% of the ${facts} known facts the attacker now holds`
-            : "% of the target's known facts the attacker now holds"
-        }
-        testid="chart-recovered"
-      >
+      <Frame title="Target details recovered" testid="chart-recovered">
         <ResponsiveContainer>
           <AreaChart data={data} margin={{ left: -18, right: 8, top: 8 }}>
             <defs>
@@ -102,11 +83,7 @@ export const AttackCharts = ({ data, facts }: { data: ChartPoint[]; facts: numbe
           </AreaChart>
         </ResponsiveContainer>
       </Frame>
-      <Frame
-        title="People who still match"
-        sub="candidate pool, log scale — 1 means identified"
-        testid="chart-matches"
-      >
+      <Frame title="People who still match" testid="chart-matches">
         <ResponsiveContainer>
           <LineChart data={data} margin={{ left: -8, right: 8, top: 8 }}>
             <CartesianGrid stroke="#EFEBE2" vertical={false} />

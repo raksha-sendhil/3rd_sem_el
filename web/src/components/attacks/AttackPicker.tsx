@@ -50,7 +50,6 @@ export const AttackPicker = ({
               </span>
             </div>
             <h3 className="mt-1 font-display text-lg font-bold text-[#17162B]">{a.name}</h3>
-            <p className="mt-1 text-xs leading-relaxed text-[#6B6880]">{m.blurb}</p>
           </div>
         </button>
       );

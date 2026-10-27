@@ -41,9 +41,6 @@ export const RoundsTable = ({
   <section className="card overflow-hidden" data-testid="attack-rounds-table">
     <div className="px-5 pb-3 pt-5">
       <h3 className="font-display text-base font-bold text-[#17162B] md:text-lg">Live transcript</h3>
-      <p className="font-mono text-[11px] text-[#6B6880]">
-        each {meta.unit.toLowerCase()} appears as the attacker receives it
-      </p>
     </div>
     <div className="overflow-x-auto">
       <table className="w-full min-w-[900px] text-sm">

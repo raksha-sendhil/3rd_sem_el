@@ -12,7 +12,6 @@ export type Variant = "standard" | "protected";
 export const V = {
   standard: {
     name: "Standard RAG",
-    sub: "reads the original records",
     icon: ShieldAlert,
     color: "#FF4D3D",
     bg: "#FFE8E4",
@@ -22,7 +21,6 @@ export const V = {
   },
   protected: {
     name: "Protected RAG",
-    sub: "reads agent-sanitised records",
     icon: ShieldCheck,
     color: "#0FB5A0",
     bg: "#DDF7F2",
@@ -69,7 +67,7 @@ export const AnswerPanel = ({
   const testid = `${variant}-rag-panel`;
   return (
     <section data-testid={testid} className="card flex flex-col overflow-hidden">
-      <div className="flex items-center justify-between gap-3 px-5 py-4" style={{ background: v.bg }}>
+      <div className="flex min-h-[72px] items-center justify-between gap-3 px-5 py-4" style={{ background: v.bg }}>
         <div className="flex items-center gap-3">
           <span
             className="grid h-10 w-10 place-items-center rounded-xl text-white shadow-sm"
@@ -77,12 +75,7 @@ export const AnswerPanel = ({
           >
             <v.icon className="h-5 w-5" strokeWidth={2.4} />
           </span>
-          <div>
-            <h2 className="font-display text-base font-bold text-[#17162B] md:text-lg">{v.name}</h2>
-            <p className="font-mono text-[11px]" style={{ color: v.ink }}>
-              {v.sub}
-            </p>
-          </div>
+          <h2 className="font-display text-base font-bold text-[#17162B] md:text-lg">{v.name}</h2>
         </div>
         {s && !busy && answer && (
           <div className="flex flex-wrap items-center justify-end gap-2">
