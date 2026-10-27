@@ -116,7 +116,10 @@ export function useTerms(docIds: string[]): Terms {
 }
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const TOKEN = /^\[[A-Z_]+_\d+\]$/;
+// placeholder tokens as the rewriter writes them: [PERSON_1], [REDACTED_1], or [REDACTED] from
+// the mask fallback (agents/rewriter/leakcheck.py)
+const TOKEN_BODY = String.raw`\[[A-Z]+(?:_[A-Z]+)*(?:_\d+)?\]`;
+const TOKEN = new RegExp(`^${TOKEN_BODY}$`);
 
 type Segment = { text: string; kind?: MarkKind; type?: string };
 
@@ -126,7 +129,7 @@ export function scan(text: string, terms: Terms, side: "std" | "prot"): Segment[
   const words = [...terms.leaks.keys(), ...(side === "prot" ? terms.vague.keys() : [])]
     .sort((a, b) => b.length - a.length)
     .map((w) => String.raw`(?<![\w])${escape(w)}(?![\w])`);
-  const parts = [...(side === "prot" ? [String.raw`\[[A-Z_]+_\d+\]`] : []), ...words];
+  const parts = [...(side === "prot" ? [TOKEN_BODY] : []), ...words];
   if (!parts.length) return [{ text }];
   return text
     .split(new RegExp(`(${parts.join("|")})`, "gi"))

@@ -1,7 +1,7 @@
 """Agent 3 orchestration.  OWNER: Person C (Platform and Integration).
 
-    route (A) -> allocate_placeholders (A) -> generalise (A) -> reconstruct (B)
-      -> leak_check (A) -> on a leak: reconstruct once more with feedback (B)
+    route (A) -> allocate_placeholders (A) -> generalise (A) -> reconstruct (C)
+      -> leak_check (A) -> on a leak: reconstruct once more with feedback (C)
       -> still leaking: mask_fallback (A) -> still leaking: LEAK_CHECK_FAILED
 
 ``rewrite`` takes no raw text (spec 10.2): the agent sees the detected spans and the facts,
