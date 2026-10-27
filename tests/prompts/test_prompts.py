@@ -63,7 +63,7 @@ def test_no_gold_text_in_any_prompt(name: str) -> None:
 
 def test_extraction_examples_parse_with_the_decoding_schema() -> None:
     blocks = re.findall(r"OUTPUT:\n(\{.*?\]\})", extract_prompt.SYSTEM_PROMPT, re.S)
-    assert len(blocks) == 2
+    assert len(blocks) == 3
     for block in blocks:
         extract_prompt.LLMFactList.model_validate_json(block)
 

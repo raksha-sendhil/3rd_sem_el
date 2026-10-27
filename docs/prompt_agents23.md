@@ -127,17 +127,24 @@ phrase appears in any prompt. Other tests check that:
 | 13 | Answer model rewrites tokens, so the dashboard cannot mark them | (spec risk) | "State details exactly as the records give them, including tokens" |
 | 14 | Long or rambling answers | (spec risk) | One to three sentences; 512-token cap |
 | 15 | Gold fixtures leaking into the examples | (prompt review) | All examples are new; the gold-text test guards every prompt |
+| 16 | Agent 2 labels things that are not identifiers as `identifier` ("the writer", "my husband", "a lighthouse keeper"); Agent 3 then writes them out ("you can reach me at the writer", "I am a working professional... I am also a working professional") | llama3:8b, run 1 | `identifier` defined as a name or ID number only, "no name, no identifier fact"; example 3 has an unnamed writer |
+| 17 | Agent 2 gives the writer a `relation_to` fact ("parent", "my wife"), which Agent 3 turns into "I am my wife's partner" | llama3:8b, run 1 | `relation_to` only on a relative's id, as one word |
+| 18 | Agent 2 infers a fact the record does not state (`works_as` "student" for a child at school) and puts an activity in `symptom_duration` ("climbing stairs") | llama3:8b, run 1 | Rule with both cases spelled out; example 3 uses `studies_at` |
+| 19 | Agent 3 drops a contact token ([EMAIL_1] missing from the record) | llama3:8b, run 1 | Rule 2: every token in the facts must appear |
+| 20 | Agent 3 writes a vague phrase awkwardly ("I work as a working professional") or says a detail twice | llama3:8b, run 1 | Rules 3 and 4 |
+| 21 | An Indian address with a PIN code was not detected, so "14/3" and "Bengaluru 560076" reached the safe text. The leak check cannot catch this: it only looks for spans that were removed | llama3:8b, run 1 (case_04) | Agent 1 rule `in_address_pin` (`rules/recognizers.py`); rule-pass ADDRESS recall on the fixtures 2/4 -> 4/4, overall precision 0.96 -> 0.99 |
 
 Add a row for each failure seen on the real model, with the model name and run.
 
 ## Real-model runs
 
-Fill in from notebook cell 2 (report pasted in the chat) and D's scorers. The targets come
+Fill in from notebook cell 2 (report pasted in the chat) and D's scorers. The four scores need D's gold facts and routing; until then cell 2 reports only the retry and leak counts. The targets come
 from `docs/phase3_plan.md`, section 8.
 
 | Run | Model | Agent 2 coverage (high) | Agent 2 faithfulness | Agent 3 leak rate | Agent 3 utility | Leak retries | Residual leaks | Avg s / doc |
 |---|---|---|---|---|---|---|---|---|
 | target | | ≥ 0.80 | ≥ 0.90 | ≤ 0.05 | ≥ 0.80 | | | |
+| 1 (27 Oct, prompts v2) | llama3:8b | - | - | - | - | 0 | 0 | 21.3 |
 
 ## Changing a prompt
 

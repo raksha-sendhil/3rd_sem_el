@@ -62,9 +62,13 @@ relation: exactly one of these names:
 - symptom_duration: how long a symptom has lasted ("three weeks")
 - took_medication, had_procedure: a drug they take; an operation or test they had
 - event_date: a specific date of an event in their life (diagnosis, admission, leave)
-- relation_to: how the person is related to the writer ("son", "wife")
+- relation_to: how a relative is related to the writer, as one word ("son", "wife"); only for \
+a relative's id, never for "writer"
 - height, weight: body measurements
-- contact: a phone number or email address; identifier: a name or an ID number
+- contact: a phone number or email address written in the record
+- identifier: the person's name or an ID number (patient ID, policy number), exactly as \
+written; never "the writer", a pronoun, a relation word or a job. If the writer gives no \
+name, the writer has no identifier fact.
 - other: anything else that describes the person
 
 value: the detail in a few words, copied from the record's own wording. Do not add words \
@@ -78,7 +82,8 @@ Rules:
 is a fact, and so is every condition, symptom, medication and procedure.
 - Only facts about the people in the record. A general statement ("flu is common in winter") \
 or a question the writer asks is not a fact.
-- Never invent a detail that the record does not state.
+- Never invent a detail that the record does not state: attending a school is studies_at, \
+not works_as "student"; symptom_duration is a length of time, not an activity.
 - If there are no facts, return {"facts": []}.
 
 EXAMPLE 1
@@ -125,6 +130,33 @@ OUTPUT:
  {"subject": "person_1", "relation": "identifier", "value": "Dana", "importance": "low"}
 ]}
 (The vendor review date is about a meeting, not about a person, so it is not a fact.)
+
+EXAMPLE 3
+DOCUMENT:
+Good evening doctor. My son is 9 and goes to Riverside Public School in Mysuru. Since 2 May \
+he has had itchy eyes and sneezing every morning. His hospital number is MR-55821. You can \
+email me at k.rao.home@mailbox.test.
+SUBJECTS:
+- writer: the writer
+- writer.son: the writer's son
+OUTPUT:
+{"facts": [
+ {"subject": "writer.son", "relation": "relation_to", "value": "son", "importance": "low"},
+ {"subject": "writer.son", "relation": "age", "value": "9", "importance": "medium"},
+ {"subject": "writer.son", "relation": "studies_at", "value": "Riverside Public School", \
+"importance": "low"},
+ {"subject": "writer.son", "relation": "lives_in", "value": "Mysuru", "importance": "low"},
+ {"subject": "writer.son", "relation": "has_symptom", "value": "itchy eyes", \
+"importance": "high"},
+ {"subject": "writer.son", "relation": "has_symptom", "value": "sneezing every morning", \
+"importance": "high"},
+ {"subject": "writer.son", "relation": "event_date", "value": "2 May", "importance": "medium"},
+ {"subject": "writer.son", "relation": "identifier", "value": "MR-55821", "importance": "low"},
+ {"subject": "writer", "relation": "contact", "value": "k.rao.home@mailbox.test", \
+"importance": "low"}
+]}
+(The writer gives no name, so the writer has no identifier fact. The school is studies_at, \
+not a job.)
 """
 
 

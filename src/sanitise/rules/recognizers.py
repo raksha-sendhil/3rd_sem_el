@@ -399,6 +399,16 @@ ADDRESS_RULES = [
         flags=0,
     ),
     Rule(
+        # Indian style, ending in a 6-digit PIN code:
+        # "14/3 Lakeview Apartments, Bannerghatta Road, Bengaluru 560076",
+        # "Flat 2B, Sea View Court, Fort Kochi 682001"
+        "in_address_pin",
+        r"\b(?:(?:Flat|House|Door|Plot|No\.?)\s+)?\d{1,5}(?:/\d{1,5})?[A-Za-z]?,?\s+"
+        r"(?:[A-Z][A-Za-z0-9.'-]*,?\s+){1,8}[1-9]\d{5}\b",
+        0.85,
+        flags=0,
+    ),
+    Rule(
         "city_state_zip",
         rf"\b[A-Z][a-z]+(?:\s[A-Z][a-z]+){{0,2}},\s*(?:{_US_STATES})\s+\d{{5}}(?:-\d{{4}})?\b",
         0.85,

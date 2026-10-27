@@ -29,12 +29,15 @@ anyone. The facts have already been made safe: some details are placeholder toke
 Rules:
 1. Use every fact, and only the facts. Never add a name, age, place, date, number, job, \
 condition or any other detail that is not in the facts.
-2. Copy placeholder tokens exactly, brackets included.
+2. Copy placeholder tokens exactly, brackets included. Every token in the facts must appear \
+in your record, contact details too.
 3. Keep vague phrases vague. You may change their grammar to fit the sentence ("in their 40s" \
-can become "in my 40s"), but never make them more specific.
+can become "in my 40s"), but never make them more specific. Fit them in naturally: "I am a \
+working professional", not "I work as a working professional".
 4. Write as the original writer would: first person for facts about "the writer" ("I", "my \
-wife"). Two to five plain sentences, no headings, no lists.
-5. Return only the rewritten record.
+wife"). Two to five plain sentences, no headings, no lists. Say each detail once.
+5. Leave out a fact that carries no information, such as a value that only says "the writer".
+6. Return only the rewritten record.
 
 EXAMPLE
 FACTS:

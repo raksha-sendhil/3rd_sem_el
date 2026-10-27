@@ -187,6 +187,23 @@ def test_round2_no_false_positives(text):
     assert rule_detect(text) == []
 
 
+@pytest.mark.parametrize(
+    "text, span",
+    [
+        (
+            "I live at 22/7 Palm Grove Residency, Hosur Road, Bengaluru 560068 now.",
+            "22/7 Palm Grove Residency, Hosur Road, Bengaluru 560068",
+        ),
+        (
+            "Post the forms to Flat 4C, Lake View Towers, Kakkanad 682030.",
+            "Flat 4C, Lake View Towers, Kakkanad 682030",
+        ),
+    ],
+)
+def test_indian_address_with_pin_code(text, span):
+    assert (span, C.ADDRESS) in found(text)
+
+
 def test_core_layer_is_presidio_only():
     got = {c for _, c in found_layers(CASE_07, ("core",))}
     assert not got & {C.AGE, C.PHYSICAL, C.RELATION}
