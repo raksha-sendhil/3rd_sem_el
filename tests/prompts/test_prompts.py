@@ -18,6 +18,7 @@ from sanitise.schemas import (
     Importance,
     PIICategory,
     RoutingDecision,
+    SensitiveSpan,
     Subject,
 )
 
@@ -63,16 +64,26 @@ def test_no_gold_text_in_any_prompt(name: str) -> None:
 
 def test_extraction_examples_parse_with_the_decoding_schema() -> None:
     blocks = re.findall(r"OUTPUT:\n(\{.*?\]\})", extract_prompt.SYSTEM_PROMPT, re.S)
-    assert len(blocks) == 3
+    assert len(blocks) == 4
     for block in blocks:
         extract_prompt.LLMFactList.model_validate_json(block)
 
 
-def test_extraction_user_prompt_lists_subjects_and_hints() -> None:
-    user = extract_prompt.build_user_prompt(
-        "I am 30.", [Subject(id="writer", label="the writer")], []
-    )
-    assert "- writer: the writer" in user and "(none)" in user and user.endswith("OUTPUT:")
+def test_extraction_user_prompt_names_one_person_and_no_identifier_hints() -> None:
+    spans = [
+        SensitiveSpan(text="30", category=PIICategory.AGE, start=5, end=7, method="rule"),
+        SensitiveSpan(text="Ira Sen", category=PIICategory.NAME, start=0, end=7, method="rule"),
+    ]
+    son = Subject(id="writer.son", label="the writer's son", mentions=["My son", "he"])
+    user = extract_prompt.build_user_prompt("I am 30.", son, spans)
+    assert "PERSON: writer.son (the writer's son), called: My son, he" in user
+    assert "- AGE: 30" in user and "Ira Sen" not in user and user.endswith("OUTPUT:")
+
+
+def test_the_model_is_never_asked_for_identifiers() -> None:
+    schema = json.dumps(extract_prompt.LLMFactList.model_json_schema())
+    for relation in ("identifier", "contact", "relation_to", "subject", "importance"):
+        assert f'"{relation}"' not in schema
 
 
 def _decision(text: str, cat: PIICategory, action: Action, repl: str | None) -> RoutingDecision:

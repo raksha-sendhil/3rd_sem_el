@@ -11,8 +11,8 @@ to someone who is not one of the writer's relatives. The model's job is to turn 
 a short, natural record that a reader would accept as the original message with the
 identifying details taken out.
 
-``feedback`` (on the retry) lists what the leak check found in the previous attempt; only the
-categories are shown to the model, never the leaked text.
+``feedback`` (on the retry) lists what the leak check and the grounding check found in the
+previous attempt; only the categories are shown to the model, never the leaked text.
 
 The few-shot example is written for this prompt and must never be taken from
 ``data/fixtures`` or ``data/gold`` (``tests/prompts/test_prompts.py`` checks).
@@ -140,8 +140,9 @@ def build_user_prompt(
     if feedback:
         kinds = ", ".join(sorted({s.category.value for s in feedback}))
         prompt += (
-            f"\n\nYour previous version contained details that must not appear ({kinds}). "
-            "Write it again using only the tokens and phrases in the facts."
+            f"\n\nYour previous version contained details that must not appear, or that are "
+            f"not in the facts ({kinds}). Write it again using only the tokens and phrases in "
+            "the facts."
         )
     return prompt + "\nOUTPUT:"
 

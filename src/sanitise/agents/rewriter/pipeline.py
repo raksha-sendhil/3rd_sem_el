@@ -1,8 +1,13 @@
 """Agent 3 orchestration.  OWNER: Person C (Platform and Integration).
 
     route (A) -> allocate_placeholders (A) -> generalise (A) -> reconstruct (C)
-      -> leak_check (A) -> on a leak: reconstruct once more with feedback (C)
-      -> still leaking: mask_fallback (A) -> still leaking: LEAK_CHECK_FAILED
+      -> leak_check (A) + grounding check (C)
+      -> on a problem: reconstruct once more with feedback (C)
+      -> still a problem: mask_fallback (A), then grounding.mask (C)
+      -> still a problem: LEAK_CHECK_FAILED
+
+The leak check finds the removed details in any form; the grounding check finds names,
+numbers and email addresses that are not in the facts the model was given at all.
 
 ``rewrite`` takes no raw text (spec 10.2): the agent sees the detected spans and the facts,
 never the original wording. ``apply_decisions`` is the deterministic rewrite mock mode uses
@@ -16,7 +21,14 @@ from dataclasses import dataclass, field
 
 from pydantic import ValidationError
 
-from sanitise.agents.rewriter import leakcheck, ontology, placeholders, prompt, routing
+from sanitise.agents.rewriter import (
+    grounding,
+    leakcheck,
+    ontology,
+    placeholders,
+    prompt,
+    routing,
+)
 from sanitise.errors import LeakCheckFailed, PipelineError, SchemaValidationFailed
 from sanitise.llm.base import LLMClient, format_validation_error
 from sanitise.schemas import (
@@ -94,16 +106,22 @@ async def rewrite_with_trace(
     try:
         decisions, tokens = plan_decisions(detected, extracted)
         removed = removed_decisions(decisions)
+        facts_text = prompt.draft(extracted.facts, decisions)
+
+        def problems(text: str) -> list[SensitiveSpan]:
+            return leakcheck.leak_check(removed, text) + grounding.ungrounded(text, facts_text)
+
         safe = await prompt.reconstruct(extracted.facts, decisions, tokens, llm)
-        leaks = leakcheck.leak_check(removed, safe)
+        leaks = problems(safe)
         retries = 0
         if leaks:
             retries = 1
             safe = await prompt.reconstruct(extracted.facts, decisions, tokens, llm, feedback=leaks)
-            leaks = leakcheck.leak_check(removed, safe)
+            leaks = problems(safe)
         if leaks:
-            safe = leakcheck.mask_fallback(safe, leaks, tokens)
-            leaks = leakcheck.leak_check(removed, safe)
+            safe = leakcheck.mask_fallback(safe, leakcheck.leak_check(removed, safe), tokens)
+            safe = grounding.mask(safe, grounding.ungrounded(safe, facts_text))
+            leaks = problems(safe)
         if leaks:
             raise LeakCheckFailed(
                 f"{len(leaks)} removed details still present after retry and masking",

@@ -6,39 +6,49 @@ Code: `src/sanitise/agents/extractor/prompt.py` (Agent 2), `src/sanitise/agents/
 
 ## Agent 2: fact extraction
 
-One constrained-JSON call per document. The model sees:
+Agent 2 is split so that the model answers only narrow questions and never handles a name, an
+ID number, a contact detail or a family relationship.
 
+**Built in code (`agents/extractor/pipeline.py`, `identity_facts`)**, from Agent 1's spans and
+Person A's subjects:
+* `identifier`: each NAME span belongs to the subject it is a mention of; each ID_NUMBER span
+  to the person mentioned last before it in the same sentence ("His patient ID is ..." -> the
+  husband), or to the writer;
+* `contact`: each PHONE and EMAIL span, by the same rule;
+* `relation_to`: one fact for each `writer.<relative>` subject ("son").
+
+**One model call per person (`agents/extractor/prompt.py`).** Each call sees:
 * the document;
-* `SUBJECTS`: the people in it, from Person A's `canonical.subjects`, as ids (`writer`,
-  `writer.wife`, `person_1`) with a label. Every fact must name one of these ids;
-* `SENSITIVE DETAILS ALREADY DETECTED`: Agent 1's spans as `- CATEGORY: text` lines, with the
-  instruction that each one should appear in a fact.
+* `PERSON`: one subject id, its label and the words the text uses for them (`My son, he,
+  His`);
+* the details Agent 1 found, except names, IDs, contact details and relations.
 
-It returns `{"facts": [{subject, relation, value, importance}]}`.
+It returns `{"facts": [{relation, value}]}` for that person only. The call sets the subject
+and Person A's `default_importance` sets the importance; the model decides neither.
 
-* **Relations.** The system prompt defines every name in `schemas.RELATIONS` in one line
-  (`lives_in`, `has_condition`, `has_symptom`, ...), so the model knows when to use which.
-* **Values** copy the record's wording, so later stages can match a fact against the spans.
-* **Importance** follows a fixed rule per relation (medical facts high; age, sex, place of
-  treatment and dates medium; the rest low).
-* **Identifying details are facts too.** Agent 3 needs to know a name or phone number exists
-  so that it can write a complete record. It replaces them before its model sees them.
-* **Few-shot examples.** Two, written for this prompt:
-  * a patient message with a relative, a clinic, a condition, a medication and a phone number;
-  * a work email, which shows that a meeting date is not a fact about a person.
+* **Relations.** An enum in the decoding schema without `identifier`, `contact` and
+  `relation_to`, each defined in one line in the system prompt.
+* **Values** copy the record's wording. `in_record` drops a model fact unless at least half of
+  its words (three letters or more, or numbers) appear in the record, so an invented detail
+  ("student") or a garbled number never reaches Agent 3.
+* **Few-shot examples.** Four, written for this prompt: the writer of a patient message, the
+  wife in the same message (one fact), a son at school, and an email addressee the record
+  says nothing about (an empty list).
+
+Cost: one call per person instead of one per document. Most records have one to three people.
 
 ### Constrained decoding
 
-`json_call` sends the schema of `LLMFactList` (title `FactList`) to Ollama as `format`.
-`relation` and `importance` are enums there, so the model cannot invent a relation name or an
-importance level. The platform's repair loop (`BaseJSONClient`) handles malformed JSON:
+`json_call` sends the schema of `LLMFactList` (title `FactList`) to Ollama as `format`, so the
+model cannot invent a relation name. The platform's repair loop (`BaseJSONClient`) handles
+malformed JSON:
 * it retries at temperatures 0.0, 0.2, 0.4 and 0.6, with the validation error quoted;
 * after three failures it raises `SCHEMA_VALIDATION_FAILED`, stage `extract`.
 
-### After the call (`agents/extractor/pipeline.py`)
+### After the calls
 
-Person A's `normalise_facts` cleans the values. The pipeline then drops any fact whose subject
-is not in `SUBJECTS` and logs how many it dropped.
+Person A's `normalise_facts` cleans the identity facts and the model's facts together. The
+pipeline then drops any fact whose subject is not in `SUBJECTS` and logs how many it dropped.
 
 ## Agent 3: reconstruction
 
@@ -50,7 +60,10 @@ Before the model sees anything:
 1. Person A's routing decides an action for every detected span.
 2. The placeholders and generalisations are filled in.
 3. `safe_value` rewrites every fact value that contains a removed span with that span's token
-   or generalised phrase, longest span first.
+   or generalised phrase, longest span first, then every other form the leak check knows.
+4. `safe_facts` drops an identifier or contact fact that is not a token, and a relationship on
+   anyone who is not one of the writer's relatives (a second guard; Agent 2 builds those facts
+   in code now).
 
 The model therefore receives only lines such as
 `the writer - lives in: a town in Kerala.` and `the writer - contact: [PHONE_1].`
@@ -67,14 +80,22 @@ One few-shot example shows facts going in and a record coming out.
 ### Leak loop (`agents/rewriter/pipeline.py`)
 
 ```
-reconstruct -> leak_check (A)
-  leak found  -> reconstruct again, told only the leaked categories (never the leaked text)
-  still leaks -> mask_fallback (A): the leaked words are replaced by their tokens
-  still leaks -> LEAK_CHECK_FAILED (409, stage rewrite)
+reconstruct -> leak_check (A) + grounding check (C)
+  problem found -> reconstruct again, told only the categories (never the text)
+  still found   -> mask_fallback (A), then grounding.mask (C): the words become tokens or [REDACTED]
+  still found   -> LEAK_CHECK_FAILED (409, stage rewrite)
 ```
 
-`meta.leak_retries` counts the second attempts, and `residual_leaks` lists anything that only
-the mask caught. Cell 2 of the notebook prints both totals.
+The two checks cover different failures:
+* the **leak check** looks for each detail Agent 1 found and routing removed, in any form;
+* the **grounding check** (`agents/rewriter/grounding.py`) needs no list of removed details. Any
+  word with a digit, any email address and any capitalised word that is not the first word of a
+  sentence must appear in the facts the model was given (forms of address such as "Doctor"
+  excepted). A name or number the model made up, or that slipped past every earlier stage,
+  is masked on any document.
+
+`meta.leak_retries` counts the second attempts. Cell 2 of the notebook prints the totals and
+the number of `[REDACTED]` masks.
 
 ## Answer prompt (both pipelines)
 
@@ -137,6 +158,9 @@ phrase appears in any prompt. Other tests check that:
 | 23 | Agent 2 copied an ID number wrongly ("HC-229174174" for "HC-2291746"), so it no longer matched the detected span and Agent 3 wrote it out | llama3:8b, run 2 (case_03) | `safe_facts`, as in row 22 |
 | 24 | A part of a removed place reached Agent 3 ("Mulund" from "Fortis Hospital, Mulund"); the leak check caught the rewrite and the mask fallback replaced it with [REDACTED] | llama3:8b, run 2 (case_08) | `safe_value` also replaces every form the leak check knows (name parts, place parts, reformatted numbers), not just the exact text |
 | 25 | Rows 16-17 again, despite the prompt: `identifier` "the writer", "My husband", "a 20 year old undergraduate student"; `contact` "Let me know"; `relation_to` on a colleague, written out as "My wife, [PERSON_2]" | llama3:8b, run 2 | `safe_facts` drops identifier and contact facts without a token, and `relation_to` facts on anyone who is not `writer.<relative>`. Deterministic, so it holds whatever the model does |
+| 26 | Rows 16, 17, 22, 23 and 25 share a cause: the model was trusted with identifying details (deciding what is a name, copying an ID, saying who is related to whom) | llama3:8b, runs 1-2 | Agent 2 builds identifier, contact and relation_to facts in code from Agent 1's spans; the model is never asked for them (`identity_facts`) |
+| 27 | Agent 2 gives one person's facts to another (case_07: the son's age and height to the writer), with all people in one call | llama3:8b, run 2 | One call per person, which only lists facts about that person; example 2 shows a call that returns one fact, example 4 an empty list |
+| 28 | A detail Agent 1 never found, or one the model makes up, can only be caught by checking for that detail; a missed one is invisible to the leak check | llama3:8b, run 2 (case_13) | Grounding check on every rewrite: digits, emails and mid-sentence capitalised words must be in the facts. Over the 20 run 2 rewrites it flagged no capitalised word |
 
 Add a row for each failure seen on the real model, with the model name and run.
 
@@ -150,6 +174,17 @@ from `docs/phase3_plan.md`, section 8.
 | target | | ≥ 0.80 | ≥ 0.90 | ≤ 0.05 | ≥ 0.80 | | | |
 | 1 (27 Oct, prompts v2) | llama3:8b | - | - | - | - | 0 | 0 | 21.3 |
 | 2 (28 Oct, prompts v3) | llama3:8b | - | - | - | - | 1 | 0 | 18.5 |
+
+## Tuning without overfitting
+
+Cell 2 runs the 20 fixtures, and D's scorers grade the same 20. A prompt change made to fix an
+output seen there is tuned to the test set, and its scores will be better than on new records.
+From run 3 on:
+* prefer a change in code that holds for any record (rows 22-28) to new prompt wording;
+* check a prompt change on records outside the fixtures (D's corpus, or new records written
+  by a teammate who has not seen the outputs) before keeping it;
+* report the fixture scores once, at the end, and say in the report which rows came from the
+  fixtures.
 
 ## Changing a prompt
 

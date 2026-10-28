@@ -1,22 +1,24 @@
 """Agent 2 - fact-extraction prompt.  OWNER: Person C (Model, Platform and Integration).
 
-One constrained-JSON call per document (docs/phase3_plan.md, Person C, item 2). The model gets
-the document, the people in it (``subjects``, from Person A - every fact must name one of
-their ids) and the sensitive details Agent 1 found (hints, so identifiers are not missed), and
-returns ``FactTuple``s whose ``relation`` is one of ``schemas.RELATIONS``.
+One small constrained-JSON call per person in the document (docs/phase3_plan.md, Person C,
+item 2). Each call gets the document, the one person to describe (an id from Person A's
+``subjects``, a label and the words the text uses for them) and the details Agent 1 found, and
+returns that person's facts. A small model follows one narrow question ("what does the record
+say about the writer's son?") far more reliably than one call that has to find every person,
+assign every fact and pick from every relation at once.
 
-Decoding is constrained to ``LLMFactList``: ``relation`` and ``importance`` are enums, so the
-model cannot invent a relation name. The pipeline then runs Person A's ``normalise_facts`` and
-drops facts whose subject is unknown.
+Decoding is constrained to ``LLMFactList``: ``relation`` is an enum, so the model cannot
+invent a relation name. The model never decides a fact's subject (the call does) or its
+importance (``importance.default_importance``, a fixed rule per relation).
 
-Design notes:
-* Identifying details (names, contact details, IDs, places) are extracted as facts too:
-  Agent 3 needs to know about them to write a complete record, and replaces them before the
-  reconstruction model ever sees them.
-* ``value`` copies the document's wording, so later stages can match it against the text.
-* The few-shot examples are written for this prompt. They must never be taken from
-  ``data/fixtures`` or ``data/gold``, because the evaluation runs on those documents
-  (``tests/prompts/test_prompts.py`` fails if a gold phrase appears here).
+Names, ID numbers, contact details and kinship are not asked for at all: the extractor
+pipeline builds those facts from Agent 1's spans and Person A's subjects, in code
+(``pipeline.identity_facts``). The model cannot mistake "the writer" for a name, copy an ID
+number wrongly or invent a relative.
+
+The few-shot examples are written for this prompt. They must never be taken from
+``data/fixtures`` or ``data/gold``, because the evaluation runs on those documents
+(``tests/prompts/test_prompts.py`` fails if a gold phrase appears here).
 """
 
 from __future__ import annotations
@@ -25,17 +27,49 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from sanitise.agents.extractor import importance
 from sanitise.llm.base import LLMClient
-from sanitise.schemas import RELATIONS, FactTuple, Importance, SensitiveSpan, Subject
+from sanitise.schemas import FactTuple, PIICategory, SensitiveSpan, Subject
 
-Relation = Literal[RELATIONS]  # type: ignore[valid-type]
+C = PIICategory
+
+# Built in code by the pipeline, never by the model.
+IDENTITY_RELATIONS = ("identifier", "contact", "relation_to")
+MODEL_RELATIONS = (
+    "age",
+    "sex",
+    "lives_in",
+    "works_as",
+    "studies_at",
+    "treated_at",
+    "has_condition",
+    "has_symptom",
+    "symptom_duration",
+    "took_medication",
+    "had_procedure",
+    "event_date",
+    "height",
+    "weight",
+    "other",
+)
+# Agent 1's hints for the categories the model extracts; identifiers are left out.
+HINT_CATEGORIES = {
+    C.AGE,
+    C.DATE,
+    C.ADDRESS,
+    C.LOCATION,
+    C.OCCUPATION,
+    C.PHYSICAL,
+    C.MEDICAL_CONDITION,
+    C.SYMPTOM,
+}
+
+Relation = Literal[MODEL_RELATIONS]  # type: ignore[valid-type]
 
 
 class LLMFact(BaseModel):
-    subject: str = Field(min_length=1)
     relation: Relation
     value: str = Field(min_length=1, max_length=300)
-    importance: Literal["high", "medium", "low"]
 
 
 class LLMFactList(BaseModel):
@@ -46,11 +80,8 @@ class LLMFactList(BaseModel):
 
 
 SYSTEM_PROMPT = """\
-You turn one private record (a patient's message to a doctor, or a workplace email) into a \
-list of facts. Each fact is {"subject", "relation", "value", "importance"}.
-
-subject: the id of the person the fact is about, from SUBJECTS. "writer" is the person who \
-wrote the record; "writer.<relative>" is one of their relatives; "person_<n>" is anyone else.
+You read one private record (a patient's message to a doctor, or a workplace email) and list \
+the facts it states about ONE person, named under PERSON. Each fact is {"relation", "value"}.
 
 relation: exactly one of these names:
 - age, sex: the person's age or sex
@@ -58,130 +89,110 @@ relation: exactly one of these names:
 - works_as: the person's job or role; studies_at: a school or university they attend
 - treated_at: a named hospital, clinic or doctor's practice treating them
 - has_condition: a named diagnosis, disease or clinical finding (also a suspected one)
-- has_symptom: a symptom or complaint (fever, cough, pain somewhere, swelling)
+- has_symptom: something the person feels or shows (fever, cough, pain somewhere, swelling); \
+not what triggers it
 - symptom_duration: how long a symptom has lasted ("three weeks")
 - took_medication, had_procedure: a drug they take; an operation or test they had
 - event_date: a specific date of an event in their life (diagnosis, admission, leave)
-- relation_to: how a relative is related to the writer, as one word ("son", "wife"); only for \
-a relative's id, never for "writer"
 - height, weight: body measurements
-- contact: a phone number or email address written in the record
-- identifier: the person's name or an ID number (patient ID, policy number), exactly as \
-written; never "the writer", a pronoun, a relation word or a job. If the writer gives no \
-name, the writer has no identifier fact.
-- other: anything else that describes the person
+- other: anything else the record says that describes the person
 
-value: the detail in a few words, copied from the record's own wording. Do not add words \
-that are not in the record.
-
-importance: "high" for has_condition, has_symptom, took_medication and had_procedure; \
-"medium" for age, sex, treated_at, event_date and symptom_duration; "low" for everything else.
+value: the detail in a few words, copied from the record's own wording.
 
 Rules:
-- One fact per detail. Every name, age, place, job, date, contact detail and ID in the record \
-is a fact, and so is every condition, symptom, medication and procedure.
-- Only facts about the people in the record. A general statement ("flu is common in winter") \
-or a question the writer asks is not a fact.
-- Never invent a detail that the record does not state: attending a school is studies_at, \
-not works_as "student"; symptom_duration is a length of time, not an activity.
-- If there are no facts, return {"facts": []}.
+- Only facts about PERSON. A fact about anyone else belongs to them, not to PERSON.
+- Names, ID numbers, phone numbers, email addresses and family relationships are handled \
+elsewhere: never list them.
+- Only what the record states. Attending a school is studies_at, not works_as "student"; \
+symptom_duration is a length of time, not an activity.
+- A general statement ("flu is common in winter") or a question is not a fact.
+- If the record says nothing about PERSON, return {"facts": []}.
 
 EXAMPLE 1
 DOCUMENT:
 Hello doctor, I am Rohan Mehta, a 41 year old bus driver from Hubli. For two months I have \
 had chest tightness when I climb stairs, and my GP at Sparsh Clinic thinks it may be angina. \
 I take aspirin. My wife Leela has psoriasis. Please call me on 98110 44521.
-SUBJECTS:
-- writer: the writer
-- writer.wife: the writer's wife
+PERSON: writer (the writer), called: I, my, me
 OUTPUT:
 {"facts": [
- {"subject": "writer", "relation": "identifier", "value": "Rohan Mehta", "importance": "low"},
- {"subject": "writer", "relation": "age", "value": "41 year old", "importance": "medium"},
- {"subject": "writer", "relation": "works_as", "value": "bus driver", "importance": "low"},
- {"subject": "writer", "relation": "lives_in", "value": "Hubli", "importance": "low"},
- {"subject": "writer", "relation": "has_symptom", "value": "chest tightness when I climb \
-stairs", "importance": "high"},
- {"subject": "writer", "relation": "symptom_duration", "value": "two months", \
-"importance": "medium"},
- {"subject": "writer", "relation": "treated_at", "value": "Sparsh Clinic", \
-"importance": "medium"},
- {"subject": "writer", "relation": "has_condition", "value": "angina", "importance": "high"},
- {"subject": "writer", "relation": "took_medication", "value": "aspirin", "importance": "high"},
- {"subject": "writer", "relation": "contact", "value": "98110 44521", "importance": "low"},
- {"subject": "writer.wife", "relation": "relation_to", "value": "wife", "importance": "low"},
- {"subject": "writer.wife", "relation": "identifier", "value": "Leela", "importance": "low"},
- {"subject": "writer.wife", "relation": "has_condition", "value": "psoriasis", \
-"importance": "high"}
+ {"relation": "age", "value": "41 year old"},
+ {"relation": "works_as", "value": "bus driver"},
+ {"relation": "lives_in", "value": "Hubli"},
+ {"relation": "has_symptom", "value": "chest tightness when I climb stairs"},
+ {"relation": "symptom_duration", "value": "two months"},
+ {"relation": "treated_at", "value": "Sparsh Clinic"},
+ {"relation": "has_condition", "value": "angina"},
+ {"relation": "took_medication", "value": "aspirin"}
 ]}
+(The name and the phone number are handled elsewhere. The psoriasis is the wife's.)
 
 EXAMPLE 2
-DOCUMENT:
-Hi Dana, the vendor review has moved to 14 March. I will be on leave the week before for \
-knee surgery, so please send me the slides early. Thanks, Victor Hale
-SUBJECTS:
-- writer: the writer
-- person_1: Dana
+DOCUMENT: (the same record)
+PERSON: writer.wife (the writer's wife), called: My wife, Leela
 OUTPUT:
 {"facts": [
- {"subject": "writer", "relation": "identifier", "value": "Victor Hale", "importance": "low"},
- {"subject": "writer", "relation": "had_procedure", "value": "knee surgery", \
-"importance": "high"},
- {"subject": "person_1", "relation": "identifier", "value": "Dana", "importance": "low"}
+ {"relation": "has_condition", "value": "psoriasis"}
 ]}
-(The vendor review date is about a meeting, not about a person, so it is not a fact.)
 
 EXAMPLE 3
 DOCUMENT:
 Good evening doctor. My son is 9 and goes to Riverside Public School in Mysuru. Since 2 May \
 he has had itchy eyes and sneezing every morning. His hospital number is MR-55821. You can \
 email me at k.rao.home@mailbox.test.
-SUBJECTS:
-- writer: the writer
-- writer.son: the writer's son
+PERSON: writer.son (the writer's son), called: My son, he, His
 OUTPUT:
 {"facts": [
- {"subject": "writer.son", "relation": "relation_to", "value": "son", "importance": "low"},
- {"subject": "writer.son", "relation": "age", "value": "9", "importance": "medium"},
- {"subject": "writer.son", "relation": "studies_at", "value": "Riverside Public School", \
-"importance": "low"},
- {"subject": "writer.son", "relation": "lives_in", "value": "Mysuru", "importance": "low"},
- {"subject": "writer.son", "relation": "has_symptom", "value": "itchy eyes", \
-"importance": "high"},
- {"subject": "writer.son", "relation": "has_symptom", "value": "sneezing every morning", \
-"importance": "high"},
- {"subject": "writer.son", "relation": "event_date", "value": "2 May", "importance": "medium"},
- {"subject": "writer.son", "relation": "identifier", "value": "MR-55821", "importance": "low"},
- {"subject": "writer", "relation": "contact", "value": "k.rao.home@mailbox.test", \
-"importance": "low"}
+ {"relation": "age", "value": "9"},
+ {"relation": "studies_at", "value": "Riverside Public School"},
+ {"relation": "lives_in", "value": "Mysuru"},
+ {"relation": "has_symptom", "value": "itchy eyes"},
+ {"relation": "has_symptom", "value": "sneezing every morning"},
+ {"relation": "event_date", "value": "2 May"}
 ]}
-(The writer gives no name, so the writer has no identifier fact. The school is studies_at, \
-not a job.)
+
+EXAMPLE 4
+DOCUMENT:
+Hi Dana, the vendor review has moved to 14 March. I will be on leave the week before for \
+knee surgery, so please send me the slides early. Thanks, Victor Hale
+PERSON: person_1 (Dana), called: Dana
+OUTPUT:
+{"facts": []}
+(The record asks Dana for slides but states nothing about her. The review date is about a \
+meeting, not a person.)
 """
 
 
-def build_user_prompt(text: str, subjects: list[Subject], spans: list[SensitiveSpan]) -> str:
-    people = "\n".join(f"- {s.id}: {s.label}" for s in subjects) or "- writer: the writer"
-    hints = "\n".join(f"- {s.category.value}: {s.text}" for s in spans) or "(none)"
+def build_user_prompt(text: str, subject: Subject, spans: list[SensitiveSpan]) -> str:
+    called = ", ".join(subject.mentions) or subject.label
+    hints = (
+        "\n".join(f"- {s.category.value}: {s.text}" for s in spans if s.category in HINT_CATEGORIES)
+        or "(none)"
+    )
     return (
-        f"DOCUMENT:\n{text}\n\nSUBJECTS:\n{people}\n\n"
-        f"SENSITIVE DETAILS ALREADY DETECTED (each one should appear in a fact):\n{hints}\n\n"
-        "List every fact in this document about the subjects above.\nOUTPUT:"
+        f"DOCUMENT:\n{text}\n\n"
+        f"DETAILS FOUND IN THE RECORD (about anyone; use those about PERSON):\n{hints}\n\n"
+        f"PERSON: {subject.id} ({subject.label}), called: {called}\n"
+        f"List the facts the record states about {subject.label}.\nOUTPUT:"
     )
 
 
 async def extract_facts(
     text: str, subjects: list[Subject], spans: list[SensitiveSpan], llm: LLMClient
 ) -> list[FactTuple]:
-    result = await llm.json_call(
-        SYSTEM_PROMPT, build_user_prompt(text, subjects, spans), LLMFactList
-    )
-    return [
-        FactTuple(
-            subject=f.subject,
-            relation=f.relation,
-            value=f.value,
-            importance=Importance(f.importance),
+    """One call per subject, in order; the subject and importance of each fact are set here."""
+    facts = []
+    for subject in subjects or [Subject(id="writer", label="the writer")]:
+        result = await llm.json_call(
+            SYSTEM_PROMPT, build_user_prompt(text, subject, spans), LLMFactList
         )
-        for f in result.facts
-    ]
+        facts += [
+            FactTuple(
+                subject=subject.id,
+                relation=f.relation,
+                value=f.value,
+                importance=importance.default_importance(f.relation),
+            )
+            for f in result.facts
+        ]
+    return facts
