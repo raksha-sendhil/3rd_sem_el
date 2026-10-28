@@ -117,7 +117,7 @@ def test_reconstruction_input_has_no_removed_text_and_labels_subjects() -> None:
     assert "Asha" not in user
     assert "the writer - name: [PERSON_1]." in user  # longest span replaced first
     assert "the writer's wife - has condition: gout." in user
-    assert "person 1 (not the writer) - name: [PERSON_2]." in user
+    assert "person 1" not in user  # named by their token, and only a name: no line
 
 
 def test_answer_prompt_is_neutral_and_contains_the_records() -> None:
@@ -162,3 +162,42 @@ def test_reconstruction_input_drops_identifiers_that_are_not_tokens() -> None:
         assert gone not in user
     assert "the writer - contact: [PHONE_1]." in user
     assert "relation to" not in user  # the label says it: "the writer's husband"
+
+
+def test_reconstruction_input_names_other_people_by_token_and_never_repeats_a_line() -> None:
+    decisions = [
+        _decision("Ines Walby", PIICategory.NAME, Action.PLACEHOLDER, "[PERSON_1]"),
+        _decision("Ines", PIICategory.NAME, Action.PLACEHOLDER, "[PERSON_1]"),
+        _decision("555-0188", PIICategory.PHONE, Action.PLACEHOLDER, "[PHONE_1]"),
+    ]
+    facts = [
+        _fact("person_1", "identifier", "Ines Walby"),
+        _fact("person_1", "identifier", "Ines"),
+        _fact("person_1", "works_as", "auditor"),
+        _fact("person_1", "works_as", "auditor"),
+        _fact("person_2", "contact", "555-0188"),
+    ]
+    user = rewrite_prompt.build_user_prompt(facts, decisions)
+    assert user.count("[PERSON_1] - works as: auditor.") == 1
+    assert "name:" not in user  # the token is the label
+    assert "another person - contact: [PHONE_1]." in user
+    assert "person 1" not in user and "person 2" not in user
+
+
+def test_a_vague_phrase_replaces_the_whole_value_when_it_is_most_of_it() -> None:
+    decisions = [
+        _decision(
+            "medial meniscus tear",
+            PIICategory.MEDICAL_CONDITION,
+            Action.GENERALISE,
+            "a knee injury",
+        ),
+        _decision("Nashik", PIICategory.LOCATION, Action.GENERALISE, "a city in the region"),
+    ]
+    facts = [
+        _fact("writer", "had_procedure", "repair of my medial meniscus tear"),
+        _fact("writer", "lives_in", "a farm a few kilometres outside Nashik"),
+    ]
+    user = rewrite_prompt.build_user_prompt(facts, decisions)
+    assert "had procedure: a knee injury." in user  # not "repair of my a knee injury"
+    assert "lives in: a farm a few kilometres outside a city in the region." in user

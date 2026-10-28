@@ -29,6 +29,7 @@ from sanitise.schemas import Action, FactTuple, RoutingDecision, SensitiveSpan
 
 TOKEN = re.compile(r"\[[A-Z]+(?:_[A-Z]+)*(?:_\d+)?\]")
 IDENTIFYING = {"identifier", "contact"}
+_WORD = re.compile(r"[A-Za-z0-9]+")
 # "Here is the rewritten record:" and the like, before the record itself
 PREAMBLE = re.compile(r"\A\s*(?:sure[,!.]?\s*)?(?:here\s+is|here's|below\s+is)[^:\n]*:\s*", re.I)
 
@@ -99,7 +100,15 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     )
     for d in removed:
         assert d.replacement is not None
-        value = re.sub(re.escape(d.span_text.strip()), d.replacement, value, flags=re.IGNORECASE)
+        span = re.escape(d.span_text.strip())
+        if d.action is Action.GENERALISE and re.search(span, value, re.IGNORECASE):
+            # a vague phrase cannot replace a few words inside a longer one ("tore my anterior
+            # cruciate ligament" -> "tore my a joint injury"); when the detail is most of the
+            # value, the vague phrase is the whole value
+            if 2 * len(_WORD.findall(d.span_text)) >= len(_WORD.findall(TOKEN.sub(" ", value))):
+                value = d.replacement
+                continue
+        value = re.sub(span, d.replacement, value, flags=re.IGNORECASE)
     for d in removed:
         assert d.replacement is not None
         for pattern in leakcheck.leak_patterns(d.span_text, d.category):
@@ -122,12 +131,37 @@ def safe_facts(
     return out
 
 
-def subject_label(subject: str) -> str:
-    if subject == "writer":
-        return "the writer"
-    if subject.startswith("writer."):
-        return "the writer's " + subject.removeprefix("writer.").replace("_", " ")
-    return subject.replace("_", " ") + " (not the writer)"
+_OTHERS = ["another person", "a second other person", "a third other person"]
+
+
+def subject_labels(safe: list[tuple[FactTuple, str]]) -> dict[str, str]:
+    """How each subject is named to the model. The writer and their relatives by role ("the
+    writer's son"); anyone else by their name token ("[PERSON_2]") or, with none, as "another
+    person", never by an id such as "person 3", which the model would copy into the record."""
+    labels: dict[str, str] = {}
+    unnamed = 0
+    for f, _ in safe:
+        subject = f.subject
+        if subject in labels:
+            continue
+        if subject == "writer":
+            labels[subject] = "the writer"
+        elif subject.startswith("writer."):
+            labels[subject] = "the writer's " + subject.removeprefix("writer.").replace("_", " ")
+        else:
+            name = next(
+                (
+                    v
+                    for g, v in safe
+                    if g.subject == subject and g.relation == "identifier" and "[PERSON_" in v
+                ),
+                None,
+            )
+            if name is None:
+                name = _OTHERS[min(unnamed, len(_OTHERS) - 1)]
+                unnamed += 1
+            labels[subject] = name
+    return labels
 
 
 def relation_label(relation: str, value: str) -> str:
@@ -139,11 +173,20 @@ def relation_label(relation: str, value: str) -> str:
 
 
 def draft(facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
-    """One line per fact the model may see, with removed details already replaced."""
-    return "\n".join(
-        f"{subject_label(f.subject)} - {relation_label(f.relation, value)}: {value}."
-        for f, value in safe_facts(facts, decisions)
-    )
+    """One line per fact the model may see, with removed details already replaced. A line is
+    never repeated ("Laura Fenn" and "Laura" are one token, so one name line), and a person
+    named by their token gets no separate line saying their name is that token."""
+    safe = safe_facts(facts, decisions)
+    labels = subject_labels(safe)
+    lines: list[str] = []
+    for f, value in safe:
+        label = labels[f.subject]
+        if f.relation == "identifier" and value == label:
+            continue
+        line = f"{label} - {relation_label(f.relation, value)}: {value}."
+        if line not in lines:
+            lines.append(line)
+    return "\n".join(lines)
 
 
 def build_user_prompt(

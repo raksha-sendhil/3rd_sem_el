@@ -199,6 +199,7 @@ phrase appears in any prompt. Other tests check that:
 | 32 | Junk facts: "sunlight" as a symptom (from a general question), "examplemail.com" as a home, "same age", "the same problem", "moved from", "phone is ..." as a symptom, "revised filing" as a job | llama3:8b, run 4 | `check_facts`: every age, place, job, date, symptom and condition must match a detail Agent 1 found, of the right kind. Replayed on run 4's facts: all of these dropped; case_18 ends with no facts, as in the gold |
 | 33 | A city inside a detected address reached the rewrite ("I live in Houston, [ADDRESS_1]") | llama3:8b, runs 3-4 (case_12) | `check_facts` gives a fact the whole detected address, which becomes one token |
 | 34 | Agent 3 wrote relationships twice or wrongly ("My sister ... is my sister", "I am my husband's wife"), made one up ("My wife" for a colleague), took another person's name as the writer's ("I am [PERSON_1]"), and began with "Here is the rewritten record:" | llama3:8b, run 4 | No `relation_to` lines (the label says "the writer's sister"); other people labelled "(not the writer)"; the grounding check treats a family word not in the facts like a made-up name; the opening line is removed |
+| 35 | Agent 3 wrote what its input said too literally: "[PERSON_2] is also known as [PERSON_2]" (two name lines for "Laura Fenn" and "Laura", one token), "You can contact [PHONE_1] for person 3" (a subject id as the label), "I tore my a joint injury" (a vague phrase put inside a longer one) | gemini-3.5/3.1-flash-lite, run 5 | The reconstruction input never repeats a line; other people are labelled by their name token, or "another person" without one, never by id; a generalised detail that is most of a fact's value replaces the whole value |
 
 Add a row for each failure seen on the real model, with the model name and run.
 
@@ -214,6 +215,7 @@ from `docs/phase3_plan.md`, section 8.
 | 2 (28 Oct, prompts v3) | llama3:8b | - | - | - | - | 1 | 0 | 18.5 |
 | 3 (28 Oct, identity facts in code, one call per person, grounding check) | llama3:8b | - | - | - | - | 0 | 0 | 15.7 |
 | 4 (28 Oct, facts attributed by position) | llama3:8b | - | - | - | - | 0 | 0 | 12.0 |
+| 5 (Agents 2-3 on Gemini, one call per document) | gemini-3.5-flash-lite, 3.1 as fallback | - | - | - | - | 0 | 0 | 34.8 (4.5 s request spacing, busy-server waits) |
 
 ## Tuning without overfitting
 
