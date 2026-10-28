@@ -119,3 +119,43 @@ def test_openapi_lists_every_new_path(client: TestClient) -> None:
         "/v1/extract",
         "/v1/rewrite",
     } <= paths
+
+
+def test_dashboard_calls_on_the_real_code_paths(fake_rules: None, tmp_path) -> None:
+    """Every call the dashboard makes, with the API configured for the real model (the model
+    itself scripted), so the real extract, rewrite and answer paths run, not mock mode's."""
+    import asyncio
+
+    from sanitise.mock_mode import build_mock_context
+
+    llm = mock_llm()
+    rag = asyncio.run(build_mock_context(llm))
+    settings = Settings(llm_backend="ollama", attacks_dir=str(tmp_path / "attacks"))
+    with TestClient(create_app(settings, llm=llm, rag=rag)) as c:
+        # Documents: an uploaded document through the three agents, one call each
+        detected = c.post("/v1/detect", json={"text": SAMPLE_TEXT})
+        assert detected.status_code == 200
+        doc_id, spans = detected.json()["doc_id"], detected.json()["output"]["spans"]
+        facts = c.post("/v1/extract", json={"doc_id": doc_id, "text": SAMPLE_TEXT})
+        assert facts.status_code == 200
+        rewritten = c.post(
+            "/v1/rewrite", json={"doc_id": doc_id, "spans": spans, "facts": facts.json()["facts"]}
+        )
+        assert rewritten.status_code == 200 and "07700 900123" not in rewritten.json()["safe_text"]
+        # Documents: stored records
+        docs = c.get("/v1/documents").json()
+        assert docs and c.get(f"/v1/documents/{docs[0]['doc_id']}").status_code == 200
+        # Attacks: one chat per pipeline, and the interception view
+        session = c.post("/v1/sessions").json()["session_id"]
+        for pipeline in ("baseline", "protected"):
+            reply = c.post(
+                "/v1/query", json={"query": "vertigo", "pipeline": pipeline, "session_id": session}
+            )
+            assert reply.status_code == 200 and reply.json()["payload"].startswith("CONTEXT:")
+        both = c.post("/v1/compare", json={"query": "stroke", "session_id": session})
+        assert both.status_code == 200
+        assert {a["kind"] for a in c.get("/v1/attacks").json()} == {
+            "context_dump",
+            "stepwise",
+            "interception",
+        }

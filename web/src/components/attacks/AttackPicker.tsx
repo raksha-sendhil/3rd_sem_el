@@ -20,8 +20,10 @@ export const AttackPicker = ({
         <button
           key={a.attack_id}
           data-testid={`attack-card-${a.attack_id}`}
-          onClick={() => onChange(a.attack_id)}
-          className="card rise group relative flex items-center gap-4 overflow-hidden p-4 text-left transition-[transform,box-shadow] duration-300 hover:-translate-y-1"
+          onClick={() => m.ready && onChange(a.attack_id)}
+          disabled={!m.ready}
+          title={m.ready ? undefined : "Not available yet"}
+          className="card rise group relative flex items-center gap-4 overflow-hidden p-4 text-left transition-[transform,box-shadow] duration-300 enabled:hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-50 disabled:grayscale"
           style={{
             animationDelay: `${i * 80}ms`,
             boxShadow: on ? `0 0 0 3px ${m.color}, 0 18px 40px -18px ${m.color}` : undefined,
