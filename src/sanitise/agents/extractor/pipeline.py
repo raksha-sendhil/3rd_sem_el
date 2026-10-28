@@ -133,24 +133,36 @@ def _words(value: str) -> str:
 
 
 def check_facts(
-    text: str, facts: list[FactTuple], spans: list[SensitiveSpan], subjects: list[Subject]
+    text: str,
+    facts: list[FactTuple],
+    spans: list[SensitiveSpan],
+    subjects: list[Subject],
+    *,
+    trust_subjects: bool = False,
 ) -> list[FactTuple]:
     """The model's facts that describe something in the record, each given to its person.
 
     * A relation in ``SPAN_RELATIONS`` must name a detail Agent 1 found, of a matching category
-      (the value contains it or is part of it). The fact takes the detected text as its value
-      and the subject mentioned last before it in its sentence; one fact per detail. Anything
-      else is dropped: "sunlight" as a symptom, an email domain as a home.
-    * ``other`` is dropped; ``symptom_duration`` must be a length of time and ``sex`` a sex.
-    * The rest (medication, procedures) must be worded from the record and go to the person
-      mentioned last before the value.
+      (the value contains it or is part of it). The fact takes the detected text as its value;
+      one fact per detail. Anything else is dropped: "sunlight" as a symptom, an email domain
+      as a home.
+    * ``symptom_duration`` must be a length of time and ``sex`` a sex. The rest (medication,
+      procedures, ``other``) must be worded from the record.
     * Of two facts with the same subject and relation, one whose words are contained in the
       other's ("breathless", "breathless climbing stairs") is dropped.
+
+    Who a fact is about: with ``trust_subjects`` (a strong model that saw every person at once
+    and chose from their ids), the model's subject. Otherwise (one call per person, where a
+    small model lists the whole record for everyone) the subject mentioned last before the
+    detail in its sentence, ``other`` is dropped (it was mostly noise), and so is a symptom
+    Agent 1 did not find; a strong model may keep a symptom worded from the record.
     """
     placed = []
     lower = text.lower()
     for f in facts:
         categories = SPAN_RELATIONS.get(f.relation)
+        if trust_subjects and f.relation == "has_symptom":
+            categories = None if not any(_within(s.text, f.value) for s in spans) else categories
         if categories is not None:
             for s in spans:
                 if (
@@ -158,17 +170,17 @@ def check_facts(
                     and s.start is not None
                     and (_within(s.text, f.value) or _within(f.value, s.text))
                 ):
-                    owner = _subject_at(text, s.start, subjects) or f.subject
-                    placed.append(_fact(owner, f.relation, s.text))
+                    owner = f.subject if trust_subjects else _subject_at(text, s.start, subjects)
+                    placed.append(_fact(owner or f.subject, f.relation, s.text))
             continue
-        if f.relation == "other" or not in_record(f.value, text):
+        if (f.relation == "other" and not trust_subjects) or not in_record(f.value, text):
             continue
         if f.relation == "symptom_duration" and not _DURATION.search(f.value):
             continue
         if f.relation == "sex" and not _SEX.fullmatch(f.value.strip()):
             continue
         at = lower.find(f.value.lower())
-        owner = _subject_at(text, at, subjects) if at >= 0 else None
+        owner = _subject_at(text, at, subjects) if at >= 0 and not trust_subjects else None
         placed.append(f.model_copy(update={"subject": owner or f.subject}))
     keys = [(f.subject, f.relation, f" {_words(f.value)} ") for f in placed]
     return [
@@ -188,8 +200,15 @@ async def extract(
         subs = [
             Subject.model_validate(s.model_dump()) for s in canonical.subjects(text, detected.spans)
         ]
-        raw = await prompt.extract_facts(text, subs, detected.spans, agents_llm(llm))
-        checked = check_facts(text, raw, detected.spans, subs)
+        model = agents_llm(llm)
+        raw = await prompt.extract_facts(text, subs, detected.spans, model)
+        checked = check_facts(
+            text,
+            raw,
+            detected.spans,
+            subs,
+            trust_subjects=getattr(model, "one_call_per_document", False),
+        )
         log.info("%s: kept %d of the model's %d facts", doc_id, len(checked), len(raw))
         facts = [
             FactTuple.model_validate(f.model_dump())

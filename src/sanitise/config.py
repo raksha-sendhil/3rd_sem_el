@@ -40,12 +40,22 @@ class Settings(BaseSettings):
     # the same one). With thinking on (Ollama's "think"), the model reasons before it answers;
     # the reasoning needs room, so these calls get their own context and output budget, and
     # the sampling a reasoning model expects (greedy decoding makes it repeat itself).
+    # "gemini": Agents 2 and 3 call the Gemini API (free tier) with ``agents_model``; None or
+    # "ollama": they use Ollama like Agent 1.
+    agents_backend: Literal["ollama", "gemini"] | None = None
     agents_model: str | None = None
     agents_think: bool | None = None
     agents_num_ctx: int = Field(default=16384, ge=512)
     agents_num_predict: int = Field(default=8192, ge=64)
     agents_temperature: float = Field(default=0.6, ge=0.0, le=2.0)
     agents_top_p: float = Field(default=0.95, gt=0.0, le=1.0)
+    # ---- Gemini (agents_backend="gemini"). Several keys, comma-separated, are used in turn
+    # when one reaches its daily limit (keys must come from different Google Cloud projects).
+    gemini_api_key: str | None = None
+    gemini_thinking_level: str | None = "low"  # minimal / low / medium / high; None: default
+    gemini_temperature: float | None = None  # None: the model's default
+    gemini_max_output_tokens: int = Field(default=4096, ge=64)
+    gemini_min_interval_s: float = Field(default=4.5, ge=0.0)  # 15 requests a minute
 
     # ---- Validation retry loop: "retries up to three times with an escalating temperature"
     llm_retries: int = Field(default=3, ge=0, le=10)

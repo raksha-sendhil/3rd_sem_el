@@ -4,6 +4,30 @@ Code: `src/sanitise/agents/extractor/prompt.py` (Agent 2), `src/sanitise/agents/
 (Agent 3), `src/sanitise/rag/answer_prompt.py` (both RAG pipelines). Tests: `tests/prompts/`
 (MockLLM, no model). Real-model runs: `notebooks/backend.ipynb` cell 2.
 
+## Models
+
+Agent 1 runs on llama3:8b (Ollama). Agents 2 and 3 can run on another model
+(`SANITISE_AGENTS_BACKEND`, `SANITISE_AGENTS_MODEL`, set in notebook cell 1):
+
+* `gemini` (default in the notebook): `gemini-3.1-flash-lite` on the Gemini API free tier
+  (`llm/gemini.py`). Requests are spaced 4.5 s apart (15 a minute); a per-minute 429 is waited
+  out; a daily 429 moves to the next key in `SANITISE_GEMINI_API_KEY` (comma-separated, each
+  from a different Google Cloud project). Thinking level "low".
+* `ollama`: a local model, optionally with thinking (`SANITISE_AGENTS_THINK`), such as
+  qwen3.5:4b; the base paper's local configuration is Qwen3.5-4B with thinking on.
+
+Why: with llama3:8b, Agents 2 and 3 got who-is-who and word meanings wrong on new records
+(a doctor named between a relative and "he" took the relative's facts; "old smoking habits"
+became an age and a job). Rules could only patch one phrasing at a time. The base paper's own
+code runs its three agents on gpt-4o-mini or Qwen3.5-4B with thinking; Llama-3-8B appears
+there only as one of the models answering questions over the sanitised records.
+
+With a strong model, Agent 2 makes **one call per document** (`DOCUMENT_PROMPT`): the model
+sees every person at once and picks each fact's subject from the document's subject ids (an
+enum in the schema), so `check_facts` keeps its choice (`trust_subjects`), keeps `other`
+facts worded from the record (smoking history), and keeps a symptom Agent 1 did not find. The
+other checks are the same for every model.
+
 ## Agent 2: fact extraction
 
 Agent 2 is split so that the model answers only narrow questions and never handles a name, an

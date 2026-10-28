@@ -26,6 +26,7 @@ REPO = Path(__file__).resolve().parents[2]
 PROMPTS = {
     "agent1": quasi.SYSTEM_PROMPT + quasi.TASK_REMINDER,
     "extract": extract_prompt.SYSTEM_PROMPT,
+    "extract_document": extract_prompt.DOCUMENT_PROMPT,
     "rewrite": rewrite_prompt.SYSTEM_PROMPT,
     "answer": answer_prompt.SYSTEM_PROMPT,
 }
