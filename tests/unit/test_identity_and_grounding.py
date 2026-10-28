@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 
 from sanitise.agents.extractor.canonical import subjects
-from sanitise.agents.extractor.pipeline import attribute, identity_facts, in_record
+from sanitise.agents.extractor.pipeline import check_facts, identity_facts, in_record
 from sanitise.agents.pipeline import sanitise
 from sanitise.agents.rewriter.grounding import REDACTED, mask, ungrounded
 from sanitise.agents.rewriter.pipeline import NO_FACTS, rewrite_with_trace
@@ -143,27 +143,68 @@ def _model_fact(subject: str, relation: str, value: str) -> FactTuple:
 def test_a_fact_listed_for_two_people_goes_to_the_one_the_sentence_is_about() -> None:
     text = (
         "My nephew is 19 and has had knee pain since the match. "
-        "I have a mild cold and I am breathless on stairs."
+        "I have a mild cold and I am breathless on stairs. I take cetirizine."
     )
-    spans = [_span(text, "My nephew", C.RELATION)]
+    spans = [
+        _span(text, "My nephew", C.RELATION),
+        _span(text, "19", C.AGE),
+        _span(text, "knee pain", C.SYMPTOM),
+        _span(text, "mild cold", C.MEDICAL_CONDITION),
+        _span(text, "breathless on stairs", C.SYMPTOM),
+    ]
     subs = subjects(text, spans)
     facts = [
         _model_fact("writer", "age", "19"),
-        _model_fact("writer.nephew", "age", "19"),
+        _model_fact("writer.nephew", "age", "19 years"),
         _model_fact("writer", "has_symptom", "knee pain"),
-        _model_fact("writer.nephew", "has_symptom", "mild cold"),
+        _model_fact("writer.nephew", "has_condition", "a mild cold"),
         _model_fact("writer", "has_symptom", "breathless"),
-        _model_fact("writer", "has_symptom", "breathless on stairs"),
-        _model_fact("writer", "other", "worried"),  # not in the record: keeps its subject
+        _model_fact("writer", "took_medication", "cetirizine"),
     ]
-    got = {(f.subject, f.relation, f.value) for f in attribute(text, facts, subs)}
+    got = {(f.subject, f.relation, f.value) for f in check_facts(text, facts, spans, subs)}
     assert got == {
         ("writer.nephew", "age", "19"),
         ("writer.nephew", "has_symptom", "knee pain"),
-        ("writer", "has_symptom", "mild cold"),
+        ("writer", "has_condition", "mild cold"),
         ("writer", "has_symptom", "breathless on stairs"),
-        ("writer", "other", "worried"),
+        ("writer", "took_medication", "cetirizine"),
     }
+
+
+@pytest.mark.parametrize(
+    "relation, value",
+    [
+        ("has_symptom", "sunlight"),  # a word from a general question, not a symptom
+        ("has_symptom", "on my cheeks and forehead"),
+        ("has_symptom", "phone is 713-555-0199"),
+        ("lives_in", "examplemail.com"),
+        ("works_as", "revised filing"),
+        ("age", "same age"),
+        ("has_condition", "the same problem"),
+        ("symptom_duration", "since then"),
+        ("other", "says it is normal"),
+        ("sex", "unwell"),
+    ],
+)
+def test_a_fact_agent_1_did_not_find_is_dropped(relation: str, value: str) -> None:
+    text = (
+        "Hi doctor, how much sunlight is enough? My acne is on my cheeks and forehead, the same "
+        "problem as my sister, who is the same age. My phone is 713-555-0199 and my email is "
+        "a.b@examplemail.com. I sent the revised filing. My mother says it is normal. I feel "
+        "unwell "
+        "since then."
+    )
+    spans = [_span(text, "acne", C.MEDICAL_CONDITION), _span(text, "my sister", C.RELATION)]
+    subs = subjects(text, spans)
+    assert check_facts(text, [_model_fact("writer", relation, value)], spans, subs) == []
+
+
+def test_a_place_inside_a_detected_address_becomes_the_address() -> None:
+    text = "We will meet at 1400 Smith Street, Houston, TX 77002 on Monday."
+    spans = [_span(text, "1400 Smith Street, Houston, TX 77002", C.ADDRESS)]
+    facts = [_model_fact("writer", "lives_in", "Houston, TX 77002")]
+    got = check_facts(text, facts, spans, subjects(text, spans))
+    assert [f.value for f in got] == ["1400 Smith Street, Houston, TX 77002"]
 
 
 def test_an_id_number_is_labelled_as_an_id_not_a_name() -> None:

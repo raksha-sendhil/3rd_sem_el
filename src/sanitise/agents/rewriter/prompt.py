@@ -6,10 +6,11 @@ before anything reaches the model, every removed span in a fact value is rewritt
 span's placeholder token or generalised phrase (``safe_value``), in any form the leak check
 recognises (a name part, a part of a place, a reformatted number). ``safe_facts`` then drops
 what must not reach the model at all: an identifier or contact detail that did not become a
-token (Agent 1 missed it, or it is not an identifier: "the writer"), and a relationship given
-to someone who is not one of the writer's relatives. The model's job is to turn the rest into
-a short, natural record that a reader would accept as the original message with the
-identifying details taken out.
+token (Agent 1 missed it, or it is not an identifier: "the writer"), and every ``relation_to``
+fact (the subject label already says "the writer's son"; a separate line made the model write
+"my sister is my sister"). The model's job is to turn the rest into a short, natural record
+that a reader would accept as the original message with the identifying details taken out.
+A leading "Here is the rewritten record:" is removed from the reply.
 
 ``feedback`` (on the retry) lists what the leak check and the grounding check found in the
 previous attempt; only the categories are shown to the model, never the leaked text.
@@ -28,6 +29,8 @@ from sanitise.schemas import Action, FactTuple, RoutingDecision, SensitiveSpan
 
 TOKEN = re.compile(r"\[[A-Z]+(?:_[A-Z]+)*(?:_\d+)?\]")
 IDENTIFYING = {"identifier", "contact"}
+# "Here is the rewritten record:" and the like, before the record itself
+PREAMBLE = re.compile(r"\A\s*(?:sure[,!.]?\s*)?(?:here\s+is|here's|below\s+is)[^:\n]*:\s*", re.I)
 
 SYSTEM_PROMPT = """\
 You rewrite a private record from a list of facts so it can be shared without identifying \
@@ -58,7 +61,6 @@ the writer - symptom duration: two months.
 the writer - has condition: angina.
 the writer - took medication: aspirin.
 the writer - contact: [PHONE_1].
-the writer's wife - relation to: wife.
 the writer's wife - has condition: psoriasis.
 OUTPUT:
 I am [PERSON_1], in my 40s, and I work as a transport worker in a city in Karnataka. For two \
@@ -112,9 +114,9 @@ def safe_facts(
     out = []
     for f in facts:
         value = safe_value(f.value, decisions)
-        if f.relation in IDENTIFYING and not TOKEN.search(value):
-            continue
-        if f.relation == "relation_to" and not f.subject.startswith("writer."):
+        if f.relation in IDENTIFYING and TOKEN.sub("", value).strip(" ,;/"):
+            continue  # not exactly a token: missed, garbled ("[ID_1]25") or not an identifier
+        if f.relation == "relation_to":  # the label says it: "the writer's son"
             continue
         out.append((f, value))
     return out
@@ -125,7 +127,7 @@ def subject_label(subject: str) -> str:
         return "the writer"
     if subject.startswith("writer."):
         return "the writer's " + subject.removeprefix("writer.").replace("_", " ")
-    return subject.replace("_", " ")
+    return subject.replace("_", " ") + " (not the writer)"
 
 
 def relation_label(relation: str, value: str) -> str:
@@ -167,4 +169,5 @@ async def reconstruct(
     llm: LLMClient,
     feedback: list[SensitiveSpan] | None = None,
 ) -> str:
-    return await llm.text_call(SYSTEM_PROMPT, build_user_prompt(facts, decisions, feedback))
+    reply = await llm.text_call(SYSTEM_PROMPT, build_user_prompt(facts, decisions, feedback))
+    return PREAMBLE.sub("", reply).strip()

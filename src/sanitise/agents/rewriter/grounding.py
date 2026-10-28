@@ -10,6 +10,7 @@ facts do not contain:
 
 * a word with a digit in it ("1987", "B-12", "40s"), unless the same word is in the facts;
 * an email address, unless it is in the facts;
+* a family word ("wife", "son") that is not in the facts: a relative the model made up;
 * a capitalised word that is not the first word of a sentence, unless the facts contain it
   (ignoring case) or it is a form of address ("Doctor", "Sir"). Capitalised words next to it
   are reported with it, so "Helen Park" is one span even at the start of a sentence.
@@ -44,6 +45,13 @@ FUNCTION_WORDS = {
     "from", "with", "by", "and", "but", "or", "so", "since", "about", "after", "before", "also",
     "as", "if", "when", "please", "recently", "now", "then", "there", "here",
 }  # fmt: skip
+# a relative the facts do not mention is a made-up person ("My wife" with no wife in the facts)
+KIN = {
+    "wife", "husband", "spouse", "partner", "son", "daughter", "child", "children", "baby",
+    "mother", "father", "mom", "mum", "dad", "parent", "brother", "sister", "sibling",
+    "grandmother", "grandfather", "grandson", "granddaughter", "aunt", "uncle", "niece",
+    "nephew", "cousin", "fiance", "fiancee", "girlfriend", "boyfriend",
+}  # fmt: skip
 
 
 def _words(text: str) -> set[str]:
@@ -77,6 +85,13 @@ def ungrounded(safe_text: str, facts_text: str) -> list[SensitiveSpan]:
         if any(c.isdigit() for c in word):
             if word.lower() not in allowed:
                 hits.append((m.start(), m.end(), C.ID_NUMBER))
+            i += 1
+            continue
+        lower = word.lower()
+        if (lower in KIN or lower.removesuffix("s") in KIN) and not (
+            {lower, lower.removesuffix("s")} & allowed
+        ):
+            hits.append((m.start(), m.end(), C.RELATION))
             i += 1
             continue
         at_start = _SENTENCE_START.search(safe_text[: m.start()]) is not None

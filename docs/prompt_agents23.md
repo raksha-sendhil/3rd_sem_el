@@ -28,13 +28,17 @@ and Person A's `default_importance` sets the importance; the model decides neith
 
 * **Relations.** An enum in the decoding schema without `identifier`, `contact` and
   `relation_to`, each defined in one line in the system prompt.
-* **Who a fact is about** is decided in code (`attribute`): a value found in the record goes
-  to the person mentioned last before it in the same sentence, by the rule used for IDs. A fact
-  the model lists for two people is kept once, and of "breathless" and "breathless climbing
-  stairs" for one person only the longer is kept.
-* **Values** copy the record's wording. `in_record` drops a model fact unless at least half of
-  its words (three letters or more, or numbers) appear in the record, so an invented detail
-  ("student") or a garbled number never reaches Agent 3.
+* **Agent 2 may only describe what Agent 1 found** (`check_facts`). An age, place, job, date,
+  symptom or condition must match a detail Agent 1 detected, of the right kind (`lives_in` a
+  LOCATION or ADDRESS, `has_symptom` a SYMPTOM or MEDICAL_CONDITION, ...). The fact takes
+  Agent 1's wording, and goes to the person mentioned last before that detail in its sentence.
+  Anything else is dropped. `other` is never kept, `symptom_duration` must be a length of time,
+  `sex` a sex; medication and procedures (which Agent 1 does not detect) must be worded from
+  the record. Of "breathless" and "breathless climbing stairs" for one person, only the longer
+  is kept.
+
+  So a junk fact can only reach Agent 3 if Agent 1 detected that text as a detail of that kind.
+  The price: a real symptom Agent 1 missed is lost too.
 * **Few-shot examples.** Four, written for this prompt: the writer of a patient message, the
   wife in the same message (one fact), a son at school, and an email addressee the record
   says nothing about (an empty list).
@@ -168,6 +172,9 @@ phrase appears in any prompt. Other tests check that:
 | 29 | One call per person: the model lists the whole record's facts for every person (case_07: the son's age, height and pain also given to the writer; case_02: the daughter's cough given to the writer) | llama3:8b, run 3 | `attribute` gives each fact to the person the sentence is about and drops repeats. Replayed on run 3's facts: case_07's five copies on the writer removed, case_02's and case_17's facts moved to the relative |
 | 30 | A part of a removed place replaced with the whole place's phrase ("Mulund" from "Fortis Hospital, Mulund" became "I live in a hospital") | llama3:8b, run 3 (case_08) | `safe_value` generalises the part on its own ("a town in the region") |
 | 31 | An ID number written as a name ("I am [ID_1]"); a record with no facts produced "Since there are no facts provided, ..." | llama3:8b, run 3 (case_03, case_14) | The reconstruction input labels identifiers "name" or "ID number"; with no facts Agent 3 writes a fixed sentence and does not call the model |
+| 32 | Junk facts: "sunlight" as a symptom (from a general question), "examplemail.com" as a home, "same age", "the same problem", "moved from", "phone is ..." as a symptom, "revised filing" as a job | llama3:8b, run 4 | `check_facts`: every age, place, job, date, symptom and condition must match a detail Agent 1 found, of the right kind. Replayed on run 4's facts: all of these dropped; case_18 ends with no facts, as in the gold |
+| 33 | A city inside a detected address reached the rewrite ("I live in Houston, [ADDRESS_1]") | llama3:8b, runs 3-4 (case_12) | `check_facts` gives a fact the whole detected address, which becomes one token |
+| 34 | Agent 3 wrote relationships twice or wrongly ("My sister ... is my sister", "I am my husband's wife"), made one up ("My wife" for a colleague), took another person's name as the writer's ("I am [PERSON_1]"), and began with "Here is the rewritten record:" | llama3:8b, run 4 | No `relation_to` lines (the label says "the writer's sister"); other people labelled "(not the writer)"; the grounding check treats a family word not in the facts like a made-up name; the opening line is removed |
 
 Add a row for each failure seen on the real model, with the model name and run.
 
@@ -182,6 +189,7 @@ from `docs/phase3_plan.md`, section 8.
 | 1 (27 Oct, prompts v2) | llama3:8b | - | - | - | - | 0 | 0 | 21.3 |
 | 2 (28 Oct, prompts v3) | llama3:8b | - | - | - | - | 1 | 0 | 18.5 |
 | 3 (28 Oct, identity facts in code, one call per person, grounding check) | llama3:8b | - | - | - | - | 0 | 0 | 15.7 |
+| 4 (28 Oct, facts attributed by position) | llama3:8b | - | - | - | - | 0 | 0 | 12.0 |
 
 ## Tuning without overfitting
 

@@ -10,12 +10,13 @@ Two parts of the result never come from the model:
   spans and the subjects. A name belongs to the subject it is a mention of; an ID number,
   phone or email to the person mentioned last before it in the same sentence (the writer if
   no one is); ``writer.<relative>`` gets ``relation_to: <relative>``.
-* ``in_record``: a model fact is kept only if its value is worded from the record (at least
-  half of its words of three letters or more appear in the text), so a detail the model
-  invented is dropped before Agent 3 can write it out.
-* ``attribute``: who a fact is about is decided by where its value sits in the record, by the
-  same rule as for IDs, so a detail the model lists for two people is given to one; and a
-  detail listed twice ("breathless", "breathless climbing stairs") is kept once.
+* ``check_facts``: Agent 2 may only describe what Agent 1 found. An age, place, job, date,
+  symptom or condition the model lists must match a detail Agent 1 detected, of the right
+  kind; it takes Agent 1's wording and goes to the person mentioned last before it in its
+  sentence ("My son ... has abdominal pain" -> the son). A fact that matches nothing is
+  dropped, so the model cannot add a detail ("sunlight" as a symptom, an email domain as a
+  home) or give one person's detail to another. Medication and procedures, which Agent 1 does
+  not detect, must be worded from the record; ``other`` is never kept.
 """
 
 from __future__ import annotations
@@ -43,6 +44,27 @@ C = PIICategory
 OWNED = {C.NAME: "identifier", C.ID_NUMBER: "identifier", C.PHONE: "contact", C.EMAIL: "contact"}
 _WORD = re.compile(r"[A-Za-z0-9]+")
 _SENTENCE_END = re.compile(r"[.!?\n]")
+# relation -> the Agent 1 categories a fact of that relation must match
+SPAN_RELATIONS: dict[str, set[PIICategory]] = {
+    "age": {C.AGE},
+    "height": {C.PHYSICAL},
+    "weight": {C.PHYSICAL},
+    "lives_in": {C.LOCATION, C.ADDRESS},
+    "studies_at": {C.LOCATION, C.ADDRESS},
+    "treated_at": {C.LOCATION, C.ADDRESS},
+    "works_as": {C.OCCUPATION},
+    "event_date": {C.DATE},
+    "has_condition": {C.MEDICAL_CONDITION, C.SYMPTOM},
+    "has_symptom": {C.SYMPTOM, C.MEDICAL_CONDITION},
+}
+_COUNT = (
+    r"(?:\d+|a|an|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|few"
+    r"|several|couple\s+of)"
+)
+_DURATION = re.compile(
+    rf"\b{_COUNT}\s+(?:minute|hour|day|night|week|month|year)s?\b", re.IGNORECASE
+)
+_SEX = re.compile(r"male|female|man|woman|boy|girl", re.IGNORECASE)
 
 
 def _fact(subject: str, relation: str, value: str) -> FactTuple:
@@ -101,25 +123,52 @@ def in_record(value: str, text: str) -> bool:
     return sum(w in present for w in words) * 2 >= len(words)
 
 
+def _within(short: str, long: str) -> bool:
+    return re.search(rf"(?<!\w){re.escape(short.strip())}(?!\w)", long, re.IGNORECASE) is not None
+
+
 def _words(value: str) -> str:
     return " ".join(w.lower() for w in _WORD.findall(value))
 
 
-def attribute(text: str, facts: list[FactTuple], subjects: list[Subject]) -> list[FactTuple]:
-    """Give each fact to the person the record says it about, then say each detail once.
+def check_facts(
+    text: str, facts: list[FactTuple], spans: list[SensitiveSpan], subjects: list[Subject]
+) -> list[FactTuple]:
+    """The model's facts that describe something in the record, each given to its person.
 
-    A fact whose value is found in the record goes to the subject mentioned last before it in
-    the same sentence ("My son ... has abdominal pain" -> the son), whatever subject the model
-    gave it; otherwise it keeps the model's. Of two facts with the same subject and relation,
-    one whose words are contained in the other's ("breathless", "breathless climbing stairs")
-    is dropped.
+    * A relation in ``SPAN_RELATIONS`` must name a detail Agent 1 found, of a matching category
+      (the value contains it or is part of it). The fact takes the detected text as its value
+      and the subject mentioned last before it in its sentence; one fact per detail. Anything
+      else is dropped: "sunlight" as a symptom, an email domain as a home.
+    * ``other`` is dropped; ``symptom_duration`` must be a length of time and ``sex`` a sex.
+    * The rest (medication, procedures) must be worded from the record and go to the person
+      mentioned last before the value.
+    * Of two facts with the same subject and relation, one whose words are contained in the
+      other's ("breathless", "breathless climbing stairs") is dropped.
     """
-    lower = text.lower()
     placed = []
+    lower = text.lower()
     for f in facts:
+        categories = SPAN_RELATIONS.get(f.relation)
+        if categories is not None:
+            for s in spans:
+                if (
+                    s.category in categories
+                    and s.start is not None
+                    and (_within(s.text, f.value) or _within(f.value, s.text))
+                ):
+                    owner = _subject_at(text, s.start, subjects) or f.subject
+                    placed.append(_fact(owner, f.relation, s.text))
+            continue
+        if f.relation == "other" or not in_record(f.value, text):
+            continue
+        if f.relation == "symptom_duration" and not _DURATION.search(f.value):
+            continue
+        if f.relation == "sex" and not _SEX.fullmatch(f.value.strip()):
+            continue
         at = lower.find(f.value.lower())
         owner = _subject_at(text, at, subjects) if at >= 0 else None
-        placed.append(f.model_copy(update={"subject": owner}) if owner else f)
+        placed.append(f.model_copy(update={"subject": owner or f.subject}))
     keys = [(f.subject, f.relation, f" {_words(f.value)} ") for f in placed]
     return [
         f
@@ -139,16 +188,12 @@ async def extract(
             Subject.model_validate(s.model_dump()) for s in canonical.subjects(text, detected.spans)
         ]
         raw = await prompt.extract_facts(text, subs, detected.spans, llm)
-        grounded = [f for f in raw if in_record(f.value, text)]
-        if len(grounded) < len(raw):
-            log.info(
-                "%s: dropped %d facts not worded from the record", doc_id, len(raw) - len(grounded)
-            )
+        checked = check_facts(text, raw, detected.spans, subs)
+        log.info("%s: kept %d of the model's %d facts", doc_id, len(checked), len(raw))
         facts = [
             FactTuple.model_validate(f.model_dump())
             for f in canonical.normalise_facts(
-                identity_facts(text, subs, detected.spans) + attribute(text, grounded, subs),
-                subs,
+                identity_facts(text, subs, detected.spans) + checked, subs
             )
         ]
     except PipelineError as exc:

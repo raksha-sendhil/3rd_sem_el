@@ -116,7 +116,7 @@ def test_reconstruction_input_has_no_removed_text_and_labels_subjects() -> None:
     assert "Asha" not in user
     assert "the writer - name: [PERSON_1]." in user  # longest span replaced first
     assert "the writer's wife - has condition: gout." in user
-    assert "person 1 - name: [PERSON_2]." in user
+    assert "person 1 (not the writer) - name: [PERSON_2]." in user
 
 
 def test_answer_prompt_is_neutral_and_contains_the_records() -> None:
@@ -160,4 +160,4 @@ def test_reconstruction_input_drops_identifiers_that_are_not_tokens() -> None:
     for gone in ("the writer - identifier", "Nora", "HC-33819", "Let me know"):
         assert gone not in user
     assert "the writer - contact: [PHONE_1]." in user
-    assert "the writer's husband - relation to: husband." in user
+    assert "relation to" not in user  # the label says it: "the writer's husband"
