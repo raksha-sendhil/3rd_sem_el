@@ -5,9 +5,9 @@ HTTP API (`docs/phase3_plan.md`, section 6.4).
 
 | Page | What it shows |
 |---|---|
-| Compare (`/`) | One question sent to both pipelines: each answer with leaked details marked red, tokens purple and generalised phrases amber; how many details leaked; the session monitor's verdict on the protected answer; the time taken and records used; and "What the model saw", the exact prompt. Runs collect in a session table with their verdicts. |
-| Attacks (`/attacks`) | The three attacks: context dump, stepwise inference and payload interception. Rounds stream in from the API as each one is answered. Charts of the Secret Recovery Rate and the people still matching, the target card (recovery rate and pool per pipeline), and a live transcript (what was disclosed, the pool left and the monitor's verdict per round). |
-| Documents (`/documents`) | Each stored record before and after the three agents, with counts per agent, the table of changes and the extracted facts. Hovering a highlight rings its twin on the other side and in the table of changes. |
+| Overview (`/`) | The two pipelines as a flowchart, with a sample record's details on each side. |
+| Attacks (`/attacks`) | Two chats side by side, one per pipeline (`POST /v1/query`). Picking context dump or stepwise inference fills the attack's prompt into both chats; after each reply the next prompt is filled in. Replies are typed out as they arrive, with leaked details marked red, tokens purple and generalised phrases amber, a running count of leaked details per chat, and the session monitor's verdict on protected replies. Payload interception opens the exact request each pipeline sends to the model (Ollama `POST /api/chat`), side by side, for each of the attack's questions. |
+| Documents (`/documents`) | A stored record, or one you upload or paste, through each agent: Agent 1's detected details in the original, Agent 2's facts as points per person, and Agent 3's rewrite. Hovering a highlight rings its twin. An uploaded document runs the agents one at a time (`/v1/detect`, `/v1/extract`, `/v1/rewrite`), each panel filling in as its agent finishes. |
 
 ## Run it
 
@@ -53,8 +53,7 @@ cd web && npm run types
 White cards on a dotted paper background (#f6f4ef), styled with Tailwind. Bricolage Grotesque
 for headings and numbers, Instrument Sans for reading, JetBrains Mono for labels and ids.
 Standard RAG is coral (#ff4d3d) and Protected RAG teal (#0fb5a0) in every panel and chart. The
-agents are blue (Detect), purple (Extract) and amber (Rewrite). Icons come from lucide-react
-and charts from recharts.
+agents are blue (Detect), purple (Extract) and amber (Rewrite). Icons come from lucide-react.
 
 Illustrations: put the image files in `public/images/` and set their paths in
 `src/lib/images.ts`. Until then each one shows a placeholder.

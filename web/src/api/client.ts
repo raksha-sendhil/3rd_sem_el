@@ -8,16 +8,18 @@ export type RagAnswer = S["RagAnswer"];
 export type CompareResponse = S["CompareResponse"];
 export type AttackDefinition = S["AttackDefinition"];
 export type AttackKind = AttackDefinition["kind"];
-export type AttackRun = S["AttackRun"];
-export type AttackRound = S["AttackRound"];
-export type RoundLeakage = S["RoundLeakage"];
-export type SessionTrace = S["SessionTrace"];
 export type DocumentSummary = S["DocumentSummary"];
 export type DocumentView = S["DocumentView"];
 export type RoutingDecision = S["RoutingDecision"];
 export type SanitisedRecord = S["SanitisedRecord"];
 export type MonitorVerdict = S["MonitorVerdict"];
 export type PIICategory = S["PIICategory"];
+export type Pipeline = RagAnswer["pipeline"];
+export type DetectorResult = S["DetectorResult"];
+export type SensitiveSpan = S["SensitiveSpan"];
+export type FactTuple = S["FactTuple"];
+export type ExtractorOutput = S["ExtractorOutput"];
+export type RewriterOutput = S["RewriterOutput"];
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
   /\/$/,
@@ -61,9 +63,15 @@ const documentCache = new Map<string, Promise<DocumentView>>();
 
 export const api = {
   health: () => call<S["HealthResponse"]>("GET", "/v1/health"),
-  sanitise: (text: string) => call<SanitisedRecord>("POST", "/v1/sanitise", { text }),
+  // the three agents one at a time, so each one's output can be shown as it finishes
+  detect: (text: string) => call<DetectorResult>("POST", "/v1/detect", { text }),
+  extract: (doc_id: string, text: string) =>
+    call<ExtractorOutput>("POST", "/v1/extract", { doc_id, text }),
+  rewrite: (doc_id: string, spans: SensitiveSpan[], facts: FactTuple[]) =>
+    call<RewriterOutput>("POST", "/v1/rewrite", { doc_id, spans, facts }),
   createSession: () => call<{ session_id: string }>("POST", "/v1/sessions", {}),
-  session: (id: string) => call<SessionTrace>("GET", `/v1/sessions/${id}`),
+  query: (query: string, pipeline: Pipeline, session_id: string) =>
+    call<RagAnswer>("POST", "/v1/query", { query, pipeline, session_id }),
   compare: (query: string, session_id: string) =>
     call<CompareResponse>("POST", "/v1/compare", { query, session_id }),
   attacks: () => call<AttackDefinition[]>("GET", "/v1/attacks"),
@@ -79,27 +87,3 @@ export const api = {
     return view;
   },
 };
-
-type StreamHandlers = {
-  round: (r: AttackRound) => void;
-  done: (run: AttackRun) => void;
-  fail: (message: string) => void;
-};
-
-/** Runs an attack over Server-Sent Events; each round arrives as soon as it is answered.
- * Returns a function that stops listening. */
-export function streamAttack(id: string, on: StreamHandlers): () => void {
-  const source = new EventSource(`${API_URL}/v1/attacks/${encodeURIComponent(id)}/stream`);
-  const data = (e: Event) => JSON.parse((e as MessageEvent).data);
-  source.addEventListener("round", (e) => on.round(data(e)));
-  source.addEventListener("done", (e) => {
-    source.close();
-    on.done(data(e));
-  });
-  source.addEventListener("error", (e) => {
-    source.close(); // without this the browser reconnects and reruns the attack
-    const body = (e as MessageEvent).data;
-    on.fail(body ? (JSON.parse(body).error?.detail ?? "The attack failed") : `Lost the API at ${API_URL}`);
-  });
-  return () => source.close();
-}

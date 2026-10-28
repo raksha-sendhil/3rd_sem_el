@@ -1,17 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { ApiError, api } from "@/api/client";
-import { AnswerPanel, type Run, type Variant } from "@/components/compare/AnswerPanel";
-import { HistoryTable, type HistoryRow } from "@/components/compare/HistoryTable";
-import { PayloadSheet } from "@/components/compare/PayloadSheet";
+import { ArrowUpRight, FileText } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { api } from "@/api/client";
 import { PipelineGraphic, type Sample } from "@/components/compare/PipelineGraphic";
-import { QuestionBox } from "@/components/compare/QuestionBox";
-import { ErrorNote, Legend, PageHead } from "@/components/PageHead";
-import { seconds } from "@/lib/agents";
-import { loadTerms, stats } from "@/lib/marks";
-
-const now = () => new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+import { Legend, PageHead } from "@/components/PageHead";
 
 /** The record count, and one changed record to show in the pipeline graphic. */
 function usePipelineSample() {
@@ -44,81 +38,43 @@ function usePipelineSample() {
   return { records, sample };
 }
 
-export default function Compare() {
-  const [run, setRun] = useState<Run | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [history, setHistory] = useState<HistoryRow[]>([]);
-  const [drawer, setDrawer] = useState<Variant | null>(null);
-  const session = useRef<string | null>(null);
-  const n = useRef(0);
+export default function Overview() {
   const { records, sample } = usePipelineSample();
-
-  const ask = async (question: string) => {
-    if (busy) return;
-    setBusy(true);
-    setError(null);
-    try {
-      session.current ??= (await api.createSession()).session_id;
-      const data = await api.compare(question, session.current);
-      const terms = await loadTerms([...data.baseline.doc_ids, ...data.protected.doc_ids]);
-      const id = `r${++n.current}`;
-      const time = now();
-      const std = stats(data.baseline.answer, terms, "std");
-      const prot = stats(data.protected.answer, terms, "prot");
-      setRun({ id, question, time, data, terms });
-      setHistory((h) => [
-        {
-          id,
-          time,
-          question,
-          leaks: std.leaks,
-          tokens: prot.tokens,
-          vague: prot.vague,
-          monitor: data.protected.monitor,
-          std: seconds(data.baseline.latency_ms),
-          prot: seconds(data.protected.latency_ms),
-        },
-        ...h,
-      ]);
-    } catch (e) {
-      setError(e instanceof ApiError ? e.message : String(e));
-    } finally {
-      setBusy(false);
-    }
-  };
-
   return (
-    <div className="space-y-8">
-      <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.25fr]">
-        <PageHead
-          index="01"
-          label="Compare"
-          color="#6D4AFF"
-          title={
-            <>
-              Same question.
-              <br />
-              Two pipelines.
-              <br />
-              <span className="text-[#FF4D3D]">One leaks.</span>
-            </>
-          }
-        >
-          <Legend />
-        </PageHead>
-        <div className="card rise p-4 sm:p-6" style={{ animationDelay: "120ms" }}>
-          <PipelineGraphic records={records} sample={sample} />
+    <div className="grid min-h-[calc(100vh-180px)] items-center gap-10 lg:grid-cols-[1fr_1.25fr]">
+      <PageHead
+        index="01"
+        label="Overview"
+        color="#6D4AFF"
+        title={
+          <>
+            Same question.
+            <br />
+            Two pipelines.
+            <br />
+            <span className="text-[#FF4D3D]">One leaks.</span>
+          </>
+        }
+      >
+        <Legend />
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            href="/attacks"
+            className="btn-primary flex items-center gap-2 rounded-2xl px-6 py-3 text-sm"
+          >
+            <ArrowUpRight className="h-4 w-4" /> Try the attacks
+          </Link>
+          <Link
+            href="/documents"
+            className="flex items-center gap-2 rounded-2xl border-2 border-[#E6E1D6] bg-white px-6 py-3 text-sm font-bold text-[#17162B] transition-[border-color,transform] hover:-translate-y-0.5 hover:border-[#17162B]"
+          >
+            <FileText className="h-4 w-4" /> See the documents
+          </Link>
         </div>
+      </PageHead>
+      <div className="card rise p-4 sm:p-6" style={{ animationDelay: "120ms" }}>
+        <PipelineGraphic records={records} sample={sample} />
       </div>
-      <QuestionBox onRun={ask} busy={busy} />
-      <ErrorNote error={error} />
-      <div className="grid gap-6 lg:grid-cols-2">
-        <AnswerPanel variant="standard" run={run} busy={busy} onInspect={() => setDrawer("standard")} />
-        <AnswerPanel variant="protected" run={run} busy={busy} onInspect={() => setDrawer("protected")} />
-      </div>
-      <HistoryTable rows={history} onRerun={ask} busy={busy} />
-      <PayloadSheet variant={drawer} run={run} onClose={() => setDrawer(null)} />
     </div>
   );
 }

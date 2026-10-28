@@ -1,13 +1,13 @@
 "use client";
 
-import { FileText, GitCompareArrows, Swords } from "lucide-react";
+import { FileText, Swords, Workflow } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { API_URL, api } from "@/api/client";
 
 const NAV = [
-  { to: "/", label: "Compare", icon: GitCompareArrows, color: "#6D4AFF", id: "compare" },
+  { to: "/", label: "Overview", icon: Workflow, color: "#6D4AFF", id: "overview" },
   { to: "/attacks", label: "Attacks", icon: Swords, color: "#FF4D3D", id: "attacks" },
   { to: "/documents", label: "Documents", icon: FileText, color: "#0FB5A0", id: "documents" },
 ];

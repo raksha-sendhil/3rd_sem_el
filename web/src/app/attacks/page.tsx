@@ -1,77 +1,102 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { ApiError, api, streamAttack, type AttackDefinition, type AttackRound } from "@/api/client";
-import { AttackCharts, type ChartPoint } from "@/components/attacks/AttackCharts";
+import { useEffect, useRef, useState } from "react";
+import { ApiError, api, type AttackDefinition } from "@/api/client";
 import { AttackPicker } from "@/components/attacks/AttackPicker";
-import { Controls } from "@/components/attacks/Controls";
-import { ORDER, leakOf, metaOf, pctOf } from "@/components/attacks/meta";
-import { RoundsTable } from "@/components/attacks/RoundsTable";
-import { TargetCard } from "@/components/attacks/TargetCard";
+import { ChatPanel, type Msg } from "@/components/attacks/ChatPanel";
+import { ORDER } from "@/components/attacks/meta";
+import { PayloadDialog } from "@/components/attacks/PayloadDialog";
+import { SIDES, VARIANTS, type Variant } from "@/components/attacks/sides";
 import { ErrorNote, PageHead } from "@/components/PageHead";
-import { useTerms } from "@/lib/marks";
+import { loadTerms } from "@/lib/marks";
+
+type Chat = {
+  session: string | null;
+  messages: Msg[];
+  draft: string;
+  queue: string[]; // the attack's next prompts, filled in one at a time after each reply
+  busy: boolean;
+};
+
+const fresh = (prompts: string[] = []): Chat => ({
+  session: null,
+  messages: [],
+  draft: prompts[0] ?? "",
+  queue: prompts.slice(1),
+  busy: false,
+});
 
 export default function Attacks() {
   const [attacks, setAttacks] = useState<AttackDefinition[]>([]);
-  const [id, setId] = useState<string | null>(null);
-  const [rounds, setRounds] = useState<AttackRound[]>([]); // shown as each one is answered
-  const [running, setRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const stop = useRef<(() => void) | null>(null);
+  const [model, setModel] = useState("llama3:8b");
+  const [picked, setPicked] = useState<string | null>(null);
+  const [intercept, setIntercept] = useState<AttackDefinition | null>(null);
+  const [chats, setChats] = useState<Record<Variant, Chat>>({
+    standard: fresh(),
+    protected: fresh(),
+  });
+  const ids = useRef(0);
 
   useEffect(() => {
     api
       .attacks()
-      .then((list) => {
-        const sorted = [...list].sort((a, b) => ORDER.indexOf(a.kind) - ORDER.indexOf(b.kind));
-        setAttacks(sorted);
-        setId((cur) => cur ?? (sorted.find((a) => a.kind === "stepwise") ?? sorted[0])?.attack_id ?? null);
-      })
+      .then((list) => setAttacks([...list].sort((a, b) => ORDER.indexOf(a.kind) - ORDER.indexOf(b.kind))))
       .catch((e) => setError(e instanceof ApiError ? e.message : String(e)));
-    return () => stop.current?.();
+    api
+      .health()
+      .then((h) => setModel(h.model))
+      .catch(() => {});
   }, []);
 
-  const attack = attacks.find((a) => a.attack_id === id) ?? null;
-  const terms = useTerms(rounds.flatMap((r) => [...r.baseline.doc_ids, ...r.protected.doc_ids]));
+  const update = (variant: Variant, change: (c: Chat) => Chat) =>
+    setChats((all) => ({ ...all, [variant]: change(all[variant]) }));
 
-  function launch() {
+  const busy = VARIANTS.some((v) => chats[v].busy);
+
+  const pick = (id: string) => {
+    const attack = attacks.find((a) => a.attack_id === id);
     if (!attack) return;
-    stop.current?.();
-    setRounds([]);
-    setError(null);
-    setRunning(true);
-    stop.current = streamAttack(attack.attack_id, {
-      round: (r) => setRounds((rs) => [...rs, r]),
-      done: () => setRunning(false),
-      fail: (message) => {
-        setRunning(false);
-        setError(message);
-      },
-    });
-  }
-
-  const select = (next: string) => {
-    if (running) return;
-    stop.current?.();
-    setRounds([]);
-    setError(null);
-    setId(next);
+    if (attack.kind === "interception") return setIntercept(attack);
+    if (busy) return;
+    setPicked(id);
+    setChats({ standard: fresh(attack.queries), protected: fresh(attack.queries) });
   };
 
-  // a new array restarts the chart animation, so rebuild it only when a round arrives
-  const chart: ChartPoint[] = useMemo(
-    () => [
-      { label: "R0", std: 0, prot: 0 },
-      ...rounds.map((r, i) => ({
-        label: `R${i + 1}`,
-        std: pctOf(leakOf(r, "std")),
-        prot: pctOf(leakOf(r, "prot")),
-        stdMatch: leakOf(r, "std")?.candidate_pool,
-        protMatch: leakOf(r, "prot")?.candidate_pool,
-      })),
-    ],
-    [rounds],
-  );
+  const send = async (variant: Variant) => {
+    const chat = chats[variant];
+    const text = chat.draft.trim();
+    if (!text || chat.busy) return;
+    update(variant, (c) => ({
+      ...c,
+      draft: "",
+      busy: true,
+      messages: [...c.messages, { id: ++ids.current, role: "user", text }],
+    }));
+    try {
+      const session = chat.session ?? (await api.createSession()).session_id;
+      const answer = await api.query(text, SIDES[variant].pipeline, session);
+      const terms = await loadTerms(answer.doc_ids);
+      update(variant, (c) => {
+        const next = !c.draft && c.queue.length ? c.queue : null; // keep anything typed meanwhile
+        return {
+          ...c,
+          session,
+          busy: false,
+          messages: [...c.messages, { id: ++ids.current, role: "assistant", answer, terms }],
+          draft: next ? next[0] : c.draft,
+          queue: next ? next.slice(1) : c.queue,
+        };
+      });
+    } catch (e) {
+      const message = e instanceof ApiError ? e.message : String(e);
+      update(variant, (c) => ({
+        ...c,
+        busy: false,
+        messages: [...c.messages, { id: ++ids.current, role: "error", text: message }],
+      }));
+    }
+  };
 
   return (
     <div className="space-y-8">
@@ -87,30 +112,23 @@ export default function Attacks() {
           </>
         }
       />
-      <AttackPicker attacks={attacks} value={id} onChange={select} />
+      <AttackPicker attacks={attacks} value={picked} onChange={pick} />
       <ErrorNote error={error} />
-      {attack && (
-        <>
-          <Controls
-            meta={metaOf(attack)}
-            shown={rounds.length}
-            total={attack.queries.length}
-            running={running}
-            onLaunch={launch}
+      <div className="grid gap-6 lg:grid-cols-2">
+        {VARIANTS.map((variant) => (
+          <ChatPanel
+            key={variant}
+            variant={variant}
+            messages={chats[variant].messages}
+            draft={chats[variant].draft}
+            busy={chats[variant].busy}
+            onDraft={(draft) => update(variant, (c) => ({ ...c, draft }))}
+            onSend={() => send(variant)}
+            onClear={() => update(variant, () => fresh())}
           />
-          <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-[1fr_1fr_340px]">
-            <AttackCharts data={chart} />
-            <TargetCard targetId={attack.target_person_id} rows={rounds} />
-          </div>
-          <RoundsTable
-            attackId={attack.attack_id}
-            meta={metaOf(attack)}
-            intercept={attack.kind === "interception"}
-            rows={rounds}
-            terms={terms}
-          />
-        </>
-      )}
+        ))}
+      </div>
+      <PayloadDialog attack={intercept} model={model} onClose={() => setIntercept(null)} />
     </div>
   );
 }

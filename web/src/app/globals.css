@@ -127,6 +127,20 @@ body {
   border-bottom: 2px dashed #f5a300;
   border-radius: 6px 6px 0 0;
 }
+.mark-kept {
+  border-radius: 6px 6px 0 0;
+  padding: 0.05rem 0.35rem;
+  cursor: default;
+  background: #f1ede4;
+  color: #4a4760;
+  font-weight: 600;
+  border-bottom: 2px dotted #a9a5b8;
+  transition:
+    box-shadow 150ms ease,
+    transform 150ms ease;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
 .mark-active {
   box-shadow: 0 0 0 3px #ffc53d;
   transform: translateY(-1px);
@@ -202,15 +216,4 @@ body {
   to {
     transform: translateX(100%);
   }
-}
-
-.recharts-cartesian-axis-tick text {
-  font-family: var(--font-mono), monospace;
-}
-
-.clamp-6 {
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
