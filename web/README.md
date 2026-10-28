@@ -32,10 +32,14 @@ To use the real model on Colab, run `notebooks/backend.ipynb` up to cell 4, copy
 it prints, and put it in `web/.env.local`:
 
 ```
-NEXT_PUBLIC_API_URL=https://<printed-address>.trycloudflare.com
+NEXT_PUBLIC_API_URL=https://<your-domain>.ngrok-free.app
 ```
 
-then restart `npm run dev`. The API allows requests from `localhost:3000` by default.
+then restart `npm run dev`. The API allows requests from `localhost:3000` by default. With
+ngrok set up (see the notebook's first cell) the address is the same in every session; with
+the Cloudflare fallback (`https://<printed-address>.trycloudflare.com`) it changes each time.
+On Windows PowerShell, write the file with `-Encoding ascii` (other encodings add a byte-order
+mark that hides the variable).
 
 ## When the API changes
 

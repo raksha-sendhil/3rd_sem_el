@@ -41,7 +41,11 @@ async function call<T>(method: "GET" | "POST", path: string, body?: unknown): Pr
   try {
     res = await fetch(API_URL + path, {
       method,
-      headers: body === undefined ? undefined : { "content-type": "application/json" },
+      // the header skips ngrok's warning page for free accounts; other hosts ignore it
+      headers: {
+        "ngrok-skip-browser-warning": "1",
+        ...(body === undefined ? {} : { "content-type": "application/json" }),
+      },
       body: body === undefined ? undefined : JSON.stringify(body),
     });
   } catch {
