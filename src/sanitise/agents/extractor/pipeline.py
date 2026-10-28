@@ -154,15 +154,13 @@ def check_facts(
     Who a fact is about: with ``trust_subjects`` (a strong model that saw every person at once
     and chose from their ids), the model's subject. Otherwise (one call per person, where a
     small model lists the whole record for everyone) the subject mentioned last before the
-    detail in its sentence, ``other`` is dropped (it was mostly noise), and so is a symptom
-    Agent 1 did not find; a strong model may keep a symptom worded from the record.
+    detail in its sentence, and ``other`` is dropped (it was mostly noise). The rule that an
+    age, place, job, date, symptom or condition must be one Agent 1 found holds for every model.
     """
     placed = []
     lower = text.lower()
     for f in facts:
         categories = SPAN_RELATIONS.get(f.relation)
-        if trust_subjects and f.relation == "has_symptom":
-            categories = None if not any(_within(s.text, f.value) for s in spans) else categories
         if categories is not None:
             for s in spans:
                 if (
