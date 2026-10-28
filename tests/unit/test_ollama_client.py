@@ -171,3 +171,30 @@ def test_from_settings() -> None:
     clone = client.with_options(model="llama3:8b")
     assert clone.model == "llama3:8b" and client.model == "qwen2.5:7b-instruct"
     assert clone._http is client._http and clone._owns_http is False
+
+
+async def test_agents_client_uses_its_own_model_thinking_and_sampling() -> None:
+    seen: list[dict] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen.append(json.loads(request.content))
+        return httpx.Response(
+            200,
+            json={
+                "message": {"role": "assistant", "thinking": "Let me see...", "content": "Done."},
+                "done": True,
+            },
+        )
+
+    http = httpx.AsyncClient(base_url="http://ollama.test", transport=httpx.MockTransport(handler))
+    settings = Settings(agents_model="qwen3.5:4b", agents_think=True)
+    base = OllamaClient.from_settings(settings, http=http)
+    agents = base.for_agents(settings)
+    assert await agents.text_call("s", "u") == "Done."  # the reasoning is not the answer
+    await base.text_call("s", "u")
+    first, second = seen
+    assert first["model"] == "qwen3.5:4b" and first["think"] is True
+    assert first["options"]["temperature"] == 0.6 and first["options"]["top_p"] == 0.95
+    assert first["options"]["num_ctx"] == 16384 and first["options"]["num_predict"] == 8192
+    assert second["model"] == "llama3:8b" and "think" not in second  # Agent 1 is unchanged
+    assert base.for_agents(Settings()) is base  # nothing configured: the same client

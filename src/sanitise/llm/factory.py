@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from sanitise.config import Settings
-from sanitise.llm.base import BaseJSONClient
+from sanitise.config import Settings, get_settings
+from sanitise.llm.base import BaseJSONClient, LLMClient
 from sanitise.llm.mock import MockLLM
 from sanitise.llm.ollama import OllamaClient
 
@@ -32,6 +32,12 @@ def build_llm_client(
     if backend == "ollama":
         return OllamaClient.from_settings(settings, model=model)
     raise ValueError(f"unknown LLM backend {backend!r} (expected 'ollama' or 'mock')")
+
+
+def agents_llm(llm: LLMClient) -> LLMClient:
+    """The client Agents 2 and 3 call: the configured agents model and thinking switch
+    (``SANITISE_AGENTS_MODEL``, ``SANITISE_AGENTS_THINK``) on Ollama; ``llm`` otherwise."""
+    return llm.for_agents(get_settings()) if isinstance(llm, OllamaClient) else llm
 
 
 async def close_llm_client(client: object) -> None:

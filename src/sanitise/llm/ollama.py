@@ -36,6 +36,8 @@ class OllamaClient(BaseJSONClient):
         temperature: float = 0.0,
         temperature_step: float = 0.2,
         temperature_max: float = 1.0,
+        think: bool | None = None,
+        top_p: float | None = None,
         http: httpx.AsyncClient | None = None,
         **hooks: Any,
     ) -> None:
@@ -52,6 +54,8 @@ class OllamaClient(BaseJSONClient):
         self.num_ctx = num_ctx
         self.seed = seed
         self.num_predict = num_predict
+        self.think = think  # Ollama's "think": the model reasons before answering (None: default)
+        self.top_p = top_p  # default top_p for every call (None: Ollama's)
         self.transport_retries = transport_retries
         self._owns_http = http is None
         self._http = http or httpx.AsyncClient(base_url=self.base_url, timeout=timeout_s)
@@ -93,6 +97,21 @@ class OllamaClient(BaseJSONClient):
         clone._owns_http = False  # closing the copy must not close the shared pool
         return clone
 
+    def for_agents(self, settings: Settings) -> OllamaClient:
+        """The client Agents 2 and 3 use: ``settings.agents_model`` with its thinking switch,
+        context, output budget and sampling, sharing this client's HTTP pool. This client
+        itself when no separate agents model or thinking is configured."""
+        if settings.agents_model is None and settings.agents_think is None:
+            return self
+        clone = self.with_options(model=settings.agents_model)
+        clone.think = settings.agents_think
+        clone.num_ctx = settings.agents_num_ctx
+        clone.num_predict = settings.agents_num_predict
+        clone.temperature = settings.agents_temperature
+        clone.temperature_max = max(clone.temperature_max, settings.agents_temperature)
+        clone.top_p = settings.agents_top_p
+        return clone
+
     # ---------------------------------------------------------------- transport
 
     async def _generate(
@@ -112,6 +131,8 @@ class OllamaClient(BaseJSONClient):
         }
         if json_schema is not None:  # None = free text (text_call)
             payload["format"] = json_schema
+        if self.think is not None:  # the reasoning comes back in message.thinking, not content
+            payload["think"] = self.think
         data = await self._post("/api/chat", payload)
         try:
             return data["message"]["content"]
@@ -126,6 +147,7 @@ class OllamaClient(BaseJSONClient):
         options: dict[str, Any] = {"temperature": temperature, "num_ctx": self.num_ctx}
         if self.seed is not None:
             options["seed"] = self.seed
+        top_p = top_p if top_p is not None else self.top_p
         if top_p is not None:
             options["top_p"] = top_p
         num_predict = max_tokens if max_tokens is not None else self.num_predict

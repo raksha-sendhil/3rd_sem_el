@@ -31,6 +31,7 @@ from sanitise.agents.rewriter import (
 )
 from sanitise.errors import LeakCheckFailed, PipelineError, SchemaValidationFailed
 from sanitise.llm.base import LLMClient, format_validation_error
+from sanitise.llm.factory import agents_llm
 from sanitise.schemas import (
     Action,
     DetectorOutput,
@@ -105,6 +106,7 @@ async def rewrite_with_trace(
     extracted: ExtractorOutput,
     llm: LLMClient,
 ) -> RewriteTrace:
+    llm = agents_llm(llm)
     try:
         decisions, tokens = plan_decisions(detected, extracted)
         removed = removed_decisions(decisions)

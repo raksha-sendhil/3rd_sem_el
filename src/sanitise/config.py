@@ -36,6 +36,17 @@ class Settings(BaseSettings):
     # Upper bound on generated tokens per call, so a runaway generation cannot stall a run.
     llm_num_predict: int = Field(default=1024, ge=64)
 
+    # ---- Agents 2 and 3 may run on a different model than Agent 1 and the RAG answers (None:
+    # the same one). With thinking on (Ollama's "think"), the model reasons before it answers;
+    # the reasoning needs room, so these calls get their own context and output budget, and
+    # the sampling a reasoning model expects (greedy decoding makes it repeat itself).
+    agents_model: str | None = None
+    agents_think: bool | None = None
+    agents_num_ctx: int = Field(default=16384, ge=512)
+    agents_num_predict: int = Field(default=8192, ge=64)
+    agents_temperature: float = Field(default=0.6, ge=0.0, le=2.0)
+    agents_top_p: float = Field(default=0.95, gt=0.0, le=1.0)
+
     # ---- Validation retry loop: "retries up to three times with an escalating temperature"
     llm_retries: int = Field(default=3, ge=0, le=10)
     llm_temperature: float = Field(default=0.0, ge=0.0, le=2.0)

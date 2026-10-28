@@ -29,6 +29,7 @@ from pydantic import ValidationError
 from sanitise.agents.extractor import canonical, importance, prompt
 from sanitise.errors import PipelineError, SchemaValidationFailed
 from sanitise.llm.base import LLMClient, format_validation_error
+from sanitise.llm.factory import agents_llm
 from sanitise.schemas import (
     DetectorOutput,
     ExtractorOutput,
@@ -187,7 +188,7 @@ async def extract(
         subs = [
             Subject.model_validate(s.model_dump()) for s in canonical.subjects(text, detected.spans)
         ]
-        raw = await prompt.extract_facts(text, subs, detected.spans, llm)
+        raw = await prompt.extract_facts(text, subs, detected.spans, agents_llm(llm))
         checked = check_facts(text, raw, detected.spans, subs)
         log.info("%s: kept %d of the model's %d facts", doc_id, len(checked), len(raw))
         facts = [
