@@ -148,3 +148,53 @@ def test_document_prompt_examples_parse_with_their_schema() -> None:
     schema = extract_prompt.document_schema(["writer", "writer.wife", "writer.son", "person_1"])
     for block in blocks:
         schema.model_validate_json(block)
+
+
+@pytest.fixture
+def no_sleep(monkeypatch: pytest.MonkeyPatch) -> list[float]:
+    slept: list[float] = []
+
+    async def fake_sleep(seconds: float) -> None:
+        slept.append(seconds)
+
+    monkeypatch.setattr("sanitise.llm.gemini.asyncio.sleep", fake_sleep)
+    return slept
+
+
+async def test_a_busy_model_is_retried_then_the_next_model_is_used(no_sleep: list[float]) -> None:
+    models: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        model = request.url.path.split("/models/")[1].split(":")[0]
+        models.append(model)
+        if model == "gemini-a":
+            return error(503, "This model is currently experiencing high demand.")
+        return answer("ok")
+
+    gemini = client(handler, model="gemini-a,gemini-b")
+    assert await gemini.text_call("s", "u") == "ok"
+    assert models == ["gemini-a", "gemini-a", "gemini-b"]
+    assert no_sleep == [10.0]  # one wait, then the switch
+    assert await gemini.text_call("s", "u") == "ok" and models[-1] == "gemini-b"  # stays
+
+
+async def test_a_busy_single_model_backs_off_then_fails(no_sleep: list[float]) -> None:
+    gemini = client(lambda _: error(503, "high demand"), max_server_errors=5)
+    with pytest.raises(LLMUnreachable, match="503"):
+        await gemini.text_call("s", "u")
+    assert no_sleep == [10.0, 20.0, 40.0, 60.0, 60.0]
+
+
+async def test_daily_limit_on_every_key_moves_to_the_next_model() -> None:
+    seen: list[tuple[str, str]] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        model = request.url.path.split("/models/")[1].split(":")[0]
+        seen.append((model, request.headers["x-goog-api-key"]))
+        if model == "gemini-a":
+            return error(429, "Quota exceeded: GenerateRequestsPerDayPerProjectPerModel")
+        return answer("ok")
+
+    gemini = client(handler, model="gemini-a,gemini-b", api_keys=["k1", "k2"])
+    assert await gemini.text_call("s", "u") == "ok"
+    assert seen == [("gemini-a", "k1"), ("gemini-a", "k2"), ("gemini-b", "k1")]

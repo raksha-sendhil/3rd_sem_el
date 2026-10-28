@@ -14,7 +14,16 @@ them itself:
 * a 429 for a daily limit moves on to the next key in ``api_keys``. A new key only helps if it
   belongs to a different Google Cloud project: keys in one project share its quota.
 
-When every key is used up the call fails with ``LLM_UNREACHABLE`` and says so.
+``model`` may name several models, comma-separated ("gemini-3.5-flash-lite,gemini-3.1-flash-lite").
+The first is used until it fails in a way the next may not:
+
+* a 503 ("high demand") or other server error is retried after 10, 20, 40, then 60 s; after two
+  in a row the client moves on to the next model, which has its own capacity;
+* when every key has reached the daily limit for one model, the next model starts again from
+  the first key (free-tier limits are per model as well as per project).
+
+When every key and model is used up, or the servers keep failing for about eight minutes, the
+call fails with ``LLM_UNREACHABLE`` and says why.
 
 Thinking is set with ``thinkingConfig.thinkingLevel`` ("minimal", "low", "medium", "high").
 If the API rejects an optional field (the schema form or the thinking setting), the request is
@@ -63,13 +72,17 @@ class GeminiClient(BaseJSONClient):
         timeout_s: float = 120.0,
         min_interval_s: float = 4.5,
         max_waits: int = 6,
+        max_server_errors: int = 12,
         retries: int = 3,
         http: httpx.AsyncClient | None = None,
     ) -> None:
         keys = [k.strip() for k in api_keys if k and k.strip()]
         if not keys:
             raise ValueError("no Gemini API key: set SANITISE_GEMINI_API_KEY")
-        super().__init__(model=model, retries=retries, temperature=temperature or 0.0)
+        models = [m.strip() for m in model.split(",") if m.strip()]
+        super().__init__(model=models[0], retries=retries, temperature=temperature or 0.0)
+        self.models = models
+        self.exhausted: set[str] = set()  # models whose daily limit every key has reached
         self.api_keys = keys
         self.key_index = 0
         self.thinking_level = thinking_level
@@ -78,6 +91,7 @@ class GeminiClient(BaseJSONClient):
         self.timeout_s = timeout_s
         self.min_interval_s = min_interval_s
         self.max_waits = max_waits
+        self.max_server_errors = max_server_errors
         self.use_json_schema = True
         self._owns_http = http is None
         self._http = http or httpx.AsyncClient(base_url=BASE_URL, timeout=timeout_s)
@@ -155,12 +169,14 @@ class GeminiClient(BaseJSONClient):
         top_p: float | None = None,
         max_tokens: int | None = None,
     ) -> str:
-        waits = 0
+        waits = server_errors = in_a_row = 0
         while True:
             body = self._body(messages, json_schema, temperature, top_p, max_tokens)
             response = await self._post(body)
             if response.status_code == 200:
                 return _text(response.json(), self.model)
+            if response.status_code < 500:
+                in_a_row = 0
             full = response.text
             detail = full[:600]
             if response.status_code == 400 and self._drop_optional(full, json_schema):
@@ -176,9 +192,20 @@ class GeminiClient(BaseJSONClient):
                 log.warning("Gemini per-minute limit; waiting %.0f s", delay)
                 await asyncio.sleep(delay)
                 continue
-            if response.status_code >= 500 and waits < self.max_waits:
-                waits += 1
-                await asyncio.sleep(5.0 * waits)
+            if response.status_code >= 500 and server_errors < self.max_server_errors:
+                server_errors += 1
+                in_a_row += 1
+                if in_a_row >= 2 and self._next_model(f"server error {response.status_code}"):
+                    in_a_row = 0
+                    continue
+                delay = min(60.0, 10.0 * 2 ** (in_a_row - 1))
+                log.warning(
+                    "Gemini %s returned %d (busy); retrying in %.0f s",
+                    self.model,
+                    response.status_code,
+                    delay,
+                )
+                await asyncio.sleep(delay)
                 continue
             raise LLMUnreachable(
                 f"Gemini returned {response.status_code} for {self.model}: {detail}"
@@ -197,11 +224,27 @@ class GeminiClient(BaseJSONClient):
             return True
         return False
 
+    def _next_model(self, why: str) -> bool:
+        """Move on to the next configured model that has not hit its daily limit."""
+        others = [m for m in self.models if m != self.model and m not in self.exhausted]
+        if not others:
+            return False
+        after = self.models[self.models.index(self.model) + 1 :] + self.models
+        nxt = next(m for m in after if m in others)
+        log.warning("Gemini %s: %s; switching to %s", self.model, why, nxt)
+        self.model = nxt
+        return True
+
     def _next_key(self, detail: str) -> None:
         if self.key_index + 1 >= len(self.api_keys):
+            self.exhausted.add(self.model)
+            if self._next_model("daily limit on every key"):
+                self.key_index = 0
+                return
             raise LLMUnreachable(
-                f"Gemini daily limit reached on all {len(self.api_keys)} API key(s). Add a key "
-                f"from a different Google Cloud project, or wait until tomorrow. {detail}"
+                f"Gemini daily limit reached on all {len(self.api_keys)} API key(s) for "
+                f"{', '.join(self.models)}. Add a key from a different Google Cloud project, or "
+                f"wait until tomorrow. {detail}"
             )
         self.key_index += 1
         log.warning(
