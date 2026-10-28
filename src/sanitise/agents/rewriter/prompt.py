@@ -2,10 +2,14 @@
 
 ``reconstruct`` writes a fresh document from the facts alone (docs/phase3_plan.md, Person C,
 item 2). It never sees the original text, and it never sees the removed details either:
-before anything reaches the model, every fact value that contains a removed span is rewritten
-with that span's placeholder token or generalised phrase (``safe_value``). The model's job is
-to turn those facts into a short, natural record that a reader would accept as the original
-message with the identifying details taken out.
+before anything reaches the model, every removed span in a fact value is rewritten with that
+span's placeholder token or generalised phrase (``safe_value``), in any form the leak check
+recognises (a name part, a part of a place, a reformatted number). ``safe_facts`` then drops
+what must not reach the model at all: an identifier or contact detail that did not become a
+token (Agent 1 missed it, or it is not an identifier: "the writer"), and a relationship given
+to someone who is not one of the writer's relatives. The model's job is to turn the rest into
+a short, natural record that a reader would accept as the original message with the
+identifying details taken out.
 
 ``feedback`` (on the retry) lists what the leak check found in the previous attempt; only the
 categories are shown to the model, never the leaked text.
@@ -18,8 +22,12 @@ from __future__ import annotations
 
 import re
 
+from sanitise.agents.rewriter import leakcheck
 from sanitise.llm.base import LLMClient
 from sanitise.schemas import Action, FactTuple, RoutingDecision, SensitiveSpan
+
+TOKEN = re.compile(r"\[[A-Z]+(?:_[A-Z]+)*(?:_\d+)?\]")
+IDENTIFYING = {"identifier", "contact"}
 
 SYSTEM_PROMPT = """\
 You rewrite a private record from a list of facts so it can be shared without identifying \
@@ -59,8 +67,20 @@ I take aspirin. My wife has psoriasis. You can reach me on [PHONE_1].
 """
 
 
+def _outside_tokens(pattern: re.Pattern[str], replacement: str, value: str) -> str:
+    tokens = [(m.start(), m.end()) for m in TOKEN.finditer(value)]
+
+    def sub(m: re.Match[str]) -> str:
+        inside = any(a < m.end() and m.start() < b for a, b in tokens)
+        return m.group(0) if inside else replacement
+
+    return pattern.sub(sub, value)
+
+
 def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
-    """``value`` with every removed span (longest first) replaced by its replacement."""
+    """``value`` with every removed span replaced by its replacement: the exact text first
+    (longest first), then any other form of it the leak check knows ("Mulund" from "Fortis
+    Hospital, Mulund", "Daniel" from "Daniel Whitcomb")."""
     removed = sorted(
         (
             d
@@ -73,7 +93,26 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     for d in removed:
         assert d.replacement is not None
         value = re.sub(re.escape(d.span_text.strip()), d.replacement, value, flags=re.IGNORECASE)
+    for d in removed:
+        assert d.replacement is not None
+        for pattern in leakcheck.leak_patterns(d.span_text, d.category):
+            value = _outside_tokens(pattern, d.replacement, value)
     return value
+
+
+def safe_facts(
+    facts: list[FactTuple], decisions: list[RoutingDecision]
+) -> list[tuple[FactTuple, str]]:
+    """The facts the model may see, each with its safe value (see the module docstring)."""
+    out = []
+    for f in facts:
+        value = safe_value(f.value, decisions)
+        if f.relation in IDENTIFYING and not TOKEN.search(value):
+            continue
+        if f.relation == "relation_to" and not f.subject.startswith("writer."):
+            continue
+        out.append((f, value))
+    return out
 
 
 def subject_label(subject: str) -> str:
@@ -85,11 +124,10 @@ def subject_label(subject: str) -> str:
 
 
 def draft(facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
-    """One line per fact, with removed details already replaced."""
+    """One line per fact the model may see, with removed details already replaced."""
     return "\n".join(
-        f"{subject_label(f.subject)} - {f.relation.replace('_', ' ')}: "
-        f"{safe_value(f.value, decisions)}."
-        for f in facts
+        f"{subject_label(f.subject)} - {f.relation.replace('_', ' ')}: {value}."
+        for f, value in safe_facts(facts, decisions)
     )
 
 

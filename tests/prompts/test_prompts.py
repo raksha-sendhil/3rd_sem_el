@@ -112,3 +112,40 @@ def test_answer_prompt_is_neutral_and_contains_the_records() -> None:
     system, user = answer_prompt.build_answer_prompt("Who has gout?", [("d1", "Asha has gout.")])
     assert "[d1]\nAsha has gout." in user and user.endswith("ANSWER:")
     assert "privacy" not in system.lower() and "protect" not in system.lower()
+
+
+def _fact(subject: str, relation: str, value: str) -> FactTuple:
+    return FactTuple(subject=subject, relation=relation, value=value, importance=Importance.LOW)
+
+
+def test_reconstruction_input_replaces_other_forms_of_a_removed_detail() -> None:
+    decisions = [
+        _decision("Ruby Hall Clinic, Wakad", PIICategory.LOCATION, Action.GENERALISE, "a clinic"),
+        _decision("Omar Siddiqui", PIICategory.NAME, Action.PLACEHOLDER, "[PERSON_1]"),
+    ]
+    user = rewrite_prompt.build_user_prompt(
+        [_fact("writer", "lives_in", "Wakad"), _fact("writer", "other", "signed Omar")], decisions
+    )
+    assert "Wakad" not in user and "Omar" not in user
+    assert "lives in: a clinic." in user and "other: signed [PERSON_1]." in user
+
+
+def test_reconstruction_input_drops_identifiers_that_are_not_tokens() -> None:
+    decisions = [
+        _decision("HC-3381925", PIICategory.ID_NUMBER, Action.PLACEHOLDER, "[ID_1]"),
+        _decision("98111 20345", PIICategory.PHONE, Action.PLACEHOLDER, "[PHONE_1]"),
+    ]
+    facts = [
+        _fact("writer", "identifier", "the writer"),  # not an identifier at all
+        _fact("writer", "identifier", "Nora Quint"),  # a name Agent 1 missed
+        _fact("writer.husband", "identifier", "HC-338192525"),  # the ID, copied wrongly
+        _fact("writer", "contact", "Let me know"),
+        _fact("writer", "contact", "98111 20345"),  # becomes [PHONE_1]: kept
+        _fact("writer.husband", "relation_to", "husband"),  # a relative: kept
+        _fact("person_1", "relation_to", "Nora"),  # not the writer's relative
+    ]
+    user = rewrite_prompt.build_user_prompt(facts, decisions)
+    for gone in ("the writer - identifier", "Nora", "HC-33819", "Let me know"):
+        assert gone not in user
+    assert "the writer - contact: [PHONE_1]." in user
+    assert "the writer's husband - relation to: husband." in user

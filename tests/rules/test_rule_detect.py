@@ -271,3 +271,14 @@ def test_ages_in_words_names_and_nhs_context(text, span, cat):
 )
 def test_no_age_or_name_from_lookalike_phrases(text):
     assert not {cat for _, cat in found(text)} & {C.AGE, C.NAME}
+
+
+@pytest.mark.parametrize(
+    "text, span",
+    [
+        ("Please send it today.\n\nThanks,\nNora Quint", "Nora Quint"),
+        ("See you then.\nBest regards,\nOmar", "Omar"),
+    ],
+)
+def test_name_after_a_sign_off(text, span):
+    assert (span, C.NAME) in found(text)

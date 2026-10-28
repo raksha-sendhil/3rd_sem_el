@@ -138,6 +138,15 @@ NAME_RULES = [
     ),
     Rule("title_name", rf"\b(?:Dr|Mr|Mrs|Ms|Miss|Prof)\.?\s+(?P<value>{_NAME})", 0.7, flags=0),
     Rule("call_me", rf"\b(?i:call\s+me)\s+(?P<value>{_NAME})", 0.6, flags=0),
+    # a name alone on the line after a closing: "Thanks,\nHelen Park"
+    Rule(
+        "sign_off",
+        r"^[ \t]*(?i:thanks|thank\s+you|many\s+thanks|regards|best\s+regards|kind\s+regards"
+        r"|warm\s+regards|best|cheers|sincerely|yours\s+sincerely|yours\s+truly)[,!.]?[ \t]*\n"
+        rf"[ \t]*(?P<value>{_NAME})[ \t]*$",
+        0.7,
+        flags=re.MULTILINE,
+    ),
 ]
 
 # ---------------------------------------------------------------- PHYSICAL

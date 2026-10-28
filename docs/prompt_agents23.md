@@ -133,6 +133,10 @@ phrase appears in any prompt. Other tests check that:
 | 19 | Agent 3 drops a contact token ([EMAIL_1] missing from the record) | llama3:8b, run 1 | Rule 2: every token in the facts must appear |
 | 20 | Agent 3 writes a vague phrase awkwardly ("I work as a working professional") or says a detail twice | llama3:8b, run 1 | Rules 3 and 4 |
 | 21 | An Indian address with a PIN code was not detected, so "14/3" and "Bengaluru 560076" reached the safe text. The leak check cannot catch this: it only looks for spans that were removed | llama3:8b, run 1 (case_04) | Agent 1 rule `in_address_pin` (`rules/recognizers.py`); rule-pass ADDRESS recall on the fixtures 2/4 -> 4/4, overall precision 0.96 -> 0.99 |
+| 22 | A name Agent 1 never detected reached the safe text ("I am Helen Park", a sign-off) because Agent 2 extracted it as an identifier | llama3:8b, run 2 (case_13) | Agent 1 rule `sign_off` (name alone on the line after "Thanks,", "Regards," ...): rule-pass NAME recall on the fixtures 13/14 -> 14/14. And `safe_facts`: an identifier or contact fact that did not become a token never reaches Agent 3 |
+| 23 | Agent 2 copied an ID number wrongly ("HC-229174174" for "HC-2291746"), so it no longer matched the detected span and Agent 3 wrote it out | llama3:8b, run 2 (case_03) | `safe_facts`, as in row 22 |
+| 24 | A part of a removed place reached Agent 3 ("Mulund" from "Fortis Hospital, Mulund"); the leak check caught the rewrite and the mask fallback replaced it with [REDACTED] | llama3:8b, run 2 (case_08) | `safe_value` also replaces every form the leak check knows (name parts, place parts, reformatted numbers), not just the exact text |
+| 25 | Rows 16-17 again, despite the prompt: `identifier` "the writer", "My husband", "a 20 year old undergraduate student"; `contact` "Let me know"; `relation_to` on a colleague, written out as "My wife, [PERSON_2]" | llama3:8b, run 2 | `safe_facts` drops identifier and contact facts without a token, and `relation_to` facts on anyone who is not `writer.<relative>`. Deterministic, so it holds whatever the model does |
 
 Add a row for each failure seen on the real model, with the model name and run.
 
@@ -145,6 +149,7 @@ from `docs/phase3_plan.md`, section 8.
 |---|---|---|---|---|---|---|---|---|
 | target | | ≥ 0.80 | ≥ 0.90 | ≤ 0.05 | ≥ 0.80 | | | |
 | 1 (27 Oct, prompts v2) | llama3:8b | - | - | - | - | 0 | 0 | 21.3 |
+| 2 (28 Oct, prompts v3) | llama3:8b | - | - | - | - | 1 | 0 | 18.5 |
 
 ## Changing a prompt
 
