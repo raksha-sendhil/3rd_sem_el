@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import re
 
-from sanitise.agents.rewriter import leakcheck
+from sanitise.agents.rewriter import leakcheck, ontology
 from sanitise.llm.base import LLMClient
 from sanitise.schemas import Action, FactTuple, RoutingDecision, SensitiveSpan
 
@@ -49,7 +49,7 @@ wife"). Two to five plain sentences, no headings, no lists. Say each detail once
 
 EXAMPLE
 FACTS:
-the writer - identifier: [PERSON_1].
+the writer - name: [PERSON_1].
 the writer - age: in their 40s.
 the writer - works as: a transport worker.
 the writer - lives in: a city in Karnataka.
@@ -67,20 +67,25 @@ I take aspirin. My wife has psoriasis. You can reach me on [PHONE_1].
 """
 
 
-def _outside_tokens(pattern: re.Pattern[str], replacement: str, value: str) -> str:
+def _outside_tokens(pattern: re.Pattern[str], decision: RoutingDecision, value: str) -> str:
     tokens = [(m.start(), m.end()) for m in TOKEN.finditer(value)]
 
     def sub(m: re.Match[str]) -> str:
-        inside = any(a < m.end() and m.start() < b for a, b in tokens)
-        return m.group(0) if inside else replacement
+        if any(a < m.end() and m.start() < b for a, b in tokens):
+            return m.group(0)
+        if decision.action is Action.GENERALISE:  # "Mulund" alone, not "a hospital"
+            return ontology.generalise(m.group(0), decision.category)
+        assert decision.replacement is not None
+        return decision.replacement
 
     return pattern.sub(sub, value)
 
 
 def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     """``value`` with every removed span replaced by its replacement: the exact text first
-    (longest first), then any other form of it the leak check knows ("Mulund" from "Fortis
-    Hospital, Mulund", "Daniel" from "Daniel Whitcomb")."""
+    (longest first), then any other form of it the leak check knows ("Daniel" from "Daniel
+    Whitcomb" gets the full name's token; "Mulund" from "Fortis Hospital, Mulund" gets a
+    generalised phrase of its own, so it does not become "a hospital")."""
     removed = sorted(
         (
             d
@@ -96,7 +101,7 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     for d in removed:
         assert d.replacement is not None
         for pattern in leakcheck.leak_patterns(d.span_text, d.category):
-            value = _outside_tokens(pattern, d.replacement, value)
+            value = _outside_tokens(pattern, d, value)
     return value
 
 
@@ -123,10 +128,18 @@ def subject_label(subject: str) -> str:
     return subject.replace("_", " ")
 
 
+def relation_label(relation: str, value: str) -> str:
+    """``identifier`` is shown as "name" or "ID number", so an ID is never written as a name
+    ("I am [ID_1]")."""
+    if relation == "identifier":
+        return "name" if "[PERSON_" in value else "ID number"
+    return relation.replace("_", " ")
+
+
 def draft(facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
     """One line per fact the model may see, with removed details already replaced."""
     return "\n".join(
-        f"{subject_label(f.subject)} - {f.relation.replace('_', ' ')}: {value}."
+        f"{subject_label(f.subject)} - {relation_label(f.relation, value)}: {value}."
         for f, value in safe_facts(facts, decisions)
     )
 

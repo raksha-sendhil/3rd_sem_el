@@ -40,6 +40,8 @@ from sanitise.schemas import (
     SensitiveSpan,
 )
 
+NO_FACTS = "The record states nothing that can be shared."
+
 
 @dataclass
 class RewriteTrace:
@@ -111,7 +113,10 @@ async def rewrite_with_trace(
         def problems(text: str) -> list[SensitiveSpan]:
             return leakcheck.leak_check(removed, text) + grounding.ungrounded(text, facts_text)
 
-        safe = await prompt.reconstruct(extracted.facts, decisions, tokens, llm)
+        if not facts_text:  # nothing to write from: no model call, no made-up text
+            safe = NO_FACTS
+        else:
+            safe = await prompt.reconstruct(extracted.facts, decisions, tokens, llm)
         leaks = problems(safe)
         retries = 0
         if leaks:

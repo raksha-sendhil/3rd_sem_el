@@ -114,9 +114,9 @@ def test_reconstruction_input_has_no_removed_text_and_labels_subjects() -> None:
     ]
     user = rewrite_prompt.build_user_prompt(facts, decisions)
     assert "Asha" not in user
-    assert "the writer - identifier: [PERSON_1]." in user  # longest span replaced first
+    assert "the writer - name: [PERSON_1]." in user  # longest span replaced first
     assert "the writer's wife - has condition: gout." in user
-    assert "person 1 - identifier: [PERSON_2]." in user
+    assert "person 1 - name: [PERSON_2]." in user
 
 
 def test_answer_prompt_is_neutral_and_contains_the_records() -> None:
@@ -138,7 +138,8 @@ def test_reconstruction_input_replaces_other_forms_of_a_removed_detail() -> None
         [_fact("writer", "lives_in", "Wakad"), _fact("writer", "other", "signed Omar")], decisions
     )
     assert "Wakad" not in user and "Omar" not in user
-    assert "lives in: a clinic." in user and "other: signed [PERSON_1]." in user
+    assert "lives in: a clinic." not in user  # the part of the place gets its own phrase
+    assert "other: signed [PERSON_1]." in user
 
 
 def test_reconstruction_input_drops_identifiers_that_are_not_tokens() -> None:

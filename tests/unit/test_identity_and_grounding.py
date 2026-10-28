@@ -5,11 +5,22 @@ from __future__ import annotations
 import pytest
 
 from sanitise.agents.extractor.canonical import subjects
-from sanitise.agents.extractor.pipeline import identity_facts, in_record
+from sanitise.agents.extractor.pipeline import attribute, identity_facts, in_record
 from sanitise.agents.pipeline import sanitise
 from sanitise.agents.rewriter.grounding import REDACTED, mask, ungrounded
+from sanitise.agents.rewriter.pipeline import NO_FACTS, rewrite_with_trace
+from sanitise.agents.rewriter.prompt import draft
 from sanitise.llm import MockLLM
-from sanitise.schemas import PIICategory, SensitiveSpan
+from sanitise.schemas import (
+    Action,
+    DetectorOutput,
+    ExtractorOutput,
+    FactTuple,
+    Importance,
+    PIICategory,
+    RoutingDecision,
+    SensitiveSpan,
+)
 from tests.conftest import SAMPLE_TEXT
 
 C = PIICategory
@@ -123,3 +134,67 @@ async def test_a_made_up_name_is_retried_then_masked(fake_rules: None) -> None:
     assert record.meta.leak_retries == 1
     assert "Arthur" not in record.rewriter.safe_text and "Penrose" not in record.rewriter.safe_text
     assert REDACTED in record.rewriter.safe_text
+
+
+def _model_fact(subject: str, relation: str, value: str) -> FactTuple:
+    return FactTuple(subject=subject, relation=relation, value=value, importance=Importance.LOW)
+
+
+def test_a_fact_listed_for_two_people_goes_to_the_one_the_sentence_is_about() -> None:
+    text = (
+        "My nephew is 19 and has had knee pain since the match. "
+        "I have a mild cold and I am breathless on stairs."
+    )
+    spans = [_span(text, "My nephew", C.RELATION)]
+    subs = subjects(text, spans)
+    facts = [
+        _model_fact("writer", "age", "19"),
+        _model_fact("writer.nephew", "age", "19"),
+        _model_fact("writer", "has_symptom", "knee pain"),
+        _model_fact("writer.nephew", "has_symptom", "mild cold"),
+        _model_fact("writer", "has_symptom", "breathless"),
+        _model_fact("writer", "has_symptom", "breathless on stairs"),
+        _model_fact("writer", "other", "worried"),  # not in the record: keeps its subject
+    ]
+    got = {(f.subject, f.relation, f.value) for f in attribute(text, facts, subs)}
+    assert got == {
+        ("writer.nephew", "age", "19"),
+        ("writer.nephew", "has_symptom", "knee pain"),
+        ("writer", "has_symptom", "mild cold"),
+        ("writer", "has_symptom", "breathless on stairs"),
+        ("writer", "other", "worried"),
+    }
+
+
+def test_an_id_number_is_labelled_as_an_id_not_a_name() -> None:
+    decisions = [
+        RoutingDecision(
+            span_text="Ira Sen",
+            category=C.NAME,
+            action=Action.PLACEHOLDER,
+            replacement="[PERSON_1]",
+            reason="test",
+        ),
+        RoutingDecision(
+            span_text="MRN-40117",
+            category=C.ID_NUMBER,
+            action=Action.PLACEHOLDER,
+            replacement="[ID_1]",
+            reason="test",
+        ),
+    ]
+    facts = [
+        _model_fact("writer", "identifier", "Ira Sen"),
+        _model_fact("writer", "identifier", "MRN-40117"),
+    ]
+    assert draft(facts, decisions) == (
+        "the writer - name: [PERSON_1].\nthe writer - ID number: [ID_1]."
+    )
+
+
+async def test_no_facts_means_no_model_call_and_no_made_up_text() -> None:
+    llm = MockLLM(by_schema={"text": ["Since there are no facts, there is nothing to say."]})
+    trace = await rewrite_with_trace(
+        "d", DetectorOutput(doc_id="d", spans=[]), ExtractorOutput(doc_id="d", facts=[]), llm
+    )
+    assert trace.output.safe_text == NO_FACTS and llm.calls == []

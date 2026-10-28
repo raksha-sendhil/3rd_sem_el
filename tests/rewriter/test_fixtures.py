@@ -26,7 +26,7 @@ from sanitise.agents.rewriter.pipeline import (
 )
 from sanitise.llm import MockLLM
 from sanitise.results import load_gold
-from sanitise.schemas import Action, DetectorOutput, ExtractorOutput
+from sanitise.schemas import Action, DetectorOutput, ExtractorOutput, FactTuple, Importance
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURES = sorted((ROOT / "data" / "fixtures").glob("*.json"))
@@ -67,7 +67,13 @@ def test_decisions_cover_every_span_and_remove_it(path: Path) -> None:
 async def test_model_that_copies_the_original_is_masked_clean(path: Path) -> None:
     doc_id, text, gold = fixture(path)
     llm = MockLLM(by_schema={"text": [text, text]})
-    trace = await rewrite_with_trace(doc_id, gold, ExtractorOutput(doc_id=doc_id, facts=[]), llm)
+    # one fact, so Agent 3 calls the model (with no facts it writes a fixed sentence instead)
+    unwell = FactTuple(
+        subject="writer", relation="other", value="unwell", importance=Importance.LOW
+    )
+    trace = await rewrite_with_trace(
+        doc_id, gold, ExtractorOutput(doc_id=doc_id, facts=[unwell]), llm
+    )
     assert trace.residual_leaks == []
     removed = removed_decisions(trace.output.decisions)
     assert leak_check(removed, trace.output.safe_text) == []

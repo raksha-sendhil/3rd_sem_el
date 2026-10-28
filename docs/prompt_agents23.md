@@ -28,6 +28,10 @@ and Person A's `default_importance` sets the importance; the model decides neith
 
 * **Relations.** An enum in the decoding schema without `identifier`, `contact` and
   `relation_to`, each defined in one line in the system prompt.
+* **Who a fact is about** is decided in code (`attribute`): a value found in the record goes
+  to the person mentioned last before it in the same sentence, by the rule used for IDs. A fact
+  the model lists for two people is kept once, and of "breathless" and "breathless climbing
+  stairs" for one person only the longer is kept.
 * **Values** copy the record's wording. `in_record` drops a model fact unless at least half of
   its words (three letters or more, or numbers) appear in the record, so an invented detail
   ("student") or a garbled number never reaches Agent 3.
@@ -161,6 +165,9 @@ phrase appears in any prompt. Other tests check that:
 | 26 | Rows 16, 17, 22, 23 and 25 share a cause: the model was trusted with identifying details (deciding what is a name, copying an ID, saying who is related to whom) | llama3:8b, runs 1-2 | Agent 2 builds identifier, contact and relation_to facts in code from Agent 1's spans; the model is never asked for them (`identity_facts`) |
 | 27 | Agent 2 gives one person's facts to another (case_07: the son's age and height to the writer), with all people in one call | llama3:8b, run 2 | One call per person, which only lists facts about that person; example 2 shows a call that returns one fact, example 4 an empty list |
 | 28 | A detail Agent 1 never found, or one the model makes up, can only be caught by checking for that detail; a missed one is invisible to the leak check | llama3:8b, run 2 (case_13) | Grounding check on every rewrite: digits, emails and mid-sentence capitalised words must be in the facts. Over the 20 run 2 rewrites it flagged no capitalised word |
+| 29 | One call per person: the model lists the whole record's facts for every person (case_07: the son's age, height and pain also given to the writer; case_02: the daughter's cough given to the writer) | llama3:8b, run 3 | `attribute` gives each fact to the person the sentence is about and drops repeats. Replayed on run 3's facts: case_07's five copies on the writer removed, case_02's and case_17's facts moved to the relative |
+| 30 | A part of a removed place replaced with the whole place's phrase ("Mulund" from "Fortis Hospital, Mulund" became "I live in a hospital") | llama3:8b, run 3 (case_08) | `safe_value` generalises the part on its own ("a town in the region") |
+| 31 | An ID number written as a name ("I am [ID_1]"); a record with no facts produced "Since there are no facts provided, ..." | llama3:8b, run 3 (case_03, case_14) | The reconstruction input labels identifiers "name" or "ID number"; with no facts Agent 3 writes a fixed sentence and does not call the model |
 
 Add a row for each failure seen on the real model, with the model name and run.
 
@@ -174,6 +181,7 @@ from `docs/phase3_plan.md`, section 8.
 | target | | ≥ 0.80 | ≥ 0.90 | ≤ 0.05 | ≥ 0.80 | | | |
 | 1 (27 Oct, prompts v2) | llama3:8b | - | - | - | - | 0 | 0 | 21.3 |
 | 2 (28 Oct, prompts v3) | llama3:8b | - | - | - | - | 1 | 0 | 18.5 |
+| 3 (28 Oct, identity facts in code, one call per person, grounding check) | llama3:8b | - | - | - | - | 0 | 0 | 15.7 |
 
 ## Tuning without overfitting
 

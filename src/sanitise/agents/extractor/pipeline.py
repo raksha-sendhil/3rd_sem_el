@@ -13,6 +13,9 @@ Two parts of the result never come from the model:
 * ``in_record``: a model fact is kept only if its value is worded from the record (at least
   half of its words of three letters or more appear in the text), so a detail the model
   invented is dropped before Agent 3 can write it out.
+* ``attribute``: who a fact is about is decided by where its value sits in the record, by the
+  same rule as for IDs, so a detail the model lists for two people is given to one; and a
+  detail listed twice ("breathless", "breathless climbing stairs") is kept once.
 """
 
 from __future__ import annotations
@@ -51,23 +54,27 @@ def _fact(subject: str, relation: str, value: str) -> FactTuple:
     )
 
 
+def _subject_at(text: str, pos: int, subjects: list[Subject]) -> str | None:
+    """The subject mentioned last before ``pos`` in its sentence (longest mention on a tie)."""
+    sentence = max((m.end() for m in _SENTENCE_END.finditer(text, 0, pos)), default=0)
+    best: tuple[int, int, str] | None = None
+    for s in subjects:
+        for mention in s.mentions:
+            pattern = rf"(?<!\w){re.escape(mention)}(?!\w)"
+            for m in re.finditer(pattern, text[sentence:pos]):
+                key = (m.start(), len(mention), s.id)
+                if best is None or key[:2] > best[:2]:
+                    best = key
+    return best[2] if best else None
+
+
 def _owner(text: str, span: SensitiveSpan, subjects: list[Subject]) -> str:
-    """The subject mentioned last before ``span`` in its sentence (longest mention on a tie)."""
     assert span.start is not None
     if span.category is C.NAME:
         named = next((s.id for s in subjects if span.text in s.mentions), None)
         if named:
             return named
-    sentence = max((m.end() for m in _SENTENCE_END.finditer(text, 0, span.start)), default=0)
-    best: tuple[int, int, str] | None = None
-    for s in subjects:
-        for mention in s.mentions:
-            pattern = rf"(?<!\w){re.escape(mention)}(?!\w)"
-            for m in re.finditer(pattern, text[sentence : span.start]):
-                key = (m.start(), len(mention), s.id)
-                if best is None or key[:2] > best[:2]:
-                    best = key
-    return best[2] if best else "writer"
+    return _subject_at(text, span.start, subjects) or "writer"
 
 
 def identity_facts(
@@ -94,6 +101,36 @@ def in_record(value: str, text: str) -> bool:
     return sum(w in present for w in words) * 2 >= len(words)
 
 
+def _words(value: str) -> str:
+    return " ".join(w.lower() for w in _WORD.findall(value))
+
+
+def attribute(text: str, facts: list[FactTuple], subjects: list[Subject]) -> list[FactTuple]:
+    """Give each fact to the person the record says it about, then say each detail once.
+
+    A fact whose value is found in the record goes to the subject mentioned last before it in
+    the same sentence ("My son ... has abdominal pain" -> the son), whatever subject the model
+    gave it; otherwise it keeps the model's. Of two facts with the same subject and relation,
+    one whose words are contained in the other's ("breathless", "breathless climbing stairs")
+    is dropped.
+    """
+    lower = text.lower()
+    placed = []
+    for f in facts:
+        at = lower.find(f.value.lower())
+        owner = _subject_at(text, at, subjects) if at >= 0 else None
+        placed.append(f.model_copy(update={"subject": owner}) if owner else f)
+    keys = [(f.subject, f.relation, f" {_words(f.value)} ") for f in placed]
+    return [
+        f
+        for f, (subject, relation, words) in zip(placed, keys, strict=True)
+        if not any(
+            (s, r) == (subject, relation) and other != words and words in other
+            for s, r, other in keys
+        )
+    ]
+
+
 async def extract(
     doc_id: str, text: str, detected: DetectorOutput, llm: LLMClient
 ) -> tuple[list[Subject], ExtractorOutput]:
@@ -110,7 +147,8 @@ async def extract(
         facts = [
             FactTuple.model_validate(f.model_dump())
             for f in canonical.normalise_facts(
-                identity_facts(text, subs, detected.spans) + grounded, subs
+                identity_facts(text, subs, detected.spans) + attribute(text, grounded, subs),
+                subs,
             )
         ]
     except PipelineError as exc:
