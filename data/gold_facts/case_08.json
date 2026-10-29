@@ -1,0 +1,61 @@
+{
+  "doc_id": "457edfd299f49463",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "age",
+      "value": "29 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "had_procedure",
+      "value": "emergency C-section",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "event_date",
+      "value": "21 January 2024",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "treated_at",
+      "value": "Fortis Hospital, Mulund",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "event_date",
+      "value": "2 February 2024",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_symptom",
+      "value": "fever",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_symptom",
+      "value": "red, swollen stitch line",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "works_as",
+      "value": "radiographer",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "other",
+      "value": "says it is normal",
+      "importance": "low"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

@@ -1,0 +1,55 @@
+{
+  "doc_id": "723b3a163f510a42",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "identifier",
+      "value": "Mohammed Faizal",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "age",
+      "value": "58 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "lives_in",
+      "value": "14/3 Lakeview Apartments, Bannerghatta Road, Bengaluru 560076",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_condition",
+      "value": "type 2 diabetes",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "event_date",
+      "value": "2015",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "took_medication",
+      "value": "metformin 500 mg twice daily",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_symptom",
+      "value": "feet feel numb at night",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_condition",
+      "value": "neuropathy",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

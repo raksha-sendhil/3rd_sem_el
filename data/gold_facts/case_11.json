@@ -1,0 +1,25 @@
+{
+  "doc_id": "d351e50b65eed8fe",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "age",
+      "value": "17 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_condition",
+      "value": "acne on cheeks and forehead",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "took_medication",
+      "value": "face wash",
+      "importance": "low"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

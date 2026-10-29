@@ -1,0 +1,61 @@
+{
+  "doc_id": "6f8d987d5416966f",
+  "facts": [
+    {
+      "subject": "writer.son",
+      "relation": "age",
+      "value": "32 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.son",
+      "relation": "height",
+      "value": "6 ft 3 inches",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.son",
+      "relation": "weight",
+      "value": "approximately 220 pounds",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.son",
+      "relation": "has_symptom",
+      "value": "left-sided abdominal pain",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.son",
+      "relation": "has_symptom",
+      "value": "bilateral pelvic pain",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.son",
+      "relation": "symptom_duration",
+      "value": "approximately 10 weeks",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.son",
+      "relation": "has_condition",
+      "value": "enlarged lymph nodes",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.son",
+      "relation": "has_condition",
+      "value": "leukocytosis",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.son",
+      "relation": "has_symptom",
+      "value": "pain worse after meals",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

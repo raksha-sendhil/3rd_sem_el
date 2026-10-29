@@ -1,0 +1,31 @@
+{
+  "doc_id": "035af4e1c80cb6e7",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "has_symptom",
+      "value": "mild headache",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "symptom_duration",
+      "value": "two days",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "took_medication",
+      "value": "paracetamol",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "long hours on the computer",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

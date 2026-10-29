@@ -1,0 +1,61 @@
+{
+  "doc_id": "aee7058d1e06c7da",
+  "facts": [
+    {
+      "subject": "person_1",
+      "relation": "identifier",
+      "value": "Marta",
+      "importance": "low"
+    },
+    {
+      "subject": "person_2",
+      "relation": "identifier",
+      "value": "Kevin Oyelaran",
+      "importance": "low"
+    },
+    {
+      "subject": "person_2",
+      "relation": "identifier",
+      "value": "E-40871",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "identifier",
+      "value": "Helen Park",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "update the HR file",
+      "importance": "high"
+    },
+    {
+      "subject": "person_2",
+      "relation": "other",
+      "value": "moved from the Portland trading desk to Houston",
+      "importance": "high"
+    },
+    {
+      "subject": "person_2",
+      "relation": "event_date",
+      "value": "15 June 2000",
+      "importance": "medium"
+    },
+    {
+      "subject": "person_2",
+      "relation": "lives_in",
+      "value": "2210 Bagby Street, Apt 12, Houston, TX 77006",
+      "importance": "medium"
+    },
+    {
+      "subject": "person_2",
+      "relation": "contact",
+      "value": "713-555-0199",
+      "importance": "low"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

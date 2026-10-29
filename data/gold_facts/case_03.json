@@ -1,0 +1,55 @@
+{
+  "doc_id": "c09ff44b9f658d5d",
+  "facts": [
+    {
+      "subject": "writer.husband",
+      "relation": "identifier",
+      "value": "HC-2291746",
+      "importance": "low"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "event_date",
+      "value": "3 March 2022",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "event_date",
+      "value": "9 March 2022",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "had_procedure",
+      "value": "coronary artery bypass",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "has_condition",
+      "value": "coronary artery disease",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "contact",
+      "value": "rajesh.kumar84@examplemail.com",
+      "importance": "low"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "other",
+      "value": "blood pressure around 150/95",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "has_symptom",
+      "value": "breathless climbing stairs",
+      "importance": "high"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

@@ -1,0 +1,17 @@
+{
+  "doc_id": "d351e50b65eed8fe",
+  "routing": [
+    {
+      "text": "17 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "acne",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

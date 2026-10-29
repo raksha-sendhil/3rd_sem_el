@@ -1,0 +1,49 @@
+{
+  "doc_id": "0967c7b852363ecf",
+  "facts": [
+    {
+      "subject": "writer.wife",
+      "relation": "age",
+      "value": "92 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.wife",
+      "relation": "has_condition",
+      "value": "atrial fibrillation",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.wife",
+      "relation": "event_date",
+      "value": "last month",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.wife",
+      "relation": "treated_at",
+      "value": "St. Thomas Hospital",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.wife",
+      "relation": "has_symptom",
+      "value": "forgetful",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.wife",
+      "relation": "took_medication",
+      "value": "blood thinner",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.wife",
+      "relation": "lives_in",
+      "value": "farm outside Ooty",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

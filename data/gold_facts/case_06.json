@@ -1,0 +1,49 @@
+{
+  "doc_id": "e4444e8ef636477e",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "works_as",
+      "value": "lighthouse keeper",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "lives_in",
+      "value": "Kavaratti island",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "age",
+      "value": "47 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_symptom",
+      "value": "persistent rash on both hands",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "symptom_duration",
+      "value": "two months",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_condition",
+      "value": "contact dermatitis",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "cleaning the lens with solvent",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

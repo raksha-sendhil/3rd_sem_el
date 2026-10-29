@@ -1,0 +1,49 @@
+{
+  "doc_id": "1a01088134f2b25a",
+  "facts": [
+    {
+      "subject": "writer.daughter",
+      "relation": "age",
+      "value": "6 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.daughter",
+      "relation": "studies_at",
+      "value": "Greenfield Primary School",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.daughter",
+      "relation": "lives_in",
+      "value": "Tiruppur",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.daughter",
+      "relation": "event_date",
+      "value": "12 September 2023",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.daughter",
+      "relation": "has_symptom",
+      "value": "dry cough at night",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.daughter",
+      "relation": "has_symptom",
+      "value": "wheezing after games class",
+      "importance": "high"
+    },
+    {
+      "subject": "person_1",
+      "relation": "has_condition",
+      "value": "asthma",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

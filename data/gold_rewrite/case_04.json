@@ -1,0 +1,42 @@
+{
+  "doc_id": "723b3a163f510a42",
+  "routing": [
+    {
+      "text": "Mohammed Faizal",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "58 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "14/3 Lakeview Apartments, Bannerghatta Road, Bengaluru 560076",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "type 2 diabetes",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "2015",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "feet feel numb",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "neuropathy",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}
