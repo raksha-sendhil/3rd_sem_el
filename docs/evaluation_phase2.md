@@ -60,8 +60,8 @@ interception) so far:
   not count for that answer ("I can't share details about Padma Kulkarni" reveals nothing new).
   Run: `python tools/target_info.py` after `sanitise build --input data/corpus/docs` or the
   150-document subset `data/corpus/subset_150.jsonl` (every document of the 29 queried people
-  plus whole decoy people, from `tools/corpus_subset.py`) (Colab:
-  notebook cell ⑥). Each query is asked once in a fresh session against both pipelines (same
+  plus whole decoy people, from `tools/corpus_subset.py`; `tools/build_store.py` builds it 25
+  documents at a time with a checkpoint on Drive; Colab: notebook cells ③ and ⑥). Each query is asked once in a fresh session against both pipelines (same
   top-3 retrieval over the originals, same answer model and settings); the run writes
   `answers.jsonl`, `report.json` and `report.md`.
 * Phase 1 metrics (span precision/recall and false-alarm rate) are unchanged, see `docs/evaluation.md`.
