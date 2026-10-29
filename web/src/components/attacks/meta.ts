@@ -1,3 +1,4 @@
+import { FileStack, Footprints, type LucideIcon, Radio } from "lucide-react";
 import type { AttackDefinition, AttackKind } from "@/api/client";
 import { IMAGES } from "@/lib/images";
 
@@ -6,6 +7,7 @@ export type Meta = {
   bg: string;
   tag: string;
   image: string;
+  icon: LucideIcon; // shown when no image is set
   ready: boolean; // false greys the attack out
 };
 
@@ -15,6 +17,7 @@ const KINDS: Record<AttackKind, Omit<Meta, "tag"> & { tag: (n: number) => string
     bg: "#FFE8E4",
     tag: (n) => (n === 1 ? "1 message" : `${n} messages`),
     image: IMAGES.context_dump,
+    icon: FileStack,
     ready: true,
   },
   stepwise: {
@@ -22,6 +25,7 @@ const KINDS: Record<AttackKind, Omit<Meta, "tag"> & { tag: (n: number) => string
     bg: "#EEE9FF",
     tag: (n) => `${n} questions`,
     image: IMAGES.stepwise,
+    icon: Footprints,
     // needs the session monitor (Phase 3b) to show anything; AllowAllMonitor is in place for now
     ready: false,
   },
@@ -30,6 +34,7 @@ const KINDS: Record<AttackKind, Omit<Meta, "tag"> & { tag: (n: number) => string
     bg: "#E3F0FF",
     tag: () => "passive",
     image: IMAGES.interception,
+    icon: Radio,
     ready: true,
   },
 };

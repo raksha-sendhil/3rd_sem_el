@@ -30,12 +30,19 @@ export const AttackPicker = ({
           }}
         >
           <div className="grid h-24 w-24 shrink-0 place-items-center rounded-2xl" style={{ background: m.bg }}>
-            {m.image && (
+            {m.image ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={m.image}
                 alt=""
                 className="h-24 w-24 object-contain mix-blend-multiply transition-transform duration-500 group-hover:rotate-3 group-hover:scale-110"
+              />
+            ) : (
+              <m.icon
+                aria-hidden
+                className="h-11 w-11 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110"
+                style={{ color: m.color }}
+                strokeWidth={1.75}
               />
             )}
           </div>

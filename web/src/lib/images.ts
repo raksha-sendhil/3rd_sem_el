@@ -4,5 +4,4 @@ export const IMAGES = {
   context_dump: "",
   stepwise: "",
   interception: "",
-  documents: "",
 };
