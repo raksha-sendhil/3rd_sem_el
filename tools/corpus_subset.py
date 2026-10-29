@@ -1,10 +1,13 @@
-"""A smaller corpus for a faster build: every document of the people the attacks are about, then
-whole other people (decoys) in person-id order until the size is reached.
+"""A smaller corpus for a faster build, always whole people (all of a person's documents or none).
 
     python tools/corpus_subset.py --docs 150    # -> data/corpus/subset_150.jsonl
 
-Every person the 251 Target Info queries or the 9 attack scripts name keeps all their documents,
-so no query asks about someone who is missing; a decoy is taken whole or not at all.
+* Large enough for everyone the 251 Target Info queries and the 9 attack scripts are about (74
+  documents): all of them, then other people (decoys) in person-id order.
+* Smaller (a quick demo build): the 3 attack targets first, then their look-alikes (people who
+  share a town, district, condition or occupation group with a target, so a stepwise attack
+  still narrows a pool), then the other queried people, then anyone else. Target Info then asks
+  only the queries about people in the store.
 """
 
 from __future__ import annotations
@@ -18,20 +21,42 @@ CORPUS = ROOT / "data" / "corpus"
 ATTACKS = ROOT / "data" / "attacks"
 
 
+def _traits(p: dict) -> set[tuple[str, str]]:
+    traits = {(k, p[k]) for k in ("town", "district", "occupation_group")}
+    return traits | {("condition", c) for c in p["conditions"]}
+
+
+def choose(people: list[dict], queried: set[str], targets: set[str], size: int) -> list[dict]:
+    named = queried | targets
+    if sum(len(p["doc_ids"]) for p in people if p["person_id"] in named) <= size:
+        order = [p for p in people if p["person_id"] in named]
+        order += [p for p in people if p["person_id"] not in named]
+    else:
+        target_traits = set().union(*(_traits(p) for p in people if p["person_id"] in targets))
+
+        def rank(p: dict) -> tuple[int, int]:
+            if p["person_id"] in targets:
+                return (0, 0)
+            shared = len(_traits(p) & target_traits)
+            return (1, -shared) if shared else (2 if p["person_id"] in queried else 3, 0)
+
+        order = sorted(people, key=rank)  # stable: person-id order within a rank
+    chosen, total = [], 0
+    for p in order:
+        if total + len(p["doc_ids"]) <= size:
+            chosen.append(p)
+            total += len(p["doc_ids"])
+    return chosen
+
+
 def main(size: int) -> None:
     people = json.loads((CORPUS / "people.json").read_text(encoding="utf-8"))
     queries = json.loads((ATTACKS / "target_info_queries.json").read_text(encoding="utf-8"))
-    named = {q["person_id"] for q in queries}
-    for path in ATTACKS.glob("*_p*.json"):
-        named.add(json.loads(path.read_text(encoding="utf-8"))["target_person_id"])
-    chosen = [p for p in people if p["person_id"] in named]
-    total = sum(len(p["doc_ids"]) for p in chosen)
-    if total > size:
-        raise SystemExit(f"the attacked people alone have {total} documents (> {size})")
-    for p in people:
-        if p["person_id"] not in named and total + len(p["doc_ids"]) <= size:
-            chosen.append(p)
-            total += len(p["doc_ids"])
+    targets = {
+        json.loads(path.read_text(encoding="utf-8"))["target_person_id"]
+        for path in ATTACKS.glob("*_p*.json")
+    }
+    chosen = choose(people, {q["person_id"] for q in queries}, targets, size)
     ids = {d for p in chosen for d in p["doc_ids"]}
     out = CORPUS / f"subset_{size}.jsonl"
     with out.open("w", encoding="utf-8") as f:
@@ -39,7 +64,8 @@ def main(size: int) -> None:
             doc = json.loads(path.read_text(encoding="utf-8"))
             if doc["doc_id"] in ids:
                 f.write(json.dumps(doc, ensure_ascii=False) + "\n")
-    print(f"{len(ids)} documents of {len(chosen)} people ({len(named)} attacked) -> {out}")
+    kept = sum(p["person_id"] in targets for p in chosen)
+    print(f"{len(ids)} documents of {len(chosen)} people ({kept} of 3 attack targets) -> {out}")
 
 
 if __name__ == "__main__":

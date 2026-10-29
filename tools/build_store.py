@@ -8,8 +8,12 @@ a time and copies the store to ``--checkpoint`` (Google Drive) after every step.
 after a disconnect, a reset or on another account with the same checkpoint file: it restores the
 checkpoint, skips the documents already in it and goes on. At the end it builds the search index.
 
-``--docs 150`` is ``tools/corpus_subset.py``'s subset (every document the attacks are about plus
-whole decoy people); ``--docs 300`` is the whole corpus.
+``--docs N`` (10-300) is ``tools/corpus_subset.py``'s subset of Person D's corpus: from 74 up,
+every document the attacks and Target Info queries are about plus whole decoy people; below,
+the 3 attack targets and their look-alikes first (a quick demo build). ``--docs 300`` is the
+whole corpus; ``--docs fixtures`` the 20 hand-made test documents (no attack targets in them).
+The local store holds one corpus at a time: building another size starts it afresh (each size
+keeps its own checkpoint).
 """
 
 from __future__ import annotations
@@ -52,21 +56,35 @@ def _sanitise(args: argparse.Namespace, corpus: Path, *extra: str) -> None:
     subprocess.run(cmd, cwd=ROOT, check=False)  # a failed document is retried on the next run
 
 
+def _doc_id(record: dict) -> str:
+    return hashlib.sha256(record["text"].encode()).hexdigest()[:16]
+
+
 def main(args: argparse.Namespace) -> None:
+    if args.docs == "fixtures":
+        corpus = ROOT / "data" / "fixtures"
+        records = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(corpus.glob("*.json"))]
+    else:
+        subprocess.run(
+            [sys.executable, "tools/corpus_subset.py", "--docs", args.docs], cwd=ROOT, check=True
+        )
+        corpus = ROOT / "data" / "corpus" / f"subset_{args.docs}.jsonl"
+        records = [json.loads(line) for line in corpus.read_text(encoding="utf-8").splitlines()]
+    wanted = {_doc_id(r) for r in records}
+
     store = Path(args.store)
+    if _in_store(store) - wanted:  # another size was built here before: start this one afresh
+        store.unlink()
+        shutil.rmtree(Path(args.index_dir), ignore_errors=True)
+        print("the local store held another corpus: starting afresh for this one")
     checkpoint = Path(args.checkpoint) if args.checkpoint else None
     if checkpoint and checkpoint.exists() and len(_in_store(checkpoint)) > len(_in_store(store)):
         store.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(checkpoint, store)
         print(f"restored {len(_in_store(store))} documents from {checkpoint}")
 
-    subprocess.run(
-        [sys.executable, "tools/corpus_subset.py", "--docs", str(args.docs)], cwd=ROOT, check=True
-    )
-    corpus = ROOT / "data" / "corpus" / f"subset_{args.docs}.jsonl"
-    records = [json.loads(line) for line in corpus.read_text(encoding="utf-8").splitlines()]
     done = _in_store(store)
-    todo = [r for r in records if hashlib.sha256(r["text"].encode()).hexdigest()[:16] not in done]
+    todo = [r for r in records if _doc_id(r) not in done]
     print(f"{len(records) - len(todo)} of {len(records)} documents already sanitised")
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -82,13 +100,12 @@ def main(args: argparse.Namespace) -> None:
             if checkpoint and store.exists():
                 _save(store, checkpoint)
             print(
-                f"== {len(_in_store(store))} of {len(records)} sanitised, checkpoint saved",
+                f"== {len(_in_store(store))} of {len(records)} sanitised"
+                + (", checkpoint saved" if checkpoint else ""),
                 flush=True,
             )
 
-    missing = len(records) - len(
-        _in_store(store) & {hashlib.sha256(r["text"].encode()).hexdigest()[:16] for r in records}
-    )
+    missing = len(wanted - _in_store(store))
     if missing:
         print(f"{missing} documents failed (often a daily limit): run this again to retry them")
         return
@@ -98,9 +115,13 @@ def main(args: argparse.Namespace) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--docs", type=int, choices=[150, 300], default=150)
+    parser.add_argument("--docs", default="150", help="10-300, or fixtures")
     parser.add_argument("--store", default="data/store.sqlite")
+    parser.add_argument("--index-dir", default="data/index")
     parser.add_argument("--checkpoint", help="copy of the store kept after every step (Drive)")
     parser.add_argument("--chunk", type=int, default=25)
     parser.add_argument("--mock", action="store_true", help="no model (checks the plumbing)")
-    main(parser.parse_args())
+    args = parser.parse_args()
+    if args.docs != "fixtures" and not (args.docs.isdigit() and 10 <= int(args.docs) <= 300):
+        parser.error("--docs must be a number from 10 to 300, or fixtures")
+    main(args)
