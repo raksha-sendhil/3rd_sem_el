@@ -2,6 +2,7 @@
 
 from sanitise.agents.extractor import casefile
 from sanitise.agents.rewriter import prompt as rewrite_prompt
+from sanitise.casefile import case_file
 from sanitise.schemas import (
     Action,
     FactTuple,
@@ -92,11 +93,13 @@ def test_a_short_removed_detail_is_replaced_only_as_a_whole_word():
         replacement="a working professional",
         reason="test",
     )
-    assert rewrite_prompt.safe_value("on antimalarials", [m]) == "on antimalarials"
+    with case_file(True):
+        assert rewrite_prompt.safe_value("on antimalarials", [m]) == "on antimalarials"
     age = m.model_copy(
         update={"span_text": "9", "category": PIICategory.AGE, "replacement": "a child"}
     )
-    assert rewrite_prompt.safe_value("Hb 9.8 g/dL, age 9", [age]) == "Hb 9.8 g/dL, age a child"
+    with case_file(True):
+        assert rewrite_prompt.safe_value("Hb 9.8 g/dL, age 9", [age]) == "Hb 9.8 g/dL, age a child"
 
 
 def test_a_date_made_vague_to_its_year_reads_in_not_on():
@@ -107,6 +110,11 @@ def test_a_date_made_vague_to_its_year_reads_in_not_on():
         replacement="2026",
         reason="test",
     )
+    with case_file(True):
+        assert rewrite_prompt.safe_value("Review on 23/10/2026 if worse", [d]) == (
+            "Review in 2026 if worse"
+        )
+    # anything that is not a clinical record is rewritten exactly as before case-file support
     assert rewrite_prompt.safe_value("Review on 23/10/2026 if worse", [d]) == (
-        "Review in 2026 if worse"
+        "Review on 2026 if worse"
     )

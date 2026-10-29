@@ -24,6 +24,7 @@ from __future__ import annotations
 import re
 
 from sanitise.agents.rewriter import leakcheck, ontology
+from sanitise.casefile import CASE_FILE
 from sanitise.llm.base import LLMClient
 from sanitise.schemas import Action, FactTuple, PIICategory, RoutingDecision, SensitiveSpan
 
@@ -160,9 +161,10 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     )
     for d in removed:
         assert d.replacement is not None
-        # whole words only: "M" (a sex marker) must not hit the m of "antimalarials", nor the
-        # age "9" the 9 of "Hb 9.8"
-        span = rf"(?<!\w)(?<!\d\.){re.escape(d.span_text.strip())}(?!\w)(?!\.\d)"
+        span = re.escape(d.span_text.strip())
+        if CASE_FILE.get():  # a clinical record: whole words only, so "M" (a sex marker)
+            # does not hit the m of "antimalarials", nor the age "9" the 9 of "Hb 9.8"
+            span = rf"(?<!\w)(?<!\d\.){span}(?!\w)(?!\.\d)"
         if d.action is Action.GENERALISE and re.search(span, value, re.IGNORECASE):
             # a vague phrase cannot replace a few words inside a longer one ("tore my anterior
             # cruciate ligament" -> "tore my a joint injury"); when the detail is most of the
@@ -182,7 +184,9 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
         if d.category in _NAMED and _leftover(value, d.span_text):
             assert d.replacement is not None
             value = d.replacement
-    # a date made vague to its year: "Review on 23/10/2026" -> "Review in 2026"
+    if not CASE_FILE.get():
+        return value
+    # a clinical record's date made vague to its year: "Review on 23/10/2026" -> "Review in 2026"
     return _ON_YEAR.sub(lambda m: ("In " if m.group(1) == "O" else "in ") + m.group(2), value)
 
 

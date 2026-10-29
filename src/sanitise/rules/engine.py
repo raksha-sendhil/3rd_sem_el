@@ -9,6 +9,7 @@ from presidio_analyzer import AnalyzerEngine, RecognizerResult
 from presidio_analyzer.nlp_engine import NlpEngineProvider
 from presidio_analyzer.predefined_recognizers import PhoneRecognizer
 
+from sanitise.casefile import is_case_file
 from sanitise.rules.categories import ENTITY_TO_CATEGORY, REQUESTED_ENTITIES
 from sanitise.rules.normalise import normalise_spans
 from sanitise.rules.recognizers import ALL_LAYERS, custom_recognizers
@@ -120,24 +121,23 @@ _NAME_STOPLIST = {
     "aunt",
     "auntie",
 }
-# A clinical record's degrees, specialties and section labels, which spaCy tags as people and
-# places ("Dr. Anil Mehta, MD (Paeds)", "C/O").
+# Clinical records only (``sanitise.casefile``): a record's degrees, specialties and section labels,
+# which spaCy tags as people and places ("Dr. Anil Mehta, MD (Paeds)", "C/O") ...
 _CLINICAL_ABBREVIATIONS = {
     "md", "mbbs", "ms", "dnb", "frcs", "mrcp", "mch", "dm", "bds", "bams", "paeds", "peds",
     "ortho", "obg", "obgyn", "ent", "opd", "ipd", "icu", "nicu", "picu", "c/o", "h/o", "o/e",
     "k/c/o", "imp", "inv", "rx", "nkda", "sos", "bd", "tds", "od", "ra",
 }  # fmt: skip
-# Columns of a form are separated by a run of spaces or a tab: a name or place ends there
-# ("Patient: Rohan Kulkarni      Age/Sex: 9 y").
+# ... columns of a form, separated by a run of spaces or a tab: a name or place ends there
+# ("Patient: Rohan Kulkarni      Age/Sex: 9 y") ...
 _FIELD_GAP = re.compile(r"[ ]{2,}|\t")
-# A vital sign or lab value ("HR 88", "BP 130/84", "Hb 9.8") is a measurement, never a date,
-# phone or ID number.
+# ... a vital sign or lab value ("HR 88", "BP 130/84", "Hb 9.8"), never a date, phone or ID ...
 _MEASUREMENT = re.compile(
     r"^(?:hr|bp|pr|rr|spo2|sp02|temp|hb|hgb|wbc|tlc|plt|pulse|wt|ht|bmi|fbs|ppbs|rbs|hba1c"
     r"|inr|esr|crp|bnp|ldl|hdl|tsh)\b",
     re.IGNORECASE,
 )
-# An all-caps heading line ("DISCHARGE SUMMARY") is not part of the name below it.
+# ... and an all-caps heading line ("DISCHARGE SUMMARY"), not part of the name below it.
 _HEADING_LINE = re.compile(r"[A-Z][A-Z \t&/-]+\n")
 # "Peyronie's disease", "Guillain Barre syndrome" - eponyms, not people
 _EPONYM_TAIL = re.compile(
@@ -157,13 +157,13 @@ _ANCHORED_DATE = re.compile(
 )
 
 
-def _keep(category: PIICategory, fragment: str) -> bool:
+def _keep(category: PIICategory, fragment: str, case: bool = False) -> bool:
     f = fragment.strip(" .,;:!?\"'").lower()
     if category is C.DATE and (_VAGUE_DATE.match(f) or not _ANCHORED_DATE.search(f)):
         return False
-    if category in (C.NAME, C.LOCATION) and f in _CLINICAL_ABBREVIATIONS:
+    if case and category in (C.NAME, C.LOCATION) and f in _CLINICAL_ABBREVIATIONS:
         return False
-    if category in (C.DATE, C.PHONE, C.ID_NUMBER) and _MEASUREMENT.match(f):
+    if case and category in (C.DATE, C.PHONE, C.ID_NUMBER) and _MEASUREMENT.match(f):
         return False
     return not (category is C.NAME and f in _NAME_STOPLIST)
 
@@ -174,20 +174,20 @@ def _keep(category: PIICategory, fragment: str) -> bool:
 _NHS_CONTEXT = re.compile(r"\bnhs\b", re.IGNORECASE)
 
 
-def _to_span(text: str, r: RecognizerResult) -> SensitiveSpan | None:
+def _to_span(text: str, r: RecognizerResult, case: bool = False) -> SensitiveSpan | None:
     category = ENTITY_TO_CATEGORY.get(r.entity_type)
     if category is None:
         return None
     if r.entity_type == "UK_NHS" and not _NHS_CONTEXT.search(text, max(0, r.start - 40), r.start):
         return None
     start, end = r.start, r.end
-    if category in (C.NAME, C.LOCATION):
+    if case and category in (C.NAME, C.LOCATION):
         if heading := _HEADING_LINE.match(text, start, end):
             start = heading.end()
         if gap := _FIELD_GAP.search(text, start, end):
             end = gap.start()
     fragment = text[start:end]
-    if not fragment.strip() or not _keep(category, fragment):
+    if not fragment.strip() or not _keep(category, fragment, case):
         return None
     if category is C.NAME and _EPONYM_TAIL.match(text, end):
         return None
@@ -225,7 +225,10 @@ def rule_detect(
     results = analyzer.analyze(
         text=text, language="en", entities=REQUESTED_ENTITIES, score_threshold=score_threshold
     )
-    spans = [s for r in results if (s := _to_span(text, r)) is not None]
+    case = is_case_file(text)
+    spans = [s for r in results if (s := _to_span(text, r, case)) is not None]
+    if not case:
+        return normalise_spans(spans, text)
     # overlap resolution can leave a remainder that would not pass on its own ("Date of
     # Service" from "Date of Service: 09/14/2026"), so the filters run again
-    return [s for s in normalise_spans(spans, text) if _keep(s.category, s.text)]
+    return [s for s in normalise_spans(spans, text) if _keep(s.category, s.text, case)]

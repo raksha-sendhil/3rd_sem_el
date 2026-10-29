@@ -69,7 +69,8 @@ _COUNT = (
 _DURATION = re.compile(
     rf"\b{_COUNT}\s+(?:minute|hour|day|night|week|month|year)s?\b", re.IGNORECASE
 )
-_SEX = re.compile(r"male|female|man|woman|boy|girl|m|f", re.IGNORECASE)
+_SEX = re.compile(r"male|female|man|woman|boy|girl", re.IGNORECASE)
+_CASE_SEX = re.compile(r"male|female|man|woman|boy|girl|m|f", re.IGNORECASE)  # "Age/Sex: 9/M"
 
 
 def _fact(subject: str, relation: str, value: str) -> FactTuple:
@@ -163,6 +164,7 @@ def check_facts(
     """
     placed = []
     lower = text.lower()
+    sex = _CASE_SEX if casefile.is_case_file(text) else _SEX
     for f in facts:
         categories = SPAN_RELATIONS.get(f.relation)
         if categories is not None:
@@ -179,7 +181,7 @@ def check_facts(
             continue
         if f.relation == "symptom_duration" and not _DURATION.search(f.value):
             continue
-        if f.relation == "sex" and not _SEX.fullmatch(f.value.strip()):
+        if f.relation == "sex" and not sex.fullmatch(f.value.strip()):
             continue
         at = lower.find(f.value.lower())
         owner = _subject_at(text, at, subjects) if at >= 0 and not trust_subjects else None

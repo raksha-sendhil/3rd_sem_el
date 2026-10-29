@@ -50,6 +50,7 @@ from pathlib import Path
 from typing import Any
 
 from sanitise.agents.rewriter.leakcheck import contains
+from sanitise.casefile import CASE_FILE
 from sanitise.schemas import PIICategory
 
 C = PIICategory
@@ -190,16 +191,16 @@ def _date(text: str, level: int) -> str:
 # ---------------------------------------------------------------- LOCATION
 
 _FACILITY_KINDS: list[tuple[str, str]] = [
-    (
-        r"hospital|clinic|medcity|medical|health|infirmary|hospice|nursing home|aiims"
-        r"|\bmedicine\b|\bpractice\b|\bsurgery\b|\bphc\b|\bchc\b",
-        "a hospital",
-    ),
+    (r"hospital|clinic|medcity|medical|health|infirmary|hospice|nursing home|aiims", "a hospital"),
     (r"university|college|institute|iit\b|iim\b|nit\b|academy|polytechnic", "a university"),
     (r"school|kindergarten|nursery", "a school"),
     (r"\bisland\b|\bisle\b", "an island"),
     (r"\bdesk\b|\boffice\b|\bplant\b|\brefinery\b", "a company site"),
 ]
+
+# A clinical record also names practices and health centres ("Cedar Ridge Family Medicine",
+# "Kengeri PHC").
+_CASE_FACILITY = [(r"\bmedicine\b|\bpractice\b|\bsurgery\b|\bphc\b|\bchc\b", "a hospital")]
 
 
 def _place(key: str) -> dict[str, Any] | None:
@@ -223,7 +224,8 @@ def _location(text: str, level: int) -> str:
     entry = _place(key)
     if entry:
         return _place_phrase(text, entry, level)
-    for pattern, kind in _FACILITY_KINDS:
+    kinds = _CASE_FACILITY + _FACILITY_KINDS if CASE_FILE.get() else _FACILITY_KINDS
+    for pattern, kind in kinds:
         if re.search(pattern, key):
             # "Fortis Hospital, Mulund" / "AIIMS Delhi": say where, one level up
             words = [w for p in parts for w in (p, *p.split())]

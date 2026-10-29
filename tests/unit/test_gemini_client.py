@@ -144,7 +144,7 @@ def test_document_prompt_examples_parse_with_their_schema() -> None:
     import re
 
     blocks = re.findall(r"OUTPUT:\n(\{.*?\]\})", extract_prompt.DOCUMENT_PROMPT, re.S)
-    assert len(blocks) == 4
+    assert len(blocks) == 3
     schema = extract_prompt.document_schema(["writer", "writer.wife", "writer.son", "person_1"])
     for block in blocks:
         schema.model_validate_json(block)
@@ -215,3 +215,15 @@ async def test_agent1_llm_pass_uses_gemini_unless_switched_off(
         monkeypatch.setenv("SANITISE_GEMINI_FOR_AGENT1", "false")
         get_settings.cache_clear()
         assert detector_llm(local) is local
+
+
+def test_case_file_prompt_examples_parse_with_the_case_schema() -> None:
+    import re
+
+    blocks = re.findall(r"OUTPUT:\n(\{.*?\]\})", extract_prompt.CASE_DOCUMENT_PROMPT, re.S)
+    assert len(blocks) == 4
+    schema = extract_prompt.document_schema(
+        ["writer", "writer.wife", "writer.son", "person_1"], extract_prompt.CASE_RELATIONS
+    )
+    for block in blocks:
+        schema.model_validate_json(block)

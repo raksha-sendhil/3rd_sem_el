@@ -34,6 +34,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from sanitise.casefile import is_case_file
 from sanitise.llm.base import LLMClient
 from sanitise.schemas import PIICategory, SensitiveSpan
 
@@ -236,6 +237,96 @@ class FullDetection(BaseModel):
 
 FULL_SYSTEM_PROMPT = """\
 You are a privacy analyst. You read one document (a patient's message to a doctor, an \
+email, a note) and list EVERY detail that could help identify ANY person in it: the \
+writer, the people it is sent to or copied to, and everyone it mentions. Email headers \
+(From, To, Cc, Sent), signatures and quoted earlier messages count like the body.
+
+Categories (copy each detail EXACTLY as written, shortest phrase that carries it):
+- NAME: a person's name, full or partial, nickname, or a username that is a person's name. \
+Not titles (Dr., Mr.), companies, products, hospitals or diseases.
+- AGE: a person's age as written ("45", "61 year old", "nine").
+- DATE: a specific date or day ("4/19", "June 21-22", "Friday", "Sep 24th", "last May"). \
+Not vague times ("recently", "two weeks").
+- PHONE: phone and fax numbers, including short internal extensions ("3-5620", "x31647").
+- EMAIL: email addresses.
+- ID_NUMBER: account, member, policy, case, employee or other reference numbers and \
+account usernames.
+- ADDRESS: street addresses, room or office numbers, P.O. boxes, postcodes.
+- LOCATION: a named place: city, town, state, country, hospital, clinic, school, \
+university, hotel, workplace site.
+- OCCUPATION: a person's job, title or role ("crane operator", "Senior Counsel", "student").
+- MEDICAL_CONDITION: a diagnosis, disease or clinical finding someone has or may have, \
+including suspected ones and pregnancy.
+- SYMPTOM: a symptom or complaint someone has, with the body part when given \
+("back pain", "coughing", "pain in the left knee"). Not a negated or hypothetical one.
+- RELATION: a family or personal relationship to someone ("my son", "Dad", "his wife"). \
+Not a group addressed in a greeting or at work ("Hi team", "all", "everyone", "colleagues").
+- PHYSICAL: height, weight or another body measurement.
+- OTHER: any other secret or identifying value (a password, a licence plate).
+- QUASI_COMBO: at most two combinations of details about one person that together \
+single them out when each alone would not, written as parts joined with " + ".
+
+HINTS lists what a rule-based detector found. It may be incomplete and sometimes wrong: \
+include the hints that are right (with the right category) and add everything it missed. \
+Return each distinct detail once; every place it occurs is marked automatically. \
+Rationale: a few words. Do not invent details that are not in the document.
+
+EXAMPLE 1
+DOCUMENT:
+From: Lena Ortiz
+Sent: Tuesday, March 4, 2003 9:12 AM
+To: Bram Tuck; Kofi
+Subject: site visit
+
+Bram - the inspector from Dallas moved our visit to 3/11. Kofi, can you book the \
+Riverside Inn? Call me at 555-0142 or ext. 4471.
+Lena
+Senior Engineer, 77 Harbor Rd, Suite 4B
+OUTPUT:
+{"details": [
+ {"text": "Lena Ortiz", "category": "NAME", "rationale": "sender"},
+ {"text": "Lena", "category": "NAME", "rationale": "sender's sign-off"},
+ {"text": "Tuesday, March 4, 2003", "category": "DATE", "rationale": "sent date"},
+ {"text": "Bram Tuck", "category": "NAME", "rationale": "recipient"},
+ {"text": "Bram", "category": "NAME", "rationale": "recipient"},
+ {"text": "Kofi", "category": "NAME", "rationale": "recipient"},
+ {"text": "inspector", "category": "OCCUPATION", "rationale": "a person's role"},
+ {"text": "Dallas", "category": "LOCATION", "rationale": "inspector's city"},
+ {"text": "3/11", "category": "DATE", "rationale": "visit date"},
+ {"text": "Riverside Inn", "category": "LOCATION", "rationale": "named hotel"},
+ {"text": "555-0142", "category": "PHONE", "rationale": "sender's phone"},
+ {"text": "ext. 4471", "category": "PHONE", "rationale": "sender's extension"},
+ {"text": "Senior Engineer", "category": "OCCUPATION", "rationale": "sender's title"},
+ {"text": "77 Harbor Rd, Suite 4B", "category": "ADDRESS", "rationale": "work address"}
+]}
+
+EXAMPLE 2
+DOCUMENT:
+Hi doctor, my mother is 68 and since 2nd May she has had swelling in both ankles and \
+gets breathless climbing stairs. She had a heart attack in 2019 at St. Anne's in Pune. \
+She is 5 ft 1 and was a schoolteacher. Is it heart failure?
+OUTPUT:
+{"details": [
+ {"text": "my mother", "category": "RELATION", "rationale": "the patient"},
+ {"text": "68", "category": "AGE", "rationale": "mother's age"},
+ {"text": "2nd May", "category": "DATE", "rationale": "onset date"},
+ {"text": "swelling in both ankles", "category": "SYMPTOM", "rationale": "mother's symptom"},
+ {"text": "breathless climbing stairs", "category": "SYMPTOM", "rationale": "mother's symptom"},
+ {"text": "heart attack", "category": "MEDICAL_CONDITION", "rationale": "past diagnosis"},
+ {"text": "2019", "category": "DATE", "rationale": "year of the heart attack"},
+ {"text": "St. Anne's", "category": "LOCATION", "rationale": "named hospital"},
+ {"text": "Pune", "category": "LOCATION", "rationale": "city"},
+ {"text": "5 ft 1", "category": "PHYSICAL", "rationale": "height"},
+ {"text": "schoolteacher", "category": "OCCUPATION", "rationale": "mother's former job"},
+ {"text": "heart failure", "category": "MEDICAL_CONDITION", "rationale": "suspected diagnosis"}
+]}
+"""
+
+# Clinical records only (``sanitise.casefile``): the same task, plus the labelled fields of a
+# record, what never identifies anyone there (sex markers, degrees, vitals, lab values, drugs)
+# and a clinic-note example.
+CASE_FULL_SYSTEM_PROMPT = """\
+You are a privacy analyst. You read one document (a patient's message to a doctor, an \
 email, a clinical record) and list EVERY detail that could help identify ANY person in it: \
 the writer, the people it is sent to or copied to, the patient, and everyone it mentions. \
 Email headers (From, To, Cc, Sent), signatures, quoted earlier messages and the labelled \
@@ -375,11 +466,7 @@ def _clean(phrase: str) -> str:
     phrase = phrase.strip(_EDGE_PUNCT)
     while (stripped := _LEADING.sub("", phrase)) != phrase:
         phrase = stripped
-    cleaned = phrase.strip(_EDGE_PUNCT)
-    # keep the closing bracket of "Fever (high grade, intermittent)"
-    if cleaned.count("(") > cleaned.count(")") and f"{cleaned})" in phrase:
-        cleaned += ")"
-    return cleaned
+    return phrase.strip(_EDGE_PUNCT)
 
 
 def find_all(text: str, phrase: str) -> list[tuple[int, int]]:
@@ -395,18 +482,24 @@ def find_all(text: str, phrase: str) -> list[tuple[int, int]]:
     return [(m.start(), m.end()) for m in re.finditer(pattern, text, re.IGNORECASE)]
 
 
-def ground(text: str, phrase: str) -> list[tuple[int, int]]:
+def ground(text: str, phrase: str, case: bool = False) -> list[tuple[int, int]]:
     """Offsets for a single detail quoted by the model; [] when it is not in the text.
 
     The phrase is tried without a leading article/possessive first (annotation guide
     3.7: "lighthouse keeper", not "a lighthouse keeper"), then exactly as quoted.
     """
     cleaned = _clean(phrase)
+    # a clinical record: keep the closing bracket of "Fever (high grade, intermittent)"
+    if case and cleaned.count("(") > cleaned.count(")") and f"{cleaned})" in phrase:
+        cleaned += ")"
     return (find_all(text, cleaned) if cleaned else []) or find_all(text, phrase)
 
 
 def to_spans(
-    text: str, hits: list[LLMQuasiHit] | list[FullHit], max_items: int = MAX_ITEMS
+    text: str,
+    hits: list[LLMQuasiHit] | list[FullHit],
+    max_items: int = MAX_ITEMS,
+    case: bool = False,
 ) -> list[SensitiveSpan]:
     """Ground single details to offsets, keep combinations offset-less, deduplicate."""
     spans: list[SensitiveSpan] = []
@@ -426,7 +519,7 @@ def to_spans(
                 )
             )
             continue
-        offsets = ground(text, hit.text)
+        offsets = ground(text, hit.text, case)
         if not offsets:
             log.info("LLM %s %r is not in the document; dropped", category.value, hit.text)
             continue
@@ -461,15 +554,15 @@ async def infer_quasi(
     every category, with the rule spans as hints.
     """
     if getattr(llm, "one_call_per_document", False):
-        full = await llm.json_call(
-            FULL_SYSTEM_PROMPT, build_full_prompt(text, explicit), FullDetection
-        )
+        case = is_case_file(text)
+        system = CASE_FULL_SYSTEM_PROMPT if case else FULL_SYSTEM_PROMPT
+        full = await llm.json_call(system, build_full_prompt(text, explicit), FullDetection)
         details = [
             d
             for d in full.details
             if d.category != "RELATION"
             or RELATION_WORDS & set(re.findall(r"[a-z]+(?:-[a-z]+)*", d.text.lower()))
         ]
-        return to_spans(text, details, MAX_FULL_ITEMS)
+        return to_spans(text, details, MAX_FULL_ITEMS, case)
     result = await llm.json_call(SYSTEM_PROMPT, build_user_prompt(text, explicit), LLMQuasiList)
     return to_spans(text, result.quasi_identifiers)

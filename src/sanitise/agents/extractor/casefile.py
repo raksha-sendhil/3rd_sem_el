@@ -1,8 +1,8 @@
 """Clinical records (case sheets, clinic notes, discharge summaries).  OWNER: Person C.
 
 A clinical record is written by a clinician about a patient, so ``subjects()``'s "writer" (the
-author of a message) is the wrong frame for it. ``is_case_file`` recognises one by its labelled
-sections (C/O, H/O, Diagnosis, Plan ...). Then:
+author of a message) is the wrong frame for it. ``is_case_file`` (``sanitise.casefile``)
+recognises one by its labelled sections (C/O, H/O, Diagnosis, Plan ...). Then:
 
 * ``patient_id``: the patient is the person named in a patient field ("Patient: ...",
   "Name: ..."); with no such field, the record is about the writer's subject ("45 y/o M presents
@@ -21,28 +21,14 @@ from __future__ import annotations
 
 import re
 
+from sanitise.casefile import is_case_file
 from sanitise.schemas import FactTuple, PIICategory, SensitiveSpan, Subject
 
-_SECTION = re.compile(
-    r"^[ \t]*(c/o|h/o|o/e|k/c/o|chief complaints?|presenting complaints?|complaints?"
-    r"|history of present(?:ing)? illness|hpi|past (?:medical )?history|pmh|family history"
-    r"|examination|exam|vitals|vital signs|investigations?|inv|labs?|lab results"
-    r"|impression|imp|diagnosis|provisional diagnosis|final diagnosis|assessment|plan|advice"
-    r"|rx|treatment|medications?|allerg(?:y|ies)|course in (?:the )?hospital|hospital course"
-    r"|follow[- ]up|mrn|uhid|ip no|op no|dob|age/sex|date of (?:visit|admission|discharge)"
-    r"|admitted|discharged|consultant|referred by|patient(?: name)?)\b[^:\n]{0,15}:",
-    re.IGNORECASE | re.MULTILINE,
-)
 _PATIENT_FIELD = re.compile(
     r"(?:patient(?:'s)?(?:\s+name)?|pt\.?(?:\s+name)?|name(?:\s+of\s+(?:the\s+)?patient)?)"
     r"\s*[:\-]\s*(?:(?:mr|mrs|ms|miss|master|baby|smt|shri|sri|kum|dr)\.?\s+)?$",
     re.IGNORECASE,
 )
-
-
-def is_case_file(text: str) -> bool:
-    """Three or more different labelled clinical sections."""
-    return len({m.group(1).lower() for m in _SECTION.finditer(text)}) >= 3
 
 
 def patient_id(text: str, spans: list[SensitiveSpan], subjects: list[Subject]) -> str:
@@ -90,3 +76,6 @@ def rename(subject: str, patient: str) -> str:
     if subject.startswith("writer."):
         return "patient." + subject.removeprefix("writer.")
     return subject
+
+
+__all__ = ["is_case_file", "own_identity", "patient_id", "relabel", "rename"]
