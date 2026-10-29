@@ -13,8 +13,7 @@ import {
 } from "@/api/client";
 import { AgentViews } from "@/components/documents/AgentViews";
 import { UploadBox } from "@/components/documents/UploadBox";
-import { ErrorNote, Illustration, Legend, PageHead } from "@/components/PageHead";
-import { IMAGES } from "@/lib/images";
+import { ErrorNote, Legend, PageHead } from "@/components/PageHead";
 
 const KINDS = {
   patient: { title: "Patient message", icon: MessageSquare, accent: "#FF4D3D" },
@@ -127,7 +126,7 @@ export default function Documents() {
 
   return (
     <div className="space-y-8">
-      <div className="grid items-center gap-6 lg:grid-cols-[1fr_1fr]">
+      <div>
         <PageHead
           index="03"
           label="Documents"
@@ -142,7 +141,6 @@ export default function Documents() {
         >
           <Legend />
         </PageHead>
-        <Illustration src={IMAGES.documents} className="rise mx-auto aspect-[16/9] w-full max-w-[460px]" />
       </div>
 
       <div className="flex gap-3 overflow-x-auto pb-2" data-testid="document-selector">

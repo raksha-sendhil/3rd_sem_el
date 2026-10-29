@@ -35,15 +35,6 @@ export const Legend = () => (
   </div>
 );
 
-/** Where an illustration goes; shows the image once its path is set in lib/images.ts. */
-export const Illustration = ({ src, className = "" }: { src: string; className?: string }) =>
-  src ? (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt="" className={`${className} mix-blend-multiply`} />
-  ) : (
-    <div className={`${className} rounded-3xl border-2 border-dashed border-[#DDD7C9] bg-white/40`} />
-  );
-
 export const ErrorNote = ({ error }: { error: string | null }) =>
   error ? (
     <div
