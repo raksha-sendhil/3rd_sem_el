@@ -67,8 +67,10 @@ export function rewrittenPieces(text: string, decisions: RoutingDecision[]): (st
     .filter((p) => p !== "");
 }
 
-/** writer -> The writer; writer.wife -> The writer's wife; person_2 -> Person 2 */
+/** writer -> The writer; writer.wife -> The writer's wife; patient.mother -> The patient's mother; person_2 -> Person 2 */
 export function subjectLabel(subject: string): string {
+  if (subject === "patient") return "The patient";
+  if (subject.startsWith("patient.")) return `The patient's ${subject.slice(8).replaceAll("_", " ")}`;
   if (subject === "writer") return "The writer";
   if (subject.startsWith("writer.")) return `The writer's ${subject.slice(7).replaceAll("_", " ")}`;
   return subject.charAt(0).toUpperCase() + subject.slice(1).replaceAll("_", " ");

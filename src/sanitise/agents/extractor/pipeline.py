@@ -17,6 +17,10 @@ Two parts of the result never come from the model:
   dropped, so the model cannot add a detail ("sunlight" as a symptom, an email domain as a
   home) or give one person's detail to another. Medication and procedures, which Agent 1 does
   not detect, must be worded from the record; ``other`` is never kept.
+
+A clinical record (``casefile.is_case_file``) is about a patient, not its writer: the model sees
+"the patient", "the clinician who wrote the record" and the patient's relatives, and the output
+names them ``patient`` and ``patient.<kin>``.
 """
 
 from __future__ import annotations
@@ -26,7 +30,7 @@ import re
 
 from pydantic import ValidationError
 
-from sanitise.agents.extractor import canonical, importance, prompt
+from sanitise.agents.extractor import canonical, casefile, importance, prompt
 from sanitise.errors import PipelineError, SchemaValidationFailed
 from sanitise.llm.base import LLMClient, format_validation_error
 from sanitise.llm.factory import agents_llm
@@ -65,7 +69,7 @@ _COUNT = (
 _DURATION = re.compile(
     rf"\b{_COUNT}\s+(?:minute|hour|day|night|week|month|year)s?\b", re.IGNORECASE
 )
-_SEX = re.compile(r"male|female|man|woman|boy|girl", re.IGNORECASE)
+_SEX = re.compile(r"male|female|man|woman|boy|girl|m|f", re.IGNORECASE)
 
 
 def _fact(subject: str, relation: str, value: str) -> FactTuple:
@@ -198,6 +202,10 @@ async def extract(
         subs = [
             Subject.model_validate(s.model_dump()) for s in canonical.subjects(text, detected.spans)
         ]
+        patient = None
+        if casefile.is_case_file(text):
+            patient = casefile.patient_id(text, detected.spans, subs)
+            subs = casefile.relabel(subs, patient)
         model = agents_llm(llm)
         raw = await prompt.extract_facts(text, subs, detected.spans, model)
         checked = check_facts(
@@ -211,7 +219,9 @@ async def extract(
         facts = [
             FactTuple.model_validate(f.model_dump())
             for f in canonical.normalise_facts(
-                identity_facts(text, subs, detected.spans) + checked, subs
+                casefile.own_identity(identity_facts(text, subs, detected.spans), patient)
+                + checked,
+                subs,
             )
         ]
     except PipelineError as exc:
@@ -224,4 +234,7 @@ async def extract(
     kept = [f for f in facts if f.subject in known]
     if len(kept) < len(facts):
         log.info("%s: dropped %d facts with unknown subjects", doc_id, len(facts) - len(kept))
+    if patient is not None:
+        subs = [s.model_copy(update={"id": casefile.rename(s.id, patient)}) for s in subs]
+        kept = [f.model_copy(update={"subject": casefile.rename(f.subject, patient)}) for f in kept]
     return subs, ExtractorOutput(doc_id=doc_id, facts=kept)

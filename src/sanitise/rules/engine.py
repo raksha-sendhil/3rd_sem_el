@@ -120,6 +120,25 @@ _NAME_STOPLIST = {
     "aunt",
     "auntie",
 }
+# A clinical record's degrees, specialties and section labels, which spaCy tags as people and
+# places ("Dr. Anil Mehta, MD (Paeds)", "C/O").
+_CLINICAL_ABBREVIATIONS = {
+    "md", "mbbs", "ms", "dnb", "frcs", "mrcp", "mch", "dm", "bds", "bams", "paeds", "peds",
+    "ortho", "obg", "obgyn", "ent", "opd", "ipd", "icu", "nicu", "picu", "c/o", "h/o", "o/e",
+    "k/c/o", "imp", "inv", "rx", "nkda", "sos", "bd", "tds", "od", "ra",
+}  # fmt: skip
+# Columns of a form are separated by a run of spaces or a tab: a name or place ends there
+# ("Patient: Rohan Kulkarni      Age/Sex: 9 y").
+_FIELD_GAP = re.compile(r"[ ]{2,}|\t")
+# A vital sign or lab value ("HR 88", "BP 130/84", "Hb 9.8") is a measurement, never a date,
+# phone or ID number.
+_MEASUREMENT = re.compile(
+    r"^(?:hr|bp|pr|rr|spo2|sp02|temp|hb|hgb|wbc|tlc|plt|pulse|wt|ht|bmi|fbs|ppbs|rbs|hba1c"
+    r"|inr|esr|crp|bnp|ldl|hdl|tsh)\b",
+    re.IGNORECASE,
+)
+# An all-caps heading line ("DISCHARGE SUMMARY") is not part of the name below it.
+_HEADING_LINE = re.compile(r"[A-Z][A-Z \t&/-]+\n")
 # "Peyronie's disease", "Guillain Barre syndrome" - eponyms, not people
 _EPONYM_TAIL = re.compile(
     r"(?:'s|’s)?\s+(?:disease|syndrome|palsy|sign|test|reflex|procedure|disorder)\b", re.IGNORECASE
@@ -142,6 +161,10 @@ def _keep(category: PIICategory, fragment: str) -> bool:
     f = fragment.strip(" .,;:!?\"'").lower()
     if category is C.DATE and (_VAGUE_DATE.match(f) or not _ANCHORED_DATE.search(f)):
         return False
+    if category in (C.NAME, C.LOCATION) and f in _CLINICAL_ABBREVIATIONS:
+        return False
+    if category in (C.DATE, C.PHONE, C.ID_NUMBER) and _MEASUREMENT.match(f):
+        return False
     return not (category is C.NAME and f in _NAME_STOPLIST)
 
 
@@ -157,10 +180,16 @@ def _to_span(text: str, r: RecognizerResult) -> SensitiveSpan | None:
         return None
     if r.entity_type == "UK_NHS" and not _NHS_CONTEXT.search(text, max(0, r.start - 40), r.start):
         return None
-    fragment = text[r.start : r.end]
-    if not _keep(category, fragment):
+    start, end = r.start, r.end
+    if category in (C.NAME, C.LOCATION):
+        if heading := _HEADING_LINE.match(text, start, end):
+            start = heading.end()
+        if gap := _FIELD_GAP.search(text, start, end):
+            end = gap.start()
+    fragment = text[start:end]
+    if not fragment.strip() or not _keep(category, fragment):
         return None
-    if category is C.NAME and _EPONYM_TAIL.match(text, r.end):
+    if category is C.NAME and _EPONYM_TAIL.match(text, end):
         return None
     meta = r.recognition_metadata or {}
     source = meta.get(RecognizerResult.RECOGNIZER_NAME_KEY, "presidio")
@@ -168,8 +197,8 @@ def _to_span(text: str, r: RecognizerResult) -> SensitiveSpan | None:
     return SensitiveSpan(
         text=fragment,
         category=category,
-        start=r.start,
-        end=r.end,
+        start=start,
+        end=end,
         method="rule",
         confidence=min(max(float(r.score), 0.0), 1.0),
         rationale=f"{source}:{detail}",
@@ -197,4 +226,6 @@ def rule_detect(
         text=text, language="en", entities=REQUESTED_ENTITIES, score_threshold=score_threshold
     )
     spans = [s for r in results if (s := _to_span(text, r)) is not None]
-    return normalise_spans(spans, text)
+    # overlap resolution can leave a remainder that would not pass on its own ("Date of
+    # Service" from "Date of Service: 09/14/2026"), so the filters run again
+    return [s for s in normalise_spans(spans, text) if _keep(s.category, s.text)]

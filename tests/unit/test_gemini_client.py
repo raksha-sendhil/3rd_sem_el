@@ -144,7 +144,7 @@ def test_document_prompt_examples_parse_with_their_schema() -> None:
     import re
 
     blocks = re.findall(r"OUTPUT:\n(\{.*?\]\})", extract_prompt.DOCUMENT_PROMPT, re.S)
-    assert len(blocks) == 3
+    assert len(blocks) == 4
     schema = extract_prompt.document_schema(["writer", "writer.wife", "writer.son", "person_1"])
     for block in blocks:
         schema.model_validate_json(block)

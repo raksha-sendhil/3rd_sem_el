@@ -190,7 +190,11 @@ def _date(text: str, level: int) -> str:
 # ---------------------------------------------------------------- LOCATION
 
 _FACILITY_KINDS: list[tuple[str, str]] = [
-    (r"hospital|clinic|medcity|medical|health|infirmary|hospice|nursing home|aiims", "a hospital"),
+    (
+        r"hospital|clinic|medcity|medical|health|infirmary|hospice|nursing home|aiims"
+        r"|\bmedicine\b|\bpractice\b|\bsurgery\b|\bphc\b|\bchc\b",
+        "a hospital",
+    ),
     (r"university|college|institute|iit\b|iim\b|nit\b|academy|polytechnic", "a university"),
     (r"school|kindergarten|nursery", "a school"),
     (r"\bisland\b|\bisle\b", "an island"),

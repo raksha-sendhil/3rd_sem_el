@@ -70,6 +70,66 @@ I take aspirin. My wife has psoriasis. You can reach me on [PHONE_1].
 """
 
 
+CASE_FILE_PROMPT = """\
+You rewrite a clinical record (a case sheet, clinic note or discharge summary) from a list of \
+facts so it can be shared without identifying anyone. The facts have already been made safe: \
+some details are placeholder tokens such as [PERSON_1] or [ID_1], and some are deliberately \
+vague phrases such as "a hospital" or "in their 50s".
+
+Rules:
+1. Use every fact, and only the facts. Never add a name, age, place, date, number, finding, \
+result or any other detail that is not in the facts.
+2. Copy placeholder tokens exactly, brackets included. Every token in the facts must appear \
+in your record, contact details too.
+3. Keep vague phrases vague; never make them more specific.
+4. Write a short case summary in the third person ("The patient ..."), under these headings, \
+each on its own line and only when there are facts for it: Patient, Complaints, History, \
+Examination, Investigations, Treatment (procedures and medications given), Assessment \
+(diagnoses and impressions), Plan. Plain sentences after each heading.
+5. Keep every value, unit and word that says how something is going or how sure it is \
+(improving, persistent, suspected, day 6) exactly as given. Keep the tense of the facts.
+6. Keep clinical abbreviations as written and read them correctly; never turn a negative into \
+a positive ("NKDA" is "no known drug allergies", not an allergy).
+7. A vague date only says roughly when: write "in 2026", never "on 2026". Leave out a date \
+whose event the facts do not say.
+8. Return only the rewritten record.
+
+EXAMPLE
+FACTS:
+the patient - name: [PERSON_1].
+the patient - ID number: [ID_1].
+the patient - age: in their 50s.
+the patient - sex: M.
+the patient - treated at: a hospital.
+the patient - has condition: Right foot cellulitis.
+the patient - has condition: Gout.
+the patient - progress: Gout, uncontrolled.
+the patient - has symptom: Swelling and redness of right foot.
+the patient - symptom duration: 5 days.
+the patient - progress: swelling reduced on IV antibiotics.
+the patient - took medication: febuxostat 40 mg OD.
+the patient - vital sign: BP 130/84.
+the patient - test result: Uric acid 9.1 mg/dL.
+the patient - allergy: penicillin (rash).
+the patient - plan: Review in OPD after 1 week.
+the patient's wife - contact: [PHONE_1].
+OUTPUT:
+Patient: [PERSON_1] ([ID_1]), male, in their 50s, treated at a hospital.
+Complaints: Swelling and redness of the right foot for 5 days, reduced on IV antibiotics.
+History: Gout, uncontrolled. Allergic to penicillin (rash).
+Examination: BP 130/84.
+Investigations: Uric acid 9.1 mg/dL.
+Treatment: Febuxostat 40 mg OD.
+Assessment: Right foot cellulitis.
+Plan: Review in OPD after 1 week. The patient's wife can be reached on [PHONE_1].
+"""
+
+
+def is_case_file(facts: list[FactTuple]) -> bool:
+    """Agent 2 names a clinical record's people ``patient`` and ``patient.<kin>``."""
+    return any(f.subject == "patient" or f.subject.startswith("patient.") for f in facts)
+
+
 def _outside_tokens(pattern: re.Pattern[str], decision: RoutingDecision, value: str) -> str:
     tokens = [(m.start(), m.end()) for m in TOKEN.finditer(value)]
 
@@ -100,7 +160,9 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     )
     for d in removed:
         assert d.replacement is not None
-        span = re.escape(d.span_text.strip())
+        # whole words only: "M" (a sex marker) must not hit the m of "antimalarials", nor the
+        # age "9" the 9 of "Hb 9.8"
+        span = rf"(?<!\w)(?<!\d\.){re.escape(d.span_text.strip())}(?!\w)(?!\.\d)"
         if d.action is Action.GENERALISE and re.search(span, value, re.IGNORECASE):
             # a vague phrase cannot replace a few words inside a longer one ("tore my anterior
             # cruciate ligament" -> "tore my a joint injury"); when the detail is most of the
@@ -120,7 +182,11 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
         if d.category in _NAMED and _leftover(value, d.span_text):
             assert d.replacement is not None
             value = d.replacement
-    return value
+    # a date made vague to its year: "Review on 23/10/2026" -> "Review in 2026"
+    return _ON_YEAR.sub(lambda m: ("In " if m.group(1) == "O" else "in ") + m.group(2), value)
+
+
+_ON_YEAR = re.compile(r"\b([Oo])n (\d{4}|the \d{4}s)\b")
 
 
 _NAMED = {PIICategory.NAME, PIICategory.LOCATION, PIICategory.ADDRESS}
@@ -169,7 +235,11 @@ def subject_labels(safe: list[tuple[FactTuple, str]]) -> dict[str, str]:
         subject = f.subject
         if subject in labels:
             continue
-        if subject == "writer":
+        if subject == "patient":
+            labels[subject] = "the patient"
+        elif subject.startswith("patient."):
+            labels[subject] = "the patient's " + subject.removeprefix("patient.").replace("_", " ")
+        elif subject == "writer":
             labels[subject] = "the writer"
         elif subject.startswith("writer."):
             labels[subject] = "the writer's " + subject.removeprefix("writer.").replace("_", " ")
@@ -237,5 +307,6 @@ async def reconstruct(
     llm: LLMClient,
     feedback: list[SensitiveSpan] | None = None,
 ) -> str:
-    reply = await llm.text_call(SYSTEM_PROMPT, build_user_prompt(facts, decisions, feedback))
+    system = CASE_FILE_PROMPT if is_case_file(facts) else SYSTEM_PROMPT
+    reply = await llm.text_call(system, build_user_prompt(facts, decisions, feedback))
     return PREAMBLE.sub("", reply).strip()

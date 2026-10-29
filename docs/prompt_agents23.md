@@ -138,6 +138,32 @@ The two checks cover different failures:
 `meta.leak_retries` counts the second attempts. Cell 2 of the notebook prints the totals and
 the number of `[REDACTED]` masks.
 
+## Clinical records (case files)
+
+Case sheets, clinic notes and discharge summaries are written by a clinician about a patient,
+in labelled fields and abbreviations, so each agent treats them differently from a message:
+
+* **Agent 1.** The Gemini prompt names the patient, the labelled fields (Patient, Guardian, MRN,
+  Consultant) and what never identifies anyone: a sex marker, a doctor's degrees, vital signs,
+  lab values, drugs and doses, absent findings, section labels. The rule pass ends a name or
+  place at a column gap ("Rohan Kulkarni      Age/Sex"), drops an all-caps heading above it,
+  ignores degrees and section labels as names ("MD", "Paeds", "C/O") and never takes a vital
+  sign or lab value as a date, phone or ID ("HR 88").
+* **Agent 2.** `extractor/casefile.py` recognises a record by three or more labelled clinical
+  sections. The person in the patient field ("Patient: Mr. ...") is the patient, otherwise the
+  writer is; the model sees "the patient", "the clinician who wrote the record" and the
+  patient's relatives, and the output names them `patient` and `patient.<kin>`. An ID or
+  contact in the header belongs to the patient. Six relations carry clinical content:
+  `progress` (how a symptom, condition or treatment is going), `vital_sign`, `test_result`,
+  `allergy`, `assessment`, `plan`. `progress` also keeps "has got better" / "remains" in
+  messages, where a symptom's own value is Agent 1's span.
+* **Agent 3.** Facts about `patient` get `CASE_FILE_PROMPT`: a third-person case summary under
+  the headings Patient, Complaints, History, Examination, Investigations, Treatment,
+  Assessment, Plan, keeping every value, unit and status word, and reading abbreviations
+  correctly ("NKDA" is no allergy). A removed detail is replaced only as a whole word and never
+  inside a decimal ("M" in "antimalarials", the age "9" in "Hb 9.8"); a date made vague to its
+  year reads "in 2026", not "on 2026".
+
 ## Answer prompt (both pipelines)
 
 `build_answer_prompt(question, contexts)` returns `(system, user)`. The user message is:

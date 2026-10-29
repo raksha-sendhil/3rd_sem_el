@@ -225,9 +225,11 @@ class FullDetection(BaseModel):
 
 FULL_SYSTEM_PROMPT = """\
 You are a privacy analyst. You read one document (a patient's message to a doctor, an \
-email, a note) and list EVERY detail that could help identify ANY person in it: the \
-writer, the people it is sent to or copied to, and everyone it mentions. Email headers \
-(From, To, Cc, Sent), signatures and quoted earlier messages count like the body.
+email, a clinical record) and list EVERY detail that could help identify ANY person in it: \
+the writer, the people it is sent to or copied to, the patient, and everyone it mentions. \
+Email headers (From, To, Cc, Sent), signatures, quoted earlier messages and the labelled \
+fields of a clinical record (Patient, Guardian, MRN, IP No, DOB, Consultant) count like the \
+body.
 
 Categories (copy each detail EXACTLY as written, shortest phrase that carries it):
 - NAME: a person's name, full or partial, nickname, or a username that is a person's name. \
@@ -248,10 +250,15 @@ including suspected ones and pregnancy.
 - SYMPTOM: a symptom or complaint someone has, with the body part when given \
 ("back pain", "coughing", "pain in the left knee"). Not a negated or hypothetical one.
 - RELATION: a family or personal relationship to someone ("my son", "Dad", "his wife").
-- PHYSICAL: height, weight or another body measurement.
+- PHYSICAL: height, weight or another measurement of the body's size.
 - OTHER: any other secret or identifying value (a password, a licence plate).
 - QUASI_COMBO: at most two combinations of details about one person that together \
 single them out when each alone would not, written as parts joined with " + ".
+
+Never list these; they identify no one and must stay readable: a sex marker (M, F), a \
+doctor's degrees or specialty (MD, MBBS, Paeds), vital signs and lab values (Temp 101 F, \
+BP 130/84, SpO2 97%, Hb 9.8), drugs and doses, findings that are absent ("no icterus"), and \
+section labels (C/O, H/O, Imp, Plan).
 
 HINTS lists what a rule-based detector found. It may be incomplete and sometimes wrong: \
 include the hints that are right (with the right category) and add everything it missed. \
@@ -307,6 +314,34 @@ OUTPUT:
  {"text": "schoolteacher", "category": "OCCUPATION", "rationale": "mother's former job"},
  {"text": "heart failure", "category": "MEDICAL_CONDITION", "rationale": "suspected diagnosis"}
 ]}
+
+EXAMPLE 3
+DOCUMENT:
+OPD NOTE - Green Valley Clinic, Mysuru        Date: 12/08/2025
+Patient: Farah Siddiqui    Age/Sex: 34/F    UHID: GV-88213
+C/O: Burning micturition x 3 days. No fever.
+K/c/o hypothyroidism, on thyroxine 50 mcg.
+O/E: Temp 99.1 F, BP 118/76. Wt 61 kg. Works as a flight attendant.
+Imp: ?UTI. Plan: urine culture, review on 15/08/2025. Husband: Imran, Ph 90031 22745.
+OUTPUT:
+{"details": [
+ {"text": "Green Valley Clinic", "category": "LOCATION", "rationale": "named clinic"},
+ {"text": "Mysuru", "category": "LOCATION", "rationale": "clinic's city"},
+ {"text": "12/08/2025", "category": "DATE", "rationale": "visit date"},
+ {"text": "Farah Siddiqui", "category": "NAME", "rationale": "patient"},
+ {"text": "34", "category": "AGE", "rationale": "patient's age"},
+ {"text": "GV-88213", "category": "ID_NUMBER", "rationale": "hospital ID"},
+ {"text": "Burning micturition", "category": "SYMPTOM", "rationale": "patient's complaint"},
+ {"text": "hypothyroidism", "category": "MEDICAL_CONDITION", "rationale": "known condition"},
+ {"text": "61 kg", "category": "PHYSICAL", "rationale": "weight"},
+ {"text": "flight attendant", "category": "OCCUPATION", "rationale": "patient's job"},
+ {"text": "UTI", "category": "MEDICAL_CONDITION", "rationale": "suspected diagnosis"},
+ {"text": "15/08/2025", "category": "DATE", "rationale": "review date"},
+ {"text": "Husband", "category": "RELATION", "rationale": "patient's husband"},
+ {"text": "Imran", "category": "NAME", "rationale": "husband"},
+ {"text": "90031 22745", "category": "PHONE", "rationale": "husband's phone"}
+]}
+(Not listed: F, thyroxine 50 mcg, Temp 99.1 F, BP 118/76 and "No fever".)
 """
 
 
@@ -328,7 +363,11 @@ def _clean(phrase: str) -> str:
     phrase = phrase.strip(_EDGE_PUNCT)
     while (stripped := _LEADING.sub("", phrase)) != phrase:
         phrase = stripped
-    return phrase.strip(_EDGE_PUNCT)
+    cleaned = phrase.strip(_EDGE_PUNCT)
+    # keep the closing bracket of "Fever (high grade, intermittent)"
+    if cleaned.count("(") > cleaned.count(")") and f"{cleaned})" in phrase:
+        cleaned += ")"
+    return cleaned
 
 
 def find_all(text: str, phrase: str) -> list[tuple[int, int]]:
