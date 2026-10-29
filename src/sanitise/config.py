@@ -52,6 +52,8 @@ class Settings(BaseSettings):
     # ---- Gemini (agents_backend="gemini"). Several keys, comma-separated, are used in turn
     # when one reaches its daily limit (keys must come from different Google Cloud projects).
     gemini_api_key: str | None = None
+    # Agent 1's LLM pass on Gemini too (its rule pass always runs locally)
+    gemini_for_agent1: bool = True
     gemini_thinking_level: str | None = "low"  # minimal / low / medium / high; None: default
     gemini_temperature: float | None = None  # None: the model's default
     gemini_max_output_tokens: int = Field(default=4096, ge=64)

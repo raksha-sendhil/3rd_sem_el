@@ -147,6 +147,16 @@ NAME_RULES = [
         0.7,
         flags=re.MULTILINE,
     ),
+    # a name after a closing on the same line, ending the line: "Thank you, Saniya"
+    Rule(
+        "sign_off_inline",
+        r"\b(?i:thanks|thank\s+you|many\s+thanks|regards|best\s+regards|kind\s+regards"
+        r"|warm\s+regards|cheers|sincerely|yours\s+sincerely|yours\s+truly)[,!.]?[ \t]+"
+        r"(?!(?i:doctor|doc|dr|sir|madam|team|everyone|all|again)\b)"
+        rf"(?P<value>{_NAME})[ \t]*[.!]?[ \t]*$",
+        0.7,
+        flags=re.MULTILINE,
+    ),
 ]
 
 # ---------------------------------------------------------------- PHYSICAL

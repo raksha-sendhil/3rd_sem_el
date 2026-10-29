@@ -198,3 +198,20 @@ async def test_daily_limit_on_every_key_moves_to_the_next_model() -> None:
     gemini = client(handler, model="gemini-a,gemini-b", api_keys=["k1", "k2"])
     assert await gemini.text_call("s", "u") == "ok"
     assert seen == [("gemini-a", "k1"), ("gemini-a", "k2"), ("gemini-b", "k1")]
+
+
+async def test_agent1_llm_pass_uses_gemini_unless_switched_off(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from sanitise.config import get_settings
+    from sanitise.llm import OllamaClient
+    from sanitise.llm.factory import detector_llm
+
+    monkeypatch.setenv("SANITISE_AGENTS_BACKEND", "gemini")
+    monkeypatch.setenv("SANITISE_GEMINI_API_KEY", "key-1")
+    get_settings.cache_clear()
+    async with OllamaClient(model="llama3:8b") as local:
+        assert isinstance(detector_llm(local), GeminiClient)
+        monkeypatch.setenv("SANITISE_GEMINI_FOR_AGENT1", "false")
+        get_settings.cache_clear()
+        assert detector_llm(local) is local

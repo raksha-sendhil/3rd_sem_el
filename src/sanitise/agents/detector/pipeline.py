@@ -31,6 +31,7 @@ from sanitise.errors import (
     Stage,
 )
 from sanitise.llm.base import LLMClient, format_validation_error, track_calls
+from sanitise.llm.factory import detector_llm
 from sanitise.loader import sha256_hex
 from sanitise.rules import OffsetOutOfRangeError as RulesOffsetError
 from sanitise.schemas import DetectorMeta, DetectorOutput, DetectorResult, SensitiveSpan
@@ -176,6 +177,7 @@ async def detect_with_trace(
     trace.rule_ms = _ms(t)
 
     if run_llm:
+        llm = detector_llm(llm)
         t = time.perf_counter()
         with track_calls() as stats:
             trace.llm_spans = await run_llm_pass(text, trace.rule_spans, llm, stages)

@@ -64,6 +64,15 @@ def agents_llm(llm: LLMClient) -> LLMClient:
     return _gemini[key]
 
 
+def detector_llm(llm: LLMClient) -> LLMClient:
+    """The client Agent 1's LLM pass calls: the Gemini client of Agents 2 and 3 when they run
+    on Gemini (``SANITISE_GEMINI_FOR_AGENT1``, on by default), ``llm`` otherwise."""
+    settings = get_settings()
+    if settings.agents_backend == "gemini" and settings.gemini_for_agent1:
+        return agents_llm(llm)
+    return llm
+
+
 async def close_llm_client(client: object) -> None:
     aclose = getattr(client, "aclose", None)
     if aclose is not None:

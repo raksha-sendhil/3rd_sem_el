@@ -282,3 +282,22 @@ def test_no_age_or_name_from_lookalike_phrases(text):
 )
 def test_name_after_a_sign_off(text, span):
     assert (span, C.NAME) in found(text)
+
+
+@pytest.mark.parametrize(
+    "text, span",
+    [
+        ("Please reply when you can. Thank you, Meher", "Meher"),
+        ("Could you call me back?\nThanks, Joel Prakash.", "Joel Prakash"),
+    ],
+)
+def test_name_after_a_sign_off_on_the_same_line(text, span):
+    assert (span, C.NAME) in found(text)
+
+
+@pytest.mark.parametrize(
+    "text",
+    ["Please reply soon. Thank you, Doctor.", "Thanks, Dr. Rao will see you.", "Thanks again."],
+)
+def test_no_name_from_a_sign_off_to_a_doctor(text):
+    assert not any(t in {"Doctor", "Dr", "Again"} and c is C.NAME for t, c in found(text))

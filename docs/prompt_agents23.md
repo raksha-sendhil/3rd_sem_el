@@ -6,7 +6,11 @@ Code: `src/sanitise/agents/extractor/prompt.py` (Agent 2), `src/sanitise/agents/
 
 ## Models
 
-Agent 1 runs on llama3:8b (Ollama). Agents 2 and 3 can run on another model
+Agent 1's rule pass (Presidio, spaCy, regular expressions) always runs locally. When Agents 2
+and 3 run on Gemini, Agent 1's LLM pass does too (`SANITISE_GEMINI_FOR_AGENT1`, on by default):
+llama3:8b labelled "ex-smoker" a job, "old" (former) an age and "over 6 months" a combination,
+and routing then rewrote Agent 2's correct facts with those labels. The answers of both RAG
+pipelines stay on llama3:8b (Ollama). Agents 2 and 3 can run on another model
 (`SANITISE_AGENTS_BACKEND`, `SANITISE_AGENTS_MODEL`, set in notebook cell 1):
 
 * `gemini` (default in the notebook): `gemini-3.1-flash-lite` on the Gemini API free tier
