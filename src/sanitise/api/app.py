@@ -217,13 +217,18 @@ def create_app(
 
     @app.post("/v1/extract", response_model=ExtractorOutput)
     async def post_extract(body: ExtractRequest, request: Request) -> ExtractorOutput:
-        """Agent 2 alone. It needs Agent 1's spans to find the subjects, so Agent 1 runs first."""
+        """Agent 2 alone. It needs Agent 1's spans to find the subjects: the ones given, or
+        Agent 1 runs first. Give them when Agent 3 will use the same spans (the dashboard's
+        live run), so the facts and the removed details match exactly."""
         doc_id = body.doc_id or compute_doc_id(body.text)
         llm = client_for(request)
-        detected = await detect(doc_id, body.text, llm)
+        if body.spans is not None:
+            detected_output = DetectorOutput(doc_id=doc_id, spans=body.spans)
+        else:
+            detected_output = (await detect(doc_id, body.text, llm)).output
         if mock:
-            return ExtractorOutput(doc_id=doc_id, facts=mock_facts(detected.output))
-        _, extracted = await extract(doc_id, body.text, detected.output, llm)
+            return ExtractorOutput(doc_id=doc_id, facts=mock_facts(detected_output))
+        _, extracted = await extract(doc_id, body.text, detected_output, llm)
         return extracted
 
     @app.post("/v1/rewrite", response_model=RewriterOutput)

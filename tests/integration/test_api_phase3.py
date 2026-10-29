@@ -97,6 +97,21 @@ def test_single_stage_extract_and_rewrite(client: TestClient) -> None:
     assert out["safe_text"] and "07700 900123" not in out["safe_text"]
 
 
+def test_extract_uses_the_spans_it_is_given(client: TestClient) -> None:
+    """The dashboard sends Agent 1's spans, so Agent 1 does not run again with another result."""
+    spans = [
+        {
+            "text": "32 years old",
+            "category": "AGE",
+            "start": SAMPLE_TEXT.index("32 years old"),
+            "end": SAMPLE_TEXT.index("32 years old") + 12,
+            "method": "rule",
+        },
+    ]
+    facts = client.post("/v1/extract", json={"text": SAMPLE_TEXT, "spans": spans}).json()["facts"]
+    assert [(f["relation"], f["value"]) for f in facts] == [("age", "32 years old")]
+
+
 def test_sanitise_endpoint(client: TestClient) -> None:
     record = client.post("/v1/sanitise", json={"text": SAMPLE_TEXT}).json()
     assert "07700 900123" not in record["rewriter"]["safe_text"]

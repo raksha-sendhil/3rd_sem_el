@@ -112,7 +112,7 @@ export default function Documents() {
       const detected = await api.detect(text);
       const spans = detected.output.spans;
       setLive((l) => l && { ...l, spans, running: 2 });
-      const { facts } = await api.extract(detected.doc_id, text);
+      const { facts } = await api.extract(detected.doc_id, text, spans);
       setLive((l) => l && { ...l, facts, running: 3 });
       const rewriter = await api.rewrite(detected.doc_id, spans, facts);
       setLive((l) => l && { ...l, rewriter, running: null });

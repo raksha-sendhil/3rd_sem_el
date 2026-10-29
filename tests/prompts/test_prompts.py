@@ -201,3 +201,15 @@ def test_a_vague_phrase_replaces_the_whole_value_when_it_is_most_of_it() -> None
     user = rewrite_prompt.build_user_prompt(facts, decisions)
     assert "had procedure: a knee injury." in user  # not "repair of my a knee injury"
     assert "lives in: a farm a few kilometres outside a city in the region." in user
+
+
+def test_a_word_of_a_removed_place_left_in_a_fact_hides_the_whole_fact() -> None:
+    decisions = [
+        _decision(
+            "Lotus Hospital, Kalyani branch", PIICategory.LOCATION, Action.GENERALISE, "a hospital"
+        ),
+    ]
+    user = rewrite_prompt.build_user_prompt(
+        [_fact("writer", "treated_at", "Lotus Hospital, Kalyani")], decisions
+    )
+    assert "Kalyani" not in user and "treated at: a hospital." in user

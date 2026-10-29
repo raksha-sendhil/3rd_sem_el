@@ -69,8 +69,9 @@ export const api = {
   health: () => call<S["HealthResponse"]>("GET", "/v1/health"),
   // the three agents one at a time, so each one's output can be shown as it finishes
   detect: (text: string) => call<DetectorResult>("POST", "/v1/detect", { text }),
-  extract: (doc_id: string, text: string) =>
-    call<ExtractorOutput>("POST", "/v1/extract", { doc_id, text }),
+  // spans: Agent 1's result for this text, so Agent 1 does not run again with a different one
+  extract: (doc_id: string, text: string, spans?: SensitiveSpan[]) =>
+    call<ExtractorOutput>("POST", "/v1/extract", { doc_id, text, spans }),
   rewrite: (doc_id: string, spans: SensitiveSpan[], facts: FactTuple[]) =>
     call<RewriterOutput>("POST", "/v1/rewrite", { doc_id, spans, facts }),
   createSession: () => call<{ session_id: string }>("POST", "/v1/sessions", {}),

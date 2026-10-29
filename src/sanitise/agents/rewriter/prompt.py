@@ -25,7 +25,7 @@ import re
 
 from sanitise.agents.rewriter import leakcheck, ontology
 from sanitise.llm.base import LLMClient
-from sanitise.schemas import Action, FactTuple, RoutingDecision, SensitiveSpan
+from sanitise.schemas import Action, FactTuple, PIICategory, RoutingDecision, SensitiveSpan
 
 TOKEN = re.compile(r"\[[A-Z]+(?:_[A-Z]+)*(?:_\d+)?\]")
 IDENTIFYING = {"identifier", "contact"}
@@ -113,7 +113,32 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
         assert d.replacement is not None
         for pattern in leakcheck.leak_patterns(d.span_text, d.category):
             value = _outside_tokens(pattern, d, value)
+    for d in removed:
+        # last resort: a distinctive word of a removed name or place still in the value
+        # ("a hospital, Kengeri" when "Blossom Hospital, Kengeri branch" was removed) means the
+        # value is that detail in another form, so the whole value becomes its replacement
+        if d.category in _NAMED and _leftover(value, d.span_text):
+            assert d.replacement is not None
+            value = d.replacement
     return value
+
+
+_NAMED = {PIICategory.NAME, PIICategory.LOCATION, PIICategory.ADDRESS}
+_GENERIC_PLACE_WORDS = {
+    "hospital", "hospitals", "clinic", "clinics", "medical", "centre", "center", "health",
+    "road", "street", "lane", "avenue", "nagar", "branch", "school", "college", "university",
+    "apartments", "apartment", "flat", "house", "tower", "towers", "court", "block", "sector",
+    "phase", "main", "cross", "north", "south", "east", "west", "city", "town", "district",
+    "state", "the",
+}  # fmt: skip
+
+
+def _leftover(value: str, span_text: str) -> bool:
+    words = {w for w in re.findall(r"[A-Z][A-Za-z'-]{3,}", span_text)} - {
+        w.title() for w in _GENERIC_PLACE_WORDS
+    }
+    outside = TOKEN.sub(" ", value)
+    return any(re.search(rf"(?<![A-Za-z]){re.escape(w)}(?![A-Za-z])", outside) for w in words)
 
 
 def safe_facts(

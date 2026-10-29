@@ -65,6 +65,9 @@ class SanitiseRequest(BaseModel):
 class ExtractRequest(BaseModel):
     doc_id: str | None = None
     text: str
+    # Agent 1's spans for this text, from an earlier /v1/detect call. Without them Agent 1 runs
+    # again here, and its model pass may not find exactly the same spans the second time.
+    spans: list[SensitiveSpan] | None = None
 
 
 class RewriteRequest(BaseModel):
