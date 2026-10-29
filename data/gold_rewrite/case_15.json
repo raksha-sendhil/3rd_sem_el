@@ -1,0 +1,62 @@
+{
+  "doc_id": "40a1b2392d436f43",
+  "routing": [
+    {
+      "text": "Marta",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Samuel Ortega",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "natural gas scheduler",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Tulsa",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "1 August 2001",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "30 September 2001",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "multiple myeloma",
+      "category": "MEDICAL_CONDITION",
+      "action": "generalise"
+    },
+    {
+      "text": "51 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "His wife",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "918-555-0133",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "occupation + small desk location + rare cancer + exact leave dates",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

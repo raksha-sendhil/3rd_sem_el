@@ -1,0 +1,52 @@
+{
+  "doc_id": "1a01088134f2b25a",
+  "routing": [
+    {
+      "text": "My daughter",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "6 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "Greenfield Primary School",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Tiruppur",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "12 September 2023",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "dry cough",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "wheezing",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "asthma",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "child age + named school + small town + precise onset date",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

@@ -1,0 +1,82 @@
+{
+  "doc_id": "450e5e06086d05c3",
+  "original_sha256": "450e5e06086d05c3d15d757d538d1e657f0720c7a06bc2273febfc58cc2d4606",
+  "output": {
+    "doc_id": "450e5e06086d05c3",
+    "spans": [
+      {
+        "text": "POL-77-410398",
+        "category": "ID_NUMBER",
+        "start": 38,
+        "end": 51,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "LabelledIdRecognizer:labelled_id; UsLicenseRecognizer:US_DRIVER_LICENSE"
+      },
+      {
+        "text": "thyroid nodule",
+        "category": "MEDICAL_CONDITION",
+        "start": 86,
+        "end": 100,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "A named diagnosis for the writer."
+      },
+      {
+        "text": "18 April 2024",
+        "category": "DATE",
+        "start": 120,
+        "end": 133,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "41 years old",
+        "category": "AGE",
+        "start": 192,
+        "end": 204,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "school librarian",
+        "category": "OCCUPATION",
+        "start": 219,
+        "end": 235,
+        "method": "rule",
+        "confidence": 0.75,
+        "rationale": "OccupationRecognizer:works_as"
+      },
+      {
+        "text": "My mother",
+        "category": "RELATION",
+        "start": 237,
+        "end": 246,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "thyroid nodule + family history (thyroid cancer at same age) + specific age (41)",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people at this age have a thyroid nodule, and those with a family history are even more likely to be identified."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 30,
+    "llm_ms": 3285,
+    "total_ms": 3315,
+    "retries": 0,
+    "rule_span_count": 5,
+    "llm_span_count": 3
+  }
+}

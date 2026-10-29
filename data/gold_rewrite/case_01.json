@@ -1,0 +1,52 @@
+{
+  "doc_id": "9e7d0526c06f871c",
+  "routing": [
+    {
+      "text": "Priya Raman",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "34 year old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "pediatric neurosurgeon",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Coonoor",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "vertigo",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "ringing in my left ear",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "My sister",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "+91 98450 12345",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "rare occupation (pediatric neurosurgeon) + small town (Coonoor) + vertigo",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

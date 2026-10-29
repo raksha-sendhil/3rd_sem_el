@@ -1,0 +1,50 @@
+{
+  "doc_id": "0967c7b852363ecf",
+  "text": "Doctor, my wife is 92 years old and was diagnosed with atrial fibrillation last month at St. Thomas Hospital. She is forgetful and refuses to take the blood thinner. We live alone on a farm outside Ooty. How can I make sure she takes the tablets?",
+  "spans": [
+    {
+      "text": "my wife",
+      "category": "RELATION",
+      "start": 8,
+      "end": 15
+    },
+    {
+      "text": "92 years old",
+      "category": "AGE",
+      "start": 19,
+      "end": 31
+    },
+    {
+      "text": "atrial fibrillation",
+      "category": "MEDICAL_CONDITION",
+      "start": 55,
+      "end": 74
+    },
+    {
+      "text": "St. Thomas Hospital",
+      "category": "LOCATION",
+      "start": 89,
+      "end": 108
+    },
+    {
+      "text": "forgetful",
+      "category": "SYMPTOM",
+      "start": 117,
+      "end": 126
+    },
+    {
+      "text": "Ooty",
+      "category": "LOCATION",
+      "start": 198,
+      "end": 202
+    },
+    {
+      "text": "extreme age (92) + diagnosis + named hospital + small-town residence",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

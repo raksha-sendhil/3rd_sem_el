@@ -1,0 +1,62 @@
+{
+  "doc_id": "1a01088134f2b25a",
+  "text": "Hello doctor. My daughter is 6 years old and attends Greenfield Primary School in Tiruppur. Since 12 September 2023 she has had a dry cough at night and wheezing after games class. A classmate was diagnosed with asthma last year. Should I give her a cough syrup or see a pediatrician?",
+  "spans": [
+    {
+      "text": "My daughter",
+      "category": "RELATION",
+      "start": 14,
+      "end": 25
+    },
+    {
+      "text": "6 years old",
+      "category": "AGE",
+      "start": 29,
+      "end": 40
+    },
+    {
+      "text": "Greenfield Primary School",
+      "category": "LOCATION",
+      "start": 53,
+      "end": 78
+    },
+    {
+      "text": "Tiruppur",
+      "category": "LOCATION",
+      "start": 82,
+      "end": 90
+    },
+    {
+      "text": "12 September 2023",
+      "category": "DATE",
+      "start": 98,
+      "end": 115
+    },
+    {
+      "text": "dry cough",
+      "category": "SYMPTOM",
+      "start": 130,
+      "end": 139
+    },
+    {
+      "text": "wheezing",
+      "category": "SYMPTOM",
+      "start": 153,
+      "end": 161
+    },
+    {
+      "text": "asthma",
+      "category": "MEDICAL_CONDITION",
+      "start": 212,
+      "end": 218
+    },
+    {
+      "text": "child age + named school + small town + precise onset date",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

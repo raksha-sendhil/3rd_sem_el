@@ -1,0 +1,52 @@
+{
+  "doc_id": "aee7058d1e06c7da",
+  "routing": [
+    {
+      "text": "Marta",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Kevin Oyelaran",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "E-40871",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Portland",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Houston",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "15 June 2000",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "2210 Bagby Street, Apt 12, Houston, TX 77006",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "713-555-0199",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "Helen Park",
+      "category": "NAME",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

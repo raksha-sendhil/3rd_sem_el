@@ -1,0 +1,47 @@
+{
+  "doc_id": "093017d395c09268",
+  "routing": [
+    {
+      "text": "20 year old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "undergraduate student",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "IIT Madras",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "5 October 2024",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "palpitations",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "supraventricular tachycardia",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "national-level fencer",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "niche athletic occupation (national-level fencer) + named institution + cardiac arrhythmia",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

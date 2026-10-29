@@ -1,0 +1,50 @@
+{
+  "doc_id": "450e5e06086d05c3",
+  "text": "Doctor, my insurance policy number is POL-77-410398 and I need a second opinion on my thyroid nodule. The ultrasound on 18 April 2024 showed a nodule of 1.8 cm and the biopsy is pending. I am 41 years old and work as a school librarian. My mother had thyroid cancer at the same age. Should I worry?",
+  "spans": [
+    {
+      "text": "POL-77-410398",
+      "category": "ID_NUMBER",
+      "start": 38,
+      "end": 51
+    },
+    {
+      "text": "thyroid nodule",
+      "category": "MEDICAL_CONDITION",
+      "start": 86,
+      "end": 100
+    },
+    {
+      "text": "18 April 2024",
+      "category": "DATE",
+      "start": 120,
+      "end": 133
+    },
+    {
+      "text": "41 years old",
+      "category": "AGE",
+      "start": 192,
+      "end": 204
+    },
+    {
+      "text": "school librarian",
+      "category": "OCCUPATION",
+      "start": 219,
+      "end": 235
+    },
+    {
+      "text": "My mother",
+      "category": "RELATION",
+      "start": 237,
+      "end": 246
+    },
+    {
+      "text": "thyroid cancer",
+      "category": "MEDICAL_CONDITION",
+      "start": 251,
+      "end": 265
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

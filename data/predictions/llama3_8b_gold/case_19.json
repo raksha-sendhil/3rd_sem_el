@@ -1,0 +1,50 @@
+{
+  "doc_id": "093017d395c09268",
+  "text": "Hi doctor, I am a 20 year old undergraduate student at IIT Madras. Since 5 October 2024 I have had palpitations, and a Holter test last week showed supraventricular tachycardia. I train as a national-level fencer and follow a strict diet. Is it safe to keep competing?",
+  "spans": [
+    {
+      "text": "20 year old",
+      "category": "AGE",
+      "start": 18,
+      "end": 29
+    },
+    {
+      "text": "undergraduate student",
+      "category": "OCCUPATION",
+      "start": 30,
+      "end": 51
+    },
+    {
+      "text": "IIT Madras",
+      "category": "LOCATION",
+      "start": 55,
+      "end": 65
+    },
+    {
+      "text": "5 October 2024",
+      "category": "DATE",
+      "start": 73,
+      "end": 87
+    },
+    {
+      "text": "supraventricular tachycardia",
+      "category": "MEDICAL_CONDITION",
+      "start": 148,
+      "end": 176
+    },
+    {
+      "text": "national-level fencer",
+      "category": "OCCUPATION",
+      "start": 191,
+      "end": 212
+    },
+    {
+      "text": "niche athletic occupation (national-level fencer) + named institution + cardiac arrhythmia",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

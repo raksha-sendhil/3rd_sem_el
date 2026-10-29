@@ -1,0 +1,45 @@
+{
+  "doc_id": "37106b20ca3ec97e",
+  "name": "e05",
+  "text": "Mark,\n\nPer our conversation, the ISDA with Morgan Stanley is signed. Contract no. 96012345 has been booked. Sara Shackleton (713-853-5620) in Legal has the originals. My new home address is 2207 Bellefontaine St, Houston, TX 77025 in case you need to courier anything.\n\nTana",
+  "spans": [
+    {
+      "text": "Mark",
+      "category": "NAME",
+      "start": 0,
+      "end": 4
+    },
+    {
+      "text": "96012345",
+      "category": "ID_NUMBER",
+      "start": 82,
+      "end": 90
+    },
+    {
+      "text": "Sara Shackleton",
+      "category": "NAME",
+      "start": 108,
+      "end": 123
+    },
+    {
+      "text": "713-853-5620",
+      "category": "PHONE",
+      "start": 125,
+      "end": 137
+    },
+    {
+      "text": "2207 Bellefontaine St, Houston, TX 77025",
+      "category": "ADDRESS",
+      "start": 190,
+      "end": 230
+    },
+    {
+      "text": "Tana",
+      "category": "NAME",
+      "start": 270,
+      "end": 274
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

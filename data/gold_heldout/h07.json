@@ -1,0 +1,81 @@
+{
+  "doc_id": "f21ea2c0c79c8f4e",
+  "name": "h07",
+  "text": "From: Sherri Sera\nSent: Tuesday, April 17, 2001 9:04 AM\nTo: Rosalee Fleming\n\nRosalee,\n\nKen would like to meet with Andy Fastow on Thursday at 3:00. Please call me at 713-853-5984 or on my cell 281-830-2347.\n\nSherri Sera\nAssistant to Jeff Skilling",
+  "spans": [
+    {
+      "text": "Sherri Sera",
+      "category": "NAME",
+      "start": 6,
+      "end": 17
+    },
+    {
+      "text": "Tuesday, April 17, 2001 9:04 AM",
+      "category": "DATE",
+      "start": 24,
+      "end": 55
+    },
+    {
+      "text": "Rosalee Fleming",
+      "category": "NAME",
+      "start": 60,
+      "end": 75
+    },
+    {
+      "text": "Rosalee",
+      "category": "NAME",
+      "start": 77,
+      "end": 84
+    },
+    {
+      "text": "Ken",
+      "category": "NAME",
+      "start": 87,
+      "end": 90
+    },
+    {
+      "text": "Andy Fastow",
+      "category": "NAME",
+      "start": 115,
+      "end": 126
+    },
+    {
+      "text": "Thursday",
+      "category": "DATE",
+      "start": 130,
+      "end": 138
+    },
+    {
+      "text": "713-853-5984",
+      "category": "PHONE",
+      "start": 166,
+      "end": 178
+    },
+    {
+      "text": "281-830-2347",
+      "category": "PHONE",
+      "start": 193,
+      "end": 205
+    },
+    {
+      "text": "Sherri Sera",
+      "category": "NAME",
+      "start": 208,
+      "end": 219
+    },
+    {
+      "text": "Assistant",
+      "category": "OCCUPATION",
+      "start": 220,
+      "end": 229
+    },
+    {
+      "text": "Jeff Skilling",
+      "category": "NAME",
+      "start": 233,
+      "end": 246
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

@@ -1,0 +1,12 @@
+{
+  "doc_id": "035af4e1c80cb6e7",
+  "routing": [
+    {
+      "text": "headache",
+      "category": "SYMPTOM",
+      "action": "keep"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

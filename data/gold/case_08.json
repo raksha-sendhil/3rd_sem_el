@@ -1,0 +1,68 @@
+{
+  "doc_id": "457edfd299f49463",
+  "text": "Hi doctor. I am 29 years old and I delivered my baby on 21 January 2024 at Fortis Hospital, Mulund by emergency C-section. Since 2 February 2024 I have had fever and a red, swollen stitch line. My husband says it is normal but I am worried. I work as a radiographer so I know infection can be serious. Should I go to emergency?",
+  "spans": [
+    {
+      "text": "29 years old",
+      "category": "AGE",
+      "start": 16,
+      "end": 28
+    },
+    {
+      "text": "my baby",
+      "category": "RELATION",
+      "start": 45,
+      "end": 52
+    },
+    {
+      "text": "21 January 2024",
+      "category": "DATE",
+      "start": 56,
+      "end": 71
+    },
+    {
+      "text": "Fortis Hospital, Mulund",
+      "category": "LOCATION",
+      "start": 75,
+      "end": 98
+    },
+    {
+      "text": "2 February 2024",
+      "category": "DATE",
+      "start": 129,
+      "end": 144
+    },
+    {
+      "text": "fever",
+      "category": "SYMPTOM",
+      "start": 156,
+      "end": 161
+    },
+    {
+      "text": "red, swollen stitch line",
+      "category": "SYMPTOM",
+      "start": 168,
+      "end": 192
+    },
+    {
+      "text": "My husband",
+      "category": "RELATION",
+      "start": 194,
+      "end": 204
+    },
+    {
+      "text": "radiographer",
+      "category": "OCCUPATION",
+      "start": 253,
+      "end": 265
+    },
+    {
+      "text": "precise delivery date + named hospital + age",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

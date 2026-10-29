@@ -1,0 +1,56 @@
+{
+  "doc_id": "8043ce091d7fe3fb",
+  "text": "My husband is 63 years old and was diagnosed with amyloidosis on 7 November 2023 at AIIMS Delhi. He used to work as a tea taster in Darjeeling. He has lost his sense of taste and has swelling of the tongue. Is there a connection with his job?",
+  "spans": [
+    {
+      "text": "My husband",
+      "category": "RELATION",
+      "start": 0,
+      "end": 10
+    },
+    {
+      "text": "63 years old",
+      "category": "AGE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "amyloidosis",
+      "category": "MEDICAL_CONDITION",
+      "start": 50,
+      "end": 61
+    },
+    {
+      "text": "7 November 2023",
+      "category": "DATE",
+      "start": 65,
+      "end": 80
+    },
+    {
+      "text": "AIIMS Delhi",
+      "category": "LOCATION",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "tea taster",
+      "category": "OCCUPATION",
+      "start": 118,
+      "end": 128
+    },
+    {
+      "text": "Darjeeling",
+      "category": "LOCATION",
+      "start": 132,
+      "end": 142
+    },
+    {
+      "text": "rare occupation (tea taster) + rare condition (amyloidosis) + small-city location",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": "C"
+}

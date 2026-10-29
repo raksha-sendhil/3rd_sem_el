@@ -1,0 +1,69 @@
+{
+  "doc_id": "6091793aeb03e697",
+  "name": "h06",
+  "text": "Hi, I'm a 52 y/o male, 6 feet tall and 250 pounds, working as a chef in a busy restaurant in Chicago. I had a gout attack on Christmas Eve. My brother Steve has the same problem. My doctor is Dr. Laura Kim at Northwestern Memorial Hospital.",
+  "spans": [
+    {
+      "text": "52 y/o",
+      "category": "AGE",
+      "start": 10,
+      "end": 16
+    },
+    {
+      "text": "6 feet",
+      "category": "PHYSICAL",
+      "start": 23,
+      "end": 29
+    },
+    {
+      "text": "250 pounds",
+      "category": "PHYSICAL",
+      "start": 39,
+      "end": 49
+    },
+    {
+      "text": "chef",
+      "category": "OCCUPATION",
+      "start": 64,
+      "end": 68
+    },
+    {
+      "text": "Chicago",
+      "category": "LOCATION",
+      "start": 93,
+      "end": 100
+    },
+    {
+      "text": "Christmas Eve",
+      "category": "DATE",
+      "start": 125,
+      "end": 138
+    },
+    {
+      "text": "My brother",
+      "category": "RELATION",
+      "start": 140,
+      "end": 150
+    },
+    {
+      "text": "Steve",
+      "category": "NAME",
+      "start": 151,
+      "end": 156
+    },
+    {
+      "text": "Laura Kim",
+      "category": "NAME",
+      "start": 196,
+      "end": 205
+    },
+    {
+      "text": "Northwestern Memorial Hospital",
+      "category": "LOCATION",
+      "start": 209,
+      "end": 239
+    }
+  ],
+  "annotator": "claude-draft",
+  "reviewed_by": null
+}

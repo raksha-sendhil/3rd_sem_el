@@ -1,0 +1,118 @@
+{
+  "doc_id": "40a1b2392d436f43",
+  "original_sha256": "40a1b2392d436f43b034ef53840992b4f341e710640979ae73dbf5a864918b07",
+  "output": {
+    "doc_id": "40a1b2392d436f43",
+    "spans": [
+      {
+        "text": "Marta",
+        "category": "NAME",
+        "start": 24,
+        "end": 29,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "Samuel Ortega",
+        "category": "NAME",
+        "start": 31,
+        "end": 44,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:PERSON"
+      },
+      {
+        "text": "natural gas scheduler",
+        "category": "OCCUPATION",
+        "start": 48,
+        "end": 69,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The person's job, a specific role."
+      },
+      {
+        "text": "Tulsa desk",
+        "category": "LOCATION",
+        "start": 77,
+        "end": 87,
+        "method": "rule",
+        "confidence": 1.0,
+        "rationale": "A specific location within the city.; SpacyRecognizer:LOCATION"
+      },
+      {
+        "text": "1 August 2001",
+        "category": "DATE",
+        "start": 119,
+        "end": 132,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "30 September 2001",
+        "category": "DATE",
+        "start": 136,
+        "end": 153,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "SpacyRecognizer:DATE_TIME"
+      },
+      {
+        "text": "multiple myeloma",
+        "category": "MEDICAL_CONDITION",
+        "start": 171,
+        "end": 187,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "The named diagnosis for the person."
+      },
+      {
+        "text": "51 years old",
+        "category": "AGE",
+        "start": 195,
+        "end": 207,
+        "method": "rule",
+        "confidence": 0.9,
+        "rationale": "AgeRecognizer:n_units_old"
+      },
+      {
+        "text": "His wife",
+        "category": "RELATION",
+        "start": 209,
+        "end": 217,
+        "method": "rule",
+        "confidence": 0.85,
+        "rationale": "RelationRecognizer:possessive_relative"
+      },
+      {
+        "text": "918-555-0133",
+        "category": "PHONE",
+        "start": 239,
+        "end": 251,
+        "method": "rule",
+        "confidence": 0.4,
+        "rationale": "PhoneRecognizer:PHONE_NUMBER"
+      },
+      {
+        "text": "rare occupation (natural gas scheduler) + specific location (Tulsa) + rare medical condition (multiple myeloma)",
+        "category": "QUASI_COMBO",
+        "start": null,
+        "end": null,
+        "method": "llm",
+        "confidence": 1.0,
+        "rationale": "Few people in Tulsa have this occupation and diagnosis, so together these details narrow down the candidate pool."
+      }
+    ]
+  },
+  "meta": {
+    "model": "llama3:8b",
+    "pipeline_version": "0.1.0",
+    "rule_ms": 30,
+    "llm_ms": 3919,
+    "total_ms": 3950,
+    "retries": 0,
+    "rule_span_count": 8,
+    "llm_span_count": 4
+  }
+}

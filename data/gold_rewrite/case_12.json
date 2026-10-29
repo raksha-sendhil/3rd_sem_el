@@ -1,0 +1,47 @@
+{
+  "doc_id": "021c22f3e51c350a",
+  "routing": [
+    {
+      "text": "Daniel Whitcomb",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Tuesday, October 9, 2001",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Laura Fenn",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Laura",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "(415) 555-0142",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "daniel.whitcomb@example-energy.com",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "1400 Smith Street, Houston, TX 77002",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "Daniel",
+      "category": "NAME",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

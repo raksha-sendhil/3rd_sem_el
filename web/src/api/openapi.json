@@ -1,0 +1,1911 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "sanitise - Agent 1: Sensitive Information Detector",
+  "version": "0.1.0"
+ },
+ "paths": {
+  "/v1/detect": {
+   "post": {
+    "summary": "Post Detect",
+    "operationId": "post_detect_v1_detect_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/DetectRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/DetectorResult"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/detect/rules": {
+   "post": {
+    "summary": "Post Detect Rules",
+    "operationId": "post_detect_rules_v1_detect_rules_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/DetectRulesRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/DetectorOutput"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/detect/llm": {
+   "post": {
+    "summary": "Post Detect Llm",
+    "operationId": "post_detect_llm_v1_detect_llm_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/DetectLLMRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/DetectorOutput"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/score": {
+   "post": {
+    "summary": "Post Score",
+    "operationId": "post_score_v1_score_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/ScoreRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SpanMetrics"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/sanitise": {
+   "post": {
+    "summary": "Post Sanitise",
+    "operationId": "post_sanitise_v1_sanitise_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/SanitiseRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SanitisedRecord"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/extract": {
+   "post": {
+    "summary": "Post Extract",
+    "description": "Agent 2 alone. It needs Agent 1's spans to find the subjects, so Agent 1 runs first.",
+    "operationId": "post_extract_v1_extract_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/ExtractRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ExtractorOutput"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/rewrite": {
+   "post": {
+    "summary": "Post Rewrite",
+    "operationId": "post_rewrite_v1_rewrite_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RewriteRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RewriterOutput"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/documents": {
+   "get": {
+    "summary": "Get Documents",
+    "operationId": "get_documents_v1_documents_get",
+    "parameters": [
+     {
+      "name": "limit",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "default": 50,
+       "title": "Limit"
+      }
+     },
+     {
+      "name": "offset",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "type": "integer",
+       "default": 0,
+       "title": "Offset"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "array",
+         "items": {
+          "$ref": "#/components/schemas/DocumentSummary"
+         },
+         "title": "Response Get Documents V1 Documents Get"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/documents/{doc_id}": {
+   "get": {
+    "summary": "Get Document",
+    "operationId": "get_document_v1_documents__doc_id__get",
+    "parameters": [
+     {
+      "name": "doc_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Doc Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/DocumentView"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/sessions": {
+   "post": {
+    "summary": "Post Session",
+    "operationId": "post_session_v1_sessions_post",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SessionCreated"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/sessions/{session_id}": {
+   "get": {
+    "summary": "Get Session",
+    "operationId": "get_session_v1_sessions__session_id__get",
+    "parameters": [
+     {
+      "name": "session_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Session Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SessionTrace"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/query": {
+   "post": {
+    "summary": "Post Query",
+    "operationId": "post_query_v1_query_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/QueryRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RagAnswer"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/compare": {
+   "post": {
+    "summary": "Post Compare",
+    "operationId": "post_compare_v1_compare_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/CompareRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/CompareResponse"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/attacks": {
+   "get": {
+    "summary": "Get Attacks",
+    "operationId": "get_attacks_v1_attacks_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "items": {
+          "$ref": "#/components/schemas/AttackDefinition"
+         },
+         "type": "array",
+         "title": "Response Get Attacks V1 Attacks Get"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/attacks/{attack_id}/run": {
+   "post": {
+    "summary": "Post Attack Run",
+    "operationId": "post_attack_run_v1_attacks__attack_id__run_post",
+    "parameters": [
+     {
+      "name": "attack_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Attack Id"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "anyOf": [
+         {
+          "$ref": "#/components/schemas/AttackRunRequest"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Body"
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/AttackRun"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/attacks/{attack_id}/stream": {
+   "get": {
+    "summary": "Get Attack Stream",
+    "description": "Server-Sent Events: one ``round`` event per finished round, then ``done`` with the\nfull ``AttackRun`` (or ``error`` with the error envelope).",
+    "operationId": "get_attack_stream_v1_attacks__attack_id__stream_get",
+    "parameters": [
+     {
+      "name": "attack_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Attack Id"
+      }
+     },
+     {
+      "name": "session_id",
+      "in": "query",
+      "required": false,
+      "schema": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "null"
+        }
+       ],
+       "title": "Session Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/health": {
+   "get": {
+    "summary": "Get Health",
+    "operationId": "get_health_v1_health_get",
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HealthResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "schemas": {
+   "Action": {
+    "type": "string",
+    "enum": [
+     "placeholder",
+     "generalise",
+     "keep"
+    ],
+    "title": "Action"
+   },
+   "AttackDefinition": {
+    "properties": {
+     "attack_id": {
+      "type": "string",
+      "title": "Attack Id"
+     },
+     "kind": {
+      "type": "string",
+      "enum": [
+       "context_dump",
+       "stepwise",
+       "interception"
+      ],
+      "title": "Kind"
+     },
+     "name": {
+      "type": "string",
+      "title": "Name"
+     },
+     "target_person_id": {
+      "type": "string",
+      "title": "Target Person Id"
+     },
+     "queries": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "minItems": 1,
+      "title": "Queries"
+     }
+    },
+    "type": "object",
+    "required": [
+     "attack_id",
+     "kind",
+     "name",
+     "target_person_id",
+     "queries"
+    ],
+    "title": "AttackDefinition",
+    "description": "One file in data/attacks/ (plan 6.3)."
+   },
+   "AttackRound": {
+    "properties": {
+     "round": {
+      "type": "integer",
+      "title": "Round"
+     },
+     "query": {
+      "type": "string",
+      "title": "Query"
+     },
+     "baseline": {
+      "$ref": "#/components/schemas/RagAnswer"
+     },
+     "protected": {
+      "$ref": "#/components/schemas/RagAnswer"
+     },
+     "baseline_leakage": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/RoundLeakage"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "protected_leakage": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/RoundLeakage"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    "type": "object",
+    "required": [
+     "round",
+     "query",
+     "baseline",
+     "protected"
+    ],
+    "title": "AttackRound"
+   },
+   "AttackRun": {
+    "properties": {
+     "attack_id": {
+      "type": "string",
+      "title": "Attack Id"
+     },
+     "session_id": {
+      "type": "string",
+      "title": "Session Id"
+     },
+     "rounds": {
+      "items": {
+       "$ref": "#/components/schemas/AttackRound"
+      },
+      "type": "array",
+      "title": "Rounds"
+     },
+     "baseline_identified_at": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Baseline Identified At"
+     },
+     "protected_identified_at": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Protected Identified At"
+     }
+    },
+    "type": "object",
+    "required": [
+     "attack_id",
+     "session_id",
+     "rounds"
+    ],
+    "title": "AttackRun"
+   },
+   "AttackRunRequest": {
+    "properties": {
+     "session_id": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Session Id"
+     }
+    },
+    "type": "object",
+    "title": "AttackRunRequest"
+   },
+   "CompareRequest": {
+    "properties": {
+     "query": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Query"
+     },
+     "session_id": {
+      "type": "string",
+      "title": "Session Id"
+     },
+     "k": {
+      "anyOf": [
+       {
+        "type": "integer",
+        "maximum": 20.0,
+        "minimum": 1.0
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "K"
+     }
+    },
+    "type": "object",
+    "required": [
+     "query",
+     "session_id"
+    ],
+    "title": "CompareRequest"
+   },
+   "CompareResponse": {
+    "properties": {
+     "baseline": {
+      "$ref": "#/components/schemas/RagAnswer"
+     },
+     "protected": {
+      "$ref": "#/components/schemas/RagAnswer"
+     }
+    },
+    "type": "object",
+    "required": [
+     "baseline",
+     "protected"
+    ],
+    "title": "CompareResponse"
+   },
+   "DetectLLMRequest": {
+    "properties": {
+     "doc_id": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Doc Id"
+     },
+     "text": {
+      "type": "string",
+      "title": "Text"
+     },
+     "explicit": {
+      "items": {
+       "$ref": "#/components/schemas/SensitiveSpan"
+      },
+      "type": "array",
+      "title": "Explicit"
+     }
+    },
+    "type": "object",
+    "required": [
+     "text"
+    ],
+    "title": "DetectLLMRequest"
+   },
+   "DetectOptions": {
+    "properties": {
+     "llm": {
+      "type": "boolean",
+      "title": "Llm",
+      "description": "Run the LLM pass. False = rule pass only, meta.model='none'.",
+      "default": true
+     },
+     "model": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Model",
+      "description": "Override the Ollama model for this request."
+     },
+     "retries": {
+      "anyOf": [
+       {
+        "type": "integer",
+        "maximum": 10.0,
+        "minimum": 0.0
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Retries",
+      "description": "Override the repair-loop retry budget."
+     }
+    },
+    "type": "object",
+    "title": "DetectOptions"
+   },
+   "DetectRequest": {
+    "properties": {
+     "doc_id": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Doc Id"
+     },
+     "text": {
+      "type": "string",
+      "title": "Text"
+     },
+     "options": {
+      "$ref": "#/components/schemas/DetectOptions"
+     }
+    },
+    "type": "object",
+    "required": [
+     "text"
+    ],
+    "title": "DetectRequest"
+   },
+   "DetectRulesRequest": {
+    "properties": {
+     "doc_id": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Doc Id"
+     },
+     "text": {
+      "type": "string",
+      "title": "Text"
+     }
+    },
+    "type": "object",
+    "required": [
+     "text"
+    ],
+    "title": "DetectRulesRequest"
+   },
+   "DetectorMeta": {
+    "properties": {
+     "model": {
+      "type": "string",
+      "title": "Model"
+     },
+     "pipeline_version": {
+      "type": "string",
+      "title": "Pipeline Version",
+      "default": "0.1.0"
+     },
+     "rule_ms": {
+      "type": "integer",
+      "title": "Rule Ms"
+     },
+     "llm_ms": {
+      "type": "integer",
+      "title": "Llm Ms"
+     },
+     "total_ms": {
+      "type": "integer",
+      "title": "Total Ms"
+     },
+     "retries": {
+      "type": "integer",
+      "title": "Retries"
+     },
+     "rule_span_count": {
+      "type": "integer",
+      "title": "Rule Span Count"
+     },
+     "llm_span_count": {
+      "type": "integer",
+      "title": "Llm Span Count"
+     }
+    },
+    "type": "object",
+    "required": [
+     "model",
+     "rule_ms",
+     "llm_ms",
+     "total_ms",
+     "retries",
+     "rule_span_count",
+     "llm_span_count"
+    ],
+    "title": "DetectorMeta"
+   },
+   "DetectorOutput": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "spans": {
+      "items": {
+       "$ref": "#/components/schemas/SensitiveSpan"
+      },
+      "type": "array",
+      "title": "Spans"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "spans"
+    ],
+    "title": "DetectorOutput"
+   },
+   "DetectorResult": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "original_sha256": {
+      "type": "string",
+      "title": "Original Sha256"
+     },
+     "output": {
+      "$ref": "#/components/schemas/DetectorOutput"
+     },
+     "meta": {
+      "$ref": "#/components/schemas/DetectorMeta"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "original_sha256",
+     "output",
+     "meta"
+    ],
+    "title": "DetectorResult"
+   },
+   "DocumentSummary": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "preview": {
+      "type": "string",
+      "title": "Preview"
+     },
+     "n_changes": {
+      "type": "integer",
+      "title": "N Changes"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "preview",
+     "n_changes"
+    ],
+    "title": "DocumentSummary"
+   },
+   "DocumentView": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "original": {
+      "type": "string",
+      "title": "Original"
+     },
+     "record": {
+      "$ref": "#/components/schemas/SanitisedRecord"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "original",
+     "record"
+    ],
+    "title": "DocumentView"
+   },
+   "ExtractRequest": {
+    "properties": {
+     "doc_id": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Doc Id"
+     },
+     "text": {
+      "type": "string",
+      "title": "Text"
+     }
+    },
+    "type": "object",
+    "required": [
+     "text"
+    ],
+    "title": "ExtractRequest"
+   },
+   "ExtractorOutput": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "facts": {
+      "items": {
+       "$ref": "#/components/schemas/FactTuple"
+      },
+      "type": "array",
+      "title": "Facts"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "facts"
+    ],
+    "title": "ExtractorOutput"
+   },
+   "FactTuple": {
+    "properties": {
+     "subject": {
+      "type": "string",
+      "title": "Subject"
+     },
+     "relation": {
+      "type": "string",
+      "title": "Relation"
+     },
+     "value": {
+      "type": "string",
+      "title": "Value"
+     },
+     "importance": {
+      "$ref": "#/components/schemas/Importance"
+     }
+    },
+    "type": "object",
+    "required": [
+     "subject",
+     "relation",
+     "value",
+     "importance"
+    ],
+    "title": "FactTuple"
+   },
+   "HTTPValidationError": {
+    "properties": {
+     "detail": {
+      "items": {
+       "$ref": "#/components/schemas/ValidationError"
+      },
+      "type": "array",
+      "title": "Detail"
+     }
+    },
+    "type": "object",
+    "title": "HTTPValidationError"
+   },
+   "HealthResponse": {
+    "properties": {
+     "status": {
+      "type": "string",
+      "enum": [
+       "ok",
+       "degraded"
+      ],
+      "title": "Status"
+     },
+     "ollama_reachable": {
+      "type": "boolean",
+      "title": "Ollama Reachable"
+     },
+     "model": {
+      "type": "string",
+      "title": "Model"
+     },
+     "pipeline_version": {
+      "type": "string",
+      "title": "Pipeline Version"
+     }
+    },
+    "type": "object",
+    "required": [
+     "status",
+     "ollama_reachable",
+     "model",
+     "pipeline_version"
+    ],
+    "title": "HealthResponse"
+   },
+   "Importance": {
+    "type": "string",
+    "enum": [
+     "high",
+     "medium",
+     "low"
+    ],
+    "title": "Importance"
+   },
+   "MonitorVerdict": {
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "allowed",
+       "generalised",
+       "blocked"
+      ],
+      "title": "Verdict",
+      "default": "allowed"
+     },
+     "candidate_pool": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Candidate Pool"
+     },
+     "disclosed": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Disclosed"
+     },
+     "reason": {
+      "type": "string",
+      "title": "Reason",
+      "default": "no monitor installed"
+     }
+    },
+    "type": "object",
+    "title": "MonitorVerdict",
+    "description": "The session monitor's decision. The Phase 3a stub always allows."
+   },
+   "PIICategory": {
+    "type": "string",
+    "enum": [
+     "NAME",
+     "AGE",
+     "DATE",
+     "PHONE",
+     "EMAIL",
+     "ID_NUMBER",
+     "ADDRESS",
+     "LOCATION",
+     "OCCUPATION",
+     "RELATION",
+     "PHYSICAL",
+     "MEDICAL_CONDITION",
+     "SYMPTOM",
+     "QUASI_COMBO",
+     "OTHER"
+    ],
+    "title": "PIICategory"
+   },
+   "QueryRequest": {
+    "properties": {
+     "query": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Query"
+     },
+     "pipeline": {
+      "type": "string",
+      "enum": [
+       "baseline",
+       "protected"
+      ],
+      "title": "Pipeline"
+     },
+     "session_id": {
+      "type": "string",
+      "title": "Session Id"
+     },
+     "k": {
+      "anyOf": [
+       {
+        "type": "integer",
+        "maximum": 20.0,
+        "minimum": 1.0
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "K"
+     }
+    },
+    "type": "object",
+    "required": [
+     "query",
+     "pipeline",
+     "session_id"
+    ],
+    "title": "QueryRequest"
+   },
+   "RagAnswer": {
+    "properties": {
+     "pipeline": {
+      "type": "string",
+      "enum": [
+       "baseline",
+       "protected"
+      ],
+      "title": "Pipeline"
+     },
+     "query": {
+      "type": "string",
+      "title": "Query"
+     },
+     "answer": {
+      "type": "string",
+      "title": "Answer"
+     },
+     "doc_ids": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Doc Ids"
+     },
+     "payload": {
+      "type": "string",
+      "title": "Payload"
+     },
+     "monitor": {
+      "$ref": "#/components/schemas/MonitorVerdict"
+     },
+     "latency_ms": {
+      "type": "integer",
+      "title": "Latency Ms"
+     }
+    },
+    "type": "object",
+    "required": [
+     "pipeline",
+     "query",
+     "answer",
+     "doc_ids",
+     "payload",
+     "latency_ms"
+    ],
+    "title": "RagAnswer"
+   },
+   "RewriteRequest": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "spans": {
+      "items": {
+       "$ref": "#/components/schemas/SensitiveSpan"
+      },
+      "type": "array",
+      "title": "Spans"
+     },
+     "facts": {
+      "items": {
+       "$ref": "#/components/schemas/FactTuple"
+      },
+      "type": "array",
+      "title": "Facts"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "spans",
+     "facts"
+    ],
+    "title": "RewriteRequest",
+    "description": "Agent 3 alone (Phase 2 spec 10.3): spans and facts in, no raw text."
+   },
+   "RewriterOutput": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "safe_text": {
+      "type": "string",
+      "title": "Safe Text"
+     },
+     "decisions": {
+      "items": {
+       "$ref": "#/components/schemas/RoutingDecision"
+      },
+      "type": "array",
+      "title": "Decisions"
+     },
+     "placeholders": {
+      "additionalProperties": {
+       "type": "string"
+      },
+      "type": "object",
+      "title": "Placeholders"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "safe_text",
+     "decisions",
+     "placeholders"
+    ],
+    "title": "RewriterOutput"
+   },
+   "RoundLeakage": {
+    "properties": {
+     "disclosed": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Disclosed"
+     },
+     "candidate_pool": {
+      "type": "integer",
+      "title": "Candidate Pool"
+     },
+     "identified": {
+      "type": "boolean",
+      "title": "Identified"
+     },
+     "recovery_rate": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Recovery Rate",
+      "default": 0.0
+     }
+    },
+    "type": "object",
+    "required": [
+     "disclosed",
+     "candidate_pool",
+     "identified"
+    ],
+    "title": "RoundLeakage"
+   },
+   "RoutingDecision": {
+    "properties": {
+     "span_text": {
+      "type": "string",
+      "title": "Span Text"
+     },
+     "category": {
+      "$ref": "#/components/schemas/PIICategory"
+     },
+     "action": {
+      "$ref": "#/components/schemas/Action"
+     },
+     "replacement": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Replacement"
+     },
+     "reason": {
+      "type": "string",
+      "title": "Reason"
+     },
+     "start": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Start"
+     },
+     "end": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "End"
+     }
+    },
+    "type": "object",
+    "required": [
+     "span_text",
+     "category",
+     "action",
+     "reason"
+    ],
+    "title": "RoutingDecision"
+   },
+   "SanitiseMeta": {
+    "properties": {
+     "model": {
+      "type": "string",
+      "title": "Model"
+     },
+     "pipeline_version": {
+      "type": "string",
+      "title": "Pipeline Version",
+      "default": "0.1.0"
+     },
+     "detect_ms": {
+      "type": "integer",
+      "title": "Detect Ms"
+     },
+     "extract_ms": {
+      "type": "integer",
+      "title": "Extract Ms"
+     },
+     "rewrite_ms": {
+      "type": "integer",
+      "title": "Rewrite Ms"
+     },
+     "total_ms": {
+      "type": "integer",
+      "title": "Total Ms"
+     },
+     "retries": {
+      "type": "integer",
+      "title": "Retries"
+     },
+     "leak_retries": {
+      "type": "integer",
+      "title": "Leak Retries"
+     }
+    },
+    "type": "object",
+    "required": [
+     "model",
+     "detect_ms",
+     "extract_ms",
+     "rewrite_ms",
+     "total_ms",
+     "retries",
+     "leak_retries"
+    ],
+    "title": "SanitiseMeta"
+   },
+   "SanitiseRequest": {
+    "properties": {
+     "doc_id": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Doc Id"
+     },
+     "text": {
+      "type": "string",
+      "title": "Text"
+     }
+    },
+    "type": "object",
+    "required": [
+     "text"
+    ],
+    "title": "SanitiseRequest"
+   },
+   "SanitisedRecord": {
+    "properties": {
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id"
+     },
+     "original_sha256": {
+      "type": "string",
+      "title": "Original Sha256"
+     },
+     "subjects": {
+      "items": {
+       "$ref": "#/components/schemas/Subject"
+      },
+      "type": "array",
+      "title": "Subjects"
+     },
+     "detector": {
+      "$ref": "#/components/schemas/DetectorOutput"
+     },
+     "extractor": {
+      "$ref": "#/components/schemas/ExtractorOutput"
+     },
+     "rewriter": {
+      "$ref": "#/components/schemas/RewriterOutput"
+     },
+     "residual_leaks": {
+      "items": {
+       "$ref": "#/components/schemas/SensitiveSpan"
+      },
+      "type": "array",
+      "title": "Residual Leaks"
+     },
+     "meta": {
+      "$ref": "#/components/schemas/SanitiseMeta"
+     }
+    },
+    "type": "object",
+    "required": [
+     "doc_id",
+     "original_sha256",
+     "subjects",
+     "detector",
+     "extractor",
+     "rewriter",
+     "meta"
+    ],
+    "title": "SanitisedRecord",
+    "description": "Everything the offline path produces for one document."
+   },
+   "ScoreRequest": {
+    "properties": {
+     "pred": {
+      "items": {
+       "$ref": "#/components/schemas/DetectorOutput"
+      },
+      "type": "array",
+      "title": "Pred"
+     },
+     "gold": {
+      "items": {
+       "$ref": "#/components/schemas/DetectorOutput"
+      },
+      "type": "array",
+      "title": "Gold"
+     }
+    },
+    "type": "object",
+    "required": [
+     "pred",
+     "gold"
+    ],
+    "title": "ScoreRequest"
+   },
+   "SensitiveSpan": {
+    "properties": {
+     "text": {
+      "type": "string",
+      "title": "Text"
+     },
+     "category": {
+      "$ref": "#/components/schemas/PIICategory"
+     },
+     "start": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Start"
+     },
+     "end": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "End"
+     },
+     "method": {
+      "type": "string",
+      "enum": [
+       "rule",
+       "llm"
+      ],
+      "title": "Method"
+     },
+     "confidence": {
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Confidence",
+      "default": 1.0
+     },
+     "rationale": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Rationale"
+     }
+    },
+    "type": "object",
+    "required": [
+     "text",
+     "category",
+     "method"
+    ],
+    "title": "SensitiveSpan"
+   },
+   "SessionCreated": {
+    "properties": {
+     "session_id": {
+      "type": "string",
+      "title": "Session Id"
+     }
+    },
+    "type": "object",
+    "required": [
+     "session_id"
+    ],
+    "title": "SessionCreated"
+   },
+   "SessionTrace": {
+    "properties": {
+     "session_id": {
+      "type": "string",
+      "title": "Session Id"
+     },
+     "rounds": {
+      "items": {
+       "$ref": "#/components/schemas/AttackRound"
+      },
+      "type": "array",
+      "title": "Rounds"
+     }
+    },
+    "type": "object",
+    "required": [
+     "session_id",
+     "rounds"
+    ],
+    "title": "SessionTrace"
+   },
+   "SpanMetrics": {
+    "properties": {
+     "precision": {
+      "type": "number",
+      "title": "Precision"
+     },
+     "recall": {
+      "type": "number",
+      "title": "Recall"
+     },
+     "f1": {
+      "type": "number",
+      "title": "F1"
+     },
+     "support": {
+      "type": "integer",
+      "title": "Support"
+     },
+     "per_category": {
+      "additionalProperties": {
+       "additionalProperties": {
+        "type": "number"
+       },
+       "type": "object"
+      },
+      "type": "object",
+      "title": "Per Category"
+     }
+    },
+    "type": "object",
+    "required": [
+     "precision",
+     "recall",
+     "f1",
+     "support",
+     "per_category"
+    ],
+    "title": "SpanMetrics",
+    "description": "Scoring result (Person D). Also the response body of POST /v1/score."
+   },
+   "Subject": {
+    "properties": {
+     "id": {
+      "type": "string",
+      "title": "Id"
+     },
+     "label": {
+      "type": "string",
+      "title": "Label"
+     },
+     "mentions": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Mentions"
+     }
+    },
+    "type": "object",
+    "required": [
+     "id",
+     "label"
+    ],
+    "title": "Subject",
+    "description": "A person a document talks about (plan 6.1). Built by Person A's ``subjects()``."
+   },
+   "ValidationError": {
+    "properties": {
+     "loc": {
+      "items": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "integer"
+        }
+       ]
+      },
+      "type": "array",
+      "title": "Location"
+     },
+     "msg": {
+      "type": "string",
+      "title": "Message"
+     },
+     "type": {
+      "type": "string",
+      "title": "Error Type"
+     },
+     "input": {
+      "title": "Input"
+     },
+     "ctx": {
+      "type": "object",
+      "title": "Context"
+     }
+    },
+    "type": "object",
+    "required": [
+     "loc",
+     "msg",
+     "type"
+    ],
+    "title": "ValidationError"
+   }
+  }
+ }
+}
