@@ -1,0 +1,31 @@
+{
+  "doc_id": "655a968eaaf62618",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "vitamin D deficiency common in people who work indoors",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "how much sunlight is enough each day",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "can supplements replace sunlight",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "side effects of too much supplement",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

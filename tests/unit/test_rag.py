@@ -164,3 +164,9 @@ def test_placeholder_scorers() -> None:
     ]
     r = score_rewrite(pred, routing, gold)
     assert (r.leak_rate, r.utility, r.routing_accuracy) == (1.0, 1.0, 0.0)
+
+
+def test_the_real_attack_folder_loads_and_skips_the_target_info_query_list():
+    attacks = load_attacks(SAMPLE_DIR.parent / "attacks")
+    assert len(attacks) == 9
+    assert {a.kind for a in attacks.values()} == {"context_dump", "stepwise", "interception"}

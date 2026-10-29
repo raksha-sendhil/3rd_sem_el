@@ -1,0 +1,67 @@
+{
+  "doc_id": "2448803dacc1f4d2",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "identifier",
+      "value": "Anita D'Souza",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "contact",
+      "value": "anita.dsouza@examplemail.com",
+      "importance": "low"
+    },
+    {
+      "subject": "writer.father",
+      "relation": "identifier",
+      "value": "Cyril D'Souza",
+      "importance": "low"
+    },
+    {
+      "subject": "writer.father",
+      "relation": "age",
+      "value": "71 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.father",
+      "relation": "lives_in",
+      "value": "Flat 2B, Sea View Court, Fort Kochi 682001",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.father",
+      "relation": "has_condition",
+      "value": "ischemic stroke",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.father",
+      "relation": "event_date",
+      "value": "14 May 2024",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.father",
+      "relation": "has_symptom",
+      "value": "weakness on his right side",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.father",
+      "relation": "treated_at",
+      "value": "Aster Medcity",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.father",
+      "relation": "had_procedure",
+      "value": "physiotherapy",
+      "importance": "high"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

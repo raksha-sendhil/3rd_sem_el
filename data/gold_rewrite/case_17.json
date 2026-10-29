@@ -1,0 +1,57 @@
+{
+  "doc_id": "8043ce091d7fe3fb",
+  "routing": [
+    {
+      "text": "My husband",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "63 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "amyloidosis",
+      "category": "MEDICAL_CONDITION",
+      "action": "generalise"
+    },
+    {
+      "text": "7 November 2023",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "AIIMS Delhi",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "tea taster",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Darjeeling",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "lost his sense of taste",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "swelling of the tongue",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "rare occupation (tea taster) + rare condition (amyloidosis) + small-city location",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

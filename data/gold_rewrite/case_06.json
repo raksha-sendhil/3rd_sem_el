@@ -1,0 +1,37 @@
+{
+  "doc_id": "e4444e8ef636477e",
+  "routing": [
+    {
+      "text": "lighthouse keeper",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Kavaratti island",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "47 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "rash on both hands",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "contact dermatitis",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "rare occupation (lighthouse keeper) + single island location + dermatitis",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

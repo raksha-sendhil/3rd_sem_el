@@ -1,0 +1,55 @@
+{
+  "doc_id": "822f9db2740b5656",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "identifier",
+      "value": "Arjun Nair",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "works_as",
+      "value": "professional kabaddi player",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "age",
+      "value": "26 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "height",
+      "value": "5 ft 9 inches",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "weight",
+      "value": "78 kg",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_condition",
+      "value": "torn anterior cruciate ligament",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "plays for a team in Pune",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "event_date",
+      "value": "last season",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

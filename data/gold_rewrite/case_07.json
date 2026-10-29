@@ -1,0 +1,62 @@
+{
+  "doc_id": "6f8d987d5416966f",
+  "routing": [
+    {
+      "text": "My son",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "left-sided abdominal pain",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "bilateral pelvic pain",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "32 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "6 ft 3 inches",
+      "category": "PHYSICAL",
+      "action": "generalise"
+    },
+    {
+      "text": "approximately 220 pounds",
+      "category": "PHYSICAL",
+      "action": "generalise"
+    },
+    {
+      "text": "enlarged lymph nodes",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "leukocytosis",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "pain",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "left-sided abdominal pain + bilateral pelvic pain (symptom combination)",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    },
+    {
+      "text": "enlarged lymph nodes + leukocytosis + roughly 10 weeks of unresolved symptoms",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

@@ -47,3 +47,20 @@ def test_small_model_keeps_the_narrow_prompt():
     llm = FakeLLM(False, {"quasi_identifiers": []})
     asyncio.run(quasi.infer_quasi(TEXT, RULE, llm))
     assert llm.calls[0][2] is quasi.LLMQuasiList
+
+
+def test_a_greeting_group_is_not_a_relation():
+    text = "Hi team, Ravi Thapa will be on leave. Please contact Thapa's family."
+    llm = FakeLLM(
+        True,
+        {
+            "details": [
+                {"text": "team", "category": "RELATION", "rationale": "addressed"},
+                {"text": "family", "category": "RELATION", "rationale": "Ravi's family"},
+                {"text": "Ravi Thapa", "category": "NAME", "rationale": "the writer"},
+            ]
+        },
+    )
+    got = {(s.text, s.category.value) for s in asyncio.run(quasi.infer_quasi(text, [], llm))}
+    assert ("team", "RELATION") not in got
+    assert {("family", "RELATION"), ("Ravi Thapa", "NAME")} <= got

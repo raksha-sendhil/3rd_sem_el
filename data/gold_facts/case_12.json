@@ -1,0 +1,55 @@
+{
+  "doc_id": "021c22f3e51c350a",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "identifier",
+      "value": "Daniel Whitcomb",
+      "importance": "low"
+    },
+    {
+      "subject": "person_1",
+      "relation": "identifier",
+      "value": "Laura Fenn",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "contact",
+      "value": "(415) 555-0142",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "contact",
+      "value": "daniel.whitcomb@example-energy.com",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "event_date",
+      "value": "Tuesday, October 9, 2001",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "call before the meeting with regulators",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "meeting at 1400 Smith Street, Houston, TX 77002",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "bring the revised filing",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

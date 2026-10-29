@@ -1,0 +1,25 @@
+{
+  "doc_id": "6e5e526b96c79432",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "quarterly pipeline review moved to next week",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "bring updated volume forecasts and revised capacity table",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "slides circulated the day before",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

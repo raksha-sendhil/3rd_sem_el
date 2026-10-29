@@ -1,0 +1,55 @@
+{
+  "doc_id": "093017d395c09268",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "age",
+      "value": "20 year old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "studies_at",
+      "value": "undergraduate student at IIT Madras",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "event_date",
+      "value": "5 October 2024",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_symptom",
+      "value": "palpitations",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "had_procedure",
+      "value": "Holter test",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_condition",
+      "value": "supraventricular tachycardia",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "works_as",
+      "value": "national-level fencer",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "strict diet",
+      "importance": "low"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

@@ -1,0 +1,57 @@
+{
+  "doc_id": "457edfd299f49463",
+  "routing": [
+    {
+      "text": "29 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "my baby",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "21 January 2024",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Fortis Hospital, Mulund",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "2 February 2024",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "fever",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "red, swollen stitch line",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "My husband",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "radiographer",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "precise delivery date + named hospital + age",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

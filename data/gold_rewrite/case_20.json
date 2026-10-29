@@ -1,0 +1,62 @@
+{
+  "doc_id": "2448803dacc1f4d2",
+  "routing": [
+    {
+      "text": "Anita D'Souza",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "anita.dsouza@examplemail.com",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "My father",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "Cyril D'Souza",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "71 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "Flat 2B, Sea View Court, Fort Kochi 682001",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "ischemic stroke",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "14 May 2024",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "weakness on his right side",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "Aster Medcity",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "exact stroke date + named hospital (Aster Medcity) + age",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

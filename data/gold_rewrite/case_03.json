@@ -1,0 +1,42 @@
+{
+  "doc_id": "c09ff44b9f658d5d",
+  "routing": [
+    {
+      "text": "my husband",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "HC-2291746",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "3 March 2022",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "9 March 2022",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "coronary artery disease",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "rajesh.kumar84@examplemail.com",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "breathless",
+      "category": "SYMPTOM",
+      "action": "keep"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

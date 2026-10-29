@@ -1,0 +1,47 @@
+{
+  "doc_id": "822f9db2740b5656",
+  "routing": [
+    {
+      "text": "Arjun Nair",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "kabaddi player",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "26 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "5 ft 9 inches",
+      "category": "PHYSICAL",
+      "action": "generalise"
+    },
+    {
+      "text": "78 kg",
+      "category": "PHYSICAL",
+      "action": "generalise"
+    },
+    {
+      "text": "anterior cruciate ligament",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "professional athlete occupation + team city + ACL injury",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

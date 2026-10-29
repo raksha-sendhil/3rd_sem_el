@@ -1,0 +1,73 @@
+{
+  "doc_id": "40a1b2392d436f43",
+  "facts": [
+    {
+      "subject": "person_1",
+      "relation": "identifier",
+      "value": "Marta",
+      "importance": "low"
+    },
+    {
+      "subject": "person_2",
+      "relation": "identifier",
+      "value": "Samuel Ortega",
+      "importance": "low"
+    },
+    {
+      "subject": "person_2",
+      "relation": "works_as",
+      "value": "natural gas scheduler",
+      "importance": "medium"
+    },
+    {
+      "subject": "person_2",
+      "relation": "other",
+      "value": "Tulsa desk",
+      "importance": "medium"
+    },
+    {
+      "subject": "person_2",
+      "relation": "event_date",
+      "value": "1 August 2001",
+      "importance": "medium"
+    },
+    {
+      "subject": "person_2",
+      "relation": "event_date",
+      "value": "30 September 2001",
+      "importance": "medium"
+    },
+    {
+      "subject": "person_2",
+      "relation": "has_condition",
+      "value": "multiple myeloma",
+      "importance": "high"
+    },
+    {
+      "subject": "person_2",
+      "relation": "other",
+      "value": "on medical leave",
+      "importance": "high"
+    },
+    {
+      "subject": "person_2",
+      "relation": "age",
+      "value": "51 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "person_3",
+      "relation": "relation_to",
+      "value": "wife of Samuel Ortega",
+      "importance": "low"
+    },
+    {
+      "subject": "person_3",
+      "relation": "contact",
+      "value": "918-555-0133",
+      "importance": "low"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

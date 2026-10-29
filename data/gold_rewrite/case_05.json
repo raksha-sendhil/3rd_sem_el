@@ -1,0 +1,42 @@
+{
+  "doc_id": "0967c7b852363ecf",
+  "routing": [
+    {
+      "text": "my wife",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "92 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "atrial fibrillation",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "St. Thomas Hospital",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "forgetful",
+      "category": "SYMPTOM",
+      "action": "keep"
+    },
+    {
+      "text": "Ooty",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "extreme age (92) + diagnosis + named hospital + small-town residence",
+      "category": "QUASI_COMBO",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

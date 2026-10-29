@@ -1,0 +1,55 @@
+{
+  "doc_id": "450e5e06086d05c3",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "identifier",
+      "value": "POL-77-410398",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_condition",
+      "value": "thyroid nodule",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "event_date",
+      "value": "18 April 2024",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "other",
+      "value": "ultrasound showed a nodule of 1.8 cm",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "had_procedure",
+      "value": "biopsy pending",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "age",
+      "value": "41 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "works_as",
+      "value": "school librarian",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.mother",
+      "relation": "has_condition",
+      "value": "thyroid cancer",
+      "importance": "high"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

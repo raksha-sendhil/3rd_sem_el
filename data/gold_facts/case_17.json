@@ -1,0 +1,55 @@
+{
+  "doc_id": "8043ce091d7fe3fb",
+  "facts": [
+    {
+      "subject": "writer.husband",
+      "relation": "age",
+      "value": "63 years old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "has_condition",
+      "value": "amyloidosis",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "event_date",
+      "value": "7 November 2023",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "treated_at",
+      "value": "AIIMS Delhi",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "works_as",
+      "value": "tea taster",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "lives_in",
+      "value": "Darjeeling",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "has_symptom",
+      "value": "lost his sense of taste",
+      "importance": "high"
+    },
+    {
+      "subject": "writer.husband",
+      "relation": "has_symptom",
+      "value": "swelling of the tongue",
+      "importance": "high"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

@@ -210,6 +210,17 @@ FullCategory = Literal[
     "QUASI_COMBO",
 ]  # fmt: skip
 MAX_FULL_ITEMS = 200
+# A RELATION names a family or personal tie. The model has tagged the "team" of "Hi team" as one,
+# which then became "the writer's team" in Agent 2; a span without one of these words is dropped.
+RELATION_WORDS = {
+    "wife", "husband", "spouse", "partner", "son", "daughter", "child", "children", "kid", "kids",
+    "baby", "boy", "girl", "mother", "father", "mom", "mum", "mommy", "mummy", "mama", "dad",
+    "daddy", "papa", "parent", "parents", "brother", "sister", "sibling", "siblings", "bro", "sis",
+    "grandmother", "grandfather", "grandma", "grandpa", "granny", "nana", "grandson",
+    "granddaughter", "grandchild", "aunt", "auntie", "uncle", "niece", "nephew", "cousin",
+    "fiance", "fiancee", "girlfriend", "boyfriend", "friend", "relative", "family", "guardian",
+    "stepmother", "stepfather", "stepson", "stepdaughter", "in-law", "in-laws",
+}  # fmt: skip
 
 
 class FullHit(BaseModel):
@@ -249,7 +260,8 @@ university, hotel, workplace site.
 including suspected ones and pregnancy.
 - SYMPTOM: a symptom or complaint someone has, with the body part when given \
 ("back pain", "coughing", "pain in the left knee"). Not a negated or hypothetical one.
-- RELATION: a family or personal relationship to someone ("my son", "Dad", "his wife").
+- RELATION: a family or personal relationship to someone ("my son", "Dad", "his wife"). \
+Not a group addressed in a greeting or at work ("Hi team", "all", "everyone", "colleagues").
 - PHYSICAL: height, weight or another measurement of the body's size.
 - OTHER: any other secret or identifying value (a password, a licence plate).
 - QUASI_COMBO: at most two combinations of details about one person that together \
@@ -452,6 +464,12 @@ async def infer_quasi(
         full = await llm.json_call(
             FULL_SYSTEM_PROMPT, build_full_prompt(text, explicit), FullDetection
         )
-        return to_spans(text, full.details, MAX_FULL_ITEMS)
+        details = [
+            d
+            for d in full.details
+            if d.category != "RELATION"
+            or RELATION_WORDS & set(re.findall(r"[a-z]+(?:-[a-z]+)*", d.text.lower()))
+        ]
+        return to_spans(text, details, MAX_FULL_ITEMS)
     result = await llm.json_call(SYSTEM_PROMPT, build_user_prompt(text, explicit), LLMQuasiList)
     return to_spans(text, result.quasi_identifiers)

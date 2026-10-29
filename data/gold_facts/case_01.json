@@ -1,0 +1,61 @@
+{
+  "doc_id": "9e7d0526c06f871c",
+  "facts": [
+    {
+      "subject": "writer",
+      "relation": "identifier",
+      "value": "Priya Raman",
+      "importance": "low"
+    },
+    {
+      "subject": "writer",
+      "relation": "age",
+      "value": "34 year old",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "works_as",
+      "value": "pediatric neurosurgeon",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "lives_in",
+      "value": "Coonoor",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_condition",
+      "value": "vertigo",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "has_symptom",
+      "value": "ringing in my left ear",
+      "importance": "high"
+    },
+    {
+      "subject": "writer",
+      "relation": "symptom_duration",
+      "value": "three weeks",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer.sister",
+      "relation": "has_condition",
+      "value": "vertigo",
+      "importance": "medium"
+    },
+    {
+      "subject": "writer",
+      "relation": "contact",
+      "value": "+91 98450 12345",
+      "importance": "low"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}

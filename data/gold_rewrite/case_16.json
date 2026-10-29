@@ -1,0 +1,42 @@
+{
+  "doc_id": "450e5e06086d05c3",
+  "routing": [
+    {
+      "text": "POL-77-410398",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "thyroid nodule",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    },
+    {
+      "text": "18 April 2024",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "41 years old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "school librarian",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "My mother",
+      "category": "RELATION",
+      "action": "keep"
+    },
+    {
+      "text": "thyroid cancer",
+      "category": "MEDICAL_CONDITION",
+      "action": "keep"
+    }
+  ],
+  "annotator": "D",
+  "reviewed_by": null
+}
