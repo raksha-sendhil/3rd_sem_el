@@ -9,7 +9,12 @@ Code: `src/sanitise/agents/extractor/prompt.py` (Agent 2), `src/sanitise/agents/
 Agent 1's rule pass (Presidio, spaCy, regular expressions) always runs locally. When Agents 2
 and 3 run on Gemini, Agent 1's LLM pass does too (`SANITISE_GEMINI_FOR_AGENT1`, on by default):
 llama3:8b labelled "ex-smoker" a job, "old" (former) an age and "over 6 months" a combination,
-and routing then rewrote Agent 2's correct facts with those labels. The answers of both RAG
+and routing then rewrote Agent 2's correct facts with those labels. On Gemini the LLM pass does
+the whole detection (`quasi.FULL_SYSTEM_PROMPT`): every category, every person in the document
+(senders, recipients, people mentioned), with the rule spans as hints that may be incomplete or
+wrong; the narrow gap-filling prompt stays for local models. On 300 real documents (patient
+messages and emails) the gap-filling prompt left Gemini silent on 91 of 150 emails and reached
+recall 0.85. The answers of both RAG
 pipelines stay on llama3:8b (Ollama). Agents 2 and 3 can run on another model
 (`SANITISE_AGENTS_BACKEND`, `SANITISE_AGENTS_MODEL`, set in notebook cell 1):
 

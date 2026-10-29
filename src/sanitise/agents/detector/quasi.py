@@ -199,6 +199,125 @@ def build_user_prompt(text: str, explicit: list[SensitiveSpan]) -> str:
     return f"DOCUMENT:\n{text}\n\nALREADY FOUND:\n{found}\n\n{TASK_REMINDER}\nOUTPUT:"
 
 
+# ------------------------------------------------------------------ full detection
+# A strong model (``one_call_per_document``, e.g. Gemini) does the whole detection itself:
+# every category, every person, with the rule pass's spans as hints only. The narrow prompt
+# above stays for the small local models it was written for.
+
+FullCategory = Literal[
+    "NAME", "AGE", "DATE", "PHONE", "EMAIL", "ID_NUMBER", "ADDRESS", "LOCATION",
+    "OCCUPATION", "MEDICAL_CONDITION", "SYMPTOM", "RELATION", "PHYSICAL", "OTHER",
+    "QUASI_COMBO",
+]  # fmt: skip
+MAX_FULL_ITEMS = 200
+
+
+class FullHit(BaseModel):
+    text: str = Field(min_length=1, max_length=300)
+    category: FullCategory
+    rationale: str = Field(min_length=1, max_length=200)
+
+
+class FullDetection(BaseModel):
+    model_config = ConfigDict(title="FullDetection")
+    details: list[FullHit]
+
+
+FULL_SYSTEM_PROMPT = """\
+You are a privacy analyst. You read one document (a patient's message to a doctor, an \
+email, a note) and list EVERY detail that could help identify ANY person in it: the \
+writer, the people it is sent to or copied to, and everyone it mentions. Email headers \
+(From, To, Cc, Sent), signatures and quoted earlier messages count like the body.
+
+Categories (copy each detail EXACTLY as written, shortest phrase that carries it):
+- NAME: a person's name, full or partial, nickname, or a username that is a person's name. \
+Not titles (Dr., Mr.), companies, products, hospitals or diseases.
+- AGE: a person's age as written ("45", "61 year old", "nine").
+- DATE: a specific date or day ("4/19", "June 21-22", "Friday", "Sep 24th", "last May"). \
+Not vague times ("recently", "two weeks").
+- PHONE: phone and fax numbers, including short internal extensions ("3-5620", "x31647").
+- EMAIL: email addresses.
+- ID_NUMBER: account, member, policy, case, employee or other reference numbers and \
+account usernames.
+- ADDRESS: street addresses, room or office numbers, P.O. boxes, postcodes.
+- LOCATION: a named place: city, town, state, country, hospital, clinic, school, \
+university, hotel, workplace site.
+- OCCUPATION: a person's job, title or role ("crane operator", "Senior Counsel", "student").
+- MEDICAL_CONDITION: a diagnosis, disease or clinical finding someone has or may have, \
+including suspected ones and pregnancy.
+- SYMPTOM: a symptom or complaint someone has, with the body part when given \
+("back pain", "coughing", "pain in the left knee"). Not a negated or hypothetical one.
+- RELATION: a family or personal relationship to someone ("my son", "Dad", "his wife").
+- PHYSICAL: height, weight or another body measurement.
+- OTHER: any other secret or identifying value (a password, a licence plate).
+- QUASI_COMBO: at most two combinations of details about one person that together \
+single them out when each alone would not, written as parts joined with " + ".
+
+HINTS lists what a rule-based detector found. It may be incomplete and sometimes wrong: \
+include the hints that are right (with the right category) and add everything it missed. \
+Return each distinct detail once; every place it occurs is marked automatically. \
+Rationale: a few words. Do not invent details that are not in the document.
+
+EXAMPLE 1
+DOCUMENT:
+From: Lena Ortiz
+Sent: Tuesday, March 4, 2003 9:12 AM
+To: Bram Tuck; Kofi
+Subject: site visit
+
+Bram - the inspector from Dallas moved our visit to 3/11. Kofi, can you book the \
+Riverside Inn? Call me at 555-0142 or ext. 4471.
+Lena
+Senior Engineer, 77 Harbor Rd, Suite 4B
+OUTPUT:
+{"details": [
+ {"text": "Lena Ortiz", "category": "NAME", "rationale": "sender"},
+ {"text": "Lena", "category": "NAME", "rationale": "sender's sign-off"},
+ {"text": "Tuesday, March 4, 2003", "category": "DATE", "rationale": "sent date"},
+ {"text": "Bram Tuck", "category": "NAME", "rationale": "recipient"},
+ {"text": "Bram", "category": "NAME", "rationale": "recipient"},
+ {"text": "Kofi", "category": "NAME", "rationale": "recipient"},
+ {"text": "inspector", "category": "OCCUPATION", "rationale": "a person's role"},
+ {"text": "Dallas", "category": "LOCATION", "rationale": "inspector's city"},
+ {"text": "3/11", "category": "DATE", "rationale": "visit date"},
+ {"text": "Riverside Inn", "category": "LOCATION", "rationale": "named hotel"},
+ {"text": "555-0142", "category": "PHONE", "rationale": "sender's phone"},
+ {"text": "ext. 4471", "category": "PHONE", "rationale": "sender's extension"},
+ {"text": "Senior Engineer", "category": "OCCUPATION", "rationale": "sender's title"},
+ {"text": "77 Harbor Rd, Suite 4B", "category": "ADDRESS", "rationale": "work address"}
+]}
+
+EXAMPLE 2
+DOCUMENT:
+Hi doctor, my mother is 68 and since 2nd May she has had swelling in both ankles and \
+gets breathless climbing stairs. She had a heart attack in 2019 at St. Anne's in Pune. \
+She is 5 ft 1 and was a schoolteacher. Is it heart failure?
+OUTPUT:
+{"details": [
+ {"text": "my mother", "category": "RELATION", "rationale": "the patient"},
+ {"text": "68", "category": "AGE", "rationale": "mother's age"},
+ {"text": "2nd May", "category": "DATE", "rationale": "onset date"},
+ {"text": "swelling in both ankles", "category": "SYMPTOM", "rationale": "mother's symptom"},
+ {"text": "breathless climbing stairs", "category": "SYMPTOM", "rationale": "mother's symptom"},
+ {"text": "heart attack", "category": "MEDICAL_CONDITION", "rationale": "past diagnosis"},
+ {"text": "2019", "category": "DATE", "rationale": "year of the heart attack"},
+ {"text": "St. Anne's", "category": "LOCATION", "rationale": "named hospital"},
+ {"text": "Pune", "category": "LOCATION", "rationale": "city"},
+ {"text": "5 ft 1", "category": "PHYSICAL", "rationale": "height"},
+ {"text": "schoolteacher", "category": "OCCUPATION", "rationale": "mother's former job"},
+ {"text": "heart failure", "category": "MEDICAL_CONDITION", "rationale": "suspected diagnosis"}
+]}
+"""
+
+
+def build_full_prompt(text: str, hints: list[SensitiveSpan]) -> str:
+    found = "\n".join(f"- {s.category.value}: {s.text}" for s in hints) or "(none)"
+    return (
+        f"DOCUMENT:\n{text}\n\nHINTS:\n{found}\n\n"
+        "List every identifying detail about every person in this document.\nOUTPUT:"
+    )
+
+
 # ------------------------------------------------------------------ post-processing
 
 _LEADING = re.compile(r"^(?:a|an|the|my|his|her|their|our)\s+", re.IGNORECASE)
@@ -235,12 +354,14 @@ def ground(text: str, phrase: str) -> list[tuple[int, int]]:
     return (find_all(text, cleaned) if cleaned else []) or find_all(text, phrase)
 
 
-def to_spans(text: str, hits: list[LLMQuasiHit]) -> list[SensitiveSpan]:
+def to_spans(
+    text: str, hits: list[LLMQuasiHit] | list[FullHit], max_items: int = MAX_ITEMS
+) -> list[SensitiveSpan]:
     """Ground single details to offsets, keep combinations offset-less, deduplicate."""
     spans: list[SensitiveSpan] = []
     seen_offsets: set[tuple[int, int]] = set()
     seen_combos: set[str] = set()
-    for hit in hits[:MAX_ITEMS]:
+    for hit in hits[:max_items]:
         category = C(hit.category)
         rationale = hit.rationale.strip() or "flagged by the LLM pass"
         if category is C.QUASI_COMBO:
@@ -285,7 +406,13 @@ async def infer_quasi(
 
     QUASI_COMBO spans have start/end None (spec 8.2). Single details
     (NAME, AGE, MEDICAL_CONDITION, SYMPTOM, OCCUPATION, LOCATION) carry the offsets of every place
-    the quoted phrase occurs in ``text``.
+    the quoted phrase occurs in ``text``. A strong model gets the full-detection prompt instead:
+    every category, with the rule spans as hints.
     """
+    if getattr(llm, "one_call_per_document", False):
+        full = await llm.json_call(
+            FULL_SYSTEM_PROMPT, build_full_prompt(text, explicit), FullDetection
+        )
+        return to_spans(text, full.details, MAX_FULL_ITEMS)
     result = await llm.json_call(SYSTEM_PROMPT, build_user_prompt(text, explicit), LLMQuasiList)
     return to_spans(text, result.quasi_identifiers)

@@ -56,7 +56,7 @@ class Settings(BaseSettings):
     gemini_for_agent1: bool = True
     gemini_thinking_level: str | None = "low"  # minimal / low / medium / high; None: default
     gemini_temperature: float | None = None  # None: the model's default
-    gemini_max_output_tokens: int = Field(default=4096, ge=64)
+    gemini_max_output_tokens: int = Field(default=16384, ge=64)
     gemini_min_interval_s: float = Field(default=4.5, ge=0.0)  # 15 requests a minute
 
     # ---- Validation retry loop: "retries up to three times with an escalating temperature"
