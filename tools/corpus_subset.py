@@ -17,6 +17,9 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# Left out of quick demo builds only (below 74 documents): their third-person leave-request
+# email reads wrongly after the rewrite. Builds for the metric are unchanged.
+DEMO_LEAVE_OUT = {"p021"}
 CORPUS = ROOT / "data" / "corpus"
 ATTACKS = ROOT / "data" / "attacks"
 
@@ -40,7 +43,9 @@ def choose(people: list[dict], queried: set[str], targets: set[str], size: int) 
             shared = len(_traits(p) & target_traits)
             return (1, -shared) if shared else (2 if p["person_id"] in queried else 3, 0)
 
-        order = sorted(people, key=rank)  # stable: person-id order within a rank
+        order = sorted(
+            (p for p in people if p["person_id"] not in DEMO_LEAVE_OUT), key=rank
+        )  # stable: person-id order within a rank
     chosen, total = [], 0
     for p in order:
         if total + len(p["doc_ids"]) <= size:

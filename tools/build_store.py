@@ -22,6 +22,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import sqlite3
 import subprocess
 import sys
 import tempfile
@@ -56,6 +57,21 @@ def _sanitise(args: argparse.Namespace, corpus: Path, *extra: str) -> None:
     subprocess.run(cmd, cwd=ROOT, check=False)  # a failed document is retried on the next run
 
 
+def _prune(store: Path, extra: set[str], index_dir: Path) -> None:
+    """Drop documents that are no longer in the corpus (a checkpoint from before a corpus change);
+    the search index is rebuilt from the store at the end."""
+    if not extra:
+        return
+    db = sqlite3.connect(store)
+    try:
+        db.executemany("DELETE FROM documents WHERE doc_id = ?", [(d,) for d in extra])
+        db.commit()
+    finally:
+        db.close()
+    shutil.rmtree(index_dir, ignore_errors=True)
+    print(f"removed {len(extra)} documents that are no longer in this corpus")
+
+
 def _doc_id(record: dict) -> str:
     return hashlib.sha256(record["text"].encode()).hexdigest()[:16]
 
@@ -73,15 +89,22 @@ def main(args: argparse.Namespace) -> None:
     wanted = {_doc_id(r) for r in records}
 
     store = Path(args.store)
+    checkpoint = Path(args.checkpoint) if args.checkpoint else None
+    if args.fresh:  # after a pipeline change: every document is sanitised again
+        for path in (store, checkpoint):
+            if path and path.exists():
+                path.unlink()
+        shutil.rmtree(Path(args.index_dir), ignore_errors=True)
+        print("starting fresh: the store and its checkpoint were removed")
     if _in_store(store) - wanted:  # another size was built here before: start this one afresh
         store.unlink()
         shutil.rmtree(Path(args.index_dir), ignore_errors=True)
         print("the local store held another corpus: starting afresh for this one")
-    checkpoint = Path(args.checkpoint) if args.checkpoint else None
     if checkpoint and checkpoint.exists() and len(_in_store(checkpoint)) > len(_in_store(store)):
         store.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(checkpoint, store)
         print(f"restored {len(_in_store(store))} documents from {checkpoint}")
+        _prune(store, _in_store(store) - wanted, Path(args.index_dir))
 
     done = _in_store(store)
     todo = [r for r in records if _doc_id(r) not in done]
@@ -118,6 +141,9 @@ if __name__ == "__main__":
     parser.add_argument("--docs", default="150", help="10-300, or fixtures")
     parser.add_argument("--store", default="data/store.sqlite")
     parser.add_argument("--index-dir", default="data/index")
+    parser.add_argument(
+        "--fresh", action="store_true", help="remove the store and checkpoint, redo every document"
+    )
     parser.add_argument("--checkpoint", help="copy of the store kept after every step (Drive)")
     parser.add_argument("--chunk", type=int, default=25)
     parser.add_argument("--mock", action="store_true", help="no model (checks the plumbing)")
