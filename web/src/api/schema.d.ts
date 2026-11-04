@@ -100,7 +100,9 @@ export interface paths {
         put?: never;
         /**
          * Post Extract
-         * @description Agent 2 alone. It needs Agent 1's spans to find the subjects, so Agent 1 runs first.
+         * @description Agent 2 alone. It needs Agent 1's spans to find the subjects: the ones given, or
+         *     Agent 1 runs first. Give them when Agent 3 will use the same spans (the dashboard's
+         *     live run), so the facts and the removed details match exactly.
          */
         post: operations["post_extract_v1_extract_post"];
         delete?: never;
@@ -277,6 +279,27 @@ export interface paths {
         get: operations["get_attack_stream_v1_attacks__attack_id__stream_get"];
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ingest": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Post Ingest
+         * @description A file to text: PDF text layers read directly, scanned pages and images through the
+         *     vision model. The text comes back for checking; the agents are called separately.
+         */
+        post: operations["post_ingest_v1_ingest_post"];
         delete?: never;
         options?: never;
         head?: never;
@@ -475,6 +498,8 @@ export interface components {
             doc_id?: string | null;
             /** Text */
             text: string;
+            /** Spans */
+            spans?: components["schemas"]["SensitiveSpan"][] | null;
         };
         /** ExtractorOutput */
         ExtractorOutput: {
@@ -518,6 +543,51 @@ export interface components {
          */
         Importance: "high" | "medium" | "low";
         /**
+         * IngestRequest
+         * @description A PDF, image or text file, base64-encoded (no multipart parser needed).
+         */
+        IngestRequest: {
+            /**
+             * Filename
+             * @default
+             */
+            filename: string;
+            /** Content Base64 */
+            content_base64: string;
+            /** Strip Headers */
+            strip_headers?: boolean | null;
+            /**
+             * Force Vision
+             * @default false
+             */
+            force_vision: boolean;
+        };
+        /** IngestResult */
+        IngestResult: {
+            /** Filename */
+            filename: string;
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "pdf" | "image" | "text";
+            /** Pages */
+            pages: components["schemas"]["PageResult"][];
+            /** Text */
+            text: string;
+            /** Parts */
+            parts: string[];
+            /** Removed Lines */
+            removed_lines?: components["schemas"]["RemovedLine"][];
+            /** Warnings */
+            warnings?: string[];
+            /**
+             * Seconds
+             * @default 0
+             */
+            seconds: number;
+        };
+        /**
          * MonitorVerdict
          * @description The session monitor's decision. The Phase 3a stub always allows.
          */
@@ -543,6 +613,25 @@ export interface components {
          * @enum {string}
          */
         PIICategory: "NAME" | "AGE" | "DATE" | "PHONE" | "EMAIL" | "ID_NUMBER" | "ADDRESS" | "LOCATION" | "OCCUPATION" | "RELATION" | "PHYSICAL" | "MEDICAL_CONDITION" | "SYMPTOM" | "QUASI_COMBO" | "OTHER";
+        /** PageResult */
+        PageResult: {
+            /** Index */
+            index: number;
+            /**
+             * Method
+             * @enum {string}
+             */
+            method: "text" | "vision" | "plain" | "failed";
+            /** Text */
+            text: string;
+            /**
+             * Seconds
+             * @default 0
+             */
+            seconds: number;
+            /** Note */
+            note?: string | null;
+        };
         /** QueryRequest */
         QueryRequest: {
             /** Query */
@@ -575,6 +664,13 @@ export interface components {
             monitor?: components["schemas"]["MonitorVerdict"];
             /** Latency Ms */
             latency_ms: number;
+        };
+        /** RemovedLine */
+        RemovedLine: {
+            /** Page */
+            page: number;
+            /** Line */
+            line: string;
         };
         /**
          * RewriteRequest
@@ -1258,6 +1354,39 @@ export interface operations {
                 };
                 content: {
                     "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    post_ingest_v1_ingest_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["IngestRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["IngestResult"];
                 };
             };
             /** @description Validation Error */

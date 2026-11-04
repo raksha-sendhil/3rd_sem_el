@@ -20,6 +20,8 @@ export type SensitiveSpan = S["SensitiveSpan"];
 export type FactTuple = S["FactTuple"];
 export type ExtractorOutput = S["ExtractorOutput"];
 export type RewriterOutput = S["RewriterOutput"];
+export type IngestResult = S["IngestResult"];
+export type PageResult = S["PageResult"];
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
   /\/$/,
@@ -74,6 +76,9 @@ export const api = {
     call<ExtractorOutput>("POST", "/v1/extract", { doc_id, text, spans }),
   rewrite: (doc_id: string, spans: SensitiveSpan[], facts: FactTuple[]) =>
     call<RewriterOutput>("POST", "/v1/rewrite", { doc_id, spans, facts }),
+  // a PDF or image to text (text layers read directly, scans through the vision model)
+  ingest: (filename: string, content_base64: string) =>
+    call<IngestResult>("POST", "/v1/ingest", { filename, content_base64 }),
   createSession: () => call<{ session_id: string }>("POST", "/v1/sessions", {}),
   query: (query: string, pipeline: Pipeline, session_id: string) =>
     call<RagAnswer>("POST", "/v1/query", { query, pipeline, session_id }),

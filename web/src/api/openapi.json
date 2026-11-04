@@ -198,7 +198,7 @@
   "/v1/extract": {
    "post": {
     "summary": "Post Extract",
-    "description": "Agent 2 alone. It needs Agent 1's spans to find the subjects, so Agent 1 runs first.",
+    "description": "Agent 2 alone. It needs Agent 1's spans to find the subjects: the ones given, or\nAgent 1 runs first. Give them when Agent 3 will use the same spans (the dashboard's\nlive run), so the facts and the removed details match exactly.",
     "operationId": "post_extract_v1_extract_post",
     "requestBody": {
      "content": {
@@ -614,6 +614,45 @@
       "content": {
        "application/json": {
         "schema": {}
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/ingest": {
+   "post": {
+    "summary": "Post Ingest",
+    "description": "A file to text: PDF text layers read directly, scanned pages and images through the\nvision model. The text comes back for checking; the agents are called separately.",
+    "operationId": "post_ingest_v1_ingest_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/IngestRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/IngestResult"
+        }
        }
       }
      },
@@ -1138,6 +1177,20 @@
      "text": {
       "type": "string",
       "title": "Text"
+     },
+     "spans": {
+      "anyOf": [
+       {
+        "items": {
+         "$ref": "#/components/schemas/SensitiveSpan"
+        },
+        "type": "array"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Spans"
      }
     },
     "type": "object",
@@ -1248,6 +1301,105 @@
     ],
     "title": "Importance"
    },
+   "IngestRequest": {
+    "properties": {
+     "filename": {
+      "type": "string",
+      "title": "Filename",
+      "default": ""
+     },
+     "content_base64": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Content Base64"
+     },
+     "strip_headers": {
+      "anyOf": [
+       {
+        "type": "boolean"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Strip Headers"
+     },
+     "force_vision": {
+      "type": "boolean",
+      "title": "Force Vision",
+      "default": false
+     }
+    },
+    "type": "object",
+    "required": [
+     "content_base64"
+    ],
+    "title": "IngestRequest",
+    "description": "A PDF, image or text file, base64-encoded (no multipart parser needed)."
+   },
+   "IngestResult": {
+    "properties": {
+     "filename": {
+      "type": "string",
+      "title": "Filename"
+     },
+     "kind": {
+      "type": "string",
+      "enum": [
+       "pdf",
+       "image",
+       "text"
+      ],
+      "title": "Kind"
+     },
+     "pages": {
+      "items": {
+       "$ref": "#/components/schemas/PageResult"
+      },
+      "type": "array",
+      "title": "Pages"
+     },
+     "text": {
+      "type": "string",
+      "title": "Text"
+     },
+     "parts": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Parts"
+     },
+     "removed_lines": {
+      "items": {
+       "$ref": "#/components/schemas/RemovedLine"
+      },
+      "type": "array",
+      "title": "Removed Lines"
+     },
+     "warnings": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Warnings"
+     },
+     "seconds": {
+      "type": "number",
+      "title": "Seconds",
+      "default": 0.0
+     }
+    },
+    "type": "object",
+    "required": [
+     "filename",
+     "kind",
+     "pages",
+     "text",
+     "parts"
+    ],
+    "title": "IngestResult"
+   },
    "MonitorVerdict": {
     "properties": {
      "verdict": {
@@ -1308,6 +1460,51 @@
      "OTHER"
     ],
     "title": "PIICategory"
+   },
+   "PageResult": {
+    "properties": {
+     "index": {
+      "type": "integer",
+      "title": "Index"
+     },
+     "method": {
+      "type": "string",
+      "enum": [
+       "text",
+       "vision",
+       "plain",
+       "failed"
+      ],
+      "title": "Method"
+     },
+     "text": {
+      "type": "string",
+      "title": "Text"
+     },
+     "seconds": {
+      "type": "number",
+      "title": "Seconds",
+      "default": 0.0
+     },
+     "note": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Note"
+     }
+    },
+    "type": "object",
+    "required": [
+     "index",
+     "method",
+     "text"
+    ],
+    "title": "PageResult"
    },
    "QueryRequest": {
     "properties": {
@@ -1397,6 +1594,24 @@
      "latency_ms"
     ],
     "title": "RagAnswer"
+   },
+   "RemovedLine": {
+    "properties": {
+     "page": {
+      "type": "integer",
+      "title": "Page"
+     },
+     "line": {
+      "type": "string",
+      "title": "Line"
+     }
+    },
+    "type": "object",
+    "required": [
+     "page",
+     "line"
+    ],
+    "title": "RemovedLine"
    },
    "RewriteRequest": {
     "properties": {
