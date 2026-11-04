@@ -1,0 +1,98 @@
+{
+  "doc_id": "bc64e4917a79f79f",
+  "text": "Intake note (Criminal team, 20 December 2022). Our client Siddharth Mittal is a 34-year-old truck driver who lives at Flat 5B, Vaishali Nagar, Jaipur 302014 and can be reached on 09818891519 or siddharth.mittal@example.com. The client's PAN RGZPM5069D.\nThe client consulted us about a anticipatory bail matter against Suresh Apte. The anticipatory bail matter arises from a complaint by Suresh Apte about Rs 6,70,000; the complaint was filed during a matrimonial dispute.\nThe matter was filed as FIR No. 2467/2023 before the Jaipur Sessions Court on 27 June 2023.",
+  "spans": [
+    {
+      "text": "20 December 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Siddharth Mittal",
+      "category": "NAME",
+      "start": 58,
+      "end": 74
+    },
+    {
+      "text": "34-year-old",
+      "category": "AGE",
+      "start": 80,
+      "end": 91
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 92,
+      "end": 104
+    },
+    {
+      "text": "Flat 5B, Vaishali Nagar, Jaipur 302014",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 156
+    },
+    {
+      "text": "09818891519",
+      "category": "PHONE",
+      "start": 179,
+      "end": 190
+    },
+    {
+      "text": "siddharth.mittal@example.com",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 222
+    },
+    {
+      "text": "RGZPM5069D",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 251
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 285,
+      "end": 302
+    },
+    {
+      "text": "Suresh Apte",
+      "category": "NAME",
+      "start": 318,
+      "end": 329
+    },
+    {
+      "text": "Suresh Apte",
+      "category": "NAME",
+      "start": 387,
+      "end": 398
+    },
+    {
+      "text": "Rs 6,70,000",
+      "category": "MONEY",
+      "start": 405,
+      "end": 416
+    },
+    {
+      "text": "FIR No. 2467/2023",
+      "category": "CASE_NUMBER",
+      "start": 496,
+      "end": 513
+    },
+    {
+      "text": "Jaipur Sessions Court",
+      "category": "COURT",
+      "start": 525,
+      "end": 546
+    },
+    {
+      "text": "27 June 2023",
+      "category": "DATE",
+      "start": 550,
+      "end": 562
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

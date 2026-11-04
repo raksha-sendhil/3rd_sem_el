@@ -1,0 +1,104 @@
+{
+  "doc_id": "e88c5139ac5e66e4",
+  "text": "Intake note (Commercial team, 8 December 2024). Our client Manoj Fernandes is a 70-year-old textile trader who lives at Bungalow 18, Kuvempunagar, Mysuru 570010 and can be reached on +91 97594 57244 or manoj.fernandes@example.com. The client's PAN ABCPF1846V.\nThe client consulted us about a breach of contract matter (Project Condor) against Pioneer Logistics Ltd. The breach of contract claim against Pioneer Logistics Ltd is for ₹1,85,00,000; the claim must be filed as a commercial suit.\nThe matter was filed as Com. S. No. 740/2025 before the Mysuru Commercial Court on 26/03/2025.",
+  "spans": [
+    {
+      "text": "8 December 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Manoj Fernandes",
+      "category": "NAME",
+      "start": 59,
+      "end": 74
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 80,
+      "end": 91
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 92,
+      "end": 106
+    },
+    {
+      "text": "Bungalow 18, Kuvempunagar, Mysuru 570010",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 160
+    },
+    {
+      "text": "+91 97594 57244",
+      "category": "PHONE",
+      "start": 183,
+      "end": 198
+    },
+    {
+      "text": "manoj.fernandes@example.com",
+      "category": "EMAIL",
+      "start": 202,
+      "end": 229
+    },
+    {
+      "text": "ABCPF1846V",
+      "category": "ID_NUMBER",
+      "start": 248,
+      "end": 258
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 292,
+      "end": 310
+    },
+    {
+      "text": "Project Condor",
+      "category": "MATTER_CODENAME",
+      "start": 319,
+      "end": 333
+    },
+    {
+      "text": "Pioneer Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 343,
+      "end": 364
+    },
+    {
+      "text": "Pioneer Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 403,
+      "end": 424
+    },
+    {
+      "text": "₹1,85,00,000",
+      "category": "MONEY",
+      "start": 432,
+      "end": 444
+    },
+    {
+      "text": "Com. S. No. 740/2025",
+      "category": "CASE_NUMBER",
+      "start": 516,
+      "end": 536
+    },
+    {
+      "text": "Mysuru Commercial Court",
+      "category": "COURT",
+      "start": 548,
+      "end": 571
+    },
+    {
+      "text": "26/03/2025",
+      "category": "DATE",
+      "start": 575,
+      "end": 585
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,74 @@
+{
+  "doc_id": "cc9166d09da3f3fc",
+  "text": "Case note: CS(COMM) 2719/2020\nClient: Joseph Joshi (truck driver, Kozhikode)\nOpposing party: Shinde Infotech Pvt Ltd\nCourt: Kozhikode Commercial Court\nFiled on: 16 April 2020\nClaim amount: INR 14,68,00,000/-\nIssue: breach of contract. The claim must be filed as a commercial suit.\nAdvice given: Complete pre-institution mediation before filing the commercial suit.\nOutcome: Mediation failed and the suit was filed.\nRecommended next step: Seek summary judgment.\nMatter code: Project Pelican",
+  "spans": [
+    {
+      "text": "CS(COMM) 2719/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Joseph Joshi",
+      "category": "NAME",
+      "start": 38,
+      "end": 50
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "Kozhikode",
+      "category": "LOCATION",
+      "start": 66,
+      "end": 75
+    },
+    {
+      "text": "Shinde Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 93,
+      "end": 116
+    },
+    {
+      "text": "Kozhikode Commercial Court",
+      "category": "COURT",
+      "start": 124,
+      "end": 150
+    },
+    {
+      "text": "16 April 2020",
+      "category": "DATE",
+      "start": 161,
+      "end": 174
+    },
+    {
+      "text": "INR 14,68,00,000/-",
+      "category": "MONEY",
+      "start": 189,
+      "end": 207
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 215,
+      "end": 233
+    },
+    {
+      "text": "Project Pelican",
+      "category": "MATTER_CODENAME",
+      "start": 474,
+      "end": 489
+    },
+    {
+      "text": "occupation (truck driver) + city (Kozhikode) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

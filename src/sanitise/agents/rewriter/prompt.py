@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import re
 
+from sanitise.domain import is_legal
 from sanitise.llm.base import LLMClient
 from sanitise.schemas import Action, FactTuple, RoutingDecision, SensitiveSpan
 
@@ -56,6 +57,42 @@ I take aspirin. My wife has psoriasis. You can reach me on [PHONE_1].
 """
 
 
+LEGAL_SYSTEM_PROMPT = """\
+You rewrite a document from a litigation firm's past matter from a list of facts, so it can \
+be shared inside the firm without identifying the client or anyone else. The facts have \
+already been made safe: some details are placeholder tokens such as [CLIENT_1], [PARTY_1] \
+or [CASE_1], and some are deliberately vague phrases such as "a High Court" or "between \
+₹1 lakh and ₹10 lakh".
+
+Rules:
+1. Use every fact, and only the facts. Never add a name, age, place, date, amount, court, \
+case number or any other detail that is not in the facts.
+2. Copy placeholder tokens exactly, brackets included.
+3. Keep vague phrases vague; you may change their grammar to fit the sentence.
+4. Keep the advice, the documents requested, the outcome and the next step in full: they \
+are what the lawyers will search for.
+5. Write a short case summary in plain sentences, three to six of them, no headings or lists.
+6. Return only the rewritten document.
+
+EXAMPLE
+FACTS:
+the client - identifier: [CLIENT_1].
+the client - works as: a healthcare worker.
+the client - lives in: a city in Karnataka.
+the client - has legal issue: partition suit.
+the client - opposing party: [PARTY_1].
+the client - filed in: a civil court.
+the client - advised: Ask the court to appoint a valuer before any division.
+the client - outcome: The court appointed a valuer.
+the client - next step: File objections to the valuation report.
+OUTPUT:
+[CLIENT_1], a healthcare worker in a city in Karnataka, brought a partition suit against \
+[PARTY_1] before a civil court. We advised the client to ask the court to appoint a valuer \
+before any division. The court appointed a valuer. The recommended next step is to file \
+objections to the valuation report.
+"""
+
+
 def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     """``value`` with every removed span (longest first) replaced by its replacement."""
     removed = sorted(
@@ -76,6 +113,8 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
 def subject_label(subject: str) -> str:
     if subject == "writer":
         return "the writer"
+    if subject in {"client", "opposing_party", "witness"}:
+        return "the " + subject.replace("_", " ")
     if subject.startswith("writer."):
         return "the writer's " + subject.removeprefix("writer.").replace("_", " ")
     return subject.replace("_", " ")
@@ -112,4 +151,5 @@ async def reconstruct(
     llm: LLMClient,
     feedback: list[SensitiveSpan] | None = None,
 ) -> str:
-    return await llm.text_call(SYSTEM_PROMPT, build_user_prompt(facts, decisions, feedback))
+    system = LEGAL_SYSTEM_PROMPT if is_legal() else SYSTEM_PROMPT
+    return await llm.text_call(system, build_user_prompt(facts, decisions, feedback))

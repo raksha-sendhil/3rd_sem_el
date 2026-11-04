@@ -1,0 +1,110 @@
+{
+  "doc_id": "0318932b31b56acd",
+  "text": "Intake note - Commercial team\nDate: 27 August 2022\nClient: Rajesh Nambiar, a 37-year-old bank manager from Kolhapur.\nAddress: Plot 51, Rajarampuri, Kolhapur 416035\nPhone: +91 97291 36281. Email: rajesh.nambiar52@example.in. PAN XQZPN3309R.\nMatter: wrongful termination\nOpposing party: M/s Goyal Pharma Ltd\nFacts: The wrongful termination claim against Goyal Pharma Ltd is for Rs 41,20,000; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 103/2022 before the Kolhapur Labour Court on 21 September 2022.",
+  "spans": [
+    {
+      "text": "27 August 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 50
+    },
+    {
+      "text": "Rajesh Nambiar",
+      "category": "NAME",
+      "start": 59,
+      "end": 73
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 101
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 115
+    },
+    {
+      "text": "Plot 51, Rajarampuri, Kolhapur 416035",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 163
+    },
+    {
+      "text": "+91 97291 36281",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "rajesh.nambiar52@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 222
+    },
+    {
+      "text": "XQZPN3309R",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 248,
+      "end": 268
+    },
+    {
+      "text": "Goyal Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 289,
+      "end": 305
+    },
+    {
+      "text": "Goyal Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 352,
+      "end": 368
+    },
+    {
+      "text": "Rs 41,20,000",
+      "category": "MONEY",
+      "start": 376,
+      "end": 388
+    },
+    {
+      "text": "Complaint No. 103/2022",
+      "category": "CASE_NUMBER",
+      "start": 467,
+      "end": 489
+    },
+    {
+      "text": "Kolhapur Labour Court",
+      "category": "COURT",
+      "start": 501,
+      "end": 522
+    },
+    {
+      "text": "21 September 2022",
+      "category": "DATE",
+      "start": 526,
+      "end": 543
+    },
+    {
+      "text": "age (37) + occupation (bank manager) + city (Kolhapur) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

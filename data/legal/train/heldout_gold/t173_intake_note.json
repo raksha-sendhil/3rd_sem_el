@@ -1,0 +1,104 @@
+{
+  "doc_id": "df04d00cdd3cd775",
+  "text": "Intake note (Commercial team, 19/05/2025). Our client Harpreet Pawar is a 72-year-old restaurant owner who lives at Flat 5D, Kadri, Mangaluru 575035 and can be reached on +91 76524 73557 or harpreet.pawar@example.in. The client's PAN VGYPP1110V.\nThe client consulted us about a breach of contract matter (Project Kestrel) against Deccan Logistics Ltd. The breach of contract claim against M/s Deccan Logistics Ltd is for Rs. 16,13,00,000; the counterparty has not paid the invoices for delivered goods.\nThe matter was filed as CS(COMM) 681/2025 before the Mangaluru Commercial Court on 16 September 2025.",
+  "spans": [
+    {
+      "text": "19/05/2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Harpreet Pawar",
+      "category": "NAME",
+      "start": 54,
+      "end": 68
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Flat 5D, Kadri, Mangaluru 575035",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 148
+    },
+    {
+      "text": "+91 76524 73557",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "harpreet.pawar@example.in",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 215
+    },
+    {
+      "text": "VGYPP1110V",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 278,
+      "end": 296
+    },
+    {
+      "text": "Project Kestrel",
+      "category": "MATTER_CODENAME",
+      "start": 305,
+      "end": 320
+    },
+    {
+      "text": "Deccan Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 330,
+      "end": 350
+    },
+    {
+      "text": "Deccan Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 393,
+      "end": 413
+    },
+    {
+      "text": "Rs. 16,13,00,000",
+      "category": "MONEY",
+      "start": 421,
+      "end": 437
+    },
+    {
+      "text": "CS(COMM) 681/2025",
+      "category": "CASE_NUMBER",
+      "start": 527,
+      "end": 544
+    },
+    {
+      "text": "Mangaluru Commercial Court",
+      "category": "COURT",
+      "start": 556,
+      "end": 582
+    },
+    {
+      "text": "16 September 2025",
+      "category": "DATE",
+      "start": 586,
+      "end": 603
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

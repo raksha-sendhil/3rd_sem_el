@@ -1,0 +1,44 @@
+{
+  "doc_id": "29c5e2d473913e48",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Khan,\n\nThank you for meeting us on 15 June 2025 about your dispute with M/s Harbour Traders. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of ₹22,70,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 45,
+      "end": 49
+    },
+    {
+      "text": "15 June 2025",
+      "category": "DATE",
+      "start": 80,
+      "end": 92
+    },
+    {
+      "text": "Harbour Traders",
+      "category": "ORGANIZATION",
+      "start": 121,
+      "end": 136
+    },
+    {
+      "text": "₹22,70,000",
+      "category": "MONEY",
+      "start": 509,
+      "end": 519
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 536,
+      "end": 551
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

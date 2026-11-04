@@ -1,0 +1,44 @@
+{
+  "doc_id": "8687e4ade2110a9a",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 2680/2020\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 03/06/2021 about your dispute with Farhan Chandran. As we understand it, the neighbour has encroached on the boundary of the plot.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 2680/2020",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 56
+    },
+    {
+      "text": "Bhandari",
+      "category": "NAME",
+      "start": 67,
+      "end": 75
+    },
+    {
+      "text": "03/06/2021",
+      "category": "DATE",
+      "start": 106,
+      "end": 116
+    },
+    {
+      "text": "Farhan Chandran",
+      "category": "NAME",
+      "start": 141,
+      "end": 156
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 424,
+      "end": 436
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

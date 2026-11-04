@@ -1,0 +1,80 @@
+{
+  "doc_id": "d0aed157dfe2133a",
+  "text": "Subject: Need help with a geographical-indication dispute case\n\nHello, my name is Swati Kamath. I am a 26-year-old cardiologist living in Pune. Our producers' association has a geographical-indication dispute with Crescent Exports over sales of INR 6,55,00,000/-, and the rival product uses the protected regional name on its label. My case number is CS(COMM) 120/2024 in the Bombay High Court. Can your firm advise me on what to do next? You can call me on +91 82078 30175 or email swati.kamath94@example.com.",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 57
+    },
+    {
+      "text": "Swati Kamath",
+      "category": "NAME",
+      "start": 82,
+      "end": 94
+    },
+    {
+      "text": "26-year-old",
+      "category": "AGE",
+      "start": 103,
+      "end": 114
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 115,
+      "end": 127
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 138,
+      "end": 142
+    },
+    {
+      "text": "Crescent Exports",
+      "category": "ORGANIZATION",
+      "start": 214,
+      "end": 230
+    },
+    {
+      "text": "INR 6,55,00,000/-",
+      "category": "MONEY",
+      "start": 245,
+      "end": 262
+    },
+    {
+      "text": "CS(COMM) 120/2024",
+      "category": "CASE_NUMBER",
+      "start": 351,
+      "end": 368
+    },
+    {
+      "text": "Bombay High Court",
+      "category": "COURT",
+      "start": 376,
+      "end": 393
+    },
+    {
+      "text": "+91 82078 30175",
+      "category": "PHONE",
+      "start": 458,
+      "end": 473
+    },
+    {
+      "text": "swati.kamath94@example.com",
+      "category": "EMAIL",
+      "start": 483,
+      "end": 509
+    },
+    {
+      "text": "age (26) + occupation (cardiologist) + city (Pune) + issue (geographical-indication dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

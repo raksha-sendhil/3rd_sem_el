@@ -1,0 +1,110 @@
+{
+  "doc_id": "bf06c856179139a9",
+  "text": "Intake note - Commercial team\nDate: 3 December 2018\nClient: Gaurav Bhatt, a 61-year-old orthopaedic surgeon from Hubballi.\nAddress: House No. 226, Keshwapur, Hubballi 580003\nPhone: +91 79935 04165. Email: gaurav.bhatt35@example.in. PAN TVXPB3629M.\nMatter: cross-border insolvency\nOpposing party: Malhotra Industries\nFacts: The cross-border insolvency matter involving M/s Malhotra Industries concerns claims of Rs 64,92,00,000; the foreign administrator wants control of the assets in this country.\nThe matter was filed as C.P.(IB) No. 2666/2019 before the NCLT Mumbai on 10 June 2019.",
+  "spans": [
+    {
+      "text": "3 December 2018",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Gaurav Bhatt",
+      "category": "NAME",
+      "start": 60,
+      "end": 72
+    },
+    {
+      "text": "61-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 107
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 113,
+      "end": 121
+    },
+    {
+      "text": "House No. 226, Keshwapur, Hubballi 580003",
+      "category": "ADDRESS",
+      "start": 132,
+      "end": 173
+    },
+    {
+      "text": "+91 79935 04165",
+      "category": "PHONE",
+      "start": 181,
+      "end": 196
+    },
+    {
+      "text": "gaurav.bhatt35@example.in",
+      "category": "EMAIL",
+      "start": 205,
+      "end": 230
+    },
+    {
+      "text": "TVXPB3629M",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 256,
+      "end": 279
+    },
+    {
+      "text": "Malhotra Industries",
+      "category": "ORGANIZATION",
+      "start": 296,
+      "end": 315
+    },
+    {
+      "text": "Malhotra Industries",
+      "category": "ORGANIZATION",
+      "start": 372,
+      "end": 391
+    },
+    {
+      "text": "Rs 64,92,00,000",
+      "category": "MONEY",
+      "start": 411,
+      "end": 426
+    },
+    {
+      "text": "C.P.(IB) No. 2666/2019",
+      "category": "CASE_NUMBER",
+      "start": 523,
+      "end": 545
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 557,
+      "end": 568
+    },
+    {
+      "text": "10 June 2019",
+      "category": "DATE",
+      "start": 572,
+      "end": 584
+    },
+    {
+      "text": "age (61) + occupation (orthopaedic surgeon) + city (Hubballi) + issue (cross-border insolvency)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

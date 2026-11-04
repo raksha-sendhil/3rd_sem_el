@@ -1,0 +1,110 @@
+{
+  "doc_id": "8b983da7db63f4f6",
+  "text": "Intake note - Commercial team\nDate: 31 December 2020\nClient: Vandana Gowda, a 46-year-old civil engineer from Coimbatore.\nAddress: Bungalow 32, Peelamedu, Coimbatore 641012\nPhone: +91 72369 63857. Email: vandana.gowda15@example.in. PAN YWEPG2193Z.\nMatter: cheque bounce\nOpposing party: M/s Vindhya Traders\nFacts: A cheque for 12.1 lakh rupees issued by M/s Vindhya Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/1668/2021 before the Judicial Magistrate First Class Court at Coimbatore on 29/04/2021.",
+  "spans": [
+    {
+      "text": "31 December 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 52
+    },
+    {
+      "text": "Vandana Gowda",
+      "category": "NAME",
+      "start": 61,
+      "end": 74
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 104
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 120
+    },
+    {
+      "text": "Bungalow 32, Peelamedu, Coimbatore 641012",
+      "category": "ADDRESS",
+      "start": 131,
+      "end": 172
+    },
+    {
+      "text": "+91 72369 63857",
+      "category": "PHONE",
+      "start": 180,
+      "end": 195
+    },
+    {
+      "text": "vandana.gowda15@example.in",
+      "category": "EMAIL",
+      "start": 204,
+      "end": 230
+    },
+    {
+      "text": "YWEPG2193Z",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 256,
+      "end": 269
+    },
+    {
+      "text": "Vindhya Traders",
+      "category": "ORGANIZATION",
+      "start": 290,
+      "end": 305
+    },
+    {
+      "text": "12.1 lakh rupees",
+      "category": "MONEY",
+      "start": 326,
+      "end": 342
+    },
+    {
+      "text": "Vindhya Traders",
+      "category": "ORGANIZATION",
+      "start": 357,
+      "end": 372
+    },
+    {
+      "text": "CC/1668/2021",
+      "category": "CASE_NUMBER",
+      "start": 459,
+      "end": 471
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 483,
+      "end": 534
+    },
+    {
+      "text": "29/04/2021",
+      "category": "DATE",
+      "start": 538,
+      "end": 548
+    },
+    {
+      "text": "age (46) + occupation (civil engineer) + city (Coimbatore) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

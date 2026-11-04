@@ -1,0 +1,116 @@
+{
+  "doc_id": "1e553141f44e7562",
+  "text": "Intake note - Commercial team\nDate: 12/09/2025\nClient: Manoj Reddy, a 60-year-old chartered accountant from Madurai.\nAddress: Bungalow 26, KK Nagar, Madurai 625028\nPhone: 06677733868. Email: manoj.reddy@example.in. PAN LBTPR4341C, Aadhaar 8185 6390 7773.\nMatter: geographical-indication dispute\nOpposing party: Skyline Foods Pvt Ltd\nFacts: The geographical-indication dispute with Skyline Foods Pvt Ltd involves sales of INR 5,97,00,000/-; a conflicting trademark was registered.\nThe matter was filed as CS(COMM) 1714/2025 before the Madras High Court on 5 November 2025.",
+  "spans": [
+    {
+      "text": "12/09/2025",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Manoj Reddy",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 102
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 115
+    },
+    {
+      "text": "Bungalow 26, KK Nagar, Madurai 625028",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 163
+    },
+    {
+      "text": "06677733868",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "manoj.reddy@example.in",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 213
+    },
+    {
+      "text": "LBTPR4341C",
+      "category": "ID_NUMBER",
+      "start": 219,
+      "end": 229
+    },
+    {
+      "text": "8185 6390 7773",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 253
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 263,
+      "end": 294
+    },
+    {
+      "text": "Skyline Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 311,
+      "end": 332
+    },
+    {
+      "text": "Skyline Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 381,
+      "end": 402
+    },
+    {
+      "text": "INR 5,97,00,000/-",
+      "category": "MONEY",
+      "start": 421,
+      "end": 438
+    },
+    {
+      "text": "CS(COMM) 1714/2025",
+      "category": "CASE_NUMBER",
+      "start": 504,
+      "end": 522
+    },
+    {
+      "text": "Madras High Court",
+      "category": "COURT",
+      "start": 534,
+      "end": 551
+    },
+    {
+      "text": "5 November 2025",
+      "category": "DATE",
+      "start": 555,
+      "end": 570
+    },
+    {
+      "text": "age (60) + occupation (chartered accountant) + city (Madurai) + issue (geographical-indication dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

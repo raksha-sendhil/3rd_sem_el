@@ -1,0 +1,44 @@
+{
+  "doc_id": "f67d2496435d54a5",
+  "text": "Subject: Your breach of contract matter\n\nDear Mr. Joshi,\n\nThank you for meeting us on 28 December 2020 about your dispute with Shinde Infotech Pvt Ltd. As we understand it, the claim must be filed as a commercial suit.\n\nOur advice is to complete pre-institution mediation before filing the commercial suit. Please collect the mediation request and the statement of accounts and send copies to this office. We will pursue the full claim of ₹14.7 crore.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Joshi",
+      "category": "NAME",
+      "start": 50,
+      "end": 55
+    },
+    {
+      "text": "28 December 2020",
+      "category": "DATE",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Shinde Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 150
+    },
+    {
+      "text": "₹14.7 crore",
+      "category": "MONEY",
+      "start": 439,
+      "end": 450
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 467,
+      "end": 479
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

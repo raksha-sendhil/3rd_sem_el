@@ -1,0 +1,56 @@
+{
+  "doc_id": "5d754bbdb6645ea7",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 2873/2022\n\nDear Mr. Mehra,\n\nThank you for meeting us on 30 June 2022 about your dispute with Ananya Goyal. As we understand it, construction has started on the disputed plot. The matter is listed before the Kolhapur District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office. We will pursue the full claim of Rs 3,33,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 2873/2022",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 56
+    },
+    {
+      "text": "Mehra",
+      "category": "NAME",
+      "start": 67,
+      "end": 72
+    },
+    {
+      "text": "30 June 2022",
+      "category": "DATE",
+      "start": 103,
+      "end": 115
+    },
+    {
+      "text": "Ananya Goyal",
+      "category": "NAME",
+      "start": 140,
+      "end": 152
+    },
+    {
+      "text": "Kolhapur District Court",
+      "category": "COURT",
+      "start": 254,
+      "end": 277
+    },
+    {
+      "text": "Rs 3,33,00,000",
+      "category": "MONEY",
+      "start": 492,
+      "end": 506
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 523,
+      "end": 539
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

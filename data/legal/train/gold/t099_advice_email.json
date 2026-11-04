@@ -1,0 +1,50 @@
+{
+  "doc_id": "36571eb26b84be0c",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2651/2023\n\nDear Ms. Deshpande,\n\nThank you for meeting us on 14 October 2023 about your dispute with Sameer Chandran. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Pune District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 2651/2023",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Deshpande",
+      "category": "NAME",
+      "start": 71,
+      "end": 80
+    },
+    {
+      "text": "14 October 2023",
+      "category": "DATE",
+      "start": 111,
+      "end": 126
+    },
+    {
+      "text": "Sameer Chandran",
+      "category": "NAME",
+      "start": 151,
+      "end": 166
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 273,
+      "end": 292
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 544,
+      "end": 556
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -14,6 +14,9 @@ Design notes:
   Agent 3 needs to know about them to write a complete record, and replaces them before the
   reconstruction model ever sees them.
 * ``value`` copies the document's wording, so later stages can match it against the text.
+* The legal domain (``LEGAL_SYSTEM_PROMPT``) asks for the legal facts the build spec's
+  Agent 2 target names: the advice, the legal issue, the court, the outcome, plus the
+  documents asked for and the next step.
 * The few-shot examples are written for this prompt. They must never be taken from
   ``data/fixtures`` or ``data/gold``, because the evaluation runs on those documents
   (``tests/prompts/test_prompts.py`` fails if a gold phrase appears here).
@@ -25,6 +28,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from sanitise.domain import is_legal
 from sanitise.llm.base import LLMClient
 from sanitise.schemas import RELATIONS, FactTuple, Importance, SensitiveSpan, Subject
 
@@ -128,6 +132,76 @@ OUTPUT:
 """
 
 
+LEGAL_SYSTEM_PROMPT = """\
+You turn one document from a litigation firm's past matter (an intake note, an advice email \
+from a lawyer to a client, a case note, or a client's enquiry) into a list of facts. Each fact \
+is {"subject", "relation", "value", "importance"}.
+
+subject: the id of the person the fact is about, from SUBJECTS. "client" is the firm's \
+client, "opposing_party" the other side, "witness" a witness, "person_<n>" anyone else \
+(a lawyer, a judge). Facts about the matter itself (the advice, the court, the outcome) \
+belong to "client".
+
+relation: exactly one of these names:
+- has_legal_issue: the legal issue ("breach of contract", "partition suit")
+- advised: the advice the firm gave, as a short clause
+- documents_requested: the documents the client was asked to collect
+- filed_in: the court or tribunal; filed_on: the filing date
+- claim_amount: the amount in dispute
+- outcome: what happened in the matter; next_step: the recommended next step
+- opposing_party: the name of the other side (a person or a company)
+- represented_by: the lawyer acting; employed_by: the person's employer
+- age, sex, works_as, lives_in: about the person
+- contact: a phone number or email; identifier: a name, PAN, Aadhaar or case number
+- other: anything else that describes the person or the matter
+
+value: the detail in a few words, copied from the document's own wording. Do not add words.
+
+importance: "high" for has_legal_issue, advised, documents_requested, filed_in, outcome and \
+next_step; "medium" for filed_on, claim_amount, age, works_as and lives_in; "low" for \
+everything else.
+
+Rules:
+- One fact per detail. Every name, contact detail, ID, case number, court, amount and date \
+is a fact, and so is the advice, every document asked for, the outcome and the next step.
+- Never invent a detail that the document does not state.
+- If there are no facts, return {"facts": []}.
+
+EXAMPLE
+DOCUMENT:
+Case note: T.S. No. 88/2021
+Client: Nitya Ramaswamy (veterinarian, Belagavi)
+Opposing party: Imran Siddiqui
+Court: Belagavi Civil Court
+Issue: partition suit. The cousins cannot agree how to divide the farmhouse.
+Advice given: Ask the court to appoint a valuer before any division.
+Outcome: The court appointed a valuer.
+Recommended next step: File objections to the valuation report.
+SUBJECTS:
+- client: the client
+- opposing_party: the opposing party
+OUTPUT:
+{"facts": [
+ {"subject": "client", "relation": "identifier", "value": "T.S. No. 88/2021", "importance": "low"},
+ {"subject": "client", "relation": "identifier", "value": "Nitya Ramaswamy", "importance": "low"},
+ {"subject": "client", "relation": "works_as", "value": "veterinarian", "importance": "medium"},
+ {"subject": "client", "relation": "lives_in", "value": "Belagavi", "importance": "medium"},
+ {"subject": "client", "relation": "opposing_party", "value": "Imran Siddiqui", \
+"importance": "low"},
+ {"subject": "client", "relation": "filed_in", "value": "Belagavi Civil Court", \
+"importance": "high"},
+ {"subject": "client", "relation": "has_legal_issue", "value": "partition suit", \
+"importance": "high"},
+ {"subject": "client", "relation": "advised", "value": "Ask the court to appoint a valuer \
+before any division", "importance": "high"},
+ {"subject": "client", "relation": "outcome", "value": "The court appointed a valuer", \
+"importance": "high"},
+ {"subject": "client", "relation": "next_step", "value": "File objections to the valuation \
+report", "importance": "high"}
+]}
+"""
+
+
 def build_user_prompt(text: str, subjects: list[Subject], spans: list[SensitiveSpan]) -> str:
     people = "\n".join(f"- {s.id}: {s.label}" for s in subjects) or "- writer: the writer"
     hints = "\n".join(f"- {s.category.value}: {s.text}" for s in spans) or "(none)"
@@ -141,9 +215,8 @@ def build_user_prompt(text: str, subjects: list[Subject], spans: list[SensitiveS
 async def extract_facts(
     text: str, subjects: list[Subject], spans: list[SensitiveSpan], llm: LLMClient
 ) -> list[FactTuple]:
-    result = await llm.json_call(
-        SYSTEM_PROMPT, build_user_prompt(text, subjects, spans), LLMFactList
-    )
+    system = LEGAL_SYSTEM_PROMPT if is_legal() else SYSTEM_PROMPT
+    result = await llm.json_call(system, build_user_prompt(text, subjects, spans), LLMFactList)
     return [
         FactTuple(
             subject=f.subject,

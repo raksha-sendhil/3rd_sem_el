@@ -1,0 +1,56 @@
+{
+  "doc_id": "2cc5dff2d2b99628",
+  "text": "Subject: Your consumer complaint matter - CC/2526/2025\n\nDear Mr. Tiwari,\n\nThank you for meeting us on 18 October 2025 about your dispute with M/s Trident Builders Pvt Ltd. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Nashik District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office. We will pursue the full claim of INR 7,17,00,000/-.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CC/2526/2025",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 54
+    },
+    {
+      "text": "Tiwari",
+      "category": "NAME",
+      "start": 65,
+      "end": 71
+    },
+    {
+      "text": "18 October 2025",
+      "category": "DATE",
+      "start": 102,
+      "end": 117
+    },
+    {
+      "text": "Trident Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 146,
+      "end": 170
+    },
+    {
+      "text": "Nashik District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 285,
+      "end": 339
+    },
+    {
+      "text": "INR 7,17,00,000/-",
+      "category": "MONEY",
+      "start": 574,
+      "end": 591
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 608,
+      "end": 624
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

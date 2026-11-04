@@ -1,0 +1,98 @@
+{
+  "doc_id": "16cc27702b6c745d",
+  "text": "Intake note (Commercial team, 14 January 2024). Our client Ramesh Gokhale is a 46-year-old farmer who lives at Bungalow 6, Kadri, Mangaluru 575011 and can be reached on +91 85255 43136 or ramesh.gokhale@example.in. The client's PAN PHYPG2959H.\nThe client consulted us about a wrongful termination matter against Everest Pharma Ltd. The wrongful termination claim against M/s Everest Pharma Ltd is for ₹26,50,000; the employer offered to settle.\nThe matter was filed as Complaint No. 2253/2024 before the Mangaluru Labour Court on 01/04/2024.",
+  "spans": [
+    {
+      "text": "14 January 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Ramesh Gokhale",
+      "category": "NAME",
+      "start": 59,
+      "end": 73
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 97
+    },
+    {
+      "text": "Bungalow 6, Kadri, Mangaluru 575011",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 146
+    },
+    {
+      "text": "+91 85255 43136",
+      "category": "PHONE",
+      "start": 169,
+      "end": 184
+    },
+    {
+      "text": "ramesh.gokhale@example.in",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 213
+    },
+    {
+      "text": "PHYPG2959H",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 276,
+      "end": 296
+    },
+    {
+      "text": "Everest Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 312,
+      "end": 330
+    },
+    {
+      "text": "Everest Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 375,
+      "end": 393
+    },
+    {
+      "text": "₹26,50,000",
+      "category": "MONEY",
+      "start": 401,
+      "end": 411
+    },
+    {
+      "text": "Complaint No. 2253/2024",
+      "category": "CASE_NUMBER",
+      "start": 469,
+      "end": 492
+    },
+    {
+      "text": "Mangaluru Labour Court",
+      "category": "COURT",
+      "start": 504,
+      "end": 526
+    },
+    {
+      "text": "01/04/2024",
+      "category": "DATE",
+      "start": 530,
+      "end": 540
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

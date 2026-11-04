@@ -1,0 +1,116 @@
+{
+  "doc_id": "9ad19a60f3e1e563",
+  "text": "Intake note - Criminal team\nDate: 15 January 2020\nClient: Radhika Rajan, a 71-year-old retired bank officer from Pune.\nAddress: Flat 14D, Koregaon Park, Pune 411026\nPhone: +91 85578 28448. Email: radhika.rajan@example.com. PAN FDXPR3010J, Aadhaar 6466 5509 6767.\nMatter: anticipatory bail\nOpposing party: Ajay Malhotra\nFacts: The anticipatory bail matter arises from a complaint by Ajay Malhotra about Rs 58,90,000; the complaint alleges negligence during treatment.\nThe matter was filed as Anticipatory Bail Application No. 670/2020 before the Pune Sessions Court on 17 May 2020.",
+  "spans": [
+    {
+      "text": "15 January 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 49
+    },
+    {
+      "text": "Radhika Rajan",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 107
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 113,
+      "end": 117
+    },
+    {
+      "text": "Flat 14D, Koregaon Park, Pune 411026",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 164
+    },
+    {
+      "text": "+91 85578 28448",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "radhika.rajan@example.com",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 221
+    },
+    {
+      "text": "FDXPR3010J",
+      "category": "ID_NUMBER",
+      "start": 227,
+      "end": 237
+    },
+    {
+      "text": "6466 5509 6767",
+      "category": "ID_NUMBER",
+      "start": 247,
+      "end": 261
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 271,
+      "end": 288
+    },
+    {
+      "text": "Ajay Malhotra",
+      "category": "NAME",
+      "start": 305,
+      "end": 318
+    },
+    {
+      "text": "Ajay Malhotra",
+      "category": "NAME",
+      "start": 382,
+      "end": 395
+    },
+    {
+      "text": "Rs 58,90,000",
+      "category": "MONEY",
+      "start": 402,
+      "end": 414
+    },
+    {
+      "text": "Anticipatory Bail Application No. 670/2020",
+      "category": "CASE_NUMBER",
+      "start": 491,
+      "end": 533
+    },
+    {
+      "text": "Pune Sessions Court",
+      "category": "COURT",
+      "start": 545,
+      "end": 564
+    },
+    {
+      "text": "17 May 2020",
+      "category": "DATE",
+      "start": 568,
+      "end": 579
+    },
+    {
+      "text": "age (71) + occupation (retired bank officer) + city (Pune) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

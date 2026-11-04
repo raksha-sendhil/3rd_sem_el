@@ -1,0 +1,50 @@
+{
+  "doc_id": "0857b850787f2590",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2701/2020\n\nDear Ms. Rao,\n\nThank you for meeting us on 3 July 2020 about your dispute with Saxena Developers. As we understand it, possession of the flat is long overdue. The matter is listed before the Hyderabad District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 2701/2020",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Rao",
+      "category": "NAME",
+      "start": 71,
+      "end": 74
+    },
+    {
+      "text": "3 July 2020",
+      "category": "DATE",
+      "start": 105,
+      "end": 116
+    },
+    {
+      "text": "Saxena Developers",
+      "category": "ORGANIZATION",
+      "start": 141,
+      "end": 158
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 253,
+      "end": 310
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 542,
+      "end": 557
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

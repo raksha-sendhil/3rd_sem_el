@@ -1,0 +1,110 @@
+{
+  "doc_id": "6bdef8f979a81ef4",
+  "text": "Intake note - Property team\nDate: 14/03/2020\nClient: Neha Rane, a 63-year-old dentist from Nagpur.\nAddress: Flat 2B, Sitabuldi, Nagpur 440010\nPhone: 07636212818. Email: neha.rane11@example.in. PAN BXEPR9206A.\nMatter: tenancy eviction\nOpposing party: Charulata Kulkarni\nFacts: The tenancy dispute with Charulata Kulkarni concerns rent arrears of 8.7 lakh rupees; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 2771/2020 before the Nagpur District Court on 30 August 2020.",
+  "spans": [
+    {
+      "text": "14/03/2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Neha Rane",
+      "category": "NAME",
+      "start": 53,
+      "end": 62
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 66,
+      "end": 77
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 78,
+      "end": 85
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 91,
+      "end": 97
+    },
+    {
+      "text": "Flat 2B, Sitabuldi, Nagpur 440010",
+      "category": "ADDRESS",
+      "start": 108,
+      "end": 141
+    },
+    {
+      "text": "07636212818",
+      "category": "PHONE",
+      "start": 149,
+      "end": 160
+    },
+    {
+      "text": "neha.rane11@example.in",
+      "category": "EMAIL",
+      "start": 169,
+      "end": 191
+    },
+    {
+      "text": "BXEPR9206A",
+      "category": "ID_NUMBER",
+      "start": 197,
+      "end": 207
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 217,
+      "end": 233
+    },
+    {
+      "text": "Charulata Kulkarni",
+      "category": "NAME",
+      "start": 250,
+      "end": 268
+    },
+    {
+      "text": "Charulata Kulkarni",
+      "category": "NAME",
+      "start": 301,
+      "end": 319
+    },
+    {
+      "text": "8.7 lakh rupees",
+      "category": "MONEY",
+      "start": 345,
+      "end": 360
+    },
+    {
+      "text": "R.C.S. No. 2771/2020",
+      "category": "CASE_NUMBER",
+      "start": 438,
+      "end": 458
+    },
+    {
+      "text": "Nagpur District Court",
+      "category": "COURT",
+      "start": 470,
+      "end": 491
+    },
+    {
+      "text": "30 August 2020",
+      "category": "DATE",
+      "start": 495,
+      "end": 509
+    },
+    {
+      "text": "age (63) + occupation (dentist) + city (Nagpur) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

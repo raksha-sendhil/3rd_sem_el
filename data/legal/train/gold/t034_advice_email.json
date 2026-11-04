@@ -1,0 +1,56 @@
+{
+  "doc_id": "6ab837610f3f34f9",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2412/2019\n\nDear Ms. Malhotra,\n\nThank you for meeting us on 18 April 2020 about your dispute with M/s Ahuja Developers. As we understand it, possession of the flat is long overdue. The matter is listed before the Mumbai District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office. We will pursue the full claim of Rs 6,91,00,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 2412/2019",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Malhotra",
+      "category": "NAME",
+      "start": 71,
+      "end": 79
+    },
+    {
+      "text": "18 April 2020",
+      "category": "DATE",
+      "start": 110,
+      "end": 123
+    },
+    {
+      "text": "Ahuja Developers",
+      "category": "ORGANIZATION",
+      "start": 152,
+      "end": 168
+    },
+    {
+      "text": "Mumbai District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 263,
+      "end": 317
+    },
+    {
+      "text": "Rs 6,91,00,000",
+      "category": "MONEY",
+      "start": 567,
+      "end": 581
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 598,
+      "end": 610
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

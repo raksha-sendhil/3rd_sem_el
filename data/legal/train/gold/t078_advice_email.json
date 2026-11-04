@@ -1,0 +1,44 @@
+{
+  "doc_id": "dc99a9a846600707",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 91/2022\n\nDear Mr. Trivedi,\n\nThank you for meeting us on 20 October 2022 about your dispute with Farhan Karve. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 91/2022",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 55
+    },
+    {
+      "text": "Trivedi",
+      "category": "NAME",
+      "start": 66,
+      "end": 73
+    },
+    {
+      "text": "20 October 2022",
+      "category": "DATE",
+      "start": 104,
+      "end": 119
+    },
+    {
+      "text": "Farhan Karve",
+      "category": "NAME",
+      "start": 144,
+      "end": 156
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 511,
+      "end": 523
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

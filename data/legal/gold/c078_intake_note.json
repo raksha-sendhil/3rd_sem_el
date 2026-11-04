@@ -1,0 +1,110 @@
+{
+  "doc_id": "e3120ae00dcce29f",
+  "text": "Intake note - Property team\nDate: 23/04/2019\nClient: Yogesh Banerjee, a 72-year-old professor from Thane.\nAddress: Flat 17D, Vartak Nagar, Thane 400645\nPhone: 77382 39268. Email: yogesh.banerjee@example.in. PAN ZEGPB8897B.\nMatter: land dispute\nOpposing party: Sunanda Fernandes\nFacts: The land dispute with Sunanda Fernandes concerns agricultural land valued at INR 3,47,00,000/-; construction has started on the disputed plot.\nThe matter was filed as R.C.S. No. 2696/2019 before the Thane District Court on 22 May 2019.",
+  "spans": [
+    {
+      "text": "23/04/2019",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Yogesh Banerjee",
+      "category": "NAME",
+      "start": 53,
+      "end": 68
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "professor",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 93
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 99,
+      "end": 104
+    },
+    {
+      "text": "Flat 17D, Vartak Nagar, Thane 400645",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 151
+    },
+    {
+      "text": "77382 39268",
+      "category": "PHONE",
+      "start": 159,
+      "end": 170
+    },
+    {
+      "text": "yogesh.banerjee@example.in",
+      "category": "EMAIL",
+      "start": 179,
+      "end": 205
+    },
+    {
+      "text": "ZEGPB8897B",
+      "category": "ID_NUMBER",
+      "start": 211,
+      "end": 221
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 231,
+      "end": 243
+    },
+    {
+      "text": "Sunanda Fernandes",
+      "category": "NAME",
+      "start": 260,
+      "end": 277
+    },
+    {
+      "text": "Sunanda Fernandes",
+      "category": "NAME",
+      "start": 307,
+      "end": 324
+    },
+    {
+      "text": "INR 3,47,00,000/-",
+      "category": "MONEY",
+      "start": 362,
+      "end": 379
+    },
+    {
+      "text": "R.C.S. No. 2696/2019",
+      "category": "CASE_NUMBER",
+      "start": 452,
+      "end": 472
+    },
+    {
+      "text": "Thane District Court",
+      "category": "COURT",
+      "start": 484,
+      "end": 504
+    },
+    {
+      "text": "22 May 2019",
+      "category": "DATE",
+      "start": 508,
+      "end": 519
+    },
+    {
+      "text": "age (72) + occupation (professor) + city (Thane) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

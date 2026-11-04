@@ -1,0 +1,104 @@
+{
+  "doc_id": "8526c02d952d8255",
+  "text": "Intake note (Property team, 9 June 2020). Our client Sujata Das is a 39-year-old general physician who lives at Flat 3A, Malviya Nagar, Jaipur 302016 and can be reached on 85521 51943 or sujata.das@example.com. The client's PAN HEYPD8234L, Aadhaar 9704 2063 8093.\nThe client consulted us about a tenancy eviction matter against Shruti Bose. The tenancy dispute with Shruti Bose concerns rent arrears of INR 4,90,000/-; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 1715/2020 before the Jaipur District Court on 16 July 2020.",
+  "spans": [
+    {
+      "text": "9 June 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 39
+    },
+    {
+      "text": "Sujata Das",
+      "category": "NAME",
+      "start": 53,
+      "end": 63
+    },
+    {
+      "text": "39-year-old",
+      "category": "AGE",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 81,
+      "end": 98
+    },
+    {
+      "text": "Flat 3A, Malviya Nagar, Jaipur 302016",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 149
+    },
+    {
+      "text": "85521 51943",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "sujata.das@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 209
+    },
+    {
+      "text": "HEYPD8234L",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "9704 2063 8093",
+      "category": "ID_NUMBER",
+      "start": 248,
+      "end": 262
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 296,
+      "end": 312
+    },
+    {
+      "text": "Shruti Bose",
+      "category": "NAME",
+      "start": 328,
+      "end": 339
+    },
+    {
+      "text": "Shruti Bose",
+      "category": "NAME",
+      "start": 366,
+      "end": 377
+    },
+    {
+      "text": "INR 4,90,000/-",
+      "category": "MONEY",
+      "start": 403,
+      "end": 417
+    },
+    {
+      "text": "R.C.S. No. 1715/2020",
+      "category": "CASE_NUMBER",
+      "start": 495,
+      "end": 515
+    },
+    {
+      "text": "Jaipur District Court",
+      "category": "COURT",
+      "start": 527,
+      "end": 548
+    },
+    {
+      "text": "16 July 2020",
+      "category": "DATE",
+      "start": 552,
+      "end": 564
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

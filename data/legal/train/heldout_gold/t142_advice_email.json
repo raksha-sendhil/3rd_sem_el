@@ -1,0 +1,50 @@
+{
+  "doc_id": "1b3ac61addbbcbab",
+  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 2794/2025\n\nDear Ms. Pillai,\n\nThank you for meeting us on 27 December 2025 about your dispute with Divya Chandran. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Thiruvananthapuram District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.A. No. 2794/2025",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Pillai",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "27 December 2025",
+      "category": "DATE",
+      "start": 108,
+      "end": 124
+    },
+    {
+      "text": "Divya Chandran",
+      "category": "NAME",
+      "start": 149,
+      "end": 163
+    },
+    {
+      "text": "Thiruvananthapuram District Court",
+      "category": "COURT",
+      "start": 296,
+      "end": 329
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 559,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

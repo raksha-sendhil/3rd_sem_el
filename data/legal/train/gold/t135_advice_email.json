@@ -1,0 +1,44 @@
+{
+  "doc_id": "a95da32967ab4cb6",
+  "text": "Subject: Your cross-border insolvency matter - C.P.(IB) No. 2741/2022\n\nDear Ms. Ghosh,\n\nThank you for meeting us on 25 July 2022 about your dispute with M/s Lotus Holdings Ltd. As we understand it, the debtor is in insolvency proceedings in two countries.\n\nOur advice is to file the claim with the resolution professional before the deadline. Please collect the loan documents and the statement of the amount due and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 37
+    },
+    {
+      "text": "C.P.(IB) No. 2741/2022",
+      "category": "CASE_NUMBER",
+      "start": 47,
+      "end": 69
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 80,
+      "end": 85
+    },
+    {
+      "text": "25 July 2022",
+      "category": "DATE",
+      "start": 116,
+      "end": 128
+    },
+    {
+      "text": "Lotus Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 157,
+      "end": 175
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 460,
+      "end": 472
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

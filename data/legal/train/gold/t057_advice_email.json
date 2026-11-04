@@ -1,0 +1,44 @@
+{
+  "doc_id": "68f6f71a26f41270",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2493/2019\n\nDear Ms. Iyer,\n\nThank you for meeting us on 9 May 2019 about your dispute with Ramesh Mishra. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 2493/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Iyer",
+      "category": "NAME",
+      "start": 68,
+      "end": 72
+    },
+    {
+      "text": "9 May 2019",
+      "category": "DATE",
+      "start": 103,
+      "end": 113
+    },
+    {
+      "text": "Ramesh Mishra",
+      "category": "NAME",
+      "start": 138,
+      "end": 151
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 476,
+      "end": 493
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

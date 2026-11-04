@@ -1,0 +1,116 @@
+{
+  "doc_id": "79c9c1219e41a04a",
+  "text": "Intake note (Commercial team, 5 February 2019). Our client Ajay Shah is a 32-year-old retired bank officer who lives at Bungalow 38, Salt Lake, Kolkata 700022 and can be reached on +91 71132 10676 or ajay.shah@example.com. The client's PAN LETPS6275Y, Aadhaar 3327 0857 4930.\nThe client consulted us about a cheque bounce matter against Asha Saxena. A cheque for ₹23,90,000 issued by Asha Saxena bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 392355497416 (IFSC KKBK0950919).\nThe matter was filed as S.C.C. No. 1034/2019 before the Judicial Magistrate First Class Court at Kolkata on 30/06/2019.",
+  "spans": [
+    {
+      "text": "5 February 2019",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Ajay Shah",
+      "category": "NAME",
+      "start": 59,
+      "end": 68
+    },
+    {
+      "text": "32-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 106
+    },
+    {
+      "text": "Bungalow 38, Salt Lake, Kolkata 700022",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 158
+    },
+    {
+      "text": "+91 71132 10676",
+      "category": "PHONE",
+      "start": 181,
+      "end": 196
+    },
+    {
+      "text": "ajay.shah@example.com",
+      "category": "EMAIL",
+      "start": 200,
+      "end": 221
+    },
+    {
+      "text": "LETPS6275Y",
+      "category": "ID_NUMBER",
+      "start": 240,
+      "end": 250
+    },
+    {
+      "text": "3327 0857 4930",
+      "category": "ID_NUMBER",
+      "start": 260,
+      "end": 274
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 308,
+      "end": 321
+    },
+    {
+      "text": "Asha Saxena",
+      "category": "NAME",
+      "start": 337,
+      "end": 348
+    },
+    {
+      "text": "₹23,90,000",
+      "category": "MONEY",
+      "start": 363,
+      "end": 373
+    },
+    {
+      "text": "Asha Saxena",
+      "category": "NAME",
+      "start": 384,
+      "end": 395
+    },
+    {
+      "text": "392355497416",
+      "category": "FINANCIAL",
+      "start": 511,
+      "end": 523
+    },
+    {
+      "text": "KKBK0950919",
+      "category": "FINANCIAL",
+      "start": 530,
+      "end": 541
+    },
+    {
+      "text": "S.C.C. No. 1034/2019",
+      "category": "CASE_NUMBER",
+      "start": 568,
+      "end": 588
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kolkata",
+      "category": "COURT",
+      "start": 600,
+      "end": 648
+    },
+    {
+      "text": "30/06/2019",
+      "category": "DATE",
+      "start": 652,
+      "end": 662
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

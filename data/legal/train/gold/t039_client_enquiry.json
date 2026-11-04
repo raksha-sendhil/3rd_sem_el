@@ -1,0 +1,68 @@
+{
+  "doc_id": "e0cedd78120803a1",
+  "text": "Subject: Need help with a land dispute case\n\nHello, my name is Thomas Patel. I am a 65-year-old mechanical engineer living in Mumbai. I have a land dispute with Vandana Mittal over land worth INR 3,29,00,000/-, and construction has started on the disputed plot. Can your firm advise me on what to do next? You can call me on +91 89330 32665 or email thomas.patel78@example.in.",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 38
+    },
+    {
+      "text": "Thomas Patel",
+      "category": "NAME",
+      "start": 63,
+      "end": 75
+    },
+    {
+      "text": "65-year-old",
+      "category": "AGE",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 96,
+      "end": 115
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 126,
+      "end": 132
+    },
+    {
+      "text": "Vandana Mittal",
+      "category": "NAME",
+      "start": 161,
+      "end": 175
+    },
+    {
+      "text": "INR 3,29,00,000/-",
+      "category": "MONEY",
+      "start": 192,
+      "end": 209
+    },
+    {
+      "text": "+91 89330 32665",
+      "category": "PHONE",
+      "start": 325,
+      "end": 340
+    },
+    {
+      "text": "thomas.patel78@example.in",
+      "category": "EMAIL",
+      "start": 350,
+      "end": 375
+    },
+    {
+      "text": "age (65) + occupation (mechanical engineer) + city (Mumbai) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

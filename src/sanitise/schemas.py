@@ -39,6 +39,14 @@ class PIICategory(str, Enum):
     SYMPTOM = "SYMPTOM"  # added 22 Oct (decision D21): a symptom a person reports
     QUASI_COMBO = "QUASI_COMBO"  # multi-attribute linkage
     OTHER = "OTHER"
+    # Legal build spec (3 Nov 2026), additive so the medical gold set stays valid.
+    FINANCIAL = "FINANCIAL"  # bank account, IFSC, card number
+    CASE_NUMBER = "CASE_NUMBER"  # CS(COMM) 412/2024, FIR No. 233/2025, CNR
+    ORGANIZATION = "ORGANIZATION"  # client company, employer, counterparty
+    COURT = "COURT"  # Bombay High Court, Pune District Court
+    MONEY = "MONEY"  # Rs 4,25,00,000
+    MATTER_CODENAME = "MATTER_CODENAME"  # Project Falcon
+    LEGAL_ISSUE = "LEGAL_ISSUE"  # the useful content; kept unless rare
 
 
 # ================= AGENT 1 : built in Phase 2 =================
@@ -188,6 +196,18 @@ RELATIONS: tuple[str, ...] = (
     "weight",
     "contact",
     "identifier",
+    # legal build spec: what a past matter says
+    "has_legal_issue",
+    "filed_in",
+    "filed_on",
+    "claim_amount",
+    "opposing_party",
+    "represented_by",
+    "advised",
+    "documents_requested",
+    "outcome",
+    "next_step",
+    "employed_by",
     "other",
 )
 
@@ -196,7 +216,9 @@ Verdict = Literal["allowed", "generalised", "blocked"]
 # Phase 2 spec section 4: one attack per attacker capability. context_dump: one prompt-injection
 # query; stepwise: innocent queries over time; interception: a passive observer of the traffic
 # to the model, who never prompts (its rounds are scored on the payload, not the answer).
-AttackKind = Literal["context_dump", "stepwise", "interception"]
+# context_dump / stepwise / interception: the medical spec; direct / linkage / stepwise:
+# the legal build spec's three attacks.
+AttackKind = Literal["context_dump", "stepwise", "interception", "direct", "linkage"]
 
 
 class Subject(BaseModel):
@@ -318,6 +340,38 @@ class Person(BaseModel):
     conditions: list[str] = Field(default_factory=list)
     phone: str | None = None
     doc_ids: list[str] = Field(default_factory=list)
+    # legal clients (data/legal/clients.json): more direct identifiers and matter attributes
+    email: str | None = None
+    pan: str | None = None
+    case_number: str | None = None
+    opposing_party: str | None = None
+    court: str | None = None
+    filing_date: str | None = None  # ISO date
+
+    @classmethod
+    def from_client(cls, row: dict) -> Person:
+        """A ``clients.json`` row (legal build spec, "Data") as a person-table row."""
+        return cls(
+            person_id=row["client_id"],
+            name=row["name"],
+            sex=row["sex"],
+            age=row["age"],
+            age_band=row["age_band"],
+            town=row["city"],
+            district=row["district"],
+            state=row["state"],
+            occupation=row["occupation"],
+            occupation_group=row["occupation_group"],
+            conditions=[row["legal_issue"]],
+            phone=row.get("phone"),
+            doc_ids=row.get("doc_ids", []),
+            email=row.get("email"),
+            pan=row.get("pan"),
+            case_number=row.get("case_number"),
+            opposing_party=row.get("opposing_party"),
+            court=row.get("court"),
+            filing_date=row.get("filing_date"),
+        )
 
 
 class GoldRoute(BaseModel):

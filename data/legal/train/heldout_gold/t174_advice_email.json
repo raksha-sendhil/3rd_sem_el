@@ -1,0 +1,56 @@
+{
+  "doc_id": "680ccd3d5ace567c",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 1530/2019\n\nDear Ms. Chauhan,\n\nThank you for meeting us on 2 August 2019 about your dispute with Pioneer Builders Pvt Ltd. As we understand it, the builder keeps promising possession by email but never delivers. The matter is listed before the New Delhi District Consumer Disputes Redressal Commission.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office. We will pursue the full claim of Rs 3,77,00,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 1530/2019",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Chauhan",
+      "category": "NAME",
+      "start": 71,
+      "end": 78
+    },
+    {
+      "text": "2 August 2019",
+      "category": "DATE",
+      "start": 109,
+      "end": 122
+    },
+    {
+      "text": "Pioneer Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 147,
+      "end": 171
+    },
+    {
+      "text": "New Delhi District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 294,
+      "end": 351
+    },
+    {
+      "text": "Rs 3,77,00,000",
+      "category": "MONEY",
+      "start": 647,
+      "end": 661
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 678,
+      "end": 695
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,104 @@
+{
+  "doc_id": "94a729bd73b87b13",
+  "text": "Intake note (Commercial team, 19 December 2018). Our client Prakash Tiwari is a 49-year-old railway employee who lives at House No. 205, Kowdiar, Thiruvananthapuram 695015 and can be reached on +91 65269 65601 or prakash.tiwari@example.in. The client's PAN GDMPT8250U, Aadhaar 4474 0586 8061.\nThe client consulted us about a cheque bounce matter against Lakshmi Agarwal. A cheque for Rs 37,30,000 issued by Lakshmi Agarwal bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as S.C.C. No. 756/2019 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 21/04/2019.",
+  "spans": [
+    {
+      "text": "19 December 2018",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Prakash Tiwari",
+      "category": "NAME",
+      "start": 60,
+      "end": 74
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 80,
+      "end": 91
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 92,
+      "end": 108
+    },
+    {
+      "text": "House No. 205, Kowdiar, Thiruvananthapuram 695015",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 171
+    },
+    {
+      "text": "+91 65269 65601",
+      "category": "PHONE",
+      "start": 194,
+      "end": 209
+    },
+    {
+      "text": "prakash.tiwari@example.in",
+      "category": "EMAIL",
+      "start": 213,
+      "end": 238
+    },
+    {
+      "text": "GDMPT8250U",
+      "category": "ID_NUMBER",
+      "start": 257,
+      "end": 267
+    },
+    {
+      "text": "4474 0586 8061",
+      "category": "ID_NUMBER",
+      "start": 277,
+      "end": 291
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 325,
+      "end": 338
+    },
+    {
+      "text": "Lakshmi Agarwal",
+      "category": "NAME",
+      "start": 354,
+      "end": 369
+    },
+    {
+      "text": "Rs 37,30,000",
+      "category": "MONEY",
+      "start": 384,
+      "end": 396
+    },
+    {
+      "text": "Lakshmi Agarwal",
+      "category": "NAME",
+      "start": 407,
+      "end": 422
+    },
+    {
+      "text": "S.C.C. No. 756/2019",
+      "category": "CASE_NUMBER",
+      "start": 511,
+      "end": 530
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 542,
+      "end": 601
+    },
+    {
+      "text": "21/04/2019",
+      "category": "DATE",
+      "start": 605,
+      "end": 615
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

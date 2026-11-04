@@ -1,0 +1,122 @@
+{
+  "doc_id": "b599f0d543b5a199",
+  "text": "Intake note - Commercial team\nDate: 25 April 2019\nClient: Smita Ahuja, a 75-year-old restaurant owner from Thane.\nAddress: Bungalow 3, Naupada, Thane 400624\nPhone: +91 61742 37860. Email: smita.ahuja@example.in. PAN YEMPA5551F.\nMatter: cheque bounce\nOpposing party: Goyal Traders\nFacts: A cheque for ₹8,65,000 issued by M/s Goyal Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 755144171602 (IFSC ICIC0363865).\nThe matter was filed as CC/2264/2019 before the Judicial Magistrate First Class Court at Thane on 03/07/2019.",
+  "spans": [
+    {
+      "text": "25 April 2019",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Smita Ahuja",
+      "category": "NAME",
+      "start": 58,
+      "end": 69
+    },
+    {
+      "text": "75-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 101
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 112
+    },
+    {
+      "text": "Bungalow 3, Naupada, Thane 400624",
+      "category": "ADDRESS",
+      "start": 123,
+      "end": 156
+    },
+    {
+      "text": "+91 61742 37860",
+      "category": "PHONE",
+      "start": 164,
+      "end": 179
+    },
+    {
+      "text": "smita.ahuja@example.in",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 210
+    },
+    {
+      "text": "YEMPA5551F",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 249
+    },
+    {
+      "text": "Goyal Traders",
+      "category": "ORGANIZATION",
+      "start": 266,
+      "end": 279
+    },
+    {
+      "text": "₹8,65,000",
+      "category": "MONEY",
+      "start": 300,
+      "end": 309
+    },
+    {
+      "text": "Goyal Traders",
+      "category": "ORGANIZATION",
+      "start": 324,
+      "end": 337
+    },
+    {
+      "text": "755144171602",
+      "category": "FINANCIAL",
+      "start": 455,
+      "end": 467
+    },
+    {
+      "text": "ICIC0363865",
+      "category": "FINANCIAL",
+      "start": 474,
+      "end": 485
+    },
+    {
+      "text": "CC/2264/2019",
+      "category": "CASE_NUMBER",
+      "start": 512,
+      "end": 524
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "start": 536,
+      "end": 582
+    },
+    {
+      "text": "03/07/2019",
+      "category": "DATE",
+      "start": 586,
+      "end": 596
+    },
+    {
+      "text": "age (75) + occupation (restaurant owner) + city (Thane) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

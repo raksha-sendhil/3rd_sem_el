@@ -1,0 +1,98 @@
+{
+  "doc_id": "24ff2416ed7d897e",
+  "text": "Intake note (Property team, 14/06/2022). Our client Tanvi Pandey is a 56-year-old paediatrician who lives at Plot 59, Indiranagar, Bengaluru 560039 and can be reached on 08054518814 or tanvi.pandey29@example.com. The client's PAN XRTPP5090P.\nThe client consulted us about a consumer complaint matter against Vindhya Constructions. The consumer complaint against Vindhya Constructions concerns a flat bought for 28.5 lakh rupees; possession of the flat is long overdue.\nThe matter was filed as CC/989/2022 before the Bengaluru District Consumer Disputes Redressal Commission on 6 September 2022.",
+  "spans": [
+    {
+      "text": "14/06/2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Tanvi Pandey",
+      "category": "NAME",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "56-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 95
+    },
+    {
+      "text": "Plot 59, Indiranagar, Bengaluru 560039",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 147
+    },
+    {
+      "text": "08054518814",
+      "category": "PHONE",
+      "start": 170,
+      "end": 181
+    },
+    {
+      "text": "tanvi.pandey29@example.com",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 211
+    },
+    {
+      "text": "XRTPP5090P",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 274,
+      "end": 292
+    },
+    {
+      "text": "Vindhya Constructions",
+      "category": "ORGANIZATION",
+      "start": 308,
+      "end": 329
+    },
+    {
+      "text": "Vindhya Constructions",
+      "category": "ORGANIZATION",
+      "start": 362,
+      "end": 383
+    },
+    {
+      "text": "28.5 lakh rupees",
+      "category": "MONEY",
+      "start": 411,
+      "end": 427
+    },
+    {
+      "text": "CC/989/2022",
+      "category": "CASE_NUMBER",
+      "start": 493,
+      "end": 504
+    },
+    {
+      "text": "Bengaluru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 516,
+      "end": 573
+    },
+    {
+      "text": "6 September 2022",
+      "category": "DATE",
+      "start": 577,
+      "end": 593
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,110 @@
+{
+  "doc_id": "98bcd17272edadb7",
+  "text": "Intake note - Property team\nDate: 10 January 2020\nClient: Charulata Deshpande, a 53-year-old textile trader from Coimbatore.\nAddress: Flat 17D, Peelamedu, Coimbatore 641006\nPhone: +91 62789 61444. Email: charulata.deshpande64@example.in. PAN CDFPD6062N.\nMatter: land dispute\nOpposing party: Lakshmi Shetty\nFacts: The land dispute with Lakshmi Shetty concerns agricultural land valued at Rs 68,50,000; relatives dispute who owns the ancestral land.\nThe matter was filed as R.C.S. No. 1967/2020 before the Coimbatore District Court on 9 May 2020.",
+  "spans": [
+    {
+      "text": "10 January 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 49
+    },
+    {
+      "text": "Charulata Deshpande",
+      "category": "NAME",
+      "start": 58,
+      "end": 77
+    },
+    {
+      "text": "53-year-old",
+      "category": "AGE",
+      "start": 81,
+      "end": 92
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 93,
+      "end": 107
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 113,
+      "end": 123
+    },
+    {
+      "text": "Flat 17D, Peelamedu, Coimbatore 641006",
+      "category": "ADDRESS",
+      "start": 134,
+      "end": 172
+    },
+    {
+      "text": "+91 62789 61444",
+      "category": "PHONE",
+      "start": 180,
+      "end": 195
+    },
+    {
+      "text": "charulata.deshpande64@example.in",
+      "category": "EMAIL",
+      "start": 204,
+      "end": 236
+    },
+    {
+      "text": "CDFPD6062N",
+      "category": "ID_NUMBER",
+      "start": 242,
+      "end": 252
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 262,
+      "end": 274
+    },
+    {
+      "text": "Lakshmi Shetty",
+      "category": "NAME",
+      "start": 291,
+      "end": 305
+    },
+    {
+      "text": "Lakshmi Shetty",
+      "category": "NAME",
+      "start": 335,
+      "end": 349
+    },
+    {
+      "text": "Rs 68,50,000",
+      "category": "MONEY",
+      "start": 387,
+      "end": 399
+    },
+    {
+      "text": "R.C.S. No. 1967/2020",
+      "category": "CASE_NUMBER",
+      "start": 472,
+      "end": 492
+    },
+    {
+      "text": "Coimbatore District Court",
+      "category": "COURT",
+      "start": 504,
+      "end": 529
+    },
+    {
+      "text": "9 May 2020",
+      "category": "DATE",
+      "start": 533,
+      "end": 543
+    },
+    {
+      "text": "age (53) + occupation (textile trader) + city (Coimbatore) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

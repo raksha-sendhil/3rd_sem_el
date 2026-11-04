@@ -1,0 +1,104 @@
+{
+  "doc_id": "49b12d8a8f16fcff",
+  "text": "Intake note (Property team, 9 November 2018). Our client Thomas Iyengar is a 72-year-old farmer who lives at Bungalow 27, Pattom, Thiruvananthapuram 695044 and can be reached on 09216038784 or thomas.iyengar@example.in. The client's PAN EHLPI9879Y, Aadhaar 7923 9700 8697.\nThe client consulted us about a tenancy eviction matter against Suresh Hegde. The tenancy dispute with Suresh Hegde concerns rent arrears of Rs 4,50,000; the tenant has sublet the flat without permission.\nThe matter was filed as R.C.A. No. 2055/2019 before the Thiruvananthapuram District Court on 16 March 2019.",
+  "spans": [
+    {
+      "text": "9 November 2018",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Thomas Iyengar",
+      "category": "NAME",
+      "start": 57,
+      "end": 71
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 95
+    },
+    {
+      "text": "Bungalow 27, Pattom, Thiruvananthapuram 695044",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 155
+    },
+    {
+      "text": "09216038784",
+      "category": "PHONE",
+      "start": 178,
+      "end": 189
+    },
+    {
+      "text": "thomas.iyengar@example.in",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 218
+    },
+    {
+      "text": "EHLPI9879Y",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "7923 9700 8697",
+      "category": "ID_NUMBER",
+      "start": 257,
+      "end": 271
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 305,
+      "end": 321
+    },
+    {
+      "text": "Suresh Hegde",
+      "category": "NAME",
+      "start": 337,
+      "end": 349
+    },
+    {
+      "text": "Suresh Hegde",
+      "category": "NAME",
+      "start": 376,
+      "end": 388
+    },
+    {
+      "text": "Rs 4,50,000",
+      "category": "MONEY",
+      "start": 414,
+      "end": 425
+    },
+    {
+      "text": "R.C.A. No. 2055/2019",
+      "category": "CASE_NUMBER",
+      "start": 502,
+      "end": 522
+    },
+    {
+      "text": "Thiruvananthapuram District Court",
+      "category": "COURT",
+      "start": 534,
+      "end": 567
+    },
+    {
+      "text": "16 March 2019",
+      "category": "DATE",
+      "start": 571,
+      "end": 584
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

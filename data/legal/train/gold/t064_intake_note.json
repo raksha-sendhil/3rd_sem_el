@@ -1,0 +1,98 @@
+{
+  "doc_id": "b736d473b34014a5",
+  "text": "Intake note (Commercial team, 01/03/2020). Our client Sameer Shinde is a 72-year-old schoolteacher who lives at Bungalow 34, Chembur, Mumbai 400009 and can be reached on +91 97531 42182 or sameer.shinde@example.com. The client's PAN USRPS3066Y.\nThe client consulted us about a wrongful termination matter against Sai Industries. The wrongful termination claim against M/s Sai Industries is for ₹15,80,000; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 1646/2020 before the Mumbai Labour Court on 27 June 2020.",
+  "spans": [
+    {
+      "text": "01/03/2020",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Sameer Shinde",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 98
+    },
+    {
+      "text": "Bungalow 34, Chembur, Mumbai 400009",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 147
+    },
+    {
+      "text": "+91 97531 42182",
+      "category": "PHONE",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "sameer.shinde@example.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 214
+    },
+    {
+      "text": "USRPS3066Y",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 297
+    },
+    {
+      "text": "Sai Industries",
+      "category": "ORGANIZATION",
+      "start": 313,
+      "end": 327
+    },
+    {
+      "text": "Sai Industries",
+      "category": "ORGANIZATION",
+      "start": 372,
+      "end": 386
+    },
+    {
+      "text": "₹15,80,000",
+      "category": "MONEY",
+      "start": 394,
+      "end": 404
+    },
+    {
+      "text": "Complaint No. 1646/2020",
+      "category": "CASE_NUMBER",
+      "start": 478,
+      "end": 501
+    },
+    {
+      "text": "Mumbai Labour Court",
+      "category": "COURT",
+      "start": 513,
+      "end": 532
+    },
+    {
+      "text": "27 June 2020",
+      "category": "DATE",
+      "start": 536,
+      "end": 548
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

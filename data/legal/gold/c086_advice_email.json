@@ -1,0 +1,50 @@
+{
+  "doc_id": "508c6b010c7288ea",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 273/2025\n\nDear Mr. DSouza,\n\nThank you for meeting us on 4 December 2025 about your dispute with Kavya Bhosale. As we understand it, the wife wants her jewellery and gifts returned.\n\nOur advice is to list the stridhan items to be returned in the settlement deed. Please collect the list of jewellery and gifts with any receipts and send copies to this office. We will pursue the full claim of INR 88,40,000/-.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 273/2025",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 70
+    },
+    {
+      "text": "DSouza",
+      "category": "NAME",
+      "start": 81,
+      "end": 87
+    },
+    {
+      "text": "4 December 2025",
+      "category": "DATE",
+      "start": 118,
+      "end": 133
+    },
+    {
+      "text": "Kavya Bhosale",
+      "category": "NAME",
+      "start": 158,
+      "end": 171
+    },
+    {
+      "text": "INR 88,40,000/-",
+      "category": "MONEY",
+      "start": 454,
+      "end": 469
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 486,
+      "end": 503
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

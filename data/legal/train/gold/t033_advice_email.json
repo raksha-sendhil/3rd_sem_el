@@ -1,0 +1,44 @@
+{
+  "doc_id": "159a3be0b1aa2062",
+  "text": "Subject: Your consumer complaint matter - CC/1941/2025\n\nDear Mr. Shah,\n\nThank you for meeting us on 11 January 2026 about your dispute with Pioneer Constructions. As we understand it, the builder never obtained the occupancy certificate.\n\nOur advice is to seek a full refund with interest because the builder failed to obtain the occupancy certificate. Please collect the builder-buyer agreement, payment receipts and the municipal reply on the occupancy certificate and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CC/1941/2025",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 54
+    },
+    {
+      "text": "Shah",
+      "category": "NAME",
+      "start": 65,
+      "end": 69
+    },
+    {
+      "text": "11 January 2026",
+      "category": "DATE",
+      "start": 100,
+      "end": 115
+    },
+    {
+      "text": "Pioneer Constructions",
+      "category": "ORGANIZATION",
+      "start": 140,
+      "end": 161
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 514,
+      "end": 526
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

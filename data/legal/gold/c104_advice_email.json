@@ -1,0 +1,56 @@
+{
+  "doc_id": "8730c0fa295faf37",
+  "text": "Subject: Your breach of contract matter (Project Condor)\n\nDear Mr. Fernandes,\n\nThank you for meeting us on 16 July 2025 about your dispute with Pioneer Logistics Ltd. As we understand it, the claim must be filed as a commercial suit. The matter is listed before the Mysuru Commercial Court.\n\nOur advice is to complete pre-institution mediation before filing the commercial suit. Please collect the mediation request and the statement of accounts and send copies to this office. We will pursue the full claim of ₹1,85,00,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Condor",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 55
+    },
+    {
+      "text": "Fernandes",
+      "category": "NAME",
+      "start": 67,
+      "end": 76
+    },
+    {
+      "text": "16 July 2025",
+      "category": "DATE",
+      "start": 107,
+      "end": 119
+    },
+    {
+      "text": "Pioneer Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 144,
+      "end": 165
+    },
+    {
+      "text": "Mysuru Commercial Court",
+      "category": "COURT",
+      "start": 266,
+      "end": 289
+    },
+    {
+      "text": "₹1,85,00,000",
+      "category": "MONEY",
+      "start": 511,
+      "end": 523
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 540,
+      "end": 552
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

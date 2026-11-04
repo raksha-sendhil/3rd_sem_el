@@ -1,0 +1,104 @@
+{
+  "doc_id": "c68e2a62aa5da10f",
+  "text": "Intake note (Property team, 28 November 2019). Our client Shruti Rao is a 55-year-old restaurant owner who lives at Flat 3B, Banjara Hills, Hyderabad 500059 and can be reached on +91 70686 74087 or shruti.rao2@example.in. The client's PAN VFRPR6870B, Aadhaar 7660 0937 2742.\nThe client consulted us about a consumer complaint matter against M/s Saxena Developers. The consumer complaint against M/s Saxena Developers concerns a flat bought for Rs 9,39,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 2701/2020 before the Hyderabad District Consumer Disputes Redressal Commission on 9 April 2020.",
+  "spans": [
+    {
+      "text": "28 November 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Shruti Rao",
+      "category": "NAME",
+      "start": 58,
+      "end": 68
+    },
+    {
+      "text": "55-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Flat 3B, Banjara Hills, Hyderabad 500059",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 156
+    },
+    {
+      "text": "+91 70686 74087",
+      "category": "PHONE",
+      "start": 179,
+      "end": 194
+    },
+    {
+      "text": "shruti.rao2@example.in",
+      "category": "EMAIL",
+      "start": 198,
+      "end": 220
+    },
+    {
+      "text": "VFRPR6870B",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 249
+    },
+    {
+      "text": "7660 0937 2742",
+      "category": "ID_NUMBER",
+      "start": 259,
+      "end": 273
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 307,
+      "end": 325
+    },
+    {
+      "text": "Saxena Developers",
+      "category": "ORGANIZATION",
+      "start": 345,
+      "end": 362
+    },
+    {
+      "text": "Saxena Developers",
+      "category": "ORGANIZATION",
+      "start": 399,
+      "end": 416
+    },
+    {
+      "text": "Rs 9,39,00,000",
+      "category": "MONEY",
+      "start": 444,
+      "end": 458
+    },
+    {
+      "text": "C.C. No. 2701/2020",
+      "category": "CASE_NUMBER",
+      "start": 524,
+      "end": 542
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 554,
+      "end": 611
+    },
+    {
+      "text": "9 April 2020",
+      "category": "DATE",
+      "start": 615,
+      "end": 627
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

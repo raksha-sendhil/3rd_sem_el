@@ -1,0 +1,68 @@
+{
+  "doc_id": "d6b1986f84acc1da",
+  "text": "Case note: S.C.C. No. 2617/2025\nClient: Sanjay Kamath (paediatrician, New Delhi)\nOpposing party: Deepa Kapoor\nCourt: Judicial Magistrate First Class Court at New Delhi\nFiled on: 05/08/2025\nClaim amount: ₹11,10,000\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 2617/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Sanjay Kamath",
+      "category": "NAME",
+      "start": 40,
+      "end": 53
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 70,
+      "end": 79
+    },
+    {
+      "text": "Deepa Kapoor",
+      "category": "NAME",
+      "start": 97,
+      "end": 109
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at New Delhi",
+      "category": "COURT",
+      "start": 117,
+      "end": 167
+    },
+    {
+      "text": "05/08/2025",
+      "category": "DATE",
+      "start": 178,
+      "end": 188
+    },
+    {
+      "text": "₹11,10,000",
+      "category": "MONEY",
+      "start": 203,
+      "end": 213
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 221,
+      "end": 234
+    },
+    {
+      "text": "occupation (paediatrician) + city (New Delhi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

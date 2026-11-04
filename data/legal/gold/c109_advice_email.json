@@ -1,0 +1,44 @@
+{
+  "doc_id": "8a1622589573db95",
+  "text": "Subject: Your wrongful termination matter\n\nDear Mr. Qureshi,\n\nThank you for meeting us on 31 July 2020 about your dispute with Zenith Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Nagpur Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Qureshi",
+      "category": "NAME",
+      "start": 52,
+      "end": 59
+    },
+    {
+      "text": "31 July 2020",
+      "category": "DATE",
+      "start": 90,
+      "end": 102
+    },
+    {
+      "text": "Zenith Industries",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 144
+    },
+    {
+      "text": "Nagpur Labour Court",
+      "category": "COURT",
+      "start": 247,
+      "end": 266
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 454,
+      "end": 466
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

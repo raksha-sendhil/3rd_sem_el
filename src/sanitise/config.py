@@ -11,7 +11,7 @@ from __future__ import annotations
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import Field
+from pydantic import Field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -22,6 +22,11 @@ class Settings(BaseSettings):
         env_file_encoding="utf-8",
         extra="ignore",
     )
+
+    # ---- Domain: which prompts, data and models the pipeline uses (sanitise.domain). The
+    # default for requests that do not choose one; profiles live in domains_file.
+    domain: str = "legal"
+    domains_file: str = "config/domains.json"
 
     # ---- LLM backend
     llm_backend: Literal["ollama", "mock"] = "ollama"
@@ -35,6 +40,27 @@ class Settings(BaseSettings):
     llm_seed: int | None = 42
     # Upper bound on generated tokens per call, so a runaway generation cannot stall a run.
     llm_num_predict: int = Field(default=1024, ge=64)
+
+    # ---- Legal build spec, "Model choice": Gemini answers from cleaned text only; Gemma 4
+    # (Ollama, or transformers with the LoRA adapter for Agent 1) sees raw text.
+    # answer_backend "same" answers with the agents' model (the medical set-up).
+    answer_backend: Literal["same", "gemini", "ollama", "mock"] = "same"
+    gemini_model: str = "gemini-3.5-flash"  # or "gemini-3.8-flash": one-word change
+    # Keys are rotated: when one hits its rate limit or quota, or uses up its daily token
+    # budget, the next one is used. Read from here, then GEMINI_API_KEYS (comma-separated),
+    # GEMINI_API_KEY, GEMINI_API_KEY_2 .. GEMINI_API_KEY_9 (environment or Kaggle secrets).
+    gemini_api_key: str | None = None
+    gemini_api_keys: str | None = None  # comma-separated
+    gemini_key_cooldown_s: float = Field(default=60.0, ge=0)  # after a per-minute limit
+    gemini_daily_token_budget: int = Field(default=0, ge=0)  # per key; 0 = no budget
+    gemini_cache_dir: str = "data/cache/gemini"  # every answer cached on disk (rate limits)
+    gemini_rpm: int = Field(default=10, ge=1)  # calls per minute
+    # Agent 1's LLM pass: "same" uses the agents' model; "transformers" loads the base Gemma
+    # model plus the fine-tuned LoRA adapter (Part 3) on its own GPU.
+    agent1_backend: Literal["same", "transformers"] = "same"
+    agent1_base_model: str = "google/gemma-4-E4B-it"
+    agent1_adapter: str | None = None  # e.g. /kaggle/working/agent1_lora
+    agent1_device: str = "cuda:1"
 
     # ---- Validation retry loop: "retries up to three times with an escalating temperature"
     llm_retries: int = Field(default=3, ge=0, le=10)
@@ -56,12 +82,23 @@ class Settings(BaseSettings):
     store_path: str = "data/store.sqlite"
     attacks_dir: str = "data/attacks"
     people_path: str = "data/corpus/people.json"
-    retrieval_k: int = Field(default=3, ge=1, le=20)
+    # None = the domain's default: top 4 for legal (legal build spec), top 3 for medical.
+    retrieval_k: int | None = Field(default=None, ge=1, le=20)
     # "hybrid" = BM25 + bge-m3 dense vectors (needs `pip install -e .[retrieval]`, falls back
     # to BM25 with a warning when the packages are missing); "bm25" = keyword search only.
     retrieval_mode: Literal["hybrid", "bm25"] = "hybrid"
     index_dir: str = "data/index"
     embedding_model: str = "BAAI/bge-m3"
+    # ---- Phase 3b: session privacy monitor (legal build spec, step 12). "candidate_pool"
+    # blocks an answer that would leave fewer than monitor_min_pool clients in the client
+    # table matching what the session has disclosed; it falls back to "off" while the table
+    # does not exist yet.
+    monitor: Literal["off", "candidate_pool"] = "candidate_pool"
+    monitor_min_pool: int = Field(default=5, ge=1)
+    clients_path: str = "data/legal/clients.json"
+    # A dashboard bundle exported from a Kaggle run (sanitise.legal.export). When set, the API
+    # replays the recorded answers and attack runs instead of calling a model.
+    replay_dir: str | None = None
 
     # ---- HTTP API
     api_host: str = "127.0.0.1"
@@ -70,6 +107,25 @@ class Settings(BaseSettings):
     api_cors_origins: list[str] = ["http://localhost:3000", "http://127.0.0.1:3000"]
 
     log_level: str = "INFO"
+
+    @model_validator(mode="after")
+    def _domain_defaults(self) -> Settings:
+        """Paths left at their medical defaults point at the legal data in the legal domain."""
+        if self.retrieval_k is None:
+            self.retrieval_k = 4 if self.domain == "legal" else 3
+        if self.domain == "legal":
+            for name, legal in _LEGAL_PATHS.items():
+                if getattr(self, name) == type(self).model_fields[name].default:
+                    setattr(self, name, legal)
+        return self
+
+
+_LEGAL_PATHS = {
+    "store_path": "data/legal/store.sqlite",
+    "attacks_dir": "data/legal/attacks",
+    "people_path": "data/legal/clients.json",
+    "index_dir": "data/legal/index",
+}
 
 
 @lru_cache(maxsize=1)

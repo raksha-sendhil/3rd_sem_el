@@ -1,0 +1,56 @@
+{
+  "doc_id": "aa90c30c275c24f4",
+  "text": "Subject: Your breach of contract matter (Project Heron)\n\nDear Mr. Patel,\n\nThank you for meeting us on 13 November 2022 about your dispute with M/s Banyan Infotech Pvt Ltd. As we understand it, the claim must be filed as a commercial suit. The matter is listed before the Hubballi Commercial Court.\n\nOur advice is to complete pre-institution mediation before filing the commercial suit. Please collect the mediation request and the statement of accounts and send copies to this office. We will pursue the full claim of INR 14,66,00,000/-.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Heron",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 54
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 66,
+      "end": 71
+    },
+    {
+      "text": "13 November 2022",
+      "category": "DATE",
+      "start": 102,
+      "end": 118
+    },
+    {
+      "text": "Banyan Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 147,
+      "end": 170
+    },
+    {
+      "text": "Hubballi Commercial Court",
+      "category": "COURT",
+      "start": 271,
+      "end": 296
+    },
+    {
+      "text": "INR 14,66,00,000/-",
+      "category": "MONEY",
+      "start": 518,
+      "end": 536
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 553,
+      "end": 572
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

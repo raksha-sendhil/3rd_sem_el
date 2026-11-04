@@ -1,0 +1,38 @@
+{
+  "doc_id": "2d0865adcffb1b87",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Sandhu,\n\nThank you for meeting us on 05/12/2022 about your dispute with Goyal Developers. As we understand it, the builder keeps promising possession by email but never delivers.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Sandhu",
+      "category": "NAME",
+      "start": 50,
+      "end": 56
+    },
+    {
+      "text": "05/12/2022",
+      "category": "DATE",
+      "start": 87,
+      "end": 97
+    },
+    {
+      "text": "Goyal Developers",
+      "category": "ORGANIZATION",
+      "start": 122,
+      "end": 138
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 505,
+      "end": 521
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

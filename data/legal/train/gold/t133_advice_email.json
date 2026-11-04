@@ -1,0 +1,38 @@
+{
+  "doc_id": "8094495fab072458",
+  "text": "Subject: Your divorce by mutual consent matter\n\nDear Mr. Sandhu,\n\nThank you for meeting us on 23 August 2025 about your dispute with Shruti Karve. As we understand it, the wife wants her jewellery and gifts returned.\n\nOur advice is to list the stridhan items to be returned in the settlement deed. Please collect the list of jewellery and gifts with any receipts and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Sandhu",
+      "category": "NAME",
+      "start": 57,
+      "end": 63
+    },
+    {
+      "text": "23 August 2025",
+      "category": "DATE",
+      "start": 94,
+      "end": 108
+    },
+    {
+      "text": "Shruti Karve",
+      "category": "NAME",
+      "start": 133,
+      "end": 145
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 410,
+      "end": 427
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

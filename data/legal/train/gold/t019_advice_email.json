@@ -1,0 +1,50 @@
+{
+  "doc_id": "26e3c1cb0c989eb9",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 763/2022\n\nDear Mr. Bansal,\n\nThank you for meeting us on 8 August 2022 about your dispute with Shetty Technologies Pvt Ltd. As we understand it, the dismissal followed a one-sided domestic enquiry. The matter is listed before the Ahmedabad Labour Court.\n\nOur advice is to demand the domestic enquiry report and challenge it for breach of natural justice. Please collect the charge sheet, the enquiry report and the reply to the charge sheet and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 763/2022",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 66
+    },
+    {
+      "text": "Bansal",
+      "category": "NAME",
+      "start": 77,
+      "end": 83
+    },
+    {
+      "text": "8 August 2022",
+      "category": "DATE",
+      "start": 114,
+      "end": 127
+    },
+    {
+      "text": "Shetty Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 152,
+      "end": 179
+    },
+    {
+      "text": "Ahmedabad Labour Court",
+      "category": "COURT",
+      "start": 287,
+      "end": 309
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 545,
+      "end": 562
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

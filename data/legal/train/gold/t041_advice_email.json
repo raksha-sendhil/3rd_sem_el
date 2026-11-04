@@ -1,0 +1,50 @@
+{
+  "doc_id": "d3080d724cc295b3",
+  "text": "Subject: Your maritime salvage claim matter - A.S. No. 873/2024\n\nDear Ms. Mittal,\n\nThank you for meeting us on 3 January 2025 about your dispute with Zenith Shipping Pvt Ltd. As we understand it, the vessel is about to leave port. The matter is listed before the Gujarat High Court.\n\nOur advice is to arrest the vessel to secure the salvage claim. Please collect the salvage agreement and the logbook entries and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 36
+    },
+    {
+      "text": "A.S. No. 873/2024",
+      "category": "CASE_NUMBER",
+      "start": 46,
+      "end": 63
+    },
+    {
+      "text": "Mittal",
+      "category": "NAME",
+      "start": 74,
+      "end": 80
+    },
+    {
+      "text": "3 January 2025",
+      "category": "DATE",
+      "start": 111,
+      "end": 125
+    },
+    {
+      "text": "Zenith Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 150,
+      "end": 173
+    },
+    {
+      "text": "Gujarat High Court",
+      "category": "COURT",
+      "start": 263,
+      "end": 281
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 456,
+      "end": 468
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

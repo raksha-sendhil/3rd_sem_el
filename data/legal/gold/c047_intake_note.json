@@ -1,0 +1,98 @@
+{
+  "doc_id": "21a86fb75f5ea8ce",
+  "text": "Intake note (Property team, 07/11/2024). Our client Arjun Deshpande is a 64-year-old architect who lives at House No. 213, Keshwapur, Hubballi 580007 and can be reached on 09108219927 or arjun.deshpande@example.com. The client's PAN XQAPD7287E.\nThe client consulted us about a tenancy eviction matter against Mohan Natarajan. The tenancy dispute with Mohan Natarajan concerns rent arrears of INR 7,30,000/-; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.S. No. 2439/2025 before the Hubballi District Court on 19 January 2025.",
+  "spans": [
+    {
+      "text": "07/11/2024",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Arjun Deshpande",
+      "category": "NAME",
+      "start": 52,
+      "end": 67
+    },
+    {
+      "text": "64-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 94
+    },
+    {
+      "text": "House No. 213, Keshwapur, Hubballi 580007",
+      "category": "ADDRESS",
+      "start": 108,
+      "end": 149
+    },
+    {
+      "text": "09108219927",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "arjun.deshpande@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 214
+    },
+    {
+      "text": "XQAPD7287E",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 293
+    },
+    {
+      "text": "Mohan Natarajan",
+      "category": "NAME",
+      "start": 309,
+      "end": 324
+    },
+    {
+      "text": "Mohan Natarajan",
+      "category": "NAME",
+      "start": 351,
+      "end": 366
+    },
+    {
+      "text": "INR 7,30,000/-",
+      "category": "MONEY",
+      "start": 392,
+      "end": 406
+    },
+    {
+      "text": "R.C.S. No. 2439/2025",
+      "category": "CASE_NUMBER",
+      "start": 510,
+      "end": 530
+    },
+    {
+      "text": "Hubballi District Court",
+      "category": "COURT",
+      "start": 542,
+      "end": 565
+    },
+    {
+      "text": "19 January 2025",
+      "category": "DATE",
+      "start": 569,
+      "end": 584
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

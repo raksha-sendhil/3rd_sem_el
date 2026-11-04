@@ -10,7 +10,10 @@ docs/phase3_plan.md 6.4 from deterministic stand-ins:
 * ``mock_llm``: a MockLLM whose free-text replies quote the first sentences of the first
   record in the prompt, so baseline answers show original details and protected answers show
   placeholders, which is the contrast the dashboard is about.
-* the corpus is ``data/fixtures`` and the people and attacks come from ``data/sample``.
+* the corpus, attacks and client table are the current domain's (``mock_corpus``,
+  ``attacks_dir``, ``clients_path`` in config/domains.json): ``data/fixtures`` and
+  ``data/sample`` for medical, the 20-client slice ``data/legal/demo`` with the legal attacks
+  and the candidate-pool session monitor for legal.
 """
 
 from __future__ import annotations
@@ -26,9 +29,11 @@ from sanitise.agents.extractor import canonical, importance
 from sanitise.agents.rewriter import leakcheck
 from sanitise.agents.rewriter.pipeline import apply_decisions, plan_decisions, removed_decisions
 from sanitise.agents.rewriter.prompt import draft
+from sanitise.domain import profile
 from sanitise.llm.base import LLMClient
 from sanitise.llm.mock import TEXT_CALL, MockCall, MockLLM, fabricate
 from sanitise.loader import sha256_hex
+from sanitise.monitor import AllowAllMonitor, build_monitor
 from sanitise.rag.answer import RagContext
 from sanitise.rag.retrieve import BM25Retriever
 from sanitise.rag.store import MemoryDocumentStore
@@ -96,6 +101,9 @@ async def mock_sanitise(doc_id: str, text: str, llm: LLMClient) -> SanitisedReco
     decisions, tokens = plan_decisions(detected.output, extracted)
     safe = apply_decisions(text, decisions)
     leaks = leakcheck.leak_check(removed_decisions(decisions), safe)
+    if leaks:  # the real pipeline's last resort, so mock mode shows the same safe text
+        safe = leakcheck.mask_fallback(safe, leaks, tokens)
+        leaks = leakcheck.leak_check(removed_decisions(decisions), safe)
     rewriter = RewriterOutput(
         doc_id=doc_id, safe_text=safe, decisions=decisions, placeholders=tokens
     )
@@ -122,7 +130,7 @@ async def mock_sanitise(doc_id: str, text: str, llm: LLMClient) -> SanitisedReco
 _SENTENCE = re.compile(r"(?<=[.!?])\s+")
 
 
-def _canned_answer(user_message: str) -> str:
+def canned_answer(user_message: str) -> str:
     """Quote the first two sentences of the first record in the prompt."""
     for line in user_message.splitlines():
         line = line.strip()
@@ -140,7 +148,7 @@ def _canned_answer(user_message: str) -> str:
 
 def _handler(call: MockCall) -> Any:
     if call.schema_name == TEXT_CALL:
-        return _canned_answer(call.user)
+        return canned_answer(call.user)
     return fabricate(call.json_schema)
 
 
@@ -165,11 +173,33 @@ def _read_fixtures(fixtures_dir: Path) -> list[dict[str, Any]]:
     return [json.loads(p.read_text(encoding="utf-8")) for p in sorted(fixtures_dir.glob("*.json"))]
 
 
-async def build_mock_context(llm: LLMClient, fixtures_dir: Path = FIXTURES_DIR) -> RagContext:
+def _repo_path(path: str | None) -> Path | None:
+    return (REPO_ROOT / path) if path else None
+
+
+def mock_attack_sources() -> tuple[Path, Path]:
+    """(attack scripts, person table) for mock mode in the current domain: the domain's own
+    when they exist (config/domains.json), else the medical samples."""
+    p = profile()
+    attacks, people = _repo_path(p.attacks_dir), _repo_path(p.people_path)
+    if attacks and people and attacks.is_dir() and people.is_file():
+        return attacks, people
+    return SAMPLE_DIR / "attacks", SAMPLE_DIR / "people.json"
+
+
+async def build_mock_context(llm: LLMClient, fixtures_dir: Path | None = None) -> RagContext:
+    """The current domain's mock corpus (its ``mock_corpus``), its client table for the
+    session monitor when it has one, BM25 retrieval."""
+    p = profile()
+    if fixtures_dir is None:
+        corpus = _repo_path(p.mock_corpus)
+        fixtures_dir = corpus if corpus and corpus.is_dir() else FIXTURES_DIR
     store = MemoryDocumentStore()
     originals: dict[str, str] = {}
     for doc in _read_fixtures(fixtures_dir):
         record = await mock_sanitise(doc["doc_id"], doc["text"], llm)
         store.put(doc["doc_id"], doc["text"], record)
         originals[doc["doc_id"]] = doc["text"]
-    return RagContext(store=store, retriever=BM25Retriever(originals))
+    clients = _repo_path(p.clients_path)
+    monitor = build_monitor(clients) if clients and clients.is_file() else AllowAllMonitor()
+    return RagContext(store=store, retriever=BM25Retriever(originals), monitor=monitor)

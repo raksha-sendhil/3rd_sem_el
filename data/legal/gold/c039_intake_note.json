@@ -1,0 +1,98 @@
+{
+  "doc_id": "d92d3e19f6193a3a",
+  "text": "Intake note (Commercial team, 26 August 2024). Our client Ananya Mehra is a 30-year-old college lecturer who lives at House No. 8, Kowdiar, Thiruvananthapuram 695003 and can be reached on 87002 58961 or ananya.mehra@example.com. The client's PAN GDWPM9187Q.\nThe client consulted us about a cheque bounce matter against M/s Lotus Textiles Pvt Ltd. A cheque for Rs 31,70,000 issued by M/s Lotus Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2373/2025 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 1 January 2025.",
+  "spans": [
+    {
+      "text": "26 August 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 44
+    },
+    {
+      "text": "Ananya Mehra",
+      "category": "NAME",
+      "start": 58,
+      "end": 70
+    },
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "House No. 8, Kowdiar, Thiruvananthapuram 695003",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 165
+    },
+    {
+      "text": "87002 58961",
+      "category": "PHONE",
+      "start": 188,
+      "end": 199
+    },
+    {
+      "text": "ananya.mehra@example.com",
+      "category": "EMAIL",
+      "start": 203,
+      "end": 227
+    },
+    {
+      "text": "GDWPM9187Q",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 256
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 290,
+      "end": 303
+    },
+    {
+      "text": "Lotus Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 323,
+      "end": 345
+    },
+    {
+      "text": "Rs 31,70,000",
+      "category": "MONEY",
+      "start": 360,
+      "end": 372
+    },
+    {
+      "text": "Lotus Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 387,
+      "end": 409
+    },
+    {
+      "text": "CC/2373/2025",
+      "category": "CASE_NUMBER",
+      "start": 496,
+      "end": 508
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 520,
+      "end": 579
+    },
+    {
+      "text": "1 January 2025",
+      "category": "DATE",
+      "start": 583,
+      "end": 597
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

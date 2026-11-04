@@ -1,0 +1,50 @@
+{
+  "doc_id": "2a68f2a15a6d1c26",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 1007/2020\n\nDear Mr. Bhosale,\n\nThank you for meeting us on 24/03/2020 about your dispute with Srivastava Industries. As we understand it, the employer offered to settle.\n\nOur advice is to negotiate a settlement of gratuity and notice pay. Please collect the salary slips and the gratuity calculation and send copies to this office. We will pursue the full claim of ₹44,60,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 1007/2020",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 67
+    },
+    {
+      "text": "Bhosale",
+      "category": "NAME",
+      "start": 78,
+      "end": 85
+    },
+    {
+      "text": "24/03/2020",
+      "category": "DATE",
+      "start": 116,
+      "end": 126
+    },
+    {
+      "text": "Srivastava Industries",
+      "category": "ORGANIZATION",
+      "start": 151,
+      "end": 172
+    },
+    {
+      "text": "₹44,60,000",
+      "category": "MONEY",
+      "start": 422,
+      "end": 432
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 449,
+      "end": 461
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

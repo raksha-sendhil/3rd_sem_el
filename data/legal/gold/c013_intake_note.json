@@ -1,0 +1,122 @@
+{
+  "doc_id": "00ff59543e600955",
+  "text": "Intake note - Commercial team\nDate: 14 January 2022\nClient: Deepak Das, a 56-year-old fashion designer from Thane.\nAddress: House No. 47, Naupada, Thane 400640\nPhone: 07918033480. Email: deepak.das84@example.in. PAN PXJPD5757X.\nMatter: cheque bounce\nOpposing party: Pioneer Enterprises\nFacts: A cheque for ₹6,50,000 issued by Pioneer Enterprises bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 659711443359 (IFSC HDFC0516258).\nThe matter was filed as CC/634/2022 before the Judicial Magistrate First Class Court at Thane on 27 June 2022.",
+  "spans": [
+    {
+      "text": "14 January 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Deepak Das",
+      "category": "NAME",
+      "start": 60,
+      "end": 70
+    },
+    {
+      "text": "56-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 113
+    },
+    {
+      "text": "House No. 47, Naupada, Thane 400640",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 159
+    },
+    {
+      "text": "07918033480",
+      "category": "PHONE",
+      "start": 167,
+      "end": 178
+    },
+    {
+      "text": "deepak.das84@example.in",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 210
+    },
+    {
+      "text": "PXJPD5757X",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 249
+    },
+    {
+      "text": "Pioneer Enterprises",
+      "category": "ORGANIZATION",
+      "start": 266,
+      "end": 285
+    },
+    {
+      "text": "₹6,50,000",
+      "category": "MONEY",
+      "start": 306,
+      "end": 315
+    },
+    {
+      "text": "Pioneer Enterprises",
+      "category": "ORGANIZATION",
+      "start": 326,
+      "end": 345
+    },
+    {
+      "text": "659711443359",
+      "category": "FINANCIAL",
+      "start": 472,
+      "end": 484
+    },
+    {
+      "text": "HDFC0516258",
+      "category": "FINANCIAL",
+      "start": 491,
+      "end": 502
+    },
+    {
+      "text": "CC/634/2022",
+      "category": "CASE_NUMBER",
+      "start": 529,
+      "end": 540
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "start": 552,
+      "end": 598
+    },
+    {
+      "text": "27 June 2022",
+      "category": "DATE",
+      "start": 602,
+      "end": 614
+    },
+    {
+      "text": "age (56) + occupation (fashion designer) + city (Thane) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

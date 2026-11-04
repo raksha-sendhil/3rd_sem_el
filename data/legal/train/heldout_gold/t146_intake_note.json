@@ -1,0 +1,122 @@
+{
+  "doc_id": "c7d5a315bdb60907",
+  "text": "Intake note - Commercial team\nDate: 17 January 2022\nClient: Simran Mishra, a 24-year-old restaurant owner from Nagpur.\nAddress: Bungalow 14, Dharampeth, Nagpur 440011\nPhone: +91 70636 60075. Email: simran.mishra@example.com. PAN NMSPM3268C, Aadhaar 3973 3824 5940.\nMatter: maritime salvage claim (Project Ibis)\nOpposing party: M/s Sunrise Marine Ltd\nFacts: The maritime salvage claim against Sunrise Marine Ltd is for ₹43.5 crore; the owners dispute the value of the salvage.\nThe matter was filed as A.S. No. 2764/2022 before the Bombay High Court on 30 June 2022.",
+  "spans": [
+    {
+      "text": "17 January 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Simran Mishra",
+      "category": "NAME",
+      "start": 60,
+      "end": 73
+    },
+    {
+      "text": "24-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 105
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 111,
+      "end": 117
+    },
+    {
+      "text": "Bungalow 14, Dharampeth, Nagpur 440011",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 166
+    },
+    {
+      "text": "+91 70636 60075",
+      "category": "PHONE",
+      "start": 174,
+      "end": 189
+    },
+    {
+      "text": "simran.mishra@example.com",
+      "category": "EMAIL",
+      "start": 198,
+      "end": 223
+    },
+    {
+      "text": "NMSPM3268C",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 239
+    },
+    {
+      "text": "3973 3824 5940",
+      "category": "ID_NUMBER",
+      "start": 249,
+      "end": 263
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 273,
+      "end": 295
+    },
+    {
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 297,
+      "end": 309
+    },
+    {
+      "text": "Sunrise Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 331,
+      "end": 349
+    },
+    {
+      "text": "Sunrise Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 392,
+      "end": 410
+    },
+    {
+      "text": "₹43.5 crore",
+      "category": "MONEY",
+      "start": 418,
+      "end": 429
+    },
+    {
+      "text": "A.S. No. 2764/2022",
+      "category": "CASE_NUMBER",
+      "start": 500,
+      "end": 518
+    },
+    {
+      "text": "Bombay High Court",
+      "category": "COURT",
+      "start": 530,
+      "end": 547
+    },
+    {
+      "text": "30 June 2022",
+      "category": "DATE",
+      "start": 551,
+      "end": 563
+    },
+    {
+      "text": "age (24) + occupation (restaurant owner) + city (Nagpur) + issue (maritime salvage claim)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

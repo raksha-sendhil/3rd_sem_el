@@ -1,0 +1,80 @@
+{
+  "doc_id": "a46d4b043647471e",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Swati Naidu. I am a 29-year-old journalist living in Jaipur. Vindhya Enterprises gave me a cheque for INR 21,60,000/- to repay a loan, but the cheque was returned unpaid for insufficient funds. My case number is CC/2899/2019 in the Judicial Magistrate First Class Court at Jaipur. Can your firm advise me on what to do next? You can call me on +91 76734 41637 or email swati.naidu47@example.in.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Swati Naidu",
+      "category": "NAME",
+      "start": 64,
+      "end": 75
+    },
+    {
+      "text": "29-year-old",
+      "category": "AGE",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 96,
+      "end": 106
+    },
+    {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 117,
+      "end": 123
+    },
+    {
+      "text": "Vindhya Enterprises",
+      "category": "ORGANIZATION",
+      "start": 125,
+      "end": 144
+    },
+    {
+      "text": "INR 21,60,000/-",
+      "category": "MONEY",
+      "start": 166,
+      "end": 181
+    },
+    {
+      "text": "CC/2899/2019",
+      "category": "CASE_NUMBER",
+      "start": 276,
+      "end": 288
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Jaipur",
+      "category": "COURT",
+      "start": 296,
+      "end": 343
+    },
+    {
+      "text": "+91 76734 41637",
+      "category": "PHONE",
+      "start": 408,
+      "end": 423
+    },
+    {
+      "text": "swati.naidu47@example.in",
+      "category": "EMAIL",
+      "start": 433,
+      "end": 457
+    },
+    {
+      "text": "age (29) + occupation (journalist) + city (Jaipur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

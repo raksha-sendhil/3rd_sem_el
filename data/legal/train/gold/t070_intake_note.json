@@ -1,0 +1,128 @@
+{
+  "doc_id": "cfc1b480a9670a42",
+  "text": "Intake note - Commercial team\nDate: 14/06/2020\nClient: Varun Subramanian, a 25-year-old architect from Chennai.\nAddress: Flat 1D, Adyar, Chennai 600050\nPhone: +91 94872 66753. Email: varun.subramanian@example.in. PAN XHGPS3139E, Aadhaar 7817 5319 0247.\nMatter: cheque bounce\nOpposing party: M/s Lotus Enterprises\nFacts: A cheque for 8.2 lakh rupees issued by Lotus Enterprises bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 30900637495 (IFSC KKBK0192542).\nThe matter was filed as CC/425/2020 before the Judicial Magistrate First Class Court at Chennai on 3 October 2020.",
+  "spans": [
+    {
+      "text": "14/06/2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Varun Subramanian",
+      "category": "NAME",
+      "start": 55,
+      "end": 72
+    },
+    {
+      "text": "25-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 97
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 110
+    },
+    {
+      "text": "Flat 1D, Adyar, Chennai 600050",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 151
+    },
+    {
+      "text": "+91 94872 66753",
+      "category": "PHONE",
+      "start": 159,
+      "end": 174
+    },
+    {
+      "text": "varun.subramanian@example.in",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 211
+    },
+    {
+      "text": "XHGPS3139E",
+      "category": "ID_NUMBER",
+      "start": 217,
+      "end": 227
+    },
+    {
+      "text": "7817 5319 0247",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 251
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 261,
+      "end": 274
+    },
+    {
+      "text": "Lotus Enterprises",
+      "category": "ORGANIZATION",
+      "start": 295,
+      "end": 312
+    },
+    {
+      "text": "8.2 lakh rupees",
+      "category": "MONEY",
+      "start": 333,
+      "end": 348
+    },
+    {
+      "text": "Lotus Enterprises",
+      "category": "ORGANIZATION",
+      "start": 359,
+      "end": 376
+    },
+    {
+      "text": "30900637495",
+      "category": "FINANCIAL",
+      "start": 492,
+      "end": 503
+    },
+    {
+      "text": "KKBK0192542",
+      "category": "FINANCIAL",
+      "start": 510,
+      "end": 521
+    },
+    {
+      "text": "CC/425/2020",
+      "category": "CASE_NUMBER",
+      "start": 548,
+      "end": 559
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Chennai",
+      "category": "COURT",
+      "start": 571,
+      "end": 619
+    },
+    {
+      "text": "3 October 2020",
+      "category": "DATE",
+      "start": 623,
+      "end": 637
+    },
+    {
+      "text": "age (25) + occupation (architect) + city (Chennai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

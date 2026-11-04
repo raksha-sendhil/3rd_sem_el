@@ -1,0 +1,50 @@
+{
+  "doc_id": "c55ec5ce94f3365c",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 1234/2021\n\nDear Mr. Das,\n\nThank you for meeting us on 02/01/2022 about your dispute with M/s Saffron Builders Pvt Ltd. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Kolhapur District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 1234/2021",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Das",
+      "category": "NAME",
+      "start": 71,
+      "end": 74
+    },
+    {
+      "text": "02/01/2022",
+      "category": "DATE",
+      "start": 105,
+      "end": 115
+    },
+    {
+      "text": "Saffron Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 144,
+      "end": 168
+    },
+    {
+      "text": "Kolhapur District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 283,
+      "end": 339
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 556,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

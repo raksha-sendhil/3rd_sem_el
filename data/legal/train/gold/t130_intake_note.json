@@ -1,0 +1,98 @@
+{
+  "doc_id": "cd43ce23ee926608",
+  "text": "Intake note (Commercial team, 30 November 2023). Our client Nandini Pawar is a 30-year-old truck driver who lives at Plot 40, Nadakkavu, Kozhikode 673043 and can be reached on +91 71888 74107 or nandini.pawar47@example.com. The client's PAN GKPPP5751F.\nThe client consulted us about a cheque bounce matter against M/s Emerald Traders. A cheque for Rs 37,00,000 issued by Emerald Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 2625/2024 before the Judicial Magistrate First Class Court at Kozhikode on 9 March 2024.",
+  "spans": [
+    {
+      "text": "30 November 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Nandini Pawar",
+      "category": "NAME",
+      "start": 60,
+      "end": 73
+    },
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 103
+    },
+    {
+      "text": "Plot 40, Nadakkavu, Kozhikode 673043",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 153
+    },
+    {
+      "text": "+91 71888 74107",
+      "category": "PHONE",
+      "start": 176,
+      "end": 191
+    },
+    {
+      "text": "nandini.pawar47@example.com",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 222
+    },
+    {
+      "text": "GKPPP5751F",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 251
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 285,
+      "end": 298
+    },
+    {
+      "text": "Emerald Traders",
+      "category": "ORGANIZATION",
+      "start": 318,
+      "end": 333
+    },
+    {
+      "text": "Rs 37,00,000",
+      "category": "MONEY",
+      "start": 348,
+      "end": 360
+    },
+    {
+      "text": "Emerald Traders",
+      "category": "ORGANIZATION",
+      "start": 371,
+      "end": 386
+    },
+    {
+      "text": "S.C.C. No. 2625/2024",
+      "category": "CASE_NUMBER",
+      "start": 473,
+      "end": 493
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kozhikode",
+      "category": "COURT",
+      "start": 505,
+      "end": 555
+    },
+    {
+      "text": "9 March 2024",
+      "category": "DATE",
+      "start": 559,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

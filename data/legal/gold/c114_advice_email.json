@@ -1,0 +1,56 @@
+{
+  "doc_id": "95b8124dd9153885",
+  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 1138/2022\n\nDear Ms. Mehra,\n\nThank you for meeting us on 03/08/2022 about your dispute with Das Exports. As we understand it, the rival product uses the protected regional name on its label. The matter is listed before the Gujarat High Court.\n\nOur advice is to rely on the registered GI certificate and seek an injunction against the infringing label. Please collect the registered GI certificate and samples of the infringing label and send copies to this office. We will pursue the full claim of Rs. 2,96,00,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 45
+    },
+    {
+      "text": "CS(COMM) 1138/2022",
+      "category": "CASE_NUMBER",
+      "start": 55,
+      "end": 73
+    },
+    {
+      "text": "Mehra",
+      "category": "NAME",
+      "start": 84,
+      "end": 89
+    },
+    {
+      "text": "03/08/2022",
+      "category": "DATE",
+      "start": 120,
+      "end": 130
+    },
+    {
+      "text": "Das Exports",
+      "category": "ORGANIZATION",
+      "start": 155,
+      "end": 166
+    },
+    {
+      "text": "Gujarat High Court",
+      "category": "COURT",
+      "start": 286,
+      "end": 304
+    },
+    {
+      "text": "Rs. 2,96,00,000",
+      "category": "MONEY",
+      "start": 561,
+      "end": 576
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 593,
+      "end": 605
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

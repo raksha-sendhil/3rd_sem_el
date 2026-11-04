@@ -1,0 +1,104 @@
+{
+  "doc_id": "a8a4cac5ba3ea9cd",
+  "text": "Intake note (Commercial team, 30 May 2021). Our client Sanjay Tiwari is a 44-year-old bank manager who lives at Bungalow 33, Dwarka, New Delhi 110014 and can be reached on +91 94167 63924 or sanjay.tiwari28@example.com. The client's PAN TXAPT8213E.\nThe client consulted us about a maritime salvage claim matter (Project Osprey) against M/s Crescent Shipping Pvt Ltd. The maritime salvage claim against Crescent Shipping Pvt Ltd is for Rs. 5,09,00,000; the vessel is about to leave port.\nThe matter was filed as A.S. No. 1097/2021 before the Delhi High Court on 06/07/2021.",
+  "spans": [
+    {
+      "text": "30 May 2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 41
+    },
+    {
+      "text": "Sanjay Tiwari",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "44-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 98
+    },
+    {
+      "text": "Bungalow 33, Dwarka, New Delhi 110014",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 149
+    },
+    {
+      "text": "+91 94167 63924",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "sanjay.tiwari28@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 218
+    },
+    {
+      "text": "TXAPT8213E",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 281,
+      "end": 303
+    },
+    {
+      "text": "Project Osprey",
+      "category": "MATTER_CODENAME",
+      "start": 312,
+      "end": 326
+    },
+    {
+      "text": "Crescent Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 340,
+      "end": 365
+    },
+    {
+      "text": "Crescent Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 402,
+      "end": 427
+    },
+    {
+      "text": "Rs. 5,09,00,000",
+      "category": "MONEY",
+      "start": 435,
+      "end": 450
+    },
+    {
+      "text": "A.S. No. 1097/2021",
+      "category": "CASE_NUMBER",
+      "start": 511,
+      "end": 529
+    },
+    {
+      "text": "Delhi High Court",
+      "category": "COURT",
+      "start": 541,
+      "end": 557
+    },
+    {
+      "text": "06/07/2021",
+      "category": "DATE",
+      "start": 561,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

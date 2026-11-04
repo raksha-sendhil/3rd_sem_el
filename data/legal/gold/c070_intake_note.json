@@ -1,0 +1,116 @@
+{
+  "doc_id": "e98072ccc28ac955",
+  "text": "Intake note - Property team\nDate: 18/05/2019\nClient: Meera Bose, a 42-year-old pharmacist from Lucknow.\nAddress: Plot 108, Gomti Nagar, Lucknow 226041\nPhone: +91 66238 55768. Email: meera.bose@example.in. PAN WUUPB5486Q, Aadhaar 2745 0364 2479.\nMatter: land dispute\nOpposing party: Gaurav Sen\nFacts: The land dispute with Gaurav Sen concerns agricultural land valued at INR 23,30,000/-; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 2030/2019 before the Lucknow District Court on 16 November 2019.",
+  "spans": [
+    {
+      "text": "18/05/2019",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Meera Bose",
+      "category": "NAME",
+      "start": 53,
+      "end": 63
+    },
+    {
+      "text": "42-year-old",
+      "category": "AGE",
+      "start": 67,
+      "end": 78
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 79,
+      "end": 89
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 95,
+      "end": 102
+    },
+    {
+      "text": "Plot 108, Gomti Nagar, Lucknow 226041",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 150
+    },
+    {
+      "text": "+91 66238 55768",
+      "category": "PHONE",
+      "start": 158,
+      "end": 173
+    },
+    {
+      "text": "meera.bose@example.in",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 203
+    },
+    {
+      "text": "WUUPB5486Q",
+      "category": "ID_NUMBER",
+      "start": 209,
+      "end": 219
+    },
+    {
+      "text": "2745 0364 2479",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 243
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 253,
+      "end": 265
+    },
+    {
+      "text": "Gaurav Sen",
+      "category": "NAME",
+      "start": 282,
+      "end": 292
+    },
+    {
+      "text": "Gaurav Sen",
+      "category": "NAME",
+      "start": 322,
+      "end": 332
+    },
+    {
+      "text": "INR 23,30,000/-",
+      "category": "MONEY",
+      "start": 370,
+      "end": 385
+    },
+    {
+      "text": "O.S. No. 2030/2019",
+      "category": "CASE_NUMBER",
+      "start": 469,
+      "end": 487
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 499,
+      "end": 521
+    },
+    {
+      "text": "16 November 2019",
+      "category": "DATE",
+      "start": 525,
+      "end": 541
+    },
+    {
+      "text": "age (42) + occupation (pharmacist) + city (Lucknow) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

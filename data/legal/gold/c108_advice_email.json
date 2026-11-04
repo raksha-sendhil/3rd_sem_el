@@ -1,0 +1,50 @@
+{
+  "doc_id": "49c29ad5afdfae4d",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 89/2024\n\nDear Mr. Sathe,\n\nThank you for meeting us on 21 April 2025 about your dispute with M/s Chatterjee Technologies Pvt Ltd. As we understand it, the employer offered to settle. The matter is listed before the Coimbatore Labour Court.\n\nOur advice is to negotiate a settlement of gratuity and notice pay. Please collect the salary slips and the gratuity calculation and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 89/2024",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 65
+    },
+    {
+      "text": "Sathe",
+      "category": "NAME",
+      "start": 76,
+      "end": 81
+    },
+    {
+      "text": "21 April 2025",
+      "category": "DATE",
+      "start": 112,
+      "end": 125
+    },
+    {
+      "text": "Chatterjee Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 154,
+      "end": 185
+    },
+    {
+      "text": "Coimbatore Labour Court",
+      "category": "COURT",
+      "start": 272,
+      "end": 295
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 474,
+      "end": 486
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

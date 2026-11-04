@@ -1,0 +1,110 @@
+{
+  "doc_id": "b0a0c3f91b3a86a5",
+  "text": "Intake note (Commercial team, 15 January 2019). Our client Debashish Mehra is a 71-year-old chartered accountant who lives at Bungalow 21, Edappally, Kochi 682003 and can be reached on +91 83945 29272 or debashish.mehra@example.com. The client's PAN LCFPM4750L.\nThe client consulted us about a cheque bounce matter against Coastal Textiles Pvt Ltd. A cheque for Rs 23,70,000 issued by Coastal Textiles Pvt Ltd bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 952691284249 (IFSC KKBK0752414).\nThe matter was filed as S.C.C. No. 1968/2019 before the Judicial Magistrate First Class Court at Kochi on 5 May 2019.",
+  "spans": [
+    {
+      "text": "15 January 2019",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Debashish Mehra",
+      "category": "NAME",
+      "start": 59,
+      "end": 74
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 80,
+      "end": 91
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 92,
+      "end": 112
+    },
+    {
+      "text": "Bungalow 21, Edappally, Kochi 682003",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 162
+    },
+    {
+      "text": "+91 83945 29272",
+      "category": "PHONE",
+      "start": 185,
+      "end": 200
+    },
+    {
+      "text": "debashish.mehra@example.com",
+      "category": "EMAIL",
+      "start": 204,
+      "end": 231
+    },
+    {
+      "text": "LCFPM4750L",
+      "category": "ID_NUMBER",
+      "start": 250,
+      "end": 260
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 294,
+      "end": 307
+    },
+    {
+      "text": "Coastal Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 323,
+      "end": 347
+    },
+    {
+      "text": "Rs 23,70,000",
+      "category": "MONEY",
+      "start": 362,
+      "end": 374
+    },
+    {
+      "text": "Coastal Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 385,
+      "end": 409
+    },
+    {
+      "text": "952691284249",
+      "category": "FINANCIAL",
+      "start": 536,
+      "end": 548
+    },
+    {
+      "text": "KKBK0752414",
+      "category": "FINANCIAL",
+      "start": 555,
+      "end": 566
+    },
+    {
+      "text": "S.C.C. No. 1968/2019",
+      "category": "CASE_NUMBER",
+      "start": 593,
+      "end": 613
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 625,
+      "end": 671
+    },
+    {
+      "text": "5 May 2019",
+      "category": "DATE",
+      "start": 675,
+      "end": 685
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

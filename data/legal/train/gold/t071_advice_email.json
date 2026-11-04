@@ -1,0 +1,50 @@
+{
+  "doc_id": "8da84e3dc89c65d0",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 2153/2022\n\nDear Ms. Patel,\n\nThank you for meeting us on 29 December 2022 about your dispute with Aarti Fernandes. As we understand it, both spouses have lived apart for a long time.\n\nOur advice is to apply to waive the statutory cooling-off period. Please collect proof of separate residence and the consent terms and send copies to this office. We will pursue the full claim of Rs 23,40,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 2153/2022",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 71
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 82,
+      "end": 87
+    },
+    {
+      "text": "29 December 2022",
+      "category": "DATE",
+      "start": 118,
+      "end": 134
+    },
+    {
+      "text": "Aarti Fernandes",
+      "category": "NAME",
+      "start": 159,
+      "end": 174
+    },
+    {
+      "text": "Rs 23,40,000",
+      "category": "MONEY",
+      "start": 441,
+      "end": 453
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 470,
+      "end": 489
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

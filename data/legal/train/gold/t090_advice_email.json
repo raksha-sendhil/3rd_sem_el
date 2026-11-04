@@ -1,0 +1,50 @@
+{
+  "doc_id": "72818d5a5f7d2bbe",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 73/2019\n\nDear Ms. Reddy,\n\nThank you for meeting us on 26 October 2019 about your dispute with Varun Gaikwad. As we understand it, construction has started on the disputed plot. The matter is listed before the Thane District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 73/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Reddy",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "26 October 2019",
+      "category": "DATE",
+      "start": 101,
+      "end": 116
+    },
+    {
+      "text": "Varun Gaikwad",
+      "category": "NAME",
+      "start": 141,
+      "end": 154
+    },
+    {
+      "text": "Thane District Court",
+      "category": "COURT",
+      "start": 256,
+      "end": 276
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 473,
+      "end": 490
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

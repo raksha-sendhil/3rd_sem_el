@@ -1,0 +1,52 @@
+{
+  "doc_id": "befb389e791032f0",
+  "routing": [
+    {
+      "text": "R.C.S. No. 2123/2020",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Neha Karve",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Revathi Shetty",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "02/04/2020",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "INR 8,25,000/-",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

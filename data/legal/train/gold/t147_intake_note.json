@@ -1,0 +1,110 @@
+{
+  "doc_id": "aa81b09663190616",
+  "text": "Intake note - Commercial team\nDate: 5 March 2025\nClient: Priyanka Saxena, a 66-year-old dentist from Pune.\nAddress: Plot 15, Baner, Pune 411007\nPhone: 06580306043. Email: priyanka.saxena81@example.in. PAN TKYPS4908G.\nMatter: cheque bounce\nOpposing party: Harpreet Shah\nFacts: A cheque for 38.5 lakh rupees issued by Harpreet Shah bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 786/2025 before the Judicial Magistrate First Class Court at Pune on 09/04/2025.",
+  "spans": [
+    {
+      "text": "5 March 2025",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Priyanka Saxena",
+      "category": "NAME",
+      "start": 57,
+      "end": 72
+    },
+    {
+      "text": "66-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 95
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 101,
+      "end": 105
+    },
+    {
+      "text": "Plot 15, Baner, Pune 411007",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 143
+    },
+    {
+      "text": "06580306043",
+      "category": "PHONE",
+      "start": 151,
+      "end": 162
+    },
+    {
+      "text": "priyanka.saxena81@example.in",
+      "category": "EMAIL",
+      "start": 171,
+      "end": 199
+    },
+    {
+      "text": "TKYPS4908G",
+      "category": "ID_NUMBER",
+      "start": 205,
+      "end": 215
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 225,
+      "end": 238
+    },
+    {
+      "text": "Harpreet Shah",
+      "category": "NAME",
+      "start": 255,
+      "end": 268
+    },
+    {
+      "text": "38.5 lakh rupees",
+      "category": "MONEY",
+      "start": 289,
+      "end": 305
+    },
+    {
+      "text": "Harpreet Shah",
+      "category": "NAME",
+      "start": 316,
+      "end": 329
+    },
+    {
+      "text": "S.C.C. No. 786/2025",
+      "category": "CASE_NUMBER",
+      "start": 416,
+      "end": 435
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 447,
+      "end": 492
+    },
+    {
+      "text": "09/04/2025",
+      "category": "DATE",
+      "start": 496,
+      "end": 506
+    },
+    {
+      "text": "age (66) + occupation (dentist) + city (Pune) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

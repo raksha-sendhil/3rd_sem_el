@@ -1,0 +1,38 @@
+{
+  "doc_id": "a02bec6b43795839",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Chauhan,\n\nThank you for meeting us on 4 June 2022 about your dispute with DSouza Enterprises. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Chauhan",
+      "category": "NAME",
+      "start": 45,
+      "end": 52
+    },
+    {
+      "text": "4 June 2022",
+      "category": "DATE",
+      "start": 83,
+      "end": 94
+    },
+    {
+      "text": "DSouza Enterprises",
+      "category": "ORGANIZATION",
+      "start": 119,
+      "end": 137
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 462,
+      "end": 478
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

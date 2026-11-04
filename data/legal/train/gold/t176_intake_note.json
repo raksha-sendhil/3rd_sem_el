@@ -1,0 +1,110 @@
+{
+  "doc_id": "17172caeba274537",
+  "text": "Intake note - Property team\nDate: 21 April 2025\nClient: Farhan Tiwari, a 32-year-old general physician from Nashik.\nAddress: Bungalow 16, College Road, Nashik 422019\nPhone: 07221845682. Email: farhan.tiwari36@example.com. PAN FABPT7139W.\nMatter: consumer complaint\nOpposing party: Trident Builders Pvt Ltd\nFacts: The consumer complaint against M/s Trident Builders Pvt Ltd concerns a flat bought for ₹7.2 crore; the flat was handed over with serious construction defects.\nThe matter was filed as CC/2526/2025 before the Nashik District Consumer Disputes Redressal Commission on 21 September 2025.",
+  "spans": [
+    {
+      "text": "21 April 2025",
+      "category": "DATE",
+      "start": 34,
+      "end": 47
+    },
+    {
+      "text": "Farhan Tiwari",
+      "category": "NAME",
+      "start": 56,
+      "end": 69
+    },
+    {
+      "text": "32-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 102
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 114
+    },
+    {
+      "text": "Bungalow 16, College Road, Nashik 422019",
+      "category": "ADDRESS",
+      "start": 125,
+      "end": 165
+    },
+    {
+      "text": "07221845682",
+      "category": "PHONE",
+      "start": 173,
+      "end": 184
+    },
+    {
+      "text": "farhan.tiwari36@example.com",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 220
+    },
+    {
+      "text": "FABPT7139W",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 246,
+      "end": 264
+    },
+    {
+      "text": "Trident Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 281,
+      "end": 305
+    },
+    {
+      "text": "Trident Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 348,
+      "end": 372
+    },
+    {
+      "text": "₹7.2 crore",
+      "category": "MONEY",
+      "start": 400,
+      "end": 410
+    },
+    {
+      "text": "CC/2526/2025",
+      "category": "CASE_NUMBER",
+      "start": 496,
+      "end": 508
+    },
+    {
+      "text": "Nashik District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 520,
+      "end": 574
+    },
+    {
+      "text": "21 September 2025",
+      "category": "DATE",
+      "start": 578,
+      "end": 595
+    },
+    {
+      "text": "age (32) + occupation (general physician) + city (Nashik) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

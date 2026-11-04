@@ -1,0 +1,110 @@
+{
+  "doc_id": "9eb95382607557cf",
+  "text": "Intake note (Commercial team, 31 January 2024). Our client Yogesh Rao is a 49-year-old electrician who lives at Bungalow 6, Sitabuldi, Nagpur 440038 and can be reached on +91 75487 53117 or yogesh.rao48@example.com. The client's PAN AHDPR4296S.\nThe client consulted us about a cheque bounce matter against Meera Khan. A cheque for INR 12,90,000/- issued by Meera Khan bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 412106107134 (IFSC HDFC0082807).\nThe matter was filed as CC/1024/2024 before the Judicial Magistrate First Class Court at Nagpur on 17 May 2024.",
+  "spans": [
+    {
+      "text": "31 January 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Yogesh Rao",
+      "category": "NAME",
+      "start": 59,
+      "end": 69
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "Bungalow 6, Sitabuldi, Nagpur 440038",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 148
+    },
+    {
+      "text": "+91 75487 53117",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "yogesh.rao48@example.com",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 214
+    },
+    {
+      "text": "AHDPR4296S",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 290
+    },
+    {
+      "text": "Meera Khan",
+      "category": "NAME",
+      "start": 306,
+      "end": 316
+    },
+    {
+      "text": "INR 12,90,000/-",
+      "category": "MONEY",
+      "start": 331,
+      "end": 346
+    },
+    {
+      "text": "Meera Khan",
+      "category": "NAME",
+      "start": 357,
+      "end": 367
+    },
+    {
+      "text": "412106107134",
+      "category": "FINANCIAL",
+      "start": 493,
+      "end": 505
+    },
+    {
+      "text": "HDFC0082807",
+      "category": "FINANCIAL",
+      "start": 512,
+      "end": 523
+    },
+    {
+      "text": "CC/1024/2024",
+      "category": "CASE_NUMBER",
+      "start": 550,
+      "end": 562
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 574,
+      "end": 621
+    },
+    {
+      "text": "17 May 2024",
+      "category": "DATE",
+      "start": 625,
+      "end": 636
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

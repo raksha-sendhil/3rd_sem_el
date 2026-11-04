@@ -1,0 +1,44 @@
+{
+  "doc_id": "885c43a1bed48d9d",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Ms. Mittal,\n\nThank you for meeting us on 1 July 2024 about your dispute with Abhishek Bose. As we understand it, the complainant alleges cheating over a failed deal. The matter is listed before the Thiruvananthapuram Sessions Court.\n\nOur advice is to produce the contract and payment records to show there was no intent to cheat at the outset. Please collect the signed contract and the payment records and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Mittal",
+      "category": "NAME",
+      "start": 49,
+      "end": 55
+    },
+    {
+      "text": "1 July 2024",
+      "category": "DATE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "Abhishek Bose",
+      "category": "NAME",
+      "start": 122,
+      "end": 135
+    },
+    {
+      "text": "Thiruvananthapuram Sessions Court",
+      "category": "COURT",
+      "start": 243,
+      "end": 276
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 495,
+      "end": 507
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

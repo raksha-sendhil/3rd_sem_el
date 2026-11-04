@@ -1,0 +1,110 @@
+{
+  "doc_id": "2e2c4e5d283b57aa",
+  "text": "Intake note - Commercial team\nDate: 26 April 2025\nClient: Sanjay Kamath, a 25-year-old paediatrician from New Delhi.\nAddress: Flat 5B, Dwarka, New Delhi 110044\nPhone: +91 79762 77208. Email: sanjay.kamath@example.in. PAN PTQPK4700W.\nMatter: cheque bounce\nOpposing party: Deepa Kapoor\nFacts: A cheque for 11.1 lakh rupees issued by Deepa Kapoor bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 2617/2025 before the Judicial Magistrate First Class Court at New Delhi on 05/08/2025.",
+  "spans": [
+    {
+      "text": "26 April 2025",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Sanjay Kamath",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "25-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 100
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 115
+    },
+    {
+      "text": "Flat 5B, Dwarka, New Delhi 110044",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 159
+    },
+    {
+      "text": "+91 79762 77208",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "sanjay.kamath@example.in",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 215
+    },
+    {
+      "text": "PTQPK4700W",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 241,
+      "end": 254
+    },
+    {
+      "text": "Deepa Kapoor",
+      "category": "NAME",
+      "start": 271,
+      "end": 283
+    },
+    {
+      "text": "11.1 lakh rupees",
+      "category": "MONEY",
+      "start": 304,
+      "end": 320
+    },
+    {
+      "text": "Deepa Kapoor",
+      "category": "NAME",
+      "start": 331,
+      "end": 343
+    },
+    {
+      "text": "S.C.C. No. 2617/2025",
+      "category": "CASE_NUMBER",
+      "start": 441,
+      "end": 461
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at New Delhi",
+      "category": "COURT",
+      "start": 473,
+      "end": 523
+    },
+    {
+      "text": "05/08/2025",
+      "category": "DATE",
+      "start": 527,
+      "end": 537
+    },
+    {
+      "text": "age (25) + occupation (paediatrician) + city (New Delhi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

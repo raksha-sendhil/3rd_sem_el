@@ -1,0 +1,50 @@
+{
+  "doc_id": "473e2194ddd59d69",
+  "text": "Subject: Your cheque bounce matter - CC/1801/2022\n\nDear Mr. Varghese,\n\nThank you for meeting us on 27 September 2022 about your dispute with Chandran Enterprises. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Kochi.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/1801/2022",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Varghese",
+      "category": "NAME",
+      "start": 60,
+      "end": 68
+    },
+    {
+      "text": "27 September 2022",
+      "category": "DATE",
+      "start": 99,
+      "end": 116
+    },
+    {
+      "text": "Chandran Enterprises",
+      "category": "ORGANIZATION",
+      "start": 141,
+      "end": 161
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 279,
+      "end": 325
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 566,
+      "end": 578
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

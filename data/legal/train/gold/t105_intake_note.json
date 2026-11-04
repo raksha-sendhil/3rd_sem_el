@@ -1,0 +1,98 @@
+{
+  "doc_id": "586290c63a578909",
+  "text": "Intake note (Property team, 3 January 2020). Our client Deepak Ghosh is a 43-year-old bank manager who lives at House No. 118, Aliganj, Lucknow 226028 and can be reached on +91 93595 56621 or deepak.ghosh83@example.in. The client's PAN MQDPG3864Q.\nThe client consulted us about a land dispute matter against Vandana Kurian. The land dispute with Vandana Kurian concerns agricultural land valued at ₹1.9 crore; the occupant claims ownership by adverse possession.\nThe matter was filed as O.S. No. 1494/2020 before the Lucknow District Court on 4 March 2020.",
+  "spans": [
+    {
+      "text": "3 January 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 42
+    },
+    {
+      "text": "Deepak Ghosh",
+      "category": "NAME",
+      "start": 56,
+      "end": 68
+    },
+    {
+      "text": "43-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 98
+    },
+    {
+      "text": "House No. 118, Aliganj, Lucknow 226028",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 150
+    },
+    {
+      "text": "+91 93595 56621",
+      "category": "PHONE",
+      "start": 173,
+      "end": 188
+    },
+    {
+      "text": "deepak.ghosh83@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 217
+    },
+    {
+      "text": "MQDPG3864Q",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 280,
+      "end": 292
+    },
+    {
+      "text": "Vandana Kurian",
+      "category": "NAME",
+      "start": 308,
+      "end": 322
+    },
+    {
+      "text": "Vandana Kurian",
+      "category": "NAME",
+      "start": 346,
+      "end": 360
+    },
+    {
+      "text": "₹1.9 crore",
+      "category": "MONEY",
+      "start": 398,
+      "end": 408
+    },
+    {
+      "text": "O.S. No. 1494/2020",
+      "category": "CASE_NUMBER",
+      "start": 487,
+      "end": 505
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 517,
+      "end": 539
+    },
+    {
+      "text": "4 March 2020",
+      "category": "DATE",
+      "start": 543,
+      "end": 555
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

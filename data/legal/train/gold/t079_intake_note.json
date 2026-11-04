@@ -1,0 +1,98 @@
+{
+  "doc_id": "40e07577cb2b173f",
+  "text": "Intake note (Commercial team, 16 April 2020). Our client Suresh Rathore is a 75-year-old software engineer who lives at Flat 2B, Aundh, Pune 411010 and can be reached on +91 87072 32389 or suresh.rathore@example.in. The client's PAN GXWPR4302A.\nThe client consulted us about a cheque bounce matter against Radhika Pai. A cheque for 29.7 lakh rupees issued by Radhika Pai bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2575/2020 before the Judicial Magistrate First Class Court at Pune on 16 July 2020.",
+  "spans": [
+    {
+      "text": "16 April 2020",
+      "category": "DATE",
+      "start": 30,
+      "end": 43
+    },
+    {
+      "text": "Suresh Rathore",
+      "category": "NAME",
+      "start": 57,
+      "end": 71
+    },
+    {
+      "text": "75-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 106
+    },
+    {
+      "text": "Flat 2B, Aundh, Pune 411010",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 147
+    },
+    {
+      "text": "+91 87072 32389",
+      "category": "PHONE",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "suresh.rathore@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 214
+    },
+    {
+      "text": "GXWPR4302A",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 290
+    },
+    {
+      "text": "Radhika Pai",
+      "category": "NAME",
+      "start": 306,
+      "end": 317
+    },
+    {
+      "text": "29.7 lakh rupees",
+      "category": "MONEY",
+      "start": 332,
+      "end": 348
+    },
+    {
+      "text": "Radhika Pai",
+      "category": "NAME",
+      "start": 359,
+      "end": 370
+    },
+    {
+      "text": "CC/2575/2020",
+      "category": "CASE_NUMBER",
+      "start": 457,
+      "end": 469
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 481,
+      "end": 526
+    },
+    {
+      "text": "16 July 2020",
+      "category": "DATE",
+      "start": 530,
+      "end": 542
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

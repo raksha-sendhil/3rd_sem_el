@@ -1,0 +1,128 @@
+{
+  "doc_id": "b552a99e8eb4cc8b",
+  "text": "Intake note - Commercial team\nDate: 13 August 2020\nClient: Vivek Srivastava, a 37-year-old journalist from Coimbatore.\nAddress: Flat 10C, Saibaba Colony, Coimbatore 641053\nPhone: +91 86233 03178. Email: vivek.srivastava@example.com. PAN BXYPS8703J, Aadhaar 4558 1575 1502.\nMatter: cheque bounce\nOpposing party: Ananya Chandran\nFacts: A cheque for ₹22,80,000 issued by Ananya Chandran bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 719051776271 (IFSC KKBK0758848).\nThe matter was filed as CC/837/2020 before the Judicial Magistrate First Class Court at Coimbatore on 09/09/2020.",
+  "spans": [
+    {
+      "text": "13 August 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 50
+    },
+    {
+      "text": "Vivek Srivastava",
+      "category": "NAME",
+      "start": 59,
+      "end": 75
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 101
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 117
+    },
+    {
+      "text": "Flat 10C, Saibaba Colony, Coimbatore 641053",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 171
+    },
+    {
+      "text": "+91 86233 03178",
+      "category": "PHONE",
+      "start": 179,
+      "end": 194
+    },
+    {
+      "text": "vivek.srivastava@example.com",
+      "category": "EMAIL",
+      "start": 203,
+      "end": 231
+    },
+    {
+      "text": "BXYPS8703J",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "4558 1575 1502",
+      "category": "ID_NUMBER",
+      "start": 257,
+      "end": 271
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 281,
+      "end": 294
+    },
+    {
+      "text": "Ananya Chandran",
+      "category": "NAME",
+      "start": 311,
+      "end": 326
+    },
+    {
+      "text": "₹22,80,000",
+      "category": "MONEY",
+      "start": 347,
+      "end": 357
+    },
+    {
+      "text": "Ananya Chandran",
+      "category": "NAME",
+      "start": 368,
+      "end": 383
+    },
+    {
+      "text": "719051776271",
+      "category": "FINANCIAL",
+      "start": 501,
+      "end": 513
+    },
+    {
+      "text": "KKBK0758848",
+      "category": "FINANCIAL",
+      "start": 520,
+      "end": 531
+    },
+    {
+      "text": "CC/837/2020",
+      "category": "CASE_NUMBER",
+      "start": 558,
+      "end": 569
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 581,
+      "end": 632
+    },
+    {
+      "text": "09/09/2020",
+      "category": "DATE",
+      "start": 636,
+      "end": 646
+    },
+    {
+      "text": "age (37) + occupation (journalist) + city (Coimbatore) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

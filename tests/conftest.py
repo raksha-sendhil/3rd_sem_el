@@ -67,12 +67,16 @@ def fake_rule_detect(text: str) -> list[SensitiveSpan]:
 def _isolated_settings(
     monkeypatch: pytest.MonkeyPatch, tmp_path_factory: pytest.TempPathFactory
 ) -> Iterator[None]:
-    """Each test gets default settings with the mock backend, unaffected by a developer's .env."""
+    """Each test gets default settings with the mock backend and the medical domain,
+    unaffected by a developer's .env."""
     for key in list(os.environ):
         if key.startswith("SANITISE_"):
             monkeypatch.delenv(key, raising=False)
     monkeypatch.chdir(tmp_path_factory.mktemp("cwd"))  # no stray .env is picked up
     monkeypatch.setenv("SANITISE_LLM_BACKEND", "mock")
+    # The suite predates the legal domain and runs on the medical corpus; legal tests opt in
+    # with ``use_domain("legal")`` or ``SANITISE_DOMAIN=legal``.
+    monkeypatch.setenv("SANITISE_DOMAIN", "medical")
     monkeypatch.setenv("SANITISE_TRANSPORT_RETRIES", "0")
     get_settings.cache_clear()
     yield

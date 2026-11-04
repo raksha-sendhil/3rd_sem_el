@@ -1,0 +1,85 @@
+{
+  "doc_id": "0563d91f233133c5",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Mahesh Pandey",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "architect",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "Thiruvananthapuram",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Nambiar Traders",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "INR 33,90,000/-",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "CC/1548/2020",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_on",
+      "value": "6 August 2020",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "advised",
+      "value": "Argue that a stop-payment instruction does not protect the drawer when the debt is admitted",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "outcome",
+      "value": "The drawer's application to discharge the complaint was rejected",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "next_step",
+      "value": "Press for an early date for cross-examination",
+      "importance": "high"
+    },
+    {
+      "subject": "witness",
+      "relation": "identifier",
+      "value": "Arjun Kulkarni",
+      "importance": "low"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

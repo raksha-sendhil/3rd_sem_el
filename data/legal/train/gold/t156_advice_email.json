@@ -1,0 +1,56 @@
+{
+  "doc_id": "28493e5c5e1c378a",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 2451/2020\n\nDear Ms. Chauhan,\n\nThank you for meeting us on 6 December 2020 about your dispute with Goyal Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Pune Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office. We will pursue the full claim of ₹22,80,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 2451/2020",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 67
+    },
+    {
+      "text": "Chauhan",
+      "category": "NAME",
+      "start": 78,
+      "end": 85
+    },
+    {
+      "text": "6 December 2020",
+      "category": "DATE",
+      "start": 116,
+      "end": 131
+    },
+    {
+      "text": "Goyal Industries",
+      "category": "ORGANIZATION",
+      "start": 156,
+      "end": 172
+    },
+    {
+      "text": "Pune Labour Court",
+      "category": "COURT",
+      "start": 275,
+      "end": 292
+    },
+    {
+      "text": "₹22,80,000",
+      "category": "MONEY",
+      "start": 498,
+      "end": 508
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 525,
+      "end": 537
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

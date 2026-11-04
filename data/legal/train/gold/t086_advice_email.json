@@ -1,0 +1,38 @@
+{
+  "doc_id": "c4fe5dbe504626b4",
+  "text": "Subject: Your breach of contract matter\n\nDear Mr. Patel,\n\nThank you for meeting us on 24 July 2021 about your dispute with Ranade Logistics Ltd. As we understand it, the counterparty terminated the contract without notice.\n\nOur advice is to send a notice of breach giving the cure period required by the contract. Please collect the contract, the termination letter and the board minutes and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 50,
+      "end": 55
+    },
+    {
+      "text": "24 July 2021",
+      "category": "DATE",
+      "start": 86,
+      "end": 98
+    },
+    {
+      "text": "Ranade Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 123,
+      "end": 143
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 435,
+      "end": 447
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

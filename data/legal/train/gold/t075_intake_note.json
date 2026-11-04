@@ -1,0 +1,104 @@
+{
+  "doc_id": "db862d5f0e7327c6",
+  "text": "Intake note (Property team, 22 May 2025). Our client Ishita Mukherjee is a 64-year-old nurse who lives at Plot 62, Kothrud, Pune 411032 and can be reached on 07777394744 or ishita.mukherjee79@example.com. The client's PAN BAYPM3360E, Aadhaar 5054 1781 8178.\nThe client consulted us about a land dispute matter against Priyanka DSouza. The land dispute with Priyanka DSouza concerns agricultural land valued at Rs 3,94,00,000; the occupant claims ownership by adverse possession.\nThe matter was filed as O.S. No. 1733/2025 before the Pune District Court on 26 October 2025.",
+  "spans": [
+    {
+      "text": "22 May 2025",
+      "category": "DATE",
+      "start": 28,
+      "end": 39
+    },
+    {
+      "text": "Ishita Mukherjee",
+      "category": "NAME",
+      "start": 53,
+      "end": 69
+    },
+    {
+      "text": "64-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 92
+    },
+    {
+      "text": "Plot 62, Kothrud, Pune 411032",
+      "category": "ADDRESS",
+      "start": 106,
+      "end": 135
+    },
+    {
+      "text": "07777394744",
+      "category": "PHONE",
+      "start": 158,
+      "end": 169
+    },
+    {
+      "text": "ishita.mukherjee79@example.com",
+      "category": "EMAIL",
+      "start": 173,
+      "end": 203
+    },
+    {
+      "text": "BAYPM3360E",
+      "category": "ID_NUMBER",
+      "start": 222,
+      "end": 232
+    },
+    {
+      "text": "5054 1781 8178",
+      "category": "ID_NUMBER",
+      "start": 242,
+      "end": 256
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 290,
+      "end": 302
+    },
+    {
+      "text": "Priyanka DSouza",
+      "category": "NAME",
+      "start": 318,
+      "end": 333
+    },
+    {
+      "text": "Priyanka DSouza",
+      "category": "NAME",
+      "start": 357,
+      "end": 372
+    },
+    {
+      "text": "Rs 3,94,00,000",
+      "category": "MONEY",
+      "start": 410,
+      "end": 424
+    },
+    {
+      "text": "O.S. No. 1733/2025",
+      "category": "CASE_NUMBER",
+      "start": 503,
+      "end": 521
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 533,
+      "end": 552
+    },
+    {
+      "text": "26 October 2025",
+      "category": "DATE",
+      "start": 556,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

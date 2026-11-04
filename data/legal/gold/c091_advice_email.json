@@ -1,0 +1,56 @@
+{
+  "doc_id": "4f156e1db706a8b4",
+  "text": "Subject: Your anticipatory bail matter - FIR No. 2467/2023\n\nDear Mr. Mittal,\n\nThank you for meeting us on 9 April 2024 about your dispute with Suresh Apte. As we understand it, the complaint was filed during a matrimonial dispute. The matter is listed before the Jaipur Sessions Court.\n\nOur advice is to seek interim protection and offer to attend mediation. Please collect the marriage certificate and messages showing attempts to settle and send copies to this office. We will pursue the full claim of Rs 6,70,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "FIR No. 2467/2023",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 58
+    },
+    {
+      "text": "Mittal",
+      "category": "NAME",
+      "start": 69,
+      "end": 75
+    },
+    {
+      "text": "9 April 2024",
+      "category": "DATE",
+      "start": 106,
+      "end": 118
+    },
+    {
+      "text": "Suresh Apte",
+      "category": "NAME",
+      "start": 143,
+      "end": 154
+    },
+    {
+      "text": "Jaipur Sessions Court",
+      "category": "COURT",
+      "start": 263,
+      "end": 284
+    },
+    {
+      "text": "Rs 6,70,000",
+      "category": "MONEY",
+      "start": 504,
+      "end": 515
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 532,
+      "end": 551
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

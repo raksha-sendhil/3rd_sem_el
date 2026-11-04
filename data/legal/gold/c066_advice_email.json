@@ -1,0 +1,38 @@
+{
+  "doc_id": "69f188d51d6afae6",
+  "text": "Subject: Your consumer complaint matter\n\nDear Ms. Hegde,\n\nThank you for meeting us on 12 July 2022 about your dispute with M/s Rao Builders Pvt Ltd. As we understand it, possession of the flat is long overdue.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Hegde",
+      "category": "NAME",
+      "start": 50,
+      "end": 55
+    },
+    {
+      "text": "12 July 2022",
+      "category": "DATE",
+      "start": 86,
+      "end": 98
+    },
+    {
+      "text": "Rao Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 147
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 440,
+      "end": 452
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

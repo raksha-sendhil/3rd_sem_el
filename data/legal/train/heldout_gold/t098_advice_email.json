@@ -1,0 +1,50 @@
+{
+  "doc_id": "eb270becdcd8f46f",
+  "text": "Subject: Your anticipatory bail matter - Anticipatory Bail Application No. 1380/2019\n\nDear Mr. Patil,\n\nThank you for meeting us on 15 January 2020 about your dispute with Simran Menon. As we understand it, the complaint was filed during a matrimonial dispute.\n\nOur advice is to seek interim protection and offer to attend mediation. Please collect the marriage certificate and messages showing attempts to settle and send copies to this office. We will pursue the full claim of ₹25,40,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Anticipatory Bail Application No. 1380/2019",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 84
+    },
+    {
+      "text": "Patil",
+      "category": "NAME",
+      "start": 95,
+      "end": 100
+    },
+    {
+      "text": "15 January 2020",
+      "category": "DATE",
+      "start": 131,
+      "end": 146
+    },
+    {
+      "text": "Simran Menon",
+      "category": "NAME",
+      "start": 171,
+      "end": 183
+    },
+    {
+      "text": "₹25,40,000",
+      "category": "MONEY",
+      "start": 478,
+      "end": 488
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 505,
+      "end": 522
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

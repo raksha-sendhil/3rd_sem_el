@@ -1,0 +1,110 @@
+{
+  "doc_id": "25838fa945ebf5f9",
+  "text": "Intake note - Commercial team\nDate: 25 November 2022\nClient: Nandini Subramanian, a 30-year-old fashion designer from Madurai.\nAddress: Bungalow 35, KK Nagar, Madurai 625045\nPhone: +91 89873 79095. Email: nandini.subramanian@example.in. PAN RVJPS8752Y.\nMatter: cheque bounce\nOpposing party: Fatima Patil\nFacts: A cheque for ₹36,90,000 issued by Fatima Patil bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/563/2023 before the Judicial Magistrate First Class Court at Madurai on 9 April 2023.",
+  "spans": [
+    {
+      "text": "25 November 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 52
+    },
+    {
+      "text": "Nandini Subramanian",
+      "category": "NAME",
+      "start": 61,
+      "end": 80
+    },
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 96,
+      "end": 112
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 118,
+      "end": 125
+    },
+    {
+      "text": "Bungalow 35, KK Nagar, Madurai 625045",
+      "category": "ADDRESS",
+      "start": 136,
+      "end": 173
+    },
+    {
+      "text": "+91 89873 79095",
+      "category": "PHONE",
+      "start": 181,
+      "end": 196
+    },
+    {
+      "text": "nandini.subramanian@example.in",
+      "category": "EMAIL",
+      "start": 205,
+      "end": 235
+    },
+    {
+      "text": "RVJPS8752Y",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 251
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 261,
+      "end": 274
+    },
+    {
+      "text": "Fatima Patil",
+      "category": "NAME",
+      "start": 291,
+      "end": 303
+    },
+    {
+      "text": "₹36,90,000",
+      "category": "MONEY",
+      "start": 324,
+      "end": 334
+    },
+    {
+      "text": "Fatima Patil",
+      "category": "NAME",
+      "start": 345,
+      "end": 357
+    },
+    {
+      "text": "CC/563/2023",
+      "category": "CASE_NUMBER",
+      "start": 444,
+      "end": 455
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Madurai",
+      "category": "COURT",
+      "start": 467,
+      "end": 515
+    },
+    {
+      "text": "9 April 2023",
+      "category": "DATE",
+      "start": 519,
+      "end": 531
+    },
+    {
+      "text": "age (30) + occupation (fashion designer) + city (Madurai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

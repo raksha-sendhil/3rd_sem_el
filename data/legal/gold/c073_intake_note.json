@@ -1,0 +1,110 @@
+{
+  "doc_id": "e3155799fe87f383",
+  "text": "Intake note - Property team\nDate: 11/12/2020\nClient: Suresh Sen, a 67-year-old architect from Ahmedabad.\nAddress: Flat 4B, Satellite, Ahmedabad 380051\nPhone: 80761 62909. Email: suresh.sen@example.com. PAN AFLPS4034V.\nMatter: land dispute\nOpposing party: Sujata Rajan\nFacts: The land dispute with Sujata Rajan concerns agricultural land valued at Rs 4,39,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 2322/2021 before the Ahmedabad District Court on 4 February 2021.",
+  "spans": [
+    {
+      "text": "11/12/2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Suresh Sen",
+      "category": "NAME",
+      "start": 53,
+      "end": 63
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 67,
+      "end": 78
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 79,
+      "end": 88
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 94,
+      "end": 103
+    },
+    {
+      "text": "Flat 4B, Satellite, Ahmedabad 380051",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 150
+    },
+    {
+      "text": "80761 62909",
+      "category": "PHONE",
+      "start": 158,
+      "end": 169
+    },
+    {
+      "text": "suresh.sen@example.com",
+      "category": "EMAIL",
+      "start": 178,
+      "end": 200
+    },
+    {
+      "text": "AFLPS4034V",
+      "category": "ID_NUMBER",
+      "start": 206,
+      "end": 216
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 226,
+      "end": 238
+    },
+    {
+      "text": "Sujata Rajan",
+      "category": "NAME",
+      "start": 255,
+      "end": 267
+    },
+    {
+      "text": "Sujata Rajan",
+      "category": "NAME",
+      "start": 297,
+      "end": 309
+    },
+    {
+      "text": "Rs 4,39,00,000",
+      "category": "MONEY",
+      "start": 347,
+      "end": 361
+    },
+    {
+      "text": "O.S. No. 2322/2021",
+      "category": "CASE_NUMBER",
+      "start": 434,
+      "end": 452
+    },
+    {
+      "text": "Ahmedabad District Court",
+      "category": "COURT",
+      "start": 464,
+      "end": 488
+    },
+    {
+      "text": "4 February 2021",
+      "category": "DATE",
+      "start": 492,
+      "end": 507
+    },
+    {
+      "text": "age (67) + occupation (architect) + city (Ahmedabad) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "2d64be0d260fae3e",
+  "text": "Intake note (Criminal team, 7 November 2023). Our client Tanvi Mittal is a 59-year-old nurse who lives at Flat 16B, Pattom, Thiruvananthapuram 695003 and can be reached on +91 68282 44043 or tanvi.mittal@example.com. The client's PAN HEYPM7770K.\nThe client consulted us about a anticipatory bail matter against Abhishek Bose. The anticipatory bail matter arises from a complaint by Abhishek Bose about 53.8 lakh rupees; the complainant alleges cheating over a failed deal.\nThe matter was filed as Anticipatory Bail Application No. 2077/2024 before the Thiruvananthapuram Sessions Court on 27 February 2024.",
+  "spans": [
+    {
+      "text": "7 November 2023",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Tanvi Mittal",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "59-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 92
+    },
+    {
+      "text": "Flat 16B, Pattom, Thiruvananthapuram 695003",
+      "category": "ADDRESS",
+      "start": 106,
+      "end": 149
+    },
+    {
+      "text": "+91 68282 44043",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "tanvi.mittal@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 215
+    },
+    {
+      "text": "HEYPM7770K",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 278,
+      "end": 295
+    },
+    {
+      "text": "Abhishek Bose",
+      "category": "NAME",
+      "start": 311,
+      "end": 324
+    },
+    {
+      "text": "Abhishek Bose",
+      "category": "NAME",
+      "start": 382,
+      "end": 395
+    },
+    {
+      "text": "53.8 lakh rupees",
+      "category": "MONEY",
+      "start": 402,
+      "end": 418
+    },
+    {
+      "text": "Anticipatory Bail Application No. 2077/2024",
+      "category": "CASE_NUMBER",
+      "start": 497,
+      "end": 540
+    },
+    {
+      "text": "Thiruvananthapuram Sessions Court",
+      "category": "COURT",
+      "start": 552,
+      "end": 585
+    },
+    {
+      "text": "27 February 2024",
+      "category": "DATE",
+      "start": 589,
+      "end": 605
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

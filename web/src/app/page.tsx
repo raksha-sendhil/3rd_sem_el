@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { API_URL, api } from "@/api/client";
+import { API_URL, type DomainInfo, api, getDomain, setDomain } from "@/api/client";
 import { AttacksView } from "@/components/AttacksView";
 import { CompareView } from "@/components/CompareView";
 import { DocumentsView } from "@/components/DocumentsView";
@@ -21,6 +21,27 @@ function viewFromHash(): ViewId {
 export default function Home() {
   const [view, setView] = useState<ViewId>("compare");
   const [offline, setOffline] = useState(false);
+  const [domains, setDomains] = useState<DomainInfo[]>([]);
+  const [domain, setDomainState] = useState<string | null>(null);
+
+  useEffect(() => {
+    api
+      .domains()
+      .then((list) => {
+        setDomains(list.domains);
+        const saved = getDomain();
+        const chosen = list.domains.some((d) => d.name === saved) ? saved! : list.default;
+        setDomain(chosen);
+        setDomainState(chosen);
+      })
+      .catch(() => setDomainState(getDomain() ?? ""));
+  }, []);
+
+  const chooseDomain = (name: string) => {
+    setDomain(name);
+    setDomainState(name); // the views remount and reload for the new domain
+  };
+  const info = domains.find((d) => d.name === domain);
 
   useEffect(() => {
     setView(viewFromHash());
@@ -59,6 +80,25 @@ export default function Home() {
             API unreachable
           </span>
         )}
+        {domains.length > 0 && (
+          <label
+            className="domain"
+            title={
+              info
+                ? `Agents: ${info.model} | Answers: ${info.answer_model} (${info.answer_backend}) | Agent 1: ${info.agent1}`
+                : undefined
+            }
+          >
+            Domain{" "}
+            <select value={domain ?? ""} onChange={(e) => chooseDomain(e.target.value)}>
+              {domains.map((d) => (
+                <option key={d.name} value={d.name}>
+                  {d.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <nav className="tabs" aria-label="Views">
           {VIEWS.map((v) => (
             <a
@@ -72,11 +112,13 @@ export default function Home() {
           ))}
         </nav>
       </header>
-      <main className="page">
-        {view === "compare" && <CompareView />}
-        {view === "attacks" && <AttacksView />}
-        {view === "documents" && <DocumentsView />}
-      </main>
+      {domain !== null && (
+        <main className="page" key={domain}>
+          {view === "compare" && <CompareView />}
+          {view === "attacks" && <AttacksView />}
+          {view === "documents" && <DocumentsView />}
+        </main>
+      )}
     </>
   );
 }

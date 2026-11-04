@@ -1,0 +1,7 @@
+{
+  "doc_id": "2f71440bf00e2b13",
+  "source": "synthetic-legal-train",
+  "template": "intake_note",
+  "person_id": "t011",
+  "text": "Intake note - Commercial team\nDate: 17 September 2018\nClient: Madhuri Sethi, a 43-year-old college lecturer from Coimbatore.\nAddress: Flat 11D, Peelamedu, Coimbatore 641036\nPhone: +91 91972 49852. Email: madhuri.sethi@example.com. PAN HRBPS5201Y.\nMatter: cheque bounce\nOpposing party: Pooja Goyal\nFacts: A cheque for INR 13,90,000/- issued by Pooja Goyal bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 683146074032 (IFSC HDFC0185770).\nThe matter was filed as S.C.C. No. 2540/2019 before the Judicial Magistrate First Class Court at Coimbatore on 6 January 2019."
+}

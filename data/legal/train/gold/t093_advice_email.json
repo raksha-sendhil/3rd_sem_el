@@ -1,0 +1,50 @@
+{
+  "doc_id": "31e2b93b7da1e18c",
+  "text": "Subject: Your land dispute matter - O.S. No. 2996/2019\n\nDear Ms. Khan,\n\nThank you for meeting us on 3 November 2019 about your dispute with Sameer Bhatt. As we understand it, the neighbour has encroached on the boundary of the plot.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of Rs. 2,34,00,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2996/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 65,
+      "end": 69
+    },
+    {
+      "text": "3 November 2019",
+      "category": "DATE",
+      "start": 100,
+      "end": 115
+    },
+    {
+      "text": "Sameer Bhatt",
+      "category": "NAME",
+      "start": 140,
+      "end": 152
+    },
+    {
+      "text": "Rs. 2,34,00,000",
+      "category": "MONEY",
+      "start": 438,
+      "end": 453
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 470,
+      "end": 487
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

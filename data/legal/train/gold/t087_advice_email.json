@@ -1,0 +1,44 @@
+{
+  "doc_id": "a127638706314aff",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Bhatt,\n\nThank you for meeting us on 31 May 2023 about your dispute with M/s Rathore Enterprises. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Hubballi.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Bhatt",
+      "category": "NAME",
+      "start": 45,
+      "end": 50
+    },
+    {
+      "text": "31 May 2023",
+      "category": "DATE",
+      "start": 81,
+      "end": 92
+    },
+    {
+      "text": "Rathore Enterprises",
+      "category": "ORGANIZATION",
+      "start": 121,
+      "end": 140
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hubballi",
+      "category": "COURT",
+      "start": 259,
+      "end": 308
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 585,
+      "end": 597
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

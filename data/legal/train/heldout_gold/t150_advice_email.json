@@ -1,0 +1,56 @@
+{
+  "doc_id": "7752b169529aaf65",
+  "text": "Subject: Your land dispute matter - O.S. No. 144/2023\n\nDear Mr. Menon,\n\nThank you for meeting us on 24 September 2023 about your dispute with Joseph Trivedi. As we understand it, relatives dispute who owns the ancestral land. The matter is listed before the New Delhi District Court.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office. We will pursue the full claim of ₹86,50,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 144/2023",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 53
+    },
+    {
+      "text": "Menon",
+      "category": "NAME",
+      "start": 64,
+      "end": 69
+    },
+    {
+      "text": "24 September 2023",
+      "category": "DATE",
+      "start": 100,
+      "end": 117
+    },
+    {
+      "text": "Joseph Trivedi",
+      "category": "NAME",
+      "start": 142,
+      "end": 156
+    },
+    {
+      "text": "New Delhi District Court",
+      "category": "COURT",
+      "start": 258,
+      "end": 282
+    },
+    {
+      "text": "₹86,50,000",
+      "category": "MONEY",
+      "start": 501,
+      "end": 511
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 528,
+      "end": 540
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

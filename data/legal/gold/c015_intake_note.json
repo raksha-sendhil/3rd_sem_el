@@ -1,0 +1,110 @@
+{
+  "doc_id": "9b1566619b2cf6d0",
+  "text": "Intake note (Commercial team, 9 April 2019). Our client Anjali Chatterjee is a 33-year-old restaurant owner who lives at Plot 91, Tallakulam, Madurai 625043 and can be reached on +91 74388 65819 or anjali.chatterjee@example.in. The client's PAN HZGPC5579G.\nThe client consulted us about a cheque bounce matter against Trident Textiles Pvt Ltd. A cheque for ₹36,20,000 issued by M/s Trident Textiles Pvt Ltd bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 711234484512 (IFSC KKBK0539102).\nThe matter was filed as S.C.C. No. 78/2019 before the Judicial Magistrate First Class Court at Madurai on 5 July 2019.",
+  "spans": [
+    {
+      "text": "9 April 2019",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Anjali Chatterjee",
+      "category": "NAME",
+      "start": 56,
+      "end": 73
+    },
+    {
+      "text": "33-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 107
+    },
+    {
+      "text": "Plot 91, Tallakulam, Madurai 625043",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 156
+    },
+    {
+      "text": "+91 74388 65819",
+      "category": "PHONE",
+      "start": 179,
+      "end": 194
+    },
+    {
+      "text": "anjali.chatterjee@example.in",
+      "category": "EMAIL",
+      "start": 198,
+      "end": 226
+    },
+    {
+      "text": "HZGPC5579G",
+      "category": "ID_NUMBER",
+      "start": 245,
+      "end": 255
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 289,
+      "end": 302
+    },
+    {
+      "text": "Trident Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 318,
+      "end": 342
+    },
+    {
+      "text": "₹36,20,000",
+      "category": "MONEY",
+      "start": 357,
+      "end": 367
+    },
+    {
+      "text": "Trident Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 382,
+      "end": 406
+    },
+    {
+      "text": "711234484512",
+      "category": "FINANCIAL",
+      "start": 524,
+      "end": 536
+    },
+    {
+      "text": "KKBK0539102",
+      "category": "FINANCIAL",
+      "start": 543,
+      "end": 554
+    },
+    {
+      "text": "S.C.C. No. 78/2019",
+      "category": "CASE_NUMBER",
+      "start": 581,
+      "end": 599
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Madurai",
+      "category": "COURT",
+      "start": 611,
+      "end": 659
+    },
+    {
+      "text": "5 July 2019",
+      "category": "DATE",
+      "start": 663,
+      "end": 674
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

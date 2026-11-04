@@ -1,0 +1,50 @@
+{
+  "doc_id": "e8f4cccfcb7eae40",
+  "text": "Subject: Your wrongful termination matter\n\nDear Mr. Shinde,\n\nThank you for meeting us on 31/03/2021 about your dispute with Sai Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Mumbai Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office. We will pursue the full claim of INR 15,80,000/-.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Shinde",
+      "category": "NAME",
+      "start": 52,
+      "end": 58
+    },
+    {
+      "text": "31/03/2021",
+      "category": "DATE",
+      "start": 89,
+      "end": 99
+    },
+    {
+      "text": "Sai Industries",
+      "category": "ORGANIZATION",
+      "start": 124,
+      "end": 138
+    },
+    {
+      "text": "Mumbai Labour Court",
+      "category": "COURT",
+      "start": 241,
+      "end": 260
+    },
+    {
+      "text": "INR 15,80,000/-",
+      "category": "MONEY",
+      "start": 466,
+      "end": 481
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 498,
+      "end": 510
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "5397b3210f0c6848",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 784/2025\n\nDear Ms. Bose,\n\nThank you for meeting us on 9 September 2025 about your dispute with M/s Sai Textiles Pvt Ltd. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Panaji.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of Rs 21,60,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 784/2025",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Bose",
+      "category": "NAME",
+      "start": 67,
+      "end": 71
+    },
+    {
+      "text": "9 September 2025",
+      "category": "DATE",
+      "start": 102,
+      "end": 118
+    },
+    {
+      "text": "Sai Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 147,
+      "end": 167
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 285,
+      "end": 332
+    },
+    {
+      "text": "Rs 21,60,000",
+      "category": "MONEY",
+      "start": 591,
+      "end": 603
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 620,
+      "end": 635
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

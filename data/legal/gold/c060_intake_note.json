@@ -1,0 +1,98 @@
+{
+  "doc_id": "e29f9a55f7858fb4",
+  "text": "Intake note (Property team, 22 December 2024). Our client Deepa Shinde is a 63-year-old restaurant owner who lives at Plot 84, Kowdiar, Thiruvananthapuram 695039 and can be reached on +91 61682 87381 or deepa.shinde@example.in. The client's PAN KASPS7554P.\nThe client consulted us about a consumer complaint matter against Emerald Builders Pvt Ltd. The consumer complaint against M/s Emerald Builders Pvt Ltd concerns a flat bought for INR 9,19,00,000/-; the builder keeps promising possession by email but never delivers.\nThe matter was filed as C.C. No. 2245/2025 before the Thiruvananthapuram District Consumer Disputes Redressal Commission on 23 January 2025.",
+  "spans": [
+    {
+      "text": "22 December 2024",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Deepa Shinde",
+      "category": "NAME",
+      "start": 58,
+      "end": 70
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Plot 84, Kowdiar, Thiruvananthapuram 695039",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 161
+    },
+    {
+      "text": "+91 61682 87381",
+      "category": "PHONE",
+      "start": 184,
+      "end": 199
+    },
+    {
+      "text": "deepa.shinde@example.in",
+      "category": "EMAIL",
+      "start": 203,
+      "end": 226
+    },
+    {
+      "text": "KASPS7554P",
+      "category": "ID_NUMBER",
+      "start": 245,
+      "end": 255
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 289,
+      "end": 307
+    },
+    {
+      "text": "Emerald Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 323,
+      "end": 347
+    },
+    {
+      "text": "Emerald Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 384,
+      "end": 408
+    },
+    {
+      "text": "INR 9,19,00,000/-",
+      "category": "MONEY",
+      "start": 436,
+      "end": 453
+    },
+    {
+      "text": "C.C. No. 2245/2025",
+      "category": "CASE_NUMBER",
+      "start": 547,
+      "end": 565
+    },
+    {
+      "text": "Thiruvananthapuram District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 577,
+      "end": 643
+    },
+    {
+      "text": "23 January 2025",
+      "category": "DATE",
+      "start": 647,
+      "end": 662
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "5ad48372a70fd1ac",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Mr. Gowda,\n\nThank you for meeting us on 15/10/2025 about your dispute with Pooja Shetty. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the Chennai District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Gowda",
+      "category": "NAME",
+      "start": 48,
+      "end": 53
+    },
+    {
+      "text": "15/10/2025",
+      "category": "DATE",
+      "start": 84,
+      "end": 94
+    },
+    {
+      "text": "Pooja Shetty",
+      "category": "NAME",
+      "start": 119,
+      "end": 131
+    },
+    {
+      "text": "Chennai District Court",
+      "category": "COURT",
+      "start": 244,
+      "end": 266
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 497,
+      "end": 513
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

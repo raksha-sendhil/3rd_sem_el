@@ -1,0 +1,110 @@
+{
+  "doc_id": "5d8b10235ed9ff09",
+  "text": "Intake note - Commercial team\nDate: 17 January 2022\nClient: Mahesh Varghese, a 75-year-old farmer from Kochi.\nAddress: Flat 6C, Edappally, Kochi 682020\nPhone: +91 75072 33130. Email: mahesh.varghese54@example.com. PAN YALPV5943V.\nMatter: cheque bounce\nOpposing party: M/s Chandran Enterprises\nFacts: A cheque for Rs 24,80,000 issued by Chandran Enterprises bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/1801/2022 before the Judicial Magistrate First Class Court at Kochi on 19/03/2022.",
+  "spans": [
+    {
+      "text": "17 January 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Mahesh Varghese",
+      "category": "NAME",
+      "start": 60,
+      "end": 75
+    },
+    {
+      "text": "75-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 97
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 108
+    },
+    {
+      "text": "Flat 6C, Edappally, Kochi 682020",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 151
+    },
+    {
+      "text": "+91 75072 33130",
+      "category": "PHONE",
+      "start": 159,
+      "end": 174
+    },
+    {
+      "text": "mahesh.varghese54@example.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 212
+    },
+    {
+      "text": "YALPV5943V",
+      "category": "ID_NUMBER",
+      "start": 218,
+      "end": 228
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 251
+    },
+    {
+      "text": "Chandran Enterprises",
+      "category": "ORGANIZATION",
+      "start": 272,
+      "end": 292
+    },
+    {
+      "text": "Rs 24,80,000",
+      "category": "MONEY",
+      "start": 313,
+      "end": 325
+    },
+    {
+      "text": "Chandran Enterprises",
+      "category": "ORGANIZATION",
+      "start": 336,
+      "end": 356
+    },
+    {
+      "text": "CC/1801/2022",
+      "category": "CASE_NUMBER",
+      "start": 453,
+      "end": 465
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 477,
+      "end": 523
+    },
+    {
+      "text": "19/03/2022",
+      "category": "DATE",
+      "start": 527,
+      "end": 537
+    },
+    {
+      "text": "age (75) + occupation (farmer) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

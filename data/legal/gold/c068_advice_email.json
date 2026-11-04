@@ -1,0 +1,56 @@
+{
+  "doc_id": "7ce8003cd044f6a4",
+  "text": "Subject: Your consumer complaint matter - CC/2220/2024\n\nDear Mr. Naidu,\n\nThank you for meeting us on 15/12/2024 about your dispute with M/s Dalvi Constructions. As we understand it, possession of the flat is long overdue. The matter is listed before the Mumbai District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office. We will pursue the full claim of INR 8,85,00,000/-.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CC/2220/2024",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 54
+    },
+    {
+      "text": "Naidu",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "15/12/2024",
+      "category": "DATE",
+      "start": 101,
+      "end": 111
+    },
+    {
+      "text": "Dalvi Constructions",
+      "category": "ORGANIZATION",
+      "start": 140,
+      "end": 159
+    },
+    {
+      "text": "Mumbai District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 254,
+      "end": 308
+    },
+    {
+      "text": "INR 8,85,00,000/-",
+      "category": "MONEY",
+      "start": 558,
+      "end": 575
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 592,
+      "end": 604
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

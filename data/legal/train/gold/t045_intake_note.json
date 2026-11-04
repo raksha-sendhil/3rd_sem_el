@@ -1,0 +1,98 @@
+{
+  "doc_id": "adfae45719454971",
+  "text": "Intake note (Commercial team, 02/12/2023). Our client Vandana Patil is a 46-year-old mechanical engineer who lives at Flat 18A, Hanamkonda, Warangal 506046 and can be reached on +91 81411 80670 or vandana.patil@example.in. The client's PAN HBFPP5861P.\nThe client consulted us about a cheque bounce matter against Pai Textiles Pvt Ltd. A cheque for INR 2,10,000/- issued by Pai Textiles Pvt Ltd bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as S.C.C. No. 434/2024 before the Judicial Magistrate First Class Court at Warangal on 20 March 2024.",
+  "spans": [
+    {
+      "text": "02/12/2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Vandana Patil",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 104
+    },
+    {
+      "text": "Flat 18A, Hanamkonda, Warangal 506046",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 155
+    },
+    {
+      "text": "+91 81411 80670",
+      "category": "PHONE",
+      "start": 178,
+      "end": 193
+    },
+    {
+      "text": "vandana.patil@example.in",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 221
+    },
+    {
+      "text": "HBFPP5861P",
+      "category": "ID_NUMBER",
+      "start": 240,
+      "end": 250
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 284,
+      "end": 297
+    },
+    {
+      "text": "Pai Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 313,
+      "end": 333
+    },
+    {
+      "text": "INR 2,10,000/-",
+      "category": "MONEY",
+      "start": 348,
+      "end": 362
+    },
+    {
+      "text": "Pai Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 373,
+      "end": 393
+    },
+    {
+      "text": "S.C.C. No. 434/2024",
+      "category": "CASE_NUMBER",
+      "start": 482,
+      "end": 501
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Warangal",
+      "category": "COURT",
+      "start": 513,
+      "end": 562
+    },
+    {
+      "text": "20 March 2024",
+      "category": "DATE",
+      "start": 566,
+      "end": 579
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

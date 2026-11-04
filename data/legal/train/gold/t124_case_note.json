@@ -1,0 +1,74 @@
+{
+  "doc_id": "a27307b3a83e613c",
+  "text": "Case note: CC/225/2025\nClient: Vandana Mishra (schoolteacher, Mysuru)\nOpposing party: Rekha Goyal\nCourt: Judicial Magistrate First Class Court at Mysuru\nFiled on: 21 August 2025\nClaim amount: ₹30,30,000\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.\nWitness: Rajesh Chauhan",
+  "spans": [
+    {
+      "text": "CC/225/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 22
+    },
+    {
+      "text": "Vandana Mishra",
+      "category": "NAME",
+      "start": 31,
+      "end": 45
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 47,
+      "end": 60
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 62,
+      "end": 68
+    },
+    {
+      "text": "Rekha Goyal",
+      "category": "NAME",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mysuru",
+      "category": "COURT",
+      "start": 105,
+      "end": 152
+    },
+    {
+      "text": "21 August 2025",
+      "category": "DATE",
+      "start": 163,
+      "end": 177
+    },
+    {
+      "text": "₹30,30,000",
+      "category": "MONEY",
+      "start": 192,
+      "end": 202
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 210,
+      "end": 223
+    },
+    {
+      "text": "Rajesh Chauhan",
+      "category": "NAME",
+      "start": 566,
+      "end": 580
+    },
+    {
+      "text": "occupation (schoolteacher) + city (Mysuru) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

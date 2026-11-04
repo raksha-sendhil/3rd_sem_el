@@ -1,0 +1,110 @@
+{
+  "doc_id": "5df7fd7d73ce5208",
+  "text": "Intake note - Property team\nDate: 08/02/2019\nClient: Thomas Patel, a 65-year-old mechanical engineer from Mumbai.\nAddress: Bungalow 29, Andheri West, Mumbai 400035\nPhone: +91 89330 32665. Email: thomas.patel78@example.in. PAN WVTPP5194Q.\nMatter: land dispute\nOpposing party: Vandana Mittal\nFacts: The land dispute with Vandana Mittal concerns agricultural land valued at Rs. 3,29,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 2212/2019 before the Mumbai District Court on 19 May 2019.",
+  "spans": [
+    {
+      "text": "08/02/2019",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Thomas Patel",
+      "category": "NAME",
+      "start": 53,
+      "end": 65
+    },
+    {
+      "text": "65-year-old",
+      "category": "AGE",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 81,
+      "end": 100
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 112
+    },
+    {
+      "text": "Bungalow 29, Andheri West, Mumbai 400035",
+      "category": "ADDRESS",
+      "start": 123,
+      "end": 163
+    },
+    {
+      "text": "+91 89330 32665",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "thomas.patel78@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 220
+    },
+    {
+      "text": "WVTPP5194Q",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 246,
+      "end": 258
+    },
+    {
+      "text": "Vandana Mittal",
+      "category": "NAME",
+      "start": 275,
+      "end": 289
+    },
+    {
+      "text": "Vandana Mittal",
+      "category": "NAME",
+      "start": 319,
+      "end": 333
+    },
+    {
+      "text": "Rs. 3,29,00,000",
+      "category": "MONEY",
+      "start": 371,
+      "end": 386
+    },
+    {
+      "text": "O.S. No. 2212/2019",
+      "category": "CASE_NUMBER",
+      "start": 459,
+      "end": 477
+    },
+    {
+      "text": "Mumbai District Court",
+      "category": "COURT",
+      "start": 489,
+      "end": 510
+    },
+    {
+      "text": "19 May 2019",
+      "category": "DATE",
+      "start": 514,
+      "end": 525
+    },
+    {
+      "text": "age (65) + occupation (mechanical engineer) + city (Mumbai) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

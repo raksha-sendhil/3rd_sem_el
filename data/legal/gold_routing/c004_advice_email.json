@@ -1,0 +1,37 @@
+{
+  "doc_id": "1d8e467f54ad4942",
+  "routing": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "S.C.C. No. 2009/2021",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Bansal",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "8 August 2022",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Gayatri Hegde",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

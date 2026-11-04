@@ -1,0 +1,74 @@
+{
+  "doc_id": "4042bfd6b5582bf9",
+  "text": "Case note: C.C. No. 2608/2023\nClient: Charulata Tiwari (retired bank officer, Thane)\nOpposing party: Orchid Constructions\nCourt: Thane District Consumer Disputes Redressal Commission\nFiled on: 22 September 2023\nClaim amount: ₹9,29,00,000\nIssue: consumer complaint. The flat was handed over with serious construction defects.\nAdvice given: Commission a structural audit report on the defects before the first hearing.\nOutcome: The builder was ordered to repair the defects or pay their cost.\nRecommended next step: Inspect the repairs before accepting them.\nWitness: Manoj Shah",
+  "spans": [
+    {
+      "text": "C.C. No. 2608/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Charulata Tiwari",
+      "category": "NAME",
+      "start": 38,
+      "end": 54
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 56,
+      "end": 76
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 78,
+      "end": 83
+    },
+    {
+      "text": "Orchid Constructions",
+      "category": "ORGANIZATION",
+      "start": 101,
+      "end": 121
+    },
+    {
+      "text": "Thane District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 129,
+      "end": 182
+    },
+    {
+      "text": "22 September 2023",
+      "category": "DATE",
+      "start": 193,
+      "end": 210
+    },
+    {
+      "text": "₹9,29,00,000",
+      "category": "MONEY",
+      "start": 225,
+      "end": 237
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 245,
+      "end": 263
+    },
+    {
+      "text": "Manoj Shah",
+      "category": "NAME",
+      "start": 566,
+      "end": 576
+    },
+    {
+      "text": "occupation (retired bank officer) + city (Thane) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

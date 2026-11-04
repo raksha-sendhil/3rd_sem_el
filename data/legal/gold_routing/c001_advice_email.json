@@ -1,0 +1,42 @@
+{
+  "doc_id": "82fff4f2e5a24250",
+  "routing": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "S.C.C. No. 995/2024",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Bose",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "12/02/2025",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Emerald Enterprises",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

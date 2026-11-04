@@ -1,0 +1,98 @@
+{
+  "doc_id": "a18b32540fb6927c",
+  "text": "Intake note (Commercial team, 14 April 2023). Our client Ashok Shetty is a 72-year-old retired bank officer who lives at Plot 6, Altinho, Panaji 403048 and can be reached on +91 76040 02030 or ashok.shetty@example.com. The client's PAN MSUPS2046L.\nThe client consulted us about a cheque bounce matter against Vikram Malhotra. A cheque for ₹18,50,000 issued by Vikram Malhotra bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 742/2023 before the Judicial Magistrate First Class Court at Panaji on 7 July 2023.",
+  "spans": [
+    {
+      "text": "14 April 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 43
+    },
+    {
+      "text": "Ashok Shetty",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 107
+    },
+    {
+      "text": "Plot 6, Altinho, Panaji 403048",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 151
+    },
+    {
+      "text": "+91 76040 02030",
+      "category": "PHONE",
+      "start": 174,
+      "end": 189
+    },
+    {
+      "text": "ashok.shetty@example.com",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 217
+    },
+    {
+      "text": "MSUPS2046L",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 280,
+      "end": 293
+    },
+    {
+      "text": "Vikram Malhotra",
+      "category": "NAME",
+      "start": 309,
+      "end": 324
+    },
+    {
+      "text": "₹18,50,000",
+      "category": "MONEY",
+      "start": 339,
+      "end": 349
+    },
+    {
+      "text": "Vikram Malhotra",
+      "category": "NAME",
+      "start": 360,
+      "end": 375
+    },
+    {
+      "text": "S.C.C. No. 742/2023",
+      "category": "CASE_NUMBER",
+      "start": 462,
+      "end": 481
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 493,
+      "end": 540
+    },
+    {
+      "text": "7 July 2023",
+      "category": "DATE",
+      "start": 544,
+      "end": 555
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

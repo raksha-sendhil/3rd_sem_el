@@ -1,0 +1,50 @@
+{
+  "doc_id": "f43946afd02463c7",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 1013/2023\n\nDear Mr. Rajan,\n\nThank you for meeting us on 06/06/2023 about your dispute with M/s Chatterjee Builders Pvt Ltd. As we understand it, possession of the flat is long overdue. The matter is listed before the Thiruvananthapuram District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 1013/2023",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Rajan",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "06/06/2023",
+      "category": "DATE",
+      "start": 107,
+      "end": 117
+    },
+    {
+      "text": "Chatterjee Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 146,
+      "end": 173
+    },
+    {
+      "text": "Thiruvananthapuram District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 268,
+      "end": 334
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 566,
+      "end": 578
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

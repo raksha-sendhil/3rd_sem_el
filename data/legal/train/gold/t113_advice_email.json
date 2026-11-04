@@ -1,0 +1,56 @@
+{
+  "doc_id": "312b1ad1460674f1",
+  "text": "Subject: Your cheque bounce matter - CC/945/2021\n\nDear Ms. Kamath,\n\nThank you for meeting us on 7 June 2021 about your dispute with M/s Mishra Traders. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Lucknow.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of INR 24,80,000/-.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/945/2021",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 48
+    },
+    {
+      "text": "Kamath",
+      "category": "NAME",
+      "start": 59,
+      "end": 65
+    },
+    {
+      "text": "7 June 2021",
+      "category": "DATE",
+      "start": 96,
+      "end": 107
+    },
+    {
+      "text": "Mishra Traders",
+      "category": "ORGANIZATION",
+      "start": 136,
+      "end": 150
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Lucknow",
+      "category": "COURT",
+      "start": 268,
+      "end": 316
+    },
+    {
+      "text": "INR 24,80,000/-",
+      "category": "MONEY",
+      "start": 575,
+      "end": 590
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 607,
+      "end": 622
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

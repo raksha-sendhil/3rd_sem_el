@@ -1,0 +1,52 @@
+{
+  "doc_id": "053ce64aa6558755",
+  "routing": [
+    {
+      "text": "CC/2745/2025",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Sanjay Patil",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Karve Constructions",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "26 April 2025",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "INR 8,29,00,000/-",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

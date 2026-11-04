@@ -1,0 +1,80 @@
+{
+  "doc_id": "4494802c6cc569a5",
+  "text": "Case note: A.S. No. 36/2021\nClient: Rupali Rathore (restaurant owner, Mysuru)\nOpposing party: Sunrise Shipping Pvt Ltd\nCourt: Karnataka High Court, before Justice Lalitha Sundaram\nFiled on: 27/04/2021\nClaim amount: Rs 41,99,00,000\nIssue: maritime salvage claim. The owners dispute the value of the salvage.\nAdvice given: Claim a salvage award based on the value of the property saved.\nOutcome: A salvage award was fixed by the court.\nRecommended next step: Recover the award from the security.\nMatter code: Project Osprey",
+  "spans": [
+    {
+      "text": "A.S. No. 36/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 27
+    },
+    {
+      "text": "Rupali Rathore",
+      "category": "NAME",
+      "start": 36,
+      "end": 50
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 52,
+      "end": 68
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 70,
+      "end": 76
+    },
+    {
+      "text": "Sunrise Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 94,
+      "end": 118
+    },
+    {
+      "text": "Karnataka High Court",
+      "category": "COURT",
+      "start": 126,
+      "end": 146
+    },
+    {
+      "text": "Lalitha Sundaram",
+      "category": "NAME",
+      "start": 163,
+      "end": 179
+    },
+    {
+      "text": "27/04/2021",
+      "category": "DATE",
+      "start": 190,
+      "end": 200
+    },
+    {
+      "text": "Rs 41,99,00,000",
+      "category": "MONEY",
+      "start": 215,
+      "end": 230
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 260
+    },
+    {
+      "text": "Project Osprey",
+      "category": "MATTER_CODENAME",
+      "start": 507,
+      "end": 521
+    },
+    {
+      "text": "occupation (restaurant owner) + city (Mysuru) + issue (maritime salvage claim)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

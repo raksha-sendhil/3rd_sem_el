@@ -1,0 +1,44 @@
+{
+  "doc_id": "b637ebe2352f27ee",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Qureshi,\n\nThank you for meeting us on 21/11/2020 about your dispute with Kiran Naidu. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Kochi.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Qureshi",
+      "category": "NAME",
+      "start": 45,
+      "end": 52
+    },
+    {
+      "text": "21/11/2020",
+      "category": "DATE",
+      "start": 83,
+      "end": 93
+    },
+    {
+      "text": "Kiran Naidu",
+      "category": "NAME",
+      "start": 118,
+      "end": 129
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 247,
+      "end": 293
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 534,
+      "end": 549
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

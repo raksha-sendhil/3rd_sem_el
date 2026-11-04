@@ -1,0 +1,44 @@
+{
+  "doc_id": "852965b3390c89fb",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 632/2021\n\nDear Mr. Khan,\n\nThank you for meeting us on 28 February 2022 about your dispute with Thomas Sen. As we understand it, the tenant has sublet the flat without permission.\n\nOur advice is to collect evidence of unauthorised subletting such as utility bills in the occupant's name. Please collect utility bills in the occupant's name and statements of the neighbours and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 632/2021",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 59
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 70,
+      "end": 74
+    },
+    {
+      "text": "28 February 2022",
+      "category": "DATE",
+      "start": 105,
+      "end": 121
+    },
+    {
+      "text": "Thomas Sen",
+      "category": "NAME",
+      "start": 146,
+      "end": 156
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 470,
+      "end": 485
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,50 @@
+{
+  "doc_id": "cadf0bfce869a75f",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 948/2022\n\nDear Ms. Iyengar,\n\nThank you for meeting us on 12 September 2022 about your dispute with Zenith Builders Pvt Ltd. As we understand it, the builder keeps promising possession by email but never delivers. The matter is listed before the Mysuru District Consumer Disputes Redressal Commission.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 948/2022",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 59
+    },
+    {
+      "text": "Iyengar",
+      "category": "NAME",
+      "start": 70,
+      "end": 77
+    },
+    {
+      "text": "12 September 2022",
+      "category": "DATE",
+      "start": 108,
+      "end": 125
+    },
+    {
+      "text": "Zenith Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 150,
+      "end": 173
+    },
+    {
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 296,
+      "end": 350
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 628,
+      "end": 640
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

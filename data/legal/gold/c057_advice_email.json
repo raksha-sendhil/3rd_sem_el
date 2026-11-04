@@ -1,0 +1,38 @@
+{
+  "doc_id": "4c7044bdbe6a5ef8",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Pandey,\n\nThank you for meeting us on 27 November 2020 about your dispute with M/s Subramanian Builders Pvt Ltd. As we understand it, possession of the flat is long overdue.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Pandey",
+      "category": "NAME",
+      "start": 50,
+      "end": 56
+    },
+    {
+      "text": "27 November 2020",
+      "category": "DATE",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Subramanian Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 132,
+      "end": 160
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 453,
+      "end": 472
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,116 @@
+{
+  "doc_id": "9ff858957d236c11",
+  "text": "Intake note - Commercial team\nDate: 7 July 2024\nClient: Mahesh Khan, a 34-year-old hardware dealer from Nagpur.\nAddress: Bungalow 40, Sitabuldi, Nagpur 440012\nPhone: 06507187554. Email: mahesh.khan36@example.in. PAN LVZPK7730J, Aadhaar 4067 6010 7685.\nMatter: cheque bounce\nOpposing party: Harbour Traders\nFacts: A cheque for ₹22,70,000 issued by Harbour Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as CC/2002/2024 before the Judicial Magistrate First Class Court at Nagpur on 29 October 2024.",
+  "spans": [
+    {
+      "text": "7 July 2024",
+      "category": "DATE",
+      "start": 36,
+      "end": 47
+    },
+    {
+      "text": "Mahesh Khan",
+      "category": "NAME",
+      "start": 56,
+      "end": 67
+    },
+    {
+      "text": "34-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 98
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 110
+    },
+    {
+      "text": "Bungalow 40, Sitabuldi, Nagpur 440012",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 158
+    },
+    {
+      "text": "06507187554",
+      "category": "PHONE",
+      "start": 166,
+      "end": 177
+    },
+    {
+      "text": "mahesh.khan36@example.in",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 210
+    },
+    {
+      "text": "LVZPK7730J",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "4067 6010 7685",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 250
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 260,
+      "end": 273
+    },
+    {
+      "text": "Harbour Traders",
+      "category": "ORGANIZATION",
+      "start": 290,
+      "end": 305
+    },
+    {
+      "text": "₹22,70,000",
+      "category": "MONEY",
+      "start": 326,
+      "end": 336
+    },
+    {
+      "text": "Harbour Traders",
+      "category": "ORGANIZATION",
+      "start": 347,
+      "end": 362
+    },
+    {
+      "text": "CC/2002/2024",
+      "category": "CASE_NUMBER",
+      "start": 451,
+      "end": 463
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 475,
+      "end": 522
+    },
+    {
+      "text": "29 October 2024",
+      "category": "DATE",
+      "start": 526,
+      "end": 541
+    },
+    {
+      "text": "age (34) + occupation (hardware dealer) + city (Nagpur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

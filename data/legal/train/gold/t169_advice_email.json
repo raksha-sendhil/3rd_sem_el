@@ -1,0 +1,44 @@
+{
+  "doc_id": "342eddf94a71bc99",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Sen,\n\nThank you for meeting us on 25/10/2021 about your dispute with Pandey Enterprises. As we understand it, the cheque was returned unpaid for insufficient funds. The matter is listed before the Judicial Magistrate First Class Court at Mysuru.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Sen",
+      "category": "NAME",
+      "start": 45,
+      "end": 48
+    },
+    {
+      "text": "25/10/2021",
+      "category": "DATE",
+      "start": 79,
+      "end": 89
+    },
+    {
+      "text": "Pandey Enterprises",
+      "category": "ORGANIZATION",
+      "start": 114,
+      "end": 132
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mysuru",
+      "category": "COURT",
+      "start": 242,
+      "end": 289
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 568,
+      "end": 580
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

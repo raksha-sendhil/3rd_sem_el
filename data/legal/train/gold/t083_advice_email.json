@@ -1,0 +1,50 @@
+{
+  "doc_id": "7dd9bfec8c930930",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2372/2024\n\nDear Ms. Trivedi,\n\nThank you for meeting us on 27 April 2024 about your dispute with Mary Ahuja. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Ahmedabad.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 2372/2024",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Trivedi",
+      "category": "NAME",
+      "start": 68,
+      "end": 75
+    },
+    {
+      "text": "27 April 2024",
+      "category": "DATE",
+      "start": 106,
+      "end": 119
+    },
+    {
+      "text": "Mary Ahuja",
+      "category": "NAME",
+      "start": 144,
+      "end": 154
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 273,
+      "end": 323
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 600,
+      "end": 612
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

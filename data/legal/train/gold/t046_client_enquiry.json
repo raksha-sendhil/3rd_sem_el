@@ -1,0 +1,80 @@
+{
+  "doc_id": "7a792360100be3c9",
+  "text": "Subject: Need help with a divorce by mutual consent case\n\nHello, my name is Mohan Menon. I am a 52-year-old nurse living in Madurai. My spouse Anjali Fernandes and I want a divorce by mutual consent with a settlement of ₹8,20,000, and the wife wants her jewellery and gifts returned. My case number is Petition No. 2736/2019 in the Family Court at Madurai. Can your firm advise me on what to do next? You can call me on +91 72412 54764 or email mohan.menon@example.in.",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 51
+    },
+    {
+      "text": "Mohan Menon",
+      "category": "NAME",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "52-year-old",
+      "category": "AGE",
+      "start": 96,
+      "end": 107
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 108,
+      "end": 113
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 124,
+      "end": 131
+    },
+    {
+      "text": "Anjali Fernandes",
+      "category": "NAME",
+      "start": 143,
+      "end": 159
+    },
+    {
+      "text": "₹8,20,000",
+      "category": "MONEY",
+      "start": 220,
+      "end": 229
+    },
+    {
+      "text": "Petition No. 2736/2019",
+      "category": "CASE_NUMBER",
+      "start": 302,
+      "end": 324
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 332,
+      "end": 355
+    },
+    {
+      "text": "+91 72412 54764",
+      "category": "PHONE",
+      "start": 420,
+      "end": 435
+    },
+    {
+      "text": "mohan.menon@example.in",
+      "category": "EMAIL",
+      "start": 445,
+      "end": 467
+    },
+    {
+      "text": "age (52) + occupation (nurse) + city (Madurai) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

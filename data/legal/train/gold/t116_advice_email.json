@@ -1,0 +1,44 @@
+{
+  "doc_id": "5b7fe06b5839aba4",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Mishra,\n\nThank you for meeting us on 30 May 2022 about your dispute with Sandhu Textiles Pvt Ltd. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of ₹43,60,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Mishra",
+      "category": "NAME",
+      "start": 45,
+      "end": 51
+    },
+    {
+      "text": "30 May 2022",
+      "category": "DATE",
+      "start": 82,
+      "end": 93
+    },
+    {
+      "text": "Sandhu Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 118,
+      "end": 141
+    },
+    {
+      "text": "₹43,60,000",
+      "category": "MONEY",
+      "start": 521,
+      "end": 531
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 548,
+      "end": 563
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,74 @@
+{
+  "doc_id": "7c97048cf1431975",
+  "text": "Case note: CC/1939/2024\nClient: Girish Tiwari (textile trader, Panaji)\nOpposing party: Kulkarni Enterprises\nCourt: Judicial Magistrate First Class Court at Panaji\nFiled on: 13 July 2024\nClaim amount: ₹28,70,000\nIssue: cheque bounce. The cheque was returned unpaid for insufficient funds.\nAdvice given: Send a statutory demand notice to the drawer and file the complaint if the drawer does not pay.\nOutcome: The drawer paid the full cheque amount after the first hearing.\nRecommended next step: Withdraw the complaint once the payment clears.\nWitness: Divya Mittal",
+  "spans": [
+    {
+      "text": "CC/1939/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Girish Tiwari",
+      "category": "NAME",
+      "start": 32,
+      "end": 45
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 47,
+      "end": 61
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 63,
+      "end": 69
+    },
+    {
+      "text": "Kulkarni Enterprises",
+      "category": "ORGANIZATION",
+      "start": 87,
+      "end": 107
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 115,
+      "end": 162
+    },
+    {
+      "text": "13 July 2024",
+      "category": "DATE",
+      "start": 173,
+      "end": 185
+    },
+    {
+      "text": "₹28,70,000",
+      "category": "MONEY",
+      "start": 200,
+      "end": 210
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 218,
+      "end": 231
+    },
+    {
+      "text": "Divya Mittal",
+      "category": "NAME",
+      "start": 551,
+      "end": 563
+    },
+    {
+      "text": "occupation (textile trader) + city (Panaji) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

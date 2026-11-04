@@ -1,0 +1,43 @@
+{
+  "doc_id": "1d8e467f54ad4942",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Bansal",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Gayatri Hegde",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "S.C.C. No. 2009/2021",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "advised",
+      "value": "treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "documents_requested",
+      "value": "the cheque, the return memo showing the account was closed and the loan agreement",
+      "importance": "high"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

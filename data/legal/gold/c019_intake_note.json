@@ -1,0 +1,98 @@
+{
+  "doc_id": "0734ef991cb7cbc6",
+  "text": "Intake note (Commercial team, 6 July 2020). Our client Mahesh Pandey is a 59-year-old architect who lives at Flat 16C, Pattom, Thiruvananthapuram 695018 and can be reached on +91 65858 07032 or mahesh.pandey21@example.in. The client's PAN XHCPP2007W.\nThe client consulted us about a cheque bounce matter against M/s Nambiar Traders. A cheque for ₹33,90,000 issued by Nambiar Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/1548/2020 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 06/08/2020.",
+  "spans": [
+    {
+      "text": "6 July 2020",
+      "category": "DATE",
+      "start": 30,
+      "end": 41
+    },
+    {
+      "text": "Mahesh Pandey",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "59-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 95
+    },
+    {
+      "text": "Flat 16C, Pattom, Thiruvananthapuram 695018",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 152
+    },
+    {
+      "text": "+91 65858 07032",
+      "category": "PHONE",
+      "start": 175,
+      "end": 190
+    },
+    {
+      "text": "mahesh.pandey21@example.in",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 220
+    },
+    {
+      "text": "XHCPP2007W",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 249
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 283,
+      "end": 296
+    },
+    {
+      "text": "Nambiar Traders",
+      "category": "ORGANIZATION",
+      "start": 316,
+      "end": 331
+    },
+    {
+      "text": "₹33,90,000",
+      "category": "MONEY",
+      "start": 346,
+      "end": 356
+    },
+    {
+      "text": "Nambiar Traders",
+      "category": "ORGANIZATION",
+      "start": 367,
+      "end": 382
+    },
+    {
+      "text": "CC/1548/2020",
+      "category": "CASE_NUMBER",
+      "start": 479,
+      "end": 491
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 503,
+      "end": 562
+    },
+    {
+      "text": "06/08/2020",
+      "category": "DATE",
+      "start": 566,
+      "end": 576
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

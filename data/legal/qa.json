@@ -1,0 +1,517 @@
+[
+  {
+    "qa_id": "q01",
+    "question": "What did we advise in past cheque-bounce matters where the cheque was returned for insufficient funds?",
+    "expected": [
+      "statutory demand notice"
+    ],
+    "doc_ids": [
+      "f5981f2680ea4804",
+      "e32ae65a311a4021",
+      "e00d3dfff3b80df6",
+      "60918f24a616d31a",
+      "a0bdd2892305aee6",
+      "9e557a67f837f463",
+      "34298a8e1064af4f",
+      "81df654fd3fc240a",
+      "ee81603d84af5974",
+      "1f675245e06a8e18",
+      "41c7402ba152a5b3",
+      "a3dcc04ac5744246"
+    ]
+  },
+  {
+    "qa_id": "q02",
+    "question": "How did we handle cheque-bounce matters where the drawer's account was closed?",
+    "expected": [
+      "evidence of dishonest intent"
+    ],
+    "doc_ids": [
+      "1d8e467f54ad4942",
+      "ac256dfd086f163f",
+      "51de0b931f26fe2a",
+      "5a417d86c9e2cc9e",
+      "98d0e99100a07d5f",
+      "01d21bd4638d662b",
+      "0b6dbc781123acc5",
+      "54d144218d3e1cbe",
+      "b36ab599423b8b29",
+      "f3e40c0a0f23aea9",
+      "1ff04753d6b0aab4",
+      "dfd8f631053a25a6",
+      "3ee4a64a8f8dd534",
+      "8f25b244883d328a",
+      "1275ab6a93b4c8f2"
+    ]
+  },
+  {
+    "qa_id": "q03",
+    "question": "What did we advise when a bounced cheque was dishonoured for a signature mismatch?",
+    "expected": [
+      "certificate on the signature mismatch"
+    ],
+    "doc_ids": [
+      "dca370edcdd19d73",
+      "abcdf98d7500ecfe",
+      "5f2a7c499614c5d4",
+      "3afbdac88543f23c",
+      "c60e5f3d10fdb0f0",
+      "f3b7f2cb63f23d53",
+      "9c138ca2d6e6616f",
+      "72d4d98de222d84c",
+      "5ce94961ee9777a4",
+      "51b198acafc7bbda",
+      "f4b12cf1c2f5980c",
+      "ad66305d669ea70e",
+      "2e473c91e41d79e9"
+    ]
+  },
+  {
+    "qa_id": "q04",
+    "question": "What was our advice in cheque-bounce cases where the drawer issued a stop-payment instruction?",
+    "expected": [
+      "stop-payment instruction does not protect the drawer"
+    ],
+    "doc_ids": [
+      "82fff4f2e5a24250",
+      "87e79e4251b8db57",
+      "39e86bdf4ed69664",
+      "e9e0e1900c034bdc",
+      "ec2b111e4c15f9b5",
+      "91160443d83a10ac",
+      "b474cf09465b1e9e",
+      "0563d91f233133c5",
+      "1cca08181bce58b3",
+      "cf87b721c9387874",
+      "4eb688080f3a5ba4",
+      "0965e43accfebdf1",
+      "2b04329415beee56"
+    ]
+  },
+  {
+    "qa_id": "q05",
+    "question": "What did we advise landlords in tenancy eviction disputes over unpaid rent?",
+    "expected": [
+      "mesne profits"
+    ],
+    "doc_ids": [
+      "f9f52e3d3f0eca4b",
+      "3ec1d91e432e1151",
+      "6e2fdca6d326f9a4",
+      "2874f700d2d34b7b",
+      "3572521feb3ca512",
+      "3260d1a5c5b52d14"
+    ]
+  },
+  {
+    "qa_id": "q06",
+    "question": "How have tenancy eviction disputes based on the landlord's own need gone before district courts?",
+    "expected": [
+      "bona fide personal need"
+    ],
+    "doc_ids": [
+      "bfd623afac83f63d",
+      "dea96bca21ff1b11",
+      "b06abde56f01bc26",
+      "884c4d5a4630cc5f",
+      "6a782df28b34241b",
+      "ef76f6dbaa319332"
+    ]
+  },
+  {
+    "qa_id": "q07",
+    "question": "What evidence did we ask for in tenancy eviction matters involving subletting?",
+    "expected": [
+      "unauthorised subletting"
+    ],
+    "doc_ids": [
+      "dd67e076c6643365",
+      "befb389e791032f0",
+      "ad2c0810e383f2ac",
+      "65a3aca1e8075519",
+      "3fb212bb583d378f"
+    ]
+  },
+  {
+    "qa_id": "q08",
+    "question": "What did we advise tenants who were facing eviction after refusing a rent increase?",
+    "expected": [
+      "deposit the admitted rent in court"
+    ],
+    "doc_ids": [
+      "f710fad0b2b4fbe7",
+      "1042fe50d4be7651",
+      "f64b1b99b9d4dd13",
+      "0d0d963a8c59f80a"
+    ]
+  },
+  {
+    "qa_id": "q09",
+    "question": "What did we advise in consumer complaints against builders for delayed possession?",
+    "expected": [
+      "every month of delay in possession"
+    ],
+    "doc_ids": [
+      "f43b2e009b516e03",
+      "4c7044bdbe6a5ef8",
+      "69f188d51d6afae6",
+      "7ce8003cd044f6a4"
+    ]
+  },
+  {
+    "qa_id": "q10",
+    "question": "What documents did we ask clients to collect in consumer complaints against builders over construction defects?",
+    "expected": [
+      "structural audit report"
+    ],
+    "doc_ids": [
+      "11d95510134f716e",
+      "34de3225283101f1",
+      "3b111dbb0f7a0b03",
+      "4126ab8898972f95",
+      "084d02fa97f91a5d",
+      "4042bfd6b5582bf9"
+    ]
+  },
+  {
+    "qa_id": "q11",
+    "question": "What did we advise when a builder had not obtained the occupancy certificate?",
+    "expected": [
+      "full refund with interest"
+    ],
+    "doc_ids": [
+      "167d2e8789f3fe56",
+      "e1f36a5bd2a4e3c7",
+      "2362e31ed797f38e"
+    ]
+  },
+  {
+    "qa_id": "q12",
+    "question": "What documents did we ask clients to collect in consumer complaints against builders who kept promising possession?",
+    "expected": [
+      "all emails promising possession"
+    ],
+    "doc_ids": [
+      "c35cab90b888fcc9",
+      "d1ed83b61aea378d",
+      "57b84eb47241d95e"
+    ]
+  },
+  {
+    "qa_id": "q13",
+    "question": "What did we advise in land disputes about boundary encroachment?",
+    "expected": [
+      "court commissioner"
+    ],
+    "doc_ids": [
+      "169a67b75cb5bd37",
+      "57745d0808810769",
+      "6da8c41ac5226518",
+      "eac48524ea418cba",
+      "f976f977128af913"
+    ]
+  },
+  {
+    "qa_id": "q14",
+    "question": "How did we handle land disputes with relatives over title to ancestral land?",
+    "expected": [
+      "mutation entries"
+    ],
+    "doc_ids": [
+      "23fd7cdda84e6fa5",
+      "2282e67a39b81b86",
+      "a8cb7159aa471105",
+      "d3bb4633c7740b60"
+    ]
+  },
+  {
+    "qa_id": "q15",
+    "question": "What did we advise when an occupant claimed land by adverse possession?",
+    "expected": [
+      "tax receipts showing continuous ownership"
+    ],
+    "doc_ids": [
+      "c35304db670bd7c9",
+      "0472628a4eb612fd",
+      "354f7b234feaa662"
+    ]
+  },
+  {
+    "qa_id": "q16",
+    "question": "What relief did we seek in land disputes where construction started on the disputed plot?",
+    "expected": [
+      "temporary injunction"
+    ],
+    "doc_ids": [
+      "894d074cf1193155",
+      "c1463ea16ce800c4",
+      "a2e83c43179c2e0d",
+      "85956427336caa3c"
+    ]
+  },
+  {
+    "qa_id": "q17",
+    "question": "What did we advise in divorces by mutual consent where the spouses had lived apart for a long time?",
+    "expected": [
+      "waive the statutory cooling-off period"
+    ],
+    "doc_ids": [
+      "c4d0910885f1387c",
+      "939731d95436c212",
+      "0953823c39d96d64"
+    ]
+  },
+  {
+    "qa_id": "q18",
+    "question": "How did we structure alimony in divorces by mutual consent?",
+    "expected": [
+      "one-time alimony settlement"
+    ],
+    "doc_ids": [
+      "a79caa7612ff993a",
+      "29a5568b106f8051"
+    ]
+  },
+  {
+    "qa_id": "q19",
+    "question": "What did we advise about the child in divorces by mutual consent?",
+    "expected": [
+      "joint parenting plan"
+    ],
+    "doc_ids": [
+      "d59809a5e9e4f38e",
+      "117c33bf44cab3f6"
+    ]
+  },
+  {
+    "qa_id": "q20",
+    "question": "What did we advise about returning jewellery and gifts in a mutual consent divorce?",
+    "expected": [
+      "stridhan items"
+    ],
+    "doc_ids": [
+      "62acdc50db93ca05",
+      "3e66d3a98d2bf87d",
+      "508c6b010c7288ea"
+    ]
+  },
+  {
+    "qa_id": "q21",
+    "question": "What did we argue in anticipatory bail matters arising from business disputes?",
+    "expected": [
+      "civil in nature"
+    ],
+    "doc_ids": [
+      "81d96681fc010e99",
+      "354ee79129294663"
+    ]
+  },
+  {
+    "qa_id": "q22",
+    "question": "What did we advise in anticipatory bail matters arising from matrimonial complaints?",
+    "expected": [
+      "interim protection"
+    ],
+    "doc_ids": [
+      "4f156e1db706a8b4",
+      "c7dfae46f4a1ac4e",
+      "e0c762decc06f938"
+    ]
+  },
+  {
+    "qa_id": "q23",
+    "question": "How did we defend clients accused of cheating in anticipatory bail applications?",
+    "expected": [
+      "no intent to cheat at the outset"
+    ],
+    "doc_ids": [
+      "a85938990e541977",
+      "03dd22ac29000aab",
+      "7174e02d09c0fe28",
+      "9be2f24a595eaeaa"
+    ]
+  },
+  {
+    "qa_id": "q24",
+    "question": "What did we rely on in anticipatory bail matters alleging negligence during treatment?",
+    "expected": [
+      "no gross negligence"
+    ],
+    "doc_ids": [
+      "a0bf28acfb66e2e8",
+      "e81ade50d56c2eb8"
+    ]
+  },
+  {
+    "qa_id": "q25",
+    "question": "What did we advise in breach of contract matters over unpaid invoices?",
+    "expected": [
+      "invoke the arbitration clause"
+    ],
+    "doc_ids": [
+      "4dfeae3029d5ea04",
+      "2c32e6e879f3c526"
+    ]
+  },
+  {
+    "qa_id": "q26",
+    "question": "What did we claim in breach of contract cases involving defective supplies?",
+    "expected": [
+      "liquidated damages"
+    ],
+    "doc_ids": [
+      "a6a9cd9e028498d4",
+      "01a8140007595dce"
+    ]
+  },
+  {
+    "qa_id": "q27",
+    "question": "What did we advise when a counterparty terminated a contract without notice?",
+    "expected": [
+      "notice of breach"
+    ],
+    "doc_ids": [
+      "33f714181e877fa4",
+      "bf6a9a82022e41db"
+    ]
+  },
+  {
+    "qa_id": "q28",
+    "question": "What step did we take before filing commercial suits for breach of contract?",
+    "expected": [
+      "pre-institution mediation"
+    ],
+    "doc_ids": [
+      "76a938935d7c9daa",
+      "8730c0fa295faf37"
+    ]
+  },
+  {
+    "qa_id": "q29",
+    "question": "What did we advise employees dismissed without an enquiry?",
+    "expected": [
+      "reinstatement with full back wages"
+    ],
+    "doc_ids": [
+      "8eaccce074bdd871",
+      "8a1622589573db95"
+    ]
+  },
+  {
+    "qa_id": "q30",
+    "question": "How did we challenge domestic enquiries in wrongful termination cases?",
+    "expected": [
+      "breach of natural justice"
+    ],
+    "doc_ids": [
+      "68f1c9719b79dd9f",
+      "407e2fd38591807a"
+    ]
+  },
+  {
+    "qa_id": "q31",
+    "question": "What did we negotiate when employers offered to settle wrongful termination claims?",
+    "expected": [
+      "gratuity and notice pay"
+    ],
+    "doc_ids": [
+      "49c29ad5afdfae4d"
+    ]
+  },
+  {
+    "qa_id": "q32",
+    "question": "What did we advise when an employer withheld salary after a dismissal?",
+    "expected": [
+      "claim for unpaid wages"
+    ],
+    "doc_ids": [
+      "dd39183d298dcb29"
+    ]
+  },
+  {
+    "qa_id": "q33",
+    "question": "What did we advise in salvage claims where the vessel was about to sail?",
+    "expected": [
+      "arrest the vessel"
+    ],
+    "doc_ids": [
+      "5a39dccdcaf14f05",
+      "c033859cedec14de",
+      "f52e80c0088ff885"
+    ]
+  },
+  {
+    "qa_id": "q34",
+    "question": "How did we value salvage awards in admiralty matters?",
+    "expected": [
+      "value of the property saved"
+    ],
+    "doc_ids": [
+      "f93872d68134e6b1"
+    ]
+  },
+  {
+    "qa_id": "q35",
+    "question": "What did we advise producers whose geographical indication was used on a rival label?",
+    "expected": [
+      "registered GI certificate"
+    ],
+    "doc_ids": [
+      "95b8124dd9153885",
+      "08f608a5f90055fe",
+      "e53208eeb507bf8c"
+    ]
+  },
+  {
+    "qa_id": "q36",
+    "question": "What did we do about trademarks that conflicted with a geographical indication?",
+    "expected": [
+      "rectification petition"
+    ],
+    "doc_ids": [
+      "01871c656f959cf1",
+      "36ae59414f59b08f"
+    ]
+  },
+  {
+    "qa_id": "q37",
+    "question": "What did we advise lessors whose airline lessee stopped paying rentals?",
+    "expected": [
+      "deregistration of the aircraft"
+    ],
+    "doc_ids": [
+      "7f965636be77036d"
+    ]
+  },
+  {
+    "qa_id": "q38",
+    "question": "How did we respond when an airline lessee entered insolvency?",
+    "expected": [
+      "outside the insolvency moratorium"
+    ],
+    "doc_ids": [
+      "ebd32b32e837c6af"
+    ]
+  },
+  {
+    "qa_id": "q39",
+    "question": "What did we advise creditors in cross-border insolvency matters?",
+    "expected": [
+      "resolution professional"
+    ],
+    "doc_ids": [
+      "f2076c4ef751ffa1",
+      "0faea9f14c8ea6cd"
+    ]
+  },
+  {
+    "qa_id": "q40",
+    "question": "How did we deal with foreign administrators in cross-border insolvency?",
+    "expected": [
+      "recognition of the foreign insolvency proceeding"
+    ],
+    "doc_ids": [
+      "aa48d977501cc159"
+    ]
+  }
+]

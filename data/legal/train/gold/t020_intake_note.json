@@ -1,0 +1,110 @@
+{
+  "doc_id": "b9d61234898fe5b3",
+  "text": "Intake note - Commercial team\nDate: 18 January 2022\nClient: Vandana Chauhan, a 74-year-old cardiologist from Mysuru.\nAddress: House No. 35, Gokulam, Mysuru 570029\nPhone: +91 94513 37698. Email: vandana.chauhan66@example.in. PAN HMMPC3474G.\nMatter: cheque bounce\nOpposing party: DSouza Enterprises\nFacts: A cheque for INR 12,70,000/- issued by DSouza Enterprises bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as S.C.C. No. 2586/2022 before the Judicial Magistrate First Class Court at Mysuru on 13 March 2022.",
+  "spans": [
+    {
+      "text": "18 January 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Vandana Chauhan",
+      "category": "NAME",
+      "start": 60,
+      "end": 75
+    },
+    {
+      "text": "74-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 103
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 109,
+      "end": 115
+    },
+    {
+      "text": "House No. 35, Gokulam, Mysuru 570029",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 162
+    },
+    {
+      "text": "+91 94513 37698",
+      "category": "PHONE",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "vandana.chauhan66@example.in",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 222
+    },
+    {
+      "text": "HMMPC3474G",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 248,
+      "end": 261
+    },
+    {
+      "text": "DSouza Enterprises",
+      "category": "ORGANIZATION",
+      "start": 278,
+      "end": 296
+    },
+    {
+      "text": "INR 12,70,000/-",
+      "category": "MONEY",
+      "start": 317,
+      "end": 332
+    },
+    {
+      "text": "DSouza Enterprises",
+      "category": "ORGANIZATION",
+      "start": 343,
+      "end": 361
+    },
+    {
+      "text": "S.C.C. No. 2586/2022",
+      "category": "CASE_NUMBER",
+      "start": 458,
+      "end": 478
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mysuru",
+      "category": "COURT",
+      "start": 490,
+      "end": 537
+    },
+    {
+      "text": "13 March 2022",
+      "category": "DATE",
+      "start": 541,
+      "end": 554
+    },
+    {
+      "text": "age (74) + occupation (cardiologist) + city (Mysuru) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

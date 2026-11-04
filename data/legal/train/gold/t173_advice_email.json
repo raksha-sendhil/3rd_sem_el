@@ -1,0 +1,50 @@
+{
+  "doc_id": "2181796bf5166b70",
+  "text": "Subject: Your breach of contract matter (Project Kestrel)\n\nDear Mr. Pawar,\n\nThank you for meeting us on 02/04/2026 about your dispute with M/s Deccan Logistics Ltd. As we understand it, the counterparty has not paid the invoices for delivered goods. The matter is listed before the Mangaluru Commercial Court.\n\nOur advice is to invoke the arbitration clause and seek interim relief to secure the amount. Please collect the contract, the invoices and the delivery challans and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Kestrel",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 56
+    },
+    {
+      "text": "Pawar",
+      "category": "NAME",
+      "start": 68,
+      "end": 73
+    },
+    {
+      "text": "02/04/2026",
+      "category": "DATE",
+      "start": 104,
+      "end": 114
+    },
+    {
+      "text": "Deccan Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 143,
+      "end": 163
+    },
+    {
+      "text": "Mangaluru Commercial Court",
+      "category": "COURT",
+      "start": 282,
+      "end": 308
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 519,
+      "end": 538
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

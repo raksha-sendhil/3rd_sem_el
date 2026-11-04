@@ -1,0 +1,50 @@
+{
+  "doc_id": "d74ca6d4d55fffb7",
+  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 2222/2022\n\nDear Ms. Ranade,\n\nThank you for meeting us on 18 March 2023 about your dispute with Sneha Shah. As we understand it, the tenant has stopped paying rent for many months.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office. We will pursue the full claim of Rs 1,65,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.A. No. 2222/2022",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Ranade",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "18 March 2023",
+      "category": "DATE",
+      "start": 108,
+      "end": 121
+    },
+    {
+      "text": "Sneha Shah",
+      "category": "NAME",
+      "start": 146,
+      "end": 156
+    },
+    {
+      "text": "Rs 1,65,000",
+      "category": "MONEY",
+      "start": 499,
+      "end": 510
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 527,
+      "end": 539
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

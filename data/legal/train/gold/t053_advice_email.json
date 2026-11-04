@@ -1,0 +1,56 @@
+{
+  "doc_id": "5f0a7d60ea277fb8",
+  "text": "Subject: Your breach of contract matter (Project Osprey)\n\nDear Ms. Mehra,\n\nThank you for meeting us on 6 March 2020 about your dispute with Meridian Logistics Ltd. As we understand it, the counterparty has not paid the invoices for delivered goods. The matter is listed before the Kolkata Commercial Court.\n\nOur advice is to invoke the arbitration clause and seek interim relief to secure the amount. Please collect the contract, the invoices and the delivery challans and send copies to this office. We will pursue the full claim of Rs. 15,72,00,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Osprey",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 55
+    },
+    {
+      "text": "Mehra",
+      "category": "NAME",
+      "start": 67,
+      "end": 72
+    },
+    {
+      "text": "6 March 2020",
+      "category": "DATE",
+      "start": 103,
+      "end": 115
+    },
+    {
+      "text": "Meridian Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 140,
+      "end": 162
+    },
+    {
+      "text": "Kolkata Commercial Court",
+      "category": "COURT",
+      "start": 281,
+      "end": 305
+    },
+    {
+      "text": "Rs. 15,72,00,000",
+      "category": "MONEY",
+      "start": 534,
+      "end": 550
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 567,
+      "end": 586
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

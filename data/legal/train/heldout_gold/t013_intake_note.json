@@ -1,0 +1,116 @@
+{
+  "doc_id": "06fd2d86ba891c61",
+  "text": "Intake note - Family team\nDate: 29 November 2023\nClient: Sameer Patil, a 27-year-old insurance agent from Kochi.\nAddress: Plot 48, Kakkanad, Kochi 682037\nPhone: +91 73640 12283. Email: sameer.patil37@example.in. PAN JTFPP7773D, Aadhaar 6446 8931 0185.\nMatter: divorce by mutual consent\nOpposing party: Sujata Gaikwad\nFacts: The divorce by mutual consent with Sujata Gaikwad includes a settlement of ₹85,70,000; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 854/2024 before the Family Court at Kochi on 2 April 2024.",
+  "spans": [
+    {
+      "text": "29 November 2023",
+      "category": "DATE",
+      "start": 32,
+      "end": 48
+    },
+    {
+      "text": "Sameer Patil",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "27-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "insurance agent",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 100
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 111
+    },
+    {
+      "text": "Plot 48, Kakkanad, Kochi 682037",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 153
+    },
+    {
+      "text": "+91 73640 12283",
+      "category": "PHONE",
+      "start": 161,
+      "end": 176
+    },
+    {
+      "text": "sameer.patil37@example.in",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 210
+    },
+    {
+      "text": "JTFPP7773D",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "6446 8931 0185",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 250
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 260,
+      "end": 285
+    },
+    {
+      "text": "Sujata Gaikwad",
+      "category": "NAME",
+      "start": 302,
+      "end": 316
+    },
+    {
+      "text": "Sujata Gaikwad",
+      "category": "NAME",
+      "start": 359,
+      "end": 373
+    },
+    {
+      "text": "₹85,70,000",
+      "category": "MONEY",
+      "start": 399,
+      "end": 409
+    },
+    {
+      "text": "Petition No. 854/2024",
+      "category": "CASE_NUMBER",
+      "start": 484,
+      "end": 505
+    },
+    {
+      "text": "Family Court at Kochi",
+      "category": "COURT",
+      "start": 517,
+      "end": 538
+    },
+    {
+      "text": "2 April 2024",
+      "category": "DATE",
+      "start": 542,
+      "end": 554
+    },
+    {
+      "text": "age (27) + occupation (insurance agent) + city (Kochi) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

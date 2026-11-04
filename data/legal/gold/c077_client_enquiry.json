@@ -1,0 +1,68 @@
+{
+  "doc_id": "dfe4a5c1b6488d1c",
+  "text": "Subject: Need help with a land dispute case\n\nHello, my name is Karthik Nambiar. I am a 28-year-old restaurant owner living in Mumbai. I have a land dispute with Radhika Jadhav over land worth INR 4,33,00,000/-, and relatives dispute who owns the ancestral land. Can your firm advise me on what to do next? You can call me on +91 66097 74256 or email karthik.nambiar5@example.in.",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 38
+    },
+    {
+      "text": "Karthik Nambiar",
+      "category": "NAME",
+      "start": 63,
+      "end": 78
+    },
+    {
+      "text": "28-year-old",
+      "category": "AGE",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 99,
+      "end": 115
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 126,
+      "end": 132
+    },
+    {
+      "text": "Radhika Jadhav",
+      "category": "NAME",
+      "start": 161,
+      "end": 175
+    },
+    {
+      "text": "INR 4,33,00,000/-",
+      "category": "MONEY",
+      "start": 192,
+      "end": 209
+    },
+    {
+      "text": "+91 66097 74256",
+      "category": "PHONE",
+      "start": 325,
+      "end": 340
+    },
+    {
+      "text": "karthik.nambiar5@example.in",
+      "category": "EMAIL",
+      "start": 350,
+      "end": 377
+    },
+    {
+      "text": "age (28) + occupation (restaurant owner) + city (Mumbai) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

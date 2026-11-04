@@ -1,0 +1,44 @@
+{
+  "doc_id": "cb29f402af5b03dc",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Das,\n\nThank you for meeting us on 01/11/2020 about your dispute with Shruti Bose. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Jaipur District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Das",
+      "category": "NAME",
+      "start": 48,
+      "end": 51
+    },
+    {
+      "text": "01/11/2020",
+      "category": "DATE",
+      "start": 82,
+      "end": 92
+    },
+    {
+      "text": "Shruti Bose",
+      "category": "NAME",
+      "start": 117,
+      "end": 128
+    },
+    {
+      "text": "Jaipur District Court",
+      "category": "COURT",
+      "start": 235,
+      "end": 256
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 508,
+      "end": 525
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

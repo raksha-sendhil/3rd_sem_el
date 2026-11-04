@@ -1,0 +1,110 @@
+{
+  "doc_id": "87e95a363ce35f88",
+  "text": "Intake note (Commercial team, 21/12/2022). Our client Rahul Krishnan is a 73-year-old civil engineer who lives at Flat 12D, Satellite, Ahmedabad 380028 and can be reached on 94749 04051 or rahul.krishnan@example.in. The client's PAN QQFPK6115A.\nThe client consulted us about a cheque bounce matter against Bhosale Enterprises. A cheque for INR 26,10,000/- issued by Bhosale Enterprises bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 921283469849 (IFSC KKBK0853547).\nThe matter was filed as CC/1128/2023 before the Judicial Magistrate First Class Court at Ahmedabad on 18 March 2023.",
+  "spans": [
+    {
+      "text": "21/12/2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Rahul Krishnan",
+      "category": "NAME",
+      "start": 54,
+      "end": 68
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 100
+    },
+    {
+      "text": "Flat 12D, Satellite, Ahmedabad 380028",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 151
+    },
+    {
+      "text": "94749 04051",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "rahul.krishnan@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 214
+    },
+    {
+      "text": "QQFPK6115A",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 290
+    },
+    {
+      "text": "Bhosale Enterprises",
+      "category": "ORGANIZATION",
+      "start": 306,
+      "end": 325
+    },
+    {
+      "text": "INR 26,10,000/-",
+      "category": "MONEY",
+      "start": 340,
+      "end": 355
+    },
+    {
+      "text": "Bhosale Enterprises",
+      "category": "ORGANIZATION",
+      "start": 366,
+      "end": 385
+    },
+    {
+      "text": "921283469849",
+      "category": "FINANCIAL",
+      "start": 501,
+      "end": 513
+    },
+    {
+      "text": "KKBK0853547",
+      "category": "FINANCIAL",
+      "start": 520,
+      "end": 531
+    },
+    {
+      "text": "CC/1128/2023",
+      "category": "CASE_NUMBER",
+      "start": 558,
+      "end": 570
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 582,
+      "end": 632
+    },
+    {
+      "text": "18 March 2023",
+      "category": "DATE",
+      "start": 636,
+      "end": 649
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

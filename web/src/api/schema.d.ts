@@ -320,7 +320,7 @@ export interface components {
              * Kind
              * @enum {string}
              */
-            kind: "context_dump" | "stepwise" | "interception";
+            kind: "context_dump" | "stepwise" | "interception" | "direct" | "linkage";
             /** Name */
             name: string;
             /** Target Person Id */
@@ -542,7 +542,7 @@ export interface components {
          * PIICategory
          * @enum {string}
          */
-        PIICategory: "NAME" | "AGE" | "DATE" | "PHONE" | "EMAIL" | "ID_NUMBER" | "ADDRESS" | "LOCATION" | "OCCUPATION" | "RELATION" | "PHYSICAL" | "MEDICAL_CONDITION" | "SYMPTOM" | "QUASI_COMBO" | "OTHER";
+        PIICategory: "NAME" | "AGE" | "DATE" | "PHONE" | "EMAIL" | "ID_NUMBER" | "ADDRESS" | "LOCATION" | "OCCUPATION" | "RELATION" | "PHYSICAL" | "MEDICAL_CONDITION" | "SYMPTOM" | "QUASI_COMBO" | "OTHER" | "FINANCIAL" | "CASE_NUMBER" | "ORGANIZATION" | "COURT" | "MONEY" | "MATTER_CODENAME" | "LEGAL_ISSUE";
         /** QueryRequest */
         QueryRequest: {
             /** Query */

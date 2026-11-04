@@ -1,0 +1,38 @@
+{
+  "doc_id": "e81ade50d56c2eb8",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Mr. Shinde,\n\nThank you for meeting us on 27 April 2020 about your dispute with Yogesh Shetty. As we understand it, the complaint alleges negligence during treatment.\n\nOur advice is to rely on the expert committee opinion that there was no gross negligence. Please collect the treatment records and the expert committee opinion and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Shinde",
+      "category": "NAME",
+      "start": 49,
+      "end": 55
+    },
+    {
+      "text": "27 April 2020",
+      "category": "DATE",
+      "start": 86,
+      "end": 99
+    },
+    {
+      "text": "Yogesh Shetty",
+      "category": "NAME",
+      "start": 124,
+      "end": 137
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 419,
+      "end": 434
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

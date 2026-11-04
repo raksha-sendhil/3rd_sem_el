@@ -1,0 +1,98 @@
+{
+  "doc_id": "4ce5b845f3c357f1",
+  "text": "Intake note (Commercial team, 7 November 2023). Our client Rekha Trivedi is a 63-year-old bank manager who lives at House No. 109, Navrangpura, Ahmedabad 380006 and can be reached on +91 64388 98685 or rekha.trivedi44@example.com. The client's PAN MHPPT6048R.\nThe client consulted us about a cheque bounce matter against Mary Ahuja. A cheque for INR 14,00,000/- issued by Mary Ahuja bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 2372/2024 before the Judicial Magistrate First Class Court at Ahmedabad on 11 January 2024.",
+  "spans": [
+    {
+      "text": "7 November 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Rekha Trivedi",
+      "category": "NAME",
+      "start": 59,
+      "end": 72
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 102
+    },
+    {
+      "text": "House No. 109, Navrangpura, Ahmedabad 380006",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 160
+    },
+    {
+      "text": "+91 64388 98685",
+      "category": "PHONE",
+      "start": 183,
+      "end": 198
+    },
+    {
+      "text": "rekha.trivedi44@example.com",
+      "category": "EMAIL",
+      "start": 202,
+      "end": 229
+    },
+    {
+      "text": "MHPPT6048R",
+      "category": "ID_NUMBER",
+      "start": 248,
+      "end": 258
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 292,
+      "end": 305
+    },
+    {
+      "text": "Mary Ahuja",
+      "category": "NAME",
+      "start": 321,
+      "end": 331
+    },
+    {
+      "text": "INR 14,00,000/-",
+      "category": "MONEY",
+      "start": 346,
+      "end": 361
+    },
+    {
+      "text": "Mary Ahuja",
+      "category": "NAME",
+      "start": 372,
+      "end": 382
+    },
+    {
+      "text": "S.C.C. No. 2372/2024",
+      "category": "CASE_NUMBER",
+      "start": 480,
+      "end": 500
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 512,
+      "end": 562
+    },
+    {
+      "text": "11 January 2024",
+      "category": "DATE",
+      "start": 566,
+      "end": 581
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

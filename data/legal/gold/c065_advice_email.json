@@ -1,0 +1,44 @@
+{
+  "doc_id": "2362e31ed797f38e",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 1904/2022\n\nDear Ms. Sathe,\n\nThank you for meeting us on 20 July 2022 about your dispute with M/s Deccan Builders Pvt Ltd. As we understand it, the builder never obtained the occupancy certificate.\n\nOur advice is to seek a full refund with interest because the builder failed to obtain the occupancy certificate. Please collect the builder-buyer agreement, payment receipts and the municipal reply on the occupancy certificate and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 1904/2022",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Sathe",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "20 July 2022",
+      "category": "DATE",
+      "start": 107,
+      "end": 119
+    },
+    {
+      "text": "Deccan Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 148,
+      "end": 171
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 524,
+      "end": 540
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

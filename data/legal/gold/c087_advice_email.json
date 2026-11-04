@@ -1,0 +1,38 @@
+{
+  "doc_id": "0953823c39d96d64",
+  "text": "Subject: Your divorce by mutual consent matter\n\nDear Ms. Ghosh,\n\nThank you for meeting us on 15/05/2025 about your dispute with Pranav Apte. As we understand it, both spouses have lived apart for a long time.\n\nOur advice is to apply to waive the statutory cooling-off period. Please collect proof of separate residence and the consent terms and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 57,
+      "end": 62
+    },
+    {
+      "text": "15/05/2025",
+      "category": "DATE",
+      "start": 93,
+      "end": 103
+    },
+    {
+      "text": "Pranav Apte",
+      "category": "NAME",
+      "start": 128,
+      "end": 139
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 388,
+      "end": 405
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

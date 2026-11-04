@@ -1,0 +1,116 @@
+{
+  "doc_id": "e67ed3ddb6fa1f29",
+  "text": "Intake note - Family team\nDate: 29 July 2021\nClient: Prakash Bhandari, a 25-year-old shopkeeper from Mangaluru.\nAddress: House No. 80, Bejai, Mangaluru 575001\nPhone: +91 92074 03996. Email: prakash.bhandari@example.com. PAN BKNPB2515K, Aadhaar 4250 0657 8953.\nMatter: divorce by mutual consent\nOpposing party: Sameer Patel\nFacts: The divorce by mutual consent with Sameer Patel includes a settlement of INR 34,50,000/-; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 2650/2021 before the Family Court at Mangaluru on 2 September 2021.",
+  "spans": [
+    {
+      "text": "29 July 2021",
+      "category": "DATE",
+      "start": 32,
+      "end": 44
+    },
+    {
+      "text": "Prakash Bhandari",
+      "category": "NAME",
+      "start": 53,
+      "end": 69
+    },
+    {
+      "text": "25-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 95
+    },
+    {
+      "text": "Mangaluru",
+      "category": "LOCATION",
+      "start": 101,
+      "end": 110
+    },
+    {
+      "text": "House No. 80, Bejai, Mangaluru 575001",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 158
+    },
+    {
+      "text": "+91 92074 03996",
+      "category": "PHONE",
+      "start": 166,
+      "end": 181
+    },
+    {
+      "text": "prakash.bhandari@example.com",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 218
+    },
+    {
+      "text": "BKNPB2515K",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "4250 0657 8953",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 258
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 268,
+      "end": 293
+    },
+    {
+      "text": "Sameer Patel",
+      "category": "NAME",
+      "start": 310,
+      "end": 322
+    },
+    {
+      "text": "Sameer Patel",
+      "category": "NAME",
+      "start": 365,
+      "end": 377
+    },
+    {
+      "text": "INR 34,50,000/-",
+      "category": "MONEY",
+      "start": 403,
+      "end": 418
+    },
+    {
+      "text": "Petition No. 2650/2021",
+      "category": "CASE_NUMBER",
+      "start": 493,
+      "end": 515
+    },
+    {
+      "text": "Family Court at Mangaluru",
+      "category": "COURT",
+      "start": 527,
+      "end": 552
+    },
+    {
+      "text": "2 September 2021",
+      "category": "DATE",
+      "start": 556,
+      "end": 572
+    },
+    {
+      "text": "age (25) + occupation (shopkeeper) + city (Mangaluru) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

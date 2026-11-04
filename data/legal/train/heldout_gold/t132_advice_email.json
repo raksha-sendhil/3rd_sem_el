@@ -1,0 +1,50 @@
+{
+  "doc_id": "3a173819cd9b11ad",
+  "text": "Subject: Your cheque bounce matter - CC/2899/2019\n\nDear Ms. Naidu,\n\nThank you for meeting us on 1 May 2020 about your dispute with Vindhya Enterprises. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of Rs 21,60,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/2899/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Naidu",
+      "category": "NAME",
+      "start": 60,
+      "end": 65
+    },
+    {
+      "text": "1 May 2020",
+      "category": "DATE",
+      "start": 96,
+      "end": 106
+    },
+    {
+      "text": "Vindhya Enterprises",
+      "category": "ORGANIZATION",
+      "start": 131,
+      "end": 150
+    },
+    {
+      "text": "Rs 21,60,000",
+      "category": "MONEY",
+      "start": 523,
+      "end": 535
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 552,
+      "end": 568
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

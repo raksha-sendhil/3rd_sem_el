@@ -1,0 +1,56 @@
+{
+  "doc_id": "d6c107ffb441baeb",
+  "text": "Subject: Your cheque bounce matter - CC/903/2021\n\nDear Ms. Gaikwad,\n\nThank you for meeting us on 9 December 2021 about your dispute with Sameer Pandey. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Hyderabad.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of Rs 12,10,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/903/2021",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 48
+    },
+    {
+      "text": "Gaikwad",
+      "category": "NAME",
+      "start": 59,
+      "end": 66
+    },
+    {
+      "text": "9 December 2021",
+      "category": "DATE",
+      "start": 97,
+      "end": 112
+    },
+    {
+      "text": "Sameer Pandey",
+      "category": "NAME",
+      "start": 137,
+      "end": 150
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hyderabad",
+      "category": "COURT",
+      "start": 268,
+      "end": 318
+    },
+    {
+      "text": "Rs 12,10,000",
+      "category": "MONEY",
+      "start": 577,
+      "end": 589
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 606,
+      "end": 618
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

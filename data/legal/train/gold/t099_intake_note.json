@@ -1,0 +1,104 @@
+{
+  "doc_id": "d9197ee7751cfb71",
+  "text": "Intake note (Property team, 4 January 2023). Our client Anjali Deshpande is a 65-year-old architect who lives at House No. 91, Koregaon Park, Pune 411013 and can be reached on +91 67250 53564 or anjali.deshpande72@example.in. The client's PAN HJLPD7669E, Aadhaar 5803 5656 7363.\nThe client consulted us about a tenancy eviction matter against Sameer Chandran. The tenancy dispute with Sameer Chandran concerns rent arrears of Rs 1,45,000; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 2651/2023 before the Pune District Court on 06/05/2023.",
+  "spans": [
+    {
+      "text": "4 January 2023",
+      "category": "DATE",
+      "start": 28,
+      "end": 42
+    },
+    {
+      "text": "Anjali Deshpande",
+      "category": "NAME",
+      "start": 56,
+      "end": 72
+    },
+    {
+      "text": "65-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 99
+    },
+    {
+      "text": "House No. 91, Koregaon Park, Pune 411013",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 153
+    },
+    {
+      "text": "+91 67250 53564",
+      "category": "PHONE",
+      "start": 176,
+      "end": 191
+    },
+    {
+      "text": "anjali.deshpande72@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 224
+    },
+    {
+      "text": "HJLPD7669E",
+      "category": "ID_NUMBER",
+      "start": 243,
+      "end": 253
+    },
+    {
+      "text": "5803 5656 7363",
+      "category": "ID_NUMBER",
+      "start": 263,
+      "end": 277
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 311,
+      "end": 327
+    },
+    {
+      "text": "Sameer Chandran",
+      "category": "NAME",
+      "start": 343,
+      "end": 358
+    },
+    {
+      "text": "Sameer Chandran",
+      "category": "NAME",
+      "start": 385,
+      "end": 400
+    },
+    {
+      "text": "Rs 1,45,000",
+      "category": "MONEY",
+      "start": 426,
+      "end": 437
+    },
+    {
+      "text": "R.C.S. No. 2651/2023",
+      "category": "CASE_NUMBER",
+      "start": 515,
+      "end": 535
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 547,
+      "end": 566
+    },
+    {
+      "text": "06/05/2023",
+      "category": "DATE",
+      "start": 570,
+      "end": 580
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

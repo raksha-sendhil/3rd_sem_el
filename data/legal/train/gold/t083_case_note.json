@@ -1,0 +1,74 @@
+{
+  "doc_id": "5ed18f816c1bc300",
+  "text": "Case note: S.C.C. No. 2372/2024\nClient: Rekha Trivedi (bank manager, Ahmedabad)\nOpposing party: Mary Ahuja\nCourt: Judicial Magistrate First Class Court at Ahmedabad\nFiled on: 11 January 2024\nClaim amount: INR 14,00,000/-\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.\nWitness: Ananya Fernandes",
+  "spans": [
+    {
+      "text": "S.C.C. No. 2372/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Rekha Trivedi",
+      "category": "NAME",
+      "start": 40,
+      "end": 53
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 67
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 69,
+      "end": 78
+    },
+    {
+      "text": "Mary Ahuja",
+      "category": "NAME",
+      "start": 96,
+      "end": 106
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 114,
+      "end": 164
+    },
+    {
+      "text": "11 January 2024",
+      "category": "DATE",
+      "start": 175,
+      "end": 190
+    },
+    {
+      "text": "INR 14,00,000/-",
+      "category": "MONEY",
+      "start": 205,
+      "end": 220
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 228,
+      "end": 241
+    },
+    {
+      "text": "Ananya Fernandes",
+      "category": "NAME",
+      "start": 582,
+      "end": 598
+    },
+    {
+      "text": "occupation (bank manager) + city (Ahmedabad) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

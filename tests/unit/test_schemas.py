@@ -29,6 +29,14 @@ FROZEN_CATEGORIES = [
     "SYMPTOM",
     "QUASI_COMBO",
     "OTHER",
+    # legal build spec (3 Nov 2026): appended, so the medical gold set stays valid
+    "FINANCIAL",
+    "CASE_NUMBER",
+    "ORGANIZATION",
+    "COURT",
+    "MONEY",
+    "MATTER_CODENAME",
+    "LEGAL_ISSUE",
 ]
 
 

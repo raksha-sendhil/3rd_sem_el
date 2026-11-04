@@ -1,0 +1,56 @@
+{
+  "doc_id": "e9e0e1900c034bdc",
+  "text": "Subject: Your cheque bounce matter - CC/1024/2024\n\nDear Mr. Rao,\n\nThank you for meeting us on 22 January 2025 about your dispute with Meera Khan. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Nagpur.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of ₹12,90,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/1024/2024",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Rao",
+      "category": "NAME",
+      "start": 60,
+      "end": 63
+    },
+    {
+      "text": "22 January 2025",
+      "category": "DATE",
+      "start": 94,
+      "end": 109
+    },
+    {
+      "text": "Meera Khan",
+      "category": "NAME",
+      "start": 134,
+      "end": 144
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 262,
+      "end": 309
+    },
+    {
+      "text": "₹12,90,000",
+      "category": "MONEY",
+      "start": 568,
+      "end": 578
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 595,
+      "end": 614
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

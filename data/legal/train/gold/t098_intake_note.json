@@ -1,0 +1,110 @@
+{
+  "doc_id": "6af7a02f446281e0",
+  "text": "Intake note - Criminal team\nDate: 19 April 2019\nClient: Manoj Patil, a 59-year-old architect from Ahmedabad.\nAddress: Bungalow 31, Navrangpura, Ahmedabad 380005\nPhone: 81656 09240. Email: manoj.patil@example.in. PAN EHRPP8255H.\nMatter: anticipatory bail\nOpposing party: Simran Menon\nFacts: The anticipatory bail matter arises from a complaint by Simran Menon about 25.4 lakh rupees; the complaint was filed during a matrimonial dispute.\nThe matter was filed as Anticipatory Bail Application No. 1380/2019 before the Ahmedabad Sessions Court on 20/10/2019.",
+  "spans": [
+    {
+      "text": "19 April 2019",
+      "category": "DATE",
+      "start": 34,
+      "end": 47
+    },
+    {
+      "text": "Manoj Patil",
+      "category": "NAME",
+      "start": 56,
+      "end": 67
+    },
+    {
+      "text": "59-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 92
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 98,
+      "end": 107
+    },
+    {
+      "text": "Bungalow 31, Navrangpura, Ahmedabad 380005",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 160
+    },
+    {
+      "text": "81656 09240",
+      "category": "PHONE",
+      "start": 168,
+      "end": 179
+    },
+    {
+      "text": "manoj.patil@example.in",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 210
+    },
+    {
+      "text": "EHRPP8255H",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 253
+    },
+    {
+      "text": "Simran Menon",
+      "category": "NAME",
+      "start": 270,
+      "end": 282
+    },
+    {
+      "text": "Simran Menon",
+      "category": "NAME",
+      "start": 346,
+      "end": 358
+    },
+    {
+      "text": "25.4 lakh rupees",
+      "category": "MONEY",
+      "start": 365,
+      "end": 381
+    },
+    {
+      "text": "Anticipatory Bail Application No. 1380/2019",
+      "category": "CASE_NUMBER",
+      "start": 461,
+      "end": 504
+    },
+    {
+      "text": "Ahmedabad Sessions Court",
+      "category": "COURT",
+      "start": 516,
+      "end": 540
+    },
+    {
+      "text": "20/10/2019",
+      "category": "DATE",
+      "start": 544,
+      "end": 554
+    },
+    {
+      "text": "age (59) + occupation (architect) + city (Ahmedabad) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,110 @@
+{
+  "doc_id": "243c3619201dac22",
+  "text": "Intake note - Property team\nDate: 04/11/2022\nClient: Tanvi Bhatt, a 58-year-old pharmacist from Warangal.\nAddress: Bungalow 6, Hanamkonda, Warangal 506007\nPhone: 09010075288. Email: tanvi.bhatt@example.in. PAN GAVPB9715H.\nMatter: consumer complaint\nOpposing party: Pai Realty\nFacts: The consumer complaint against M/s Pai Realty concerns a flat bought for ₹83,40,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as CC/2625/2023 before the Warangal District Consumer Disputes Redressal Commission on 9 April 2023.",
+  "spans": [
+    {
+      "text": "04/11/2022",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Tanvi Bhatt",
+      "category": "NAME",
+      "start": 53,
+      "end": 64
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 68,
+      "end": 79
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 80,
+      "end": 90
+    },
+    {
+      "text": "Warangal",
+      "category": "LOCATION",
+      "start": 96,
+      "end": 104
+    },
+    {
+      "text": "Bungalow 6, Hanamkonda, Warangal 506007",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 154
+    },
+    {
+      "text": "09010075288",
+      "category": "PHONE",
+      "start": 162,
+      "end": 173
+    },
+    {
+      "text": "tanvi.bhatt@example.in",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 204
+    },
+    {
+      "text": "GAVPB9715H",
+      "category": "ID_NUMBER",
+      "start": 210,
+      "end": 220
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 230,
+      "end": 248
+    },
+    {
+      "text": "Pai Realty",
+      "category": "ORGANIZATION",
+      "start": 265,
+      "end": 275
+    },
+    {
+      "text": "Pai Realty",
+      "category": "ORGANIZATION",
+      "start": 318,
+      "end": 328
+    },
+    {
+      "text": "₹83,40,000",
+      "category": "MONEY",
+      "start": 356,
+      "end": 366
+    },
+    {
+      "text": "CC/2625/2023",
+      "category": "CASE_NUMBER",
+      "start": 460,
+      "end": 472
+    },
+    {
+      "text": "Warangal District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 484,
+      "end": 540
+    },
+    {
+      "text": "9 April 2023",
+      "category": "DATE",
+      "start": 544,
+      "end": 556
+    },
+    {
+      "text": "age (58) + occupation (pharmacist) + city (Warangal) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

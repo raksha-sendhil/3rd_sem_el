@@ -1,0 +1,98 @@
+{
+  "doc_id": "2f3944c85b243f92",
+  "text": "Intake note (Commercial team, 20 July 2024). Our client Anjali Rao is a 63-year-old railway employee who lives at Plot 87, Vesu, Surat 395040 and can be reached on +91 96797 09975 or anjali.rao@example.com. The client's PAN EZRPR9130W.\nThe client consulted us about a wrongful termination matter against Karve Industries. The wrongful termination claim against M/s Karve Industries is for INR 51,50,000/-; the employer withheld the last salary.\nThe matter was filed as Complaint No. 200/2024 before the Surat Labour Court on 22 November 2024.",
+  "spans": [
+    {
+      "text": "20 July 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Anjali Rao",
+      "category": "NAME",
+      "start": 56,
+      "end": 66
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 100
+    },
+    {
+      "text": "Plot 87, Vesu, Surat 395040",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 141
+    },
+    {
+      "text": "+91 96797 09975",
+      "category": "PHONE",
+      "start": 164,
+      "end": 179
+    },
+    {
+      "text": "anjali.rao@example.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 205
+    },
+    {
+      "text": "EZRPR9130W",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 268,
+      "end": 288
+    },
+    {
+      "text": "Karve Industries",
+      "category": "ORGANIZATION",
+      "start": 304,
+      "end": 320
+    },
+    {
+      "text": "Karve Industries",
+      "category": "ORGANIZATION",
+      "start": 365,
+      "end": 381
+    },
+    {
+      "text": "INR 51,50,000/-",
+      "category": "MONEY",
+      "start": 389,
+      "end": 404
+    },
+    {
+      "text": "Complaint No. 200/2024",
+      "category": "CASE_NUMBER",
+      "start": 469,
+      "end": 491
+    },
+    {
+      "text": "Surat Labour Court",
+      "category": "COURT",
+      "start": 503,
+      "end": 521
+    },
+    {
+      "text": "22 November 2024",
+      "category": "DATE",
+      "start": 525,
+      "end": 541
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

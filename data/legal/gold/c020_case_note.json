@@ -1,0 +1,74 @@
+{
+  "doc_id": "cf87b721c9387874",
+  "text": "Case note: CC/239/2019\nClient: Sneha Chatterjee (civil engineer, Warangal)\nOpposing party: M/s Aravali Textiles Pvt Ltd\nCourt: Judicial Magistrate First Class Court at Warangal\nFiled on: 22 September 2019\nClaim amount: ₹35,70,000\nIssue: cheque bounce. The drawer stopped the cheque with a stop-payment instruction.\nAdvice given: Argue that a stop-payment instruction does not protect the drawer when the debt is admitted.\nOutcome: The drawer's application to discharge the complaint was rejected.\nRecommended next step: Press for an early date for cross-examination.\nWitness: Suresh Jadhav",
+  "spans": [
+    {
+      "text": "CC/239/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 22
+    },
+    {
+      "text": "Sneha Chatterjee",
+      "category": "NAME",
+      "start": 31,
+      "end": 47
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 49,
+      "end": 63
+    },
+    {
+      "text": "Warangal",
+      "category": "LOCATION",
+      "start": 65,
+      "end": 73
+    },
+    {
+      "text": "Aravali Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 95,
+      "end": 119
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Warangal",
+      "category": "COURT",
+      "start": 127,
+      "end": 176
+    },
+    {
+      "text": "22 September 2019",
+      "category": "DATE",
+      "start": 187,
+      "end": 204
+    },
+    {
+      "text": "₹35,70,000",
+      "category": "MONEY",
+      "start": 219,
+      "end": 229
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 237,
+      "end": 250
+    },
+    {
+      "text": "Suresh Jadhav",
+      "category": "NAME",
+      "start": 576,
+      "end": 589
+    },
+    {
+      "text": "occupation (civil engineer) + city (Warangal) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

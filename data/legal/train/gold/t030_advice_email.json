@@ -1,0 +1,56 @@
+{
+  "doc_id": "ae7c2d881e90b926",
+  "text": "Subject: Your land dispute matter - O.S. No. 2655/2022\n\nDear Mr. Pillai,\n\nThank you for meeting us on 07/08/2022 about your dispute with Vivek Bose. As we understand it, relatives dispute who owns the ancestral land. The matter is listed before the Coimbatore District Court.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office. We will pursue the full claim of Rs. 4,57,00,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2655/2022",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Pillai",
+      "category": "NAME",
+      "start": 65,
+      "end": 71
+    },
+    {
+      "text": "07/08/2022",
+      "category": "DATE",
+      "start": 102,
+      "end": 112
+    },
+    {
+      "text": "Vivek Bose",
+      "category": "NAME",
+      "start": 137,
+      "end": 147
+    },
+    {
+      "text": "Coimbatore District Court",
+      "category": "COURT",
+      "start": 249,
+      "end": 274
+    },
+    {
+      "text": "Rs. 4,57,00,000",
+      "category": "MONEY",
+      "start": 493,
+      "end": 508
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 525,
+      "end": 544
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

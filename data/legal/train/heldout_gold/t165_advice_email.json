@@ -1,0 +1,44 @@
+{
+  "doc_id": "8914cda4f5eb623a",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Srivastava,\n\nThank you for meeting us on 6 November 2020 about your dispute with Ananya Chandran. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of INR 22,80,000/-.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Srivastava",
+      "category": "NAME",
+      "start": 45,
+      "end": 55
+    },
+    {
+      "text": "6 November 2020",
+      "category": "DATE",
+      "start": 86,
+      "end": 101
+    },
+    {
+      "text": "Ananya Chandran",
+      "category": "NAME",
+      "start": 126,
+      "end": 141
+    },
+    {
+      "text": "INR 22,80,000/-",
+      "category": "MONEY",
+      "start": 514,
+      "end": 529
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 546,
+      "end": 558
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

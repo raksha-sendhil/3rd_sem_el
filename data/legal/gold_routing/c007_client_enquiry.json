@@ -1,0 +1,62 @@
+{
+  "doc_id": "fe3f2d2b62d7e0f4",
+  "routing": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "Harish Subramanian",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Sujata Sathe",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "₹15,10,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "S.C.C. No. 2572/2021",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nashik",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "+91 77499 92467",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "harish.subramanian4@example.com",
+      "category": "EMAIL",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

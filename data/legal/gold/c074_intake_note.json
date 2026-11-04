@@ -1,0 +1,104 @@
+{
+  "doc_id": "cc9b97834be47db5",
+  "text": "Intake note (Property team, 10 October 2018). Our client Gayatri Mishra is a 46-year-old hardware dealer who lives at Flat 13B, Edappally, Kochi 682006 and can be reached on +91 66063 49354 or gayatri.mishra9@example.com. The client's PAN SJAPM3642V, Aadhaar 6659 7627 9961.\nThe client consulted us about a land dispute matter against Radhika Agarwal. The land dispute with Radhika Agarwal concerns agricultural land valued at Rs 2,87,00,000; the occupant claims ownership by adverse possession.\nThe matter was filed as O.S. No. 2027/2019 before the Kochi District Court on 9 March 2019.",
+  "spans": [
+    {
+      "text": "10 October 2018",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Gayatri Mishra",
+      "category": "NAME",
+      "start": 57,
+      "end": 71
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 104
+    },
+    {
+      "text": "Flat 13B, Edappally, Kochi 682006",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 151
+    },
+    {
+      "text": "+91 66063 49354",
+      "category": "PHONE",
+      "start": 174,
+      "end": 189
+    },
+    {
+      "text": "gayatri.mishra9@example.com",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 220
+    },
+    {
+      "text": "SJAPM3642V",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 249
+    },
+    {
+      "text": "6659 7627 9961",
+      "category": "ID_NUMBER",
+      "start": 259,
+      "end": 273
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 307,
+      "end": 319
+    },
+    {
+      "text": "Radhika Agarwal",
+      "category": "NAME",
+      "start": 335,
+      "end": 350
+    },
+    {
+      "text": "Radhika Agarwal",
+      "category": "NAME",
+      "start": 374,
+      "end": 389
+    },
+    {
+      "text": "Rs 2,87,00,000",
+      "category": "MONEY",
+      "start": 427,
+      "end": 441
+    },
+    {
+      "text": "O.S. No. 2027/2019",
+      "category": "CASE_NUMBER",
+      "start": 520,
+      "end": 538
+    },
+    {
+      "text": "Kochi District Court",
+      "category": "COURT",
+      "start": 550,
+      "end": 570
+    },
+    {
+      "text": "9 March 2019",
+      "category": "DATE",
+      "start": 574,
+      "end": 586
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

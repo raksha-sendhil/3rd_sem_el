@@ -1,0 +1,44 @@
+{
+  "doc_id": "e0c762decc06f938",
+  "text": "Subject: Your anticipatory bail matter - FIR No. 230/2023\n\nDear Ms. Hegde,\n\nThank you for meeting us on 23 November 2023 about your dispute with Arjun Swamy. As we understand it, the complaint was filed during a matrimonial dispute.\n\nOur advice is to seek interim protection and offer to attend mediation. Please collect the marriage certificate and messages showing attempts to settle and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "FIR No. 230/2023",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 57
+    },
+    {
+      "text": "Hegde",
+      "category": "NAME",
+      "start": 68,
+      "end": 73
+    },
+    {
+      "text": "23 November 2023",
+      "category": "DATE",
+      "start": 104,
+      "end": 120
+    },
+    {
+      "text": "Arjun Swamy",
+      "category": "NAME",
+      "start": 145,
+      "end": 156
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 433,
+      "end": 448
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

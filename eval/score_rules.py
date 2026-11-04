@@ -16,7 +16,7 @@ from pathlib import Path
 
 from sanitise.rules import ALL_LAYERS, rule_detect
 
-SKIP = {"QUASI_COMBO", "MEDICAL_CONDITION", "SYMPTOM"}  # LLM-pass scope
+SKIP = {"QUASI_COMBO", "MEDICAL_CONDITION", "SYMPTOM", "LEGAL_ISSUE"}  # LLM-pass scope
 
 
 def overlaps(a, b):
@@ -95,7 +95,10 @@ def main():
     gold_dir = (
         Path(pos[0]) if pos else Path(__file__).resolve().parent.parent / "data" / "gold_draft"
     )
-    docs = [json.loads(p.read_text()) for p in sorted(gold_dir.glob("*.json"))]
+    docs = [
+        {"name": p.stem, **json.loads(p.read_text(encoding="utf-8"))}
+        for p in sorted(gold_dir.glob("*.json"))
+    ]
     if "--ablation" not in args:
         evaluate(docs, gold_dir, layers, show="--show" in args)
         return

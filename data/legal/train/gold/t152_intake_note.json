@@ -1,0 +1,98 @@
+{
+  "doc_id": "cd8fd74cc4c7bdef",
+  "text": "Intake note (Property team, 9 November 2022). Our client Rupali Ranade is a 55-year-old fashion designer who lives at Bungalow 19, Vesu, Surat 395033 and can be reached on +91 75642 98712 or rupali.ranade43@example.com. The client's PAN QSSPR9444F.\nThe client consulted us about a tenancy eviction matter against Sneha Shah. The tenancy dispute with Sneha Shah concerns rent arrears of ₹1,65,000; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.A. No. 2222/2022 before the Surat District Court on 10 December 2022.",
+  "spans": [
+    {
+      "text": "9 November 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Rupali Ranade",
+      "category": "NAME",
+      "start": 57,
+      "end": 70
+    },
+    {
+      "text": "55-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Bungalow 19, Vesu, Surat 395033",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 149
+    },
+    {
+      "text": "+91 75642 98712",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "rupali.ranade43@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 218
+    },
+    {
+      "text": "QSSPR9444F",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 281,
+      "end": 297
+    },
+    {
+      "text": "Sneha Shah",
+      "category": "NAME",
+      "start": 313,
+      "end": 323
+    },
+    {
+      "text": "Sneha Shah",
+      "category": "NAME",
+      "start": 350,
+      "end": 360
+    },
+    {
+      "text": "₹1,65,000",
+      "category": "MONEY",
+      "start": 386,
+      "end": 395
+    },
+    {
+      "text": "R.C.A. No. 2222/2022",
+      "category": "CASE_NUMBER",
+      "start": 473,
+      "end": 493
+    },
+    {
+      "text": "Surat District Court",
+      "category": "COURT",
+      "start": 505,
+      "end": 525
+    },
+    {
+      "text": "10 December 2022",
+      "category": "DATE",
+      "start": 529,
+      "end": 545
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}
