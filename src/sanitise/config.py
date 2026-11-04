@@ -86,6 +86,19 @@ class Settings(BaseSettings):
     index_dir: str = "data/index"
     embedding_model: str = "BAAI/bge-m3"
 
+    # ---- PDF / image input (sanitise.ingest). PDF pages with a real text layer are read
+    # directly; scanned pages and images go to a vision model on Ollama.
+    ocr_model: str = "qwen3-vl:8b-instruct"
+    ocr_timeout_s: float = Field(default=600.0, gt=0)
+    ocr_num_ctx: int = Field(default=16384, ge=2048)
+    ocr_num_predict: int = Field(default=4096, ge=256)
+    ocr_dpi: int = Field(default=200, ge=72, le=400)  # scanned PDF pages are rendered at this
+    ocr_max_side: int = Field(default=2000, ge=640)  # longest image side sent to the model
+    ocr_min_side: int = Field(default=1200, ge=320)  # smaller photos are enlarged to this
+    ingest_max_mb: float = Field(default=25.0, gt=0)
+    ingest_max_pages: int = Field(default=30, ge=1)
+    ingest_strip_headers: bool = True
+
     # ---- HTTP API
     api_host: str = "127.0.0.1"
     api_port: int = 8000

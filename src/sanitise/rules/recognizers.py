@@ -459,6 +459,21 @@ ID_RULES = [
         rf"\b{_ID_LABEL}\s*(?:is|:|#|=|-)?\s*(?P<value>(?=[A-Z0-9-]*\d)[A-Z0-9][A-Z0-9-]{{3,}})\b",
         0.9,
     ),
+    # Hospital, bank and Indian ID labels, as printed on case sheets, lab reports, bills and
+    # statements (scanned or exported): "UHID: MH-2024-00187", "IP No. 2024/1187", "PAN: ...".
+    # Values may contain "/"; the label must end at a non-letter, so "Pantop 40" is no PAN.
+    Rule(
+        "hospital_finance_id",
+        r"\b(?:UHID|U\.H\.I\.D\.?|(?:IP|OP|IPD|OPD|MR|MRD|lab|sample|bill|receipt|registration"
+        r"|regn?\.?|folio|cheque|claim|policy)\s*(?:no\.?|number|id|#)|ABHA(?:\s*(?:no\.?|number|id))?"
+        r"|aadha?a?r(?:\s*(?:no\.?|number))?|PAN(?:\s*(?:no\.?|number))?|IFSC(?:\s*code)?|GSTIN|CIN)"
+        r"(?![A-Za-z])\s*(?:is|:|#|=|-|\.)?\s*(?P<value>(?=[A-Z0-9/-]*\d)[A-Z0-9][A-Z0-9/-]{2,}[A-Z0-9])",
+        0.9,
+    ),
+    # Unlabelled Indian formats: PAN (ABCDE1234F), Aadhaar (1234 5678 9012), IFSC (SBIN0001234)
+    Rule("pan_format", r"\b[A-Z]{5}\d{4}[A-Z]\b", 0.7, flags=0),
+    Rule("aadhaar_format", r"\b[2-9]\d{3}[ -]?\d{4}[ -]?\d{4}\b", 0.6),
+    Rule("ifsc_format", r"\b[A-Z]{4}0[A-Z0-9]{6}\b", 0.7, flags=0),
 ]
 
 # ---------------------------------------------------------------- EMAIL layer

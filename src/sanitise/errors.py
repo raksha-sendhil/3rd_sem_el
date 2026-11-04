@@ -28,6 +28,8 @@ Stage = Literal[
     "answer",
     "attack",
     "session",
+    # PDF / image input (sanitise.ingest)
+    "ingest",
 ]
 
 
@@ -43,6 +45,8 @@ class ErrorCode(str, Enum):
     ATTACK_NOT_FOUND = "ATTACK_NOT_FOUND"
     SESSION_NOT_FOUND = "SESSION_NOT_FOUND"
     LEAK_CHECK_FAILED = "LEAK_CHECK_FAILED"
+    # PDF / image input (sanitise.ingest)
+    UNSUPPORTED_FILE = "UNSUPPORTED_FILE"
 
 
 class ErrorBody(BaseModel):
@@ -161,3 +165,13 @@ class LeakCheckFailed(PipelineError):
 
     code = ErrorCode.LEAK_CHECK_FAILED
     http_status = 409  # spec 10.3: leak check failed, sanitised text withheld
+
+
+# ------------------------------------------------------------------ PDF / image input
+
+
+class UnsupportedFile(PipelineError):
+    """Not a PDF, an image or UTF-8 text, a damaged file, or a file over the size limit."""
+
+    code = ErrorCode.UNSUPPORTED_FILE
+    http_status = 415

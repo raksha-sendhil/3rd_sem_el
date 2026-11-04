@@ -5,6 +5,7 @@
     POST /v1/detect/llm    { doc_id, text, explicit } -> DetectorOutput   (LLM pass only)
     POST /v1/score         { pred[], gold[] }         -> SpanMetrics
     GET  /v1/health   -> { status, ollama_reachable, model, pipeline_version }
+    POST /v1/ingest   { filename, content_base64 }    -> IngestResult (PDF / image -> text)
 
 Every ``PipelineError`` becomes the spec 8.5 error envelope with an HTTP status
 from the error class (413 DOC_TOO_LONG, 502 SCHEMA_VALIDATION_FAILED, 503
@@ -21,6 +22,8 @@ Run with ``sanitise serve`` or ``uvicorn sanitise.api.app:create_app --factory``
 from __future__ import annotations
 
 import asyncio
+import base64
+import binascii
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -43,6 +46,7 @@ from sanitise.api.models import (
     DocumentView,
     ExtractRequest,
     HealthResponse,
+    IngestRequest,
     QueryRequest,
     RewriteRequest,
     SanitiseRequest,
@@ -58,8 +62,9 @@ from sanitise.attacks.runner import (
     summarise,
 )
 from sanitise.config import Settings, get_settings
-from sanitise.errors import PipelineError
+from sanitise.errors import PipelineError, UnsupportedFile
 from sanitise.evaluation import scoring
+from sanitise.ingest import IngestResult, MockVisionReader, VisionReader, ingest_bytes
 from sanitise.llm.base import BaseJSONClient
 from sanitise.llm.factory import build_llm_client, close_llm_client
 from sanitise.llm.ollama import OllamaClient
@@ -109,9 +114,12 @@ def create_app(
             app.state.llm = llm
         else:
             app.state.llm = mock_llm() if mock else build_llm_client(settings)
+        # the vision model for scanned pages and images (PDF / image input)
+        app.state.vision = MockVisionReader() if mock else VisionReader.from_settings(settings)
         try:
             yield
         finally:
+            await app.state.vision.aclose()
             if owned:
                 await close_llm_client(app.state.llm)
 
@@ -340,6 +348,23 @@ def create_app(
             events(),
             media_type="text/event-stream",
             headers={"cache-control": "no-cache", "x-accel-buffering": "no"},
+        )
+
+    @app.post("/v1/ingest", response_model=IngestResult)
+    async def post_ingest(body: IngestRequest, request: Request) -> IngestResult:
+        """A file to text: PDF text layers read directly, scanned pages and images through the
+        vision model. The text comes back for checking; the agents are called separately."""
+        try:
+            data = base64.b64decode(body.content_base64, validate=True)
+        except (binascii.Error, ValueError):
+            raise UnsupportedFile("content_base64 is not valid base64", stage="ingest") from None
+        return await ingest_bytes(
+            data,
+            body.filename,
+            reader=request.app.state.vision,
+            settings=settings,
+            strip_headers=body.strip_headers,
+            force_vision=body.force_vision,
         )
 
     @app.get("/v1/health", response_model=HealthResponse)

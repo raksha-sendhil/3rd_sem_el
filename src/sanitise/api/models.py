@@ -116,3 +116,17 @@ class HealthResponse(BaseModel):
     ollama_reachable: bool
     model: str
     pipeline_version: str
+
+
+# ------------------------------------------------------------------ PDF / image input
+
+
+class IngestRequest(BaseModel):
+    """A PDF, image or text file, base64-encoded (no multipart parser needed)."""
+
+    filename: str = ""
+    content_base64: str = Field(min_length=1)
+    # None: settings.ingest_strip_headers (on by default)
+    strip_headers: bool | None = None
+    # send pages with a text layer to the vision model too (for testing)
+    force_vision: bool = False

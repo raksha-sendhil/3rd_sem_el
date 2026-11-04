@@ -44,6 +44,8 @@ def test_codes_and_statuses() -> None:
         "ATTACK_NOT_FOUND",
         "SESSION_NOT_FOUND",
         "LEAK_CHECK_FAILED",
+        # PDF / image input
+        "UNSUPPORTED_FILE",
     }
     assert (DocTooLong("x").code, DocTooLong.http_status) == (ErrorCode.DOC_TOO_LONG, 413)
     assert (LLMTimeout("x").code, LLMTimeout.http_status) == (ErrorCode.LLM_TIMEOUT, 504)

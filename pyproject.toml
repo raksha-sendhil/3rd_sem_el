@@ -19,6 +19,11 @@ dependencies = [
     "tldextract>=5",  # used directly by the rule pass (URL filtering)
     # Scoring (Person D)
     "scikit-learn>=1.5",
+    # PDF / image input (Person C): PDF text layers, page images, OCR scoring
+    "pymupdf>=1.26",
+    "pymupdf4llm>=0.2",
+    "pillow>=10",
+    "rapidfuzz>=3",
 ]
 
 [project.optional-dependencies]
@@ -86,10 +91,12 @@ ignore = [
 # Person A's recognizers match curly quotes on purpose, and some regexes are long.
 "src/sanitise/rules/*.py" = ["RUF001", "E501"]
 # Hand-annotated corpus text (D's build_corpus, A's build_gold) is kept on one line.
-"tools/*.py" = ["E501"]
+"tools/*.py" = ["E501", "ASYNC240", "RUF005"]
 "eval/*.py" = ["E501"]
 # Imports come after the en_core_web_lg skip check.
 "tests/rules/test_rule_detect.py" = ["E402"]
+# The vision prompt is kept one rule per line.
+"src/sanitise/ingest/vision.py" = ["E501"]
 # Shell lines (!cmd {var}) use loop variables ruff cannot see; shell commands run long;
 # Colab form settings (#@param) come before the imports.
 "notebooks/*.ipynb" = ["E501", "B007", "E402"]

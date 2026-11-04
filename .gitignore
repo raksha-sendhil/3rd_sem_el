@@ -32,3 +32,9 @@ data/raw/
 .idea/
 .DS_Store
 Thumbs.db
+
+# OCR test set: downloaded fonts and IAM line images (fetched again when needed)
+data/ocr_test/.fonts/
+data/ocr_test/.iam/
+# OCR evaluation: per-document readings (report.md / report.json are kept)
+results/ocr/*/pred/
