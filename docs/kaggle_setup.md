@@ -49,9 +49,9 @@ person who wrote this.
    | `NGROK_AUTHTOKEN` | the ngrok authtoken |
    | `NGROK_DOMAIN` | e.g. `name.ngrok-free.dev` (no `https://`) |
 
-4. In cell **1 Setup**, set `BRANCH` to the branch that has the code you want (`main`, or
-   `demo-size` / `case-files`) and check `MODEL = "llama3:8b"` and `AGENTS_BACKEND = "gemini"`.
-   Edit the plain variables at the top of the cell instead of using form fields.
+4. In cell **1 Setup**, leave `BRANCH = "main"` (it has everything, case files included) and
+   check `MODEL = "llama3:8b"` and `AGENTS_BACKEND = "gemini"`. Edit the plain variables at the
+   top of the cell instead of using form fields.
 5. Run the cells in order (Shift+Enter on each; do not use "Run All" the first time):
 
    | Cell | Notes |
