@@ -1,0 +1,50 @@
+{
+  "doc_id": "a79caa7612ff993a",
+  "text": "Subject: Your divorce by mutual consent matter\n\nDear Ms. Ranade,\n\nThank you for meeting us on 17/10/2019 about your dispute with Vandana Sathe. As we understand it, the spouses agree on a single payment instead of maintenance. The matter is listed before the Family Court at Madurai.\n\nOur advice is to record the one-time alimony settlement in the consent terms. Please collect income tax returns and the draft consent terms and send copies to this office. We will pursue the full claim of 9.4 lakh rupees.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Ranade",
+      "category": "NAME",
+      "start": 57,
+      "end": 63
+    },
+    {
+      "text": "17/10/2019",
+      "category": "DATE",
+      "start": 94,
+      "end": 104
+    },
+    {
+      "text": "Vandana Sathe",
+      "category": "NAME",
+      "start": 129,
+      "end": 142
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 259,
+      "end": 282
+    },
+    {
+      "text": "9.4 lakh rupees",
+      "category": "MONEY",
+      "start": 490,
+      "end": 505
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 522,
+      "end": 539
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

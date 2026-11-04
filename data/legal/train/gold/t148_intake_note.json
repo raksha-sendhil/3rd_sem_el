@@ -1,0 +1,110 @@
+{
+  "doc_id": "e592452d6121c137",
+  "text": "Intake note - Commercial team\nDate: 14 February 2022\nClient: Swati Varghese, a 58-year-old college lecturer from Nashik.\nAddress: Plot 69, Gangapur Road, Nashik 422019\nPhone: 90054 87951. Email: swati.varghese@example.in. PAN RTHPV4981Z.\nMatter: cheque bounce\nOpposing party: M/s Shetty Traders\nFacts: A cheque for 9.4 lakh rupees issued by Shetty Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as S.C.C. No. 1181/2022 before the Judicial Magistrate First Class Court at Nashik on 21 August 2022.",
+  "spans": [
+    {
+      "text": "14 February 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 52
+    },
+    {
+      "text": "Swati Varghese",
+      "category": "NAME",
+      "start": 61,
+      "end": 75
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 107
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 113,
+      "end": 119
+    },
+    {
+      "text": "Plot 69, Gangapur Road, Nashik 422019",
+      "category": "ADDRESS",
+      "start": 130,
+      "end": 167
+    },
+    {
+      "text": "90054 87951",
+      "category": "PHONE",
+      "start": 175,
+      "end": 186
+    },
+    {
+      "text": "swati.varghese@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 220
+    },
+    {
+      "text": "RTHPV4981Z",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 246,
+      "end": 259
+    },
+    {
+      "text": "Shetty Traders",
+      "category": "ORGANIZATION",
+      "start": 280,
+      "end": 294
+    },
+    {
+      "text": "9.4 lakh rupees",
+      "category": "MONEY",
+      "start": 315,
+      "end": 330
+    },
+    {
+      "text": "Shetty Traders",
+      "category": "ORGANIZATION",
+      "start": 341,
+      "end": 355
+    },
+    {
+      "text": "S.C.C. No. 1181/2022",
+      "category": "CASE_NUMBER",
+      "start": 444,
+      "end": 464
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nashik",
+      "category": "COURT",
+      "start": 476,
+      "end": 523
+    },
+    {
+      "text": "21 August 2022",
+      "category": "DATE",
+      "start": 527,
+      "end": 541
+    },
+    {
+      "text": "age (58) + occupation (college lecturer) + city (Nashik) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

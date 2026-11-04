@@ -1,0 +1,68 @@
+{
+  "doc_id": "4e3fb35754b4db8c",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Anand Sen. I am a 37-year-old government clerk living in Coimbatore. Joseph Tiwari gave me a cheque for Rs 22,40,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. Can your firm advise me on what to do next? You can call me on +91 83957 84757 or email anand.sen75@example.com.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Anand Sen",
+      "category": "NAME",
+      "start": 64,
+      "end": 73
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 82,
+      "end": 93
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 94,
+      "end": 110
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 121,
+      "end": 131
+    },
+    {
+      "text": "Joseph Tiwari",
+      "category": "NAME",
+      "start": 133,
+      "end": 146
+    },
+    {
+      "text": "Rs 22,40,000",
+      "category": "MONEY",
+      "start": 168,
+      "end": 180
+    },
+    {
+      "text": "+91 83957 84757",
+      "category": "PHONE",
+      "start": 328,
+      "end": 343
+    },
+    {
+      "text": "anand.sen75@example.com",
+      "category": "EMAIL",
+      "start": 353,
+      "end": 376
+    },
+    {
+      "text": "age (37) + occupation (government clerk) + city (Coimbatore) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

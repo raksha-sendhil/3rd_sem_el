@@ -20,11 +20,15 @@ def _ms(start: float) -> int:
     return round((time.perf_counter() - start) * 1000)
 
 
-async def sanitise(doc_id: str, text: str, llm: LLMClient) -> SanitisedRecord:
+async def sanitise(
+    doc_id: str, text: str, llm: LLMClient, *, detector_llm: LLMClient | None = None
+) -> SanitisedRecord:
+    """``detector_llm`` runs Agent 1's LLM pass when given (the fine-tuned Gemma 4 on its own
+    GPU, legal build spec Part 3); Agents 2 and 3 always use ``llm``."""
     t_total = time.perf_counter()
     with track_calls() as stats:
         t = time.perf_counter()
-        detected = await detect(doc_id, text, llm)
+        detected = await detect(doc_id, text, detector_llm or llm)
         detect_ms = _ms(t)
         t = time.perf_counter()
         subs, extracted = await extract(doc_id, text, detected.output, llm)

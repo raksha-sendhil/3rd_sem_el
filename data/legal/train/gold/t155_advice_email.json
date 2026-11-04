@@ -1,0 +1,50 @@
+{
+  "doc_id": "d529b87a25aa0984",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Shetty,\n\nThank you for meeting us on 13 March 2024 about your dispute with Vikram Malhotra. As we understand it, the cheque came back with the remark account closed. The matter is listed before the Judicial Magistrate First Class Court at Panaji.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office. We will pursue the full claim of Rs 18,50,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Shetty",
+      "category": "NAME",
+      "start": 45,
+      "end": 51
+    },
+    {
+      "text": "13 March 2024",
+      "category": "DATE",
+      "start": 82,
+      "end": 95
+    },
+    {
+      "text": "Vikram Malhotra",
+      "category": "NAME",
+      "start": 120,
+      "end": 135
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 243,
+      "end": 290
+    },
+    {
+      "text": "Rs 18,50,000",
+      "category": "MONEY",
+      "start": 594,
+      "end": 606
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 623,
+      "end": 642
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

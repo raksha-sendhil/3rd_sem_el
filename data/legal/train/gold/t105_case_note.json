@@ -1,0 +1,68 @@
+{
+  "doc_id": "7e1dfc5a8dc32ef7",
+  "text": "Case note: O.S. No. 1494/2020\nClient: Deepak Ghosh (bank manager, Lucknow)\nOpposing party: Vandana Kurian\nCourt: Lucknow District Court\nFiled on: 4 March 2020\nClaim amount: ₹1,86,00,000\nIssue: land dispute. The occupant claims ownership by adverse possession.\nAdvice given: Rebut the adverse possession claim with tax receipts showing continuous ownership.\nOutcome: The adverse possession claim was dismissed.\nRecommended next step: Seek possession of the land.",
+  "spans": [
+    {
+      "text": "O.S. No. 1494/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Deepak Ghosh",
+      "category": "NAME",
+      "start": 38,
+      "end": 50
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 66,
+      "end": 73
+    },
+    {
+      "text": "Vandana Kurian",
+      "category": "NAME",
+      "start": 91,
+      "end": 105
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 113,
+      "end": 135
+    },
+    {
+      "text": "4 March 2020",
+      "category": "DATE",
+      "start": 146,
+      "end": 158
+    },
+    {
+      "text": "₹1,86,00,000",
+      "category": "MONEY",
+      "start": 173,
+      "end": 185
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 193,
+      "end": 205
+    },
+    {
+      "text": "occupation (bank manager) + city (Lucknow) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

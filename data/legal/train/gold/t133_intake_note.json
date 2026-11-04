@@ -1,0 +1,110 @@
+{
+  "doc_id": "438f8fb8e0b48bec",
+  "text": "Intake note - Family team\nDate: 16 October 2024\nClient: Vivek Sandhu, a 36-year-old journalist from Chennai.\nAddress: Bungalow 31, Anna Nagar, Chennai 600032\nPhone: +91 71224 41206. Email: vivek.sandhu28@example.in. PAN EVWPS8004Z.\nMatter: divorce by mutual consent\nOpposing party: Shruti Karve\nFacts: The divorce by mutual consent with Shruti Karve includes a settlement of Rs 79,60,000; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 1258/2024 before the Family Court at Chennai on 11 December 2024.",
+  "spans": [
+    {
+      "text": "16 October 2024",
+      "category": "DATE",
+      "start": 32,
+      "end": 47
+    },
+    {
+      "text": "Vivek Sandhu",
+      "category": "NAME",
+      "start": 56,
+      "end": 68
+    },
+    {
+      "text": "36-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 94
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 100,
+      "end": 107
+    },
+    {
+      "text": "Bungalow 31, Anna Nagar, Chennai 600032",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 157
+    },
+    {
+      "text": "+91 71224 41206",
+      "category": "PHONE",
+      "start": 165,
+      "end": 180
+    },
+    {
+      "text": "vivek.sandhu28@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 214
+    },
+    {
+      "text": "EVWPS8004Z",
+      "category": "ID_NUMBER",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 240,
+      "end": 265
+    },
+    {
+      "text": "Shruti Karve",
+      "category": "NAME",
+      "start": 282,
+      "end": 294
+    },
+    {
+      "text": "Shruti Karve",
+      "category": "NAME",
+      "start": 337,
+      "end": 349
+    },
+    {
+      "text": "Rs 79,60,000",
+      "category": "MONEY",
+      "start": 375,
+      "end": 387
+    },
+    {
+      "text": "Petition No. 1258/2024",
+      "category": "CASE_NUMBER",
+      "start": 462,
+      "end": 484
+    },
+    {
+      "text": "Family Court at Chennai",
+      "category": "COURT",
+      "start": 496,
+      "end": 519
+    },
+    {
+      "text": "11 December 2024",
+      "category": "DATE",
+      "start": 523,
+      "end": 539
+    },
+    {
+      "text": "age (36) + occupation (journalist) + city (Chennai) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

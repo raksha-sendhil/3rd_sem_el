@@ -1,0 +1,56 @@
+{
+  "doc_id": "01871c656f959cf1",
+  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 1714/2025\n\nDear Mr. Reddy,\n\nThank you for meeting us on 10 February 2026 about your dispute with M/s Skyline Foods Pvt Ltd. As we understand it, a conflicting trademark was registered. The matter is listed before the Madras High Court.\n\nOur advice is to file a rectification petition against the conflicting trademark. Please collect the trademark registration and the GI registration and send copies to this office. We will pursue the full claim of Rs 5,97,00,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 45
+    },
+    {
+      "text": "CS(COMM) 1714/2025",
+      "category": "CASE_NUMBER",
+      "start": 55,
+      "end": 73
+    },
+    {
+      "text": "Reddy",
+      "category": "NAME",
+      "start": 84,
+      "end": 89
+    },
+    {
+      "text": "10 February 2026",
+      "category": "DATE",
+      "start": 120,
+      "end": 136
+    },
+    {
+      "text": "Skyline Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 165,
+      "end": 186
+    },
+    {
+      "text": "Madras High Court",
+      "category": "COURT",
+      "start": 281,
+      "end": 298
+    },
+    {
+      "text": "Rs 5,97,00,000",
+      "category": "MONEY",
+      "start": 514,
+      "end": 528
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 545,
+      "end": 560
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

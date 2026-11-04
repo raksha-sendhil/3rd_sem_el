@@ -1,0 +1,56 @@
+{
+  "doc_id": "ab97158efcd7aa01",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 2736/2019\n\nDear Mr. Menon,\n\nThank you for meeting us on 28 December 2019 about your dispute with Anjali Fernandes. As we understand it, the wife wants her jewellery and gifts returned. The matter is listed before the Family Court at Madurai.\n\nOur advice is to list the stridhan items to be returned in the settlement deed. Please collect the list of jewellery and gifts with any receipts and send copies to this office. We will pursue the full claim of ₹8,20,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 2736/2019",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 71
+    },
+    {
+      "text": "Menon",
+      "category": "NAME",
+      "start": 82,
+      "end": 87
+    },
+    {
+      "text": "28 December 2019",
+      "category": "DATE",
+      "start": 118,
+      "end": 134
+    },
+    {
+      "text": "Anjali Fernandes",
+      "category": "NAME",
+      "start": 159,
+      "end": 175
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 279,
+      "end": 302
+    },
+    {
+      "text": "₹8,20,000",
+      "category": "MONEY",
+      "start": 515,
+      "end": 524
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 541,
+      "end": 556
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,110 @@
+{
+  "doc_id": "2786099b5a01e77b",
+  "text": "Intake note - Family team\nDate: 24/06/2020\nClient: Pallavi Bose, a 54-year-old cardiologist from Madurai.\nAddress: House No. 62, KK Nagar, Madurai 625042\nPhone: 82175 95997. Email: pallavi.bose@example.com. PAN LGVPB6932M.\nMatter: divorce by mutual consent\nOpposing party: Pranav Kapoor\nFacts: The divorce by mutual consent with Pranav Kapoor includes a settlement of ₹74,20,000; the couple has a young child.\nThe matter was filed as Petition No. 787/2020 before the Family Court at Madurai on 2 August 2020.",
+  "spans": [
+    {
+      "text": "24/06/2020",
+      "category": "DATE",
+      "start": 32,
+      "end": 42
+    },
+    {
+      "text": "Pallavi Bose",
+      "category": "NAME",
+      "start": 51,
+      "end": 63
+    },
+    {
+      "text": "54-year-old",
+      "category": "AGE",
+      "start": 67,
+      "end": 78
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 79,
+      "end": 91
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 97,
+      "end": 104
+    },
+    {
+      "text": "House No. 62, KK Nagar, Madurai 625042",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 153
+    },
+    {
+      "text": "82175 95997",
+      "category": "PHONE",
+      "start": 161,
+      "end": 172
+    },
+    {
+      "text": "pallavi.bose@example.com",
+      "category": "EMAIL",
+      "start": 181,
+      "end": 205
+    },
+    {
+      "text": "LGVPB6932M",
+      "category": "ID_NUMBER",
+      "start": 211,
+      "end": 221
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 231,
+      "end": 256
+    },
+    {
+      "text": "Pranav Kapoor",
+      "category": "NAME",
+      "start": 273,
+      "end": 286
+    },
+    {
+      "text": "Pranav Kapoor",
+      "category": "NAME",
+      "start": 329,
+      "end": 342
+    },
+    {
+      "text": "₹74,20,000",
+      "category": "MONEY",
+      "start": 368,
+      "end": 378
+    },
+    {
+      "text": "Petition No. 787/2020",
+      "category": "CASE_NUMBER",
+      "start": 434,
+      "end": 455
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 467,
+      "end": 490
+    },
+    {
+      "text": "2 August 2020",
+      "category": "DATE",
+      "start": 494,
+      "end": 507
+    },
+    {
+      "text": "age (54) + occupation (cardiologist) + city (Madurai) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

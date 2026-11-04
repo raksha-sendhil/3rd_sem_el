@@ -1,0 +1,50 @@
+{
+  "doc_id": "8cdcb988754cad35",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 2871/2022\n\nDear Ms. Karve,\n\nThank you for meeting us on 23/09/2022 about your dispute with Rahul Shetty. As we understand it, the occupant claims ownership by adverse possession.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office. We will pursue the full claim of ₹74,80,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 2871/2022",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 56
+    },
+    {
+      "text": "Karve",
+      "category": "NAME",
+      "start": 67,
+      "end": 72
+    },
+    {
+      "text": "23/09/2022",
+      "category": "DATE",
+      "start": 103,
+      "end": 113
+    },
+    {
+      "text": "Rahul Shetty",
+      "category": "NAME",
+      "start": 138,
+      "end": 150
+    },
+    {
+      "text": "₹74,80,000",
+      "category": "MONEY",
+      "start": 471,
+      "end": 481
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 498,
+      "end": 515
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

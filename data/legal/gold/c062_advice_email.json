@@ -1,0 +1,50 @@
+{
+  "doc_id": "e1f36a5bd2a4e3c7",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 1581/2021\n\nDear Ms. Sathe,\n\nThank you for meeting us on 20 March 2022 about your dispute with M/s Sunrise Realty. As we understand it, the builder never obtained the occupancy certificate.\n\nOur advice is to seek a full refund with interest because the builder failed to obtain the occupancy certificate. Please collect the builder-buyer agreement, payment receipts and the municipal reply on the occupancy certificate and send copies to this office. We will pursue the full claim of Rs 61,50,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 1581/2021",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Sathe",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "20 March 2022",
+      "category": "DATE",
+      "start": 107,
+      "end": 120
+    },
+    {
+      "text": "Sunrise Realty",
+      "category": "ORGANIZATION",
+      "start": 149,
+      "end": 163
+    },
+    {
+      "text": "Rs 61,50,000",
+      "category": "MONEY",
+      "start": 534,
+      "end": 546
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 563,
+      "end": 575
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "f8683311a398ebd2",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Mr. Bhandari,\n\nThank you for meeting us on 19 October 2021 about your dispute with Sujata More. As we understand it, the complaint turns a business disagreement into a criminal case. The matter is listed before the Coimbatore Sessions Court.\n\nOur advice is to argue that the dispute is civil in nature and offer to cooperate with the investigation. Please collect the partnership papers and the correspondence with the complainant and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Bhandari",
+      "category": "NAME",
+      "start": 49,
+      "end": 57
+    },
+    {
+      "text": "19 October 2021",
+      "category": "DATE",
+      "start": 88,
+      "end": 103
+    },
+    {
+      "text": "Sujata More",
+      "category": "NAME",
+      "start": 128,
+      "end": 139
+    },
+    {
+      "text": "Coimbatore Sessions Court",
+      "category": "COURT",
+      "start": 260,
+      "end": 285
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 523,
+      "end": 538
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

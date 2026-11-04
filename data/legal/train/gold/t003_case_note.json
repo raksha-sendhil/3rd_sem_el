@@ -1,0 +1,68 @@
+{
+  "doc_id": "b9f1d72e0c3b5706",
+  "text": "Case note: CC/1715/2025\nClient: Ashok Trivedi (paediatrician, Panaji)\nOpposing party: Anirudh Banerjee\nCourt: Judicial Magistrate First Class Court at Panaji\nFiled on: 15 July 2025\nClaim amount: ₹34,10,000\nIssue: cheque bounce. The cheque was returned unpaid for insufficient funds.\nAdvice given: Send a statutory demand notice to the drawer and file the complaint if the drawer does not pay.\nOutcome: The drawer paid the full cheque amount after the first hearing.\nRecommended next step: Withdraw the complaint once the payment clears.",
+  "spans": [
+    {
+      "text": "CC/1715/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Ashok Trivedi",
+      "category": "NAME",
+      "start": 32,
+      "end": 45
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 47,
+      "end": 60
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 62,
+      "end": 68
+    },
+    {
+      "text": "Anirudh Banerjee",
+      "category": "NAME",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 110,
+      "end": 157
+    },
+    {
+      "text": "15 July 2025",
+      "category": "DATE",
+      "start": 168,
+      "end": 180
+    },
+    {
+      "text": "₹34,10,000",
+      "category": "MONEY",
+      "start": 195,
+      "end": 205
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 213,
+      "end": 226
+    },
+    {
+      "text": "occupation (paediatrician) + city (Panaji) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "56f097283d1e4ad9",
+  "text": "Intake note (Property team, 30 October 2023). Our client Leena Khan is a 60-year-old civil engineer who lives at House No. 4, Kuvempunagar, Mysuru 570037 and can be reached on +91 61582 44323 or leena.khan44@example.com. The client's PAN TZEPK8480N.\nThe client consulted us about a tenancy eviction matter against Thomas Mishra. The tenancy dispute with Thomas Mishra concerns rent arrears of ₹5,85,000; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.A. No. 2876/2023 before the Mysuru District Court on 23 December 2023.",
+  "spans": [
+    {
+      "text": "30 October 2023",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Leena Khan",
+      "category": "NAME",
+      "start": 57,
+      "end": 67
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 99
+    },
+    {
+      "text": "House No. 4, Kuvempunagar, Mysuru 570037",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 153
+    },
+    {
+      "text": "+91 61582 44323",
+      "category": "PHONE",
+      "start": 176,
+      "end": 191
+    },
+    {
+      "text": "leena.khan44@example.com",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 219
+    },
+    {
+      "text": "TZEPK8480N",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 248
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 282,
+      "end": 298
+    },
+    {
+      "text": "Thomas Mishra",
+      "category": "NAME",
+      "start": 314,
+      "end": 327
+    },
+    {
+      "text": "Thomas Mishra",
+      "category": "NAME",
+      "start": 354,
+      "end": 367
+    },
+    {
+      "text": "₹5,85,000",
+      "category": "MONEY",
+      "start": 393,
+      "end": 402
+    },
+    {
+      "text": "R.C.A. No. 2876/2023",
+      "category": "CASE_NUMBER",
+      "start": 486,
+      "end": 506
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "start": 518,
+      "end": 539
+    },
+    {
+      "text": "23 December 2023",
+      "category": "DATE",
+      "start": 543,
+      "end": 559
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

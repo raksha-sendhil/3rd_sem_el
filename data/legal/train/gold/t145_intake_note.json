@@ -1,0 +1,98 @@
+{
+  "doc_id": "2da26bccf10d9358",
+  "text": "Intake note (Property team, 14/12/2020). Our client Manoj Bhosale is a 35-year-old general physician who lives at Flat 9A, Aundh, Pune 411045 and can be reached on +91 62283 53450 or manoj.bhosale@example.com. The client's PAN DLLPB3151E.\nThe client consulted us about a tenancy eviction matter against Charulata Sen. The tenancy dispute with Charulata Sen concerns rent arrears of ₹4,65,000; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.S. No. 2642/2021 before the Pune District Court on 14 January 2021.",
+  "spans": [
+    {
+      "text": "14/12/2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Manoj Bhosale",
+      "category": "NAME",
+      "start": 52,
+      "end": 65
+    },
+    {
+      "text": "35-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 100
+    },
+    {
+      "text": "Flat 9A, Aundh, Pune 411045",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 141
+    },
+    {
+      "text": "+91 62283 53450",
+      "category": "PHONE",
+      "start": 164,
+      "end": 179
+    },
+    {
+      "text": "manoj.bhosale@example.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 208
+    },
+    {
+      "text": "DLLPB3151E",
+      "category": "ID_NUMBER",
+      "start": 227,
+      "end": 237
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 271,
+      "end": 287
+    },
+    {
+      "text": "Charulata Sen",
+      "category": "NAME",
+      "start": 303,
+      "end": 316
+    },
+    {
+      "text": "Charulata Sen",
+      "category": "NAME",
+      "start": 343,
+      "end": 356
+    },
+    {
+      "text": "₹4,65,000",
+      "category": "MONEY",
+      "start": 382,
+      "end": 391
+    },
+    {
+      "text": "R.C.S. No. 2642/2021",
+      "category": "CASE_NUMBER",
+      "start": 495,
+      "end": 515
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 527,
+      "end": 546
+    },
+    {
+      "text": "14 January 2021",
+      "category": "DATE",
+      "start": 550,
+      "end": 565
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

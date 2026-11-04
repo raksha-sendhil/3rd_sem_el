@@ -108,6 +108,23 @@ class DocumentView(BaseModel):
     record: SanitisedRecord
 
 
+class DomainInfo(BaseModel):
+    """One domain the dashboard can switch to, and the models it runs."""
+
+    name: str
+    label: str
+    description: str = ""
+    model: str  # Agents 2-3 (Ollama)
+    answer_backend: str
+    answer_model: str
+    agent1: str
+
+
+class DomainsResponse(BaseModel):
+    default: str
+    domains: list[DomainInfo]
+
+
 class HealthResponse(BaseModel):
     status: Literal["ok", "degraded"]
     ollama_reachable: bool

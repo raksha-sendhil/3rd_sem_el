@@ -1,0 +1,44 @@
+{
+  "doc_id": "899844df7e938ecb",
+  "text": "Subject: Your cross-border insolvency matter\n\nDear Ms. Kurian,\n\nThank you for meeting us on 19/10/2020 about your dispute with Konark Industries. As we understand it, the foreign administrator wants control of the assets in this country.\n\nOur advice is to seek recognition of the foreign insolvency proceeding. Please collect the foreign court's order and the list of local assets and send copies to this office. We will pursue the full claim of Rs 84,54,00,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 37
+    },
+    {
+      "text": "Kurian",
+      "category": "NAME",
+      "start": 55,
+      "end": 61
+    },
+    {
+      "text": "19/10/2020",
+      "category": "DATE",
+      "start": 92,
+      "end": 102
+    },
+    {
+      "text": "Konark Industries",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 144
+    },
+    {
+      "text": "Rs 84,54,00,000",
+      "category": "MONEY",
+      "start": 446,
+      "end": 461
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 478,
+      "end": 490
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "74fd76901cee16ca",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 1730/2021\n\nDear Mr. Deshpande,\n\nThank you for meeting us on 22 January 2022 about your dispute with M/s Pai Pharma Ltd. As we understand it, the dismissal followed a one-sided domestic enquiry.\n\nOur advice is to demand the domestic enquiry report and challenge it for breach of natural justice. Please collect the charge sheet, the enquiry report and the reply to the charge sheet and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 1730/2021",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 67
+    },
+    {
+      "text": "Deshpande",
+      "category": "NAME",
+      "start": 78,
+      "end": 87
+    },
+    {
+      "text": "22 January 2022",
+      "category": "DATE",
+      "start": 118,
+      "end": 133
+    },
+    {
+      "text": "Pai Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 162,
+      "end": 176
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 486,
+      "end": 505
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,22 +1,28 @@
 """End-to-end utility: answer accuracy on the QA set.  OWNER: Person D.
 
-PLACEHOLDER created by Person C (a working first version). Refine the body; keep the
-signature (docs/phase3_plan.md 6.2).
-
 Answers are paired with QA items by ``answer.query == item.question``. An answer is correct
-when every string in ``item.expected`` appears in it (case-insensitive). The real version
-should also accept the generalised form of an expected string, since the protected pipeline
-answers from rewritten text.
+when every string in ``item.expected`` appears in it, ignoring case, punctuation and spacing
+("builder-buyer agreement" matches "builder buyer agreement"). The legal QA set's expected
+phrases are advice and document phrases, which the protected pipeline keeps verbatim, so no
+generalised form is needed for them.
 """
 
 from __future__ import annotations
 
+import re
+
 from sanitise.schemas import QAItem, QAMetrics, RagAnswer
+
+_NON_ALNUM = re.compile(r"[^0-9a-z]+")
+
+
+def _norm(text: str) -> str:
+    return " " + _NON_ALNUM.sub(" ", text.lower()).strip() + " "
 
 
 def _correct(answer: str, expected: list[str]) -> bool:
-    text = answer.lower()
-    return all(e.lower() in text for e in expected)
+    text = _norm(answer)
+    return all(_norm(e) in text for e in expected)
 
 
 def score_qa(answers: list[RagAnswer], qa: list[QAItem]) -> QAMetrics:

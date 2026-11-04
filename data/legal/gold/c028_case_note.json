@@ -1,0 +1,68 @@
+{
+  "doc_id": "9e557a67f837f463",
+  "text": "Case note: S.C.C. No. 831/2019\nClient: Anjali Dalvi (software engineer, Coimbatore)\nOpposing party: Arjun Rajan\nCourt: Judicial Magistrate First Class Court at Coimbatore\nFiled on: 02/01/2019\nClaim amount: ₹27,60,000\nIssue: cheque bounce. The cheque was returned unpaid for insufficient funds.\nAdvice given: Send a statutory demand notice to the drawer and file the complaint if the drawer does not pay.\nOutcome: The drawer paid the full cheque amount after the first hearing.\nRecommended next step: Withdraw the complaint once the payment clears.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 831/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Anjali Dalvi",
+      "category": "NAME",
+      "start": 39,
+      "end": 51
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 53,
+      "end": 70
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 72,
+      "end": 82
+    },
+    {
+      "text": "Arjun Rajan",
+      "category": "NAME",
+      "start": 100,
+      "end": 111
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 119,
+      "end": 170
+    },
+    {
+      "text": "02/01/2019",
+      "category": "DATE",
+      "start": 181,
+      "end": 191
+    },
+    {
+      "text": "₹27,60,000",
+      "category": "MONEY",
+      "start": 206,
+      "end": 216
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 224,
+      "end": 237
+    },
+    {
+      "text": "occupation (software engineer) + city (Coimbatore) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

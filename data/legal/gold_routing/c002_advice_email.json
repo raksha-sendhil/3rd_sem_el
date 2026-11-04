@@ -1,0 +1,37 @@
+{
+  "doc_id": "dd67e076c6643365",
+  "routing": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "R.C.S. No. 2123/2020",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Karve",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "22 December 2020",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Revathi Shetty",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

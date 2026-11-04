@@ -1,0 +1,68 @@
+{
+  "doc_id": "27acf831c456a284",
+  "text": "Case note: S.C.C. No. 742/2023\nClient: Ashok Shetty (retired bank officer, Panaji)\nOpposing party: Vikram Malhotra\nCourt: Judicial Magistrate First Class Court at Panaji\nFiled on: 7 July 2023\nClaim amount: Rs 18,50,000\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 742/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Ashok Shetty",
+      "category": "NAME",
+      "start": 39,
+      "end": 51
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 53,
+      "end": 73
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 75,
+      "end": 81
+    },
+    {
+      "text": "Vikram Malhotra",
+      "category": "NAME",
+      "start": 99,
+      "end": 114
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 122,
+      "end": 169
+    },
+    {
+      "text": "7 July 2023",
+      "category": "DATE",
+      "start": 180,
+      "end": 191
+    },
+    {
+      "text": "Rs 18,50,000",
+      "category": "MONEY",
+      "start": 206,
+      "end": 218
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 226,
+      "end": 239
+    },
+    {
+      "text": "occupation (retired bank officer) + city (Panaji) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

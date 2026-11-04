@@ -24,6 +24,15 @@ Parsing, validation and the retry/repair loop (up to ``retries`` extra attempts
 with escalating temperature and the validation error fed back) are done once for
 every schema by ``sanitise.llm.base.BaseJSONClient``; this module only adds the
 prompt, the few-shot examples and the post-processing that a schema cannot express.
+
+**Legal domain** (legal build spec, step 3). The litigation-firm documents use their own
+prompt and schema (``LEGAL_SYSTEM_PROMPT``, ``LegalSpanList``): the model lists every NAME,
+ORGANIZATION, MATTER_CODENAME, LEGAL_ISSUE, OCCUPATION, LOCATION, AGE and ADDRESS in the
+document plus QUASI_COMBO combinations, as ``{"spans": [{"text", "category"}]}``. That is
+also the fine-tuning target format (Part 3), so the base model and the LoRA-tuned Gemma 4 are
+prompted identically and their before/after scores compare like for like. The prompt does
+not list what the rules found: the generated training data has no rule pass, and the merge
+removes duplicates anyway.
 """
 
 from __future__ import annotations
@@ -34,6 +43,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from sanitise.domain import is_legal
 from sanitise.llm.base import LLMClient
 from sanitise.schemas import PIICategory, SensitiveSpan
 
@@ -235,12 +245,12 @@ def ground(text: str, phrase: str) -> list[tuple[int, int]]:
     return (find_all(text, cleaned) if cleaned else []) or find_all(text, phrase)
 
 
-def to_spans(text: str, hits: list[LLMQuasiHit]) -> list[SensitiveSpan]:
+def to_spans(text: str, hits: list[LLMQuasiHit], max_items: int = MAX_ITEMS) -> list[SensitiveSpan]:
     """Ground single details to offsets, keep combinations offset-less, deduplicate."""
     spans: list[SensitiveSpan] = []
     seen_offsets: set[tuple[int, int]] = set()
     seen_combos: set[str] = set()
-    for hit in hits[:MAX_ITEMS]:
+    for hit in hits[:max_items]:
         category = C(hit.category)
         rationale = hit.rationale.strip() or "flagged by the LLM pass"
         if category is C.QUASI_COMBO:
@@ -287,5 +297,104 @@ async def infer_quasi(
     (NAME, AGE, MEDICAL_CONDITION, SYMPTOM, OCCUPATION, LOCATION) carry the offsets of every place
     the quoted phrase occurs in ``text``.
     """
+    if is_legal():
+        legal = await llm.json_call(LEGAL_SYSTEM_PROMPT, legal_user_prompt(text), LegalSpanList)
+        return to_spans(text, legal_hits(legal), max_items=LEGAL_MAX_ITEMS)
     result = await llm.json_call(SYSTEM_PROMPT, build_user_prompt(text, explicit), LLMQuasiList)
     return to_spans(text, result.quasi_identifiers)
+
+
+# ------------------------------------------------------------------ legal domain
+
+LegalLLMCategory = Literal[
+    "NAME",
+    "ORGANIZATION",
+    "MATTER_CODENAME",
+    "LEGAL_ISSUE",
+    "OCCUPATION",
+    "LOCATION",
+    "AGE",
+    "ADDRESS",
+    "QUASI_COMBO",
+]
+LEGAL_LLM_CATEGORIES = frozenset(LegalLLMCategory.__args__)  # type: ignore[attr-defined]
+LEGAL_MAX_ITEMS = 40
+_LEGAL_RATIONALE = "legal LLM pass"
+
+
+class LegalSpan(BaseModel):
+    text: str = Field(min_length=1, max_length=300)
+    category: LegalLLMCategory
+
+
+class LegalSpanList(BaseModel):
+    """The legal LLM pass's output and the fine-tuning target: ``{"spans": [...]}``."""
+
+    model_config = ConfigDict(title="SpanList")
+    spans: list[LegalSpan]
+
+
+def legal_hits(result: LegalSpanList) -> list[LLMQuasiHit]:
+    """The legal output as hits for ``to_spans`` (the legal schema carries no rationale)."""
+    return [
+        LLMQuasiHit.model_construct(text=s.text, category=s.category, rationale=_LEGAL_RATIONALE)
+        for s in result.spans
+    ]
+
+
+LEGAL_SYSTEM_PROMPT = """\
+You are a privacy analyst at a litigation firm. You read one document from a past matter \
+(an intake note, an advice email from a lawyer to a client, a case note, or a client's \
+enquiry) and list every detail that could identify a client, an opposing party or a witness.
+
+Return a JSON object {"spans": [...]} where each item is {"text": ..., "category": ...}. \
+Copy "text" EXACTLY as it is written in the document (same spelling and capitals, no added \
+words). Use these categories only:
+- NAME: a person's name: client, opposing party, witness, lawyer or judge. Leave out titles \
+such as Mr., Ms., Dr., Adv., Smt. or Justice ("Adv. Nitya Ramaswamy" -> "Nitya Ramaswamy"). \
+A surname used alone ("Dear Mr. Siddiqui") is a NAME too.
+- ORGANIZATION: a company, firm, employer, bank or counterparty, with its suffix ("Bluewater \
+Ceramics Pvt Ltd"), without "M/s". Not a court.
+- MATTER_CODENAME: an internal code name for a matter or deal ("Project Albatross").
+- LEGAL_ISSUE: the legal issue as the document names it ("trademark infringement", \
+"partition suit"). Keep it short; not the whole story.
+- OCCUPATION: a person's job ("veterinarian", "tailor").
+- LOCATION: a city, town or neighbourhood named on its own, outside a full address.
+- AGE: a person's age as written ("47-year-old", "61 years old").
+- ADDRESS: a full postal address, as one item from the house or flat number to the PIN code.
+- QUASI_COMBO: when the document names the client's occupation, city and legal issue \
+together, one item that lists them, joined with " + ", in this form: "age (47) + occupation \
+(veterinarian) + city (Belagavi) + issue (partition suit)". Leave out a part the document \
+does not give.
+
+Phone numbers, emails, PAN, Aadhaar and other ID numbers, bank details, case numbers, court \
+names, amounts of money and dates are found by other rules: do not return them. List each \
+distinct detail once. If there is nothing to list, return {"spans": []}. Never invent a \
+detail that is not in the document.
+
+EXAMPLE
+DOCUMENT:
+Intake note - Property team
+Our client Nitya Ramaswamy is a 47-year-old veterinarian from Belagavi. She lives at Flat \
+9C, Tilakwadi, Belagavi 590006 and wants to file a partition suit against her cousin Imran \
+Siddiqui and against Bluewater Ceramics Pvt Ltd, which bought part of the land. Internal \
+code: Project Albatross.
+OUTPUT:
+{"spans": [
+ {"text": "Nitya Ramaswamy", "category": "NAME"},
+ {"text": "47-year-old", "category": "AGE"},
+ {"text": "veterinarian", "category": "OCCUPATION"},
+ {"text": "Belagavi", "category": "LOCATION"},
+ {"text": "Flat 9C, Tilakwadi, Belagavi 590006", "category": "ADDRESS"},
+ {"text": "partition suit", "category": "LEGAL_ISSUE"},
+ {"text": "Imran Siddiqui", "category": "NAME"},
+ {"text": "Bluewater Ceramics Pvt Ltd", "category": "ORGANIZATION"},
+ {"text": "Project Albatross", "category": "MATTER_CODENAME"},
+ {"text": "age (47) + occupation (veterinarian) + city (Belagavi) + issue (partition suit)", \
+"category": "QUASI_COMBO"}
+]}
+"""
+
+
+def legal_user_prompt(text: str) -> str:
+    return f"DOCUMENT:\n{text}\nOUTPUT:"

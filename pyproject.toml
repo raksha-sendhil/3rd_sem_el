@@ -17,6 +17,7 @@ dependencies = [
     "presidio-analyzer>=2.2.355",
     "spacy>=3.7,<4",
     "tldextract>=5",  # used directly by the rule pass (URL filtering)
+    "rapidfuzz>=3.9",  # Agent 3 leak check: near spellings of removed names
     # Scoring (Person D)
     "scikit-learn>=1.5",
 ]
@@ -26,6 +27,11 @@ dependencies = [
 spacy-model = ["en-core-web-lg"]
 # Dense half of hybrid retrieval (Colab): bge-m3 embeddings in ChromaDB.
 retrieval = ["sentence-transformers>=3.0", "chromadb>=0.5"]
+# Legal build spec: Gemini answers (cleaned text only) and the training-set rewording.
+gemini = ["google-genai>=1.0"]
+# Part 3, fine-tuning Gemma 4 for Agent 1 on a Kaggle T4 (plus matplotlib for the charts).
+finetune = ["transformers>=4.57", "accelerate>=1.0", "peft>=0.17", "bitsandbytes>=0.46"]
+report = ["matplotlib>=3.8"]
 
 [project.scripts]
 sanitise = "sanitise.cli.main:app"
@@ -85,11 +91,14 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 # Person A's recognizers match curly quotes on purpose, and some regexes are long.
 "src/sanitise/rules/*.py" = ["RUF001", "E501"]
+"src/sanitise/agents/rewriter/leakcheck.py" = ["RUF001"]
+"src/sanitise/monitor/pool.py" = ["RUF001"]
 # Hand-annotated corpus text (D's build_corpus, A's build_gold) is kept on one line.
 "tools/*.py" = ["E501"]
 "eval/*.py" = ["E501"]
 # Imports come after the en_core_web_lg skip check.
 "tests/rules/test_rule_detect.py" = ["E402"]
+"tests/rules/test_legal_rules.py" = ["E402"]
 # Shell lines (!cmd {var}) use loop variables ruff cannot see; shell commands run long;
 # Colab form settings (#@param) come before the imports.
 "notebooks/*.ipynb" = ["E501", "B007", "E402"]

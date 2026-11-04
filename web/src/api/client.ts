@@ -21,6 +21,50 @@ export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:800
   "",
 );
 
+// ---- Domain: every request carries the chosen domain as ?domain=..., so the API uses that
+// domain's prompts, data and models (config/domains.json). EventSource cannot set headers,
+// hence a query parameter rather than X-Sanitise-Domain.
+export type DomainInfo = {
+  name: string;
+  label: string;
+  description: string;
+  model: string;
+  answer_backend: string;
+  answer_model: string;
+  agent1: string;
+};
+export type DomainsResponse = { default: string; domains: DomainInfo[] };
+
+const DOMAIN_KEY = "sanitise.domain";
+let currentDomain: string | null = null;
+
+export function getDomain(): string | null {
+  if (currentDomain === null && typeof window !== "undefined") {
+    try {
+      currentDomain = window.localStorage.getItem(DOMAIN_KEY);
+    } catch {
+      currentDomain = null;
+    }
+  }
+  return currentDomain;
+}
+
+export function setDomain(name: string): void {
+  currentDomain = name;
+  documentCache.clear();
+  try {
+    window.localStorage.setItem(DOMAIN_KEY, name);
+  } catch {
+    // private window or blocked storage: the choice lasts until the page reloads
+  }
+}
+
+function withDomain(path: string): string {
+  const domain = getDomain();
+  if (!domain) return path;
+  return path + (path.includes("?") ? "&" : "?") + "domain=" + encodeURIComponent(domain);
+}
+
 export class ApiError extends Error {
   constructor(
     readonly status: number,
@@ -34,7 +78,7 @@ export class ApiError extends Error {
 async function call<T>(method: "GET" | "POST", path: string, body?: unknown): Promise<T> {
   let res: Response;
   try {
-    res = await fetch(API_URL + path, {
+    res = await fetch(API_URL + withDomain(path), {
       method,
       headers: body === undefined ? undefined : { "content-type": "application/json" },
       body: body === undefined ? undefined : JSON.stringify(body),
@@ -58,6 +102,7 @@ const documentCache = new Map<string, Promise<DocumentView>>();
 
 export const api = {
   health: () => call<S["HealthResponse"]>("GET", "/v1/health"),
+  domains: () => call<DomainsResponse>("GET", "/v1/domains"),
   createSession: () => call<{ session_id: string }>("POST", "/v1/sessions", {}),
   session: (id: string) => call<SessionTrace>("GET", `/v1/sessions/${id}`),
   compare: (query: string, session_id: string) =>
@@ -85,7 +130,9 @@ type StreamHandlers = {
 /** Runs an attack over Server-Sent Events; each round arrives as soon as it is answered.
  * Returns a function that stops listening. */
 export function streamAttack(id: string, on: StreamHandlers): () => void {
-  const source = new EventSource(`${API_URL}/v1/attacks/${encodeURIComponent(id)}/stream`);
+  const source = new EventSource(
+    API_URL + withDomain(`/v1/attacks/${encodeURIComponent(id)}/stream`),
+  );
   const data = (e: Event) => JSON.parse((e as MessageEvent).data);
   source.addEventListener("round", (e) => on.round(data(e)));
   source.addEventListener("done", (e) => {

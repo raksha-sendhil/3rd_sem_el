@@ -1,0 +1,74 @@
+{
+  "doc_id": "ab3ad52e7e7873e3",
+  "text": "Case note: C.C. No. 1811/2019\nClient: Sameer Iyer (fashion designer, Mysuru)\nOpposing party: Deccan Developers\nCourt: Mysuru District Consumer Disputes Redressal Commission\nFiled on: 12 December 2019\nClaim amount: ₹5,89,00,000\nIssue: consumer complaint. Possession of the flat is long overdue.\nAdvice given: Claim interest on the amount paid for every month of delay in possession.\nOutcome: The commission directed the builder to pay interest for the delay.\nRecommended next step: File for execution if the builder does not pay.\nWitness: Vivek Gowda",
+  "spans": [
+    {
+      "text": "C.C. No. 1811/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Sameer Iyer",
+      "category": "NAME",
+      "start": 38,
+      "end": 49
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 51,
+      "end": 67
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 69,
+      "end": 75
+    },
+    {
+      "text": "Deccan Developers",
+      "category": "ORGANIZATION",
+      "start": 93,
+      "end": 110
+    },
+    {
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 118,
+      "end": 172
+    },
+    {
+      "text": "12 December 2019",
+      "category": "DATE",
+      "start": 183,
+      "end": 199
+    },
+    {
+      "text": "₹5,89,00,000",
+      "category": "MONEY",
+      "start": 214,
+      "end": 226
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 234,
+      "end": 252
+    },
+    {
+      "text": "Vivek Gowda",
+      "category": "NAME",
+      "start": 538,
+      "end": 549
+    },
+    {
+      "text": "occupation (fashion designer) + city (Mysuru) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

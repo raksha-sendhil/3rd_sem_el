@@ -1,0 +1,50 @@
+{
+  "doc_id": "39de42324712d815",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 2020/2019\n\nDear Ms. Swamy,\n\nThank you for meeting us on 28/03/2019 about your dispute with Vikram Sen. As we understand it, construction has started on the disputed plot. The matter is listed before the Mumbai District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 2020/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 56
+    },
+    {
+      "text": "Swamy",
+      "category": "NAME",
+      "start": 67,
+      "end": 72
+    },
+    {
+      "text": "28/03/2019",
+      "category": "DATE",
+      "start": 103,
+      "end": 113
+    },
+    {
+      "text": "Vikram Sen",
+      "category": "NAME",
+      "start": 138,
+      "end": 148
+    },
+    {
+      "text": "Mumbai District Court",
+      "category": "COURT",
+      "start": 250,
+      "end": 271
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 468,
+      "end": 483
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

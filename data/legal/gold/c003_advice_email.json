@@ -1,0 +1,56 @@
+{
+  "doc_id": "c35cab90b888fcc9",
+  "text": "Subject: Your consumer complaint matter - CC/2745/2025\n\nDear Mr. Patil,\n\nThank you for meeting us on 03/11/2025 about your dispute with M/s Karve Constructions. As we understand it, the builder keeps promising possession by email but never delivers. The matter is listed before the Hyderabad District Consumer Disputes Redressal Commission.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office. We will pursue the full claim of Rs. 8,29,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CC/2745/2025",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 54
+    },
+    {
+      "text": "Patil",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "03/11/2025",
+      "category": "DATE",
+      "start": 101,
+      "end": 111
+    },
+    {
+      "text": "Karve Constructions",
+      "category": "ORGANIZATION",
+      "start": 140,
+      "end": 159
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 282,
+      "end": 339
+    },
+    {
+      "text": "Rs. 8,29,00,000",
+      "category": "MONEY",
+      "start": 635,
+      "end": 650
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 667,
+      "end": 683
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

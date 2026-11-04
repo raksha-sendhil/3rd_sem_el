@@ -1,0 +1,50 @@
+{
+  "doc_id": "3ee4a64a8f8dd534",
+  "text": "Subject: Your cheque bounce matter - CC/2642/2022\n\nDear Ms. Natarajan,\n\nThank you for meeting us on 13/10/2022 about your dispute with M/s Patil Traders. As we understand it, the cheque came back with the remark account closed.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office. We will pursue the full claim of INR 31,30,000/-.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/2642/2022",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Natarajan",
+      "category": "NAME",
+      "start": 60,
+      "end": 69
+    },
+    {
+      "text": "13/10/2022",
+      "category": "DATE",
+      "start": 100,
+      "end": 110
+    },
+    {
+      "text": "Patil Traders",
+      "category": "ORGANIZATION",
+      "start": 139,
+      "end": 152
+    },
+    {
+      "text": "INR 31,30,000/-",
+      "category": "MONEY",
+      "start": 530,
+      "end": 545
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 562,
+      "end": 577
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

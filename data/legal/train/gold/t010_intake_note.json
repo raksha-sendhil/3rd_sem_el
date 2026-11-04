@@ -1,0 +1,110 @@
+{
+  "doc_id": "1689c3b41fbc1371",
+  "text": "Intake note (Commercial team, 11 September 2021). Our client Vandana Fernandes is a 39-year-old paediatrician who lives at Bungalow 14, KK Nagar, Madurai 625047 and can be reached on +91 92335 88184 or vandana.fernandes69@example.in. The client's PAN SAMPF5334J.\nThe client consulted us about a cheque bounce matter against Leena Mehra. A cheque for ₹33,50,000 issued by Leena Mehra bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 121590068516 (IFSC HDFC0350068).\nThe matter was filed as CC/1352/2021 before the Judicial Magistrate First Class Court at Madurai on 31/10/2021.",
+  "spans": [
+    {
+      "text": "11 September 2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 47
+    },
+    {
+      "text": "Vandana Fernandes",
+      "category": "NAME",
+      "start": 61,
+      "end": 78
+    },
+    {
+      "text": "39-year-old",
+      "category": "AGE",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 96,
+      "end": 109
+    },
+    {
+      "text": "Bungalow 14, KK Nagar, Madurai 625047",
+      "category": "ADDRESS",
+      "start": 123,
+      "end": 160
+    },
+    {
+      "text": "+91 92335 88184",
+      "category": "PHONE",
+      "start": 183,
+      "end": 198
+    },
+    {
+      "text": "vandana.fernandes69@example.in",
+      "category": "EMAIL",
+      "start": 202,
+      "end": 232
+    },
+    {
+      "text": "SAMPF5334J",
+      "category": "ID_NUMBER",
+      "start": 251,
+      "end": 261
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 295,
+      "end": 308
+    },
+    {
+      "text": "Leena Mehra",
+      "category": "NAME",
+      "start": 324,
+      "end": 335
+    },
+    {
+      "text": "₹33,50,000",
+      "category": "MONEY",
+      "start": 350,
+      "end": 360
+    },
+    {
+      "text": "Leena Mehra",
+      "category": "NAME",
+      "start": 371,
+      "end": 382
+    },
+    {
+      "text": "121590068516",
+      "category": "FINANCIAL",
+      "start": 498,
+      "end": 510
+    },
+    {
+      "text": "HDFC0350068",
+      "category": "FINANCIAL",
+      "start": 517,
+      "end": 528
+    },
+    {
+      "text": "CC/1352/2021",
+      "category": "CASE_NUMBER",
+      "start": 555,
+      "end": 567
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Madurai",
+      "category": "COURT",
+      "start": 579,
+      "end": 627
+    },
+    {
+      "text": "31/10/2021",
+      "category": "DATE",
+      "start": 631,
+      "end": 641
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

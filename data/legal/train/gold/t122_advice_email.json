@@ -1,0 +1,50 @@
+{
+  "doc_id": "8d5b5a7d7ce5d74c",
+  "text": "Subject: Your consumer complaint matter\n\nDear Ms. Bhatt,\n\nThank you for meeting us on 29 November 2023 about your dispute with Pai Realty. As we understand it, the builder keeps promising possession by email but never delivers. The matter is listed before the Warangal District Consumer Disputes Redressal Commission.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office. We will pursue the full claim of INR 83,40,000/-.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Bhatt",
+      "category": "NAME",
+      "start": 50,
+      "end": 55
+    },
+    {
+      "text": "29 November 2023",
+      "category": "DATE",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Pai Realty",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 137
+    },
+    {
+      "text": "Warangal District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 260,
+      "end": 316
+    },
+    {
+      "text": "INR 83,40,000/-",
+      "category": "MONEY",
+      "start": 612,
+      "end": 627
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 644,
+      "end": 659
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

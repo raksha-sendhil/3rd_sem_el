@@ -1,0 +1,56 @@
+{
+  "doc_id": "d28a43039360978b",
+  "text": "Subject: Your consumer complaint matter - CC/989/2022\n\nDear Ms. Pandey,\n\nThank you for meeting us on 24/04/2023 about your dispute with Vindhya Constructions. As we understand it, possession of the flat is long overdue. The matter is listed before the Bengaluru District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office. We will pursue the full claim of ₹28,50,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CC/989/2022",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 53
+    },
+    {
+      "text": "Pandey",
+      "category": "NAME",
+      "start": 64,
+      "end": 70
+    },
+    {
+      "text": "24/04/2023",
+      "category": "DATE",
+      "start": 101,
+      "end": 111
+    },
+    {
+      "text": "Vindhya Constructions",
+      "category": "ORGANIZATION",
+      "start": 136,
+      "end": 157
+    },
+    {
+      "text": "Bengaluru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 252,
+      "end": 309
+    },
+    {
+      "text": "₹28,50,000",
+      "category": "MONEY",
+      "start": 559,
+      "end": 569
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 586,
+      "end": 598
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

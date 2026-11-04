@@ -1,0 +1,104 @@
+{
+  "doc_id": "c39a9d0883f5c8e0",
+  "text": "Intake note (Commercial team, 3 November 2019). Our client Manoj Qureshi is a 34-year-old general physician who lives at Flat 5B, Sitabuldi, Nagpur 440027 and can be reached on +91 62304 65295 or manoj.qureshi84@example.in. The client's PAN FQXPQ2244H, Aadhaar 4669 1006 2549.\nThe client consulted us about a wrongful termination matter against M/s Zenith Industries. The wrongful termination claim against Zenith Industries is for ₹59,80,000; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 2822/2020 before the Nagpur Labour Court on 09/04/2020.",
+  "spans": [
+    {
+      "text": "3 November 2019",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Manoj Qureshi",
+      "category": "NAME",
+      "start": 59,
+      "end": 72
+    },
+    {
+      "text": "34-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 107
+    },
+    {
+      "text": "Flat 5B, Sitabuldi, Nagpur 440027",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 154
+    },
+    {
+      "text": "+91 62304 65295",
+      "category": "PHONE",
+      "start": 177,
+      "end": 192
+    },
+    {
+      "text": "manoj.qureshi84@example.in",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 222
+    },
+    {
+      "text": "FQXPQ2244H",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 251
+    },
+    {
+      "text": "4669 1006 2549",
+      "category": "ID_NUMBER",
+      "start": 261,
+      "end": 275
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 309,
+      "end": 329
+    },
+    {
+      "text": "Zenith Industries",
+      "category": "ORGANIZATION",
+      "start": 349,
+      "end": 366
+    },
+    {
+      "text": "Zenith Industries",
+      "category": "ORGANIZATION",
+      "start": 407,
+      "end": 424
+    },
+    {
+      "text": "₹59,80,000",
+      "category": "MONEY",
+      "start": 432,
+      "end": 442
+    },
+    {
+      "text": "Complaint No. 2822/2020",
+      "category": "CASE_NUMBER",
+      "start": 516,
+      "end": 539
+    },
+    {
+      "text": "Nagpur Labour Court",
+      "category": "COURT",
+      "start": 551,
+      "end": 570
+    },
+    {
+      "text": "09/04/2020",
+      "category": "DATE",
+      "start": 574,
+      "end": 584
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

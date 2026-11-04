@@ -1,0 +1,56 @@
+{
+  "doc_id": "3f8604112838aa4f",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 1099/2022\n\nDear Ms. DSouza,\n\nThank you for meeting us on 31 January 2023 about your dispute with Kiran Shah. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the Pune District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office. We will pursue the full claim of ₹7,25,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 1099/2022",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "DSouza",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "31 January 2023",
+      "category": "DATE",
+      "start": 108,
+      "end": 123
+    },
+    {
+      "text": "Kiran Shah",
+      "category": "NAME",
+      "start": 148,
+      "end": 158
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 271,
+      "end": 290
+    },
+    {
+      "text": "₹7,25,000",
+      "category": "MONEY",
+      "start": 539,
+      "end": 548
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 565,
+      "end": 582
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

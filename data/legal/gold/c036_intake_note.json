@@ -1,0 +1,110 @@
+{
+  "doc_id": "3a16a9a2de6049b7",
+  "text": "Intake note (Commercial team, 05/06/2021). Our client Anand Sen is a 37-year-old government clerk who lives at House No. 145, Saibaba Colony, Coimbatore 641038 and can be reached on +91 83957 84757 or anand.sen75@example.com. The client's PAN YQKPS5306X.\nThe client consulted us about a cheque bounce matter against Joseph Tiwari. A cheque for ₹22,40,000 issued by Joseph Tiwari bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 222043820387 (IFSC KKBK0985367).\nThe matter was filed as S.C.C. No. 251/2021 before the Judicial Magistrate First Class Court at Coimbatore on 16 October 2021.",
+  "spans": [
+    {
+      "text": "05/06/2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Anand Sen",
+      "category": "NAME",
+      "start": 54,
+      "end": 63
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 81,
+      "end": 97
+    },
+    {
+      "text": "House No. 145, Saibaba Colony, Coimbatore 641038",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 159
+    },
+    {
+      "text": "+91 83957 84757",
+      "category": "PHONE",
+      "start": 182,
+      "end": 197
+    },
+    {
+      "text": "anand.sen75@example.com",
+      "category": "EMAIL",
+      "start": 201,
+      "end": 224
+    },
+    {
+      "text": "YQKPS5306X",
+      "category": "ID_NUMBER",
+      "start": 243,
+      "end": 253
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 287,
+      "end": 300
+    },
+    {
+      "text": "Joseph Tiwari",
+      "category": "NAME",
+      "start": 316,
+      "end": 329
+    },
+    {
+      "text": "₹22,40,000",
+      "category": "MONEY",
+      "start": 344,
+      "end": 354
+    },
+    {
+      "text": "Joseph Tiwari",
+      "category": "NAME",
+      "start": 365,
+      "end": 378
+    },
+    {
+      "text": "222043820387",
+      "category": "FINANCIAL",
+      "start": 504,
+      "end": 516
+    },
+    {
+      "text": "KKBK0985367",
+      "category": "FINANCIAL",
+      "start": 523,
+      "end": 534
+    },
+    {
+      "text": "S.C.C. No. 251/2021",
+      "category": "CASE_NUMBER",
+      "start": 561,
+      "end": 580
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 592,
+      "end": 643
+    },
+    {
+      "text": "16 October 2021",
+      "category": "DATE",
+      "start": 647,
+      "end": 662
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

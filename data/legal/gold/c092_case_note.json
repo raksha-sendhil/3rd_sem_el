@@ -1,0 +1,74 @@
+{
+  "doc_id": "9be2f24a595eaeaa",
+  "text": "Case note: FIR No. 1412/2019\nClient: Abhishek Qureshi (dentist, Ahmedabad)\nOpposing party: Vikram Rao\nCourt: Ahmedabad Sessions Court\nFiled on: 13 August 2019\nClaim amount: 35.9 lakh rupees\nIssue: anticipatory bail. The complainant alleges cheating over a failed deal.\nAdvice given: Produce the contract and payment records to show there was no intent to cheat at the outset.\nOutcome: Bail was granted because the dispute was about performance of a contract.\nRecommended next step: Seek quashing of the complaint.\nWitness: Rahul Kapoor",
+  "spans": [
+    {
+      "text": "FIR No. 1412/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 28
+    },
+    {
+      "text": "Abhishek Qureshi",
+      "category": "NAME",
+      "start": 37,
+      "end": 53
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 62
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 64,
+      "end": 73
+    },
+    {
+      "text": "Vikram Rao",
+      "category": "NAME",
+      "start": 91,
+      "end": 101
+    },
+    {
+      "text": "Ahmedabad Sessions Court",
+      "category": "COURT",
+      "start": 109,
+      "end": 133
+    },
+    {
+      "text": "13 August 2019",
+      "category": "DATE",
+      "start": 144,
+      "end": 158
+    },
+    {
+      "text": "35.9 lakh rupees",
+      "category": "MONEY",
+      "start": 173,
+      "end": 189
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 197,
+      "end": 214
+    },
+    {
+      "text": "Rahul Kapoor",
+      "category": "NAME",
+      "start": 523,
+      "end": 535
+    },
+    {
+      "text": "occupation (dentist) + city (Ahmedabad) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

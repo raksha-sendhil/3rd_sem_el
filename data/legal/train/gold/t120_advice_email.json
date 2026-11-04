@@ -1,0 +1,50 @@
+{
+  "doc_id": "5db7b9096b712619",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Patel,\n\nThank you for meeting us on 2 January 2022 about your dispute with Harish Swamy. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Bengaluru.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of INR 20,10,000/-.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 45,
+      "end": 50
+    },
+    {
+      "text": "2 January 2022",
+      "category": "DATE",
+      "start": 81,
+      "end": 95
+    },
+    {
+      "text": "Harish Swamy",
+      "category": "NAME",
+      "start": 120,
+      "end": 132
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Bengaluru",
+      "category": "COURT",
+      "start": 251,
+      "end": 301
+    },
+    {
+      "text": "INR 20,10,000/-",
+      "category": "MONEY",
+      "start": 596,
+      "end": 611
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 628,
+      "end": 640
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

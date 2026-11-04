@@ -1,0 +1,74 @@
+{
+  "doc_id": "3b9fd014a70fb6f3",
+  "text": "Case note: S.C.C. No. 2814/2023\nClient: Karthik Bhatt (college lecturer, Hubballi)\nOpposing party: Rathore Enterprises\nCourt: Judicial Magistrate First Class Court at Hubballi\nFiled on: 30 March 2023\nClaim amount: INR 30,40,000/-\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.\nWitness: Pranav Chandran",
+  "spans": [
+    {
+      "text": "S.C.C. No. 2814/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Karthik Bhatt",
+      "category": "NAME",
+      "start": 40,
+      "end": 53
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 71
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 73,
+      "end": 81
+    },
+    {
+      "text": "Rathore Enterprises",
+      "category": "ORGANIZATION",
+      "start": 99,
+      "end": 118
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hubballi",
+      "category": "COURT",
+      "start": 126,
+      "end": 175
+    },
+    {
+      "text": "30 March 2023",
+      "category": "DATE",
+      "start": 186,
+      "end": 199
+    },
+    {
+      "text": "INR 30,40,000/-",
+      "category": "MONEY",
+      "start": 214,
+      "end": 229
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 237,
+      "end": 250
+    },
+    {
+      "text": "Pranav Chandran",
+      "category": "NAME",
+      "start": 591,
+      "end": 606
+    },
+    {
+      "text": "occupation (college lecturer) + city (Hubballi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

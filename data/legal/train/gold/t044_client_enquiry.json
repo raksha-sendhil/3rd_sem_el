@@ -1,0 +1,68 @@
+{
+  "doc_id": "eff3a49896a1ee09",
+  "text": "Subject: Need help with a breach of contract case\n\nHello, my name is Venkat Patel. I am a 47-year-old taxi driver living in Hubballi. Our company has a breach of contract claim of Rs. 14,66,00,000 against Banyan Infotech Pvt Ltd, and the claim must be filed as a commercial suit. Can your firm advise me on what to do next? You can call me on +91 79016 63203 or email venkat.patel16@example.com.",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Venkat Patel",
+      "category": "NAME",
+      "start": 69,
+      "end": 81
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 90,
+      "end": 101
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 102,
+      "end": 113
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 124,
+      "end": 132
+    },
+    {
+      "text": "Rs. 14,66,00,000",
+      "category": "MONEY",
+      "start": 180,
+      "end": 196
+    },
+    {
+      "text": "Banyan Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 205,
+      "end": 228
+    },
+    {
+      "text": "+91 79016 63203",
+      "category": "PHONE",
+      "start": 343,
+      "end": 358
+    },
+    {
+      "text": "venkat.patel16@example.com",
+      "category": "EMAIL",
+      "start": 368,
+      "end": 394
+    },
+    {
+      "text": "age (47) + occupation (taxi driver) + city (Hubballi) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

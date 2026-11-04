@@ -1,0 +1,50 @@
+{
+  "doc_id": "adaf7d32f598272a",
+  "text": "Subject: Your land dispute matter\n\nDear Mr. Kapoor,\n\nThank you for meeting us on 22/06/2025 about your dispute with Smita Subramanian. As we understand it, construction has started on the disputed plot. The matter is listed before the Lucknow District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office. We will pursue the full claim of INR 2,31,00,000/-.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "Kapoor",
+      "category": "NAME",
+      "start": 44,
+      "end": 50
+    },
+    {
+      "text": "22/06/2025",
+      "category": "DATE",
+      "start": 81,
+      "end": 91
+    },
+    {
+      "text": "Smita Subramanian",
+      "category": "NAME",
+      "start": 116,
+      "end": 133
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 235,
+      "end": 257
+    },
+    {
+      "text": "INR 2,31,00,000/-",
+      "category": "MONEY",
+      "start": 472,
+      "end": 489
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 506,
+      "end": 525
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

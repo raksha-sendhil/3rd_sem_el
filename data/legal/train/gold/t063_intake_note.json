@@ -1,0 +1,116 @@
+{
+  "doc_id": "e739d6ac0ab35145",
+  "text": "Intake note - Commercial team\nDate: 12 April 2025\nClient: Sunanda Banerjee, a 52-year-old civil engineer from Ahmedabad.\nAddress: Bungalow 16, Satellite, Ahmedabad 380042\nPhone: 99799 83871. Email: sunanda.banerjee@example.in. PAN DFMPB3367U.\nMatter: breach of contract (Project Pelican)\nOpposing party: M/s Lotus Industries\nFacts: The breach of contract claim against Lotus Industries is for Rs 3,53,00,000; the counterparty has not paid the invoices for delivered goods.\nThe matter was filed as Com. S. No. 2624/2025 before the Ahmedabad Commercial Court on 31/08/2025.",
+  "spans": [
+    {
+      "text": "12 April 2025",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Sunanda Banerjee",
+      "category": "NAME",
+      "start": 58,
+      "end": 74
+    },
+    {
+      "text": "52-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 104
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 119
+    },
+    {
+      "text": "Bungalow 16, Satellite, Ahmedabad 380042",
+      "category": "ADDRESS",
+      "start": 130,
+      "end": 170
+    },
+    {
+      "text": "99799 83871",
+      "category": "PHONE",
+      "start": 178,
+      "end": 189
+    },
+    {
+      "text": "sunanda.banerjee@example.in",
+      "category": "EMAIL",
+      "start": 198,
+      "end": 225
+    },
+    {
+      "text": "DFMPB3367U",
+      "category": "ID_NUMBER",
+      "start": 231,
+      "end": 241
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 251,
+      "end": 269
+    },
+    {
+      "text": "Project Pelican",
+      "category": "MATTER_CODENAME",
+      "start": 271,
+      "end": 286
+    },
+    {
+      "text": "Lotus Industries",
+      "category": "ORGANIZATION",
+      "start": 308,
+      "end": 324
+    },
+    {
+      "text": "Lotus Industries",
+      "category": "ORGANIZATION",
+      "start": 369,
+      "end": 385
+    },
+    {
+      "text": "Rs 3,53,00,000",
+      "category": "MONEY",
+      "start": 393,
+      "end": 407
+    },
+    {
+      "text": "Com. S. No. 2624/2025",
+      "category": "CASE_NUMBER",
+      "start": 497,
+      "end": 518
+    },
+    {
+      "text": "Ahmedabad Commercial Court",
+      "category": "COURT",
+      "start": 530,
+      "end": 556
+    },
+    {
+      "text": "31/08/2025",
+      "category": "DATE",
+      "start": 560,
+      "end": 570
+    },
+    {
+      "text": "age (52) + occupation (civil engineer) + city (Ahmedabad) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

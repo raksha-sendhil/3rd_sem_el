@@ -1,0 +1,104 @@
+{
+  "doc_id": "882a109cddead6ab",
+  "text": "Intake note (Commercial team, 1 November 2024). Our client Rekha Bose is a 37-year-old fashion designer who lives at Bungalow 2, Miramar, Panaji 403006 and can be reached on 08072356339 or rekha.bose@example.com. The client's PAN RRNPB1044W, Aadhaar 4629 8372 6423.\nThe client consulted us about a cheque bounce matter against M/s Sai Textiles Pvt Ltd. A cheque for INR 21,60,000/- issued by Sai Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as S.C.C. No. 784/2025 before the Judicial Magistrate First Class Court at Panaji on 24 January 2025.",
+  "spans": [
+    {
+      "text": "1 November 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Rekha Bose",
+      "category": "NAME",
+      "start": 59,
+      "end": 69
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Bungalow 2, Miramar, Panaji 403006",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 151
+    },
+    {
+      "text": "08072356339",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "rekha.bose@example.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 211
+    },
+    {
+      "text": "RRNPB1044W",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "4629 8372 6423",
+      "category": "ID_NUMBER",
+      "start": 250,
+      "end": 264
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 298,
+      "end": 311
+    },
+    {
+      "text": "Sai Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 331,
+      "end": 351
+    },
+    {
+      "text": "INR 21,60,000/-",
+      "category": "MONEY",
+      "start": 366,
+      "end": 381
+    },
+    {
+      "text": "Sai Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 392,
+      "end": 412
+    },
+    {
+      "text": "S.C.C. No. 784/2025",
+      "category": "CASE_NUMBER",
+      "start": 509,
+      "end": 528
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 540,
+      "end": 587
+    },
+    {
+      "text": "24 January 2025",
+      "category": "DATE",
+      "start": 591,
+      "end": 606
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

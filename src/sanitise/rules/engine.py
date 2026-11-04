@@ -11,7 +11,8 @@ from presidio_analyzer.predefined_recognizers import PhoneRecognizer
 
 from sanitise.rules.categories import ENTITY_TO_CATEGORY, REQUESTED_ENTITIES
 from sanitise.rules.normalise import normalise_spans
-from sanitise.rules.recognizers import ALL_LAYERS, custom_recognizers
+from sanitise.rules.recognizers import ALL_LAYERS, INDIAN_CITIES, custom_recognizers
+from sanitise.rules.roles import tag_roles
 from sanitise.schemas import PIICategory, SensitiveSpan
 
 C = PIICategory
@@ -81,6 +82,11 @@ _VAGUE_DATE = re.compile(
 
 # spaCy regularly mislabels salutations and platform names in ChatDoctor as PERSON.
 _NAME_STOPLIST = {
+    "pan",
+    "email",
+    "phone",
+    "facts",
+    "matter",
     "doctor",
     "dr",
     "doc",
@@ -145,6 +151,8 @@ def _keep(category: PIICategory, fragment: str) -> bool:
     return not (category is C.NAME and f in _NAME_STOPLIST)
 
 
+_KNOWN_PLACES = frozenset(c.lower() for c in INDIAN_CITIES)
+
 # About 1 in 11 ten-digit numbers passes the UK NHS checksum, so without this an Indian
 # mobile number often outranked its PHONE hit as ID_NUMBER. An NHS number is kept only
 # when "NHS" is written shortly before it ("NHS number is 943 476 5919").
@@ -162,6 +170,14 @@ def _to_span(text: str, r: RecognizerResult) -> SensitiveSpan | None:
         return None
     if category is C.NAME and _EPONYM_TAIL.match(text, r.end):
         return None
+    if category is C.NAME and (
+        len(fragment.strip()) < 2 or text[r.end : r.end + 2] in {"/s", "/S"}
+    ):
+        return None  # the "M" of "M/s Kale Traders"
+    if category is C.NAME and "\n" in fragment.strip():
+        return None  # spaCy joins a line's last word to the next line's label ("PAN.\nMatter")
+    if category is C.NAME and fragment.strip().lower() in _KNOWN_PLACES:
+        category = C.LOCATION  # spaCy reads some Indian cities (Kozhikode) as people
     meta = r.recognition_metadata or {}
     source = meta.get(RecognizerResult.RECOGNIZER_NAME_KEY, "presidio")
     detail = meta.get("rule") or r.entity_type
@@ -176,6 +192,26 @@ def _to_span(text: str, r: RecognizerResult) -> SensitiveSpan | None:
     )
 
 
+# spaCy often reads a whole cause title as one PERSON: "Rohan Mehta v. M/s Kale Developers".
+_VERSUS = re.compile(r"\s+(?:v\.|vs\.?|versus)\s+", re.IGNORECASE)
+
+
+def _split_cause_titles(spans: list[SensitiveSpan]) -> list[SensitiveSpan]:
+    out = []
+    for s in spans:
+        match = _VERSUS.search(s.text) if s.category is C.NAME else None
+        if match is None:
+            out.append(s)
+            continue
+        for lo, hi in ((0, match.start()), (match.end(), len(s.text))):
+            part = s.text[lo:hi]
+            if part.strip() and part.strip("./ ").upper() != "M":
+                out.append(
+                    s.model_copy(update={"text": part, "start": s.start + lo, "end": s.start + hi})
+                )
+    return out
+
+
 def rule_detect(
     text: str,
     *,
@@ -188,7 +224,8 @@ def rule_detect(
     ``layers`` selects which custom recognizer layers run on top of Presidio's
     core (default: all) - see recognizers.py.
 
-    Output is normalised: no overlaps, ``text == doc[start:end]``, sorted by start.
+    Output is normalised: no overlaps, ``text == doc[start:end]``, sorted by start. NAME
+    spans whose party role is clear carry ``role=client|party|witness`` (rules/roles.py).
     """
     if not text.strip():
         return []
@@ -196,5 +233,5 @@ def rule_detect(
     results = analyzer.analyze(
         text=text, language="en", entities=REQUESTED_ENTITIES, score_threshold=score_threshold
     )
-    spans = [s for r in results if (s := _to_span(text, r)) is not None]
-    return normalise_spans(spans, text)
+    spans = _split_cause_titles([s for r in results if (s := _to_span(text, r)) is not None])
+    return tag_roles(text, normalise_spans(spans, text))

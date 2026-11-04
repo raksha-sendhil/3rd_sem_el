@@ -1,0 +1,104 @@
+{
+  "doc_id": "bf4d39e1ed4d8dd5",
+  "text": "Intake note (Property team, 11 February 2022). Our client Debashish Pawar is a 74-year-old railway employee who lives at Flat 2D, Malviya Nagar, Jaipur 302031 and can be reached on 90876 72978 or debashish.pawar@example.com. The client's PAN VBBPP1610E, Aadhaar 9768 8270 3244.\nThe client consulted us about a consumer complaint matter against Fernandes Constructions. The consumer complaint against M/s Fernandes Constructions concerns a flat bought for Rs. 9,10,00,000; the builder never obtained the occupancy certificate.\nThe matter was filed as CC/960/2022 before the Jaipur District Consumer Disputes Redressal Commission on 5 April 2022.",
+  "spans": [
+    {
+      "text": "11 February 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Debashish Pawar",
+      "category": "NAME",
+      "start": 58,
+      "end": 73
+    },
+    {
+      "text": "74-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 107
+    },
+    {
+      "text": "Flat 2D, Malviya Nagar, Jaipur 302031",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 158
+    },
+    {
+      "text": "90876 72978",
+      "category": "PHONE",
+      "start": 181,
+      "end": 192
+    },
+    {
+      "text": "debashish.pawar@example.com",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 223
+    },
+    {
+      "text": "VBBPP1610E",
+      "category": "ID_NUMBER",
+      "start": 242,
+      "end": 252
+    },
+    {
+      "text": "9768 8270 3244",
+      "category": "ID_NUMBER",
+      "start": 262,
+      "end": 276
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 310,
+      "end": 328
+    },
+    {
+      "text": "Fernandes Constructions",
+      "category": "ORGANIZATION",
+      "start": 344,
+      "end": 367
+    },
+    {
+      "text": "Fernandes Constructions",
+      "category": "ORGANIZATION",
+      "start": 404,
+      "end": 427
+    },
+    {
+      "text": "Rs. 9,10,00,000",
+      "category": "MONEY",
+      "start": 455,
+      "end": 470
+    },
+    {
+      "text": "CC/960/2022",
+      "category": "CASE_NUMBER",
+      "start": 550,
+      "end": 561
+    },
+    {
+      "text": "Jaipur District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 573,
+      "end": 627
+    },
+    {
+      "text": "5 April 2022",
+      "category": "DATE",
+      "start": 631,
+      "end": 643
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

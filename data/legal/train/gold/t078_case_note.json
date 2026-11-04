@@ -1,0 +1,68 @@
+{
+  "doc_id": "beaa6f9ab25f9eb0",
+  "text": "Case note: S.C.C. No. 91/2022\nClient: Manoj Trivedi (hardware dealer, Kochi)\nOpposing party: Farhan Karve\nCourt: Judicial Magistrate First Class Court at Kochi\nFiled on: 2 June 2022\nClaim amount: ₹20,70,000\nIssue: cheque bounce. The cheque was returned unpaid for insufficient funds.\nAdvice given: Send a statutory demand notice to the drawer and file the complaint if the drawer does not pay.\nOutcome: The drawer paid the full cheque amount after the first hearing.\nRecommended next step: Withdraw the complaint once the payment clears.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 91/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Manoj Trivedi",
+      "category": "NAME",
+      "start": 38,
+      "end": 51
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 53,
+      "end": 68
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 70,
+      "end": 75
+    },
+    {
+      "text": "Farhan Karve",
+      "category": "NAME",
+      "start": 93,
+      "end": 105
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 113,
+      "end": 159
+    },
+    {
+      "text": "2 June 2022",
+      "category": "DATE",
+      "start": 170,
+      "end": 181
+    },
+    {
+      "text": "₹20,70,000",
+      "category": "MONEY",
+      "start": 196,
+      "end": 206
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 214,
+      "end": 227
+    },
+    {
+      "text": "occupation (hardware dealer) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

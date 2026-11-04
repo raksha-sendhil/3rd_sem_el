@@ -1,0 +1,44 @@
+{
+  "doc_id": "751eba6ae160e4a8",
+  "text": "Subject: Your aircraft lease repossession matter - CS(COMM) 737/2019\n\nDear Ms. Pai,\n\nThank you for meeting us on 25/07/2020 about your dispute with Meridian Airways Ltd. As we understand it, the airline has stopped paying lease rentals.\n\nOur advice is to seek deregistration of the aircraft under the international lease convention. Please collect the lease agreement and the irrevocable deregistration authorisation and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 41
+    },
+    {
+      "text": "CS(COMM) 737/2019",
+      "category": "CASE_NUMBER",
+      "start": 51,
+      "end": 68
+    },
+    {
+      "text": "Pai",
+      "category": "NAME",
+      "start": 79,
+      "end": 82
+    },
+    {
+      "text": "25/07/2020",
+      "category": "DATE",
+      "start": 113,
+      "end": 123
+    },
+    {
+      "text": "Meridian Airways Ltd",
+      "category": "ORGANIZATION",
+      "start": 148,
+      "end": 168
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 464,
+      "end": 476
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

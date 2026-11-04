@@ -1,0 +1,98 @@
+{
+  "doc_id": "80fe1f44111ba266",
+  "text": "Intake note (Property team, 11/01/2019). Our client Rupali Swamy is a 40-year-old fashion designer who lives at Flat 18B, Andheri West, Mumbai 400013 and can be reached on 82754 29619 or rupali.swamy@example.com. The client's PAN GFPPS4990M.\nThe client consulted us about a land dispute matter against Vikram Sen. The land dispute with Vikram Sen concerns agricultural land valued at ₹1.5 crore; construction has started on the disputed plot.\nThe matter was filed as R.C.S. No. 2020/2019 before the Mumbai District Court on 23 February 2019.",
+  "spans": [
+    {
+      "text": "11/01/2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Rupali Swamy",
+      "category": "NAME",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "40-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 98
+    },
+    {
+      "text": "Flat 18B, Andheri West, Mumbai 400013",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 149
+    },
+    {
+      "text": "82754 29619",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "rupali.swamy@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 211
+    },
+    {
+      "text": "GFPPS4990M",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 274,
+      "end": 286
+    },
+    {
+      "text": "Vikram Sen",
+      "category": "NAME",
+      "start": 302,
+      "end": 312
+    },
+    {
+      "text": "Vikram Sen",
+      "category": "NAME",
+      "start": 336,
+      "end": 346
+    },
+    {
+      "text": "₹1.5 crore",
+      "category": "MONEY",
+      "start": 384,
+      "end": 394
+    },
+    {
+      "text": "R.C.S. No. 2020/2019",
+      "category": "CASE_NUMBER",
+      "start": 467,
+      "end": 487
+    },
+    {
+      "text": "Mumbai District Court",
+      "category": "COURT",
+      "start": 499,
+      "end": 520
+    },
+    {
+      "text": "23 February 2019",
+      "category": "DATE",
+      "start": 524,
+      "end": 540
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

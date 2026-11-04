@@ -1,0 +1,56 @@
+{
+  "doc_id": "084d02fa97f91a5d",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2608/2023\n\nDear Ms. Tiwari,\n\nThank you for meeting us on 16/06/2024 about your dispute with Orchid Constructions. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Thane District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office. We will pursue the full claim of Rs 9,29,00,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 2608/2023",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Tiwari",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "16/06/2024",
+      "category": "DATE",
+      "start": 108,
+      "end": 118
+    },
+    {
+      "text": "Orchid Constructions",
+      "category": "ORGANIZATION",
+      "start": 143,
+      "end": 163
+    },
+    {
+      "text": "Thane District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 278,
+      "end": 331
+    },
+    {
+      "text": "Rs 9,29,00,000",
+      "category": "MONEY",
+      "start": 566,
+      "end": 580
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 597,
+      "end": 612
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

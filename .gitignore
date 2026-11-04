@@ -24,6 +24,15 @@ out/
 data/store.sqlite
 data/index/
 
+# Legal build spec run outputs (python -m sanitise.legal build / evaluate / export)
+data/legal/store.sqlite
+data/legal/index/
+data/legal/processed/
+data/legal/results/
+data/legal/bundle/
+data/legal/train_aug/
+data/cache/
+
 # Raw datasets are large and may contain real personal data - never commit them.
 data/raw/
 

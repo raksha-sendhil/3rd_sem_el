@@ -1,0 +1,68 @@
+{
+  "doc_id": "223ae8967584c0fc",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Sujata Das. I am a 39-year-old general physician living in Jaipur. I have a tenancy problem with Shruti Bose involving ₹4,90,000 in rent, and the tenant has stopped paying rent for many months. Can your firm advise me on what to do next? You can call me on 85521 51943 or email sujata.das@example.com.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Sujata Das",
+      "category": "NAME",
+      "start": 67,
+      "end": 77
+    },
+    {
+      "text": "39-year-old",
+      "category": "AGE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 98,
+      "end": 115
+    },
+    {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 126,
+      "end": 132
+    },
+    {
+      "text": "Shruti Bose",
+      "category": "NAME",
+      "start": 164,
+      "end": 175
+    },
+    {
+      "text": "₹4,90,000",
+      "category": "MONEY",
+      "start": 186,
+      "end": 195
+    },
+    {
+      "text": "85521 51943",
+      "category": "PHONE",
+      "start": 324,
+      "end": 335
+    },
+    {
+      "text": "sujata.das@example.com",
+      "category": "EMAIL",
+      "start": 345,
+      "end": 367
+    },
+    {
+      "text": "age (39) + occupation (general physician) + city (Jaipur) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

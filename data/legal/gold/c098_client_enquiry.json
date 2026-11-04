@@ -1,0 +1,68 @@
+{
+  "doc_id": "f4f6f91574c95154",
+  "text": "Subject: Need help with a breach of contract case\n\nHello, my name is Karthik Sathe. I am a 61-year-old college lecturer living in Pune. Our company has a breach of contract claim of INR 7,31,00,000/- against Mishra Infotech Pvt Ltd, and the goods supplied were defective. Can your firm advise me on what to do next? You can call me on 62734 00122 or email karthik.sathe@example.com.",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Karthik Sathe",
+      "category": "NAME",
+      "start": 69,
+      "end": 82
+    },
+    {
+      "text": "61-year-old",
+      "category": "AGE",
+      "start": 91,
+      "end": 102
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 103,
+      "end": 119
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 130,
+      "end": 134
+    },
+    {
+      "text": "INR 7,31,00,000/-",
+      "category": "MONEY",
+      "start": 182,
+      "end": 199
+    },
+    {
+      "text": "Mishra Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 208,
+      "end": 231
+    },
+    {
+      "text": "62734 00122",
+      "category": "PHONE",
+      "start": 335,
+      "end": 346
+    },
+    {
+      "text": "karthik.sathe@example.com",
+      "category": "EMAIL",
+      "start": 356,
+      "end": 381
+    },
+    {
+      "text": "age (61) + occupation (college lecturer) + city (Pune) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,50 @@
+{
+  "doc_id": "cf9b7e30193fa267",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 434/2024\n\nDear Ms. Patil,\n\nThank you for meeting us on 30 August 2024 about your dispute with M/s Pai Textiles Pvt Ltd. As we understand it, the cheque was returned unpaid for insufficient funds. The matter is listed before the Judicial Magistrate First Class Court at Warangal.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 434/2024",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Patil",
+      "category": "NAME",
+      "start": 67,
+      "end": 72
+    },
+    {
+      "text": "30 August 2024",
+      "category": "DATE",
+      "start": 103,
+      "end": 117
+    },
+    {
+      "text": "Pai Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 146,
+      "end": 166
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Warangal",
+      "category": "COURT",
+      "start": 276,
+      "end": 325
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 604,
+      "end": 619
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

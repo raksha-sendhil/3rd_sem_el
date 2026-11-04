@@ -1,0 +1,110 @@
+{
+  "doc_id": "7ec3c65c077a652e",
+  "text": "Intake note (Commercial team, 17 April 2022). Our client Mary Bhatt is a 51-year-old mechanical engineer who lives at Plot 23, Dwarka, New Delhi 110004 and can be reached on 90674 20590 or mary.bhatt@example.com. The client's PAN ECWPB4337X.\nThe client consulted us about a cheque bounce matter against Varghese Textiles Pvt Ltd. A cheque for ₹34,80,000 issued by Varghese Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 815807527677 (IFSC UTIB0223322).\nThe matter was filed as CC/805/2022 before the Judicial Magistrate First Class Court at New Delhi on 25 June 2022.",
+  "spans": [
+    {
+      "text": "17 April 2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 43
+    },
+    {
+      "text": "Mary Bhatt",
+      "category": "NAME",
+      "start": 57,
+      "end": 67
+    },
+    {
+      "text": "51-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 104
+    },
+    {
+      "text": "Plot 23, Dwarka, New Delhi 110004",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 151
+    },
+    {
+      "text": "90674 20590",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "mary.bhatt@example.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 211
+    },
+    {
+      "text": "ECWPB4337X",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 274,
+      "end": 287
+    },
+    {
+      "text": "Varghese Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 303,
+      "end": 328
+    },
+    {
+      "text": "₹34,80,000",
+      "category": "MONEY",
+      "start": 343,
+      "end": 353
+    },
+    {
+      "text": "Varghese Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 364,
+      "end": 389
+    },
+    {
+      "text": "815807527677",
+      "category": "FINANCIAL",
+      "start": 515,
+      "end": 527
+    },
+    {
+      "text": "UTIB0223322",
+      "category": "FINANCIAL",
+      "start": 534,
+      "end": 545
+    },
+    {
+      "text": "CC/805/2022",
+      "category": "CASE_NUMBER",
+      "start": 572,
+      "end": 583
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at New Delhi",
+      "category": "COURT",
+      "start": 595,
+      "end": 645
+    },
+    {
+      "text": "25 June 2022",
+      "category": "DATE",
+      "start": 649,
+      "end": 661
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

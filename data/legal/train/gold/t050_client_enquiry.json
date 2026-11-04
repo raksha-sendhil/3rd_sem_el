@@ -1,0 +1,68 @@
+{
+  "doc_id": "5ab89ed22b07fc14",
+  "text": "Subject: Need help with a breach of contract case\n\nHello, my name is Sanjay Bhosale. I am a 59-year-old pharmacist living in Panaji. Our company has a breach of contract claim of Rs 6,00,00,000 against M/s Apte Logistics Ltd, and the goods supplied were defective. Can your firm advise me on what to do next? You can call me on +91 86778 85665 or email sanjay.bhosale81@example.in.",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Sanjay Bhosale",
+      "category": "NAME",
+      "start": 69,
+      "end": 83
+    },
+    {
+      "text": "59-year-old",
+      "category": "AGE",
+      "start": 92,
+      "end": 103
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 104,
+      "end": 114
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 125,
+      "end": 131
+    },
+    {
+      "text": "Rs 6,00,00,000",
+      "category": "MONEY",
+      "start": 179,
+      "end": 193
+    },
+    {
+      "text": "Apte Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 206,
+      "end": 224
+    },
+    {
+      "text": "+91 86778 85665",
+      "category": "PHONE",
+      "start": 328,
+      "end": 343
+    },
+    {
+      "text": "sanjay.bhosale81@example.in",
+      "category": "EMAIL",
+      "start": 353,
+      "end": 380
+    },
+    {
+      "text": "age (59) + occupation (pharmacist) + city (Panaji) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

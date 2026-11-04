@@ -1,0 +1,110 @@
+{
+  "doc_id": "a87e40093a469da5",
+  "text": "Intake note - Commercial team\nDate: 13 July 2024\nClient: Pallavi Subramanian, a 76-year-old cardiologist from Kolkata.\nAddress: House No. 52, Salt Lake, Kolkata 700004\nPhone: +91 81193 30462. Email: pallavi.subramanian@example.com. PAN QUAPS9348Z.\nMatter: geographical-indication dispute\nOpposing party: Trident Exports\nFacts: The geographical-indication dispute with Trident Exports involves sales of ₹7.4 crore; a conflicting trademark was registered.\nThe matter was filed as CS(COMM) 1863/2025 before the Calcutta High Court on 26/01/2025.",
+  "spans": [
+    {
+      "text": "13 July 2024",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Pallavi Subramanian",
+      "category": "NAME",
+      "start": 57,
+      "end": 76
+    },
+    {
+      "text": "76-year-old",
+      "category": "AGE",
+      "start": 80,
+      "end": 91
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 92,
+      "end": 104
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 117
+    },
+    {
+      "text": "House No. 52, Salt Lake, Kolkata 700004",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 167
+    },
+    {
+      "text": "+91 81193 30462",
+      "category": "PHONE",
+      "start": 175,
+      "end": 190
+    },
+    {
+      "text": "pallavi.subramanian@example.com",
+      "category": "EMAIL",
+      "start": 199,
+      "end": 230
+    },
+    {
+      "text": "QUAPS9348Z",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 256,
+      "end": 287
+    },
+    {
+      "text": "Trident Exports",
+      "category": "ORGANIZATION",
+      "start": 304,
+      "end": 319
+    },
+    {
+      "text": "Trident Exports",
+      "category": "ORGANIZATION",
+      "start": 368,
+      "end": 383
+    },
+    {
+      "text": "₹7.4 crore",
+      "category": "MONEY",
+      "start": 402,
+      "end": 412
+    },
+    {
+      "text": "CS(COMM) 1863/2025",
+      "category": "CASE_NUMBER",
+      "start": 478,
+      "end": 496
+    },
+    {
+      "text": "Calcutta High Court",
+      "category": "COURT",
+      "start": 508,
+      "end": 527
+    },
+    {
+      "text": "26/01/2025",
+      "category": "DATE",
+      "start": 531,
+      "end": 541
+    },
+    {
+      "text": "age (76) + occupation (cardiologist) + city (Kolkata) + issue (geographical-indication dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

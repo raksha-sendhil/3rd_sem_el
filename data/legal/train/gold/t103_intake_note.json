@@ -1,0 +1,104 @@
+{
+  "doc_id": "894528b5d67f9132",
+  "text": "Intake note (Criminal team, 5 January 2021). Our client Radhika Mishra is a 49-year-old orthopaedic surgeon who lives at Bungalow 15, Kadri, Mangaluru 575037 and can be reached on 06650615460 or radhika.mishra48@example.in. The client's PAN BZWPM8284R, Aadhaar 2949 7932 4231.\nThe client consulted us about a anticipatory bail matter against Swati Shinde. The anticipatory bail matter arises from a complaint by Swati Shinde about Rs 55,70,000; the complaint turns a business disagreement into a criminal case.\nThe matter was filed as FIR No. 2368/2021 before the Mangaluru Sessions Court on 19 February 2021.",
+  "spans": [
+    {
+      "text": "5 January 2021",
+      "category": "DATE",
+      "start": 28,
+      "end": 42
+    },
+    {
+      "text": "Radhika Mishra",
+      "category": "NAME",
+      "start": 56,
+      "end": 70
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 107
+    },
+    {
+      "text": "Bungalow 15, Kadri, Mangaluru 575037",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 157
+    },
+    {
+      "text": "06650615460",
+      "category": "PHONE",
+      "start": 180,
+      "end": 191
+    },
+    {
+      "text": "radhika.mishra48@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 222
+    },
+    {
+      "text": "BZWPM8284R",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 251
+    },
+    {
+      "text": "2949 7932 4231",
+      "category": "ID_NUMBER",
+      "start": 261,
+      "end": 275
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 309,
+      "end": 326
+    },
+    {
+      "text": "Swati Shinde",
+      "category": "NAME",
+      "start": 342,
+      "end": 354
+    },
+    {
+      "text": "Swati Shinde",
+      "category": "NAME",
+      "start": 412,
+      "end": 424
+    },
+    {
+      "text": "Rs 55,70,000",
+      "category": "MONEY",
+      "start": 431,
+      "end": 443
+    },
+    {
+      "text": "FIR No. 2368/2021",
+      "category": "CASE_NUMBER",
+      "start": 535,
+      "end": 552
+    },
+    {
+      "text": "Mangaluru Sessions Court",
+      "category": "COURT",
+      "start": 564,
+      "end": 588
+    },
+    {
+      "text": "19 February 2021",
+      "category": "DATE",
+      "start": 592,
+      "end": 608
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

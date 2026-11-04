@@ -1,0 +1,110 @@
+{
+  "doc_id": "f4f03e21ea27bf62",
+  "text": "Intake note - Property team\nDate: 2 March 2025\nClient: Sameer Shah, a 71-year-old government clerk from Thane.\nAddress: Plot 80, Vartak Nagar, Thane 400660\nPhone: +91 89267 59850. Email: sameer.shah@example.com. PAN PSBPS3786F.\nMatter: consumer complaint\nOpposing party: Pioneer Constructions\nFacts: The consumer complaint against Pioneer Constructions concerns a flat bought for ₹3.6 crore; the builder never obtained the occupancy certificate.\nThe matter was filed as CC/1941/2025 before the Thane District Consumer Disputes Redressal Commission on 14 August 2025.",
+  "spans": [
+    {
+      "text": "2 March 2025",
+      "category": "DATE",
+      "start": 34,
+      "end": 46
+    },
+    {
+      "text": "Sameer Shah",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 98
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 109
+    },
+    {
+      "text": "Plot 80, Vartak Nagar, Thane 400660",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 155
+    },
+    {
+      "text": "+91 89267 59850",
+      "category": "PHONE",
+      "start": 163,
+      "end": 178
+    },
+    {
+      "text": "sameer.shah@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 210
+    },
+    {
+      "text": "PSBPS3786F",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 254
+    },
+    {
+      "text": "Pioneer Constructions",
+      "category": "ORGANIZATION",
+      "start": 271,
+      "end": 292
+    },
+    {
+      "text": "Pioneer Constructions",
+      "category": "ORGANIZATION",
+      "start": 331,
+      "end": 352
+    },
+    {
+      "text": "₹3.6 crore",
+      "category": "MONEY",
+      "start": 380,
+      "end": 390
+    },
+    {
+      "text": "CC/1941/2025",
+      "category": "CASE_NUMBER",
+      "start": 470,
+      "end": 482
+    },
+    {
+      "text": "Thane District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 494,
+      "end": 547
+    },
+    {
+      "text": "14 August 2025",
+      "category": "DATE",
+      "start": 551,
+      "end": 565
+    },
+    {
+      "text": "age (71) + occupation (government clerk) + city (Thane) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,104 @@
+{
+  "doc_id": "0fc877361a3ed037",
+  "text": "Intake note (Commercial team, 27 June 2022). Our client Mary Pillai is a 56-year-old software engineer who lives at Plot 82, Shahupuri, Kolhapur 416046 and can be reached on 62656 61287 or mary.pillai14@example.in. The client's PAN EGAPP4971B, Aadhaar 8028 2480 2657.\nThe client consulted us about a cheque bounce matter against Ravi Agarwal. A cheque for Rs 9,75,000 issued by Ravi Agarwal bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as CC/384/2022 before the Judicial Magistrate First Class Court at Kolhapur on 24 December 2022.",
+  "spans": [
+    {
+      "text": "27 June 2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Mary Pillai",
+      "category": "NAME",
+      "start": 56,
+      "end": 67
+    },
+    {
+      "text": "56-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 102
+    },
+    {
+      "text": "Plot 82, Shahupuri, Kolhapur 416046",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 151
+    },
+    {
+      "text": "62656 61287",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "mary.pillai14@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 213
+    },
+    {
+      "text": "EGAPP4971B",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "8028 2480 2657",
+      "category": "ID_NUMBER",
+      "start": 252,
+      "end": 266
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 300,
+      "end": 313
+    },
+    {
+      "text": "Ravi Agarwal",
+      "category": "NAME",
+      "start": 329,
+      "end": 341
+    },
+    {
+      "text": "Rs 9,75,000",
+      "category": "MONEY",
+      "start": 356,
+      "end": 367
+    },
+    {
+      "text": "Ravi Agarwal",
+      "category": "NAME",
+      "start": 378,
+      "end": 390
+    },
+    {
+      "text": "CC/384/2022",
+      "category": "CASE_NUMBER",
+      "start": 488,
+      "end": 499
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kolhapur",
+      "category": "COURT",
+      "start": 511,
+      "end": 560
+    },
+    {
+      "text": "24 December 2022",
+      "category": "DATE",
+      "start": 564,
+      "end": 580
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

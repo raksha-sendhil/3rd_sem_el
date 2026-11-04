@@ -1,0 +1,7 @@
+{
+  "doc_id": "97b7c4bec20b2a5b",
+  "source": "synthetic-legal-train",
+  "template": "intake_note",
+  "person_id": "t116",
+  "text": "Intake note - Commercial team\nDate: 21/07/2021\nClient: Manoj Mishra, a 28-year-old textile trader from Chennai.\nAddress: Bungalow 7, Anna Nagar, Chennai 600056\nPhone: 86619 19450. Email: manoj.mishra@example.com. PAN DYXPM8761X, Aadhaar 9468 6628 3382.\nMatter: cheque bounce\nOpposing party: M/s Sandhu Textiles Pvt Ltd\nFacts: A cheque for INR 43,60,000/- issued by Sandhu Textiles Pvt Ltd bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 312449076635 (IFSC HDFC0542788).\nThe matter was filed as S.C.C. No. 655/2022 before the Judicial Magistrate First Class Court at Chennai on 1 January 2022."
+}

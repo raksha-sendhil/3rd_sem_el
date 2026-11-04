@@ -1,0 +1,44 @@
+{
+  "doc_id": "b6115c282266b9f1",
+  "text": "Subject: Your breach of contract matter (Project Flamingo)\n\nDear Ms. Qureshi,\n\nThank you for meeting us on 20 October 2020 about your dispute with Coastal Industries. As we understand it, the goods supplied were defective.\n\nOur advice is to claim liquidated damages as fixed in the contract. Please collect the inspection reports and the rejection notices and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Flamingo",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 57
+    },
+    {
+      "text": "Qureshi",
+      "category": "NAME",
+      "start": 69,
+      "end": 76
+    },
+    {
+      "text": "20 October 2020",
+      "category": "DATE",
+      "start": 107,
+      "end": 122
+    },
+    {
+      "text": "Coastal Industries",
+      "category": "ORGANIZATION",
+      "start": 147,
+      "end": 165
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 403,
+      "end": 418
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

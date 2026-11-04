@@ -1,0 +1,68 @@
+{
+  "doc_id": "5e42dea2f4e90527",
+  "text": "Subject: Need help with a anticipatory bail case\n\nHello, my name is Pallavi Hegde. I am a 70-year-old electrician living in Kozhikode. Arjun Swamy has filed a police complaint against me over ₹7,75,000, and the complaint was filed during a matrimonial dispute. Can your firm advise me on what to do next? You can call me on 93104 39888 or email pallavi.hegde@example.com.",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 43
+    },
+    {
+      "text": "Pallavi Hegde",
+      "category": "NAME",
+      "start": 68,
+      "end": 81
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 90,
+      "end": 101
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 102,
+      "end": 113
+    },
+    {
+      "text": "Kozhikode",
+      "category": "LOCATION",
+      "start": 124,
+      "end": 133
+    },
+    {
+      "text": "Arjun Swamy",
+      "category": "NAME",
+      "start": 135,
+      "end": 146
+    },
+    {
+      "text": "₹7,75,000",
+      "category": "MONEY",
+      "start": 192,
+      "end": 201
+    },
+    {
+      "text": "93104 39888",
+      "category": "PHONE",
+      "start": 324,
+      "end": 335
+    },
+    {
+      "text": "pallavi.hegde@example.com",
+      "category": "EMAIL",
+      "start": 345,
+      "end": 370
+    },
+    {
+      "text": "age (70) + occupation (electrician) + city (Kozhikode) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

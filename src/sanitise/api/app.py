@@ -33,6 +33,7 @@ from sanitise.agents.detector.pipeline import detect, detect_llm, detect_rules, 
 from sanitise.agents.extractor.pipeline import extract
 from sanitise.agents.pipeline import sanitise
 from sanitise.agents.rewriter.pipeline import rewrite
+from sanitise.api.domains import DomainMiddleware
 from sanitise.api.models import (
     AttackRunRequest,
     CompareRequest,
@@ -41,6 +42,8 @@ from sanitise.api.models import (
     DetectRulesRequest,
     DocumentSummary,
     DocumentView,
+    DomainInfo,
+    DomainsResponse,
     ExtractRequest,
     HealthResponse,
     QueryRequest,
@@ -58,20 +61,22 @@ from sanitise.attacks.runner import (
     summarise,
 )
 from sanitise.config import Settings, get_settings
+from sanitise.domain import current_domain, profiles, settings_for
 from sanitise.errors import PipelineError
 from sanitise.evaluation import scoring
 from sanitise.llm.base import BaseJSONClient
-from sanitise.llm.factory import build_llm_client, close_llm_client
+from sanitise.llm.factory import build_answer_llm, build_llm_client, close_llm_client
 from sanitise.llm.ollama import OllamaClient
 from sanitise.loader import compute_doc_id
 from sanitise.mock_mode import (
-    SAMPLE_DIR,
     build_mock_context,
+    mock_attack_sources,
     mock_facts,
     mock_llm,
     mock_rewrite,
     mock_sanitise,
 )
+from sanitise.monitor import AllowAllMonitor, build_monitor
 from sanitise.rag.answer import RagContext, answer, compare
 from sanitise.rag.dense import build_retriever
 from sanitise.rag.store import SqliteDocumentStore
@@ -101,19 +106,53 @@ def create_app(
     otherwise both come from settings (mock mode builds the fixture corpus on first use)."""
     settings = settings or get_settings()
     mock = settings.llm_backend == "mock"
+    replay = settings.replay_dir  # a Kaggle run exported by sanitise.legal.export
+
+    # One model per role per domain, built on first use: the agents' model (Ollama) and the
+    # answering model (Gemini for legal), as config/domains.json sets them. A test's ``llm``,
+    # mock mode and replay serve every domain with the same stand-in.
+    fixed_llm = llm is not None or mock or bool(replay)
+
+    def domain_settings() -> Settings:
+        return settings_for(settings, current_domain())
+
+    def agents_llm(app: FastAPI) -> BaseJSONClient:
+        if fixed_llm:
+            return app.state.llm
+        domain = current_domain()
+        if domain not in app.state.llms:
+            app.state.llms[domain] = build_llm_client(domain_settings())
+        return app.state.llms[domain]
+
+    def answer_llm(app: FastAPI) -> BaseJSONClient:
+        if fixed_llm:
+            return app.state.llm
+        domain = current_domain()
+        if domain not in app.state.answer_llms:
+            app.state.answer_llms[domain] = build_answer_llm(domain_settings(), agents_llm(app))
+        return app.state.answer_llms[domain]
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
-        owned = llm is None
+        app.state.llms, app.state.answer_llms = {}, {}
         if llm is not None:
             app.state.llm = llm
-        else:
-            app.state.llm = mock_llm() if mock else build_llm_client(settings)
+        elif replay:
+            from sanitise.legal.export import replay_llm
+
+            app.state.llm = replay_llm(replay)
+        elif mock:
+            app.state.llm = mock_llm()
+        else:  # the default domain's model, so /v1/health reports it
+            app.state.llm = agents_llm(app)
         try:
             yield
         finally:
-            if owned:
-                await close_llm_client(app.state.llm)
+            if llm is None:
+                clients = {id(c): c for c in (app.state.llm, *app.state.llms.values())}
+                clients.update({id(c): c for c in app.state.answer_llms.values()})
+                for client in clients.values():
+                    await close_llm_client(client)
 
     app = FastAPI(
         title="sanitise - Agent 1: Sensitive Information Detector",
@@ -122,6 +161,8 @@ def create_app(
     )
     app.state.settings = settings
     app.state.rag = rag
+    app.state.rags = {}  # domain -> RagContext, built on first use
+    app.add_middleware(DomainMiddleware, settings=settings)
     rag_lock = asyncio.Lock()
     app.add_middleware(
         CORSMiddleware,
@@ -143,10 +184,13 @@ def create_app(
     def client_for(
         request: Request, model: str | None = None, retries: int | None = None
     ) -> BaseJSONClient:
-        base: BaseJSONClient = request.app.state.llm
+        base = agents_llm(request.app)
         if model is None and retries is None:
             return base
         return base.with_options(model=model, retries=retries)
+
+    def answer_client(request: Request) -> BaseJSONClient:
+        return answer_llm(request.app)
 
     @app.post("/v1/detect", response_model=DetectorResult)
     async def post_detect(body: DetectRequest, request: Request) -> DetectorResult:
@@ -183,31 +227,76 @@ def create_app(
     # ---------------------------------------------------------- Phase 3a (plan 6.4)
 
     async def rag_for(request: Request) -> RagContext:
-        """The store/retriever/sessions context, built on first use."""
-        if request.app.state.rag is None:
+        """The domain's store/retriever/sessions context, built on first use."""
+        if request.app.state.rag is not None:  # a test's ready context
+            return request.app.state.rag
+        domain = current_domain()
+        rags = request.app.state.rags
+        if domain not in rags:
             async with rag_lock:
-                if request.app.state.rag is None:
-                    if mock:
-                        request.app.state.rag = await build_mock_context(request.app.state.llm)
-                    else:
-                        store = SqliteDocumentStore(settings.store_path)
-                        retriever = await asyncio.to_thread(
-                            build_retriever,
-                            store,
-                            mode=settings.retrieval_mode,
-                            index_dir=settings.index_dir,
-                            model_name=settings.embedding_model,
-                        )
-                        request.app.state.rag = RagContext(store=store, retriever=retriever)
-        return request.app.state.rag
+                if domain not in rags:
+                    rags[domain] = await _build_rag(request.app)
+        return rags[domain]
+
+    async def _build_rag(app: FastAPI) -> RagContext:
+        if replay:
+            from sanitise.legal.export import replay_context
+
+            return replay_context(replay, settings.monitor_min_pool)
+        if mock:
+            return await build_mock_context(app.state.llm)
+        ds = domain_settings()
+        store = SqliteDocumentStore(ds.store_path)
+        retriever = await asyncio.to_thread(
+            build_retriever,
+            store,
+            mode=ds.retrieval_mode,
+            index_dir=ds.index_dir,
+            model_name=ds.embedding_model,
+        )
+        monitor = (
+            build_monitor(ds.clients_path, ds.monitor_min_pool)
+            if ds.monitor == "candidate_pool"
+            else AllowAllMonitor()
+        )
+        return RagContext(store=store, retriever=retriever, monitor=monitor)
+
+    @app.get("/v1/domains", response_model=DomainsResponse)
+    async def get_domains() -> DomainsResponse:
+        """The domains the dashboard can switch between, with the models each one runs."""
+        out = []
+        for name, p in profiles(settings).items():
+            ds = settings_for(settings, name)
+            answer_backend = "mock" if mock else ds.answer_backend
+            out.append(
+                DomainInfo(
+                    name=name,
+                    label=p.label or name.title(),
+                    description=p.description,
+                    model="mock" if mock else ds.model,
+                    answer_backend=answer_backend,
+                    answer_model=ds.gemini_model if answer_backend == "gemini" else ds.model,
+                    agent1=(
+                        f"{ds.agent1_base_model} + {ds.agent1_adapter or 'no adapter'}"
+                        if ds.agent1_backend == "transformers" and not mock
+                        else "same as agents"
+                    ),
+                )
+            )
+        return DomainsResponse(default=settings.domain, domains=out)
 
     def attack_sources() -> tuple[Path, Path]:
         """D's attack scripts and person table; the sample ones (over the 20 fixtures) in mock
         mode or until D's scripts are in place."""
-        attacks_dir = Path(settings.attacks_dir)
-        if mock or not any(attacks_dir.glob("*.json")):
-            return SAMPLE_DIR / "attacks", SAMPLE_DIR / "people.json"
-        return attacks_dir, Path(settings.people_path)
+        if replay:
+            return Path(replay) / "attacks", Path(replay) / "clients.json"
+        if mock:
+            return mock_attack_sources()
+        ds = domain_settings()
+        attacks_dir = Path(ds.attacks_dir)
+        if not any(attacks_dir.glob("*.json")):
+            return mock_attack_sources()
+        return attacks_dir, Path(ds.people_path)
 
     @app.post("/v1/sanitise", response_model=SanitisedRecord)
     async def post_sanitise(body: SanitiseRequest, request: Request) -> SanitisedRecord:
@@ -274,15 +363,19 @@ def create_app(
             body.query,
             body.pipeline,
             body.session_id,
-            client_for(request),
-            body.k or settings.retrieval_k,
+            answer_client(request),
+            body.k or domain_settings().retrieval_k,
         )
 
     @app.post("/v1/compare", response_model=CompareResponse)
     async def post_compare(body: CompareRequest, request: Request) -> CompareResponse:
         ctx = await rag_for(request)
         return await compare(
-            ctx, body.query, body.session_id, client_for(request), body.k or settings.retrieval_k
+            ctx,
+            body.query,
+            body.session_id,
+            answer_client(request),
+            body.k or domain_settings().retrieval_k,
         )
 
     @app.get("/v1/attacks", response_model=list[AttackDefinition])
@@ -301,7 +394,7 @@ def create_app(
             ctx,
             attack,
             load_people(people_path),
-            client_for(request),
+            answer_client(request),
             body.session_id if body else None,
         )
 
@@ -315,7 +408,7 @@ def create_app(
         attack = get_attack(load_attacks(attacks_dir), attack_id)
         ctx = await rag_for(request)
         people = load_people(people_path)
-        llm = client_for(request)
+        llm = answer_client(request)
         sid = session_id or ctx.sessions.create()
 
         def event(name: str, data: str) -> str:

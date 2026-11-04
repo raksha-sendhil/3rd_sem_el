@@ -1,0 +1,74 @@
+{
+  "doc_id": "e06bc42908931959",
+  "text": "Case note: CC/2002/2024\nClient: Mahesh Khan (hardware dealer, Nagpur)\nOpposing party: Harbour Traders\nCourt: Judicial Magistrate First Class Court at Nagpur\nFiled on: 29/10/2024\nClaim amount: 22.7 lakh rupees\nIssue: cheque bounce. The cheque was returned unpaid for insufficient funds.\nAdvice given: Send a statutory demand notice to the drawer and file the complaint if the drawer does not pay.\nOutcome: The drawer paid the full cheque amount after the first hearing.\nRecommended next step: Withdraw the complaint once the payment clears.\nWitness: Anirudh Rathore",
+  "spans": [
+    {
+      "text": "CC/2002/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Mahesh Khan",
+      "category": "NAME",
+      "start": 32,
+      "end": 43
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 45,
+      "end": 60
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 62,
+      "end": 68
+    },
+    {
+      "text": "Harbour Traders",
+      "category": "ORGANIZATION",
+      "start": 86,
+      "end": 101
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 109,
+      "end": 156
+    },
+    {
+      "text": "29/10/2024",
+      "category": "DATE",
+      "start": 167,
+      "end": 177
+    },
+    {
+      "text": "22.7 lakh rupees",
+      "category": "MONEY",
+      "start": 192,
+      "end": 208
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 216,
+      "end": 229
+    },
+    {
+      "text": "Anirudh Rathore",
+      "category": "NAME",
+      "start": 549,
+      "end": 564
+    },
+    {
+      "text": "occupation (hardware dealer) + city (Nagpur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

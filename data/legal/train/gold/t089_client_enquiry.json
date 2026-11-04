@@ -1,0 +1,80 @@
+{
+  "doc_id": "992f549c3de9d638",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Asha Kurian. I am a 49-year-old retired bank officer living in Kolkata. I have a tenancy problem with Ravi Rajan involving Rs 2,25,000 in rent, and the landlord is trying to evict the tenant after a rent increase was refused. My case number is R.C.A. No. 2240/2019 in the Kolkata District Court. Can your firm advise me on what to do next? You can call me on 07349571674 or email asha.kurian58@example.in.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Asha Kurian",
+      "category": "NAME",
+      "start": 67,
+      "end": 78
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 99,
+      "end": 119
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 130,
+      "end": 137
+    },
+    {
+      "text": "Ravi Rajan",
+      "category": "NAME",
+      "start": 169,
+      "end": 179
+    },
+    {
+      "text": "Rs 2,25,000",
+      "category": "MONEY",
+      "start": 190,
+      "end": 201
+    },
+    {
+      "text": "R.C.A. No. 2240/2019",
+      "category": "CASE_NUMBER",
+      "start": 311,
+      "end": 331
+    },
+    {
+      "text": "Kolkata District Court",
+      "category": "COURT",
+      "start": 339,
+      "end": 361
+    },
+    {
+      "text": "07349571674",
+      "category": "PHONE",
+      "start": 426,
+      "end": 437
+    },
+    {
+      "text": "asha.kurian58@example.in",
+      "category": "EMAIL",
+      "start": 447,
+      "end": 471
+    },
+    {
+      "text": "age (49) + occupation (retired bank officer) + city (Kolkata) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

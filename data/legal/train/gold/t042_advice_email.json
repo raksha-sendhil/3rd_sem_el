@@ -1,0 +1,44 @@
+{
+  "doc_id": "a4f2f68d2b1b004d",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Kulkarni,\n\nThank you for meeting us on 18 September 2025 about your dispute with Meera Bansal. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Lucknow.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Kulkarni",
+      "category": "NAME",
+      "start": 45,
+      "end": 53
+    },
+    {
+      "text": "18 September 2025",
+      "category": "DATE",
+      "start": 84,
+      "end": 101
+    },
+    {
+      "text": "Meera Bansal",
+      "category": "NAME",
+      "start": 126,
+      "end": 138
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Lucknow",
+      "category": "COURT",
+      "start": 256,
+      "end": 304
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 545,
+      "end": 560
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

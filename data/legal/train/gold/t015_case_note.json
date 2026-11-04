@@ -1,0 +1,68 @@
+{
+  "doc_id": "d5a5f4c580cec860",
+  "text": "Case note: C.P.(IB) No. 574/2025\nClient: Sunanda DSouza (orthopaedic surgeon, Mysuru)\nOpposing party: M/s Aravali Holdings Ltd\nCourt: NCLT Mumbai\nFiled on: 25 September 2025\nClaim amount: Rs 32,07,00,000\nIssue: cross-border insolvency. The debtor is in insolvency proceedings in two countries.\nAdvice given: File the claim with the resolution professional before the deadline.\nOutcome: The claim was admitted in full.\nRecommended next step: Vote on the resolution plan.",
+  "spans": [
+    {
+      "text": "C.P.(IB) No. 574/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 32
+    },
+    {
+      "text": "Sunanda DSouza",
+      "category": "NAME",
+      "start": 41,
+      "end": 55
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 57,
+      "end": 76
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 78,
+      "end": 84
+    },
+    {
+      "text": "Aravali Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 106,
+      "end": 126
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 134,
+      "end": 145
+    },
+    {
+      "text": "25 September 2025",
+      "category": "DATE",
+      "start": 156,
+      "end": 173
+    },
+    {
+      "text": "Rs 32,07,00,000",
+      "category": "MONEY",
+      "start": 188,
+      "end": 203
+    },
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 211,
+      "end": 234
+    },
+    {
+      "text": "occupation (orthopaedic surgeon) + city (Mysuru) + issue (cross-border insolvency)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "3572521feb3ca512",
+  "text": "Case note: R.C.S. No. 1916/2022\nClient: Nikhil Ghosh (textile trader, Nagpur)\nOpposing party: Charulata Sandhu\nCourt: Nagpur District Court\nFiled on: 17/08/2022\nClaim amount: 8.6 lakh rupees\nIssue: tenancy eviction. The tenant has stopped paying rent for many months.\nAdvice given: Issue a notice terminating the tenancy and claim mesne profits for the period of occupation.\nOutcome: The court passed an eviction decree with arrears.\nRecommended next step: File for execution of the decree.",
+  "spans": [
+    {
+      "text": "R.C.S. No. 1916/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Nikhil Ghosh",
+      "category": "NAME",
+      "start": 40,
+      "end": 52
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 68
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 70,
+      "end": 76
+    },
+    {
+      "text": "Charulata Sandhu",
+      "category": "NAME",
+      "start": 94,
+      "end": 110
+    },
+    {
+      "text": "Nagpur District Court",
+      "category": "COURT",
+      "start": 118,
+      "end": 139
+    },
+    {
+      "text": "17/08/2022",
+      "category": "DATE",
+      "start": 150,
+      "end": 160
+    },
+    {
+      "text": "8.6 lakh rupees",
+      "category": "MONEY",
+      "start": 175,
+      "end": 190
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 198,
+      "end": 214
+    },
+    {
+      "text": "occupation (textile trader) + city (Nagpur) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

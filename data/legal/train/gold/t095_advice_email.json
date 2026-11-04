@@ -1,0 +1,50 @@
+{
+  "doc_id": "706e54a79bc84cd0",
+  "text": "Subject: Your land dispute matter - O.S. No. 2445/2025\n\nDear Ms. Ranade,\n\nThank you for meeting us on 6 February 2026 about your dispute with Asha Fernandes. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Coimbatore District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2445/2025",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Ranade",
+      "category": "NAME",
+      "start": 65,
+      "end": 71
+    },
+    {
+      "text": "6 February 2026",
+      "category": "DATE",
+      "start": 102,
+      "end": 117
+    },
+    {
+      "text": "Asha Fernandes",
+      "category": "NAME",
+      "start": 142,
+      "end": 156
+    },
+    {
+      "text": "Coimbatore District Court",
+      "category": "COURT",
+      "start": 269,
+      "end": 294
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 483,
+      "end": 499
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

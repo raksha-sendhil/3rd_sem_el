@@ -1,0 +1,122 @@
+{
+  "doc_id": "94b3b2782e5a4256",
+  "text": "Intake note - Commercial team\nDate: 26 May 2019\nClient: Aarti Pai, a 54-year-old architect from Jaipur.\nAddress: Plot 34, Vaishali Nagar, Jaipur 302033\nPhone: 71590 03555. Email: aarti.pai@example.in. PAN VLXPP1883A, Aadhaar 5258 7719 8902.\nMatter: aircraft lease repossession (Project Ibis)\nOpposing party: M/s Meridian Airways Ltd\nFacts: The aircraft lease repossession against M/s Meridian Airways Ltd concerns arrears of INR 34,82,00,000/-; the airline has stopped paying lease rentals.\nThe matter was filed as CS(COMM) 737/2019 before the Rajasthan High Court on 18 November 2019.",
+  "spans": [
+    {
+      "text": "26 May 2019",
+      "category": "DATE",
+      "start": 36,
+      "end": 47
+    },
+    {
+      "text": "Aarti Pai",
+      "category": "NAME",
+      "start": 56,
+      "end": 65
+    },
+    {
+      "text": "54-year-old",
+      "category": "AGE",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 81,
+      "end": 90
+    },
+    {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 96,
+      "end": 102
+    },
+    {
+      "text": "Plot 34, Vaishali Nagar, Jaipur 302033",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 151
+    },
+    {
+      "text": "71590 03555",
+      "category": "PHONE",
+      "start": 159,
+      "end": 170
+    },
+    {
+      "text": "aarti.pai@example.in",
+      "category": "EMAIL",
+      "start": 179,
+      "end": 199
+    },
+    {
+      "text": "VLXPP1883A",
+      "category": "ID_NUMBER",
+      "start": 205,
+      "end": 215
+    },
+    {
+      "text": "5258 7719 8902",
+      "category": "ID_NUMBER",
+      "start": 225,
+      "end": 239
+    },
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 249,
+      "end": 276
+    },
+    {
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 278,
+      "end": 290
+    },
+    {
+      "text": "Meridian Airways Ltd",
+      "category": "ORGANIZATION",
+      "start": 312,
+      "end": 332
+    },
+    {
+      "text": "Meridian Airways Ltd",
+      "category": "ORGANIZATION",
+      "start": 384,
+      "end": 404
+    },
+    {
+      "text": "INR 34,82,00,000/-",
+      "category": "MONEY",
+      "start": 425,
+      "end": 443
+    },
+    {
+      "text": "CS(COMM) 737/2019",
+      "category": "CASE_NUMBER",
+      "start": 515,
+      "end": 532
+    },
+    {
+      "text": "Rajasthan High Court",
+      "category": "COURT",
+      "start": 544,
+      "end": 564
+    },
+    {
+      "text": "18 November 2019",
+      "category": "DATE",
+      "start": 568,
+      "end": 584
+    },
+    {
+      "text": "age (54) + occupation (architect) + city (Jaipur) + issue (aircraft lease repossession)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

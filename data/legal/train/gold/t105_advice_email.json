@@ -1,0 +1,56 @@
+{
+  "doc_id": "6f7f3c021948a09d",
+  "text": "Subject: Your land dispute matter - O.S. No. 1494/2020\n\nDear Mr. Ghosh,\n\nThank you for meeting us on 4 October 2020 about your dispute with Vandana Kurian. As we understand it, the occupant claims ownership by adverse possession. The matter is listed before the Lucknow District Court.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office. We will pursue the full claim of INR 1,86,00,000/-.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 1494/2020",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "4 October 2020",
+      "category": "DATE",
+      "start": 101,
+      "end": 115
+    },
+    {
+      "text": "Vandana Kurian",
+      "category": "NAME",
+      "start": 140,
+      "end": 154
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 262,
+      "end": 284
+    },
+    {
+      "text": "INR 1,86,00,000/-",
+      "category": "MONEY",
+      "start": 531,
+      "end": 548
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 565,
+      "end": 577
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "cabfaa5117466387",
+  "text": "Intake note (Property team, 21/10/2021). Our client Mohan Sandhu is a 62-year-old electrician who lives at House No. 123, Anna Nagar, Chennai 600042 and can be reached on 06926818780 or mohan.sandhu@example.com. The client's PAN VWDPS1315J.\nThe client consulted us about a consumer complaint matter against M/s Goyal Developers. The consumer complaint against Goyal Developers concerns a flat bought for ₹3,26,00,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as CC/57/2022 before the Chennai District Consumer Disputes Redressal Commission on 31 March 2022.",
+  "spans": [
+    {
+      "text": "21/10/2021",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Mohan Sandhu",
+      "category": "NAME",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 93
+    },
+    {
+      "text": "House No. 123, Anna Nagar, Chennai 600042",
+      "category": "ADDRESS",
+      "start": 107,
+      "end": 148
+    },
+    {
+      "text": "06926818780",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "mohan.sandhu@example.com",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 210
+    },
+    {
+      "text": "VWDPS1315J",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 239
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 273,
+      "end": 291
+    },
+    {
+      "text": "Goyal Developers",
+      "category": "ORGANIZATION",
+      "start": 311,
+      "end": 327
+    },
+    {
+      "text": "Goyal Developers",
+      "category": "ORGANIZATION",
+      "start": 360,
+      "end": 376
+    },
+    {
+      "text": "₹3,26,00,000",
+      "category": "MONEY",
+      "start": 404,
+      "end": 416
+    },
+    {
+      "text": "CC/57/2022",
+      "category": "CASE_NUMBER",
+      "start": 510,
+      "end": 520
+    },
+    {
+      "text": "Chennai District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 532,
+      "end": 587
+    },
+    {
+      "text": "31 March 2022",
+      "category": "DATE",
+      "start": 591,
+      "end": 604
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

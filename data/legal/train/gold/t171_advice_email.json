@@ -1,0 +1,38 @@
+{
+  "doc_id": "8bcb2fa7e586acfe",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Desai,\n\nThank you for meeting us on 26 January 2025 about your dispute with Emerald Textiles Pvt Ltd. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Desai",
+      "category": "NAME",
+      "start": 45,
+      "end": 50
+    },
+    {
+      "text": "26 January 2025",
+      "category": "DATE",
+      "start": 81,
+      "end": 96
+    },
+    {
+      "text": "Emerald Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 121,
+      "end": 145
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 470,
+      "end": 482
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

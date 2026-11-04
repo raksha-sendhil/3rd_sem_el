@@ -1,0 +1,74 @@
+{
+  "doc_id": "5ce33e4aec2e2306",
+  "text": "Case note: CC/960/2022\nClient: Debashish Pawar (railway employee, Jaipur)\nOpposing party: M/s Fernandes Constructions\nCourt: Jaipur District Consumer Disputes Redressal Commission\nFiled on: 5 April 2022\nClaim amount: ₹9,10,00,000\nIssue: consumer complaint. The builder never obtained the occupancy certificate.\nAdvice given: Seek a full refund with interest because the builder failed to obtain the occupancy certificate.\nOutcome: A full refund with interest was ordered.\nRecommended next step: Track the refund instalments.\nWitness: Naveen Karve",
+  "spans": [
+    {
+      "text": "CC/960/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 22
+    },
+    {
+      "text": "Debashish Pawar",
+      "category": "NAME",
+      "start": 31,
+      "end": 46
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 48,
+      "end": 64
+    },
+    {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 66,
+      "end": 72
+    },
+    {
+      "text": "Fernandes Constructions",
+      "category": "ORGANIZATION",
+      "start": 94,
+      "end": 117
+    },
+    {
+      "text": "Jaipur District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 125,
+      "end": 179
+    },
+    {
+      "text": "5 April 2022",
+      "category": "DATE",
+      "start": 190,
+      "end": 202
+    },
+    {
+      "text": "₹9,10,00,000",
+      "category": "MONEY",
+      "start": 217,
+      "end": 229
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 237,
+      "end": 255
+    },
+    {
+      "text": "Naveen Karve",
+      "category": "NAME",
+      "start": 534,
+      "end": 546
+    },
+    {
+      "text": "occupation (railway employee) + city (Jaipur) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

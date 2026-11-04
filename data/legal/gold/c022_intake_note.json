@@ -1,0 +1,98 @@
+{
+  "doc_id": "168a7e4ad638c588",
+  "text": "Intake note (Commercial team, 06/12/2022). Our client Priyanka Apte is a 67-year-old schoolteacher who lives at House No. 31, Vesu, Surat 395010 and can be reached on +91 70100 19900 or priyanka.apte@example.com. The client's PAN THEPA9392F.\nThe client consulted us about a cheque bounce matter against M/s Meridian Traders. A cheque for Rs 15,40,000 issued by M/s Meridian Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2548/2023 before the Judicial Magistrate First Class Court at Surat on 2 May 2023.",
+  "spans": [
+    {
+      "text": "06/12/2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Priyanka Apte",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 98
+    },
+    {
+      "text": "House No. 31, Vesu, Surat 395010",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 144
+    },
+    {
+      "text": "+91 70100 19900",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "priyanka.apte@example.com",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 211
+    },
+    {
+      "text": "THEPA9392F",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 274,
+      "end": 287
+    },
+    {
+      "text": "Meridian Traders",
+      "category": "ORGANIZATION",
+      "start": 307,
+      "end": 323
+    },
+    {
+      "text": "Rs 15,40,000",
+      "category": "MONEY",
+      "start": 338,
+      "end": 350
+    },
+    {
+      "text": "Meridian Traders",
+      "category": "ORGANIZATION",
+      "start": 365,
+      "end": 381
+    },
+    {
+      "text": "CC/2548/2023",
+      "category": "CASE_NUMBER",
+      "start": 468,
+      "end": 480
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Surat",
+      "category": "COURT",
+      "start": 492,
+      "end": 538
+    },
+    {
+      "text": "2 May 2023",
+      "category": "DATE",
+      "start": 542,
+      "end": 552
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

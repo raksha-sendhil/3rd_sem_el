@@ -1,0 +1,44 @@
+{
+  "doc_id": "6a782df28b34241b",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Shinde,\n\nThank you for meeting us on 20 July 2023 about your dispute with Anirudh Gaikwad. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the New Delhi District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Shinde",
+      "category": "NAME",
+      "start": 48,
+      "end": 54
+    },
+    {
+      "text": "20 July 2023",
+      "category": "DATE",
+      "start": 85,
+      "end": 97
+    },
+    {
+      "text": "Anirudh Gaikwad",
+      "category": "NAME",
+      "start": 122,
+      "end": 137
+    },
+    {
+      "text": "New Delhi District Court",
+      "category": "COURT",
+      "start": 250,
+      "end": 274
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 505,
+      "end": 524
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,74 @@
+{
+  "doc_id": "72d4d98de222d84c",
+  "text": "Case note: CC/185/2019\nClient: Pooja Bhandari (government clerk, Jaipur)\nOpposing party: Anand Menon\nCourt: Judicial Magistrate First Class Court at Jaipur\nFiled on: 29 October 2019\nClaim amount: ₹19,40,000\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.\nWitness: Sujata Mishra",
+  "spans": [
+    {
+      "text": "CC/185/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 22
+    },
+    {
+      "text": "Pooja Bhandari",
+      "category": "NAME",
+      "start": 31,
+      "end": 45
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 47,
+      "end": 63
+    },
+    {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 65,
+      "end": 71
+    },
+    {
+      "text": "Anand Menon",
+      "category": "NAME",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Jaipur",
+      "category": "COURT",
+      "start": 108,
+      "end": 155
+    },
+    {
+      "text": "29 October 2019",
+      "category": "DATE",
+      "start": 166,
+      "end": 181
+    },
+    {
+      "text": "₹19,40,000",
+      "category": "MONEY",
+      "start": 196,
+      "end": 206
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 214,
+      "end": 227
+    },
+    {
+      "text": "Sujata Mishra",
+      "category": "NAME",
+      "start": 568,
+      "end": 581
+    },
+    {
+      "text": "occupation (government clerk) + city (Jaipur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

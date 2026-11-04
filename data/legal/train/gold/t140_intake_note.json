@@ -1,0 +1,98 @@
+{
+  "doc_id": "43bb936cf573abf8",
+  "text": "Intake note (Commercial team, 27/04/2024). Our client Priyanka Rane is a 40-year-old schoolteacher who lives at House No. 6, Pattom, Thiruvananthapuram 695046 and can be reached on 83019 89885 or priyanka.rane@example.in. The client's PAN VRJPR4140X.\nThe client consulted us about a cheque bounce matter against Farhan Khan. A cheque for ₹16,20,000 issued by Farhan Khan bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/1143/2024 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 6 June 2024.",
+  "spans": [
+    {
+      "text": "27/04/2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Priyanka Rane",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "40-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 98
+    },
+    {
+      "text": "House No. 6, Pattom, Thiruvananthapuram 695046",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 158
+    },
+    {
+      "text": "83019 89885",
+      "category": "PHONE",
+      "start": 181,
+      "end": 192
+    },
+    {
+      "text": "priyanka.rane@example.in",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 220
+    },
+    {
+      "text": "VRJPR4140X",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 249
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 283,
+      "end": 296
+    },
+    {
+      "text": "Farhan Khan",
+      "category": "NAME",
+      "start": 312,
+      "end": 323
+    },
+    {
+      "text": "₹16,20,000",
+      "category": "MONEY",
+      "start": 338,
+      "end": 348
+    },
+    {
+      "text": "Farhan Khan",
+      "category": "NAME",
+      "start": 359,
+      "end": 370
+    },
+    {
+      "text": "CC/1143/2024",
+      "category": "CASE_NUMBER",
+      "start": 467,
+      "end": 479
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 491,
+      "end": 550
+    },
+    {
+      "text": "6 June 2024",
+      "category": "DATE",
+      "start": 554,
+      "end": 565
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

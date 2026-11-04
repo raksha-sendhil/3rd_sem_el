@@ -1,0 +1,44 @@
+{
+  "doc_id": "7226f9cbb481f236",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Mr. Hegde,\n\nThank you for meeting us on 14 February 2021 about your dispute with Madhuri Kurian. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Nashik District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Hegde",
+      "category": "NAME",
+      "start": 48,
+      "end": 53
+    },
+    {
+      "text": "14 February 2021",
+      "category": "DATE",
+      "start": 84,
+      "end": 100
+    },
+    {
+      "text": "Madhuri Kurian",
+      "category": "NAME",
+      "start": 125,
+      "end": 139
+    },
+    {
+      "text": "Nashik District Court",
+      "category": "COURT",
+      "start": 272,
+      "end": 293
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 523,
+      "end": 538
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

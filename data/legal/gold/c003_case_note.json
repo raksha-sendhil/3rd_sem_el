@@ -1,0 +1,68 @@
+{
+  "doc_id": "053ce64aa6558755",
+  "text": "Case note: CC/2745/2025\nClient: Sanjay Patil (software engineer, Hyderabad)\nOpposing party: Karve Constructions\nCourt: Hyderabad District Consumer Disputes Redressal Commission\nFiled on: 26 April 2025\nClaim amount: INR 8,29,00,000/-\nIssue: consumer complaint. The builder keeps promising possession by email but never delivers.\nAdvice given: Keep every written promise of possession because each one extends the period of limitation.\nOutcome: The complaint was admitted and notice was issued to the builder.\nRecommended next step: File the evidence affidavit.",
+  "spans": [
+    {
+      "text": "CC/2745/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Sanjay Patil",
+      "category": "NAME",
+      "start": 32,
+      "end": 44
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 46,
+      "end": 63
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 65,
+      "end": 74
+    },
+    {
+      "text": "Karve Constructions",
+      "category": "ORGANIZATION",
+      "start": 92,
+      "end": 111
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 119,
+      "end": 176
+    },
+    {
+      "text": "26 April 2025",
+      "category": "DATE",
+      "start": 187,
+      "end": 200
+    },
+    {
+      "text": "INR 8,29,00,000/-",
+      "category": "MONEY",
+      "start": 215,
+      "end": 232
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 240,
+      "end": 258
+    },
+    {
+      "text": "occupation (software engineer) + city (Hyderabad) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

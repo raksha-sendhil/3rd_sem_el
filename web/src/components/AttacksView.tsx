@@ -25,13 +25,17 @@ import {
 } from "./common";
 import { LeakageChart } from "./LeakageChart";
 
-const ORDER: AttackKind[] = ["context_dump", "stepwise", "interception"];
+const ORDER: AttackKind[] = ["direct", "linkage", "context_dump", "stepwise", "interception"];
 const TONE: Record<AttackKind, string> = {
+  direct: "pink",
+  linkage: "orange",
   context_dump: "pink",
   stepwise: "teal",
   interception: "orange",
 };
 const COUNT: Record<AttackKind, (n: number) => string> = {
+  direct: (n) => (n === 1 ? "1 prompt" : `${n} prompts`),
+  linkage: (n) => (n === 1 ? "1 prompt" : `${n} prompts`),
   context_dump: (n) => (n === 1 ? "1 prompt" : `${n} prompts`),
   stepwise: (n) => `${n} prompts`,
   interception: (n) => `${n} requests, no prompts`,

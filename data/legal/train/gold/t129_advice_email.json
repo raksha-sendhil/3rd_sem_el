@@ -1,0 +1,50 @@
+{
+  "doc_id": "2517af47ad0b9cfa",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 759/2024\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 24 August 2025 about your dispute with Rekha Nambiar. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Vadodara.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 759/2024",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Bhandari",
+      "category": "NAME",
+      "start": 67,
+      "end": 75
+    },
+    {
+      "text": "24 August 2025",
+      "category": "DATE",
+      "start": 106,
+      "end": 120
+    },
+    {
+      "text": "Rekha Nambiar",
+      "category": "NAME",
+      "start": 145,
+      "end": 158
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Vadodara",
+      "category": "COURT",
+      "start": 277,
+      "end": 326
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 603,
+      "end": 615
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

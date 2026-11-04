@@ -1,0 +1,56 @@
+{
+  "doc_id": "25748cd085b44517",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 881/2020\n\nDear Ms. Mehra,\n\nThank you for meeting us on 7 September 2020 about your dispute with Ravi Ghosh. As we understand it, the couple has a young child. The matter is listed before the Family Court at Coimbatore.\n\nOur advice is to agree a joint parenting plan before the second motion. Please collect the school records of the child and the draft parenting plan and send copies to this office. We will pursue the full claim of ₹25,40,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 881/2020",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 70
+    },
+    {
+      "text": "Mehra",
+      "category": "NAME",
+      "start": 81,
+      "end": 86
+    },
+    {
+      "text": "7 September 2020",
+      "category": "DATE",
+      "start": 117,
+      "end": 133
+    },
+    {
+      "text": "Ravi Ghosh",
+      "category": "NAME",
+      "start": 158,
+      "end": 168
+    },
+    {
+      "text": "Family Court at Coimbatore",
+      "category": "COURT",
+      "start": 253,
+      "end": 279
+    },
+    {
+      "text": "₹25,40,000",
+      "category": "MONEY",
+      "start": 495,
+      "end": 505
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 522,
+      "end": 537
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

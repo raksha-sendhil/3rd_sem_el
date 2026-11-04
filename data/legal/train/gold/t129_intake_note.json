@@ -1,0 +1,98 @@
+{
+  "doc_id": "b72f7d99ccc8660a",
+  "text": "Intake note (Commercial team, 14 August 2024). Our client Priyanka Bhandari is a 49-year-old nurse who lives at Bungalow 38, Fatehgunj, Vadodara 390055 and can be reached on +91 89572 07148 or priyanka.bhandari@example.com. The client's PAN JEEPB1730G.\nThe client consulted us about a cheque bounce matter against Rekha Nambiar. A cheque for ₹24,20,000 issued by Rekha Nambiar bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 759/2024 before the Judicial Magistrate First Class Court at Vadodara on 28 October 2024.",
+  "spans": [
+    {
+      "text": "14 August 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 44
+    },
+    {
+      "text": "Priyanka Bhandari",
+      "category": "NAME",
+      "start": 58,
+      "end": 75
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 81,
+      "end": 92
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 93,
+      "end": 98
+    },
+    {
+      "text": "Bungalow 38, Fatehgunj, Vadodara 390055",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 151
+    },
+    {
+      "text": "+91 89572 07148",
+      "category": "PHONE",
+      "start": 174,
+      "end": 189
+    },
+    {
+      "text": "priyanka.bhandari@example.com",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 222
+    },
+    {
+      "text": "JEEPB1730G",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 251
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 285,
+      "end": 298
+    },
+    {
+      "text": "Rekha Nambiar",
+      "category": "NAME",
+      "start": 314,
+      "end": 327
+    },
+    {
+      "text": "₹24,20,000",
+      "category": "MONEY",
+      "start": 342,
+      "end": 352
+    },
+    {
+      "text": "Rekha Nambiar",
+      "category": "NAME",
+      "start": 363,
+      "end": 376
+    },
+    {
+      "text": "S.C.C. No. 759/2024",
+      "category": "CASE_NUMBER",
+      "start": 474,
+      "end": 493
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Vadodara",
+      "category": "COURT",
+      "start": 505,
+      "end": 554
+    },
+    {
+      "text": "28 October 2024",
+      "category": "DATE",
+      "start": 558,
+      "end": 573
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

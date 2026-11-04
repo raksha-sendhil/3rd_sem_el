@@ -1,0 +1,68 @@
+{
+  "doc_id": "00384fdb6c5cd04d",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Ananya Shinde. I am a 69-year-old general physician living in New Delhi. I have a tenancy problem with Anirudh Gaikwad involving ₹7,30,000 in rent, and the landlord needs the premises for the family's own use. Can your firm advise me on what to do next? You can call me on 09345664067 or email ananya.shinde@example.com.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Ananya Shinde",
+      "category": "NAME",
+      "start": 67,
+      "end": 80
+    },
+    {
+      "text": "69-year-old",
+      "category": "AGE",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 101,
+      "end": 118
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 129,
+      "end": 138
+    },
+    {
+      "text": "Anirudh Gaikwad",
+      "category": "NAME",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "₹7,30,000",
+      "category": "MONEY",
+      "start": 196,
+      "end": 205
+    },
+    {
+      "text": "09345664067",
+      "category": "PHONE",
+      "start": 340,
+      "end": 351
+    },
+    {
+      "text": "ananya.shinde@example.com",
+      "category": "EMAIL",
+      "start": 361,
+      "end": 386
+    },
+    {
+      "text": "age (69) + occupation (general physician) + city (New Delhi) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

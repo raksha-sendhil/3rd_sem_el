@@ -1,0 +1,122 @@
+{
+  "doc_id": "83d0bc63e50cc435",
+  "text": "Intake note - Commercial team\nDate: 30 May 2022\nClient: Ishita Ranade, a 32-year-old taxi driver from Chennai.\nAddress: Bungalow 14, Adyar, Chennai 600031\nPhone: +91 62055 23008. Email: ishita.ranade@example.com. PAN WGKPR1241Z.\nMatter: cheque bounce\nOpposing party: Everest Traders\nFacts: A cheque for Rs 9,90,000 issued by M/s Everest Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 23587201940 (IFSC KKBK0211995).\nThe matter was filed as S.C.C. No. 765/2022 before the Judicial Magistrate First Class Court at Chennai on 20 October 2022.",
+  "spans": [
+    {
+      "text": "30 May 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 47
+    },
+    {
+      "text": "Ishita Ranade",
+      "category": "NAME",
+      "start": 56,
+      "end": 69
+    },
+    {
+      "text": "32-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 96
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 102,
+      "end": 109
+    },
+    {
+      "text": "Bungalow 14, Adyar, Chennai 600031",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 154
+    },
+    {
+      "text": "+91 62055 23008",
+      "category": "PHONE",
+      "start": 162,
+      "end": 177
+    },
+    {
+      "text": "ishita.ranade@example.com",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 211
+    },
+    {
+      "text": "WGKPR1241Z",
+      "category": "ID_NUMBER",
+      "start": 217,
+      "end": 227
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 237,
+      "end": 250
+    },
+    {
+      "text": "Everest Traders",
+      "category": "ORGANIZATION",
+      "start": 267,
+      "end": 282
+    },
+    {
+      "text": "Rs 9,90,000",
+      "category": "MONEY",
+      "start": 303,
+      "end": 314
+    },
+    {
+      "text": "Everest Traders",
+      "category": "ORGANIZATION",
+      "start": 329,
+      "end": 344
+    },
+    {
+      "text": "23587201940",
+      "category": "FINANCIAL",
+      "start": 462,
+      "end": 473
+    },
+    {
+      "text": "KKBK0211995",
+      "category": "FINANCIAL",
+      "start": 480,
+      "end": 491
+    },
+    {
+      "text": "S.C.C. No. 765/2022",
+      "category": "CASE_NUMBER",
+      "start": 518,
+      "end": 537
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Chennai",
+      "category": "COURT",
+      "start": 549,
+      "end": 597
+    },
+    {
+      "text": "20 October 2022",
+      "category": "DATE",
+      "start": 601,
+      "end": 616
+    },
+    {
+      "text": "age (32) + occupation (taxi driver) + city (Chennai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

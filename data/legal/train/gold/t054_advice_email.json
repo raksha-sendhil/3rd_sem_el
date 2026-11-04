@@ -1,0 +1,44 @@
+{
+  "doc_id": "1505e78ed5ec6f11",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 1131/2021\n\nDear Ms. Nambiar,\n\nThank you for meeting us on 12 July 2021 about your dispute with Mittal Realty. As we understand it, the builder keeps promising possession by email but never delivers.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 1131/2021",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Nambiar",
+      "category": "NAME",
+      "start": 71,
+      "end": 78
+    },
+    {
+      "text": "12 July 2021",
+      "category": "DATE",
+      "start": 109,
+      "end": 121
+    },
+    {
+      "text": "Mittal Realty",
+      "category": "ORGANIZATION",
+      "start": 146,
+      "end": 159
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 526,
+      "end": 545
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

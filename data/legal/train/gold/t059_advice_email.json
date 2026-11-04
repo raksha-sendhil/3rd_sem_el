@@ -1,0 +1,44 @@
+{
+  "doc_id": "a7aaffa064fdacce",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. DSouza,\n\nThank you for meeting us on 27 June 2021 about your dispute with Pallavi Desai. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Thiruvananthapuram District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "DSouza",
+      "category": "NAME",
+      "start": 48,
+      "end": 54
+    },
+    {
+      "text": "27 June 2021",
+      "category": "DATE",
+      "start": 85,
+      "end": 97
+    },
+    {
+      "text": "Pallavi Desai",
+      "category": "NAME",
+      "start": 122,
+      "end": 135
+    },
+    {
+      "text": "Thiruvananthapuram District Court",
+      "category": "COURT",
+      "start": 242,
+      "end": 275
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 527,
+      "end": 546
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

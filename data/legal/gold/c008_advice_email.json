@@ -1,0 +1,44 @@
+{
+  "doc_id": "5f2a7c499614c5d4",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Pillai,\n\nThank you for meeting us on 11 April 2023 about your dispute with Ravi Agarwal. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Kolhapur.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Pillai",
+      "category": "NAME",
+      "start": 45,
+      "end": 51
+    },
+    {
+      "text": "11 April 2023",
+      "category": "DATE",
+      "start": 82,
+      "end": 95
+    },
+    {
+      "text": "Ravi Agarwal",
+      "category": "NAME",
+      "start": 120,
+      "end": 132
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kolhapur",
+      "category": "COURT",
+      "start": 251,
+      "end": 300
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 577,
+      "end": 589
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

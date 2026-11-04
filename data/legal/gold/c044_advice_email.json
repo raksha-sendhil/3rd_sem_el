@@ -1,0 +1,50 @@
+{
+  "doc_id": "f710fad0b2b4fbe7",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Iyer,\n\nThank you for meeting us on 27 October 2020 about your dispute with Anjali Patil. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Hubballi District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office. We will pursue the full claim of ₹65,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Iyer",
+      "category": "NAME",
+      "start": 48,
+      "end": 52
+    },
+    {
+      "text": "27 October 2020",
+      "category": "DATE",
+      "start": 83,
+      "end": 98
+    },
+    {
+      "text": "Anjali Patil",
+      "category": "NAME",
+      "start": 123,
+      "end": 135
+    },
+    {
+      "text": "Hubballi District Court",
+      "category": "COURT",
+      "start": 268,
+      "end": 291
+    },
+    {
+      "text": "₹65,000",
+      "category": "MONEY",
+      "start": 539,
+      "end": 546
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 563,
+      "end": 578
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

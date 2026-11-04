@@ -1,0 +1,116 @@
+{
+  "doc_id": "0de65f5daf34ea87",
+  "text": "Intake note - Commercial team\nDate: 23 June 2020\nClient: Fatima Rathore, a 41-year-old college lecturer from Kolhapur.\nAddress: House No. 42, Shahupuri, Kolhapur 416017\nPhone: 84839 81532. Email: fatima.rathore@example.in. PAN PNAPR3050A, Aadhaar 5850 3603 1072.\nMatter: wrongful termination\nOpposing party: Mehra Pharma Ltd\nFacts: The wrongful termination claim against M/s Mehra Pharma Ltd is for ₹9,50,000; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 1791/2020 before the Kolhapur Labour Court on 26 November 2020.",
+  "spans": [
+    {
+      "text": "23 June 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Fatima Rathore",
+      "category": "NAME",
+      "start": 57,
+      "end": 71
+    },
+    {
+      "text": "41-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 109,
+      "end": 117
+    },
+    {
+      "text": "House No. 42, Shahupuri, Kolhapur 416017",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 168
+    },
+    {
+      "text": "84839 81532",
+      "category": "PHONE",
+      "start": 176,
+      "end": 187
+    },
+    {
+      "text": "fatima.rathore@example.in",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 221
+    },
+    {
+      "text": "PNAPR3050A",
+      "category": "ID_NUMBER",
+      "start": 227,
+      "end": 237
+    },
+    {
+      "text": "5850 3603 1072",
+      "category": "ID_NUMBER",
+      "start": 247,
+      "end": 261
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 271,
+      "end": 291
+    },
+    {
+      "text": "Mehra Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 308,
+      "end": 324
+    },
+    {
+      "text": "Mehra Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 375,
+      "end": 391
+    },
+    {
+      "text": "₹9,50,000",
+      "category": "MONEY",
+      "start": 399,
+      "end": 408
+    },
+    {
+      "text": "Complaint No. 1791/2020",
+      "category": "CASE_NUMBER",
+      "start": 487,
+      "end": 510
+    },
+    {
+      "text": "Kolhapur Labour Court",
+      "category": "COURT",
+      "start": 522,
+      "end": 543
+    },
+    {
+      "text": "26 November 2020",
+      "category": "DATE",
+      "start": 547,
+      "end": 563
+    },
+    {
+      "text": "age (41) + occupation (college lecturer) + city (Kolhapur) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

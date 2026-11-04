@@ -1,0 +1,110 @@
+{
+  "doc_id": "65b0233bdc732f31",
+  "text": "Intake note (Commercial team, 15 June 2025). Our client Gaurav Pawar is a 67-year-old government clerk who lives at House No. 73, Koregaon Park, Pune 411012 and can be reached on +91 69625 03203 or gaurav.pawar@example.in. The client's PAN YUFPP2848M.\nThe client consulted us about a cheque bounce matter against M/s Sterling Traders. A cheque for ₹22,10,000 issued by M/s Sterling Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 822527743139 (IFSC KKBK0956267).\nThe matter was filed as S.C.C. No. 1770/2025 before the Judicial Magistrate First Class Court at Pune on 21 July 2025.",
+  "spans": [
+    {
+      "text": "15 June 2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Gaurav Pawar",
+      "category": "NAME",
+      "start": 56,
+      "end": 68
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "House No. 73, Koregaon Park, Pune 411012",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 156
+    },
+    {
+      "text": "+91 69625 03203",
+      "category": "PHONE",
+      "start": 179,
+      "end": 194
+    },
+    {
+      "text": "gaurav.pawar@example.in",
+      "category": "EMAIL",
+      "start": 198,
+      "end": 221
+    },
+    {
+      "text": "YUFPP2848M",
+      "category": "ID_NUMBER",
+      "start": 240,
+      "end": 250
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 284,
+      "end": 297
+    },
+    {
+      "text": "Sterling Traders",
+      "category": "ORGANIZATION",
+      "start": 317,
+      "end": 333
+    },
+    {
+      "text": "₹22,10,000",
+      "category": "MONEY",
+      "start": 348,
+      "end": 358
+    },
+    {
+      "text": "Sterling Traders",
+      "category": "ORGANIZATION",
+      "start": 373,
+      "end": 389
+    },
+    {
+      "text": "822527743139",
+      "category": "FINANCIAL",
+      "start": 507,
+      "end": 519
+    },
+    {
+      "text": "KKBK0956267",
+      "category": "FINANCIAL",
+      "start": 526,
+      "end": 537
+    },
+    {
+      "text": "S.C.C. No. 1770/2025",
+      "category": "CASE_NUMBER",
+      "start": 564,
+      "end": 584
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 596,
+      "end": 641
+    },
+    {
+      "text": "21 July 2025",
+      "category": "DATE",
+      "start": 645,
+      "end": 657
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

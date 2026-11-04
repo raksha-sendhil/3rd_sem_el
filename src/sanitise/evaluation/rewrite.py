@@ -1,15 +1,12 @@
 """Agent 3 metrics: leak rate, utility and routing accuracy.  OWNER: Person D.
 
-PLACEHOLDER created by Person C (a working first version). Refine the body; keep the
-signature (docs/phase3_plan.md 6.2).
-
 For each document (paired by ``doc_id``):
 
 * leak_rate: of the gold spans whose gold action is placeholder or generalise, the share whose
   original text still appears in ``safe_text`` (case-insensitive substring).
 * utility: of the gold facts with importance "high", the share whose value still appears in
-  ``safe_text`` (case-insensitive substring). The real version should also count a fact as
-  kept when its generalised form appears.
+  ``safe_text`` (case-insensitive substring), or whose generalised form does: a court fact
+  "Bombay High Court" is kept when the safe text says "a High Court".
 * routing_accuracy: of the gold routes, the share where the predicted decision for the same
   text (case-insensitive) has the same action. A gold route with no predicted decision counts
   as wrong.
@@ -17,14 +14,37 @@ For each document (paired by ``doc_id``):
 
 from __future__ import annotations
 
+from sanitise.agents.rewriter.ontology import generalise
 from sanitise.schemas import (
     Action,
     ExtractorOutput,
     GoldRouting,
     Importance,
+    PIICategory,
     RewriteMetrics,
     RewriterOutput,
 )
+
+# relation -> the category whose ladder its value climbs in the rewrite
+_LADDER = {
+    "filed_in": PIICategory.COURT,
+    "filed_on": PIICategory.DATE,
+    "claim_amount": PIICategory.MONEY,
+    "lives_in": PIICategory.LOCATION,
+    "works_as": PIICategory.OCCUPATION,
+    "age": PIICategory.AGE,
+    "has_legal_issue": PIICategory.LEGAL_ISSUE,
+    "has_condition": PIICategory.MEDICAL_CONDITION,
+}
+
+
+def _kept(relation: str, value: str, safe: str) -> bool:
+    if value.lower() in safe:
+        return True
+    category = _LADDER.get(relation)
+    if category is None:
+        return False
+    return any(generalise(value, category, steps=n).lower() in safe for n in (1, 2))
 
 
 def score_rewrite(
@@ -46,7 +66,7 @@ def score_rewrite(
         for fact in facts_by_id.get(g.doc_id, []):
             if fact.importance is Importance.HIGH:
                 high += 1
-                kept += fact.value.lower() in safe
+                kept += _kept(fact.relation, fact.value, safe)
     return RewriteMetrics(
         leak_rate=leaked / removable if removable else 0.0,
         utility=kept / high if high else 0.0,

@@ -1221,3 +1221,15 @@ mark[data-action="generalise"] {
     transition: none;
   }
 }
+
+/* domain switcher in the header */
+.domain {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+.domain select {
+  font: inherit;
+  padding: 0.15rem 0.3rem;
+}

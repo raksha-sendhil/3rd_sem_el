@@ -10,6 +10,9 @@
     healthcare  named hospitals and clinics (ChatDoctor).
     email       Enron-style signatures and phone formats (713/853-1234, x3-5761,
                 title lines). Switch off if the fixture set has no emails.
+    legal       Indian litigation files (legal build spec): PAN, Aadhaar, GSTIN, bank
+                accounts, case numbers, courts, rupee amounts, +91 phones, PIN-code
+                addresses, company names, matter code names, party names.
 
 A rule may define a named group ``value``; when present only that group becomes
 the span (e.g. ``MRN: 00451234`` yields ``00451234``), otherwise the whole match.
@@ -126,7 +129,7 @@ AGE_RULES = [
 # phrasings introduce a person's name whatever the name is. Case-sensitive: the name
 # must be capitalised. ("named X" / "called X" are left out: "a drug named Crocin".)
 _NAME_WORD = r"[A-Z][a-z]*(?:['’-][A-Z]?[a-z]+)*"
-_NAME = rf"{_NAME_WORD}(?:\s+{_NAME_WORD}){{0,2}}"
+_NAME = rf"{_NAME_WORD}(?:[ \t]+{_NAME_WORD}){{0,2}}"
 
 NAME_RULES = [
     Rule("name_is", rf"\b(?i:name\s+is|name's)\s+(?P<value>{_NAME})", 0.7, flags=0),
@@ -452,6 +455,381 @@ EMAIL_PHONE_RULES = [
 ]
 
 
+# ---------------------------------------------------------------- LEGAL layer (India)
+# Legal build spec, "Sensitive categories and routing policy". Formats follow the spec's
+# data section: Rs 4,25,000 and Rs 1.2 crore, +91 98450 12345, PAN ABCPM1234K, O.S. No.
+# 412/2024, FIR No. 233/2025, CC/118/2023, CNR MHPU010012342024.
+
+# A capitalised word that is not a sentence opener or preposition, so "In Bombay High
+# Court" and "The Pune District Court" start at the place name.
+_CAP_WORD = (
+    r"(?!(?:The|In|At|Before|From|To|Of|And|By|On|For|Our|Their|His|Her|A|An|This|That)\b)"
+    r"[A-Z][A-Za-z&'’-]*"
+)
+_YEAR = r"(?:19|20)\d{2}"
+
+LEGAL_ID_RULES = [
+    # PAN: 5 letters, 4 digits, 1 letter; the 4th letter is the holder type (P, C, H, F, ...)
+    Rule("pan", r"\b[A-Z]{3}[ABCFGHJLPT][A-Z]\d{4}[A-Z]\b", 0.85, flags=0),
+    Rule("aadhaar", r"(?<![\d-])[2-9]\d{3}[\s-]\d{4}[\s-]\d{4}(?![\s-]?\d)", 0.8),
+    Rule(
+        "aadhaar_labelled",
+        r"\b(?:aadhaa?r|UID)(?:\s+(?:card\s+)?(?:no\.?|number|#))?\s*(?::|-|is)?\s*(?P<value>[2-9]\d{3}\s?\d{4}\s?\d{4})\b",
+        0.9,
+    ),
+    Rule("gstin", r"\b\d{2}[A-Z]{5}\d{4}[A-Z][1-9A-Z]Z[0-9A-Z]\b", 0.9, flags=0),
+    Rule(
+        "passport_in",
+        r"\bpassport(?:\s+(?:no\.?|number|#))?\s*(?::|-|is)?\s*(?P<value>[A-PR-WY][1-9]\d\s?\d{4}[1-9])\b",
+        0.9,
+    ),
+    Rule(
+        "voter_id",
+        r"\b(?:EPIC|voter\s+id)(?:\s+(?:no\.?|number))?\s*:?\s*(?P<value>[A-Z]{3}\d{7})\b",
+        0.85,
+    ),
+]
+
+FINANCIAL_RULES = [
+    Rule("ifsc", r"\b[A-Z]{4}0[A-Z0-9]{6}\b", 0.85, flags=0),
+    Rule(
+        "bank_account",
+        r"\b(?:a/c|account|acct\.?|bank\s+account|savings\s+account|current\s+account)"
+        r"(?:\s+(?:no\.?|number|#))?\s*(?::|-|is)?\s*(?P<value>\d(?:[\s-]?\d){8,17})\b",
+        0.9,
+    ),
+    Rule("card", r"(?<![\d-])\d{4}[\s-]\d{4}[\s-]\d{4}[\s-]\d{4}(?![\s-]?\d)", 0.85),
+    Rule("upi", r"\b[\w.-]{2,}@(?:ok)?(?:axis|hdfcbank|icici|sbi|ybl|paytm|upi|ibl|apl)\b", 0.8),
+]
+
+_CASE_TYPE_WORDS = (
+    r"(?:Writ\s+Petition|Bail\s+Application|Anticipatory\s+Bail\s+Application|Original\s+Suit"
+    r"|Summary\s+Suit|Commercial\s+Suit|Complaint\s+Case|Consumer\s+Complaint|Criminal\s+Complaint"
+    r"|Arbitration\s+Petition|Execution\s+Petition|Criminal\s+Appeal|Civil\s+Appeal|First\s+Appeal"
+    r"|Second\s+Appeal|Revision\s+Petition|Special\s+Leave\s+Petition|Miscellaneous\s+Application"
+    r"|Suit|Case|Appeal|Petition|Complaint|Application|Matter|Crime|C\.?R\.?)"
+)
+_CASE_ABBR = r"(?:[A-Z]{1,5}\.?(?:\s?[A-Z]{1,4}\.?){0,2}|Crl\.?\s?(?:A|M\.?P|Rev|Appeal|Misc)\.?)"
+_CASE_NO = rf"\d{{1,6}}\s*(?:/|\s+of\s+)\s*{_YEAR}"
+
+CASE_NUMBER_RULES = [
+    # CS(COMM) 412/2024, O.S. No. 412/2024, W.P.(C) 1234 of 2023, Crl.A. 55/2022
+    Rule(
+        "abbreviated",
+        rf"\b{_CASE_ABBR}\s?(?:\((?:[A-Za-z.]{{1,8}})\))?\s*(?:No\.?\s*|Nos?\.\s*)?{_CASE_NO}\b",
+        0.85,
+        flags=0,
+    ),
+    # Original Suit No. 412 of 2024, Bail Application No. 77/2025
+    Rule(
+        "worded",
+        rf"\b{_CASE_TYPE_WORDS}\s*(?:\([A-Za-z.]{{1,8}}\)\s*)?(?:No\.?|Number|#)\s*:?\s*\d{{1,6}}(?:\s*(?:/|\s+of\s+)\s*{_YEAR})?\b",
+        0.85,
+    ),
+    Rule(
+        "fir",
+        rf"\bF\.?I\.?R\.?\s*(?:No\.?|Number|#)?\s*:?\s*\d{{1,6}}(?:\s*/\s*{_YEAR})?\b",
+        0.9,
+        flags=0,
+    ),
+    Rule("slash_form", rf"\b[A-Z]{{1,6}}/\d{{1,6}}/{_YEAR}\b", 0.85, flags=0),  # CC/118/2023
+    Rule("cnr", r"\b(?:CNR\s*(?:No\.?|Number)?\s*:?\s*)?(?P<value>[A-Z]{4}\d{12})\b", 0.9, flags=0),
+]
+
+_COURT_HEAD = (
+    r"(?:High\s+Court|Supreme\s+Court|District\s+(?:and\s+Sessions\s+)?Court|Sessions\s+Court"
+    r"|City\s+Civil\s+Court|Civil\s+Court|Family\s+Court|Small\s+Causes\s+Court|Magistrate(?:'s)?\s+Court"
+    r"|Commercial\s+Court|Labour\s+Court|Industrial\s+Court|Consumer\s+(?:Disputes\s+Redressal\s+)?(?:Commission|Forum)"
+    r"|Tribunal|Court)"
+)
+_PLACE = r"[A-Z][a-z]+(?:[ \t]+[A-Z][a-z]+)?"
+
+COURT_RULES = [
+    # Bombay High Court, Pune District Court, Delhi State Consumer Disputes Redressal Commission
+    Rule(
+        "named_court",
+        rf"\b(?:{_CAP_WORD}[ \t]+){{1,4}}{_COURT_HEAD}\b(?:[ \t]+(?:at|of)[ \t]+{_PLACE})?",
+        0.75,
+        flags=0,
+    ),
+    # High Court of Delhi, District Court at Pune, District Court, Pune
+    Rule("court_of_place", rf"\b{_COURT_HEAD}\s*(?:(?:at|of)\s+|,\s*){_PLACE}\b", 0.75, flags=0),
+    Rule(
+        "tribunal_acronym",
+        r"\b(?:NCLT|NCLAT|DRT|DRAT|NCDRC|SCDRC|DCDRC|MahaRERA|RERA|ITAT|CAT)\b(?:[,\s]+(?:at\s+)?(?!Bench\b)[A-Z][a-z]+)?",
+        0.7,
+        flags=0,
+    ),
+]
+
+_MONEY_UNIT = r"(?:\s*(?:lakhs?|lacs?|crores?|cr\.?|million|mn|billion|thousand|k)\b)?"
+MONEY_RULES = [
+    Rule(
+        "rupee_symbol",
+        rf"(?:₹|\bRs\.?|\bINR)\s?\d[\d,]*(?:\.\d+)?{_MONEY_UNIT}(?:\s*/-)?",
+        0.85,
+    ),
+    Rule(
+        "amount_in_words_unit",
+        r"\b\d[\d,]*(?:\.\d+)?\s*(?:lakhs?|lacs?|crores?)(?:\s+rupees)?\b",
+        0.8,
+    ),
+    Rule("rupees_suffix", r"\b\d[\d,]*(?:\.\d+)?\s+rupees\b", 0.8),
+]
+
+INDIAN_PHONE_RULES = [
+    Rule("in_mobile", r"(?<![\d+])(?:\+91[\s-]?|0)?[6-9]\d{4}[\s-]?\d{5}(?!\d)", 0.75),
+    Rule(
+        "in_landline", r"(?<![\d+])(?:\+91[\s-]?)?0?[1-9]\d{1,3}[\s-]\d{3,4}[\s-]?\d{4}(?!\d)", 0.5
+    ),
+]
+
+_ADDR_UNIT = (
+    r"(?:Flat|Plot|House|Shop|Office|Unit|Door|Bungalow|Apartment|Apt|Block|Wing|Room|Survey"
+    r"|Gat|H\.?\s?No|Sr\.?\s?No)"
+)
+_ADDR_CHUNK = r"(?:[A-Z][A-Za-z.'’-]*|\d+[A-Za-z]*)(?:[ \t]+(?:[A-Z][A-Za-z.'’-]*|\d+[A-Za-z]*|no\.?|of)){0,4}"
+_PIN = r"\d{3}\s?\d{3}"
+_IN_LOCALITY = (
+    r"(?:Marg|Nagar|Colony|Society|Layout|Chowk|Peth|Wadi|Apartments?|Towers?|Residency|Enclave"
+    r"|Heights|CHS|Housing\s+Society|Cross\s+Road|Main\s+Road)"
+)
+
+INDIAN_ADDRESS_RULES = [
+    # Flat 4B, Koregaon Park, Pune 411001
+    Rule(
+        "unit_address",
+        rf"\b{_ADDR_UNIT}\.?\s*(?:No\.?\s*)?[A-Z]?\d+[A-Z]?(?:[/-]\d+[A-Z]?)?(?:,[ \t]*{_ADDR_CHUNK}){{0,5}}(?:[, \t-]+{_PIN}\b)?",
+        0.85,
+        flags=0,
+    ),
+    Rule(
+        "city_pin",
+        rf"\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)?\s*[-–,]?\s*(?P<value>{_PIN})\b(?!\s*(?:/|of\b))",
+        0.5,
+        flags=0,
+    ),
+    Rule("pin_labelled", rf"\b(?:PIN|pin\s*code|pincode)\s*:?\s*(?P<value>{_PIN})\b", 0.85),
+    Rule("locality", rf"\b(?:{_CAP_WORD}[ \t]+){{1,3}}{_IN_LOCALITY}\b", 0.6, flags=0),
+]
+
+_COMPANY_SUFFIX = (
+    r"(?:Pvt\.?\s*Ltd\.?|Private\s+Limited|Ltd\.?|Limited|LLP|Inc\.?|Corporation|Corp\.?"
+    r"|&\s*(?:Co\.?|Sons|Associates)|Associates|Enterprises|Industries|Traders|Builders|Developers"
+    r"|Constructions?|Infra(?:structure)?|Realty|Co-?operative\s+(?:Bank|Society)|Bank|Finance"
+    r"|Motors|Textiles|Exports|Pharma(?:ceuticals)?|Logistics|Infotech|Technologies|Solutions)"
+)
+ORGANIZATION_RULES = [
+    Rule(
+        "company_suffix",
+        rf"\b(?:{_CAP_WORD}[ \t]+){{1,5}}{_COMPANY_SUFFIX}(?![A-Za-z])\.?",
+        0.8,
+        flags=0,
+    ),
+    # M/s Mehta Builders: "M/s" marks a firm in Indian legal writing
+    Rule(
+        "messrs",
+        rf"\bM/[sS]\.?[ \t]+(?P<value>{_CAP_WORD}(?:[ \t]+{_CAP_WORD}){{0,5}})",
+        0.85,
+        flags=0,
+    ),
+]
+
+MATTER_CODENAME_RULES = [
+    Rule(
+        "project_codename",
+        r"\b(?:Project|Operation)\s+(?!(?:Manager|Management|Report|Plan|Team|Lead|Director|Engineer"
+        r"|Office|Site|Cost|Phase|Account|Head|Work|Details)\b)[A-Z][a-z]+(?:[ \t]+[A-Z][a-z]+)?\b",
+        0.8,
+        flags=0,
+    ),
+]
+
+# Party names in pleadings and intake notes. The role cue itself is not part of the span;
+# rules/roles.py reads it again to choose [CLIENT_n], [PARTY_n] or [WITNESS_n].
+_ROLE_WORD = (
+    r"(?:client|petitioner|respondent|plaintiff|defendant|complainant|accused|appellant|applicant"
+    r"|witness|opposing\s+party|opposite\s+party|counterparty|landlord|tenant|drawer|payee|deponent"
+    r"|borrower|guarantor|builder)"
+)
+_HONORIFIC = r"(?:(?:Mr|Mrs|Ms|Dr|Shri|Sri|Smt|Kumari|Adv|Advocate)\.?\s+)"
+_NOT_A_NAME = r"(?!(?:The|In|On|At|Has|Had|Was|Is|Will|And|For|To|Of|Name|No|Details)\b)"
+
+LEGAL_NAME_RULES = [
+    # "your dispute with Sunanda Khan": the other side of a matter
+    Rule(
+        "dispute_with",
+        rf"\b(?i:dispute|case|matter|complaint|quarrel)[ \t]+(?i:with|against)[ \t]+{_HONORIFIC}?(?!M/[sS]){_NOT_A_NAME}(?P<value>{_NAME})",
+        0.7,
+        flags=0,
+    ),
+    Rule(
+        "role_name",
+        rf"\b(?i:{_ROLE_WORD})(?:\s+(?i:name))?\s*(?::|-|,)?\s+{_HONORIFIC}?{_NOT_A_NAME}(?P<value>{_NAME})",
+        0.7,
+        flags=0,
+    ),
+    Rule(
+        "indian_honorific",
+        rf"\b(?:Shri|Sri|Smt|Kumari|Adv|Advocate)\.?\s+(?P<value>{_NAME})",
+        0.75,
+        flags=0,
+    ),
+    Rule("justice", rf"\b(?:Justice|Hon'ble\s+Justice)\s+(?P<value>{_NAME})", 0.75, flags=0),
+    # "Rohan Mehta v. Sunita Kale": both sides of a cause title
+    Rule("versus_left", rf"(?P<value>{_NAME})\s+(?:v\.|vs\.?|versus)\s+", 0.7, flags=0),
+    Rule(
+        "versus_right",
+        rf"\s(?:v\.|vs\.?|versus)\s+{_HONORIFIC}?(?!M/[sS])(?P<value>{_NAME})",
+        0.7,
+        flags=0,
+    ),
+]
+
+LEGAL_OCCUPATIONS = [
+    "cardiologist",
+    "surgeon",
+    "dentist",
+    "chartered accountant",
+    "advocate",
+    "civil engineer",
+    "software engineer",
+    "shop owner",
+    "small business owner",
+    "builder",
+    "contractor",
+    "landlord",
+    "government employee",
+    "bank manager",
+    "retired government officer",
+    "professor",
+]
+# Job titles common in Indian intake notes, matched wherever they appear. Role words that
+# are also jobs in some sentences (builder, landlord, contractor, advocate) are left to the
+# "is a ..." rule above, which needs the context.
+LEGAL_JOBS = [
+    "cardiologist",
+    "dentist",
+    "orthopaedic surgeon",
+    "paediatrician",
+    "pediatrician",
+    "general physician",
+    "gynaecologist",
+    "radiologist",
+    "schoolteacher",
+    "school teacher",
+    "college lecturer",
+    "professor",
+    "software engineer",
+    "civil engineer",
+    "mechanical engineer",
+    "chartered accountant",
+    "bank manager",
+    "insurance agent",
+    "shopkeeper",
+    "textile trader",
+    "restaurant owner",
+    "hardware dealer",
+    "government clerk",
+    "railway employee",
+    "truck driver",
+    "taxi driver",
+    "auto-rickshaw driver",
+    "farmer",
+    "architect",
+    "fashion designer",
+    "pharmacist",
+    "nurse",
+    "journalist",
+    "electrician",
+    "plumber",
+    "retired bank officer",
+    "police constable",
+]
+_NOT_AFTER_DETERMINER = "".join(
+    rf"(?<!\b{w} )" for w in ("my", "the", "his", "her", "our", "your", "their", "a", "an")
+)
+LEGAL_OCCUPATION_RULES = [
+    Rule(
+        "legal_is_a_occupation",
+        rf"\b(?:am|is|was|a|an|as)\s+(?:an?\s+)?{_AGE_GENDER}(?P<value>{_alt(LEGAL_OCCUPATIONS)})s?\b",
+        0.7,
+    ),
+    # not after a possessive or article: "my gynaecologist" is the treating doctor, not the
+    # person described ("is a cardiologist" is the rule above's job)
+    Rule(
+        "legal_job_title",
+        rf"\b{_NOT_AFTER_DETERMINER}(?P<value>{_alt(LEGAL_JOBS)})s?\b",
+        0.6,
+    ),
+]
+
+# Indian cities, matched by name: spaCy reads some of them (Kozhikode, Hubballi) as people.
+INDIAN_CITIES = [
+    "Mumbai",
+    "Pune",
+    "Nagpur",
+    "Nashik",
+    "Thane",
+    "Aurangabad",
+    "Kolhapur",
+    "Solapur",
+    "Bengaluru",
+    "Bangalore",
+    "Mysuru",
+    "Mysore",
+    "Mangaluru",
+    "Mangalore",
+    "Hubballi",
+    "Hubli",
+    "Belagavi",
+    "Chennai",
+    "Coimbatore",
+    "Madurai",
+    "Tiruchirappalli",
+    "Kochi",
+    "Ernakulam",
+    "Thiruvananthapuram",
+    "Kozhikode",
+    "Thrissur",
+    "Hyderabad",
+    "Warangal",
+    "Hanamkonda",
+    "Ahmedabad",
+    "Surat",
+    "Vadodara",
+    "Rajkot",
+    "New Delhi",
+    "Delhi",
+    "Gurugram",
+    "Noida",
+    "Kolkata",
+    "Howrah",
+    "Lucknow",
+    "Kanpur",
+    "Varanasi",
+    "Jaipur",
+    "Udaipur",
+    "Jodhpur",
+    "Panaji",
+    "Margao",
+    "Bhopal",
+    "Indore",
+    "Chandigarh",
+    "Patna",
+    "Bhubaneswar",
+    "Guwahati",
+]
+INDIAN_PLACE_RULES = [
+    Rule(
+        "indian_city",
+        rf"\b(?P<value>{'|'.join(INDIAN_CITIES)})\b(?![ \t]+(?:District|High|Sessions|Family|Labour|Commercial|Civil|Bench)\b)",
+        0.6,
+        flags=0,
+    ),
+]
+
+
 LAYERS: dict[str, list[tuple[str, str, list[Rule]]]] = {
     "spec": [
         ("AgeRecognizer", "AGE", AGE_RULES),
@@ -470,6 +848,20 @@ LAYERS: dict[str, list[tuple[str, str, list[Rule]]]] = {
     "email": [
         ("EmailPhoneRecognizer", "PHONE", EMAIL_PHONE_RULES),
         ("SignatureTitleRecognizer", "OCCUPATION", SIGNATURE_TITLE_RULES),
+    ],
+    "legal": [
+        ("LegalIdRecognizer", "ID_NUMBER", LEGAL_ID_RULES),
+        ("FinancialRecognizer", "FINANCIAL", FINANCIAL_RULES),
+        ("CaseNumberRecognizer", "CASE_NUMBER", CASE_NUMBER_RULES),
+        ("CourtRecognizer", "COURT", COURT_RULES),
+        ("MoneyRecognizer", "MONEY", MONEY_RULES),
+        ("IndianPhoneRecognizer", "PHONE", INDIAN_PHONE_RULES),
+        ("IndianAddressRecognizer", "ADDRESS", INDIAN_ADDRESS_RULES),
+        ("CompanyRecognizer", "COMPANY", ORGANIZATION_RULES),
+        ("MatterCodenameRecognizer", "MATTER_CODENAME", MATTER_CODENAME_RULES),
+        ("LegalNameRecognizer", "NAME", LEGAL_NAME_RULES),
+        ("LegalOccupationRecognizer", "OCCUPATION", LEGAL_OCCUPATION_RULES),
+        ("IndianPlaceRecognizer", "LOCATION", INDIAN_PLACE_RULES),
     ],
 }
 ALL_LAYERS: tuple[str, ...] = ("core", *LAYERS)

@@ -1,0 +1,110 @@
+{
+  "doc_id": "f51e4477c70e7dd3",
+  "text": "Intake note - Property team\nDate: 5 May 2022\nClient: Anjali DSouza, a 37-year-old taxi driver from Pune.\nAddress: Flat 6D, Kothrud, Pune 411009\nPhone: 07222926339. Email: anjali.dsouza@example.com. PAN FZKPD9819S.\nMatter: tenancy eviction\nOpposing party: Kiran Shah\nFacts: The tenancy dispute with Kiran Shah concerns rent arrears of INR 7,25,000/-; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.S. No. 1099/2022 before the Pune District Court on 23/06/2022.",
+  "spans": [
+    {
+      "text": "5 May 2022",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Anjali DSouza",
+      "category": "NAME",
+      "start": 53,
+      "end": 66
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 93
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 99,
+      "end": 103
+    },
+    {
+      "text": "Flat 6D, Kothrud, Pune 411009",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 143
+    },
+    {
+      "text": "07222926339",
+      "category": "PHONE",
+      "start": 151,
+      "end": 162
+    },
+    {
+      "text": "anjali.dsouza@example.com",
+      "category": "EMAIL",
+      "start": 171,
+      "end": 196
+    },
+    {
+      "text": "FZKPD9819S",
+      "category": "ID_NUMBER",
+      "start": 202,
+      "end": 212
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 222,
+      "end": 238
+    },
+    {
+      "text": "Kiran Shah",
+      "category": "NAME",
+      "start": 255,
+      "end": 265
+    },
+    {
+      "text": "Kiran Shah",
+      "category": "NAME",
+      "start": 298,
+      "end": 308
+    },
+    {
+      "text": "INR 7,25,000/-",
+      "category": "MONEY",
+      "start": 334,
+      "end": 348
+    },
+    {
+      "text": "R.C.S. No. 1099/2022",
+      "category": "CASE_NUMBER",
+      "start": 432,
+      "end": 452
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 464,
+      "end": 483
+    },
+    {
+      "text": "23/06/2022",
+      "category": "DATE",
+      "start": 487,
+      "end": 497
+    },
+    {
+      "text": "age (37) + occupation (taxi driver) + city (Pune) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

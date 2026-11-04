@@ -1,0 +1,68 @@
+{
+  "doc_id": "a2e83c43179c2e0d",
+  "text": "Case note: O.S. No. 2322/2021\nClient: Suresh Sen (architect, Ahmedabad)\nOpposing party: Sujata Rajan\nCourt: Ahmedabad District Court\nFiled on: 04/02/2021\nClaim amount: ₹4,39,00,000\nIssue: land dispute. Construction has started on the disputed plot.\nAdvice given: Seek a temporary injunction to stop construction on the plot.\nOutcome: A temporary injunction was granted.\nRecommended next step: File a contempt petition if construction continues.",
+  "spans": [
+    {
+      "text": "O.S. No. 2322/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Suresh Sen",
+      "category": "NAME",
+      "start": 38,
+      "end": 48
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 50,
+      "end": 59
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 61,
+      "end": 70
+    },
+    {
+      "text": "Sujata Rajan",
+      "category": "NAME",
+      "start": 88,
+      "end": 100
+    },
+    {
+      "text": "Ahmedabad District Court",
+      "category": "COURT",
+      "start": 108,
+      "end": 132
+    },
+    {
+      "text": "04/02/2021",
+      "category": "DATE",
+      "start": 143,
+      "end": 153
+    },
+    {
+      "text": "₹4,39,00,000",
+      "category": "MONEY",
+      "start": 168,
+      "end": 180
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 188,
+      "end": 200
+    },
+    {
+      "text": "occupation (architect) + city (Ahmedabad) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

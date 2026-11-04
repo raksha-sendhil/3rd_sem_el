@@ -1,0 +1,74 @@
+{
+  "doc_id": "3b111dbb0f7a0b03",
+  "text": "Case note: CC/2665/2023\nClient: Vandana Iyengar (nurse, Lucknow)\nOpposing party: Sahyadri Constructions\nCourt: Lucknow District Consumer Disputes Redressal Commission\nFiled on: 26/03/2023\nClaim amount: Rs 4,76,00,000\nIssue: consumer complaint. The flat was handed over with serious construction defects.\nAdvice given: Commission a structural audit report on the defects before the first hearing.\nOutcome: The builder was ordered to repair the defects or pay their cost.\nRecommended next step: Inspect the repairs before accepting them.\nWitness: Vandana Menon",
+  "spans": [
+    {
+      "text": "CC/2665/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Vandana Iyengar",
+      "category": "NAME",
+      "start": 32,
+      "end": 47
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 49,
+      "end": 54
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 56,
+      "end": 63
+    },
+    {
+      "text": "Sahyadri Constructions",
+      "category": "ORGANIZATION",
+      "start": 81,
+      "end": 103
+    },
+    {
+      "text": "Lucknow District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 111,
+      "end": 166
+    },
+    {
+      "text": "26/03/2023",
+      "category": "DATE",
+      "start": 177,
+      "end": 187
+    },
+    {
+      "text": "Rs 4,76,00,000",
+      "category": "MONEY",
+      "start": 202,
+      "end": 216
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 224,
+      "end": 242
+    },
+    {
+      "text": "Vandana Menon",
+      "category": "NAME",
+      "start": 545,
+      "end": 558
+    },
+    {
+      "text": "occupation (nurse) + city (Lucknow) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

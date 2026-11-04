@@ -1,0 +1,44 @@
+{
+  "doc_id": "c9c42de6d9b8cef6",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Hegde,\n\nThank you for meeting us on 30 December 2025 about your dispute with M/s Dutta Developers. As we understand it, the flat was handed over with serious construction defects.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office. We will pursue the full claim of ₹3.5 crore.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Hegde",
+      "category": "NAME",
+      "start": 50,
+      "end": 55
+    },
+    {
+      "text": "30 December 2025",
+      "category": "DATE",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Dutta Developers",
+      "category": "ORGANIZATION",
+      "start": 131,
+      "end": 147
+    },
+    {
+      "text": "₹3.5 crore",
+      "category": "MONEY",
+      "start": 463,
+      "end": 473
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 490,
+      "end": 502
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

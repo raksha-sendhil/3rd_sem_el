@@ -1,0 +1,50 @@
+{
+  "doc_id": "29a5568b106f8051",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 117/2020\n\nDear Mr. Sethi,\n\nThank you for meeting us on 24/05/2021 about your dispute with Harpreet Chauhan. As we understand it, the spouses agree on a single payment instead of maintenance.\n\nOur advice is to record the one-time alimony settlement in the consent terms. Please collect income tax returns and the draft consent terms and send copies to this office. We will pursue the full claim of ₹30,60,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 117/2020",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 70
+    },
+    {
+      "text": "Sethi",
+      "category": "NAME",
+      "start": 81,
+      "end": 86
+    },
+    {
+      "text": "24/05/2021",
+      "category": "DATE",
+      "start": 117,
+      "end": 127
+    },
+    {
+      "text": "Harpreet Chauhan",
+      "category": "NAME",
+      "start": 152,
+      "end": 168
+    },
+    {
+      "text": "₹30,60,000",
+      "category": "MONEY",
+      "start": 459,
+      "end": 469
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 486,
+      "end": 503
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

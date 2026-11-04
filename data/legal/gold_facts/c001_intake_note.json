@@ -1,0 +1,85 @@
+{
+  "doc_id": "8a1b0b4ce44f35e5",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Joseph Bose",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "age",
+      "value": "52-year-old",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "cardiologist",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "House No. 159, Aundh, Pune 411005",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "07556653413",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "joseph.bose6@example.in",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "APGPB9213Q",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Emerald Enterprises",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "₹24,40,000",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Judicial Magistrate First Class Court at Pune",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "S.C.C. No. 995/2024",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_on",
+      "value": "19 December 2024",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

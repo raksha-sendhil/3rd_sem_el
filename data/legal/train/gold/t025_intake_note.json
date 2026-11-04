@@ -1,0 +1,116 @@
+{
+  "doc_id": "dcf47d7d28806a27",
+  "text": "Intake note - Property team\nDate: 6 January 2020\nClient: Pooja Bansal, a 62-year-old schoolteacher from Coimbatore.\nAddress: Flat 11A, Peelamedu, Coimbatore 641060\nPhone: +91 98113 78789. Email: pooja.bansal@example.in. PAN PPQPB4025Y, Aadhaar 3553 4503 3431.\nMatter: tenancy eviction\nOpposing party: Rekha Naidu\nFacts: The tenancy dispute with Rekha Naidu concerns rent arrears of ₹3,50,000; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.A. No. 1652/2020 before the Coimbatore District Court on 5 March 2020.",
+  "spans": [
+    {
+      "text": "6 January 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 48
+    },
+    {
+      "text": "Pooja Bansal",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 98
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 114
+    },
+    {
+      "text": "Flat 11A, Peelamedu, Coimbatore 641060",
+      "category": "ADDRESS",
+      "start": 125,
+      "end": 163
+    },
+    {
+      "text": "+91 98113 78789",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "pooja.bansal@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 218
+    },
+    {
+      "text": "PPQPB4025Y",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "3553 4503 3431",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 258
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 268,
+      "end": 284
+    },
+    {
+      "text": "Rekha Naidu",
+      "category": "NAME",
+      "start": 301,
+      "end": 312
+    },
+    {
+      "text": "Rekha Naidu",
+      "category": "NAME",
+      "start": 345,
+      "end": 356
+    },
+    {
+      "text": "₹3,50,000",
+      "category": "MONEY",
+      "start": 382,
+      "end": 391
+    },
+    {
+      "text": "R.C.A. No. 1652/2020",
+      "category": "CASE_NUMBER",
+      "start": 495,
+      "end": 515
+    },
+    {
+      "text": "Coimbatore District Court",
+      "category": "COURT",
+      "start": 527,
+      "end": 552
+    },
+    {
+      "text": "5 March 2020",
+      "category": "DATE",
+      "start": 556,
+      "end": 568
+    },
+    {
+      "text": "age (62) + occupation (schoolteacher) + city (Coimbatore) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

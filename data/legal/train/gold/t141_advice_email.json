@@ -1,0 +1,50 @@
+{
+  "doc_id": "bb2503a6aab311bb",
+  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 120/2024\n\nDear Ms. Kamath,\n\nThank you for meeting us on 12 May 2025 about your dispute with Crescent Exports. As we understand it, the rival product uses the protected regional name on its label.\n\nOur advice is to rely on the registered GI certificate and seek an injunction against the infringing label. Please collect the registered GI certificate and samples of the infringing label and send copies to this office. We will pursue the full claim of Rs. 6,55,00,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 45
+    },
+    {
+      "text": "CS(COMM) 120/2024",
+      "category": "CASE_NUMBER",
+      "start": 55,
+      "end": 72
+    },
+    {
+      "text": "Kamath",
+      "category": "NAME",
+      "start": 83,
+      "end": 89
+    },
+    {
+      "text": "12 May 2025",
+      "category": "DATE",
+      "start": 120,
+      "end": 131
+    },
+    {
+      "text": "Crescent Exports",
+      "category": "ORGANIZATION",
+      "start": 156,
+      "end": 172
+    },
+    {
+      "text": "Rs. 6,55,00,000",
+      "category": "MONEY",
+      "start": 515,
+      "end": 530
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 547,
+      "end": 559
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

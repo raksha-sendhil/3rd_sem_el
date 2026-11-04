@@ -1,0 +1,104 @@
+{
+  "doc_id": "8bbb4bad6f874e27",
+  "text": "Intake note (Commercial team, 29/06/2020). Our client Divya Qureshi is a 62-year-old general physician who lives at Bungalow 39, Kakkanad, Kochi 682039 and can be reached on 08013563997 or divya.qureshi@example.in. The client's PAN AYNPQ5925L.\nThe client consulted us about a breach of contract matter (Project Flamingo) against Coastal Industries. The breach of contract claim against M/s Coastal Industries is for INR 17,35,00,000/-; the goods supplied were defective.\nThe matter was filed as CS(COMM) 1469/2020 before the Kochi Commercial Court on 27 July 2020.",
+  "spans": [
+    {
+      "text": "29/06/2020",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Divya Qureshi",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 102
+    },
+    {
+      "text": "Bungalow 39, Kakkanad, Kochi 682039",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 151
+    },
+    {
+      "text": "08013563997",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "divya.qureshi@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 213
+    },
+    {
+      "text": "AYNPQ5925L",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 276,
+      "end": 294
+    },
+    {
+      "text": "Project Flamingo",
+      "category": "MATTER_CODENAME",
+      "start": 303,
+      "end": 319
+    },
+    {
+      "text": "Coastal Industries",
+      "category": "ORGANIZATION",
+      "start": 329,
+      "end": 347
+    },
+    {
+      "text": "Coastal Industries",
+      "category": "ORGANIZATION",
+      "start": 390,
+      "end": 408
+    },
+    {
+      "text": "INR 17,35,00,000/-",
+      "category": "MONEY",
+      "start": 416,
+      "end": 434
+    },
+    {
+      "text": "CS(COMM) 1469/2020",
+      "category": "CASE_NUMBER",
+      "start": 495,
+      "end": 513
+    },
+    {
+      "text": "Kochi Commercial Court",
+      "category": "COURT",
+      "start": 525,
+      "end": 547
+    },
+    {
+      "text": "27 July 2020",
+      "category": "DATE",
+      "start": 551,
+      "end": 563
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

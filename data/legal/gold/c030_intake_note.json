@@ -1,0 +1,110 @@
+{
+  "doc_id": "8a6bd60d7b69635e",
+  "text": "Intake note (Commercial team, 2 April 2025). Our client Ashok Chandran is a 48-year-old fashion designer who lives at Bungalow 22, Keshwapur, Hubballi 580047 and can be reached on 73452 22254 or ashok.chandran76@example.com. The client's PAN QQSPC5805A.\nThe client consulted us about a cheque bounce matter against Pranav Mukherjee. A cheque for INR 8,75,000/- issued by Pranav Mukherjee bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 819013304648 (IFSC ICIC0784383).\nThe matter was filed as S.C.C. No. 1737/2025 before the Judicial Magistrate First Class Court at Hubballi on 5 October 2025.",
+  "spans": [
+    {
+      "text": "2 April 2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Ashok Chandran",
+      "category": "NAME",
+      "start": 56,
+      "end": 70
+    },
+    {
+      "text": "48-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Bungalow 22, Keshwapur, Hubballi 580047",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 157
+    },
+    {
+      "text": "73452 22254",
+      "category": "PHONE",
+      "start": 180,
+      "end": 191
+    },
+    {
+      "text": "ashok.chandran76@example.com",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 223
+    },
+    {
+      "text": "QQSPC5805A",
+      "category": "ID_NUMBER",
+      "start": 242,
+      "end": 252
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 286,
+      "end": 299
+    },
+    {
+      "text": "Pranav Mukherjee",
+      "category": "NAME",
+      "start": 315,
+      "end": 331
+    },
+    {
+      "text": "INR 8,75,000/-",
+      "category": "MONEY",
+      "start": 346,
+      "end": 360
+    },
+    {
+      "text": "Pranav Mukherjee",
+      "category": "NAME",
+      "start": 371,
+      "end": 387
+    },
+    {
+      "text": "819013304648",
+      "category": "FINANCIAL",
+      "start": 514,
+      "end": 526
+    },
+    {
+      "text": "ICIC0784383",
+      "category": "FINANCIAL",
+      "start": 533,
+      "end": 544
+    },
+    {
+      "text": "S.C.C. No. 1737/2025",
+      "category": "CASE_NUMBER",
+      "start": 571,
+      "end": 591
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hubballi",
+      "category": "COURT",
+      "start": 603,
+      "end": 652
+    },
+    {
+      "text": "5 October 2025",
+      "category": "DATE",
+      "start": 656,
+      "end": 670
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

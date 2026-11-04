@@ -1,0 +1,104 @@
+{
+  "doc_id": "79d86857feb88293",
+  "text": "Intake note (Commercial team, 10 January 2021). Our client Sanjay Bhosale is a 59-year-old pharmacist who lives at Bungalow 22, Altinho, Panaji 403052 and can be reached on +91 86778 85665 or sanjay.bhosale81@example.in. The client's PAN SWUPB5880J.\nThe client consulted us about a breach of contract matter (Project Falcon) against M/s Apte Logistics Ltd. The breach of contract claim against Apte Logistics Ltd is for Rs 6,00,00,000; the goods supplied were defective.\nThe matter was filed as CS(COMM) 2069/2021 before the Panaji Commercial Court on 9 May 2021.",
+  "spans": [
+    {
+      "text": "10 January 2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Sanjay Bhosale",
+      "category": "NAME",
+      "start": 59,
+      "end": 73
+    },
+    {
+      "text": "59-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 101
+    },
+    {
+      "text": "Bungalow 22, Altinho, Panaji 403052",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 150
+    },
+    {
+      "text": "+91 86778 85665",
+      "category": "PHONE",
+      "start": 173,
+      "end": 188
+    },
+    {
+      "text": "sanjay.bhosale81@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 219
+    },
+    {
+      "text": "SWUPB5880J",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 248
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 282,
+      "end": 300
+    },
+    {
+      "text": "Project Falcon",
+      "category": "MATTER_CODENAME",
+      "start": 309,
+      "end": 323
+    },
+    {
+      "text": "Apte Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 337,
+      "end": 355
+    },
+    {
+      "text": "Apte Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 394,
+      "end": 412
+    },
+    {
+      "text": "Rs 6,00,00,000",
+      "category": "MONEY",
+      "start": 420,
+      "end": 434
+    },
+    {
+      "text": "CS(COMM) 2069/2021",
+      "category": "CASE_NUMBER",
+      "start": 495,
+      "end": 513
+    },
+    {
+      "text": "Panaji Commercial Court",
+      "category": "COURT",
+      "start": 525,
+      "end": 548
+    },
+    {
+      "text": "9 May 2021",
+      "category": "DATE",
+      "start": 552,
+      "end": 562
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

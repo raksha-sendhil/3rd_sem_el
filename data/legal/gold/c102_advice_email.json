@@ -1,0 +1,50 @@
+{
+  "doc_id": "01a8140007595dce",
+  "text": "Subject: Your breach of contract matter - CS(COMM) 2734/2021\n\nDear Ms. Natarajan,\n\nThank you for meeting us on 9 June 2022 about your dispute with Saffron Industries. As we understand it, the goods supplied were defective. The matter is listed before the Warangal Commercial Court.\n\nOur advice is to claim liquidated damages as fixed in the contract. Please collect the inspection reports and the rejection notices and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CS(COMM) 2734/2021",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Natarajan",
+      "category": "NAME",
+      "start": 71,
+      "end": 80
+    },
+    {
+      "text": "9 June 2022",
+      "category": "DATE",
+      "start": 111,
+      "end": 122
+    },
+    {
+      "text": "Saffron Industries",
+      "category": "ORGANIZATION",
+      "start": 147,
+      "end": 165
+    },
+    {
+      "text": "Warangal Commercial Court",
+      "category": "COURT",
+      "start": 255,
+      "end": 280
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 462,
+      "end": 478
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

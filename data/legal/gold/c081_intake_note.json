@@ -1,0 +1,98 @@
+{
+  "doc_id": "db70c76bc97dafa7",
+  "text": "Intake note (Family team, 15/05/2019). Our client Lakshmi Ranade is a 73-year-old mechanical engineer who lives at Flat 13A, Tallakulam, Madurai 625046 and can be reached on 98323 90037 or lakshmi.ranade@example.com. The client's PAN YAUPR1885S.\nThe client consulted us about a divorce by mutual consent matter against Vandana Sathe. The divorce by mutual consent with Vandana Sathe includes a settlement of INR 9,45,000/-; the spouses agree on a single payment instead of maintenance.\nThe matter was filed as Petition No. 2289/2019 before the Family Court at Madurai on 16/06/2019.",
+  "spans": [
+    {
+      "text": "15/05/2019",
+      "category": "DATE",
+      "start": 26,
+      "end": 36
+    },
+    {
+      "text": "Lakshmi Ranade",
+      "category": "NAME",
+      "start": 50,
+      "end": 64
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 101
+    },
+    {
+      "text": "Flat 13A, Tallakulam, Madurai 625046",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 151
+    },
+    {
+      "text": "98323 90037",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "lakshmi.ranade@example.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 215
+    },
+    {
+      "text": "YAUPR1885S",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 278,
+      "end": 303
+    },
+    {
+      "text": "Vandana Sathe",
+      "category": "NAME",
+      "start": 319,
+      "end": 332
+    },
+    {
+      "text": "Vandana Sathe",
+      "category": "NAME",
+      "start": 369,
+      "end": 382
+    },
+    {
+      "text": "INR 9,45,000/-",
+      "category": "MONEY",
+      "start": 408,
+      "end": 422
+    },
+    {
+      "text": "Petition No. 2289/2019",
+      "category": "CASE_NUMBER",
+      "start": 510,
+      "end": 532
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 544,
+      "end": 567
+    },
+    {
+      "text": "16/06/2019",
+      "category": "DATE",
+      "start": 571,
+      "end": 581
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -34,7 +34,9 @@ def load_people(path: str | Path) -> list[Person]:
     path = Path(path)
     if not path.is_file():
         return []
-    return [Person.model_validate(p) for p in json.loads(path.read_text(encoding="utf-8"))]
+    rows = json.loads(path.read_text(encoding="utf-8"))
+    # the legal client table (data/legal/clients.json) or the medical person table
+    return [Person.from_client(p) if "client_id" in p else Person.model_validate(p) for p in rows]
 
 
 def get_attack(attacks: dict[str, AttackDefinition], attack_id: str) -> AttackDefinition:

@@ -1,0 +1,68 @@
+{
+  "doc_id": "5a417d86c9e2cc9e",
+  "text": "Case note: S.C.C. No. 2242/2021\nClient: Tushar Shinde (fashion designer, Kochi)\nOpposing party: M/s Saffron Enterprises\nCourt: Judicial Magistrate First Class Court at Kochi\nFiled on: 29 March 2021\nClaim amount: INR 20,00,000/-\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 2242/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Tushar Shinde",
+      "category": "NAME",
+      "start": 40,
+      "end": 53
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 71
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 73,
+      "end": 78
+    },
+    {
+      "text": "Saffron Enterprises",
+      "category": "ORGANIZATION",
+      "start": 100,
+      "end": 119
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 127,
+      "end": 173
+    },
+    {
+      "text": "29 March 2021",
+      "category": "DATE",
+      "start": 184,
+      "end": 197
+    },
+    {
+      "text": "INR 20,00,000/-",
+      "category": "MONEY",
+      "start": 212,
+      "end": 227
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 235,
+      "end": 248
+    },
+    {
+      "text": "occupation (fashion designer) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

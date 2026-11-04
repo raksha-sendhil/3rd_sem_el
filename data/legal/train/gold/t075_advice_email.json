@@ -1,0 +1,50 @@
+{
+  "doc_id": "db41f2f30a482ec7",
+  "text": "Subject: Your land dispute matter - O.S. No. 1733/2025\n\nDear Ms. Mukherjee,\n\nThank you for meeting us on 15 May 2026 about your dispute with Priyanka DSouza. As we understand it, the occupant claims ownership by adverse possession. The matter is listed before the Pune District Court.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 1733/2025",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Mukherjee",
+      "category": "NAME",
+      "start": 65,
+      "end": 74
+    },
+    {
+      "text": "15 May 2026",
+      "category": "DATE",
+      "start": 105,
+      "end": 116
+    },
+    {
+      "text": "Priyanka DSouza",
+      "category": "NAME",
+      "start": 141,
+      "end": 156
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 264,
+      "end": 283
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 512,
+      "end": 524
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

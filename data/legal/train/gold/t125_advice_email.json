@@ -1,0 +1,44 @@
+{
+  "doc_id": "f8b60b0921cde6be",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2617/2025\n\nDear Mr. Kamath,\n\nThank you for meeting us on 02/10/2025 about your dispute with Deepa Kapoor. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 2617/2025",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Kamath",
+      "category": "NAME",
+      "start": 68,
+      "end": 74
+    },
+    {
+      "text": "02/10/2025",
+      "category": "DATE",
+      "start": 105,
+      "end": 115
+    },
+    {
+      "text": "Deepa Kapoor",
+      "category": "NAME",
+      "start": 140,
+      "end": 152
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 514,
+      "end": 529
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

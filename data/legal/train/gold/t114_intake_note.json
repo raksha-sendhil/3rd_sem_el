@@ -1,0 +1,110 @@
+{
+  "doc_id": "035e1aa8a862557a",
+  "text": "Intake note (Commercial team, 4 July 2023). Our client Suresh Qureshi is a 40-year-old shopkeeper who lives at House No. 110, KK Nagar, Madurai 625026 and can be reached on 72191 41098 or suresh.qureshi52@example.in. The client's PAN HUYPQ9785G.\nThe client consulted us about a cheque bounce matter against Gaurav Kulkarni. A cheque for 20.3 lakh rupees issued by Gaurav Kulkarni bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 23679745574 (IFSC KKBK0614170).\nThe matter was filed as CC/608/2023 before the Judicial Magistrate First Class Court at Madurai on 25/08/2023.",
+  "spans": [
+    {
+      "text": "4 July 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 41
+    },
+    {
+      "text": "Suresh Qureshi",
+      "category": "NAME",
+      "start": 55,
+      "end": 69
+    },
+    {
+      "text": "40-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 97
+    },
+    {
+      "text": "House No. 110, KK Nagar, Madurai 625026",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 150
+    },
+    {
+      "text": "72191 41098",
+      "category": "PHONE",
+      "start": 173,
+      "end": 184
+    },
+    {
+      "text": "suresh.qureshi52@example.in",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 215
+    },
+    {
+      "text": "HUYPQ9785G",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 278,
+      "end": 291
+    },
+    {
+      "text": "Gaurav Kulkarni",
+      "category": "NAME",
+      "start": 307,
+      "end": 322
+    },
+    {
+      "text": "20.3 lakh rupees",
+      "category": "MONEY",
+      "start": 337,
+      "end": 353
+    },
+    {
+      "text": "Gaurav Kulkarni",
+      "category": "NAME",
+      "start": 364,
+      "end": 379
+    },
+    {
+      "text": "23679745574",
+      "category": "FINANCIAL",
+      "start": 497,
+      "end": 508
+    },
+    {
+      "text": "KKBK0614170",
+      "category": "FINANCIAL",
+      "start": 515,
+      "end": 526
+    },
+    {
+      "text": "CC/608/2023",
+      "category": "CASE_NUMBER",
+      "start": 553,
+      "end": 564
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Madurai",
+      "category": "COURT",
+      "start": 576,
+      "end": 624
+    },
+    {
+      "text": "25/08/2023",
+      "category": "DATE",
+      "start": 628,
+      "end": 638
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

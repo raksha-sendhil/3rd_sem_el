@@ -1,0 +1,110 @@
+{
+  "doc_id": "9d153fe64f7078ca",
+  "text": "Intake note (Commercial team, 05/09/2018). Our client Meera Iyer is a 60-year-old journalist who lives at Bungalow 35, Dharampeth, Nagpur 440018 and can be reached on 61394 67542 or meera.iyer@example.in. The client's PAN KKTPI5196B.\nThe client consulted us about a cheque bounce matter against Ramesh Mishra. A cheque for 44.4 lakh rupees issued by Ramesh Mishra bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 675102993471 (IFSC KKBK0773640).\nThe matter was filed as S.C.C. No. 2493/2019 before the Judicial Magistrate First Class Court at Nagpur on 8 January 2019.",
+  "spans": [
+    {
+      "text": "05/09/2018",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Meera Iyer",
+      "category": "NAME",
+      "start": 54,
+      "end": 64
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 92
+    },
+    {
+      "text": "Bungalow 35, Dharampeth, Nagpur 440018",
+      "category": "ADDRESS",
+      "start": 106,
+      "end": 144
+    },
+    {
+      "text": "61394 67542",
+      "category": "PHONE",
+      "start": 167,
+      "end": 178
+    },
+    {
+      "text": "meera.iyer@example.in",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 203
+    },
+    {
+      "text": "KKTPI5196B",
+      "category": "ID_NUMBER",
+      "start": 222,
+      "end": 232
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 266,
+      "end": 279
+    },
+    {
+      "text": "Ramesh Mishra",
+      "category": "NAME",
+      "start": 295,
+      "end": 308
+    },
+    {
+      "text": "44.4 lakh rupees",
+      "category": "MONEY",
+      "start": 323,
+      "end": 339
+    },
+    {
+      "text": "Ramesh Mishra",
+      "category": "NAME",
+      "start": 350,
+      "end": 363
+    },
+    {
+      "text": "675102993471",
+      "category": "FINANCIAL",
+      "start": 489,
+      "end": 501
+    },
+    {
+      "text": "KKBK0773640",
+      "category": "FINANCIAL",
+      "start": 508,
+      "end": 519
+    },
+    {
+      "text": "S.C.C. No. 2493/2019",
+      "category": "CASE_NUMBER",
+      "start": 546,
+      "end": 566
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 578,
+      "end": 625
+    },
+    {
+      "text": "8 January 2019",
+      "category": "DATE",
+      "start": 629,
+      "end": 643
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

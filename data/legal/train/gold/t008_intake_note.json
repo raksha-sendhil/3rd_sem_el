@@ -1,0 +1,98 @@
+{
+  "doc_id": "e7e31186f85e8d5c",
+  "text": "Intake note (Commercial team, 16 February 2022). Our client Meera Desai is a 46-year-old textile trader who lives at Flat 3C, Bejai, Mangaluru 575008 and can be reached on 09224019988 or meera.desai@example.com. The client's PAN ZYYPD9910Y.\nThe client consulted us about a cheque bounce matter against M/s Vindhya Textiles Pvt Ltd. A cheque for ₹42,50,000 issued by M/s Vindhya Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2451/2022 before the Judicial Magistrate First Class Court at Mangaluru on 30 June 2022.",
+  "spans": [
+    {
+      "text": "16 February 2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Meera Desai",
+      "category": "NAME",
+      "start": 60,
+      "end": 71
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 103
+    },
+    {
+      "text": "Flat 3C, Bejai, Mangaluru 575008",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 149
+    },
+    {
+      "text": "09224019988",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "meera.desai@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 210
+    },
+    {
+      "text": "ZYYPD9910Y",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 239
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 273,
+      "end": 286
+    },
+    {
+      "text": "Vindhya Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 306,
+      "end": 330
+    },
+    {
+      "text": "₹42,50,000",
+      "category": "MONEY",
+      "start": 345,
+      "end": 355
+    },
+    {
+      "text": "Vindhya Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 370,
+      "end": 394
+    },
+    {
+      "text": "CC/2451/2022",
+      "category": "CASE_NUMBER",
+      "start": 481,
+      "end": 493
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mangaluru",
+      "category": "COURT",
+      "start": 505,
+      "end": 555
+    },
+    {
+      "text": "30 June 2022",
+      "category": "DATE",
+      "start": 559,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

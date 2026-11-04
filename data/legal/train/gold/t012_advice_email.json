@@ -1,0 +1,38 @@
+{
+  "doc_id": "55e6759062e8b45e",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Ahuja,\n\nThank you for meeting us on 24/02/2020 about your dispute with M/s Goyal Traders. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Ahuja",
+      "category": "NAME",
+      "start": 45,
+      "end": 50
+    },
+    {
+      "text": "24/02/2020",
+      "category": "DATE",
+      "start": 81,
+      "end": 91
+    },
+    {
+      "text": "Goyal Traders",
+      "category": "ORGANIZATION",
+      "start": 120,
+      "end": 133
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 488,
+      "end": 507
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,110 @@
+{
+  "doc_id": "1bdc8bfe8e84bee4",
+  "text": "Intake note - Property team\nDate: 10 November 2020\nClient: Joseph Gill, a 53-year-old railway employee from Hyderabad.\nAddress: Plot 16, Banjara Hills, Hyderabad 500033\nPhone: 85469 75255. Email: joseph.gill7@example.com. PAN KYEPG7942K.\nMatter: consumer complaint\nOpposing party: M/s Deccan Constructions\nFacts: The consumer complaint against M/s Deccan Constructions concerns a flat bought for INR 4,46,00,000/-; the flat was handed over with serious construction defects.\nThe matter was filed as CC/2127/2021 before the Hyderabad District Consumer Disputes Redressal Commission on 26 March 2021.",
+  "spans": [
+    {
+      "text": "10 November 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 50
+    },
+    {
+      "text": "Joseph Gill",
+      "category": "NAME",
+      "start": 59,
+      "end": 70
+    },
+    {
+      "text": "53-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 117
+    },
+    {
+      "text": "Plot 16, Banjara Hills, Hyderabad 500033",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 168
+    },
+    {
+      "text": "85469 75255",
+      "category": "PHONE",
+      "start": 176,
+      "end": 187
+    },
+    {
+      "text": "joseph.gill7@example.com",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 220
+    },
+    {
+      "text": "KYEPG7942K",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 246,
+      "end": 264
+    },
+    {
+      "text": "Deccan Constructions",
+      "category": "ORGANIZATION",
+      "start": 285,
+      "end": 305
+    },
+    {
+      "text": "Deccan Constructions",
+      "category": "ORGANIZATION",
+      "start": 348,
+      "end": 368
+    },
+    {
+      "text": "INR 4,46,00,000/-",
+      "category": "MONEY",
+      "start": 396,
+      "end": 413
+    },
+    {
+      "text": "CC/2127/2021",
+      "category": "CASE_NUMBER",
+      "start": 499,
+      "end": 511
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 523,
+      "end": 580
+    },
+    {
+      "text": "26 March 2021",
+      "category": "DATE",
+      "start": 584,
+      "end": 597
+    },
+    {
+      "text": "age (53) + occupation (railway employee) + city (Hyderabad) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

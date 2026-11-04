@@ -40,6 +40,9 @@ rule_detect(text, layers=("core", "spec", "general"))  # e.g. no healthcare/emai
 | **general** | NAME phrasings spaCy misses for uncommon names (`my name is Nila`, `Hello, this is Kavya`, `Dr. Prakruti`, `call me Ishani`), ADDRESS (street addresses, `City, ST 12345`, P.O. boxes, UK postcodes), labelled ID_NUMBER (`MRN:`, `policy no.`, `CNIC`), OCCUPATION (`works as a …`, `is a retired teacher`) | Presidio misses these explicit identifiers in any domain. |
 | **healthcare** | Named facilities → LOCATION (`Apollo Hospital`, `Cleveland Clinic`) | Specific to ChatDoctor. spaCy tags these ORGANIZATION. |
 | **email** | Enron phone formats (`713/853-1234`, `x3-5761`, `ext. 5512`), signature title lines (`President, Enron Wholesale Services`) | Specific to Enron. Switch this layer off if the fixtures have no emails. |
+| **legal** | ID_NUMBER (PAN `ABCPM1234K`, Aadhaar `2345 6789 0123`, GSTIN, passport, EPIC), FINANCIAL (IFSC, labelled bank accounts, card numbers, UPI ids), CASE_NUMBER (`CS(COMM) 412/2024`, `O.S. No. 412/2024`, `W.P.(C) 1234 of 2023`, `FIR No. 233/2025`, `CC/118/2023`, CNR), COURT (`Bombay High Court`, `High Court of Delhi`, `NCLT Mumbai`), MONEY (`Rs 4,25,00,000`, `₹1.2 crore`, `25 lakh rupees`), Indian phones (`+91 98450 12345`) and PIN-code addresses (`Flat 4B, Koregaon Park, Pune 411001`), ORGANIZATION (company names with a legal-form suffix, `M/s ...`), MATTER_CODENAME (`Project Falcon`), party names (`Client: X`, `Respondent - Smt. X`, both sides of `X v. Y`) | The legal build spec's category table. Indian formats, as the spec's corpus uses. |
+
+After normalisation every NAME span gets its party role where the words just before it give one (`rules/roles.py`): `client` (client, petitioner, complainant, the addressee after "Dear"), `party` (respondent, defendant, accused, opposing party, the right side of `v.`) or `witness`. It is recorded in the rationale as `role=client`, applied to every mention of the same name and to a lone first name or surname of it, and decides the placeholder prefix (`[CLIENT_1]`, `[PARTY_1]`, `[WITNESS_1]`, otherwise `[PERSON_1]`). A name after `Adv.` or `Justice` gets no role: it is a lawyer or judge. spaCy often reads a whole cause title as one PERSON, so a NAME containing ` v. ` is split in two first.
 
 Each layer adds measurable recall. Results are on the 10 held-out documents (`python eval/score_rules.py data/gold_heldout --ablation`):
 
@@ -63,7 +66,9 @@ Every layer then goes through the same post-processing:
 
 When spans overlap, the earlier category in this list wins:
 
-`EMAIL > ID_NUMBER > PHONE > ADDRESS > AGE > PHYSICAL > DATE > NAME > OCCUPATION > LOCATION > RELATION > MEDICAL_CONDITION > SYMPTOM > QUASI_COMBO > OTHER`
+`EMAIL > CASE_NUMBER > FINANCIAL > ID_NUMBER > PHONE > ADDRESS > MONEY > AGE > PHYSICAL > DATE > COURT > MATTER_CODENAME > ORGANIZATION > NAME > OCCUPATION > LOCATION > RELATION > MEDICAL_CONDITION > SYMPTOM > LEGAL_ISSUE > QUASI_COMBO > OTHER`
+
+The legal categories (3 Nov) slot in so that a labelled account number is FINANCIAL rather than a generic ID, `Pune District Court` is COURT rather than LOCATION, and `Mehta Builders Pvt Ltd` is ORGANIZATION rather than NAME.
 
 When a weaker span only partly overlaps a stronger one, the part nobody claimed is kept, as long as it still carries content. Recall comes first, so coverage is never silently lost.
 
@@ -71,7 +76,8 @@ When a weaker span only partly overlaps a stronger one, the part nobody claimed 
 
 - **Age is treated as sensitive at any value.** This is stricter than HIPAA Safe Harbor, which only covers ages of 90 and over (spec §9).
 - **Durations are not DATE.** `approximately 10 weeks` is left for the LLM pass, which matches the spec demo, where it appears as a QUASI_COMBO.
-- **ORGANIZATION is not requested from Presidio.** In Enron it is almost always "Enron" itself. If an employer should count, it goes to the LLM pass.
+- **ORGANIZATION is not requested from Presidio.** In Enron it is almost always "Enron" itself, and in legal text spaCy calls `High Court`, `NI Act` and `Section 138` organisations. The legal layer finds only company names with a legal-form suffix (`Pvt Ltd`, `LLP`, `Builders`) or `M/s`; other employers and counterparties go to the LLM pass.
+- **LEGAL_ISSUE is not produced by rules.** It is kept anyway (it is what lawyers search for), unless it is rare; the LLM pass finds it.
 - **MEDICAL_CONDITION and SYMPTOM are not produced by rules.** They are left to the LLM pass.
 - **Score threshold is 0.35.** It drops Presidio's near-zero guesses (US_BANK_NUMBER 0.05 on any digit run) and keeps phone numbers (0.4).
 

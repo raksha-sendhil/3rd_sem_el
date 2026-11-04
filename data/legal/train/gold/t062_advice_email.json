@@ -1,0 +1,56 @@
+{
+  "doc_id": "c137a5cd6478d4de",
+  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 790/2022\n\nDear Ms. Ahuja,\n\nThank you for meeting us on 22 November 2022 about your dispute with Fatima Sathe. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the Kolhapur District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office. We will pursue the full claim of INR 8,80,000/-.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.A. No. 790/2022",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 59
+    },
+    {
+      "text": "Ahuja",
+      "category": "NAME",
+      "start": 70,
+      "end": 75
+    },
+    {
+      "text": "22 November 2022",
+      "category": "DATE",
+      "start": 106,
+      "end": 122
+    },
+    {
+      "text": "Fatima Sathe",
+      "category": "NAME",
+      "start": 147,
+      "end": 159
+    },
+    {
+      "text": "Kolhapur District Court",
+      "category": "COURT",
+      "start": 272,
+      "end": 295
+    },
+    {
+      "text": "INR 8,80,000/-",
+      "category": "MONEY",
+      "start": 544,
+      "end": 558
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 575,
+      "end": 591
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

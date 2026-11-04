@@ -1,0 +1,74 @@
+{
+  "doc_id": "ea0877d453318b84",
+  "text": "Case note: R.C.S. No. 2651/2023\nClient: Anjali Deshpande (architect, Pune)\nOpposing party: Sameer Chandran\nCourt: Pune District Court\nFiled on: 6 May 2023\nClaim amount: INR 1,45,000/-\nIssue: tenancy eviction. The tenant has stopped paying rent for many months.\nAdvice given: Issue a notice terminating the tenancy and claim mesne profits for the period of occupation.\nOutcome: The court passed an eviction decree with arrears.\nRecommended next step: File for execution of the decree.\nWitness: Shalini Pawar",
+  "spans": [
+    {
+      "text": "R.C.S. No. 2651/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Anjali Deshpande",
+      "category": "NAME",
+      "start": 40,
+      "end": 56
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 58,
+      "end": 67
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 69,
+      "end": 73
+    },
+    {
+      "text": "Sameer Chandran",
+      "category": "NAME",
+      "start": 91,
+      "end": 106
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 114,
+      "end": 133
+    },
+    {
+      "text": "6 May 2023",
+      "category": "DATE",
+      "start": 144,
+      "end": 154
+    },
+    {
+      "text": "INR 1,45,000/-",
+      "category": "MONEY",
+      "start": 169,
+      "end": 183
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 191,
+      "end": 207
+    },
+    {
+      "text": "Shalini Pawar",
+      "category": "NAME",
+      "start": 493,
+      "end": 506
+    },
+    {
+      "text": "occupation (architect) + city (Pune) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

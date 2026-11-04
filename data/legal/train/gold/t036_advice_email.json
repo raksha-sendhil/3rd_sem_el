@@ -1,0 +1,56 @@
+{
+  "doc_id": "dab6657de53d6bfa",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 2334/2024\n\nDear Mr. Tiwari,\n\nThank you for meeting us on 2 November 2024 about your dispute with M/s Reddy Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Nashik Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office. We will pursue the full claim of 35.9 lakh rupees.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 2334/2024",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 67
+    },
+    {
+      "text": "Tiwari",
+      "category": "NAME",
+      "start": 78,
+      "end": 84
+    },
+    {
+      "text": "2 November 2024",
+      "category": "DATE",
+      "start": 115,
+      "end": 130
+    },
+    {
+      "text": "Reddy Industries",
+      "category": "ORGANIZATION",
+      "start": 159,
+      "end": 175
+    },
+    {
+      "text": "Nashik Labour Court",
+      "category": "COURT",
+      "start": 278,
+      "end": 297
+    },
+    {
+      "text": "35.9 lakh rupees",
+      "category": "MONEY",
+      "start": 503,
+      "end": 519
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 536,
+      "end": 551
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

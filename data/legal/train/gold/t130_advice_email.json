@@ -1,0 +1,50 @@
+{
+  "doc_id": "e3f4f0a2787c4650",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2625/2024\n\nDear Ms. Pawar,\n\nThank you for meeting us on 7 August 2024 about your dispute with Emerald Traders. As we understand it, the cheque came back with the remark account closed.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office. We will pursue the full claim of INR 37,00,000/-.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 2625/2024",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Pawar",
+      "category": "NAME",
+      "start": 68,
+      "end": 73
+    },
+    {
+      "text": "7 August 2024",
+      "category": "DATE",
+      "start": 104,
+      "end": 117
+    },
+    {
+      "text": "Emerald Traders",
+      "category": "ORGANIZATION",
+      "start": 142,
+      "end": 157
+    },
+    {
+      "text": "INR 37,00,000/-",
+      "category": "MONEY",
+      "start": 535,
+      "end": 550
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 567,
+      "end": 579
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

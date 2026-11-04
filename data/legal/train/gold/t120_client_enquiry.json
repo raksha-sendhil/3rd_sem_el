@@ -1,0 +1,68 @@
+{
+  "doc_id": "6a5fcd7a0be018ce",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Kavya Patel. I am a 52-year-old college lecturer living in Bengaluru. Harish Swamy gave me a cheque for 20.1 lakh rupees to repay a loan, but the cheque was dishonoured because the signature did not match. Can your firm advise me on what to do next? You can call me on 08612468933 or email kavya.patel@example.com.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Kavya Patel",
+      "category": "NAME",
+      "start": 64,
+      "end": 75
+    },
+    {
+      "text": "52-year-old",
+      "category": "AGE",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 96,
+      "end": 112
+    },
+    {
+      "text": "Bengaluru",
+      "category": "LOCATION",
+      "start": 123,
+      "end": 132
+    },
+    {
+      "text": "Harish Swamy",
+      "category": "NAME",
+      "start": 134,
+      "end": 146
+    },
+    {
+      "text": "20.1 lakh rupees",
+      "category": "MONEY",
+      "start": 168,
+      "end": 184
+    },
+    {
+      "text": "08612468933",
+      "category": "PHONE",
+      "start": 333,
+      "end": 344
+    },
+    {
+      "text": "kavya.patel@example.com",
+      "category": "EMAIL",
+      "start": 354,
+      "end": 377
+    },
+    {
+      "text": "age (52) + occupation (college lecturer) + city (Bengaluru) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "fee4251e3463862e",
+  "text": "Case note: R.C.S. No. 1099/2022\nClient: Anjali DSouza (taxi driver, Pune)\nOpposing party: Kiran Shah\nCourt: Pune District Court\nFiled on: 23 June 2022\nClaim amount: ₹7,25,000\nIssue: tenancy eviction. The landlord needs the premises for the family's own use.\nAdvice given: Plead bona fide personal need with proof of the family's housing requirement.\nOutcome: The eviction was granted on the ground of personal need.\nRecommended next step: Give the tenant time to vacate under the decree.",
+  "spans": [
+    {
+      "text": "R.C.S. No. 1099/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Anjali DSouza",
+      "category": "NAME",
+      "start": 40,
+      "end": 53
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 68,
+      "end": 72
+    },
+    {
+      "text": "Kiran Shah",
+      "category": "NAME",
+      "start": 90,
+      "end": 100
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 108,
+      "end": 127
+    },
+    {
+      "text": "23 June 2022",
+      "category": "DATE",
+      "start": 138,
+      "end": 150
+    },
+    {
+      "text": "₹7,25,000",
+      "category": "MONEY",
+      "start": 165,
+      "end": 174
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 182,
+      "end": 198
+    },
+    {
+      "text": "occupation (taxi driver) + city (Pune) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

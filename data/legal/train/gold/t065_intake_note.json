@@ -1,0 +1,98 @@
+{
+  "doc_id": "6ce4c4db5c32d246",
+  "text": "Intake note (Property team, 2 October 2019). Our client Sameer Iyer is a 35-year-old fashion designer who lives at Plot 17, Kuvempunagar, Mysuru 570051 and can be reached on 06113839356 or sameer.iyer@example.com. The client's PAN YDUPI6950E.\nThe client consulted us about a consumer complaint matter against M/s Deccan Developers. The consumer complaint against Deccan Developers concerns a flat bought for ₹5,89,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 1811/2019 before the Mysuru District Consumer Disputes Redressal Commission on 12 December 2019.",
+  "spans": [
+    {
+      "text": "2 October 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 42
+    },
+    {
+      "text": "Sameer Iyer",
+      "category": "NAME",
+      "start": 56,
+      "end": 67
+    },
+    {
+      "text": "35-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 101
+    },
+    {
+      "text": "Plot 17, Kuvempunagar, Mysuru 570051",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 151
+    },
+    {
+      "text": "06113839356",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "sameer.iyer@example.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 212
+    },
+    {
+      "text": "YDUPI6950E",
+      "category": "ID_NUMBER",
+      "start": 231,
+      "end": 241
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 275,
+      "end": 293
+    },
+    {
+      "text": "Deccan Developers",
+      "category": "ORGANIZATION",
+      "start": 313,
+      "end": 330
+    },
+    {
+      "text": "Deccan Developers",
+      "category": "ORGANIZATION",
+      "start": 363,
+      "end": 380
+    },
+    {
+      "text": "₹5,89,00,000",
+      "category": "MONEY",
+      "start": 408,
+      "end": 420
+    },
+    {
+      "text": "C.C. No. 1811/2019",
+      "category": "CASE_NUMBER",
+      "start": 486,
+      "end": 504
+    },
+    {
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 516,
+      "end": 570
+    },
+    {
+      "text": "12 December 2019",
+      "category": "DATE",
+      "start": 574,
+      "end": 590
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

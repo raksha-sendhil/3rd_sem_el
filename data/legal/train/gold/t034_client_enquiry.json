@@ -1,0 +1,68 @@
+{
+  "doc_id": "8d411623f33689e0",
+  "text": "Subject: Need help with a consumer complaint case\n\nHello, my name is Sunanda Malhotra. I am a 70-year-old chartered accountant living in Mumbai. I paid Ahuja Developers Rs 6,91,00,000 for a flat, and possession of the flat is long overdue. Can your firm advise me on what to do next? You can call me on 06577304165 or email sunanda.malhotra@example.in.",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Sunanda Malhotra",
+      "category": "NAME",
+      "start": 69,
+      "end": 85
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 94,
+      "end": 105
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 106,
+      "end": 126
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 137,
+      "end": 143
+    },
+    {
+      "text": "Ahuja Developers",
+      "category": "ORGANIZATION",
+      "start": 152,
+      "end": 168
+    },
+    {
+      "text": "Rs 6,91,00,000",
+      "category": "MONEY",
+      "start": 169,
+      "end": 183
+    },
+    {
+      "text": "06577304165",
+      "category": "PHONE",
+      "start": 303,
+      "end": 314
+    },
+    {
+      "text": "sunanda.malhotra@example.in",
+      "category": "EMAIL",
+      "start": 324,
+      "end": 351
+    },
+    {
+      "text": "age (70) + occupation (chartered accountant) + city (Mumbai) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

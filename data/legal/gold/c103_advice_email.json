@@ -1,0 +1,56 @@
+{
+  "doc_id": "2c32e6e879f3c526",
+  "text": "Subject: Your breach of contract matter (Project Flamingo)\n\nDear Ms. Fernandes,\n\nThank you for meeting us on 29 March 2020 about your dispute with M/s Lotus Motors Ltd. As we understand it, the counterparty has not paid the invoices for delivered goods. The matter is listed before the Vadodara Commercial Court.\n\nOur advice is to invoke the arbitration clause and seek interim relief to secure the amount. Please collect the contract, the invoices and the delivery challans and send copies to this office. We will pursue the full claim of ₹7,89,00,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Flamingo",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 57
+    },
+    {
+      "text": "Fernandes",
+      "category": "NAME",
+      "start": 69,
+      "end": 78
+    },
+    {
+      "text": "29 March 2020",
+      "category": "DATE",
+      "start": 109,
+      "end": 122
+    },
+    {
+      "text": "Lotus Motors Ltd",
+      "category": "ORGANIZATION",
+      "start": 151,
+      "end": 167
+    },
+    {
+      "text": "Vadodara Commercial Court",
+      "category": "COURT",
+      "start": 286,
+      "end": 311
+    },
+    {
+      "text": "₹7,89,00,000",
+      "category": "MONEY",
+      "start": 540,
+      "end": 552
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 569,
+      "end": 588
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

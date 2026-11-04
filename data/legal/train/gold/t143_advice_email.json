@@ -1,0 +1,50 @@
+{
+  "doc_id": "393c5175eda63d26",
+  "text": "Subject: Your wrongful termination matter\n\nDear Mr. Bhosale,\n\nThank you for meeting us on 18 June 2020 about your dispute with M/s Kulkarni Technologies Pvt Ltd. As we understand it, the dismissal followed a one-sided domestic enquiry. The matter is listed before the Vadodara Labour Court.\n\nOur advice is to demand the domestic enquiry report and challenge it for breach of natural justice. Please collect the charge sheet, the enquiry report and the reply to the charge sheet and send copies to this office. We will pursue the full claim of Rs 4,00,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Bhosale",
+      "category": "NAME",
+      "start": 52,
+      "end": 59
+    },
+    {
+      "text": "18 June 2020",
+      "category": "DATE",
+      "start": 90,
+      "end": 102
+    },
+    {
+      "text": "Kulkarni Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 131,
+      "end": 160
+    },
+    {
+      "text": "Vadodara Labour Court",
+      "category": "COURT",
+      "start": 268,
+      "end": 289
+    },
+    {
+      "text": "Rs 4,00,000",
+      "category": "MONEY",
+      "start": 543,
+      "end": 554
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 571,
+      "end": 583
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

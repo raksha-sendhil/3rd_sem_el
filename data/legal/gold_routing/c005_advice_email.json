@@ -1,0 +1,42 @@
+{
+  "doc_id": "dca370edcdd19d73",
+  "routing": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "CC/1613/2025",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Dalvi",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "09/01/2026",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Revathi Pawar",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

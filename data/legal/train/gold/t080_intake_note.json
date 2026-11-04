@@ -1,0 +1,104 @@
+{
+  "doc_id": "e131212e85f807e4",
+  "text": "Intake note (Criminal team, 15 November 2020). Our client Harish Bhandari is a 63-year-old farmer who lives at Flat 4D, Peelamedu, Coimbatore 641056 and can be reached on 06544618367 or harish.bhandari@example.in. The client's PAN FRVPB4068R, Aadhaar 8388 6798 3050.\nThe client consulted us about a anticipatory bail matter against Sujata More. The anticipatory bail matter arises from a complaint by Sujata More about INR 64,40,000/-; the complaint turns a business disagreement into a criminal case.\nThe matter was filed as Anticipatory Bail Application No. 2376/2021 before the Coimbatore Sessions Court on 23 March 2021.",
+  "spans": [
+    {
+      "text": "15 November 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Harish Bhandari",
+      "category": "NAME",
+      "start": 58,
+      "end": 73
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 97
+    },
+    {
+      "text": "Flat 4D, Peelamedu, Coimbatore 641056",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 148
+    },
+    {
+      "text": "06544618367",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "harish.bhandari@example.in",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 212
+    },
+    {
+      "text": "FRVPB4068R",
+      "category": "ID_NUMBER",
+      "start": 231,
+      "end": 241
+    },
+    {
+      "text": "8388 6798 3050",
+      "category": "ID_NUMBER",
+      "start": 251,
+      "end": 265
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 299,
+      "end": 316
+    },
+    {
+      "text": "Sujata More",
+      "category": "NAME",
+      "start": 332,
+      "end": 343
+    },
+    {
+      "text": "Sujata More",
+      "category": "NAME",
+      "start": 401,
+      "end": 412
+    },
+    {
+      "text": "INR 64,40,000/-",
+      "category": "MONEY",
+      "start": 419,
+      "end": 434
+    },
+    {
+      "text": "Anticipatory Bail Application No. 2376/2021",
+      "category": "CASE_NUMBER",
+      "start": 526,
+      "end": 569
+    },
+    {
+      "text": "Coimbatore Sessions Court",
+      "category": "COURT",
+      "start": 581,
+      "end": 606
+    },
+    {
+      "text": "23 March 2021",
+      "category": "DATE",
+      "start": 610,
+      "end": 623
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

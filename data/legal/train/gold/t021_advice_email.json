@@ -1,0 +1,50 @@
+{
+  "doc_id": "992b09424ff20441",
+  "text": "Subject: Your geographical-indication dispute matter\n\nDear Mr. Srivastava,\n\nThank you for meeting us on 26 June 2024 about your dispute with Pandey Foods Pvt Ltd. As we understand it, the rival product uses the protected regional name on its label. The matter is listed before the Allahabad High Court.\n\nOur advice is to rely on the registered GI certificate and seek an injunction against the infringing label. Please collect the registered GI certificate and samples of the infringing label and send copies to this office. We will pursue the full claim of Rs. 2,10,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 45
+    },
+    {
+      "text": "Srivastava",
+      "category": "NAME",
+      "start": 63,
+      "end": 73
+    },
+    {
+      "text": "26 June 2024",
+      "category": "DATE",
+      "start": 104,
+      "end": 116
+    },
+    {
+      "text": "Pandey Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 141,
+      "end": 161
+    },
+    {
+      "text": "Allahabad High Court",
+      "category": "COURT",
+      "start": 281,
+      "end": 301
+    },
+    {
+      "text": "Rs. 2,10,00,000",
+      "category": "MONEY",
+      "start": 558,
+      "end": 573
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 590,
+      "end": 606
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

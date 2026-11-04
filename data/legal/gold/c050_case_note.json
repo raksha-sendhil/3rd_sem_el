@@ -1,0 +1,74 @@
+{
+  "doc_id": "3fb212bb583d378f",
+  "text": "Case note: R.C.S. No. 315/2019\nClient: Kavya Malhotra (insurance agent, Warangal)\nOpposing party: Sujata Khan\nCourt: Warangal District Court\nFiled on: 28 February 2019\nClaim amount: Rs 7,85,000\nIssue: tenancy eviction. The tenant has sublet the flat without permission.\nAdvice given: Collect evidence of unauthorised subletting such as utility bills in the occupant's name.\nOutcome: The tenant admitted the subletting and agreed to vacate.\nRecommended next step: Record the compromise before the court.\nWitness: Priyanka Mehra",
+  "spans": [
+    {
+      "text": "R.C.S. No. 315/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Kavya Malhotra",
+      "category": "NAME",
+      "start": 39,
+      "end": 53
+    },
+    {
+      "text": "insurance agent",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 70
+    },
+    {
+      "text": "Warangal",
+      "category": "LOCATION",
+      "start": 72,
+      "end": 80
+    },
+    {
+      "text": "Sujata Khan",
+      "category": "NAME",
+      "start": 98,
+      "end": 109
+    },
+    {
+      "text": "Warangal District Court",
+      "category": "COURT",
+      "start": 117,
+      "end": 140
+    },
+    {
+      "text": "28 February 2019",
+      "category": "DATE",
+      "start": 151,
+      "end": 167
+    },
+    {
+      "text": "Rs 7,85,000",
+      "category": "MONEY",
+      "start": 182,
+      "end": 193
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 201,
+      "end": 217
+    },
+    {
+      "text": "Priyanka Mehra",
+      "category": "NAME",
+      "start": 512,
+      "end": 526
+    },
+    {
+      "text": "occupation (insurance agent) + city (Warangal) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

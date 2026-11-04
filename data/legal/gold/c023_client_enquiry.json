@@ -1,0 +1,68 @@
+{
+  "doc_id": "2d9f9ecdbad40215",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Aarti Saxena. I am a 45-year-old electrician living in Panaji. Sterling Textiles Pvt Ltd gave me a cheque for ₹35,20,000 to repay a loan, but the cheque came back with the remark account closed. Can your firm advise me on what to do next? You can call me on 95870 73728 or email aarti.saxena73@example.com.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Aarti Saxena",
+      "category": "NAME",
+      "start": 64,
+      "end": 76
+    },
+    {
+      "text": "45-year-old",
+      "category": "AGE",
+      "start": 85,
+      "end": 96
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 97,
+      "end": 108
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 119,
+      "end": 125
+    },
+    {
+      "text": "Sterling Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 152
+    },
+    {
+      "text": "₹35,20,000",
+      "category": "MONEY",
+      "start": 174,
+      "end": 184
+    },
+    {
+      "text": "95870 73728",
+      "category": "PHONE",
+      "start": 322,
+      "end": 333
+    },
+    {
+      "text": "aarti.saxena73@example.com",
+      "category": "EMAIL",
+      "start": 343,
+      "end": 369
+    },
+    {
+      "text": "age (45) + occupation (electrician) + city (Panaji) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

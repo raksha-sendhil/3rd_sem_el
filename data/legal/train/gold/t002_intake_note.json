@@ -1,0 +1,116 @@
+{
+  "doc_id": "265daf69cc3d4769",
+  "text": "Intake note - Property team\nDate: 3 February 2022\nClient: Bhavana Iyengar, a 53-year-old truck driver from Mysuru.\nAddress: Plot 62, Kuvempunagar, Mysuru 570009\nPhone: 96569 49062. Email: bhavana.iyengar@example.com. PAN JUZPI7009N, Aadhaar 2404 5112 9119.\nMatter: consumer complaint\nOpposing party: M/s Zenith Builders Pvt Ltd\nFacts: The consumer complaint against Zenith Builders Pvt Ltd concerns a flat bought for ₹2.2 crore; the builder keeps promising possession by email but never delivers.\nThe matter was filed as C.C. No. 948/2022 before the Mysuru District Consumer Disputes Redressal Commission on 1 June 2022.",
+  "spans": [
+    {
+      "text": "3 February 2022",
+      "category": "DATE",
+      "start": 34,
+      "end": 49
+    },
+    {
+      "text": "Bhavana Iyengar",
+      "category": "NAME",
+      "start": 58,
+      "end": 73
+    },
+    {
+      "text": "53-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 101
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 113
+    },
+    {
+      "text": "Plot 62, Kuvempunagar, Mysuru 570009",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 160
+    },
+    {
+      "text": "96569 49062",
+      "category": "PHONE",
+      "start": 168,
+      "end": 179
+    },
+    {
+      "text": "bhavana.iyengar@example.com",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 215
+    },
+    {
+      "text": "JUZPI7009N",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "2404 5112 9119",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 255
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 265,
+      "end": 283
+    },
+    {
+      "text": "Zenith Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 304,
+      "end": 327
+    },
+    {
+      "text": "Zenith Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 366,
+      "end": 389
+    },
+    {
+      "text": "₹2.2 crore",
+      "category": "MONEY",
+      "start": 417,
+      "end": 427
+    },
+    {
+      "text": "C.C. No. 948/2022",
+      "category": "CASE_NUMBER",
+      "start": 521,
+      "end": 538
+    },
+    {
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 550,
+      "end": 604
+    },
+    {
+      "text": "1 June 2022",
+      "category": "DATE",
+      "start": 608,
+      "end": 619
+    },
+    {
+      "text": "age (53) + occupation (truck driver) + city (Mysuru) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

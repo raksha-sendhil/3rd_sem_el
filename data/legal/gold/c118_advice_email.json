@@ -1,0 +1,56 @@
+{
+  "doc_id": "ebd32b32e837c6af",
+  "text": "Subject: Your aircraft lease repossession matter (Project Ibis)\n\nDear Mr. Pillai,\n\nThank you for meeting us on 12 July 2024 about your dispute with M/s Khan Aviation Ltd. As we understand it, the airline sought protection from its creditors. The matter is listed before the Telangana High Court.\n\nOur advice is to argue that leased aircraft fall outside the insolvency moratorium. Please collect the lease agreement and the moratorium order and send copies to this office. We will pursue the full claim of Rs. 91,00,00,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 41
+    },
+    {
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 50,
+      "end": 62
+    },
+    {
+      "text": "Pillai",
+      "category": "NAME",
+      "start": 74,
+      "end": 80
+    },
+    {
+      "text": "12 July 2024",
+      "category": "DATE",
+      "start": 111,
+      "end": 123
+    },
+    {
+      "text": "Khan Aviation Ltd",
+      "category": "ORGANIZATION",
+      "start": 152,
+      "end": 169
+    },
+    {
+      "text": "Telangana High Court",
+      "category": "COURT",
+      "start": 274,
+      "end": 294
+    },
+    {
+      "text": "Rs. 91,00,00,000",
+      "category": "MONEY",
+      "start": 506,
+      "end": 522
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 539,
+      "end": 554
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

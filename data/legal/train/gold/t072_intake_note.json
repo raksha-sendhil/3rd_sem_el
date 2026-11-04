@@ -1,0 +1,110 @@
+{
+  "doc_id": "b7545388521a565e",
+  "text": "Intake note - Family team\nDate: 14 February 2023\nClient: Mary Hegde, a 46-year-old schoolteacher from Madurai.\nAddress: Bungalow 20, KK Nagar, Madurai 625042\nPhone: 08484215847. Email: mary.hegde8@example.com. PAN HFWPH3242W.\nMatter: divorce by mutual consent\nOpposing party: Shalini Rao\nFacts: The divorce by mutual consent with Shalini Rao includes a settlement of 22.2 lakh rupees; both spouses have lived apart for a long time.\nThe matter was filed as Petition No. 1489/2023 before the Family Court at Madurai on 06/04/2023.",
+  "spans": [
+    {
+      "text": "14 February 2023",
+      "category": "DATE",
+      "start": 32,
+      "end": 48
+    },
+    {
+      "text": "Mary Hegde",
+      "category": "NAME",
+      "start": 57,
+      "end": 67
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 96
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 102,
+      "end": 109
+    },
+    {
+      "text": "Bungalow 20, KK Nagar, Madurai 625042",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 157
+    },
+    {
+      "text": "08484215847",
+      "category": "PHONE",
+      "start": 165,
+      "end": 176
+    },
+    {
+      "text": "mary.hegde8@example.com",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 208
+    },
+    {
+      "text": "HFWPH3242W",
+      "category": "ID_NUMBER",
+      "start": 214,
+      "end": 224
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 234,
+      "end": 259
+    },
+    {
+      "text": "Shalini Rao",
+      "category": "NAME",
+      "start": 276,
+      "end": 287
+    },
+    {
+      "text": "Shalini Rao",
+      "category": "NAME",
+      "start": 330,
+      "end": 341
+    },
+    {
+      "text": "22.2 lakh rupees",
+      "category": "MONEY",
+      "start": 367,
+      "end": 383
+    },
+    {
+      "text": "Petition No. 1489/2023",
+      "category": "CASE_NUMBER",
+      "start": 456,
+      "end": 478
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 490,
+      "end": 513
+    },
+    {
+      "text": "06/04/2023",
+      "category": "DATE",
+      "start": 517,
+      "end": 527
+    },
+    {
+      "text": "age (46) + occupation (schoolteacher) + city (Madurai) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "39e86bdf4ed69664",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 310/2023\n\nDear Mr. Kamath,\n\nThank you for meeting us on 31/01/2024 about your dispute with M/s Pioneer Textiles Pvt Ltd. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 310/2023",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Kamath",
+      "category": "NAME",
+      "start": 67,
+      "end": 73
+    },
+    {
+      "text": "31/01/2024",
+      "category": "DATE",
+      "start": 104,
+      "end": 114
+    },
+    {
+      "text": "Pioneer Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 143,
+      "end": 167
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 492,
+      "end": 504
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,50 @@
+{
+  "doc_id": "7f965636be77036d",
+  "text": "Subject: Your aircraft lease repossession matter - CS(COMM) 2864/2025\n\nDear Ms. Ghosh,\n\nThank you for meeting us on 7 May 2026 about your dispute with Skyline Airways Ltd. As we understand it, the airline has stopped paying lease rentals. The matter is listed before the Kerala High Court.\n\nOur advice is to seek deregistration of the aircraft under the international lease convention. Please collect the lease agreement and the irrevocable deregistration authorisation and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 41
+    },
+    {
+      "text": "CS(COMM) 2864/2025",
+      "category": "CASE_NUMBER",
+      "start": 51,
+      "end": 69
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 80,
+      "end": 85
+    },
+    {
+      "text": "7 May 2026",
+      "category": "DATE",
+      "start": 116,
+      "end": 126
+    },
+    {
+      "text": "Skyline Airways Ltd",
+      "category": "ORGANIZATION",
+      "start": 151,
+      "end": 170
+    },
+    {
+      "text": "Kerala High Court",
+      "category": "COURT",
+      "start": 271,
+      "end": 288
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 517,
+      "end": 532
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

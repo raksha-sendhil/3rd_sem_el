@@ -1,0 +1,110 @@
+{
+  "doc_id": "7c46a55b28dc6ac5",
+  "text": "Intake note - Property team\nDate: 9 April 2021\nClient: Debashish Das, a 68-year-old architect from Kolhapur.\nAddress: Plot 74, Shahupuri, Kolhapur 416050\nPhone: +91 69768 70494. Email: debashish.das@example.in. PAN WHQPD1813H.\nMatter: consumer complaint\nOpposing party: M/s Saffron Builders Pvt Ltd\nFacts: The consumer complaint against M/s Saffron Builders Pvt Ltd concerns a flat bought for Rs 6,67,00,000; the flat was handed over with serious construction defects.\nThe matter was filed as C.C. No. 1234/2021 before the Kolhapur District Consumer Disputes Redressal Commission on 24 October 2021.",
+  "spans": [
+    {
+      "text": "9 April 2021",
+      "category": "DATE",
+      "start": 34,
+      "end": 46
+    },
+    {
+      "text": "Debashish Das",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "68-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 93
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 99,
+      "end": 107
+    },
+    {
+      "text": "Plot 74, Shahupuri, Kolhapur 416050",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 153
+    },
+    {
+      "text": "+91 69768 70494",
+      "category": "PHONE",
+      "start": 161,
+      "end": 176
+    },
+    {
+      "text": "debashish.das@example.in",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 209
+    },
+    {
+      "text": "WHQPD1813H",
+      "category": "ID_NUMBER",
+      "start": 215,
+      "end": 225
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 235,
+      "end": 253
+    },
+    {
+      "text": "Saffron Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 274,
+      "end": 298
+    },
+    {
+      "text": "Saffron Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 341,
+      "end": 365
+    },
+    {
+      "text": "Rs 6,67,00,000",
+      "category": "MONEY",
+      "start": 393,
+      "end": 407
+    },
+    {
+      "text": "C.C. No. 1234/2021",
+      "category": "CASE_NUMBER",
+      "start": 493,
+      "end": 511
+    },
+    {
+      "text": "Kolhapur District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 523,
+      "end": 579
+    },
+    {
+      "text": "24 October 2021",
+      "category": "DATE",
+      "start": 583,
+      "end": 598
+    },
+    {
+      "text": "age (68) + occupation (architect) + city (Kolhapur) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

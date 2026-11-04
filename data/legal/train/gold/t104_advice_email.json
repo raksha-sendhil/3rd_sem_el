@@ -1,0 +1,44 @@
+{
+  "doc_id": "448a98eb7863ae8a",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Gill,\n\nThank you for meeting us on 28 September 2021 about your dispute with Deccan Constructions. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Hyderabad District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Gill",
+      "category": "NAME",
+      "start": 50,
+      "end": 54
+    },
+    {
+      "text": "28 September 2021",
+      "category": "DATE",
+      "start": 85,
+      "end": 102
+    },
+    {
+      "text": "Deccan Constructions",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 147
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 262,
+      "end": 319
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 536,
+      "end": 548
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

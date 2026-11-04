@@ -1,0 +1,98 @@
+{
+  "doc_id": "24fa58bc716af42b",
+  "text": "Intake note (Criminal team, 30 July 2019). Our client Meera Malhotra is a 69-year-old chartered accountant who lives at Plot 42, Vesu, Surat 395006 and can be reached on +91 75382 94451 or meera.malhotra55@example.com. The client's PAN MPLPM6874E.\nThe client consulted us about a anticipatory bail matter against Rupali Chauhan. The anticipatory bail matter arises from a complaint by Rupali Chauhan about Rs 19,90,000; the complaint alleges negligence during treatment.\nThe matter was filed as FIR No. 2056/2019 before the Surat Sessions Court on 18 November 2019.",
+  "spans": [
+    {
+      "text": "30 July 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 40
+    },
+    {
+      "text": "Meera Malhotra",
+      "category": "NAME",
+      "start": 54,
+      "end": 68
+    },
+    {
+      "text": "69-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 106
+    },
+    {
+      "text": "Plot 42, Vesu, Surat 395006",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 147
+    },
+    {
+      "text": "+91 75382 94451",
+      "category": "PHONE",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "meera.malhotra55@example.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 217
+    },
+    {
+      "text": "MPLPM6874E",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 280,
+      "end": 297
+    },
+    {
+      "text": "Rupali Chauhan",
+      "category": "NAME",
+      "start": 313,
+      "end": 327
+    },
+    {
+      "text": "Rupali Chauhan",
+      "category": "NAME",
+      "start": 385,
+      "end": 399
+    },
+    {
+      "text": "Rs 19,90,000",
+      "category": "MONEY",
+      "start": 406,
+      "end": 418
+    },
+    {
+      "text": "FIR No. 2056/2019",
+      "category": "CASE_NUMBER",
+      "start": 495,
+      "end": 512
+    },
+    {
+      "text": "Surat Sessions Court",
+      "category": "COURT",
+      "start": 524,
+      "end": 544
+    },
+    {
+      "text": "18 November 2019",
+      "category": "DATE",
+      "start": 548,
+      "end": 564
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

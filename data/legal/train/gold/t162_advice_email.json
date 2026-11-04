@@ -1,0 +1,44 @@
+{
+  "doc_id": "f56377c7af321ba4",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Malhotra,\n\nThank you for meeting us on 11 March 2021 about your dispute with Crescent Enterprises. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Warangal.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Malhotra",
+      "category": "NAME",
+      "start": 45,
+      "end": 53
+    },
+    {
+      "text": "11 March 2021",
+      "category": "DATE",
+      "start": 84,
+      "end": 97
+    },
+    {
+      "text": "Crescent Enterprises",
+      "category": "ORGANIZATION",
+      "start": 122,
+      "end": 142
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Warangal",
+      "category": "COURT",
+      "start": 260,
+      "end": 309
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 550,
+      "end": 562
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

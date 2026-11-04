@@ -1,0 +1,44 @@
+{
+  "doc_id": "0fd9a5f6ff7b809f",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Khan,\n\nThank you for meeting us on 29/05/2024 about your dispute with Thomas Mishra. As we understand it, the landlord needs the premises for the family's own use.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office. We will pursue the full claim of ₹5,85,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 48,
+      "end": 52
+    },
+    {
+      "text": "29/05/2024",
+      "category": "DATE",
+      "start": 83,
+      "end": 93
+    },
+    {
+      "text": "Thomas Mishra",
+      "category": "NAME",
+      "start": 118,
+      "end": 131
+    },
+    {
+      "text": "₹5,85,000",
+      "category": "MONEY",
+      "start": 459,
+      "end": 468
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 485,
+      "end": 497
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

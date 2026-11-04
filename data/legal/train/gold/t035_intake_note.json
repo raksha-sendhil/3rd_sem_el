@@ -1,0 +1,110 @@
+{
+  "doc_id": "b244eb15a66c4fda",
+  "text": "Intake note (Commercial team, 19/02/2023). Our client Neha Menon is a 48-year-old farmer who lives at Flat 11B, Sitabuldi, Nagpur 440035 and can be reached on 08923428939 or neha.menon@example.com. The client's PAN MZVPM3800S.\nThe client consulted us about a cheque bounce matter against Kavya Kulkarni. A cheque for ₹25,20,000 issued by Kavya Kulkarni bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 580557634181 (IFSC ICIC0719043).\nThe matter was filed as S.C.C. No. 851/2023 before the Judicial Magistrate First Class Court at Nagpur on 30 June 2023.",
+  "spans": [
+    {
+      "text": "19/02/2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Neha Menon",
+      "category": "NAME",
+      "start": 54,
+      "end": 64
+    },
+    {
+      "text": "48-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 88
+    },
+    {
+      "text": "Flat 11B, Sitabuldi, Nagpur 440035",
+      "category": "ADDRESS",
+      "start": 102,
+      "end": 136
+    },
+    {
+      "text": "08923428939",
+      "category": "PHONE",
+      "start": 159,
+      "end": 170
+    },
+    {
+      "text": "neha.menon@example.com",
+      "category": "EMAIL",
+      "start": 174,
+      "end": 196
+    },
+    {
+      "text": "MZVPM3800S",
+      "category": "ID_NUMBER",
+      "start": 215,
+      "end": 225
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 259,
+      "end": 272
+    },
+    {
+      "text": "Kavya Kulkarni",
+      "category": "NAME",
+      "start": 288,
+      "end": 302
+    },
+    {
+      "text": "₹25,20,000",
+      "category": "MONEY",
+      "start": 317,
+      "end": 327
+    },
+    {
+      "text": "Kavya Kulkarni",
+      "category": "NAME",
+      "start": 338,
+      "end": 352
+    },
+    {
+      "text": "580557634181",
+      "category": "FINANCIAL",
+      "start": 468,
+      "end": 480
+    },
+    {
+      "text": "ICIC0719043",
+      "category": "FINANCIAL",
+      "start": 487,
+      "end": 498
+    },
+    {
+      "text": "S.C.C. No. 851/2023",
+      "category": "CASE_NUMBER",
+      "start": 525,
+      "end": 544
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 556,
+      "end": 603
+    },
+    {
+      "text": "30 June 2023",
+      "category": "DATE",
+      "start": 607,
+      "end": 619
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

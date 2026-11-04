@@ -1,0 +1,44 @@
+{
+  "doc_id": "1bf7aac593e97fc2",
+  "text": "Subject: Your maritime salvage claim matter - A.S. No. 1810/2024\n\nDear Mr. Gaikwad,\n\nThank you for meeting us on 23 November 2024 about your dispute with M/s Swamy Shipping Pvt Ltd. As we understand it, the vessel is about to leave port.\n\nOur advice is to arrest the vessel to secure the salvage claim. Please collect the salvage agreement and the logbook entries and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 36
+    },
+    {
+      "text": "A.S. No. 1810/2024",
+      "category": "CASE_NUMBER",
+      "start": 46,
+      "end": 64
+    },
+    {
+      "text": "Gaikwad",
+      "category": "NAME",
+      "start": 75,
+      "end": 82
+    },
+    {
+      "text": "23 November 2024",
+      "category": "DATE",
+      "start": 113,
+      "end": 129
+    },
+    {
+      "text": "Swamy Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 158,
+      "end": 180
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 411,
+      "end": 423
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

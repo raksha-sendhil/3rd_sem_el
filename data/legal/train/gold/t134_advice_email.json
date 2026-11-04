@@ -1,0 +1,56 @@
+{
+  "doc_id": "9141e8e026f2c748",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 200/2024\n\nDear Ms. Rao,\n\nThank you for meeting us on 4 April 2025 about your dispute with Karve Industries. As we understand it, the employer withheld the last salary. The matter is listed before the Surat Labour Court.\n\nOur advice is to file a claim for unpaid wages before the labour authority. Please collect the attendance record and the salary slips and send copies to this office. We will pursue the full claim of Rs 51,50,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 200/2024",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 66
+    },
+    {
+      "text": "Rao",
+      "category": "NAME",
+      "start": 77,
+      "end": 80
+    },
+    {
+      "text": "4 April 2025",
+      "category": "DATE",
+      "start": 111,
+      "end": 123
+    },
+    {
+      "text": "Karve Industries",
+      "category": "ORGANIZATION",
+      "start": 148,
+      "end": 164
+    },
+    {
+      "text": "Surat Labour Court",
+      "category": "COURT",
+      "start": 258,
+      "end": 276
+    },
+    {
+      "text": "Rs 51,50,000",
+      "category": "MONEY",
+      "start": 478,
+      "end": 490
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 507,
+      "end": 519
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

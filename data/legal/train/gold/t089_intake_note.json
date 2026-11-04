@@ -1,0 +1,98 @@
+{
+  "doc_id": "bfbe6b4bbf394652",
+  "text": "Intake note (Property team, 20 August 2018). Our client Asha Kurian is a 49-year-old retired bank officer who lives at Flat 9C, Ballygunge, Kolkata 700049 and can be reached on 07349571674 or asha.kurian58@example.in. The client's PAN VUBPK6307P.\nThe client consulted us about a tenancy eviction matter against Ravi Rajan. The tenancy dispute with Ravi Rajan concerns rent arrears of INR 2,25,000/-; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.A. No. 2240/2019 before the Kolkata District Court on 03/02/2019.",
+  "spans": [
+    {
+      "text": "20 August 2018",
+      "category": "DATE",
+      "start": 28,
+      "end": 42
+    },
+    {
+      "text": "Asha Kurian",
+      "category": "NAME",
+      "start": 56,
+      "end": 67
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 105
+    },
+    {
+      "text": "Flat 9C, Ballygunge, Kolkata 700049",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 154
+    },
+    {
+      "text": "07349571674",
+      "category": "PHONE",
+      "start": 177,
+      "end": 188
+    },
+    {
+      "text": "asha.kurian58@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 216
+    },
+    {
+      "text": "VUBPK6307P",
+      "category": "ID_NUMBER",
+      "start": 235,
+      "end": 245
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 279,
+      "end": 295
+    },
+    {
+      "text": "Ravi Rajan",
+      "category": "NAME",
+      "start": 311,
+      "end": 321
+    },
+    {
+      "text": "Ravi Rajan",
+      "category": "NAME",
+      "start": 348,
+      "end": 358
+    },
+    {
+      "text": "INR 2,25,000/-",
+      "category": "MONEY",
+      "start": 384,
+      "end": 398
+    },
+    {
+      "text": "R.C.A. No. 2240/2019",
+      "category": "CASE_NUMBER",
+      "start": 502,
+      "end": 522
+    },
+    {
+      "text": "Kolkata District Court",
+      "category": "COURT",
+      "start": 534,
+      "end": 556
+    },
+    {
+      "text": "03/02/2019",
+      "category": "DATE",
+      "start": 560,
+      "end": 570
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

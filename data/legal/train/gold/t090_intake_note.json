@@ -1,0 +1,116 @@
+{
+  "doc_id": "2948f9d7812797e4",
+  "text": "Intake note - Property team\nDate: 20 January 2019\nClient: Shalini Reddy, a 24-year-old pharmacist from Thane.\nAddress: House No. 66, Naupada, Thane 400631\nPhone: 79330 76991. Email: shalini.reddy93@example.com. PAN GZBPR7680B, Aadhaar 8248 5324 2047.\nMatter: land dispute\nOpposing party: Varun Gaikwad\nFacts: The land dispute with Varun Gaikwad concerns agricultural land valued at Rs. 1,64,00,000; construction has started on the disputed plot.\nThe matter was filed as R.C.S. No. 73/2019 before the Thane District Court on 30 June 2019.",
+  "spans": [
+    {
+      "text": "20 January 2019",
+      "category": "DATE",
+      "start": 34,
+      "end": 49
+    },
+    {
+      "text": "Shalini Reddy",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "24-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 97
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 108
+    },
+    {
+      "text": "House No. 66, Naupada, Thane 400631",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 154
+    },
+    {
+      "text": "79330 76991",
+      "category": "PHONE",
+      "start": 162,
+      "end": 173
+    },
+    {
+      "text": "shalini.reddy93@example.com",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 209
+    },
+    {
+      "text": "GZBPR7680B",
+      "category": "ID_NUMBER",
+      "start": 215,
+      "end": 225
+    },
+    {
+      "text": "8248 5324 2047",
+      "category": "ID_NUMBER",
+      "start": 235,
+      "end": 249
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 259,
+      "end": 271
+    },
+    {
+      "text": "Varun Gaikwad",
+      "category": "NAME",
+      "start": 288,
+      "end": 301
+    },
+    {
+      "text": "Varun Gaikwad",
+      "category": "NAME",
+      "start": 331,
+      "end": 344
+    },
+    {
+      "text": "Rs. 1,64,00,000",
+      "category": "MONEY",
+      "start": 382,
+      "end": 397
+    },
+    {
+      "text": "R.C.S. No. 73/2019",
+      "category": "CASE_NUMBER",
+      "start": 470,
+      "end": 488
+    },
+    {
+      "text": "Thane District Court",
+      "category": "COURT",
+      "start": 500,
+      "end": 520
+    },
+    {
+      "text": "30 June 2019",
+      "category": "DATE",
+      "start": 524,
+      "end": 536
+    },
+    {
+      "text": "age (24) + occupation (pharmacist) + city (Thane) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

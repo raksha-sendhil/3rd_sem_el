@@ -1,0 +1,98 @@
+{
+  "doc_id": "cb451f7c54c5bd60",
+  "text": "Intake note (Property team, 29 October 2020). Our client Anjali Bhandari is a 67-year-old truck driver who lives at Plot 115, Fatehgunj, Vadodara 390041 and can be reached on 06194445151 or anjali.bhandari@example.in. The client's PAN AJKPB9516M.\nThe client consulted us about a land dispute matter against Farhan Chandran. The land dispute with Farhan Chandran concerns agricultural land valued at Rs 4,53,00,000; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as R.C.S. No. 2680/2020 before the Vadodara District Court on 23 November 2020.",
+  "spans": [
+    {
+      "text": "29 October 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Anjali Bhandari",
+      "category": "NAME",
+      "start": 57,
+      "end": 72
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 102
+    },
+    {
+      "text": "Plot 115, Fatehgunj, Vadodara 390041",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 152
+    },
+    {
+      "text": "06194445151",
+      "category": "PHONE",
+      "start": 175,
+      "end": 186
+    },
+    {
+      "text": "anjali.bhandari@example.in",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 216
+    },
+    {
+      "text": "AJKPB9516M",
+      "category": "ID_NUMBER",
+      "start": 235,
+      "end": 245
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 279,
+      "end": 291
+    },
+    {
+      "text": "Farhan Chandran",
+      "category": "NAME",
+      "start": 307,
+      "end": 322
+    },
+    {
+      "text": "Farhan Chandran",
+      "category": "NAME",
+      "start": 346,
+      "end": 361
+    },
+    {
+      "text": "Rs 4,53,00,000",
+      "category": "MONEY",
+      "start": 399,
+      "end": 413
+    },
+    {
+      "text": "R.C.S. No. 2680/2020",
+      "category": "CASE_NUMBER",
+      "start": 497,
+      "end": 517
+    },
+    {
+      "text": "Vadodara District Court",
+      "category": "COURT",
+      "start": 529,
+      "end": 552
+    },
+    {
+      "text": "23 November 2020",
+      "category": "DATE",
+      "start": 556,
+      "end": 572
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

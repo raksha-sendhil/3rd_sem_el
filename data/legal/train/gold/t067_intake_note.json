@@ -1,0 +1,98 @@
+{
+  "doc_id": "00814763a83ab927",
+  "text": "Intake note (Commercial team, 14 April 2023). Our client Girish Patel is a 51-year-old nurse who lives at Plot 114, Kothrud, Pune 411005 and can be reached on +91 98021 32158 or girish.patel@example.in. The client's PAN KCKPP3539Y.\nThe client consulted us about a cheque bounce matter against Divya Shetty. A cheque for ₹38,40,000 issued by Divya Shetty bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as S.C.C. No. 1028/2023 before the Judicial Magistrate First Class Court at Pune on 05/09/2023.",
+  "spans": [
+    {
+      "text": "14 April 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 43
+    },
+    {
+      "text": "Girish Patel",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "51-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 92
+    },
+    {
+      "text": "Plot 114, Kothrud, Pune 411005",
+      "category": "ADDRESS",
+      "start": 106,
+      "end": 136
+    },
+    {
+      "text": "+91 98021 32158",
+      "category": "PHONE",
+      "start": 159,
+      "end": 174
+    },
+    {
+      "text": "girish.patel@example.in",
+      "category": "EMAIL",
+      "start": 178,
+      "end": 201
+    },
+    {
+      "text": "KCKPP3539Y",
+      "category": "ID_NUMBER",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 264,
+      "end": 277
+    },
+    {
+      "text": "Divya Shetty",
+      "category": "NAME",
+      "start": 293,
+      "end": 305
+    },
+    {
+      "text": "₹38,40,000",
+      "category": "MONEY",
+      "start": 320,
+      "end": 330
+    },
+    {
+      "text": "Divya Shetty",
+      "category": "NAME",
+      "start": 341,
+      "end": 353
+    },
+    {
+      "text": "S.C.C. No. 1028/2023",
+      "category": "CASE_NUMBER",
+      "start": 442,
+      "end": 462
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 474,
+      "end": 519
+    },
+    {
+      "text": "05/09/2023",
+      "category": "DATE",
+      "start": 523,
+      "end": 533
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

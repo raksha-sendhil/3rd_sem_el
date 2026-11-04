@@ -8,6 +8,12 @@ sensitive spans comes out, scored against hand-annotated ground truth.
 Everything runs locally: Ollama (llama3:8b, qwen2.5:7b-instruct fallback),
 Presidio + spaCy, no paid APIs.
 
+**Legal build (Nov 2026):** the same design as a private matter assistant for a litigation
+firm. It uses Gemma 4 on Kaggle for everything that sees client text, Gemini for answers from
+cleaned text, a fictional 120-client corpus, three attacks and seven metrics. Start at
+[docs/legal/README.md](docs/legal/README.md); `python -m sanitise.legal all --mock` runs the
+whole pipeline on a laptop, and `notebooks/legal_kaggle.ipynb` runs it with the real models.
+
 ## Quick start
 
 With pip (pinned, known-good versions):

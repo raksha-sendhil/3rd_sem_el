@@ -1,0 +1,86 @@
+{
+  "doc_id": "e4158536f812aaa6",
+  "text": "Case note: CS(COMM) 2224/2020\nClient: Neha Bhatt (architect, Vadodara)\nOpposing party: Vindhya Aviation Ltd\nCourt: Gujarat High Court, before Justice Arvind Bhargava\nFiled on: 30/04/2020\nClaim amount: ₹135.5 crore\nIssue: aircraft lease repossession. The airline sought protection from its creditors.\nAdvice given: Argue that leased aircraft fall outside the insolvency moratorium.\nOutcome: The aircraft were released from the moratorium.\nRecommended next step: Repossess the aircraft.\nWitness: Swati Iyengar\nMatter code: Project Kestrel",
+  "spans": [
+    {
+      "text": "CS(COMM) 2224/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Neha Bhatt",
+      "category": "NAME",
+      "start": 38,
+      "end": 48
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 50,
+      "end": 59
+    },
+    {
+      "text": "Vadodara",
+      "category": "LOCATION",
+      "start": 61,
+      "end": 69
+    },
+    {
+      "text": "Vindhya Aviation Ltd",
+      "category": "ORGANIZATION",
+      "start": 87,
+      "end": 107
+    },
+    {
+      "text": "Gujarat High Court",
+      "category": "COURT",
+      "start": 115,
+      "end": 133
+    },
+    {
+      "text": "Arvind Bhargava",
+      "category": "NAME",
+      "start": 150,
+      "end": 165
+    },
+    {
+      "text": "30/04/2020",
+      "category": "DATE",
+      "start": 176,
+      "end": 186
+    },
+    {
+      "text": "₹135.5 crore",
+      "category": "MONEY",
+      "start": 201,
+      "end": 213
+    },
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 221,
+      "end": 248
+    },
+    {
+      "text": "Swati Iyengar",
+      "category": "NAME",
+      "start": 494,
+      "end": 507
+    },
+    {
+      "text": "Project Kestrel",
+      "category": "MATTER_CODENAME",
+      "start": 521,
+      "end": 536
+    },
+    {
+      "text": "occupation (architect) + city (Vadodara) + issue (aircraft lease repossession)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

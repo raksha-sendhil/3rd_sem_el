@@ -1,0 +1,87 @@
+{
+  "doc_id": "cc8d90609049fe71",
+  "routing": [
+    {
+      "text": "04/06/2025",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Sujata Dalvi",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "House No. 101, Vartak Nagar, Thane 400639",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "08288932683",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "sujata.dalvi@example.in",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "KVNPD1739R",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "2378 9739 8538",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "Revathi Pawar",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "₹38,70,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "Revathi Pawar",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "CC/1613/2025",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "12 July 2025",
+      "category": "DATE",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

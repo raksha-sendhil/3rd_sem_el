@@ -1,0 +1,50 @@
+{
+  "doc_id": "1eee733a51fb6036",
+  "text": "Subject: Your anticipatory bail matter - FIR No. 2368/2021\n\nDear Ms. Mishra,\n\nThank you for meeting us on 11 September 2021 about your dispute with Swati Shinde. As we understand it, the complaint turns a business disagreement into a criminal case. The matter is listed before the Mangaluru Sessions Court.\n\nOur advice is to argue that the dispute is civil in nature and offer to cooperate with the investigation. Please collect the partnership papers and the correspondence with the complainant and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "FIR No. 2368/2021",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 58
+    },
+    {
+      "text": "Mishra",
+      "category": "NAME",
+      "start": 69,
+      "end": 75
+    },
+    {
+      "text": "11 September 2021",
+      "category": "DATE",
+      "start": 106,
+      "end": 123
+    },
+    {
+      "text": "Swati Shinde",
+      "category": "NAME",
+      "start": 148,
+      "end": 160
+    },
+    {
+      "text": "Mangaluru Sessions Court",
+      "category": "COURT",
+      "start": 281,
+      "end": 305
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 543,
+      "end": 555
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

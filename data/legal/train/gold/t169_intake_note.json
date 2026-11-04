@@ -1,0 +1,128 @@
+{
+  "doc_id": "967c20ee8db9c369",
+  "text": "Intake note - Commercial team\nDate: 7 May 2021\nClient: Vandana Sen, a 67-year-old cardiologist from Mysuru.\nAddress: Flat 9D, Gokulam, Mysuru 570053\nPhone: 87672 07023. Email: vandana.sen@example.com. PAN YSNPS2384J, Aadhaar 6718 5165 6577.\nMatter: cheque bounce\nOpposing party: M/s Pandey Enterprises\nFacts: A cheque for ₹24,30,000 issued by Pandey Enterprises bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 978446232305 (IFSC HDFC0800245).\nThe matter was filed as CC/2816/2021 before the Judicial Magistrate First Class Court at Mysuru on 06/10/2021.",
+  "spans": [
+    {
+      "text": "7 May 2021",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Vandana Sen",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 94
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 100,
+      "end": 106
+    },
+    {
+      "text": "Flat 9D, Gokulam, Mysuru 570053",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 148
+    },
+    {
+      "text": "87672 07023",
+      "category": "PHONE",
+      "start": 156,
+      "end": 167
+    },
+    {
+      "text": "vandana.sen@example.com",
+      "category": "EMAIL",
+      "start": 176,
+      "end": 199
+    },
+    {
+      "text": "YSNPS2384J",
+      "category": "ID_NUMBER",
+      "start": 205,
+      "end": 215
+    },
+    {
+      "text": "6718 5165 6577",
+      "category": "ID_NUMBER",
+      "start": 225,
+      "end": 239
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 249,
+      "end": 262
+    },
+    {
+      "text": "Pandey Enterprises",
+      "category": "ORGANIZATION",
+      "start": 283,
+      "end": 301
+    },
+    {
+      "text": "₹24,30,000",
+      "category": "MONEY",
+      "start": 322,
+      "end": 332
+    },
+    {
+      "text": "Pandey Enterprises",
+      "category": "ORGANIZATION",
+      "start": 343,
+      "end": 361
+    },
+    {
+      "text": "978446232305",
+      "category": "FINANCIAL",
+      "start": 479,
+      "end": 491
+    },
+    {
+      "text": "HDFC0800245",
+      "category": "FINANCIAL",
+      "start": 498,
+      "end": 509
+    },
+    {
+      "text": "CC/2816/2021",
+      "category": "CASE_NUMBER",
+      "start": 536,
+      "end": 548
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mysuru",
+      "category": "COURT",
+      "start": 560,
+      "end": 607
+    },
+    {
+      "text": "06/10/2021",
+      "category": "DATE",
+      "start": 611,
+      "end": 621
+    },
+    {
+      "text": "age (67) + occupation (cardiologist) + city (Mysuru) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

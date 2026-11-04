@@ -1,0 +1,68 @@
+{
+  "doc_id": "3d963eb15d267ff6",
+  "text": "Case note: O.S. No. 2655/2022\nClient: Ajay Pillai (truck driver, Coimbatore)\nOpposing party: Vivek Bose\nCourt: Coimbatore District Court\nFiled on: 26/07/2022\nClaim amount: ₹4,57,00,000\nIssue: land dispute. Relatives dispute who owns the ancestral land.\nAdvice given: Trace the chain of title through the mutation entries.\nOutcome: The title of the client was upheld.\nRecommended next step: Apply for correction of the land records.",
+  "spans": [
+    {
+      "text": "O.S. No. 2655/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Ajay Pillai",
+      "category": "NAME",
+      "start": 38,
+      "end": 49
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 51,
+      "end": 63
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 65,
+      "end": 75
+    },
+    {
+      "text": "Vivek Bose",
+      "category": "NAME",
+      "start": 93,
+      "end": 103
+    },
+    {
+      "text": "Coimbatore District Court",
+      "category": "COURT",
+      "start": 111,
+      "end": 136
+    },
+    {
+      "text": "26/07/2022",
+      "category": "DATE",
+      "start": 147,
+      "end": 157
+    },
+    {
+      "text": "₹4,57,00,000",
+      "category": "MONEY",
+      "start": 172,
+      "end": 184
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 192,
+      "end": 204
+    },
+    {
+      "text": "occupation (truck driver) + city (Coimbatore) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

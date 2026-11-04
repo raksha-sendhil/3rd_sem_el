@@ -1,0 +1,98 @@
+{
+  "doc_id": "1ebb50ae86111b63",
+  "text": "Intake note (Commercial team, 28/09/2020). Our client Siddharth Pai is a 47-year-old truck driver who lives at Flat 12A, Miramar, Panaji 403041 and can be reached on 90128 56052 or siddharth.pai@example.in. The client's PAN RXUPP7938Y.\nThe client consulted us about a wrongful termination matter against Emerald Technologies Pvt Ltd. The wrongful termination claim against M/s Emerald Technologies Pvt Ltd is for 36.5 lakh rupees; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 1715/2020 before the Panaji Labour Court on 10 November 2020.",
+  "spans": [
+    {
+      "text": "28/09/2020",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Siddharth Pai",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 97
+    },
+    {
+      "text": "Flat 12A, Miramar, Panaji 403041",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 143
+    },
+    {
+      "text": "90128 56052",
+      "category": "PHONE",
+      "start": 166,
+      "end": 177
+    },
+    {
+      "text": "siddharth.pai@example.in",
+      "category": "EMAIL",
+      "start": 181,
+      "end": 205
+    },
+    {
+      "text": "RXUPP7938Y",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 268,
+      "end": 288
+    },
+    {
+      "text": "Emerald Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 304,
+      "end": 332
+    },
+    {
+      "text": "Emerald Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 377,
+      "end": 405
+    },
+    {
+      "text": "36.5 lakh rupees",
+      "category": "MONEY",
+      "start": 413,
+      "end": 429
+    },
+    {
+      "text": "Complaint No. 1715/2020",
+      "category": "CASE_NUMBER",
+      "start": 508,
+      "end": 531
+    },
+    {
+      "text": "Panaji Labour Court",
+      "category": "COURT",
+      "start": 543,
+      "end": 562
+    },
+    {
+      "text": "10 November 2020",
+      "category": "DATE",
+      "start": 566,
+      "end": 582
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

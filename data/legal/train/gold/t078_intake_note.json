@@ -1,0 +1,116 @@
+{
+  "doc_id": "e72b260442d2e721",
+  "text": "Intake note - Commercial team\nDate: 14 February 2022\nClient: Manoj Trivedi, a 73-year-old hardware dealer from Kochi.\nAddress: Plot 58, Kakkanad, Kochi 682057\nPhone: 06789248902. Email: manoj.trivedi90@example.com. PAN PXPPT1074F, Aadhaar 6899 0735 5404.\nMatter: cheque bounce\nOpposing party: Farhan Karve\nFacts: A cheque for Rs 20,70,000 issued by Farhan Karve bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as S.C.C. No. 91/2022 before the Judicial Magistrate First Class Court at Kochi on 02/06/2022.",
+  "spans": [
+    {
+      "text": "14 February 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 52
+    },
+    {
+      "text": "Manoj Trivedi",
+      "category": "NAME",
+      "start": 61,
+      "end": 74
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 105
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 111,
+      "end": 116
+    },
+    {
+      "text": "Plot 58, Kakkanad, Kochi 682057",
+      "category": "ADDRESS",
+      "start": 127,
+      "end": 158
+    },
+    {
+      "text": "06789248902",
+      "category": "PHONE",
+      "start": 166,
+      "end": 177
+    },
+    {
+      "text": "manoj.trivedi90@example.com",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 213
+    },
+    {
+      "text": "PXPPT1074F",
+      "category": "ID_NUMBER",
+      "start": 219,
+      "end": 229
+    },
+    {
+      "text": "6899 0735 5404",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 253
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 263,
+      "end": 276
+    },
+    {
+      "text": "Farhan Karve",
+      "category": "NAME",
+      "start": 293,
+      "end": 305
+    },
+    {
+      "text": "Rs 20,70,000",
+      "category": "MONEY",
+      "start": 326,
+      "end": 338
+    },
+    {
+      "text": "Farhan Karve",
+      "category": "NAME",
+      "start": 349,
+      "end": 361
+    },
+    {
+      "text": "S.C.C. No. 91/2022",
+      "category": "CASE_NUMBER",
+      "start": 450,
+      "end": 468
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 480,
+      "end": 526
+    },
+    {
+      "text": "02/06/2022",
+      "category": "DATE",
+      "start": 530,
+      "end": 540
+    },
+    {
+      "text": "age (73) + occupation (hardware dealer) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}
