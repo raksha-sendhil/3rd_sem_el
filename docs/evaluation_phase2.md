@@ -66,6 +66,19 @@ interception) so far:
   `answers.jsonl`, `report.json` and `report.md`.
 * Phase 1 metrics (span precision/recall and false-alarm rate) are unchanged, see `docs/evaluation.md`.
 
+### Core RAG Privacy Benchmark Metrics (Literature Standard)
+
+Evaluates the 7 core metrics comparing baseline unprotected RAG vs our protected pipeline:
+1. **Extraction leakage:** ROUGE-L and leaked-chunk rate on extraction / context-dump attack prompts.
+2. **PII leakage rate:** NER & dictionary matching of exact private entities (names, phones, conditions, towns) per query.
+3. **Membership inference:** ROC AUC and TPR @ 1% FPR using member queries vs non-member queries.
+4. **Answer quality:** Token F1 on benign queries and utility retention vs non-private baseline.
+5. **Latency overhead:** Execution time multiplier ($\times$ baseline).
+6. **Recall@k:** Diagnostic hit rate of relevant retrieval chunks (identical in our dual-track design).
+7. **($\epsilon, \delta$):** Differential Privacy guarantee (N/A: our system is an empirical multi-agent de-identification and tracking mechanism).
+
+Run: `python tools/evaluate_core_metrics.py --answers ollama` (or on Kaggle in Cell 9).
+
 ## 3. Numbers measured so far (no LLM)
 
 | Check | Result |
