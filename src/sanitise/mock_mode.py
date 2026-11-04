@@ -29,7 +29,7 @@ from sanitise.agents.extractor import canonical, importance
 from sanitise.agents.rewriter import leakcheck
 from sanitise.agents.rewriter.pipeline import apply_decisions, plan_decisions, removed_decisions
 from sanitise.agents.rewriter.prompt import draft
-from sanitise.domain import profile
+from sanitise.domain import is_legal, profile
 from sanitise.llm.base import LLMClient
 from sanitise.llm.mock import TEXT_CALL, MockCall, MockLLM, fabricate
 from sanitise.loader import sha256_hex
@@ -82,7 +82,7 @@ def mock_facts(detected: DetectorOutput) -> list[FactTuple]:
             continue
         facts.append(
             FactTuple(
-                subject="writer",
+                subject="client" if is_legal() else "writer",
                 relation=relation,
                 value=span.text,
                 importance=importance.default_importance(relation),

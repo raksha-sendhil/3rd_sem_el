@@ -12,6 +12,7 @@ substituted in place.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 
 from pydantic import ValidationError
@@ -75,9 +76,29 @@ def apply_decisions(text: str, decisions: list[RoutingDecision]) -> str:
         assert d.start is not None and d.end is not None and d.replacement is not None
         if d.end > last_start:  # overlaps an edit already applied
             continue
-        out = out[: d.start] + d.replacement + out[d.end :]
-        last_start = d.start
+        before = _fit(out[: d.start], d.replacement)
+        out = before + d.replacement + out[d.end :]
+        last_start = len(before)
     return out
+
+
+# A generalised phrase brings its own article ("a magistrate's court"), so the word that
+# introduced the original goes: "before the Pune District Court" -> "before a district court",
+# "M/s Kale Traders" -> "a trading business". A date that lost its day reads "in", not "on".
+_LEADING_ARTICLE = re.compile(r"(?:\b(?:the|a|an)|\bM/[sS]\.?)\s+$", re.IGNORECASE)
+_STARTS_WITH_ARTICLE = re.compile(r"(?:a|an|the)\b", re.IGNORECASE)
+_NO_DAY = re.compile(r"^(?:[A-Z][a-z]+ )?(?:19|20)\d{2}$|^the (?:early |mid |late )?\d{4}s$")
+_ON = re.compile(r"\bon(\s+)$")
+
+
+def _fit(before: str, replacement: str) -> str:
+    if _STARTS_WITH_ARTICLE.match(replacement):
+        trimmed = _LEADING_ARTICLE.sub("", before)
+        if trimmed != before:
+            return trimmed
+    if _NO_DAY.match(replacement) and _ON.search(before):
+        return _ON.sub(r"in\1", before)
+    return before
 
 
 def removed_decisions(decisions: list[RoutingDecision]) -> list[RoutingDecision]:

@@ -275,7 +275,13 @@ def create_app(
                     description=p.description,
                     model="mock" if mock else ds.model,
                     answer_backend=answer_backend,
-                    answer_model=ds.gemini_model if answer_backend == "gemini" else ds.model,
+                    answer_model=(
+                        "mock"
+                        if mock
+                        else ds.gemini_model
+                        if answer_backend == "gemini"
+                        else ds.model
+                    ),
                     agent1=(
                         f"{ds.agent1_base_model} + {ds.agent1_adapter or 'no adapter'}"
                         if ds.agent1_backend == "transformers" and not mock

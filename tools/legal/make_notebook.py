@@ -101,48 +101,16 @@ import time; time.sleep(5)
     ),
     (
         "code",
+        """# Preflight: every required line must say OK (keys, Ollama + gemma4:e4b, spaCy, data)
+!python -m sanitise.legal preflight""",
+    ),
+    (
+        "code",
         """# Check the agents on one document before the long runs: Agent 1 (rules + LLM pass +
-# merge), Agent 2 (facts), Agent 3 (routing + rewrite + leak check), one answer from Gemini
-import asyncio, json
-from sanitise.agents.pipeline import sanitise
-from sanitise.config import get_settings
-from sanitise.domain import settings_for, use_domain
-from sanitise.llm.factory import build_answer_llm, build_llm_client
-
-doc = json.load(open("data/legal/corpus/c001_intake_note.json"))
-settings = settings_for(get_settings(), "legal")
-agents = build_llm_client(settings)
-
-
-async def check():
-    with use_domain("legal"):
-        record = await sanitise(doc["doc_id"], doc["text"], agents)
-        print("ORIGINAL
-" + doc["text"])
-        print("
-AGENT 1 spans:")
-        for s in record.detector.spans:
-            print(f"  {s.category.value:15} {s.text!r:45} {s.method}")
-        print("
-AGENT 2 facts:")
-        for f in record.extractor.facts:
-            print(f"  {f.subject:15} {f.relation:20} {f.value!r} ({f.importance.value})")
-        print("
-AGENT 3 safe text:
-" + record.rewriter.safe_text)
-        print("
-residual leaks:", record.residual_leaks or "none")
-        answer = await build_answer_llm(settings, agents).text_call(
-            "Answer in one sentence.", "CONTEXT:
-" + record.rewriter.safe_text
-            + "
-
-QUESTION: What did we advise?
-ANSWER:")
-        print("
-GEMINI on the safe text:", answer)
-
-await check()""",
+# merge), Agent 2 (facts), Agent 3 (routing + rewrite + leak check), one Gemini answer
+!python -m sanitise.legal check --doc c001_intake_note --question "What is this matter about?"
+!python -m sanitise.legal check --doc c001_advice_email --question "What did we advise?"
+!python -m sanitise.legal check --doc c001_case_note --question 'What was the outcome?'""",
     ),
     (
         "markdown",

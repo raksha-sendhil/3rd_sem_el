@@ -62,7 +62,7 @@ domain. Kaggle steps, checking each agent, and Gemini key rotation:
 |---|---|---|
 | `SANITISE_DOMAIN` | `legal` | domain for requests that do not choose one |
 | `SANITISE_DOMAINS_FILE` | `config/domains.json` | models and data per domain |
-| `GEMINI_API_KEY`, `_2` ... `_9` / `GEMINI_API_KEYS` | unset | keys, rotated on limits |
+| `GEMINI_API_KEY`, `_2` ... `_9` (environment or Kaggle secrets) or `SANITISE_GEMINI_API_KEYS` (.env) | unset | keys, rotated on limits |
 | `SANITISE_GEMINI_DAILY_TOKEN_BUDGET` | `0` | tokens per key per day; 0 = no budget |
 | `SANITISE_REPLAY_DIR` | unset | serve an exported run in the dashboard |
 
