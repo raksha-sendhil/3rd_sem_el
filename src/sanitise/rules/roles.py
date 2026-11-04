@@ -61,7 +61,7 @@ def name_words(text: str) -> list[str]:
     return [w for w in words if w not in _HONORIFICS]
 
 
-_LAWYER = re.compile(r"(?:adv|advocate|counsel|justice|judge)\.?\s*$", re.I)
+_LAWYER = re.compile(r"\b(?:adv|advocate|counsel|justice|judge)\.?\s*$", re.I)
 
 
 def _cue(text: str, start: int) -> str | None:
