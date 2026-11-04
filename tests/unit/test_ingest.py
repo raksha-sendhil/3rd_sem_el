@@ -219,3 +219,17 @@ async def test_vision_reader_sends_the_image_to_ollama() -> None:
     assert message["images"] == [base64.b64encode(b"jpeg-bytes").decode()]
     assert "[illegible]" in message["content"]
     await http.aclose()
+
+
+def test_word_f1_ignores_order_and_hyphenation() -> None:
+    gold = "INVOICE NO PEGIV-1030765\nTOTAL 193.00"
+    s = score_text("TOTAL 193.00\nINVOICE NO PEGIV-1030765", gold)
+    assert s.word_f1 == 1.0 and s.cer > 0  # same words, other order
+    assert score_text("the constitutional question", "the consti-\ntutional question").cer == 0
+
+
+def test_tidy_markdown_drops_inline_tags() -> None:
+    from sanitise.ingest.pdf import tidy_markdown
+
+    md = '## **Definitions**\n<u>Agreement</u> means _this_ contract<sup>1</sup>'
+    assert tidy_markdown(md) == "Definitions\nAgreement means this contract1"

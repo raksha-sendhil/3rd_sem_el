@@ -21,23 +21,28 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# real documents hold characters the Windows console cannot print
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 sys.path.insert(0, str(ROOT / "src"))
 
 from sanitise.config import get_settings  # noqa: E402
 from sanitise.ingest import VisionReader, ingest_bytes  # noqa: E402
 from sanitise.ingest.metrics import detail_hits, score_text  # noqa: E402
 
-TEST_SET = ROOT / "data" / "ocr_test"
+TEST_SETS = [ROOT / "data" / "ocr_test", ROOT / "data" / "ocr_real"]
 
 
 def load(source: str) -> tuple[bytes, str, dict | None]:
     """(bytes, file name, gold record if it is a test-set document)."""
-    gold_file = TEST_SET / "gold.jsonl"
-    if gold_file.exists() and not Path(source).exists() and "/" not in source:
+    for test_set in TEST_SETS:
+        gold_file = test_set / "gold.jsonl"
+        if not gold_file.exists() or Path(source).exists() or "/" in source:
+            continue
         for line in gold_file.read_text(encoding="utf-8").splitlines():
             g = json.loads(line)
             if g["id"] == source:
-                path = TEST_SET / g["file"]
+                path = test_set / g["file"]
                 return path.read_bytes(), path.name, g
     if source.startswith(("http://", "https://")):
         req = urllib.request.Request(source, headers={"User-Agent": "sanitise-ingest"})
@@ -87,8 +92,11 @@ async def main() -> None:
     if gold is not None:
         s = score_text(result.text, gold["gold"] if not args.no_strip else "\n\n".join(gold["gold_pages"]))
         hits = detail_hits(result.text, gold["details"])
-        print(f"\nTest-set document ({gold['about']}): CER {100 * s.cer:.1f}%, WER {100 * s.wer:.1f}%, "
-              f"private details read exactly {sum(hits)}/{len(hits)}")
+        details = f", private details read exactly {sum(hits)}/{len(hits)}" if hits else ""
+        print(f"\nTest-set document ({gold['about']}): CER {100 * s.cer:.1f}%, "
+              f"word F1 {100 * s.word_f1:.1f}%, WER {100 * s.wer:.1f}%{details}")
+        if gold.get("source"):
+            print(f"  source: {gold['source']} ({gold['licence']}), gold order {gold['order']}")
         missed = [d for d, h in zip(gold["details"], hits, strict=True) if not h]
         if missed:
             print("  missed:", "; ".join(missed))

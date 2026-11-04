@@ -60,12 +60,18 @@ def text_layer(page: pymupdf.Page) -> tuple[bool, str | None]:
 
 
 _BOLD = re.compile(r"(\*\*|__)(.+?)\1")
+_ITALIC = re.compile(r"(?<![\w*])([*_])(?=\S)(.+?)(?<=\S)\1(?![\w*])")
 _HEADING = re.compile(r"^#{1,6}\s+", re.M)
+# underline, superscript etc. come out as HTML tags
+_TAGS = re.compile(r"</?(?:u|sup|sub|s|i|b|em|strong|span|mark)\b[^>]*>", re.I)
 
 
 def tidy_markdown(md: str) -> str:
-    """Keep tables; drop emphasis marks and heading hashes, which the agents do not need."""
+    """Keep tables; drop emphasis marks, inline HTML tags and heading hashes, which the agents
+    do not need."""
+    md = _TAGS.sub("", md)
     md = _BOLD.sub(r"\2", md)
+    md = _ITALIC.sub(r"\2", md)
     md = _HEADING.sub("", md)
     md = md.replace("<br>", " ")
     md = "\n".join(line.rstrip() for line in md.split("\n"))

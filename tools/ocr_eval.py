@@ -1,25 +1,29 @@
-"""Measure the PDF/image input step on the OCR test set (and on real handwriting).
+"""Measure the PDF/image input step on the OCR test sets (synthetic and real) and real handwriting.
 
-    python tools/ocr_eval.py                          # every document in data/ocr_test
-    python tools/ocr_eval.py --n 9                    # 9 documents, one of each type
-    python tools/ocr_eval.py --types prescription_hw,consent_form_hw --n 4
-    python tools/ocr_eval.py --ids lab_photo_02,mixed_file_01
-    python tools/ocr_eval.py --n 0 --iam 50           # only 50 real handwritten lines (IAM)
-    python tools/ocr_eval.py --no-vision --types discharge_e,lab_e,bank_statement_e  # no GPU
+    python tools/ocr_eval.py                               # every document in every test set
+    python tools/ocr_eval.py --domain health               # one domain (health / finance / law)
+    python tools/ocr_eval.py --set data/ocr_real --n 30    # 30 real documents, every type
+    python tools/ocr_eval.py --set data/ocr_test --n 9     # 9 synthetic, one of each type
+    python tools/ocr_eval.py --types clinocr_handwriting,rx_handwritten_word
+    python tools/ocr_eval.py --ids lab_photo_02,finance_cord_03
+    python tools/ocr_eval.py --n 0 --iam 50                # only 50 real handwritten lines (IAM)
+    python tools/ocr_eval.py --no-vision --types discharge_e,lab_e,contract_e   # no GPU
 
-Documents are picked one type at a time (type A 01, type B 01, ..., type A 02, ...), so a small
---n still covers every type. Each document is read once with header removal off; the score is
-then computed both with and without header/footer removal on the same reading. Readings are
-saved in <out>/pred/, so a run stopped half way (a Kaggle disconnect) carries on where it
-stopped; --fresh reads everything again.
+Test sets (``--set``, comma-separated; default both that exist):
+    data/ocr_test   synthetic documents with exact text (tools/make_ocr_testset.py)
+    data/ocr_real   real documents, 50 per domain (tools/fetch_real_testset.py fetches them)
 
-IAM lines (--iam N) are real handwritten English sentences with transcriptions (IAM
-Handwriting Database, test split, via the Hugging Face dataset Teklia/IAM-line), fetched over
-the internet: the synthetic set's handwriting fonts are neater than real hands, so this is the
-honest handwriting number.
+Documents are picked one type at a time (type A, type B, ..., type A again), so a small --n still
+covers every type. Each document is read once with header removal off; the score is computed both
+with and without header/footer removal on the same reading. Readings are saved in <out>/pred/, so
+a run stopped half way (a Kaggle disconnect) carries on where it stopped; --fresh reads again.
+
+IAM lines (--iam N) are real handwritten English sentences with transcriptions (IAM Handwriting
+Database, test split, Hugging Face Teklia/IAM-line), fetched over the internet.
 
 Writes <out>/report.md (tables), report.json (all numbers) and pred/<id>.txt (what was read).
-Headline metric: CER, the character error rate (see sanitise/ingest/metrics.py).
+Headline metric: CER, the character error rate; word F1 (order-free) next to it, which is the fair
+number for real sources whose gold order is approximate (see sanitise/ingest/metrics.py).
 """
 
 from __future__ import annotations
@@ -35,6 +39,9 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# real documents hold characters the Windows console cannot print
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 sys.path.insert(0, str(ROOT / "src"))
 
 from sanitise.config import get_settings  # noqa: E402
@@ -42,23 +49,37 @@ from sanitise.ingest import IngestResult, VisionReader, ingest_bytes  # noqa: E4
 from sanitise.ingest.headers import strip_repeated  # noqa: E402
 from sanitise.ingest.metrics import detail_hits, score_text, strip_scores  # noqa: E402
 
-GROUPS = {
-    "electronic PDF": ["discharge_e", "lab_e", "bank_statement_e"],
-    "scanned / photographed print": ["discharge_scan", "lab_photo", "affidavit_scan"],
-    "handwriting (synthetic)": ["prescription_hw", "consent_form_hw"],
-    "mixed file": ["mixed_file"],
-}
+DEFAULT_SETS = [ROOT / "data" / "ocr_test", ROOT / "data" / "ocr_real"]
 IAM_ROWS = "https://datasets-server.huggingface.co/rows?dataset=Teklia/IAM-line&config=default&split=test"
 
 
-def pick(gold: list[dict], n: int | None, types: list[str] | None, ids: list[str] | None) -> list[dict]:
+def load_sets(spec: str | None) -> list[dict]:
+    folders = [Path(s) for s in spec.split(",")] if spec else [d for d in DEFAULT_SETS if (d / "gold.jsonl").exists()]
+    gold: list[dict] = []
+    for folder in folders:
+        gold_file = folder / "gold.jsonl"
+        if not gold_file.exists():
+            hint = " (run tools/fetch_real_testset.py)" if folder.name == "ocr_real" else ""
+            raise SystemExit(f"no {gold_file}{hint}")
+        for line in gold_file.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                g = json.loads(line)
+                g["_path"] = str(folder / g["file"])
+                g.setdefault("source", "synthetic")
+                g.setdefault("order", "exact")
+                gold.append(g)
+    return gold
+
+
+def pick(gold: list[dict], n: int | None, types: list[str] | None, ids: list[str] | None,
+         domain: str | None) -> list[dict]:
     if ids:
         by_id = {g["id"]: g for g in gold}
         missing = [i for i in ids if i not in by_id]
         if missing:
-            raise SystemExit(f"not in the test set: {missing}")
+            raise SystemExit(f"not in the test sets: {missing}")
         return [by_id[i] for i in ids]
-    pool = [g for g in gold if not types or g["type"] in types]
+    pool = [g for g in gold if (not types or g["type"] in types) and (not domain or g["domain"] == domain)]
     order: dict[str, list[dict]] = {}
     for g in pool:
         order.setdefault(g["type"], []).append(g)
@@ -90,20 +111,25 @@ def score_doc(g: dict, result: IngestResult) -> dict:
     s_full = score_text(text_full, "\n\n".join(g["gold_pages"]))
     hits = detail_hits(text_strip, g["details"])
     routes = ["vision" if p.method in ("vision", "failed") else "text" for p in result.pages]
-    correct, wrong, expected = strip_scores([r.model_dump() for r in removed], g["removals"], text_strip)
+    correct, lost, expected = strip_scores([r.model_dump() for r in removed], g["removals"], text_strip)
     vision_s = [p.seconds for p in result.pages if p.method == "vision"]
     return {
         "id": g["id"],
         "type": g["type"],
         "domain": g["domain"],
+        "source": g["source"],
+        "order": g["order"],
         "pages": len(result.pages),
         "failed_pages": sum(p.method == "failed" for p in result.pages),
         "cer": s.cer,
         "wer": s.wer,
+        "word_f1": s.word_f1,
         "char_errors": s.char_errors,
         "gold_chars": s.gold_chars,
         "word_errors": s.word_errors,
         "gold_words": s.gold_words,
+        "words_matched": s.words_matched,
+        "pred_words": s.pred_words,
         "cer_no_strip": s_full.cer,
         "char_errors_no_strip": s_full.char_errors,
         "gold_chars_no_strip": s_full.gold_chars,
@@ -112,7 +138,7 @@ def score_doc(g: dict, result: IngestResult) -> dict:
         "details_missed": [d for d, h in zip(g["details"], hits, strict=True) if not h],
         "routes_ok": sum(a == b for a, b in zip(routes, g["routes"], strict=False)),
         "strip_correct": correct,
-        "strip_wrong": wrong,
+        "strip_lost": lost,
         "strip_expected": expected,
         "vision_seconds": vision_s,
         "text": text_strip,
@@ -122,20 +148,17 @@ def score_doc(g: dict, result: IngestResult) -> dict:
 def summarise(rows: list[dict]) -> dict:
     if not rows:
         return {}
-    ce = sum(r["char_errors"] for r in rows)
-    gc = sum(r["gold_chars"] for r in rows)
-    we = sum(r["word_errors"] for r in rows)
     gw = sum(r["gold_words"] for r in rows)
     det = sum(r["details"] for r in rows)
-    found = sum(r["details_found"] for r in rows)
     pages = sum(r["pages"] for r in rows)
     vs = [s for r in rows for s in r["vision_seconds"]]
     return {
         "docs": len(rows),
         "pages": pages,
-        "cer": ce / max(gc, 1),
-        "wer": we / max(gw, 1),
-        "detail_recall": found / max(det, 1),
+        "cer": sum(r["char_errors"] for r in rows) / max(sum(r["gold_chars"] for r in rows), 1),
+        "wer": sum(r["word_errors"] for r in rows) / max(gw, 1),
+        "word_f1": 2 * sum(r["words_matched"] for r in rows) / max(sum(r["pred_words"] for r in rows) + gw, 1),
+        "detail_recall": sum(r["details_found"] for r in rows) / det if det else None,
         "details": det,
         "route_accuracy": sum(r["routes_ok"] for r in rows) / max(pages, 1),
         "failed_pages": sum(r["failed_pages"] for r in rows),
@@ -151,10 +174,8 @@ def fetch_iam(n: int, offset: int, cache_dir: Path) -> list[dict]:
     start = offset
     while len(rows) < n:
         length = min(100, n - len(rows))
-        url = f"{IAM_ROWS}&offset={start}&length={length}"
-        with urllib.request.urlopen(url, timeout=60) as resp:
-            data = json.load(resp)
-        batch = data.get("rows", [])
+        with urllib.request.urlopen(f"{IAM_ROWS}&offset={start}&length={length}", timeout=60) as resp:
+            batch = json.load(resp).get("rows", [])
         if not batch:
             break
         for item in batch:
@@ -172,45 +193,52 @@ def pct(x: float | None) -> str:
     return "-" if x is None else f"{100 * x:.1f}%"
 
 
+def table(title: str, groups: dict[str, dict], label: str, extra: dict[str, str] | None = None) -> list[str]:
+    out = [f"## {title}", "", f"| {label} | Docs | CER | Word F1 | WER | Details read exactly | s / vision page |",
+           "|---|---|---|---|---|---|---|"]
+    for name, s in groups.items():
+        sec = f"{s['seconds_per_vision_page']:.1f}" if s["seconds_per_vision_page"] else "-"
+        tag = f" {extra[name]}" if extra and name in extra else ""
+        out.append(f"| {name}{tag} | {s['docs']} | {pct(s['cer'])} | {pct(s['word_f1'])} | "
+                   f"{pct(s['wer'])} | {pct(s['detail_recall'])} | {sec} |")
+    return [*out, ""]
+
+
 def report_md(meta: dict, rows: list[dict], iam: list[dict], summary: dict) -> str:
     out = [f"# OCR / document input evaluation - {meta['run']}", ""]
-    out.append(f"Vision model `{meta['model']}`, pages rendered at {meta['dpi']} dpi, "
-               f"{meta['when']}. Headline: **CER** (character error rate, lower is better; "
-               "2% = 2 wrong characters in 100), after header/footer removal.")
+    out.append(f"Vision model `{meta['model']}`, pages rendered at {meta['dpi']} dpi, {meta['when']}. "
+               "**CER** = character error rate (lower is better; 2% = 2 wrong characters in 100), "
+               "after header/footer removal. **Word F1** = words read correctly regardless of order "
+               "(higher is better); use it for sources marked *approx. order*, whose gold text was "
+               "rebuilt from word boxes. Details = private details read exactly (synthetic documents only).")
     out.append("")
     if rows:
         a = summary["all"]
-        out += ["## Overall", "", "| Documents | Pages | CER | WER | Private details read exactly | "
+        out += ["## Overall", "", "| Documents | Pages | CER | Word F1 | WER | Details read exactly | "
                 "Pages routed correctly | Failed pages | s / vision page |",
-                "|---|---|---|---|---|---|---|---|",
-                f"| {a['docs']} | {a['pages']} | **{pct(a['cer'])}** | {pct(a['wer'])} | "
-                f"{pct(a['detail_recall'])} of {a['details']} | {pct(a['route_accuracy'])} | "
-                f"{a['failed_pages']} | {a['seconds_per_vision_page'] or 0:.1f} |", ""]
-        out += ["## By kind of input", "", "| Kind | Docs | CER | WER | Details read exactly |",
-                "|---|---|---|---|---|"]
-        for name, s in summary["groups"].items():
-            out.append(f"| {name} | {s['docs']} | {pct(s['cer'])} | {pct(s['wer'])} | "
-                       f"{pct(s['detail_recall'])} |")
-        out += ["", "## By document type", "",
-                "| Type | Domain | Docs | Pages | CER | WER | Details | s / vision page |",
-                "|---|---|---|---|---|---|---|---|"]
-        for t, s in summary["types"].items():
-            dom = next(r["domain"] for r in rows if r["type"] == t)
-            sec = f"{s['seconds_per_vision_page']:.1f}" if s["seconds_per_vision_page"] else "-"
-            out.append(f"| {t} | {dom} | {s['docs']} | {s['pages']} | {pct(s['cer'])} | "
-                       f"{pct(s['wer'])} | {pct(s['detail_recall'])} | {sec} |")
+                "|---|---|---|---|---|---|---|---|---|",
+                f"| {a['docs']} | {a['pages']} | **{pct(a['cer'])}** | {pct(a['word_f1'])} | {pct(a['wer'])} | "
+                f"{pct(a['detail_recall'])} | {pct(a['route_accuracy'])} | {a['failed_pages']} | "
+                f"{a['seconds_per_vision_page'] or 0:.1f} |", ""]
+        out += table("By domain", summary["domains"], "Domain")
+        approx = {src: "*(approx. order)*" for src in summary["sources"]
+                  if any(r["source"] == src and r["order"] == "approximate" for r in rows)}
+        out += table("By source", summary["sources"], "Source", approx)
+        out += table("By document type", summary["types"], "Type")
         st = summary["strip"]
-        out += ["", "## Header/footer removal", "",
-                f"On the {st['docs']} multi-page documents with repeated headers/footers: "
-                f"{st['correct']} of {st['expected']} repeated lines removed (recall "
-                f"{pct(st['recall'])}); {st['wrong']} removed lines whose content is not kept "
-                f"anywhere else (information lost; should be 0). CER on these documents: "
-                f"{pct(st['cer_strip'])} with removal vs {pct(st['cer_no_strip'])} without.", ""]
-        worst = sorted(rows, key=lambda r: -r["cer"])[:5]
-        out += ["## Worst documents", "", "| Document | CER | Details missed |", "|---|---|---|"]
+        if st["docs"]:
+            out += ["## Header/footer removal", "",
+                    f"On the {st['docs']} multi-page documents with repeated headers/footers: "
+                    f"{st['correct']} of {st['expected']} repeated lines removed (recall {pct(st['recall'])}); "
+                    f"{st['lost']} removed lines whose content is not kept anywhere else (information "
+                    f"lost; should be 0). CER on these documents: {pct(st['cer_strip'])} with removal vs "
+                    f"{pct(st['cer_no_strip'])} without.", ""]
+        worst = sorted(rows, key=lambda r: -r["cer"])[:8]
+        out += ["## Worst documents", "", "| Document | Source | CER | Word F1 | Details missed |",
+                "|---|---|---|---|---|"]
         for r in worst:
             missed = ", ".join(r["details_missed"][:4]) or "-"
-            out.append(f"| {r['id']} | {pct(r['cer'])} | {missed} |")
+            out.append(f"| {r['id']} | {r['source']} | {pct(r['cer'])} | {pct(r['word_f1'])} | {missed} |")
         out.append("")
     if iam:
         s = summary["iam"]
@@ -226,8 +254,9 @@ def report_md(meta: dict, rows: list[dict], iam: list[dict], summary: dict) -> s
 
 async def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--set", default=str(ROOT / "data" / "ocr_test"))
+    ap.add_argument("--set", default=None, help="test set folders, comma-separated (default: all)")
     ap.add_argument("--n", type=int, default=None, help="number of documents (default: all)")
+    ap.add_argument("--domain", default=None, choices=["health", "finance", "law"])
     ap.add_argument("--types", default="", help="comma-separated document types")
     ap.add_argument("--ids", default="", help="comma-separated document ids")
     ap.add_argument("--iam", type=int, default=0, help="real handwritten lines to add (IAM)")
@@ -235,8 +264,8 @@ async def main() -> None:
     ap.add_argument("--model", default=None, help="vision model (default: settings.ocr_model)")
     ap.add_argument("--no-vision", action="store_true", help="no model: scanned pages fail")
     ap.add_argument("--out", default=None, help="default: results/ocr/<model>")
-    ap.add_argument("--quiet", action="store_true", help="progress only, not the report text")
     ap.add_argument("--fresh", action="store_true", help="read every document again")
+    ap.add_argument("--quiet", action="store_true", help="progress only, not the report text")
     args = ap.parse_args()
 
     settings = get_settings()
@@ -244,10 +273,9 @@ async def main() -> None:
     run = model.replace(":", "_").replace("/", "_") if not args.no_vision else "no_vision"
     out = Path(args.out or ROOT / "results" / "ocr" / run)
     (out / "pred").mkdir(parents=True, exist_ok=True)
-    test_set = Path(args.set)
-    gold = [json.loads(line) for line in (test_set / "gold.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    gold = load_sets(args.set)
     chosen = pick(gold, args.n, [t for t in args.types.split(",") if t] or None,
-                  [i for i in args.ids.split(",") if i] or None)
+                  [i for i in args.ids.split(",") if i] or None, args.domain)
 
     reader = None if args.no_vision else VisionReader.from_settings(settings, model=model)
     rows: list[dict] = []
@@ -255,13 +283,13 @@ async def main() -> None:
     try:
         for k, g in enumerate(chosen, 1):
             started = time.perf_counter()
-            result = await read_doc(test_set / g["file"], reader, settings, out / "pred" / f"{g['id']}.json", args.fresh)
+            result = await read_doc(Path(g["_path"]), reader, settings, out / "pred" / f"{g['id']}.json", args.fresh)
             row = score_doc(g, result)
             (out / "pred" / f"{g['id']}.txt").write_text(row.pop("text"), encoding="utf-8")
             rows.append(row)
-            print(f"[{k}/{len(chosen)}] {g['id']:22s} CER {pct(row['cer']):>6s}  details "
-                  f"{row['details_found']}/{row['details']}  ({time.perf_counter() - started:.0f} s)",
-                  flush=True)
+            det = f"details {row['details_found']}/{row['details']}" if row["details"] else ""
+            print(f"[{k}/{len(chosen)}] {g['id']:36s} CER {pct(row['cer']):>6s}  word F1 "
+                  f"{pct(row['word_f1']):>6s}  {det} ({time.perf_counter() - started:.0f} s)", flush=True)
         if args.iam:
             from PIL import Image
 
@@ -269,7 +297,7 @@ async def main() -> None:
 
             if reader is None:
                 raise SystemExit("--iam needs the vision model (drop --no-vision)")
-            lines = fetch_iam(args.iam, args.iam_offset, test_set / ".iam")
+            lines = fetch_iam(args.iam, args.iam_offset, ROOT / "data" / "ocr_test" / ".iam")
             for k, line in enumerate(lines, 1):
                 cache = out / "pred" / f"iam_{line['idx']}.txt"
                 started = time.perf_counter()
@@ -291,17 +319,16 @@ async def main() -> None:
         if reader is not None:
             await reader.aclose()
 
-    summary: dict = {"all": summarise(rows)}
-    summary["groups"] = {name: summarise([r for r in rows if r["type"] in ts])
-                         for name, ts in GROUPS.items() if any(r["type"] in ts for r in rows)}
-    summary["types"] = {t: summarise([r for r in rows if r["type"] == t])
-                        for t in dict.fromkeys(r["type"] for r in rows)}
+    def group(key: str) -> dict[str, dict]:
+        return {v: summarise([r for r in rows if r[key] == v]) for v in dict.fromkeys(r[key] for r in rows)}
+
+    summary: dict = {"all": summarise(rows), "domains": group("domain"), "sources": group("source"),
+                     "types": group("type")}
     multi = [r for r in rows if r["strip_expected"]]
     c = sum(r["strip_correct"] for r in multi)
-    w = sum(r["strip_wrong"] for r in multi)
     e = sum(r["strip_expected"] for r in multi)
     summary["strip"] = {
-        "docs": len(multi), "correct": c, "wrong": w, "expected": e,
+        "docs": len(multi), "correct": c, "lost": sum(r["strip_lost"] for r in multi), "expected": e,
         "recall": c / e if e else None,
         "cer_strip": sum(r["char_errors"] for r in multi) / max(sum(r["gold_chars"] for r in multi), 1) if multi else None,
         "cer_no_strip": sum(r["char_errors_no_strip"] for r in multi) / max(sum(r["gold_chars_no_strip"] for r in multi), 1) if multi else None,

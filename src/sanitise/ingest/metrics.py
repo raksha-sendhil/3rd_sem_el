@@ -10,6 +10,9 @@ are ignored. An ``[illegible]`` word therefore counts as missing, as it should.
 Also reported, because they are free once the gold is known:
 
 * WER, the same on words;
+* word F1, order-free: the words read correctly whatever order they came in. Real test sources
+  whose gold text was rebuilt from word boxes (receipts, forms) have only an approximate reading
+  order, which inflates CER without any word being misread; word F1 is the fair number there;
 * detail recall: the share of the document's private details (names, phones, ID numbers,
   addresses) that appear exactly in the extracted text. A detail read wrongly cannot be found by
   Agent 1, and a near-miss ("Ravl Kumar") still points at the person;
@@ -22,6 +25,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
+from collections import Counter
 from dataclasses import dataclass
 
 from rapidfuzz.distance import Levenshtein
@@ -44,7 +48,9 @@ _DASHES = str.maketrans(
 
 
 def normalise(text: str) -> str:
-    t = unicodedata.normalize("NFKC", text).translate(_DASHES)
+    t = unicodedata.normalize("NFKC", text).translate(_DASHES).replace("­", "")
+    # a word broken across lines ("consti-\ntutional") is one word, however it was read
+    t = re.sub(r"(\w)-[ \t]*\n[ \t]*(\w)", r"\1\2", t)
     t = _TAGS.sub(" ", t)
     t = _TABLE_RULE.sub(" ", t)
     t = _MARKS.sub(" ", t)
@@ -61,6 +67,18 @@ class TextScore:
     gold_chars: int
     word_errors: int
     gold_words: int
+    # order-free: words read correctly, whatever order they came in (multiset overlap)
+    words_matched: int = 0
+    pred_words: int = 0
+
+    @property
+    def word_f1(self) -> float:
+        total = self.pred_words + self.gold_words
+        return 2 * self.words_matched / total if total else 1.0
+
+
+def _bag(words: list[str]) -> Counter[str]:
+    return Counter(w.strip(".,;:!?()[]\"'") for w in words if w.strip(".,;:!?()[]\"'"))
 
 
 def score_text(pred: str, gold: str) -> TextScore:
@@ -68,6 +86,7 @@ def score_text(pred: str, gold: str) -> TextScore:
     ce = Levenshtein.distance(p, g)
     pw, gw = p.split(), g.split()
     we = Levenshtein.distance(pw, gw)
+    pb, gb = _bag(pw), _bag(gw)
     return TextScore(
         cer=ce / max(len(g), 1),
         wer=we / max(len(gw), 1),
@@ -75,6 +94,8 @@ def score_text(pred: str, gold: str) -> TextScore:
         gold_chars=len(g),
         word_errors=we,
         gold_words=len(gw),
+        words_matched=sum((pb & gb).values()),
+        pred_words=sum(pb.values()),
     )
 
 
