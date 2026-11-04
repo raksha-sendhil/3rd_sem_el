@@ -51,7 +51,11 @@ person who wrote this.
 
 4. In cell **1 Setup**, leave `BRANCH = "main"` (it has everything, case files included) and
    check `MODEL = "llama3:8b"` and `AGENTS_BACKEND = "gemini"`. Edit the plain variables at the
-   top of the cell instead of using form fields.
+   top of the cell instead of using form fields. `OCR = True` also downloads the vision model
+   (Qwen3-VL 8B, about 6 GB) so the dashboard can read scanned PDFs and photos; use
+   `BRANCH = "ingest"` for that until it is merged into main (see `docs/document_input.md`).
+   Ollama and its models are kept in `/tmp`, outside `/kaggle/working`, so Save Version does not
+   try to save gigabytes of models.
 5. Run the cells in order (Shift+Enter on each; do not use "Run All" the first time):
 
    | Cell | Notes |
