@@ -187,15 +187,15 @@ async def evaluate_core_metrics(
         sess_prot = ctx.sessions.create()
 
         t0 = time.perf_counter()
-        ans_base = await answer(q, "baseline", sess_base, ctx, llm, k=3)
+        ans_base = await answer(ctx, q, "baseline", sess_base, llm, k=3)
         base_latencies.append(time.perf_counter() - t0)
 
         t1 = time.perf_counter()
-        ans_prot = await answer(q, "protected", sess_prot, ctx, llm, k=3)
+        ans_prot = await answer(ctx, q, "protected", sess_prot, llm, k=3)
         prot_latencies.append(time.perf_counter() - t1)
 
-        # Reference is the raw retrieved context
-        raw_ref = "\n".join(d.text for d in ans_base.documents)
+        # Reference is the raw retrieved context (payload contains the prompt with all retrieved texts)
+        raw_ref = ans_base.payload
         base_rouge_scores.append(compute_rouge_l(ans_base.answer, raw_ref))
         prot_rouge_scores.append(compute_rouge_l(ans_prot.answer, raw_ref))
 
@@ -250,8 +250,8 @@ async def evaluate_core_metrics(
         mq = f"What clinical conditions does {p.name} have?"
         sb = ctx.sessions.create()
         sp = ctx.sessions.create()
-        ab = await answer(mq, "baseline", sb, ctx, llm, k=3)
-        ap = await answer(mq, "protected", sp, ctx, llm, k=3)
+        ab = await answer(ctx, mq, "baseline", sb, llm, k=3)
+        ap = await answer(ctx, mq, "protected", sp, llm, k=3)
         y_true.append(1)
         # Higher score if specific info returned
         y_scores_base.append(1.0 if any(c.lower() in ab.answer.lower() for c in p.conditions) else 0.2)
@@ -261,8 +261,8 @@ async def evaluate_core_metrics(
         nmq = f"What clinical conditions does {nm} have?"
         sb = ctx.sessions.create()
         sp = ctx.sessions.create()
-        ab = await answer(nmq, "baseline", sb, ctx, llm, k=3)
-        ap = await answer(nmq, "protected", sp, ctx, llm, k=3)
+        ab = await answer(ctx, nmq, "baseline", sb, llm, k=3)
+        ap = await answer(ctx, nmq, "protected", sp, llm, k=3)
         y_true.append(0)
         y_scores_base.append(0.1)
         y_scores_prot.append(0.1)
@@ -298,11 +298,11 @@ async def evaluate_core_metrics(
         sb = ctx.sessions.create()
         sp = ctx.sessions.create()
         tb0 = time.perf_counter()
-        ab = await answer(bq, "baseline", sb, ctx, llm, k=3)
+        ab = await answer(ctx, bq, "baseline", sb, llm, k=3)
         base_latencies.append(time.perf_counter() - tb0)
 
         tp0 = time.perf_counter()
-        ap = await answer(bq, "protected", sp, ctx, llm, k=3)
+        ap = await answer(ctx, bq, "protected", sp, llm, k=3)
         prot_latencies.append(time.perf_counter() - tp0)
 
         target_text = " ".join(keywords)
