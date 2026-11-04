@@ -140,6 +140,15 @@ add `--extra data/legal/train_aug/sft.jsonl` to the train command.""",
     ),
     (
         "code",
+        """# Free the GPUs for fine-tuning: Ollama keeps Gemma 4 loaded (about 9 GB) after the checks
+# above, and training needs one whole T4. Ollama is started again before the build.
+!pkill -f "ollama serve"; sleep 5
+!nvidia-smi --query-gpu=index,memory.used,memory.total --format=csv
+# Both GPUs should show only a few MiB used. If not: Run -> Restart & clear cell outputs,
+# re-run cells 1-2 (not the Ollama cell), and run this cell again.""",
+    ),
+    (
+        "code",
         """!python tools/legal/finetune_agent1.py eval --out /kaggle/working/agent1_before.json""",
     ),
     (
@@ -164,6 +173,20 @@ print("Done when: recall after > recall before ->", after["recall"] > before["re
 Agent 1 = rules + the fine-tuned Gemma 4 on GPU 1; Agents 2-3 = Gemma 4 through Ollama;
 leak check; SQLite store plus one JSON file per document. Re-run the cell after a restart: it
 skips documents already in the store.""",
+    ),
+    (
+        "code",
+        """# The build needs Ollama again (Agents 2-3 on GPU 0); the model is already downloaded
+import os, subprocess, time, urllib.request
+ollama_log = open("/kaggle/working/ollama.log", "a")
+subprocess.Popen(["ollama", "serve"], stdout=ollama_log, stderr=subprocess.STDOUT,
+                 env={**os.environ, "CUDA_VISIBLE_DEVICES": "0"})
+for _ in range(30):
+    try:
+        urllib.request.urlopen("http://localhost:11434/api/tags", timeout=2); break
+    except Exception:
+        time.sleep(2)
+!ollama list""",
     ),
     (
         "code",
