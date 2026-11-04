@@ -299,7 +299,15 @@ Runs `check` on `c001`'s intake note, advice email and case note with the real m
 asks Gemini one question each time. Read the output against the checklists in Part D before
 starting the long runs. This is the cheapest place to catch a wrong prompt or model.
 
-### C7. Fine-tune Agent 1 (cells 8-10)
+### C7. Fine-tune Agent 1
+
+**Free the GPUs first** (the cell just before the "before" eval). After the agent checks,
+Ollama keeps Gemma 4 loaded, about 9 GB, and training needs one whole T4. The cell stops
+Ollama and prints the memory used on each GPU; both should show only a few MiB. If one
+still shows several GB, use Run → Restart & clear cell outputs, re-run cells 1-2 (not the
+Ollama cell), then run the free-the-GPUs cell again. Fine-tuning does not need Ollama; the
+build step starts it again.
+
 
 | Cell | What it does | Time | Expect |
 |---|---|---|---|
@@ -319,7 +327,9 @@ If the session ends during training, re-run C1-C3 and then the train cell with
 
 ### C8. Build the store (cell 12, 1-2 hours)
 
-This cell first switches the legal profile's Agent 1 to the adapter (it edits
+First run the cell that restarts Ollama (it was stopped for fine-tuning); `ollama list`
+should show `gemma4:e4b`. The build cell then switches the legal profile's Agent 1 to the
+adapter (it edits
 `config/domains.json`), then sanitises all 300 documents: Agent 1 on GPU 1, Agents 2-3
 through Ollama on GPU 0.
 
@@ -562,6 +572,7 @@ the context: its prompts, its data and its models.
 | `all N Gemini keys are rate-limited` | wait the time given, then re-run; add keys or lower `SANITISE_GEMINI_RPM` |
 | 401 / 403 downloading `google/gemma-4-E4B-it` | accept the licence on Hugging Face; check the `HF_TOKEN` secret is attached |
 | training loss `nan` | add `--fp32` to the train command |
+| CUDA out of memory when fine-tuning ("Process … has 8.9 GiB in use") | Ollama still holds Gemma 4 on the GPU: run the free-the-GPUs cell (`pkill -f "ollama serve"`), check `nvidia-smi`, restart the session if memory is still used |
 | CUDA out of memory during the build | Agent 1 must be on `cuda:1` and Ollama on GPU 0, as the cells set; restart the session and run C1-C3 then C8 |
 | `LLM_TIMEOUT` during the build | raise `SANITISE_LLM_TIMEOUT_S` in cell 2 (Gemma on a T4 can take over a minute on long documents) |
 | session ended mid-build or mid-evaluation | re-run C1-C3, then the same cell; finished work is skipped or cached |
