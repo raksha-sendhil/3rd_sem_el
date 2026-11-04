@@ -36,7 +36,7 @@ RUNTIME_PACKAGES = {
     "tldextract",
     "en-core-web-lg",
 }
-CONTENT = Path("/content")
+CONTENT = Path(os.environ.get("SANITISE_WORKDIR", "/content"))  # Kaggle: /kaggle/working
 PYLIB = CONTENT / "pylib"
 MODELS = CONTENT / "ollama_models"
 OLLAMA_URL = "http://127.0.0.1:11434"
