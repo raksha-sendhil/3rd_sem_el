@@ -1,0 +1,23 @@
+PROGRESS NOTE
+Patient Name: Margaret O'Connell	DOB: 07/22/1951	MRN: 00483921
+Date of Service: 09/14/2026	Provider: James Whitfield, NP
+Location: Cedar Ridge Family Medicine, Bozeman, MT
+
+Chief Complaint: Follow-up of shortness of breath.
+
+HPI: 75 yo female retired schoolteacher with COPD and atrial fibrillation, seen 2 weeks ago for
+worsening dyspnea on exertion. Started on prednisone taper and doxycycline. Today reports
+breathing is "much better", still gets winded after one flight of stairs. Cough now
+minimal, no fever. Lives alone; daughter Karen checks on her daily (cell 406-555-0193).
+
+Medications: tiotropium 18 mcg daily, apixaban 5 mg BID, metoprolol 25 mg BID.
+Allergies: sulfa (hives).
+
+Vitals: BP 138/82, HR 88 irregular, SpO2 93% on room air, Wt 142 lb.
+Exam: scattered expiratory wheeze bilaterally, improved from last visit. No leg edema.
+
+Labs: BNP 210 (prior 480). CXR 09/02: hyperinflation, no infiltrate.
+
+Assessment: COPD exacerbation, resolving. AF, rate controlled on metoprolol.
+Plan: Complete prednisone taper. Continue inhalers. Refer to pulmonary rehab at
+Bozeman Health. Return in 4 weeks, sooner if symptoms worsen.

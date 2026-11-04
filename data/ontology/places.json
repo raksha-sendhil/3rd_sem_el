@@ -1,0 +1,272 @@
+{
+  "alappuzha": {
+    "district": "Alappuzha",
+    "state": "Kerala",
+    "kind": "town"
+  },
+  "bangalore": {
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "kind": "city"
+  },
+  "bengaluru": {
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "kind": "city"
+  },
+  "bozeman": {
+    "district": "Gallatin County",
+    "state": "Montana",
+    "kind": "town"
+  },
+  "calicut": {
+    "district": "Kozhikode",
+    "state": "Kerala",
+    "kind": "city"
+  },
+  "chennai": {
+    "district": "Chennai",
+    "state": "Tamil Nadu",
+    "kind": "city"
+  },
+  "cochin": {
+    "district": "Ernakulam",
+    "state": "Kerala",
+    "kind": "city"
+  },
+  "coimbatore": {
+    "district": "Coimbatore",
+    "state": "Tamil Nadu",
+    "kind": "city"
+  },
+  "coonoor": {
+    "district": "Nilgiris",
+    "state": "Tamil Nadu",
+    "kind": "town"
+  },
+  "darjeeling": {
+    "district": "Darjeeling",
+    "state": "West Bengal",
+    "kind": "town"
+  },
+  "dehradun": {
+    "district": "Dehradun",
+    "state": "Uttarakhand",
+    "kind": "city"
+  },
+  "delhi": {
+    "district": "New Delhi",
+    "state": "Delhi",
+    "kind": "city"
+  },
+  "electronic city": {
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "kind": "suburb"
+  },
+  "erode": {
+    "district": "Erode",
+    "state": "Tamil Nadu",
+    "kind": "city"
+  },
+  "gangtok": {
+    "district": "East Sikkim",
+    "state": "Sikkim",
+    "kind": "town"
+  },
+  "houston": {
+    "district": "Harris County",
+    "state": "Texas",
+    "kind": "city"
+  },
+  "hubballi": {
+    "district": "Dharwad",
+    "state": "Karnataka",
+    "kind": "city"
+  },
+  "hubli": {
+    "district": "Dharwad",
+    "state": "Karnataka",
+    "kind": "city"
+  },
+  "hyderabad": {
+    "district": "Hyderabad",
+    "state": "Telangana",
+    "kind": "city"
+  },
+  "indore": {
+    "district": "Indore",
+    "state": "Madhya Pradesh",
+    "kind": "city"
+  },
+  "jaipur": {
+    "district": "Jaipur",
+    "state": "Rajasthan",
+    "kind": "city"
+  },
+  "jayanagar": {
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "kind": "suburb"
+  },
+  "kavaratti": {
+    "district": "Lakshadweep",
+    "state": "Lakshadweep",
+    "kind": "town"
+  },
+  "kavaratti island": {
+    "district": "Lakshadweep",
+    "state": "Lakshadweep",
+    "kind": "town"
+  },
+  "kengeri": {
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "kind": "suburb"
+  },
+  "kochi": {
+    "district": "Ernakulam",
+    "state": "Kerala",
+    "kind": "city"
+  },
+  "kodaikanal": {
+    "district": "Dindigul",
+    "state": "Tamil Nadu",
+    "kind": "town"
+  },
+  "kolkata": {
+    "district": "Kolkata",
+    "state": "West Bengal",
+    "kind": "city"
+  },
+  "kozhikode": {
+    "district": "Kozhikode",
+    "state": "Kerala",
+    "kind": "city"
+  },
+  "madurai": {
+    "district": "Madurai",
+    "state": "Tamil Nadu",
+    "kind": "city"
+  },
+  "manali": {
+    "district": "Kullu",
+    "state": "Himachal Pradesh",
+    "kind": "town"
+  },
+  "mulund": {
+    "district": "Mumbai",
+    "state": "Maharashtra",
+    "kind": "suburb"
+  },
+  "mumbai": {
+    "district": "Mumbai",
+    "state": "Maharashtra",
+    "kind": "city"
+  },
+  "munnar": {
+    "district": "Idukki",
+    "state": "Kerala",
+    "kind": "town"
+  },
+  "mussoorie": {
+    "district": "Dehradun",
+    "state": "Uttarakhand",
+    "kind": "town"
+  },
+  "mysore": {
+    "district": "Mysuru",
+    "state": "Karnataka",
+    "kind": "city"
+  },
+  "mysuru": {
+    "district": "Mysuru",
+    "state": "Karnataka",
+    "kind": "city"
+  },
+  "nagpur": {
+    "district": "Nagpur",
+    "state": "Maharashtra",
+    "kind": "city"
+  },
+  "nainital": {
+    "district": "Nainital",
+    "state": "Uttarakhand",
+    "kind": "town"
+  },
+  "nashik": {
+    "district": "Nashik",
+    "state": "Maharashtra",
+    "kind": "city"
+  },
+  "new delhi": {
+    "district": "New Delhi",
+    "state": "Delhi",
+    "kind": "city"
+  },
+  "ooty": {
+    "district": "Nilgiris",
+    "state": "Tamil Nadu",
+    "kind": "town"
+  },
+  "port blair": {
+    "district": "South Andaman",
+    "state": "Andaman and Nicobar Islands",
+    "kind": "town"
+  },
+  "portland": {
+    "district": "Multnomah County",
+    "state": "Oregon",
+    "kind": "city"
+  },
+  "pune": {
+    "district": "Pune",
+    "state": "Maharashtra",
+    "kind": "city"
+  },
+  "rameswaram": {
+    "district": "Ramanathapuram",
+    "state": "Tamil Nadu",
+    "kind": "town"
+  },
+  "salem": {
+    "district": "Salem",
+    "state": "Tamil Nadu",
+    "kind": "city"
+  },
+  "shillong": {
+    "district": "East Khasi Hills",
+    "state": "Meghalaya",
+    "kind": "town"
+  },
+  "shimla": {
+    "district": "Shimla",
+    "state": "Himachal Pradesh",
+    "kind": "town"
+  },
+  "thrissur": {
+    "district": "Thrissur",
+    "state": "Kerala",
+    "kind": "city"
+  },
+  "tiruppur": {
+    "district": "Tiruppur",
+    "state": "Tamil Nadu",
+    "kind": "city"
+  },
+  "tulsa": {
+    "district": "Tulsa County",
+    "state": "Oklahoma",
+    "kind": "city"
+  },
+  "udhagamandalam": {
+    "district": "Nilgiris",
+    "state": "Tamil Nadu",
+    "kind": "town"
+  },
+  "visakhapatnam": {
+    "district": "Visakhapatnam",
+    "state": "Andhra Pradesh",
+    "kind": "city"
+  }
+}

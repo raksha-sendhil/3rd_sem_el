@@ -1,0 +1,20 @@
+DISCHARGE SUMMARY
+St. Martha's Hospital, Bannerghatta Road, Bengaluru
+Name: Mr. Venkatesh Iyer          Age: 46 yrs     Sex: Male
+IP No: SMH/IP/26/07731            Ward: Cardiology, Bed 14
+DOA: 03/09/2026    DOD: 08/09/2026
+Treating Consultant: Dr. Priya Nair, DM (Cardiology)
+
+Final Diagnosis: Acute inferior wall myocardial infarction. Hypertension. Dyslipidemia.
+
+Presenting complaints: Retrosternal chest pain radiating to left arm x 2 hours with sweating.
+Occupation: software engineer at Infosys, Electronic City. Smoker, 10 pack-years.
+
+Course in hospital: Taken up for primary PCI on day of admission - stent to RCA. Post
+procedure chest pain resolved. Echo: LVEF 45%, mild inferior hypokinesia. Troponin I peaked at
+18.4 ng/mL. Stable at discharge.
+
+Medications on discharge: Aspirin 75 mg OD, Ticagrelor 90 mg BD, Atorvastatin 80 mg HS,
+Metoprolol 25 mg BD, Ramipril 2.5 mg OD.
+Advice: Stop smoking. Cardiac rehab. Review in Cardiology OPD on 22/09/2026 with lipid profile.
+Emergency contact: wife Lakshmi Iyer, 99001 23456.

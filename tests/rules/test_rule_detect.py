@@ -301,3 +301,25 @@ def test_name_after_a_sign_off_on_the_same_line(text, span):
 )
 def test_no_name_from_a_sign_off_to_a_doctor(text):
     assert not any(t in {"Doctor", "Dr", "Again"} and c is C.NAME for t, c in found(text))
+
+
+CASE_FILE = (
+    "DISCHARGE SUMMARY\n"
+    "St. Agnes Hospital, Pune\n"
+    "Patient Name: Meera Joshi      Age/Sex: 52/F\n"
+    "Date of Service: 09/14/2026\n"
+    "Consultant: Dr. Ravi Kale, MD (Paeds)\n"
+    "Vitals: HR 96, BP 128/80, Temp 99 F.\n"
+)
+
+
+def test_case_file_fields_end_names_and_measurements_are_not_dates():
+    found = {(s.category, s.text) for s in rule_detect(CASE_FILE)}
+    names = {t for c, t in found if c is C.NAME}
+    assert "Meera Joshi" in names  # stops at the gap before the next field
+    assert not any("Age/Sex" in t for t in names)
+    assert (C.DATE, "09/14/2026") in found
+    dates = {t for c, t in found if c is C.DATE}
+    assert not {"Date of Service", "HR 96"} & dates
+    assert not any(t in {"MD", "Paeds"} for _, t in found)
+    assert not any(t.startswith("DISCHARGE") for _, t in found)

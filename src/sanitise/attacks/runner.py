@@ -25,7 +25,10 @@ from sanitise.schemas import AttackDefinition, AttackRound, AttackRun, Person, R
 def load_attacks(directory: str | Path) -> dict[str, AttackDefinition]:
     attacks: dict[str, AttackDefinition] = {}
     for path in sorted(Path(directory).glob("*.json")):
-        attack = AttackDefinition.model_validate_json(path.read_text(encoding="utf-8"))
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):  # target_info_queries.json: Metric 1's query list
+            continue
+        attack = AttackDefinition.model_validate(data)
         attacks[attack.attack_id] = attack
     return attacks
 

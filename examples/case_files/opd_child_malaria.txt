@@ -1,0 +1,17 @@
+OUTPATIENT CASE RECORD - Sunrise Children's Clinic, Jayanagar, Bengaluru
+Patient: Rohan Kulkarni      Age/Sex: 9 y / M      MRN: SCC-2026-04417
+DOB: 14/03/2017     Guardian: Shanaya Kulkarni (mother), Ph: 98807 67856
+Address: 22, 4th Cross, Kengeri Satellite Town, Bengaluru 560060
+Date of visit: 21/10/2026     Consultant: Dr. Anil Mehta, MD (Paeds)
+
+C/O: Fever (high grade, intermittent) x 6 days, headache x 4 days.
+     Cough and cold x 1 wk, now improving.
+H/O: Treated for P. vivax malaria at Kengeri PHC on 15/10/2026,
+     on chloroquine (day 6 of 3+ regimen). No h/o seizures.
+     K/c/o mild asthma, uses salbutamol inhaler SOS. NKDA.
+O/E: Temp 102.4 F, PR 118/min, RR 24/min, SpO2 97% RA. Wt 27 kg.
+     Mild pallor, no icterus. Spleen just palpable.
+Inv: Hb 9.8 g/dL, TLC 5,400, Platelets 1.1 lakh. Smear: P. vivax +.
+Imp: Persistent fever on antimalarials - ?inadequate response, ?mixed infection.
+Plan: Repeat smear and RDT for P. falciparum, CBC in 48 h. Paracetamol
+      15 mg/kg SOS. Review on 23/10/2026 or earlier if vomiting/drowsiness.

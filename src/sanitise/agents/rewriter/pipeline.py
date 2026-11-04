@@ -29,6 +29,7 @@ from sanitise.agents.rewriter import (
     prompt,
     routing,
 )
+from sanitise.casefile import case_file
 from sanitise.errors import LeakCheckFailed, PipelineError, SchemaValidationFailed
 from sanitise.llm.base import LLMClient, format_validation_error
 from sanitise.llm.factory import agents_llm
@@ -107,6 +108,13 @@ async def rewrite_with_trace(
     llm: LLMClient,
 ) -> RewriteTrace:
     llm = agents_llm(llm)
+    with case_file(prompt.is_case_file(extracted.facts)):
+        return await _rewrite(doc_id, detected, extracted, llm)
+
+
+async def _rewrite(
+    doc_id: str, detected: DetectorOutput, extracted: ExtractorOutput, llm: LLMClient
+) -> RewriteTrace:
     try:
         decisions, tokens = plan_decisions(detected, extracted)
         removed = removed_decisions(decisions)
