@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import os
 from pathlib import Path
 
 DATA = Path("data/legal/train")
@@ -76,7 +77,7 @@ def collate(batch: list[dict], pad_id: int) -> dict:
 def train(args: argparse.Namespace) -> None:
     import torch
     import transformers
-    from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+    from peft import LoraConfig, get_peft_model
     from transformers import AutoProcessor, BitsAndBytesConfig, Trainer, TrainingArguments
 
     dtype = torch.float32 if args.fp32 else torch.float16
@@ -92,9 +93,14 @@ def train(args: argparse.Namespace) -> None:
         transformers.AutoModelForCausalLM
     )
     model = model_cls.from_pretrained(
-        args.base, quantization_config=quant, device_map={"": 0}, torch_dtype=dtype
+        args.base, quantization_config=quant, device_map={"": 0}, dtype=dtype
     )
-    model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+    # Not peft's prepare_model_for_kbit_training: it casts every non-quantised weight to
+    # float32, and Gemma 4's large embedding tables then need another ~10 GB, more than a T4
+    # has. The frozen weights stay in float16; peft keeps the LoRA weights in float32.
+    model.config.use_cache = False
+    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+    model.enable_input_require_grads()
     lora = LoraConfig(
         r=16,
         lora_alpha=32,
@@ -128,6 +134,7 @@ def train(args: argparse.Namespace) -> None:
             lr_scheduler_type="cosine",
             warmup_ratio=0.03,
             gradient_checkpointing=True,
+            gradient_checkpointing_kwargs={"use_reentrant": False},
             optim="paged_adamw_8bit",
             fp16=not args.fp32,
             logging_steps=10,
@@ -203,7 +210,16 @@ def main() -> None:
     p.add_argument("--fp32", action="store_true", help="if the float16 loss shows nan")
     p.add_argument("--resume", default=None, help="checkpoint folder to resume from")
     p.add_argument("--out", default="agent1_eval.json")
+    p.add_argument(
+        "--gpu",
+        default="1",
+        help="GPU to use (default 1: on Kaggle's T4 x2, Ollama holds GPU 0); 0 on one GPU",
+    )
     args = p.parse_args()
+    # before torch is imported: the chosen GPU becomes cuda:0 for this process, and the
+    # allocator returns freed blocks instead of fragmenting
+    os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
+    os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
     if args.command == "train":
         if not args.adapter:
             p.error("train needs --adapter (e.g. /kaggle/working/agent1_lora)")

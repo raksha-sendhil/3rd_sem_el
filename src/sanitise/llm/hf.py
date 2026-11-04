@@ -41,7 +41,7 @@ def load_gemma(base_model: str, adapter: str | None = None, device: str = "cuda:
     )
     processor = AutoProcessor.from_pretrained(base_model)
     model = model_cls.from_pretrained(
-        base_model, quantization_config=quant, device_map={"": device}, torch_dtype=torch.float16
+        base_model, quantization_config=quant, device_map={"": device}, dtype=torch.float16
     )
     if adapter:
         from peft import PeftModel

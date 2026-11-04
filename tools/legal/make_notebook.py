@@ -46,7 +46,7 @@ building can run in separate sessions: both resume from what is on disk.""",
 !pip install -q -U transformers accelerate peft bitsandbytes google-genai \\
     presidio-analyzer sentence-transformers chromadb rank_bm25 rapidfuzz rouge-score matplotlib
 !pip install -q -e .
-!python -m spacy download -q en_core_web_lg""",
+!python -m spacy download en_core_web_lg""",
     ),
     (
         "code",
@@ -87,10 +87,23 @@ print(json.dumps(json.load(open("config/domains.json"))["legal"], indent=1))""",
     (
         "code",
         """# Part 1, step 5: Gemma 4 for Agents 2-3 through Ollama on GPU 0 (GPU 1 stays free for Agent 1)
+!apt-get update -qq && apt-get install -y -qq zstd
 !curl -fsSL https://ollama.com/install.sh | sh
-!CUDA_VISIBLE_DEVICES=0 nohup ollama serve > /kaggle/working/ollama.log 2>&1 &
-import time; time.sleep(5)
-!ollama pull gemma4:e4b""",
+
+# Kaggle's kernel refuses "!cmd &", so the server is started from Python
+import os, subprocess, time, urllib.request
+ollama_log = open("/kaggle/working/ollama.log", "w")
+subprocess.Popen(["ollama", "serve"], stdout=ollama_log, stderr=subprocess.STDOUT,
+                 env={**os.environ, "CUDA_VISIBLE_DEVICES": "0"})
+for _ in range(30):  # wait until the server answers
+    try:
+        urllib.request.urlopen("http://localhost:11434/api/tags", timeout=2); break
+    except Exception:
+        time.sleep(2)
+print("Ollama is running")
+
+!ollama pull gemma4:e4b
+!ollama list""",
     ),
     (
         "code",
