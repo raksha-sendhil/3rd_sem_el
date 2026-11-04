@@ -67,6 +67,12 @@ const documentCache = new Map<string, Promise<DocumentView>>();
 
 export const api = {
   health: () => call<S["HealthResponse"]>("GET", "/v1/health"),
+  ingest: (content_base64?: string, text?: string, filename?: string) =>
+    call<{ doc_id: string; text: string; source_format: string; char_count: number }>(
+      "POST",
+      "/v1/ingest",
+      { content_base64, text, filename },
+    ),
   // the three agents one at a time, so each one's output can be shown as it finishes
   detect: (text: string) => call<DetectorResult>("POST", "/v1/detect", { text }),
   // spans: Agent 1's result for this text, so Agent 1 does not run again with a different one

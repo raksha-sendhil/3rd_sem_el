@@ -43,6 +43,8 @@ from sanitise.api.models import (
     DocumentView,
     ExtractRequest,
     HealthResponse,
+    IngestRequest,
+    IngestResponse,
     QueryRequest,
     RewriteRequest,
     SanitiseRequest,
@@ -214,6 +216,44 @@ def create_app(
         doc_id = body.doc_id or compute_doc_id(body.text)
         run = mock_sanitise if mock else sanitise
         return await run(doc_id, body.text, client_for(request))
+
+    @app.post("/v1/ingest", response_model=IngestResponse)
+    async def post_ingest(body: IngestRequest) -> IngestResponse:
+        import base64
+        from sanitise.ingest import extract_text_multimodal
+
+        if body.content_base64:
+            raw_bytes = base64.b64decode(body.content_base64)
+            text, fmt = extract_text_multimodal(raw_bytes, filename=body.filename)
+        elif body.text:
+            text, fmt = extract_text_multimodal(body.text, filename=body.filename)
+        else:
+            raise ValueError("Either content_base64 or text must be provided")
+
+        doc_id = compute_doc_id(text)
+        return IngestResponse(
+            doc_id=doc_id,
+            text=text,
+            source_format=fmt,
+            char_count=len(text),
+        )
+
+    @app.post("/v1/ingest/sanitise", response_model=SanitisedRecord)
+    async def post_ingest_sanitise(body: IngestRequest, request: Request) -> SanitisedRecord:
+        import base64
+        from sanitise.ingest import extract_text_multimodal
+
+        if body.content_base64:
+            raw_bytes = base64.b64decode(body.content_base64)
+            text, _ = extract_text_multimodal(raw_bytes, filename=body.filename)
+        elif body.text:
+            text, _ = extract_text_multimodal(body.text, filename=body.filename)
+        else:
+            raise ValueError("Either content_base64 or text must be provided")
+
+        doc_id = compute_doc_id(text)
+        run = mock_sanitise if mock else sanitise
+        return await run(doc_id, text, client_for(request))
 
     @app.post("/v1/extract", response_model=ExtractorOutput)
     async def post_extract(body: ExtractRequest, request: Request) -> ExtractorOutput:

@@ -1,0 +1,11 @@
+MSH|^~\&|HOSPITAL_EMR|DEPT_CARDIOLOGY|SANITISER|APP|20261104103000||ADT^A08|MSG10045|P|2.5
+PID|1||MRN778912^^^HOSP||SHARMA^VIKRAM^K||19680514|M|||42 PARK ROAD^^COONOOR^TN^643101||+91 98451 22334
+PV1|1|O|||||4421^MENON^RADHA^DR||||||||||||V992144|||||||||||||||||||||||||20261101
+DG1|1||I25.1^Atherosclerotic Heart Disease^ICD10||A
+DG1|2||I10^Essential Hypertension^ICD10||A
+OBX|1|NM|883-9^Systolic Blood Pressure||152|mmHg|||||H
+OBX|2|NM|8462-4^Diastolic Blood Pressure||96|mmHg|||||H
+OBX|3|NM|2339-0^Blood Glucose Fasting||138|mg/dL|||||H
+NTE|1||Patient reports chest tightness during brisk walking and occasional breathlessness.
+NTE|2||Advised low-sodium diet, continue Atorvastatin 20mg and Telmisartan 40mg. Follow-up in 2 weeks.
+

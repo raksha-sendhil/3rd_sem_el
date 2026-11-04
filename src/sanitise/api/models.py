@@ -111,6 +111,20 @@ class DocumentView(BaseModel):
     record: SanitisedRecord
 
 
+class IngestRequest(BaseModel):
+    content_base64: str | None = None
+    text: str | None = None
+    filename: str | None = None
+    mime_type: str | None = None
+
+
+class IngestResponse(BaseModel):
+    doc_id: str
+    text: str
+    source_format: str
+    char_count: int
+
+
 class HealthResponse(BaseModel):
     status: Literal["ok", "degraded"]
     ollama_reachable: bool
