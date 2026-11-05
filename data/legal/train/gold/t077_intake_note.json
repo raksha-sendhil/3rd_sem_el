@@ -1,108 +1,120 @@
 {
-  "doc_id": "7ec3c65c077a652e",
-  "text": "Intake note (Commercial team, 17 April 2022). Our client Mary Bhatt is a 51-year-old mechanical engineer who lives at Plot 23, Dwarka, New Delhi 110004 and can be reached on 90674 20590 or mary.bhatt@example.com. The client's PAN ECWPB4337X.\nThe client consulted us about a cheque bounce matter against Varghese Textiles Pvt Ltd. A cheque for ₹34,80,000 issued by Varghese Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 815807527677 (IFSC UTIB0223322).\nThe matter was filed as CC/805/2022 before the Judicial Magistrate First Class Court at New Delhi on 25 June 2022.",
+  "doc_id": "fd81c1d534b2b47c",
+  "text": "Intake note - Commercial team\nDate: 10/01/2022\nClient: Mary Bhatt, a 51-year-old mechanical engineer from New Delhi.\nAddress: Plot 23, Dwarka, New Delhi 110004\nPhone: 90674 20590. Email: mary.bhatt@example.com. PAN ECWPB4337X.\nMatter: cheque bounce\nOpposing party: Varghese Textiles Pvt Ltd\nFacts: A cheque for Rs 34,80,000 issued by Varghese Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 815807527677 (IFSC UTIB0223322).\nThe matter was filed as CC/805/2022 before the Judicial Magistrate First Class Court at New Delhi on 25 June 2022.",
   "spans": [
     {
-      "text": "17 April 2022",
+      "text": "10/01/2022",
       "category": "DATE",
-      "start": 30,
-      "end": 43
+      "start": 36,
+      "end": 46
     },
     {
       "text": "Mary Bhatt",
       "category": "NAME",
-      "start": 57,
-      "end": 67
+      "start": 55,
+      "end": 65
     },
     {
       "text": "51-year-old",
       "category": "AGE",
-      "start": 73,
-      "end": 84
+      "start": 69,
+      "end": 80
     },
     {
       "text": "mechanical engineer",
       "category": "OCCUPATION",
-      "start": 85,
-      "end": 104
+      "start": 81,
+      "end": 100
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 115
     },
     {
       "text": "Plot 23, Dwarka, New Delhi 110004",
       "category": "ADDRESS",
-      "start": 118,
-      "end": 151
+      "start": 126,
+      "end": 159
     },
     {
       "text": "90674 20590",
       "category": "PHONE",
-      "start": 174,
-      "end": 185
+      "start": 167,
+      "end": 178
     },
     {
       "text": "mary.bhatt@example.com",
       "category": "EMAIL",
-      "start": 189,
-      "end": 211
+      "start": 187,
+      "end": 209
     },
     {
       "text": "ECWPB4337X",
       "category": "ID_NUMBER",
-      "start": 230,
-      "end": 240
+      "start": 215,
+      "end": 225
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 274,
-      "end": 287
+      "start": 235,
+      "end": 248
     },
     {
       "text": "Varghese Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 303,
-      "end": 328
+      "start": 265,
+      "end": 290
     },
     {
-      "text": "₹34,80,000",
+      "text": "Rs 34,80,000",
       "category": "MONEY",
-      "start": 343,
-      "end": 353
+      "start": 311,
+      "end": 323
     },
     {
       "text": "Varghese Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 364,
-      "end": 389
+      "start": 334,
+      "end": 359
     },
     {
       "text": "815807527677",
       "category": "FINANCIAL",
-      "start": 515,
-      "end": 527
+      "start": 485,
+      "end": 497
     },
     {
       "text": "UTIB0223322",
       "category": "FINANCIAL",
-      "start": 534,
-      "end": 545
+      "start": 504,
+      "end": 515
     },
     {
       "text": "CC/805/2022",
       "category": "CASE_NUMBER",
-      "start": 572,
-      "end": 583
+      "start": 542,
+      "end": 553
     },
     {
       "text": "Judicial Magistrate First Class Court at New Delhi",
       "category": "COURT",
-      "start": 595,
-      "end": 645
+      "start": 565,
+      "end": 615
     },
     {
       "text": "25 June 2022",
       "category": "DATE",
-      "start": 649,
-      "end": 661
+      "start": 619,
+      "end": 631
+    },
+    {
+      "text": "age (51) + occupation (mechanical engineer) + city (New Delhi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

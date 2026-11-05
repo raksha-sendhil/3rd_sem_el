@@ -1,6 +1,6 @@
 {
-  "doc_id": "8d5b5a7d7ce5d74c",
-  "text": "Subject: Your consumer complaint matter\n\nDear Ms. Bhatt,\n\nThank you for meeting us on 29 November 2023 about your dispute with Pai Realty. As we understand it, the builder keeps promising possession by email but never delivers. The matter is listed before the Warangal District Consumer Disputes Redressal Commission.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office. We will pursue the full claim of INR 83,40,000/-.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "doc_id": "87d2f7224b6918cd",
+  "text": "Subject: Your consumer complaint matter - CC/2625/2023\n\nDear Ms. Bhatt,\n\nThank you for meeting us on 11/08/2023 about your dispute with Pai Realty. As we understand it, the builder keeps promising possession by email but never delivers.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office. We will pursue the full claim of Rs 83,40,000.\n\nRegards,\nAdv. Rohit Wadhwa",
   "spans": [
     {
       "text": "consumer complaint",
@@ -9,40 +9,40 @@
       "end": 32
     },
     {
-      "text": "Bhatt",
-      "category": "NAME",
-      "start": 50,
-      "end": 55
+      "text": "CC/2625/2023",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 54
     },
     {
-      "text": "29 November 2023",
+      "text": "Bhatt",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "11/08/2023",
       "category": "DATE",
-      "start": 86,
-      "end": 102
+      "start": 101,
+      "end": 111
     },
     {
       "text": "Pai Realty",
       "category": "ORGANIZATION",
-      "start": 127,
-      "end": 137
+      "start": 136,
+      "end": 146
     },
     {
-      "text": "Warangal District Consumer Disputes Redressal Commission",
-      "category": "COURT",
-      "start": 260,
-      "end": 316
-    },
-    {
-      "text": "INR 83,40,000/-",
+      "text": "Rs 83,40,000",
       "category": "MONEY",
-      "start": 612,
-      "end": 627
+      "start": 531,
+      "end": 543
     },
     {
-      "text": "Mrinalini Saraf",
+      "text": "Rohit Wadhwa",
       "category": "NAME",
-      "start": 644,
-      "end": 659
+      "start": 560,
+      "end": 572
     }
   ],
   "annotator": "generator",

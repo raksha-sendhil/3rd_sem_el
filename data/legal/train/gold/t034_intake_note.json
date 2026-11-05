@@ -1,114 +1,102 @@
 {
-  "doc_id": "e79ac4fb73b7b6c0",
-  "text": "Intake note - Property team\nDate: 21 August 2019\nClient: Sunanda Malhotra, a 70-year-old chartered accountant from Mumbai.\nAddress: Plot 115, Powai, Mumbai 400011\nPhone: 06577304165. Email: sunanda.malhotra@example.in. PAN ATWPM3693A, Aadhaar 7964 8150 9459.\nMatter: consumer complaint\nOpposing party: M/s Ahuja Developers\nFacts: The consumer complaint against M/s Ahuja Developers concerns a flat bought for Rs 6,91,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 2412/2019 before the Mumbai District Consumer Disputes Redressal Commission on 11 September 2019.",
+  "doc_id": "0d8236d3a51888ed",
+  "text": "Intake note (Property team, 7 July 2019). Our client Sunanda Malhotra is a 70-year-old chartered accountant who lives at Plot 115, Powai, Mumbai 400011 and can be reached on 06577304165 or sunanda.malhotra@example.in. The client's PAN ATWPM3693A, Aadhaar 7964 8150 9459.\nThe client consulted us about a consumer complaint matter against M/s Ahuja Developers. The consumer complaint against Ahuja Developers concerns a flat bought for ₹6,91,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 2412/2019 before the Mumbai District Consumer Disputes Redressal Commission on 11 September 2019.",
   "spans": [
     {
-      "text": "21 August 2019",
+      "text": "7 July 2019",
       "category": "DATE",
-      "start": 34,
-      "end": 48
+      "start": 28,
+      "end": 39
     },
     {
       "text": "Sunanda Malhotra",
       "category": "NAME",
-      "start": 57,
-      "end": 73
+      "start": 53,
+      "end": 69
     },
     {
       "text": "70-year-old",
       "category": "AGE",
-      "start": 77,
-      "end": 88
+      "start": 75,
+      "end": 86
     },
     {
       "text": "chartered accountant",
       "category": "OCCUPATION",
-      "start": 89,
-      "end": 109
-    },
-    {
-      "text": "Mumbai",
-      "category": "LOCATION",
-      "start": 115,
-      "end": 121
+      "start": 87,
+      "end": 107
     },
     {
       "text": "Plot 115, Powai, Mumbai 400011",
       "category": "ADDRESS",
-      "start": 132,
-      "end": 162
+      "start": 121,
+      "end": 151
     },
     {
       "text": "06577304165",
       "category": "PHONE",
-      "start": 170,
-      "end": 181
+      "start": 174,
+      "end": 185
     },
     {
       "text": "sunanda.malhotra@example.in",
       "category": "EMAIL",
-      "start": 190,
-      "end": 217
+      "start": 189,
+      "end": 216
     },
     {
       "text": "ATWPM3693A",
       "category": "ID_NUMBER",
-      "start": 223,
-      "end": 233
+      "start": 235,
+      "end": 245
     },
     {
       "text": "7964 8150 9459",
       "category": "ID_NUMBER",
-      "start": 243,
-      "end": 257
+      "start": 255,
+      "end": 269
     },
     {
       "text": "consumer complaint",
       "category": "LEGAL_ISSUE",
-      "start": 267,
-      "end": 285
+      "start": 303,
+      "end": 321
     },
     {
       "text": "Ahuja Developers",
       "category": "ORGANIZATION",
-      "start": 306,
-      "end": 322
+      "start": 341,
+      "end": 357
     },
     {
       "text": "Ahuja Developers",
       "category": "ORGANIZATION",
-      "start": 365,
-      "end": 381
+      "start": 390,
+      "end": 406
     },
     {
-      "text": "Rs 6,91,00,000",
+      "text": "₹6,91,00,000",
       "category": "MONEY",
-      "start": 409,
-      "end": 423
+      "start": 434,
+      "end": 446
     },
     {
       "text": "C.C. No. 2412/2019",
       "category": "CASE_NUMBER",
-      "start": 489,
-      "end": 507
+      "start": 512,
+      "end": 530
     },
     {
       "text": "Mumbai District Consumer Disputes Redressal Commission",
       "category": "COURT",
-      "start": 519,
-      "end": 573
+      "start": 542,
+      "end": 596
     },
     {
       "text": "11 September 2019",
       "category": "DATE",
-      "start": 577,
-      "end": 594
-    },
-    {
-      "text": "age (70) + occupation (chartered accountant) + city (Mumbai) + issue (consumer complaint)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 600,
+      "end": 617
     }
   ],
   "annotator": "generator",

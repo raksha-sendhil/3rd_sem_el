@@ -1,6 +1,6 @@
 {
-  "doc_id": "0857b850787f2590",
-  "text": "Subject: Your consumer complaint matter - C.C. No. 2701/2020\n\nDear Ms. Rao,\n\nThank you for meeting us on 3 July 2020 about your dispute with Saxena Developers. As we understand it, possession of the flat is long overdue. The matter is listed before the Hyderabad District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "doc_id": "420f5b76b2141e5e",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2701/2020\n\nDear Ms. Rao,\n\nThank you for meeting us on 07/05/2020 about your dispute with Saxena Developers. As we understand it, possession of the flat is long overdue. The matter is listed before the Hyderabad District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
   "spans": [
     {
       "text": "consumer complaint",
@@ -21,28 +21,28 @@
       "end": 74
     },
     {
-      "text": "3 July 2020",
+      "text": "07/05/2020",
       "category": "DATE",
       "start": 105,
-      "end": 116
+      "end": 115
     },
     {
       "text": "Saxena Developers",
       "category": "ORGANIZATION",
-      "start": 141,
-      "end": 158
+      "start": 140,
+      "end": 157
     },
     {
       "text": "Hyderabad District Consumer Disputes Redressal Commission",
       "category": "COURT",
-      "start": 253,
-      "end": 310
+      "start": 252,
+      "end": 309
     },
     {
-      "text": "Mrinalini Saraf",
+      "text": "Rohit Wadhwa",
       "category": "NAME",
-      "start": 542,
-      "end": 557
+      "start": 541,
+      "end": 553
     }
   ],
   "annotator": "generator",

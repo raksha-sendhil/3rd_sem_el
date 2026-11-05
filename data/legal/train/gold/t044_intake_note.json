@@ -1,120 +1,108 @@
 {
-  "doc_id": "cccc3106ec78c449",
-  "text": "Intake note - Commercial team\nDate: 08/08/2021\nClient: Venkat Patel, a 47-year-old taxi driver from Hubballi.\nAddress: Flat 13C, Vidyanagar, Hubballi 580006\nPhone: +91 79016 63203. Email: venkat.patel16@example.com. PAN CBHPP3215D, Aadhaar 7014 0823 8523.\nMatter: breach of contract (Project Heron)\nOpposing party: Banyan Infotech Pvt Ltd\nFacts: The breach of contract claim against M/s Banyan Infotech Pvt Ltd is for Rs 14,66,00,000; the claim must be filed as a commercial suit.\nThe matter was filed as CS(COMM) 2463/2022 before the Hubballi Commercial Court on 27 January 2022.",
+  "doc_id": "00f1cac2d84018d9",
+  "text": "Intake note (Commercial team, 4 January 2022). Our client Venkat Patel is a 47-year-old taxi driver who lives at Flat 13C, Vidyanagar, Hubballi 580006 and can be reached on +91 79016 63203 or venkat.patel16@example.com. The client's PAN CBHPP3215D, Aadhaar 7014 0823 8523.\nThe client consulted us about a breach of contract matter (Project Heron) against Banyan Infotech Pvt Ltd. The breach of contract claim against Banyan Infotech Pvt Ltd is for Rs. 14,66,00,000; the claim must be filed as a commercial suit.\nThe matter was filed as CS(COMM) 2463/2022 before the Hubballi Commercial Court on 27 January 2022.",
   "spans": [
     {
-      "text": "08/08/2021",
+      "text": "4 January 2022",
       "category": "DATE",
-      "start": 36,
-      "end": 46
+      "start": 30,
+      "end": 44
     },
     {
       "text": "Venkat Patel",
       "category": "NAME",
-      "start": 55,
-      "end": 67
+      "start": 58,
+      "end": 70
     },
     {
       "text": "47-year-old",
       "category": "AGE",
-      "start": 71,
-      "end": 82
+      "start": 76,
+      "end": 87
     },
     {
       "text": "taxi driver",
       "category": "OCCUPATION",
-      "start": 83,
-      "end": 94
-    },
-    {
-      "text": "Hubballi",
-      "category": "LOCATION",
-      "start": 100,
-      "end": 108
+      "start": 88,
+      "end": 99
     },
     {
       "text": "Flat 13C, Vidyanagar, Hubballi 580006",
       "category": "ADDRESS",
-      "start": 119,
-      "end": 156
+      "start": 113,
+      "end": 150
     },
     {
       "text": "+91 79016 63203",
       "category": "PHONE",
-      "start": 164,
-      "end": 179
+      "start": 173,
+      "end": 188
     },
     {
       "text": "venkat.patel16@example.com",
       "category": "EMAIL",
-      "start": 188,
-      "end": 214
+      "start": 192,
+      "end": 218
     },
     {
       "text": "CBHPP3215D",
       "category": "ID_NUMBER",
-      "start": 220,
-      "end": 230
+      "start": 237,
+      "end": 247
     },
     {
       "text": "7014 0823 8523",
       "category": "ID_NUMBER",
-      "start": 240,
-      "end": 254
+      "start": 257,
+      "end": 271
     },
     {
       "text": "breach of contract",
       "category": "LEGAL_ISSUE",
-      "start": 264,
-      "end": 282
+      "start": 305,
+      "end": 323
     },
     {
       "text": "Project Heron",
       "category": "MATTER_CODENAME",
-      "start": 284,
-      "end": 297
+      "start": 332,
+      "end": 345
     },
     {
       "text": "Banyan Infotech Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 315,
-      "end": 338
+      "start": 355,
+      "end": 378
     },
     {
       "text": "Banyan Infotech Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 387,
-      "end": 410
+      "start": 417,
+      "end": 440
     },
     {
-      "text": "Rs 14,66,00,000",
+      "text": "Rs. 14,66,00,000",
       "category": "MONEY",
-      "start": 418,
-      "end": 433
+      "start": 448,
+      "end": 464
     },
     {
       "text": "CS(COMM) 2463/2022",
       "category": "CASE_NUMBER",
-      "start": 505,
-      "end": 523
+      "start": 536,
+      "end": 554
     },
     {
       "text": "Hubballi Commercial Court",
       "category": "COURT",
-      "start": 535,
-      "end": 560
+      "start": 566,
+      "end": 591
     },
     {
       "text": "27 January 2022",
       "category": "DATE",
-      "start": 564,
-      "end": 579
-    },
-    {
-      "text": "age (47) + occupation (taxi driver) + city (Hubballi) + issue (breach of contract)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 595,
+      "end": 610
     }
   ],
   "annotator": "generator",

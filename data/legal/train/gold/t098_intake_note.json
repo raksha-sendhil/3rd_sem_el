@@ -1,102 +1,102 @@
 {
-  "doc_id": "6af7a02f446281e0",
-  "text": "Intake note - Criminal team\nDate: 19 April 2019\nClient: Manoj Patil, a 59-year-old architect from Ahmedabad.\nAddress: Bungalow 31, Navrangpura, Ahmedabad 380005\nPhone: 81656 09240. Email: manoj.patil@example.in. PAN EHRPP8255H.\nMatter: anticipatory bail\nOpposing party: Simran Menon\nFacts: The anticipatory bail matter arises from a complaint by Simran Menon about 25.4 lakh rupees; the complaint was filed during a matrimonial dispute.\nThe matter was filed as Anticipatory Bail Application No. 1380/2019 before the Ahmedabad Sessions Court on 20/10/2019.",
+  "doc_id": "062bacec6accb8e8",
+  "text": "Intake note - Criminal team\nDate: 24 July 2019\nClient: Manoj Patil, a 59-year-old architect from Ahmedabad.\nAddress: Bungalow 31, Navrangpura, Ahmedabad 380005\nPhone: 81656 09240. Email: manoj.patil@example.in. PAN EHRPP8255H.\nMatter: anticipatory bail\nOpposing party: Simran Menon\nFacts: The anticipatory bail matter arises from a complaint by Simran Menon about ₹25,40,000; the complaint was filed during a matrimonial dispute.\nThe matter was filed as Anticipatory Bail Application No. 1380/2019 before the Ahmedabad Sessions Court on 20 October 2019.",
   "spans": [
     {
-      "text": "19 April 2019",
+      "text": "24 July 2019",
       "category": "DATE",
       "start": 34,
-      "end": 47
+      "end": 46
     },
     {
       "text": "Manoj Patil",
       "category": "NAME",
-      "start": 56,
-      "end": 67
+      "start": 55,
+      "end": 66
     },
     {
       "text": "59-year-old",
       "category": "AGE",
-      "start": 71,
-      "end": 82
+      "start": 70,
+      "end": 81
     },
     {
       "text": "architect",
       "category": "OCCUPATION",
-      "start": 83,
-      "end": 92
+      "start": 82,
+      "end": 91
     },
     {
       "text": "Ahmedabad",
       "category": "LOCATION",
-      "start": 98,
-      "end": 107
+      "start": 97,
+      "end": 106
     },
     {
       "text": "Bungalow 31, Navrangpura, Ahmedabad 380005",
       "category": "ADDRESS",
-      "start": 118,
-      "end": 160
+      "start": 117,
+      "end": 159
     },
     {
       "text": "81656 09240",
       "category": "PHONE",
-      "start": 168,
-      "end": 179
+      "start": 167,
+      "end": 178
     },
     {
       "text": "manoj.patil@example.in",
       "category": "EMAIL",
-      "start": 188,
-      "end": 210
+      "start": 187,
+      "end": 209
     },
     {
       "text": "EHRPP8255H",
       "category": "ID_NUMBER",
-      "start": 216,
-      "end": 226
+      "start": 215,
+      "end": 225
     },
     {
       "text": "anticipatory bail",
       "category": "LEGAL_ISSUE",
-      "start": 236,
-      "end": 253
+      "start": 235,
+      "end": 252
     },
     {
       "text": "Simran Menon",
       "category": "NAME",
-      "start": 270,
-      "end": 282
+      "start": 269,
+      "end": 281
     },
     {
       "text": "Simran Menon",
       "category": "NAME",
-      "start": 346,
-      "end": 358
+      "start": 345,
+      "end": 357
     },
     {
-      "text": "25.4 lakh rupees",
+      "text": "₹25,40,000",
       "category": "MONEY",
-      "start": 365,
-      "end": 381
+      "start": 364,
+      "end": 374
     },
     {
       "text": "Anticipatory Bail Application No. 1380/2019",
       "category": "CASE_NUMBER",
-      "start": 461,
-      "end": 504
+      "start": 454,
+      "end": 497
     },
     {
       "text": "Ahmedabad Sessions Court",
       "category": "COURT",
-      "start": 516,
-      "end": 540
+      "start": 509,
+      "end": 533
     },
     {
-      "text": "20/10/2019",
+      "text": "20 October 2019",
       "category": "DATE",
-      "start": 544,
-      "end": 554
+      "start": 537,
+      "end": 552
     },
     {
       "text": "age (59) + occupation (architect) + city (Ahmedabad) + issue (anticipatory bail)",

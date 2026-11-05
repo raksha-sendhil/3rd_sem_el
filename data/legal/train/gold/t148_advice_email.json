@@ -1,6 +1,6 @@
 {
-  "doc_id": "8a4fa457fa3eab70",
-  "text": "Subject: Your cheque bounce matter - S.C.C. No. 1181/2022\n\nDear Ms. Varghese,\n\nThank you for meeting us on 3 September 2022 about your dispute with Shetty Traders. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "95f478113a28b096",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Varghese,\n\nThank you for meeting us on 14 April 2023 about your dispute with M/s Shetty Traders. As we understand it, the cheque was returned unpaid for insufficient funds. The matter is listed before the Judicial Magistrate First Class Court at Nashik.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of Rs 9,40,000.\n\nRegards,\nAdv. Mrinalini Saraf",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,34 +9,40 @@
       "end": 27
     },
     {
-      "text": "S.C.C. No. 1181/2022",
-      "category": "CASE_NUMBER",
-      "start": 37,
-      "end": 57
-    },
-    {
       "text": "Varghese",
       "category": "NAME",
-      "start": 68,
-      "end": 76
+      "start": 45,
+      "end": 53
     },
     {
-      "text": "3 September 2022",
+      "text": "14 April 2023",
       "category": "DATE",
-      "start": 107,
-      "end": 123
+      "start": 84,
+      "end": 97
     },
     {
       "text": "Shetty Traders",
       "category": "ORGANIZATION",
-      "start": 148,
-      "end": 162
+      "start": 126,
+      "end": 140
     },
     {
-      "text": "Aditi Ranganathan",
+      "text": "Judicial Magistrate First Class Court at Nashik",
+      "category": "COURT",
+      "start": 250,
+      "end": 297
+    },
+    {
+      "text": "Rs 9,40,000",
+      "category": "MONEY",
+      "start": 594,
+      "end": 605
+    },
+    {
+      "text": "Mrinalini Saraf",
       "category": "NAME",
-      "start": 517,
-      "end": 534
+      "start": 622,
+      "end": 637
     }
   ],
   "annotator": "generator",

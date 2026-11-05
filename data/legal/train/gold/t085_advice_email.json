@@ -1,6 +1,6 @@
 {
-  "doc_id": "c9c42de6d9b8cef6",
-  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Hegde,\n\nThank you for meeting us on 30 December 2025 about your dispute with M/s Dutta Developers. As we understand it, the flat was handed over with serious construction defects.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office. We will pursue the full claim of ₹3.5 crore.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "ef59b3378b1849f8",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Hegde,\n\nThank you for meeting us on 20 January 2026 about your dispute with Dutta Developers. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Kochi District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office. We will pursue the full claim of ₹3,46,00,000.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "consumer complaint",
@@ -15,28 +15,34 @@
       "end": 55
     },
     {
-      "text": "30 December 2025",
+      "text": "20 January 2026",
       "category": "DATE",
       "start": 86,
-      "end": 102
+      "end": 101
     },
     {
       "text": "Dutta Developers",
       "category": "ORGANIZATION",
-      "start": 131,
-      "end": 147
+      "start": 126,
+      "end": 142
     },
     {
-      "text": "₹3.5 crore",
+      "text": "Kochi District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 257,
+      "end": 310
+    },
+    {
+      "text": "₹3,46,00,000",
       "category": "MONEY",
-      "start": 463,
-      "end": 473
+      "start": 545,
+      "end": 557
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 490,
-      "end": 502
+      "start": 574,
+      "end": 589
     }
   ],
   "annotator": "generator",

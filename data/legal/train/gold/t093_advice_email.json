@@ -1,6 +1,6 @@
 {
-  "doc_id": "31e2b93b7da1e18c",
-  "text": "Subject: Your land dispute matter - O.S. No. 2996/2019\n\nDear Ms. Khan,\n\nThank you for meeting us on 3 November 2019 about your dispute with Sameer Bhatt. As we understand it, the neighbour has encroached on the boundary of the plot.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of Rs. 2,34,00,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "875b6e305e0e7b8b",
+  "text": "Subject: Your land dispute matter - O.S. No. 2996/2019\n\nDear Ms. Khan,\n\nThank you for meeting us on 14 January 2020 about your dispute with Sameer Bhatt. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Nagpur District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "land dispute",
@@ -21,7 +21,7 @@
       "end": 69
     },
     {
-      "text": "3 November 2019",
+      "text": "14 January 2020",
       "category": "DATE",
       "start": 100,
       "end": 115
@@ -33,16 +33,16 @@
       "end": 152
     },
     {
-      "text": "Rs. 2,34,00,000",
-      "category": "MONEY",
-      "start": 438,
-      "end": 453
+      "text": "Nagpur District Court",
+      "category": "COURT",
+      "start": 265,
+      "end": 286
     },
     {
-      "text": "Aditi Ranganathan",
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 470,
-      "end": 487
+      "start": 475,
+      "end": 494
     }
   ],
   "annotator": "generator",

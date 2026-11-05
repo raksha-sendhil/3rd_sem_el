@@ -1,6 +1,6 @@
 {
-  "doc_id": "72818d5a5f7d2bbe",
-  "text": "Subject: Your land dispute matter - R.C.S. No. 73/2019\n\nDear Ms. Reddy,\n\nThank you for meeting us on 26 October 2019 about your dispute with Varun Gaikwad. As we understand it, construction has started on the disputed plot. The matter is listed before the Thane District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "22a8c0c2b320ed08",
+  "text": "Subject: Your land dispute matter\n\nDear Ms. Reddy,\n\nThank you for meeting us on 14 July 2019 about your dispute with Varun Gaikwad. As we understand it, construction has started on the disputed plot. The matter is listed before the Thane District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office. We will pursue the full claim of Rs 1,64,00,000.\n\nRegards,\nAdv. Zubin Contractor",
   "spans": [
     {
       "text": "land dispute",
@@ -9,40 +9,40 @@
       "end": 26
     },
     {
-      "text": "R.C.S. No. 73/2019",
-      "category": "CASE_NUMBER",
-      "start": 36,
-      "end": 54
-    },
-    {
       "text": "Reddy",
       "category": "NAME",
-      "start": 65,
-      "end": 70
+      "start": 44,
+      "end": 49
     },
     {
-      "text": "26 October 2019",
+      "text": "14 July 2019",
       "category": "DATE",
-      "start": 101,
-      "end": 116
+      "start": 80,
+      "end": 92
     },
     {
       "text": "Varun Gaikwad",
       "category": "NAME",
-      "start": 141,
-      "end": 154
+      "start": 117,
+      "end": 130
     },
     {
       "text": "Thane District Court",
       "category": "COURT",
-      "start": 256,
-      "end": 276
+      "start": 232,
+      "end": 252
     },
     {
-      "text": "Aditi Ranganathan",
+      "text": "Rs 1,64,00,000",
+      "category": "MONEY",
+      "start": 467,
+      "end": 481
+    },
+    {
+      "text": "Zubin Contractor",
       "category": "NAME",
-      "start": 473,
-      "end": 490
+      "start": 498,
+      "end": 514
     }
   ],
   "annotator": "generator",

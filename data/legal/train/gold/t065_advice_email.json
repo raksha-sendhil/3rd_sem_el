@@ -1,6 +1,6 @@
 {
-  "doc_id": "c392732a9f34c812",
-  "text": "Subject: Your consumer complaint matter - C.C. No. 1811/2019\n\nDear Mr. Iyer,\n\nThank you for meeting us on 16 June 2020 about your dispute with M/s Deccan Developers. As we understand it, possession of the flat is long overdue.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office. We will pursue the full claim of ₹5.9 crore.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "e0ad15f07fd768b5",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Iyer,\n\nThank you for meeting us on 4 January 2020 about your dispute with Deccan Developers. As we understand it, possession of the flat is long overdue.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office. We will pursue the full claim of Rs. 5,89,00,000.\n\nRegards,\nAdv. Aditi Ranganathan",
   "spans": [
     {
       "text": "consumer complaint",
@@ -9,40 +9,34 @@
       "end": 32
     },
     {
-      "text": "C.C. No. 1811/2019",
-      "category": "CASE_NUMBER",
-      "start": 42,
-      "end": 60
-    },
-    {
       "text": "Iyer",
       "category": "NAME",
-      "start": 71,
-      "end": 75
+      "start": 50,
+      "end": 54
     },
     {
-      "text": "16 June 2020",
+      "text": "4 January 2020",
       "category": "DATE",
-      "start": 106,
-      "end": 118
+      "start": 85,
+      "end": 99
     },
     {
       "text": "Deccan Developers",
       "category": "ORGANIZATION",
-      "start": 147,
-      "end": 164
+      "start": 124,
+      "end": 141
     },
     {
-      "text": "₹5.9 crore",
+      "text": "Rs. 5,89,00,000",
       "category": "MONEY",
-      "start": 475,
-      "end": 485
+      "start": 452,
+      "end": 467
     },
     {
       "text": "Aditi Ranganathan",
       "category": "NAME",
-      "start": 502,
-      "end": 519
+      "start": 484,
+      "end": 501
     }
   ],
   "annotator": "generator",

@@ -1,0 +1,80 @@
+{
+  "doc_id": "d89037d1c51b7712",
+  "text": "Subject: Need help with a anticipatory bail case\n\nHello, my name is Manoj Patil. I am a 59-year-old architect living in Ahmedabad. Simran Menon has filed a police complaint against me over 25.4 lakh rupees, and the complaint was filed during a matrimonial dispute. My case number is Anticipatory Bail Application No. 1380/2019 in the Ahmedabad Sessions Court. Can your firm advise me on what to do next? You can call me on 81656 09240 or email manoj.patil@example.in.",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 43
+    },
+    {
+      "text": "Manoj Patil",
+      "category": "NAME",
+      "start": 68,
+      "end": 79
+    },
+    {
+      "text": "59-year-old",
+      "category": "AGE",
+      "start": 88,
+      "end": 99
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 100,
+      "end": 109
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 120,
+      "end": 129
+    },
+    {
+      "text": "Simran Menon",
+      "category": "NAME",
+      "start": 131,
+      "end": 143
+    },
+    {
+      "text": "25.4 lakh rupees",
+      "category": "MONEY",
+      "start": 189,
+      "end": 205
+    },
+    {
+      "text": "Anticipatory Bail Application No. 1380/2019",
+      "category": "CASE_NUMBER",
+      "start": 283,
+      "end": 326
+    },
+    {
+      "text": "Ahmedabad Sessions Court",
+      "category": "COURT",
+      "start": 334,
+      "end": 358
+    },
+    {
+      "text": "81656 09240",
+      "category": "PHONE",
+      "start": 423,
+      "end": 434
+    },
+    {
+      "text": "manoj.patil@example.in",
+      "category": "EMAIL",
+      "start": 444,
+      "end": 466
+    },
+    {
+      "text": "age (59) + occupation (architect) + city (Ahmedabad) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,7 +1,7 @@
 {
-  "doc_id": "c888de3e69660cf9",
+  "doc_id": "1e878b243574d9d7",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t127",
-  "text": "Intake note (Property team, 8 August 2021). Our client Thomas Mehra is a 71-year-old hardware dealer who lives at Plot 9, Rajarampuri, Kolhapur 416028 and can be reached on +91 77121 50850 or thomas.mehra@example.com. The client's PAN VCZPM2752H.\nThe client consulted us about a land dispute matter against Ananya Goyal. The land dispute with Ananya Goyal concerns agricultural land valued at ₹3.3 crore; construction has started on the disputed plot.\nThe matter was filed as R.C.S. No. 2873/2022 before the Kolhapur District Court on 18 January 2022."
+  "text": "Intake note - Property team\nDate: 22 October 2021\nClient: Thomas Mehra, a 71-year-old hardware dealer from Kolhapur.\nAddress: Plot 9, Rajarampuri, Kolhapur 416028\nPhone: +91 77121 50850. Email: thomas.mehra@example.com. PAN VCZPM2752H.\nMatter: land dispute\nOpposing party: Ananya Goyal\nFacts: The land dispute with Ananya Goyal concerns agricultural land valued at INR 3,33,00,000/-; construction has started on the disputed plot.\nThe matter was filed as R.C.S. No. 2873/2022 before the Kolhapur District Court on 18 January 2022."
 }

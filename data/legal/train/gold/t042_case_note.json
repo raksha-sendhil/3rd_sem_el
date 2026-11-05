@@ -1,0 +1,68 @@
+{
+  "doc_id": "5b9c4a90b4da87c0",
+  "text": "Case note: S.C.C. No. 779/2025\nClient: Vivek Kulkarni (civil engineer, Lucknow)\nOpposing party: Meera Bansal\nCourt: Judicial Magistrate First Class Court at Lucknow\nFiled on: 24/08/2025\nClaim amount: 5.8 lakh rupees\nIssue: cheque bounce. The drawer stopped the cheque with a stop-payment instruction.\nAdvice given: Argue that a stop-payment instruction does not protect the drawer when the debt is admitted.\nOutcome: The drawer's application to discharge the complaint was rejected.\nRecommended next step: Press for an early date for cross-examination.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 779/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Vivek Kulkarni",
+      "category": "NAME",
+      "start": 39,
+      "end": 53
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 69
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 71,
+      "end": 78
+    },
+    {
+      "text": "Meera Bansal",
+      "category": "NAME",
+      "start": 96,
+      "end": 108
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Lucknow",
+      "category": "COURT",
+      "start": 116,
+      "end": 164
+    },
+    {
+      "text": "24/08/2025",
+      "category": "DATE",
+      "start": 175,
+      "end": 185
+    },
+    {
+      "text": "5.8 lakh rupees",
+      "category": "MONEY",
+      "start": 200,
+      "end": 215
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 223,
+      "end": 236
+    },
+    {
+      "text": "occupation (civil engineer) + city (Lucknow) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

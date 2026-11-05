@@ -1,0 +1,80 @@
+{
+  "doc_id": "b17d6cf9019922ae",
+  "text": "Subject: Need help with a cross-border insolvency case\n\nHello, my name is Swati Desai. I am a 48-year-old cardiologist living in Nashik. Our company is owed Rs 81,36,00,000 by Goyal Holdings Ltd, which is insolvent here and abroad, and the foreign administrator wants control of the assets in this country. My case number is C.P.(IB) No. 2033/2023 in the NCLT Mumbai. Can your firm advise me on what to do next? You can call me on 08274055243 or email swati.desai@example.in.",
+  "spans": [
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 49
+    },
+    {
+      "text": "Swati Desai",
+      "category": "NAME",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "48-year-old",
+      "category": "AGE",
+      "start": 94,
+      "end": 105
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 106,
+      "end": 118
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 129,
+      "end": 135
+    },
+    {
+      "text": "Rs 81,36,00,000",
+      "category": "MONEY",
+      "start": 157,
+      "end": 172
+    },
+    {
+      "text": "Goyal Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 176,
+      "end": 194
+    },
+    {
+      "text": "C.P.(IB) No. 2033/2023",
+      "category": "CASE_NUMBER",
+      "start": 325,
+      "end": 347
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 355,
+      "end": 366
+    },
+    {
+      "text": "08274055243",
+      "category": "PHONE",
+      "start": 431,
+      "end": 442
+    },
+    {
+      "text": "swati.desai@example.in",
+      "category": "EMAIL",
+      "start": 452,
+      "end": 474
+    },
+    {
+      "text": "age (48) + occupation (cardiologist) + city (Nashik) + issue (cross-border insolvency)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

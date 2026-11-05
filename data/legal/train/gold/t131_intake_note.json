@@ -1,108 +1,108 @@
 {
-  "doc_id": "8c6e2633f818dc1b",
-  "text": "Intake note - Commercial team\nDate: 25/05/2019\nClient: Madhuri Goyal, a 60-year-old taxi driver from Pune.\nAddress: Plot 76, Baner, Pune 411004\nPhone: 98110 70783. Email: madhuri.goyal8@example.in. PAN UWEPG2794F, Aadhaar 7031 3812 5289.\nMatter: cheque bounce\nOpposing party: Joseph More\nFacts: A cheque for ₹3,45,000 issued by Joseph More bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as CC/2462/2019 before the Judicial Magistrate First Class Court at Pune on 21/07/2019.",
+  "doc_id": "b472c669e4da26af",
+  "text": "Intake note - Commercial team\nDate: 25 February 2019\nClient: Madhuri Goyal, a 60-year-old taxi driver from Pune.\nAddress: Plot 76, Baner, Pune 411004\nPhone: 98110 70783. Email: madhuri.goyal8@example.in. PAN UWEPG2794F, Aadhaar 7031 3812 5289.\nMatter: cheque bounce\nOpposing party: Joseph More\nFacts: A cheque for INR 3,45,000/- issued by Joseph More bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as CC/2462/2019 before the Judicial Magistrate First Class Court at Pune on 21 July 2019.",
   "spans": [
     {
-      "text": "25/05/2019",
+      "text": "25 February 2019",
       "category": "DATE",
       "start": 36,
-      "end": 46
+      "end": 52
     },
     {
       "text": "Madhuri Goyal",
       "category": "NAME",
-      "start": 55,
-      "end": 68
+      "start": 61,
+      "end": 74
     },
     {
       "text": "60-year-old",
       "category": "AGE",
-      "start": 72,
-      "end": 83
+      "start": 78,
+      "end": 89
     },
     {
       "text": "taxi driver",
       "category": "OCCUPATION",
-      "start": 84,
-      "end": 95
+      "start": 90,
+      "end": 101
     },
     {
       "text": "Pune",
       "category": "LOCATION",
-      "start": 101,
-      "end": 105
+      "start": 107,
+      "end": 111
     },
     {
       "text": "Plot 76, Baner, Pune 411004",
       "category": "ADDRESS",
-      "start": 116,
-      "end": 143
+      "start": 122,
+      "end": 149
     },
     {
       "text": "98110 70783",
       "category": "PHONE",
-      "start": 151,
-      "end": 162
+      "start": 157,
+      "end": 168
     },
     {
       "text": "madhuri.goyal8@example.in",
       "category": "EMAIL",
-      "start": 171,
-      "end": 196
+      "start": 177,
+      "end": 202
     },
     {
       "text": "UWEPG2794F",
       "category": "ID_NUMBER",
-      "start": 202,
-      "end": 212
+      "start": 208,
+      "end": 218
     },
     {
       "text": "7031 3812 5289",
       "category": "ID_NUMBER",
-      "start": 222,
-      "end": 236
+      "start": 228,
+      "end": 242
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 246,
-      "end": 259
+      "start": 252,
+      "end": 265
     },
     {
       "text": "Joseph More",
       "category": "NAME",
-      "start": 276,
-      "end": 287
+      "start": 282,
+      "end": 293
     },
     {
-      "text": "₹3,45,000",
+      "text": "INR 3,45,000/-",
       "category": "MONEY",
-      "start": 308,
-      "end": 317
+      "start": 314,
+      "end": 328
     },
     {
       "text": "Joseph More",
       "category": "NAME",
-      "start": 328,
-      "end": 339
+      "start": 339,
+      "end": 350
     },
     {
       "text": "CC/2462/2019",
       "category": "CASE_NUMBER",
-      "start": 437,
-      "end": 449
+      "start": 448,
+      "end": 460
     },
     {
       "text": "Judicial Magistrate First Class Court at Pune",
       "category": "COURT",
-      "start": 461,
-      "end": 506
+      "start": 472,
+      "end": 517
     },
     {
-      "text": "21/07/2019",
+      "text": "21 July 2019",
       "category": "DATE",
-      "start": 510,
-      "end": 520
+      "start": 521,
+      "end": 533
     },
     {
       "text": "age (60) + occupation (taxi driver) + city (Pune) + issue (cheque bounce)",

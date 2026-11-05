@@ -1,0 +1,7 @@
+{
+  "doc_id": "aba0d4cc46c039a9",
+  "source": "synthetic-legal-train",
+  "template": "intake_note",
+  "person_id": "t132",
+  "text": "Intake note - Commercial team\nDate: 15/04/2019\nClient: Swati Naidu, a 29-year-old journalist from Jaipur.\nAddress: House No. 147, Vaishali Nagar, Jaipur 302046\nPhone: +91 76734 41637. Email: swati.naidu47@example.in. PAN GCTPN9637W.\nMatter: cheque bounce\nOpposing party: Vindhya Enterprises\nFacts: A cheque for INR 21,60,000/- issued by M/s Vindhya Enterprises bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 566415247128 (IFSC SBIN0419025).\nThe matter was filed as CC/2899/2019 before the Judicial Magistrate First Class Court at Jaipur on 29 September 2019."
+}

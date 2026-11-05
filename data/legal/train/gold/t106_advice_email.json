@@ -1,6 +1,6 @@
 {
-  "doc_id": "209cdba5fb8d8691",
-  "text": "Subject: Your anticipatory bail matter - Anticipatory Bail Application No. 955/2019\n\nDear Ms. Rathore,\n\nThank you for meeting us on 21/12/2019 about your dispute with Abhishek Swamy. As we understand it, the complaint alleges negligence during treatment. The matter is listed before the Vadodara Sessions Court.\n\nOur advice is to rely on the expert committee opinion that there was no gross negligence. Please collect the treatment records and the expert committee opinion and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "doc_id": "e2a1466b9f8adf06",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Ms. Rathore,\n\nThank you for meeting us on 24 July 2019 about your dispute with Abhishek Swamy. As we understand it, the complaint alleges negligence during treatment.\n\nOur advice is to rely on the expert committee opinion that there was no gross negligence. Please collect the treatment records and the expert committee opinion and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "anticipatory bail",
@@ -9,40 +9,28 @@
       "end": 31
     },
     {
-      "text": "Anticipatory Bail Application No. 955/2019",
-      "category": "CASE_NUMBER",
-      "start": 41,
-      "end": 83
-    },
-    {
       "text": "Rathore",
       "category": "NAME",
-      "start": 94,
-      "end": 101
+      "start": 49,
+      "end": 56
     },
     {
-      "text": "21/12/2019",
+      "text": "24 July 2019",
       "category": "DATE",
-      "start": 132,
-      "end": 142
+      "start": 87,
+      "end": 99
     },
     {
       "text": "Abhishek Swamy",
       "category": "NAME",
-      "start": 167,
-      "end": 181
-    },
-    {
-      "text": "Vadodara Sessions Court",
-      "category": "COURT",
-      "start": 287,
-      "end": 310
+      "start": 124,
+      "end": 138
     },
     {
       "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 520,
-      "end": 539
+      "start": 420,
+      "end": 439
     }
   ],
   "annotator": "generator",

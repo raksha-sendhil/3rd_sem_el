@@ -1,108 +1,120 @@
 {
-  "doc_id": "1689c3b41fbc1371",
-  "text": "Intake note (Commercial team, 11 September 2021). Our client Vandana Fernandes is a 39-year-old paediatrician who lives at Bungalow 14, KK Nagar, Madurai 625047 and can be reached on +91 92335 88184 or vandana.fernandes69@example.in. The client's PAN SAMPF5334J.\nThe client consulted us about a cheque bounce matter against Leena Mehra. A cheque for ₹33,50,000 issued by Leena Mehra bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 121590068516 (IFSC HDFC0350068).\nThe matter was filed as CC/1352/2021 before the Judicial Magistrate First Class Court at Madurai on 31/10/2021.",
+  "doc_id": "571f876f210041a4",
+  "text": "Intake note - Commercial team\nDate: 2 October 2021\nClient: Vandana Fernandes, a 39-year-old paediatrician from Madurai.\nAddress: Bungalow 14, KK Nagar, Madurai 625047\nPhone: +91 92335 88184. Email: vandana.fernandes69@example.in. PAN SAMPF5334J.\nMatter: cheque bounce\nOpposing party: Leena Mehra\nFacts: A cheque for INR 33,50,000/- issued by Leena Mehra bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 121590068516 (IFSC HDFC0350068).\nThe matter was filed as CC/1352/2021 before the Judicial Magistrate First Class Court at Madurai on 31 October 2021.",
   "spans": [
     {
-      "text": "11 September 2021",
+      "text": "2 October 2021",
       "category": "DATE",
-      "start": 30,
-      "end": 47
+      "start": 36,
+      "end": 50
     },
     {
       "text": "Vandana Fernandes",
       "category": "NAME",
-      "start": 61,
-      "end": 78
+      "start": 59,
+      "end": 76
     },
     {
       "text": "39-year-old",
       "category": "AGE",
-      "start": 84,
-      "end": 95
+      "start": 80,
+      "end": 91
     },
     {
       "text": "paediatrician",
       "category": "OCCUPATION",
-      "start": 96,
-      "end": 109
+      "start": 92,
+      "end": 105
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 111,
+      "end": 118
     },
     {
       "text": "Bungalow 14, KK Nagar, Madurai 625047",
       "category": "ADDRESS",
-      "start": 123,
-      "end": 160
+      "start": 129,
+      "end": 166
     },
     {
       "text": "+91 92335 88184",
       "category": "PHONE",
-      "start": 183,
-      "end": 198
+      "start": 174,
+      "end": 189
     },
     {
       "text": "vandana.fernandes69@example.in",
       "category": "EMAIL",
-      "start": 202,
-      "end": 232
+      "start": 198,
+      "end": 228
     },
     {
       "text": "SAMPF5334J",
       "category": "ID_NUMBER",
-      "start": 251,
-      "end": 261
+      "start": 234,
+      "end": 244
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 295,
-      "end": 308
+      "start": 254,
+      "end": 267
     },
     {
       "text": "Leena Mehra",
       "category": "NAME",
-      "start": 324,
-      "end": 335
+      "start": 284,
+      "end": 295
     },
     {
-      "text": "₹33,50,000",
+      "text": "INR 33,50,000/-",
       "category": "MONEY",
-      "start": 350,
-      "end": 360
+      "start": 316,
+      "end": 331
     },
     {
       "text": "Leena Mehra",
       "category": "NAME",
-      "start": 371,
-      "end": 382
+      "start": 342,
+      "end": 353
     },
     {
       "text": "121590068516",
       "category": "FINANCIAL",
-      "start": 498,
-      "end": 510
+      "start": 469,
+      "end": 481
     },
     {
       "text": "HDFC0350068",
       "category": "FINANCIAL",
-      "start": 517,
-      "end": 528
+      "start": 488,
+      "end": 499
     },
     {
       "text": "CC/1352/2021",
       "category": "CASE_NUMBER",
-      "start": 555,
-      "end": 567
+      "start": 526,
+      "end": 538
     },
     {
       "text": "Judicial Magistrate First Class Court at Madurai",
       "category": "COURT",
-      "start": 579,
-      "end": 627
+      "start": 550,
+      "end": 598
     },
     {
-      "text": "31/10/2021",
+      "text": "31 October 2021",
       "category": "DATE",
-      "start": 631,
-      "end": 641
+      "start": 602,
+      "end": 617
+    },
+    {
+      "text": "age (39) + occupation (paediatrician) + city (Madurai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

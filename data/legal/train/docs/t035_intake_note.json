@@ -1,7 +1,7 @@
 {
-  "doc_id": "b244eb15a66c4fda",
+  "doc_id": "7c4fcb64e57c418b",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t035",
-  "text": "Intake note (Commercial team, 19/02/2023). Our client Neha Menon is a 48-year-old farmer who lives at Flat 11B, Sitabuldi, Nagpur 440035 and can be reached on 08923428939 or neha.menon@example.com. The client's PAN MZVPM3800S.\nThe client consulted us about a cheque bounce matter against Kavya Kulkarni. A cheque for ₹25,20,000 issued by Kavya Kulkarni bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 580557634181 (IFSC ICIC0719043).\nThe matter was filed as S.C.C. No. 851/2023 before the Judicial Magistrate First Class Court at Nagpur on 30 June 2023."
+  "text": "Intake note - Commercial team\nDate: 19 May 2023\nClient: Neha Menon, a 48-year-old farmer from Nagpur.\nAddress: Flat 11B, Sitabuldi, Nagpur 440035\nPhone: 08923428939. Email: neha.menon@example.com. PAN MZVPM3800S.\nMatter: cheque bounce\nOpposing party: Kavya Kulkarni\nFacts: A cheque for Rs 25,20,000 issued by Kavya Kulkarni bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 580557634181 (IFSC ICIC0719043).\nThe matter was filed as S.C.C. No. 851/2023 before the Judicial Magistrate First Class Court at Nagpur on 30 June 2023."
 }

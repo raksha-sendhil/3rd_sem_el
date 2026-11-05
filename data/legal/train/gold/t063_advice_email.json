@@ -1,6 +1,6 @@
 {
-  "doc_id": "bd1a1bc151650d88",
-  "text": "Subject: Your breach of contract matter (Project Pelican)\n\nDear Ms. Banerjee,\n\nThank you for meeting us on 2 May 2026 about your dispute with M/s Lotus Industries. As we understand it, the counterparty has not paid the invoices for delivered goods. The matter is listed before the Ahmedabad Commercial Court.\n\nOur advice is to invoke the arbitration clause and seek interim relief to secure the amount. Please collect the contract, the invoices and the delivery challans and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "doc_id": "380d8fbafd8958f1",
+  "text": "Subject: Your breach of contract matter (Project Pelican)\n\nDear Ms. Banerjee,\n\nThank you for meeting us on 28 January 2026 about your dispute with Lotus Industries. As we understand it, the counterparty has not paid the invoices for delivered goods.\n\nOur advice is to invoke the arbitration clause and seek interim relief to secure the amount. Please collect the contract, the invoices and the delivery challans and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
   "spans": [
     {
       "text": "breach of contract",
@@ -21,28 +21,22 @@
       "end": 76
     },
     {
-      "text": "2 May 2026",
+      "text": "28 January 2026",
       "category": "DATE",
       "start": 107,
-      "end": 117
+      "end": 122
     },
     {
       "text": "Lotus Industries",
       "category": "ORGANIZATION",
-      "start": 146,
-      "end": 162
+      "start": 147,
+      "end": 163
     },
     {
-      "text": "Ahmedabad Commercial Court",
-      "category": "COURT",
-      "start": 281,
-      "end": 307
-    },
-    {
-      "text": "Sharmila Venkatesan",
+      "text": "Tejas Oberoi",
       "category": "NAME",
-      "start": 518,
-      "end": 537
+      "start": 459,
+      "end": 471
     }
   ],
   "annotator": "generator",

@@ -1,6 +1,6 @@
 {
-  "doc_id": "3e409c1a5b02f5a2",
-  "text": "Subject: Your consumer complaint matter\n\nDear Ms. Nambiar,\n\nThank you for meeting us on 14 October 2020 about your dispute with Pillai Constructions. As we understand it, the builder never obtained the occupancy certificate.\n\nOur advice is to seek a full refund with interest because the builder failed to obtain the occupancy certificate. Please collect the builder-buyer agreement, payment receipts and the municipal reply on the occupancy certificate and send copies to this office. We will pursue the full claim of ₹1,39,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "doc_id": "3636ebeb1324bac2",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2928/2020\n\nDear Ms. Nambiar,\n\nThank you for meeting us on 21 October 2020 about your dispute with Pillai Constructions. As we understand it, the builder never obtained the occupancy certificate. The matter is listed before the Mysuru District Consumer Disputes Redressal Commission.\n\nOur advice is to seek a full refund with interest because the builder failed to obtain the occupancy certificate. Please collect the builder-buyer agreement, payment receipts and the municipal reply on the occupancy certificate and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
   "spans": [
     {
       "text": "consumer complaint",
@@ -9,34 +9,40 @@
       "end": 32
     },
     {
-      "text": "Nambiar",
-      "category": "NAME",
-      "start": 50,
-      "end": 57
+      "text": "C.C. No. 2928/2020",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
     },
     {
-      "text": "14 October 2020",
+      "text": "Nambiar",
+      "category": "NAME",
+      "start": 71,
+      "end": 78
+    },
+    {
+      "text": "21 October 2020",
       "category": "DATE",
-      "start": 88,
-      "end": 103
+      "start": 109,
+      "end": 124
     },
     {
       "text": "Pillai Constructions",
       "category": "ORGANIZATION",
-      "start": 128,
-      "end": 148
+      "start": 149,
+      "end": 169
     },
     {
-      "text": "₹1,39,00,000",
-      "category": "MONEY",
-      "start": 519,
-      "end": 531
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 278,
+      "end": 332
     },
     {
-      "text": "Zubin Contractor",
+      "text": "Aditi Ranganathan",
       "category": "NAME",
-      "start": 548,
-      "end": 564
+      "start": 610,
+      "end": 627
     }
   ],
   "annotator": "generator",

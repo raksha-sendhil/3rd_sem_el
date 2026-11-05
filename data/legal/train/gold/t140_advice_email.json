@@ -1,6 +1,6 @@
 {
-  "doc_id": "022a40949cb7be09",
-  "text": "Subject: Your cheque bounce matter - CC/1143/2024\n\nDear Ms. Rane,\n\nThank you for meeting us on 11/10/2024 about your dispute with Farhan Khan. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Thiruvananthapuram.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "eb5f6596f08afb0c",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Rane,\n\nThank you for meeting us on 24 November 2024 about your dispute with Farhan Khan. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Thiruvananthapuram.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of Rs 16,20,000.\n\nRegards,\nAdv. Tejas Oberoi",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,40 +9,40 @@
       "end": 27
     },
     {
-      "text": "CC/1143/2024",
-      "category": "CASE_NUMBER",
-      "start": 37,
+      "text": "Rane",
+      "category": "NAME",
+      "start": 45,
       "end": 49
     },
     {
-      "text": "Rane",
-      "category": "NAME",
-      "start": 60,
-      "end": 64
-    },
-    {
-      "text": "11/10/2024",
+      "text": "24 November 2024",
       "category": "DATE",
-      "start": 95,
-      "end": 105
+      "start": 80,
+      "end": 96
     },
     {
       "text": "Farhan Khan",
       "category": "NAME",
-      "start": 130,
-      "end": 141
+      "start": 121,
+      "end": 132
     },
     {
       "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
       "category": "COURT",
-      "start": 259,
-      "end": 318
+      "start": 250,
+      "end": 309
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "Rs 16,20,000",
+      "category": "MONEY",
+      "start": 568,
+      "end": 580
+    },
+    {
+      "text": "Tejas Oberoi",
       "category": "NAME",
-      "start": 559,
-      "end": 571
+      "start": 597,
+      "end": 609
     }
   ],
   "annotator": "generator",

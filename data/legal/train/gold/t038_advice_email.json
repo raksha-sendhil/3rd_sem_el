@@ -1,6 +1,6 @@
 {
-  "doc_id": "899844df7e938ecb",
-  "text": "Subject: Your cross-border insolvency matter\n\nDear Ms. Kurian,\n\nThank you for meeting us on 19/10/2020 about your dispute with Konark Industries. As we understand it, the foreign administrator wants control of the assets in this country.\n\nOur advice is to seek recognition of the foreign insolvency proceeding. Please collect the foreign court's order and the list of local assets and send copies to this office. We will pursue the full claim of Rs 84,54,00,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "doc_id": "89cd8978f602ee47",
+  "text": "Subject: Your cross-border insolvency matter\n\nDear Ms. Kurian,\n\nThank you for meeting us on 02/01/2021 about your dispute with M/s Konark Industries. As we understand it, the foreign administrator wants control of the assets in this country. The matter is listed before the NCLT Mumbai.\n\nOur advice is to seek recognition of the foreign insolvency proceeding. Please collect the foreign court's order and the list of local assets and send copies to this office. We will pursue the full claim of ₹84.5 crore.\n\nRegards,\nAdv. Rohit Wadhwa",
   "spans": [
     {
       "text": "cross-border insolvency",
@@ -15,7 +15,7 @@
       "end": 61
     },
     {
-      "text": "19/10/2020",
+      "text": "02/01/2021",
       "category": "DATE",
       "start": 92,
       "end": 102
@@ -23,20 +23,26 @@
     {
       "text": "Konark Industries",
       "category": "ORGANIZATION",
-      "start": 127,
-      "end": 144
+      "start": 131,
+      "end": 148
     },
     {
-      "text": "Rs 84,54,00,000",
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 274,
+      "end": 285
+    },
+    {
+      "text": "₹84.5 crore",
       "category": "MONEY",
-      "start": 446,
-      "end": 461
+      "start": 495,
+      "end": 506
     },
     {
-      "text": "Tejas Oberoi",
+      "text": "Rohit Wadhwa",
       "category": "NAME",
-      "start": 478,
-      "end": 490
+      "start": 523,
+      "end": 535
     }
   ],
   "annotator": "generator",

@@ -1,0 +1,74 @@
+{
+  "doc_id": "c28ae2e1f147ac8c",
+  "text": "Case note: S.C.C. No. 400/2021\nClient: Ajay Desai (professor, Chennai)\nOpposing party: Konark Traders\nCourt: Judicial Magistrate First Class Court at Chennai\nFiled on: 23 August 2021\nClaim amount: 41.8 lakh rupees\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.\nWitness: Kiran Iyengar",
+  "spans": [
+    {
+      "text": "S.C.C. No. 400/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Ajay Desai",
+      "category": "NAME",
+      "start": 39,
+      "end": 49
+    },
+    {
+      "text": "professor",
+      "category": "OCCUPATION",
+      "start": 51,
+      "end": 60
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 62,
+      "end": 69
+    },
+    {
+      "text": "Konark Traders",
+      "category": "ORGANIZATION",
+      "start": 87,
+      "end": 101
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Chennai",
+      "category": "COURT",
+      "start": 109,
+      "end": 157
+    },
+    {
+      "text": "23 August 2021",
+      "category": "DATE",
+      "start": 168,
+      "end": 182
+    },
+    {
+      "text": "41.8 lakh rupees",
+      "category": "MONEY",
+      "start": 197,
+      "end": 213
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 221,
+      "end": 234
+    },
+    {
+      "text": "Kiran Iyengar",
+      "category": "NAME",
+      "start": 575,
+      "end": 588
+    },
+    {
+      "text": "occupation (professor) + city (Chennai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

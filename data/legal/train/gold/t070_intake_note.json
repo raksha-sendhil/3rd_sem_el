@@ -1,9 +1,9 @@
 {
-  "doc_id": "cfc1b480a9670a42",
-  "text": "Intake note - Commercial team\nDate: 14/06/2020\nClient: Varun Subramanian, a 25-year-old architect from Chennai.\nAddress: Flat 1D, Adyar, Chennai 600050\nPhone: +91 94872 66753. Email: varun.subramanian@example.in. PAN XHGPS3139E, Aadhaar 7817 5319 0247.\nMatter: cheque bounce\nOpposing party: M/s Lotus Enterprises\nFacts: A cheque for 8.2 lakh rupees issued by Lotus Enterprises bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 30900637495 (IFSC KKBK0192542).\nThe matter was filed as CC/425/2020 before the Judicial Magistrate First Class Court at Chennai on 3 October 2020.",
+  "doc_id": "9353412924937c92",
+  "text": "Intake note - Commercial team\nDate: 20/05/2020\nClient: Varun Subramanian, a 25-year-old architect from Chennai.\nAddress: Flat 1D, Adyar, Chennai 600050\nPhone: +91 94872 66753. Email: varun.subramanian@example.in. PAN XHGPS3139E, Aadhaar 7817 5319 0247.\nMatter: cheque bounce\nOpposing party: Lotus Enterprises\nFacts: A cheque for INR 8,25,000/- issued by Lotus Enterprises bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 30900637495 (IFSC KKBK0192542).\nThe matter was filed as CC/425/2020 before the Judicial Magistrate First Class Court at Chennai on 3 October 2020.",
   "spans": [
     {
-      "text": "14/06/2020",
+      "text": "20/05/2020",
       "category": "DATE",
       "start": 36,
       "end": 46
@@ -71,50 +71,50 @@
     {
       "text": "Lotus Enterprises",
       "category": "ORGANIZATION",
-      "start": 295,
-      "end": 312
+      "start": 291,
+      "end": 308
     },
     {
-      "text": "8.2 lakh rupees",
+      "text": "INR 8,25,000/-",
       "category": "MONEY",
-      "start": 333,
-      "end": 348
+      "start": 329,
+      "end": 343
     },
     {
       "text": "Lotus Enterprises",
       "category": "ORGANIZATION",
-      "start": 359,
-      "end": 376
+      "start": 354,
+      "end": 371
     },
     {
       "text": "30900637495",
       "category": "FINANCIAL",
-      "start": 492,
-      "end": 503
+      "start": 487,
+      "end": 498
     },
     {
       "text": "KKBK0192542",
       "category": "FINANCIAL",
-      "start": 510,
-      "end": 521
+      "start": 505,
+      "end": 516
     },
     {
       "text": "CC/425/2020",
       "category": "CASE_NUMBER",
-      "start": 548,
-      "end": 559
+      "start": 543,
+      "end": 554
     },
     {
       "text": "Judicial Magistrate First Class Court at Chennai",
       "category": "COURT",
-      "start": 571,
-      "end": 619
+      "start": 566,
+      "end": 614
     },
     {
       "text": "3 October 2020",
       "category": "DATE",
-      "start": 623,
-      "end": 637
+      "start": 618,
+      "end": 632
     },
     {
       "text": "age (25) + occupation (architect) + city (Chennai) + issue (cheque bounce)",

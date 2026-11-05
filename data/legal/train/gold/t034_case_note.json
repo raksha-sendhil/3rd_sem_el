@@ -1,0 +1,68 @@
+{
+  "doc_id": "b319575ef4484d89",
+  "text": "Case note: C.C. No. 2412/2019\nClient: Sunanda Malhotra (chartered accountant, Mumbai)\nOpposing party: M/s Ahuja Developers\nCourt: Mumbai District Consumer Disputes Redressal Commission\nFiled on: 11/09/2019\nClaim amount: ₹6.9 crore\nIssue: consumer complaint. Possession of the flat is long overdue.\nAdvice given: Claim interest on the amount paid for every month of delay in possession.\nOutcome: The commission directed the builder to pay interest for the delay.\nRecommended next step: File for execution if the builder does not pay.",
+  "spans": [
+    {
+      "text": "C.C. No. 2412/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Sunanda Malhotra",
+      "category": "NAME",
+      "start": 38,
+      "end": 54
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 56,
+      "end": 76
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 78,
+      "end": 84
+    },
+    {
+      "text": "Ahuja Developers",
+      "category": "ORGANIZATION",
+      "start": 106,
+      "end": 122
+    },
+    {
+      "text": "Mumbai District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 130,
+      "end": 184
+    },
+    {
+      "text": "11/09/2019",
+      "category": "DATE",
+      "start": 195,
+      "end": 205
+    },
+    {
+      "text": "₹6.9 crore",
+      "category": "MONEY",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 256
+    },
+    {
+      "text": "occupation (chartered accountant) + city (Mumbai) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,12 +1,12 @@
 {
-  "doc_id": "224096c51fa15880",
-  "text": "Intake note (Commercial team, 20 September 2024). Our client Swati Kamath is a 26-year-old cardiologist who lives at Bungalow 17, Baner, Pune 411035 and can be reached on +91 82078 30175 or swati.kamath94@example.com. The client's PAN KAKPK3866K.\nThe client consulted us about a geographical-indication dispute matter against Crescent Exports. The geographical-indication dispute with Crescent Exports involves sales of Rs. 6,55,00,000; the rival product uses the protected regional name on its label.\nThe matter was filed as CS(COMM) 120/2024 before the Bombay High Court on 15 December 2024.",
+  "doc_id": "4aa04e2aca3e60a1",
+  "text": "Intake note - Commercial team\nDate: 17 November 2024\nClient: Swati Kamath, a 26-year-old cardiologist from Pune.\nAddress: Bungalow 17, Baner, Pune 411035\nPhone: +91 82078 30175. Email: swati.kamath94@example.com. PAN KAKPK3866K.\nMatter: geographical-indication dispute\nOpposing party: Crescent Exports\nFacts: The geographical-indication dispute with Crescent Exports involves sales of Rs. 6,55,00,000; the rival product uses the protected regional name on its label.\nThe matter was filed as CS(COMM) 120/2024 before the Bombay High Court on 15/12/2024.",
   "spans": [
     {
-      "text": "20 September 2024",
+      "text": "17 November 2024",
       "category": "DATE",
-      "start": 30,
-      "end": 47
+      "start": 36,
+      "end": 52
     },
     {
       "text": "Swati Kamath",
@@ -17,80 +17,92 @@
     {
       "text": "26-year-old",
       "category": "AGE",
-      "start": 79,
-      "end": 90
+      "start": 77,
+      "end": 88
     },
     {
       "text": "cardiologist",
       "category": "OCCUPATION",
-      "start": 91,
-      "end": 103
+      "start": 89,
+      "end": 101
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 111
     },
     {
       "text": "Bungalow 17, Baner, Pune 411035",
       "category": "ADDRESS",
-      "start": 117,
-      "end": 148
+      "start": 122,
+      "end": 153
     },
     {
       "text": "+91 82078 30175",
       "category": "PHONE",
-      "start": 171,
-      "end": 186
+      "start": 161,
+      "end": 176
     },
     {
       "text": "swati.kamath94@example.com",
       "category": "EMAIL",
-      "start": 190,
-      "end": 216
+      "start": 185,
+      "end": 211
     },
     {
       "text": "KAKPK3866K",
       "category": "ID_NUMBER",
-      "start": 235,
-      "end": 245
+      "start": 217,
+      "end": 227
     },
     {
       "text": "geographical-indication dispute",
       "category": "LEGAL_ISSUE",
-      "start": 279,
-      "end": 310
+      "start": 237,
+      "end": 268
     },
     {
       "text": "Crescent Exports",
       "category": "ORGANIZATION",
-      "start": 326,
-      "end": 342
+      "start": 285,
+      "end": 301
     },
     {
       "text": "Crescent Exports",
       "category": "ORGANIZATION",
-      "start": 385,
-      "end": 401
+      "start": 350,
+      "end": 366
     },
     {
       "text": "Rs. 6,55,00,000",
       "category": "MONEY",
-      "start": 420,
-      "end": 435
+      "start": 385,
+      "end": 400
     },
     {
       "text": "CS(COMM) 120/2024",
       "category": "CASE_NUMBER",
-      "start": 526,
-      "end": 543
+      "start": 491,
+      "end": 508
     },
     {
       "text": "Bombay High Court",
       "category": "COURT",
-      "start": 555,
-      "end": 572
+      "start": 520,
+      "end": 537
     },
     {
-      "text": "15 December 2024",
+      "text": "15/12/2024",
       "category": "DATE",
-      "start": 576,
-      "end": 592
+      "start": 541,
+      "end": 551
+    },
+    {
+      "text": "age (26) + occupation (cardiologist) + city (Pune) + issue (geographical-indication dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

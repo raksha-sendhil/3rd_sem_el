@@ -1,102 +1,102 @@
 {
-  "doc_id": "a87e40093a469da5",
-  "text": "Intake note - Commercial team\nDate: 13 July 2024\nClient: Pallavi Subramanian, a 76-year-old cardiologist from Kolkata.\nAddress: House No. 52, Salt Lake, Kolkata 700004\nPhone: +91 81193 30462. Email: pallavi.subramanian@example.com. PAN QUAPS9348Z.\nMatter: geographical-indication dispute\nOpposing party: Trident Exports\nFacts: The geographical-indication dispute with Trident Exports involves sales of ₹7.4 crore; a conflicting trademark was registered.\nThe matter was filed as CS(COMM) 1863/2025 before the Calcutta High Court on 26/01/2025.",
+  "doc_id": "5895cf58ef46bd11",
+  "text": "Intake note - Commercial team\nDate: 16 October 2024\nClient: Pallavi Subramanian, a 76-year-old cardiologist from Kolkata.\nAddress: House No. 52, Salt Lake, Kolkata 700004\nPhone: +91 81193 30462. Email: pallavi.subramanian@example.com. PAN QUAPS9348Z.\nMatter: geographical-indication dispute\nOpposing party: Trident Exports\nFacts: The geographical-indication dispute with M/s Trident Exports involves sales of Rs 7,40,00,000; a conflicting trademark was registered.\nThe matter was filed as CS(COMM) 1863/2025 before the Calcutta High Court on 26 January 2025.",
   "spans": [
     {
-      "text": "13 July 2024",
+      "text": "16 October 2024",
       "category": "DATE",
       "start": 36,
-      "end": 48
+      "end": 51
     },
     {
       "text": "Pallavi Subramanian",
       "category": "NAME",
-      "start": 57,
-      "end": 76
+      "start": 60,
+      "end": 79
     },
     {
       "text": "76-year-old",
       "category": "AGE",
-      "start": 80,
-      "end": 91
+      "start": 83,
+      "end": 94
     },
     {
       "text": "cardiologist",
       "category": "OCCUPATION",
-      "start": 92,
-      "end": 104
+      "start": 95,
+      "end": 107
     },
     {
       "text": "Kolkata",
       "category": "LOCATION",
-      "start": 110,
-      "end": 117
+      "start": 113,
+      "end": 120
     },
     {
       "text": "House No. 52, Salt Lake, Kolkata 700004",
       "category": "ADDRESS",
-      "start": 128,
-      "end": 167
+      "start": 131,
+      "end": 170
     },
     {
       "text": "+91 81193 30462",
       "category": "PHONE",
-      "start": 175,
-      "end": 190
+      "start": 178,
+      "end": 193
     },
     {
       "text": "pallavi.subramanian@example.com",
       "category": "EMAIL",
-      "start": 199,
-      "end": 230
+      "start": 202,
+      "end": 233
     },
     {
       "text": "QUAPS9348Z",
       "category": "ID_NUMBER",
-      "start": 236,
-      "end": 246
+      "start": 239,
+      "end": 249
     },
     {
       "text": "geographical-indication dispute",
       "category": "LEGAL_ISSUE",
-      "start": 256,
-      "end": 287
+      "start": 259,
+      "end": 290
     },
     {
       "text": "Trident Exports",
       "category": "ORGANIZATION",
-      "start": 304,
-      "end": 319
+      "start": 307,
+      "end": 322
     },
     {
       "text": "Trident Exports",
       "category": "ORGANIZATION",
-      "start": 368,
-      "end": 383
+      "start": 375,
+      "end": 390
     },
     {
-      "text": "₹7.4 crore",
+      "text": "Rs 7,40,00,000",
       "category": "MONEY",
-      "start": 402,
-      "end": 412
+      "start": 409,
+      "end": 423
     },
     {
       "text": "CS(COMM) 1863/2025",
       "category": "CASE_NUMBER",
-      "start": 478,
-      "end": 496
+      "start": 489,
+      "end": 507
     },
     {
       "text": "Calcutta High Court",
       "category": "COURT",
-      "start": 508,
-      "end": 527
+      "start": 519,
+      "end": 538
     },
     {
-      "text": "26/01/2025",
+      "text": "26 January 2025",
       "category": "DATE",
-      "start": 531,
-      "end": 541
+      "start": 542,
+      "end": 557
     },
     {
       "text": "age (76) + occupation (cardiologist) + city (Kolkata) + issue (geographical-indication dispute)",

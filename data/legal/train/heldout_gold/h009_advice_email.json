@@ -1,0 +1,44 @@
+{
+  "doc_id": "199cb130eb769162",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2054/2019\n\nDear Mr. Shetty,\n\nThank you for meeting us on 21 September 2019 about your dispute with Sai Developers. As we understand it, the builder keeps promising possession by email but never delivers.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 2054/2019",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Shetty",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "21 September 2019",
+      "category": "DATE",
+      "start": 108,
+      "end": 125
+    },
+    {
+      "text": "Sai Developers",
+      "category": "ORGANIZATION",
+      "start": 150,
+      "end": 164
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 531,
+      "end": 543
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

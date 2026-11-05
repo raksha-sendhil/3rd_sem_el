@@ -1,18 +1,18 @@
 {
-  "doc_id": "bf4d39e1ed4d8dd5",
-  "text": "Intake note (Property team, 11 February 2022). Our client Debashish Pawar is a 74-year-old railway employee who lives at Flat 2D, Malviya Nagar, Jaipur 302031 and can be reached on 90876 72978 or debashish.pawar@example.com. The client's PAN VBBPP1610E, Aadhaar 9768 8270 3244.\nThe client consulted us about a consumer complaint matter against Fernandes Constructions. The consumer complaint against M/s Fernandes Constructions concerns a flat bought for Rs. 9,10,00,000; the builder never obtained the occupancy certificate.\nThe matter was filed as CC/960/2022 before the Jaipur District Consumer Disputes Redressal Commission on 5 April 2022.",
+  "doc_id": "0879de0e700cc237",
+  "text": "Intake note - Property team\nDate: 17 September 2021\nClient: Debashish Pawar, a 74-year-old railway employee from Jaipur.\nAddress: Flat 2D, Malviya Nagar, Jaipur 302031\nPhone: 90876 72978. Email: debashish.pawar@example.com. PAN VBBPP1610E, Aadhaar 9768 8270 3244.\nMatter: consumer complaint\nOpposing party: M/s Fernandes Constructions\nFacts: The consumer complaint against M/s Fernandes Constructions concerns a flat bought for ₹9.1 crore; the builder never obtained the occupancy certificate.\nThe matter was filed as CC/960/2022 before the Jaipur District Consumer Disputes Redressal Commission on 5 April 2022.",
   "spans": [
     {
-      "text": "11 February 2022",
+      "text": "17 September 2021",
       "category": "DATE",
-      "start": 28,
-      "end": 44
+      "start": 34,
+      "end": 51
     },
     {
       "text": "Debashish Pawar",
       "category": "NAME",
-      "start": 58,
-      "end": 73
+      "start": 60,
+      "end": 75
     },
     {
       "text": "74-year-old",
@@ -27,76 +27,88 @@
       "end": 107
     },
     {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 113,
+      "end": 119
+    },
+    {
       "text": "Flat 2D, Malviya Nagar, Jaipur 302031",
       "category": "ADDRESS",
-      "start": 121,
-      "end": 158
+      "start": 130,
+      "end": 167
     },
     {
       "text": "90876 72978",
       "category": "PHONE",
-      "start": 181,
-      "end": 192
+      "start": 175,
+      "end": 186
     },
     {
       "text": "debashish.pawar@example.com",
       "category": "EMAIL",
-      "start": 196,
-      "end": 223
+      "start": 195,
+      "end": 222
     },
     {
       "text": "VBBPP1610E",
       "category": "ID_NUMBER",
-      "start": 242,
-      "end": 252
+      "start": 228,
+      "end": 238
     },
     {
       "text": "9768 8270 3244",
       "category": "ID_NUMBER",
-      "start": 262,
-      "end": 276
+      "start": 248,
+      "end": 262
     },
     {
       "text": "consumer complaint",
       "category": "LEGAL_ISSUE",
-      "start": 310,
-      "end": 328
+      "start": 272,
+      "end": 290
     },
     {
       "text": "Fernandes Constructions",
       "category": "ORGANIZATION",
-      "start": 344,
-      "end": 367
+      "start": 311,
+      "end": 334
     },
     {
       "text": "Fernandes Constructions",
       "category": "ORGANIZATION",
-      "start": 404,
-      "end": 427
+      "start": 377,
+      "end": 400
     },
     {
-      "text": "Rs. 9,10,00,000",
+      "text": "₹9.1 crore",
       "category": "MONEY",
-      "start": 455,
-      "end": 470
+      "start": 428,
+      "end": 438
     },
     {
       "text": "CC/960/2022",
       "category": "CASE_NUMBER",
-      "start": 550,
-      "end": 561
+      "start": 518,
+      "end": 529
     },
     {
       "text": "Jaipur District Consumer Disputes Redressal Commission",
       "category": "COURT",
-      "start": 573,
-      "end": 627
+      "start": 541,
+      "end": 595
     },
     {
       "text": "5 April 2022",
       "category": "DATE",
-      "start": 631,
-      "end": 643
+      "start": 599,
+      "end": 611
+    },
+    {
+      "text": "age (74) + occupation (railway employee) + city (Jaipur) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

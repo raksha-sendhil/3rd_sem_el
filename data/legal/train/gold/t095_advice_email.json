@@ -1,6 +1,6 @@
 {
-  "doc_id": "706e54a79bc84cd0",
-  "text": "Subject: Your land dispute matter - O.S. No. 2445/2025\n\nDear Ms. Ranade,\n\nThank you for meeting us on 6 February 2026 about your dispute with Asha Fernandes. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Coimbatore District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "doc_id": "d911e18bd5de9209",
+  "text": "Subject: Your land dispute matter - O.S. No. 2445/2025\n\nDear Ms. Ranade,\n\nThank you for meeting us on 26 December 2025 about your dispute with Asha Fernandes. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Coimbatore District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of INR 5,99,00,000/-.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "land dispute",
@@ -21,28 +21,34 @@
       "end": 71
     },
     {
-      "text": "6 February 2026",
+      "text": "26 December 2025",
       "category": "DATE",
       "start": 102,
-      "end": 117
+      "end": 118
     },
     {
       "text": "Asha Fernandes",
       "category": "NAME",
-      "start": 142,
-      "end": 156
+      "start": 143,
+      "end": 157
     },
     {
       "text": "Coimbatore District Court",
       "category": "COURT",
-      "start": 269,
-      "end": 294
+      "start": 270,
+      "end": 295
     },
     {
-      "text": "Zubin Contractor",
+      "text": "INR 5,99,00,000/-",
+      "category": "MONEY",
+      "start": 502,
+      "end": 519
+    },
+    {
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 483,
-      "end": 499
+      "start": 536,
+      "end": 555
     }
   ],
   "annotator": "generator",

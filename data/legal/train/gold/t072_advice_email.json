@@ -1,6 +1,6 @@
 {
-  "doc_id": "e533d61e9de5fb43",
-  "text": "Subject: Your divorce by mutual consent matter\n\nDear Ms. Hegde,\n\nThank you for meeting us on 26 August 2023 about your dispute with Shalini Rao. As we understand it, both spouses have lived apart for a long time. The matter is listed before the Family Court at Madurai.\n\nOur advice is to apply to waive the statutory cooling-off period. Please collect proof of separate residence and the consent terms and send copies to this office. We will pursue the full claim of INR 22,20,000/-.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "3620c257c5dd7a80",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 1489/2023\n\nDear Ms. Hegde,\n\nThank you for meeting us on 14/07/2023 about your dispute with Shalini Rao. As we understand it, both spouses have lived apart for a long time.\n\nOur advice is to apply to waive the statutory cooling-off period. Please collect proof of separate residence and the consent terms and send copies to this office. We will pursue the full claim of ₹22,20,000.\n\nRegards,\nAdv. Zubin Contractor",
   "spans": [
     {
       "text": "divorce by mutual consent",
@@ -9,40 +9,40 @@
       "end": 39
     },
     {
-      "text": "Hegde",
-      "category": "NAME",
-      "start": 57,
-      "end": 62
+      "text": "Petition No. 1489/2023",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 71
     },
     {
-      "text": "26 August 2023",
+      "text": "Hegde",
+      "category": "NAME",
+      "start": 82,
+      "end": 87
+    },
+    {
+      "text": "14/07/2023",
       "category": "DATE",
-      "start": 93,
-      "end": 107
+      "start": 118,
+      "end": 128
     },
     {
       "text": "Shalini Rao",
       "category": "NAME",
-      "start": 132,
-      "end": 143
+      "start": 153,
+      "end": 164
     },
     {
-      "text": "Family Court at Madurai",
-      "category": "COURT",
-      "start": 245,
-      "end": 268
-    },
-    {
-      "text": "INR 22,20,000/-",
+      "text": "₹22,20,000",
       "category": "MONEY",
-      "start": 467,
-      "end": 482
+      "start": 431,
+      "end": 441
     },
     {
-      "text": "Hema Lakshmanan",
+      "text": "Zubin Contractor",
       "category": "NAME",
-      "start": 499,
-      "end": 514
+      "start": 458,
+      "end": 474
     }
   ],
   "annotator": "generator",

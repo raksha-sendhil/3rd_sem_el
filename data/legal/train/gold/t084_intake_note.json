@@ -1,42 +1,48 @@
 {
-  "doc_id": "8bbb4bad6f874e27",
-  "text": "Intake note (Commercial team, 29/06/2020). Our client Divya Qureshi is a 62-year-old general physician who lives at Bungalow 39, Kakkanad, Kochi 682039 and can be reached on 08013563997 or divya.qureshi@example.in. The client's PAN AYNPQ5925L.\nThe client consulted us about a breach of contract matter (Project Flamingo) against Coastal Industries. The breach of contract claim against M/s Coastal Industries is for INR 17,35,00,000/-; the goods supplied were defective.\nThe matter was filed as CS(COMM) 1469/2020 before the Kochi Commercial Court on 27 July 2020.",
+  "doc_id": "3fba1f605e9f9542",
+  "text": "Intake note - Commercial team\nDate: 12 March 2020\nClient: Divya Qureshi, a 62-year-old general physician from Kochi.\nAddress: Bungalow 39, Kakkanad, Kochi 682039\nPhone: 08013563997. Email: divya.qureshi@example.in. PAN AYNPQ5925L.\nMatter: breach of contract (Project Flamingo)\nOpposing party: M/s Coastal Industries\nFacts: The breach of contract claim against Coastal Industries is for INR 17,35,00,000/-; the goods supplied were defective.\nThe matter was filed as CS(COMM) 1469/2020 before the Kochi Commercial Court on 27 July 2020.",
   "spans": [
     {
-      "text": "29/06/2020",
+      "text": "12 March 2020",
       "category": "DATE",
-      "start": 30,
-      "end": 40
+      "start": 36,
+      "end": 49
     },
     {
       "text": "Divya Qureshi",
       "category": "NAME",
-      "start": 54,
-      "end": 67
+      "start": 58,
+      "end": 71
     },
     {
       "text": "62-year-old",
       "category": "AGE",
-      "start": 73,
-      "end": 84
+      "start": 75,
+      "end": 86
     },
     {
       "text": "general physician",
       "category": "OCCUPATION",
-      "start": 85,
-      "end": 102
+      "start": 87,
+      "end": 104
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 115
     },
     {
       "text": "Bungalow 39, Kakkanad, Kochi 682039",
       "category": "ADDRESS",
-      "start": 116,
-      "end": 151
+      "start": 126,
+      "end": 161
     },
     {
       "text": "08013563997",
       "category": "PHONE",
-      "start": 174,
-      "end": 185
+      "start": 169,
+      "end": 180
     },
     {
       "text": "divya.qureshi@example.in",
@@ -47,56 +53,62 @@
     {
       "text": "AYNPQ5925L",
       "category": "ID_NUMBER",
-      "start": 232,
-      "end": 242
+      "start": 219,
+      "end": 229
     },
     {
       "text": "breach of contract",
       "category": "LEGAL_ISSUE",
-      "start": 276,
-      "end": 294
+      "start": 239,
+      "end": 257
     },
     {
       "text": "Project Flamingo",
       "category": "MATTER_CODENAME",
-      "start": 303,
-      "end": 319
+      "start": 259,
+      "end": 275
     },
     {
       "text": "Coastal Industries",
       "category": "ORGANIZATION",
-      "start": 329,
-      "end": 347
+      "start": 297,
+      "end": 315
     },
     {
       "text": "Coastal Industries",
       "category": "ORGANIZATION",
-      "start": 390,
-      "end": 408
+      "start": 360,
+      "end": 378
     },
     {
       "text": "INR 17,35,00,000/-",
       "category": "MONEY",
-      "start": 416,
-      "end": 434
+      "start": 386,
+      "end": 404
     },
     {
       "text": "CS(COMM) 1469/2020",
       "category": "CASE_NUMBER",
-      "start": 495,
-      "end": 513
+      "start": 465,
+      "end": 483
     },
     {
       "text": "Kochi Commercial Court",
       "category": "COURT",
-      "start": 525,
-      "end": 547
+      "start": 495,
+      "end": 517
     },
     {
       "text": "27 July 2020",
       "category": "DATE",
-      "start": 551,
-      "end": 563
+      "start": 521,
+      "end": 533
+    },
+    {
+      "text": "age (62) + occupation (general physician) + city (Kochi) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

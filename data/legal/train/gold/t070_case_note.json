@@ -1,0 +1,74 @@
+{
+  "doc_id": "bc46fdb45c1cedeb",
+  "text": "Case note: CC/425/2020\nClient: Varun Subramanian (architect, Chennai)\nOpposing party: Lotus Enterprises\nCourt: Judicial Magistrate First Class Court at Chennai\nFiled on: 3 October 2020\nClaim amount: 8.2 lakh rupees\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.\nWitness: Manoj Ranade",
+  "spans": [
+    {
+      "text": "CC/425/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 22
+    },
+    {
+      "text": "Varun Subramanian",
+      "category": "NAME",
+      "start": 31,
+      "end": 48
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 50,
+      "end": 59
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 61,
+      "end": 68
+    },
+    {
+      "text": "Lotus Enterprises",
+      "category": "ORGANIZATION",
+      "start": 86,
+      "end": 103
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Chennai",
+      "category": "COURT",
+      "start": 111,
+      "end": 159
+    },
+    {
+      "text": "3 October 2020",
+      "category": "DATE",
+      "start": 170,
+      "end": 184
+    },
+    {
+      "text": "8.2 lakh rupees",
+      "category": "MONEY",
+      "start": 199,
+      "end": 214
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 222,
+      "end": 235
+    },
+    {
+      "text": "Manoj Ranade",
+      "category": "NAME",
+      "start": 578,
+      "end": 590
+    },
+    {
+      "text": "occupation (architect) + city (Chennai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

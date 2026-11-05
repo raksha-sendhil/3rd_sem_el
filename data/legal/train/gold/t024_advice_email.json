@@ -1,6 +1,6 @@
 {
-  "doc_id": "8687e4ade2110a9a",
-  "text": "Subject: Your land dispute matter - R.C.S. No. 2680/2020\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 03/06/2021 about your dispute with Farhan Chandran. As we understand it, the neighbour has encroached on the boundary of the plot.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "1d49c40e001ba20e",
+  "text": "Subject: Your land dispute matter\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 06/05/2021 about your dispute with Farhan Chandran. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Vadodara District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of ₹4,53,00,000.\n\nRegards,\nAdv. Mrinalini Saraf",
   "spans": [
     {
       "text": "land dispute",
@@ -9,34 +9,40 @@
       "end": 26
     },
     {
-      "text": "R.C.S. No. 2680/2020",
-      "category": "CASE_NUMBER",
-      "start": 36,
-      "end": 56
-    },
-    {
       "text": "Bhandari",
       "category": "NAME",
-      "start": 67,
-      "end": 75
+      "start": 44,
+      "end": 52
     },
     {
-      "text": "03/06/2021",
+      "text": "06/05/2021",
       "category": "DATE",
-      "start": 106,
-      "end": 116
+      "start": 83,
+      "end": 93
     },
     {
       "text": "Farhan Chandran",
       "category": "NAME",
-      "start": 141,
-      "end": 156
+      "start": 118,
+      "end": 133
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "Vadodara District Court",
+      "category": "COURT",
+      "start": 246,
+      "end": 269
+    },
+    {
+      "text": "₹4,53,00,000",
+      "category": "MONEY",
+      "start": 476,
+      "end": 488
+    },
+    {
+      "text": "Mrinalini Saraf",
       "category": "NAME",
-      "start": 424,
-      "end": 436
+      "start": 505,
+      "end": 520
     }
   ],
   "annotator": "generator",

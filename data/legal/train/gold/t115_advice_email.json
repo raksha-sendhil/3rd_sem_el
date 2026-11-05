@@ -1,6 +1,6 @@
 {
-  "doc_id": "3f8604112838aa4f",
-  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 1099/2022\n\nDear Ms. DSouza,\n\nThank you for meeting us on 31 January 2023 about your dispute with Kiran Shah. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the Pune District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office. We will pursue the full claim of ₹7,25,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "b652405580ac132a",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 1099/2022\n\nDear Ms. DSouza,\n\nThank you for meeting us on 02/10/2022 about your dispute with Kiran Shah. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the Pune District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office. We will pursue the full claim of ₹7,25,000.\n\nRegards,\nAdv. Tejas Oberoi",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -21,34 +21,34 @@
       "end": 77
     },
     {
-      "text": "31 January 2023",
+      "text": "02/10/2022",
       "category": "DATE",
       "start": 108,
-      "end": 123
+      "end": 118
     },
     {
       "text": "Kiran Shah",
       "category": "NAME",
-      "start": 148,
-      "end": 158
+      "start": 143,
+      "end": 153
     },
     {
       "text": "Pune District Court",
       "category": "COURT",
-      "start": 271,
-      "end": 290
+      "start": 266,
+      "end": 285
     },
     {
       "text": "₹7,25,000",
       "category": "MONEY",
-      "start": 539,
-      "end": 548
+      "start": 534,
+      "end": 543
     },
     {
-      "text": "Aditi Ranganathan",
+      "text": "Tejas Oberoi",
       "category": "NAME",
-      "start": 565,
-      "end": 582
+      "start": 560,
+      "end": 572
     }
   ],
   "annotator": "generator",

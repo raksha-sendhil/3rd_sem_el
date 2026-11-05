@@ -1,0 +1,74 @@
+{
+  "doc_id": "be38b85b018e94bd",
+  "text": "Case note: S.C.C. No. 1968/2019\nClient: Debashish Mehra (chartered accountant, Kochi)\nOpposing party: M/s Coastal Textiles Pvt Ltd\nCourt: Judicial Magistrate First Class Court at Kochi\nFiled on: 5 May 2019\nClaim amount: ₹23,70,000\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.\nWitness: Shruti Chatterjee",
+  "spans": [
+    {
+      "text": "S.C.C. No. 1968/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Debashish Mehra",
+      "category": "NAME",
+      "start": 40,
+      "end": 55
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 57,
+      "end": 77
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 79,
+      "end": 84
+    },
+    {
+      "text": "Coastal Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 106,
+      "end": 130
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 138,
+      "end": 184
+    },
+    {
+      "text": "5 May 2019",
+      "category": "DATE",
+      "start": 195,
+      "end": 205
+    },
+    {
+      "text": "₹23,70,000",
+      "category": "MONEY",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 251
+    },
+    {
+      "text": "Shruti Chatterjee",
+      "category": "NAME",
+      "start": 592,
+      "end": 609
+    },
+    {
+      "text": "occupation (chartered accountant) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

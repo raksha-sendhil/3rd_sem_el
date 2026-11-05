@@ -1,7 +1,7 @@
 {
-  "doc_id": "ff78c5d9ef5ce706",
+  "doc_id": "08c2cf619d7218dc",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t097",
-  "text": "Intake note (Commercial team, 22 April 2024). Our client Harish Srivastava is a 53-year-old government clerk who lives at Plot 35, Kothrud, Pune 411009 and can be reached on +91 87694 21184 or harish.srivastava@example.in. The client's PAN QPEPS3767L.\nThe client consulted us about a cheque bounce matter against Crescent Traders. A cheque for ₹28,40,000 issued by M/s Crescent Traders bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 798418146245 (IFSC KKBK0125946).\nThe matter was filed as CC/24/2024 before the Judicial Magistrate First Class Court at Pune on 26 August 2024."
+  "text": "Intake note - Commercial team\nDate: 03/07/2024\nClient: Harish Srivastava, a 53-year-old government clerk from Pune.\nAddress: Plot 35, Kothrud, Pune 411009\nPhone: +91 87694 21184. Email: harish.srivastava@example.in. PAN QPEPS3767L.\nMatter: cheque bounce\nOpposing party: Crescent Traders\nFacts: A cheque for INR 28,40,000/- issued by M/s Crescent Traders bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 798418146245 (IFSC KKBK0125946).\nThe matter was filed as CC/24/2024 before the Judicial Magistrate First Class Court at Pune on 26 August 2024."
 }

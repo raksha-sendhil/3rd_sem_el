@@ -1,12 +1,12 @@
 {
-  "doc_id": "9ff858957d236c11",
-  "text": "Intake note - Commercial team\nDate: 7 July 2024\nClient: Mahesh Khan, a 34-year-old hardware dealer from Nagpur.\nAddress: Bungalow 40, Sitabuldi, Nagpur 440012\nPhone: 06507187554. Email: mahesh.khan36@example.in. PAN LVZPK7730J, Aadhaar 4067 6010 7685.\nMatter: cheque bounce\nOpposing party: Harbour Traders\nFacts: A cheque for ₹22,70,000 issued by Harbour Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as CC/2002/2024 before the Judicial Magistrate First Class Court at Nagpur on 29 October 2024.",
+  "doc_id": "e406e5d07c57d701",
+  "text": "Intake note (Commercial team, 31 July 2024). Our client Mahesh Khan is a 34-year-old hardware dealer who lives at Bungalow 40, Sitabuldi, Nagpur 440012 and can be reached on 06507187554 or mahesh.khan36@example.in. The client's PAN LVZPK7730J, Aadhaar 4067 6010 7685.\nThe client consulted us about a cheque bounce matter against M/s Harbour Traders. A cheque for Rs 22,70,000 issued by Harbour Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as CC/2002/2024 before the Judicial Magistrate First Class Court at Nagpur on 29/10/2024.",
   "spans": [
     {
-      "text": "7 July 2024",
+      "text": "31 July 2024",
       "category": "DATE",
-      "start": 36,
-      "end": 47
+      "start": 30,
+      "end": 42
     },
     {
       "text": "Mahesh Khan",
@@ -17,98 +17,86 @@
     {
       "text": "34-year-old",
       "category": "AGE",
-      "start": 71,
-      "end": 82
+      "start": 73,
+      "end": 84
     },
     {
       "text": "hardware dealer",
       "category": "OCCUPATION",
-      "start": 83,
-      "end": 98
-    },
-    {
-      "text": "Nagpur",
-      "category": "LOCATION",
-      "start": 104,
-      "end": 110
+      "start": 85,
+      "end": 100
     },
     {
       "text": "Bungalow 40, Sitabuldi, Nagpur 440012",
       "category": "ADDRESS",
-      "start": 121,
-      "end": 158
+      "start": 114,
+      "end": 151
     },
     {
       "text": "06507187554",
       "category": "PHONE",
-      "start": 166,
-      "end": 177
+      "start": 174,
+      "end": 185
     },
     {
       "text": "mahesh.khan36@example.in",
       "category": "EMAIL",
-      "start": 186,
-      "end": 210
+      "start": 189,
+      "end": 213
     },
     {
       "text": "LVZPK7730J",
       "category": "ID_NUMBER",
-      "start": 216,
-      "end": 226
+      "start": 232,
+      "end": 242
     },
     {
       "text": "4067 6010 7685",
       "category": "ID_NUMBER",
-      "start": 236,
-      "end": 250
+      "start": 252,
+      "end": 266
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 260,
-      "end": 273
+      "start": 300,
+      "end": 313
     },
     {
       "text": "Harbour Traders",
       "category": "ORGANIZATION",
-      "start": 290,
-      "end": 305
+      "start": 333,
+      "end": 348
     },
     {
-      "text": "₹22,70,000",
+      "text": "Rs 22,70,000",
       "category": "MONEY",
-      "start": 326,
-      "end": 336
+      "start": 363,
+      "end": 375
     },
     {
       "text": "Harbour Traders",
       "category": "ORGANIZATION",
-      "start": 347,
-      "end": 362
+      "start": 386,
+      "end": 401
     },
     {
       "text": "CC/2002/2024",
       "category": "CASE_NUMBER",
-      "start": 451,
-      "end": 463
+      "start": 490,
+      "end": 502
     },
     {
       "text": "Judicial Magistrate First Class Court at Nagpur",
       "category": "COURT",
-      "start": 475,
-      "end": 522
+      "start": 514,
+      "end": 561
     },
     {
-      "text": "29 October 2024",
+      "text": "29/10/2024",
       "category": "DATE",
-      "start": 526,
-      "end": 541
-    },
-    {
-      "text": "age (34) + occupation (hardware dealer) + city (Nagpur) + issue (cheque bounce)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 565,
+      "end": 575
     }
   ],
   "annotator": "generator",

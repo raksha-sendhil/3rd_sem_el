@@ -1,6 +1,6 @@
 {
-  "doc_id": "40270da388045668",
-  "text": "Case note: A.S. No. 2764/2022\nClient: Simran Mishra (restaurant owner, Nagpur)\nOpposing party: M/s Sunrise Marine Ltd\nCourt: Bombay High Court, before Justice Arvind Bhargava\nFiled on: 30 June 2022\nClaim amount: Rs. 43,51,00,000\nIssue: maritime salvage claim. The owners dispute the value of the salvage.\nAdvice given: Claim a salvage award based on the value of the property saved.\nOutcome: A salvage award was fixed by the court.\nRecommended next step: Recover the award from the security.\nMatter code: Project Ibis",
+  "doc_id": "d23127bbfbf3d630",
+  "text": "Case note: A.S. No. 2764/2022\nClient: Simran Mishra (restaurant owner, Nagpur)\nOpposing party: Sunrise Marine Ltd\nCourt: Bombay High Court, before Justice Arvind Bhargava\nFiled on: 30 June 2022\nClaim amount: ₹43,51,00,000\nIssue: maritime salvage claim. The owners dispute the value of the salvage.\nAdvice given: Claim a salvage award based on the value of the property saved.\nOutcome: A salvage award was fixed by the court.\nRecommended next step: Recover the award from the security.\nMatter code: Project Ibis",
   "spans": [
     {
       "text": "A.S. No. 2764/2022",
@@ -29,44 +29,44 @@
     {
       "text": "Sunrise Marine Ltd",
       "category": "ORGANIZATION",
-      "start": 99,
-      "end": 117
+      "start": 95,
+      "end": 113
     },
     {
       "text": "Bombay High Court",
       "category": "COURT",
-      "start": 125,
-      "end": 142
+      "start": 121,
+      "end": 138
     },
     {
       "text": "Arvind Bhargava",
       "category": "NAME",
-      "start": 159,
-      "end": 174
+      "start": 155,
+      "end": 170
     },
     {
       "text": "30 June 2022",
       "category": "DATE",
-      "start": 185,
-      "end": 197
+      "start": 181,
+      "end": 193
     },
     {
-      "text": "Rs. 43,51,00,000",
+      "text": "₹43,51,00,000",
       "category": "MONEY",
-      "start": 212,
-      "end": 228
+      "start": 208,
+      "end": 221
     },
     {
       "text": "maritime salvage claim",
       "category": "LEGAL_ISSUE",
-      "start": 236,
-      "end": 258
+      "start": 229,
+      "end": 251
     },
     {
       "text": "Project Ibis",
       "category": "MATTER_CODENAME",
-      "start": 505,
-      "end": 517
+      "start": 498,
+      "end": 510
     },
     {
       "text": "occupation (restaurant owner) + city (Nagpur) + issue (maritime salvage claim)",

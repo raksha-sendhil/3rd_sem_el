@@ -1,6 +1,6 @@
 {
-  "doc_id": "a127638706314aff",
-  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Bhatt,\n\nThank you for meeting us on 31 May 2023 about your dispute with M/s Rathore Enterprises. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Hubballi.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "4c901c3741070264",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2814/2023\n\nDear Mr. Bhatt,\n\nThank you for meeting us on 29 July 2023 about your dispute with M/s Rathore Enterprises. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,34 +9,34 @@
       "end": 27
     },
     {
-      "text": "Bhatt",
-      "category": "NAME",
-      "start": 45,
-      "end": 50
+      "text": "S.C.C. No. 2814/2023",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
     },
     {
-      "text": "31 May 2023",
+      "text": "Bhatt",
+      "category": "NAME",
+      "start": 68,
+      "end": 73
+    },
+    {
+      "text": "29 July 2023",
       "category": "DATE",
-      "start": 81,
-      "end": 92
+      "start": 104,
+      "end": 116
     },
     {
       "text": "Rathore Enterprises",
       "category": "ORGANIZATION",
-      "start": 121,
-      "end": 140
+      "start": 145,
+      "end": 164
     },
     {
-      "text": "Judicial Magistrate First Class Court at Hubballi",
-      "category": "COURT",
-      "start": 259,
-      "end": 308
-    },
-    {
-      "text": "Kunal Bhagat",
+      "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 585,
-      "end": 597
+      "start": 526,
+      "end": 541
     }
   ],
   "annotator": "generator",

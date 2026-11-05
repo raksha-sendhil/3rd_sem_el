@@ -1,126 +1,114 @@
 {
-  "doc_id": "97b7c4bec20b2a5b",
-  "text": "Intake note - Commercial team\nDate: 21/07/2021\nClient: Manoj Mishra, a 28-year-old textile trader from Chennai.\nAddress: Bungalow 7, Anna Nagar, Chennai 600056\nPhone: 86619 19450. Email: manoj.mishra@example.com. PAN DYXPM8761X, Aadhaar 9468 6628 3382.\nMatter: cheque bounce\nOpposing party: M/s Sandhu Textiles Pvt Ltd\nFacts: A cheque for INR 43,60,000/- issued by Sandhu Textiles Pvt Ltd bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 312449076635 (IFSC HDFC0542788).\nThe matter was filed as S.C.C. No. 655/2022 before the Judicial Magistrate First Class Court at Chennai on 1 January 2022.",
+  "doc_id": "46491bd52a2000b7",
+  "text": "Intake note (Commercial team, 15 October 2021). Our client Manoj Mishra is a 28-year-old textile trader who lives at Bungalow 7, Anna Nagar, Chennai 600056 and can be reached on 86619 19450 or manoj.mishra@example.com. The client's PAN DYXPM8761X, Aadhaar 9468 6628 3382.\nThe client consulted us about a cheque bounce matter against Sandhu Textiles Pvt Ltd. A cheque for ₹43,60,000 issued by M/s Sandhu Textiles Pvt Ltd bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 312449076635 (IFSC HDFC0542788).\nThe matter was filed as S.C.C. No. 655/2022 before the Judicial Magistrate First Class Court at Chennai on 01/01/2022.",
   "spans": [
     {
-      "text": "21/07/2021",
+      "text": "15 October 2021",
       "category": "DATE",
-      "start": 36,
-      "end": 46
+      "start": 30,
+      "end": 45
     },
     {
       "text": "Manoj Mishra",
       "category": "NAME",
-      "start": 55,
-      "end": 67
+      "start": 59,
+      "end": 71
     },
     {
       "text": "28-year-old",
       "category": "AGE",
-      "start": 71,
-      "end": 82
+      "start": 77,
+      "end": 88
     },
     {
       "text": "textile trader",
       "category": "OCCUPATION",
-      "start": 83,
-      "end": 97
-    },
-    {
-      "text": "Chennai",
-      "category": "LOCATION",
-      "start": 103,
-      "end": 110
+      "start": 89,
+      "end": 103
     },
     {
       "text": "Bungalow 7, Anna Nagar, Chennai 600056",
       "category": "ADDRESS",
-      "start": 121,
-      "end": 159
+      "start": 117,
+      "end": 155
     },
     {
       "text": "86619 19450",
       "category": "PHONE",
-      "start": 167,
-      "end": 178
+      "start": 178,
+      "end": 189
     },
     {
       "text": "manoj.mishra@example.com",
       "category": "EMAIL",
-      "start": 187,
-      "end": 211
+      "start": 193,
+      "end": 217
     },
     {
       "text": "DYXPM8761X",
       "category": "ID_NUMBER",
-      "start": 217,
-      "end": 227
+      "start": 236,
+      "end": 246
     },
     {
       "text": "9468 6628 3382",
       "category": "ID_NUMBER",
-      "start": 237,
-      "end": 251
+      "start": 256,
+      "end": 270
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 261,
-      "end": 274
+      "start": 304,
+      "end": 317
     },
     {
       "text": "Sandhu Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 295,
-      "end": 318
+      "start": 333,
+      "end": 356
     },
     {
-      "text": "INR 43,60,000/-",
+      "text": "₹43,60,000",
       "category": "MONEY",
-      "start": 339,
-      "end": 354
+      "start": 371,
+      "end": 381
     },
     {
       "text": "Sandhu Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 365,
-      "end": 388
+      "start": 396,
+      "end": 419
     },
     {
       "text": "312449076635",
       "category": "FINANCIAL",
-      "start": 515,
-      "end": 527
+      "start": 546,
+      "end": 558
     },
     {
       "text": "HDFC0542788",
       "category": "FINANCIAL",
-      "start": 534,
-      "end": 545
+      "start": 565,
+      "end": 576
     },
     {
       "text": "S.C.C. No. 655/2022",
       "category": "CASE_NUMBER",
-      "start": 572,
-      "end": 591
+      "start": 603,
+      "end": 622
     },
     {
       "text": "Judicial Magistrate First Class Court at Chennai",
       "category": "COURT",
-      "start": 603,
-      "end": 651
+      "start": 634,
+      "end": 682
     },
     {
-      "text": "1 January 2022",
+      "text": "01/01/2022",
       "category": "DATE",
-      "start": 655,
-      "end": 669
-    },
-    {
-      "text": "age (28) + occupation (textile trader) + city (Chennai) + issue (cheque bounce)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 686,
+      "end": 696
     }
   ],
   "annotator": "generator",

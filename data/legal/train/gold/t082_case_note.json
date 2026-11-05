@@ -1,6 +1,6 @@
 {
-  "doc_id": "c22cfa80ffb6c832",
-  "text": "Case note: CS(COMM) 737/2019\nClient: Aarti Pai (architect, Jaipur)\nOpposing party: Meridian Airways Ltd\nCourt: Rajasthan High Court, before Justice Arvind Bhargava\nFiled on: 18 November 2019\nClaim amount: Rs. 34,82,00,000\nIssue: aircraft lease repossession. The airline has stopped paying lease rentals.\nAdvice given: Seek deregistration of the aircraft under the international lease convention.\nOutcome: The aviation regulator deregistered the aircraft.\nRecommended next step: Arrange the export of the aircraft.\nMatter code: Project Ibis",
+  "doc_id": "b2181bb1d941fd43",
+  "text": "Case note: CS(COMM) 737/2019\nClient: Aarti Pai (architect, Jaipur)\nOpposing party: Meridian Airways Ltd\nCourt: Rajasthan High Court, before Justice Arvind Bhargava\nFiled on: 18 November 2019\nClaim amount: ₹34.8 crore\nIssue: aircraft lease repossession. The airline has stopped paying lease rentals.\nAdvice given: Seek deregistration of the aircraft under the international lease convention.\nOutcome: The aviation regulator deregistered the aircraft.\nRecommended next step: Arrange the export of the aircraft.\nMatter code: Project Ibis",
   "spans": [
     {
       "text": "CS(COMM) 737/2019",
@@ -51,22 +51,22 @@
       "end": 190
     },
     {
-      "text": "Rs. 34,82,00,000",
+      "text": "₹34.8 crore",
       "category": "MONEY",
       "start": 205,
-      "end": 221
+      "end": 216
     },
     {
       "text": "aircraft lease repossession",
       "category": "LEGAL_ISSUE",
-      "start": 229,
-      "end": 256
+      "start": 224,
+      "end": 251
     },
     {
       "text": "Project Ibis",
       "category": "MATTER_CODENAME",
-      "start": 527,
-      "end": 539
+      "start": 522,
+      "end": 534
     },
     {
       "text": "occupation (architect) + city (Jaipur) + issue (aircraft lease repossession)",

@@ -1,7 +1,7 @@
 {
-  "doc_id": "9d153fe64f7078ca",
+  "doc_id": "97e0125ae39a9829",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t057",
-  "text": "Intake note (Commercial team, 05/09/2018). Our client Meera Iyer is a 60-year-old journalist who lives at Bungalow 35, Dharampeth, Nagpur 440018 and can be reached on 61394 67542 or meera.iyer@example.in. The client's PAN KKTPI5196B.\nThe client consulted us about a cheque bounce matter against Ramesh Mishra. A cheque for 44.4 lakh rupees issued by Ramesh Mishra bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 675102993471 (IFSC KKBK0773640).\nThe matter was filed as S.C.C. No. 2493/2019 before the Judicial Magistrate First Class Court at Nagpur on 8 January 2019."
+  "text": "Intake note - Commercial team\nDate: 17/12/2018\nClient: Meera Iyer, a 60-year-old journalist from Nagpur.\nAddress: Bungalow 35, Dharampeth, Nagpur 440018\nPhone: 61394 67542. Email: meera.iyer@example.in. PAN KKTPI5196B.\nMatter: cheque bounce\nOpposing party: Ramesh Mishra\nFacts: A cheque for Rs 44,40,000 issued by Ramesh Mishra bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 675102993471 (IFSC KKBK0773640).\nThe matter was filed as S.C.C. No. 2493/2019 before the Judicial Magistrate First Class Court at Nagpur on 8 January 2019."
 }

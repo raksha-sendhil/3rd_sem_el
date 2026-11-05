@@ -1,6 +1,6 @@
 {
-  "doc_id": "c55ec5ce94f3365c",
-  "text": "Subject: Your consumer complaint matter - C.C. No. 1234/2021\n\nDear Mr. Das,\n\nThank you for meeting us on 02/01/2022 about your dispute with M/s Saffron Builders Pvt Ltd. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Kolhapur District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "fc36fc60704d554f",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Das,\n\nThank you for meeting us on 2 June 2022 about your dispute with Saffron Builders Pvt Ltd. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Kolhapur District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "consumer complaint",
@@ -9,40 +9,34 @@
       "end": 32
     },
     {
-      "text": "C.C. No. 1234/2021",
-      "category": "CASE_NUMBER",
-      "start": 42,
-      "end": 60
-    },
-    {
       "text": "Das",
       "category": "NAME",
-      "start": 71,
-      "end": 74
+      "start": 50,
+      "end": 53
     },
     {
-      "text": "02/01/2022",
+      "text": "2 June 2022",
       "category": "DATE",
-      "start": 105,
-      "end": 115
+      "start": 84,
+      "end": 95
     },
     {
       "text": "Saffron Builders Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 144,
-      "end": 168
+      "start": 120,
+      "end": 144
     },
     {
       "text": "Kolhapur District Consumer Disputes Redressal Commission",
       "category": "COURT",
-      "start": 283,
-      "end": 339
+      "start": 259,
+      "end": 315
     },
     {
       "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 556,
-      "end": 571
+      "start": 532,
+      "end": 547
     }
   ],
   "annotator": "generator",

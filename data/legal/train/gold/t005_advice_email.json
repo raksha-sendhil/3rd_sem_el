@@ -1,6 +1,6 @@
 {
-  "doc_id": "1f30cfde6943aaa3",
-  "text": "Subject: Your cheque bounce matter - S.C.C. No. 1968/2019\n\nDear Mr. Mehra,\n\nThank you for meeting us on 4 July 2019 about your dispute with M/s Coastal Textiles Pvt Ltd. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Kochi.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "f94f58cf2a4d61d6",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Mehra,\n\nThank you for meeting us on 14 January 2020 about your dispute with M/s Coastal Textiles Pvt Ltd. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,40 +9,28 @@
       "end": 27
     },
     {
-      "text": "S.C.C. No. 1968/2019",
-      "category": "CASE_NUMBER",
-      "start": 37,
-      "end": 57
-    },
-    {
       "text": "Mehra",
       "category": "NAME",
-      "start": 68,
-      "end": 73
+      "start": 45,
+      "end": 50
     },
     {
-      "text": "4 July 2019",
+      "text": "14 January 2020",
       "category": "DATE",
-      "start": 104,
-      "end": 115
+      "start": 81,
+      "end": 96
     },
     {
       "text": "Coastal Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 144,
-      "end": 168
+      "start": 125,
+      "end": 149
     },
     {
-      "text": "Judicial Magistrate First Class Court at Kochi",
-      "category": "COURT",
-      "start": 287,
-      "end": 333
-    },
-    {
-      "text": "Aditi Ranganathan",
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 610,
-      "end": 627
+      "start": 511,
+      "end": 530
     }
   ],
   "annotator": "generator",

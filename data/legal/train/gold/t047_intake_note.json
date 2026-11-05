@@ -1,18 +1,18 @@
 {
-  "doc_id": "cd66467eea5114b2",
-  "text": "Intake note (Criminal team, 07/08/2023). Our client Prakash Mukherjee is a 65-year-old mechanical engineer who lives at Plot 107, Vesu, Surat 395017 and can be reached on 06864049758 or prakash.mukherjee@example.com. The client's PAN DBVPM6420B.\nThe client consulted us about a anticipatory bail matter against Sanjay Mehra. The anticipatory bail matter arises from a complaint by Sanjay Mehra about ₹17,00,000; the complainant alleges cheating over a failed deal.\nThe matter was filed as FIR No. 752/2023 before the Surat Sessions Court on 5 October 2023.",
+  "doc_id": "d91324ca37ab2d8e",
+  "text": "Intake note - Criminal team\nDate: 3 July 2023\nClient: Prakash Mukherjee, a 65-year-old mechanical engineer from Surat.\nAddress: Plot 107, Vesu, Surat 395017\nPhone: 06864049758. Email: prakash.mukherjee@example.com. PAN DBVPM6420B.\nMatter: anticipatory bail\nOpposing party: Sanjay Mehra\nFacts: The anticipatory bail matter arises from a complaint by Sanjay Mehra about Rs 17,00,000; the complainant alleges cheating over a failed deal.\nThe matter was filed as FIR No. 752/2023 before the Surat Sessions Court on 5 October 2023.",
   "spans": [
     {
-      "text": "07/08/2023",
+      "text": "3 July 2023",
       "category": "DATE",
-      "start": 28,
-      "end": 38
+      "start": 34,
+      "end": 45
     },
     {
       "text": "Prakash Mukherjee",
       "category": "NAME",
-      "start": 52,
-      "end": 69
+      "start": 54,
+      "end": 71
     },
     {
       "text": "65-year-old",
@@ -27,70 +27,82 @@
       "end": 106
     },
     {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 112,
+      "end": 117
+    },
+    {
       "text": "Plot 107, Vesu, Surat 395017",
       "category": "ADDRESS",
-      "start": 120,
-      "end": 148
+      "start": 128,
+      "end": 156
     },
     {
       "text": "06864049758",
       "category": "PHONE",
-      "start": 171,
-      "end": 182
+      "start": 164,
+      "end": 175
     },
     {
       "text": "prakash.mukherjee@example.com",
       "category": "EMAIL",
-      "start": 186,
-      "end": 215
+      "start": 184,
+      "end": 213
     },
     {
       "text": "DBVPM6420B",
       "category": "ID_NUMBER",
-      "start": 234,
-      "end": 244
+      "start": 219,
+      "end": 229
     },
     {
       "text": "anticipatory bail",
       "category": "LEGAL_ISSUE",
-      "start": 278,
-      "end": 295
+      "start": 239,
+      "end": 256
     },
     {
       "text": "Sanjay Mehra",
       "category": "NAME",
-      "start": 311,
-      "end": 323
+      "start": 273,
+      "end": 285
     },
     {
       "text": "Sanjay Mehra",
       "category": "NAME",
-      "start": 381,
-      "end": 393
+      "start": 349,
+      "end": 361
     },
     {
-      "text": "₹17,00,000",
+      "text": "Rs 17,00,000",
       "category": "MONEY",
-      "start": 400,
-      "end": 410
+      "start": 368,
+      "end": 380
     },
     {
       "text": "FIR No. 752/2023",
       "category": "CASE_NUMBER",
-      "start": 489,
-      "end": 505
+      "start": 459,
+      "end": 475
     },
     {
       "text": "Surat Sessions Court",
       "category": "COURT",
-      "start": 517,
-      "end": 537
+      "start": 487,
+      "end": 507
     },
     {
       "text": "5 October 2023",
       "category": "DATE",
-      "start": 541,
-      "end": 555
+      "start": 511,
+      "end": 525
+    },
+    {
+      "text": "age (65) + occupation (mechanical engineer) + city (Surat) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

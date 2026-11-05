@@ -1,6 +1,6 @@
 {
-  "doc_id": "ba83178a60625014",
-  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Mahesh Varghese. I am a 75-year-old farmer living in Kochi. Chandran Enterprises gave me a cheque for Rs 24,80,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. Can your firm advise me on what to do next? You can call me on +91 75072 33130 or email mahesh.varghese54@example.com.",
+  "doc_id": "745da3adc662709a",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Mahesh Varghese. I am a 75-year-old farmer living in Kochi. Chandran Enterprises gave me a cheque for ₹24,80,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. My case number is CC/1801/2022 in the Judicial Magistrate First Class Court at Kochi. Can your firm advise me on what to do next? You can call me on +91 75072 33130 or email mahesh.varghese54@example.com.",
   "spans": [
     {
       "text": "cheque bounce",
@@ -39,22 +39,34 @@
       "end": 144
     },
     {
-      "text": "Rs 24,80,000",
+      "text": "₹24,80,000",
       "category": "MONEY",
       "start": 166,
-      "end": 178
+      "end": 176
+    },
+    {
+      "text": "CC/1801/2022",
+      "category": "CASE_NUMBER",
+      "start": 279,
+      "end": 291
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 299,
+      "end": 345
     },
     {
       "text": "+91 75072 33130",
       "category": "PHONE",
-      "start": 326,
-      "end": 341
+      "start": 410,
+      "end": 425
     },
     {
       "text": "mahesh.varghese54@example.com",
       "category": "EMAIL",
-      "start": 351,
-      "end": 380
+      "start": 435,
+      "end": 464
     },
     {
       "text": "age (75) + occupation (farmer) + city (Kochi) + issue (cheque bounce)",

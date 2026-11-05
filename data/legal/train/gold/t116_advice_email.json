@@ -1,6 +1,6 @@
 {
-  "doc_id": "5b7fe06b5839aba4",
-  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Mishra,\n\nThank you for meeting us on 30 May 2022 about your dispute with Sandhu Textiles Pvt Ltd. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of ₹43,60,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "42da2c18e3c3bfd1",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 655/2022\n\nDear Mr. Mishra,\n\nThank you for meeting us on 1 July 2022 about your dispute with Sandhu Textiles Pvt Ltd. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of 43.6 lakh rupees.\n\nRegards,\nAdv. Kunal Bhagat",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,34 +9,40 @@
       "end": 27
     },
     {
-      "text": "Mishra",
-      "category": "NAME",
-      "start": 45,
-      "end": 51
+      "text": "S.C.C. No. 655/2022",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
     },
     {
-      "text": "30 May 2022",
+      "text": "Mishra",
+      "category": "NAME",
+      "start": 67,
+      "end": 73
+    },
+    {
+      "text": "1 July 2022",
       "category": "DATE",
-      "start": 82,
-      "end": 93
+      "start": 104,
+      "end": 115
     },
     {
       "text": "Sandhu Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 118,
-      "end": 141
+      "start": 140,
+      "end": 163
     },
     {
-      "text": "₹43,60,000",
+      "text": "43.6 lakh rupees",
       "category": "MONEY",
-      "start": 521,
-      "end": 531
+      "start": 543,
+      "end": 559
     },
     {
-      "text": "Hema Lakshmanan",
+      "text": "Kunal Bhagat",
       "category": "NAME",
-      "start": 548,
-      "end": 563
+      "start": 576,
+      "end": 588
     }
   ],
   "annotator": "generator",

@@ -1,108 +1,120 @@
 {
-  "doc_id": "7e6e4b2505748e87",
-  "text": "Intake note (Commercial team, 4 September 2021). Our client Uma Ahuja is a 25-year-old railway employee who lives at House No. 92, Kowdiar, Thiruvananthapuram 695024 and can be reached on 80506 81291 or uma.ahuja@example.com. The client's PAN FYTPA5456W.\nThe client consulted us about a cheque bounce matter against Deepak Bhosale. A cheque for INR 34,40,000/- issued by Deepak Bhosale bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 271203747145 (IFSC HDFC0499917).\nThe matter was filed as CC/390/2021 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 21 November 2021.",
+  "doc_id": "376b5fc71e16bd21",
+  "text": "Intake note - Commercial team\nDate: 24 August 2021\nClient: Uma Ahuja, a 25-year-old railway employee from Thiruvananthapuram.\nAddress: House No. 92, Kowdiar, Thiruvananthapuram 695024\nPhone: 80506 81291. Email: uma.ahuja@example.com. PAN FYTPA5456W.\nMatter: cheque bounce\nOpposing party: Deepak Bhosale\nFacts: A cheque for ₹34,40,000 issued by Deepak Bhosale bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 271203747145 (IFSC HDFC0499917).\nThe matter was filed as CC/390/2021 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 21 November 2021.",
   "spans": [
     {
-      "text": "4 September 2021",
+      "text": "24 August 2021",
       "category": "DATE",
-      "start": 30,
-      "end": 46
+      "start": 36,
+      "end": 50
     },
     {
       "text": "Uma Ahuja",
       "category": "NAME",
-      "start": 60,
-      "end": 69
+      "start": 59,
+      "end": 68
     },
     {
       "text": "25-year-old",
       "category": "AGE",
-      "start": 75,
-      "end": 86
+      "start": 72,
+      "end": 83
     },
     {
       "text": "railway employee",
       "category": "OCCUPATION",
-      "start": 87,
-      "end": 103
+      "start": 84,
+      "end": 100
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 124
     },
     {
       "text": "House No. 92, Kowdiar, Thiruvananthapuram 695024",
       "category": "ADDRESS",
-      "start": 117,
-      "end": 165
+      "start": 135,
+      "end": 183
     },
     {
       "text": "80506 81291",
       "category": "PHONE",
-      "start": 188,
-      "end": 199
+      "start": 191,
+      "end": 202
     },
     {
       "text": "uma.ahuja@example.com",
       "category": "EMAIL",
-      "start": 203,
-      "end": 224
+      "start": 211,
+      "end": 232
     },
     {
       "text": "FYTPA5456W",
       "category": "ID_NUMBER",
-      "start": 243,
-      "end": 253
+      "start": 238,
+      "end": 248
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 287,
-      "end": 300
+      "start": 258,
+      "end": 271
     },
     {
       "text": "Deepak Bhosale",
       "category": "NAME",
-      "start": 316,
-      "end": 330
+      "start": 288,
+      "end": 302
     },
     {
-      "text": "INR 34,40,000/-",
+      "text": "₹34,40,000",
       "category": "MONEY",
-      "start": 345,
-      "end": 360
+      "start": 323,
+      "end": 333
     },
     {
       "text": "Deepak Bhosale",
       "category": "NAME",
-      "start": 371,
-      "end": 385
+      "start": 344,
+      "end": 358
     },
     {
       "text": "271203747145",
       "category": "FINANCIAL",
-      "start": 512,
-      "end": 524
+      "start": 485,
+      "end": 497
     },
     {
       "text": "HDFC0499917",
       "category": "FINANCIAL",
-      "start": 531,
-      "end": 542
+      "start": 504,
+      "end": 515
     },
     {
       "text": "CC/390/2021",
       "category": "CASE_NUMBER",
-      "start": 569,
-      "end": 580
+      "start": 542,
+      "end": 553
     },
     {
       "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
       "category": "COURT",
-      "start": 592,
-      "end": 651
+      "start": 565,
+      "end": 624
     },
     {
       "text": "21 November 2021",
       "category": "DATE",
-      "start": 655,
-      "end": 671
+      "start": 628,
+      "end": 644
+    },
+    {
+      "text": "age (25) + occupation (railway employee) + city (Thiruvananthapuram) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

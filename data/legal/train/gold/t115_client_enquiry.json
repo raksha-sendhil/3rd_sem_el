@@ -1,0 +1,68 @@
+{
+  "doc_id": "7cfcbf07dd9780c8",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Anjali DSouza. I am a 37-year-old taxi driver living in Pune. I have a tenancy problem with Kiran Shah involving INR 7,25,000/- in rent, and the landlord needs the premises for the family's own use. Can your firm advise me on what to do next? You can call me on 07222926339 or email anjali.dsouza@example.com.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Anjali DSouza",
+      "category": "NAME",
+      "start": 67,
+      "end": 80
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 101,
+      "end": 112
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 123,
+      "end": 127
+    },
+    {
+      "text": "Kiran Shah",
+      "category": "NAME",
+      "start": 159,
+      "end": 169
+    },
+    {
+      "text": "INR 7,25,000/-",
+      "category": "MONEY",
+      "start": 180,
+      "end": 194
+    },
+    {
+      "text": "07222926339",
+      "category": "PHONE",
+      "start": 329,
+      "end": 340
+    },
+    {
+      "text": "anjali.dsouza@example.com",
+      "category": "EMAIL",
+      "start": 350,
+      "end": 375
+    },
+    {
+      "text": "age (37) + occupation (taxi driver) + city (Pune) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

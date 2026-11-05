@@ -1,0 +1,104 @@
+{
+  "doc_id": "e68d47b3b2a06147",
+  "text": "Intake note (Commercial team, 30 September 2024). Our client Farhan Chatterjee is a 44-year-old fashion designer who lives at Bungalow 10, Adajan, Surat 395002 and can be reached on 08091648932 or farhan.chatterjee@example.com. The client's PAN JQKPC3068T, Aadhaar 6693 7739 5485.\nThe client consulted us about a cheque bounce matter against Priyanka Sen. A cheque for 6.3 lakh rupees issued by Priyanka Sen bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as S.C.C. No. 1946/2024 before the Judicial Magistrate First Class Court at Surat on 04/11/2024.",
+  "spans": [
+    {
+      "text": "30 September 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 47
+    },
+    {
+      "text": "Farhan Chatterjee",
+      "category": "NAME",
+      "start": 61,
+      "end": 78
+    },
+    {
+      "text": "44-year-old",
+      "category": "AGE",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 96,
+      "end": 112
+    },
+    {
+      "text": "Bungalow 10, Adajan, Surat 395002",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 159
+    },
+    {
+      "text": "08091648932",
+      "category": "PHONE",
+      "start": 182,
+      "end": 193
+    },
+    {
+      "text": "farhan.chatterjee@example.com",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 226
+    },
+    {
+      "text": "JQKPC3068T",
+      "category": "ID_NUMBER",
+      "start": 245,
+      "end": 255
+    },
+    {
+      "text": "6693 7739 5485",
+      "category": "ID_NUMBER",
+      "start": 265,
+      "end": 279
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 313,
+      "end": 326
+    },
+    {
+      "text": "Priyanka Sen",
+      "category": "NAME",
+      "start": 342,
+      "end": 354
+    },
+    {
+      "text": "6.3 lakh rupees",
+      "category": "MONEY",
+      "start": 369,
+      "end": 384
+    },
+    {
+      "text": "Priyanka Sen",
+      "category": "NAME",
+      "start": 395,
+      "end": 407
+    },
+    {
+      "text": "S.C.C. No. 1946/2024",
+      "category": "CASE_NUMBER",
+      "start": 504,
+      "end": 524
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Surat",
+      "category": "COURT",
+      "start": 536,
+      "end": 582
+    },
+    {
+      "text": "04/11/2024",
+      "category": "DATE",
+      "start": 586,
+      "end": 596
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

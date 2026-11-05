@@ -1,6 +1,6 @@
 {
-  "doc_id": "04eb7447e7e4a2e3",
-  "text": "Subject: Your consumer complaint matter - C.C. No. 2078/2025\n\nDear Mr. Chandran,\n\nThank you for meeting us on 14/12/2025 about your dispute with Qureshi Developers. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Kochi District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office. We will pursue the full claim of ₹9 crore.\n\nRegards,\nAdv. Zubin Contractor",
+  "doc_id": "1d82cecd5c022f06",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Chandran,\n\nThank you for meeting us on 3 July 2026 about your dispute with Qureshi Developers. As we understand it, the flat was handed over with serious construction defects.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office. We will pursue the full claim of Rs. 9,02,00,000.\n\nRegards,\nAdv. Mrinalini Saraf",
   "spans": [
     {
       "text": "consumer complaint",
@@ -9,46 +9,34 @@
       "end": 32
     },
     {
-      "text": "C.C. No. 2078/2025",
-      "category": "CASE_NUMBER",
-      "start": 42,
-      "end": 60
-    },
-    {
       "text": "Chandran",
       "category": "NAME",
-      "start": 71,
-      "end": 79
+      "start": 50,
+      "end": 58
     },
     {
-      "text": "14/12/2025",
+      "text": "3 July 2026",
       "category": "DATE",
-      "start": 110,
-      "end": 120
+      "start": 89,
+      "end": 100
     },
     {
       "text": "Qureshi Developers",
       "category": "ORGANIZATION",
-      "start": 145,
-      "end": 163
+      "start": 125,
+      "end": 143
     },
     {
-      "text": "Kochi District Consumer Disputes Redressal Commission",
-      "category": "COURT",
-      "start": 278,
-      "end": 331
-    },
-    {
-      "text": "₹9 crore",
+      "text": "Rs. 9,02,00,000",
       "category": "MONEY",
-      "start": 566,
-      "end": 574
+      "start": 459,
+      "end": 474
     },
     {
-      "text": "Zubin Contractor",
+      "text": "Mrinalini Saraf",
       "category": "NAME",
-      "start": 591,
-      "end": 607
+      "start": 491,
+      "end": 506
     }
   ],
   "annotator": "generator",

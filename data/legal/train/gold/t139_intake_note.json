@@ -1,108 +1,108 @@
 {
-  "doc_id": "0de65f5daf34ea87",
-  "text": "Intake note - Commercial team\nDate: 23 June 2020\nClient: Fatima Rathore, a 41-year-old college lecturer from Kolhapur.\nAddress: House No. 42, Shahupuri, Kolhapur 416017\nPhone: 84839 81532. Email: fatima.rathore@example.in. PAN PNAPR3050A, Aadhaar 5850 3603 1072.\nMatter: wrongful termination\nOpposing party: Mehra Pharma Ltd\nFacts: The wrongful termination claim against M/s Mehra Pharma Ltd is for ₹9,50,000; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 1791/2020 before the Kolhapur Labour Court on 26 November 2020.",
+  "doc_id": "3fb18976604b452b",
+  "text": "Intake note - Commercial team\nDate: 19 May 2020\nClient: Fatima Rathore, a 41-year-old college lecturer from Kolhapur.\nAddress: House No. 42, Shahupuri, Kolhapur 416017\nPhone: 84839 81532. Email: fatima.rathore@example.in. PAN PNAPR3050A, Aadhaar 5850 3603 1072.\nMatter: wrongful termination\nOpposing party: Mehra Pharma Ltd\nFacts: The wrongful termination claim against Mehra Pharma Ltd is for 9.5 lakh rupees; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 1791/2020 before the Kolhapur Labour Court on 26 November 2020.",
   "spans": [
     {
-      "text": "23 June 2020",
+      "text": "19 May 2020",
       "category": "DATE",
       "start": 36,
-      "end": 48
+      "end": 47
     },
     {
       "text": "Fatima Rathore",
       "category": "NAME",
-      "start": 57,
-      "end": 71
+      "start": 56,
+      "end": 70
     },
     {
       "text": "41-year-old",
       "category": "AGE",
-      "start": 75,
-      "end": 86
+      "start": 74,
+      "end": 85
     },
     {
       "text": "college lecturer",
       "category": "OCCUPATION",
-      "start": 87,
-      "end": 103
+      "start": 86,
+      "end": 102
     },
     {
       "text": "Kolhapur",
       "category": "LOCATION",
-      "start": 109,
-      "end": 117
+      "start": 108,
+      "end": 116
     },
     {
       "text": "House No. 42, Shahupuri, Kolhapur 416017",
       "category": "ADDRESS",
-      "start": 128,
-      "end": 168
+      "start": 127,
+      "end": 167
     },
     {
       "text": "84839 81532",
       "category": "PHONE",
-      "start": 176,
-      "end": 187
+      "start": 175,
+      "end": 186
     },
     {
       "text": "fatima.rathore@example.in",
       "category": "EMAIL",
-      "start": 196,
-      "end": 221
+      "start": 195,
+      "end": 220
     },
     {
       "text": "PNAPR3050A",
       "category": "ID_NUMBER",
-      "start": 227,
-      "end": 237
+      "start": 226,
+      "end": 236
     },
     {
       "text": "5850 3603 1072",
       "category": "ID_NUMBER",
-      "start": 247,
-      "end": 261
+      "start": 246,
+      "end": 260
     },
     {
       "text": "wrongful termination",
       "category": "LEGAL_ISSUE",
-      "start": 271,
-      "end": 291
+      "start": 270,
+      "end": 290
     },
     {
       "text": "Mehra Pharma Ltd",
       "category": "ORGANIZATION",
-      "start": 308,
-      "end": 324
+      "start": 307,
+      "end": 323
     },
     {
       "text": "Mehra Pharma Ltd",
       "category": "ORGANIZATION",
-      "start": 375,
-      "end": 391
+      "start": 370,
+      "end": 386
     },
     {
-      "text": "₹9,50,000",
+      "text": "9.5 lakh rupees",
       "category": "MONEY",
-      "start": 399,
-      "end": 408
+      "start": 394,
+      "end": 409
     },
     {
       "text": "Complaint No. 1791/2020",
       "category": "CASE_NUMBER",
-      "start": 487,
-      "end": 510
+      "start": 488,
+      "end": 511
     },
     {
       "text": "Kolhapur Labour Court",
       "category": "COURT",
-      "start": 522,
-      "end": 543
+      "start": 523,
+      "end": 544
     },
     {
       "text": "26 November 2020",
       "category": "DATE",
-      "start": 547,
-      "end": 563
+      "start": 548,
+      "end": 564
     },
     {
       "text": "age (41) + occupation (college lecturer) + city (Kolhapur) + issue (wrongful termination)",

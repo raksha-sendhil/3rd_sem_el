@@ -1,42 +1,48 @@
 {
-  "doc_id": "b72f7d99ccc8660a",
-  "text": "Intake note (Commercial team, 14 August 2024). Our client Priyanka Bhandari is a 49-year-old nurse who lives at Bungalow 38, Fatehgunj, Vadodara 390055 and can be reached on +91 89572 07148 or priyanka.bhandari@example.com. The client's PAN JEEPB1730G.\nThe client consulted us about a cheque bounce matter against Rekha Nambiar. A cheque for ₹24,20,000 issued by Rekha Nambiar bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 759/2024 before the Judicial Magistrate First Class Court at Vadodara on 28 October 2024.",
+  "doc_id": "2ec9e951e97f3a18",
+  "text": "Intake note - Commercial team\nDate: 31 August 2024\nClient: Priyanka Bhandari, a 49-year-old nurse from Vadodara.\nAddress: Bungalow 38, Fatehgunj, Vadodara 390055\nPhone: +91 89572 07148. Email: priyanka.bhandari@example.com. PAN JEEPB1730G.\nMatter: cheque bounce\nOpposing party: Rekha Nambiar\nFacts: A cheque for ₹24,20,000 issued by Rekha Nambiar bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 759/2024 before the Judicial Magistrate First Class Court at Vadodara on 28 October 2024.",
   "spans": [
     {
-      "text": "14 August 2024",
+      "text": "31 August 2024",
       "category": "DATE",
-      "start": 30,
-      "end": 44
+      "start": 36,
+      "end": 50
     },
     {
       "text": "Priyanka Bhandari",
       "category": "NAME",
-      "start": 58,
-      "end": 75
+      "start": 59,
+      "end": 76
     },
     {
       "text": "49-year-old",
       "category": "AGE",
-      "start": 81,
-      "end": 92
+      "start": 80,
+      "end": 91
     },
     {
       "text": "nurse",
       "category": "OCCUPATION",
-      "start": 93,
-      "end": 98
+      "start": 92,
+      "end": 97
+    },
+    {
+      "text": "Vadodara",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 111
     },
     {
       "text": "Bungalow 38, Fatehgunj, Vadodara 390055",
       "category": "ADDRESS",
-      "start": 112,
-      "end": 151
+      "start": 122,
+      "end": 161
     },
     {
       "text": "+91 89572 07148",
       "category": "PHONE",
-      "start": 174,
-      "end": 189
+      "start": 169,
+      "end": 184
     },
     {
       "text": "priyanka.bhandari@example.com",
@@ -47,50 +53,56 @@
     {
       "text": "JEEPB1730G",
       "category": "ID_NUMBER",
-      "start": 241,
-      "end": 251
+      "start": 228,
+      "end": 238
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 285,
-      "end": 298
+      "start": 248,
+      "end": 261
     },
     {
       "text": "Rekha Nambiar",
       "category": "NAME",
-      "start": 314,
-      "end": 327
+      "start": 278,
+      "end": 291
     },
     {
       "text": "₹24,20,000",
       "category": "MONEY",
-      "start": 342,
-      "end": 352
+      "start": 312,
+      "end": 322
     },
     {
       "text": "Rekha Nambiar",
       "category": "NAME",
-      "start": 363,
-      "end": 376
+      "start": 333,
+      "end": 346
     },
     {
       "text": "S.C.C. No. 759/2024",
       "category": "CASE_NUMBER",
-      "start": 474,
-      "end": 493
+      "start": 444,
+      "end": 463
     },
     {
       "text": "Judicial Magistrate First Class Court at Vadodara",
       "category": "COURT",
-      "start": 505,
-      "end": 554
+      "start": 475,
+      "end": 524
     },
     {
       "text": "28 October 2024",
       "category": "DATE",
-      "start": 558,
-      "end": 573
+      "start": 528,
+      "end": 543
+    },
+    {
+      "text": "age (49) + occupation (nurse) + city (Vadodara) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

@@ -1,7 +1,7 @@
 {
-  "doc_id": "e36ef57570689b84",
+  "doc_id": "01cca0a6242f671e",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t001",
-  "text": "Intake note - Commercial team\nDate: 30 November 2022\nClient: Suresh Dutta, a 52-year-old electrician from Hubballi.\nAddress: Bungalow 23, Keshwapur, Hubballi 580029\nPhone: 06996633239. Email: suresh.dutta@example.in. PAN RFYPD9208H.\nMatter: cheque bounce\nOpposing party: Harpreet Kamath\nFacts: A cheque for INR 13,10,000/- issued by Harpreet Kamath bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 1385/2023 before the Judicial Magistrate First Class Court at Hubballi on 29/01/2023."
+  "text": "Intake note (Commercial team, 26 August 2022). Our client Suresh Dutta is a 52-year-old electrician who lives at Bungalow 23, Keshwapur, Hubballi 580029 and can be reached on 06996633239 or suresh.dutta@example.in. The client's PAN RFYPD9208H.\nThe client consulted us about a cheque bounce matter against Harpreet Kamath. A cheque for ₹13,10,000 issued by Harpreet Kamath bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 1385/2023 before the Judicial Magistrate First Class Court at Hubballi on 29 January 2023."
 }

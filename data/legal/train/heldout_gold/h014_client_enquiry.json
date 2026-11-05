@@ -1,0 +1,80 @@
+{
+  "doc_id": "f208992877a2e152",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Farhan Tiwari. I am a 70-year-old college lecturer living in Kolkata. M/s Trident Traders gave me a cheque for Rs 31,00,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. My case number is S.C.C. No. 2222/2022 in the Judicial Magistrate First Class Court at Kolkata. Can your firm advise me on what to do next? You can call me on +91 75651 22469 or email farhan.tiwari@example.com.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Farhan Tiwari",
+      "category": "NAME",
+      "start": 64,
+      "end": 77
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 98,
+      "end": 114
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 125,
+      "end": 132
+    },
+    {
+      "text": "Trident Traders",
+      "category": "ORGANIZATION",
+      "start": 138,
+      "end": 153
+    },
+    {
+      "text": "Rs 31,00,000",
+      "category": "MONEY",
+      "start": 175,
+      "end": 187
+    },
+    {
+      "text": "S.C.C. No. 2222/2022",
+      "category": "CASE_NUMBER",
+      "start": 290,
+      "end": 310
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kolkata",
+      "category": "COURT",
+      "start": 318,
+      "end": 366
+    },
+    {
+      "text": "+91 75651 22469",
+      "category": "PHONE",
+      "start": 431,
+      "end": 446
+    },
+    {
+      "text": "farhan.tiwari@example.com",
+      "category": "EMAIL",
+      "start": 456,
+      "end": 481
+    },
+    {
+      "text": "age (70) + occupation (college lecturer) + city (Kolkata) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

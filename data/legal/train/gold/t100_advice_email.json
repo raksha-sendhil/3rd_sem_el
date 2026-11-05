@@ -1,6 +1,6 @@
 {
-  "doc_id": "e93d76d1c9325ef7",
-  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 2055/2019\n\nDear Mr. Iyengar,\n\nThank you for meeting us on 8 May 2019 about your dispute with Suresh Hegde. As we understand it, the tenant has sublet the flat without permission.\n\nOur advice is to collect evidence of unauthorised subletting such as utility bills in the occupant's name. Please collect utility bills in the occupant's name and statements of the neighbours and send copies to this office. We will pursue the full claim of INR 4,50,000/-.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "d11ecebaabc7dede",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Mr. Iyengar,\n\nThank you for meeting us on 6 May 2019 about your dispute with Suresh Hegde. As we understand it, the tenant has sublet the flat without permission. The matter is listed before the Thiruvananthapuram District Court.\n\nOur advice is to collect evidence of unauthorised subletting such as utility bills in the occupant's name. Please collect utility bills in the occupant's name and statements of the neighbours and send copies to this office. We will pursue the full claim of Rs 4,50,000.\n\nRegards,\nAdv. Aditi Ranganathan",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -9,40 +9,40 @@
       "end": 30
     },
     {
-      "text": "R.C.A. No. 2055/2019",
-      "category": "CASE_NUMBER",
-      "start": 40,
-      "end": 60
-    },
-    {
       "text": "Iyengar",
       "category": "NAME",
-      "start": 71,
-      "end": 78
+      "start": 48,
+      "end": 55
     },
     {
-      "text": "8 May 2019",
+      "text": "6 May 2019",
       "category": "DATE",
-      "start": 109,
-      "end": 119
+      "start": 86,
+      "end": 96
     },
     {
       "text": "Suresh Hegde",
       "category": "NAME",
-      "start": 144,
-      "end": 156
+      "start": 121,
+      "end": 133
     },
     {
-      "text": "INR 4,50,000/-",
+      "text": "Thiruvananthapuram District Court",
+      "category": "COURT",
+      "start": 239,
+      "end": 272
+    },
+    {
+      "text": "Rs 4,50,000",
       "category": "MONEY",
-      "start": 488,
-      "end": 502
+      "start": 532,
+      "end": 543
     },
     {
       "text": "Aditi Ranganathan",
       "category": "NAME",
-      "start": 519,
-      "end": 536
+      "start": 560,
+      "end": 577
     }
   ],
   "annotator": "generator",

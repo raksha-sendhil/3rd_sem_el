@@ -1,6 +1,6 @@
 {
-  "doc_id": "4393c58ecbed19a9",
-  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2642/2021\n\nDear Mr. Bhosale,\n\nThank you for meeting us on 15 June 2021 about your dispute with Charulata Sen. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office. We will pursue the full claim of ₹4,65,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "c09406bf3d9b10c0",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2642/2021\n\nDear Mr. Bhosale,\n\nThank you for meeting us on 24 August 2021 about your dispute with Charulata Sen. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Pune District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office. We will pursue the full claim of ₹4,65,000.\n\nRegards,\nAdv. Aditi Ranganathan",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -21,28 +21,34 @@
       "end": 78
     },
     {
-      "text": "15 June 2021",
+      "text": "24 August 2021",
       "category": "DATE",
       "start": 109,
-      "end": 121
+      "end": 123
     },
     {
       "text": "Charulata Sen",
       "category": "NAME",
-      "start": 146,
-      "end": 159
+      "start": 148,
+      "end": 161
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 294,
+      "end": 313
     },
     {
       "text": "₹4,65,000",
       "category": "MONEY",
-      "start": 506,
-      "end": 515
+      "start": 561,
+      "end": 570
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "Aditi Ranganathan",
       "category": "NAME",
-      "start": 532,
-      "end": 544
+      "start": 587,
+      "end": 604
     }
   ],
   "annotator": "generator",

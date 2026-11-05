@@ -1,6 +1,6 @@
 {
-  "doc_id": "262931fe0e8e308d",
-  "text": "Subject: Your cheque bounce matter - CC/1706/2021\n\nDear Ms. Shah,\n\nThank you for meeting us on 15/06/2022 about your dispute with Shruti More. As we understand it, the cheque came back with the remark account closed. The matter is listed before the Judicial Magistrate First Class Court at Ahmedabad.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office. We will pursue the full claim of 32.9 lakh rupees.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "c921dedb5aa91dfc",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Shah,\n\nThank you for meeting us on 30 August 2022 about your dispute with Shruti More. As we understand it, the cheque came back with the remark account closed. The matter is listed before the Judicial Magistrate First Class Court at Ahmedabad.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,46 +9,34 @@
       "end": 27
     },
     {
-      "text": "CC/1706/2021",
-      "category": "CASE_NUMBER",
-      "start": 37,
+      "text": "Shah",
+      "category": "NAME",
+      "start": 45,
       "end": 49
     },
     {
-      "text": "Shah",
-      "category": "NAME",
-      "start": 60,
-      "end": 64
-    },
-    {
-      "text": "15/06/2022",
+      "text": "30 August 2022",
       "category": "DATE",
-      "start": 95,
-      "end": 105
+      "start": 80,
+      "end": 94
     },
     {
       "text": "Shruti More",
       "category": "NAME",
-      "start": 130,
-      "end": 141
+      "start": 119,
+      "end": 130
     },
     {
       "text": "Judicial Magistrate First Class Court at Ahmedabad",
       "category": "COURT",
-      "start": 249,
-      "end": 299
+      "start": 238,
+      "end": 288
     },
     {
-      "text": "32.9 lakh rupees",
-      "category": "MONEY",
-      "start": 603,
-      "end": 619
-    },
-    {
-      "text": "Hema Lakshmanan",
+      "text": "Zubin Contractor",
       "category": "NAME",
-      "start": 636,
-      "end": 651
+      "start": 574,
+      "end": 590
     }
   ],
   "annotator": "generator",

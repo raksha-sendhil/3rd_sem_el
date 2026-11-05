@@ -1,114 +1,102 @@
 {
-  "doc_id": "7d4c8480e4406d03",
-  "text": "Intake note - Property team\nDate: 30 November 2021\nClient: Simran Srivastava, a 62-year-old journalist from Kolhapur.\nAddress: Bungalow 26, Rajarampuri, Kolhapur 416027\nPhone: 66564 25751. Email: simran.srivastava@example.com. PAN BYEPS2677G, Aadhaar 3059 6304 5336.\nMatter: land dispute\nOpposing party: Kavya Pawar\nFacts: The land dispute with Kavya Pawar concerns agricultural land valued at INR 85,20,000/-; relatives dispute who owns the ancestral land.\nThe matter was filed as R.C.S. No. 1465/2022 before the Kolhapur District Court on 25 May 2022.",
+  "doc_id": "f0df8db8c3014070",
+  "text": "Intake note (Property team, 4 May 2022). Our client Simran Srivastava is a 62-year-old journalist who lives at Bungalow 26, Rajarampuri, Kolhapur 416027 and can be reached on 66564 25751 or simran.srivastava@example.com. The client's PAN BYEPS2677G, Aadhaar 3059 6304 5336.\nThe client consulted us about a land dispute matter against Kavya Pawar. The land dispute with Kavya Pawar concerns agricultural land valued at ₹85,20,000; relatives dispute who owns the ancestral land.\nThe matter was filed as R.C.S. No. 1465/2022 before the Kolhapur District Court on 25 May 2022.",
   "spans": [
     {
-      "text": "30 November 2021",
+      "text": "4 May 2022",
       "category": "DATE",
-      "start": 34,
-      "end": 50
+      "start": 28,
+      "end": 38
     },
     {
       "text": "Simran Srivastava",
       "category": "NAME",
-      "start": 59,
-      "end": 76
+      "start": 52,
+      "end": 69
     },
     {
       "text": "62-year-old",
       "category": "AGE",
-      "start": 80,
-      "end": 91
+      "start": 75,
+      "end": 86
     },
     {
       "text": "journalist",
       "category": "OCCUPATION",
-      "start": 92,
-      "end": 102
-    },
-    {
-      "text": "Kolhapur",
-      "category": "LOCATION",
-      "start": 108,
-      "end": 116
+      "start": 87,
+      "end": 97
     },
     {
       "text": "Bungalow 26, Rajarampuri, Kolhapur 416027",
       "category": "ADDRESS",
-      "start": 127,
-      "end": 168
+      "start": 111,
+      "end": 152
     },
     {
       "text": "66564 25751",
       "category": "PHONE",
-      "start": 176,
-      "end": 187
+      "start": 175,
+      "end": 186
     },
     {
       "text": "simran.srivastava@example.com",
       "category": "EMAIL",
-      "start": 196,
-      "end": 225
+      "start": 190,
+      "end": 219
     },
     {
       "text": "BYEPS2677G",
       "category": "ID_NUMBER",
-      "start": 231,
-      "end": 241
+      "start": 238,
+      "end": 248
     },
     {
       "text": "3059 6304 5336",
       "category": "ID_NUMBER",
-      "start": 251,
-      "end": 265
+      "start": 258,
+      "end": 272
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 275,
-      "end": 287
+      "start": 306,
+      "end": 318
     },
     {
       "text": "Kavya Pawar",
       "category": "NAME",
-      "start": 304,
-      "end": 315
+      "start": 334,
+      "end": 345
     },
     {
       "text": "Kavya Pawar",
       "category": "NAME",
-      "start": 345,
-      "end": 356
+      "start": 369,
+      "end": 380
     },
     {
-      "text": "INR 85,20,000/-",
+      "text": "₹85,20,000",
       "category": "MONEY",
-      "start": 394,
-      "end": 409
+      "start": 418,
+      "end": 428
     },
     {
       "text": "R.C.S. No. 1465/2022",
       "category": "CASE_NUMBER",
-      "start": 482,
-      "end": 502
+      "start": 501,
+      "end": 521
     },
     {
       "text": "Kolhapur District Court",
       "category": "COURT",
-      "start": 514,
-      "end": 537
+      "start": 533,
+      "end": 556
     },
     {
       "text": "25 May 2022",
       "category": "DATE",
-      "start": 541,
-      "end": 552
-    },
-    {
-      "text": "age (62) + occupation (journalist) + city (Kolhapur) + issue (land dispute)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 560,
+      "end": 571
     }
   ],
   "annotator": "generator",

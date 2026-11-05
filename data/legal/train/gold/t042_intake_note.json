@@ -1,108 +1,120 @@
 {
-  "doc_id": "1e67a1b10138a40f",
-  "text": "Intake note (Commercial team, 5 July 2025). Our client Vivek Kulkarni is a 36-year-old civil engineer who lives at Bungalow 2, Aliganj, Lucknow 226041 and can be reached on +91 73281 67725 or vivek.kulkarni71@example.com. The client's PAN RMGPK3608A.\nThe client consulted us about a cheque bounce matter against Meera Bansal. A cheque for 5.8 lakh rupees issued by Meera Bansal bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 24253742410 (IFSC UTIB0779001).\nThe matter was filed as S.C.C. No. 779/2025 before the Judicial Magistrate First Class Court at Lucknow on 24 August 2025.",
+  "doc_id": "5ff29a2465c08274",
+  "text": "Intake note - Commercial team\nDate: 6 February 2025\nClient: Vivek Kulkarni, a 36-year-old civil engineer from Lucknow.\nAddress: Bungalow 2, Aliganj, Lucknow 226041\nPhone: +91 73281 67725. Email: vivek.kulkarni71@example.com. PAN RMGPK3608A.\nMatter: cheque bounce\nOpposing party: Meera Bansal\nFacts: A cheque for INR 5,85,000/- issued by Meera Bansal bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 24253742410 (IFSC UTIB0779001).\nThe matter was filed as S.C.C. No. 779/2025 before the Judicial Magistrate First Class Court at Lucknow on 24/08/2025.",
   "spans": [
     {
-      "text": "5 July 2025",
+      "text": "6 February 2025",
       "category": "DATE",
-      "start": 30,
-      "end": 41
+      "start": 36,
+      "end": 51
     },
     {
       "text": "Vivek Kulkarni",
       "category": "NAME",
-      "start": 55,
-      "end": 69
+      "start": 60,
+      "end": 74
     },
     {
       "text": "36-year-old",
       "category": "AGE",
-      "start": 75,
-      "end": 86
+      "start": 78,
+      "end": 89
     },
     {
       "text": "civil engineer",
       "category": "OCCUPATION",
-      "start": 87,
-      "end": 101
+      "start": 90,
+      "end": 104
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 117
     },
     {
       "text": "Bungalow 2, Aliganj, Lucknow 226041",
       "category": "ADDRESS",
-      "start": 115,
-      "end": 150
+      "start": 128,
+      "end": 163
     },
     {
       "text": "+91 73281 67725",
       "category": "PHONE",
-      "start": 173,
-      "end": 188
+      "start": 171,
+      "end": 186
     },
     {
       "text": "vivek.kulkarni71@example.com",
       "category": "EMAIL",
-      "start": 192,
-      "end": 220
+      "start": 195,
+      "end": 223
     },
     {
       "text": "RMGPK3608A",
       "category": "ID_NUMBER",
-      "start": 239,
-      "end": 249
+      "start": 229,
+      "end": 239
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 283,
-      "end": 296
+      "start": 249,
+      "end": 262
     },
     {
       "text": "Meera Bansal",
       "category": "NAME",
-      "start": 312,
-      "end": 324
+      "start": 279,
+      "end": 291
     },
     {
-      "text": "5.8 lakh rupees",
+      "text": "INR 5,85,000/-",
       "category": "MONEY",
-      "start": 339,
-      "end": 354
+      "start": 312,
+      "end": 326
     },
     {
       "text": "Meera Bansal",
       "category": "NAME",
-      "start": 365,
-      "end": 377
+      "start": 337,
+      "end": 349
     },
     {
       "text": "24253742410",
       "category": "FINANCIAL",
-      "start": 503,
-      "end": 514
+      "start": 475,
+      "end": 486
     },
     {
       "text": "UTIB0779001",
       "category": "FINANCIAL",
-      "start": 521,
-      "end": 532
+      "start": 493,
+      "end": 504
     },
     {
       "text": "S.C.C. No. 779/2025",
       "category": "CASE_NUMBER",
-      "start": 559,
-      "end": 578
+      "start": 531,
+      "end": 550
     },
     {
       "text": "Judicial Magistrate First Class Court at Lucknow",
       "category": "COURT",
-      "start": 590,
-      "end": 638
+      "start": 562,
+      "end": 610
     },
     {
-      "text": "24 August 2025",
+      "text": "24/08/2025",
       "category": "DATE",
-      "start": 642,
-      "end": 656
+      "start": 614,
+      "end": 624
+    },
+    {
+      "text": "age (36) + occupation (civil engineer) + city (Lucknow) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

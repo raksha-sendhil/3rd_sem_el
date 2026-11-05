@@ -1,0 +1,68 @@
+{
+  "doc_id": "399c13a52a18989a",
+  "text": "Subject: Need help with a land dispute case\n\nHello, my name is Shalini Reddy. I am a 24-year-old pharmacist living in Thane. I have a land dispute with Varun Gaikwad over land worth Rs 1,64,00,000, and construction has started on the disputed plot. Can your firm advise me on what to do next? You can call me on 79330 76991 or email shalini.reddy93@example.com.",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 38
+    },
+    {
+      "text": "Shalini Reddy",
+      "category": "NAME",
+      "start": 63,
+      "end": 76
+    },
+    {
+      "text": "24-year-old",
+      "category": "AGE",
+      "start": 85,
+      "end": 96
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 97,
+      "end": 107
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 118,
+      "end": 123
+    },
+    {
+      "text": "Varun Gaikwad",
+      "category": "NAME",
+      "start": 152,
+      "end": 165
+    },
+    {
+      "text": "Rs 1,64,00,000",
+      "category": "MONEY",
+      "start": 182,
+      "end": 196
+    },
+    {
+      "text": "79330 76991",
+      "category": "PHONE",
+      "start": 312,
+      "end": 323
+    },
+    {
+      "text": "shalini.reddy93@example.com",
+      "category": "EMAIL",
+      "start": 333,
+      "end": 360
+    },
+    {
+      "text": "age (24) + occupation (pharmacist) + city (Thane) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

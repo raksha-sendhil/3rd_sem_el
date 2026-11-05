@@ -1,96 +1,108 @@
 {
-  "doc_id": "24ff2416ed7d897e",
-  "text": "Intake note (Property team, 14/06/2022). Our client Tanvi Pandey is a 56-year-old paediatrician who lives at Plot 59, Indiranagar, Bengaluru 560039 and can be reached on 08054518814 or tanvi.pandey29@example.com. The client's PAN XRTPP5090P.\nThe client consulted us about a consumer complaint matter against Vindhya Constructions. The consumer complaint against Vindhya Constructions concerns a flat bought for 28.5 lakh rupees; possession of the flat is long overdue.\nThe matter was filed as CC/989/2022 before the Bengaluru District Consumer Disputes Redressal Commission on 6 September 2022.",
+  "doc_id": "9c013a0d41732c72",
+  "text": "Intake note - Property team\nDate: 20 February 2022\nClient: Tanvi Pandey, a 56-year-old paediatrician from Bengaluru.\nAddress: Plot 59, Indiranagar, Bengaluru 560039\nPhone: 08054518814. Email: tanvi.pandey29@example.com. PAN XRTPP5090P.\nMatter: consumer complaint\nOpposing party: M/s Vindhya Constructions\nFacts: The consumer complaint against Vindhya Constructions concerns a flat bought for ₹28,50,000; possession of the flat is long overdue.\nThe matter was filed as CC/989/2022 before the Bengaluru District Consumer Disputes Redressal Commission on 06/09/2022.",
   "spans": [
     {
-      "text": "14/06/2022",
+      "text": "20 February 2022",
       "category": "DATE",
-      "start": 28,
-      "end": 38
+      "start": 34,
+      "end": 50
     },
     {
       "text": "Tanvi Pandey",
       "category": "NAME",
-      "start": 52,
-      "end": 64
+      "start": 59,
+      "end": 71
     },
     {
       "text": "56-year-old",
       "category": "AGE",
-      "start": 70,
-      "end": 81
+      "start": 75,
+      "end": 86
     },
     {
       "text": "paediatrician",
       "category": "OCCUPATION",
-      "start": 82,
-      "end": 95
+      "start": 87,
+      "end": 100
+    },
+    {
+      "text": "Bengaluru",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 115
     },
     {
       "text": "Plot 59, Indiranagar, Bengaluru 560039",
       "category": "ADDRESS",
-      "start": 109,
-      "end": 147
+      "start": 126,
+      "end": 164
     },
     {
       "text": "08054518814",
       "category": "PHONE",
-      "start": 170,
-      "end": 181
+      "start": 172,
+      "end": 183
     },
     {
       "text": "tanvi.pandey29@example.com",
       "category": "EMAIL",
-      "start": 185,
-      "end": 211
+      "start": 192,
+      "end": 218
     },
     {
       "text": "XRTPP5090P",
       "category": "ID_NUMBER",
-      "start": 230,
-      "end": 240
+      "start": 224,
+      "end": 234
     },
     {
       "text": "consumer complaint",
       "category": "LEGAL_ISSUE",
-      "start": 274,
-      "end": 292
+      "start": 244,
+      "end": 262
     },
     {
       "text": "Vindhya Constructions",
       "category": "ORGANIZATION",
-      "start": 308,
-      "end": 329
+      "start": 283,
+      "end": 304
     },
     {
       "text": "Vindhya Constructions",
       "category": "ORGANIZATION",
-      "start": 362,
-      "end": 383
+      "start": 343,
+      "end": 364
     },
     {
-      "text": "28.5 lakh rupees",
+      "text": "₹28,50,000",
       "category": "MONEY",
-      "start": 411,
-      "end": 427
+      "start": 392,
+      "end": 402
     },
     {
       "text": "CC/989/2022",
       "category": "CASE_NUMBER",
-      "start": 493,
-      "end": 504
+      "start": 468,
+      "end": 479
     },
     {
       "text": "Bengaluru District Consumer Disputes Redressal Commission",
       "category": "COURT",
-      "start": 516,
-      "end": 573
+      "start": 491,
+      "end": 548
     },
     {
-      "text": "6 September 2022",
+      "text": "06/09/2022",
       "category": "DATE",
-      "start": 577,
-      "end": 593
+      "start": 552,
+      "end": 562
+    },
+    {
+      "text": "age (56) + occupation (paediatrician) + city (Bengaluru) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

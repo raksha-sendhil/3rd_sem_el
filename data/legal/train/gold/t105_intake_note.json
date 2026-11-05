@@ -1,96 +1,96 @@
 {
-  "doc_id": "586290c63a578909",
-  "text": "Intake note (Property team, 3 January 2020). Our client Deepak Ghosh is a 43-year-old bank manager who lives at House No. 118, Aliganj, Lucknow 226028 and can be reached on +91 93595 56621 or deepak.ghosh83@example.in. The client's PAN MQDPG3864Q.\nThe client consulted us about a land dispute matter against Vandana Kurian. The land dispute with Vandana Kurian concerns agricultural land valued at ₹1.9 crore; the occupant claims ownership by adverse possession.\nThe matter was filed as O.S. No. 1494/2020 before the Lucknow District Court on 4 March 2020.",
+  "doc_id": "48e28a3d05e4b063",
+  "text": "Intake note (Property team, 29/01/2020). Our client Deepak Ghosh is a 43-year-old bank manager who lives at House No. 118, Aliganj, Lucknow 226028 and can be reached on +91 93595 56621 or deepak.ghosh83@example.in. The client's PAN MQDPG3864Q.\nThe client consulted us about a land dispute matter against Vandana Kurian. The land dispute with Vandana Kurian concerns agricultural land valued at ₹1,86,00,000; the occupant claims ownership by adverse possession.\nThe matter was filed as O.S. No. 1494/2020 before the Lucknow District Court on 04/03/2020.",
   "spans": [
     {
-      "text": "3 January 2020",
+      "text": "29/01/2020",
       "category": "DATE",
       "start": 28,
-      "end": 42
+      "end": 38
     },
     {
       "text": "Deepak Ghosh",
       "category": "NAME",
-      "start": 56,
-      "end": 68
+      "start": 52,
+      "end": 64
     },
     {
       "text": "43-year-old",
       "category": "AGE",
-      "start": 74,
-      "end": 85
+      "start": 70,
+      "end": 81
     },
     {
       "text": "bank manager",
       "category": "OCCUPATION",
-      "start": 86,
-      "end": 98
+      "start": 82,
+      "end": 94
     },
     {
       "text": "House No. 118, Aliganj, Lucknow 226028",
       "category": "ADDRESS",
-      "start": 112,
-      "end": 150
+      "start": 108,
+      "end": 146
     },
     {
       "text": "+91 93595 56621",
       "category": "PHONE",
-      "start": 173,
-      "end": 188
+      "start": 169,
+      "end": 184
     },
     {
       "text": "deepak.ghosh83@example.in",
       "category": "EMAIL",
-      "start": 192,
-      "end": 217
+      "start": 188,
+      "end": 213
     },
     {
       "text": "MQDPG3864Q",
       "category": "ID_NUMBER",
-      "start": 236,
-      "end": 246
+      "start": 232,
+      "end": 242
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 280,
-      "end": 292
+      "start": 276,
+      "end": 288
     },
     {
       "text": "Vandana Kurian",
       "category": "NAME",
-      "start": 308,
-      "end": 322
+      "start": 304,
+      "end": 318
     },
     {
       "text": "Vandana Kurian",
       "category": "NAME",
-      "start": 346,
-      "end": 360
+      "start": 342,
+      "end": 356
     },
     {
-      "text": "₹1.9 crore",
+      "text": "₹1,86,00,000",
       "category": "MONEY",
-      "start": 398,
-      "end": 408
+      "start": 394,
+      "end": 406
     },
     {
       "text": "O.S. No. 1494/2020",
       "category": "CASE_NUMBER",
-      "start": 487,
-      "end": 505
+      "start": 485,
+      "end": 503
     },
     {
       "text": "Lucknow District Court",
       "category": "COURT",
-      "start": 517,
-      "end": 539
+      "start": 515,
+      "end": 537
     },
     {
-      "text": "4 March 2020",
+      "text": "04/03/2020",
       "category": "DATE",
-      "start": 543,
-      "end": 555
+      "start": 541,
+      "end": 551
     }
   ],
   "annotator": "generator",

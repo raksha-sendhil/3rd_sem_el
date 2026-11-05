@@ -1,96 +1,108 @@
 {
-  "doc_id": "a18b32540fb6927c",
-  "text": "Intake note (Commercial team, 14 April 2023). Our client Ashok Shetty is a 72-year-old retired bank officer who lives at Plot 6, Altinho, Panaji 403048 and can be reached on +91 76040 02030 or ashok.shetty@example.com. The client's PAN MSUPS2046L.\nThe client consulted us about a cheque bounce matter against Vikram Malhotra. A cheque for ₹18,50,000 issued by Vikram Malhotra bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 742/2023 before the Judicial Magistrate First Class Court at Panaji on 7 July 2023.",
+  "doc_id": "93ce6d8bdfa8c959",
+  "text": "Intake note - Commercial team\nDate: 28 March 2023\nClient: Ashok Shetty, a 72-year-old retired bank officer from Panaji.\nAddress: Plot 6, Altinho, Panaji 403048\nPhone: +91 76040 02030. Email: ashok.shetty@example.com. PAN MSUPS2046L.\nMatter: cheque bounce\nOpposing party: Vikram Malhotra\nFacts: A cheque for 18.5 lakh rupees issued by Vikram Malhotra bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 742/2023 before the Judicial Magistrate First Class Court at Panaji on 07/07/2023.",
   "spans": [
     {
-      "text": "14 April 2023",
+      "text": "28 March 2023",
       "category": "DATE",
-      "start": 30,
-      "end": 43
+      "start": 36,
+      "end": 49
     },
     {
       "text": "Ashok Shetty",
       "category": "NAME",
-      "start": 57,
-      "end": 69
+      "start": 58,
+      "end": 70
     },
     {
       "text": "72-year-old",
       "category": "AGE",
-      "start": 75,
-      "end": 86
+      "start": 74,
+      "end": 85
     },
     {
       "text": "retired bank officer",
       "category": "OCCUPATION",
-      "start": 87,
-      "end": 107
+      "start": 86,
+      "end": 106
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 112,
+      "end": 118
     },
     {
       "text": "Plot 6, Altinho, Panaji 403048",
       "category": "ADDRESS",
-      "start": 121,
-      "end": 151
+      "start": 129,
+      "end": 159
     },
     {
       "text": "+91 76040 02030",
       "category": "PHONE",
-      "start": 174,
-      "end": 189
+      "start": 167,
+      "end": 182
     },
     {
       "text": "ashok.shetty@example.com",
       "category": "EMAIL",
-      "start": 193,
-      "end": 217
+      "start": 191,
+      "end": 215
     },
     {
       "text": "MSUPS2046L",
       "category": "ID_NUMBER",
-      "start": 236,
-      "end": 246
+      "start": 221,
+      "end": 231
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 280,
-      "end": 293
+      "start": 241,
+      "end": 254
     },
     {
       "text": "Vikram Malhotra",
       "category": "NAME",
-      "start": 309,
-      "end": 324
+      "start": 271,
+      "end": 286
     },
     {
-      "text": "₹18,50,000",
+      "text": "18.5 lakh rupees",
       "category": "MONEY",
-      "start": 339,
-      "end": 349
+      "start": 307,
+      "end": 323
     },
     {
       "text": "Vikram Malhotra",
       "category": "NAME",
-      "start": 360,
-      "end": 375
+      "start": 334,
+      "end": 349
     },
     {
       "text": "S.C.C. No. 742/2023",
       "category": "CASE_NUMBER",
-      "start": 462,
-      "end": 481
+      "start": 436,
+      "end": 455
     },
     {
       "text": "Judicial Magistrate First Class Court at Panaji",
       "category": "COURT",
-      "start": 493,
-      "end": 540
+      "start": 467,
+      "end": 514
     },
     {
-      "text": "7 July 2023",
+      "text": "07/07/2023",
       "category": "DATE",
-      "start": 544,
-      "end": 555
+      "start": 518,
+      "end": 528
+    },
+    {
+      "text": "age (72) + occupation (retired bank officer) + city (Panaji) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

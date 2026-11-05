@@ -1,7 +1,7 @@
 {
-  "doc_id": "b736d473b34014a5",
+  "doc_id": "c09f0c0c6229c6cc",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t064",
-  "text": "Intake note (Commercial team, 01/03/2020). Our client Sameer Shinde is a 72-year-old schoolteacher who lives at Bungalow 34, Chembur, Mumbai 400009 and can be reached on +91 97531 42182 or sameer.shinde@example.com. The client's PAN USRPS3066Y.\nThe client consulted us about a wrongful termination matter against Sai Industries. The wrongful termination claim against M/s Sai Industries is for ₹15,80,000; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 1646/2020 before the Mumbai Labour Court on 27 June 2020."
+  "text": "Intake note - Commercial team\nDate: 14/04/2020\nClient: Sameer Shinde, a 72-year-old schoolteacher from Mumbai.\nAddress: Bungalow 34, Chembur, Mumbai 400009\nPhone: +91 97531 42182. Email: sameer.shinde@example.com. PAN USRPS3066Y.\nMatter: wrongful termination\nOpposing party: Sai Industries\nFacts: The wrongful termination claim against M/s Sai Industries is for Rs 15,80,000; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 1646/2020 before the Mumbai Labour Court on 27 June 2020."
 }

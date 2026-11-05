@@ -1,108 +1,96 @@
 {
-  "doc_id": "d81e69875f761c86",
-  "text": "Intake note - Property team\nDate: 03/03/2023\nClient: Gayatri Menon, a 58-year-old hardware dealer from Lucknow.\nAddress: House No. 125, Aliganj, Lucknow 226054\nPhone: +91 71825 49495. Email: gayatri.menon@example.in. PAN WTRPM9249L.\nMatter: land dispute\nOpposing party: Naveen Kulkarni\nFacts: The land dispute with Naveen Kulkarni concerns agricultural land valued at 58 lakh rupees; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 2855/2023 before the Lucknow District Court on 24/07/2023.",
+  "doc_id": "187da77c64ab6494",
+  "text": "Intake note (Property team, 6 April 2023). Our client Gayatri Menon is a 58-year-old hardware dealer who lives at House No. 125, Aliganj, Lucknow 226054 and can be reached on +91 71825 49495 or gayatri.menon@example.in. The client's PAN WTRPM9249L.\nThe client consulted us about a land dispute matter against Naveen Kulkarni. The land dispute with Naveen Kulkarni concerns agricultural land valued at 58 lakh rupees; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 2855/2023 before the Lucknow District Court on 24/07/2023.",
   "spans": [
     {
-      "text": "03/03/2023",
+      "text": "6 April 2023",
       "category": "DATE",
-      "start": 34,
-      "end": 44
+      "start": 28,
+      "end": 40
     },
     {
       "text": "Gayatri Menon",
       "category": "NAME",
-      "start": 53,
-      "end": 66
+      "start": 54,
+      "end": 67
     },
     {
       "text": "58-year-old",
       "category": "AGE",
-      "start": 70,
-      "end": 81
+      "start": 73,
+      "end": 84
     },
     {
       "text": "hardware dealer",
       "category": "OCCUPATION",
-      "start": 82,
-      "end": 97
-    },
-    {
-      "text": "Lucknow",
-      "category": "LOCATION",
-      "start": 103,
-      "end": 110
+      "start": 85,
+      "end": 100
     },
     {
       "text": "House No. 125, Aliganj, Lucknow 226054",
       "category": "ADDRESS",
-      "start": 121,
-      "end": 159
+      "start": 114,
+      "end": 152
     },
     {
       "text": "+91 71825 49495",
       "category": "PHONE",
-      "start": 167,
-      "end": 182
+      "start": 175,
+      "end": 190
     },
     {
       "text": "gayatri.menon@example.in",
       "category": "EMAIL",
-      "start": 191,
-      "end": 215
+      "start": 194,
+      "end": 218
     },
     {
       "text": "WTRPM9249L",
       "category": "ID_NUMBER",
-      "start": 221,
-      "end": 231
+      "start": 237,
+      "end": 247
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 241,
-      "end": 253
+      "start": 281,
+      "end": 293
     },
     {
       "text": "Naveen Kulkarni",
       "category": "NAME",
-      "start": 270,
-      "end": 285
+      "start": 309,
+      "end": 324
     },
     {
       "text": "Naveen Kulkarni",
       "category": "NAME",
-      "start": 315,
-      "end": 330
+      "start": 348,
+      "end": 363
     },
     {
       "text": "58 lakh rupees",
       "category": "MONEY",
-      "start": 368,
-      "end": 382
+      "start": 401,
+      "end": 415
     },
     {
       "text": "O.S. No. 2855/2023",
       "category": "CASE_NUMBER",
-      "start": 466,
-      "end": 484
+      "start": 499,
+      "end": 517
     },
     {
       "text": "Lucknow District Court",
       "category": "COURT",
-      "start": 496,
-      "end": 518
+      "start": 529,
+      "end": 551
     },
     {
       "text": "24/07/2023",
       "category": "DATE",
-      "start": 522,
-      "end": 532
-    },
-    {
-      "text": "age (58) + occupation (hardware dealer) + city (Lucknow) + issue (land dispute)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 555,
+      "end": 565
     }
   ],
   "annotator": "generator",

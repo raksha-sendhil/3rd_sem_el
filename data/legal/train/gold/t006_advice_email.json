@@ -1,6 +1,6 @@
 {
-  "doc_id": "fd9992d68f6bf24e",
-  "text": "Subject: Your land dispute matter - R.C.S. No. 1967/2020\n\nDear Ms. Deshpande,\n\nThank you for meeting us on 20 January 2021 about your dispute with Lakshmi Shetty. As we understand it, relatives dispute who owns the ancestral land. The matter is listed before the Coimbatore District Court.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "doc_id": "4964d5b9683f6ce6",
+  "text": "Subject: Your land dispute matter\n\nDear Ms. Deshpande,\n\nThank you for meeting us on 16 August 2020 about your dispute with Lakshmi Shetty. As we understand it, relatives dispute who owns the ancestral land.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office. We will pursue the full claim of Rs 68,50,000.\n\nRegards,\nAdv. Kunal Bhagat",
   "spans": [
     {
       "text": "land dispute",
@@ -9,40 +9,34 @@
       "end": 26
     },
     {
-      "text": "R.C.S. No. 1967/2020",
-      "category": "CASE_NUMBER",
-      "start": 36,
-      "end": 56
-    },
-    {
       "text": "Deshpande",
       "category": "NAME",
-      "start": 67,
-      "end": 76
+      "start": 44,
+      "end": 53
     },
     {
-      "text": "20 January 2021",
+      "text": "16 August 2020",
       "category": "DATE",
-      "start": 107,
-      "end": 122
+      "start": 84,
+      "end": 98
     },
     {
       "text": "Lakshmi Shetty",
       "category": "NAME",
-      "start": 147,
-      "end": 161
+      "start": 123,
+      "end": 137
     },
     {
-      "text": "Coimbatore District Court",
-      "category": "COURT",
-      "start": 263,
-      "end": 288
+      "text": "Rs 68,50,000",
+      "category": "MONEY",
+      "start": 424,
+      "end": 436
     },
     {
-      "text": "Mrinalini Saraf",
+      "text": "Kunal Bhagat",
       "category": "NAME",
-      "start": 489,
-      "end": 504
+      "start": 453,
+      "end": 465
     }
   ],
   "annotator": "generator",

@@ -1,0 +1,68 @@
+{
+  "doc_id": "2654a99dd518e12f",
+  "text": "Case note: CC/2462/2019\nClient: Madhuri Goyal (taxi driver, Pune)\nOpposing party: Joseph More\nCourt: Judicial Magistrate First Class Court at Pune\nFiled on: 21 July 2019\nClaim amount: Rs 3,45,000\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.",
+  "spans": [
+    {
+      "text": "CC/2462/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Madhuri Goyal",
+      "category": "NAME",
+      "start": 32,
+      "end": 45
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 47,
+      "end": 58
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 60,
+      "end": 64
+    },
+    {
+      "text": "Joseph More",
+      "category": "NAME",
+      "start": 82,
+      "end": 93
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 101,
+      "end": 146
+    },
+    {
+      "text": "21 July 2019",
+      "category": "DATE",
+      "start": 157,
+      "end": 169
+    },
+    {
+      "text": "Rs 3,45,000",
+      "category": "MONEY",
+      "start": 184,
+      "end": 195
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 203,
+      "end": 216
+    },
+    {
+      "text": "occupation (taxi driver) + city (Pune) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

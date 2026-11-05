@@ -1,108 +1,96 @@
 {
-  "doc_id": "47fa9b5b1ff6d99a",
-  "text": "Intake note - Family team\nDate: 18 July 2022\nClient: Sneha Shinde, a 71-year-old paediatrician from Mysuru.\nAddress: Bungalow 8, Kuvempunagar, Mysuru 570031\nPhone: +91 90062 56759. Email: sneha.shinde16@example.com. PAN VVRPS8715P.\nMatter: divorce by mutual consent\nOpposing party: Simran Natarajan\nFacts: The divorce by mutual consent with Simran Natarajan includes a settlement of ₹60,30,000; the spouses agree on a single payment instead of maintenance.\nThe matter was filed as Petition No. 452/2023 before the Family Court at Mysuru on 19 January 2023.",
+  "doc_id": "ae4d8730f153800e",
+  "text": "Intake note (Family team, 17 August 2022). Our client Sneha Shinde is a 71-year-old paediatrician who lives at Bungalow 8, Kuvempunagar, Mysuru 570031 and can be reached on +91 90062 56759 or sneha.shinde16@example.com. The client's PAN VVRPS8715P.\nThe client consulted us about a divorce by mutual consent matter against Simran Natarajan. The divorce by mutual consent with Simran Natarajan includes a settlement of INR 60,30,000/-; the spouses agree on a single payment instead of maintenance.\nThe matter was filed as Petition No. 452/2023 before the Family Court at Mysuru on 19/01/2023.",
   "spans": [
     {
-      "text": "18 July 2022",
+      "text": "17 August 2022",
       "category": "DATE",
-      "start": 32,
-      "end": 44
+      "start": 26,
+      "end": 40
     },
     {
       "text": "Sneha Shinde",
       "category": "NAME",
-      "start": 53,
-      "end": 65
+      "start": 54,
+      "end": 66
     },
     {
       "text": "71-year-old",
       "category": "AGE",
-      "start": 69,
-      "end": 80
+      "start": 72,
+      "end": 83
     },
     {
       "text": "paediatrician",
       "category": "OCCUPATION",
-      "start": 81,
-      "end": 94
-    },
-    {
-      "text": "Mysuru",
-      "category": "LOCATION",
-      "start": 100,
-      "end": 106
+      "start": 84,
+      "end": 97
     },
     {
       "text": "Bungalow 8, Kuvempunagar, Mysuru 570031",
       "category": "ADDRESS",
-      "start": 117,
-      "end": 156
+      "start": 111,
+      "end": 150
     },
     {
       "text": "+91 90062 56759",
       "category": "PHONE",
-      "start": 164,
-      "end": 179
+      "start": 173,
+      "end": 188
     },
     {
       "text": "sneha.shinde16@example.com",
       "category": "EMAIL",
-      "start": 188,
-      "end": 214
+      "start": 192,
+      "end": 218
     },
     {
       "text": "VVRPS8715P",
       "category": "ID_NUMBER",
-      "start": 220,
-      "end": 230
+      "start": 237,
+      "end": 247
     },
     {
       "text": "divorce by mutual consent",
       "category": "LEGAL_ISSUE",
-      "start": 240,
-      "end": 265
+      "start": 281,
+      "end": 306
     },
     {
       "text": "Simran Natarajan",
       "category": "NAME",
-      "start": 282,
-      "end": 298
+      "start": 322,
+      "end": 338
     },
     {
       "text": "Simran Natarajan",
       "category": "NAME",
-      "start": 341,
-      "end": 357
+      "start": 375,
+      "end": 391
     },
     {
-      "text": "₹60,30,000",
+      "text": "INR 60,30,000/-",
       "category": "MONEY",
-      "start": 383,
-      "end": 393
+      "start": 417,
+      "end": 432
     },
     {
       "text": "Petition No. 452/2023",
       "category": "CASE_NUMBER",
-      "start": 481,
-      "end": 502
+      "start": 520,
+      "end": 541
     },
     {
       "text": "Family Court at Mysuru",
       "category": "COURT",
-      "start": 514,
-      "end": 536
+      "start": 553,
+      "end": 575
     },
     {
-      "text": "19 January 2023",
+      "text": "19/01/2023",
       "category": "DATE",
-      "start": 540,
-      "end": 555
-    },
-    {
-      "text": "age (71) + occupation (paediatrician) + city (Mysuru) + issue (divorce by mutual consent)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 579,
+      "end": 589
     }
   ],
   "annotator": "generator",

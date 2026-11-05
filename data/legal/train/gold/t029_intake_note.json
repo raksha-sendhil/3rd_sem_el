@@ -1,102 +1,102 @@
 {
-  "doc_id": "cd3599aec50c405d",
-  "text": "Intake note - Criminal team\nDate: 20/01/2024\nClient: Simran Krishnan, a 56-year-old insurance agent from Panaji.\nAddress: House No. 117, Miramar, Panaji 403053\nPhone: 09876089965. Email: simran.krishnan12@example.com. PAN BYSPK6009B.\nMatter: anticipatory bail\nOpposing party: Smita Mukherjee\nFacts: The anticipatory bail matter arises from a complaint by Smita Mukherjee about ₹16,20,000; the complainant alleges cheating over a failed deal.\nThe matter was filed as Anticipatory Bail Application No. 2891/2024 before the Panaji Sessions Court on 2 May 2024.",
+  "doc_id": "c8b1dbf6d4e75f01",
+  "text": "Intake note - Criminal team\nDate: 13 February 2024\nClient: Simran Krishnan, a 56-year-old insurance agent from Panaji.\nAddress: House No. 117, Miramar, Panaji 403053\nPhone: 09876089965. Email: simran.krishnan12@example.com. PAN BYSPK6009B.\nMatter: anticipatory bail\nOpposing party: Smita Mukherjee\nFacts: The anticipatory bail matter arises from a complaint by Smita Mukherjee about 16.2 lakh rupees; the complainant alleges cheating over a failed deal.\nThe matter was filed as Anticipatory Bail Application No. 2891/2024 before the Panaji Sessions Court on 2 May 2024.",
   "spans": [
     {
-      "text": "20/01/2024",
+      "text": "13 February 2024",
       "category": "DATE",
       "start": 34,
-      "end": 44
+      "end": 50
     },
     {
       "text": "Simran Krishnan",
       "category": "NAME",
-      "start": 53,
-      "end": 68
+      "start": 59,
+      "end": 74
     },
     {
       "text": "56-year-old",
       "category": "AGE",
-      "start": 72,
-      "end": 83
+      "start": 78,
+      "end": 89
     },
     {
       "text": "insurance agent",
       "category": "OCCUPATION",
-      "start": 84,
-      "end": 99
+      "start": 90,
+      "end": 105
     },
     {
       "text": "Panaji",
       "category": "LOCATION",
-      "start": 105,
-      "end": 111
+      "start": 111,
+      "end": 117
     },
     {
       "text": "House No. 117, Miramar, Panaji 403053",
       "category": "ADDRESS",
-      "start": 122,
-      "end": 159
+      "start": 128,
+      "end": 165
     },
     {
       "text": "09876089965",
       "category": "PHONE",
-      "start": 167,
-      "end": 178
+      "start": 173,
+      "end": 184
     },
     {
       "text": "simran.krishnan12@example.com",
       "category": "EMAIL",
-      "start": 187,
-      "end": 216
+      "start": 193,
+      "end": 222
     },
     {
       "text": "BYSPK6009B",
       "category": "ID_NUMBER",
-      "start": 222,
-      "end": 232
+      "start": 228,
+      "end": 238
     },
     {
       "text": "anticipatory bail",
       "category": "LEGAL_ISSUE",
-      "start": 242,
-      "end": 259
+      "start": 248,
+      "end": 265
     },
     {
       "text": "Smita Mukherjee",
       "category": "NAME",
-      "start": 276,
-      "end": 291
+      "start": 282,
+      "end": 297
     },
     {
       "text": "Smita Mukherjee",
       "category": "NAME",
-      "start": 355,
-      "end": 370
+      "start": 361,
+      "end": 376
     },
     {
-      "text": "₹16,20,000",
+      "text": "16.2 lakh rupees",
       "category": "MONEY",
-      "start": 377,
-      "end": 387
+      "start": 383,
+      "end": 399
     },
     {
       "text": "Anticipatory Bail Application No. 2891/2024",
       "category": "CASE_NUMBER",
-      "start": 466,
-      "end": 509
+      "start": 478,
+      "end": 521
     },
     {
       "text": "Panaji Sessions Court",
       "category": "COURT",
-      "start": 521,
-      "end": 542
+      "start": 533,
+      "end": 554
     },
     {
       "text": "2 May 2024",
       "category": "DATE",
-      "start": 546,
-      "end": 556
+      "start": 558,
+      "end": 568
     },
     {
       "text": "age (56) + occupation (insurance agent) + city (Panaji) + issue (anticipatory bail)",

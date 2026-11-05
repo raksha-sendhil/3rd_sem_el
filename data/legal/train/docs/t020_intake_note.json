@@ -1,7 +1,7 @@
 {
-  "doc_id": "b9d61234898fe5b3",
+  "doc_id": "b65950568c434cae",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t020",
-  "text": "Intake note - Commercial team\nDate: 18 January 2022\nClient: Vandana Chauhan, a 74-year-old cardiologist from Mysuru.\nAddress: House No. 35, Gokulam, Mysuru 570029\nPhone: +91 94513 37698. Email: vandana.chauhan66@example.in. PAN HMMPC3474G.\nMatter: cheque bounce\nOpposing party: DSouza Enterprises\nFacts: A cheque for INR 12,70,000/- issued by DSouza Enterprises bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as S.C.C. No. 2586/2022 before the Judicial Magistrate First Class Court at Mysuru on 13 March 2022."
+  "text": "Intake note (Commercial team, 20/01/2022). Our client Vandana Chauhan is a 74-year-old cardiologist who lives at House No. 35, Gokulam, Mysuru 570029 and can be reached on +91 94513 37698 or vandana.chauhan66@example.in. The client's PAN HMMPC3474G.\nThe client consulted us about a cheque bounce matter against DSouza Enterprises. A cheque for ₹12,70,000 issued by M/s DSouza Enterprises bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as S.C.C. No. 2586/2022 before the Judicial Magistrate First Class Court at Mysuru on 13 March 2022."
 }

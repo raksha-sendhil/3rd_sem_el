@@ -1,7 +1,7 @@
 {
-  "doc_id": "cb451f7c54c5bd60",
+  "doc_id": "7f2d8e634898e461",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t024",
-  "text": "Intake note (Property team, 29 October 2020). Our client Anjali Bhandari is a 67-year-old truck driver who lives at Plot 115, Fatehgunj, Vadodara 390041 and can be reached on 06194445151 or anjali.bhandari@example.in. The client's PAN AJKPB9516M.\nThe client consulted us about a land dispute matter against Farhan Chandran. The land dispute with Farhan Chandran concerns agricultural land valued at Rs 4,53,00,000; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as R.C.S. No. 2680/2020 before the Vadodara District Court on 23 November 2020."
+  "text": "Intake note - Property team\nDate: 26 August 2020\nClient: Anjali Bhandari, a 67-year-old truck driver from Vadodara.\nAddress: Plot 115, Fatehgunj, Vadodara 390041\nPhone: 06194445151. Email: anjali.bhandari@example.in. PAN AJKPB9516M.\nMatter: land dispute\nOpposing party: Farhan Chandran\nFacts: The land dispute with Farhan Chandran concerns agricultural land valued at ₹4.5 crore; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as R.C.S. No. 2680/2020 before the Vadodara District Court on 23 November 2020."
 }

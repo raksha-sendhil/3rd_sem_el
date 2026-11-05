@@ -1,6 +1,6 @@
 {
-  "doc_id": "20a7a11eafb38d81",
-  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Sandhu,\n\nThank you for meeting us on 11 April 2024 about your dispute with Madhuri Gill. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of ₹17,50,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "doc_id": "6ce6c393ffc83d23",
+  "text": "Subject: Your cheque bounce matter - CC/2922/2023\n\nDear Ms. Sandhu,\n\nThank you for meeting us on 23 April 2024 about your dispute with Madhuri Gill. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Nashik.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of INR 17,50,000/-.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,34 +9,46 @@
       "end": 27
     },
     {
-      "text": "Sandhu",
-      "category": "NAME",
-      "start": 45,
-      "end": 51
+      "text": "CC/2922/2023",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
     },
     {
-      "text": "11 April 2024",
+      "text": "Sandhu",
+      "category": "NAME",
+      "start": 60,
+      "end": 66
+    },
+    {
+      "text": "23 April 2024",
       "category": "DATE",
-      "start": 82,
-      "end": 95
+      "start": 97,
+      "end": 110
     },
     {
       "text": "Madhuri Gill",
       "category": "NAME",
-      "start": 120,
-      "end": 132
+      "start": 135,
+      "end": 147
     },
     {
-      "text": "₹17,50,000",
+      "text": "Judicial Magistrate First Class Court at Nashik",
+      "category": "COURT",
+      "start": 266,
+      "end": 313
+    },
+    {
+      "text": "INR 17,50,000/-",
       "category": "MONEY",
-      "start": 512,
-      "end": 522
+      "start": 608,
+      "end": 623
     },
     {
-      "text": "Rohit Wadhwa",
+      "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 539,
-      "end": 551
+      "start": 640,
+      "end": 655
     }
   ],
   "annotator": "generator",

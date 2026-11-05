@@ -1,0 +1,104 @@
+{
+  "doc_id": "4ba440b2213b2352",
+  "text": "Intake note (Criminal team, 20 January 2019). Our client Uma Patel is a 74-year-old farmer who lives at Flat 2C, Vartak Nagar, Thane 400628 and can be reached on 84131 72850 or uma.patel@example.in. The client's PAN CGPPP6376A, Aadhaar 7494 6618 7541.\nThe client consulted us about a anticipatory bail matter against Harish Kulkarni. The anticipatory bail matter arises from a complaint by Harish Kulkarni about INR 38,40,000/-; the complaint was filed during a matrimonial dispute.\nThe matter was filed as FIR No. 1647/2019 before the Thane Sessions Court on 11 July 2019.",
+  "spans": [
+    {
+      "text": "20 January 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Uma Patel",
+      "category": "NAME",
+      "start": 57,
+      "end": 66
+    },
+    {
+      "text": "74-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 90
+    },
+    {
+      "text": "Flat 2C, Vartak Nagar, Thane 400628",
+      "category": "ADDRESS",
+      "start": 104,
+      "end": 139
+    },
+    {
+      "text": "84131 72850",
+      "category": "PHONE",
+      "start": 162,
+      "end": 173
+    },
+    {
+      "text": "uma.patel@example.in",
+      "category": "EMAIL",
+      "start": 177,
+      "end": 197
+    },
+    {
+      "text": "CGPPP6376A",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "7494 6618 7541",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 250
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 284,
+      "end": 301
+    },
+    {
+      "text": "Harish Kulkarni",
+      "category": "NAME",
+      "start": 317,
+      "end": 332
+    },
+    {
+      "text": "Harish Kulkarni",
+      "category": "NAME",
+      "start": 390,
+      "end": 405
+    },
+    {
+      "text": "INR 38,40,000/-",
+      "category": "MONEY",
+      "start": 412,
+      "end": 427
+    },
+    {
+      "text": "FIR No. 1647/2019",
+      "category": "CASE_NUMBER",
+      "start": 507,
+      "end": 524
+    },
+    {
+      "text": "Thane Sessions Court",
+      "category": "COURT",
+      "start": 536,
+      "end": 556
+    },
+    {
+      "text": "11 July 2019",
+      "category": "DATE",
+      "start": 560,
+      "end": 572
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

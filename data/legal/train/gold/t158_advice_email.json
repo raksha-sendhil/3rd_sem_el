@@ -1,0 +1,44 @@
+{
+  "doc_id": "e80da3927f7b97a5",
+  "text": "Subject: Your cross-border insolvency matter - C.P.(IB) No. 2033/2023\n\nDear Ms. Desai,\n\nThank you for meeting us on 7 June 2023 about your dispute with Goyal Holdings Ltd. As we understand it, the foreign administrator wants control of the assets in this country.\n\nOur advice is to seek recognition of the foreign insolvency proceeding. Please collect the foreign court's order and the list of local assets and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 37
+    },
+    {
+      "text": "C.P.(IB) No. 2033/2023",
+      "category": "CASE_NUMBER",
+      "start": 47,
+      "end": 69
+    },
+    {
+      "text": "Desai",
+      "category": "NAME",
+      "start": 80,
+      "end": 85
+    },
+    {
+      "text": "7 June 2023",
+      "category": "DATE",
+      "start": 116,
+      "end": 127
+    },
+    {
+      "text": "Goyal Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 152,
+      "end": 170
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 454,
+      "end": 470
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

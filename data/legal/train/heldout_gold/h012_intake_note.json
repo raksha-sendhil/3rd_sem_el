@@ -1,0 +1,98 @@
+{
+  "doc_id": "23211a4bddd2614c",
+  "text": "Intake note (Criminal team, 5 February 2020). Our client Neha Chauhan is a 58-year-old truck driver who lives at Bungalow 37, Pattom, Thiruvananthapuram 695007 and can be reached on +91 66319 31347 or neha.chauhan63@example.com. The client's PAN RYCPC4517D.\nThe client consulted us about a anticipatory bail matter against Suresh Naidu. The anticipatory bail matter arises from a complaint by Suresh Naidu about Rs 20,20,000; the complaint turns a business disagreement into a criminal case.\nThe matter was filed as Anticipatory Bail Application No. 1369/2020 before the Thiruvananthapuram Sessions Court on 27 April 2020.",
+  "spans": [
+    {
+      "text": "5 February 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Neha Chauhan",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 99
+    },
+    {
+      "text": "Bungalow 37, Pattom, Thiruvananthapuram 695007",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 159
+    },
+    {
+      "text": "+91 66319 31347",
+      "category": "PHONE",
+      "start": 182,
+      "end": 197
+    },
+    {
+      "text": "neha.chauhan63@example.com",
+      "category": "EMAIL",
+      "start": 201,
+      "end": 227
+    },
+    {
+      "text": "RYCPC4517D",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 256
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 290,
+      "end": 307
+    },
+    {
+      "text": "Suresh Naidu",
+      "category": "NAME",
+      "start": 323,
+      "end": 335
+    },
+    {
+      "text": "Suresh Naidu",
+      "category": "NAME",
+      "start": 393,
+      "end": 405
+    },
+    {
+      "text": "Rs 20,20,000",
+      "category": "MONEY",
+      "start": 412,
+      "end": 424
+    },
+    {
+      "text": "Anticipatory Bail Application No. 1369/2020",
+      "category": "CASE_NUMBER",
+      "start": 516,
+      "end": 559
+    },
+    {
+      "text": "Thiruvananthapuram Sessions Court",
+      "category": "COURT",
+      "start": 571,
+      "end": 604
+    },
+    {
+      "text": "27 April 2020",
+      "category": "DATE",
+      "start": 608,
+      "end": 621
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

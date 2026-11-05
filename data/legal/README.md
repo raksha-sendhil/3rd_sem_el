@@ -12,7 +12,7 @@ gives identical files.
 | `gold/` | one span file per corpus document, exact offsets |
 | `gold_facts/`, `gold_routing/` | 20 documents, drafted by the generator, awaiting review (docs/legal/gold_review.md) |
 | `nonmembers/` | 120 documents about 120 other clients, never indexed (membership inference) |
-| `train/` | 400 training and 40 held-out documents with span labels; `sft.jsonl` for fine-tuning |
+| `train/` | 400 training documents (160 clients) and 40 held-out documents (16 other clients) with span labels; `sft.jsonl` for fine-tuning |
 | `qa.json` | 40 questions, expected phrases, answering documents |
 | `attacks/` | direct, linkage and stepwise attacks on `c001`, `c002`, `c003` |
 | `extraction.json` | 20 "repeat the file word for word" prompts |

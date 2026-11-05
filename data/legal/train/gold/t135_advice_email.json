@@ -1,6 +1,6 @@
 {
-  "doc_id": "a95da32967ab4cb6",
-  "text": "Subject: Your cross-border insolvency matter - C.P.(IB) No. 2741/2022\n\nDear Ms. Ghosh,\n\nThank you for meeting us on 25 July 2022 about your dispute with M/s Lotus Holdings Ltd. As we understand it, the debtor is in insolvency proceedings in two countries.\n\nOur advice is to file the claim with the resolution professional before the deadline. Please collect the loan documents and the statement of the amount due and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "0e5a8687fa166e1b",
+  "text": "Subject: Your cross-border insolvency matter\n\nDear Ms. Ghosh,\n\nThank you for meeting us on 25 April 2023 about your dispute with M/s Lotus Holdings Ltd. As we understand it, the debtor is in insolvency proceedings in two countries. The matter is listed before the NCLT Mumbai.\n\nOur advice is to file the claim with the resolution professional before the deadline. Please collect the loan documents and the statement of the amount due and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
   "spans": [
     {
       "text": "cross-border insolvency",
@@ -9,34 +9,34 @@
       "end": 37
     },
     {
-      "text": "C.P.(IB) No. 2741/2022",
-      "category": "CASE_NUMBER",
-      "start": 47,
-      "end": 69
-    },
-    {
       "text": "Ghosh",
       "category": "NAME",
-      "start": 80,
-      "end": 85
+      "start": 55,
+      "end": 60
     },
     {
-      "text": "25 July 2022",
+      "text": "25 April 2023",
       "category": "DATE",
-      "start": 116,
-      "end": 128
+      "start": 91,
+      "end": 104
     },
     {
       "text": "Lotus Holdings Ltd",
       "category": "ORGANIZATION",
-      "start": 157,
-      "end": 175
+      "start": 133,
+      "end": 151
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 264,
+      "end": 275
+    },
+    {
+      "text": "Aditi Ranganathan",
       "category": "NAME",
-      "start": 460,
-      "end": 472
+      "start": 481,
+      "end": 498
     }
   ],
   "annotator": "generator",

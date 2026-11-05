@@ -1,96 +1,108 @@
 {
-  "doc_id": "bac71f3a68e53d3b",
-  "text": "Intake note (Commercial team, 8 August 2020). Our client Uma Chauhan is a 73-year-old schoolteacher who lives at Bungalow 25, Koregaon Park, Pune 411046 and can be reached on +91 60028 14419 or uma.chauhan@example.in. The client's PAN WJJPC7260Q.\nThe client consulted us about a wrongful termination matter against Goyal Industries. The wrongful termination claim against M/s Goyal Industries is for ₹22,80,000; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 2451/2020 before the Pune Labour Court on 4 October 2020.",
+  "doc_id": "3b1787287671dce6",
+  "text": "Intake note - Commercial team\nDate: 11 April 2020\nClient: Uma Chauhan, a 73-year-old schoolteacher from Pune.\nAddress: Bungalow 25, Koregaon Park, Pune 411046\nPhone: +91 60028 14419. Email: uma.chauhan@example.in. PAN WJJPC7260Q.\nMatter: wrongful termination\nOpposing party: Goyal Industries\nFacts: The wrongful termination claim against M/s Goyal Industries is for 22.8 lakh rupees; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 2451/2020 before the Pune Labour Court on 04/10/2020.",
   "spans": [
     {
-      "text": "8 August 2020",
+      "text": "11 April 2020",
       "category": "DATE",
-      "start": 30,
-      "end": 43
+      "start": 36,
+      "end": 49
     },
     {
       "text": "Uma Chauhan",
       "category": "NAME",
-      "start": 57,
-      "end": 68
+      "start": 58,
+      "end": 69
     },
     {
       "text": "73-year-old",
       "category": "AGE",
-      "start": 74,
-      "end": 85
+      "start": 73,
+      "end": 84
     },
     {
       "text": "schoolteacher",
       "category": "OCCUPATION",
-      "start": 86,
-      "end": 99
+      "start": 85,
+      "end": 98
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 108
     },
     {
       "text": "Bungalow 25, Koregaon Park, Pune 411046",
       "category": "ADDRESS",
-      "start": 113,
-      "end": 152
+      "start": 119,
+      "end": 158
     },
     {
       "text": "+91 60028 14419",
       "category": "PHONE",
-      "start": 175,
-      "end": 190
+      "start": 166,
+      "end": 181
     },
     {
       "text": "uma.chauhan@example.in",
       "category": "EMAIL",
-      "start": 194,
-      "end": 216
+      "start": 190,
+      "end": 212
     },
     {
       "text": "WJJPC7260Q",
       "category": "ID_NUMBER",
-      "start": 235,
-      "end": 245
+      "start": 218,
+      "end": 228
     },
     {
       "text": "wrongful termination",
       "category": "LEGAL_ISSUE",
-      "start": 279,
-      "end": 299
+      "start": 238,
+      "end": 258
     },
     {
       "text": "Goyal Industries",
       "category": "ORGANIZATION",
-      "start": 315,
-      "end": 331
+      "start": 275,
+      "end": 291
     },
     {
       "text": "Goyal Industries",
       "category": "ORGANIZATION",
-      "start": 376,
-      "end": 392
+      "start": 342,
+      "end": 358
     },
     {
-      "text": "₹22,80,000",
+      "text": "22.8 lakh rupees",
       "category": "MONEY",
-      "start": 400,
-      "end": 410
+      "start": 366,
+      "end": 382
     },
     {
       "text": "Complaint No. 2451/2020",
       "category": "CASE_NUMBER",
-      "start": 484,
-      "end": 507
+      "start": 456,
+      "end": 479
     },
     {
       "text": "Pune Labour Court",
       "category": "COURT",
-      "start": 519,
-      "end": 536
+      "start": 491,
+      "end": 508
     },
     {
-      "text": "4 October 2020",
+      "text": "04/10/2020",
       "category": "DATE",
-      "start": 540,
-      "end": 554
+      "start": 512,
+      "end": 522
+    },
+    {
+      "text": "age (73) + occupation (schoolteacher) + city (Pune) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

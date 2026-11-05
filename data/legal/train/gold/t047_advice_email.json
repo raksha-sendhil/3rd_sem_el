@@ -1,6 +1,6 @@
 {
-  "doc_id": "ba858da2177a57fd",
-  "text": "Subject: Your anticipatory bail matter\n\nDear Mr. Mukherjee,\n\nThank you for meeting us on 5 January 2024 about your dispute with Sanjay Mehra. As we understand it, the complainant alleges cheating over a failed deal.\n\nOur advice is to produce the contract and payment records to show there was no intent to cheat at the outset. Please collect the signed contract and the payment records and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "doc_id": "b042a2690c964156",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Mr. Mukherjee,\n\nThank you for meeting us on 17 June 2024 about your dispute with Sanjay Mehra. As we understand it, the complainant alleges cheating over a failed deal.\n\nOur advice is to produce the contract and payment records to show there was no intent to cheat at the outset. Please collect the signed contract and the payment records and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
   "spans": [
     {
       "text": "anticipatory bail",
@@ -15,22 +15,22 @@
       "end": 58
     },
     {
-      "text": "5 January 2024",
+      "text": "17 June 2024",
       "category": "DATE",
       "start": 89,
-      "end": 103
+      "end": 101
     },
     {
       "text": "Sanjay Mehra",
       "category": "NAME",
-      "start": 128,
-      "end": 140
+      "start": 126,
+      "end": 138
     },
     {
-      "text": "Tejas Oberoi",
+      "text": "Mrinalini Saraf",
       "category": "NAME",
-      "start": 433,
-      "end": 445
+      "start": 431,
+      "end": 446
     }
   ],
   "annotator": "generator",

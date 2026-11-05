@@ -1,6 +1,6 @@
 {
-  "doc_id": "990e5b07cc748be8",
-  "text": "Subject: Your cheque bounce matter - CC/1880/2025\n\nDear Ms. Tiwari,\n\nThank you for meeting us on 25 November 2025 about your dispute with M/s Trident Enterprises. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Thane.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "892e837727e8ff70",
+  "text": "Subject: Your cheque bounce matter - CC/1880/2025\n\nDear Ms. Tiwari,\n\nThank you for meeting us on 12 March 2026 about your dispute with M/s Trident Enterprises. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of 20.4 lakh rupees.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "cheque bounce",
@@ -21,28 +21,28 @@
       "end": 66
     },
     {
-      "text": "25 November 2025",
+      "text": "12 March 2026",
       "category": "DATE",
       "start": 97,
-      "end": 113
+      "end": 110
     },
     {
       "text": "Trident Enterprises",
       "category": "ORGANIZATION",
-      "start": 142,
-      "end": 161
+      "start": 139,
+      "end": 158
     },
     {
-      "text": "Judicial Magistrate First Class Court at Thane",
-      "category": "COURT",
-      "start": 280,
-      "end": 326
+      "text": "20.4 lakh rupees",
+      "category": "MONEY",
+      "start": 538,
+      "end": 554
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 603,
-      "end": 615
+      "start": 571,
+      "end": 586
     }
   ],
   "annotator": "generator",

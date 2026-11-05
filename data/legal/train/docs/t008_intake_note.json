@@ -1,7 +1,7 @@
 {
-  "doc_id": "e7e31186f85e8d5c",
+  "doc_id": "b0f5e946a440d8e6",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t008",
-  "text": "Intake note (Commercial team, 16 February 2022). Our client Meera Desai is a 46-year-old textile trader who lives at Flat 3C, Bejai, Mangaluru 575008 and can be reached on 09224019988 or meera.desai@example.com. The client's PAN ZYYPD9910Y.\nThe client consulted us about a cheque bounce matter against M/s Vindhya Textiles Pvt Ltd. A cheque for ₹42,50,000 issued by M/s Vindhya Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2451/2022 before the Judicial Magistrate First Class Court at Mangaluru on 30 June 2022."
+  "text": "Intake note - Commercial team\nDate: 16 March 2022\nClient: Meera Desai, a 46-year-old textile trader from Mangaluru.\nAddress: Flat 3C, Bejai, Mangaluru 575008\nPhone: 09224019988. Email: meera.desai@example.com. PAN ZYYPD9910Y.\nMatter: cheque bounce\nOpposing party: Vindhya Textiles Pvt Ltd\nFacts: A cheque for ₹42,50,000 issued by Vindhya Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2451/2022 before the Judicial Magistrate First Class Court at Mangaluru on 30 June 2022."
 }

@@ -1,0 +1,80 @@
+{
+  "doc_id": "a8844822cedd79f6",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Rupali Ranade. I am a 55-year-old fashion designer living in Surat. I have a tenancy problem with Sneha Shah involving 1.6 lakh rupees in rent, and the tenant has stopped paying rent for many months. My case number is R.C.A. No. 2222/2022 in the Surat District Court. Can your firm advise me on what to do next? You can call me on +91 75642 98712 or email rupali.ranade43@example.com.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Rupali Ranade",
+      "category": "NAME",
+      "start": 67,
+      "end": 80
+    },
+    {
+      "text": "55-year-old",
+      "category": "AGE",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 101,
+      "end": 117
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 128,
+      "end": 133
+    },
+    {
+      "text": "Sneha Shah",
+      "category": "NAME",
+      "start": 165,
+      "end": 175
+    },
+    {
+      "text": "1.6 lakh rupees",
+      "category": "MONEY",
+      "start": 186,
+      "end": 201
+    },
+    {
+      "text": "R.C.A. No. 2222/2022",
+      "category": "CASE_NUMBER",
+      "start": 285,
+      "end": 305
+    },
+    {
+      "text": "Surat District Court",
+      "category": "COURT",
+      "start": 313,
+      "end": 333
+    },
+    {
+      "text": "+91 75642 98712",
+      "category": "PHONE",
+      "start": 398,
+      "end": 413
+    },
+    {
+      "text": "rupali.ranade43@example.com",
+      "category": "EMAIL",
+      "start": 423,
+      "end": 450
+    },
+    {
+      "text": "age (55) + occupation (fashion designer) + city (Surat) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

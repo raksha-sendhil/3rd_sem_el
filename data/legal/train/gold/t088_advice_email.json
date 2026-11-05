@@ -1,6 +1,6 @@
 {
-  "doc_id": "eef9770927e21353",
-  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 2404/2024\n\nDear Mr. Sandhu,\n\nThank you for meeting us on 05/12/2024 about your dispute with Deepak More. As we understand it, the tenant has sublet the flat without permission. The matter is listed before the Mysuru District Court.\n\nOur advice is to collect evidence of unauthorised subletting such as utility bills in the occupant's name. Please collect utility bills in the occupant's name and statements of the neighbours and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "doc_id": "2b8df7cf720ece20",
+  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 2404/2024\n\nDear Mr. Sandhu,\n\nThank you for meeting us on 22/08/2024 about your dispute with Deepak More. As we understand it, the tenant has sublet the flat without permission. The matter is listed before the Mysuru District Court.\n\nOur advice is to collect evidence of unauthorised subletting such as utility bills in the occupant's name. Please collect utility bills in the occupant's name and statements of the neighbours and send copies to this office. We will pursue the full claim of ₹70,000.\n\nRegards,\nAdv. Tejas Oberoi",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -21,7 +21,7 @@
       "end": 77
     },
     {
-      "text": "05/12/2024",
+      "text": "22/08/2024",
       "category": "DATE",
       "start": 108,
       "end": 118
@@ -39,10 +39,16 @@
       "end": 281
     },
     {
-      "text": "Mrinalini Saraf",
+      "text": "₹70,000",
+      "category": "MONEY",
+      "start": 541,
+      "end": 548
+    },
+    {
+      "text": "Tejas Oberoi",
       "category": "NAME",
-      "start": 523,
-      "end": 538
+      "start": 565,
+      "end": 577
     }
   ],
   "annotator": "generator",

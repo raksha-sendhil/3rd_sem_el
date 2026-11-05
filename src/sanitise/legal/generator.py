@@ -12,7 +12,8 @@
 ``gold_facts/``            facts for 20 documents  (machine-drafted: see below)
 ``gold_routing/``          routing for the same 20 documents (machine-drafted)
 ``nonmembers/``            120 documents about 120 other clients, never indexed
-``train/``                 400 training documents + 40 held out, with span labels and
+``train/``                 400 training documents + 40 held out (about clients the
+                           training documents never mention), with span labels and
                            ``sft.jsonl`` (prompt + target) for fine-tuning Agent 1
 ``qa.json``                40 questions with expected phrases and answering doc ids
 ``attacks/``               direct, linkage and stepwise attacks on 3 target clients
@@ -37,6 +38,7 @@ from __future__ import annotations
 import json
 import random
 import re
+import shutil
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 from pathlib import Path
@@ -946,11 +948,16 @@ def build(seed: int = DEFAULT_SEED) -> Generated:
         doc = write_doc(c, out_rng.choice(TEMPLATES), out_rng)
         c.doc_ids.append(doc.doc_id)
         nonmembers.append(doc)
+    # Held-out documents are about other clients: splitting one pool by document would score
+    # the fine-tuned model on names, companies and addresses it was trained on.
     train_rng = random.Random(seed + 3)
-    trainees = make_clients(train_rng, names, "t", designed=False, count=176)
-    train_docs = corpus_docs(trainees, train_rng, n_docs=440)
+    trainees = make_clients(train_rng, names, "t", designed=False, count=160)
+    train_docs = corpus_docs(trainees, train_rng, n_docs=400)
     train_rng.shuffle(train_docs)
-    return Generated(clients, docs, nonmembers, train_docs[:400], train_docs[400:])
+    held_rng = random.Random(seed + 5)
+    held_clients = make_clients(held_rng, names, "h", designed=False, count=16)
+    heldout = corpus_docs(held_clients, held_rng, n_docs=40)
+    return Generated(clients, docs, nonmembers, train_docs, heldout)
 
 
 def generate(out_dir: str | Path = "data/legal", seed: int = DEFAULT_SEED) -> Generated:
@@ -961,6 +968,7 @@ def generate(out_dir: str | Path = "data/legal", seed: int = DEFAULT_SEED) -> Ge
     _write_docs(out / "corpus", g.docs, out / "gold", "synthetic-legal")
     _dump(out / "nonmembers" / "clients.json", [c.to_json() for c in g.nonmember_clients()])
     _write_docs(out / "nonmembers" / "docs", g.nonmembers, None, "synthetic-legal-nonmember")
+    shutil.rmtree(out / "train", ignore_errors=True)  # no stale documents from an older split
     _write_docs(out / "train" / "docs", g.train, out / "train" / "gold", "synthetic-legal-train")
     _write_docs(
         out / "train" / "heldout",

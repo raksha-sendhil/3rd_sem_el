@@ -1,6 +1,6 @@
 {
-  "doc_id": "e8f4cccfcb7eae40",
-  "text": "Subject: Your wrongful termination matter\n\nDear Mr. Shinde,\n\nThank you for meeting us on 31/03/2021 about your dispute with Sai Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Mumbai Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office. We will pursue the full claim of INR 15,80,000/-.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "doc_id": "2736b196b9dea73d",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 1646/2020\n\nDear Mr. Shinde,\n\nThank you for meeting us on 15 January 2021 about your dispute with Sai Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Mumbai Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
   "spans": [
     {
       "text": "wrongful termination",
@@ -9,40 +9,40 @@
       "end": 34
     },
     {
-      "text": "Shinde",
-      "category": "NAME",
-      "start": 52,
-      "end": 58
+      "text": "Complaint No. 1646/2020",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 67
     },
     {
-      "text": "31/03/2021",
+      "text": "Shinde",
+      "category": "NAME",
+      "start": 78,
+      "end": 84
+    },
+    {
+      "text": "15 January 2021",
       "category": "DATE",
-      "start": 89,
-      "end": 99
+      "start": 115,
+      "end": 130
     },
     {
       "text": "Sai Industries",
       "category": "ORGANIZATION",
-      "start": 124,
-      "end": 138
+      "start": 155,
+      "end": 169
     },
     {
       "text": "Mumbai Labour Court",
       "category": "COURT",
-      "start": 241,
-      "end": 260
-    },
-    {
-      "text": "INR 15,80,000/-",
-      "category": "MONEY",
-      "start": 466,
-      "end": 481
+      "start": 272,
+      "end": 291
     },
     {
       "text": "Rohit Wadhwa",
       "category": "NAME",
-      "start": 498,
-      "end": 510
+      "start": 479,
+      "end": 491
     }
   ],
   "annotator": "generator",

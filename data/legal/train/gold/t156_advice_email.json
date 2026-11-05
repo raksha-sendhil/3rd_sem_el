@@ -1,6 +1,6 @@
 {
-  "doc_id": "28493e5c5e1c378a",
-  "text": "Subject: Your wrongful termination matter - Complaint No. 2451/2020\n\nDear Ms. Chauhan,\n\nThank you for meeting us on 6 December 2020 about your dispute with Goyal Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Pune Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office. We will pursue the full claim of ₹22,80,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "doc_id": "95a515f5d526bf50",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 2451/2020\n\nDear Ms. Chauhan,\n\nThank you for meeting us on 21/06/2021 about your dispute with M/s Goyal Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Pune Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
   "spans": [
     {
       "text": "wrongful termination",
@@ -21,34 +21,28 @@
       "end": 85
     },
     {
-      "text": "6 December 2020",
+      "text": "21/06/2021",
       "category": "DATE",
       "start": 116,
-      "end": 131
+      "end": 126
     },
     {
       "text": "Goyal Industries",
       "category": "ORGANIZATION",
-      "start": 156,
-      "end": 172
+      "start": 155,
+      "end": 171
     },
     {
       "text": "Pune Labour Court",
       "category": "COURT",
-      "start": 275,
-      "end": 292
+      "start": 274,
+      "end": 291
     },
     {
-      "text": "₹22,80,000",
-      "category": "MONEY",
-      "start": 498,
-      "end": 508
-    },
-    {
-      "text": "Tejas Oberoi",
+      "text": "Rohit Wadhwa",
       "category": "NAME",
-      "start": 525,
-      "end": 537
+      "start": 479,
+      "end": 491
     }
   ],
   "annotator": "generator",

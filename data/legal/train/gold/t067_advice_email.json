@@ -1,6 +1,6 @@
 {
-  "doc_id": "f9051269825ae1e8",
-  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Patel,\n\nThank you for meeting us on 3 December 2023 about your dispute with Divya Shetty. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of ₹38,40,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "9aebc9f8c94c715e",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Patel,\n\nThank you for meeting us on 27 December 2023 about your dispute with Divya Shetty. As we understand it, the cheque was returned unpaid for insufficient funds. The matter is listed before the Judicial Magistrate First Class Court at Pune.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "cheque bounce",
@@ -15,28 +15,28 @@
       "end": 50
     },
     {
-      "text": "3 December 2023",
+      "text": "27 December 2023",
       "category": "DATE",
       "start": 81,
-      "end": 96
+      "end": 97
     },
     {
       "text": "Divya Shetty",
       "category": "NAME",
-      "start": 121,
-      "end": 133
+      "start": 122,
+      "end": 134
     },
     {
-      "text": "₹38,40,000",
-      "category": "MONEY",
-      "start": 506,
-      "end": 516
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 244,
+      "end": 289
     },
     {
-      "text": "Hema Lakshmanan",
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 533,
-      "end": 548
+      "start": 568,
+      "end": 587
     }
   ],
   "annotator": "generator",

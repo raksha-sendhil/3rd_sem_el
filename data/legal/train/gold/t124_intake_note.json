@@ -1,96 +1,96 @@
 {
-  "doc_id": "5f76a86bea2e8c17",
-  "text": "Intake note (Commercial team, 15/02/2025). Our client Vandana Mishra is a 28-year-old schoolteacher who lives at House No. 45, Gokulam, Mysuru 570040 and can be reached on +91 90458 83613 or vandana.mishra@example.in. The client's PAN VMTPM6329R.\nThe client consulted us about a cheque bounce matter against Rekha Goyal. A cheque for ₹30,30,000 issued by Rekha Goyal bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/225/2025 before the Judicial Magistrate First Class Court at Mysuru on 21 August 2025.",
+  "doc_id": "f5b534e16b574c2d",
+  "text": "Intake note (Commercial team, 28 April 2025). Our client Vandana Mishra is a 28-year-old schoolteacher who lives at House No. 45, Gokulam, Mysuru 570040 and can be reached on +91 90458 83613 or vandana.mishra@example.in. The client's PAN VMTPM6329R.\nThe client consulted us about a cheque bounce matter against Rekha Goyal. A cheque for Rs 30,30,000 issued by Rekha Goyal bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/225/2025 before the Judicial Magistrate First Class Court at Mysuru on 21 August 2025.",
   "spans": [
     {
-      "text": "15/02/2025",
+      "text": "28 April 2025",
       "category": "DATE",
       "start": 30,
-      "end": 40
+      "end": 43
     },
     {
       "text": "Vandana Mishra",
       "category": "NAME",
-      "start": 54,
-      "end": 68
+      "start": 57,
+      "end": 71
     },
     {
       "text": "28-year-old",
       "category": "AGE",
-      "start": 74,
-      "end": 85
+      "start": 77,
+      "end": 88
     },
     {
       "text": "schoolteacher",
       "category": "OCCUPATION",
-      "start": 86,
-      "end": 99
+      "start": 89,
+      "end": 102
     },
     {
       "text": "House No. 45, Gokulam, Mysuru 570040",
       "category": "ADDRESS",
-      "start": 113,
-      "end": 149
+      "start": 116,
+      "end": 152
     },
     {
       "text": "+91 90458 83613",
       "category": "PHONE",
-      "start": 172,
-      "end": 187
+      "start": 175,
+      "end": 190
     },
     {
       "text": "vandana.mishra@example.in",
       "category": "EMAIL",
-      "start": 191,
-      "end": 216
+      "start": 194,
+      "end": 219
     },
     {
       "text": "VMTPM6329R",
       "category": "ID_NUMBER",
-      "start": 235,
-      "end": 245
+      "start": 238,
+      "end": 248
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 279,
-      "end": 292
+      "start": 282,
+      "end": 295
     },
     {
       "text": "Rekha Goyal",
       "category": "NAME",
-      "start": 308,
-      "end": 319
+      "start": 311,
+      "end": 322
     },
     {
-      "text": "₹30,30,000",
+      "text": "Rs 30,30,000",
       "category": "MONEY",
-      "start": 334,
-      "end": 344
+      "start": 337,
+      "end": 349
     },
     {
       "text": "Rekha Goyal",
       "category": "NAME",
-      "start": 355,
-      "end": 366
+      "start": 360,
+      "end": 371
     },
     {
       "text": "CC/225/2025",
       "category": "CASE_NUMBER",
-      "start": 453,
-      "end": 464
+      "start": 458,
+      "end": 469
     },
     {
       "text": "Judicial Magistrate First Class Court at Mysuru",
       "category": "COURT",
-      "start": 476,
-      "end": 523
+      "start": 481,
+      "end": 528
     },
     {
       "text": "21 August 2025",
       "category": "DATE",
-      "start": 527,
-      "end": 541
+      "start": 532,
+      "end": 546
     }
   ],
   "annotator": "generator",

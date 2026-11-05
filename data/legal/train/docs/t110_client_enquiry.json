@@ -1,7 +1,7 @@
 {
-  "doc_id": "ba83178a60625014",
+  "doc_id": "745da3adc662709a",
   "source": "synthetic-legal-train",
   "template": "client_enquiry",
   "person_id": "t110",
-  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Mahesh Varghese. I am a 75-year-old farmer living in Kochi. Chandran Enterprises gave me a cheque for Rs 24,80,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. Can your firm advise me on what to do next? You can call me on +91 75072 33130 or email mahesh.varghese54@example.com."
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Mahesh Varghese. I am a 75-year-old farmer living in Kochi. Chandran Enterprises gave me a cheque for ₹24,80,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. My case number is CC/1801/2022 in the Judicial Magistrate First Class Court at Kochi. Can your firm advise me on what to do next? You can call me on +91 75072 33130 or email mahesh.varghese54@example.com."
 }

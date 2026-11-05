@@ -1,6 +1,6 @@
 {
-  "doc_id": "7226f9cbb481f236",
-  "text": "Subject: Your tenancy eviction matter\n\nDear Mr. Hegde,\n\nThank you for meeting us on 14 February 2021 about your dispute with Madhuri Kurian. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Nashik District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "2a683c362c0aa309",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2056/2020\n\nDear Mr. Hegde,\n\nThank you for meeting us on 18 November 2020 about your dispute with Madhuri Kurian. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Nashik District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -9,34 +9,40 @@
       "end": 30
     },
     {
-      "text": "Hegde",
-      "category": "NAME",
-      "start": 48,
-      "end": 53
+      "text": "R.C.S. No. 2056/2020",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
     },
     {
-      "text": "14 February 2021",
+      "text": "Hegde",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "18 November 2020",
       "category": "DATE",
-      "start": 84,
-      "end": 100
+      "start": 107,
+      "end": 123
     },
     {
       "text": "Madhuri Kurian",
       "category": "NAME",
-      "start": 125,
-      "end": 139
+      "start": 148,
+      "end": 162
     },
     {
       "text": "Nashik District Court",
       "category": "COURT",
-      "start": 272,
-      "end": 293
+      "start": 295,
+      "end": 316
     },
     {
-      "text": "Hema Lakshmanan",
+      "text": "Aditi Ranganathan",
       "category": "NAME",
-      "start": 523,
-      "end": 538
+      "start": 546,
+      "end": 563
     }
   ],
   "annotator": "generator",

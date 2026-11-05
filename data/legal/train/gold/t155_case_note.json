@@ -1,6 +1,6 @@
 {
-  "doc_id": "27acf831c456a284",
-  "text": "Case note: S.C.C. No. 742/2023\nClient: Ashok Shetty (retired bank officer, Panaji)\nOpposing party: Vikram Malhotra\nCourt: Judicial Magistrate First Class Court at Panaji\nFiled on: 7 July 2023\nClaim amount: Rs 18,50,000\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.",
+  "doc_id": "bee042939eed3dd8",
+  "text": "Case note: S.C.C. No. 742/2023\nClient: Ashok Shetty (retired bank officer, Panaji)\nOpposing party: Vikram Malhotra\nCourt: Judicial Magistrate First Class Court at Panaji\nFiled on: 07/07/2023\nClaim amount: ₹18,50,000\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.",
   "spans": [
     {
       "text": "S.C.C. No. 742/2023",
@@ -39,22 +39,22 @@
       "end": 169
     },
     {
-      "text": "7 July 2023",
+      "text": "07/07/2023",
       "category": "DATE",
       "start": 180,
-      "end": 191
+      "end": 190
     },
     {
-      "text": "Rs 18,50,000",
+      "text": "₹18,50,000",
       "category": "MONEY",
-      "start": 206,
-      "end": 218
+      "start": 205,
+      "end": 215
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 226,
-      "end": 239
+      "start": 223,
+      "end": 236
     },
     {
       "text": "occupation (retired bank officer) + city (Panaji) + issue (cheque bounce)",

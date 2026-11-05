@@ -1,96 +1,96 @@
 {
-  "doc_id": "45506f65232a14ae",
-  "text": "Intake note (Commercial team, 06/05/2022). Our client Abhishek Bansal is a 47-year-old taxi driver who lives at House No. 99, Navrangpura, Ahmedabad 380049 and can be reached on +91 93359 68045 or abhishek.bansal@example.in. The client's PAN ZXUPB6867B.\nThe client consulted us about a wrongful termination matter against M/s Shetty Technologies Pvt Ltd. The wrongful termination claim against M/s Shetty Technologies Pvt Ltd is for Rs 21,40,000; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 763/2022 before the Ahmedabad Labour Court on 05/07/2022.",
+  "doc_id": "7133ea9d19bba039",
+  "text": "Intake note (Commercial team, 11 June 2022). Our client Abhishek Bansal is a 47-year-old taxi driver who lives at House No. 99, Navrangpura, Ahmedabad 380049 and can be reached on +91 93359 68045 or abhishek.bansal@example.in. The client's PAN ZXUPB6867B.\nThe client consulted us about a wrongful termination matter against M/s Shetty Technologies Pvt Ltd. The wrongful termination claim against M/s Shetty Technologies Pvt Ltd is for Rs 21,40,000; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 763/2022 before the Ahmedabad Labour Court on 5 July 2022.",
   "spans": [
     {
-      "text": "06/05/2022",
+      "text": "11 June 2022",
       "category": "DATE",
       "start": 30,
-      "end": 40
+      "end": 42
     },
     {
       "text": "Abhishek Bansal",
       "category": "NAME",
-      "start": 54,
-      "end": 69
+      "start": 56,
+      "end": 71
     },
     {
       "text": "47-year-old",
       "category": "AGE",
-      "start": 75,
-      "end": 86
+      "start": 77,
+      "end": 88
     },
     {
       "text": "taxi driver",
       "category": "OCCUPATION",
-      "start": 87,
-      "end": 98
+      "start": 89,
+      "end": 100
     },
     {
       "text": "House No. 99, Navrangpura, Ahmedabad 380049",
       "category": "ADDRESS",
-      "start": 112,
-      "end": 155
+      "start": 114,
+      "end": 157
     },
     {
       "text": "+91 93359 68045",
       "category": "PHONE",
-      "start": 178,
-      "end": 193
+      "start": 180,
+      "end": 195
     },
     {
       "text": "abhishek.bansal@example.in",
       "category": "EMAIL",
-      "start": 197,
-      "end": 223
+      "start": 199,
+      "end": 225
     },
     {
       "text": "ZXUPB6867B",
       "category": "ID_NUMBER",
-      "start": 242,
-      "end": 252
+      "start": 244,
+      "end": 254
     },
     {
       "text": "wrongful termination",
       "category": "LEGAL_ISSUE",
-      "start": 286,
-      "end": 306
+      "start": 288,
+      "end": 308
     },
     {
       "text": "Shetty Technologies Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 326,
-      "end": 353
+      "start": 328,
+      "end": 355
     },
     {
       "text": "Shetty Technologies Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 398,
-      "end": 425
+      "start": 400,
+      "end": 427
     },
     {
       "text": "Rs 21,40,000",
       "category": "MONEY",
-      "start": 433,
-      "end": 445
+      "start": 435,
+      "end": 447
     },
     {
       "text": "Complaint No. 763/2022",
       "category": "CASE_NUMBER",
-      "start": 524,
-      "end": 546
+      "start": 526,
+      "end": 548
     },
     {
       "text": "Ahmedabad Labour Court",
       "category": "COURT",
-      "start": 558,
-      "end": 580
+      "start": 560,
+      "end": 582
     },
     {
-      "text": "05/07/2022",
+      "text": "5 July 2022",
       "category": "DATE",
-      "start": 584,
-      "end": 594
+      "start": 586,
+      "end": 597
     }
   ],
   "annotator": "generator",

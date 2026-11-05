@@ -1,6 +1,6 @@
 {
-  "doc_id": "bf4ef0ae2e660f18",
-  "text": "Subject: Your cross-border insolvency matter\n\nDear Ms. DSouza,\n\nThank you for meeting us on 9 April 2026 about your dispute with Aravali Holdings Ltd. As we understand it, the debtor is in insolvency proceedings in two countries. The matter is listed before the NCLT Mumbai.\n\nOur advice is to file the claim with the resolution professional before the deadline. Please collect the loan documents and the statement of the amount due and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "953c0577da649f8d",
+  "text": "Subject: Your cross-border insolvency matter - C.P.(IB) No. 574/2025\n\nDear Ms. DSouza,\n\nThank you for meeting us on 5 November 2025 about your dispute with Aravali Holdings Ltd. As we understand it, the debtor is in insolvency proceedings in two countries. The matter is listed before the NCLT Mumbai.\n\nOur advice is to file the claim with the resolution professional before the deadline. Please collect the loan documents and the statement of the amount due and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
   "spans": [
     {
       "text": "cross-border insolvency",
@@ -9,34 +9,40 @@
       "end": 37
     },
     {
-      "text": "DSouza",
-      "category": "NAME",
-      "start": 55,
-      "end": 61
+      "text": "C.P.(IB) No. 574/2025",
+      "category": "CASE_NUMBER",
+      "start": 47,
+      "end": 68
     },
     {
-      "text": "9 April 2026",
+      "text": "DSouza",
+      "category": "NAME",
+      "start": 79,
+      "end": 85
+    },
+    {
+      "text": "5 November 2025",
       "category": "DATE",
-      "start": 92,
-      "end": 104
+      "start": 116,
+      "end": 131
     },
     {
       "text": "Aravali Holdings Ltd",
       "category": "ORGANIZATION",
-      "start": 129,
-      "end": 149
+      "start": 156,
+      "end": 176
     },
     {
       "text": "NCLT Mumbai",
       "category": "COURT",
-      "start": 262,
-      "end": 273
+      "start": 289,
+      "end": 300
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "Aditi Ranganathan",
       "category": "NAME",
-      "start": 479,
-      "end": 491
+      "start": 506,
+      "end": 523
     }
   ],
   "annotator": "generator",

@@ -1,12 +1,12 @@
 {
-  "doc_id": "265daf69cc3d4769",
-  "text": "Intake note - Property team\nDate: 3 February 2022\nClient: Bhavana Iyengar, a 53-year-old truck driver from Mysuru.\nAddress: Plot 62, Kuvempunagar, Mysuru 570009\nPhone: 96569 49062. Email: bhavana.iyengar@example.com. PAN JUZPI7009N, Aadhaar 2404 5112 9119.\nMatter: consumer complaint\nOpposing party: M/s Zenith Builders Pvt Ltd\nFacts: The consumer complaint against Zenith Builders Pvt Ltd concerns a flat bought for ₹2.2 crore; the builder keeps promising possession by email but never delivers.\nThe matter was filed as C.C. No. 948/2022 before the Mysuru District Consumer Disputes Redressal Commission on 1 June 2022.",
+  "doc_id": "8530451317aa014c",
+  "text": "Intake note (Property team, 10 February 2022). Our client Bhavana Iyengar is a 53-year-old truck driver who lives at Plot 62, Kuvempunagar, Mysuru 570009 and can be reached on 96569 49062 or bhavana.iyengar@example.com. The client's PAN JUZPI7009N, Aadhaar 2404 5112 9119.\nThe client consulted us about a consumer complaint matter against M/s Zenith Builders Pvt Ltd. The consumer complaint against M/s Zenith Builders Pvt Ltd concerns a flat bought for ₹2,18,00,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as C.C. No. 948/2022 before the Mysuru District Consumer Disputes Redressal Commission on 1 June 2022.",
   "spans": [
     {
-      "text": "3 February 2022",
+      "text": "10 February 2022",
       "category": "DATE",
-      "start": 34,
-      "end": 49
+      "start": 28,
+      "end": 44
     },
     {
       "text": "Bhavana Iyengar",
@@ -17,98 +17,86 @@
     {
       "text": "53-year-old",
       "category": "AGE",
-      "start": 77,
-      "end": 88
+      "start": 79,
+      "end": 90
     },
     {
       "text": "truck driver",
       "category": "OCCUPATION",
-      "start": 89,
-      "end": 101
-    },
-    {
-      "text": "Mysuru",
-      "category": "LOCATION",
-      "start": 107,
-      "end": 113
+      "start": 91,
+      "end": 103
     },
     {
       "text": "Plot 62, Kuvempunagar, Mysuru 570009",
       "category": "ADDRESS",
-      "start": 124,
-      "end": 160
+      "start": 117,
+      "end": 153
     },
     {
       "text": "96569 49062",
       "category": "PHONE",
-      "start": 168,
-      "end": 179
+      "start": 176,
+      "end": 187
     },
     {
       "text": "bhavana.iyengar@example.com",
       "category": "EMAIL",
-      "start": 188,
-      "end": 215
+      "start": 191,
+      "end": 218
     },
     {
       "text": "JUZPI7009N",
       "category": "ID_NUMBER",
-      "start": 221,
-      "end": 231
+      "start": 237,
+      "end": 247
     },
     {
       "text": "2404 5112 9119",
       "category": "ID_NUMBER",
-      "start": 241,
-      "end": 255
+      "start": 257,
+      "end": 271
     },
     {
       "text": "consumer complaint",
       "category": "LEGAL_ISSUE",
-      "start": 265,
-      "end": 283
+      "start": 305,
+      "end": 323
     },
     {
       "text": "Zenith Builders Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 304,
-      "end": 327
+      "start": 343,
+      "end": 366
     },
     {
       "text": "Zenith Builders Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 366,
-      "end": 389
+      "start": 403,
+      "end": 426
     },
     {
-      "text": "₹2.2 crore",
+      "text": "₹2,18,00,000",
       "category": "MONEY",
-      "start": 417,
-      "end": 427
+      "start": 454,
+      "end": 466
     },
     {
       "text": "C.C. No. 948/2022",
       "category": "CASE_NUMBER",
-      "start": 521,
-      "end": 538
+      "start": 560,
+      "end": 577
     },
     {
       "text": "Mysuru District Consumer Disputes Redressal Commission",
       "category": "COURT",
-      "start": 550,
-      "end": 604
+      "start": 589,
+      "end": 643
     },
     {
       "text": "1 June 2022",
       "category": "DATE",
-      "start": 608,
-      "end": 619
-    },
-    {
-      "text": "age (53) + occupation (truck driver) + city (Mysuru) + issue (consumer complaint)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 647,
+      "end": 658
     }
   ],
   "annotator": "generator",
