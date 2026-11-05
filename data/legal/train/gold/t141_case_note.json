@@ -1,0 +1,80 @@
+{
+  "doc_id": "bfe4886649f218b8",
+  "text": "Case note: CS(COMM) 120/2024\nClient: Swati Kamath (cardiologist, Pune)\nOpposing party: M/s Crescent Exports\nCourt: Bombay High Court, before Justice Sudhir Dhingra\nFiled on: 15 December 2024\nClaim amount: Rs 6,55,00,000\nIssue: geographical-indication dispute. The rival product uses the protected regional name on its label.\nAdvice given: Rely on the registered GI certificate and seek an injunction against the infringing label.\nOutcome: An injunction against the infringing label was granted.\nRecommended next step: Seek damages.\nWitness: Madhuri Ahuja",
+  "spans": [
+    {
+      "text": "CS(COMM) 120/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 28
+    },
+    {
+      "text": "Swati Kamath",
+      "category": "NAME",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 51,
+      "end": 63
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 65,
+      "end": 69
+    },
+    {
+      "text": "Crescent Exports",
+      "category": "ORGANIZATION",
+      "start": 91,
+      "end": 107
+    },
+    {
+      "text": "Bombay High Court",
+      "category": "COURT",
+      "start": 115,
+      "end": 132
+    },
+    {
+      "text": "Sudhir Dhingra",
+      "category": "NAME",
+      "start": 149,
+      "end": 163
+    },
+    {
+      "text": "15 December 2024",
+      "category": "DATE",
+      "start": 174,
+      "end": 190
+    },
+    {
+      "text": "Rs 6,55,00,000",
+      "category": "MONEY",
+      "start": 205,
+      "end": 219
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 227,
+      "end": 258
+    },
+    {
+      "text": "Madhuri Ahuja",
+      "category": "NAME",
+      "start": 541,
+      "end": 554
+    },
+    {
+      "text": "occupation (cardiologist) + city (Pune) + issue (geographical-indication dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

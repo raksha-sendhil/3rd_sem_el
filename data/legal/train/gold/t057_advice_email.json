@@ -1,6 +1,6 @@
 {
-  "doc_id": "68f6f71a26f41270",
-  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2493/2019\n\nDear Ms. Iyer,\n\nThank you for meeting us on 9 May 2019 about your dispute with Ramesh Mishra. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "40ee7730e7e9f8da",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2493/2019\n\nDear Ms. Iyer,\n\nThank you for meeting us on 20 April 2019 about your dispute with Ramesh Mishra. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Nagpur.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of ₹44,40,000.\n\nRegards,\nAdv. Aditi Ranganathan",
   "spans": [
     {
       "text": "cheque bounce",
@@ -21,22 +21,34 @@
       "end": 72
     },
     {
-      "text": "9 May 2019",
+      "text": "20 April 2019",
       "category": "DATE",
       "start": 103,
-      "end": 113
+      "end": 116
     },
     {
       "text": "Ramesh Mishra",
       "category": "NAME",
-      "start": 138,
-      "end": 151
+      "start": 141,
+      "end": 154
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 272,
+      "end": 319
+    },
+    {
+      "text": "₹44,40,000",
+      "category": "MONEY",
+      "start": 578,
+      "end": 588
     },
     {
       "text": "Aditi Ranganathan",
       "category": "NAME",
-      "start": 476,
-      "end": 493
+      "start": 605,
+      "end": 622
     }
   ],
   "annotator": "generator",

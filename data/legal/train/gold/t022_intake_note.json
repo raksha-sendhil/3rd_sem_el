@@ -1,102 +1,102 @@
 {
-  "doc_id": "7840447515dbe5bd",
-  "text": "Intake note - Property team\nDate: 21 February 2020\nClient: Varun Hegde, a 59-year-old railway employee from Nashik.\nAddress: House No. 105, Gangapur Road, Nashik 422026\nPhone: 07404299127. Email: varun.hegde@example.in. PAN YQKPH4733Q.\nMatter: tenancy eviction\nOpposing party: Madhuri Kurian\nFacts: The tenancy dispute with Madhuri Kurian concerns rent arrears of ₹2,55,000; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.S. No. 2056/2020 before the Nashik District Court on 23 August 2020.",
+  "doc_id": "96a634bbdc1e7589",
+  "text": "Intake note - Property team\nDate: 3 March 2020\nClient: Varun Hegde, a 59-year-old railway employee from Nashik.\nAddress: House No. 105, Gangapur Road, Nashik 422026\nPhone: 07404299127. Email: varun.hegde@example.in. PAN YQKPH4733Q.\nMatter: tenancy eviction\nOpposing party: Madhuri Kurian\nFacts: The tenancy dispute with Madhuri Kurian concerns rent arrears of INR 2,55,000/-; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.S. No. 2056/2020 before the Nashik District Court on 23/08/2020.",
   "spans": [
     {
-      "text": "21 February 2020",
+      "text": "3 March 2020",
       "category": "DATE",
       "start": 34,
-      "end": 50
+      "end": 46
     },
     {
       "text": "Varun Hegde",
       "category": "NAME",
-      "start": 59,
-      "end": 70
+      "start": 55,
+      "end": 66
     },
     {
       "text": "59-year-old",
       "category": "AGE",
-      "start": 74,
-      "end": 85
+      "start": 70,
+      "end": 81
     },
     {
       "text": "railway employee",
       "category": "OCCUPATION",
-      "start": 86,
-      "end": 102
+      "start": 82,
+      "end": 98
     },
     {
       "text": "Nashik",
       "category": "LOCATION",
-      "start": 108,
-      "end": 114
+      "start": 104,
+      "end": 110
     },
     {
       "text": "House No. 105, Gangapur Road, Nashik 422026",
       "category": "ADDRESS",
-      "start": 125,
-      "end": 168
+      "start": 121,
+      "end": 164
     },
     {
       "text": "07404299127",
       "category": "PHONE",
-      "start": 176,
-      "end": 187
+      "start": 172,
+      "end": 183
     },
     {
       "text": "varun.hegde@example.in",
       "category": "EMAIL",
-      "start": 196,
-      "end": 218
+      "start": 192,
+      "end": 214
     },
     {
       "text": "YQKPH4733Q",
       "category": "ID_NUMBER",
-      "start": 224,
-      "end": 234
+      "start": 220,
+      "end": 230
     },
     {
       "text": "tenancy eviction",
       "category": "LEGAL_ISSUE",
-      "start": 244,
-      "end": 260
+      "start": 240,
+      "end": 256
     },
     {
       "text": "Madhuri Kurian",
       "category": "NAME",
-      "start": 277,
-      "end": 291
+      "start": 273,
+      "end": 287
     },
     {
       "text": "Madhuri Kurian",
       "category": "NAME",
-      "start": 324,
-      "end": 338
+      "start": 320,
+      "end": 334
     },
     {
-      "text": "₹2,55,000",
+      "text": "INR 2,55,000/-",
       "category": "MONEY",
-      "start": 364,
-      "end": 373
+      "start": 360,
+      "end": 374
     },
     {
       "text": "R.C.S. No. 2056/2020",
       "category": "CASE_NUMBER",
-      "start": 477,
-      "end": 497
+      "start": 478,
+      "end": 498
     },
     {
       "text": "Nashik District Court",
       "category": "COURT",
-      "start": 509,
-      "end": 530
+      "start": 510,
+      "end": 531
     },
     {
-      "text": "23 August 2020",
+      "text": "23/08/2020",
       "category": "DATE",
-      "start": 534,
-      "end": 548
+      "start": 535,
+      "end": 545
     },
     {
       "text": "age (59) + occupation (railway employee) + city (Nashik) + issue (tenancy eviction)",

@@ -1,0 +1,74 @@
+{
+  "doc_id": "17f60415cd73bdfd",
+  "text": "Case note: CS(COMM) 2463/2022\nClient: Venkat Patel (taxi driver, Hubballi)\nOpposing party: Banyan Infotech Pvt Ltd\nCourt: Hubballi Commercial Court\nFiled on: 27 January 2022\nClaim amount: ₹14,66,00,000\nIssue: breach of contract. The claim must be filed as a commercial suit.\nAdvice given: Complete pre-institution mediation before filing the commercial suit.\nOutcome: Mediation failed and the suit was filed.\nRecommended next step: Seek summary judgment.\nMatter code: Project Heron",
+  "spans": [
+    {
+      "text": "CS(COMM) 2463/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Venkat Patel",
+      "category": "NAME",
+      "start": 38,
+      "end": 50
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 52,
+      "end": 63
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 65,
+      "end": 73
+    },
+    {
+      "text": "Banyan Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 91,
+      "end": 114
+    },
+    {
+      "text": "Hubballi Commercial Court",
+      "category": "COURT",
+      "start": 122,
+      "end": 147
+    },
+    {
+      "text": "27 January 2022",
+      "category": "DATE",
+      "start": 158,
+      "end": 173
+    },
+    {
+      "text": "₹14,66,00,000",
+      "category": "MONEY",
+      "start": 188,
+      "end": 201
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 209,
+      "end": 227
+    },
+    {
+      "text": "Project Heron",
+      "category": "MATTER_CODENAME",
+      "start": 468,
+      "end": 481
+    },
+    {
+      "text": "occupation (taxi driver) + city (Hubballi) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

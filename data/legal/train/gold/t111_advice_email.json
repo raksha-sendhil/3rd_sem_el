@@ -1,6 +1,6 @@
 {
-  "doc_id": "f07bded608aa37a1",
-  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 1863/2025\n\nDear Ms. Subramanian,\n\nThank you for meeting us on 28 June 2025 about your dispute with Trident Exports. As we understand it, a conflicting trademark was registered.\n\nOur advice is to file a rectification petition against the conflicting trademark. Please collect the trademark registration and the GI registration and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "doc_id": "967437129d76638c",
+  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 1863/2025\n\nDear Ms. Subramanian,\n\nThank you for meeting us on 26 February 2025 about your dispute with Trident Exports. As we understand it, a conflicting trademark was registered.\n\nOur advice is to file a rectification petition against the conflicting trademark. Please collect the trademark registration and the GI registration and send copies to this office. We will pursue the full claim of ₹7,40,00,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "geographical-indication dispute",
@@ -21,22 +21,28 @@
       "end": 95
     },
     {
-      "text": "28 June 2025",
+      "text": "26 February 2025",
       "category": "DATE",
       "start": 126,
-      "end": 138
+      "end": 142
     },
     {
       "text": "Trident Exports",
       "category": "ORGANIZATION",
-      "start": 163,
-      "end": 178
+      "start": 167,
+      "end": 182
     },
     {
-      "text": "Rohit Wadhwa",
+      "text": "₹7,40,00,000",
+      "category": "MONEY",
+      "start": 459,
+      "end": 471
+    },
+    {
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 437,
-      "end": 449
+      "start": 488,
+      "end": 507
     }
   ],
   "annotator": "generator",

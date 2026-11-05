@@ -95,6 +95,16 @@ def test_gold_routing_follows_the_policy_table(g: generator.Generated) -> None:
         assert fact["value"] in doc.text
 
 
+def test_heldout_documents_are_about_clients_never_seen_in_training(
+    g: generator.Generated,
+) -> None:
+    train_clients = {d.client.client_id for d in g.train}
+    assert not train_clients & {d.client.client_id for d in g.heldout}
+    seen = "\n".join(d.text for d in g.train)
+    people = {c for d in g.heldout for c in (d.client.name, d.client.opposing, d.client.email)}
+    assert not [p for p in people if p in seen]
+
+
 def test_committed_data_matches_the_generator(g: generator.Generated) -> None:
     """data/legal/ is the generator's output for the default seed; regenerate after edits."""
     clients = json.loads((LEGAL / "clients.json").read_text(encoding="utf-8"))

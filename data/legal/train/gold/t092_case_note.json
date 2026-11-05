@@ -1,6 +1,6 @@
 {
-  "doc_id": "36de70f3d27d34f9",
-  "text": "Case note: O.S. No. 1118/2023\nClient: Karthik Khan (nurse, Bengaluru)\nOpposing party: Ajay Mukherjee\nCourt: Bengaluru District Court\nFiled on: 11 February 2023\nClaim amount: ₹4.2 crore\nIssue: land dispute. Relatives dispute who owns the ancestral land.\nAdvice given: Trace the chain of title through the mutation entries.\nOutcome: The title of the client was upheld.\nRecommended next step: Apply for correction of the land records.\nWitness: Rajesh Bhandari",
+  "doc_id": "037f41d2a8c53b82",
+  "text": "Case note: O.S. No. 1118/2023\nClient: Karthik Khan (nurse, Bengaluru)\nOpposing party: Ajay Mukherjee\nCourt: Bengaluru District Court\nFiled on: 11 February 2023\nClaim amount: Rs. 4,19,00,000\nIssue: land dispute. Relatives dispute who owns the ancestral land.\nAdvice given: Trace the chain of title through the mutation entries.\nOutcome: The title of the client was upheld.\nRecommended next step: Apply for correction of the land records.\nWitness: Rajesh Bhandari",
   "spans": [
     {
       "text": "O.S. No. 1118/2023",
@@ -45,22 +45,22 @@
       "end": 159
     },
     {
-      "text": "₹4.2 crore",
+      "text": "Rs. 4,19,00,000",
       "category": "MONEY",
       "start": 174,
-      "end": 184
+      "end": 189
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 192,
-      "end": 204
+      "start": 197,
+      "end": 209
     },
     {
       "text": "Rajesh Bhandari",
       "category": "NAME",
-      "start": 441,
-      "end": 456
+      "start": 446,
+      "end": 461
     },
     {
       "text": "occupation (nurse) + city (Bengaluru) + issue (land dispute)",

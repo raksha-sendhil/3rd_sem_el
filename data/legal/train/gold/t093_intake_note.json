@@ -1,48 +1,42 @@
 {
-  "doc_id": "42024f2f07f9595a",
-  "text": "Intake note - Property team\nDate: 11 November 2018\nClient: Vandana Khan, a 30-year-old professor from Nagpur.\nAddress: Flat 9A, Sitabuldi, Nagpur 440004\nPhone: +91 95744 07496. Email: vandana.khan91@example.in. PAN QTZPK7998K.\nMatter: land dispute\nOpposing party: Sameer Bhatt\nFacts: The land dispute with Sameer Bhatt concerns agricultural land valued at ₹2.3 crore; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 2996/2019 before the Nagpur District Court on 15 May 2019.",
+  "doc_id": "63bdb29722211bb8",
+  "text": "Intake note (Property team, 1 January 2019). Our client Vandana Khan is a 30-year-old professor who lives at Flat 9A, Sitabuldi, Nagpur 440004 and can be reached on +91 95744 07496 or vandana.khan91@example.in. The client's PAN QTZPK7998K.\nThe client consulted us about a land dispute matter against Sameer Bhatt. The land dispute with Sameer Bhatt concerns agricultural land valued at Rs 2,34,00,000; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 2996/2019 before the Nagpur District Court on 15/05/2019.",
   "spans": [
     {
-      "text": "11 November 2018",
+      "text": "1 January 2019",
       "category": "DATE",
-      "start": 34,
-      "end": 50
+      "start": 28,
+      "end": 42
     },
     {
       "text": "Vandana Khan",
       "category": "NAME",
-      "start": 59,
-      "end": 71
+      "start": 56,
+      "end": 68
     },
     {
       "text": "30-year-old",
       "category": "AGE",
-      "start": 75,
-      "end": 86
+      "start": 74,
+      "end": 85
     },
     {
       "text": "professor",
       "category": "OCCUPATION",
-      "start": 87,
-      "end": 96
-    },
-    {
-      "text": "Nagpur",
-      "category": "LOCATION",
-      "start": 102,
-      "end": 108
+      "start": 86,
+      "end": 95
     },
     {
       "text": "Flat 9A, Sitabuldi, Nagpur 440004",
       "category": "ADDRESS",
-      "start": 119,
-      "end": 152
+      "start": 109,
+      "end": 142
     },
     {
       "text": "+91 95744 07496",
       "category": "PHONE",
-      "start": 160,
-      "end": 175
+      "start": 165,
+      "end": 180
     },
     {
       "text": "vandana.khan91@example.in",
@@ -53,56 +47,50 @@
     {
       "text": "QTZPK7998K",
       "category": "ID_NUMBER",
-      "start": 215,
-      "end": 225
+      "start": 228,
+      "end": 238
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 235,
-      "end": 247
+      "start": 272,
+      "end": 284
     },
     {
       "text": "Sameer Bhatt",
       "category": "NAME",
-      "start": 264,
-      "end": 276
+      "start": 300,
+      "end": 312
     },
     {
       "text": "Sameer Bhatt",
       "category": "NAME",
-      "start": 306,
-      "end": 318
+      "start": 336,
+      "end": 348
     },
     {
-      "text": "₹2.3 crore",
+      "text": "Rs 2,34,00,000",
       "category": "MONEY",
-      "start": 356,
-      "end": 366
+      "start": 386,
+      "end": 400
     },
     {
       "text": "O.S. No. 2996/2019",
       "category": "CASE_NUMBER",
-      "start": 450,
-      "end": 468
+      "start": 484,
+      "end": 502
     },
     {
       "text": "Nagpur District Court",
       "category": "COURT",
-      "start": 480,
-      "end": 501
+      "start": 514,
+      "end": 535
     },
     {
-      "text": "15 May 2019",
+      "text": "15/05/2019",
       "category": "DATE",
-      "start": 505,
-      "end": 516
-    },
-    {
-      "text": "age (30) + occupation (professor) + city (Nagpur) + issue (land dispute)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 539,
+      "end": 549
     }
   ],
   "annotator": "generator",

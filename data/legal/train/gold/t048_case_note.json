@@ -1,0 +1,68 @@
+{
+  "doc_id": "4bda8378d41b53bb",
+  "text": "Case note: CC/1880/2025\nClient: Divya Tiwari (dentist, Thane)\nOpposing party: Trident Enterprises\nCourt: Judicial Magistrate First Class Court at Thane\nFiled on: 29/05/2025\nClaim amount: ₹20,40,000\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.",
+  "spans": [
+    {
+      "text": "CC/1880/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Divya Tiwari",
+      "category": "NAME",
+      "start": 32,
+      "end": 44
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 46,
+      "end": 53
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 55,
+      "end": 60
+    },
+    {
+      "text": "Trident Enterprises",
+      "category": "ORGANIZATION",
+      "start": 78,
+      "end": 97
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "start": 105,
+      "end": 151
+    },
+    {
+      "text": "29/05/2025",
+      "category": "DATE",
+      "start": 162,
+      "end": 172
+    },
+    {
+      "text": "₹20,40,000",
+      "category": "MONEY",
+      "start": 187,
+      "end": 197
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 205,
+      "end": 218
+    },
+    {
+      "text": "occupation (dentist) + city (Thane) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

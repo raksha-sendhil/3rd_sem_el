@@ -1,6 +1,6 @@
 {
-  "doc_id": "8094495fab072458",
-  "text": "Subject: Your divorce by mutual consent matter\n\nDear Mr. Sandhu,\n\nThank you for meeting us on 23 August 2025 about your dispute with Shruti Karve. As we understand it, the wife wants her jewellery and gifts returned.\n\nOur advice is to list the stridhan items to be returned in the settlement deed. Please collect the list of jewellery and gifts with any receipts and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "6082c7032c43d587",
+  "text": "Subject: Your divorce by mutual consent matter\n\nDear Mr. Sandhu,\n\nThank you for meeting us on 21/05/2025 about your dispute with Shruti Karve. As we understand it, the wife wants her jewellery and gifts returned. The matter is listed before the Family Court at Chennai.\n\nOur advice is to list the stridhan items to be returned in the settlement deed. Please collect the list of jewellery and gifts with any receipts and send copies to this office. We will pursue the full claim of INR 79,60,000/-.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "divorce by mutual consent",
@@ -15,22 +15,34 @@
       "end": 63
     },
     {
-      "text": "23 August 2025",
+      "text": "21/05/2025",
       "category": "DATE",
       "start": 94,
-      "end": 108
+      "end": 104
     },
     {
       "text": "Shruti Karve",
       "category": "NAME",
-      "start": 133,
-      "end": 145
+      "start": 129,
+      "end": 141
     },
     {
-      "text": "Aditi Ranganathan",
+      "text": "Family Court at Chennai",
+      "category": "COURT",
+      "start": 245,
+      "end": 268
+    },
+    {
+      "text": "INR 79,60,000/-",
+      "category": "MONEY",
+      "start": 481,
+      "end": 496
+    },
+    {
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 410,
-      "end": 427
+      "start": 513,
+      "end": 532
     }
   ],
   "annotator": "generator",

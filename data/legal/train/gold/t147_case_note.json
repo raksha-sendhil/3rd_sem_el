@@ -1,6 +1,6 @@
 {
-  "doc_id": "ad2748079400b8e1",
-  "text": "Case note: S.C.C. No. 786/2025\nClient: Priyanka Saxena (dentist, Pune)\nOpposing party: Harpreet Shah\nCourt: Judicial Magistrate First Class Court at Pune\nFiled on: 9 April 2025\nClaim amount: ₹38,50,000\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.\nWitness: Lakshmi Subramanian",
+  "doc_id": "b6ae66629072acd1",
+  "text": "Case note: S.C.C. No. 786/2025\nClient: Priyanka Saxena (dentist, Pune)\nOpposing party: Harpreet Shah\nCourt: Judicial Magistrate First Class Court at Pune\nFiled on: 9 April 2025\nClaim amount: Rs 38,50,000\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.\nWitness: Lakshmi Subramanian",
   "spans": [
     {
       "text": "S.C.C. No. 786/2025",
@@ -45,22 +45,22 @@
       "end": 176
     },
     {
-      "text": "₹38,50,000",
+      "text": "Rs 38,50,000",
       "category": "MONEY",
       "start": 191,
-      "end": 201
+      "end": 203
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 209,
-      "end": 222
+      "start": 211,
+      "end": 224
     },
     {
       "text": "Lakshmi Subramanian",
       "category": "NAME",
-      "start": 565,
-      "end": 584
+      "start": 567,
+      "end": 586
     },
     {
       "text": "occupation (dentist) + city (Pune) + issue (cheque bounce)",

@@ -1,18 +1,18 @@
 {
-  "doc_id": "b0a0c3f91b3a86a5",
-  "text": "Intake note (Commercial team, 15 January 2019). Our client Debashish Mehra is a 71-year-old chartered accountant who lives at Bungalow 21, Edappally, Kochi 682003 and can be reached on +91 83945 29272 or debashish.mehra@example.com. The client's PAN LCFPM4750L.\nThe client consulted us about a cheque bounce matter against Coastal Textiles Pvt Ltd. A cheque for Rs 23,70,000 issued by Coastal Textiles Pvt Ltd bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 952691284249 (IFSC KKBK0752414).\nThe matter was filed as S.C.C. No. 1968/2019 before the Judicial Magistrate First Class Court at Kochi on 5 May 2019.",
+  "doc_id": "9af8f1b306547593",
+  "text": "Intake note - Commercial team\nDate: 13 December 2018\nClient: Debashish Mehra, a 71-year-old chartered accountant from Kochi.\nAddress: Bungalow 21, Edappally, Kochi 682003\nPhone: +91 83945 29272. Email: debashish.mehra@example.com. PAN LCFPM4750L.\nMatter: cheque bounce\nOpposing party: M/s Coastal Textiles Pvt Ltd\nFacts: A cheque for ₹23,70,000 issued by M/s Coastal Textiles Pvt Ltd bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 952691284249 (IFSC KKBK0752414).\nThe matter was filed as S.C.C. No. 1968/2019 before the Judicial Magistrate First Class Court at Kochi on 5 May 2019.",
   "spans": [
     {
-      "text": "15 January 2019",
+      "text": "13 December 2018",
       "category": "DATE",
-      "start": 30,
-      "end": 45
+      "start": 36,
+      "end": 52
     },
     {
       "text": "Debashish Mehra",
       "category": "NAME",
-      "start": 59,
-      "end": 74
+      "start": 61,
+      "end": 76
     },
     {
       "text": "71-year-old",
@@ -27,82 +27,94 @@
       "end": 112
     },
     {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 118,
+      "end": 123
+    },
+    {
       "text": "Bungalow 21, Edappally, Kochi 682003",
       "category": "ADDRESS",
-      "start": 126,
-      "end": 162
+      "start": 134,
+      "end": 170
     },
     {
       "text": "+91 83945 29272",
       "category": "PHONE",
-      "start": 185,
-      "end": 200
+      "start": 178,
+      "end": 193
     },
     {
       "text": "debashish.mehra@example.com",
       "category": "EMAIL",
-      "start": 204,
-      "end": 231
+      "start": 202,
+      "end": 229
     },
     {
       "text": "LCFPM4750L",
       "category": "ID_NUMBER",
-      "start": 250,
-      "end": 260
+      "start": 235,
+      "end": 245
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 294,
-      "end": 307
+      "start": 255,
+      "end": 268
     },
     {
       "text": "Coastal Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 323,
-      "end": 347
+      "start": 289,
+      "end": 313
     },
     {
-      "text": "Rs 23,70,000",
+      "text": "₹23,70,000",
       "category": "MONEY",
-      "start": 362,
-      "end": 374
+      "start": 334,
+      "end": 344
     },
     {
       "text": "Coastal Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 385,
-      "end": 409
+      "start": 359,
+      "end": 383
     },
     {
       "text": "952691284249",
       "category": "FINANCIAL",
-      "start": 536,
-      "end": 548
+      "start": 510,
+      "end": 522
     },
     {
       "text": "KKBK0752414",
       "category": "FINANCIAL",
-      "start": 555,
-      "end": 566
+      "start": 529,
+      "end": 540
     },
     {
       "text": "S.C.C. No. 1968/2019",
       "category": "CASE_NUMBER",
-      "start": 593,
-      "end": 613
+      "start": 567,
+      "end": 587
     },
     {
       "text": "Judicial Magistrate First Class Court at Kochi",
       "category": "COURT",
-      "start": 625,
-      "end": 671
+      "start": 599,
+      "end": 645
     },
     {
       "text": "5 May 2019",
       "category": "DATE",
-      "start": 675,
-      "end": 685
+      "start": 649,
+      "end": 659
+    },
+    {
+      "text": "age (71) + occupation (chartered accountant) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

@@ -1,96 +1,96 @@
 {
-  "doc_id": "7eed97896ea5ad60",
-  "text": "Intake note (Commercial team, 18 March 2025). Our client Debashish Kapoor is a 44-year-old truck driver who lives at House No. 15, Kazipet, Warangal 506023 and can be reached on 09134592651 or debashish.kapoor94@example.com. The client's PAN LEXPK7468K.\nThe client consulted us about a cheque bounce matter against Menon Traders. A cheque for INR 37,30,000/- issued by Menon Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/127/2025 before the Judicial Magistrate First Class Court at Warangal on 11 April 2025.",
+  "doc_id": "f31e4200592f8e49",
+  "text": "Intake note (Commercial team, 02/02/2025). Our client Debashish Kapoor is a 44-year-old truck driver who lives at House No. 15, Kazipet, Warangal 506023 and can be reached on 09134592651 or debashish.kapoor94@example.com. The client's PAN LEXPK7468K.\nThe client consulted us about a cheque bounce matter against M/s Menon Traders. A cheque for Rs 37,30,000 issued by Menon Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/127/2025 before the Judicial Magistrate First Class Court at Warangal on 11 April 2025.",
   "spans": [
     {
-      "text": "18 March 2025",
+      "text": "02/02/2025",
       "category": "DATE",
       "start": 30,
-      "end": 43
+      "end": 40
     },
     {
       "text": "Debashish Kapoor",
       "category": "NAME",
-      "start": 57,
-      "end": 73
+      "start": 54,
+      "end": 70
     },
     {
       "text": "44-year-old",
       "category": "AGE",
-      "start": 79,
-      "end": 90
+      "start": 76,
+      "end": 87
     },
     {
       "text": "truck driver",
       "category": "OCCUPATION",
-      "start": 91,
-      "end": 103
+      "start": 88,
+      "end": 100
     },
     {
       "text": "House No. 15, Kazipet, Warangal 506023",
       "category": "ADDRESS",
-      "start": 117,
-      "end": 155
+      "start": 114,
+      "end": 152
     },
     {
       "text": "09134592651",
       "category": "PHONE",
-      "start": 178,
-      "end": 189
+      "start": 175,
+      "end": 186
     },
     {
       "text": "debashish.kapoor94@example.com",
       "category": "EMAIL",
-      "start": 193,
-      "end": 223
+      "start": 190,
+      "end": 220
     },
     {
       "text": "LEXPK7468K",
       "category": "ID_NUMBER",
-      "start": 242,
-      "end": 252
+      "start": 239,
+      "end": 249
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 286,
-      "end": 299
+      "start": 283,
+      "end": 296
     },
     {
       "text": "Menon Traders",
       "category": "ORGANIZATION",
-      "start": 315,
-      "end": 328
+      "start": 316,
+      "end": 329
     },
     {
-      "text": "INR 37,30,000/-",
+      "text": "Rs 37,30,000",
       "category": "MONEY",
-      "start": 343,
-      "end": 358
+      "start": 344,
+      "end": 356
     },
     {
       "text": "Menon Traders",
       "category": "ORGANIZATION",
-      "start": 369,
-      "end": 382
+      "start": 367,
+      "end": 380
     },
     {
       "text": "CC/127/2025",
       "category": "CASE_NUMBER",
-      "start": 479,
-      "end": 490
+      "start": 477,
+      "end": 488
     },
     {
       "text": "Judicial Magistrate First Class Court at Warangal",
       "category": "COURT",
-      "start": 502,
-      "end": 551
+      "start": 500,
+      "end": 549
     },
     {
       "text": "11 April 2025",
       "category": "DATE",
-      "start": 555,
-      "end": 568
+      "start": 553,
+      "end": 566
     }
   ],
   "annotator": "generator",

@@ -1,6 +1,6 @@
 {
-  "doc_id": "f862b989fc6a6d44",
-  "text": "Case note: R.C.A. No. 2876/2023\nClient: Leena Khan (civil engineer, Mysuru)\nOpposing party: Thomas Mishra\nCourt: Mysuru District Court\nFiled on: 23/12/2023\nClaim amount: ₹5,85,000\nIssue: tenancy eviction. The landlord needs the premises for the family's own use.\nAdvice given: Plead bona fide personal need with proof of the family's housing requirement.\nOutcome: The eviction was granted on the ground of personal need.\nRecommended next step: Give the tenant time to vacate under the decree.\nWitness: Madhuri Iyengar",
+  "doc_id": "70f7768ada59cafa",
+  "text": "Case note: R.C.A. No. 2876/2023\nClient: Leena Khan (civil engineer, Mysuru)\nOpposing party: Thomas Mishra\nCourt: Mysuru District Court\nFiled on: 23 December 2023\nClaim amount: Rs 5,85,000\nIssue: tenancy eviction. The landlord needs the premises for the family's own use.\nAdvice given: Plead bona fide personal need with proof of the family's housing requirement.\nOutcome: The eviction was granted on the ground of personal need.\nRecommended next step: Give the tenant time to vacate under the decree.\nWitness: Madhuri Iyengar",
   "spans": [
     {
       "text": "R.C.A. No. 2876/2023",
@@ -39,28 +39,28 @@
       "end": 134
     },
     {
-      "text": "23/12/2023",
+      "text": "23 December 2023",
       "category": "DATE",
       "start": 145,
-      "end": 155
+      "end": 161
     },
     {
-      "text": "₹5,85,000",
+      "text": "Rs 5,85,000",
       "category": "MONEY",
-      "start": 170,
-      "end": 179
+      "start": 176,
+      "end": 187
     },
     {
       "text": "tenancy eviction",
       "category": "LEGAL_ISSUE",
-      "start": 187,
-      "end": 203
+      "start": 195,
+      "end": 211
     },
     {
       "text": "Madhuri Iyengar",
       "category": "NAME",
-      "start": 502,
-      "end": 517
+      "start": 510,
+      "end": 525
     },
     {
       "text": "occupation (civil engineer) + city (Mysuru) + issue (tenancy eviction)",

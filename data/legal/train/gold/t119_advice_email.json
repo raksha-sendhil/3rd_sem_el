@@ -1,6 +1,6 @@
 {
-  "doc_id": "410adc25ccd2f61a",
-  "text": "Subject: Your anticipatory bail matter - Anticipatory Bail Application No. 2135/2019\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 05/12/2019 about your dispute with Rajesh Tiwari. As we understand it, the complaint was filed during a matrimonial dispute. The matter is listed before the Hyderabad Sessions Court.\n\nOur advice is to seek interim protection and offer to attend mediation. Please collect the marriage certificate and messages showing attempts to settle and send copies to this office. We will pursue the full claim of ₹15,10,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "doc_id": "0a53b1f555f4faa3",
+  "text": "Subject: Your anticipatory bail matter - Anticipatory Bail Application No. 2135/2019\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 5 September 2019 about your dispute with Rajesh Tiwari. As we understand it, the complaint was filed during a matrimonial dispute. The matter is listed before the Hyderabad Sessions Court.\n\nOur advice is to seek interim protection and offer to attend mediation. Please collect the marriage certificate and messages showing attempts to settle and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
   "spans": [
     {
       "text": "anticipatory bail",
@@ -21,34 +21,28 @@
       "end": 103
     },
     {
-      "text": "05/12/2019",
+      "text": "5 September 2019",
       "category": "DATE",
       "start": 134,
-      "end": 144
+      "end": 150
     },
     {
       "text": "Rajesh Tiwari",
       "category": "NAME",
-      "start": 169,
-      "end": 182
+      "start": 175,
+      "end": 188
     },
     {
       "text": "Hyderabad Sessions Court",
       "category": "COURT",
-      "start": 291,
-      "end": 315
+      "start": 297,
+      "end": 321
     },
     {
-      "text": "₹15,10,000",
-      "category": "MONEY",
-      "start": 535,
-      "end": 545
-    },
-    {
-      "text": "Rohit Wadhwa",
+      "text": "Tejas Oberoi",
       "category": "NAME",
-      "start": 562,
-      "end": 574
+      "start": 523,
+      "end": 535
     }
   ],
   "annotator": "generator",

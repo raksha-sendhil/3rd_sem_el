@@ -1,6 +1,6 @@
 {
-  "doc_id": "68f6e15bbf201b13",
-  "text": "Subject: Your anticipatory bail matter - FIR No. 2056/2019\n\nDear Ms. Malhotra,\n\nThank you for meeting us on 13 May 2020 about your dispute with Rupali Chauhan. As we understand it, the complaint alleges negligence during treatment. The matter is listed before the Surat Sessions Court.\n\nOur advice is to rely on the expert committee opinion that there was no gross negligence. Please collect the treatment records and the expert committee opinion and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "05480617c2be9c2f",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Ms. Malhotra,\n\nThank you for meeting us on 19 May 2020 about your dispute with Rupali Chauhan. As we understand it, the complaint alleges negligence during treatment. The matter is listed before the Surat Sessions Court.\n\nOur advice is to rely on the expert committee opinion that there was no gross negligence. Please collect the treatment records and the expert committee opinion and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "anticipatory bail",
@@ -9,40 +9,34 @@
       "end": 31
     },
     {
-      "text": "FIR No. 2056/2019",
-      "category": "CASE_NUMBER",
-      "start": 41,
-      "end": 58
-    },
-    {
       "text": "Malhotra",
       "category": "NAME",
-      "start": 69,
-      "end": 77
+      "start": 49,
+      "end": 57
     },
     {
-      "text": "13 May 2020",
+      "text": "19 May 2020",
       "category": "DATE",
-      "start": 108,
-      "end": 119
+      "start": 88,
+      "end": 99
     },
     {
       "text": "Rupali Chauhan",
       "category": "NAME",
-      "start": 144,
-      "end": 158
+      "start": 124,
+      "end": 138
     },
     {
       "text": "Surat Sessions Court",
       "category": "COURT",
-      "start": 264,
-      "end": 284
+      "start": 244,
+      "end": 264
     },
     {
-      "text": "Aditi Ranganathan",
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 494,
-      "end": 511
+      "start": 474,
+      "end": 493
     }
   ],
   "annotator": "generator",

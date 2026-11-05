@@ -1,6 +1,6 @@
 {
-  "doc_id": "adaf7d32f598272a",
-  "text": "Subject: Your land dispute matter\n\nDear Mr. Kapoor,\n\nThank you for meeting us on 22/06/2025 about your dispute with Smita Subramanian. As we understand it, construction has started on the disputed plot. The matter is listed before the Lucknow District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office. We will pursue the full claim of INR 2,31,00,000/-.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "doc_id": "3372ff400473a4c9",
+  "text": "Subject: Your land dispute matter - O.S. No. 606/2025\n\nDear Mr. Kapoor,\n\nThank you for meeting us on 9 July 2025 about your dispute with Smita Subramanian. As we understand it, construction has started on the disputed plot.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
   "spans": [
     {
       "text": "land dispute",
@@ -9,40 +9,34 @@
       "end": 26
     },
     {
-      "text": "Kapoor",
-      "category": "NAME",
-      "start": 44,
-      "end": 50
+      "text": "O.S. No. 606/2025",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 53
     },
     {
-      "text": "22/06/2025",
+      "text": "Kapoor",
+      "category": "NAME",
+      "start": 64,
+      "end": 70
+    },
+    {
+      "text": "9 July 2025",
       "category": "DATE",
-      "start": 81,
-      "end": 91
+      "start": 101,
+      "end": 112
     },
     {
       "text": "Smita Subramanian",
       "category": "NAME",
-      "start": 116,
-      "end": 133
+      "start": 137,
+      "end": 154
     },
     {
-      "text": "Lucknow District Court",
-      "category": "COURT",
-      "start": 235,
-      "end": 257
-    },
-    {
-      "text": "INR 2,31,00,000/-",
-      "category": "MONEY",
-      "start": 472,
-      "end": 489
-    },
-    {
-      "text": "Sharmila Venkatesan",
+      "text": "Kunal Bhagat",
       "category": "NAME",
-      "start": 506,
-      "end": 525
+      "start": 419,
+      "end": 431
     }
   ],
   "annotator": "generator",

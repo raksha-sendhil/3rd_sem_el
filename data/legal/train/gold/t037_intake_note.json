@@ -1,102 +1,102 @@
 {
-  "doc_id": "c14484dea17413e7",
-  "text": "Intake note - Family team\nDate: 24 January 2020\nClient: Simran Mehra, a 36-year-old government clerk from Coimbatore.\nAddress: Plot 82, Peelamedu, Coimbatore 641048\nPhone: +91 94740 66221. Email: simran.mehra83@example.com. PAN WDNPM2659Z.\nMatter: divorce by mutual consent\nOpposing party: Ravi Ghosh\nFacts: The divorce by mutual consent with Ravi Ghosh includes a settlement of INR 25,40,000/-; the couple has a young child.\nThe matter was filed as Petition No. 881/2020 before the Family Court at Coimbatore on 19 March 2020.",
+  "doc_id": "fd8bda646790a150",
+  "text": "Intake note - Family team\nDate: 14/01/2020\nClient: Simran Mehra, a 36-year-old government clerk from Coimbatore.\nAddress: Plot 82, Peelamedu, Coimbatore 641048\nPhone: +91 94740 66221. Email: simran.mehra83@example.com. PAN WDNPM2659Z.\nMatter: divorce by mutual consent\nOpposing party: Ravi Ghosh\nFacts: The divorce by mutual consent with Ravi Ghosh includes a settlement of 25.4 lakh rupees; the couple has a young child.\nThe matter was filed as Petition No. 881/2020 before the Family Court at Coimbatore on 19 March 2020.",
   "spans": [
     {
-      "text": "24 January 2020",
+      "text": "14/01/2020",
       "category": "DATE",
       "start": 32,
-      "end": 47
+      "end": 42
     },
     {
       "text": "Simran Mehra",
       "category": "NAME",
-      "start": 56,
-      "end": 68
+      "start": 51,
+      "end": 63
     },
     {
       "text": "36-year-old",
       "category": "AGE",
-      "start": 72,
-      "end": 83
+      "start": 67,
+      "end": 78
     },
     {
       "text": "government clerk",
       "category": "OCCUPATION",
-      "start": 84,
-      "end": 100
+      "start": 79,
+      "end": 95
     },
     {
       "text": "Coimbatore",
       "category": "LOCATION",
-      "start": 106,
-      "end": 116
+      "start": 101,
+      "end": 111
     },
     {
       "text": "Plot 82, Peelamedu, Coimbatore 641048",
       "category": "ADDRESS",
-      "start": 127,
-      "end": 164
+      "start": 122,
+      "end": 159
     },
     {
       "text": "+91 94740 66221",
       "category": "PHONE",
-      "start": 172,
-      "end": 187
+      "start": 167,
+      "end": 182
     },
     {
       "text": "simran.mehra83@example.com",
       "category": "EMAIL",
-      "start": 196,
-      "end": 222
+      "start": 191,
+      "end": 217
     },
     {
       "text": "WDNPM2659Z",
       "category": "ID_NUMBER",
-      "start": 228,
-      "end": 238
+      "start": 223,
+      "end": 233
     },
     {
       "text": "divorce by mutual consent",
       "category": "LEGAL_ISSUE",
-      "start": 248,
-      "end": 273
+      "start": 243,
+      "end": 268
     },
     {
       "text": "Ravi Ghosh",
       "category": "NAME",
-      "start": 290,
-      "end": 300
+      "start": 285,
+      "end": 295
     },
     {
       "text": "Ravi Ghosh",
       "category": "NAME",
-      "start": 343,
-      "end": 353
+      "start": 338,
+      "end": 348
     },
     {
-      "text": "INR 25,40,000/-",
+      "text": "25.4 lakh rupees",
       "category": "MONEY",
-      "start": 379,
-      "end": 394
+      "start": 374,
+      "end": 390
     },
     {
       "text": "Petition No. 881/2020",
       "category": "CASE_NUMBER",
-      "start": 450,
-      "end": 471
+      "start": 446,
+      "end": 467
     },
     {
       "text": "Family Court at Coimbatore",
       "category": "COURT",
-      "start": 483,
-      "end": 509
+      "start": 479,
+      "end": 505
     },
     {
       "text": "19 March 2020",
       "category": "DATE",
-      "start": 513,
-      "end": 526
+      "start": 509,
+      "end": 522
     },
     {
       "text": "age (36) + occupation (government clerk) + city (Coimbatore) + issue (divorce by mutual consent)",

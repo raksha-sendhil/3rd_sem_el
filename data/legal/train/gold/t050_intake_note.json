@@ -1,102 +1,114 @@
 {
-  "doc_id": "79d86857feb88293",
-  "text": "Intake note (Commercial team, 10 January 2021). Our client Sanjay Bhosale is a 59-year-old pharmacist who lives at Bungalow 22, Altinho, Panaji 403052 and can be reached on +91 86778 85665 or sanjay.bhosale81@example.in. The client's PAN SWUPB5880J.\nThe client consulted us about a breach of contract matter (Project Falcon) against M/s Apte Logistics Ltd. The breach of contract claim against Apte Logistics Ltd is for Rs 6,00,00,000; the goods supplied were defective.\nThe matter was filed as CS(COMM) 2069/2021 before the Panaji Commercial Court on 9 May 2021.",
+  "doc_id": "dfc794efbafad756",
+  "text": "Intake note - Commercial team\nDate: 16 March 2021\nClient: Sanjay Bhosale, a 59-year-old pharmacist from Panaji.\nAddress: Bungalow 22, Altinho, Panaji 403052\nPhone: +91 86778 85665. Email: sanjay.bhosale81@example.in. PAN SWUPB5880J.\nMatter: breach of contract (Project Falcon)\nOpposing party: Apte Logistics Ltd\nFacts: The breach of contract claim against Apte Logistics Ltd is for INR 6,00,00,000/-; the goods supplied were defective.\nThe matter was filed as CS(COMM) 2069/2021 before the Panaji Commercial Court on 9 May 2021.",
   "spans": [
     {
-      "text": "10 January 2021",
+      "text": "16 March 2021",
       "category": "DATE",
-      "start": 30,
-      "end": 45
+      "start": 36,
+      "end": 49
     },
     {
       "text": "Sanjay Bhosale",
       "category": "NAME",
-      "start": 59,
-      "end": 73
+      "start": 58,
+      "end": 72
     },
     {
       "text": "59-year-old",
       "category": "AGE",
-      "start": 79,
-      "end": 90
+      "start": 76,
+      "end": 87
     },
     {
       "text": "pharmacist",
       "category": "OCCUPATION",
-      "start": 91,
-      "end": 101
+      "start": 88,
+      "end": 98
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 110
     },
     {
       "text": "Bungalow 22, Altinho, Panaji 403052",
       "category": "ADDRESS",
-      "start": 115,
-      "end": 150
+      "start": 121,
+      "end": 156
     },
     {
       "text": "+91 86778 85665",
       "category": "PHONE",
-      "start": 173,
-      "end": 188
+      "start": 164,
+      "end": 179
     },
     {
       "text": "sanjay.bhosale81@example.in",
       "category": "EMAIL",
-      "start": 192,
-      "end": 219
+      "start": 188,
+      "end": 215
     },
     {
       "text": "SWUPB5880J",
       "category": "ID_NUMBER",
-      "start": 238,
-      "end": 248
+      "start": 221,
+      "end": 231
     },
     {
       "text": "breach of contract",
       "category": "LEGAL_ISSUE",
-      "start": 282,
-      "end": 300
+      "start": 241,
+      "end": 259
     },
     {
       "text": "Project Falcon",
       "category": "MATTER_CODENAME",
-      "start": 309,
-      "end": 323
+      "start": 261,
+      "end": 275
     },
     {
       "text": "Apte Logistics Ltd",
       "category": "ORGANIZATION",
-      "start": 337,
-      "end": 355
+      "start": 293,
+      "end": 311
     },
     {
       "text": "Apte Logistics Ltd",
       "category": "ORGANIZATION",
-      "start": 394,
-      "end": 412
+      "start": 356,
+      "end": 374
     },
     {
-      "text": "Rs 6,00,00,000",
+      "text": "INR 6,00,00,000/-",
       "category": "MONEY",
-      "start": 420,
-      "end": 434
+      "start": 382,
+      "end": 399
     },
     {
       "text": "CS(COMM) 2069/2021",
       "category": "CASE_NUMBER",
-      "start": 495,
-      "end": 513
+      "start": 460,
+      "end": 478
     },
     {
       "text": "Panaji Commercial Court",
       "category": "COURT",
-      "start": 525,
-      "end": 548
+      "start": 490,
+      "end": 513
     },
     {
       "text": "9 May 2021",
       "category": "DATE",
-      "start": 552,
-      "end": 562
+      "start": 517,
+      "end": 527
+    },
+    {
+      "text": "age (59) + occupation (pharmacist) + city (Panaji) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

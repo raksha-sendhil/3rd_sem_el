@@ -1,9 +1,9 @@
 {
-  "doc_id": "e0ba224dff6e7f19",
-  "text": "Intake note - Family team\nDate: 18/06/2024\nClient: Sanjay Natarajan, a 44-year-old schoolteacher from Ahmedabad.\nAddress: Flat 8B, Navrangpura, Ahmedabad 380004\nPhone: 60480 78081. Email: sanjay.natarajan64@example.com. PAN EFNPN7359A.\nMatter: divorce by mutual consent\nOpposing party: Madhuri Joshi\nFacts: The divorce by mutual consent with Madhuri Joshi includes a settlement of ₹7,05,000; the spouses agree on a single payment instead of maintenance.\nThe matter was filed as Petition No. 1041/2024 before the Family Court at Ahmedabad on 12 October 2024.",
+  "doc_id": "f661f54262d0c968",
+  "text": "Intake note - Family team\nDate: 26/08/2024\nClient: Sanjay Natarajan, a 44-year-old schoolteacher from Ahmedabad.\nAddress: Flat 8B, Navrangpura, Ahmedabad 380004\nPhone: 60480 78081. Email: sanjay.natarajan64@example.com. PAN EFNPN7359A.\nMatter: divorce by mutual consent\nOpposing party: Madhuri Joshi\nFacts: The divorce by mutual consent with Madhuri Joshi includes a settlement of INR 7,05,000/-; the spouses agree on a single payment instead of maintenance.\nThe matter was filed as Petition No. 1041/2024 before the Family Court at Ahmedabad on 12 October 2024.",
   "spans": [
     {
-      "text": "18/06/2024",
+      "text": "26/08/2024",
       "category": "DATE",
       "start": 32,
       "end": 42
@@ -75,28 +75,28 @@
       "end": 355
     },
     {
-      "text": "₹7,05,000",
+      "text": "INR 7,05,000/-",
       "category": "MONEY",
       "start": 381,
-      "end": 390
+      "end": 395
     },
     {
       "text": "Petition No. 1041/2024",
       "category": "CASE_NUMBER",
-      "start": 478,
-      "end": 500
+      "start": 483,
+      "end": 505
     },
     {
       "text": "Family Court at Ahmedabad",
       "category": "COURT",
-      "start": 512,
-      "end": 537
+      "start": 517,
+      "end": 542
     },
     {
       "text": "12 October 2024",
       "category": "DATE",
-      "start": 541,
-      "end": 556
+      "start": 546,
+      "end": 561
     },
     {
       "text": "age (44) + occupation (schoolteacher) + city (Ahmedabad) + issue (divorce by mutual consent)",

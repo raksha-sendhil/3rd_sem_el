@@ -1,6 +1,6 @@
 {
-  "doc_id": "db41f2f30a482ec7",
-  "text": "Subject: Your land dispute matter - O.S. No. 1733/2025\n\nDear Ms. Mukherjee,\n\nThank you for meeting us on 15 May 2026 about your dispute with Priyanka DSouza. As we understand it, the occupant claims ownership by adverse possession. The matter is listed before the Pune District Court.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "doc_id": "5a928a5d890bcf9f",
+  "text": "Subject: Your land dispute matter\n\nDear Ms. Mukherjee,\n\nThank you for meeting us on 25 November 2025 about your dispute with Priyanka DSouza. As we understand it, the occupant claims ownership by adverse possession.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office. We will pursue the full claim of ₹3.9 crore.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "land dispute",
@@ -9,40 +9,34 @@
       "end": 26
     },
     {
-      "text": "O.S. No. 1733/2025",
-      "category": "CASE_NUMBER",
-      "start": 36,
-      "end": 54
-    },
-    {
       "text": "Mukherjee",
       "category": "NAME",
-      "start": 65,
-      "end": 74
+      "start": 44,
+      "end": 53
     },
     {
-      "text": "15 May 2026",
+      "text": "25 November 2025",
       "category": "DATE",
-      "start": 105,
-      "end": 116
+      "start": 84,
+      "end": 100
     },
     {
       "text": "Priyanka DSouza",
       "category": "NAME",
-      "start": 141,
-      "end": 156
+      "start": 125,
+      "end": 140
     },
     {
-      "text": "Pune District Court",
-      "category": "COURT",
-      "start": 264,
-      "end": 283
+      "text": "₹3.9 crore",
+      "category": "MONEY",
+      "start": 461,
+      "end": 471
     },
     {
-      "text": "Tejas Oberoi",
+      "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 512,
-      "end": 524
+      "start": 488,
+      "end": 503
     }
   ],
   "annotator": "generator",

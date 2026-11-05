@@ -1,6 +1,6 @@
 {
-  "doc_id": "d996f9d691ab6642",
-  "text": "Subject: Your consumer complaint matter - C.C. No. 1403/2020\n\nDear Mr. Ranade,\n\nThank you for meeting us on 23 November 2020 about your dispute with Sai Constructions. As we understand it, the builder never obtained the occupancy certificate. The matter is listed before the Vadodara District Consumer Disputes Redressal Commission.\n\nOur advice is to seek a full refund with interest because the builder failed to obtain the occupancy certificate. Please collect the builder-buyer agreement, payment receipts and the municipal reply on the occupancy certificate and send copies to this office. We will pursue the full claim of ₹7,93,00,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "a4a883228d18214c",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 1403/2020\n\nDear Mr. Ranade,\n\nThank you for meeting us on 22 December 2020 about your dispute with Sai Constructions. As we understand it, the builder never obtained the occupancy certificate.\n\nOur advice is to seek a full refund with interest because the builder failed to obtain the occupancy certificate. Please collect the builder-buyer agreement, payment receipts and the municipal reply on the occupancy certificate and send copies to this office. We will pursue the full claim of Rs 7,93,00,000.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "consumer complaint",
@@ -21,7 +21,7 @@
       "end": 77
     },
     {
-      "text": "23 November 2020",
+      "text": "22 December 2020",
       "category": "DATE",
       "start": 108,
       "end": 124
@@ -33,22 +33,16 @@
       "end": 166
     },
     {
-      "text": "Vadodara District Consumer Disputes Redressal Commission",
-      "category": "COURT",
-      "start": 275,
-      "end": 331
-    },
-    {
-      "text": "₹7,93,00,000",
+      "text": "Rs 7,93,00,000",
       "category": "MONEY",
-      "start": 627,
-      "end": 639
+      "start": 537,
+      "end": 551
     },
     {
       "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 656,
-      "end": 671
+      "start": 568,
+      "end": 583
     }
   ],
   "annotator": "generator",

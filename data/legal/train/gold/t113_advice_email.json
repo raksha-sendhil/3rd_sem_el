@@ -1,6 +1,6 @@
 {
-  "doc_id": "312b1ad1460674f1",
-  "text": "Subject: Your cheque bounce matter - CC/945/2021\n\nDear Ms. Kamath,\n\nThank you for meeting us on 7 June 2021 about your dispute with M/s Mishra Traders. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Lucknow.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of INR 24,80,000/-.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "25e71c8a22d18d0b",
+  "text": "Subject: Your cheque bounce matter - CC/945/2021\n\nDear Ms. Kamath,\n\nThank you for meeting us on 23 June 2021 about your dispute with Mishra Traders. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of Rs 24,80,000.\n\nRegards,\nAdv. Zubin Contractor",
   "spans": [
     {
       "text": "cheque bounce",
@@ -21,34 +21,28 @@
       "end": 65
     },
     {
-      "text": "7 June 2021",
+      "text": "23 June 2021",
       "category": "DATE",
       "start": 96,
-      "end": 107
+      "end": 108
     },
     {
       "text": "Mishra Traders",
       "category": "ORGANIZATION",
-      "start": 136,
-      "end": 150
+      "start": 133,
+      "end": 147
     },
     {
-      "text": "Judicial Magistrate First Class Court at Lucknow",
-      "category": "COURT",
-      "start": 268,
-      "end": 316
-    },
-    {
-      "text": "INR 24,80,000/-",
+      "text": "Rs 24,80,000",
       "category": "MONEY",
-      "start": 575,
-      "end": 590
+      "start": 490,
+      "end": 502
     },
     {
-      "text": "Hema Lakshmanan",
+      "text": "Zubin Contractor",
       "category": "NAME",
-      "start": 607,
-      "end": 622
+      "start": 519,
+      "end": 535
     }
   ],
   "annotator": "generator",

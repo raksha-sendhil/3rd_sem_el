@@ -1,42 +1,48 @@
 {
-  "doc_id": "65b0233bdc732f31",
-  "text": "Intake note (Commercial team, 15 June 2025). Our client Gaurav Pawar is a 67-year-old government clerk who lives at House No. 73, Koregaon Park, Pune 411012 and can be reached on +91 69625 03203 or gaurav.pawar@example.in. The client's PAN YUFPP2848M.\nThe client consulted us about a cheque bounce matter against M/s Sterling Traders. A cheque for ₹22,10,000 issued by M/s Sterling Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 822527743139 (IFSC KKBK0956267).\nThe matter was filed as S.C.C. No. 1770/2025 before the Judicial Magistrate First Class Court at Pune on 21 July 2025.",
+  "doc_id": "f38b6d7c32b04e60",
+  "text": "Intake note - Commercial team\nDate: 17 February 2025\nClient: Gaurav Pawar, a 67-year-old government clerk from Pune.\nAddress: House No. 73, Koregaon Park, Pune 411012\nPhone: +91 69625 03203. Email: gaurav.pawar@example.in. PAN YUFPP2848M.\nMatter: cheque bounce\nOpposing party: Sterling Traders\nFacts: A cheque for ₹22,10,000 issued by Sterling Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 822527743139 (IFSC KKBK0956267).\nThe matter was filed as S.C.C. No. 1770/2025 before the Judicial Magistrate First Class Court at Pune on 21 July 2025.",
   "spans": [
     {
-      "text": "15 June 2025",
+      "text": "17 February 2025",
       "category": "DATE",
-      "start": 30,
-      "end": 42
+      "start": 36,
+      "end": 52
     },
     {
       "text": "Gaurav Pawar",
       "category": "NAME",
-      "start": 56,
-      "end": 68
+      "start": 61,
+      "end": 73
     },
     {
       "text": "67-year-old",
       "category": "AGE",
-      "start": 74,
-      "end": 85
+      "start": 77,
+      "end": 88
     },
     {
       "text": "government clerk",
       "category": "OCCUPATION",
-      "start": 86,
-      "end": 102
+      "start": 89,
+      "end": 105
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 111,
+      "end": 115
     },
     {
       "text": "House No. 73, Koregaon Park, Pune 411012",
       "category": "ADDRESS",
-      "start": 116,
-      "end": 156
+      "start": 126,
+      "end": 166
     },
     {
       "text": "+91 69625 03203",
       "category": "PHONE",
-      "start": 179,
-      "end": 194
+      "start": 174,
+      "end": 189
     },
     {
       "text": "gaurav.pawar@example.in",
@@ -47,62 +53,68 @@
     {
       "text": "YUFPP2848M",
       "category": "ID_NUMBER",
-      "start": 240,
-      "end": 250
+      "start": 227,
+      "end": 237
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 284,
-      "end": 297
+      "start": 247,
+      "end": 260
     },
     {
       "text": "Sterling Traders",
       "category": "ORGANIZATION",
-      "start": 317,
-      "end": 333
+      "start": 277,
+      "end": 293
     },
     {
       "text": "₹22,10,000",
       "category": "MONEY",
-      "start": 348,
-      "end": 358
+      "start": 314,
+      "end": 324
     },
     {
       "text": "Sterling Traders",
       "category": "ORGANIZATION",
-      "start": 373,
-      "end": 389
+      "start": 335,
+      "end": 351
     },
     {
       "text": "822527743139",
       "category": "FINANCIAL",
-      "start": 507,
-      "end": 519
+      "start": 469,
+      "end": 481
     },
     {
       "text": "KKBK0956267",
       "category": "FINANCIAL",
-      "start": 526,
-      "end": 537
+      "start": 488,
+      "end": 499
     },
     {
       "text": "S.C.C. No. 1770/2025",
       "category": "CASE_NUMBER",
-      "start": 564,
-      "end": 584
+      "start": 526,
+      "end": 546
     },
     {
       "text": "Judicial Magistrate First Class Court at Pune",
       "category": "COURT",
-      "start": 596,
-      "end": 641
+      "start": 558,
+      "end": 603
     },
     {
       "text": "21 July 2025",
       "category": "DATE",
-      "start": 645,
-      "end": 657
+      "start": 607,
+      "end": 619
+    },
+    {
+      "text": "age (67) + occupation (government clerk) + city (Pune) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

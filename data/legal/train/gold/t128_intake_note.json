@@ -1,108 +1,120 @@
 {
-  "doc_id": "a21845ebebddb635",
-  "text": "Intake note (Commercial team, 26 September 2020). Our client Divya Rajan is a 44-year-old taxi driver who lives at Plot 60, Keshwapur, Hubballi 580021 and can be reached on +91 77332 05313 or divya.rajan73@example.com. The client's PAN HNNPR8773N.\nThe client consulted us about a cheque bounce matter against Divya Agarwal. A cheque for ₹19,60,000 issued by Divya Agarwal bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 302311965483 (IFSC UTIB0288132).\nThe matter was filed as CC/2590/2021 before the Judicial Magistrate First Class Court at Hubballi on 12/02/2021.",
+  "doc_id": "6723bc7641f640c4",
+  "text": "Intake note - Commercial team\nDate: 4 November 2020\nClient: Divya Rajan, a 44-year-old taxi driver from Hubballi.\nAddress: Plot 60, Keshwapur, Hubballi 580021\nPhone: +91 77332 05313. Email: divya.rajan73@example.com. PAN HNNPR8773N.\nMatter: cheque bounce\nOpposing party: Divya Agarwal\nFacts: A cheque for ₹19,60,000 issued by Divya Agarwal bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 302311965483 (IFSC UTIB0288132).\nThe matter was filed as CC/2590/2021 before the Judicial Magistrate First Class Court at Hubballi on 12/02/2021.",
   "spans": [
     {
-      "text": "26 September 2020",
+      "text": "4 November 2020",
       "category": "DATE",
-      "start": 30,
-      "end": 47
+      "start": 36,
+      "end": 51
     },
     {
       "text": "Divya Rajan",
       "category": "NAME",
-      "start": 61,
-      "end": 72
+      "start": 60,
+      "end": 71
     },
     {
       "text": "44-year-old",
       "category": "AGE",
-      "start": 78,
-      "end": 89
+      "start": 75,
+      "end": 86
     },
     {
       "text": "taxi driver",
       "category": "OCCUPATION",
-      "start": 90,
-      "end": 101
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 112
     },
     {
       "text": "Plot 60, Keshwapur, Hubballi 580021",
       "category": "ADDRESS",
-      "start": 115,
-      "end": 150
+      "start": 123,
+      "end": 158
     },
     {
       "text": "+91 77332 05313",
       "category": "PHONE",
-      "start": 173,
-      "end": 188
+      "start": 166,
+      "end": 181
     },
     {
       "text": "divya.rajan73@example.com",
       "category": "EMAIL",
-      "start": 192,
-      "end": 217
+      "start": 190,
+      "end": 215
     },
     {
       "text": "HNNPR8773N",
       "category": "ID_NUMBER",
-      "start": 236,
-      "end": 246
+      "start": 221,
+      "end": 231
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 280,
-      "end": 293
+      "start": 241,
+      "end": 254
     },
     {
       "text": "Divya Agarwal",
       "category": "NAME",
-      "start": 309,
-      "end": 322
+      "start": 271,
+      "end": 284
     },
     {
       "text": "₹19,60,000",
       "category": "MONEY",
-      "start": 337,
-      "end": 347
+      "start": 305,
+      "end": 315
     },
     {
       "text": "Divya Agarwal",
       "category": "NAME",
-      "start": 358,
-      "end": 371
+      "start": 326,
+      "end": 339
     },
     {
       "text": "302311965483",
       "category": "FINANCIAL",
-      "start": 487,
-      "end": 499
+      "start": 455,
+      "end": 467
     },
     {
       "text": "UTIB0288132",
       "category": "FINANCIAL",
-      "start": 506,
-      "end": 517
+      "start": 474,
+      "end": 485
     },
     {
       "text": "CC/2590/2021",
       "category": "CASE_NUMBER",
-      "start": 544,
-      "end": 556
+      "start": 512,
+      "end": 524
     },
     {
       "text": "Judicial Magistrate First Class Court at Hubballi",
       "category": "COURT",
-      "start": 568,
-      "end": 617
+      "start": 536,
+      "end": 585
     },
     {
       "text": "12/02/2021",
       "category": "DATE",
-      "start": 621,
-      "end": 631
+      "start": 589,
+      "end": 599
+    },
+    {
+      "text": "age (44) + occupation (taxi driver) + city (Hubballi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

@@ -1,6 +1,6 @@
 {
-  "doc_id": "7774854fce3544ca",
-  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Bhatt,\n\nThank you for meeting us on 31 March 2023 about your dispute with Varghese Textiles Pvt Ltd. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "doc_id": "6607e6f68bcd3963",
+  "text": "Subject: Your cheque bounce matter - CC/805/2022\n\nDear Ms. Bhatt,\n\nThank you for meeting us on 21/09/2022 about your dispute with Varghese Textiles Pvt Ltd. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of Rs 34,80,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,28 +9,40 @@
       "end": 27
     },
     {
-      "text": "Bhatt",
-      "category": "NAME",
-      "start": 45,
-      "end": 50
+      "text": "CC/805/2022",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 48
     },
     {
-      "text": "31 March 2023",
+      "text": "Bhatt",
+      "category": "NAME",
+      "start": 59,
+      "end": 64
+    },
+    {
+      "text": "21/09/2022",
       "category": "DATE",
-      "start": 81,
-      "end": 94
+      "start": 95,
+      "end": 105
     },
     {
       "text": "Varghese Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 119,
-      "end": 144
+      "start": 130,
+      "end": 155
     },
     {
-      "text": "Zubin Contractor",
+      "text": "Rs 34,80,000",
+      "category": "MONEY",
+      "start": 498,
+      "end": 510
+    },
+    {
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 469,
-      "end": 485
+      "start": 527,
+      "end": 546
     }
   ],
   "annotator": "generator",

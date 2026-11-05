@@ -1,6 +1,6 @@
 {
-  "doc_id": "b9e543139c8532ab",
-  "text": "Subject: Your divorce by mutual consent matter - Petition No. 1041/2024\n\nDear Mr. Natarajan,\n\nThank you for meeting us on 8 April 2025 about your dispute with Madhuri Joshi. As we understand it, the spouses agree on a single payment instead of maintenance. The matter is listed before the Family Court at Ahmedabad.\n\nOur advice is to record the one-time alimony settlement in the consent terms. Please collect income tax returns and the draft consent terms and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "e5c0ec5fa686d89f",
+  "text": "Subject: Your divorce by mutual consent matter\n\nDear Mr. Natarajan,\n\nThank you for meeting us on 26/01/2025 about your dispute with Madhuri Joshi. As we understand it, the spouses agree on a single payment instead of maintenance.\n\nOur advice is to record the one-time alimony settlement in the consent terms. Please collect income tax returns and the draft consent terms and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
   "spans": [
     {
       "text": "divorce by mutual consent",
@@ -9,40 +9,28 @@
       "end": 39
     },
     {
-      "text": "Petition No. 1041/2024",
-      "category": "CASE_NUMBER",
-      "start": 49,
-      "end": 71
-    },
-    {
       "text": "Natarajan",
       "category": "NAME",
-      "start": 82,
-      "end": 91
+      "start": 57,
+      "end": 66
     },
     {
-      "text": "8 April 2025",
+      "text": "26/01/2025",
       "category": "DATE",
-      "start": 122,
-      "end": 134
+      "start": 97,
+      "end": 107
     },
     {
       "text": "Madhuri Joshi",
       "category": "NAME",
-      "start": 159,
-      "end": 172
+      "start": 132,
+      "end": 145
     },
     {
-      "text": "Family Court at Ahmedabad",
-      "category": "COURT",
-      "start": 289,
-      "end": 314
-    },
-    {
-      "text": "Hema Lakshmanan",
+      "text": "Tejas Oberoi",
       "category": "NAME",
-      "start": 504,
-      "end": 519
+      "start": 418,
+      "end": 430
     }
   ],
   "annotator": "generator",

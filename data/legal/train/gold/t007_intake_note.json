@@ -1,102 +1,114 @@
 {
-  "doc_id": "147553a6f21302bc",
-  "text": "Intake note (Property team, 30 December 2024). Our client Deepak Kapoor is a 47-year-old professor who lives at Bungalow 1, Aliganj, Lucknow 226001 and can be reached on +91 86824 87622 or deepak.kapoor@example.com. The client's PAN ZXQPK2388V, Aadhaar 8599 4096 1715.\nThe client consulted us about a land dispute matter against Smita Subramanian. The land dispute with Smita Subramanian concerns agricultural land valued at Rs. 2,31,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 606/2025 before the Lucknow District Court on 18 March 2025.",
+  "doc_id": "bcc6110378b84366",
+  "text": "Intake note - Property team\nDate: 23 December 2024\nClient: Deepak Kapoor, a 47-year-old professor from Lucknow.\nAddress: Bungalow 1, Aliganj, Lucknow 226001\nPhone: +91 86824 87622. Email: deepak.kapoor@example.com. PAN ZXQPK2388V, Aadhaar 8599 4096 1715.\nMatter: land dispute\nOpposing party: Smita Subramanian\nFacts: The land dispute with Smita Subramanian concerns agricultural land valued at ₹2,31,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 606/2025 before the Lucknow District Court on 18 March 2025.",
   "spans": [
     {
-      "text": "30 December 2024",
+      "text": "23 December 2024",
       "category": "DATE",
-      "start": 28,
-      "end": 44
+      "start": 34,
+      "end": 50
     },
     {
       "text": "Deepak Kapoor",
       "category": "NAME",
-      "start": 58,
-      "end": 71
+      "start": 59,
+      "end": 72
     },
     {
       "text": "47-year-old",
       "category": "AGE",
-      "start": 77,
-      "end": 88
+      "start": 76,
+      "end": 87
     },
     {
       "text": "professor",
       "category": "OCCUPATION",
-      "start": 89,
-      "end": 98
+      "start": 88,
+      "end": 97
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 110
     },
     {
       "text": "Bungalow 1, Aliganj, Lucknow 226001",
       "category": "ADDRESS",
-      "start": 112,
-      "end": 147
+      "start": 121,
+      "end": 156
     },
     {
       "text": "+91 86824 87622",
       "category": "PHONE",
-      "start": 170,
-      "end": 185
+      "start": 164,
+      "end": 179
     },
     {
       "text": "deepak.kapoor@example.com",
       "category": "EMAIL",
-      "start": 189,
-      "end": 214
+      "start": 188,
+      "end": 213
     },
     {
       "text": "ZXQPK2388V",
       "category": "ID_NUMBER",
-      "start": 233,
-      "end": 243
+      "start": 219,
+      "end": 229
     },
     {
       "text": "8599 4096 1715",
       "category": "ID_NUMBER",
-      "start": 253,
-      "end": 267
+      "start": 239,
+      "end": 253
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 301,
-      "end": 313
+      "start": 263,
+      "end": 275
     },
     {
       "text": "Smita Subramanian",
       "category": "NAME",
-      "start": 329,
-      "end": 346
+      "start": 292,
+      "end": 309
     },
     {
       "text": "Smita Subramanian",
       "category": "NAME",
-      "start": 370,
-      "end": 387
+      "start": 339,
+      "end": 356
     },
     {
-      "text": "Rs. 2,31,00,000",
+      "text": "₹2,31,00,000",
       "category": "MONEY",
-      "start": 425,
-      "end": 440
+      "start": 394,
+      "end": 406
     },
     {
       "text": "O.S. No. 606/2025",
       "category": "CASE_NUMBER",
-      "start": 513,
-      "end": 530
+      "start": 479,
+      "end": 496
     },
     {
       "text": "Lucknow District Court",
       "category": "COURT",
-      "start": 542,
-      "end": 564
+      "start": 508,
+      "end": 530
     },
     {
       "text": "18 March 2025",
       "category": "DATE",
-      "start": 568,
-      "end": 581
+      "start": 534,
+      "end": 547
+    },
+    {
+      "text": "age (47) + occupation (professor) + city (Lucknow) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

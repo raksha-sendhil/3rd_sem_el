@@ -1,7 +1,7 @@
 {
-  "doc_id": "cd43ce23ee926608",
+  "doc_id": "66b76768a542547d",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t130",
-  "text": "Intake note (Commercial team, 30 November 2023). Our client Nandini Pawar is a 30-year-old truck driver who lives at Plot 40, Nadakkavu, Kozhikode 673043 and can be reached on +91 71888 74107 or nandini.pawar47@example.com. The client's PAN GKPPP5751F.\nThe client consulted us about a cheque bounce matter against M/s Emerald Traders. A cheque for Rs 37,00,000 issued by Emerald Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 2625/2024 before the Judicial Magistrate First Class Court at Kozhikode on 9 March 2024."
+  "text": "Intake note - Commercial team\nDate: 5 December 2023\nClient: Nandini Pawar, a 30-year-old truck driver from Kozhikode.\nAddress: Plot 40, Nadakkavu, Kozhikode 673043\nPhone: +91 71888 74107. Email: nandini.pawar47@example.com. PAN GKPPP5751F.\nMatter: cheque bounce\nOpposing party: Emerald Traders\nFacts: A cheque for 37 lakh rupees issued by Emerald Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 2625/2024 before the Judicial Magistrate First Class Court at Kozhikode on 9 March 2024."
 }

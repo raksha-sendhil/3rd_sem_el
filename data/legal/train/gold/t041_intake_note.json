@@ -1,108 +1,108 @@
 {
-  "doc_id": "8509dc27aebd5a34",
-  "text": "Intake note - Commercial team\nDate: 16 May 2024\nClient: Pooja Mittal, a 59-year-old pharmacist from Vadodara.\nAddress: Plot 58, Alkapuri, Vadodara 390049\nPhone: +91 70360 13031. Email: pooja.mittal66@example.com. PAN VJBPM4851H.\nMatter: maritime salvage claim (Project Condor)\nOpposing party: M/s Zenith Shipping Pvt Ltd\nFacts: The maritime salvage claim against Zenith Shipping Pvt Ltd is for ₹13,46,00,000; the vessel is about to leave port.\nThe matter was filed as A.S. No. 873/2024 before the Gujarat High Court on 10 September 2024.",
+  "doc_id": "c2a5e585200a2260",
+  "text": "Intake note - Commercial team\nDate: 10 July 2024\nClient: Pooja Mittal, a 59-year-old pharmacist from Vadodara.\nAddress: Plot 58, Alkapuri, Vadodara 390049\nPhone: +91 70360 13031. Email: pooja.mittal66@example.com. PAN VJBPM4851H.\nMatter: maritime salvage claim (Project Condor)\nOpposing party: Zenith Shipping Pvt Ltd\nFacts: The maritime salvage claim against Zenith Shipping Pvt Ltd is for Rs 13,46,00,000; the vessel is about to leave port.\nThe matter was filed as A.S. No. 873/2024 before the Gujarat High Court on 10/09/2024.",
   "spans": [
     {
-      "text": "16 May 2024",
+      "text": "10 July 2024",
       "category": "DATE",
       "start": 36,
-      "end": 47
+      "end": 48
     },
     {
       "text": "Pooja Mittal",
       "category": "NAME",
-      "start": 56,
-      "end": 68
+      "start": 57,
+      "end": 69
     },
     {
       "text": "59-year-old",
       "category": "AGE",
-      "start": 72,
-      "end": 83
+      "start": 73,
+      "end": 84
     },
     {
       "text": "pharmacist",
       "category": "OCCUPATION",
-      "start": 84,
-      "end": 94
+      "start": 85,
+      "end": 95
     },
     {
       "text": "Vadodara",
       "category": "LOCATION",
-      "start": 100,
-      "end": 108
+      "start": 101,
+      "end": 109
     },
     {
       "text": "Plot 58, Alkapuri, Vadodara 390049",
       "category": "ADDRESS",
-      "start": 119,
-      "end": 153
+      "start": 120,
+      "end": 154
     },
     {
       "text": "+91 70360 13031",
       "category": "PHONE",
-      "start": 161,
-      "end": 176
+      "start": 162,
+      "end": 177
     },
     {
       "text": "pooja.mittal66@example.com",
       "category": "EMAIL",
-      "start": 185,
-      "end": 211
+      "start": 186,
+      "end": 212
     },
     {
       "text": "VJBPM4851H",
       "category": "ID_NUMBER",
-      "start": 217,
-      "end": 227
+      "start": 218,
+      "end": 228
     },
     {
       "text": "maritime salvage claim",
       "category": "LEGAL_ISSUE",
-      "start": 237,
-      "end": 259
+      "start": 238,
+      "end": 260
     },
     {
       "text": "Project Condor",
       "category": "MATTER_CODENAME",
-      "start": 261,
-      "end": 275
+      "start": 262,
+      "end": 276
     },
     {
       "text": "Zenith Shipping Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 297,
-      "end": 320
+      "start": 294,
+      "end": 317
     },
     {
       "text": "Zenith Shipping Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 363,
-      "end": 386
+      "start": 360,
+      "end": 383
     },
     {
-      "text": "₹13,46,00,000",
+      "text": "Rs 13,46,00,000",
       "category": "MONEY",
-      "start": 394,
-      "end": 407
+      "start": 391,
+      "end": 406
     },
     {
       "text": "A.S. No. 873/2024",
       "category": "CASE_NUMBER",
-      "start": 468,
-      "end": 485
+      "start": 467,
+      "end": 484
     },
     {
       "text": "Gujarat High Court",
       "category": "COURT",
-      "start": 497,
-      "end": 515
+      "start": 496,
+      "end": 514
     },
     {
-      "text": "10 September 2024",
+      "text": "10/09/2024",
       "category": "DATE",
-      "start": 519,
-      "end": 536
+      "start": 518,
+      "end": 528
     },
     {
       "text": "age (59) + occupation (pharmacist) + city (Vadodara) + issue (maritime salvage claim)",

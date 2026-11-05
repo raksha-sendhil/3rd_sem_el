@@ -1,0 +1,50 @@
+{
+  "doc_id": "89fd49258a061d6e",
+  "text": "Subject: Your consumer complaint matter - CC/2721/2024\n\nDear Mr. Pawar,\n\nThank you for meeting us on 17 March 2025 about your dispute with Saffron Realty. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Hubballi District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CC/2721/2024",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 54
+    },
+    {
+      "text": "Pawar",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "17 March 2025",
+      "category": "DATE",
+      "start": 101,
+      "end": 114
+    },
+    {
+      "text": "Saffron Realty",
+      "category": "ORGANIZATION",
+      "start": 139,
+      "end": 153
+    },
+    {
+      "text": "Hubballi District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 268,
+      "end": 324
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 541,
+      "end": 560
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,6 +1,6 @@
 {
-  "doc_id": "25748cd085b44517",
-  "text": "Subject: Your divorce by mutual consent matter - Petition No. 881/2020\n\nDear Ms. Mehra,\n\nThank you for meeting us on 7 September 2020 about your dispute with Ravi Ghosh. As we understand it, the couple has a young child. The matter is listed before the Family Court at Coimbatore.\n\nOur advice is to agree a joint parenting plan before the second motion. Please collect the school records of the child and the draft parenting plan and send copies to this office. We will pursue the full claim of ₹25,40,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "doc_id": "fddf9368a94fa569",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 881/2020\n\nDear Ms. Mehra,\n\nThank you for meeting us on 14/12/2020 about your dispute with Ravi Ghosh. As we understand it, the couple has a young child. The matter is listed before the Family Court at Coimbatore.\n\nOur advice is to agree a joint parenting plan before the second motion. Please collect the school records of the child and the draft parenting plan and send copies to this office. We will pursue the full claim of Rs 25,40,000.\n\nRegards,\nAdv. Mrinalini Saraf",
   "spans": [
     {
       "text": "divorce by mutual consent",
@@ -21,34 +21,34 @@
       "end": 86
     },
     {
-      "text": "7 September 2020",
+      "text": "14/12/2020",
       "category": "DATE",
       "start": 117,
-      "end": 133
+      "end": 127
     },
     {
       "text": "Ravi Ghosh",
       "category": "NAME",
-      "start": 158,
-      "end": 168
+      "start": 152,
+      "end": 162
     },
     {
       "text": "Family Court at Coimbatore",
       "category": "COURT",
-      "start": 253,
-      "end": 279
+      "start": 247,
+      "end": 273
     },
     {
-      "text": "₹25,40,000",
+      "text": "Rs 25,40,000",
       "category": "MONEY",
-      "start": 495,
-      "end": 505
+      "start": 489,
+      "end": 501
     },
     {
-      "text": "Hema Lakshmanan",
+      "text": "Mrinalini Saraf",
       "category": "NAME",
-      "start": 522,
-      "end": 537
+      "start": 518,
+      "end": 533
     }
   ],
   "annotator": "generator",

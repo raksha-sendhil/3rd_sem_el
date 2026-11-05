@@ -1,108 +1,96 @@
 {
-  "doc_id": "cb06219ccf6f7793",
-  "text": "Intake note - Property team\nDate: 4 August 2021\nClient: Pallavi Pillai, a 68-year-old professor from Pune.\nAddress: Bungalow 2, Aundh, Pune 411016\nPhone: +91 73996 87605. Email: pallavi.pillai@example.com. PAN FEDPP3036L.\nMatter: tenancy eviction\nOpposing party: Tushar Goyal\nFacts: The tenancy dispute with Tushar Goyal concerns rent arrears of Rs 4,90,000; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 571/2022 before the Pune District Court on 19/02/2022.",
+  "doc_id": "d9c7358918a26ab3",
+  "text": "Intake note (Property team, 20 December 2021). Our client Pallavi Pillai is a 68-year-old professor who lives at Bungalow 2, Aundh, Pune 411016 and can be reached on +91 73996 87605 or pallavi.pillai@example.com. The client's PAN FEDPP3036L.\nThe client consulted us about a tenancy eviction matter against Tushar Goyal. The tenancy dispute with Tushar Goyal concerns rent arrears of ₹4,90,000; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 571/2022 before the Pune District Court on 19 February 2022.",
   "spans": [
     {
-      "text": "4 August 2021",
+      "text": "20 December 2021",
       "category": "DATE",
-      "start": 34,
-      "end": 47
+      "start": 28,
+      "end": 44
     },
     {
       "text": "Pallavi Pillai",
       "category": "NAME",
-      "start": 56,
-      "end": 70
+      "start": 58,
+      "end": 72
     },
     {
       "text": "68-year-old",
       "category": "AGE",
-      "start": 74,
-      "end": 85
+      "start": 78,
+      "end": 89
     },
     {
       "text": "professor",
       "category": "OCCUPATION",
-      "start": 86,
-      "end": 95
-    },
-    {
-      "text": "Pune",
-      "category": "LOCATION",
-      "start": 101,
-      "end": 105
+      "start": 90,
+      "end": 99
     },
     {
       "text": "Bungalow 2, Aundh, Pune 411016",
       "category": "ADDRESS",
-      "start": 116,
-      "end": 146
+      "start": 113,
+      "end": 143
     },
     {
       "text": "+91 73996 87605",
       "category": "PHONE",
-      "start": 154,
-      "end": 169
+      "start": 166,
+      "end": 181
     },
     {
       "text": "pallavi.pillai@example.com",
       "category": "EMAIL",
-      "start": 178,
-      "end": 204
+      "start": 185,
+      "end": 211
     },
     {
       "text": "FEDPP3036L",
       "category": "ID_NUMBER",
-      "start": 210,
-      "end": 220
+      "start": 230,
+      "end": 240
     },
     {
       "text": "tenancy eviction",
       "category": "LEGAL_ISSUE",
-      "start": 230,
-      "end": 246
+      "start": 274,
+      "end": 290
     },
     {
       "text": "Tushar Goyal",
       "category": "NAME",
-      "start": 263,
-      "end": 275
+      "start": 306,
+      "end": 318
     },
     {
       "text": "Tushar Goyal",
       "category": "NAME",
-      "start": 308,
-      "end": 320
-    },
-    {
-      "text": "Rs 4,90,000",
-      "category": "MONEY",
-      "start": 346,
+      "start": 345,
       "end": 357
+    },
+    {
+      "text": "₹4,90,000",
+      "category": "MONEY",
+      "start": 383,
+      "end": 392
     },
     {
       "text": "R.C.S. No. 571/2022",
       "category": "CASE_NUMBER",
-      "start": 435,
-      "end": 454
+      "start": 470,
+      "end": 489
     },
     {
       "text": "Pune District Court",
       "category": "COURT",
-      "start": 466,
-      "end": 485
+      "start": 501,
+      "end": 520
     },
     {
-      "text": "19/02/2022",
+      "text": "19 February 2022",
       "category": "DATE",
-      "start": 489,
-      "end": 499
-    },
-    {
-      "text": "age (68) + occupation (professor) + city (Pune) + issue (tenancy eviction)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 524,
+      "end": 540
     }
   ],
   "annotator": "generator",

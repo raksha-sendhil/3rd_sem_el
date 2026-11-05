@@ -1,6 +1,6 @@
 {
-  "doc_id": "6f7f3c021948a09d",
-  "text": "Subject: Your land dispute matter - O.S. No. 1494/2020\n\nDear Mr. Ghosh,\n\nThank you for meeting us on 4 October 2020 about your dispute with Vandana Kurian. As we understand it, the occupant claims ownership by adverse possession. The matter is listed before the Lucknow District Court.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office. We will pursue the full claim of INR 1,86,00,000/-.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "aa8a124bda4bba6d",
+  "text": "Subject: Your land dispute matter - O.S. No. 1494/2020\n\nDear Mr. Ghosh,\n\nThank you for meeting us on 14 December 2020 about your dispute with Vandana Kurian. As we understand it, the occupant claims ownership by adverse possession. The matter is listed before the Lucknow District Court.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office. We will pursue the full claim of Rs 1,86,00,000.\n\nRegards,\nAdv. Zubin Contractor",
   "spans": [
     {
       "text": "land dispute",
@@ -21,34 +21,34 @@
       "end": 70
     },
     {
-      "text": "4 October 2020",
+      "text": "14 December 2020",
       "category": "DATE",
       "start": 101,
-      "end": 115
+      "end": 117
     },
     {
       "text": "Vandana Kurian",
       "category": "NAME",
-      "start": 140,
-      "end": 154
+      "start": 142,
+      "end": 156
     },
     {
       "text": "Lucknow District Court",
       "category": "COURT",
-      "start": 262,
-      "end": 284
+      "start": 264,
+      "end": 286
     },
     {
-      "text": "INR 1,86,00,000/-",
+      "text": "Rs 1,86,00,000",
       "category": "MONEY",
-      "start": 531,
-      "end": 548
+      "start": 533,
+      "end": 547
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "Zubin Contractor",
       "category": "NAME",
-      "start": 565,
-      "end": 577
+      "start": 564,
+      "end": 580
     }
   ],
   "annotator": "generator",

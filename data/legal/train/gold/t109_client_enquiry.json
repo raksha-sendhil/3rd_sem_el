@@ -1,0 +1,80 @@
+{
+  "doc_id": "b071a437c42139e6",
+  "text": "Subject: Need help with a consumer complaint case\n\nHello, my name is Neha Nambiar. I am a 50-year-old hardware dealer living in Mysuru. I paid Pillai Constructions INR 1,39,00,000/- for a flat, and the builder never obtained the occupancy certificate. My case number is C.C. No. 2928/2020 in the Mysuru District Consumer Disputes Redressal Commission. Can your firm advise me on what to do next? You can call me on +91 69079 35518 or email neha.nambiar50@example.com.",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Neha Nambiar",
+      "category": "NAME",
+      "start": 69,
+      "end": 81
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 90,
+      "end": 101
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 102,
+      "end": 117
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 128,
+      "end": 134
+    },
+    {
+      "text": "Pillai Constructions",
+      "category": "ORGANIZATION",
+      "start": 143,
+      "end": 163
+    },
+    {
+      "text": "INR 1,39,00,000/-",
+      "category": "MONEY",
+      "start": 164,
+      "end": 181
+    },
+    {
+      "text": "C.C. No. 2928/2020",
+      "category": "CASE_NUMBER",
+      "start": 270,
+      "end": 288
+    },
+    {
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 296,
+      "end": 350
+    },
+    {
+      "text": "+91 69079 35518",
+      "category": "PHONE",
+      "start": 415,
+      "end": 430
+    },
+    {
+      "text": "neha.nambiar50@example.com",
+      "category": "EMAIL",
+      "start": 440,
+      "end": 466
+    },
+    {
+      "text": "age (50) + occupation (hardware dealer) + city (Mysuru) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

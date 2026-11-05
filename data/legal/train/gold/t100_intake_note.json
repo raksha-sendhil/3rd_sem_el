@@ -1,36 +1,42 @@
 {
-  "doc_id": "49b12d8a8f16fcff",
-  "text": "Intake note (Property team, 9 November 2018). Our client Thomas Iyengar is a 72-year-old farmer who lives at Bungalow 27, Pattom, Thiruvananthapuram 695044 and can be reached on 09216038784 or thomas.iyengar@example.in. The client's PAN EHLPI9879Y, Aadhaar 7923 9700 8697.\nThe client consulted us about a tenancy eviction matter against Suresh Hegde. The tenancy dispute with Suresh Hegde concerns rent arrears of Rs 4,50,000; the tenant has sublet the flat without permission.\nThe matter was filed as R.C.A. No. 2055/2019 before the Thiruvananthapuram District Court on 16 March 2019.",
+  "doc_id": "7cb81550bf70bc76",
+  "text": "Intake note - Property team\nDate: 13/11/2018\nClient: Thomas Iyengar, a 72-year-old farmer from Thiruvananthapuram.\nAddress: Bungalow 27, Pattom, Thiruvananthapuram 695044\nPhone: 09216038784. Email: thomas.iyengar@example.in. PAN EHLPI9879Y, Aadhaar 7923 9700 8697.\nMatter: tenancy eviction\nOpposing party: Suresh Hegde\nFacts: The tenancy dispute with Suresh Hegde concerns rent arrears of INR 4,50,000/-; the tenant has sublet the flat without permission.\nThe matter was filed as R.C.A. No. 2055/2019 before the Thiruvananthapuram District Court on 16 March 2019.",
   "spans": [
     {
-      "text": "9 November 2018",
+      "text": "13/11/2018",
       "category": "DATE",
-      "start": 28,
-      "end": 43
+      "start": 34,
+      "end": 44
     },
     {
       "text": "Thomas Iyengar",
       "category": "NAME",
-      "start": 57,
-      "end": 71
+      "start": 53,
+      "end": 67
     },
     {
       "text": "72-year-old",
       "category": "AGE",
-      "start": 77,
-      "end": 88
+      "start": 71,
+      "end": 82
     },
     {
       "text": "farmer",
       "category": "OCCUPATION",
-      "start": 89,
-      "end": 95
+      "start": 83,
+      "end": 89
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 95,
+      "end": 113
     },
     {
       "text": "Bungalow 27, Pattom, Thiruvananthapuram 695044",
       "category": "ADDRESS",
-      "start": 109,
-      "end": 155
+      "start": 124,
+      "end": 170
     },
     {
       "text": "09216038784",
@@ -41,62 +47,68 @@
     {
       "text": "thomas.iyengar@example.in",
       "category": "EMAIL",
-      "start": 193,
-      "end": 218
+      "start": 198,
+      "end": 223
     },
     {
       "text": "EHLPI9879Y",
       "category": "ID_NUMBER",
-      "start": 237,
-      "end": 247
+      "start": 229,
+      "end": 239
     },
     {
       "text": "7923 9700 8697",
       "category": "ID_NUMBER",
-      "start": 257,
-      "end": 271
+      "start": 249,
+      "end": 263
     },
     {
       "text": "tenancy eviction",
       "category": "LEGAL_ISSUE",
-      "start": 305,
-      "end": 321
+      "start": 273,
+      "end": 289
     },
     {
       "text": "Suresh Hegde",
       "category": "NAME",
-      "start": 337,
-      "end": 349
+      "start": 306,
+      "end": 318
     },
     {
       "text": "Suresh Hegde",
       "category": "NAME",
-      "start": 376,
-      "end": 388
+      "start": 351,
+      "end": 363
     },
     {
-      "text": "Rs 4,50,000",
+      "text": "INR 4,50,000/-",
       "category": "MONEY",
-      "start": 414,
-      "end": 425
+      "start": 389,
+      "end": 403
     },
     {
       "text": "R.C.A. No. 2055/2019",
       "category": "CASE_NUMBER",
-      "start": 502,
-      "end": 522
+      "start": 480,
+      "end": 500
     },
     {
       "text": "Thiruvananthapuram District Court",
       "category": "COURT",
-      "start": 534,
-      "end": 567
+      "start": 512,
+      "end": 545
     },
     {
       "text": "16 March 2019",
       "category": "DATE",
-      "start": 571,
-      "end": 584
+      "start": 549,
+      "end": 562
+    },
+    {
+      "text": "age (72) + occupation (farmer) + city (Thiruvananthapuram) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

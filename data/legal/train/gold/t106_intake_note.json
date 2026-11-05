@@ -1,96 +1,96 @@
 {
-  "doc_id": "6123618012fa315b",
-  "text": "Intake note (Criminal team, 11 February 2019). Our client Vandana Rathore is a 71-year-old orthopaedic surgeon who lives at House No. 193, Alkapuri, Vadodara 390029 and can be reached on +91 88954 10986 or vandana.rathore@example.com. The client's PAN ZSVPR1568T.\nThe client consulted us about a anticipatory bail matter against Abhishek Swamy. The anticipatory bail matter arises from a complaint by Abhishek Swamy about ₹73,10,000; the complaint alleges negligence during treatment.\nThe matter was filed as Anticipatory Bail Application No. 955/2019 before the Vadodara Sessions Court on 21/03/2019.",
+  "doc_id": "f4e5a182d46a905b",
+  "text": "Intake note (Criminal team, 02/12/2018). Our client Vandana Rathore is a 71-year-old orthopaedic surgeon who lives at House No. 193, Alkapuri, Vadodara 390029 and can be reached on +91 88954 10986 or vandana.rathore@example.com. The client's PAN ZSVPR1568T.\nThe client consulted us about a anticipatory bail matter against Abhishek Swamy. The anticipatory bail matter arises from a complaint by Abhishek Swamy about ₹73,10,000; the complaint alleges negligence during treatment.\nThe matter was filed as Anticipatory Bail Application No. 955/2019 before the Vadodara Sessions Court on 21 March 2019.",
   "spans": [
     {
-      "text": "11 February 2019",
+      "text": "02/12/2018",
       "category": "DATE",
       "start": 28,
-      "end": 44
+      "end": 38
     },
     {
       "text": "Vandana Rathore",
       "category": "NAME",
-      "start": 58,
-      "end": 73
+      "start": 52,
+      "end": 67
     },
     {
       "text": "71-year-old",
       "category": "AGE",
-      "start": 79,
-      "end": 90
+      "start": 73,
+      "end": 84
     },
     {
       "text": "orthopaedic surgeon",
       "category": "OCCUPATION",
-      "start": 91,
-      "end": 110
+      "start": 85,
+      "end": 104
     },
     {
       "text": "House No. 193, Alkapuri, Vadodara 390029",
       "category": "ADDRESS",
-      "start": 124,
-      "end": 164
+      "start": 118,
+      "end": 158
     },
     {
       "text": "+91 88954 10986",
       "category": "PHONE",
-      "start": 187,
-      "end": 202
+      "start": 181,
+      "end": 196
     },
     {
       "text": "vandana.rathore@example.com",
       "category": "EMAIL",
-      "start": 206,
-      "end": 233
+      "start": 200,
+      "end": 227
     },
     {
       "text": "ZSVPR1568T",
       "category": "ID_NUMBER",
-      "start": 252,
-      "end": 262
+      "start": 246,
+      "end": 256
     },
     {
       "text": "anticipatory bail",
       "category": "LEGAL_ISSUE",
-      "start": 296,
-      "end": 313
+      "start": 290,
+      "end": 307
     },
     {
       "text": "Abhishek Swamy",
       "category": "NAME",
-      "start": 329,
-      "end": 343
+      "start": 323,
+      "end": 337
     },
     {
       "text": "Abhishek Swamy",
       "category": "NAME",
-      "start": 401,
-      "end": 415
+      "start": 395,
+      "end": 409
     },
     {
       "text": "₹73,10,000",
       "category": "MONEY",
-      "start": 422,
-      "end": 432
+      "start": 416,
+      "end": 426
     },
     {
       "text": "Anticipatory Bail Application No. 955/2019",
       "category": "CASE_NUMBER",
-      "start": 509,
-      "end": 551
+      "start": 503,
+      "end": 545
     },
     {
       "text": "Vadodara Sessions Court",
       "category": "COURT",
-      "start": 563,
-      "end": 586
+      "start": 557,
+      "end": 580
     },
     {
-      "text": "21/03/2019",
+      "text": "21 March 2019",
       "category": "DATE",
-      "start": 590,
-      "end": 600
+      "start": 584,
+      "end": 597
     }
   ],
   "annotator": "generator",

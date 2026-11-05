@@ -1,0 +1,44 @@
+{
+  "doc_id": "9de8b6f3a7f11cc2",
+  "text": "Subject: Your breach of contract matter (Project Pelican)\n\nDear Ms. Patil,\n\nThank you for meeting us on 19/04/2021 about your dispute with Sai Infotech Pvt Ltd. As we understand it, the counterparty has not paid the invoices for delivered goods.\n\nOur advice is to invoke the arbitration clause and seek interim relief to secure the amount. Please collect the contract, the invoices and the delivery challans and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Pelican",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 56
+    },
+    {
+      "text": "Patil",
+      "category": "NAME",
+      "start": 68,
+      "end": 73
+    },
+    {
+      "text": "19/04/2021",
+      "category": "DATE",
+      "start": 104,
+      "end": 114
+    },
+    {
+      "text": "Sai Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 139,
+      "end": 159
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 455,
+      "end": 467
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

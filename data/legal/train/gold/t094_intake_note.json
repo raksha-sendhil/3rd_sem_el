@@ -1,108 +1,96 @@
 {
-  "doc_id": "7719db75cd5148f4",
-  "text": "Intake note - Commercial team\nDate: 16 March 2021\nClient: Ajay Desai, a 37-year-old professor from Chennai.\nAddress: Bungalow 29, Anna Nagar, Chennai 600017\nPhone: +91 98359 92333. Email: ajay.desai18@example.com. PAN JRQPD7803W.\nMatter: cheque bounce\nOpposing party: M/s Konark Traders\nFacts: A cheque for 41.8 lakh rupees issued by M/s Konark Traders bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 400/2021 before the Judicial Magistrate First Class Court at Chennai on 23/08/2021.",
+  "doc_id": "0778ab3bbc763d3c",
+  "text": "Intake note (Commercial team, 22 March 2021). Our client Ajay Desai is a 37-year-old professor who lives at Bungalow 29, Anna Nagar, Chennai 600017 and can be reached on +91 98359 92333 or ajay.desai18@example.com. The client's PAN JRQPD7803W.\nThe client consulted us about a cheque bounce matter against M/s Konark Traders. A cheque for 41.8 lakh rupees issued by Konark Traders bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 400/2021 before the Judicial Magistrate First Class Court at Chennai on 23 August 2021.",
   "spans": [
     {
-      "text": "16 March 2021",
+      "text": "22 March 2021",
       "category": "DATE",
-      "start": 36,
-      "end": 49
+      "start": 30,
+      "end": 43
     },
     {
       "text": "Ajay Desai",
       "category": "NAME",
-      "start": 58,
-      "end": 68
+      "start": 57,
+      "end": 67
     },
     {
       "text": "37-year-old",
       "category": "AGE",
-      "start": 72,
-      "end": 83
+      "start": 73,
+      "end": 84
     },
     {
       "text": "professor",
       "category": "OCCUPATION",
-      "start": 84,
-      "end": 93
-    },
-    {
-      "text": "Chennai",
-      "category": "LOCATION",
-      "start": 99,
-      "end": 106
+      "start": 85,
+      "end": 94
     },
     {
       "text": "Bungalow 29, Anna Nagar, Chennai 600017",
       "category": "ADDRESS",
-      "start": 117,
-      "end": 156
+      "start": 108,
+      "end": 147
     },
     {
       "text": "+91 98359 92333",
       "category": "PHONE",
-      "start": 164,
-      "end": 179
+      "start": 170,
+      "end": 185
     },
     {
       "text": "ajay.desai18@example.com",
       "category": "EMAIL",
-      "start": 188,
-      "end": 212
+      "start": 189,
+      "end": 213
     },
     {
       "text": "JRQPD7803W",
       "category": "ID_NUMBER",
-      "start": 218,
-      "end": 228
+      "start": 232,
+      "end": 242
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 238,
-      "end": 251
+      "start": 276,
+      "end": 289
     },
     {
       "text": "Konark Traders",
       "category": "ORGANIZATION",
-      "start": 272,
-      "end": 286
+      "start": 309,
+      "end": 323
     },
     {
       "text": "41.8 lakh rupees",
       "category": "MONEY",
-      "start": 307,
-      "end": 323
+      "start": 338,
+      "end": 354
     },
     {
       "text": "Konark Traders",
       "category": "ORGANIZATION",
-      "start": 338,
-      "end": 352
+      "start": 365,
+      "end": 379
     },
     {
       "text": "S.C.C. No. 400/2021",
       "category": "CASE_NUMBER",
-      "start": 450,
-      "end": 469
+      "start": 477,
+      "end": 496
     },
     {
       "text": "Judicial Magistrate First Class Court at Chennai",
       "category": "COURT",
-      "start": 481,
-      "end": 529
+      "start": 508,
+      "end": 556
     },
     {
-      "text": "23/08/2021",
+      "text": "23 August 2021",
       "category": "DATE",
-      "start": 533,
-      "end": 543
-    },
-    {
-      "text": "age (37) + occupation (professor) + city (Chennai) + issue (cheque bounce)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 560,
+      "end": 574
     }
   ],
   "annotator": "generator",

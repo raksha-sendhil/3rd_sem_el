@@ -1,6 +1,6 @@
 {
-  "doc_id": "a54fbeb0c7fa019b",
-  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Kurian,\n\nThank you for meeting us on 19 August 2019 about your dispute with Ravi Rajan. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "doc_id": "5aa21250e09ae435",
+  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 2240/2019\n\nDear Ms. Kurian,\n\nThank you for meeting us on 28/11/2019 about your dispute with Ravi Rajan. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Kolkata District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -9,28 +9,40 @@
       "end": 30
     },
     {
-      "text": "Kurian",
-      "category": "NAME",
-      "start": 48,
-      "end": 54
+      "text": "R.C.A. No. 2240/2019",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
     },
     {
-      "text": "19 August 2019",
+      "text": "Kurian",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "28/11/2019",
       "category": "DATE",
-      "start": 85,
-      "end": 99
+      "start": 108,
+      "end": 118
     },
     {
       "text": "Ravi Rajan",
       "category": "NAME",
-      "start": 124,
-      "end": 134
+      "start": 143,
+      "end": 153
+    },
+    {
+      "text": "Kolkata District Court",
+      "category": "COURT",
+      "start": 286,
+      "end": 308
     },
     {
       "text": "Tejas Oberoi",
       "category": "NAME",
-      "start": 463,
-      "end": 475
+      "start": 538,
+      "end": 550
     }
   ],
   "annotator": "generator",

@@ -1,6 +1,6 @@
 {
-  "doc_id": "96b0839e39e72603",
-  "text": "Subject: Your aircraft lease repossession matter\n\nDear Ms. Bhatt,\n\nThank you for meeting us on 18 July 2020 about your dispute with Vindhya Aviation Ltd. As we understand it, the airline sought protection from its creditors. The matter is listed before the Gujarat High Court.\n\nOur advice is to argue that leased aircraft fall outside the insolvency moratorium. Please collect the lease agreement and the moratorium order and send copies to this office. We will pursue the full claim of Rs 1,35,46,00,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "doc_id": "8352859b0e0d5ca8",
+  "text": "Subject: Your aircraft lease repossession matter (Project Kestrel)\n\nDear Ms. Bhatt,\n\nThank you for meeting us on 7 February 2021 about your dispute with Vindhya Aviation Ltd. As we understand it, the airline sought protection from its creditors. The matter is listed before the Gujarat High Court.\n\nOur advice is to argue that leased aircraft fall outside the insolvency moratorium. Please collect the lease agreement and the moratorium order and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "aircraft lease repossession",
@@ -9,40 +9,40 @@
       "end": 41
     },
     {
-      "text": "Bhatt",
-      "category": "NAME",
-      "start": 59,
-      "end": 64
+      "text": "Project Kestrel",
+      "category": "MATTER_CODENAME",
+      "start": 50,
+      "end": 65
     },
     {
-      "text": "18 July 2020",
+      "text": "Bhatt",
+      "category": "NAME",
+      "start": 77,
+      "end": 82
+    },
+    {
+      "text": "7 February 2021",
       "category": "DATE",
-      "start": 95,
-      "end": 107
+      "start": 113,
+      "end": 128
     },
     {
       "text": "Vindhya Aviation Ltd",
       "category": "ORGANIZATION",
-      "start": 132,
-      "end": 152
+      "start": 153,
+      "end": 173
     },
     {
       "text": "Gujarat High Court",
       "category": "COURT",
-      "start": 257,
-      "end": 275
+      "start": 278,
+      "end": 296
     },
     {
-      "text": "Rs 1,35,46,00,000",
-      "category": "MONEY",
-      "start": 487,
-      "end": 504
-    },
-    {
-      "text": "Sharmila Venkatesan",
+      "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 521,
-      "end": 540
+      "start": 490,
+      "end": 505
     }
   ],
   "annotator": "generator",

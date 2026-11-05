@@ -1,108 +1,120 @@
 {
-  "doc_id": "ff78c5d9ef5ce706",
-  "text": "Intake note (Commercial team, 22 April 2024). Our client Harish Srivastava is a 53-year-old government clerk who lives at Plot 35, Kothrud, Pune 411009 and can be reached on +91 87694 21184 or harish.srivastava@example.in. The client's PAN QPEPS3767L.\nThe client consulted us about a cheque bounce matter against Crescent Traders. A cheque for ₹28,40,000 issued by M/s Crescent Traders bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 798418146245 (IFSC KKBK0125946).\nThe matter was filed as CC/24/2024 before the Judicial Magistrate First Class Court at Pune on 26 August 2024.",
+  "doc_id": "08c2cf619d7218dc",
+  "text": "Intake note - Commercial team\nDate: 03/07/2024\nClient: Harish Srivastava, a 53-year-old government clerk from Pune.\nAddress: Plot 35, Kothrud, Pune 411009\nPhone: +91 87694 21184. Email: harish.srivastava@example.in. PAN QPEPS3767L.\nMatter: cheque bounce\nOpposing party: Crescent Traders\nFacts: A cheque for INR 28,40,000/- issued by M/s Crescent Traders bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 798418146245 (IFSC KKBK0125946).\nThe matter was filed as CC/24/2024 before the Judicial Magistrate First Class Court at Pune on 26 August 2024.",
   "spans": [
     {
-      "text": "22 April 2024",
+      "text": "03/07/2024",
       "category": "DATE",
-      "start": 30,
-      "end": 43
+      "start": 36,
+      "end": 46
     },
     {
       "text": "Harish Srivastava",
       "category": "NAME",
-      "start": 57,
-      "end": 74
+      "start": 55,
+      "end": 72
     },
     {
       "text": "53-year-old",
       "category": "AGE",
-      "start": 80,
-      "end": 91
+      "start": 76,
+      "end": 87
     },
     {
       "text": "government clerk",
       "category": "OCCUPATION",
-      "start": 92,
-      "end": 108
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 114
     },
     {
       "text": "Plot 35, Kothrud, Pune 411009",
       "category": "ADDRESS",
-      "start": 122,
-      "end": 151
+      "start": 125,
+      "end": 154
     },
     {
       "text": "+91 87694 21184",
       "category": "PHONE",
-      "start": 174,
-      "end": 189
+      "start": 162,
+      "end": 177
     },
     {
       "text": "harish.srivastava@example.in",
       "category": "EMAIL",
-      "start": 193,
-      "end": 221
+      "start": 186,
+      "end": 214
     },
     {
       "text": "QPEPS3767L",
       "category": "ID_NUMBER",
-      "start": 240,
-      "end": 250
+      "start": 220,
+      "end": 230
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 284,
-      "end": 297
+      "start": 240,
+      "end": 253
     },
     {
       "text": "Crescent Traders",
       "category": "ORGANIZATION",
-      "start": 313,
-      "end": 329
+      "start": 270,
+      "end": 286
     },
     {
-      "text": "₹28,40,000",
+      "text": "INR 28,40,000/-",
       "category": "MONEY",
-      "start": 344,
-      "end": 354
+      "start": 307,
+      "end": 322
     },
     {
       "text": "Crescent Traders",
       "category": "ORGANIZATION",
-      "start": 369,
-      "end": 385
+      "start": 337,
+      "end": 353
     },
     {
       "text": "798418146245",
       "category": "FINANCIAL",
-      "start": 501,
-      "end": 513
+      "start": 469,
+      "end": 481
     },
     {
       "text": "KKBK0125946",
       "category": "FINANCIAL",
-      "start": 520,
-      "end": 531
+      "start": 488,
+      "end": 499
     },
     {
       "text": "CC/24/2024",
       "category": "CASE_NUMBER",
-      "start": 558,
-      "end": 568
+      "start": 526,
+      "end": 536
     },
     {
       "text": "Judicial Magistrate First Class Court at Pune",
       "category": "COURT",
-      "start": 580,
-      "end": 625
+      "start": 548,
+      "end": 593
     },
     {
       "text": "26 August 2024",
       "category": "DATE",
-      "start": 629,
-      "end": 643
+      "start": 597,
+      "end": 611
+    },
+    {
+      "text": "age (53) + occupation (government clerk) + city (Pune) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

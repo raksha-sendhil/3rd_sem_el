@@ -1,6 +1,6 @@
 {
-  "doc_id": "751eba6ae160e4a8",
-  "text": "Subject: Your aircraft lease repossession matter - CS(COMM) 737/2019\n\nDear Ms. Pai,\n\nThank you for meeting us on 25/07/2020 about your dispute with Meridian Airways Ltd. As we understand it, the airline has stopped paying lease rentals.\n\nOur advice is to seek deregistration of the aircraft under the international lease convention. Please collect the lease agreement and the irrevocable deregistration authorisation and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "doc_id": "c4b09c537ccb6c10",
+  "text": "Subject: Your aircraft lease repossession matter (Project Ibis)\n\nDear Ms. Pai,\n\nThank you for meeting us on 4 July 2020 about your dispute with M/s Meridian Airways Ltd. As we understand it, the airline has stopped paying lease rentals.\n\nOur advice is to seek deregistration of the aircraft under the international lease convention. Please collect the lease agreement and the irrevocable deregistration authorisation and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
   "spans": [
     {
       "text": "aircraft lease repossession",
@@ -9,22 +9,22 @@
       "end": 41
     },
     {
-      "text": "CS(COMM) 737/2019",
-      "category": "CASE_NUMBER",
-      "start": 51,
-      "end": 68
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 50,
+      "end": 62
     },
     {
       "text": "Pai",
       "category": "NAME",
-      "start": 79,
-      "end": 82
+      "start": 74,
+      "end": 77
     },
     {
-      "text": "25/07/2020",
+      "text": "4 July 2020",
       "category": "DATE",
-      "start": 113,
-      "end": 123
+      "start": 108,
+      "end": 119
     },
     {
       "text": "Meridian Airways Ltd",
@@ -33,7 +33,7 @@
       "end": 168
     },
     {
-      "text": "Tejas Oberoi",
+      "text": "Rohit Wadhwa",
       "category": "NAME",
       "start": 464,
       "end": 476

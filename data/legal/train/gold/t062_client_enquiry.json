@@ -1,0 +1,68 @@
+{
+  "doc_id": "10bd1d1c41762c5b",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Divya Ahuja. I am a 58-year-old dentist living in Kolhapur. I have a tenancy problem with Fatima Sathe involving ₹8,80,000 in rent, and the landlord needs the premises for the family's own use. Can your firm advise me on what to do next? You can call me on +91 91544 93210 or email divya.ahuja@example.in.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Divya Ahuja",
+      "category": "NAME",
+      "start": 67,
+      "end": 78
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 99,
+      "end": 106
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 117,
+      "end": 125
+    },
+    {
+      "text": "Fatima Sathe",
+      "category": "NAME",
+      "start": 157,
+      "end": 169
+    },
+    {
+      "text": "₹8,80,000",
+      "category": "MONEY",
+      "start": 180,
+      "end": 189
+    },
+    {
+      "text": "+91 91544 93210",
+      "category": "PHONE",
+      "start": 324,
+      "end": 339
+    },
+    {
+      "text": "divya.ahuja@example.in",
+      "category": "EMAIL",
+      "start": 349,
+      "end": 371
+    },
+    {
+      "text": "age (58) + occupation (dentist) + city (Kolhapur) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

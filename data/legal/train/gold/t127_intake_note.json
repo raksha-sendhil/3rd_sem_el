@@ -1,96 +1,108 @@
 {
-  "doc_id": "c888de3e69660cf9",
-  "text": "Intake note (Property team, 8 August 2021). Our client Thomas Mehra is a 71-year-old hardware dealer who lives at Plot 9, Rajarampuri, Kolhapur 416028 and can be reached on +91 77121 50850 or thomas.mehra@example.com. The client's PAN VCZPM2752H.\nThe client consulted us about a land dispute matter against Ananya Goyal. The land dispute with Ananya Goyal concerns agricultural land valued at ₹3.3 crore; construction has started on the disputed plot.\nThe matter was filed as R.C.S. No. 2873/2022 before the Kolhapur District Court on 18 January 2022.",
+  "doc_id": "1e878b243574d9d7",
+  "text": "Intake note - Property team\nDate: 22 October 2021\nClient: Thomas Mehra, a 71-year-old hardware dealer from Kolhapur.\nAddress: Plot 9, Rajarampuri, Kolhapur 416028\nPhone: +91 77121 50850. Email: thomas.mehra@example.com. PAN VCZPM2752H.\nMatter: land dispute\nOpposing party: Ananya Goyal\nFacts: The land dispute with Ananya Goyal concerns agricultural land valued at INR 3,33,00,000/-; construction has started on the disputed plot.\nThe matter was filed as R.C.S. No. 2873/2022 before the Kolhapur District Court on 18 January 2022.",
   "spans": [
     {
-      "text": "8 August 2021",
+      "text": "22 October 2021",
       "category": "DATE",
-      "start": 28,
-      "end": 41
+      "start": 34,
+      "end": 49
     },
     {
       "text": "Thomas Mehra",
       "category": "NAME",
-      "start": 55,
-      "end": 67
+      "start": 58,
+      "end": 70
     },
     {
       "text": "71-year-old",
       "category": "AGE",
-      "start": 73,
-      "end": 84
+      "start": 74,
+      "end": 85
     },
     {
       "text": "hardware dealer",
       "category": "OCCUPATION",
-      "start": 85,
-      "end": 100
+      "start": 86,
+      "end": 101
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 115
     },
     {
       "text": "Plot 9, Rajarampuri, Kolhapur 416028",
       "category": "ADDRESS",
-      "start": 114,
-      "end": 150
+      "start": 126,
+      "end": 162
     },
     {
       "text": "+91 77121 50850",
       "category": "PHONE",
-      "start": 173,
-      "end": 188
+      "start": 170,
+      "end": 185
     },
     {
       "text": "thomas.mehra@example.com",
       "category": "EMAIL",
-      "start": 192,
-      "end": 216
+      "start": 194,
+      "end": 218
     },
     {
       "text": "VCZPM2752H",
       "category": "ID_NUMBER",
-      "start": 235,
-      "end": 245
+      "start": 224,
+      "end": 234
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 279,
-      "end": 291
+      "start": 244,
+      "end": 256
     },
     {
       "text": "Ananya Goyal",
       "category": "NAME",
-      "start": 307,
-      "end": 319
+      "start": 273,
+      "end": 285
     },
     {
       "text": "Ananya Goyal",
       "category": "NAME",
-      "start": 343,
-      "end": 355
+      "start": 315,
+      "end": 327
     },
     {
-      "text": "₹3.3 crore",
+      "text": "INR 3,33,00,000/-",
       "category": "MONEY",
-      "start": 393,
-      "end": 403
+      "start": 365,
+      "end": 382
     },
     {
       "text": "R.C.S. No. 2873/2022",
       "category": "CASE_NUMBER",
-      "start": 476,
-      "end": 496
+      "start": 455,
+      "end": 475
     },
     {
       "text": "Kolhapur District Court",
       "category": "COURT",
-      "start": 508,
-      "end": 531
+      "start": 487,
+      "end": 510
     },
     {
       "text": "18 January 2022",
       "category": "DATE",
-      "start": 535,
-      "end": 550
+      "start": 514,
+      "end": 529
+    },
+    {
+      "text": "age (71) + occupation (hardware dealer) + city (Kolhapur) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

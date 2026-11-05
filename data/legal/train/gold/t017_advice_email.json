@@ -1,0 +1,44 @@
+{
+  "doc_id": "8ceb80e1703ae6bd",
+  "text": "Subject: Your breach of contract matter - CS(COMM) 2719/2020\n\nDear Mr. Joshi,\n\nThank you for meeting us on 19 January 2021 about your dispute with Shinde Infotech Pvt Ltd. As we understand it, the claim must be filed as a commercial suit.\n\nOur advice is to complete pre-institution mediation before filing the commercial suit. Please collect the mediation request and the statement of accounts and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CS(COMM) 2719/2020",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Joshi",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "19 January 2021",
+      "category": "DATE",
+      "start": 107,
+      "end": 122
+    },
+    {
+      "text": "Shinde Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 147,
+      "end": 170
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 441,
+      "end": 456
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,102 +1,102 @@
 {
-  "doc_id": "dd7232f169a8ba37",
-  "text": "Intake note - Commercial team\nDate: 8 May 2019\nClient: Anjali Rajan, a 41-year-old chartered accountant from Nagpur.\nAddress: Bungalow 1, Sitabuldi, Nagpur 440006\nPhone: 09885258775. Email: anjali.rajan@example.com. PAN NTZPR3221M.\nMatter: geographical-indication dispute\nOpposing party: M/s Sunrise Foods Pvt Ltd\nFacts: The geographical-indication dispute with M/s Sunrise Foods Pvt Ltd involves sales of ₹6.9 crore; the rival product uses the protected regional name on its label.\nThe matter was filed as CS(COMM) 1565/2019 before the Bombay High Court on 4 July 2019.",
+  "doc_id": "8c9ea51ba7e9e518",
+  "text": "Intake note - Commercial team\nDate: 30 March 2019\nClient: Anjali Rajan, a 41-year-old chartered accountant from Nagpur.\nAddress: Bungalow 1, Sitabuldi, Nagpur 440006\nPhone: 09885258775. Email: anjali.rajan@example.com. PAN NTZPR3221M.\nMatter: geographical-indication dispute\nOpposing party: M/s Sunrise Foods Pvt Ltd\nFacts: The geographical-indication dispute with M/s Sunrise Foods Pvt Ltd involves sales of Rs 6,94,00,000; the rival product uses the protected regional name on its label.\nThe matter was filed as CS(COMM) 1565/2019 before the Bombay High Court on 4 July 2019.",
   "spans": [
     {
-      "text": "8 May 2019",
+      "text": "30 March 2019",
       "category": "DATE",
       "start": 36,
-      "end": 46
+      "end": 49
     },
     {
       "text": "Anjali Rajan",
       "category": "NAME",
-      "start": 55,
-      "end": 67
+      "start": 58,
+      "end": 70
     },
     {
       "text": "41-year-old",
       "category": "AGE",
-      "start": 71,
-      "end": 82
+      "start": 74,
+      "end": 85
     },
     {
       "text": "chartered accountant",
       "category": "OCCUPATION",
-      "start": 83,
-      "end": 103
+      "start": 86,
+      "end": 106
     },
     {
       "text": "Nagpur",
       "category": "LOCATION",
-      "start": 109,
-      "end": 115
+      "start": 112,
+      "end": 118
     },
     {
       "text": "Bungalow 1, Sitabuldi, Nagpur 440006",
       "category": "ADDRESS",
-      "start": 126,
-      "end": 162
+      "start": 129,
+      "end": 165
     },
     {
       "text": "09885258775",
       "category": "PHONE",
-      "start": 170,
-      "end": 181
+      "start": 173,
+      "end": 184
     },
     {
       "text": "anjali.rajan@example.com",
       "category": "EMAIL",
-      "start": 190,
-      "end": 214
+      "start": 193,
+      "end": 217
     },
     {
       "text": "NTZPR3221M",
       "category": "ID_NUMBER",
-      "start": 220,
-      "end": 230
+      "start": 223,
+      "end": 233
     },
     {
       "text": "geographical-indication dispute",
       "category": "LEGAL_ISSUE",
-      "start": 240,
-      "end": 271
+      "start": 243,
+      "end": 274
     },
     {
       "text": "Sunrise Foods Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 292,
-      "end": 313
+      "start": 295,
+      "end": 316
     },
     {
       "text": "Sunrise Foods Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 366,
-      "end": 387
+      "start": 369,
+      "end": 390
     },
     {
-      "text": "₹6.9 crore",
+      "text": "Rs 6,94,00,000",
       "category": "MONEY",
-      "start": 406,
-      "end": 416
+      "start": 409,
+      "end": 423
     },
     {
       "text": "CS(COMM) 1565/2019",
       "category": "CASE_NUMBER",
-      "start": 507,
-      "end": 525
+      "start": 514,
+      "end": 532
     },
     {
       "text": "Bombay High Court",
       "category": "COURT",
-      "start": 537,
-      "end": 554
+      "start": 544,
+      "end": 561
     },
     {
       "text": "4 July 2019",
       "category": "DATE",
-      "start": 558,
-      "end": 569
+      "start": 565,
+      "end": 576
     },
     {
       "text": "age (41) + occupation (chartered accountant) + city (Nagpur) + issue (geographical-indication dispute)",

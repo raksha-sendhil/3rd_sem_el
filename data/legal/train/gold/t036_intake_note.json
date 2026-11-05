@@ -1,9 +1,9 @@
 {
-  "doc_id": "cae791e5fb273143",
-  "text": "Intake note (Commercial team, 22 August 2024). Our client Vivek Tiwari is a 26-year-old dentist who lives at House No. 118, Gangapur Road, Nashik 422010 and can be reached on 79622 56699 or vivek.tiwari@example.in. The client's PAN LZZPT6175Y.\nThe client consulted us about a wrongful termination matter against Reddy Industries. The wrongful termination claim against M/s Reddy Industries is for ₹35,90,000; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 2334/2024 before the Nashik Labour Court on 7 October 2024.",
+  "doc_id": "454c5931c759154a",
+  "text": "Intake note (Commercial team, 21 August 2024). Our client Vivek Tiwari is a 26-year-old dentist who lives at House No. 118, Gangapur Road, Nashik 422010 and can be reached on 79622 56699 or vivek.tiwari@example.in. The client's PAN LZZPT6175Y.\nThe client consulted us about a wrongful termination matter against M/s Reddy Industries. The wrongful termination claim against M/s Reddy Industries is for ₹35,90,000; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 2334/2024 before the Nashik Labour Court on 7 October 2024.",
   "spans": [
     {
-      "text": "22 August 2024",
+      "text": "21 August 2024",
       "category": "DATE",
       "start": 30,
       "end": 44
@@ -59,38 +59,38 @@
     {
       "text": "Reddy Industries",
       "category": "ORGANIZATION",
-      "start": 312,
-      "end": 328
+      "start": 316,
+      "end": 332
     },
     {
       "text": "Reddy Industries",
       "category": "ORGANIZATION",
-      "start": 373,
-      "end": 389
+      "start": 377,
+      "end": 393
     },
     {
       "text": "₹35,90,000",
       "category": "MONEY",
-      "start": 397,
-      "end": 407
+      "start": 401,
+      "end": 411
     },
     {
       "text": "Complaint No. 2334/2024",
       "category": "CASE_NUMBER",
-      "start": 481,
-      "end": 504
+      "start": 485,
+      "end": 508
     },
     {
       "text": "Nashik Labour Court",
       "category": "COURT",
-      "start": 516,
-      "end": 535
+      "start": 520,
+      "end": 539
     },
     {
       "text": "7 October 2024",
       "category": "DATE",
-      "start": 539,
-      "end": 553
+      "start": 543,
+      "end": 557
     }
   ],
   "annotator": "generator",

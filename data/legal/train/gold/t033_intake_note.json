@@ -1,9 +1,9 @@
 {
-  "doc_id": "f4f03e21ea27bf62",
-  "text": "Intake note - Property team\nDate: 2 March 2025\nClient: Sameer Shah, a 71-year-old government clerk from Thane.\nAddress: Plot 80, Vartak Nagar, Thane 400660\nPhone: +91 89267 59850. Email: sameer.shah@example.com. PAN PSBPS3786F.\nMatter: consumer complaint\nOpposing party: Pioneer Constructions\nFacts: The consumer complaint against Pioneer Constructions concerns a flat bought for ₹3.6 crore; the builder never obtained the occupancy certificate.\nThe matter was filed as CC/1941/2025 before the Thane District Consumer Disputes Redressal Commission on 14 August 2025.",
+  "doc_id": "f40cf542932613fe",
+  "text": "Intake note - Property team\nDate: 27 June 2025\nClient: Sameer Shah, a 71-year-old government clerk from Thane.\nAddress: Plot 80, Vartak Nagar, Thane 400660\nPhone: +91 89267 59850. Email: sameer.shah@example.com. PAN PSBPS3786F.\nMatter: consumer complaint\nOpposing party: M/s Pioneer Constructions\nFacts: The consumer complaint against M/s Pioneer Constructions concerns a flat bought for Rs 3,59,00,000; the builder never obtained the occupancy certificate.\nThe matter was filed as CC/1941/2025 before the Thane District Consumer Disputes Redressal Commission on 14 August 2025.",
   "spans": [
     {
-      "text": "2 March 2025",
+      "text": "27 June 2025",
       "category": "DATE",
       "start": 34,
       "end": 46
@@ -65,38 +65,38 @@
     {
       "text": "Pioneer Constructions",
       "category": "ORGANIZATION",
-      "start": 271,
-      "end": 292
+      "start": 275,
+      "end": 296
     },
     {
       "text": "Pioneer Constructions",
       "category": "ORGANIZATION",
-      "start": 331,
-      "end": 352
+      "start": 339,
+      "end": 360
     },
     {
-      "text": "₹3.6 crore",
+      "text": "Rs 3,59,00,000",
       "category": "MONEY",
-      "start": 380,
-      "end": 390
+      "start": 388,
+      "end": 402
     },
     {
       "text": "CC/1941/2025",
       "category": "CASE_NUMBER",
-      "start": 470,
-      "end": 482
+      "start": 482,
+      "end": 494
     },
     {
       "text": "Thane District Consumer Disputes Redressal Commission",
       "category": "COURT",
-      "start": 494,
-      "end": 547
+      "start": 506,
+      "end": 559
     },
     {
       "text": "14 August 2025",
       "category": "DATE",
-      "start": 551,
-      "end": 565
+      "start": 563,
+      "end": 577
     },
     {
       "text": "age (71) + occupation (government clerk) + city (Thane) + issue (consumer complaint)",

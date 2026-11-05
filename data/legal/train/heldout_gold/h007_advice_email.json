@@ -1,0 +1,50 @@
+{
+  "doc_id": "9f7e0a93369d9a0b",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 860/2021\n\nDear Ms. Khan,\n\nThank you for meeting us on 10/08/2021 about your dispute with Ishita Gowda. As we understand it, both spouses have lived apart for a long time.\n\nOur advice is to apply to waive the statutory cooling-off period. Please collect proof of separate residence and the consent terms and send copies to this office. We will pursue the full claim of ₹48,90,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 860/2021",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 70
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 81,
+      "end": 85
+    },
+    {
+      "text": "10/08/2021",
+      "category": "DATE",
+      "start": 116,
+      "end": 126
+    },
+    {
+      "text": "Ishita Gowda",
+      "category": "NAME",
+      "start": 151,
+      "end": 163
+    },
+    {
+      "text": "₹48,90,000",
+      "category": "MONEY",
+      "start": 430,
+      "end": 440
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 457,
+      "end": 469
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

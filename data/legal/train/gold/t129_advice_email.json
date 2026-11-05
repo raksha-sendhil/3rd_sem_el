@@ -1,6 +1,6 @@
 {
-  "doc_id": "2517af47ad0b9cfa",
-  "text": "Subject: Your cheque bounce matter - S.C.C. No. 759/2024\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 24 August 2025 about your dispute with Rekha Nambiar. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Vadodara.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "doc_id": "99381111b0818e0d",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 759/2024\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 30/03/2025 about your dispute with Rekha Nambiar. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Vadodara.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of 24.2 lakh rupees.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "cheque bounce",
@@ -21,28 +21,34 @@
       "end": 75
     },
     {
-      "text": "24 August 2025",
+      "text": "30/03/2025",
       "category": "DATE",
       "start": 106,
-      "end": 120
+      "end": 116
     },
     {
       "text": "Rekha Nambiar",
       "category": "NAME",
-      "start": 145,
-      "end": 158
+      "start": 141,
+      "end": 154
     },
     {
       "text": "Judicial Magistrate First Class Court at Vadodara",
       "category": "COURT",
-      "start": 277,
-      "end": 326
+      "start": 273,
+      "end": 322
     },
     {
-      "text": "Tejas Oberoi",
+      "text": "24.2 lakh rupees",
+      "category": "MONEY",
+      "start": 617,
+      "end": 633
+    },
+    {
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 603,
-      "end": 615
+      "start": 650,
+      "end": 669
     }
   ],
   "annotator": "generator",

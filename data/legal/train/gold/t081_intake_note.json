@@ -1,18 +1,18 @@
 {
-  "doc_id": "f491c6f1c308b204",
-  "text": "Intake note - Commercial team\nDate: 15 May 2021\nClient: Revathi Gaikwad, a 62-year-old retired bank officer from Hyderabad.\nAddress: Flat 13A, Madhapur, Hyderabad 500015\nPhone: 07074161966. Email: revathi.gaikwad@example.in. PAN FMFPG6966E.\nMatter: cheque bounce\nOpposing party: Sameer Pandey\nFacts: A cheque for Rs 12,10,000 issued by Sameer Pandey bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 890984364244 (IFSC UTIB0448759).\nThe matter was filed as CC/903/2021 before the Judicial Magistrate First Class Court at Hyderabad on 25 August 2021.",
+  "doc_id": "aab7c68844256872",
+  "text": "Intake note (Commercial team, 16/04/2021). Our client Revathi Gaikwad is a 62-year-old retired bank officer who lives at Flat 13A, Madhapur, Hyderabad 500015 and can be reached on 07074161966 or revathi.gaikwad@example.in. The client's PAN FMFPG6966E.\nThe client consulted us about a cheque bounce matter against Sameer Pandey. A cheque for ₹12,10,000 issued by Sameer Pandey bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 890984364244 (IFSC UTIB0448759).\nThe matter was filed as CC/903/2021 before the Judicial Magistrate First Class Court at Hyderabad on 25/08/2021.",
   "spans": [
     {
-      "text": "15 May 2021",
+      "text": "16/04/2021",
       "category": "DATE",
-      "start": 36,
-      "end": 47
+      "start": 30,
+      "end": 40
     },
     {
       "text": "Revathi Gaikwad",
       "category": "NAME",
-      "start": 56,
-      "end": 71
+      "start": 54,
+      "end": 69
     },
     {
       "text": "62-year-old",
@@ -27,94 +27,82 @@
       "end": 107
     },
     {
-      "text": "Hyderabad",
-      "category": "LOCATION",
-      "start": 113,
-      "end": 122
-    },
-    {
       "text": "Flat 13A, Madhapur, Hyderabad 500015",
       "category": "ADDRESS",
-      "start": 133,
-      "end": 169
+      "start": 121,
+      "end": 157
     },
     {
       "text": "07074161966",
       "category": "PHONE",
-      "start": 177,
-      "end": 188
+      "start": 180,
+      "end": 191
     },
     {
       "text": "revathi.gaikwad@example.in",
       "category": "EMAIL",
-      "start": 197,
-      "end": 223
+      "start": 195,
+      "end": 221
     },
     {
       "text": "FMFPG6966E",
       "category": "ID_NUMBER",
-      "start": 229,
-      "end": 239
+      "start": 240,
+      "end": 250
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 249,
-      "end": 262
+      "start": 284,
+      "end": 297
     },
     {
       "text": "Sameer Pandey",
       "category": "NAME",
-      "start": 279,
-      "end": 292
-    },
-    {
-      "text": "Rs 12,10,000",
-      "category": "MONEY",
       "start": 313,
-      "end": 325
+      "end": 326
+    },
+    {
+      "text": "₹12,10,000",
+      "category": "MONEY",
+      "start": 341,
+      "end": 351
     },
     {
       "text": "Sameer Pandey",
       "category": "NAME",
-      "start": 336,
-      "end": 349
+      "start": 362,
+      "end": 375
     },
     {
       "text": "890984364244",
       "category": "FINANCIAL",
-      "start": 475,
-      "end": 487
+      "start": 501,
+      "end": 513
     },
     {
       "text": "UTIB0448759",
       "category": "FINANCIAL",
-      "start": 494,
-      "end": 505
+      "start": 520,
+      "end": 531
     },
     {
       "text": "CC/903/2021",
       "category": "CASE_NUMBER",
-      "start": 532,
-      "end": 543
+      "start": 558,
+      "end": 569
     },
     {
       "text": "Judicial Magistrate First Class Court at Hyderabad",
       "category": "COURT",
-      "start": 555,
-      "end": 605
+      "start": 581,
+      "end": 631
     },
     {
-      "text": "25 August 2021",
+      "text": "25/08/2021",
       "category": "DATE",
-      "start": 609,
-      "end": 623
-    },
-    {
-      "text": "age (62) + occupation (retired bank officer) + city (Hyderabad) + issue (cheque bounce)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 635,
+      "end": 645
     }
   ],
   "annotator": "generator",

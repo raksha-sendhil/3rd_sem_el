@@ -1,6 +1,6 @@
 {
-  "doc_id": "d74ca6d4d55fffb7",
-  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 2222/2022\n\nDear Ms. Ranade,\n\nThank you for meeting us on 18 March 2023 about your dispute with Sneha Shah. As we understand it, the tenant has stopped paying rent for many months.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office. We will pursue the full claim of Rs 1,65,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "doc_id": "9ac689eee68cc29a",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Ranade,\n\nThank you for meeting us on 1 August 2023 about your dispute with Sneha Shah. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Surat District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office. We will pursue the full claim of INR 1,65,000/-.\n\nRegards,\nAdv. Mrinalini Saraf",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -9,40 +9,40 @@
       "end": 30
     },
     {
-      "text": "R.C.A. No. 2222/2022",
-      "category": "CASE_NUMBER",
-      "start": 40,
-      "end": 60
-    },
-    {
       "text": "Ranade",
       "category": "NAME",
-      "start": 71,
-      "end": 77
+      "start": 48,
+      "end": 54
     },
     {
-      "text": "18 March 2023",
+      "text": "1 August 2023",
       "category": "DATE",
-      "start": 108,
-      "end": 121
+      "start": 85,
+      "end": 98
     },
     {
       "text": "Sneha Shah",
       "category": "NAME",
-      "start": 146,
-      "end": 156
+      "start": 123,
+      "end": 133
     },
     {
-      "text": "Rs 1,65,000",
+      "text": "Surat District Court",
+      "category": "COURT",
+      "start": 240,
+      "end": 260
+    },
+    {
+      "text": "INR 1,65,000/-",
       "category": "MONEY",
-      "start": 499,
-      "end": 510
+      "start": 530,
+      "end": 544
     },
     {
-      "text": "Rohit Wadhwa",
+      "text": "Mrinalini Saraf",
       "category": "NAME",
-      "start": 527,
-      "end": 539
+      "start": 561,
+      "end": 576
     }
   ],
   "annotator": "generator",

@@ -1,7 +1,7 @@
 {
-  "doc_id": "5df7fd7d73ce5208",
+  "doc_id": "819f9bf38230264e",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t039",
-  "text": "Intake note - Property team\nDate: 08/02/2019\nClient: Thomas Patel, a 65-year-old mechanical engineer from Mumbai.\nAddress: Bungalow 29, Andheri West, Mumbai 400035\nPhone: +91 89330 32665. Email: thomas.patel78@example.in. PAN WVTPP5194Q.\nMatter: land dispute\nOpposing party: Vandana Mittal\nFacts: The land dispute with Vandana Mittal concerns agricultural land valued at Rs. 3,29,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 2212/2019 before the Mumbai District Court on 19 May 2019."
+  "text": "Intake note (Property team, 18/01/2019). Our client Thomas Patel is a 65-year-old mechanical engineer who lives at Bungalow 29, Andheri West, Mumbai 400035 and can be reached on +91 89330 32665 or thomas.patel78@example.in. The client's PAN WVTPP5194Q.\nThe client consulted us about a land dispute matter against Vandana Mittal. The land dispute with Vandana Mittal concerns agricultural land valued at ₹3,29,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 2212/2019 before the Mumbai District Court on 19/05/2019."
 }

@@ -1,7 +1,7 @@
 {
-  "doc_id": "bfbe6b4bbf394652",
+  "doc_id": "f59089ab954f19cc",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t089",
-  "text": "Intake note (Property team, 20 August 2018). Our client Asha Kurian is a 49-year-old retired bank officer who lives at Flat 9C, Ballygunge, Kolkata 700049 and can be reached on 07349571674 or asha.kurian58@example.in. The client's PAN VUBPK6307P.\nThe client consulted us about a tenancy eviction matter against Ravi Rajan. The tenancy dispute with Ravi Rajan concerns rent arrears of INR 2,25,000/-; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.A. No. 2240/2019 before the Kolkata District Court on 03/02/2019."
+  "text": "Intake note - Property team\nDate: 10/12/2018\nClient: Asha Kurian, a 49-year-old retired bank officer from Kolkata.\nAddress: Flat 9C, Ballygunge, Kolkata 700049\nPhone: 07349571674. Email: asha.kurian58@example.in. PAN VUBPK6307P.\nMatter: tenancy eviction\nOpposing party: Ravi Rajan\nFacts: The tenancy dispute with Ravi Rajan concerns rent arrears of ₹2,25,000; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.A. No. 2240/2019 before the Kolkata District Court on 3 February 2019."
 }

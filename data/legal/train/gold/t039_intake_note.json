@@ -1,108 +1,96 @@
 {
-  "doc_id": "5df7fd7d73ce5208",
-  "text": "Intake note - Property team\nDate: 08/02/2019\nClient: Thomas Patel, a 65-year-old mechanical engineer from Mumbai.\nAddress: Bungalow 29, Andheri West, Mumbai 400035\nPhone: +91 89330 32665. Email: thomas.patel78@example.in. PAN WVTPP5194Q.\nMatter: land dispute\nOpposing party: Vandana Mittal\nFacts: The land dispute with Vandana Mittal concerns agricultural land valued at Rs. 3,29,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 2212/2019 before the Mumbai District Court on 19 May 2019.",
+  "doc_id": "819f9bf38230264e",
+  "text": "Intake note (Property team, 18/01/2019). Our client Thomas Patel is a 65-year-old mechanical engineer who lives at Bungalow 29, Andheri West, Mumbai 400035 and can be reached on +91 89330 32665 or thomas.patel78@example.in. The client's PAN WVTPP5194Q.\nThe client consulted us about a land dispute matter against Vandana Mittal. The land dispute with Vandana Mittal concerns agricultural land valued at ₹3,29,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 2212/2019 before the Mumbai District Court on 19/05/2019.",
   "spans": [
     {
-      "text": "08/02/2019",
+      "text": "18/01/2019",
       "category": "DATE",
-      "start": 34,
-      "end": 44
+      "start": 28,
+      "end": 38
     },
     {
       "text": "Thomas Patel",
       "category": "NAME",
-      "start": 53,
-      "end": 65
+      "start": 52,
+      "end": 64
     },
     {
       "text": "65-year-old",
       "category": "AGE",
-      "start": 69,
-      "end": 80
+      "start": 70,
+      "end": 81
     },
     {
       "text": "mechanical engineer",
       "category": "OCCUPATION",
-      "start": 81,
-      "end": 100
-    },
-    {
-      "text": "Mumbai",
-      "category": "LOCATION",
-      "start": 106,
-      "end": 112
+      "start": 82,
+      "end": 101
     },
     {
       "text": "Bungalow 29, Andheri West, Mumbai 400035",
       "category": "ADDRESS",
-      "start": 123,
-      "end": 163
+      "start": 115,
+      "end": 155
     },
     {
       "text": "+91 89330 32665",
       "category": "PHONE",
-      "start": 171,
-      "end": 186
+      "start": 178,
+      "end": 193
     },
     {
       "text": "thomas.patel78@example.in",
       "category": "EMAIL",
-      "start": 195,
-      "end": 220
+      "start": 197,
+      "end": 222
     },
     {
       "text": "WVTPP5194Q",
       "category": "ID_NUMBER",
-      "start": 226,
-      "end": 236
+      "start": 241,
+      "end": 251
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 246,
-      "end": 258
+      "start": 285,
+      "end": 297
     },
     {
       "text": "Vandana Mittal",
       "category": "NAME",
-      "start": 275,
-      "end": 289
+      "start": 313,
+      "end": 327
     },
     {
       "text": "Vandana Mittal",
       "category": "NAME",
-      "start": 319,
-      "end": 333
+      "start": 351,
+      "end": 365
     },
     {
-      "text": "Rs. 3,29,00,000",
+      "text": "₹3,29,00,000",
       "category": "MONEY",
-      "start": 371,
-      "end": 386
+      "start": 403,
+      "end": 415
     },
     {
       "text": "O.S. No. 2212/2019",
       "category": "CASE_NUMBER",
-      "start": 459,
-      "end": 477
+      "start": 488,
+      "end": 506
     },
     {
       "text": "Mumbai District Court",
       "category": "COURT",
-      "start": 489,
-      "end": 510
+      "start": 518,
+      "end": 539
     },
     {
-      "text": "19 May 2019",
+      "text": "19/05/2019",
       "category": "DATE",
-      "start": 514,
-      "end": 525
-    },
-    {
-      "text": "age (65) + occupation (mechanical engineer) + city (Mumbai) + issue (land dispute)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 543,
+      "end": 553
     }
   ],
   "annotator": "generator",

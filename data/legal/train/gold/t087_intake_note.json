@@ -1,18 +1,18 @@
 {
-  "doc_id": "1b7b0d3905e80ca0",
-  "text": "Intake note - Commercial team\nDate: 25 September 2022\nClient: Karthik Bhatt, a 35-year-old college lecturer from Hubballi.\nAddress: Flat 14D, Keshwapur, Hubballi 580048\nPhone: 09528373302. Email: karthik.bhatt@example.in. PAN MQLPB2392H.\nMatter: cheque bounce\nOpposing party: Rathore Enterprises\nFacts: A cheque for INR 30,40,000/- issued by M/s Rathore Enterprises bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 2814/2023 before the Judicial Magistrate First Class Court at Hubballi on 30 March 2023.",
+  "doc_id": "85c24e384c4da0a3",
+  "text": "Intake note (Commercial team, 20 November 2022). Our client Karthik Bhatt is a 35-year-old college lecturer who lives at Flat 14D, Keshwapur, Hubballi 580048 and can be reached on 09528373302 or karthik.bhatt@example.in. The client's PAN MQLPB2392H.\nThe client consulted us about a cheque bounce matter against Rathore Enterprises. A cheque for 30.4 lakh rupees issued by Rathore Enterprises bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 2814/2023 before the Judicial Magistrate First Class Court at Hubballi on 30 March 2023.",
   "spans": [
     {
-      "text": "25 September 2022",
+      "text": "20 November 2022",
       "category": "DATE",
-      "start": 36,
-      "end": 53
+      "start": 30,
+      "end": 46
     },
     {
       "text": "Karthik Bhatt",
       "category": "NAME",
-      "start": 62,
-      "end": 75
+      "start": 60,
+      "end": 73
     },
     {
       "text": "35-year-old",
@@ -27,82 +27,70 @@
       "end": 107
     },
     {
-      "text": "Hubballi",
-      "category": "LOCATION",
-      "start": 113,
-      "end": 121
-    },
-    {
       "text": "Flat 14D, Keshwapur, Hubballi 580048",
       "category": "ADDRESS",
-      "start": 132,
-      "end": 168
+      "start": 121,
+      "end": 157
     },
     {
       "text": "09528373302",
       "category": "PHONE",
-      "start": 176,
-      "end": 187
+      "start": 180,
+      "end": 191
     },
     {
       "text": "karthik.bhatt@example.in",
       "category": "EMAIL",
-      "start": 196,
-      "end": 220
+      "start": 195,
+      "end": 219
     },
     {
       "text": "MQLPB2392H",
       "category": "ID_NUMBER",
-      "start": 226,
-      "end": 236
+      "start": 238,
+      "end": 248
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 246,
-      "end": 259
-    },
-    {
-      "text": "Rathore Enterprises",
-      "category": "ORGANIZATION",
-      "start": 276,
+      "start": 282,
       "end": 295
     },
     {
-      "text": "INR 30,40,000/-",
+      "text": "Rathore Enterprises",
+      "category": "ORGANIZATION",
+      "start": 311,
+      "end": 330
+    },
+    {
+      "text": "30.4 lakh rupees",
       "category": "MONEY",
-      "start": 316,
-      "end": 331
+      "start": 345,
+      "end": 361
     },
     {
       "text": "Rathore Enterprises",
       "category": "ORGANIZATION",
-      "start": 346,
-      "end": 365
+      "start": 372,
+      "end": 391
     },
     {
       "text": "S.C.C. No. 2814/2023",
       "category": "CASE_NUMBER",
-      "start": 463,
-      "end": 483
+      "start": 489,
+      "end": 509
     },
     {
       "text": "Judicial Magistrate First Class Court at Hubballi",
       "category": "COURT",
-      "start": 495,
-      "end": 544
+      "start": 521,
+      "end": 570
     },
     {
       "text": "30 March 2023",
       "category": "DATE",
-      "start": 548,
-      "end": 561
-    },
-    {
-      "text": "age (35) + occupation (college lecturer) + city (Hubballi) + issue (cheque bounce)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 574,
+      "end": 587
     }
   ],
   "annotator": "generator",

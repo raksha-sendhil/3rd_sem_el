@@ -1,6 +1,6 @@
 {
-  "doc_id": "39de42324712d815",
-  "text": "Subject: Your land dispute matter - R.C.S. No. 2020/2019\n\nDear Ms. Swamy,\n\nThank you for meeting us on 28/03/2019 about your dispute with Vikram Sen. As we understand it, construction has started on the disputed plot. The matter is listed before the Mumbai District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "doc_id": "1659919ed42356fc",
+  "text": "Subject: Your land dispute matter\n\nDear Ms. Swamy,\n\nThank you for meeting us on 7 March 2019 about your dispute with Vikram Sen. As we understand it, construction has started on the disputed plot.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
   "spans": [
     {
       "text": "land dispute",
@@ -9,40 +9,28 @@
       "end": 26
     },
     {
-      "text": "R.C.S. No. 2020/2019",
-      "category": "CASE_NUMBER",
-      "start": 36,
-      "end": 56
-    },
-    {
       "text": "Swamy",
       "category": "NAME",
-      "start": 67,
-      "end": 72
+      "start": 44,
+      "end": 49
     },
     {
-      "text": "28/03/2019",
+      "text": "7 March 2019",
       "category": "DATE",
-      "start": 103,
-      "end": 113
+      "start": 80,
+      "end": 92
     },
     {
       "text": "Vikram Sen",
       "category": "NAME",
-      "start": 138,
-      "end": 148
+      "start": 117,
+      "end": 127
     },
     {
-      "text": "Mumbai District Court",
-      "category": "COURT",
-      "start": 250,
-      "end": 271
-    },
-    {
-      "text": "Mrinalini Saraf",
+      "text": "Sharmila Venkatesan",
       "category": "NAME",
-      "start": 468,
-      "end": 483
+      "start": 392,
+      "end": 411
     }
   ],
   "annotator": "generator",

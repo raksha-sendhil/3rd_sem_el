@@ -1,0 +1,68 @@
+{
+  "doc_id": "57f1ce95956bd01f",
+  "text": "Subject: Need help with a wrongful termination case\n\nHello, my name is Anjali Rao. I am a 63-year-old railway employee living in Surat. My employer Karve Industries owes me ₹51,50,000 after firing me, and the employer withheld the last salary. Can your firm advise me on what to do next? You can call me on +91 96797 09975 or email anjali.rao@example.com.",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 46
+    },
+    {
+      "text": "Anjali Rao",
+      "category": "NAME",
+      "start": 71,
+      "end": 81
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 90,
+      "end": 101
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 102,
+      "end": 118
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 129,
+      "end": 134
+    },
+    {
+      "text": "Karve Industries",
+      "category": "ORGANIZATION",
+      "start": 148,
+      "end": 164
+    },
+    {
+      "text": "₹51,50,000",
+      "category": "MONEY",
+      "start": 173,
+      "end": 183
+    },
+    {
+      "text": "+91 96797 09975",
+      "category": "PHONE",
+      "start": 307,
+      "end": 322
+    },
+    {
+      "text": "anjali.rao@example.com",
+      "category": "EMAIL",
+      "start": 332,
+      "end": 354
+    },
+    {
+      "text": "age (63) + occupation (railway employee) + city (Surat) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,18 +1,18 @@
 {
-  "doc_id": "c0a9002ecb1a37a2",
-  "text": "Intake note - Family team\nDate: 26 November 2018\nClient: Mohan Menon, a 52-year-old nurse from Madurai.\nAddress: House No. 59, Tallakulam, Madurai 625010\nPhone: +91 72412 54764. Email: mohan.menon@example.in. PAN LDKPM8369B, Aadhaar 8799 8134 6238.\nMatter: divorce by mutual consent\nOpposing party: Anjali Fernandes\nFacts: The divorce by mutual consent with Anjali Fernandes includes a settlement of 8.2 lakh rupees; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 2736/2019 before the Family Court at Madurai on 08/03/2019.",
+  "doc_id": "184de8ff4df692de",
+  "text": "Intake note (Family team, 2 December 2018). Our client Mohan Menon is a 52-year-old nurse who lives at House No. 59, Tallakulam, Madurai 625010 and can be reached on +91 72412 54764 or mohan.menon@example.in. The client's PAN LDKPM8369B, Aadhaar 8799 8134 6238.\nThe client consulted us about a divorce by mutual consent matter against Anjali Fernandes. The divorce by mutual consent with Anjali Fernandes includes a settlement of INR 8,20,000/-; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 2736/2019 before the Family Court at Madurai on 8 March 2019.",
   "spans": [
     {
-      "text": "26 November 2018",
+      "text": "2 December 2018",
       "category": "DATE",
-      "start": 32,
-      "end": 48
+      "start": 26,
+      "end": 41
     },
     {
       "text": "Mohan Menon",
       "category": "NAME",
-      "start": 57,
-      "end": 68
+      "start": 55,
+      "end": 66
     },
     {
       "text": "52-year-old",
@@ -27,22 +27,16 @@
       "end": 89
     },
     {
-      "text": "Madurai",
-      "category": "LOCATION",
-      "start": 95,
-      "end": 102
-    },
-    {
       "text": "House No. 59, Tallakulam, Madurai 625010",
       "category": "ADDRESS",
-      "start": 113,
-      "end": 153
+      "start": 103,
+      "end": 143
     },
     {
       "text": "+91 72412 54764",
       "category": "PHONE",
-      "start": 161,
-      "end": 176
+      "start": 166,
+      "end": 181
     },
     {
       "text": "mohan.menon@example.in",
@@ -53,62 +47,56 @@
     {
       "text": "LDKPM8369B",
       "category": "ID_NUMBER",
-      "start": 213,
-      "end": 223
+      "start": 226,
+      "end": 236
     },
     {
       "text": "8799 8134 6238",
       "category": "ID_NUMBER",
-      "start": 233,
-      "end": 247
+      "start": 246,
+      "end": 260
     },
     {
       "text": "divorce by mutual consent",
       "category": "LEGAL_ISSUE",
-      "start": 257,
-      "end": 282
+      "start": 294,
+      "end": 319
     },
     {
       "text": "Anjali Fernandes",
       "category": "NAME",
-      "start": 299,
-      "end": 315
+      "start": 335,
+      "end": 351
     },
     {
       "text": "Anjali Fernandes",
       "category": "NAME",
-      "start": 358,
-      "end": 374
+      "start": 388,
+      "end": 404
     },
     {
-      "text": "8.2 lakh rupees",
+      "text": "INR 8,20,000/-",
       "category": "MONEY",
-      "start": 400,
-      "end": 415
+      "start": 430,
+      "end": 444
     },
     {
       "text": "Petition No. 2736/2019",
       "category": "CASE_NUMBER",
-      "start": 490,
-      "end": 512
+      "start": 519,
+      "end": 541
     },
     {
       "text": "Family Court at Madurai",
       "category": "COURT",
-      "start": 524,
-      "end": 547
+      "start": 553,
+      "end": 576
     },
     {
-      "text": "08/03/2019",
+      "text": "8 March 2019",
       "category": "DATE",
-      "start": 551,
-      "end": 561
-    },
-    {
-      "text": "age (52) + occupation (nurse) + city (Madurai) + issue (divorce by mutual consent)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 580,
+      "end": 592
     }
   ],
   "annotator": "generator",

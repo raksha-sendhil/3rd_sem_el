@@ -1,96 +1,108 @@
 {
-  "doc_id": "43bb936cf573abf8",
-  "text": "Intake note (Commercial team, 27/04/2024). Our client Priyanka Rane is a 40-year-old schoolteacher who lives at House No. 6, Pattom, Thiruvananthapuram 695046 and can be reached on 83019 89885 or priyanka.rane@example.in. The client's PAN VRJPR4140X.\nThe client consulted us about a cheque bounce matter against Farhan Khan. A cheque for ₹16,20,000 issued by Farhan Khan bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/1143/2024 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 6 June 2024.",
+  "doc_id": "e40274c416f5fac3",
+  "text": "Intake note - Commercial team\nDate: 27/11/2023\nClient: Priyanka Rane, a 40-year-old schoolteacher from Thiruvananthapuram.\nAddress: House No. 6, Pattom, Thiruvananthapuram 695046\nPhone: 83019 89885. Email: priyanka.rane@example.in. PAN VRJPR4140X.\nMatter: cheque bounce\nOpposing party: Farhan Khan\nFacts: A cheque for Rs 16,20,000 issued by Farhan Khan bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/1143/2024 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 6 June 2024.",
   "spans": [
     {
-      "text": "27/04/2024",
+      "text": "27/11/2023",
       "category": "DATE",
-      "start": 30,
-      "end": 40
+      "start": 36,
+      "end": 46
     },
     {
       "text": "Priyanka Rane",
       "category": "NAME",
-      "start": 54,
-      "end": 67
+      "start": 55,
+      "end": 68
     },
     {
       "text": "40-year-old",
       "category": "AGE",
-      "start": 73,
-      "end": 84
+      "start": 72,
+      "end": 83
     },
     {
       "text": "schoolteacher",
       "category": "OCCUPATION",
-      "start": 85,
-      "end": 98
+      "start": 84,
+      "end": 97
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 121
     },
     {
       "text": "House No. 6, Pattom, Thiruvananthapuram 695046",
       "category": "ADDRESS",
-      "start": 112,
-      "end": 158
+      "start": 132,
+      "end": 178
     },
     {
       "text": "83019 89885",
       "category": "PHONE",
-      "start": 181,
-      "end": 192
+      "start": 186,
+      "end": 197
     },
     {
       "text": "priyanka.rane@example.in",
       "category": "EMAIL",
-      "start": 196,
-      "end": 220
+      "start": 206,
+      "end": 230
     },
     {
       "text": "VRJPR4140X",
       "category": "ID_NUMBER",
-      "start": 239,
-      "end": 249
+      "start": 236,
+      "end": 246
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 283,
-      "end": 296
+      "start": 256,
+      "end": 269
     },
     {
       "text": "Farhan Khan",
       "category": "NAME",
-      "start": 312,
-      "end": 323
+      "start": 286,
+      "end": 297
     },
     {
-      "text": "₹16,20,000",
+      "text": "Rs 16,20,000",
       "category": "MONEY",
-      "start": 338,
-      "end": 348
+      "start": 318,
+      "end": 330
     },
     {
       "text": "Farhan Khan",
       "category": "NAME",
-      "start": 359,
-      "end": 370
+      "start": 341,
+      "end": 352
     },
     {
       "text": "CC/1143/2024",
       "category": "CASE_NUMBER",
-      "start": 467,
-      "end": 479
+      "start": 449,
+      "end": 461
     },
     {
       "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
       "category": "COURT",
-      "start": 491,
-      "end": 550
+      "start": 473,
+      "end": 532
     },
     {
       "text": "6 June 2024",
       "category": "DATE",
-      "start": 554,
-      "end": 565
+      "start": 536,
+      "end": 547
+    },
+    {
+      "text": "age (40) + occupation (schoolteacher) + city (Thiruvananthapuram) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

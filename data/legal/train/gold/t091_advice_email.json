@@ -1,0 +1,56 @@
+{
+  "doc_id": "c9c0d1bd10e5eedf",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2991/2022\n\nDear Ms. Bhosale,\n\nThank you for meeting us on 29/09/2022 about your dispute with M/s Crescent Realty. As we understand it, possession of the flat is long overdue. The matter is listed before the Coimbatore District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office. We will pursue the full claim of Rs. 9,31,00,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 2991/2022",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Bhosale",
+      "category": "NAME",
+      "start": 71,
+      "end": 78
+    },
+    {
+      "text": "29/09/2022",
+      "category": "DATE",
+      "start": 109,
+      "end": 119
+    },
+    {
+      "text": "Crescent Realty",
+      "category": "ORGANIZATION",
+      "start": 148,
+      "end": 163
+    },
+    {
+      "text": "Coimbatore District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 258,
+      "end": 316
+    },
+    {
+      "text": "Rs. 9,31,00,000",
+      "category": "MONEY",
+      "start": 566,
+      "end": 581
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 598,
+      "end": 613
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

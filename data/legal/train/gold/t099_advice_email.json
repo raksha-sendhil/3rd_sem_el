@@ -1,6 +1,6 @@
 {
-  "doc_id": "36571eb26b84be0c",
-  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2651/2023\n\nDear Ms. Deshpande,\n\nThank you for meeting us on 14 October 2023 about your dispute with Sameer Chandran. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Pune District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "doc_id": "b90d39e825ab4c48",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2651/2023\n\nDear Ms. Deshpande,\n\nThank you for meeting us on 13 December 2023 about your dispute with Sameer Chandran. As we understand it, the tenant has stopped paying rent for many months.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office. We will pursue the full claim of Rs 1,45,000.\n\nRegards,\nAdv. Hema Lakshmanan",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -21,28 +21,28 @@
       "end": 80
     },
     {
-      "text": "14 October 2023",
+      "text": "13 December 2023",
       "category": "DATE",
       "start": 111,
-      "end": 126
+      "end": 127
     },
     {
       "text": "Sameer Chandran",
       "category": "NAME",
-      "start": 151,
-      "end": 166
+      "start": 152,
+      "end": 167
     },
     {
-      "text": "Pune District Court",
-      "category": "COURT",
-      "start": 273,
-      "end": 292
+      "text": "Rs 1,45,000",
+      "category": "MONEY",
+      "start": 510,
+      "end": 521
     },
     {
-      "text": "Rohit Wadhwa",
+      "text": "Hema Lakshmanan",
       "category": "NAME",
-      "start": 544,
-      "end": 556
+      "start": 538,
+      "end": 553
     }
   ],
   "annotator": "generator",

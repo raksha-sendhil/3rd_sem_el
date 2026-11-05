@@ -1,0 +1,98 @@
+{
+  "doc_id": "dd9645cc4e795ffd",
+  "text": "Intake note (Property team, 10 June 2022). Our client Radhika Rajan is a 60-year-old software engineer who lives at Bungalow 36, Jayanagar, Bengaluru 560051 and can be reached on 90341 03811 or radhika.rajan@example.com. The client's PAN PMYPR5609B.\nThe client consulted us about a land dispute matter against Ajay Malhotra. The land dispute with Ajay Malhotra concerns agricultural land valued at ₹84,60,000; relatives dispute who owns the ancestral land.\nThe matter was filed as R.C.S. No. 423/2022 before the Bengaluru District Court on 2 November 2022.",
+  "spans": [
+    {
+      "text": "10 June 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 40
+    },
+    {
+      "text": "Radhika Rajan",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 102
+    },
+    {
+      "text": "Bungalow 36, Jayanagar, Bengaluru 560051",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 156
+    },
+    {
+      "text": "90341 03811",
+      "category": "PHONE",
+      "start": 179,
+      "end": 190
+    },
+    {
+      "text": "radhika.rajan@example.com",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 219
+    },
+    {
+      "text": "PMYPR5609B",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 248
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 282,
+      "end": 294
+    },
+    {
+      "text": "Ajay Malhotra",
+      "category": "NAME",
+      "start": 310,
+      "end": 323
+    },
+    {
+      "text": "Ajay Malhotra",
+      "category": "NAME",
+      "start": 347,
+      "end": 360
+    },
+    {
+      "text": "₹84,60,000",
+      "category": "MONEY",
+      "start": 398,
+      "end": 408
+    },
+    {
+      "text": "R.C.S. No. 423/2022",
+      "category": "CASE_NUMBER",
+      "start": 481,
+      "end": 500
+    },
+    {
+      "text": "Bengaluru District Court",
+      "category": "COURT",
+      "start": 512,
+      "end": 536
+    },
+    {
+      "text": "2 November 2022",
+      "category": "DATE",
+      "start": 540,
+      "end": 555
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

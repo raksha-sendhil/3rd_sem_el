@@ -1,7 +1,7 @@
 {
-  "doc_id": "65b0233bdc732f31",
+  "doc_id": "f38b6d7c32b04e60",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t049",
-  "text": "Intake note (Commercial team, 15 June 2025). Our client Gaurav Pawar is a 67-year-old government clerk who lives at House No. 73, Koregaon Park, Pune 411012 and can be reached on +91 69625 03203 or gaurav.pawar@example.in. The client's PAN YUFPP2848M.\nThe client consulted us about a cheque bounce matter against M/s Sterling Traders. A cheque for ₹22,10,000 issued by M/s Sterling Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 822527743139 (IFSC KKBK0956267).\nThe matter was filed as S.C.C. No. 1770/2025 before the Judicial Magistrate First Class Court at Pune on 21 July 2025."
+  "text": "Intake note - Commercial team\nDate: 17 February 2025\nClient: Gaurav Pawar, a 67-year-old government clerk from Pune.\nAddress: House No. 73, Koregaon Park, Pune 411012\nPhone: +91 69625 03203. Email: gaurav.pawar@example.in. PAN YUFPP2848M.\nMatter: cheque bounce\nOpposing party: Sterling Traders\nFacts: A cheque for ₹22,10,000 issued by Sterling Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 822527743139 (IFSC KKBK0956267).\nThe matter was filed as S.C.C. No. 1770/2025 before the Judicial Magistrate First Class Court at Pune on 21 July 2025."
 }

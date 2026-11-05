@@ -1,6 +1,6 @@
 {
-  "doc_id": "0fd9a5f6ff7b809f",
-  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Khan,\n\nThank you for meeting us on 29/05/2024 about your dispute with Thomas Mishra. As we understand it, the landlord needs the premises for the family's own use.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office. We will pursue the full claim of ₹5,85,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "3c10cb51636f6025",
+  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 2876/2023\n\nDear Ms. Khan,\n\nThank you for meeting us on 28 January 2024 about your dispute with Thomas Mishra. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the Mysuru District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office. We will pursue the full claim of ₹5,85,000.\n\nRegards,\nAdv. Rohit Wadhwa",
   "spans": [
     {
       "text": "tenancy eviction",
@@ -9,34 +9,46 @@
       "end": 30
     },
     {
-      "text": "Khan",
-      "category": "NAME",
-      "start": 48,
-      "end": 52
+      "text": "R.C.A. No. 2876/2023",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
     },
     {
-      "text": "29/05/2024",
+      "text": "Khan",
+      "category": "NAME",
+      "start": 71,
+      "end": 75
+    },
+    {
+      "text": "28 January 2024",
       "category": "DATE",
-      "start": 83,
-      "end": 93
+      "start": 106,
+      "end": 121
     },
     {
       "text": "Thomas Mishra",
       "category": "NAME",
-      "start": 118,
-      "end": 131
+      "start": 146,
+      "end": 159
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "start": 272,
+      "end": 293
     },
     {
       "text": "₹5,85,000",
       "category": "MONEY",
-      "start": 459,
-      "end": 468
+      "start": 542,
+      "end": 551
     },
     {
-      "text": "Kunal Bhagat",
+      "text": "Rohit Wadhwa",
       "category": "NAME",
-      "start": 485,
-      "end": 497
+      "start": 568,
+      "end": 580
     }
   ],
   "annotator": "generator",

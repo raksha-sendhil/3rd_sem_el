@@ -1,120 +1,108 @@
 {
-  "doc_id": "b599f0d543b5a199",
-  "text": "Intake note - Commercial team\nDate: 25 April 2019\nClient: Smita Ahuja, a 75-year-old restaurant owner from Thane.\nAddress: Bungalow 3, Naupada, Thane 400624\nPhone: +91 61742 37860. Email: smita.ahuja@example.in. PAN YEMPA5551F.\nMatter: cheque bounce\nOpposing party: Goyal Traders\nFacts: A cheque for ₹8,65,000 issued by M/s Goyal Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 755144171602 (IFSC ICIC0363865).\nThe matter was filed as CC/2264/2019 before the Judicial Magistrate First Class Court at Thane on 03/07/2019.",
+  "doc_id": "f5d64981f4a57143",
+  "text": "Intake note (Commercial team, 3 February 2019). Our client Smita Ahuja is a 75-year-old restaurant owner who lives at Bungalow 3, Naupada, Thane 400624 and can be reached on +91 61742 37860 or smita.ahuja@example.in. The client's PAN YEMPA5551F.\nThe client consulted us about a cheque bounce matter against M/s Goyal Traders. A cheque for INR 8,65,000/- issued by M/s Goyal Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 755144171602 (IFSC ICIC0363865).\nThe matter was filed as CC/2264/2019 before the Judicial Magistrate First Class Court at Thane on 03/07/2019.",
   "spans": [
     {
-      "text": "25 April 2019",
+      "text": "3 February 2019",
       "category": "DATE",
-      "start": 36,
-      "end": 49
+      "start": 30,
+      "end": 45
     },
     {
       "text": "Smita Ahuja",
       "category": "NAME",
-      "start": 58,
-      "end": 69
+      "start": 59,
+      "end": 70
     },
     {
       "text": "75-year-old",
       "category": "AGE",
-      "start": 73,
-      "end": 84
+      "start": 76,
+      "end": 87
     },
     {
       "text": "restaurant owner",
       "category": "OCCUPATION",
-      "start": 85,
-      "end": 101
-    },
-    {
-      "text": "Thane",
-      "category": "LOCATION",
-      "start": 107,
-      "end": 112
+      "start": 88,
+      "end": 104
     },
     {
       "text": "Bungalow 3, Naupada, Thane 400624",
       "category": "ADDRESS",
-      "start": 123,
-      "end": 156
+      "start": 118,
+      "end": 151
     },
     {
       "text": "+91 61742 37860",
       "category": "PHONE",
-      "start": 164,
-      "end": 179
+      "start": 174,
+      "end": 189
     },
     {
       "text": "smita.ahuja@example.in",
       "category": "EMAIL",
-      "start": 188,
-      "end": 210
+      "start": 193,
+      "end": 215
     },
     {
       "text": "YEMPA5551F",
       "category": "ID_NUMBER",
-      "start": 216,
-      "end": 226
+      "start": 234,
+      "end": 244
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 236,
-      "end": 249
+      "start": 278,
+      "end": 291
     },
     {
       "text": "Goyal Traders",
       "category": "ORGANIZATION",
-      "start": 266,
-      "end": 279
+      "start": 311,
+      "end": 324
     },
     {
-      "text": "₹8,65,000",
+      "text": "INR 8,65,000/-",
       "category": "MONEY",
-      "start": 300,
-      "end": 309
+      "start": 339,
+      "end": 353
     },
     {
       "text": "Goyal Traders",
       "category": "ORGANIZATION",
-      "start": 324,
-      "end": 337
+      "start": 368,
+      "end": 381
     },
     {
       "text": "755144171602",
       "category": "FINANCIAL",
-      "start": 455,
-      "end": 467
+      "start": 499,
+      "end": 511
     },
     {
       "text": "ICIC0363865",
       "category": "FINANCIAL",
-      "start": 474,
-      "end": 485
+      "start": 518,
+      "end": 529
     },
     {
       "text": "CC/2264/2019",
       "category": "CASE_NUMBER",
-      "start": 512,
-      "end": 524
+      "start": 556,
+      "end": 568
     },
     {
       "text": "Judicial Magistrate First Class Court at Thane",
       "category": "COURT",
-      "start": 536,
-      "end": 582
+      "start": 580,
+      "end": 626
     },
     {
       "text": "03/07/2019",
       "category": "DATE",
-      "start": 586,
-      "end": 596
-    },
-    {
-      "text": "age (75) + occupation (restaurant owner) + city (Thane) + issue (cheque bounce)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 630,
+      "end": 640
     }
   ],
   "annotator": "generator",

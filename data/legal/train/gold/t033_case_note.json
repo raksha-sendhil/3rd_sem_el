@@ -1,0 +1,68 @@
+{
+  "doc_id": "9030adbbe1d4e032",
+  "text": "Case note: CC/1941/2025\nClient: Sameer Shah (government clerk, Thane)\nOpposing party: Pioneer Constructions\nCourt: Thane District Consumer Disputes Redressal Commission\nFiled on: 14/08/2025\nClaim amount: Rs 3,59,00,000\nIssue: consumer complaint. The builder never obtained the occupancy certificate.\nAdvice given: Seek a full refund with interest because the builder failed to obtain the occupancy certificate.\nOutcome: A full refund with interest was ordered.\nRecommended next step: Track the refund instalments.",
+  "spans": [
+    {
+      "text": "CC/1941/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Sameer Shah",
+      "category": "NAME",
+      "start": 32,
+      "end": 43
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 45,
+      "end": 61
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 63,
+      "end": 68
+    },
+    {
+      "text": "Pioneer Constructions",
+      "category": "ORGANIZATION",
+      "start": 86,
+      "end": 107
+    },
+    {
+      "text": "Thane District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 115,
+      "end": 168
+    },
+    {
+      "text": "14/08/2025",
+      "category": "DATE",
+      "start": 179,
+      "end": 189
+    },
+    {
+      "text": "Rs 3,59,00,000",
+      "category": "MONEY",
+      "start": 204,
+      "end": 218
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 226,
+      "end": 244
+    },
+    {
+      "text": "occupation (government clerk) + city (Thane) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

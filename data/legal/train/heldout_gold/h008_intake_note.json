@@ -1,0 +1,110 @@
+{
+  "doc_id": "1c7c718c603a7c0a",
+  "text": "Intake note - Criminal team\nDate: 18 May 2019\nClient: Kiran Ahuja, a 56-year-old retired bank officer from Ahmedabad.\nAddress: Flat 17C, Satellite, Ahmedabad 380026\nPhone: 91870 59243. Email: kiran.ahuja@example.in. PAN DYRPA2340Q.\nMatter: anticipatory bail\nOpposing party: Suresh Kulkarni\nFacts: The anticipatory bail matter arises from a complaint by Suresh Kulkarni about Rs 55,80,000; the complaint turns a business disagreement into a criminal case.\nThe matter was filed as Anticipatory Bail Application No. 683/2019 before the Ahmedabad Sessions Court on 27 July 2019.",
+  "spans": [
+    {
+      "text": "18 May 2019",
+      "category": "DATE",
+      "start": 34,
+      "end": 45
+    },
+    {
+      "text": "Kiran Ahuja",
+      "category": "NAME",
+      "start": 54,
+      "end": 65
+    },
+    {
+      "text": "56-year-old",
+      "category": "AGE",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 81,
+      "end": 101
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 116
+    },
+    {
+      "text": "Flat 17C, Satellite, Ahmedabad 380026",
+      "category": "ADDRESS",
+      "start": 127,
+      "end": 164
+    },
+    {
+      "text": "91870 59243",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "kiran.ahuja@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 214
+    },
+    {
+      "text": "DYRPA2340Q",
+      "category": "ID_NUMBER",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 240,
+      "end": 257
+    },
+    {
+      "text": "Suresh Kulkarni",
+      "category": "NAME",
+      "start": 274,
+      "end": 289
+    },
+    {
+      "text": "Suresh Kulkarni",
+      "category": "NAME",
+      "start": 353,
+      "end": 368
+    },
+    {
+      "text": "Rs 55,80,000",
+      "category": "MONEY",
+      "start": 375,
+      "end": 387
+    },
+    {
+      "text": "Anticipatory Bail Application No. 683/2019",
+      "category": "CASE_NUMBER",
+      "start": 479,
+      "end": 521
+    },
+    {
+      "text": "Ahmedabad Sessions Court",
+      "category": "COURT",
+      "start": 533,
+      "end": 557
+    },
+    {
+      "text": "27 July 2019",
+      "category": "DATE",
+      "start": 561,
+      "end": 573
+    },
+    {
+      "text": "age (56) + occupation (retired bank officer) + city (Ahmedabad) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

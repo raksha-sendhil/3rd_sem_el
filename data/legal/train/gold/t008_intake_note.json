@@ -1,96 +1,108 @@
 {
-  "doc_id": "e7e31186f85e8d5c",
-  "text": "Intake note (Commercial team, 16 February 2022). Our client Meera Desai is a 46-year-old textile trader who lives at Flat 3C, Bejai, Mangaluru 575008 and can be reached on 09224019988 or meera.desai@example.com. The client's PAN ZYYPD9910Y.\nThe client consulted us about a cheque bounce matter against M/s Vindhya Textiles Pvt Ltd. A cheque for ₹42,50,000 issued by M/s Vindhya Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2451/2022 before the Judicial Magistrate First Class Court at Mangaluru on 30 June 2022.",
+  "doc_id": "b0f5e946a440d8e6",
+  "text": "Intake note - Commercial team\nDate: 16 March 2022\nClient: Meera Desai, a 46-year-old textile trader from Mangaluru.\nAddress: Flat 3C, Bejai, Mangaluru 575008\nPhone: 09224019988. Email: meera.desai@example.com. PAN ZYYPD9910Y.\nMatter: cheque bounce\nOpposing party: Vindhya Textiles Pvt Ltd\nFacts: A cheque for ₹42,50,000 issued by Vindhya Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2451/2022 before the Judicial Magistrate First Class Court at Mangaluru on 30 June 2022.",
   "spans": [
     {
-      "text": "16 February 2022",
+      "text": "16 March 2022",
       "category": "DATE",
-      "start": 30,
-      "end": 46
+      "start": 36,
+      "end": 49
     },
     {
       "text": "Meera Desai",
       "category": "NAME",
-      "start": 60,
-      "end": 71
+      "start": 58,
+      "end": 69
     },
     {
       "text": "46-year-old",
       "category": "AGE",
-      "start": 77,
-      "end": 88
+      "start": 73,
+      "end": 84
     },
     {
       "text": "textile trader",
       "category": "OCCUPATION",
-      "start": 89,
-      "end": 103
+      "start": 85,
+      "end": 99
+    },
+    {
+      "text": "Mangaluru",
+      "category": "LOCATION",
+      "start": 105,
+      "end": 114
     },
     {
       "text": "Flat 3C, Bejai, Mangaluru 575008",
       "category": "ADDRESS",
-      "start": 117,
-      "end": 149
+      "start": 125,
+      "end": 157
     },
     {
       "text": "09224019988",
       "category": "PHONE",
-      "start": 172,
-      "end": 183
+      "start": 165,
+      "end": 176
     },
     {
       "text": "meera.desai@example.com",
       "category": "EMAIL",
-      "start": 187,
-      "end": 210
+      "start": 185,
+      "end": 208
     },
     {
       "text": "ZYYPD9910Y",
       "category": "ID_NUMBER",
-      "start": 229,
-      "end": 239
+      "start": 214,
+      "end": 224
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 273,
-      "end": 286
+      "start": 234,
+      "end": 247
     },
     {
       "text": "Vindhya Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 306,
-      "end": 330
+      "start": 264,
+      "end": 288
     },
     {
       "text": "₹42,50,000",
       "category": "MONEY",
-      "start": 345,
-      "end": 355
+      "start": 309,
+      "end": 319
     },
     {
       "text": "Vindhya Textiles Pvt Ltd",
       "category": "ORGANIZATION",
-      "start": 370,
-      "end": 394
+      "start": 330,
+      "end": 354
     },
     {
       "text": "CC/2451/2022",
       "category": "CASE_NUMBER",
-      "start": 481,
-      "end": 493
+      "start": 441,
+      "end": 453
     },
     {
       "text": "Judicial Magistrate First Class Court at Mangaluru",
       "category": "COURT",
-      "start": 505,
-      "end": 555
+      "start": 465,
+      "end": 515
     },
     {
       "text": "30 June 2022",
       "category": "DATE",
-      "start": 559,
-      "end": 571
+      "start": 519,
+      "end": 531
+    },
+    {
+      "text": "age (46) + occupation (textile trader) + city (Mangaluru) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
     }
   ],
   "annotator": "generator",

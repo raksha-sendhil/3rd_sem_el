@@ -1,42 +1,36 @@
 {
-  "doc_id": "085bae75c532c523",
-  "text": "Intake note - Commercial team\nDate: 31 January 2021\nClient: Sujata Krishnan, a 26-year-old dentist from Warangal.\nAddress: House No. 182, Hanamkonda, Warangal 506057\nPhone: 06107469831. Email: sujata.krishnan71@example.com. PAN PVJPK7247X.\nMatter: wrongful termination\nOpposing party: M/s Aravali Industries\nFacts: The wrongful termination claim against M/s Aravali Industries is for INR 6,60,000/-; the employer withheld the last salary.\nThe matter was filed as Complaint No. 1984/2021 before the Warangal Labour Court on 6 June 2021.",
+  "doc_id": "27b0f309788e9714",
+  "text": "Intake note (Commercial team, 16/01/2021). Our client Sujata Krishnan is a 26-year-old dentist who lives at House No. 182, Hanamkonda, Warangal 506057 and can be reached on 06107469831 or sujata.krishnan71@example.com. The client's PAN PVJPK7247X.\nThe client consulted us about a wrongful termination matter against Aravali Industries. The wrongful termination claim against Aravali Industries is for INR 6,60,000/-; the employer withheld the last salary.\nThe matter was filed as Complaint No. 1984/2021 before the Warangal Labour Court on 06/06/2021.",
   "spans": [
     {
-      "text": "31 January 2021",
+      "text": "16/01/2021",
       "category": "DATE",
-      "start": 36,
-      "end": 51
+      "start": 30,
+      "end": 40
     },
     {
       "text": "Sujata Krishnan",
       "category": "NAME",
-      "start": 60,
-      "end": 75
+      "start": 54,
+      "end": 69
     },
     {
       "text": "26-year-old",
       "category": "AGE",
-      "start": 79,
-      "end": 90
+      "start": 75,
+      "end": 86
     },
     {
       "text": "dentist",
       "category": "OCCUPATION",
-      "start": 91,
-      "end": 98
-    },
-    {
-      "text": "Warangal",
-      "category": "LOCATION",
-      "start": 104,
-      "end": 112
+      "start": 87,
+      "end": 94
     },
     {
       "text": "House No. 182, Hanamkonda, Warangal 506057",
       "category": "ADDRESS",
-      "start": 123,
-      "end": 165
+      "start": 108,
+      "end": 150
     },
     {
       "text": "06107469831",
@@ -47,62 +41,56 @@
     {
       "text": "sujata.krishnan71@example.com",
       "category": "EMAIL",
-      "start": 193,
-      "end": 222
+      "start": 188,
+      "end": 217
     },
     {
       "text": "PVJPK7247X",
       "category": "ID_NUMBER",
-      "start": 228,
-      "end": 238
+      "start": 236,
+      "end": 246
     },
     {
       "text": "wrongful termination",
       "category": "LEGAL_ISSUE",
-      "start": 248,
-      "end": 268
+      "start": 280,
+      "end": 300
     },
     {
       "text": "Aravali Industries",
       "category": "ORGANIZATION",
-      "start": 289,
-      "end": 307
+      "start": 316,
+      "end": 334
     },
     {
       "text": "Aravali Industries",
       "category": "ORGANIZATION",
-      "start": 358,
-      "end": 376
+      "start": 375,
+      "end": 393
     },
     {
       "text": "INR 6,60,000/-",
       "category": "MONEY",
-      "start": 384,
-      "end": 398
+      "start": 401,
+      "end": 415
     },
     {
       "text": "Complaint No. 1984/2021",
       "category": "CASE_NUMBER",
-      "start": 463,
-      "end": 486
+      "start": 480,
+      "end": 503
     },
     {
       "text": "Warangal Labour Court",
       "category": "COURT",
-      "start": 498,
-      "end": 519
+      "start": 515,
+      "end": 536
     },
     {
-      "text": "6 June 2021",
+      "text": "06/06/2021",
       "category": "DATE",
-      "start": 523,
-      "end": 534
-    },
-    {
-      "text": "age (26) + occupation (dentist) + city (Warangal) + issue (wrongful termination)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 540,
+      "end": 550
     }
   ],
   "annotator": "generator",

@@ -1,102 +1,102 @@
 {
-  "doc_id": "37f7518d7aafd1ac",
-  "text": "Intake note - Property team\nDate: 28 May 2022\nClient: Ajay Pillai, a 41-year-old truck driver from Coimbatore.\nAddress: Plot 91, Saibaba Colony, Coimbatore 641051\nPhone: +91 78807 19906. Email: ajay.pillai@example.com. PAN FQHPP4197Y.\nMatter: land dispute\nOpposing party: Vivek Bose\nFacts: The land dispute with Vivek Bose concerns agricultural land valued at INR 4,57,00,000/-; relatives dispute who owns the ancestral land.\nThe matter was filed as O.S. No. 2655/2022 before the Coimbatore District Court on 26 July 2022.",
+  "doc_id": "daf482d4c15723f0",
+  "text": "Intake note - Property team\nDate: 30/04/2022\nClient: Ajay Pillai, a 41-year-old truck driver from Coimbatore.\nAddress: Plot 91, Saibaba Colony, Coimbatore 641051\nPhone: +91 78807 19906. Email: ajay.pillai@example.com. PAN FQHPP4197Y.\nMatter: land dispute\nOpposing party: Vivek Bose\nFacts: The land dispute with Vivek Bose concerns agricultural land valued at ₹4.6 crore; relatives dispute who owns the ancestral land.\nThe matter was filed as O.S. No. 2655/2022 before the Coimbatore District Court on 26/07/2022.",
   "spans": [
     {
-      "text": "28 May 2022",
+      "text": "30/04/2022",
       "category": "DATE",
       "start": 34,
-      "end": 45
+      "end": 44
     },
     {
       "text": "Ajay Pillai",
       "category": "NAME",
-      "start": 54,
-      "end": 65
+      "start": 53,
+      "end": 64
     },
     {
       "text": "41-year-old",
       "category": "AGE",
-      "start": 69,
-      "end": 80
+      "start": 68,
+      "end": 79
     },
     {
       "text": "truck driver",
       "category": "OCCUPATION",
-      "start": 81,
-      "end": 93
+      "start": 80,
+      "end": 92
     },
     {
       "text": "Coimbatore",
       "category": "LOCATION",
-      "start": 99,
-      "end": 109
+      "start": 98,
+      "end": 108
     },
     {
       "text": "Plot 91, Saibaba Colony, Coimbatore 641051",
       "category": "ADDRESS",
-      "start": 120,
-      "end": 162
+      "start": 119,
+      "end": 161
     },
     {
       "text": "+91 78807 19906",
       "category": "PHONE",
-      "start": 170,
-      "end": 185
+      "start": 169,
+      "end": 184
     },
     {
       "text": "ajay.pillai@example.com",
       "category": "EMAIL",
-      "start": 194,
-      "end": 217
+      "start": 193,
+      "end": 216
     },
     {
       "text": "FQHPP4197Y",
       "category": "ID_NUMBER",
-      "start": 223,
-      "end": 233
+      "start": 222,
+      "end": 232
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 243,
-      "end": 255
+      "start": 242,
+      "end": 254
     },
     {
       "text": "Vivek Bose",
       "category": "NAME",
-      "start": 272,
-      "end": 282
+      "start": 271,
+      "end": 281
     },
     {
       "text": "Vivek Bose",
       "category": "NAME",
-      "start": 312,
-      "end": 322
+      "start": 311,
+      "end": 321
     },
     {
-      "text": "INR 4,57,00,000/-",
+      "text": "₹4.6 crore",
       "category": "MONEY",
-      "start": 360,
-      "end": 377
+      "start": 359,
+      "end": 369
     },
     {
       "text": "O.S. No. 2655/2022",
       "category": "CASE_NUMBER",
-      "start": 450,
-      "end": 468
+      "start": 442,
+      "end": 460
     },
     {
       "text": "Coimbatore District Court",
       "category": "COURT",
-      "start": 480,
-      "end": 505
+      "start": 472,
+      "end": 497
     },
     {
-      "text": "26 July 2022",
+      "text": "26/07/2022",
       "category": "DATE",
-      "start": 509,
-      "end": 521
+      "start": 501,
+      "end": 511
     },
     {
       "text": "age (41) + occupation (truck driver) + city (Coimbatore) + issue (land dispute)",

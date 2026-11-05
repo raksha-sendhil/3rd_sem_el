@@ -1,0 +1,68 @@
+{
+  "doc_id": "4044c0627a9d62a7",
+  "text": "Case note: O.S. No. 606/2025\nClient: Deepak Kapoor (professor, Lucknow)\nOpposing party: Smita Subramanian\nCourt: Lucknow District Court\nFiled on: 18 March 2025\nClaim amount: Rs. 2,31,00,000\nIssue: land dispute. Construction has started on the disputed plot.\nAdvice given: Seek a temporary injunction to stop construction on the plot.\nOutcome: A temporary injunction was granted.\nRecommended next step: File a contempt petition if construction continues.",
+  "spans": [
+    {
+      "text": "O.S. No. 606/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 28
+    },
+    {
+      "text": "Deepak Kapoor",
+      "category": "NAME",
+      "start": 37,
+      "end": 50
+    },
+    {
+      "text": "professor",
+      "category": "OCCUPATION",
+      "start": 52,
+      "end": 61
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 63,
+      "end": 70
+    },
+    {
+      "text": "Smita Subramanian",
+      "category": "NAME",
+      "start": 88,
+      "end": 105
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 113,
+      "end": 135
+    },
+    {
+      "text": "18 March 2025",
+      "category": "DATE",
+      "start": 146,
+      "end": 159
+    },
+    {
+      "text": "Rs. 2,31,00,000",
+      "category": "MONEY",
+      "start": 174,
+      "end": 189
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 197,
+      "end": 209
+    },
+    {
+      "text": "occupation (professor) + city (Lucknow) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

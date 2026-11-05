@@ -1,6 +1,6 @@
 {
-  "doc_id": "b95690cd6b8b28a5",
-  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Saxena,\n\nThank you for meeting us on 17/01/2020 about your dispute with Nikhil Subramanian. As we understand it, the cheque was returned unpaid for insufficient funds. The matter is listed before the Judicial Magistrate First Class Court at New Delhi.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of ₹28,50,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "doc_id": "cc0c3d6a3231e34f",
+  "text": "Subject: Your cheque bounce matter - CC/2573/2019\n\nDear Mr. Saxena,\n\nThank you for meeting us on 29 February 2020 about your dispute with Nikhil Subramanian. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
   "spans": [
     {
       "text": "cheque bounce",
@@ -9,40 +9,34 @@
       "end": 27
     },
     {
-      "text": "Saxena",
-      "category": "NAME",
-      "start": 45,
-      "end": 51
+      "text": "CC/2573/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
     },
     {
-      "text": "17/01/2020",
+      "text": "Saxena",
+      "category": "NAME",
+      "start": 60,
+      "end": 66
+    },
+    {
+      "text": "29 February 2020",
       "category": "DATE",
-      "start": 82,
-      "end": 92
+      "start": 97,
+      "end": 113
     },
     {
       "text": "Nikhil Subramanian",
       "category": "NAME",
-      "start": 117,
-      "end": 135
+      "start": 138,
+      "end": 156
     },
     {
-      "text": "Judicial Magistrate First Class Court at New Delhi",
-      "category": "COURT",
-      "start": 245,
-      "end": 295
-    },
-    {
-      "text": "₹28,50,000",
-      "category": "MONEY",
-      "start": 592,
-      "end": 602
-    },
-    {
-      "text": "Kunal Bhagat",
+      "text": "Mrinalini Saraf",
       "category": "NAME",
-      "start": 619,
-      "end": 631
+      "start": 511,
+      "end": 526
     }
   ],
   "annotator": "generator",

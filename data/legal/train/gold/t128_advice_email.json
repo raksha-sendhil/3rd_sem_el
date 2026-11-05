@@ -1,6 +1,6 @@
 {
-  "doc_id": "11e5164a0db3cd57",
-  "text": "Subject: Your cheque bounce matter - CC/2590/2021\n\nDear Ms. Rajan,\n\nThank you for meeting us on 8 August 2021 about your dispute with Divya Agarwal. As we understand it, the cheque came back with the remark account closed. The matter is listed before the Judicial Magistrate First Class Court at Hubballi.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office. We will pursue the full claim of ₹19,60,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "doc_id": "bcd3dd1a058d9523",
+  "text": "Subject: Your cheque bounce matter - CC/2590/2021\n\nDear Ms. Rajan,\n\nThank you for meeting us on 4 August 2021 about your dispute with Divya Agarwal. As we understand it, the cheque came back with the remark account closed.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office. We will pursue the full claim of ₹19,60,000.\n\nRegards,\nAdv. Tejas Oberoi",
   "spans": [
     {
       "text": "cheque bounce",
@@ -21,7 +21,7 @@
       "end": 65
     },
     {
-      "text": "8 August 2021",
+      "text": "4 August 2021",
       "category": "DATE",
       "start": 96,
       "end": 109
@@ -33,22 +33,16 @@
       "end": 147
     },
     {
-      "text": "Judicial Magistrate First Class Court at Hubballi",
-      "category": "COURT",
-      "start": 255,
-      "end": 304
-    },
-    {
       "text": "₹19,60,000",
       "category": "MONEY",
-      "start": 608,
-      "end": 618
+      "start": 525,
+      "end": 535
     },
     {
-      "text": "Aditi Ranganathan",
+      "text": "Tejas Oberoi",
       "category": "NAME",
-      "start": 635,
-      "end": 652
+      "start": 552,
+      "end": 564
     }
   ],
   "annotator": "generator",

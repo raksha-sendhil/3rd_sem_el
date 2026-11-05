@@ -1,6 +1,6 @@
 {
-  "doc_id": "dab6657de53d6bfa",
-  "text": "Subject: Your wrongful termination matter - Complaint No. 2334/2024\n\nDear Mr. Tiwari,\n\nThank you for meeting us on 2 November 2024 about your dispute with M/s Reddy Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Nashik Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office. We will pursue the full claim of 35.9 lakh rupees.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "doc_id": "411e241ecc517558",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 2334/2024\n\nDear Mr. Tiwari,\n\nThank you for meeting us on 22 March 2025 about your dispute with M/s Reddy Industries. As we understand it, the employee was dismissed without any enquiry.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office. We will pursue the full claim of 35.9 lakh rupees.\n\nRegards,\nAdv. Mrinalini Saraf",
   "spans": [
     {
       "text": "wrongful termination",
@@ -21,34 +21,28 @@
       "end": 84
     },
     {
-      "text": "2 November 2024",
+      "text": "22 March 2025",
       "category": "DATE",
       "start": 115,
-      "end": 130
+      "end": 128
     },
     {
       "text": "Reddy Industries",
       "category": "ORGANIZATION",
-      "start": 159,
-      "end": 175
-    },
-    {
-      "text": "Nashik Labour Court",
-      "category": "COURT",
-      "start": 278,
-      "end": 297
+      "start": 157,
+      "end": 173
     },
     {
       "text": "35.9 lakh rupees",
       "category": "MONEY",
-      "start": 503,
-      "end": 519
+      "start": 448,
+      "end": 464
     },
     {
       "text": "Mrinalini Saraf",
       "category": "NAME",
-      "start": 536,
-      "end": 551
+      "start": 481,
+      "end": 496
     }
   ],
   "annotator": "generator",

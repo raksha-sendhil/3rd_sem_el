@@ -1,7 +1,7 @@
 {
-  "doc_id": "8526c02d952d8255",
+  "doc_id": "c11a3cd84b7cb45b",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t032",
-  "text": "Intake note (Property team, 9 June 2020). Our client Sujata Das is a 39-year-old general physician who lives at Flat 3A, Malviya Nagar, Jaipur 302016 and can be reached on 85521 51943 or sujata.das@example.com. The client's PAN HEYPD8234L, Aadhaar 9704 2063 8093.\nThe client consulted us about a tenancy eviction matter against Shruti Bose. The tenancy dispute with Shruti Bose concerns rent arrears of INR 4,90,000/-; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 1715/2020 before the Jaipur District Court on 16 July 2020."
+  "text": "Intake note - Property team\nDate: 20 March 2020\nClient: Sujata Das, a 39-year-old general physician from Jaipur.\nAddress: Flat 3A, Malviya Nagar, Jaipur 302016\nPhone: 85521 51943. Email: sujata.das@example.com. PAN HEYPD8234L, Aadhaar 9704 2063 8093.\nMatter: tenancy eviction\nOpposing party: Shruti Bose\nFacts: The tenancy dispute with Shruti Bose concerns rent arrears of INR 4,90,000/-; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 1715/2020 before the Jaipur District Court on 16/07/2020."
 }

@@ -1,0 +1,68 @@
+{
+  "doc_id": "efb83f7a4877944b",
+  "text": "Case note: Complaint No. 1007/2020\nClient: Joseph Bhosale (farmer, Hubballi)\nOpposing party: M/s Srivastava Industries\nCourt: Hubballi Labour Court\nFiled on: 2 March 2020\nClaim amount: INR 44,60,000/-\nIssue: wrongful termination. The employer offered to settle.\nAdvice given: Negotiate a settlement of gratuity and notice pay.\nOutcome: The employer paid gratuity and notice pay under a settlement.\nRecommended next step: Sign the settlement and withdraw the complaint.",
+  "spans": [
+    {
+      "text": "Complaint No. 1007/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 34
+    },
+    {
+      "text": "Joseph Bhosale",
+      "category": "NAME",
+      "start": 43,
+      "end": 57
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 59,
+      "end": 65
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 67,
+      "end": 75
+    },
+    {
+      "text": "Srivastava Industries",
+      "category": "ORGANIZATION",
+      "start": 97,
+      "end": 118
+    },
+    {
+      "text": "Hubballi Labour Court",
+      "category": "COURT",
+      "start": 126,
+      "end": 147
+    },
+    {
+      "text": "2 March 2020",
+      "category": "DATE",
+      "start": 158,
+      "end": 170
+    },
+    {
+      "text": "INR 44,60,000/-",
+      "category": "MONEY",
+      "start": 185,
+      "end": 200
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 208,
+      "end": 228
+    },
+    {
+      "text": "occupation (farmer) + city (Hubballi) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

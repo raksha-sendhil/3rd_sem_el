@@ -1,102 +1,102 @@
 {
-  "doc_id": "9a6c889f69a703de",
-  "text": "Intake note - Commercial team\nDate: 8 January 2021\nClient: Sunanda Kamath, a 71-year-old dentist from Lucknow.\nAddress: Plot 82, Aliganj, Lucknow 226006\nPhone: 08151736123. Email: sunanda.kamath@example.com. PAN LJSPK7165J.\nMatter: cheque bounce\nOpposing party: Mishra Traders\nFacts: A cheque for ₹24,80,000 issued by M/s Mishra Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/945/2021 before the Judicial Magistrate First Class Court at Lucknow on 28 February 2021.",
+  "doc_id": "9139e898ae5b0ffc",
+  "text": "Intake note - Commercial team\nDate: 18 November 2020\nClient: Sunanda Kamath, a 71-year-old dentist from Lucknow.\nAddress: Plot 82, Aliganj, Lucknow 226006\nPhone: 08151736123. Email: sunanda.kamath@example.com. PAN LJSPK7165J.\nMatter: cheque bounce\nOpposing party: Mishra Traders\nFacts: A cheque for INR 24,80,000/- issued by Mishra Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/945/2021 before the Judicial Magistrate First Class Court at Lucknow on 28 February 2021.",
   "spans": [
     {
-      "text": "8 January 2021",
+      "text": "18 November 2020",
       "category": "DATE",
       "start": 36,
-      "end": 50
+      "end": 52
     },
     {
       "text": "Sunanda Kamath",
       "category": "NAME",
-      "start": 59,
-      "end": 73
+      "start": 61,
+      "end": 75
     },
     {
       "text": "71-year-old",
       "category": "AGE",
-      "start": 77,
-      "end": 88
+      "start": 79,
+      "end": 90
     },
     {
       "text": "dentist",
       "category": "OCCUPATION",
-      "start": 89,
-      "end": 96
+      "start": 91,
+      "end": 98
     },
     {
       "text": "Lucknow",
       "category": "LOCATION",
-      "start": 102,
-      "end": 109
+      "start": 104,
+      "end": 111
     },
     {
       "text": "Plot 82, Aliganj, Lucknow 226006",
       "category": "ADDRESS",
-      "start": 120,
-      "end": 152
+      "start": 122,
+      "end": 154
     },
     {
       "text": "08151736123",
       "category": "PHONE",
-      "start": 160,
-      "end": 171
+      "start": 162,
+      "end": 173
     },
     {
       "text": "sunanda.kamath@example.com",
       "category": "EMAIL",
-      "start": 180,
-      "end": 206
+      "start": 182,
+      "end": 208
     },
     {
       "text": "LJSPK7165J",
       "category": "ID_NUMBER",
-      "start": 212,
-      "end": 222
+      "start": 214,
+      "end": 224
     },
     {
       "text": "cheque bounce",
       "category": "LEGAL_ISSUE",
-      "start": 232,
-      "end": 245
+      "start": 234,
+      "end": 247
     },
     {
       "text": "Mishra Traders",
       "category": "ORGANIZATION",
-      "start": 262,
-      "end": 276
+      "start": 264,
+      "end": 278
     },
     {
-      "text": "₹24,80,000",
+      "text": "INR 24,80,000/-",
       "category": "MONEY",
-      "start": 297,
-      "end": 307
+      "start": 299,
+      "end": 314
     },
     {
       "text": "Mishra Traders",
       "category": "ORGANIZATION",
-      "start": 322,
-      "end": 336
+      "start": 325,
+      "end": 339
     },
     {
       "text": "CC/945/2021",
       "category": "CASE_NUMBER",
-      "start": 433,
-      "end": 444
+      "start": 436,
+      "end": 447
     },
     {
       "text": "Judicial Magistrate First Class Court at Lucknow",
       "category": "COURT",
-      "start": 456,
-      "end": 504
+      "start": 459,
+      "end": 507
     },
     {
       "text": "28 February 2021",
       "category": "DATE",
-      "start": 508,
-      "end": 524
+      "start": 511,
+      "end": 527
     },
     {
       "text": "age (71) + occupation (dentist) + city (Lucknow) + issue (cheque bounce)",

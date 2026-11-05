@@ -1,102 +1,102 @@
 {
-  "doc_id": "4cc0878ad2505fd4",
-  "text": "Intake note - Commercial team\nDate: 21 December 2019\nClient: Joseph Bhosale, a 40-year-old farmer from Hubballi.\nAddress: Plot 42, Keshwapur, Hubballi 580019\nPhone: +91 97265 47027. Email: joseph.bhosale97@example.com. PAN PWZPB3947Y.\nMatter: wrongful termination\nOpposing party: Srivastava Industries\nFacts: The wrongful termination claim against M/s Srivastava Industries is for ₹44,60,000; the employer offered to settle.\nThe matter was filed as Complaint No. 1007/2020 before the Hubballi Labour Court on 2 March 2020.",
+  "doc_id": "9a626c7558920ab0",
+  "text": "Intake note - Commercial team\nDate: 2 January 2020\nClient: Joseph Bhosale, a 40-year-old farmer from Hubballi.\nAddress: Plot 42, Keshwapur, Hubballi 580019\nPhone: +91 97265 47027. Email: joseph.bhosale97@example.com. PAN PWZPB3947Y.\nMatter: wrongful termination\nOpposing party: M/s Srivastava Industries\nFacts: The wrongful termination claim against M/s Srivastava Industries is for INR 44,60,000/-; the employer offered to settle.\nThe matter was filed as Complaint No. 1007/2020 before the Hubballi Labour Court on 2 March 2020.",
   "spans": [
     {
-      "text": "21 December 2019",
+      "text": "2 January 2020",
       "category": "DATE",
       "start": 36,
-      "end": 52
+      "end": 50
     },
     {
       "text": "Joseph Bhosale",
       "category": "NAME",
-      "start": 61,
-      "end": 75
+      "start": 59,
+      "end": 73
     },
     {
       "text": "40-year-old",
       "category": "AGE",
-      "start": 79,
-      "end": 90
+      "start": 77,
+      "end": 88
     },
     {
       "text": "farmer",
       "category": "OCCUPATION",
-      "start": 91,
-      "end": 97
+      "start": 89,
+      "end": 95
     },
     {
       "text": "Hubballi",
       "category": "LOCATION",
-      "start": 103,
-      "end": 111
+      "start": 101,
+      "end": 109
     },
     {
       "text": "Plot 42, Keshwapur, Hubballi 580019",
       "category": "ADDRESS",
-      "start": 122,
-      "end": 157
+      "start": 120,
+      "end": 155
     },
     {
       "text": "+91 97265 47027",
       "category": "PHONE",
-      "start": 165,
-      "end": 180
+      "start": 163,
+      "end": 178
     },
     {
       "text": "joseph.bhosale97@example.com",
       "category": "EMAIL",
-      "start": 189,
-      "end": 217
+      "start": 187,
+      "end": 215
     },
     {
       "text": "PWZPB3947Y",
       "category": "ID_NUMBER",
-      "start": 223,
-      "end": 233
+      "start": 221,
+      "end": 231
     },
     {
       "text": "wrongful termination",
       "category": "LEGAL_ISSUE",
-      "start": 243,
-      "end": 263
+      "start": 241,
+      "end": 261
     },
     {
       "text": "Srivastava Industries",
       "category": "ORGANIZATION",
-      "start": 280,
-      "end": 301
+      "start": 282,
+      "end": 303
     },
     {
       "text": "Srivastava Industries",
       "category": "ORGANIZATION",
-      "start": 352,
-      "end": 373
+      "start": 354,
+      "end": 375
     },
     {
-      "text": "₹44,60,000",
+      "text": "INR 44,60,000/-",
       "category": "MONEY",
-      "start": 381,
-      "end": 391
+      "start": 383,
+      "end": 398
     },
     {
       "text": "Complaint No. 1007/2020",
       "category": "CASE_NUMBER",
-      "start": 449,
-      "end": 472
+      "start": 456,
+      "end": 479
     },
     {
       "text": "Hubballi Labour Court",
       "category": "COURT",
-      "start": 484,
-      "end": 505
+      "start": 491,
+      "end": 512
     },
     {
       "text": "2 March 2020",
       "category": "DATE",
-      "start": 509,
-      "end": 521
+      "start": 516,
+      "end": 528
     },
     {
       "text": "age (40) + occupation (farmer) + city (Hubballi) + issue (wrongful termination)",

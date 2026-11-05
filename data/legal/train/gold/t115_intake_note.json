@@ -1,12 +1,12 @@
 {
-  "doc_id": "f51e4477c70e7dd3",
-  "text": "Intake note - Property team\nDate: 5 May 2022\nClient: Anjali DSouza, a 37-year-old taxi driver from Pune.\nAddress: Flat 6D, Kothrud, Pune 411009\nPhone: 07222926339. Email: anjali.dsouza@example.com. PAN FZKPD9819S.\nMatter: tenancy eviction\nOpposing party: Kiran Shah\nFacts: The tenancy dispute with Kiran Shah concerns rent arrears of INR 7,25,000/-; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.S. No. 1099/2022 before the Pune District Court on 23/06/2022.",
+  "doc_id": "40ed31b82e18c0a7",
+  "text": "Intake note (Property team, 23 May 2022). Our client Anjali DSouza is a 37-year-old taxi driver who lives at Flat 6D, Kothrud, Pune 411009 and can be reached on 07222926339 or anjali.dsouza@example.com. The client's PAN FZKPD9819S.\nThe client consulted us about a tenancy eviction matter against Kiran Shah. The tenancy dispute with Kiran Shah concerns rent arrears of INR 7,25,000/-; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.S. No. 1099/2022 before the Pune District Court on 23/06/2022.",
   "spans": [
     {
-      "text": "5 May 2022",
+      "text": "23 May 2022",
       "category": "DATE",
-      "start": 34,
-      "end": 44
+      "start": 28,
+      "end": 39
     },
     {
       "text": "Anjali DSouza",
@@ -17,92 +17,80 @@
     {
       "text": "37-year-old",
       "category": "AGE",
-      "start": 70,
-      "end": 81
+      "start": 72,
+      "end": 83
     },
     {
       "text": "taxi driver",
       "category": "OCCUPATION",
-      "start": 82,
-      "end": 93
-    },
-    {
-      "text": "Pune",
-      "category": "LOCATION",
-      "start": 99,
-      "end": 103
+      "start": 84,
+      "end": 95
     },
     {
       "text": "Flat 6D, Kothrud, Pune 411009",
       "category": "ADDRESS",
-      "start": 114,
-      "end": 143
+      "start": 109,
+      "end": 138
     },
     {
       "text": "07222926339",
       "category": "PHONE",
-      "start": 151,
-      "end": 162
+      "start": 161,
+      "end": 172
     },
     {
       "text": "anjali.dsouza@example.com",
       "category": "EMAIL",
-      "start": 171,
-      "end": 196
+      "start": 176,
+      "end": 201
     },
     {
       "text": "FZKPD9819S",
       "category": "ID_NUMBER",
-      "start": 202,
-      "end": 212
+      "start": 220,
+      "end": 230
     },
     {
       "text": "tenancy eviction",
       "category": "LEGAL_ISSUE",
-      "start": 222,
-      "end": 238
+      "start": 264,
+      "end": 280
     },
     {
       "text": "Kiran Shah",
       "category": "NAME",
-      "start": 255,
-      "end": 265
+      "start": 296,
+      "end": 306
     },
     {
       "text": "Kiran Shah",
       "category": "NAME",
-      "start": 298,
-      "end": 308
+      "start": 333,
+      "end": 343
     },
     {
       "text": "INR 7,25,000/-",
       "category": "MONEY",
-      "start": 334,
-      "end": 348
+      "start": 369,
+      "end": 383
     },
     {
       "text": "R.C.S. No. 1099/2022",
       "category": "CASE_NUMBER",
-      "start": 432,
-      "end": 452
+      "start": 467,
+      "end": 487
     },
     {
       "text": "Pune District Court",
       "category": "COURT",
-      "start": 464,
-      "end": 483
+      "start": 499,
+      "end": 518
     },
     {
       "text": "23/06/2022",
       "category": "DATE",
-      "start": 487,
-      "end": 497
-    },
-    {
-      "text": "age (37) + occupation (taxi driver) + city (Pune) + issue (tenancy eviction)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 522,
+      "end": 532
     }
   ],
   "annotator": "generator",

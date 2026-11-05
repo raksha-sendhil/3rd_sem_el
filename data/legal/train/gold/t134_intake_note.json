@@ -1,96 +1,96 @@
 {
-  "doc_id": "2f3944c85b243f92",
-  "text": "Intake note (Commercial team, 20 July 2024). Our client Anjali Rao is a 63-year-old railway employee who lives at Plot 87, Vesu, Surat 395040 and can be reached on +91 96797 09975 or anjali.rao@example.com. The client's PAN EZRPR9130W.\nThe client consulted us about a wrongful termination matter against Karve Industries. The wrongful termination claim against M/s Karve Industries is for INR 51,50,000/-; the employer withheld the last salary.\nThe matter was filed as Complaint No. 200/2024 before the Surat Labour Court on 22 November 2024.",
+  "doc_id": "3080c3d33203d5e1",
+  "text": "Intake note (Commercial team, 06/05/2024). Our client Anjali Rao is a 63-year-old railway employee who lives at Plot 87, Vesu, Surat 395040 and can be reached on +91 96797 09975 or anjali.rao@example.com. The client's PAN EZRPR9130W.\nThe client consulted us about a wrongful termination matter against Karve Industries. The wrongful termination claim against Karve Industries is for INR 51,50,000/-; the employer withheld the last salary.\nThe matter was filed as Complaint No. 200/2024 before the Surat Labour Court on 22 November 2024.",
   "spans": [
     {
-      "text": "20 July 2024",
+      "text": "06/05/2024",
       "category": "DATE",
       "start": 30,
-      "end": 42
+      "end": 40
     },
     {
       "text": "Anjali Rao",
       "category": "NAME",
-      "start": 56,
-      "end": 66
+      "start": 54,
+      "end": 64
     },
     {
       "text": "63-year-old",
       "category": "AGE",
-      "start": 72,
-      "end": 83
+      "start": 70,
+      "end": 81
     },
     {
       "text": "railway employee",
       "category": "OCCUPATION",
-      "start": 84,
-      "end": 100
+      "start": 82,
+      "end": 98
     },
     {
       "text": "Plot 87, Vesu, Surat 395040",
       "category": "ADDRESS",
-      "start": 114,
-      "end": 141
+      "start": 112,
+      "end": 139
     },
     {
       "text": "+91 96797 09975",
       "category": "PHONE",
-      "start": 164,
-      "end": 179
+      "start": 162,
+      "end": 177
     },
     {
       "text": "anjali.rao@example.com",
       "category": "EMAIL",
-      "start": 183,
-      "end": 205
+      "start": 181,
+      "end": 203
     },
     {
       "text": "EZRPR9130W",
       "category": "ID_NUMBER",
-      "start": 224,
-      "end": 234
+      "start": 222,
+      "end": 232
     },
     {
       "text": "wrongful termination",
       "category": "LEGAL_ISSUE",
-      "start": 268,
-      "end": 288
+      "start": 266,
+      "end": 286
     },
     {
       "text": "Karve Industries",
       "category": "ORGANIZATION",
-      "start": 304,
-      "end": 320
+      "start": 302,
+      "end": 318
     },
     {
       "text": "Karve Industries",
       "category": "ORGANIZATION",
-      "start": 365,
-      "end": 381
+      "start": 359,
+      "end": 375
     },
     {
       "text": "INR 51,50,000/-",
       "category": "MONEY",
-      "start": 389,
-      "end": 404
+      "start": 383,
+      "end": 398
     },
     {
       "text": "Complaint No. 200/2024",
       "category": "CASE_NUMBER",
-      "start": 469,
-      "end": 491
+      "start": 463,
+      "end": 485
     },
     {
       "text": "Surat Labour Court",
       "category": "COURT",
-      "start": 503,
-      "end": 521
+      "start": 497,
+      "end": 515
     },
     {
       "text": "22 November 2024",
       "category": "DATE",
-      "start": 525,
-      "end": 541
+      "start": 519,
+      "end": 535
     }
   ],
   "annotator": "generator",

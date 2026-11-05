@@ -1,108 +1,96 @@
 {
-  "doc_id": "ec078e0cf1a25ea3",
-  "text": "Intake note - Criminal team\nDate: 03/09/2021\nClient: Anirudh Chauhan, a 64-year-old bank manager from Panaji.\nAddress: House No. 81, Miramar, Panaji 403022\nPhone: 74993 27598. Email: anirudh.chauhan@example.in. PAN GZKPC3796R.\nMatter: anticipatory bail\nOpposing party: Bhavana Patil\nFacts: The anticipatory bail matter arises from a complaint by Bhavana Patil about ₹48,80,000; the complainant alleges cheating over a failed deal.\nThe matter was filed as Anticipatory Bail Application No. 2721/2022 before the Panaji Sessions Court on 02/03/2022.",
+  "doc_id": "faf1daeecabd73b7",
+  "text": "Intake note (Criminal team, 21/01/2022). Our client Anirudh Chauhan is a 64-year-old bank manager who lives at House No. 81, Miramar, Panaji 403022 and can be reached on 74993 27598 or anirudh.chauhan@example.in. The client's PAN GZKPC3796R.\nThe client consulted us about a anticipatory bail matter against Bhavana Patil. The anticipatory bail matter arises from a complaint by Bhavana Patil about ₹48,80,000; the complainant alleges cheating over a failed deal.\nThe matter was filed as Anticipatory Bail Application No. 2721/2022 before the Panaji Sessions Court on 2 March 2022.",
   "spans": [
     {
-      "text": "03/09/2021",
+      "text": "21/01/2022",
       "category": "DATE",
-      "start": 34,
-      "end": 44
+      "start": 28,
+      "end": 38
     },
     {
       "text": "Anirudh Chauhan",
       "category": "NAME",
-      "start": 53,
-      "end": 68
+      "start": 52,
+      "end": 67
     },
     {
       "text": "64-year-old",
       "category": "AGE",
-      "start": 72,
-      "end": 83
+      "start": 73,
+      "end": 84
     },
     {
       "text": "bank manager",
       "category": "OCCUPATION",
-      "start": 84,
-      "end": 96
-    },
-    {
-      "text": "Panaji",
-      "category": "LOCATION",
-      "start": 102,
-      "end": 108
+      "start": 85,
+      "end": 97
     },
     {
       "text": "House No. 81, Miramar, Panaji 403022",
       "category": "ADDRESS",
-      "start": 119,
-      "end": 155
+      "start": 111,
+      "end": 147
     },
     {
       "text": "74993 27598",
       "category": "PHONE",
-      "start": 163,
-      "end": 174
+      "start": 170,
+      "end": 181
     },
     {
       "text": "anirudh.chauhan@example.in",
       "category": "EMAIL",
-      "start": 183,
-      "end": 209
+      "start": 185,
+      "end": 211
     },
     {
       "text": "GZKPC3796R",
       "category": "ID_NUMBER",
-      "start": 215,
-      "end": 225
+      "start": 230,
+      "end": 240
     },
     {
       "text": "anticipatory bail",
       "category": "LEGAL_ISSUE",
-      "start": 235,
-      "end": 252
+      "start": 274,
+      "end": 291
     },
     {
       "text": "Bhavana Patil",
       "category": "NAME",
-      "start": 269,
-      "end": 282
+      "start": 307,
+      "end": 320
     },
     {
       "text": "Bhavana Patil",
       "category": "NAME",
-      "start": 346,
-      "end": 359
+      "start": 378,
+      "end": 391
     },
     {
       "text": "₹48,80,000",
       "category": "MONEY",
-      "start": 366,
-      "end": 376
+      "start": 398,
+      "end": 408
     },
     {
       "text": "Anticipatory Bail Application No. 2721/2022",
       "category": "CASE_NUMBER",
-      "start": 455,
-      "end": 498
+      "start": 487,
+      "end": 530
     },
     {
       "text": "Panaji Sessions Court",
       "category": "COURT",
-      "start": 510,
-      "end": 531
+      "start": 542,
+      "end": 563
     },
     {
-      "text": "02/03/2022",
+      "text": "2 March 2022",
       "category": "DATE",
-      "start": 535,
-      "end": 545
-    },
-    {
-      "text": "age (64) + occupation (bank manager) + city (Panaji) + issue (anticipatory bail)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 567,
+      "end": 579
     }
   ],
   "annotator": "generator",

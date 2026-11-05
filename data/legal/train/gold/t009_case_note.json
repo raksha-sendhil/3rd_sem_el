@@ -1,0 +1,74 @@
+{
+  "doc_id": "d21f61f33668a3be",
+  "text": "Case note: CC/390/2021\nClient: Uma Ahuja (railway employee, Thiruvananthapuram)\nOpposing party: Deepak Bhosale\nCourt: Judicial Magistrate First Class Court at Thiruvananthapuram\nFiled on: 21 November 2021\nClaim amount: 34.4 lakh rupees\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.\nWitness: Vivek Agarwal",
+  "spans": [
+    {
+      "text": "CC/390/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 22
+    },
+    {
+      "text": "Uma Ahuja",
+      "category": "NAME",
+      "start": 31,
+      "end": 40
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 42,
+      "end": 58
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 60,
+      "end": 78
+    },
+    {
+      "text": "Deepak Bhosale",
+      "category": "NAME",
+      "start": 96,
+      "end": 110
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 118,
+      "end": 177
+    },
+    {
+      "text": "21 November 2021",
+      "category": "DATE",
+      "start": 188,
+      "end": 204
+    },
+    {
+      "text": "34.4 lakh rupees",
+      "category": "MONEY",
+      "start": 219,
+      "end": 235
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 243,
+      "end": 256
+    },
+    {
+      "text": "Vivek Agarwal",
+      "category": "NAME",
+      "start": 597,
+      "end": 610
+    },
+    {
+      "text": "occupation (railway employee) + city (Thiruvananthapuram) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

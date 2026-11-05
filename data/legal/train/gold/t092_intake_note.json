@@ -1,108 +1,96 @@
 {
-  "doc_id": "c244b9fd4da5ddcd",
-  "text": "Intake note - Property team\nDate: 23 November 2022\nClient: Karthik Khan, a 48-year-old nurse from Bengaluru.\nAddress: Plot 29, Indiranagar, Bengaluru 560028\nPhone: 07399866892. Email: karthik.khan@example.com. PAN LCJPK1913G.\nMatter: land dispute\nOpposing party: Ajay Mukherjee\nFacts: The land dispute with Ajay Mukherjee concerns agricultural land valued at Rs. 4,19,00,000; relatives dispute who owns the ancestral land.\nThe matter was filed as O.S. No. 1118/2023 before the Bengaluru District Court on 11/02/2023.",
+  "doc_id": "831674ebcc19db6e",
+  "text": "Intake note (Property team, 06/11/2022). Our client Karthik Khan is a 48-year-old nurse who lives at Plot 29, Indiranagar, Bengaluru 560028 and can be reached on 07399866892 or karthik.khan@example.com. The client's PAN LCJPK1913G.\nThe client consulted us about a land dispute matter against Ajay Mukherjee. The land dispute with Ajay Mukherjee concerns agricultural land valued at Rs 4,19,00,000; relatives dispute who owns the ancestral land.\nThe matter was filed as O.S. No. 1118/2023 before the Bengaluru District Court on 11/02/2023.",
   "spans": [
     {
-      "text": "23 November 2022",
+      "text": "06/11/2022",
       "category": "DATE",
-      "start": 34,
-      "end": 50
+      "start": 28,
+      "end": 38
     },
     {
       "text": "Karthik Khan",
       "category": "NAME",
-      "start": 59,
-      "end": 71
+      "start": 52,
+      "end": 64
     },
     {
       "text": "48-year-old",
       "category": "AGE",
-      "start": 75,
-      "end": 86
+      "start": 70,
+      "end": 81
     },
     {
       "text": "nurse",
       "category": "OCCUPATION",
-      "start": 87,
-      "end": 92
-    },
-    {
-      "text": "Bengaluru",
-      "category": "LOCATION",
-      "start": 98,
-      "end": 107
+      "start": 82,
+      "end": 87
     },
     {
       "text": "Plot 29, Indiranagar, Bengaluru 560028",
       "category": "ADDRESS",
-      "start": 118,
-      "end": 156
+      "start": 101,
+      "end": 139
     },
     {
       "text": "07399866892",
       "category": "PHONE",
-      "start": 164,
-      "end": 175
+      "start": 162,
+      "end": 173
     },
     {
       "text": "karthik.khan@example.com",
       "category": "EMAIL",
-      "start": 184,
-      "end": 208
+      "start": 177,
+      "end": 201
     },
     {
       "text": "LCJPK1913G",
       "category": "ID_NUMBER",
-      "start": 214,
-      "end": 224
+      "start": 220,
+      "end": 230
     },
     {
       "text": "land dispute",
       "category": "LEGAL_ISSUE",
-      "start": 234,
-      "end": 246
+      "start": 264,
+      "end": 276
     },
     {
       "text": "Ajay Mukherjee",
       "category": "NAME",
-      "start": 263,
-      "end": 277
+      "start": 292,
+      "end": 306
     },
     {
       "text": "Ajay Mukherjee",
       "category": "NAME",
-      "start": 307,
-      "end": 321
+      "start": 330,
+      "end": 344
     },
     {
-      "text": "Rs. 4,19,00,000",
+      "text": "Rs 4,19,00,000",
       "category": "MONEY",
-      "start": 359,
-      "end": 374
+      "start": 382,
+      "end": 396
     },
     {
       "text": "O.S. No. 1118/2023",
       "category": "CASE_NUMBER",
-      "start": 447,
-      "end": 465
+      "start": 469,
+      "end": 487
     },
     {
       "text": "Bengaluru District Court",
       "category": "COURT",
-      "start": 477,
-      "end": 501
+      "start": 499,
+      "end": 523
     },
     {
       "text": "11/02/2023",
       "category": "DATE",
-      "start": 505,
-      "end": 515
-    },
-    {
-      "text": "age (48) + occupation (nurse) + city (Bengaluru) + issue (land dispute)",
-      "category": "QUASI_COMBO",
-      "start": null,
-      "end": null
+      "start": 527,
+      "end": 537
     }
   ],
   "annotator": "generator",

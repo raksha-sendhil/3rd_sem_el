@@ -1,7 +1,7 @@
 {
-  "doc_id": "cabfaa5117466387",
+  "doc_id": "dbfa7b6eb9f0934c",
   "source": "synthetic-legal-train",
   "template": "intake_note",
   "person_id": "t073",
-  "text": "Intake note (Property team, 21/10/2021). Our client Mohan Sandhu is a 62-year-old electrician who lives at House No. 123, Anna Nagar, Chennai 600042 and can be reached on 06926818780 or mohan.sandhu@example.com. The client's PAN VWDPS1315J.\nThe client consulted us about a consumer complaint matter against M/s Goyal Developers. The consumer complaint against Goyal Developers concerns a flat bought for ₹3,26,00,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as CC/57/2022 before the Chennai District Consumer Disputes Redressal Commission on 31 March 2022."
+  "text": "Intake note - Property team\nDate: 24 November 2021\nClient: Mohan Sandhu, a 62-year-old electrician from Chennai.\nAddress: House No. 123, Anna Nagar, Chennai 600042\nPhone: 06926818780. Email: mohan.sandhu@example.com. PAN VWDPS1315J.\nMatter: consumer complaint\nOpposing party: M/s Goyal Developers\nFacts: The consumer complaint against Goyal Developers concerns a flat bought for Rs 3,26,00,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as CC/57/2022 before the Chennai District Consumer Disputes Redressal Commission on 31 March 2022."
 }
