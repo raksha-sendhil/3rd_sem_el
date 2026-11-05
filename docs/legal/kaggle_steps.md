@@ -515,7 +515,7 @@ Rotation is implemented by `KeyPool` in `src/sanitise/llm/gemini.py`.
 - Only when every key is resting does a call fail, with a message saying when the first key
   is free again.
 - **Model overloaded** (HTTP 503, "high demand"): another key would not help, so the same call
-  waits and tries again up to 8 times (15 s, doubling to 5 minutes at most, about 18 minutes in
+  waits and tries again up to 8 times (15 s, doubling to 5 minutes at most, about 23 minutes in
   all). If it still fails, the run stops with the error. Answers already received are cached,
   so running the same cell again later continues without paying for them twice.
 
