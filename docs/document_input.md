@@ -132,7 +132,7 @@ come with their text. Sources and licences are in `data/ocr_real/README.md`.
 
 | Domain | Items |
 |---|---|
-| health | 40 ClinOCR-Bench: clinical documents (radiology, lab, intake, medication forms) physically printed, then crumpled, photocopied, put in sleeves, rotated and scanned, with human-audited text. Subsets: normal, handwriting, poor quality, rotated, tables, mixed. 10 real doctors' handwritten medicine names from real prescriptions (Bangladesh) |
+| health | 30 ClinOCR-Bench: clinical documents with fictional, AI-written content, physically printed, then crumpled, photocopied, put in sleeves, rotated and scanned, with human-audited text (real paper and scanning, synthetic content; its handwriting subset uses handwriting fonts). Subsets: normal, handwriting, poor quality, rotated, tables, mixed. 20 real doctors' handwritten medicine names from real prescriptions (Bangladesh), 20 different medicines A to Z |
 | finance | 25 real scanned receipts and tax invoices (SROIE), 25 real receipt photos (CORD) |
 | law | 35 real SEC contracts, 2 pages each, half as PDF and half scanned (CUAD), 15 real noisy scanned forms and letters (FUNSD) |
 

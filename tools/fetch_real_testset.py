@@ -11,12 +11,13 @@ every licence's terms and the rule that no real document goes into the repositor
 
 Sources (share of each domain at 50 per domain):
 
-    health   ClinOCR-Bench (40)       clinical documents printed, crumpled, photocopied, put in
+    health   ClinOCR-Bench (30)       clinical documents printed, crumpled, photocopied, put in
                                       plastic sleeves, rotated and scanned; human-audited text;
                                       subsets normal / handwriting / poor / rotated / tables /
                                       mixed. Content is fictional (no patient data). MIT.
-             BD prescriptions (10)    real doctors' handwriting: medicine names cut from real
-                                      prescriptions in Bangladesh, with their labels.
+             BD prescriptions (20)    real doctors' handwriting: medicine names cut from real
+                                      prescriptions in Bangladesh, with their labels; 20 different
+                                      medicines spread from A to Z.
     finance  SROIE (25)               real scanned receipts and tax invoices (ICDAR 2019).
              CORD (25)                real receipt photos (CC BY 4.0).
     law      CUAD (35)                real contracts filed with the SEC (CC BY 4.0): 2 pages each,
@@ -63,7 +64,7 @@ CUAD_FILE = "https://huggingface.co/datasets/theatticusproject/cuad/resolve/main
 
 # share of each source in a domain of 50
 QUOTAS = {
-    "health": {"clinocr": 40, "bd_rx": 10},
+    "health": {"clinocr": 30, "bd_rx": 20},
     "finance": {"sroie": 25, "cord": 25},
     "law": {"cuad": 35, "funsd": 15},
 }
@@ -212,14 +213,13 @@ def clinocr(f: Fetcher, n: int, out: Path) -> list[dict]:
 
 def bd_rx(f: Fetcher, n: int, out: Path) -> list[dict]:
     rows = f.rows("lance-format/handwriting-ocr", "default", "test")
-    seen: set[str] = set()
-    picked = []
-    for r in rows[:: max(1, len(rows) // (n * 4))]:  # different medicines, not 10 of the same
-        if r["medicine_name"] not in seen:
-            seen.add(r["medicine_name"])
-            picked.append(r)
-        if len(picked) == n:
-            break
+    # one crop per medicine, medicines spread over the whole list (A to Z), and within a
+    # medicine a crop from the middle of its samples rather than always the first one
+    by_name: dict[str, list[dict]] = {}
+    for r in rows:
+        by_name.setdefault(r["medicine_name"], []).append(r)
+    names = sorted(by_name)
+    picked = [by_name[names[i]][len(by_name[names[i]]) // 2] for i in spread(len(names), n)]
     recs = []
     for k, r in enumerate(picked, 1):
         doc_id = f"health_bd_rx_{k:02d}"

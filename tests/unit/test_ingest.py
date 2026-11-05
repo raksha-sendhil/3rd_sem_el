@@ -233,3 +233,10 @@ def test_tidy_markdown_drops_inline_tags() -> None:
 
     md = '## **Definitions**\n<u>Agreement</u> means _this_ contract<sup>1</sup>'
     assert tidy_markdown(md) == "Definitions\nAgreement means this contract1"
+
+
+def test_iam_style_tokenisation_is_not_an_error() -> None:
+    gold = '" My September Love , " the big hit of 1956 . You \'re a star ... . it \'s fine'
+    read = '"My September love", the big hit of 1956. You\'re a star.... it\'s fine'
+    s = score_text(read, gold)
+    assert s.cer == 0 and s.wer == 0

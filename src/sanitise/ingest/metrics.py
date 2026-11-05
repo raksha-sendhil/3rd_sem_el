@@ -54,7 +54,13 @@ def normalise(text: str) -> str:
     t = _TAGS.sub(" ", t)
     t = _TABLE_RULE.sub(" ", t)
     t = _MARKS.sub(" ", t)
+    # Quote marks are dropped: transcriptions differ in where they put them and how they space
+    # them (IAM writes '" No Hiding Place "'), and they never change what a word says.
+    t = t.replace('"', " ")
+    # tokenised contractions ("it 's", "You 're", "do n't") are one word
+    t = re.sub(r"(\w)\s+('(?:s|re|ll|ve|d|m|t)|n't)\b", r"\1\2", t, flags=re.I)
     t = re.sub(r"\s+([.,;:!?)])", r"\1", t)  # "word ." and "word." are the same reading
+    t = re.sub(r"([.,;:!?])\s+(?=[.,;:!?])", r"\1", t)  # "star ... ." = "star...."
     t = re.sub(r"([(])\s+", r"\1", t)
     return re.sub(r"\s+", " ", t).strip().lower()
 
