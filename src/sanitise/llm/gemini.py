@@ -13,7 +13,9 @@ Fallbacks from the spec's risk table ("Gemini rate limits"), plus key rotation:
   RESOURCE_EXHAUSTED) it rests for ``cooldown_s``; when it reports a daily quota, or uses
   up its own ``daily_token_budget``, it rests until the next day; the call then moves to the
   next key. Only when every key is resting does the call fail. Token use per key and per day
-  is kept in ``<cache_dir>/usage.json``, under a short fingerprint of the key, never the key.
+  is kept in ``<cache_dir>/usage.json``, under a short fingerprint of the key, never the key;
+* when the model itself is overloaded (HTTP 503, "high demand") another key would not help, so
+  the call waits and tries again, longer each time, and fails only after ``overload_retries``.
 
 Keys come from ``api_key`` / ``api_keys``, else the environment or Kaggle secrets:
 ``GEMINI_API_KEYS`` (comma-separated), ``GEMINI_API_KEY``, ``GEMINI_API_KEY_2`` ..
@@ -45,6 +47,10 @@ log = logging.getLogger(__name__)
 KEY_NAMES = ("GEMINI_API_KEY", *(f"GEMINI_API_KEY_{i}" for i in range(2, 10)))
 _RATE_LIMITED = re.compile(r"\b429\b|RESOURCE_EXHAUSTED|rate.?limit|quota", re.IGNORECASE)
 _DAILY = re.compile(r"per.?day|PerDay|daily", re.IGNORECASE)
+_OVERLOADED = re.compile(
+    r"\b50[0234] [A-Z_]+|\bUNAVAILABLE\b|\bDEADLINE_EXCEEDED\b|overloaded|high demand"
+)
+OVERLOAD_MAX_WAIT_S = 300.0
 DAY_S = 24 * 3600.0
 
 
@@ -174,6 +180,8 @@ class GeminiClient(BaseJSONClient):
         timeout_s: float = 120.0,
         cooldown_s: float = 60.0,
         daily_token_budget: int = 0,
+        overload_retries: int = 8,
+        overload_wait_s: float = 15.0,
         sdk_client: Any = None,
         sdk_factory: Callable[[str], Any] | None = None,
         **kwargs: Any,
@@ -193,6 +201,8 @@ class GeminiClient(BaseJSONClient):
         self._sdk_factory = sdk_factory
         self.min_interval = 60.0 / max(rpm, 1)
         self.timeout_s = timeout_s
+        self.overload_retries = overload_retries
+        self.overload_wait_s = overload_wait_s
         self._lock = asyncio.Lock()
         self._last_call = 0.0
         self.cache_hits = 0
@@ -208,6 +218,8 @@ class GeminiClient(BaseJSONClient):
             timeout_s=settings.llm_timeout_s,
             cooldown_s=settings.gemini_key_cooldown_s,
             daily_token_budget=settings.gemini_daily_token_budget,
+            overload_retries=settings.gemini_overload_retries,
+            overload_wait_s=settings.gemini_overload_wait_s,
             retries=settings.llm_retries,
             temperature=settings.llm_temperature,
             temperature_step=settings.llm_temperature_step,
@@ -290,7 +302,8 @@ class GeminiClient(BaseJSONClient):
             config["response_mime_type"] = "application/json"
             config["response_json_schema"] = json_schema
 
-        for _ in range(max(len(self.pool), 1)):
+        rate_limited = overloaded = 0
+        while rate_limited < max(len(self.pool), 1):
             entry = self.pool.acquire()
             await self._throttle()
             try:
@@ -307,7 +320,19 @@ class GeminiClient(BaseJSONClient):
             except Exception as exc:  # the SDK raises its own error types
                 if _RATE_LIMITED.search(str(exc)):
                     self.pool.rest(entry, str(exc))
+                    rate_limited += 1
                     continue  # the next key
+                if _OVERLOADED.search(str(exc)) and overloaded < self.overload_retries:
+                    wait = min(self.overload_wait_s * 2**overloaded, OVERLOAD_MAX_WAIT_S)
+                    overloaded += 1
+                    log.warning(
+                        "Gemini is overloaded; try %d of %d in %.0f s",
+                        overloaded,
+                        self.overload_retries,
+                        wait,
+                    )
+                    await asyncio.sleep(wait)
+                    continue  # the same call again
                 raise LLMUnreachable(f"Gemini call failed: {exc}") from None
             usage = getattr(response, "usage_metadata", None)
             self.pool.record(entry, int(getattr(usage, "total_token_count", 0) or 0))

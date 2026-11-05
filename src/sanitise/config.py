@@ -56,6 +56,8 @@ class Settings(BaseSettings):
     gemini_api_keys: str | None = None  # comma-separated
     gemini_key_cooldown_s: float = Field(default=60.0, ge=0)  # after a per-minute limit
     gemini_daily_token_budget: int = Field(default=0, ge=0)  # per key; 0 = no budget
+    gemini_overload_retries: int = Field(default=8, ge=0)  # after a 503: tries before failing
+    gemini_overload_wait_s: float = Field(default=15.0, ge=0)  # first wait; doubles, 5 min at most
     gemini_cache_dir: str = "data/cache/gemini"  # every answer cached on disk (rate limits)
     gemini_rpm: int = Field(default=10, ge=1)  # calls per minute
     # Agent 1's LLM pass: "same" uses the agents' model; "transformers" loads the base Gemma

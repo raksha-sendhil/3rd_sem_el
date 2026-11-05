@@ -216,6 +216,59 @@ async def test_all_keys_limited_fails_clearly(tmp_path: Path) -> None:
     assert log == ["k1", "k2"]
 
 
+HIGH_DEMAND = "503 UNAVAILABLE. {'error': {'message': 'experiencing high demand'}}"
+
+
+def _overloaded_sdk(failures: int, calls: list[int]) -> SimpleNamespace:
+    async def generate_content(*, model: str, contents: list, config: dict):
+        calls.append(1)
+        if len(calls) <= failures:
+            raise RuntimeError(HIGH_DEMAND)
+        return SimpleNamespace(text="ok")
+
+    return SimpleNamespace(
+        aio=SimpleNamespace(models=SimpleNamespace(generate_content=generate_content))
+    )
+
+
+async def test_an_overloaded_model_is_waited_for_on_the_same_call(tmp_path: Path) -> None:
+    calls: list[int] = []
+    client = GeminiClient(
+        cache_dir=tmp_path, rpm=6000, overload_wait_s=0, sdk_client=_overloaded_sdk(3, calls)
+    )
+    assert await client.text_call("s", "u") == "ok"
+    assert len(calls) == 4
+    assert client.pool._keys[0].rest_until == 0.0  # the key did nothing wrong
+
+
+async def test_an_overload_that_never_ends_fails_and_caches_nothing(tmp_path: Path) -> None:
+    from sanitise.errors import LLMUnreachable
+
+    calls: list[int] = []
+    client = GeminiClient(
+        cache_dir=tmp_path,
+        rpm=6000,
+        overload_retries=2,
+        overload_wait_s=0,
+        sdk_client=_overloaded_sdk(99, calls),
+    )
+    with pytest.raises(LLMUnreachable, match="503"):
+        await client.text_call("s", "u")
+    assert len(calls) == 3
+    with pytest.raises(LLMUnreachable, match="503"):  # not served from the cache
+        await client.text_call("s", "u")
+    assert len(calls) == 6
+
+
+async def test_other_gemini_errors_are_not_retried(tmp_path: Path) -> None:
+    from sanitise.errors import LLMUnreachable
+
+    client, log = _rotating(tmp_path, ["k1"], {"k1": "400 INVALID_ARGUMENT: max 500 tokens"})
+    with pytest.raises(LLMUnreachable, match="400"):
+        await client.text_call("s", "u")
+    assert log == ["k1"]
+
+
 def test_keys_are_read_from_numbered_variables(monkeypatch) -> None:
     from sanitise.llm.gemini import gemini_api_keys
 
