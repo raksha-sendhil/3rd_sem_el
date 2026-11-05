@@ -153,22 +153,28 @@ def train(args: argparse.Namespace) -> None:
 # ---------------------------------------------------------------- evaluate
 
 
-async def _detect_all(client, docs: list[dict]) -> list:
+async def _detect_all(client, docs: list[dict]) -> tuple[list, int]:
+    """Spans per document, and how many documents gave unusable JSON after the retries. Only
+    that counts as "found nothing"; any other error (a model that will not load) stops the run,
+    so a failure is never written down as a score of zero."""
     from sanitise.agents.detector.quasi import infer_quasi
     from sanitise.domain import use_domain
+    from sanitise.errors import SchemaValidationFailed
     from sanitise.schemas import DetectorOutput
 
     out = []
+    broken = 0
     with use_domain("legal"):
         for i, d in enumerate(docs, 1):
             try:
                 spans = await infer_quasi(d["text"], [], client)
-            except Exception as exc:  # broken JSON after retries counts as nothing found
+            except SchemaValidationFailed as exc:
                 print(f"  {d['doc_id']}: {exc}")
                 spans = []
+                broken += 1
             out.append(DetectorOutput(doc_id=d["doc_id"], spans=spans))
             print(f"  [{i}/{len(docs)}] {len(spans)} spans", flush=True)
-    return out
+    return out, broken
 
 
 def evaluate(args: argparse.Namespace) -> None:
@@ -176,6 +182,11 @@ def evaluate(args: argparse.Namespace) -> None:
     from sanitise.evaluation.scoring import load_dir, score
     from sanitise.llm.hf import TransformersClient
 
+    if args.adapter and not (Path(args.adapter) / "adapter_config.json").is_file():
+        raise SystemExit(
+            f"No trained adapter at {args.adapter} (adapter_config.json is missing). "
+            "Finish the train step first; nothing was scored."
+        )
     docs = [
         json.loads(p.read_text(encoding="utf-8"))
         for p in sorted((args.data / "heldout").glob("*.json"))
@@ -184,7 +195,9 @@ def evaluate(args: argparse.Namespace) -> None:
     for g in gold:
         g.spans = [s for s in g.spans if s.category.value in LEGAL_LLM_CATEGORIES]
     client = TransformersClient(model=args.base, adapter=args.adapter, device="cuda:0", retries=1)
-    pred = asyncio.run(_detect_all(client, docs))
+    pred, broken = asyncio.run(_detect_all(client, docs))
+    if broken == len(docs):
+        raise SystemExit(f"All {broken} documents gave unusable JSON; {args.out} was not written.")
     m = score(pred, gold)
     result = {
         "model": client.model,
@@ -192,10 +205,14 @@ def evaluate(args: argparse.Namespace) -> None:
         "recall": m.recall,
         "f1": m.f1,
         "documents": len(docs),
+        "documents_with_broken_json": broken,
         "per_category": m.per_category,
     }
     Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
-    print(f"{client.model}: P {m.precision:.3f} R {m.recall:.3f} F1 {m.f1:.3f} -> {args.out}")
+    print(
+        f"{client.model}: P {m.precision:.3f} R {m.recall:.3f} F1 {m.f1:.3f}, "
+        f"{broken} documents with broken JSON -> {args.out}"
+    )
 
 
 def main() -> None:
