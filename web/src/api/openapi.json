@@ -1681,6 +1681,13 @@
      "leak_retries": {
       "type": "integer",
       "title": "Leak Retries"
+     },
+     "fallback": {
+      "items": {
+       "type": "string"
+      },
+      "type": "array",
+      "title": "Fallback"
      }
     },
     "type": "object",

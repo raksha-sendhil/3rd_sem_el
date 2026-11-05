@@ -26,8 +26,7 @@ from typing import Any
 
 from sanitise.agents.detector.pipeline import detect
 from sanitise.agents.extractor import canonical, importance
-from sanitise.agents.rewriter import leakcheck
-from sanitise.agents.rewriter.pipeline import apply_decisions, plan_decisions, removed_decisions
+from sanitise.agents.rewriter.pipeline import plan_decisions, rewrite_in_place
 from sanitise.agents.rewriter.prompt import draft
 from sanitise.domain import is_legal, profile
 from sanitise.llm.base import LLMClient
@@ -98,23 +97,15 @@ async def mock_sanitise(doc_id: str, text: str, llm: LLMClient) -> SanitisedReco
     subs = canonical.subjects(text, detected.output.spans)
     extracted = ExtractorOutput(doc_id=doc_id, facts=mock_facts(detected.output))
     t = time.perf_counter()
-    decisions, tokens = plan_decisions(detected.output, extracted)
-    safe = apply_decisions(text, decisions)
-    leaks = leakcheck.leak_check(removed_decisions(decisions), safe)
-    if leaks:  # the real pipeline's last resort, so mock mode shows the same safe text
-        safe = leakcheck.mask_fallback(safe, leaks, tokens)
-        leaks = leakcheck.leak_check(removed_decisions(decisions), safe)
-    rewriter = RewriterOutput(
-        doc_id=doc_id, safe_text=safe, decisions=decisions, placeholders=tokens
-    )
+    trace = rewrite_in_place(doc_id, text, detected.output, extracted)
     return SanitisedRecord(
         doc_id=doc_id,
         original_sha256=sha256_hex(text),
         subjects=subs,
         detector=detected.output,
         extractor=extracted,
-        rewriter=rewriter,
-        residual_leaks=leaks,
+        rewriter=trace.output,
+        residual_leaks=trace.residual_leaks,
         meta=SanitiseMeta(
             model="mock",
             detect_ms=detect_ms,

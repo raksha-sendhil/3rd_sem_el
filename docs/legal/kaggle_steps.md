@@ -335,6 +335,9 @@ through Ollama on GPU 0.
 
 - **Expect:** one line per document (`[17] c007_intake_note.json: ok`), then
   `300 sanitised, 0 failed, N with residual leaks`.
+- **Broken model output** does not lose a document: it falls back to rules or an in-place
+  rewrite, and `REPORT.md` counts these under "fell back". A high count means the Agent 2
+  and Agent 3 scores mostly reflect the fallback, so look into it before reporting them.
 - **N with residual leaks** should be 0 or very small. Any document listed there needs a look
   in Part D.
 - **If it stops:** re-run C1-C3 and this cell. Finished documents are skipped.
@@ -575,6 +578,8 @@ the context: its prompts, its data and its models.
 | CUDA out of memory when fine-tuning ("Process … has 8.9 GiB in use") | Ollama still holds Gemma 4 on the GPU: run the free-the-GPUs cell (`pkill -f "ollama serve"`), check `nvidia-smi`, restart the session if memory is still used |
 | CUDA out of memory during the build | Agent 1 must be on `cuda:1` and Ollama on GPU 0, as the cells set; restart the session and run C1-C3 then C8 |
 | `LLM_TIMEOUT` during the build | raise `SANITISE_LLM_TIMEOUT_S` in cell 2 (Gemma on a T4 can take over a minute on long documents) |
+| `Expecting value at char 0` from Agent 2 or 3 | Gemma 4 spent its token allowance thinking; `"llm_think": false` in the legal profile of `config/domains.json` turns this off |
+| `cannot reach Ollama` right after pressing Stop on a cell | an older Ollama cell: add `start_new_session=True` to `subprocess.Popen` and start it again |
 | session ended mid-build or mid-evaluation | re-run C1-C3, then the same cell; finished work is skipped or cached |
 | dashboard says "API unreachable" | the API is not running, or `web/.env.local` has the wrong `NEXT_PUBLIC_API_URL` |
 | `400 UNKNOWN_DOMAIN` | the domain name is not in `config/domains.json` |

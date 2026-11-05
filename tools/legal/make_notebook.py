@@ -94,7 +94,8 @@ print(json.dumps(json.load(open("config/domains.json"))["legal"], indent=1))""",
 import os, subprocess, time, urllib.request
 ollama_log = open("/kaggle/working/ollama.log", "w")
 subprocess.Popen(["ollama", "serve"], stdout=ollama_log, stderr=subprocess.STDOUT,
-                 env={**os.environ, "CUDA_VISIBLE_DEVICES": "0"})
+                 env={**os.environ, "CUDA_VISIBLE_DEVICES": "0"},
+                 start_new_session=True)  # survives pressing Stop on another cell
 for _ in range(30):  # wait until the server answers
     try:
         urllib.request.urlopen("http://localhost:11434/api/tags", timeout=2); break
@@ -180,7 +181,8 @@ skips documents already in the store.""",
 import os, subprocess, time, urllib.request
 ollama_log = open("/kaggle/working/ollama.log", "a")
 subprocess.Popen(["ollama", "serve"], stdout=ollama_log, stderr=subprocess.STDOUT,
-                 env={**os.environ, "CUDA_VISIBLE_DEVICES": "0"})
+                 env={**os.environ, "CUDA_VISIBLE_DEVICES": "0"},
+                 start_new_session=True)  # survives pressing Stop on another cell
 for _ in range(30):
     try:
         urllib.request.urlopen("http://localhost:11434/api/tags", timeout=2); break

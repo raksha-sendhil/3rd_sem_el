@@ -127,6 +127,13 @@ def render(results: dict[str, Any]) -> str:
         f"{a['agent3']['documents_with_direct_leaks']} | 0 | "
         f"{'yes' if a['agent3']['documents_with_direct_leaks'] == 0 else '**no**'} |",
         "",
+        "Documents where a model step fell back after broken output: "
+        + (
+            ", ".join(f"{k} {v}" for k, v in sorted(a["agent3"].get("fallbacks", {}).items()))
+            or "none"
+        )
+        + ".",
+        "",
         "## Attack outcomes",
         "",
         "| Attack | Monitor | Baseline identified at | Protected identified at | "

@@ -106,6 +106,22 @@ def removed_decisions(decisions: list[RoutingDecision]) -> list[RoutingDecision]
     return [d for d in decisions if d.action is not Action.KEEP and d.start is not None]
 
 
+def rewrite_in_place(
+    doc_id: str, text: str, detected: DetectorOutput, extracted: ExtractorOutput
+) -> RewriteTrace:
+    """Placeholders and ladders applied directly to the original text, with the leak check and
+    mask (the spec's fallback when the rewrite drops the advice, and mock mode's rewrite)."""
+    decisions, tokens = plan_decisions(detected, extracted)
+    removed = removed_decisions(decisions)
+    safe = apply_decisions(text, decisions)
+    leaks = leakcheck.leak_check(removed, safe)
+    if leaks:
+        safe = leakcheck.mask_fallback(safe, leaks, tokens)
+        leaks = leakcheck.leak_check(removed, safe)
+    output = RewriterOutput(doc_id=doc_id, safe_text=safe, decisions=decisions, placeholders=tokens)
+    return RewriteTrace(output=output, residual_leaks=leaks)
+
+
 async def rewrite_with_trace(
     doc_id: str,
     detected: DetectorOutput,
