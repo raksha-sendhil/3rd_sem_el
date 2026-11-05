@@ -312,12 +312,12 @@ build step starts it again.
 | Cell | What it does | Time | Expect |
 |---|---|---|---|
 | eval (before) | the base Gemma 4 on the 40 held-out documents | about 20 min | `P ... R ... F1 ...`, written to `agent1_before.json` |
-| train | QLoRA, 400 documents, 1 epoch | 1-2 h | a loss line every 10 steps, falling steadily; ends with `adapter saved to /kaggle/working/agent1_lora` |
+| train | QLoRA, 400 documents, 1 epoch (50 optimiser steps) | 1-2 h | `400 training examples; ... 0 with the target cut off`, then five loss lines (one every 10 steps), falling; a checkpoint every 10 steps; ends with `adapter saved to /kaggle/working/agent1_lora` |
 | eval (after) | the tuned model on the same 40 | about 20 min | a before/after table, then `Done when: recall after > recall before -> True` |
 
 Watching the loss:
 
-- **Falls from about 1-2 towards 0.1-0.3:** good.
+- **Falls across the five lines:** good. The exact numbers depend on the model, so judge the trend.
 - **Flat or rising:** the learning rate is too high, or the labels are wrong. Stop and tell
   person C.
 - **`nan`:** re-run the train cell with `--fp32` added.

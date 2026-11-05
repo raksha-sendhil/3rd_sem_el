@@ -13,8 +13,12 @@ the JSON answer only (prompt tokens are masked with -100). Settings are the spec
 
     4-bit NF4 + double quantisation, float16 compute (T4: no bfloat16; --fp32 if the loss is nan)
     LoRA r=16, alpha=32, dropout=0.05 on attention and MLP projections of the language model
-    1 epoch, lr 2e-4, batch 1 x grad accumulation 8, max length 1024, cosine, 3% warm-up,
+    1 epoch, lr 2e-4, batch 1 x grad accumulation 8, cosine, 3% warm-up,
     gradient checkpointing, paged_adamw_8bit, loss logged every 10 steps
+
+One setting differs from the spec: max length is 1536, not 1024. The detection prompt alone
+is about 830 tokens, so 1024 would cut off the target JSON in most examples. The script
+prints how many examples were cut with the real tokenizer, and skips any with no target left.
 
 ``eval`` runs the model (``sanitise.llm.hf.TransformersClient``, same prompt as the pipeline)
 on the 40 held-out documents and scores its spans against the held-out gold with the project's
@@ -26,6 +30,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import math
 import os
 from pathlib import Path
 
@@ -55,6 +60,20 @@ def encode(example: dict, tokenizer, apply_template, max_length: int) -> dict:
     full_ids = tokenizer(full, add_special_tokens=False)["input_ids"][:max_length]
     labels = [-100] * min(len(prompt_ids), len(full_ids)) + full_ids[len(prompt_ids) :]
     return {"input_ids": full_ids, "labels": labels[: len(full_ids)]}
+
+
+def warmup_steps(n_examples: int, epochs: float, accumulation: int = 8) -> int:
+    """3% of the optimiser steps, as a whole number: transformers 5 removed ``warmup_ratio``,
+    and an integer means the same in every version."""
+    total = math.ceil(n_examples / accumulation * epochs)
+    return max(1, round(0.03 * total))
+
+
+def usable(encoded: list[dict], max_length: int) -> tuple[list[dict], int, int]:
+    """(examples with some target left, how many were cut at max_length, how many dropped)."""
+    kept = [e for e in encoded if any(label != -100 for label in e["labels"])]
+    cut = sum(len(e["input_ids"]) >= max_length for e in kept)
+    return kept, cut, len(encoded) - len(kept)
 
 
 def collate(batch: list[dict], pad_id: int) -> dict:
@@ -119,7 +138,14 @@ def train(args: argparse.Namespace) -> None:
     encoded = [
         encode(e, tokenizer, processor.apply_chat_template, args.max_length) for e in examples
     ]
-    print(f"{len(encoded)} training examples")
+    longest = max(len(e["input_ids"]) for e in encoded)
+    encoded, cut, dropped = usable(encoded, args.max_length)
+    print(
+        f"{len(encoded)} training examples; longest {longest} tokens (limit {args.max_length}); "
+        f"{cut} with the target cut off, {dropped} dropped with no target left"
+    )
+    if not encoded:
+        raise SystemExit("No example has any target left: raise --max-length.")
 
     trainer = Trainer(
         model=model,
@@ -132,13 +158,13 @@ def train(args: argparse.Namespace) -> None:
             per_device_train_batch_size=1,
             gradient_accumulation_steps=8,
             lr_scheduler_type="cosine",
-            warmup_ratio=0.03,
+            warmup_steps=warmup_steps(len(encoded), args.epochs),
             gradient_checkpointing=True,
             gradient_checkpointing_kwargs={"use_reentrant": False},
             optim="paged_adamw_8bit",
             fp16=not args.fp32,
             logging_steps=10,
-            save_steps=50,
+            save_steps=10,  # one epoch of 400 examples is only 50 optimiser steps
             save_total_limit=2,
             report_to="none",
             remove_unused_columns=False,
@@ -223,7 +249,7 @@ def main() -> None:
     p.add_argument("--adapter", default=None, help="train: where to save; eval: adapter to load")
     p.add_argument("--extra", nargs="*", help="more sft.jsonl files (train_aug)")
     p.add_argument("--epochs", type=float, default=1.0)
-    p.add_argument("--max-length", type=int, default=1024)
+    p.add_argument("--max-length", type=int, default=1536)
     p.add_argument("--fp32", action="store_true", help="if the float16 loss shows nan")
     p.add_argument("--resume", default=None, help="checkpoint folder to resume from")
     p.add_argument("--out", default="agent1_eval.json")
