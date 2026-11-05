@@ -253,6 +253,7 @@ async def _check(data: Path, name: str, mock: bool, question: str | None) -> Non
         print(f"\n{bar}\nAGENT 3: safe text (all the answer model ever sees)\n{bar}")
         print(record.rewriter.safe_text)
         print(f"\nleak check: {record.residual_leaks or 'no residual leaks'}")
+        print(f"fallbacks used: {record.meta.fallback or 'none'}")
         meta = record.meta
         print(
             f"time: agent 1 {meta.detect_ms} ms, agent 2 {meta.extract_ms} ms, "

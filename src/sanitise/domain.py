@@ -48,6 +48,9 @@ class DomainProfile(BaseModel):
     prompts: str = "medical"
     # models: null = the global setting
     model: str | None = None  # Agents 2-3 (and Agent 1's LLM pass unless agent1_backend says)
+    llm_think: bool | None = None  # Ollama's thinking mode; false for Gemma 4
+    llm_num_predict: int | None = None  # output token limit per call
+    llm_retries: int | None = None  # repair attempts after broken JSON
     answer_backend: str | None = None  # same | gemini | ollama | mock
     gemini_model: str | None = None
     agent1_backend: str | None = None  # same | transformers
@@ -91,6 +94,9 @@ _BUILT_IN: dict[str, dict[str, Any]] = {
 
 _SETTING_FIELDS = (
     "model",
+    "llm_think",
+    "llm_num_predict",
+    "llm_retries",
     "answer_backend",
     "gemini_model",
     "agent1_backend",

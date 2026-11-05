@@ -40,6 +40,9 @@ class Settings(BaseSettings):
     llm_seed: int | None = 42
     # Upper bound on generated tokens per call, so a runaway generation cannot stall a run.
     llm_num_predict: int = Field(default=1024, ge=64)
+    # Ollama's "think" option for models with a thinking mode. Gemma 4 can spend its whole token
+    # allowance thinking and return no JSON, so the legal profile sets false. None = not sent.
+    llm_think: bool | None = None
 
     # ---- Legal build spec, "Model choice": Gemini answers from cleaned text only; Gemma 4
     # (Ollama, or transformers with the LoRA adapter for Agent 1) sees raw text.

@@ -6,7 +6,8 @@
     "answer_backend: same | gemini | ollama | mock. gemini_model: gemini-3.5-flash or gemini-3.8-flash.",
     "agent1_backend: same | transformers (Gemma 4 + the LoRA adapter at agent1_adapter, on a GPU).",
     "prompts: which prompt family the agents use (medical or legal). A new domain uses one of them until its own prompts are written.",
-    "To add a domain, copy the legal entry, give it a new name and point its paths at that domain's data."
+    "To add a domain, copy the legal entry, give it a new name and point its paths at that domain's data.",
+    "llm_think: Ollama's thinking mode (false for Gemma 4). llm_num_predict: output token limit. llm_retries: repair attempts after broken JSON (the spec asks for one)."
   ],
   "medical": {
     "label": "Medical",
@@ -21,6 +22,9 @@
     "label": "Legal",
     "prompts": "legal",
     "model": "gemma4:e4b",
+    "llm_think": false,
+    "llm_num_predict": 2048,
+    "llm_retries": 1,
     "answer_backend": "gemini",
     "gemini_model": "gemini-3.5-flash",
     "agent1_backend": "same",

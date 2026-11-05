@@ -21,6 +21,7 @@ from __future__ import annotations
 import json
 import logging
 import time
+from collections import Counter
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
 from functools import partial
@@ -195,6 +196,7 @@ def _agent_scores(cfg: RunConfig, store: SqliteDocumentStore) -> dict[str, Any]:
             **rewrite.model_dump(),
             "documents_with_residual_leaks": sum(bool(r.residual_leaks) for r in records.values()),
             "documents_with_direct_leaks": direct_leaks,
+            "fallbacks": dict(Counter(step for r in records.values() for step in r.meta.fallback)),
         },
         "offline_ms": {
             "agent1": [r.meta.detect_ms for r in records.values()],

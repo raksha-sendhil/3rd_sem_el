@@ -651,6 +651,7 @@ export interface components {
             retries: number;
             /** Leak Retries */
             leak_retries: number;
+            fallback?: string[];
         };
         /** SanitiseRequest */
         SanitiseRequest: {

@@ -31,6 +31,7 @@ class OllamaClient(BaseJSONClient):
         num_ctx: int = 4096,
         seed: int | None = None,
         num_predict: int | None = None,
+        think: bool | None = None,
         retries: int = 3,
         transport_retries: int = 1,
         temperature: float = 0.0,
@@ -52,6 +53,7 @@ class OllamaClient(BaseJSONClient):
         self.num_ctx = num_ctx
         self.seed = seed
         self.num_predict = num_predict
+        self.think = think
         self.transport_retries = transport_retries
         self._owns_http = http is None
         self._http = http or httpx.AsyncClient(base_url=self.base_url, timeout=timeout_s)
@@ -78,6 +80,7 @@ class OllamaClient(BaseJSONClient):
             num_ctx=settings.llm_num_ctx,
             seed=settings.llm_seed,
             num_predict=settings.llm_num_predict,
+            think=settings.llm_think,
             retries=settings.llm_retries,
             transport_retries=settings.transport_retries,
             temperature=settings.llm_temperature,
@@ -110,6 +113,8 @@ class OllamaClient(BaseJSONClient):
             "stream": False,
             "options": self._options(temperature, top_p, max_tokens),
         }
+        if self.think is not None:
+            payload["think"] = self.think
         if json_schema is not None:  # None = free text (text_call)
             payload["format"] = json_schema
         data = await self._post("/api/chat", payload)

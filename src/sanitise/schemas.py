@@ -238,6 +238,9 @@ class SanitiseMeta(BaseModel):
     total_ms: int
     retries: int  # LLM schema retries across the three agents
     leak_retries: int  # rewrites redone because the leak check found a leak
+    # Which steps fell back after broken model output (legal build spec, "Risks and fallbacks"):
+    # agent1_rules_only, agent2_rules_only, agent3_in_place. Empty when every model step worked.
+    fallback: list[str] = Field(default_factory=list)
 
 
 class SanitisedRecord(BaseModel):
