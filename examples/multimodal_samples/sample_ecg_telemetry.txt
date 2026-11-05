@@ -1,0 +1,18 @@
+ELECTROCARDIOGRAM (12-LEAD ECG) TELEMETRY REPORT
+Facility: St. Jude Heart Institute
+Patient: Rajesh Varma (Age: 56, Male)
+Date of Acquisition: 03-Nov-2026 14:22:10
+
+MEASUREMENTS:
+Ventricular Rate: 84 bpm
+PR Interval: 168 ms
+QRS Duration: 96 ms
+QT/QTc Interval: 394/442 ms
+P-R-T Axes: 52 40 45 degrees
+
+INTERPRETATION:
+Normal sinus rhythm with normal axis.
+No acute ST segment elevation or pathological Q waves.
+Occasional premature ventricular contractions (PVCs).
+Impression: Borderline ECG tracing, clinical correlation recommended.
+

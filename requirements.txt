@@ -17,6 +17,7 @@ fastapi==0.143.3
 uvicorn[standard]==0.54.0
 typer==0.27.3
 rich==15.0.0
+pypdf>=4.0.0
 
 # ---- Deterministic pass (Person A)
 presidio-analyzer==2.2.364

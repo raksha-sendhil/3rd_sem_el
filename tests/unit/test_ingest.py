@@ -240,3 +240,60 @@ def test_iam_style_tokenisation_is_not_an_error() -> None:
     read = '"My September love", the big hit of 1956. You\'re a star.... it\'s fine'
     s = score_text(read, gold)
     assert s.cer == 0 and s.wer == 0
+
+
+# ------------------------------------------------------------------ health records, Gemini reader
+
+HL7 = (
+    "MSH|^~\\&|SYS|HOSP|||20261104||ORU^R01|101|P|2.3\n"
+    "PID|1||98765||KUMAR^VIJAY||19820315|M|||12 MG ROAD^^CHENNAI^TN^600001\n"
+    "DG1|1||J45^Asthma\n"
+)
+
+
+async def test_health_record_goes_through_the_electronic_route() -> None:
+    result = await ingest_bytes(HL7.encode(), "case.hl7", settings=SETTINGS)
+    assert result.kind == "ehr" and result.source_format == "hl7"
+    assert [p.method for p in result.pages] == ["electronic"]
+    assert "Vijay Kumar" in result.text and "Asthma" in result.text
+    assert result.doc_id and result.char_count == len(result.text)
+    fhir = b'{"resourceType": "Patient", "name": [{"family": "Iyer", "given": ["Ananya"]}]}'
+    assert sniff(fhir, "") == "ehr" and sniff(fhir, "p.json") == "ehr"
+
+
+def test_ingest_endpoint_takes_text_records_and_sanitises() -> None:
+    with TestClient(create_app(SETTINGS)) as client:
+        r = client.post("/v1/ingest", json={"filename": "case.hl7", "text": HL7})
+        assert r.status_code == 200, r.text
+        assert r.json()["source_format"] == "hl7" and "Vijay Kumar" in r.json()["text"]
+        r = client.post("/v1/ingest/sanitise", json={"filename": "case.hl7", "text": HL7})
+        assert r.status_code == 200, r.text
+        assert r.json()["doc_id"]
+        assert client.post("/v1/ingest", json={"filename": "x"}).status_code == 415
+
+
+async def test_gemini_reader_uses_the_same_prompt_and_rotates_keys() -> None:
+    import json
+
+    import httpx
+
+    from sanitise.ingest import GeminiVisionReader, make_reader
+    from sanitise.ingest.vision import PROMPT
+
+    keys: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        keys.append(request.url.params["key"])
+        if request.url.params["key"] == "spent":
+            return httpx.Response(429, text="quota")
+        body = {"candidates": [{"content": {"parts": [{"text": "Name: Ravi Kumar"}]}}]}
+        assert json.loads(request.content)["contents"][0]["parts"][1]["text"] == PROMPT
+        return httpx.Response(200, json=body)
+
+    http = httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    reader = GeminiVisionReader(model="gemini-2.5-flash", api_key="spent, good", http=http)
+    assert await reader.read(b"jpeg") == "Name: Ravi Kumar"
+    assert keys == ["spent", "good"]
+    await http.aclose()
+    gemini = Settings(llm_backend="ollama", ocr_backend="gemini", gemini_api_key="k")
+    assert isinstance(make_reader(gemini), GeminiVisionReader)

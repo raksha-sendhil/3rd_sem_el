@@ -23,6 +23,7 @@ const METHOD: Record<string, string> = {
   text: "text layer",
   vision: "read by vision model",
   plain: "text file",
+  electronic: "health record",
   failed: "could not be read",
 };
 
@@ -76,7 +77,7 @@ export const UploadBox = ({ onRun, busy }: { onRun: (text: string) => void; busy
           value={text}
           onChange={(e) => setText(e.target.value)}
           rows={6}
-          placeholder="Paste a message or note, or choose a file: text, PDF (typed or scanned) or a photo"
+          placeholder="Paste a note, or choose a file: text, PDF (typed or scanned), a photo or scan (printed or handwritten), or a health record (.hl7, .fhir, .xml)"
           className="mt-3 min-h-[160px] w-full resize-y rounded-2xl border-2 border-[#E6E1D6] bg-[#FBFAF7] px-4 py-3 font-mono text-[13px] leading-[1.9] text-[#17162B] outline-none transition-[border-color,box-shadow] placeholder:font-sans placeholder:text-[#A9A5B8] focus:border-[#6D4AFF] focus:shadow-[0_0_0_4px_#EEE9FF]"
         />
 
@@ -86,8 +87,9 @@ export const UploadBox = ({ onRun, busy }: { onRun: (text: string) => void; busy
               <span className="font-bold">{read.filename}</span>
               <span className="text-[#6B6880]">
                 {" "}
-                · {read.pages.length} {read.pages.length === 1 ? "page" : "pages"} · check the text before running the
-                agents
+                · {read.pages.length} {read.pages.length === 1 ? "page" : "pages"}
+                {read.kind === "ehr" ? ` · ${read.source_format.toUpperCase()} record` : ""} · check the text before
+                running the agents
               </span>
             </p>
             <div className="flex flex-wrap gap-2">
@@ -149,7 +151,7 @@ export const UploadBox = ({ onRun, busy }: { onRun: (text: string) => void; busy
           <input
             ref={file}
             type="file"
-            accept=".txt,.md,text/plain,.pdf,application/pdf,image/*,.heic,.tif,.tiff"
+            accept=".txt,.md,text/plain,.pdf,application/pdf,image/*,.heic,.tif,.tiff,.hl7,.fhir,.xml,.json"
             className="hidden"
             onChange={(e) => {
               const f = e.target.files?.[0];

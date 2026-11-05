@@ -88,7 +88,11 @@ class Settings(BaseSettings):
 
     # ---- PDF / image input (sanitise.ingest). PDF pages with a real text layer are read
     # directly; scanned pages and images go to a vision model on Ollama.
+    # "ollama": a local vision model (the page never leaves the machine); "gemini": the Gemini
+    # API with gemini_api_key (no GPU needed, but the page image goes to Google)
+    ocr_backend: Literal["ollama", "gemini"] = "ollama"
     ocr_model: str = "qwen3-vl:8b-instruct"
+    ocr_gemini_model: str = "gemini-2.5-flash"
     ocr_timeout_s: float = Field(default=600.0, gt=0)
     ocr_num_ctx: int = Field(default=16384, ge=2048)
     ocr_num_predict: int = Field(default=4096, ge=256)

@@ -297,9 +297,31 @@ export interface paths {
         /**
          * Post Ingest
          * @description A file to text: PDF text layers read directly, scanned pages and images through the
-         *     vision model. The text comes back for checking; the agents are called separately.
+         *     vision model, health records (HL7 / FHIR / CDA) written out. The text comes back for
+         *     checking; the agents are called separately (or use /v1/ingest/sanitise).
          */
         post: operations["post_ingest_v1_ingest_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ingest/sanitise": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Post Ingest Sanitise
+         * @description Read the file and run Agents 1-3 on it in one call. The text must fit in one part
+         *     (max_doc_chars); a longer file is read with /v1/ingest and sanitised part by part.
+         */
+        post: operations["post_ingest_sanitise_v1_ingest_sanitise_post"];
         delete?: never;
         options?: never;
         head?: never;
@@ -544,7 +566,9 @@ export interface components {
         Importance: "high" | "medium" | "low";
         /**
          * IngestRequest
-         * @description A PDF, image or text file, base64-encoded (no multipart parser needed).
+         * @description A file to read: PDF, image, electronic health record (HL7 v2, FHIR, CDA XML) or text.
+         *     Send the file base64-encoded in ``content_base64`` (no multipart parser needed), or a text
+         *     record as it is in ``text``.
          */
         IngestRequest: {
             /**
@@ -553,7 +577,11 @@ export interface components {
              */
             filename: string;
             /** Content Base64 */
-            content_base64: string;
+            content_base64?: string | null;
+            /** Text */
+            text?: string | null;
+            /** Mime Type */
+            mime_type?: string | null;
             /** Strip Headers */
             strip_headers?: boolean | null;
             /**
@@ -570,7 +598,22 @@ export interface components {
              * Kind
              * @enum {string}
              */
-            kind: "pdf" | "image" | "text";
+            kind: "pdf" | "image" | "text" | "ehr";
+            /**
+             * Source Format
+             * @default
+             */
+            source_format: string;
+            /**
+             * Doc Id
+             * @default
+             */
+            doc_id: string;
+            /**
+             * Char Count
+             * @default 0
+             */
+            char_count: number;
             /** Pages */
             pages: components["schemas"]["PageResult"][];
             /** Text */
@@ -621,7 +664,7 @@ export interface components {
              * Method
              * @enum {string}
              */
-            method: "text" | "vision" | "plain" | "failed";
+            method: "text" | "vision" | "plain" | "electronic" | "failed";
             /** Text */
             text: string;
             /**
@@ -1387,6 +1430,39 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["IngestResult"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    post_ingest_sanitise_v1_ingest_sanitise_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["IngestRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SanitisedRecord"];
                 };
             };
             /** @description Validation Error */

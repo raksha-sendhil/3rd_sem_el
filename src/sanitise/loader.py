@@ -43,8 +43,38 @@ from sanitise.errors import DocTooLong
 
 log = logging.getLogger(__name__)
 
-SourceFormat = Literal["text", "fixture", "chatdoctor", "enron"]
-SUPPORTED_SUFFIXES = (".json", ".jsonl", ".txt", ".csv")
+SourceFormat = Literal[
+    "text",
+    "fixture",
+    "chatdoctor",
+    "enron",
+    "pdf",
+    "image",
+    "handwritten",
+    "electronic",
+    "hl7",
+    "fhir",
+    "clinical_xml",
+    "ecg_telemetry",
+    "telemetry",
+    "electronic_json",
+]
+SUPPORTED_SUFFIXES = (
+    ".json",
+    ".jsonl",
+    ".txt",
+    ".csv",
+    ".pdf",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".tiff",
+    ".bmp",
+    ".webp",
+    ".hl7",
+    ".fhir",
+    ".xml",
+)
 
 
 class Document(BaseModel):
@@ -88,7 +118,8 @@ def extract_text(
 ) -> tuple[str, SourceFormat]:
     """Pull the document text out of one dataset record."""
     if isinstance(record.get("text"), str):
-        return record["text"], "fixture"
+        fmt = record.get("source_format", "fixture")
+        return record["text"], fmt
     if isinstance(record.get("input"), str) and ("output" in record or "instruction" in record):
         text = record["input"]
         if include_answer and isinstance(record.get("output"), str) and record["output"]:
@@ -108,6 +139,22 @@ def _records(path: Path) -> list[dict[str, Any]] | None:
     suffix = path.suffix.lower()
     if suffix == ".txt":
         return None
+    if suffix in (
+        ".pdf",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".tiff",
+        ".bmp",
+        ".webp",
+        ".hl7",
+        ".fhir",
+        ".xml",
+    ):
+        from sanitise.ingest import extract_text_multimodal
+
+        text, fmt = extract_text_multimodal(path)
+        return [{"text": text, "source_format": fmt}]
     if suffix == ".json":
         data = json.loads(path.read_text(encoding="utf-8-sig"))
         return data if isinstance(data, list) else [data]

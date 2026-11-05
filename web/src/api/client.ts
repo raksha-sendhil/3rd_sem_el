@@ -76,7 +76,8 @@ export const api = {
     call<ExtractorOutput>("POST", "/v1/extract", { doc_id, text, spans }),
   rewrite: (doc_id: string, spans: SensitiveSpan[], facts: FactTuple[]) =>
     call<RewriterOutput>("POST", "/v1/rewrite", { doc_id, spans, facts }),
-  // a PDF or image to text (text layers read directly, scans through the vision model)
+  // a file to text: PDF (text layers read directly, scans through the vision model), photo,
+  // or health record (HL7 / FHIR / CDA)
   ingest: (filename: string, content_base64: string) =>
     call<IngestResult>("POST", "/v1/ingest", { filename, content_base64 }),
   createSession: () => call<{ session_id: string }>("POST", "/v1/sessions", {}),

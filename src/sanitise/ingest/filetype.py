@@ -8,10 +8,21 @@ from sanitise.ingest.models import FileKind
 
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".webp", ".bmp", ".heic", ".heif"}
 TEXT_SUFFIXES = {".txt", ".md", ".text"}
+EHR_SUFFIXES = {".hl7", ".fhir", ".xml", ".json"}
+
+
+def _looks_like_ehr(text: str) -> bool:
+    head = text.lstrip()[:400]
+    return (
+        head.startswith("MSH|")
+        or head.startswith("<?xml")
+        or "<ClinicalDocument" in head
+        or (head.startswith(("{", "[")) and '"resourceType"' in text[:5000])
+    )
 
 
 def sniff(data: bytes, filename: str = "") -> FileKind | None:
-    """``pdf``, ``image``, ``text`` or None (not supported)."""
+    """``pdf``, ``image``, ``ehr`` (HL7 / FHIR / CDA record), ``text`` or None (not supported)."""
     head = data[:16]
     if head.startswith(b"%PDF") or b"%PDF-" in data[:1024]:
         return "pdf"
@@ -27,10 +38,13 @@ def sniff(data: bytes, filename: str = "") -> FileKind | None:
     suffix = PurePath(filename).suffix.lower()
     if suffix in IMAGE_SUFFIXES:
         return "image"
-    if suffix in TEXT_SUFFIXES or suffix == "":
+    if suffix in TEXT_SUFFIXES | EHR_SUFFIXES or suffix == "":
         try:
-            data.decode("utf-8")
-            return "text"
+            text = data.decode("utf-8-sig")
         except UnicodeDecodeError:
             return None
+        # an electronic health record (HL7 v2, FHIR JSON, CDA XML), whatever its name says
+        if suffix in {".hl7", ".fhir"} or _looks_like_ehr(text):
+            return "ehr"
+        return "text" if suffix != ".json" and suffix != ".xml" else None
     return None

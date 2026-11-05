@@ -2,6 +2,7 @@
 
     file ─► sniff type
             ├─ text (.txt/.md) ─────────────────────────────────► as is
+            ├─ health record (HL7 v2 / FHIR / CDA XML) ──────────► written out as text
             ├─ PDF, per page ─ real text layer? ─ yes ─► PyMuPDF4LLM (exact, tables as Markdown)
             │                                    └ no ──► render ─┐
             └─ image (each frame of a TIFF) ─────────────────────┴─► vision model (Ollama)
@@ -28,6 +29,7 @@ from sanitise.ingest.filetype import sniff
 from sanitise.ingest.headers import strip_repeated
 from sanitise.ingest.models import IngestResult, PageResult
 from sanitise.ingest.split import split_parts
+from sanitise.loader import compute_doc_id
 
 
 class Reader(Protocol):
@@ -88,8 +90,24 @@ async def ingest_bytes(
 
     pages: list[PageResult] = []
     warnings: list[str] = []
+    source_format: str = kind
     if kind == "text":
-        pages.append(PageResult(index=0, method="plain", text=data.decode("utf-8").strip()))
+        pages.append(PageResult(index=0, method="plain", text=data.decode("utf-8-sig").strip()))
+    elif kind == "ehr":
+        # HL7 v2 / FHIR / CDA XML: the structured record written out as text (electronic_parser)
+        from sanitise.ingest.electronic_parser import parse_electronic
+
+        start = time.perf_counter()
+        text, source_format = parse_electronic(data)
+        pages.append(
+            PageResult(
+                index=0,
+                method="electronic",
+                text=text.strip(),
+                seconds=time.perf_counter() - start,
+                note=source_format,
+            )
+        )
     elif kind == "pdf":
         try:
             doc = pdf.open_pdf(data)
@@ -153,6 +171,9 @@ async def ingest_bytes(
     return IngestResult(
         filename=filename,
         kind=kind,
+        source_format=source_format,
+        doc_id=compute_doc_id(text) if text else "",
+        char_count=len(text),
         pages=pages,
         text=text,
         parts=parts,

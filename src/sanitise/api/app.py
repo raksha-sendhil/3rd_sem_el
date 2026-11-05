@@ -5,7 +5,8 @@
     POST /v1/detect/llm    { doc_id, text, explicit } -> DetectorOutput   (LLM pass only)
     POST /v1/score         { pred[], gold[] }         -> SpanMetrics
     GET  /v1/health   -> { status, ollama_reachable, model, pipeline_version }
-    POST /v1/ingest   { filename, content_base64 }    -> IngestResult (PDF / image -> text)
+    POST /v1/ingest   { filename, content_base64 | text } -> IngestResult (file -> text)
+    POST /v1/ingest/sanitise  (same body)              -> SanitisedRecord
 
 Every ``PipelineError`` becomes the spec 8.5 error envelope with an HTTP status
 from the error class (413 DOC_TOO_LONG, 502 SCHEMA_VALIDATION_FAILED, 503
@@ -62,9 +63,9 @@ from sanitise.attacks.runner import (
     summarise,
 )
 from sanitise.config import Settings, get_settings
-from sanitise.errors import PipelineError, UnsupportedFile
+from sanitise.errors import DocTooLong, PipelineError, UnsupportedFile
 from sanitise.evaluation import scoring
-from sanitise.ingest import IngestResult, MockVisionReader, VisionReader, ingest_bytes
+from sanitise.ingest import IngestResult, ingest_bytes, make_reader
 from sanitise.llm.base import BaseJSONClient
 from sanitise.llm.factory import build_llm_client, close_llm_client
 from sanitise.llm.ollama import OllamaClient
@@ -115,7 +116,7 @@ def create_app(
         else:
             app.state.llm = mock_llm() if mock else build_llm_client(settings)
         # the vision model for scanned pages and images (PDF / image input)
-        app.state.vision = MockVisionReader() if mock else VisionReader.from_settings(settings)
+        app.state.vision = make_reader(settings)  # mock, local model or Gemini
         try:
             yield
         finally:
@@ -350,14 +351,20 @@ def create_app(
             headers={"cache-control": "no-cache", "x-accel-buffering": "no"},
         )
 
-    @app.post("/v1/ingest", response_model=IngestResult)
-    async def post_ingest(body: IngestRequest, request: Request) -> IngestResult:
-        """A file to text: PDF text layers read directly, scanned pages and images through the
-        vision model. The text comes back for checking; the agents are called separately."""
-        try:
-            data = base64.b64decode(body.content_base64, validate=True)
-        except (binascii.Error, ValueError):
-            raise UnsupportedFile("content_base64 is not valid base64", stage="ingest") from None
+    async def read_upload(body: IngestRequest, request: Request) -> IngestResult:
+        if body.content_base64:
+            try:
+                data = base64.b64decode(body.content_base64, validate=True)
+            except (binascii.Error, ValueError):
+                raise UnsupportedFile(
+                    "content_base64 is not valid base64", stage="ingest"
+                ) from None
+        elif body.text:
+            data = body.text.encode("utf-8")
+        else:
+            raise UnsupportedFile(
+                "send the file in content_base64, or a text record in text", stage="ingest"
+            )
         return await ingest_bytes(
             data,
             body.filename,
@@ -366,6 +373,27 @@ def create_app(
             strip_headers=body.strip_headers,
             force_vision=body.force_vision,
         )
+
+    @app.post("/v1/ingest", response_model=IngestResult)
+    async def post_ingest(body: IngestRequest, request: Request) -> IngestResult:
+        """A file to text: PDF text layers read directly, scanned pages and images through the
+        vision model, health records (HL7 / FHIR / CDA) written out. The text comes back for
+        checking; the agents are called separately (or use /v1/ingest/sanitise)."""
+        return await read_upload(body, request)
+
+    @app.post("/v1/ingest/sanitise", response_model=SanitisedRecord)
+    async def post_ingest_sanitise(body: IngestRequest, request: Request) -> SanitisedRecord:
+        """Read the file and run Agents 1-3 on it in one call. The text must fit in one part
+        (max_doc_chars); a longer file is read with /v1/ingest and sanitised part by part."""
+        result = await read_upload(body, request)
+        if len(result.parts) > 1:
+            raise DocTooLong(
+                f"{body.filename or 'the file'} is {result.char_count:,} characters; read it with "
+                f"/v1/ingest and sanitise its {len(result.parts)} parts one by one",
+                stage="ingest",
+            )
+        run = mock_sanitise if mock else sanitise
+        return await run(result.doc_id, result.text, client_for(request))
 
     @app.get("/v1/health", response_model=HealthResponse)
     async def get_health(request: Request) -> HealthResponse:

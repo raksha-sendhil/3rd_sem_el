@@ -633,7 +633,7 @@
   "/v1/ingest": {
    "post": {
     "summary": "Post Ingest",
-    "description": "A file to text: PDF text layers read directly, scanned pages and images through the\nvision model. The text comes back for checking; the agents are called separately.",
+    "description": "A file to text: PDF text layers read directly, scanned pages and images through the\nvision model, health records (HL7 / FHIR / CDA) written out. The text comes back for\nchecking; the agents are called separately (or use /v1/ingest/sanitise).",
     "operationId": "post_ingest_v1_ingest_post",
     "requestBody": {
      "content": {
@@ -652,6 +652,45 @@
        "application/json": {
         "schema": {
          "$ref": "#/components/schemas/IngestResult"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/v1/ingest/sanitise": {
+   "post": {
+    "summary": "Post Ingest Sanitise",
+    "description": "Read the file and run Agents 1-3 on it in one call. The text must fit in one part\n(max_doc_chars); a longer file is read with /v1/ingest and sanitised part by part.",
+    "operationId": "post_ingest_sanitise_v1_ingest_sanitise_post",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/IngestRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/SanitisedRecord"
         }
        }
       }
@@ -1309,9 +1348,37 @@
       "default": ""
      },
      "content_base64": {
-      "type": "string",
-      "minLength": 1,
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
       "title": "Content Base64"
+     },
+     "text": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Text"
+     },
+     "mime_type": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Mime Type"
      },
      "strip_headers": {
       "anyOf": [
@@ -1331,11 +1398,8 @@
      }
     },
     "type": "object",
-    "required": [
-     "content_base64"
-    ],
     "title": "IngestRequest",
-    "description": "A PDF, image or text file, base64-encoded (no multipart parser needed)."
+    "description": "A file to read: PDF, image, electronic health record (HL7 v2, FHIR, CDA XML) or text.\nSend the file base64-encoded in ``content_base64`` (no multipart parser needed), or a text\nrecord as it is in ``text``."
    },
    "IngestResult": {
     "properties": {
@@ -1348,9 +1412,25 @@
       "enum": [
        "pdf",
        "image",
-       "text"
+       "text",
+       "ehr"
       ],
       "title": "Kind"
+     },
+     "source_format": {
+      "type": "string",
+      "title": "Source Format",
+      "default": ""
+     },
+     "doc_id": {
+      "type": "string",
+      "title": "Doc Id",
+      "default": ""
+     },
+     "char_count": {
+      "type": "integer",
+      "title": "Char Count",
+      "default": 0
      },
      "pages": {
       "items": {
@@ -1473,6 +1553,7 @@
        "text",
        "vision",
        "plain",
+       "electronic",
        "failed"
       ],
       "title": "Method"

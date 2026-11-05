@@ -15,17 +15,21 @@ change.
 | Phone photo | a report or prescription sent on WhatsApp | vision model, after fixing rotation and size |
 | Mixed PDF | one patient file: typed summary + scanned reports + photo of a prescription | page by page, each page its own way |
 | Text file | `.txt`, `.md` | as is |
+| Electronic health record | HL7 v2 messages (`.hl7`), FHIR JSON (`.fhir`, `.json`), CDA / CCDA XML (`.xml`) exported from a hospital system | written out as readable text: patient, encounter, diagnoses, observations, notes (`electronic_parser.py`) |
 
-Out of scope: medical images (X-ray, CT, DICOM), ECG traces, audio and video. Only text leaves this
+Out of scope: medical images (X-ray, CT, DICOM), ECG waveforms (ECG interval reports as text are
+handled), audio and video. Only text leaves this
 step, so logos, photos, signatures, stamps and barcodes never reach the store.
 
 ## The pipeline (`src/sanitise/ingest/`)
 
 ```
-file ─► what is it? (first bytes: PDF / PNG / JPEG / TIFF / WebP / HEIC / text)
+file ─► what is it? (first bytes: PDF / PNG / JPEG / TIFF / WebP / HEIC / HL7 / FHIR / CDA / text)
+        ├─ health record (HL7 v2, FHIR JSON, CDA XML) ─► written out as text (electronic_parser.py)
         ├─ PDF, per page ─ trustworthy text layer? ─ yes ─► PyMuPDF4LLM: text + Markdown tables
         │                                          └ no ──► render at 200 dpi ─┐
-        └─ image (each frame of a TIFF) ─► fix camera rotation, resize ────────┴─► Qwen3-VL 8B (Ollama)
+        └─ image (each frame of a TIFF) ─► fix camera rotation, resize ────────┴─► vision model:
+                                       Qwen3-VL 8B on Ollama (default) or Gemini (OCR_BACKEND=gemini)
      ─► repeated headers/footers removed after their first page
      ─► cut into parts of at most max_doc_chars (2,000) at paragraph breaks ─► Agents 1-3
 ```
@@ -34,7 +38,10 @@ file ─► what is it? (first bytes: PDF / PNG / JPEG / TIFF / WebP / HEIC / te
   scanners add an invisible OCR layer of poor quality; those pages are read again), at least 30
   characters, words that look like words (a broken font gives garbage), and it is not a
   full-page picture with a few words on top.
-* **Vision model** (`vision.py`): `qwen3-vl:8b-instruct` on Ollama, temperature 0. The prompt is
+* **Vision model** (`vision.py`): `qwen3-vl:8b-instruct` on Ollama by default, so the page
+  never leaves the machine. With `SANITISE_OCR_BACKEND=gemini` the same prompt goes to the Gemini
+  API instead (`OCR_GEMINI_MODEL`, default `gemini-2.5-flash`; the agents' Gemini keys, tried in
+  turn). That needs no GPU, but the page image goes to Google. Temperature 0. The prompt is
   the same for every domain: copy exactly, no corrections or expansions; each `Label: value` on its
   own line; tables as Markdown; `[illegible]` instead of a guess; `[signature]` and
   `[stamp: ...]` for marks. Fences and runaway repeated lines are removed from the reply.
@@ -52,7 +59,13 @@ file ─► what is it? (first bytes: PDF / PNG / JPEG / TIFF / WebP / HEIC / te
   contain `/`) and three unlabelled Indian formats (PAN `ABCDE1234F`, Aadhaar `1234 5678 9012`,
   IFSC `SBIN0001234`).
 
-Settings (environment variables, `SANITISE_` prefix): `OCR_MODEL`, `OCR_DPI` (200), `OCR_MAX_SIDE`
+* **Simple file-to-text** (`facade.py`): `ingest_file` / `extract_text_multimodal`, used by the
+  document loader to read a folder of PDFs, images and records. PDFs and images go through the
+  pipeline above when a vision model answers; otherwise through the simpler `pdf_parser.py`
+  (pypdf) and `image_parser.py` (Gemini Vision, Tesseract or EasyOCR).
+
+Settings (environment variables, `SANITISE_` prefix): `OCR_BACKEND` (ollama / gemini), `OCR_MODEL`,
+`OCR_GEMINI_MODEL`, `OCR_DPI` (200), `OCR_MAX_SIDE`
 (2000 px), `OCR_MIN_SIDE` (1200 px), `OCR_TIMEOUT_S`, `INGEST_MAX_MB` (25), `INGEST_MAX_PAGES` (30),
 `INGEST_STRIP_HEADERS` (true).
 
@@ -127,8 +140,9 @@ made up. Scans and photos are degraded renders: tilt, perspective, shadow, blur,
 Handwriting uses nine handwriting fonts, drawn word by word on a wobbling baseline. Only this set
 has the private-details list. `--per-type` and `--seed` make bigger or different sets.
 
-**Real, `data/ocr_real/` (150, fetched, not committed).** 50 per domain, from public datasets that
-come with their text. Sources and licences are in `data/ocr_real/README.md`.
+**Real, `data/ocr_real/` (150, in the repository).** 50 per domain, from public datasets that
+come with their text; `tools/fetch_real_testset.py` rebuilds them. Sources, licences and the
+research-use limits are in `data/ocr_real/README.md`.
 
 | Domain | Items |
 |---|---|

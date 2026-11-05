@@ -1,0 +1,68 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "p042",
+        "name": [
+          {
+            "family": "Nambiar",
+            "given": ["Devika"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1983-09-22",
+        "address": [
+          {
+            "text": "14 Lotus Villa, Ooty, Tamil Nadu 643001"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Hypothyroidism and Chronic Migraine"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "onsetDateTime": "2024-03-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Serum TSH"
+        },
+        "valueQuantity": {
+          "value": 7.4,
+          "unit": "uIU/mL"
+        },
+        "effectiveDateTime": "2026-10-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "text": "Levothyroxine Sodium 50mcg"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 tablet daily early morning on empty stomach"
+          }
+        ]
+      }
+    }
+  ]
+}
+

@@ -9,9 +9,10 @@ from pydantic import BaseModel, Field
 # text:   a PDF page with a real text layer, read directly (exact)
 # vision: a scanned page or image, transcribed by the vision model
 # plain:  a .txt / .md file
+# electronic: an electronic health record (HL7 v2, FHIR, CDA XML, ECG report) turned into text
 # failed: the page could not be read (see note)
-PageMethod = Literal["text", "vision", "plain", "failed"]
-FileKind = Literal["pdf", "image", "text"]
+PageMethod = Literal["text", "vision", "plain", "electronic", "failed"]
+FileKind = Literal["pdf", "image", "text", "ehr"]
 
 
 class PageResult(BaseModel):
@@ -30,6 +31,10 @@ class RemovedLine(BaseModel):
 class IngestResult(BaseModel):
     filename: str
     kind: FileKind
+    # pdf / image / text, or the record format: hl7 / fhir / clinical_xml / ecg_telemetry
+    source_format: str = ""
+    doc_id: str = ""  # of ``text``, as the document loader computes it
+    char_count: int = 0
     pages: list[PageResult]
     text: str  # all pages joined, repeated headers/footers removed when asked
     # ``text`` cut at paragraph boundaries into pieces the agents accept (max_doc_chars each)

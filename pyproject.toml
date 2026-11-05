@@ -13,6 +13,7 @@ dependencies = [
     "uvicorn[standard]>=0.30",
     "typer>=0.12",
     "rich>=13.7",
+    "pypdf>=4.0",
     # Deterministic pass (Person A)
     "presidio-analyzer>=2.2.355",
     "spacy>=3.7,<4",
@@ -97,6 +98,12 @@ ignore = [
 "tests/rules/test_rule_detect.py" = ["E402"]
 # The vision prompt is kept one rule per line.
 "src/sanitise/ingest/vision.py" = ["E501"]
+# Long clinical prompt and record-formatting lines in the EHR, image and PDF parsers.
+"src/sanitise/ingest/electronic_parser.py" = ["E501"]
+"src/sanitise/ingest/image_parser.py" = ["E501"]
+"src/sanitise/ingest/pdf_parser.py" = ["E501"]
+# Sample HL7 / CDA records are kept on one line each.
+"tests/unit/test_ingest_ehr.py" = ["E501", "RUF059"]
 # Shell lines (!cmd {var}) use loop variables ruff cannot see; shell commands run long;
 # Colab form settings (#@param) come before the imports.
 "notebooks/*.ipynb" = ["E501", "B007", "E402"]

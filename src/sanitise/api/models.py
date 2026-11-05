@@ -122,10 +122,14 @@ class HealthResponse(BaseModel):
 
 
 class IngestRequest(BaseModel):
-    """A PDF, image or text file, base64-encoded (no multipart parser needed)."""
+    """A file to read: PDF, image, electronic health record (HL7 v2, FHIR, CDA XML) or text.
+    Send the file base64-encoded in ``content_base64`` (no multipart parser needed), or a text
+    record as it is in ``text``."""
 
     filename: str = ""
-    content_base64: str = Field(min_length=1)
+    content_base64: str | None = None
+    text: str | None = None
+    mime_type: str | None = None  # accepted for older clients; the type is read from the bytes
     # None: settings.ingest_strip_headers (on by default)
     strip_headers: bool | None = None
     # send pages with a text layer to the vision model too (for testing)
