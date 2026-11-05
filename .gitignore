@@ -33,11 +33,9 @@ data/raw/
 .DS_Store
 Thumbs.db
 
-# OCR test set: downloaded fonts and IAM line images (fetched again when needed)
-data/ocr_test/.fonts/
+# OCR test sets: the documents, gold text and generator fonts are committed; only the
+# download caches (raw files, IAM line images) stay out
 data/ocr_test/.iam/
+data/ocr_real/.cache/
 # OCR evaluation: per-document readings (report.md / report.json are kept)
 results/ocr/*/pred/
-# Real OCR test set: fetched by tools/fetch_real_testset.py, never committed (licences, real documents)
-data/ocr_real/*
-!data/ocr_real/README.md

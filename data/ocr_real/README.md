@@ -1,15 +1,18 @@
 # Real OCR test set
 
-150 real documents with known text, 50 per domain. The files are not in the repository (licences,
-and the rule that no real document is committed): fetch them with
+150 real documents with known text, 50 per domain, in `docs/` with their gold text in
+`gold.jsonl` (same format as `data/ocr_test`, plus `source`, `licence`, `url` and `order`). They
+are committed so a `git pull` is enough. `tools/fetch_real_testset.py` rebuilds them from the
+public sources and always picks the same items:
 
 ```bash
 python tools/fetch_real_testset.py                  # 50 per domain, about 30 MB, a few minutes
 python tools/fetch_real_testset.py --per-domain 20  # smaller, same mix
 ```
 
-The script writes `docs/` and `gold.jsonl` here (same format as `data/ocr_test`, plus `source`,
-`licence`, `url` and `order`). It always picks the same items, so everyone gets the same set.
+Some sources are licensed for research use only (SROIE, FUNSD, the BD prescriptions), and FUNSD
+and SROIE contain real names and phone numbers from public archives. Keep this folder to research
+use and do not republish it.
 
 | Domain | Source | Items | What it is | Licence |
 |---|---|---|---|---|
