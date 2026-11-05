@@ -85,6 +85,10 @@ python tools/ocr_eval.py --types clinocr_handwriting,rx_handwritten_word
 python tools/ocr_eval.py --no-vision --types discharge_e,lab_e,contract_e   # laptop, no GPU
 ```
 
+**Unattended per-domain run:** `notebooks/ocr_bulk_kaggle.ipynb` with Kaggle's **Save Version ->
+Save & Run All**. It runs on Kaggle's servers, so the laptop can be off. It writes one report per
+domain plus IAM, `SUMMARY.md` and `ocr_results.zip` into the version's Output.
+
 Readings are cached in `<out>/pred/`, so a run stopped by a disconnect continues where it
 stopped. `--fresh` reads everything again, for example after changing the prompt or the model.
 
