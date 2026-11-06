@@ -47,6 +47,7 @@ class DomainProfile(BaseModel):
     # its own prompts are written)
     prompts: str = "medical"
     # models: null = the global setting
+    llm_backend: str | None = None  # ollama | gemini; a global "mock" always wins
     model: str | None = None  # Agents 2-3 (and Agent 1's LLM pass unless agent1_backend says)
     llm_think: bool | None = None  # Ollama's thinking mode; false for Gemma 4
     llm_num_predict: int | None = None  # output token limit per call
@@ -93,6 +94,7 @@ _BUILT_IN: dict[str, dict[str, Any]] = {
 }
 
 _SETTING_FIELDS = (
+    "llm_backend",
     "model",
     "llm_think",
     "llm_num_predict",
@@ -145,6 +147,10 @@ def settings_for(settings: Settings, domain: str | None = None) -> Settings:
     """``settings`` with the domain profile's models and paths applied."""
     p = profile(domain, settings)
     update = {f: getattr(p, f) for f in _SETTING_FIELDS if getattr(p, f) is not None}
+    if settings.llm_backend == "mock":
+        update.pop("llm_backend", None)
+    if update.get("llm_backend", settings.llm_backend) == "gemini":
+        update["model"] = update.get("gemini_model", settings.gemini_model)
     return settings.model_copy(update={**update, "domain": p.name})
 
 

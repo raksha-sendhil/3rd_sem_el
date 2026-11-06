@@ -67,11 +67,14 @@ def test_check_command_prints_every_agent(capsys) -> None:
 
 
 def test_preflight_reports_missing_keys(monkeypatch, capsys) -> None:
+    from sanitise.config import get_settings
     from sanitise.legal import __main__ as cli
     from sanitise.llm.gemini import KEY_NAMES
 
     for name in (*KEY_NAMES, "GEMINI_API_KEYS"):
         monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv("SANITISE_LLM_BACKEND", "ollama")  # the suite's default is mock
+    get_settings.cache_clear()
 
     async def unreachable(_settings):
         return {"reachable": False, "model_available": False, "detail": "offline"}
@@ -80,4 +83,16 @@ def test_preflight_reports_missing_keys(monkeypatch, capsys) -> None:
     monkeypatch.chdir(REPO)
     assert cli._preflight(REPO / "data" / "legal") is False
     out = capsys.readouterr().out
-    assert "[FAIL] 0 key(s)" in out and "legal: agents gemma4:e4b" in out
+    assert "[FAIL] 0 key(s)" in out and "legal: agents gemini-3.5-flash" in out
+    assert "Ollama (" not in out and "fictional data only" in out
+
+
+def test_the_gemini_notebook_never_starts_ollama() -> None:
+    import json
+
+    notebook = json.loads(
+        (REPO / "notebooks" / "legal_kaggle_gemini.ipynb").read_text(encoding="utf-8")
+    )
+    code = "".join("".join(c["source"]) for c in notebook["cells"] if c["cell_type"] == "code")
+    assert "-b law-version-2" in code
+    assert "ollama" not in code.lower() and "finetune" not in code

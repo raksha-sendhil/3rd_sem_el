@@ -37,10 +37,10 @@ python -m sanitise.legal ontology            # data/ontology/
 python -m sanitise.legal all --mock          # rules + deterministic rewrite + canned answers
 ```
 
-With models (Ollama running `gemma4:e4b`, `GEMINI_API_KEY` set):
+With models (`GEMINI_API_KEY` set; on this branch every legal agent runs on Gemini, so the
+original documents go to Google: fictional data only):
 
 ```bash
-export SANITISE_MODEL=gemma4:e4b SANITISE_ANSWER_BACKEND=gemini
 python -m sanitise.legal build               # resumes after a restart
 python -m sanitise.legal evaluate
 python -m sanitise.legal report              # data/legal/results/REPORT.md + charts/
@@ -53,10 +53,11 @@ if Gemini rate limits bite (the spec's fallback is 100 + 100).
 ## Domains and models
 
 Every domain runs the same pipeline. `config/domains.json` gives each domain its prompts,
-data and models (legal: `gemma4:e4b` for Agents 2-3, Gemini for answers). The dashboard's
+data and models (legal on this branch: Gemini for the agents and the answers). The dashboard's
 domain dropdown, `?domain=` on any API call, or `X-Sanitise-Domain` switches a request to that
 domain. Kaggle steps, checking each agent, and Gemini key rotation:
-[kaggle_steps.md](kaggle_steps.md).
+[kaggle_steps.md](kaggle_steps.md); for this branch's notebook,
+[kaggle_steps_gemini.md](kaggle_steps_gemini.md).
 
 | Setting | Default | Purpose |
 |---|---|---|

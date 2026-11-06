@@ -1,8 +1,9 @@
 """Gemini through the ``google-genai`` SDK.  OWNER: Person C.
 
-Legal build spec, "Model choice": Gemini 3.5 Flash (or 3.8 Flash, one config value) answers
-from cleaned text only, and may generate fictional training documents. It never sees raw
-client text, and it cannot be fine-tuned, only prompted.
+Gemini 3.5 Flash (or 3.8 Flash, one config value) answers the questions, and with
+``llm_backend`` "gemini" also runs Agents 1-3. Agents read the original documents, so that mode
+sends raw text to Google and is for fictional data only. Gemini cannot be fine-tuned, only
+prompted.
 
 Fallbacks from the spec's risk table ("Gemini rate limits"), plus key rotation:
 
@@ -12,8 +13,9 @@ Fallbacks from the spec's risk table ("Gemini rate limits"), plus key rotation:
 * several API keys can be given (``KeyPool``). When a key is rate-limited (HTTP 429,
   RESOURCE_EXHAUSTED) it rests for ``cooldown_s``; when it reports a daily quota, or uses
   up its own ``daily_token_budget``, it rests until the next day; the call then moves to the
-  next key. Only when every key is resting does the call fail. Token use per key and per day
-  is kept in ``<cache_dir>/usage.json``, under a short fingerprint of the key, never the key;
+  next key. When every key is resting, the call waits if the first is free again within
+  ``max_key_wait_s``, and fails otherwise. Token use per key and per day is kept in
+  ``<cache_dir>/usage.json``, under a short fingerprint of the key, never the key;
 * when the model itself is overloaded (HTTP 503, "high demand") another key would not help, so
   the call waits and tries again, longer each time, and fails only after ``overload_retries``.
 
@@ -133,12 +135,19 @@ class KeyPool:
         self.usage_path.parent.mkdir(parents=True, exist_ok=True)
         self.usage_path.write_text(json.dumps(usage, indent=1), encoding="utf-8")
 
-    def _available(self, entry: _Key) -> bool:
-        if entry.rest_until > self.clock():
-            return False
-        return not (
-            self.daily_token_budget and self.used_today(entry.id) >= self.daily_token_budget
+    def _over_budget(self, entry: _Key) -> bool:
+        return (
+            bool(self.daily_token_budget) and self.used_today(entry.id) >= self.daily_token_budget
         )
+
+    def _available(self, entry: _Key) -> bool:
+        return entry.rest_until <= self.clock() and not self._over_budget(entry)
+
+    def free_in(self) -> float:
+        """Seconds until a key can be used: 0 if one can now, infinity if none can today."""
+        now = self.clock()
+        waits = [max(k.rest_until - now, 0.0) for k in self._keys if not self._over_budget(k)]
+        return min(waits, default=float("inf"))
 
     def acquire(self) -> _Key:
         """The next usable key; LLMUnreachable when all are resting or over budget."""
@@ -180,6 +189,7 @@ class GeminiClient(BaseJSONClient):
         timeout_s: float = 120.0,
         cooldown_s: float = 60.0,
         daily_token_budget: int = 0,
+        max_key_wait_s: float = 0.0,
         overload_retries: int = 8,
         overload_wait_s: float = 15.0,
         sdk_client: Any = None,
@@ -201,6 +211,7 @@ class GeminiClient(BaseJSONClient):
         self._sdk_factory = sdk_factory
         self.min_interval = 60.0 / max(rpm, 1)
         self.timeout_s = timeout_s
+        self.max_key_wait_s = max_key_wait_s
         self.overload_retries = overload_retries
         self.overload_wait_s = overload_wait_s
         self._lock = asyncio.Lock()
@@ -218,6 +229,7 @@ class GeminiClient(BaseJSONClient):
             timeout_s=settings.llm_timeout_s,
             cooldown_s=settings.gemini_key_cooldown_s,
             daily_token_budget=settings.gemini_daily_token_budget,
+            max_key_wait_s=settings.gemini_max_key_wait_s,
             overload_retries=settings.gemini_overload_retries,
             overload_wait_s=settings.gemini_overload_wait_s,
             retries=settings.llm_retries,
@@ -302,8 +314,15 @@ class GeminiClient(BaseJSONClient):
             config["response_mime_type"] = "application/json"
             config["response_json_schema"] = json_schema
 
-        rate_limited = overloaded = 0
-        while rate_limited < max(len(self.pool), 1):
+        rate_limited = overloaded = key_waits = 0
+        while True:
+            free_in = self.pool.free_in()
+            if 0 < free_in <= self.max_key_wait_s and key_waits < self.overload_retries:
+                key_waits += 1
+                log.warning("Every Gemini key is resting; waiting %.0f s", free_in)
+                await asyncio.sleep(free_in)
+            elif rate_limited >= max(len(self.pool), 1) * (key_waits + 1):
+                break
             entry = self.pool.acquire()
             await self._throttle()
             try:
@@ -337,7 +356,8 @@ class GeminiClient(BaseJSONClient):
             usage = getattr(response, "usage_metadata", None)
             self.pool.record(entry, int(getattr(usage, "total_token_count", 0) or 0))
             text = getattr(response, "text", None) or ""
-            self._store(cache_key, text)
+            if text:  # an empty reply (blocked, cut off) must not come back on every re-run
+                self._store(cache_key, text)
             return text
         self.pool.acquire()  # every key just rested: raises with the reason
         raise AssertionError("unreachable")  # pragma: no cover

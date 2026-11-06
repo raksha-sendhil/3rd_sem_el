@@ -1,5 +1,9 @@
 # Setting up and checking the system, step by step
 
+> **On branch `law-version-2`** the legal agents run on Gemini, so Part C and every mention of
+> Ollama or Gemma 4 below describe `a/legal-pipeline` instead. Use
+> [kaggle_steps_gemini.md](kaggle_steps_gemini.md) for that branch.
+
 This guide is for the whole team. Work through it in order; each step says what to type, what
 you should see, and what to do if you see something else.
 

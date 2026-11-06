@@ -242,9 +242,9 @@ and start the API with `SANITISE_REPLAY_DIR=<bundle>`; the dashboard then plays 
 ]
 
 
-def notebook() -> dict:
+def notebook(source_cells: list[tuple[str, str]] = CELLS) -> dict:
     cells = []
-    for kind, source in CELLS:
+    for kind, source in source_cells:
         lines = source.split("\n")
         cell = {
             "cell_type": kind,

@@ -124,10 +124,8 @@ async def test_think_is_sent_only_when_set() -> None:
     assert bodies[0]["think"] is False and "think" not in bodies[1]
 
 
-def test_the_legal_profile_turns_thinking_off() -> None:
+def test_the_legal_profile_allows_one_repair() -> None:
     from sanitise.config import Settings
     from sanitise.domain import settings_for
 
-    legal = settings_for(Settings(domain="medical"), "legal")
-    assert (legal.llm_think, legal.llm_retries, legal.llm_num_predict) == (False, 1, 2048)
-    assert settings_for(Settings(domain="medical"), "medical").llm_think is None
+    assert settings_for(Settings(domain="medical"), "legal").llm_retries == 1

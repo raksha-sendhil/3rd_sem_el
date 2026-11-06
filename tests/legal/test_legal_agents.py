@@ -216,6 +216,84 @@ async def test_all_keys_limited_fails_clearly(tmp_path: Path) -> None:
     assert log == ["k1", "k2"]
 
 
+async def test_a_short_rest_is_waited_out_instead_of_failing(tmp_path: Path, monkeypatch) -> None:
+    client, log = _rotating(tmp_path, ["k1"], {"k1": "429 rate limit"}, max_key_wait_s=60)
+    now = [1000.0]
+    client.pool.clock = lambda: now[0]
+    slept: list[float] = []
+
+    async def sleep(seconds: float) -> None:
+        slept.append(seconds)
+        now[0] += seconds
+        client.pool._keys[0].sdk.aio.models.limited = {}  # the limit has passed
+
+    monkeypatch.setattr("sanitise.llm.gemini.asyncio.sleep", sleep)
+    assert await client.text_call("s", "u") == "answer from k1"
+    assert log == ["k1", "k1"] and slept.count(60.0) == 1
+
+
+async def test_a_daily_quota_is_not_waited_for(tmp_path: Path) -> None:
+    from sanitise.errors import LLMUnreachable
+
+    limited = {"k1": "429 quota exceeded: GenerateRequestsPerDay"}
+    client, log = _rotating(tmp_path, ["k1"], limited, max_key_wait_s=300)
+    with pytest.raises(LLMUnreachable, match="all 1 Gemini keys"):
+        await client.text_call("s", "u")
+    assert log == ["k1"]
+
+
+async def test_a_limit_that_never_lifts_fails_in_the_end(tmp_path: Path, monkeypatch) -> None:
+    from sanitise.errors import LLMUnreachable
+
+    client, log = _rotating(
+        tmp_path, ["k1"], {"k1": "429 rate limit"}, max_key_wait_s=60, overload_retries=2
+    )
+    now = [1000.0]
+    client.pool.clock = lambda: now[0]
+
+    async def sleep(seconds: float) -> None:
+        now[0] += seconds
+
+    monkeypatch.setattr("sanitise.llm.gemini.asyncio.sleep", sleep)
+    with pytest.raises(LLMUnreachable, match="all 1 Gemini keys"):
+        await client.text_call("s", "u")
+    assert len(log) == 3  # the first try and one after each of the two waits
+
+
+async def test_an_empty_reply_is_not_cached(tmp_path: Path) -> None:
+    replies = ["", "ok"]
+
+    async def generate_content(*, model: str, contents: list, config: dict):
+        return SimpleNamespace(text=replies.pop(0))
+
+    sdk = SimpleNamespace(
+        aio=SimpleNamespace(models=SimpleNamespace(generate_content=generate_content))
+    )
+    client = GeminiClient(cache_dir=tmp_path, rpm=6000, sdk_client=sdk)
+    assert await client.text_call("s", "u") == ""
+    assert await client.text_call("s", "u") == "ok"
+
+
+def test_the_factory_builds_gemini_for_every_agent(tmp_path: Path) -> None:
+    from sanitise.config import Settings
+    from sanitise.domain import settings_for
+    from sanitise.llm.factory import build_agent1_llm, build_answer_llm, build_llm_client
+
+    base = Settings(llm_backend="ollama", gemini_api_keys="k", gemini_cache_dir=str(tmp_path))
+    s = settings_for(base, "legal")
+    agents = build_llm_client(s)
+    assert isinstance(agents, GeminiClient) and agents.model == "gemini-3.5-flash"
+    assert build_agent1_llm(s, agents) is agents
+    assert build_answer_llm(s, agents) is agents  # one key pool and one rate limit for all
+
+
+def test_a_global_mock_backend_beats_the_profile() -> None:
+    from sanitise.config import Settings
+    from sanitise.domain import settings_for
+
+    assert settings_for(Settings(llm_backend="mock"), "legal").llm_backend == "mock"
+
+
 HIGH_DEMAND = "503 UNAVAILABLE. {'error': {'message': 'experiencing high demand'}}"
 
 
@@ -282,13 +360,15 @@ def test_domains_pick_their_own_models_and_data() -> None:
     from sanitise.config import Settings
     from sanitise.domain import profiles, settings_for
 
-    base = Settings(domain="medical", model="llama3:8b")
+    base = Settings(domain="medical", model="llama3:8b", llm_backend="ollama")
     assert {"medical", "legal"} <= set(profiles(base))
     legal = settings_for(base, "legal")
-    assert (legal.model, legal.answer_backend, legal.retrieval_k) == ("gemma4:e4b", "gemini", 4)
+    assert (legal.llm_backend, legal.answer_backend, legal.retrieval_k) == ("gemini", "same", 4)
+    assert legal.model == legal.gemini_model == "gemini-3.5-flash"
     assert legal.store_path == "data/legal/store.sqlite"
     medical = settings_for(base, "medical")
     assert (medical.model, medical.answer_backend, medical.retrieval_k) == ("llama3:8b", "same", 3)
+    assert medical.llm_backend == "ollama"
 
 
 def test_a_domain_added_in_the_file_is_served(tmp_path: Path, monkeypatch) -> None:
