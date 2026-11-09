@@ -245,12 +245,15 @@ class RetrievalHit(BaseModel):
 
 
 class MonitorVerdict(BaseModel):
-    """The session monitor's decision. The Phase 3a stub always allows."""
+    """The session monitor's decision (sanitise.monitor). ``AllowAllMonitor`` always allows."""
 
     verdict: Verdict = "allowed"
-    candidate_pool: int | None = None  # filled by the Phase 3b monitor
-    disclosed: list[str] = Field(default_factory=list)
+    candidate_pool: int | None = None  # records still consistent with what the session knows
+    disclosed: list[str] = Field(default_factory=list)  # attribute types known about that person
     reason: str = "no monitor installed"
+    # the answer with its details made less specific ("generalised"); used by answer(), never
+    # sent to clients (the answer itself is)
+    revised_answer: str | None = Field(default=None, exclude=True)
 
 
 class RagAnswer(BaseModel):

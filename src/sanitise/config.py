@@ -103,6 +103,17 @@ class Settings(BaseSettings):
     ingest_max_pages: int = Field(default=30, ge=1)
     ingest_strip_headers: bool = True
 
+    # ---- Session privacy monitor (sanitise.monitor, docs/session_monitor.md). "ledger": track
+    # what each session has been told about each person and generalise or block an answer that
+    # would single someone out; "off": allow everything (for comparison).
+    monitor: Literal["ledger", "off"] = "ledger"
+    monitor_k: int = Field(default=5, ge=1)  # fewest records that must still match a person
+    monitor_max_attributes: int = Field(default=3, ge=1)  # attribute types per person per session
+    monitor_max_climb: int = Field(default=2, ge=0)  # generalisation steps before blocking
+    monitor_db_path: str = "data/monitor.sqlite"  # the disclosure ledger (":memory:" allowed)
+    # key for the ledger's value hashes; None draws a random one per process
+    monitor_salt: str | None = None
+
     # ---- HTTP API
     api_host: str = "127.0.0.1"
     api_port: int = 8000
