@@ -297,3 +297,9 @@ async def test_gemini_reader_uses_the_same_prompt_and_rotates_keys() -> None:
     await http.aclose()
     gemini = Settings(llm_backend="ollama", ocr_backend="gemini", gemini_api_key="k")
     assert isinstance(make_reader(gemini), GeminiVisionReader)
+
+
+def test_details_accept_alternative_forms() -> None:
+    read = "Statement of financial activities for the year ended 31st December 2017: income 385,847"
+    details = ["385,847 || 385847", "31 December 2017 || 31st December 2017", "205797"]
+    assert detail_hits(read, details) == [True, True, False]

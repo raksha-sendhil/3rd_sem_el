@@ -117,7 +117,7 @@ spacing, Markdown marks and the `[signature]`/`[stamp]`/`[illegible]` tags are i
 The report also gives, from the same run:
 
 * **WER**: the same measure on words;
-* **word F1**: words read correctly whatever their order. Receipts and forms in the real set
+* **word F1**: words read correctly whatever their order. Scanned forms in the real set
   give only words with boxes; their gold text is rebuilt line by line, so its order is
   approximate and CER also counts order differences. Quote word F1 for those sources;
 * **private details read exactly**: names, phones, IDs and address parts found exactly in the text.
@@ -147,7 +147,7 @@ research-use limits are in `data/ocr_real/README.md`.
 | Domain | Items |
 |---|---|
 | health | 30 ClinOCR-Bench: clinical documents with fictional, AI-written content, physically printed, then crumpled, photocopied, put in sleeves, rotated and scanned, with human-audited text (real paper and scanning, synthetic content; its handwriting subset uses handwriting fonts). Subsets: normal, handwriting, poor quality, rotated, tables, mixed. 20 real doctors' handwritten medicine names from real prescriptions (Bangladesh), 20 different medicines A to Z |
-| finance | 25 real scanned receipts and tax invoices (SROIE), 25 real receipt photos (CORD) |
+| finance | 50 real annual reports and accounts filed by UK charities (Kleister-Charity), 33 scanned and 17 typed, each cut to the pages holding the answer key's values (name, number, postcode, year end, income, spending); scored on those details, as no full transcription exists |
 | law | 35 real SEC contracts, 2 pages each, half as PDF and half scanned (CUAD), 15 real noisy scanned forms and letters (FUNSD) |
 
 Synthetic handwriting is neater than real handwriting, so `--iam N` adds N real handwritten
@@ -180,7 +180,7 @@ The vision-model numbers (scans, photos, handwriting, IAM) need the Kaggle GPU: 
 
 The input step holds for both. Routing, the vision prompt and header removal have nothing medical
 in them, and the test sets cover both: synthetic bank statements and affidavits, plus 50 real
-finance documents (receipts, invoices) and 50 real legal ones (SEC contracts, scanned forms). What
+finance documents (filed annual accounts) and 50 real legal ones (SEC contracts, scanned forms). What
 differs is the documents, and so the parts around this step:
 
 | | Law | Finance |

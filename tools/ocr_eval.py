@@ -107,8 +107,9 @@ def score_doc(g: dict, result: IngestResult) -> dict:
     stripped, removed = strip_repeated(pages)
     text_strip = "\n\n".join(t for t in stripped if t.strip())
     text_full = "\n\n".join(t for t in pages if t.strip())
-    s = score_text(text_strip, g["gold"])
-    s_full = score_text(text_full, "\n\n".join(g["gold_pages"]))
+    has_text = g.get("gold") is not None  # False: scored on its details only (Kleister)
+    s = score_text(text_strip, g["gold"] if has_text else "")
+    s_full = score_text(text_full, "\n\n".join(g["gold_pages"]) if has_text else "")
     hits = detail_hits(text_strip, g["details"])
     routes = ["vision" if p.method in ("vision", "failed") else "text" for p in result.pages]
     correct, lost, expected = strip_scores([r.model_dump() for r in removed], g["removals"], text_strip)
@@ -121,18 +122,19 @@ def score_doc(g: dict, result: IngestResult) -> dict:
         "order": g["order"],
         "pages": len(result.pages),
         "failed_pages": sum(p.method == "failed" for p in result.pages),
-        "cer": s.cer,
-        "wer": s.wer,
-        "word_f1": s.word_f1,
-        "char_errors": s.char_errors,
-        "gold_chars": s.gold_chars,
-        "word_errors": s.word_errors,
-        "gold_words": s.gold_words,
-        "words_matched": s.words_matched,
-        "pred_words": s.pred_words,
-        "cer_no_strip": s_full.cer,
-        "char_errors_no_strip": s_full.char_errors,
-        "gold_chars_no_strip": s_full.gold_chars,
+        "has_text": has_text,
+        "cer": s.cer if has_text else None,
+        "wer": s.wer if has_text else None,
+        "word_f1": s.word_f1 if has_text else None,
+        "char_errors": s.char_errors if has_text else 0,
+        "gold_chars": s.gold_chars if has_text else 0,
+        "word_errors": s.word_errors if has_text else 0,
+        "gold_words": s.gold_words if has_text else 0,
+        "words_matched": s.words_matched if has_text else 0,
+        "pred_words": s.pred_words if has_text else 0,
+        "cer_no_strip": s_full.cer if has_text else None,
+        "char_errors_no_strip": s_full.char_errors if has_text else 0,
+        "gold_chars_no_strip": s_full.gold_chars if has_text else 0,
         "details": len(hits),
         "details_found": sum(hits),
         "details_missed": [d for d, h in zip(g["details"], hits, strict=True) if not h],
@@ -149,15 +151,16 @@ def summarise(rows: list[dict]) -> dict:
     if not rows:
         return {}
     gw = sum(r["gold_words"] for r in rows)
+    texts = [r for r in rows if r.get("has_text", True)]  # documents with a full gold text
     det = sum(r["details"] for r in rows)
     pages = sum(r["pages"] for r in rows)
     vs = [s for r in rows for s in r["vision_seconds"]]
     return {
         "docs": len(rows),
         "pages": pages,
-        "cer": sum(r["char_errors"] for r in rows) / max(sum(r["gold_chars"] for r in rows), 1),
-        "wer": sum(r["word_errors"] for r in rows) / max(gw, 1),
-        "word_f1": 2 * sum(r["words_matched"] for r in rows) / max(sum(r["pred_words"] for r in rows) + gw, 1),
+        "cer": sum(r["char_errors"] for r in texts) / max(sum(r["gold_chars"] for r in texts), 1) if texts else None,
+        "wer": sum(r["word_errors"] for r in texts) / max(gw, 1) if texts else None,
+        "word_f1": 2 * sum(r["words_matched"] for r in texts) / max(sum(r["pred_words"] for r in texts) + gw, 1) if texts else None,
         "detail_recall": sum(r["details_found"] for r in rows) / det if det else None,
         "details": det,
         "route_accuracy": sum(r["routes_ok"] for r in rows) / max(pages, 1),
@@ -210,7 +213,9 @@ def report_md(meta: dict, rows: list[dict], iam: list[dict], summary: dict) -> s
                "**CER** = character error rate (lower is better; 2% = 2 wrong characters in 100), "
                "after header/footer removal. **Word F1** = words read correctly regardless of order "
                "(higher is better); use it for sources marked *approx. order*, whose gold text was "
-               "rebuilt from word boxes. Details = private details read exactly (synthetic documents only).")
+               "rebuilt from word boxes. Details = private details read exactly (synthetic documents, and real "
+               "documents scored on their details only, such as the Kleister charity accounts, whose CER "
+               "shows as -).")
     out.append("")
     if rows:
         a = summary["all"]
@@ -233,7 +238,12 @@ def report_md(meta: dict, rows: list[dict], iam: list[dict], summary: dict) -> s
                     f"{st['lost']} removed lines whose content is not kept anywhere else (information "
                     f"lost; should be 0). CER on these documents: {pct(st['cer_strip'])} with removal vs "
                     f"{pct(st['cer_no_strip'])} without.", ""]
-        worst = sorted(rows, key=lambda r: -r["cer"])[:8]
+        def badness(r: dict) -> float:
+            if r["cer"] is not None:
+                return r["cer"]
+            return 1 - r["details_found"] / r["details"] if r["details"] else 0.0
+
+        worst = sorted(rows, key=lambda r: -badness(r))[:8]
         out += ["## Worst documents", "", "| Document | Source | CER | Word F1 | Details missed |",
                 "|---|---|---|---|---|"]
         for r in worst:

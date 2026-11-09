@@ -90,11 +90,14 @@ async def main() -> None:
         print(f"written to {args.out}")
 
     if gold is not None:
-        s = score_text(result.text, gold["gold"] if not args.no_strip else "\n\n".join(gold["gold_pages"]))
         hits = detail_hits(result.text, gold["details"])
-        details = f", private details read exactly {sum(hits)}/{len(hits)}" if hits else ""
-        print(f"\nTest-set document ({gold['about']}): CER {100 * s.cer:.1f}%, "
-              f"word F1 {100 * s.word_f1:.1f}%, WER {100 * s.wer:.1f}%{details}")
+        details = f"private details read exactly {sum(hits)}/{len(hits)}" if hits else ""
+        if gold.get("gold") is None:  # scored on its details only (no full transcription)
+            print(f"\nTest-set document ({gold['about']}): {details}")
+        else:
+            s = score_text(result.text, gold["gold"] if not args.no_strip else "\n\n".join(gold["gold_pages"]))
+            print(f"\nTest-set document ({gold['about']}): CER {100 * s.cer:.1f}%, "
+                  f"word F1 {100 * s.word_f1:.1f}%, WER {100 * s.wer:.1f}%" + (f", {details}" if details else ""))
         if gold.get("source"):
             print(f"  source: {gold['source']} ({gold['licence']}), gold order {gold['order']}")
         missed = [d for d, h in zip(gold["details"], hits, strict=True) if not h]

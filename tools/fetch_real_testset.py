@@ -18,8 +18,15 @@ Sources (share of each domain at 50 per domain):
              BD prescriptions (20)    real doctors' handwriting: medicine names cut from real
                                       prescriptions in Bangladesh, with their labels; 20 different
                                       medicines spread from A to Z.
-    finance  SROIE (25)               real scanned receipts and tax invoices (ICDAR 2019).
-             CORD (25)                real receipt photos (CC BY 4.0).
+    finance  Kleister-Charity (50)    real annual reports and accounts of UK charities, filed with the
+                                      Charity Commission (many scanned, some typed): trustees' reports,
+                                      statements of financial activities, balance sheets, examiners'
+                                      reports. Gold = the values a lender or auditor looks up (charity
+                                      name and number, postcode, year end, income, spending), kept only
+                                      where they appear in the document; scored on details read
+                                      exactly, as there is no full transcription. Each filing is cut
+                                      to the (up to 4) pages that hold the answers, so the OCR run
+                                      stays short.
     law      CUAD (35)                real contracts filed with the SEC (CC BY 4.0): 2 pages each,
                                       half as the PDF itself, half scanned (rendered and degraded);
                                       most carry a running "Source:" line on every page.
@@ -27,8 +34,9 @@ Sources (share of each domain at 50 per domain):
                                       tobacco litigation archive (research use).
 
 ``order``: "exact" when the gold text comes in reading order (transcriptions, PDF text layers);
-"approximate" when it was rebuilt from word boxes (SROIE, CORD, FUNSD). For those, CER also
-counts order differences, so the order-free word F1 is the fair number.
+"approximate" when it was rebuilt from word boxes (FUNSD). For those, CER also counts order
+differences, so the order-free word F1 is the fair number. ``gold`` is null for documents that are
+scored on their details only (Kleister-Charity).
 """
 
 from __future__ import annotations
@@ -65,7 +73,7 @@ CUAD_FILE = "https://huggingface.co/datasets/theatticusproject/cuad/resolve/main
 # share of each source in a domain of 50
 QUOTAS = {
     "health": {"clinocr": 30, "bd_rx": 20},
-    "finance": {"sroie": 25, "cord": 25},
+    "finance": {"kleister": 50},
     "law": {"cuad": 35, "funsd": 15},
 }
 CLINOCR_SUBSETS = {"normal": 7, "handwriting": 8, "poor": 7, "rotated": 6, "tables": 7, "mixed": 5}
@@ -77,8 +85,8 @@ ABOUT = {
     "clinocr_tables": "ClinOCR-Bench: clinical document dominated by tables",
     "clinocr_mixed": "ClinOCR-Bench: several artifacts at once (rotation, highlight, low resolution)",
     "rx_handwritten_word": "real doctor's handwriting: a medicine name from a real prescription",
-    "receipt_scan": "real scanned receipt / tax invoice (SROIE)",
-    "receipt_photo": "real receipt photo (CORD)",
+    "accounts_scan": "real charity annual report and accounts, scanned (Kleister-Charity)",
+    "accounts_e": "real charity annual report and accounts, typed PDF (Kleister-Charity)",
     "contract_e": "real contract filed with the SEC, as PDF (CUAD)",
     "contract_scan": "real contract filed with the SEC, scanned (CUAD, rendered and degraded)",
     "form_scan": "real noisy scanned business form or letter (FUNSD)",
@@ -171,8 +179,16 @@ def clean_page(text: str) -> str:
     return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
 
 
-def record(doc_id: str, file: str, doc_type: str, domain: str, gold_pages: list[str],
-           routes: list[str], *, source: str, licence: str, url: str, order: str) -> dict:
+def record(doc_id: str, file: str, doc_type: str, domain: str, gold_pages: list[str] | None,
+           routes: list[str], *, source: str, licence: str, url: str, order: str,
+           details: list[str] | None = None) -> dict:
+    if gold_pages is None:  # scored on its details only (no full transcription)
+        return {
+            "id": doc_id, "file": file, "type": doc_type, "domain": domain,
+            "about": ABOUT[doc_type], "routes": routes, "gold": None, "gold_pages": None,
+            "removals": [], "details": details or [], "source": source, "licence": licence,
+            "url": url, "order": order,
+        }
     stripped, removed = strip_repeated(gold_pages) if len(gold_pages) > 1 else (gold_pages, [])
     return {
         "id": doc_id,
@@ -184,7 +200,7 @@ def record(doc_id: str, file: str, doc_type: str, domain: str, gold_pages: list[
         "gold": "\n\n".join(t for t in stripped if t.strip()),
         "gold_pages": gold_pages,
         "removals": [{"page": r.page, "line": r.line} for r in removed],
-        "details": [],
+        "details": details or [],
         "source": source,
         "licence": licence,
         "url": url,
@@ -232,42 +248,119 @@ def bd_rx(f: Fetcher, n: int, out: Path) -> list[dict]:
                            order="exact"))
     return recs
 
-
-def sroie(f: Fetcher, n: int, out: Path) -> list[dict]:
-    rows = f.rows("jsdnrs/ICDAR2019-SROIE", "default", "test")
-    recs = []
-    for k, i in enumerate(spread(len(rows), n), 1):
-        r = rows[i]
-        doc_id = f"finance_sroie_{k:02d}"
-        file = f"docs/{doc_id}.jpg"
-        save_image(f.get(r["image"]["src"]), out / file)
-        lines = lines_from_boxes([(w, *b) for w, b in zip(r["words"], r["bboxes"], strict=False)])
-        recs.append(record(doc_id, file, "receipt_scan", "finance", ["\n".join(lines)], ["vision"],
-                           source="SROIE (ICDAR 2019)", licence="research use",
-                           url="https://huggingface.co/datasets/jsdnrs/ICDAR2019-SROIE",
-                           order="approximate"))
-    return recs
+KLEISTER_RAW = "https://raw.githubusercontent.com/applicaai/kleister-charity/master/"
+KLEISTER_S3 = "https://applica-public.s3-eu-west-1.amazonaws.com/kleister-charity-git-annex/"
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August",
+          "September", "October", "November", "December"]
 
 
-def cord(f: Fetcher, n: int, out: Path) -> list[dict]:
-    rows = f.rows("naver-clova-ix/cord-v2", "default", "test")
-    recs = []
-    for k, i in enumerate(spread(len(rows), n), 1):
-        r = rows[i]
-        gt = json.loads(r["ground_truth"])
-        words = []
-        for line in gt.get("valid_line", []):
-            for w in line.get("words", []):
-                q = w["quad"]
-                words.append((w["text"], min(q["x1"], q["x4"]), min(q["y1"], q["y2"]),
-                              max(q["x2"], q["x3"]), max(q["y3"], q["y4"])))
-        doc_id = f"finance_cord_{k:02d}"
-        file = f"docs/{doc_id}.jpg"
-        save_image(f.get(r["image"]["src"]), out / file)
-        recs.append(record(doc_id, file, "receipt_photo", "finance",
-                           ["\n".join(lines_from_boxes(words))], ["vision"], source="CORD v2",
-                           licence="CC BY 4.0", url="https://huggingface.co/datasets/naver-clova-ix/cord-v2",
-                           order="approximate"))
+def money_variants(value: str) -> str:
+    """'41721.00' -> '41,721 || 41721' (accounts print whole pounds, with or without commas)."""
+    pounds = str(round(float(value)))
+    return f"{int(pounds):,} || {pounds}"
+
+
+def date_variants(iso: str) -> str:
+    """'2016-03-31' -> the ways accounts print a year end."""
+    y, m, d = iso.split("-")
+    month = MONTHS[int(m) - 1]
+    day = str(int(d))
+    n = int(day)
+    suffix = "th" if 11 <= n % 100 <= 13 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+    forms = [f"{day} {month} {y}", f"{day}{suffix} {month} {y}", f"{d}/{m}/{y}", f"{d}.{m}.{y}",
+             f"{d}-{m}-{y}", f"{day} {month[:3]} {y}", f"{month} {day}, {y}"]
+    return " || ".join(dict.fromkeys(forms))
+
+
+def kleister_details(expected: str, text: str) -> list[str]:
+    """The answer key's values, each with the forms it may be printed in, kept only when one of
+    the forms is in the document's own text (Kleister's text layer / OCR)."""
+    from sanitise.ingest.metrics import detail_hits
+
+    fields = dict(kv.split("=", 1) for kv in expected.split() if "=" in kv)
+    out = []
+    for key, value in fields.items():
+        value = value.replace("_", " ")
+        if key == "charity_number":
+            out.append(value)
+        elif key == "address__postcode":
+            out.append(value)
+        elif key == "charity_name":
+            out.append(value)
+        elif key in ("income_annually_in_british_pounds", "spending_annually_in_british_pounds"):
+            out.append(money_variants(value))
+        elif key == "report_date":
+            out.append(date_variants(value))
+    return [d for d, hit in zip(out, detail_hits(text, out), strict=True) if hit]
+
+
+KLEISTER_MAX_PAGES = 4
+
+
+def kleister_pages(doc: pymupdf.Document, details: list[str]) -> tuple[list[int], list[str]]:
+    """The pages (at most KLEISTER_MAX_PAGES, in order) that hold the most answers, and the answers
+    on them. Pages are found by their text: the typed text layer, or the hidden OCR layer most
+    scanned filings carry (used only to find the page; the pipeline reads the scan itself)."""
+    from sanitise.ingest.metrics import detail_hits
+
+    on_page = [detail_hits(page.get_text(), details) for page in doc]
+    chosen: list[int] = []
+    covered = [False] * len(details)
+    while len(chosen) < KLEISTER_MAX_PAGES:
+        gain, best = max(
+            ((sum(h and not c for h, c in zip(hits, covered, strict=True)), i)
+             for i, hits in enumerate(on_page) if i not in chosen),
+            default=(0, -1),
+        )
+        if gain == 0:
+            break
+        chosen.append(best)
+        covered = [c or h for c, h in zip(covered, on_page[best], strict=True)]
+    return sorted(chosen), [d for d, c in zip(details, covered, strict=True) if c]
+
+
+def kleister(f: Fetcher, n: int, out: Path) -> list[dict]:
+    import lzma
+
+    rows = lzma.decompress(f.get(KLEISTER_RAW + "dev-0/in.tsv.xz")).decode("utf-8").rstrip(chr(10)).split(chr(10))
+    expected = f.get(KLEISTER_RAW + "dev-0/expected.tsv").decode().rstrip(chr(10)).split(chr(10))
+    assert len(rows) == len(expected), "Kleister dev-0: inputs and answers do not line up"
+    order = list(range(len(rows)))
+    random.Random("kleister").shuffle(order)
+    want_scans = round(n * 2 / 3)  # a lender's files are mostly scans: about 2 scanned to 1 typed
+    recs: list[dict] = []
+    scans = typed = 0
+    for i in order:
+        if len(recs) == n:
+            break
+        cols = rows[i].split(chr(9))
+        name, text = cols[0], cols[-1].replace("\\n", chr(10))
+        m = re.search(r"(SHA256E-s(\d+)--\w+\.pdf)", f.get(KLEISTER_RAW + f"documents/{name}").decode())
+        if not m or int(m.group(2)) > 3_000_000:
+            continue
+        try:
+            doc = pymupdf.open(stream=f.get(KLEISTER_S3 + m.group(1)), filetype="pdf")
+        except Exception:
+            continue
+        pages, details = kleister_pages(doc, kleister_details(expected[i], text))
+        if len(details) < 3:  # too little to score, or the pages cannot be found
+            continue
+        scanned = sum(not text_layer(doc[p])[0] for p in pages) > len(pages) / 2
+        if (scanned and scans >= want_scans) or (not scanned and typed >= n - want_scans):
+            continue
+        scans += scanned
+        typed += not scanned
+        part = pymupdf.open()
+        for page in pages:
+            part.insert_pdf(doc, from_page=page, to_page=page)
+        doc_id = f"finance_kleister_{len(recs) + 1:02d}"
+        file = f"docs/{doc_id}.pdf"
+        (out / file).write_bytes(part.tobytes(garbage=3, deflate=True))
+        routes = ["text" if text_layer(page)[0] else "vision" for page in part]
+        recs.append(record(doc_id, file, "accounts_scan" if scanned else "accounts_e", "finance",
+                           None, routes, source="Kleister-Charity", licence="research use",
+                           url=f"https://github.com/applicaai/kleister-charity (pages {', '.join(str(p + 1) for p in pages)} of {name})",
+                           order="exact", details=details))
     return recs
 
 
@@ -355,7 +448,7 @@ def cuad(f: Fetcher, n: int, out: Path) -> list[dict]:
     return recs
 
 
-SOURCES = {"clinocr": clinocr, "bd_rx": bd_rx, "sroie": sroie, "cord": cord, "cuad": cuad,
+SOURCES = {"clinocr": clinocr, "bd_rx": bd_rx, "kleister": kleister, "cuad": cuad,
            "funsd": funsd}
 
 

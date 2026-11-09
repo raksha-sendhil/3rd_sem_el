@@ -106,15 +106,19 @@ def score_text(pred: str, gold: str) -> TextScore:
 
 
 def detail_hits(pred: str, details: list[str]) -> list[bool]:
-    """For each private detail: is it in the extracted text exactly (after normalising)?"""
+    """For each private detail: is it in the extracted text exactly (after normalising)?
+    A detail may list the forms it can be printed in, separated by " || " ("41,721 || 41721",
+    "31 March 2016 || 31/03/2016"); any one of them counts."""
     p = normalise(pred)
     p_tight = p.replace(" ", "")
-    out = []
-    for d in details:
-        n = normalise(d)
+
+    def found(form: str) -> bool:
+        n = normalise(form)
         # "+91 98450 12345" vs "+91 9845012345": spacing inside a number is not a misreading
-        out.append(n in p or (any(c.isdigit() for c in n) and n.replace(" ", "") in p_tight))
-    return out
+        digits = any(c.isdigit() for c in n)
+        return bool(n) and (n in p or (digits and n.replace(" ", "") in p_tight))
+
+    return [any(found(form) for form in d.split(" || ")) for d in details]
 
 
 def strip_scores(removed: list[dict], expected: list[dict], kept_text: str) -> tuple[int, int, int]:
