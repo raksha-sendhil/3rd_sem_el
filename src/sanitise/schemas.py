@@ -264,6 +264,9 @@ class RagAnswer(BaseModel):
     payload: str  # the literal text sent to the model (payload inspector)
     monitor: MonitorVerdict = Field(default_factory=MonitorVerdict)
     latency_ms: int
+    # protected only: the answer before the monitor generalised or blocked it (None when the
+    # monitor let it through unchanged). Kept for scoring "rewriting alone"; never sent to clients.
+    draft_answer: str | None = Field(default=None, exclude=True)
 
 
 class CompareResponse(BaseModel):

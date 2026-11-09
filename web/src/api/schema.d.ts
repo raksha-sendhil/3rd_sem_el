@@ -196,6 +196,27 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/sessions/{session_id}/monitor": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Get Session Monitor
+         * @description The kinds of detail the protected pipeline has released about each person in this
+         *     session, and when: the session monitor's ledger, without the values.
+         */
+        get: operations["get_session_monitor_v1_sessions__session_id__monitor_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/query": {
         parameters: {
             query?: never;
@@ -631,8 +652,39 @@ export interface components {
             seconds: number;
         };
         /**
+         * LedgerEntry
+         * @description One kind of detail released about one person (the value itself is never shown).
+         */
+        LedgerEntry: {
+            /** Subject Id */
+            subject_id: string;
+            /** Attribute Type */
+            attribute_type: string;
+            /** Round */
+            round: number;
+        };
+        /**
+         * MonitorLedger
+         * @description What the session monitor has recorded for a session (GET /v1/sessions/{id}/monitor).
+         */
+        MonitorLedger: {
+            /** Session Id */
+            session_id: string;
+            /**
+             * Monitor
+             * @enum {string}
+             */
+            monitor: "ledger" | "off";
+            /** K */
+            k?: number | null;
+            /** Max Attributes */
+            max_attributes?: number | null;
+            /** Entries */
+            entries?: components["schemas"]["LedgerEntry"][];
+        };
+        /**
          * MonitorVerdict
-         * @description The session monitor's decision. The Phase 3a stub always allows.
+         * @description The session monitor's decision (sanitise.monitor). ``AllowAllMonitor`` always allows.
          */
         MonitorVerdict: {
             /**
@@ -1243,6 +1295,37 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["SessionTrace"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_session_monitor_v1_sessions__session_id__monitor_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                session_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MonitorLedger"];
                 };
             };
             /** @description Validation Error */

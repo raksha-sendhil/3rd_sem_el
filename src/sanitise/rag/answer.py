@@ -81,8 +81,12 @@ async def answer(
         )
     except PipelineError as exc:
         raise exc.with_stage("answer") from None
+    draft = None
     if verdict.verdict == "blocked":
+        draft = text
         text = "This question cannot be answered: it would narrow the records down too far."
+    elif verdict.verdict == "generalised" and verdict.revised_answer:
+        draft, text = text, verdict.revised_answer
     return RagAnswer(
         pipeline=pipeline,
         query=query,
@@ -91,6 +95,7 @@ async def answer(
         payload=user,
         monitor=verdict,
         latency_ms=_ms(t),
+        draft_answer=draft,
     )
 
 

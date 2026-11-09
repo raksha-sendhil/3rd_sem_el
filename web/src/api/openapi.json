@@ -422,6 +422,46 @@
     }
    }
   },
+  "/v1/sessions/{session_id}/monitor": {
+   "get": {
+    "summary": "Get Session Monitor",
+    "description": "The kinds of detail the protected pipeline has released about each person in this\nsession, and when: the session monitor's ledger, without the values.",
+    "operationId": "get_session_monitor_v1_sessions__session_id__monitor_get",
+    "parameters": [
+     {
+      "name": "session_id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string",
+       "title": "Session Id"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Successful Response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/MonitorLedger"
+        }
+       }
+      }
+     },
+     "422": {
+      "description": "Validation Error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/HTTPValidationError"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
   "/v1/query": {
    "post": {
     "summary": "Post Query",
@@ -1480,6 +1520,82 @@
     ],
     "title": "IngestResult"
    },
+   "LedgerEntry": {
+    "properties": {
+     "subject_id": {
+      "type": "string",
+      "title": "Subject Id"
+     },
+     "attribute_type": {
+      "type": "string",
+      "title": "Attribute Type"
+     },
+     "round": {
+      "type": "integer",
+      "title": "Round"
+     }
+    },
+    "type": "object",
+    "required": [
+     "subject_id",
+     "attribute_type",
+     "round"
+    ],
+    "title": "LedgerEntry",
+    "description": "One kind of detail released about one person (the value itself is never shown)."
+   },
+   "MonitorLedger": {
+    "properties": {
+     "session_id": {
+      "type": "string",
+      "title": "Session Id"
+     },
+     "monitor": {
+      "type": "string",
+      "enum": [
+       "ledger",
+       "off"
+      ],
+      "title": "Monitor"
+     },
+     "k": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "K"
+     },
+     "max_attributes": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Max Attributes"
+     },
+     "entries": {
+      "items": {
+       "$ref": "#/components/schemas/LedgerEntry"
+      },
+      "type": "array",
+      "title": "Entries"
+     }
+    },
+    "type": "object",
+    "required": [
+     "session_id",
+     "monitor"
+    ],
+    "title": "MonitorLedger",
+    "description": "What the session monitor has recorded for a session (GET /v1/sessions/{id}/monitor)."
+   },
    "MonitorVerdict": {
     "properties": {
      "verdict": {
@@ -1518,7 +1634,7 @@
     },
     "type": "object",
     "title": "MonitorVerdict",
-    "description": "The session monitor's decision. The Phase 3a stub always allows."
+    "description": "The session monitor's decision (sanitise.monitor). ``AllowAllMonitor`` always allows."
    },
    "PIICategory": {
     "type": "string",

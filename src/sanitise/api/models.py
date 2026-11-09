@@ -82,6 +82,24 @@ class SessionCreated(BaseModel):
     session_id: str
 
 
+class LedgerEntry(BaseModel):
+    """One kind of detail released about one person (the value itself is never shown)."""
+
+    subject_id: str  # "<doc_id>:<subject>"
+    attribute_type: str  # age, date, location, occupation, condition, physical
+    round: int  # the protected answer that first released it
+
+
+class MonitorLedger(BaseModel):
+    """What the session monitor has recorded for a session (GET /v1/sessions/{id}/monitor)."""
+
+    session_id: str
+    monitor: Literal["ledger", "off"]
+    k: int | None = None  # fewest records that must still match a person
+    max_attributes: int | None = None  # kinds of detail allowed per person per session
+    entries: list[LedgerEntry] = Field(default_factory=list)
+
+
 class QueryRequest(BaseModel):
     query: str = Field(min_length=1)
     pipeline: Pipeline

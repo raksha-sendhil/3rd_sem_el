@@ -48,6 +48,8 @@ from sanitise.api.models import (
     ExtractRequest,
     HealthResponse,
     IngestRequest,
+    LedgerEntry,
+    MonitorLedger,
     QueryRequest,
     RewriteRequest,
     SanitiseRequest,
@@ -78,6 +80,7 @@ from sanitise.mock_mode import (
     mock_rewrite,
     mock_sanitise,
 )
+from sanitise.monitor import LedgerMonitor, build_monitor
 from sanitise.rag.answer import RagContext, answer, compare
 from sanitise.rag.dense import build_retriever
 from sanitise.rag.store import SqliteDocumentStore
@@ -208,6 +211,9 @@ def create_app(
                             model_name=settings.embedding_model,
                         )
                         request.app.state.rag = RagContext(store=store, retriever=retriever)
+                    # the session privacy monitor reads every stored record once, up front
+                    ctx = request.app.state.rag
+                    ctx.monitor = await asyncio.to_thread(build_monitor, settings, ctx.store)
         return request.app.state.rag
 
     def attack_sources() -> tuple[Path, Path]:
@@ -279,6 +285,26 @@ def create_app(
     @app.get("/v1/sessions/{session_id}", response_model=SessionTrace)
     async def get_session(session_id: str, request: Request) -> SessionTrace:
         return (await rag_for(request)).sessions.get(session_id)
+
+    @app.get("/v1/sessions/{session_id}/monitor", response_model=MonitorLedger)
+    async def get_session_monitor(session_id: str, request: Request) -> MonitorLedger:
+        """The kinds of detail the protected pipeline has released about each person in this
+        session, and when: the session monitor's ledger, without the values."""
+        ctx = await rag_for(request)
+        ctx.sessions.get(session_id)  # 404 for an unknown session
+        monitor = ctx.monitor
+        if not isinstance(monitor, LedgerMonitor):
+            return MonitorLedger(session_id=session_id, monitor="off")
+        return MonitorLedger(
+            session_id=session_id,
+            monitor="ledger",
+            k=monitor.k,
+            max_attributes=monitor.max_attributes,
+            entries=[
+                LedgerEntry(subject_id=d.subject_id, attribute_type=d.attribute_type, round=d.round)
+                for d in monitor.ledger.entries(session_id)
+            ],
+        )
 
     @app.post("/v1/query", response_model=RagAnswer)
     async def post_query(body: QueryRequest, request: Request) -> RagAnswer:
