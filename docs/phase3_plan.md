@@ -23,7 +23,8 @@ Everything in the spec's Phase 3 except the session privacy monitor:
 | **Comparison dashboard** | Side-by-side answers, payload inspector, document viewer, attack selector, session trace, leakage chart |
 | **Evaluation** | Fact coverage and faithfulness (Agent 2), leak rate and utility (Agent 3), answer accuracy and attack success (end to end) |
 
-**What remains for Phase 3b: the session privacy monitor.** It tracks which attributes have
+**Phase 3b, the session privacy monitor, is built** (`src/sanitise/monitor/`, described in
+`docs/session_monitor.md`). As planned, it tracks which attributes have
 been disclosed about each person across a conversation and withholds an answer when too few
 people still match. It is the only defence against multi-question (stepwise) attacks; rewriting
 alone slows them down but does not stop them. Everything the monitor needs is built in now: a
@@ -644,7 +645,7 @@ the Python models.
 | SYMPTOM, RELATION | keep | `fever`, `my son` |
 | QUASI_COMBO | generalise at least one member so the combination no longer narrows the pool | |
 
-### 6.7 Monitor hook (for Phase 3b)
+### 6.7 Monitor hook (Phase 3b: built, see docs/session_monitor.md)
 
 `answer()` calls `monitor.check(session_id, query, hits, draft_answer)` for the protected
 pipeline before returning. The stub returns `MonitorVerdict()` (allowed, no pool).

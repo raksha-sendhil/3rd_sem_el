@@ -113,5 +113,6 @@ baseline vs protected. Targets are in plan section 8.
   (the scorer cannot tell whose record a sentence came from). This over-states leakage for both
   pipelines equally.
 * The synthetic corpus is template-generated, so wording is more regular than real ChatDoctor text.
-* Stepwise attacks are only slowed by rewriting; stopping them is the Phase 3b session monitor.
+* Stepwise attacks are only slowed by rewriting; stopping them is the session monitor
+  (`docs/session_monitor.md`, measured by `tools/monitor_eval.py`).
 * Gold facts and routing are written by one annotator until B's review is merged.
