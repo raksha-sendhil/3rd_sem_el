@@ -1,10 +1,12 @@
 "use client";
 
-import { FileText, Swords, Workflow } from "lucide-react";
+import { Briefcase, FileText, Landmark, Lock, Stethoscope, Swords, Workflow } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { API_URL, api } from "@/api/client";
+import { DOMAINS, type DomainId } from "@/lib/domains";
+import { useDomain } from "./Providers";
 
 const NAV = [
   { to: "/", label: "Overview", icon: Workflow, color: "#6D4AFF", id: "overview" },
@@ -25,6 +27,53 @@ export const Logo = () => (
     <div className="font-display text-lg font-extrabold tracking-tight text-[#17162B]">Sanitise AI</div>
   </div>
 );
+
+const DOMAIN_ICON: Record<DomainId, typeof Stethoscope> = {
+  medical: Stethoscope,
+  legal: Briefcase,
+  finance: Landmark,
+};
+
+/** Health / Legal / Finance. A domain that is not ready is greyed out and says why. */
+export function DomainToggle() {
+  const { domain, setDomain } = useDomain();
+  return (
+    <div
+      role="radiogroup"
+      aria-label="Use case"
+      data-testid="domain-toggle"
+      className="flex gap-1 rounded-full border border-[#E6E1D6] bg-[#EFECE4] p-1"
+    >
+      {DOMAINS.map((d) => {
+        const Icon = d.ready ? DOMAIN_ICON[d.id] : Lock;
+        const active = d.id === domain.id;
+        return (
+          <button
+            key={d.id}
+            role="radio"
+            aria-checked={active}
+            aria-disabled={!d.ready}
+            disabled={!d.ready}
+            title={d.ready ? d.blurb : d.why}
+            data-testid={`domain-${d.id}`}
+            onClick={() => setDomain(d.id)}
+            className={`flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-bold transition-[background-color,color] duration-200 ${
+              active
+                ? "text-white shadow-md"
+                : d.ready
+                  ? "text-[#4A4760] hover:bg-white"
+                  : "cursor-not-allowed text-[#A9A5B8]"
+            }`}
+            style={active ? { background: d.accent } : undefined}
+          >
+            <Icon className="h-3.5 w-3.5" strokeWidth={2.4} />
+            {d.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
 /** Whether the API answers; checked every 15 s. Only a failure is shown. */
 function useOnline(): boolean | null {
@@ -75,8 +124,11 @@ export function Header() {
             );
           })}
         </nav>
+        <div className="ml-auto flex items-center gap-3">
+          <DomainToggle />
+        </div>
         {online === false && (
-          <span className="chip ml-auto bg-[#FFE8E4] text-[#B42318]" title={API_URL}>
+          <span className="chip bg-[#FFE8E4] text-[#B42318]" title={API_URL}>
             <span className="pulse-dot bg-[#FF4D3D]" /> API unreachable
           </span>
         )}

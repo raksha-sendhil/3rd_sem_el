@@ -1,7 +1,7 @@
 "use client";
 
 import { FileText, Mail, MessageSquare, Upload } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ApiError,
   api,
@@ -12,6 +12,7 @@ import {
   type SensitiveSpan,
 } from "@/api/client";
 import { AgentViews } from "@/components/documents/AgentViews";
+import { ReadView, type Upload as FileUpload } from "@/components/documents/ReadView";
 import { UploadBox } from "@/components/documents/UploadBox";
 import { ErrorNote, Legend, PageHead } from "@/components/PageHead";
 
@@ -27,6 +28,18 @@ function kindOf(d: DocumentSummary) {
   const first = d.preview.trim().split("\n")[0];
   if (!/^(from|subject):/i.test(first)) return KINDS.patient;
   return /\b(hr|leave)\b/i.test(d.preview) ? KINDS.hr : KINDS.email;
+}
+
+const RECORD_FILE = /\.(hl7|fhir|xml|json)$/i; // health records: shown as they are next to what was read
+
+/** The file's bytes as base64 (what POST /v1/ingest takes). */
+function toBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(",")[1] ?? "");
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
 }
 
 /** An uploaded document going through the agents one at a time. */
@@ -79,6 +92,39 @@ export default function Documents() {
   const [view, setView] = useState<DocumentView | null>(null);
   const [live, setLive] = useState<Live | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // a chosen file: sent to /v1/ingest, then shown as step 0 before the agents
+  const [upload, setUpload] = useState<FileUpload | null>(null);
+  const [reading, setReading] = useState<string | null>(null);
+  const [readError, setReadError] = useState<string | null>(null);
+  const previewUrl = useRef<string | null>(null);
+
+  const clearUpload = () => {
+    if (previewUrl.current) URL.revokeObjectURL(previewUrl.current);
+    previewUrl.current = null;
+    setUpload(null);
+    setReadError(null);
+    setLive(null);
+  };
+
+  const readFile = async (file: File) => {
+    clearUpload();
+    setReading(file.name);
+    try {
+      const raw = RECORD_FILE.test(file.name) ? await file.text() : null;
+      const result = await api.ingest(file.name, await toBase64(file));
+      const url = URL.createObjectURL(file);
+      previewUrl.current = url;
+      setUpload({ file, url, raw, result });
+    } catch (e) {
+      setReadError(e instanceof ApiError ? e.message : String(e));
+    } finally {
+      setReading(null);
+    }
+  };
+
+  useEffect(() => () => {
+    if (previewUrl.current) URL.revokeObjectURL(previewUrl.current);
+  }, []);
 
   useEffect(() => {
     api
@@ -174,7 +220,19 @@ export default function Documents() {
 
       {own ? (
         <>
-          <UploadBox onRun={run} busy={running} />
+          <UploadBox
+            onRun={(text) => {
+              clearUpload();
+              void run(text);
+            }}
+            onFile={(file) => void readFile(file)}
+            onClear={clearUpload}
+            busy={running}
+            reading={reading}
+            fileName={upload?.file.name ?? null}
+            error={readError}
+          />
+          {upload && <ReadView upload={upload} busy={running} onRun={run} />}
           {live && (
             <AgentViews
               original={live.text}

@@ -38,10 +38,24 @@ export class ApiError extends Error {
   }
 }
 
+// ---- Domain: every request carries the chosen use case as ?domain=... (medical, legal,
+// finance), the same way as the legal branch, so a backend with several domains uses that one's
+// prompts, data and models. A backend with one domain ignores it. Set by DomainProvider.
+let requestDomain: string | null = null;
+
+export function setRequestDomain(domain: string | null): void {
+  requestDomain = domain;
+}
+
+function withDomain(path: string): string {
+  if (!requestDomain) return path;
+  return path + (path.includes("?") ? "&" : "?") + "domain=" + encodeURIComponent(requestDomain);
+}
+
 async function call<T>(method: "GET" | "POST", path: string, body?: unknown): Promise<T> {
   let res: Response;
   try {
-    res = await fetch(API_URL + path, {
+    res = await fetch(API_URL + withDomain(path), {
       method,
       // the header skips ngrok's warning page for free accounts; other hosts ignore it
       headers: {

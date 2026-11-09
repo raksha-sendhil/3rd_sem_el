@@ -7,7 +7,13 @@ HTTP API (`docs/phase3_plan.md`, section 6.4).
 |---|---|
 | Overview (`/`) | The two pipelines as a flowchart, with a sample record's details on each side. |
 | Attacks (`/attacks`) | Two chats side by side, one per pipeline (`POST /v1/query`). Picking context dump or stepwise inference fills the attack's prompt into both chats; after each reply the next prompt is filled in. Replies are typed out as they arrive, with leaked details marked red, tokens purple and generalised phrases amber, a running count of leaked details per chat, and the session monitor's verdict on protected replies. Payload interception opens the exact request each pipeline sends to the model (Ollama `POST /api/chat`), side by side, for each of the attack's questions. |
-| Documents (`/documents`) | A stored record, or one you upload or paste, through each agent: Agent 1's detected details in the original, Agent 2's facts as points per person, and Agent 3's rewrite. Hovering a highlight rings its twin. An uploaded document runs the agents one at a time (`/v1/detect`, `/v1/extract`, `/v1/rewrite`), each panel filling in as its agent finishes. |
+| Documents (`/documents`) | A stored record, or one you upload or paste, through each agent: Agent 1's detected details in the original, Agent 2's facts as points per person, and Agent 3's rewrite. Hovering a highlight rings its twin. A chosen file (PDF typed or scanned, photo or scan of a report or prescription, health record `.hl7` / `.fhir` / `.xml`) is read first (`POST /v1/ingest`) and shown as **step 0, read the file**: the file itself (image, PDF viewer or the raw record) next to the text read from each page, how each page was read (text layer, vision model, health record), the seconds taken, the repeated header/footer lines removed and any warnings. Below it is the text the agents will get, editable, part by part for a long file, and the button that runs them. The agents then run one at a time (`/v1/detect`, `/v1/extract`, `/v1/rewrite`), each panel filling in as its agent finishes. |
+
+**Use case toggle** (top right): Healthcare, Legal, Finance. Every API request carries the chosen
+one as `?domain=medical|legal|finance` (the same way as the legal branch), and the choice is
+remembered in the browser. A backend with one domain ignores it. Only Healthcare is enabled for
+now: Legal is on its own branch and Finance is not built yet, so both are greyed out with the
+reason on hover. `src/lib/domains.ts` lists the domains (label, colour, upload hint, file types).
 
 ## Run it
 
@@ -28,8 +34,19 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
-To use the real model on Colab, run `notebooks/backend.ipynb` up to cell 4, copy the address
-it prints, and put it in `web/.env.local`:
+In mock mode a typed PDF and a health record are read for real (no model is needed for
+them); a scanned page or photo comes back as a placeholder, and the agents' results are samples.
+The API address comes from `web/.env.local` (`NEXT_PUBLIC_API_URL`). An environment variable
+wins over that file, which helps to try the local API without editing it:
+
+```powershell
+$env:NEXT_PUBLIC_API_URL = "http://localhost:8000"; npm run dev
+```
+
+To use the real models (vision model for scans and photos, Gemini or Ollama for the agents), run
+`notebooks/backend_kaggle.ipynb` on Kaggle (`docs/kaggle_setup.md`; `OCR = True` in cell 1) or
+`notebooks/backend.ipynb` on Colab up to the serve cell, copy the address it prints, and put it in
+`web/.env.local`:
 
 ```
 NEXT_PUBLIC_API_URL=https://<your-domain>.ngrok-free.app
