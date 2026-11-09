@@ -26,8 +26,8 @@ const KINDS: Record<AttackKind, Omit<Meta, "tag"> & { tag: (n: number) => string
     tag: (n) => `${n} questions`,
     image: IMAGES.stepwise,
     icon: Footprints,
-    // needs the session monitor (Phase 3b) to show anything; AllowAllMonitor is in place for now
-    ready: false,
+    // answered normally until the session monitor sees the details add up to one person
+    ready: true,
   },
   interception: {
     color: "#2D8CFF",

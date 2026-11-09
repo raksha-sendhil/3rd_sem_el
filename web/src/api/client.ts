@@ -22,6 +22,9 @@ export type ExtractorOutput = S["ExtractorOutput"];
 export type RewriterOutput = S["RewriterOutput"];
 export type IngestResult = S["IngestResult"];
 export type PageResult = S["PageResult"];
+export type MonitorLedger = S["MonitorLedger"];
+export type AttackRun = S["AttackRun"];
+export type AttackRound = S["AttackRound"];
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
   /\/$/,
@@ -100,6 +103,11 @@ export const api = {
   compare: (query: string, session_id: string) =>
     call<CompareResponse>("POST", "/v1/compare", { query, session_id }),
   attacks: () => call<AttackDefinition[]>("GET", "/v1/attacks"),
+  // an attack script played against both pipelines, every round scored (standard, rewriting
+  // alone, rewriting + session monitor)
+  runAttack: (id: string) => call<AttackRun>("POST", `/v1/attacks/${encodeURIComponent(id)}/run`, {}),
+  // the session monitor's ledger: kinds of detail released per person, never the values
+  monitorLedger: (session_id: string) => call<MonitorLedger>("GET", `/v1/sessions/${session_id}/monitor`),
   documents: (limit = 500, offset = 0) =>
     call<DocumentSummary[]>("GET", `/v1/documents?limit=${limit}&offset=${offset}`),
   document(id: string): Promise<DocumentView> {
