@@ -112,3 +112,54 @@ async def test_attack_rounds_score_rewriting_alone_too() -> None:
     assert "district" in last.unmonitored_leakage.disclosed
     assert "district" not in last.protected_leakage.disclosed
     assert last.unmonitored_leakage.candidate_pool <= last.protected_leakage.candidate_pool
+
+
+def _monitor_eval_tool():
+    """tools/monitor_eval.py as a module (tools/ is not a package)."""
+    import importlib.util
+    from pathlib import Path
+
+    path = Path(__file__).resolve().parents[2] / "tools" / "monitor_eval.py"
+    spec = importlib.util.spec_from_file_location("monitor_eval", path)
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+    return tool
+
+
+TOOL = _monitor_eval_tool()
+
+
+async def test_monitor_eval_report() -> None:
+    from sanitise.attacks.runner import run_attack
+    from sanitise.schemas import AttackDefinition, Person
+
+    store = MemoryDocumentStore()
+    for doc_id, values in PATIENTS.items():
+        store.put(doc_id, "neurosurgeon Coonoor vertigo", make_record(doc_id, *values))
+    ctx = RagContext(store=store, retriever=BM25Retriever({"p1": "neurosurgeon Coonoor vertigo"}))
+    ctx.monitor = LedgerMonitor(store, ledger=DisclosureLedger(salt="t"))
+    target = Person(
+        person_id="p1", name="Priya Raman", sex="F", age=36, age_band="30-39", town="Coonoor",
+        district="Nilgiris", state="Tamil Nadu", occupation="neurosurgeon",
+        occupation_group="healthcare worker", conditions=["vertigo"],
+    )  # fmt: skip
+    attack = AttackDefinition(
+        attack_id="s", kind="stepwise", name="Stepwise", target_person_id="p1",
+        queries=["Coonoor a", "Coonoor b"],
+    )  # fmt: skip
+    llm = MockLLM(by_schema={TEXT_CALL: [a for a in ANSWERS[:2] for _ in (0, 1)]})
+    run = await run_attack(ctx, attack, [target], llm)
+    benign = {
+        "fresh": {"allowed": 29, "blocked": 1},
+        "one_session": {"allowed": 30},
+        "stepped_in": [],
+    }
+    summary = TOOL.summarise([(run, "stepwise")], benign)
+    assert summary["overall"]["all"]["attacks"] == 1
+    assert set(summary["overall"]["stepwise"]) >= {"baseline", "unmonitored", "protected"}
+    meta = {
+        "run": "t", "answer_model": "mock", "store": "mem", "documents": 13, "k": 5,
+        "max_attributes": 3, "commit": "x", "finished": "now",
+    }  # fmt: skip
+    md = TOOL.report_md(meta, summary)
+    assert "Rewriting + session monitor" in md and "**3%**" in md  # 1 of 30 refused
