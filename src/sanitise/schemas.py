@@ -288,7 +288,9 @@ class AttackRound(BaseModel):
     baseline: RagAnswer
     protected: RagAnswer
     baseline_leakage: RoundLeakage | None = None  # None outside an attack (plain /v1/compare)
-    protected_leakage: RoundLeakage | None = None
+    protected_leakage: RoundLeakage | None = None  # rewriting + session monitor
+    # rewriting alone: what the protected answers would have revealed without the monitor
+    unmonitored_leakage: RoundLeakage | None = None
 
 
 class AttackDefinition(BaseModel):
@@ -307,6 +309,7 @@ class AttackRun(BaseModel):
     rounds: list[AttackRound]
     baseline_identified_at: int | None = None  # first round the target was identified
     protected_identified_at: int | None = None
+    unmonitored_identified_at: int | None = None  # rewriting alone, without the monitor
 
 
 class SessionTrace(BaseModel):

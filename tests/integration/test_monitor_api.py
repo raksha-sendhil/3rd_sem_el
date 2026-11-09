@@ -83,3 +83,32 @@ def test_monitor_off_allows_everything() -> None:
         ).json()
         assert body["monitor"]["verdict"] == "allowed" and "Nilgiris" in body["answer"]
         assert client.get(f"/v1/sessions/{session}/monitor").json()["monitor"] == "off"
+
+
+async def test_attack_rounds_score_rewriting_alone_too() -> None:
+    from sanitise.attacks.runner import run_attack
+    from sanitise.schemas import AttackDefinition, Person
+
+    store = MemoryDocumentStore()
+    for doc_id, values in PATIENTS.items():
+        store.put(doc_id, "neurosurgeon Coonoor vertigo", make_record(doc_id, *values))
+    ctx = RagContext(store=store, retriever=BM25Retriever({"p1": "neurosurgeon Coonoor vertigo"}))
+    ctx.monitor = LedgerMonitor(store, ledger=DisclosureLedger(salt="t"))
+    target = Person(
+        person_id="p1", name="Priya Raman", sex="F", age=36, age_band="30-39", town="Coonoor",
+        district="Nilgiris", state="Tamil Nadu", occupation="neurosurgeon",
+        occupation_group="healthcare worker", conditions=["vertigo"],
+    )  # fmt: skip
+    attack = AttackDefinition(
+        attack_id="stepwise_test", kind="stepwise", name="Stepwise", target_person_id="p1",
+        queries=["Coonoor vertigo?", "Coonoor age?", "Coonoor job?", "Coonoor town?"],
+    )  # fmt: skip
+    # the baseline and the protected pipeline get the same scripted answers, in turn
+    llm = MockLLM(by_schema={TEXT_CALL: [a for a in ANSWERS for _ in (0, 1)]})
+    run = await run_attack(ctx, attack, [target], llm)
+    last = run.rounds[-1]
+    assert last.protected.monitor.verdict == "blocked"
+    # without the monitor the town (the Nilgiris district) would have gone out
+    assert "district" in last.unmonitored_leakage.disclosed
+    assert "district" not in last.protected_leakage.disclosed
+    assert last.unmonitored_leakage.candidate_pool <= last.protected_leakage.candidate_pool

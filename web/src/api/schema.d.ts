@@ -404,6 +404,7 @@ export interface components {
             protected: components["schemas"]["RagAnswer"];
             baseline_leakage?: components["schemas"]["RoundLeakage"] | null;
             protected_leakage?: components["schemas"]["RoundLeakage"] | null;
+            unmonitored_leakage?: components["schemas"]["RoundLeakage"] | null;
         };
         /** AttackRun */
         AttackRun: {
@@ -417,6 +418,8 @@ export interface components {
             baseline_identified_at?: number | null;
             /** Protected Identified At */
             protected_identified_at?: number | null;
+            /** Unmonitored Identified At */
+            unmonitored_identified_at?: number | null;
         };
         /** AttackRunRequest */
         AttackRunRequest: {

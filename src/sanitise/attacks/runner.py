@@ -7,6 +7,11 @@ one question per round, in a single session, and scores every round with Person 
 For ``interception`` the queries are ordinary users' questions; the attacker never prompts and
 only reads the traffic to the model, so each round is scored on the payload instead of the
 answer. ``iter_attack`` yields rounds as they finish (the dashboard streams them).
+
+Each round is scored three ways: the standard pipeline, the protected one as answered
+(rewriting + session monitor), and the protected one without the monitor ("rewriting alone":
+the draft the monitor generalised or blocked, where it changed anything). The last is the
+leakage chart's third line (docs/phase3_plan.md section 1).
 """
 
 from __future__ import annotations
@@ -54,6 +59,14 @@ def _observed(attack: AttackDefinition, answers: list[RagAnswer]) -> list[RagAns
     return [a.model_copy(update={"answer": a.payload}) for a in answers]
 
 
+def _unmonitored(answers: list[RagAnswer]) -> list[RagAnswer]:
+    """The protected answers as rewriting alone would have given them (before the monitor)."""
+    return [
+        a.model_copy(update={"answer": a.draft_answer}) if a.draft_answer is not None else a
+        for a in answers
+    ]
+
+
 async def iter_attack(
     ctx: RagContext,
     attack: AttackDefinition,
@@ -79,6 +92,9 @@ async def iter_attack(
             protected_leakage=score_round(
                 people, attack.target_person_id, _observed(attack, seen["protected"])
             ),
+            unmonitored_leakage=score_round(
+                people, attack.target_person_id, _observed(attack, _unmonitored(seen["protected"]))
+            ),
         )
         ctx.sessions.append(session_id, round_)
         yield round_
@@ -87,7 +103,7 @@ async def iter_attack(
 def summarise(attack: AttackDefinition, session_id: str, rounds: list[AttackRound]) -> AttackRun:
     def first(side: str) -> int | None:
         for r in rounds:
-            leak = r.baseline_leakage if side == "baseline" else r.protected_leakage
+            leak = getattr(r, f"{side}_leakage")
             if leak is not None and leak.identified:
                 return r.round
         return None
@@ -98,6 +114,7 @@ def summarise(attack: AttackDefinition, session_id: str, rounds: list[AttackRoun
         rounds=rounds,
         baseline_identified_at=first("baseline"),
         protected_identified_at=first("protected"),
+        unmonitored_identified_at=first("unmonitored"),
     )
 
 

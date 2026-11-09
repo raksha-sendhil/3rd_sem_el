@@ -856,6 +856,16 @@
         "type": "null"
        }
       ]
+     },
+     "unmonitored_leakage": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/RoundLeakage"
+       },
+       {
+        "type": "null"
+       }
+      ]
      }
     },
     "type": "object",
@@ -905,6 +915,17 @@
        }
       ],
       "title": "Protected Identified At"
+     },
+     "unmonitored_identified_at": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "title": "Unmonitored Identified At"
      }
     },
     "type": "object",
