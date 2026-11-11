@@ -32,6 +32,7 @@ import random
 import re
 import sys
 import time
+import urllib.error
 from pathlib import Path
 
 MAX_PARTS = 2
@@ -196,6 +197,20 @@ def value_found(value: str, text: str) -> bool:
     return bool(v) and f" {v} " in _norm(text)
 
 
+def _label_models() -> list[str]:
+    """Models to try, in order: EVAL_LABEL_MODEL, then the agents' Gemini models (the health
+    notebook sets them), then current defaults. A model the key cannot use (404) is skipped."""
+    names = [os.environ.get("EVAL_LABEL_MODEL", "")]
+    names += os.environ.get("SANITISE_AGENTS_MODEL", "").split(",")
+    names += [
+        "gemini-3.5-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite",
+        "gemini-2.5-flash",
+    ]
+    return list(dict.fromkeys(n.strip() for n in names if n.strip()))
+
+
 def _gemini_keys() -> list[str]:
     raw = ",".join(os.environ.get(k, "") for k in
                    ("GEMINI_API_KEYS", "SANITISE_GEMINI_API_KEY", "GEMINI_API_KEY"))  # fmt: skip
@@ -229,7 +244,7 @@ def label(work: Path, n_targeted: int = 2, n_utility: int = 2) -> None:
     keys = _gemini_keys()
     if not keys:
         raise SystemExit("no Gemini key: set the Kaggle secret GEMINI_API_KEY")
-    model = os.environ.get("EVAL_LABEL_MODEL", "gemini-2.5-flash")
+    models = _label_models()
     key_i = 0
     for m in manifest:
         if m["id"] in labels or not m["gold_text"].strip():
@@ -237,15 +252,25 @@ def label(work: Path, n_targeted: int = 2, n_utility: int = 2) -> None:
         prompt = LABEL_PROMPT.format(n_t=n_targeted, n_u=n_utility, text=m["gold_text"][:6000])
         data = None
         for attempt in range(8):
+            if not models:
+                raise SystemExit("no Gemini model this key can use: set EVAL_LABEL_MODEL")
+            model = models[0]
             try:
                 data = json.loads(_gemini(prompt, model, keys[key_i % len(keys)]))
                 break
-            except Exception as exc:  # rate limit or broken JSON: next key, wait, retry
-                print(f"  {m['id']}: {str(exc)[:120]} (retrying)", flush=True)
-                key_i += 1
-                time.sleep(min(60, 5 * (attempt + 1)))
+            except urllib.error.HTTPError as exc:
+                if exc.code == 404:  # the key has no such model: the next one, at once
+                    print(f"  {model}: not available to this key, trying the next model")
+                    models.pop(0)
+                    continue
+                print(f"  {m['id']}: {model}: {exc} (retrying)", flush=True)
+            except Exception as exc:  # network or broken JSON
+                print(f"  {m['id']}: {model}: {str(exc)[:120]} (retrying)", flush=True)
+            key_i += 1  # rate limit or a hiccup: next key, wait, retry
+            time.sleep(min(60, 5 * (attempt + 1)))
         if data is None:
             continue
+        labels_model = model
         gold = m["gold_text"]
         values = [v for v in data.get("private_values", [])
                   if isinstance(v, dict) and v.get("value") and value_found(v["value"], gold)]  # fmt: skip
@@ -255,7 +280,7 @@ def label(work: Path, n_targeted: int = 2, n_utility: int = 2) -> None:
         utility = [q for q in data.get("utility_questions", [])
                    if q.get("answer") and value_found(q["answer"], gold)][:n_utility]  # fmt: skip
         labels[m["id"]] = {"private_values": values, "targeted_questions": targeted,
-                           "utility_questions": utility, "label_model": model}  # fmt: skip
+                           "utility_questions": utility, "label_model": labels_model}  # fmt: skip
         out_path.write_text(json.dumps(labels, indent=1, ensure_ascii=False), encoding="utf-8")
         print(
             f"labelled {m['id']}: {len(values)} private values, {len(targeted)} targeted, "
