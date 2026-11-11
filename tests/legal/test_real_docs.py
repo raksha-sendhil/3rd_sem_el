@@ -62,7 +62,10 @@ def test_the_indian_set_has_300_checked_documents_from_many_courts() -> None:
         assert d.meta["url"].startswith("https://indian-") and d.meta["url"].endswith(".pdf")
         assert 900 <= len(d.text.strip()) <= 1800, d.id  # one part for the agents
         assert d.must_hide and d.must_keep, d.id
-    assert load_set("indian300", limit=5) == docs[:5]
+    trial = load_set("indian300", limit=30)
+    assert len(trial) == 30 and len({d.id for d in trial}) == 30
+    assert len({d.meta["court"] for d in trial}) == 10  # every court, not 30 of one
+    assert load_set("indian300", limit=1000) == docs
     assert len(load_set("both")) == 300 + len(load_manifest(REAL))
     with pytest.raises(ValueError, match="unknown set"):
         load_set("english")

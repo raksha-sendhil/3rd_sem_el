@@ -144,7 +144,8 @@ real = load_set(DOC_SET)
 if ONLY:
     real = [d for d in real if d.id in ONLY]
 everything_in_set = real
-real = real[:LIMIT] if LIMIT else real
+if LIMIT and not ONLY:
+    real = load_set(DOC_SET, LIMIT)  # taken in turn from each court
 table = pd.DataFrame([{
     "id": d.id, "court": d.meta["court"], "type": d.meta["doc_type"], "date": d.meta["date"],
     "chars": len(d.text), "must_hide": len(d.must_hide), "must_keep": len(d.must_keep),

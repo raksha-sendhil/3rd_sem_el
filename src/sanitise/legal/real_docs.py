@@ -94,13 +94,25 @@ SETS = {
 
 def load_set(name: str = "indian300", limit: int | None = None) -> list[Document]:
     """A document set by name: "indian300", "curated" or "both" (curated first). ``limit``
-    keeps the first N, for a quick trial."""
+    keeps N documents for a quick trial, taken in turn from each court so that a small trial
+    still covers every court."""
     names = ("curated", "indian300") if name == "both" else (name,)
     unknown = [n for n in names if n not in SETS]
     if unknown:
         raise ValueError(f"unknown set {unknown[0]!r}: use one of {[*SETS, 'both']}")
     docs = [d for n in names for d in load_manifest(SETS[n])]
-    return docs[:limit] if limit else docs
+    if not limit or limit >= len(docs):
+        return docs
+    by_court: dict[str, list[Document]] = {}
+    for d in docs:
+        by_court.setdefault(str(d.meta.get("court", "")), []).append(d)
+    queues = list(by_court.values())
+    picked: list[Document] = []
+    while len(picked) < limit:
+        for queue in queues:
+            if queue and len(picked) < limit:
+                picked.append(queue.pop(0))
+    return picked
 
 
 def read_file(path: str | Path) -> str:
