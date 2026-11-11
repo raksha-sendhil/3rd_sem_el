@@ -386,7 +386,7 @@ export interface components {
              * Kind
              * @enum {string}
              */
-            kind: "context_dump" | "stepwise" | "interception";
+            kind: "context_dump" | "stepwise" | "interception" | "direct" | "linkage";
             /** Name */
             name: string;
             /** Target Person Id */
@@ -677,7 +677,7 @@ export interface components {
              * Monitor
              * @enum {string}
              */
-            monitor: "ledger" | "off";
+            monitor: "ledger" | "off" | "pool";
             /** K */
             k?: number | null;
             /** Max Attributes */

@@ -8,6 +8,10 @@ sensitive spans comes out, scored against hand-annotated ground truth.
 Everything runs locally: Ollama (llama3:8b, qwen2.5:7b-instruct fallback),
 Presidio + spaCy, no paid APIs.
 
+Two domains: **healthcare** (`src/sanitise`) and **legal** (`src/sanitise_legal`, the legal
+pipeline imported from its branch). The dashboard's toggle picks one; the API serves legal under
+`/legal`. See [docs/domains.md](docs/domains.md).
+
 ## Quick start
 
 With pip (pinned, known-good versions):

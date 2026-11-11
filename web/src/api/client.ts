@@ -42,7 +42,7 @@ export class ApiError extends Error {
 }
 
 // ---- Domain: every request carries the chosen use case as ?domain=... (medical, legal,
-// finance), the same way as the legal branch, so a backend with several domains uses that one's
+// finance), so a backend with several domains uses that one's
 // prompts, data and models. A backend with one domain ignores it. Set by DomainProvider.
 let requestDomain: string | null = null;
 
@@ -50,9 +50,14 @@ export function setRequestDomain(domain: string | null): void {
   requestDomain = domain;
 }
 
+// Legal runs on its own pipeline (src/sanitise_legal), which the API serves under /legal with the
+// same paths; healthcare uses the paths as they are.
+const DOMAIN_PREFIX: Record<string, string> = { legal: "/legal" };
+
 function withDomain(path: string): string {
   if (!requestDomain) return path;
-  return path + (path.includes("?") ? "&" : "?") + "domain=" + encodeURIComponent(requestDomain);
+  const prefix = DOMAIN_PREFIX[requestDomain] ?? "";
+  return prefix + path + (path.includes("?") ? "&" : "?") + "domain=" + encodeURIComponent(requestDomain);
 }
 
 async function call<T>(method: "GET" | "POST", path: string, body?: unknown): Promise<T> {

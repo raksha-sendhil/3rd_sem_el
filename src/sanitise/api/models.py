@@ -94,7 +94,8 @@ class MonitorLedger(BaseModel):
     """What the session monitor has recorded for a session (GET /v1/sessions/{id}/monitor)."""
 
     session_id: str
-    monitor: Literal["ledger", "off"]
+    # "pool": the legal pipeline's candidate-pool monitor (no ledger of kinds of detail)
+    monitor: Literal["ledger", "off", "pool"]
     k: int | None = None  # fewest records that must still match a person
     max_attributes: int | None = None  # kinds of detail allowed per person per session
     entries: list[LedgerEntry] = Field(default_factory=list)

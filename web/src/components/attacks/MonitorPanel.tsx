@@ -96,7 +96,9 @@ export function MonitorPanel({ rounds, ledger }: { rounds: MonitorRound[]; ledge
           </div>
         </div>
         <div className="ml-auto font-mono text-[11px] text-[#4A4760]">
-          at least {k} matching records · at most {n} kinds of detail per person
+          {ledger?.monitor === "pool"
+            ? `at least ${k} matching clients`
+            : `at least ${k} matching records · at most ${n} kinds of detail per person`}
         </div>
       </div>
       {rounds.length === 0 ? (

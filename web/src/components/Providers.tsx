@@ -1,11 +1,11 @@
 "use client";
 
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, Fragment, useContext, useEffect, useState, type ReactNode } from "react";
 import { setRequestDomain } from "@/api/client";
 import { DEFAULT_DOMAIN, type Domain, type DomainId, domainById } from "@/lib/domains";
 
-const STORAGE_KEY = "sanitise.domain"; // the same key as the legal branch's dashboard
+const STORAGE_KEY = "sanitise.domain";
 
 type DomainState = { domain: Domain; setDomain: (id: DomainId) => void };
 
@@ -42,7 +42,13 @@ function DomainProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  return <DomainContext.Provider value={{ domain: domainById(id), setDomain }}>{children}</DomainContext.Provider>;
+  // keyed by the domain: switching remounts the pages, so each loads its data again from the
+  // chosen domain's pipeline (healthcare and legal have different documents, attacks and models)
+  return (
+    <DomainContext.Provider value={{ domain: domainById(id), setDomain }}>
+      <Fragment key={id}>{children}</Fragment>
+    </DomainContext.Provider>
+  );
 }
 
 export const useDomain = () => useContext(DomainContext);

@@ -1,5 +1,5 @@
 // The use cases the dashboard can switch between. The id is what the API receives (?domain=...),
-// matching config/domains.json on the legal branch ("medical", "legal"). A domain that is not
+// matching config/domains.json ("medical", "legal"). A domain that is not
 // ready yet shows in the toggle, greyed out, and cannot be picked.
 
 export type DomainId = "medical" | "legal" | "finance";
@@ -31,8 +31,7 @@ export const DOMAINS: Domain[] = [
   {
     id: "legal",
     label: "Legal",
-    ready: false,
-    why: "Coming soon: the legal pipeline is on its own branch and not merged yet",
+    ready: true,
     accent: "#6D4AFF",
     blurb: "Client files: intake notes, case notes, advice emails, contracts",
     placeholder: "Paste a case note or advice email, or choose a contract or scanned filing",
