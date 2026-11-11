@@ -202,23 +202,36 @@ requests at once (`OLLAMA_NUM_PARALLEL=4`, `EVAL_CONCURRENCY=2`).
    `notebooks/eval_<domain>_kaggle.ipynb`. Or download the file from GitHub and upload it.
 2. **Session options** (right sidebar):
    * **Accelerator:** GPU T4 x2;
-   * **Internet:** On (needs a phone-verified account);
-   * **Persistence:** Files only. Without it, `/kaggle/working` is lost between sessions and
-     the run starts over.
+   * **Internet:** On (needs a phone-verified account).
 3. **Add-ons → Secrets:** add `GEMINI_API_KEY` and tick it as attached.
    * Health: several keys, comma-separated, in that one secret.
    * Legal: `GEMINI_API_KEY_2` ... `GEMINI_API_KEY_9` as separate secrets.
 
-**The run.** Leave `SCALE = "5h"` in cell 1 and run every cell in order (about 4.5 hours).
-To check the set-up first, run all cells once with `SCALE = "quick"` (about 10 minutes, a few
-items per step). Each scale keeps its results in its own folder (`eval/<domain>_5h`,
-`eval/<domain>_quick`); `SCALE = "full"` runs the plan's full volumes (12-15 hours).
+**Optional check first (interactive, about 10 minutes).** Set `SCALE = "quick"` in cell 1 and
+run the cells one by one. If every cell finishes, set `SCALE` back to `"5h"`.
 
-* When a session ends (12-hour limit, or idle): open the notebook again, run **cell 1**, then
-  run on from the first cell that had not finished. Every step skips what is already on disk.
-* Cell 4 (labels) prints how many private values and questions each scan got. Open
-  `eval/<domain>_5h/e2e/labels.json`, check 10 documents by eye, and note any wrong label.
-* Cell 9 shows `REPORT.md` and the figures.
+**The run, unattended (recommended).** An interactive session stops soon after the tab is
+closed or left idle. To let Kaggle run the whole notebook on its own:
+
+1. Make sure cell 1 says `SCALE = "5h"`.
+2. Top right: **Save Version → Save & Run All (Commit) → Save**.
+3. Close Kaggle. The notebook runs every cell in order in the background (up to 12 hours; the
+   5h scale needs about 4.5).
+4. To follow it, open the notebook's **Versions** and click the running version to see its log.
+5. When it has finished, open that version's **Output** tab: it holds
+   `eval_results_<domain>_5h.zip` and the whole `eval/` folder.
+
+An unattended run starts with an empty `/kaggle/working`. If it fails partway, fix the cause and
+run it again from the start; the 5h scale fits in one run.
+
+**After the run:**
+* Open `<domain>_5h/e2e/labels.json` (in the zip), check 10 documents by eye, and note any
+  wrong label.
+* `REPORT.md` and the figures are in `<domain>_5h/results/`.
+
+Running cell by cell in an interactive session also works. It stops if the tab closes; run
+cell 1 again and carry on from the first unfinished cell, since every step skips what is
+already on disk.
 
 **Saving the results and pushing them to the repo:**
 

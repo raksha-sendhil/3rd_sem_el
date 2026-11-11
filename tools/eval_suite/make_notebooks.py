@@ -41,9 +41,12 @@ measured for **no privacy** (standard RAG) and **ours** (Agents 1-3 + the sessio
 Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 
 **Before running** (right sidebar):
-* **Session options**: Accelerator **GPU T4 x2**, Internet **On**, Persistence **Files only**
-  (so `/kaggle/working` survives between sessions and every step resumes).
+* **Session options**: Accelerator **GPU T4 x2**, Internet **On**.
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
+
+**To let it run on its own** (recommended): with `SCALE = "5h"` in cell 1, click **Save Version
+-> Save & Run All (Commit) -> Save** (top right) and close Kaggle. Every cell runs in the
+background; when it finishes, the version's **Output** tab holds `eval_results_{domain}_5h.zip`.
 
 | Cell | What it does | Time at `SCALE = "5h"` |
 |---|---|---|
@@ -60,9 +63,9 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 
 `SCALE = "5h"` (the default) fits in about 4.5 hours. Optionally run `SCALE = "quick"` first
 (about 10 minutes, a few items per step) to check the set-up; `SCALE = "full"` is the plan's
-full volumes (12-15 hours). Each scale keeps its results in its own folder. If a session stops,
-run cell 1 again and carry on from the first unfinished cell: every step skips what is already
-on disk.
+full volumes (12-15 hours). Each scale keeps its results in its own folder. Run interactively,
+a session stops when the tab closes: run cell 1 again and carry on from the first unfinished
+cell, since every step skips what is already on disk.
 """
 
 
