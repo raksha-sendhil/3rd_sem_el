@@ -51,7 +51,7 @@ the rules alone (a baseline that needs no model) and then for the full agents.
 |---|---|
 | Setup: code, packages, Gemma 4 through Ollama | ~10 min |
 | Rules-only baseline on 300 documents | ~2 min |
-| Agents 1-3 with Gemma 4, 30 documents (`LIMIT = 30`) | ~30-45 min on a T4 |
+| Agents 1-3 with Gemma 4, a 30-document trial (`LIMIT = 30`) | ~30-45 min on a T4 |
 | Agents 1-3 with Gemma 4, all 300 | ~5-7 h: one session, or two (finished documents are kept) |
 | Your own documents | ~1-2 min per 1,800 characters |""",
     ),
@@ -64,7 +64,7 @@ BACKEND = "ollama"        # "ollama": Gemma 4 on this notebook's GPU; nothing le
                           # "mock":   rules only, no model (the baseline; runs in seconds)
 MODEL = None              # None = the legal profile's model (gemma4:e4b / gemini-3.5-flash)
 DOC_SET = "indian300"     # "indian300" (300 Indian judgments), "curated" (14), or "both"
-LIMIT = 30                # first N documents for a trial run; None = the whole set
+LIMIT = None              # None = all 300; e.g. 30 for a quick trial (3 from each court)
 MAX_CHARS = 1800          # longer documents are split into parts of at most this many characters
 RUN_REAL_DOCS = True      # False = skip the set and run only your own documents
 ONLY = None               # e.g. ["in08_kar_hc_motor_accident"]: just these ids

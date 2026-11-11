@@ -38,10 +38,10 @@ monitor is a teammate's part.
 The other settings in cell 1:
 
 - `DOC_SET`: `"indian300"` (default), `"curated"`, or `"both"` (all 314).
-- `LIMIT`: run only the first N documents. It is 30 by default, for a first trial of about
-  30-45 minutes. Set it to `None` for all 300, which takes about 5-7 hours with Gemma on a T4.
+- `LIMIT`: `None` (the default) runs all 300, which takes about 5-7 hours with Gemma on a T4.
   That fits in one Kaggle session (12 hours at most), or in two, because finished documents are
-  kept.
+  kept. Set it to a number such as 30 for a quick trial, which takes documents in turn from each
+  court.
 - `MODEL`: another model. Any Ollama tag works with `"ollama"` (cell 3 pulls it), and for
   example `"gemini-3.8-flash"` works with `"gemini"`.
 - `MAX_CHARS`: the size of a part. 1,800 is the default and the maximum, because Agent 1
@@ -58,7 +58,7 @@ Click **Run All**, or run the cells one by one from the top.
 |---|---|---|
 | 2 | clones `law-pipeline-final`, installs the packages and the spaCy model | `code version: <hash> ...` |
 | 3 | installs Ollama, starts it and pulls `gemma4:e4b` (about 10 min the first time) | `gemma4:e4b` in the `ollama list` table |
-| 4 | loads the set | "300 documents in the set; running 30", documents per court, the first rows |
+| 4 | loads the set | "300 documents in the set; running 300", documents per court, the first rows |
 | Baseline | the rules alone, with no model | totals: on all 300, about 51% of the must-hide identifiers hidden and 80% of the legal terms kept |
 | Agents 1-3 | the documents with the model | one line per document, then the totals side by side and a table per document |
 | 5 | one document in full | the coloured spans, the safe text, the spot checks, the facts and the routing |
