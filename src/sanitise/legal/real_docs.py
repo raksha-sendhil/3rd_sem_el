@@ -32,7 +32,8 @@ from typing import Any
 
 from sanitise.schemas import PIICategory, SanitisedRecord
 
-REAL_DIR = Path("data/legal/real")
+_IN_REPO = Path(__file__).resolve().parents[3] / "data" / "legal" / "real"
+REAL_DIR = _IN_REPO if _IN_REPO.is_dir() else Path("data/legal/real")
 SUFFIXES = (".txt", ".md", ".json", ".pdf", ".docx")
 # Agent 1 categories that name a person or a record outright; any of these still in the safe
 # text is reported as left behind (the same set the leak check treats as direct).
@@ -83,6 +84,23 @@ def load_manifest(root: str | Path = REAL_DIR) -> list[Document]:
             )
         )
     return docs
+
+
+SETS = {
+    "indian300": REAL_DIR / "indian300",  # 300 Indian judgments, checks from court metadata
+    "curated": REAL_DIR,  # 14 hand-picked documents, checks written by hand
+}
+
+
+def load_set(name: str = "indian300", limit: int | None = None) -> list[Document]:
+    """A document set by name: "indian300", "curated" or "both" (curated first). ``limit``
+    keeps the first N, for a quick trial."""
+    names = ("curated", "indian300") if name == "both" else (name,)
+    unknown = [n for n in names if n not in SETS]
+    if unknown:
+        raise ValueError(f"unknown set {unknown[0]!r}: use one of {[*SETS, 'both']}")
+    docs = [d for n in names for d in load_manifest(SETS[n])]
+    return docs[:limit] if limit else docs
 
 
 def read_file(path: str | Path) -> str:

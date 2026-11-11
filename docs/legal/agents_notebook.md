@@ -1,8 +1,14 @@
 # Running the agents notebook
 
 `notebooks/legal_agents_kaggle.ipynb` runs only Agents 1-3: detect, extract facts, rewrite and
-leak-check. It runs them on 14 real public legal documents and on any documents you give it,
-and shows each agent's output. There is no store, search, answering model, attacks, session
+leak-check. It runs them on real legal documents and on any documents you give it, and shows
+each agent's output. There are two document sets:
+
+- **`indian300`** (the default): 300 Indian judgments, 90 from the Supreme Court and 210 from
+  nine High Courts, from the courts' open datasets. Their checks come from the courts' own case
+  metadata. See `data/legal/real/indian300/README.md`.
+- **`curated`**: 14 hand-picked documents (12 Indian, 1 UK, 1 US) with checks written by hand.
+  See `data/legal/real/README.md`. There is no store, search, answering model, attacks, session
 monitor, fine-tuning or dashboard. Those are in `notebooks/legal_kaggle.ipynb`, and the session
 monitor is a teammate's part.
 
@@ -31,13 +37,18 @@ monitor is a teammate's part.
 
 The other settings in cell 1:
 
+- `DOC_SET`: `"indian300"` (default), `"curated"`, or `"both"` (all 314).
+- `LIMIT`: run only the first N documents. It is 30 by default, for a first trial of about
+  30-45 minutes. Set it to `None` for all 300, which takes about 5-7 hours with Gemma on a T4.
+  That fits in one Kaggle session (12 hours at most), or in two, because finished documents are
+  kept.
 - `MODEL`: another model. Any Ollama tag works with `"ollama"` (cell 3 pulls it), and for
   example `"gemini-3.8-flash"` works with `"gemini"`.
 - `MAX_CHARS`: the size of a part. 1,800 is the default and the maximum, because Agent 1
   refuses text longer than 2,000 characters. Lower it if the model's output often breaks (the
   **fallbacks** column).
 - `ONLY`: run a few documents. For example `["in08_kar_hc_motor_accident"]`.
-- `RUN_REAL_DOCS = False` skips the 14 documents and runs only your own.
+- `RUN_REAL_DOCS = False` skips the set and runs only your own documents.
 
 ## 3. Run it
 
@@ -47,10 +58,11 @@ Click **Run All**, or run the cells one by one from the top.
 |---|---|---|
 | 2 | clones `law-pipeline-final`, installs the packages and the spaCy model | `code version: <hash> ...` |
 | 3 | installs Ollama, starts it and pulls `gemma4:e4b` (about 10 min the first time) | `gemma4:e4b` in the `ollama list` table |
-| 4 | loads the 14 documents | a table of ids, courts, types and sources |
-| Baseline | the rules alone, with no model | totals, about 75% of the must-hide identifiers hidden |
-| Agents 1-3 | every document with the model | one line per document, then the totals side by side and a table per document |
+| 4 | loads the set | "300 documents in the set; running 30", documents per court, the first rows |
+| Baseline | the rules alone, with no model | totals: on all 300, about 51% of the must-hide identifiers hidden and 80% of the legal terms kept |
+| Agents 1-3 | the documents with the model | one line per document, then the totals side by side and a table per document |
 | 5 | one document in full | the coloured spans, the safe text, the spot checks, the facts and the routing |
+| Worst 10 | the documents with the most leaks, in full | where the agents still fail |
 | Your documents | see section 4 | the same table and views for your files |
 | Save | `REPORT.md` and `agent_runs.zip` | the report's start |
 

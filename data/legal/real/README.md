@@ -1,5 +1,8 @@
 # Real legal documents for testing the agents
 
+> The larger set, 300 Indian judgments checked automatically, is in
+> [`indian300/`](indian300/README.md). This page covers the 14 hand-picked documents.
+
 Fourteen public legal documents for testing Agents 1-3 on real text, next to the fictional
 training corpus in `data/legal/corpus/`. `manifest.json` gives each one's court, type, date,
 source link, licence and spot checks; `docs/` holds the text.

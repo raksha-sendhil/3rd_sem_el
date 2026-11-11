@@ -13,6 +13,7 @@ from sanitise.legal.real_docs import (
     from_text,
     load_inputs,
     load_manifest,
+    load_set,
     render_html,
     run_agents,
     split_text,
@@ -42,10 +43,29 @@ def test_every_real_document_is_listed_with_its_source() -> None:
 
 
 def test_every_spot_check_string_is_in_its_document() -> None:
-    for d in load_manifest(REAL):
+    for d in load_set("both"):
         text = d.text.lower()
         missing = [s for s in d.must_hide + d.must_keep if s.lower() not in text]
         assert not missing, (d.id, missing)
+
+
+def test_the_indian_set_has_300_checked_documents_from_many_courts() -> None:
+    docs = load_set("indian300")
+    assert len(docs) == 300 and len({d.id for d in docs}) == 300
+    on_disk = {p.stem for p in (REAL / "indian300" / "docs").glob("*.txt")}
+    assert on_disk == {d.id for d in docs}
+    courts = {d.meta["court"] for d in docs}
+    assert len(courts) == 10 and "Supreme Court of India" in courts
+    assert sum(d.meta["court"] == "Supreme Court of India" for d in docs) == 90
+    for d in docs:
+        assert d.meta["jurisdiction"] == "India" and d.meta["licence"].startswith("CC-BY-4.0")
+        assert d.meta["url"].startswith("https://indian-") and d.meta["url"].endswith(".pdf")
+        assert 900 <= len(d.text.strip()) <= 1800, d.id  # one part for the agents
+        assert d.must_hide and d.must_keep, d.id
+    assert load_set("indian300", limit=5) == docs[:5]
+    assert len(load_set("both")) == 300 + len(load_manifest(REAL))
+    with pytest.raises(ValueError, match="unknown set"):
+        load_set("english")
 
 
 def test_split_keeps_every_word_and_respects_the_limit() -> None:

@@ -27,16 +27,22 @@ This notebook runs only the three agents and shows what each one does:
 | 2 Extract | turns the document into facts (`subject - relation - value`, with importance) | a facts table |
 | 3 Rewrite | keeps, generalises or replaces each span, rewrites the text, then runs a leak check | the safe text, and what happened to each span |
 
-**The documents.** 14 real, public legal documents in `data/legal/real/`, taken from official
-or established sources: 7 Supreme Court of India judgments, 3 High Court orders (Karnataka,
-Delhi), a Central Information Commission RTI decision, an Indian company's executive contract
-filed with the US SEC, a UK Employment Appeal Tribunal judgment and a US contract case. Each is an
-excerpt of the facts; `data/legal/real/README.md` lists every source, link and licence.
+**The documents** (`DOC_SET` in cell 1):
+
+- `"indian300"`: 300 real Indian judgments and orders from the official open datasets of the
+  Supreme Court (90, from 2023-2025) and nine High Courts (Karnataka, Delhi, Bombay, Kerala,
+  Madras, Calcutta, Telangana, Gujarat, Gauhati). Each is the start of the judgment, at most
+  1,800 characters, so it goes through the agents in one part. They were picked and checked by
+  `tools/legal/build_indian_corpus.py`.
+- `"curated"`: 14 hand-picked documents (12 Indian, 1 UK, 1 US) with checks written by hand.
+- `"both"`: all 314.
 
 **What counts as a good result.** Each document lists identifiers that must disappear
-(`must_hide`, e.g. names, vehicle and policy numbers, home addresses) and legal substance that
-must survive (`must_keep`, e.g. "Section 138", "specific performance"). The notebook reports
-both, first for the rules alone (a baseline that needs no model) and then for the full agents.
+(`must_hide`) and legal substance that must survive (`must_keep`). For the 300, the names come
+from the court's own case metadata (petitioner and respondent), not from our agents, together
+with phone numbers, PAN, vehicle numbers and S/o names found by pattern. The legal terms are the
+sections, Acts and words such as "bail" found in the text. The notebook reports both, first for
+the rules alone (a baseline that needs no model) and then for the full agents.
 
 **Kaggle settings** (right-hand panel): Accelerator **GPU T4 x2** (one GPU is used), Internet
 **on**. Run the cells from top to bottom. Step-by-step help: `docs/legal/agents_notebook.md`.
@@ -44,8 +50,9 @@ both, first for the rules alone (a baseline that needs no model) and then for th
 | Step | Time |
 |---|---|
 | Setup: code, packages, Gemma 4 through Ollama | ~10 min |
-| Rules-only baseline on 14 documents | < 1 min |
-| Agents 1-3 with Gemma 4 on 14 documents (29 parts) | ~20-40 min on a T4 |
+| Rules-only baseline on 300 documents | ~2 min |
+| Agents 1-3 with Gemma 4, 30 documents (`LIMIT = 30`) | ~30-45 min on a T4 |
+| Agents 1-3 with Gemma 4, all 300 | ~5-7 h: one session, or two (finished documents are kept) |
 | Your own documents | ~1-2 min per 1,800 characters |""",
     ),
     (
@@ -56,9 +63,11 @@ BACKEND = "ollama"        # "ollama": Gemma 4 on this notebook's GPU; nothing le
                           #           text is sent to Google, so use it for public documents only
                           # "mock":   rules only, no model (the baseline; runs in seconds)
 MODEL = None              # None = the legal profile's model (gemma4:e4b / gemini-3.5-flash)
+DOC_SET = "indian300"     # "indian300" (300 Indian judgments), "curated" (14), or "both"
+LIMIT = 30                # first N documents for a trial run; None = the whole set
 MAX_CHARS = 1800          # longer documents are split into parts of at most this many characters
-RUN_REAL_DOCS = True      # run the 14 public documents
-ONLY = None               # e.g. ["in08_kar_hc_motor_accident", "uk01_eat_dismissal_data_access"]
+RUN_REAL_DOCS = True      # False = skip the set and run only your own documents
+ONLY = None               # e.g. ["in08_kar_hc_motor_accident"]: just these ids
 OUT = "/kaggle/working/agent_runs"   # one JSON per document; re-running skips finished ones""",
     ),
     (
@@ -121,18 +130,23 @@ from IPython.display import HTML, Markdown, display
 from sanitise.config import get_settings
 get_settings.cache_clear()  # pick up the settings above, also after re-running them
 from sanitise.legal.real_docs import (
-    from_text, load_inputs, load_manifest, render_html, run_agents, summary_rows, totals,
+    from_text, load_inputs, load_set, render_html, run_agents, summary_rows, totals,
     write_report,
 )
 pd.set_option("display.max_colwidth", 80)
 
-real = load_manifest()
+real = load_set(DOC_SET)
 if ONLY:
     real = [d for d in real if d.id in ONLY]
-display(pd.DataFrame([{
+everything_in_set = real
+real = real[:LIMIT] if LIMIT else real
+table = pd.DataFrame([{
     "id": d.id, "court": d.meta["court"], "type": d.meta["doc_type"], "date": d.meta["date"],
-    "chars": len(d.text), "source": d.meta["source"],
-} for d in real]))""",
+    "chars": len(d.text), "must_hide": len(d.must_hide), "must_keep": len(d.must_keep),
+} for d in everything_in_set])
+print(f"{len(everything_in_set)} documents in the set; running {len(real)} (LIMIT = {LIMIT})")
+display(table["court"].value_counts().rename("documents per court"))
+display(table.head(20))""",
     ),
     (
         "markdown",
@@ -181,14 +195,19 @@ if RUN_REAL_DOCS and BACKEND != "mock":
     (
         "code",
         """# 5. Look at one document in full: pick any id from the table above
-DOC = "in08_kar_hc_motor_accident"
 shown = {r.doc.id: r for r in (results or baseline)}
+DOC = next(iter(shown))   # or any id from the table, e.g. "in08_kar_hc_motor_accident"
 display(HTML(render_html(shown[DOC])))""",
     ),
     (
         "code",
-        """# Every document, one after another (long output)
-for r in (results or baseline):
+        """# The documents that did worst: most must-hide leaks, then most dropped terms
+def badness(r):
+    c = r.checks()
+    return (not r.ok, len(c["leaked"]) + len(c["direct_left"]), len(c["dropped"]))
+
+SHOW = 10   # how many to show; set to len(results) to see every document
+for r in sorted(results or baseline, key=badness, reverse=True)[:SHOW]:
     display(HTML(render_html(r) + "<hr>"))""",
     ),
     (
