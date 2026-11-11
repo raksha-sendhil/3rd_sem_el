@@ -1,0 +1,104 @@
+{
+  "doc_id": "c77a034b0cc3aee0",
+  "text": "Intake note (Property team, 13 January 2021). Our client Radhika Sathe is a 47-year-old restaurant owner who lives at Flat 12A, Nadakkavu, Kozhikode 673049 and can be reached on 75274 82070 or radhika.sathe30@example.com. The client's PAN LPCPS6444S, Aadhaar 4999 9178 4642.\nThe client consulted us about a consumer complaint matter against Sunrise Realty. The consumer complaint against Sunrise Realty concerns a flat bought for 61.5 lakh rupees; the builder never obtained the occupancy certificate.\nThe matter was filed as C.C. No. 1581/2021 before the Kozhikode District Consumer Disputes Redressal Commission on 29 June 2021.",
+  "spans": [
+    {
+      "text": "13 January 2021",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Radhika Sathe",
+      "category": "NAME",
+      "start": 57,
+      "end": 70
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Flat 12A, Nadakkavu, Kozhikode 673049",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 155
+    },
+    {
+      "text": "75274 82070",
+      "category": "PHONE",
+      "start": 178,
+      "end": 189
+    },
+    {
+      "text": "radhika.sathe30@example.com",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 220
+    },
+    {
+      "text": "LPCPS6444S",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 249
+    },
+    {
+      "text": "4999 9178 4642",
+      "category": "ID_NUMBER",
+      "start": 259,
+      "end": 273
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 307,
+      "end": 325
+    },
+    {
+      "text": "Sunrise Realty",
+      "category": "ORGANIZATION",
+      "start": 341,
+      "end": 355
+    },
+    {
+      "text": "Sunrise Realty",
+      "category": "ORGANIZATION",
+      "start": 388,
+      "end": 402
+    },
+    {
+      "text": "61.5 lakh rupees",
+      "category": "MONEY",
+      "start": 430,
+      "end": 446
+    },
+    {
+      "text": "C.C. No. 1581/2021",
+      "category": "CASE_NUMBER",
+      "start": 526,
+      "end": 544
+    },
+    {
+      "text": "Kozhikode District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 556,
+      "end": 613
+    },
+    {
+      "text": "29 June 2021",
+      "category": "DATE",
+      "start": 617,
+      "end": 629
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

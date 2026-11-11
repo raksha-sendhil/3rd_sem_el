@@ -1,0 +1,98 @@
+{
+  "doc_id": "7f242461e600f1fa",
+  "text": "Intake note (Commercial team, 29 January 2024). Our client Girish Tiwari is a 55-year-old textile trader who lives at Bungalow 14, Miramar, Panaji 403008 and can be reached on 08001433760 or girish.tiwari@example.com. The client's PAN LGBPT3915J.\nThe client consulted us about a cheque bounce matter against M/s Kulkarni Enterprises. A cheque for ₹28,70,000 issued by Kulkarni Enterprises bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as CC/1939/2024 before the Judicial Magistrate First Class Court at Panaji on 13 July 2024.",
+  "spans": [
+    {
+      "text": "29 January 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Girish Tiwari",
+      "category": "NAME",
+      "start": 59,
+      "end": 72
+    },
+    {
+      "text": "55-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 104
+    },
+    {
+      "text": "Bungalow 14, Miramar, Panaji 403008",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 153
+    },
+    {
+      "text": "08001433760",
+      "category": "PHONE",
+      "start": 176,
+      "end": 187
+    },
+    {
+      "text": "girish.tiwari@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 216
+    },
+    {
+      "text": "LGBPT3915J",
+      "category": "ID_NUMBER",
+      "start": 235,
+      "end": 245
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 279,
+      "end": 292
+    },
+    {
+      "text": "Kulkarni Enterprises",
+      "category": "ORGANIZATION",
+      "start": 312,
+      "end": 332
+    },
+    {
+      "text": "₹28,70,000",
+      "category": "MONEY",
+      "start": 347,
+      "end": 357
+    },
+    {
+      "text": "Kulkarni Enterprises",
+      "category": "ORGANIZATION",
+      "start": 368,
+      "end": 388
+    },
+    {
+      "text": "CC/1939/2024",
+      "category": "CASE_NUMBER",
+      "start": 477,
+      "end": 489
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 501,
+      "end": 548
+    },
+    {
+      "text": "13 July 2024",
+      "category": "DATE",
+      "start": 552,
+      "end": 564
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

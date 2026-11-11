@@ -1,0 +1,44 @@
+{
+  "doc_id": "5187b0cf0371fbe9",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Chauhan,\n\nThank you for meeting us on 29/11/2022 about your dispute with M/s DSouza Enterprises. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Mysuru.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Chauhan",
+      "category": "NAME",
+      "start": 45,
+      "end": 52
+    },
+    {
+      "text": "29/11/2022",
+      "category": "DATE",
+      "start": 83,
+      "end": 93
+    },
+    {
+      "text": "DSouza Enterprises",
+      "category": "ORGANIZATION",
+      "start": 122,
+      "end": 140
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mysuru",
+      "category": "COURT",
+      "start": 258,
+      "end": 305
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 546,
+      "end": 563
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

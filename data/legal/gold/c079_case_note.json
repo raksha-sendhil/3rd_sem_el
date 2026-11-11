@@ -1,0 +1,68 @@
+{
+  "doc_id": "f976f977128af913",
+  "text": "Case note: R.C.S. No. 940/2020\nClient: Prakash Khan (orthopaedic surgeon, Panaji)\nOpposing party: Rahul Reddy\nCourt: Panaji District Court\nFiled on: 16 July 2020\nClaim amount: ₹4.6 crore\nIssue: land dispute. The neighbour has encroached on the boundary of the plot.\nAdvice given: Apply for a court commissioner to measure the boundary.\nOutcome: The court commissioner confirmed the encroachment.\nRecommended next step: Seek removal of the encroachment.",
+  "spans": [
+    {
+      "text": "R.C.S. No. 940/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Prakash Khan",
+      "category": "NAME",
+      "start": 39,
+      "end": 51
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 53,
+      "end": 72
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 74,
+      "end": 80
+    },
+    {
+      "text": "Rahul Reddy",
+      "category": "NAME",
+      "start": 98,
+      "end": 109
+    },
+    {
+      "text": "Panaji District Court",
+      "category": "COURT",
+      "start": 117,
+      "end": 138
+    },
+    {
+      "text": "16 July 2020",
+      "category": "DATE",
+      "start": 149,
+      "end": 161
+    },
+    {
+      "text": "₹4.6 crore",
+      "category": "MONEY",
+      "start": 176,
+      "end": 186
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 194,
+      "end": 206
+    },
+    {
+      "text": "occupation (orthopaedic surgeon) + city (Panaji) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

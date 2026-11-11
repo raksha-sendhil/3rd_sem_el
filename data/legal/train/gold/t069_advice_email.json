@@ -1,0 +1,44 @@
+{
+  "doc_id": "cc0c3d6a3231e34f",
+  "text": "Subject: Your cheque bounce matter - CC/2573/2019\n\nDear Mr. Saxena,\n\nThank you for meeting us on 29 February 2020 about your dispute with Nikhil Subramanian. As we understand it, the cheque was returned unpaid for insufficient funds.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/2573/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Saxena",
+      "category": "NAME",
+      "start": 60,
+      "end": 66
+    },
+    {
+      "text": "29 February 2020",
+      "category": "DATE",
+      "start": 97,
+      "end": 113
+    },
+    {
+      "text": "Nikhil Subramanian",
+      "category": "NAME",
+      "start": 138,
+      "end": 156
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 511,
+      "end": 526
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "87e79e4251b8db57",
+  "text": "Case note: S.C.C. No. 995/2024\nClient: Joseph Bose (cardiologist, Pune)\nOpposing party: M/s Emerald Enterprises\nCourt: Judicial Magistrate First Class Court at Pune\nFiled on: 19 December 2024\nClaim amount: Rs 24,40,000\nIssue: cheque bounce. The drawer stopped the cheque with a stop-payment instruction.\nAdvice given: Argue that a stop-payment instruction does not protect the drawer when the debt is admitted.\nOutcome: The drawer's application to discharge the complaint was rejected.\nRecommended next step: Press for an early date for cross-examination.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 995/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Joseph Bose",
+      "category": "NAME",
+      "start": 39,
+      "end": 50
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 66,
+      "end": 70
+    },
+    {
+      "text": "Emerald Enterprises",
+      "category": "ORGANIZATION",
+      "start": 92,
+      "end": 111
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 119,
+      "end": 164
+    },
+    {
+      "text": "19 December 2024",
+      "category": "DATE",
+      "start": 175,
+      "end": 191
+    },
+    {
+      "text": "Rs 24,40,000",
+      "category": "MONEY",
+      "start": 206,
+      "end": 218
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 226,
+      "end": 239
+    },
+    {
+      "text": "occupation (cardiologist) + city (Pune) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

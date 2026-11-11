@@ -1,0 +1,50 @@
+{
+  "doc_id": "967437129d76638c",
+  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 1863/2025\n\nDear Ms. Subramanian,\n\nThank you for meeting us on 26 February 2025 about your dispute with Trident Exports. As we understand it, a conflicting trademark was registered.\n\nOur advice is to file a rectification petition against the conflicting trademark. Please collect the trademark registration and the GI registration and send copies to this office. We will pursue the full claim of ₹7,40,00,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 45
+    },
+    {
+      "text": "CS(COMM) 1863/2025",
+      "category": "CASE_NUMBER",
+      "start": 55,
+      "end": 73
+    },
+    {
+      "text": "Subramanian",
+      "category": "NAME",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "26 February 2025",
+      "category": "DATE",
+      "start": 126,
+      "end": 142
+    },
+    {
+      "text": "Trident Exports",
+      "category": "ORGANIZATION",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "₹7,40,00,000",
+      "category": "MONEY",
+      "start": 459,
+      "end": 471
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 488,
+      "end": 507
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

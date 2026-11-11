@@ -1,0 +1,110 @@
+{
+  "doc_id": "80f8e4d3ccad0140",
+  "text": "Intake note - Property team\nDate: 7 February 2025\nClient: Girish Hegde, a 34-year-old hardware dealer from Kochi.\nAddress: House No. 231, Kakkanad, Kochi 682043\nPhone: +91 66853 58130. Email: girish.hegde@example.com. PAN EEMPH9319M.\nMatter: consumer complaint\nOpposing party: M/s Dutta Developers\nFacts: The consumer complaint against Dutta Developers concerns a flat bought for INR 3,46,00,000/-; the flat was handed over with serious construction defects.\nThe matter was filed as CC/1433/2025 before the Kochi District Consumer Disputes Redressal Commission on 21 July 2025.",
+  "spans": [
+    {
+      "text": "7 February 2025",
+      "category": "DATE",
+      "start": 34,
+      "end": 49
+    },
+    {
+      "text": "Girish Hegde",
+      "category": "NAME",
+      "start": 58,
+      "end": 70
+    },
+    {
+      "text": "34-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 101
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 112
+    },
+    {
+      "text": "House No. 231, Kakkanad, Kochi 682043",
+      "category": "ADDRESS",
+      "start": 123,
+      "end": 160
+    },
+    {
+      "text": "+91 66853 58130",
+      "category": "PHONE",
+      "start": 168,
+      "end": 183
+    },
+    {
+      "text": "girish.hegde@example.com",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 216
+    },
+    {
+      "text": "EEMPH9319M",
+      "category": "ID_NUMBER",
+      "start": 222,
+      "end": 232
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 242,
+      "end": 260
+    },
+    {
+      "text": "Dutta Developers",
+      "category": "ORGANIZATION",
+      "start": 281,
+      "end": 297
+    },
+    {
+      "text": "Dutta Developers",
+      "category": "ORGANIZATION",
+      "start": 336,
+      "end": 352
+    },
+    {
+      "text": "INR 3,46,00,000/-",
+      "category": "MONEY",
+      "start": 380,
+      "end": 397
+    },
+    {
+      "text": "CC/1433/2025",
+      "category": "CASE_NUMBER",
+      "start": 483,
+      "end": 495
+    },
+    {
+      "text": "Kochi District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 507,
+      "end": 560
+    },
+    {
+      "text": "21 July 2025",
+      "category": "DATE",
+      "start": 564,
+      "end": 576
+    },
+    {
+      "text": "age (34) + occupation (hardware dealer) + city (Kochi) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

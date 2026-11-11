@@ -1,0 +1,50 @@
+{
+  "doc_id": "8352859b0e0d5ca8",
+  "text": "Subject: Your aircraft lease repossession matter (Project Kestrel)\n\nDear Ms. Bhatt,\n\nThank you for meeting us on 7 February 2021 about your dispute with Vindhya Aviation Ltd. As we understand it, the airline sought protection from its creditors. The matter is listed before the Gujarat High Court.\n\nOur advice is to argue that leased aircraft fall outside the insolvency moratorium. Please collect the lease agreement and the moratorium order and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 41
+    },
+    {
+      "text": "Project Kestrel",
+      "category": "MATTER_CODENAME",
+      "start": 50,
+      "end": 65
+    },
+    {
+      "text": "Bhatt",
+      "category": "NAME",
+      "start": 77,
+      "end": 82
+    },
+    {
+      "text": "7 February 2021",
+      "category": "DATE",
+      "start": 113,
+      "end": 128
+    },
+    {
+      "text": "Vindhya Aviation Ltd",
+      "category": "ORGANIZATION",
+      "start": 153,
+      "end": 173
+    },
+    {
+      "text": "Gujarat High Court",
+      "category": "COURT",
+      "start": 278,
+      "end": 296
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 490,
+      "end": 505
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

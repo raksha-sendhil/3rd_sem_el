@@ -1,0 +1,110 @@
+{
+  "doc_id": "d845649b0e89ddd6",
+  "text": "Intake note (Commercial team, 19 September 2024). Our client Pooja Pillai is a 69-year-old insurance agent who lives at Flat 14C, Navrangpura, Ahmedabad 380050 and can be reached on +91 66496 61694 or pooja.pillai@example.in. The client's PAN PMEPP2595N.\nThe client consulted us about a cheque bounce matter against Ravi Patel. A cheque for INR 12,10,000/- issued by Ravi Patel bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 220220281754 (IFSC KKBK0233114).\nThe matter was filed as CC/2684/2024 before the Judicial Magistrate First Class Court at Ahmedabad on 15/12/2024.",
+  "spans": [
+    {
+      "text": "19 September 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 47
+    },
+    {
+      "text": "Pooja Pillai",
+      "category": "NAME",
+      "start": 61,
+      "end": 73
+    },
+    {
+      "text": "69-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "insurance agent",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 106
+    },
+    {
+      "text": "Flat 14C, Navrangpura, Ahmedabad 380050",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 159
+    },
+    {
+      "text": "+91 66496 61694",
+      "category": "PHONE",
+      "start": 182,
+      "end": 197
+    },
+    {
+      "text": "pooja.pillai@example.in",
+      "category": "EMAIL",
+      "start": 201,
+      "end": 224
+    },
+    {
+      "text": "PMEPP2595N",
+      "category": "ID_NUMBER",
+      "start": 243,
+      "end": 253
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 287,
+      "end": 300
+    },
+    {
+      "text": "Ravi Patel",
+      "category": "NAME",
+      "start": 316,
+      "end": 326
+    },
+    {
+      "text": "INR 12,10,000/-",
+      "category": "MONEY",
+      "start": 341,
+      "end": 356
+    },
+    {
+      "text": "Ravi Patel",
+      "category": "NAME",
+      "start": 367,
+      "end": 377
+    },
+    {
+      "text": "220220281754",
+      "category": "FINANCIAL",
+      "start": 504,
+      "end": 516
+    },
+    {
+      "text": "KKBK0233114",
+      "category": "FINANCIAL",
+      "start": 523,
+      "end": 534
+    },
+    {
+      "text": "CC/2684/2024",
+      "category": "CASE_NUMBER",
+      "start": 561,
+      "end": 573
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 585,
+      "end": 635
+    },
+    {
+      "text": "15/12/2024",
+      "category": "DATE",
+      "start": 639,
+      "end": 649
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

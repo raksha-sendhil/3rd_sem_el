@@ -1,0 +1,68 @@
+{
+  "doc_id": "dc9d8a8d2b408edd",
+  "text": "Case note: R.C.S. No. 423/2022\nClient: Radhika Rajan (software engineer, Bengaluru)\nOpposing party: Ajay Malhotra\nCourt: Bengaluru District Court\nFiled on: 2 November 2022\nClaim amount: Rs 84,60,000\nIssue: land dispute. Relatives dispute who owns the ancestral land.\nAdvice given: Trace the chain of title through the mutation entries.\nOutcome: The title of the client was upheld.\nRecommended next step: Apply for correction of the land records.",
+  "spans": [
+    {
+      "text": "R.C.S. No. 423/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Radhika Rajan",
+      "category": "NAME",
+      "start": 39,
+      "end": 52
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 71
+    },
+    {
+      "text": "Bengaluru",
+      "category": "LOCATION",
+      "start": 73,
+      "end": 82
+    },
+    {
+      "text": "Ajay Malhotra",
+      "category": "NAME",
+      "start": 100,
+      "end": 113
+    },
+    {
+      "text": "Bengaluru District Court",
+      "category": "COURT",
+      "start": 121,
+      "end": 145
+    },
+    {
+      "text": "2 November 2022",
+      "category": "DATE",
+      "start": 156,
+      "end": 171
+    },
+    {
+      "text": "Rs 84,60,000",
+      "category": "MONEY",
+      "start": 186,
+      "end": 198
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 206,
+      "end": 218
+    },
+    {
+      "text": "occupation (software engineer) + city (Bengaluru) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

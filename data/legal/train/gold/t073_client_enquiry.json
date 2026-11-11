@@ -1,0 +1,68 @@
+{
+  "doc_id": "f208d6a2f1aa8bc1",
+  "text": "Subject: Need help with a consumer complaint case\n\nHello, my name is Mohan Sandhu. I am a 62-year-old electrician living in Chennai. I paid Goyal Developers ₹3,26,00,000 for a flat, and the builder keeps promising possession by email but never delivers. Can your firm advise me on what to do next? You can call me on 06926818780 or email mohan.sandhu@example.com.",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Mohan Sandhu",
+      "category": "NAME",
+      "start": 69,
+      "end": 81
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 90,
+      "end": 101
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 102,
+      "end": 113
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 124,
+      "end": 131
+    },
+    {
+      "text": "Goyal Developers",
+      "category": "ORGANIZATION",
+      "start": 140,
+      "end": 156
+    },
+    {
+      "text": "₹3,26,00,000",
+      "category": "MONEY",
+      "start": 157,
+      "end": 169
+    },
+    {
+      "text": "06926818780",
+      "category": "PHONE",
+      "start": 317,
+      "end": 328
+    },
+    {
+      "text": "mohan.sandhu@example.com",
+      "category": "EMAIL",
+      "start": 338,
+      "end": 362
+    },
+    {
+      "text": "age (62) + occupation (electrician) + city (Chennai) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

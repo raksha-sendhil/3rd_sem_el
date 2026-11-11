@@ -1,0 +1,44 @@
+{
+  "doc_id": "ae97f5a3230ba2ff",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Rajan,\n\nThank you for meeting us on 25 September 2023 about your dispute with M/s Chatterjee Builders Pvt Ltd. As we understand it, possession of the flat is long overdue.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office. We will pursue the full claim of INR 6,76,00,000/-.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Rajan",
+      "category": "NAME",
+      "start": 50,
+      "end": 55
+    },
+    {
+      "text": "25 September 2023",
+      "category": "DATE",
+      "start": 86,
+      "end": 103
+    },
+    {
+      "text": "Chatterjee Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 132,
+      "end": 159
+    },
+    {
+      "text": "INR 6,76,00,000/-",
+      "category": "MONEY",
+      "start": 470,
+      "end": 487
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 504,
+      "end": 519
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

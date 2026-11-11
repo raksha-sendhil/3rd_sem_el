@@ -1,0 +1,50 @@
+{
+  "doc_id": "23fd7cdda84e6fa5",
+  "text": "Subject: Your land dispute matter - O.S. No. 319/2023\n\nDear Mr. Varghese,\n\nThank you for meeting us on 1 January 2024 about your dispute with Harish Patil. As we understand it, relatives dispute who owns the ancestral land. The matter is listed before the Surat District Court.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 319/2023",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 53
+    },
+    {
+      "text": "Varghese",
+      "category": "NAME",
+      "start": 64,
+      "end": 72
+    },
+    {
+      "text": "1 January 2024",
+      "category": "DATE",
+      "start": 103,
+      "end": 117
+    },
+    {
+      "text": "Harish Patil",
+      "category": "NAME",
+      "start": 142,
+      "end": 154
+    },
+    {
+      "text": "Surat District Court",
+      "category": "COURT",
+      "start": 256,
+      "end": 276
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 477,
+      "end": 489
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

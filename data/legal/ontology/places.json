@@ -1,0 +1,488 @@
+{
+  "pune": {
+    "district": "Pune",
+    "state": "Maharashtra",
+    "kind": "city",
+    "region": "western India"
+  },
+  "koregaon park": {
+    "district": "Pune",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "baner": {
+    "district": "Pune",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "kothrud": {
+    "district": "Pune",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "aundh": {
+    "district": "Pune",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "mumbai": {
+    "district": "Mumbai Suburban",
+    "state": "Maharashtra",
+    "kind": "city",
+    "region": "western India"
+  },
+  "andheri west": {
+    "district": "Mumbai Suburban",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "powai": {
+    "district": "Mumbai Suburban",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "chembur": {
+    "district": "Mumbai Suburban",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "nagpur": {
+    "district": "Nagpur",
+    "state": "Maharashtra",
+    "kind": "city",
+    "region": "western India"
+  },
+  "dharampeth": {
+    "district": "Nagpur",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "sitabuldi": {
+    "district": "Nagpur",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "nashik": {
+    "district": "Nashik",
+    "state": "Maharashtra",
+    "kind": "city",
+    "region": "western India"
+  },
+  "gangapur road": {
+    "district": "Nashik",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "college road": {
+    "district": "Nashik",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "thane": {
+    "district": "Thane",
+    "state": "Maharashtra",
+    "kind": "city",
+    "region": "western India"
+  },
+  "naupada": {
+    "district": "Thane",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "vartak nagar": {
+    "district": "Thane",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "kolhapur": {
+    "district": "Kolhapur",
+    "state": "Maharashtra",
+    "kind": "city",
+    "region": "western India"
+  },
+  "rajarampuri": {
+    "district": "Kolhapur",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "shahupuri": {
+    "district": "Kolhapur",
+    "state": "Maharashtra",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "bengaluru": {
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "indiranagar": {
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "jayanagar": {
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "mysuru": {
+    "district": "Mysuru",
+    "state": "Karnataka",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "gokulam": {
+    "district": "Mysuru",
+    "state": "Karnataka",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "kuvempunagar": {
+    "district": "Mysuru",
+    "state": "Karnataka",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "mangaluru": {
+    "district": "Dakshina Kannada",
+    "state": "Karnataka",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "kadri": {
+    "district": "Dakshina Kannada",
+    "state": "Karnataka",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "bejai": {
+    "district": "Dakshina Kannada",
+    "state": "Karnataka",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "hubballi": {
+    "district": "Dharwad",
+    "state": "Karnataka",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "vidyanagar": {
+    "district": "Dharwad",
+    "state": "Karnataka",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "keshwapur": {
+    "district": "Dharwad",
+    "state": "Karnataka",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "chennai": {
+    "district": "Chennai",
+    "state": "Tamil Nadu",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "adyar": {
+    "district": "Chennai",
+    "state": "Tamil Nadu",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "anna nagar": {
+    "district": "Chennai",
+    "state": "Tamil Nadu",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "coimbatore": {
+    "district": "Coimbatore",
+    "state": "Tamil Nadu",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "peelamedu": {
+    "district": "Coimbatore",
+    "state": "Tamil Nadu",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "saibaba colony": {
+    "district": "Coimbatore",
+    "state": "Tamil Nadu",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "madurai": {
+    "district": "Madurai",
+    "state": "Tamil Nadu",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "kk nagar": {
+    "district": "Madurai",
+    "state": "Tamil Nadu",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "tallakulam": {
+    "district": "Madurai",
+    "state": "Tamil Nadu",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "kochi": {
+    "district": "Ernakulam",
+    "state": "Kerala",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "kakkanad": {
+    "district": "Ernakulam",
+    "state": "Kerala",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "edappally": {
+    "district": "Ernakulam",
+    "state": "Kerala",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "thiruvananthapuram": {
+    "district": "Thiruvananthapuram",
+    "state": "Kerala",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "pattom": {
+    "district": "Thiruvananthapuram",
+    "state": "Kerala",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "kowdiar": {
+    "district": "Thiruvananthapuram",
+    "state": "Kerala",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "kozhikode": {
+    "district": "Kozhikode",
+    "state": "Kerala",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "nadakkavu": {
+    "district": "Kozhikode",
+    "state": "Kerala",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "mavoor road": {
+    "district": "Kozhikode",
+    "state": "Kerala",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "hyderabad": {
+    "district": "Hyderabad",
+    "state": "Telangana",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "banjara hills": {
+    "district": "Hyderabad",
+    "state": "Telangana",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "madhapur": {
+    "district": "Hyderabad",
+    "state": "Telangana",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "warangal": {
+    "district": "Hanamkonda",
+    "state": "Telangana",
+    "kind": "city",
+    "region": "southern India"
+  },
+  "hanamkonda": {
+    "district": "Hanamkonda",
+    "state": "Telangana",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "kazipet": {
+    "district": "Hanamkonda",
+    "state": "Telangana",
+    "kind": "neighbourhood",
+    "region": "southern India"
+  },
+  "ahmedabad": {
+    "district": "Ahmedabad",
+    "state": "Gujarat",
+    "kind": "city",
+    "region": "western India"
+  },
+  "navrangpura": {
+    "district": "Ahmedabad",
+    "state": "Gujarat",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "satellite": {
+    "district": "Ahmedabad",
+    "state": "Gujarat",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "surat": {
+    "district": "Surat",
+    "state": "Gujarat",
+    "kind": "city",
+    "region": "western India"
+  },
+  "adajan": {
+    "district": "Surat",
+    "state": "Gujarat",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "vesu": {
+    "district": "Surat",
+    "state": "Gujarat",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "vadodara": {
+    "district": "Vadodara",
+    "state": "Gujarat",
+    "kind": "city",
+    "region": "western India"
+  },
+  "alkapuri": {
+    "district": "Vadodara",
+    "state": "Gujarat",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "fatehgunj": {
+    "district": "Vadodara",
+    "state": "Gujarat",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "new delhi": {
+    "district": "New Delhi",
+    "state": "Delhi",
+    "kind": "city",
+    "region": "northern India"
+  },
+  "lajpat nagar": {
+    "district": "New Delhi",
+    "state": "Delhi",
+    "kind": "neighbourhood",
+    "region": "northern India"
+  },
+  "dwarka": {
+    "district": "New Delhi",
+    "state": "Delhi",
+    "kind": "neighbourhood",
+    "region": "northern India"
+  },
+  "kolkata": {
+    "district": "Kolkata",
+    "state": "West Bengal",
+    "kind": "city",
+    "region": "eastern India"
+  },
+  "salt lake": {
+    "district": "Kolkata",
+    "state": "West Bengal",
+    "kind": "neighbourhood",
+    "region": "eastern India"
+  },
+  "ballygunge": {
+    "district": "Kolkata",
+    "state": "West Bengal",
+    "kind": "neighbourhood",
+    "region": "eastern India"
+  },
+  "lucknow": {
+    "district": "Lucknow",
+    "state": "Uttar Pradesh",
+    "kind": "city",
+    "region": "northern India"
+  },
+  "gomti nagar": {
+    "district": "Lucknow",
+    "state": "Uttar Pradesh",
+    "kind": "neighbourhood",
+    "region": "northern India"
+  },
+  "aliganj": {
+    "district": "Lucknow",
+    "state": "Uttar Pradesh",
+    "kind": "neighbourhood",
+    "region": "northern India"
+  },
+  "jaipur": {
+    "district": "Jaipur",
+    "state": "Rajasthan",
+    "kind": "city",
+    "region": "northern India"
+  },
+  "malviya nagar": {
+    "district": "Jaipur",
+    "state": "Rajasthan",
+    "kind": "neighbourhood",
+    "region": "northern India"
+  },
+  "vaishali nagar": {
+    "district": "Jaipur",
+    "state": "Rajasthan",
+    "kind": "neighbourhood",
+    "region": "northern India"
+  },
+  "panaji": {
+    "district": "North Goa",
+    "state": "Goa",
+    "kind": "city",
+    "region": "western India"
+  },
+  "altinho": {
+    "district": "North Goa",
+    "state": "Goa",
+    "kind": "neighbourhood",
+    "region": "western India"
+  },
+  "miramar": {
+    "district": "North Goa",
+    "state": "Goa",
+    "kind": "neighbourhood",
+    "region": "western India"
+  }
+}

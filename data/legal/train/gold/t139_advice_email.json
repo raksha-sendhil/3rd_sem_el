@@ -1,0 +1,44 @@
+{
+  "doc_id": "6579e06556560071",
+  "text": "Subject: Your wrongful termination matter\n\nDear Ms. Rathore,\n\nThank you for meeting us on 25/04/2021 about your dispute with M/s Mehra Pharma Ltd. As we understand it, the dismissal followed a one-sided domestic enquiry. The matter is listed before the Kolhapur Labour Court.\n\nOur advice is to demand the domestic enquiry report and challenge it for breach of natural justice. Please collect the charge sheet, the enquiry report and the reply to the charge sheet and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Rathore",
+      "category": "NAME",
+      "start": 52,
+      "end": 59
+    },
+    {
+      "text": "25/04/2021",
+      "category": "DATE",
+      "start": 90,
+      "end": 100
+    },
+    {
+      "text": "Mehra Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 129,
+      "end": 145
+    },
+    {
+      "text": "Kolhapur Labour Court",
+      "category": "COURT",
+      "start": 253,
+      "end": 274
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 510,
+      "end": 525
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

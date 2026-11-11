@@ -1,0 +1,43 @@
+{
+  "doc_id": "dd67e076c6643365",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Karve",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "tenancy eviction",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Revathi Shetty",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "R.C.S. No. 2123/2020",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "advised",
+      "value": "collect evidence of unauthorised subletting such as utility bills in the occupant's name",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "documents_requested",
+      "value": "utility bills in the occupant's name and statements of the neighbours",
+      "importance": "high"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

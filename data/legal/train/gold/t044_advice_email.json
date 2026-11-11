@@ -1,0 +1,50 @@
+{
+  "doc_id": "0a645c539f12f9f8",
+  "text": "Subject: Your breach of contract matter - CS(COMM) 2463/2022\n\nDear Mr. Patel,\n\nThank you for meeting us on 15 June 2022 about your dispute with Banyan Infotech Pvt Ltd. As we understand it, the claim must be filed as a commercial suit. The matter is listed before the Hubballi Commercial Court.\n\nOur advice is to complete pre-institution mediation before filing the commercial suit. Please collect the mediation request and the statement of accounts and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CS(COMM) 2463/2022",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "15 June 2022",
+      "category": "DATE",
+      "start": 107,
+      "end": 119
+    },
+    {
+      "text": "Banyan Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 144,
+      "end": 167
+    },
+    {
+      "text": "Hubballi Commercial Court",
+      "category": "COURT",
+      "start": 268,
+      "end": 293
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 497,
+      "end": 509
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

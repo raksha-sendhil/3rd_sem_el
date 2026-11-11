@@ -1,0 +1,44 @@
+{
+  "doc_id": "57b84eb47241d95e",
+  "text": "Subject: Your consumer complaint matter\n\nDear Ms. Pawar,\n\nThank you for meeting us on 21 March 2021 about your dispute with Vindhya Developers. As we understand it, the builder keeps promising possession by email but never delivers.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office. We will pursue the full claim of INR 7,67,00,000/-.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Pawar",
+      "category": "NAME",
+      "start": 50,
+      "end": 55
+    },
+    {
+      "text": "21 March 2021",
+      "category": "DATE",
+      "start": 86,
+      "end": 99
+    },
+    {
+      "text": "Vindhya Developers",
+      "category": "ORGANIZATION",
+      "start": 124,
+      "end": 142
+    },
+    {
+      "text": "INR 7,67,00,000/-",
+      "category": "MONEY",
+      "start": 527,
+      "end": 544
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 561,
+      "end": 578
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,50 @@
+{
+  "cheque bounce": {
+    "category": "a cheque-bounce dispute",
+    "rare": false
+  },
+  "tenancy eviction": {
+    "category": "a tenancy dispute",
+    "rare": false
+  },
+  "consumer complaint": {
+    "category": "a consumer dispute",
+    "rare": false
+  },
+  "land dispute": {
+    "category": "a property dispute",
+    "rare": false
+  },
+  "divorce by mutual consent": {
+    "category": "a matrimonial matter",
+    "rare": false
+  },
+  "anticipatory bail": {
+    "category": "a criminal matter",
+    "rare": false
+  },
+  "breach of contract": {
+    "category": "a commercial contract dispute",
+    "rare": false
+  },
+  "wrongful termination": {
+    "category": "an employment dispute",
+    "rare": false
+  },
+  "maritime salvage claim": {
+    "category": "a specialised admiralty dispute",
+    "rare": true
+  },
+  "geographical-indication dispute": {
+    "category": "a specialised intellectual-property dispute",
+    "rare": true
+  },
+  "aircraft lease repossession": {
+    "category": "a specialised aviation finance dispute",
+    "rare": true
+  },
+  "cross-border insolvency": {
+    "category": "a specialised insolvency matter",
+    "rare": true
+  }
+}

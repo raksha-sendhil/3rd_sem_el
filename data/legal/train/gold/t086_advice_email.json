@@ -1,0 +1,56 @@
+{
+  "doc_id": "922c1e515962a8ef",
+  "text": "Subject: Your breach of contract matter (Project Kingfisher)\n\nDear Mr. Patel,\n\nThank you for meeting us on 18/08/2021 about your dispute with Ranade Logistics Ltd. As we understand it, the counterparty terminated the contract without notice. The matter is listed before the Madurai Commercial Court.\n\nOur advice is to send a notice of breach giving the cure period required by the contract. Please collect the contract, the termination letter and the board minutes and send copies to this office. We will pursue the full claim of Rs. 10,50,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Kingfisher",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 59
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "18/08/2021",
+      "category": "DATE",
+      "start": 107,
+      "end": 117
+    },
+    {
+      "text": "Ranade Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 142,
+      "end": 162
+    },
+    {
+      "text": "Madurai Commercial Court",
+      "category": "COURT",
+      "start": 274,
+      "end": 298
+    },
+    {
+      "text": "Rs. 10,50,00,000",
+      "category": "MONEY",
+      "start": 530,
+      "end": 546
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 563,
+      "end": 579
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

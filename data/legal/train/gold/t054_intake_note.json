@@ -1,0 +1,98 @@
+{
+  "doc_id": "3887686f17ecb8d9",
+  "text": "Intake note (Property team, 1 December 2020). Our client Mary Nambiar is a 47-year-old software engineer who lives at Bungalow 31, Tallakulam, Madurai 625060 and can be reached on +91 63098 12700 or mary.nambiar93@example.com. The client's PAN MKMPN1236P.\nThe client consulted us about a consumer complaint matter against M/s Mittal Realty. The consumer complaint against Mittal Realty concerns a flat bought for ₹3,20,00,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as C.C. No. 1131/2021 before the Madurai District Consumer Disputes Redressal Commission on 25 May 2021.",
+  "spans": [
+    {
+      "text": "1 December 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Mary Nambiar",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 104
+    },
+    {
+      "text": "Bungalow 31, Tallakulam, Madurai 625060",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 157
+    },
+    {
+      "text": "+91 63098 12700",
+      "category": "PHONE",
+      "start": 180,
+      "end": 195
+    },
+    {
+      "text": "mary.nambiar93@example.com",
+      "category": "EMAIL",
+      "start": 199,
+      "end": 225
+    },
+    {
+      "text": "MKMPN1236P",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 254
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 288,
+      "end": 306
+    },
+    {
+      "text": "Mittal Realty",
+      "category": "ORGANIZATION",
+      "start": 326,
+      "end": 339
+    },
+    {
+      "text": "Mittal Realty",
+      "category": "ORGANIZATION",
+      "start": 372,
+      "end": 385
+    },
+    {
+      "text": "₹3,20,00,000",
+      "category": "MONEY",
+      "start": 413,
+      "end": 425
+    },
+    {
+      "text": "C.C. No. 1131/2021",
+      "category": "CASE_NUMBER",
+      "start": 519,
+      "end": 537
+    },
+    {
+      "text": "Madurai District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 549,
+      "end": 604
+    },
+    {
+      "text": "25 May 2021",
+      "category": "DATE",
+      "start": 608,
+      "end": 619
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

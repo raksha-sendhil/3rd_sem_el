@@ -1,0 +1,68 @@
+{
+  "doc_id": "3e66d3a98d2bf87d",
+  "text": "Case note: Petition No. 2350/2021\nClient: Neha Jadhav (railway employee, Kozhikode)\nOpposing party: Swati Tiwari\nCourt: Family Court at Kozhikode\nFiled on: 5 April 2021\nClaim amount: ₹30,20,000\nIssue: divorce by mutual consent. The wife wants her jewellery and gifts returned.\nAdvice given: List the stridhan items to be returned in the settlement deed.\nOutcome: The stridhan items were returned before the decree.\nRecommended next step: Sign the receipt for the returned items.",
+  "spans": [
+    {
+      "text": "Petition No. 2350/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 33
+    },
+    {
+      "text": "Neha Jadhav",
+      "category": "NAME",
+      "start": 42,
+      "end": 53
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 71
+    },
+    {
+      "text": "Kozhikode",
+      "category": "LOCATION",
+      "start": 73,
+      "end": 82
+    },
+    {
+      "text": "Swati Tiwari",
+      "category": "NAME",
+      "start": 100,
+      "end": 112
+    },
+    {
+      "text": "Family Court at Kozhikode",
+      "category": "COURT",
+      "start": 120,
+      "end": 145
+    },
+    {
+      "text": "5 April 2021",
+      "category": "DATE",
+      "start": 156,
+      "end": 168
+    },
+    {
+      "text": "₹30,20,000",
+      "category": "MONEY",
+      "start": 183,
+      "end": 193
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 201,
+      "end": 226
+    },
+    {
+      "text": "occupation (railway employee) + city (Kozhikode) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

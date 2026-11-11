@@ -1,0 +1,50 @@
+{
+  "doc_id": "bf6a9a82022e41db",
+  "text": "Subject: Your breach of contract matter (Project Flamingo)\n\nDear Mr. Bose,\n\nThank you for meeting us on 23 April 2019 about your dispute with Orchid Logistics Ltd. As we understand it, the counterparty terminated the contract without notice. The matter is listed before the Vadodara Commercial Court.\n\nOur advice is to send a notice of breach giving the cure period required by the contract. Please collect the contract, the termination letter and the board minutes and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Flamingo",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 57
+    },
+    {
+      "text": "Bose",
+      "category": "NAME",
+      "start": 69,
+      "end": 73
+    },
+    {
+      "text": "23 April 2019",
+      "category": "DATE",
+      "start": 104,
+      "end": 117
+    },
+    {
+      "text": "Orchid Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 142,
+      "end": 162
+    },
+    {
+      "text": "Vadodara Commercial Court",
+      "category": "COURT",
+      "start": 274,
+      "end": 299
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 513,
+      "end": 528
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

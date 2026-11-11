@@ -1,0 +1,104 @@
+{
+  "doc_id": "feb9fa2664a170e2",
+  "text": "Intake note (Property team, 24 April 2019). Our client Shalini Reddy is a 24-year-old pharmacist who lives at House No. 66, Naupada, Thane 400631 and can be reached on 79330 76991 or shalini.reddy93@example.com. The client's PAN GZBPR7680B, Aadhaar 8248 5324 2047.\nThe client consulted us about a land dispute matter against Varun Gaikwad. The land dispute with Varun Gaikwad concerns agricultural land valued at ₹1.6 crore; construction has started on the disputed plot.\nThe matter was filed as R.C.S. No. 73/2019 before the Thane District Court on 30/06/2019.",
+  "spans": [
+    {
+      "text": "24 April 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 41
+    },
+    {
+      "text": "Shalini Reddy",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "24-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 96
+    },
+    {
+      "text": "House No. 66, Naupada, Thane 400631",
+      "category": "ADDRESS",
+      "start": 110,
+      "end": 145
+    },
+    {
+      "text": "79330 76991",
+      "category": "PHONE",
+      "start": 168,
+      "end": 179
+    },
+    {
+      "text": "shalini.reddy93@example.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 210
+    },
+    {
+      "text": "GZBPR7680B",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 239
+    },
+    {
+      "text": "8248 5324 2047",
+      "category": "ID_NUMBER",
+      "start": 249,
+      "end": 263
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 297,
+      "end": 309
+    },
+    {
+      "text": "Varun Gaikwad",
+      "category": "NAME",
+      "start": 325,
+      "end": 338
+    },
+    {
+      "text": "Varun Gaikwad",
+      "category": "NAME",
+      "start": 362,
+      "end": 375
+    },
+    {
+      "text": "₹1.6 crore",
+      "category": "MONEY",
+      "start": 413,
+      "end": 423
+    },
+    {
+      "text": "R.C.S. No. 73/2019",
+      "category": "CASE_NUMBER",
+      "start": 496,
+      "end": 514
+    },
+    {
+      "text": "Thane District Court",
+      "category": "COURT",
+      "start": 526,
+      "end": 546
+    },
+    {
+      "text": "30/06/2019",
+      "category": "DATE",
+      "start": 550,
+      "end": 560
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

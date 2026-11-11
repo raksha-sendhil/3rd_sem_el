@@ -1,0 +1,80 @@
+{
+  "doc_id": "745da3adc662709a",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Mahesh Varghese. I am a 75-year-old farmer living in Kochi. Chandran Enterprises gave me a cheque for ₹24,80,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. My case number is CC/1801/2022 in the Judicial Magistrate First Class Court at Kochi. Can your firm advise me on what to do next? You can call me on +91 75072 33130 or email mahesh.varghese54@example.com.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Mahesh Varghese",
+      "category": "NAME",
+      "start": 64,
+      "end": 79
+    },
+    {
+      "text": "75-year-old",
+      "category": "AGE",
+      "start": 88,
+      "end": 99
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 100,
+      "end": 106
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 117,
+      "end": 122
+    },
+    {
+      "text": "Chandran Enterprises",
+      "category": "ORGANIZATION",
+      "start": 124,
+      "end": 144
+    },
+    {
+      "text": "₹24,80,000",
+      "category": "MONEY",
+      "start": 166,
+      "end": 176
+    },
+    {
+      "text": "CC/1801/2022",
+      "category": "CASE_NUMBER",
+      "start": 279,
+      "end": 291
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 299,
+      "end": 345
+    },
+    {
+      "text": "+91 75072 33130",
+      "category": "PHONE",
+      "start": 410,
+      "end": 425
+    },
+    {
+      "text": "mahesh.varghese54@example.com",
+      "category": "EMAIL",
+      "start": 435,
+      "end": 464
+    },
+    {
+      "text": "age (75) + occupation (farmer) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

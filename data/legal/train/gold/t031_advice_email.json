@@ -1,0 +1,44 @@
+{
+  "doc_id": "36006363bef1388f",
+  "text": "Subject: Your wrongful termination matter\n\nDear Mr. Bhosale,\n\nThank you for meeting us on 27 August 2020 about your dispute with M/s Srivastava Industries. As we understand it, the employer offered to settle.\n\nOur advice is to negotiate a settlement of gratuity and notice pay. Please collect the salary slips and the gratuity calculation and send copies to this office. We will pursue the full claim of ₹44,60,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Bhosale",
+      "category": "NAME",
+      "start": 52,
+      "end": 59
+    },
+    {
+      "text": "27 August 2020",
+      "category": "DATE",
+      "start": 90,
+      "end": 104
+    },
+    {
+      "text": "Srivastava Industries",
+      "category": "ORGANIZATION",
+      "start": 133,
+      "end": 154
+    },
+    {
+      "text": "₹44,60,000",
+      "category": "MONEY",
+      "start": 404,
+      "end": 414
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 431,
+      "end": 448
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

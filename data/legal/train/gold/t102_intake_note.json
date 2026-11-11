@@ -1,0 +1,98 @@
+{
+  "doc_id": "811864862b480d11",
+  "text": "Intake note (Property team, 24 March 2020). Our client Debashish Ranade is a 62-year-old government clerk who lives at Flat 11C, Fatehgunj, Vadodara 390015 and can be reached on +91 88626 48867 or debashish.ranade@example.com. The client's PAN TXWPR4712Y.\nThe client consulted us about a consumer complaint matter against M/s Sai Constructions. The consumer complaint against M/s Sai Constructions concerns a flat bought for ₹7,93,00,000; the builder never obtained the occupancy certificate.\nThe matter was filed as C.C. No. 1403/2020 before the Vadodara District Consumer Disputes Redressal Commission on 5 July 2020.",
+  "spans": [
+    {
+      "text": "24 March 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 41
+    },
+    {
+      "text": "Debashish Ranade",
+      "category": "NAME",
+      "start": 55,
+      "end": 71
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 105
+    },
+    {
+      "text": "Flat 11C, Fatehgunj, Vadodara 390015",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 155
+    },
+    {
+      "text": "+91 88626 48867",
+      "category": "PHONE",
+      "start": 178,
+      "end": 193
+    },
+    {
+      "text": "debashish.ranade@example.com",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 225
+    },
+    {
+      "text": "TXWPR4712Y",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 254
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 288,
+      "end": 306
+    },
+    {
+      "text": "Sai Constructions",
+      "category": "ORGANIZATION",
+      "start": 326,
+      "end": 343
+    },
+    {
+      "text": "Sai Constructions",
+      "category": "ORGANIZATION",
+      "start": 380,
+      "end": 397
+    },
+    {
+      "text": "₹7,93,00,000",
+      "category": "MONEY",
+      "start": 425,
+      "end": 437
+    },
+    {
+      "text": "C.C. No. 1403/2020",
+      "category": "CASE_NUMBER",
+      "start": 517,
+      "end": 535
+    },
+    {
+      "text": "Vadodara District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 547,
+      "end": 603
+    },
+    {
+      "text": "5 July 2020",
+      "category": "DATE",
+      "start": 607,
+      "end": 618
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

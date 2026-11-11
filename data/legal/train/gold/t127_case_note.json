@@ -1,0 +1,68 @@
+{
+  "doc_id": "71c9b6a8eacb397f",
+  "text": "Case note: R.C.S. No. 2873/2022\nClient: Thomas Mehra (hardware dealer, Kolhapur)\nOpposing party: Ananya Goyal\nCourt: Kolhapur District Court\nFiled on: 18 January 2022\nClaim amount: INR 3,33,00,000/-\nIssue: land dispute. Construction has started on the disputed plot.\nAdvice given: Seek a temporary injunction to stop construction on the plot.\nOutcome: A temporary injunction was granted.\nRecommended next step: File a contempt petition if construction continues.",
+  "spans": [
+    {
+      "text": "R.C.S. No. 2873/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Thomas Mehra",
+      "category": "NAME",
+      "start": 40,
+      "end": 52
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 69
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 71,
+      "end": 79
+    },
+    {
+      "text": "Ananya Goyal",
+      "category": "NAME",
+      "start": 97,
+      "end": 109
+    },
+    {
+      "text": "Kolhapur District Court",
+      "category": "COURT",
+      "start": 117,
+      "end": 140
+    },
+    {
+      "text": "18 January 2022",
+      "category": "DATE",
+      "start": 151,
+      "end": 166
+    },
+    {
+      "text": "INR 3,33,00,000/-",
+      "category": "MONEY",
+      "start": 181,
+      "end": 198
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 206,
+      "end": 218
+    },
+    {
+      "text": "occupation (hardware dealer) + city (Kolhapur) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

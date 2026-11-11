@@ -1,0 +1,104 @@
+{
+  "doc_id": "a2e90b48a09995d2",
+  "text": "Intake note (Property team, 29 April 2019). Our client Girish Krishnan is a 63-year-old college lecturer who lives at Bungalow 19, Gokulam, Mysuru 570054 and can be reached on +91 75605 66903 or girish.krishnan@example.in. The client's PAN URSPK3049Q, Aadhaar 8359 6944 8081.\nThe client consulted us about a tenancy eviction matter against Naveen Subramanian. The tenancy dispute with Naveen Subramanian concerns rent arrears of Rs 6,25,000; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.A. No. 2408/2019 before the Mysuru District Court on 30 September 2019.",
+  "spans": [
+    {
+      "text": "29 April 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 41
+    },
+    {
+      "text": "Girish Krishnan",
+      "category": "NAME",
+      "start": 55,
+      "end": 70
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Bungalow 19, Gokulam, Mysuru 570054",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 153
+    },
+    {
+      "text": "+91 75605 66903",
+      "category": "PHONE",
+      "start": 176,
+      "end": 191
+    },
+    {
+      "text": "girish.krishnan@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 221
+    },
+    {
+      "text": "URSPK3049Q",
+      "category": "ID_NUMBER",
+      "start": 240,
+      "end": 250
+    },
+    {
+      "text": "8359 6944 8081",
+      "category": "ID_NUMBER",
+      "start": 260,
+      "end": 274
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 308,
+      "end": 324
+    },
+    {
+      "text": "Naveen Subramanian",
+      "category": "NAME",
+      "start": 340,
+      "end": 358
+    },
+    {
+      "text": "Naveen Subramanian",
+      "category": "NAME",
+      "start": 385,
+      "end": 403
+    },
+    {
+      "text": "Rs 6,25,000",
+      "category": "MONEY",
+      "start": 429,
+      "end": 440
+    },
+    {
+      "text": "R.C.A. No. 2408/2019",
+      "category": "CASE_NUMBER",
+      "start": 524,
+      "end": 544
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "start": 556,
+      "end": 577
+    },
+    {
+      "text": "30 September 2019",
+      "category": "DATE",
+      "start": 581,
+      "end": 598
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

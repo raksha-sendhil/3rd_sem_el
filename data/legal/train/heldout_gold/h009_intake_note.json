@@ -1,0 +1,98 @@
+{
+  "doc_id": "15893952206d8d38",
+  "text": "Intake note (Property team, 15 December 2018). Our client Harish Shetty is a 36-year-old cardiologist who lives at Plot 48, Navrangpura, Ahmedabad 380028 and can be reached on +91 67317 54768 or harish.shetty@example.in. The client's PAN BDLPS3800F.\nThe client consulted us about a consumer complaint matter against Sai Developers. The consumer complaint against Sai Developers concerns a flat bought for ₹94,10,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as C.C. No. 2054/2019 before the Ahmedabad District Consumer Disputes Redressal Commission on 12 March 2019.",
+  "spans": [
+    {
+      "text": "15 December 2018",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Harish Shetty",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "36-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 101
+    },
+    {
+      "text": "Plot 48, Navrangpura, Ahmedabad 380028",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 153
+    },
+    {
+      "text": "+91 67317 54768",
+      "category": "PHONE",
+      "start": 176,
+      "end": 191
+    },
+    {
+      "text": "harish.shetty@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 219
+    },
+    {
+      "text": "BDLPS3800F",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 248
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 282,
+      "end": 300
+    },
+    {
+      "text": "Sai Developers",
+      "category": "ORGANIZATION",
+      "start": 316,
+      "end": 330
+    },
+    {
+      "text": "Sai Developers",
+      "category": "ORGANIZATION",
+      "start": 363,
+      "end": 377
+    },
+    {
+      "text": "₹94,10,000",
+      "category": "MONEY",
+      "start": 405,
+      "end": 415
+    },
+    {
+      "text": "C.C. No. 2054/2019",
+      "category": "CASE_NUMBER",
+      "start": 509,
+      "end": 527
+    },
+    {
+      "text": "Ahmedabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 539,
+      "end": 596
+    },
+    {
+      "text": "12 March 2019",
+      "category": "DATE",
+      "start": 600,
+      "end": 613
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

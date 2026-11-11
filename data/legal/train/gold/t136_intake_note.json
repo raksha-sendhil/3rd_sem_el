@@ -1,0 +1,98 @@
+{
+  "doc_id": "d9c7358918a26ab3",
+  "text": "Intake note (Property team, 20 December 2021). Our client Pallavi Pillai is a 68-year-old professor who lives at Bungalow 2, Aundh, Pune 411016 and can be reached on +91 73996 87605 or pallavi.pillai@example.com. The client's PAN FEDPP3036L.\nThe client consulted us about a tenancy eviction matter against Tushar Goyal. The tenancy dispute with Tushar Goyal concerns rent arrears of ₹4,90,000; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 571/2022 before the Pune District Court on 19 February 2022.",
+  "spans": [
+    {
+      "text": "20 December 2021",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Pallavi Pillai",
+      "category": "NAME",
+      "start": 58,
+      "end": 72
+    },
+    {
+      "text": "68-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "professor",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 99
+    },
+    {
+      "text": "Bungalow 2, Aundh, Pune 411016",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 143
+    },
+    {
+      "text": "+91 73996 87605",
+      "category": "PHONE",
+      "start": 166,
+      "end": 181
+    },
+    {
+      "text": "pallavi.pillai@example.com",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 211
+    },
+    {
+      "text": "FEDPP3036L",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 274,
+      "end": 290
+    },
+    {
+      "text": "Tushar Goyal",
+      "category": "NAME",
+      "start": 306,
+      "end": 318
+    },
+    {
+      "text": "Tushar Goyal",
+      "category": "NAME",
+      "start": 345,
+      "end": 357
+    },
+    {
+      "text": "₹4,90,000",
+      "category": "MONEY",
+      "start": 383,
+      "end": 392
+    },
+    {
+      "text": "R.C.S. No. 571/2022",
+      "category": "CASE_NUMBER",
+      "start": 470,
+      "end": 489
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 501,
+      "end": 520
+    },
+    {
+      "text": "19 February 2022",
+      "category": "DATE",
+      "start": 524,
+      "end": 540
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "b7ca970ac6879d12",
+  "text": "Case note: CC/945/2021\nClient: Sunanda Kamath (dentist, Lucknow)\nOpposing party: M/s Mishra Traders\nCourt: Judicial Magistrate First Class Court at Lucknow\nFiled on: 28 February 2021\nClaim amount: Rs 24,80,000\nIssue: cheque bounce. The drawer stopped the cheque with a stop-payment instruction.\nAdvice given: Argue that a stop-payment instruction does not protect the drawer when the debt is admitted.\nOutcome: The drawer's application to discharge the complaint was rejected.\nRecommended next step: Press for an early date for cross-examination.",
+  "spans": [
+    {
+      "text": "CC/945/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 22
+    },
+    {
+      "text": "Sunanda Kamath",
+      "category": "NAME",
+      "start": 31,
+      "end": 45
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 47,
+      "end": 54
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 56,
+      "end": 63
+    },
+    {
+      "text": "Mishra Traders",
+      "category": "ORGANIZATION",
+      "start": 85,
+      "end": 99
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Lucknow",
+      "category": "COURT",
+      "start": 107,
+      "end": 155
+    },
+    {
+      "text": "28 February 2021",
+      "category": "DATE",
+      "start": 166,
+      "end": 182
+    },
+    {
+      "text": "Rs 24,80,000",
+      "category": "MONEY",
+      "start": 197,
+      "end": 209
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 217,
+      "end": 230
+    },
+    {
+      "text": "occupation (dentist) + city (Lucknow) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

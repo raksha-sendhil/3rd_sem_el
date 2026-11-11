@@ -1,0 +1,74 @@
+{
+  "doc_id": "062b0cc835b50f48",
+  "text": "Case note: CC/2127/2021\nClient: Joseph Gill (railway employee, Hyderabad)\nOpposing party: M/s Deccan Constructions\nCourt: Hyderabad District Consumer Disputes Redressal Commission\nFiled on: 26 March 2021\nClaim amount: Rs. 4,46,00,000\nIssue: consumer complaint. The flat was handed over with serious construction defects.\nAdvice given: Commission a structural audit report on the defects before the first hearing.\nOutcome: The builder was ordered to repair the defects or pay their cost.\nRecommended next step: Inspect the repairs before accepting them.\nWitness: Leena Chauhan",
+  "spans": [
+    {
+      "text": "CC/2127/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Joseph Gill",
+      "category": "NAME",
+      "start": 32,
+      "end": 43
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 45,
+      "end": 61
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 63,
+      "end": 72
+    },
+    {
+      "text": "Deccan Constructions",
+      "category": "ORGANIZATION",
+      "start": 94,
+      "end": 114
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 122,
+      "end": 179
+    },
+    {
+      "text": "26 March 2021",
+      "category": "DATE",
+      "start": 190,
+      "end": 203
+    },
+    {
+      "text": "Rs. 4,46,00,000",
+      "category": "MONEY",
+      "start": 218,
+      "end": 233
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 241,
+      "end": 259
+    },
+    {
+      "text": "Leena Chauhan",
+      "category": "NAME",
+      "start": 562,
+      "end": 575
+    },
+    {
+      "text": "occupation (railway employee) + city (Hyderabad) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

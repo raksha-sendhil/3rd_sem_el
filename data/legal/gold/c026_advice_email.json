@@ -1,0 +1,50 @@
+{
+  "doc_id": "5ce94961ee9777a4",
+  "text": "Subject: Your cheque bounce matter - CC/2441/2022\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 19 June 2023 about your dispute with Karve Textiles Pvt Ltd. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of ₹12,50,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/2441/2022",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Bhandari",
+      "category": "NAME",
+      "start": 60,
+      "end": 68
+    },
+    {
+      "text": "19 June 2023",
+      "category": "DATE",
+      "start": 99,
+      "end": 111
+    },
+    {
+      "text": "Karve Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 136,
+      "end": 158
+    },
+    {
+      "text": "₹12,50,000",
+      "category": "MONEY",
+      "start": 538,
+      "end": 548
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 565,
+      "end": 582
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

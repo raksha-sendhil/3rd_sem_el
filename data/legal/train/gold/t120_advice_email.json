@@ -1,0 +1,50 @@
+{
+  "doc_id": "3c7afb25b159521d",
+  "text": "Subject: Your cheque bounce matter - CC/2761/2021\n\nDear Ms. Patel,\n\nThank you for meeting us on 24/10/2021 about your dispute with Harish Swamy. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Bengaluru.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/2761/2021",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 60,
+      "end": 65
+    },
+    {
+      "text": "24/10/2021",
+      "category": "DATE",
+      "start": 96,
+      "end": 106
+    },
+    {
+      "text": "Harish Swamy",
+      "category": "NAME",
+      "start": 131,
+      "end": 143
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Bengaluru",
+      "category": "COURT",
+      "start": 262,
+      "end": 312
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 589,
+      "end": 604
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

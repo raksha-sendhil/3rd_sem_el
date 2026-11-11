@@ -1,0 +1,104 @@
+{
+  "doc_id": "989e36c632e6bd56",
+  "text": "Intake note (Property team, 5 December 2021). Our client Tanvi Sathe is a 50-year-old hardware dealer who lives at Flat 13C, Adajan, Surat 395052 and can be reached on +91 64486 85815 or tanvi.sathe@example.com. The client's PAN UXQPS1837D, Aadhaar 9186 2505 9628.\nThe client consulted us about a consumer complaint matter against M/s Deccan Builders Pvt Ltd. The consumer complaint against M/s Deccan Builders Pvt Ltd concerns a flat bought for Rs 5,54,00,000; the builder never obtained the occupancy certificate.\nThe matter was filed as C.C. No. 1904/2022 before the Surat District Consumer Disputes Redressal Commission on 25 May 2022.",
+  "spans": [
+    {
+      "text": "5 December 2021",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Tanvi Sathe",
+      "category": "NAME",
+      "start": 57,
+      "end": 68
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 101
+    },
+    {
+      "text": "Flat 13C, Adajan, Surat 395052",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 145
+    },
+    {
+      "text": "+91 64486 85815",
+      "category": "PHONE",
+      "start": 168,
+      "end": 183
+    },
+    {
+      "text": "tanvi.sathe@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 210
+    },
+    {
+      "text": "UXQPS1837D",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 239
+    },
+    {
+      "text": "9186 2505 9628",
+      "category": "ID_NUMBER",
+      "start": 249,
+      "end": 263
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 297,
+      "end": 315
+    },
+    {
+      "text": "Deccan Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 335,
+      "end": 358
+    },
+    {
+      "text": "Deccan Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 395,
+      "end": 418
+    },
+    {
+      "text": "Rs 5,54,00,000",
+      "category": "MONEY",
+      "start": 446,
+      "end": 460
+    },
+    {
+      "text": "C.C. No. 1904/2022",
+      "category": "CASE_NUMBER",
+      "start": 540,
+      "end": 558
+    },
+    {
+      "text": "Surat District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 570,
+      "end": 623
+    },
+    {
+      "text": "25 May 2022",
+      "category": "DATE",
+      "start": 627,
+      "end": 638
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

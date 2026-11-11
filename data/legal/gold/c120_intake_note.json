@@ -1,0 +1,98 @@
+{
+  "doc_id": "70abad1f2c7565cf",
+  "text": "Intake note (Commercial team, 03/01/2025). Our client Pallavi Chatterjee is a 54-year-old paediatrician who lives at Flat 3B, Banjara Hills, Hyderabad 500027 and can be reached on 60898 07723 or pallavi.chatterjee@example.in. The client's PAN DNNPC1711W.\nThe client consulted us about a cross-border insolvency matter against Skyline Holdings Ltd. The cross-border insolvency matter involving Skyline Holdings Ltd concerns claims of Rs. 73,12,00,000; the debtor is in insolvency proceedings in two countries.\nThe matter was filed as C.P.(IB) No. 2834/2025 before the NCLT Mumbai on 2 February 2025.",
+  "spans": [
+    {
+      "text": "03/01/2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Pallavi Chatterjee",
+      "category": "NAME",
+      "start": 54,
+      "end": 72
+    },
+    {
+      "text": "54-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 103
+    },
+    {
+      "text": "Flat 3B, Banjara Hills, Hyderabad 500027",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 157
+    },
+    {
+      "text": "60898 07723",
+      "category": "PHONE",
+      "start": 180,
+      "end": 191
+    },
+    {
+      "text": "pallavi.chatterjee@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 224
+    },
+    {
+      "text": "DNNPC1711W",
+      "category": "ID_NUMBER",
+      "start": 243,
+      "end": 253
+    },
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 287,
+      "end": 310
+    },
+    {
+      "text": "Skyline Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 326,
+      "end": 346
+    },
+    {
+      "text": "Skyline Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 393,
+      "end": 413
+    },
+    {
+      "text": "Rs. 73,12,00,000",
+      "category": "MONEY",
+      "start": 433,
+      "end": 449
+    },
+    {
+      "text": "C.P.(IB) No. 2834/2025",
+      "category": "CASE_NUMBER",
+      "start": 533,
+      "end": 555
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 567,
+      "end": 578
+    },
+    {
+      "text": "2 February 2025",
+      "category": "DATE",
+      "start": 582,
+      "end": 597
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

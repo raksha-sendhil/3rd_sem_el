@@ -1,0 +1,50 @@
+{
+  "doc_id": "892e837727e8ff70",
+  "text": "Subject: Your cheque bounce matter - CC/1880/2025\n\nDear Ms. Tiwari,\n\nThank you for meeting us on 12 March 2026 about your dispute with M/s Trident Enterprises. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of 20.4 lakh rupees.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/1880/2025",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Tiwari",
+      "category": "NAME",
+      "start": 60,
+      "end": 66
+    },
+    {
+      "text": "12 March 2026",
+      "category": "DATE",
+      "start": 97,
+      "end": 110
+    },
+    {
+      "text": "Trident Enterprises",
+      "category": "ORGANIZATION",
+      "start": 139,
+      "end": 158
+    },
+    {
+      "text": "20.4 lakh rupees",
+      "category": "MONEY",
+      "start": 538,
+      "end": 554
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 571,
+      "end": 586
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

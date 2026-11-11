@@ -1,0 +1,110 @@
+{
+  "doc_id": "e40274c416f5fac3",
+  "text": "Intake note - Commercial team\nDate: 27/11/2023\nClient: Priyanka Rane, a 40-year-old schoolteacher from Thiruvananthapuram.\nAddress: House No. 6, Pattom, Thiruvananthapuram 695046\nPhone: 83019 89885. Email: priyanka.rane@example.in. PAN VRJPR4140X.\nMatter: cheque bounce\nOpposing party: Farhan Khan\nFacts: A cheque for Rs 16,20,000 issued by Farhan Khan bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/1143/2024 before the Judicial Magistrate First Class Court at Thiruvananthapuram on 6 June 2024.",
+  "spans": [
+    {
+      "text": "27/11/2023",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Priyanka Rane",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "40-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 97
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 121
+    },
+    {
+      "text": "House No. 6, Pattom, Thiruvananthapuram 695046",
+      "category": "ADDRESS",
+      "start": 132,
+      "end": 178
+    },
+    {
+      "text": "83019 89885",
+      "category": "PHONE",
+      "start": 186,
+      "end": 197
+    },
+    {
+      "text": "priyanka.rane@example.in",
+      "category": "EMAIL",
+      "start": 206,
+      "end": 230
+    },
+    {
+      "text": "VRJPR4140X",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 256,
+      "end": 269
+    },
+    {
+      "text": "Farhan Khan",
+      "category": "NAME",
+      "start": 286,
+      "end": 297
+    },
+    {
+      "text": "Rs 16,20,000",
+      "category": "MONEY",
+      "start": 318,
+      "end": 330
+    },
+    {
+      "text": "Farhan Khan",
+      "category": "NAME",
+      "start": 341,
+      "end": 352
+    },
+    {
+      "text": "CC/1143/2024",
+      "category": "CASE_NUMBER",
+      "start": 449,
+      "end": 461
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 473,
+      "end": 532
+    },
+    {
+      "text": "6 June 2024",
+      "category": "DATE",
+      "start": 536,
+      "end": 547
+    },
+    {
+      "text": "age (40) + occupation (schoolteacher) + city (Thiruvananthapuram) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

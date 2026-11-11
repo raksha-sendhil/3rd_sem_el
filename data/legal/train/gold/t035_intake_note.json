@@ -1,0 +1,122 @@
+{
+  "doc_id": "7c4fcb64e57c418b",
+  "text": "Intake note - Commercial team\nDate: 19 May 2023\nClient: Neha Menon, a 48-year-old farmer from Nagpur.\nAddress: Flat 11B, Sitabuldi, Nagpur 440035\nPhone: 08923428939. Email: neha.menon@example.com. PAN MZVPM3800S.\nMatter: cheque bounce\nOpposing party: Kavya Kulkarni\nFacts: A cheque for Rs 25,20,000 issued by Kavya Kulkarni bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 580557634181 (IFSC ICIC0719043).\nThe matter was filed as S.C.C. No. 851/2023 before the Judicial Magistrate First Class Court at Nagpur on 30 June 2023.",
+  "spans": [
+    {
+      "text": "19 May 2023",
+      "category": "DATE",
+      "start": 36,
+      "end": 47
+    },
+    {
+      "text": "Neha Menon",
+      "category": "NAME",
+      "start": 56,
+      "end": 66
+    },
+    {
+      "text": "48-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 88
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 94,
+      "end": 100
+    },
+    {
+      "text": "Flat 11B, Sitabuldi, Nagpur 440035",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 145
+    },
+    {
+      "text": "08923428939",
+      "category": "PHONE",
+      "start": 153,
+      "end": 164
+    },
+    {
+      "text": "neha.menon@example.com",
+      "category": "EMAIL",
+      "start": 173,
+      "end": 195
+    },
+    {
+      "text": "MZVPM3800S",
+      "category": "ID_NUMBER",
+      "start": 201,
+      "end": 211
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 221,
+      "end": 234
+    },
+    {
+      "text": "Kavya Kulkarni",
+      "category": "NAME",
+      "start": 251,
+      "end": 265
+    },
+    {
+      "text": "Rs 25,20,000",
+      "category": "MONEY",
+      "start": 286,
+      "end": 298
+    },
+    {
+      "text": "Kavya Kulkarni",
+      "category": "NAME",
+      "start": 309,
+      "end": 323
+    },
+    {
+      "text": "580557634181",
+      "category": "FINANCIAL",
+      "start": 439,
+      "end": 451
+    },
+    {
+      "text": "ICIC0719043",
+      "category": "FINANCIAL",
+      "start": 458,
+      "end": 469
+    },
+    {
+      "text": "S.C.C. No. 851/2023",
+      "category": "CASE_NUMBER",
+      "start": 496,
+      "end": 515
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 527,
+      "end": 574
+    },
+    {
+      "text": "30 June 2023",
+      "category": "DATE",
+      "start": 578,
+      "end": 590
+    },
+    {
+      "text": "age (48) + occupation (farmer) + city (Nagpur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

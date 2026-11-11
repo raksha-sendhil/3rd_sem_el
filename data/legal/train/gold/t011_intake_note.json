@@ -1,0 +1,110 @@
+{
+  "doc_id": "adf3ff517e344569",
+  "text": "Intake note (Commercial team, 25 October 2018). Our client Madhuri Sethi is a 43-year-old college lecturer who lives at Flat 11D, Peelamedu, Coimbatore 641036 and can be reached on +91 91972 49852 or madhuri.sethi@example.com. The client's PAN HRBPS5201Y.\nThe client consulted us about a cheque bounce matter against Pooja Goyal. A cheque for 13.9 lakh rupees issued by Pooja Goyal bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 683146074032 (IFSC HDFC0185770).\nThe matter was filed as S.C.C. No. 2540/2019 before the Judicial Magistrate First Class Court at Coimbatore on 6 January 2019.",
+  "spans": [
+    {
+      "text": "25 October 2018",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Madhuri Sethi",
+      "category": "NAME",
+      "start": 59,
+      "end": 72
+    },
+    {
+      "text": "43-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 106
+    },
+    {
+      "text": "Flat 11D, Peelamedu, Coimbatore 641036",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 158
+    },
+    {
+      "text": "+91 91972 49852",
+      "category": "PHONE",
+      "start": 181,
+      "end": 196
+    },
+    {
+      "text": "madhuri.sethi@example.com",
+      "category": "EMAIL",
+      "start": 200,
+      "end": 225
+    },
+    {
+      "text": "HRBPS5201Y",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 254
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 288,
+      "end": 301
+    },
+    {
+      "text": "Pooja Goyal",
+      "category": "NAME",
+      "start": 317,
+      "end": 328
+    },
+    {
+      "text": "13.9 lakh rupees",
+      "category": "MONEY",
+      "start": 343,
+      "end": 359
+    },
+    {
+      "text": "Pooja Goyal",
+      "category": "NAME",
+      "start": 370,
+      "end": 381
+    },
+    {
+      "text": "683146074032",
+      "category": "FINANCIAL",
+      "start": 508,
+      "end": 520
+    },
+    {
+      "text": "HDFC0185770",
+      "category": "FINANCIAL",
+      "start": 527,
+      "end": 538
+    },
+    {
+      "text": "S.C.C. No. 2540/2019",
+      "category": "CASE_NUMBER",
+      "start": 565,
+      "end": 585
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 597,
+      "end": 648
+    },
+    {
+      "text": "6 January 2019",
+      "category": "DATE",
+      "start": 652,
+      "end": 666
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

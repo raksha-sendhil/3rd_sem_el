@@ -1,0 +1,56 @@
+{
+  "doc_id": "11d95510134f716e",
+  "text": "Subject: Your consumer complaint matter - CC/2946/2022\n\nDear Ms. More,\n\nThank you for meeting us on 20/02/2023 about your dispute with M/s Mehra Developers. As we understand it, the flat was handed over with serious construction defects. The matter is listed before the Warangal District Consumer Disputes Redressal Commission.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office. We will pursue the full claim of Rs 54,40,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CC/2946/2022",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 54
+    },
+    {
+      "text": "More",
+      "category": "NAME",
+      "start": 65,
+      "end": 69
+    },
+    {
+      "text": "20/02/2023",
+      "category": "DATE",
+      "start": 100,
+      "end": 110
+    },
+    {
+      "text": "Mehra Developers",
+      "category": "ORGANIZATION",
+      "start": 139,
+      "end": 155
+    },
+    {
+      "text": "Warangal District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 270,
+      "end": 326
+    },
+    {
+      "text": "Rs 54,40,000",
+      "category": "MONEY",
+      "start": 561,
+      "end": 573
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 590,
+      "end": 605
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "5c4c9af7f93e2558",
+  "text": "Case note: CC/127/2025\nClient: Debashish Kapoor (truck driver, Warangal)\nOpposing party: Menon Traders\nCourt: Judicial Magistrate First Class Court at Warangal\nFiled on: 11 April 2025\nClaim amount: ₹37,30,000\nIssue: cheque bounce. The drawer stopped the cheque with a stop-payment instruction.\nAdvice given: Argue that a stop-payment instruction does not protect the drawer when the debt is admitted.\nOutcome: The drawer's application to discharge the complaint was rejected.\nRecommended next step: Press for an early date for cross-examination.",
+  "spans": [
+    {
+      "text": "CC/127/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 22
+    },
+    {
+      "text": "Debashish Kapoor",
+      "category": "NAME",
+      "start": 31,
+      "end": 47
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 49,
+      "end": 61
+    },
+    {
+      "text": "Warangal",
+      "category": "LOCATION",
+      "start": 63,
+      "end": 71
+    },
+    {
+      "text": "Menon Traders",
+      "category": "ORGANIZATION",
+      "start": 89,
+      "end": 102
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Warangal",
+      "category": "COURT",
+      "start": 110,
+      "end": 159
+    },
+    {
+      "text": "11 April 2025",
+      "category": "DATE",
+      "start": 170,
+      "end": 183
+    },
+    {
+      "text": "₹37,30,000",
+      "category": "MONEY",
+      "start": 198,
+      "end": 208
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 216,
+      "end": 229
+    },
+    {
+      "text": "occupation (truck driver) + city (Warangal) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

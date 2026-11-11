@@ -1,0 +1,116 @@
+{
+  "doc_id": "3f792827964cd923",
+  "text": "Intake note - Commercial team\nDate: 10/10/2020\nClient: Rupali Rathore, a 58-year-old restaurant owner from Mysuru.\nAddress: House No. 30, Kuvempunagar, Mysuru 570027\nPhone: +91 99696 45940. Email: rupali.rathore@example.in. PAN MBJPR3528F.\nMatter: maritime salvage claim (Project Osprey)\nOpposing party: Sunrise Shipping Pvt Ltd\nFacts: The maritime salvage claim against Sunrise Shipping Pvt Ltd is for ₹41,99,00,000; the owners dispute the value of the salvage.\nThe matter was filed as A.S. No. 36/2021 before the Karnataka High Court on 27 April 2021.",
+  "spans": [
+    {
+      "text": "10/10/2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Rupali Rathore",
+      "category": "NAME",
+      "start": 55,
+      "end": 69
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 101
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 113
+    },
+    {
+      "text": "House No. 30, Kuvempunagar, Mysuru 570027",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 165
+    },
+    {
+      "text": "+91 99696 45940",
+      "category": "PHONE",
+      "start": 173,
+      "end": 188
+    },
+    {
+      "text": "rupali.rathore@example.in",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 222
+    },
+    {
+      "text": "MBJPR3528F",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 248,
+      "end": 270
+    },
+    {
+      "text": "Project Osprey",
+      "category": "MATTER_CODENAME",
+      "start": 272,
+      "end": 286
+    },
+    {
+      "text": "Sunrise Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 304,
+      "end": 328
+    },
+    {
+      "text": "Sunrise Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 371,
+      "end": 395
+    },
+    {
+      "text": "₹41,99,00,000",
+      "category": "MONEY",
+      "start": 403,
+      "end": 416
+    },
+    {
+      "text": "A.S. No. 36/2021",
+      "category": "CASE_NUMBER",
+      "start": 487,
+      "end": 503
+    },
+    {
+      "text": "Karnataka High Court",
+      "category": "COURT",
+      "start": 515,
+      "end": 535
+    },
+    {
+      "text": "27 April 2021",
+      "category": "DATE",
+      "start": 539,
+      "end": 552
+    },
+    {
+      "text": "age (58) + occupation (restaurant owner) + city (Mysuru) + issue (maritime salvage claim)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,7 @@
+{
+  "doc_id": "fd81c1d534b2b47c",
+  "source": "synthetic-legal-train",
+  "template": "intake_note",
+  "person_id": "t077",
+  "text": "Intake note - Commercial team\nDate: 10/01/2022\nClient: Mary Bhatt, a 51-year-old mechanical engineer from New Delhi.\nAddress: Plot 23, Dwarka, New Delhi 110004\nPhone: 90674 20590. Email: mary.bhatt@example.com. PAN ECWPB4337X.\nMatter: cheque bounce\nOpposing party: Varghese Textiles Pvt Ltd\nFacts: A cheque for Rs 34,80,000 issued by Varghese Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 815807527677 (IFSC UTIB0223322).\nThe matter was filed as CC/805/2022 before the Judicial Magistrate First Class Court at New Delhi on 25 June 2022."
+}

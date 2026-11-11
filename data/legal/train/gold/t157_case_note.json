@@ -1,0 +1,74 @@
+{
+  "doc_id": "ec62de6e969f201a",
+  "text": "Case note: Petition No. 787/2020\nClient: Pallavi Bose (cardiologist, Madurai)\nOpposing party: Pranav Kapoor\nCourt: Family Court at Madurai\nFiled on: 2 August 2020\nClaim amount: ₹74,20,000\nIssue: divorce by mutual consent. The couple has a young child.\nAdvice given: Agree a joint parenting plan before the second motion.\nOutcome: The joint parenting plan was made part of the decree.\nRecommended next step: Review the parenting plan after a year.\nWitness: Fatima Chandran",
+  "spans": [
+    {
+      "text": "Petition No. 787/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 32
+    },
+    {
+      "text": "Pallavi Bose",
+      "category": "NAME",
+      "start": 41,
+      "end": 53
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 67
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 69,
+      "end": 76
+    },
+    {
+      "text": "Pranav Kapoor",
+      "category": "NAME",
+      "start": 94,
+      "end": 107
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 115,
+      "end": 138
+    },
+    {
+      "text": "2 August 2020",
+      "category": "DATE",
+      "start": 149,
+      "end": 162
+    },
+    {
+      "text": "₹74,20,000",
+      "category": "MONEY",
+      "start": 177,
+      "end": 187
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 195,
+      "end": 220
+    },
+    {
+      "text": "Fatima Chandran",
+      "category": "NAME",
+      "start": 456,
+      "end": 471
+    },
+    {
+      "text": "occupation (cardiologist) + city (Madurai) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

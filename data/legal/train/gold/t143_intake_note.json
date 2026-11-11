@@ -1,0 +1,98 @@
+{
+  "doc_id": "9ef58cbdf3740451",
+  "text": "Intake note (Commercial team, 28 September 2019). Our client Yogesh Bhosale is a 28-year-old nurse who lives at House No. 74, Fatehgunj, Vadodara 390043 and can be reached on +91 63368 54030 or yogesh.bhosale@example.com. The client's PAN CFTPB6229F.\nThe client consulted us about a wrongful termination matter against Kulkarni Technologies Pvt Ltd. The wrongful termination claim against M/s Kulkarni Technologies Pvt Ltd is for ₹4,00,000; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 2692/2020 before the Vadodara Labour Court on 5 February 2020.",
+  "spans": [
+    {
+      "text": "28 September 2019",
+      "category": "DATE",
+      "start": 30,
+      "end": 47
+    },
+    {
+      "text": "Yogesh Bhosale",
+      "category": "NAME",
+      "start": 61,
+      "end": 75
+    },
+    {
+      "text": "28-year-old",
+      "category": "AGE",
+      "start": 81,
+      "end": 92
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 93,
+      "end": 98
+    },
+    {
+      "text": "House No. 74, Fatehgunj, Vadodara 390043",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 152
+    },
+    {
+      "text": "+91 63368 54030",
+      "category": "PHONE",
+      "start": 175,
+      "end": 190
+    },
+    {
+      "text": "yogesh.bhosale@example.com",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 220
+    },
+    {
+      "text": "CFTPB6229F",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 249
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 283,
+      "end": 303
+    },
+    {
+      "text": "Kulkarni Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 319,
+      "end": 348
+    },
+    {
+      "text": "Kulkarni Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 393,
+      "end": 422
+    },
+    {
+      "text": "₹4,00,000",
+      "category": "MONEY",
+      "start": 430,
+      "end": 439
+    },
+    {
+      "text": "Complaint No. 2692/2020",
+      "category": "CASE_NUMBER",
+      "start": 518,
+      "end": 541
+    },
+    {
+      "text": "Vadodara Labour Court",
+      "category": "COURT",
+      "start": 553,
+      "end": 574
+    },
+    {
+      "text": "5 February 2020",
+      "category": "DATE",
+      "start": 578,
+      "end": 593
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

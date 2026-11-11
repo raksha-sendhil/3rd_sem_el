@@ -1,0 +1,98 @@
+{
+  "doc_id": "79ba2fd285437ac6",
+  "text": "Intake note (Commercial team, 03/11/2021). Our client Anjali Natarajan is a 71-year-old architect who lives at House No. 156, Kakkanad, Kochi 682026 and can be reached on +91 67813 62211 or anjali.natarajan@example.in. The client's PAN VWJPN7093Y.\nThe client consulted us about a cheque bounce matter against Patil Traders. A cheque for 31.3 lakh rupees issued by Patil Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2642/2022 before the Judicial Magistrate First Class Court at Kochi on 30 March 2022.",
+  "spans": [
+    {
+      "text": "03/11/2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Anjali Natarajan",
+      "category": "NAME",
+      "start": 54,
+      "end": 70
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 97
+    },
+    {
+      "text": "House No. 156, Kakkanad, Kochi 682026",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 148
+    },
+    {
+      "text": "+91 67813 62211",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "anjali.natarajan@example.in",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 217
+    },
+    {
+      "text": "VWJPN7093Y",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 280,
+      "end": 293
+    },
+    {
+      "text": "Patil Traders",
+      "category": "ORGANIZATION",
+      "start": 309,
+      "end": 322
+    },
+    {
+      "text": "31.3 lakh rupees",
+      "category": "MONEY",
+      "start": 337,
+      "end": 353
+    },
+    {
+      "text": "Patil Traders",
+      "category": "ORGANIZATION",
+      "start": 364,
+      "end": 377
+    },
+    {
+      "text": "CC/2642/2022",
+      "category": "CASE_NUMBER",
+      "start": 464,
+      "end": 476
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 488,
+      "end": 534
+    },
+    {
+      "text": "30 March 2022",
+      "category": "DATE",
+      "start": 538,
+      "end": 551
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

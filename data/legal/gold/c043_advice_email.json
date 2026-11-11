@@ -1,0 +1,44 @@
+{
+  "doc_id": "bfd623afac83f63d",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Mr. Krishnan,\n\nThank you for meeting us on 4 February 2020 about your dispute with Naveen Subramanian. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the Mysuru District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Krishnan",
+      "category": "NAME",
+      "start": 48,
+      "end": 56
+    },
+    {
+      "text": "4 February 2020",
+      "category": "DATE",
+      "start": 87,
+      "end": 102
+    },
+    {
+      "text": "Naveen Subramanian",
+      "category": "NAME",
+      "start": 127,
+      "end": 145
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "start": 258,
+      "end": 279
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 510,
+      "end": 522
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

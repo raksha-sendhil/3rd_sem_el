@@ -1,0 +1,104 @@
+{
+  "doc_id": "e1e8757d5a8a3f24",
+  "text": "Intake note (Property team, 8 November 2022). Our client Suresh Menon is a 38-year-old farmer who lives at Plot 109, Lajpat Nagar, New Delhi 110031 and can be reached on +91 86349 16252 or suresh.menon@example.in. The client's PAN UJRPM5787T, Aadhaar 3045 1262 2086.\nThe client consulted us about a land dispute matter against Joseph Trivedi. The land dispute with Joseph Trivedi concerns agricultural land valued at ₹86,50,000; relatives dispute who owns the ancestral land.\nThe matter was filed as O.S. No. 144/2023 before the New Delhi District Court on 15 February 2023.",
+  "spans": [
+    {
+      "text": "8 November 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Suresh Menon",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "38-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 93
+    },
+    {
+      "text": "Plot 109, Lajpat Nagar, New Delhi 110031",
+      "category": "ADDRESS",
+      "start": 107,
+      "end": 147
+    },
+    {
+      "text": "+91 86349 16252",
+      "category": "PHONE",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "suresh.menon@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 212
+    },
+    {
+      "text": "UJRPM5787T",
+      "category": "ID_NUMBER",
+      "start": 231,
+      "end": 241
+    },
+    {
+      "text": "3045 1262 2086",
+      "category": "ID_NUMBER",
+      "start": 251,
+      "end": 265
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 299,
+      "end": 311
+    },
+    {
+      "text": "Joseph Trivedi",
+      "category": "NAME",
+      "start": 327,
+      "end": 341
+    },
+    {
+      "text": "Joseph Trivedi",
+      "category": "NAME",
+      "start": 365,
+      "end": 379
+    },
+    {
+      "text": "₹86,50,000",
+      "category": "MONEY",
+      "start": 417,
+      "end": 427
+    },
+    {
+      "text": "O.S. No. 144/2023",
+      "category": "CASE_NUMBER",
+      "start": 500,
+      "end": 517
+    },
+    {
+      "text": "New Delhi District Court",
+      "category": "COURT",
+      "start": 529,
+      "end": 553
+    },
+    {
+      "text": "15 February 2023",
+      "category": "DATE",
+      "start": 557,
+      "end": 573
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

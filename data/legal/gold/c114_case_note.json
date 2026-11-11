@@ -1,0 +1,80 @@
+{
+  "doc_id": "08f608a5f90055fe",
+  "text": "Case note: CS(COMM) 1138/2022\nClient: Bhavana Mehra (textile trader, Vadodara)\nOpposing party: Das Exports\nCourt: Gujarat High Court, before Justice Arvind Bhargava\nFiled on: 19 March 2022\nClaim amount: Rs 2,96,00,000\nIssue: geographical-indication dispute. The rival product uses the protected regional name on its label.\nAdvice given: Rely on the registered GI certificate and seek an injunction against the infringing label.\nOutcome: An injunction against the infringing label was granted.\nRecommended next step: Seek damages.\nWitness: Kavya Bhatt",
+  "spans": [
+    {
+      "text": "CS(COMM) 1138/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Bhavana Mehra",
+      "category": "NAME",
+      "start": 38,
+      "end": 51
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 53,
+      "end": 67
+    },
+    {
+      "text": "Vadodara",
+      "category": "LOCATION",
+      "start": 69,
+      "end": 77
+    },
+    {
+      "text": "Das Exports",
+      "category": "ORGANIZATION",
+      "start": 95,
+      "end": 106
+    },
+    {
+      "text": "Gujarat High Court",
+      "category": "COURT",
+      "start": 114,
+      "end": 132
+    },
+    {
+      "text": "Arvind Bhargava",
+      "category": "NAME",
+      "start": 149,
+      "end": 164
+    },
+    {
+      "text": "19 March 2022",
+      "category": "DATE",
+      "start": 175,
+      "end": 188
+    },
+    {
+      "text": "Rs 2,96,00,000",
+      "category": "MONEY",
+      "start": 203,
+      "end": 217
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 225,
+      "end": 256
+    },
+    {
+      "text": "Kavya Bhatt",
+      "category": "NAME",
+      "start": 539,
+      "end": 550
+    },
+    {
+      "text": "occupation (textile trader) + city (Vadodara) + issue (geographical-indication dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

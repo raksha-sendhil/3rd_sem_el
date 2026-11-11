@@ -1,0 +1,104 @@
+{
+  "doc_id": "d8015af806ca6089",
+  "text": "Intake note (Commercial team, 20 December 2018). Our client Asha Khan is a 73-year-old electrician who lives at Flat 16D, Vidyanagar, Hubballi 580051 and can be reached on +91 75464 14352 or asha.khan@example.com. The client's PAN ZLWPK9321J, Aadhaar 2491 3034 1031.\nThe client consulted us about a wrongful termination matter against M/s Harbour Pharma Ltd. The wrongful termination claim against Harbour Pharma Ltd is for 17.4 lakh rupees; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 2189/2019 before the Hubballi Labour Court on 12 March 2019.",
+  "spans": [
+    {
+      "text": "20 December 2018",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Asha Khan",
+      "category": "NAME",
+      "start": 60,
+      "end": 69
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "Flat 16D, Vidyanagar, Hubballi 580051",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 149
+    },
+    {
+      "text": "+91 75464 14352",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "asha.khan@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 212
+    },
+    {
+      "text": "ZLWPK9321J",
+      "category": "ID_NUMBER",
+      "start": 231,
+      "end": 241
+    },
+    {
+      "text": "2491 3034 1031",
+      "category": "ID_NUMBER",
+      "start": 251,
+      "end": 265
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 299,
+      "end": 319
+    },
+    {
+      "text": "Harbour Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 339,
+      "end": 357
+    },
+    {
+      "text": "Harbour Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 398,
+      "end": 416
+    },
+    {
+      "text": "17.4 lakh rupees",
+      "category": "MONEY",
+      "start": 424,
+      "end": 440
+    },
+    {
+      "text": "Complaint No. 2189/2019",
+      "category": "CASE_NUMBER",
+      "start": 514,
+      "end": 537
+    },
+    {
+      "text": "Hubballi Labour Court",
+      "category": "COURT",
+      "start": 549,
+      "end": 570
+    },
+    {
+      "text": "12 March 2019",
+      "category": "DATE",
+      "start": 574,
+      "end": 587
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

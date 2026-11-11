@@ -1,0 +1,50 @@
+{
+  "doc_id": "0bd7871c6bbb5e27",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 200/2024\n\nDear Ms. Rao,\n\nThank you for meeting us on 14 June 2025 about your dispute with Karve Industries. As we understand it, the employer withheld the last salary. The matter is listed before the Surat Labour Court.\n\nOur advice is to file a claim for unpaid wages before the labour authority. Please collect the attendance record and the salary slips and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 200/2024",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 66
+    },
+    {
+      "text": "Rao",
+      "category": "NAME",
+      "start": 77,
+      "end": 80
+    },
+    {
+      "text": "14 June 2025",
+      "category": "DATE",
+      "start": 111,
+      "end": 123
+    },
+    {
+      "text": "Karve Industries",
+      "category": "ORGANIZATION",
+      "start": 148,
+      "end": 164
+    },
+    {
+      "text": "Surat Labour Court",
+      "category": "COURT",
+      "start": 258,
+      "end": 276
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 460,
+      "end": 477
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

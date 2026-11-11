@@ -1,0 +1,98 @@
+{
+  "doc_id": "de9230c6c5353782",
+  "text": "Intake note (Family team, 20 March 2022). Our client Gayatri Patel is a 48-year-old civil engineer who lives at Flat 12D, Vidyanagar, Hubballi 580030 and can be reached on 79800 99223 or gayatri.patel@example.in. The client's PAN ANUPP7053W.\nThe client consulted us about a divorce by mutual consent matter against Aarti Fernandes. The divorce by mutual consent with Aarti Fernandes includes a settlement of 23.4 lakh rupees; both spouses have lived apart for a long time.\nThe matter was filed as Petition No. 2153/2022 before the Family Court at Hubballi on 12 July 2022.",
+  "spans": [
+    {
+      "text": "20 March 2022",
+      "category": "DATE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Gayatri Patel",
+      "category": "NAME",
+      "start": 53,
+      "end": 66
+    },
+    {
+      "text": "48-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 98
+    },
+    {
+      "text": "Flat 12D, Vidyanagar, Hubballi 580030",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 149
+    },
+    {
+      "text": "79800 99223",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "gayatri.patel@example.in",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 211
+    },
+    {
+      "text": "ANUPP7053W",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 274,
+      "end": 299
+    },
+    {
+      "text": "Aarti Fernandes",
+      "category": "NAME",
+      "start": 315,
+      "end": 330
+    },
+    {
+      "text": "Aarti Fernandes",
+      "category": "NAME",
+      "start": 367,
+      "end": 382
+    },
+    {
+      "text": "23.4 lakh rupees",
+      "category": "MONEY",
+      "start": 408,
+      "end": 424
+    },
+    {
+      "text": "Petition No. 2153/2022",
+      "category": "CASE_NUMBER",
+      "start": 497,
+      "end": 519
+    },
+    {
+      "text": "Family Court at Hubballi",
+      "category": "COURT",
+      "start": 531,
+      "end": 555
+    },
+    {
+      "text": "12 July 2022",
+      "category": "DATE",
+      "start": 559,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

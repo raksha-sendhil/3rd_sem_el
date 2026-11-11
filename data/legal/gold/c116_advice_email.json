@@ -1,0 +1,50 @@
+{
+  "doc_id": "e53208eeb507bf8c",
+  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 1125/2025\n\nDear Ms. Naidu,\n\nThank you for meeting us on 22 January 2026 about your dispute with M/s Zenith Foods Pvt Ltd. As we understand it, the rival product uses the protected regional name on its label.\n\nOur advice is to rely on the registered GI certificate and seek an injunction against the infringing label. Please collect the registered GI certificate and samples of the infringing label and send copies to this office. We will pursue the full claim of INR 5,34,00,000/-.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 45
+    },
+    {
+      "text": "CS(COMM) 1125/2025",
+      "category": "CASE_NUMBER",
+      "start": 55,
+      "end": 73
+    },
+    {
+      "text": "Naidu",
+      "category": "NAME",
+      "start": 84,
+      "end": 89
+    },
+    {
+      "text": "22 January 2026",
+      "category": "DATE",
+      "start": 120,
+      "end": 135
+    },
+    {
+      "text": "Zenith Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 164,
+      "end": 184
+    },
+    {
+      "text": "INR 5,34,00,000/-",
+      "category": "MONEY",
+      "start": 527,
+      "end": 544
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 561,
+      "end": 573
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

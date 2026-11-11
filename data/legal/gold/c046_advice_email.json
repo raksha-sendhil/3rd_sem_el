@@ -1,0 +1,38 @@
+{
+  "doc_id": "ad2c0810e383f2ac",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Ghosh,\n\nThank you for meeting us on 15 September 2025 about your dispute with Rahul Das. As we understand it, the tenant has sublet the flat without permission.\n\nOur advice is to collect evidence of unauthorised subletting such as utility bills in the occupant's name. Please collect utility bills in the occupant's name and statements of the neighbours and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 48,
+      "end": 53
+    },
+    {
+      "text": "15 September 2025",
+      "category": "DATE",
+      "start": 84,
+      "end": 101
+    },
+    {
+      "text": "Rahul Das",
+      "category": "NAME",
+      "start": 126,
+      "end": 135
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 449,
+      "end": 466
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

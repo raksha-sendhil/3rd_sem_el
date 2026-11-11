@@ -1,0 +1,7 @@
+{
+  "doc_id": "9bdae4440627f7c5",
+  "source": "synthetic-legal-train",
+  "template": "intake_note",
+  "person_id": "h005",
+  "text": "Intake note - Commercial team\nDate: 17/06/2020\nClient: Prakash Bhandari, a 66-year-old orthopaedic surgeon from Surat.\nAddress: Bungalow 2, Adajan, Surat 395056\nPhone: 06149684306. Email: prakash.bhandari@example.com. PAN PSCPB5266P.\nMatter: cheque bounce\nOpposing party: Mehra Enterprises\nFacts: A cheque for ₹8,95,000 issued by Mehra Enterprises bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 698979579649 (IFSC KKBK0571891).\nThe matter was filed as S.C.C. No. 2792/2020 before the Judicial Magistrate First Class Court at Surat on 12 August 2020."
+}

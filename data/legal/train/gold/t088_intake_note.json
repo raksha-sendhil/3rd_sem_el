@@ -1,0 +1,104 @@
+{
+  "doc_id": "339af501f76f4fc1",
+  "text": "Intake note (Property team, 14 February 2024). Our client Nikhil Sandhu is a 26-year-old nurse who lives at House No. 154, Gokulam, Mysuru 570038 and can be reached on 78986 54777 or nikhil.sandhu@example.in. The client's PAN MAMPS9334D, Aadhaar 9303 6859 2071.\nThe client consulted us about a tenancy eviction matter against Deepak More. The tenancy dispute with Deepak More concerns rent arrears of ₹70,000; the tenant has sublet the flat without permission.\nThe matter was filed as R.C.A. No. 2404/2024 before the Mysuru District Court on 7 June 2024.",
+  "spans": [
+    {
+      "text": "14 February 2024",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Nikhil Sandhu",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "26-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 94
+    },
+    {
+      "text": "House No. 154, Gokulam, Mysuru 570038",
+      "category": "ADDRESS",
+      "start": 108,
+      "end": 145
+    },
+    {
+      "text": "78986 54777",
+      "category": "PHONE",
+      "start": 168,
+      "end": 179
+    },
+    {
+      "text": "nikhil.sandhu@example.in",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 207
+    },
+    {
+      "text": "MAMPS9334D",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "9303 6859 2071",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 260
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 294,
+      "end": 310
+    },
+    {
+      "text": "Deepak More",
+      "category": "NAME",
+      "start": 326,
+      "end": 337
+    },
+    {
+      "text": "Deepak More",
+      "category": "NAME",
+      "start": 364,
+      "end": 375
+    },
+    {
+      "text": "₹70,000",
+      "category": "MONEY",
+      "start": 401,
+      "end": 408
+    },
+    {
+      "text": "R.C.A. No. 2404/2024",
+      "category": "CASE_NUMBER",
+      "start": 485,
+      "end": 505
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "start": 517,
+      "end": 538
+    },
+    {
+      "text": "7 June 2024",
+      "category": "DATE",
+      "start": 542,
+      "end": 553
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

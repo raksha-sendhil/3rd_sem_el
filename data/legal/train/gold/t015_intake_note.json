@@ -1,0 +1,98 @@
+{
+  "doc_id": "3053a64a8a6219a4",
+  "text": "Intake note (Commercial team, 26 July 2025). Our client Sunanda DSouza is a 42-year-old orthopaedic surgeon who lives at Flat 3B, Kuvempunagar, Mysuru 570016 and can be reached on +91 69977 16413 or sunanda.dsouza42@example.com. The client's PAN TNFPD7808L.\nThe client consulted us about a cross-border insolvency matter against Aravali Holdings Ltd. The cross-border insolvency matter involving Aravali Holdings Ltd concerns claims of ₹32.1 crore; the debtor is in insolvency proceedings in two countries.\nThe matter was filed as C.P.(IB) No. 574/2025 before the NCLT Mumbai on 25 September 2025.",
+  "spans": [
+    {
+      "text": "26 July 2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Sunanda DSouza",
+      "category": "NAME",
+      "start": 56,
+      "end": 70
+    },
+    {
+      "text": "42-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 107
+    },
+    {
+      "text": "Flat 3B, Kuvempunagar, Mysuru 570016",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 157
+    },
+    {
+      "text": "+91 69977 16413",
+      "category": "PHONE",
+      "start": 180,
+      "end": 195
+    },
+    {
+      "text": "sunanda.dsouza42@example.com",
+      "category": "EMAIL",
+      "start": 199,
+      "end": 227
+    },
+    {
+      "text": "TNFPD7808L",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 256
+    },
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 290,
+      "end": 313
+    },
+    {
+      "text": "Aravali Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 329,
+      "end": 349
+    },
+    {
+      "text": "Aravali Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 396,
+      "end": 416
+    },
+    {
+      "text": "₹32.1 crore",
+      "category": "MONEY",
+      "start": 436,
+      "end": 447
+    },
+    {
+      "text": "C.P.(IB) No. 574/2025",
+      "category": "CASE_NUMBER",
+      "start": 531,
+      "end": 552
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 564,
+      "end": 575
+    },
+    {
+      "text": "25 September 2025",
+      "category": "DATE",
+      "start": 579,
+      "end": 596
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

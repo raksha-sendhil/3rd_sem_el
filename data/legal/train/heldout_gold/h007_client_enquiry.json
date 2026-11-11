@@ -1,0 +1,80 @@
+{
+  "doc_id": "257ab026f3057ded",
+  "text": "Subject: Need help with a divorce by mutual consent case\n\nHello, my name is Shalini Khan. I am a 38-year-old railway employee living in Kolhapur. My spouse Ishita Gowda and I want a divorce by mutual consent with a settlement of INR 48,90,000/-, and both spouses have lived apart for a long time. My case number is Petition No. 860/2021 in the Family Court at Kolhapur. Can your firm advise me on what to do next? You can call me on 97993 78962 or email shalini.khan@example.com.",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 51
+    },
+    {
+      "text": "Shalini Khan",
+      "category": "NAME",
+      "start": 76,
+      "end": 88
+    },
+    {
+      "text": "38-year-old",
+      "category": "AGE",
+      "start": 97,
+      "end": 108
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 109,
+      "end": 125
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 136,
+      "end": 144
+    },
+    {
+      "text": "Ishita Gowda",
+      "category": "NAME",
+      "start": 156,
+      "end": 168
+    },
+    {
+      "text": "INR 48,90,000/-",
+      "category": "MONEY",
+      "start": 229,
+      "end": 244
+    },
+    {
+      "text": "Petition No. 860/2021",
+      "category": "CASE_NUMBER",
+      "start": 315,
+      "end": 336
+    },
+    {
+      "text": "Family Court at Kolhapur",
+      "category": "COURT",
+      "start": 344,
+      "end": 368
+    },
+    {
+      "text": "97993 78962",
+      "category": "PHONE",
+      "start": 433,
+      "end": 444
+    },
+    {
+      "text": "shalini.khan@example.com",
+      "category": "EMAIL",
+      "start": 454,
+      "end": 478
+    },
+    {
+      "text": "age (38) + occupation (railway employee) + city (Kolhapur) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

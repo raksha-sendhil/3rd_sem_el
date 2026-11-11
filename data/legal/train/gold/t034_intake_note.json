@@ -1,0 +1,104 @@
+{
+  "doc_id": "0d8236d3a51888ed",
+  "text": "Intake note (Property team, 7 July 2019). Our client Sunanda Malhotra is a 70-year-old chartered accountant who lives at Plot 115, Powai, Mumbai 400011 and can be reached on 06577304165 or sunanda.malhotra@example.in. The client's PAN ATWPM3693A, Aadhaar 7964 8150 9459.\nThe client consulted us about a consumer complaint matter against M/s Ahuja Developers. The consumer complaint against Ahuja Developers concerns a flat bought for ₹6,91,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 2412/2019 before the Mumbai District Consumer Disputes Redressal Commission on 11 September 2019.",
+  "spans": [
+    {
+      "text": "7 July 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 39
+    },
+    {
+      "text": "Sunanda Malhotra",
+      "category": "NAME",
+      "start": 53,
+      "end": 69
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 107
+    },
+    {
+      "text": "Plot 115, Powai, Mumbai 400011",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 151
+    },
+    {
+      "text": "06577304165",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "sunanda.malhotra@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 216
+    },
+    {
+      "text": "ATWPM3693A",
+      "category": "ID_NUMBER",
+      "start": 235,
+      "end": 245
+    },
+    {
+      "text": "7964 8150 9459",
+      "category": "ID_NUMBER",
+      "start": 255,
+      "end": 269
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 303,
+      "end": 321
+    },
+    {
+      "text": "Ahuja Developers",
+      "category": "ORGANIZATION",
+      "start": 341,
+      "end": 357
+    },
+    {
+      "text": "Ahuja Developers",
+      "category": "ORGANIZATION",
+      "start": 390,
+      "end": 406
+    },
+    {
+      "text": "₹6,91,00,000",
+      "category": "MONEY",
+      "start": 434,
+      "end": 446
+    },
+    {
+      "text": "C.C. No. 2412/2019",
+      "category": "CASE_NUMBER",
+      "start": 512,
+      "end": 530
+    },
+    {
+      "text": "Mumbai District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 542,
+      "end": 596
+    },
+    {
+      "text": "11 September 2019",
+      "category": "DATE",
+      "start": 600,
+      "end": 617
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

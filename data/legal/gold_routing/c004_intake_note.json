@@ -1,0 +1,92 @@
+{
+  "doc_id": "e7db6b3b14fc762c",
+  "routing": [
+    {
+      "text": "13 September 2021",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Bhavana Bansal",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "38-year-old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Flat 17A, Sitabuldi, Nagpur 440001",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "+91 99698 94961",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "bhavana.bansal99@example.com",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "JQGPB3805U",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "Gayatri Hegde",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "₹37,40,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "Gayatri Hegde",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "873196873264",
+      "category": "FINANCIAL",
+      "action": "placeholder"
+    },
+    {
+      "text": "KKBK0888972",
+      "category": "FINANCIAL",
+      "action": "placeholder"
+    },
+    {
+      "text": "S.C.C. No. 2009/2021",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "30 November 2021",
+      "category": "DATE",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

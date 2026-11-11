@@ -1,0 +1,50 @@
+{
+  "doc_id": "123d2482fa8d460e",
+  "text": "Subject: Your land dispute matter - O.S. No. 2212/2019\n\nDear Mr. Patel,\n\nThank you for meeting us on 18 December 2019 about your dispute with Vandana Mittal. As we understand it, construction has started on the disputed plot. The matter is listed before the Mumbai District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2212/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "18 December 2019",
+      "category": "DATE",
+      "start": 101,
+      "end": 117
+    },
+    {
+      "text": "Vandana Mittal",
+      "category": "NAME",
+      "start": 142,
+      "end": 156
+    },
+    {
+      "text": "Mumbai District Court",
+      "category": "COURT",
+      "start": 258,
+      "end": 279
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 476,
+      "end": 488
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

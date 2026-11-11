@@ -1,0 +1,98 @@
+{
+  "doc_id": "991ce385adb07a72",
+  "text": "Intake note (Property team, 12 March 2022). Our client Ananya More is a 72-year-old farmer who lives at Bungalow 14, Kazipet, Warangal 506060 and can be reached on +91 93810 20755 or ananya.more@example.com. The client's PAN GQBPM6344P.\nThe client consulted us about a consumer complaint matter against Mehra Developers. The consumer complaint against Mehra Developers concerns a flat bought for 54.4 lakh rupees; the flat was handed over with serious construction defects.\nThe matter was filed as CC/2946/2022 before the Warangal District Consumer Disputes Redressal Commission on 11 July 2022.",
+  "spans": [
+    {
+      "text": "12 March 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 41
+    },
+    {
+      "text": "Ananya More",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 90
+    },
+    {
+      "text": "Bungalow 14, Kazipet, Warangal 506060",
+      "category": "ADDRESS",
+      "start": 104,
+      "end": 141
+    },
+    {
+      "text": "+91 93810 20755",
+      "category": "PHONE",
+      "start": 164,
+      "end": 179
+    },
+    {
+      "text": "ananya.more@example.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 206
+    },
+    {
+      "text": "GQBPM6344P",
+      "category": "ID_NUMBER",
+      "start": 225,
+      "end": 235
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 269,
+      "end": 287
+    },
+    {
+      "text": "Mehra Developers",
+      "category": "ORGANIZATION",
+      "start": 303,
+      "end": 319
+    },
+    {
+      "text": "Mehra Developers",
+      "category": "ORGANIZATION",
+      "start": 352,
+      "end": 368
+    },
+    {
+      "text": "54.4 lakh rupees",
+      "category": "MONEY",
+      "start": 396,
+      "end": 412
+    },
+    {
+      "text": "CC/2946/2022",
+      "category": "CASE_NUMBER",
+      "start": 498,
+      "end": 510
+    },
+    {
+      "text": "Warangal District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 522,
+      "end": 578
+    },
+    {
+      "text": "11 July 2022",
+      "category": "DATE",
+      "start": 582,
+      "end": 594
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

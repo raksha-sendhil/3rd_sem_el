@@ -1,0 +1,44 @@
+{
+  "doc_id": "3fd7758bf0ef466c",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2412/2019\n\nDear Ms. Malhotra,\n\nThank you for meeting us on 15 May 2020 about your dispute with Ahuja Developers. As we understand it, possession of the flat is long overdue.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 2412/2019",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Malhotra",
+      "category": "NAME",
+      "start": 71,
+      "end": 79
+    },
+    {
+      "text": "15 May 2020",
+      "category": "DATE",
+      "start": 110,
+      "end": 121
+    },
+    {
+      "text": "Ahuja Developers",
+      "category": "ORGANIZATION",
+      "start": 146,
+      "end": 162
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 455,
+      "end": 467
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

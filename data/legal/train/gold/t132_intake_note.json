@@ -1,0 +1,122 @@
+{
+  "doc_id": "aba0d4cc46c039a9",
+  "text": "Intake note - Commercial team\nDate: 15/04/2019\nClient: Swati Naidu, a 29-year-old journalist from Jaipur.\nAddress: House No. 147, Vaishali Nagar, Jaipur 302046\nPhone: +91 76734 41637. Email: swati.naidu47@example.in. PAN GCTPN9637W.\nMatter: cheque bounce\nOpposing party: Vindhya Enterprises\nFacts: A cheque for INR 21,60,000/- issued by M/s Vindhya Enterprises bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 566415247128 (IFSC SBIN0419025).\nThe matter was filed as CC/2899/2019 before the Judicial Magistrate First Class Court at Jaipur on 29 September 2019.",
+  "spans": [
+    {
+      "text": "15/04/2019",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Swati Naidu",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "29-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 92
+    },
+    {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 98,
+      "end": 104
+    },
+    {
+      "text": "House No. 147, Vaishali Nagar, Jaipur 302046",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 159
+    },
+    {
+      "text": "+91 76734 41637",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "swati.naidu47@example.in",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 215
+    },
+    {
+      "text": "GCTPN9637W",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 241,
+      "end": 254
+    },
+    {
+      "text": "Vindhya Enterprises",
+      "category": "ORGANIZATION",
+      "start": 271,
+      "end": 290
+    },
+    {
+      "text": "INR 21,60,000/-",
+      "category": "MONEY",
+      "start": 311,
+      "end": 326
+    },
+    {
+      "text": "Vindhya Enterprises",
+      "category": "ORGANIZATION",
+      "start": 341,
+      "end": 360
+    },
+    {
+      "text": "566415247128",
+      "category": "FINANCIAL",
+      "start": 478,
+      "end": 490
+    },
+    {
+      "text": "SBIN0419025",
+      "category": "FINANCIAL",
+      "start": 497,
+      "end": 508
+    },
+    {
+      "text": "CC/2899/2019",
+      "category": "CASE_NUMBER",
+      "start": 535,
+      "end": 547
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Jaipur",
+      "category": "COURT",
+      "start": 559,
+      "end": 606
+    },
+    {
+      "text": "29 September 2019",
+      "category": "DATE",
+      "start": 610,
+      "end": 627
+    },
+    {
+      "text": "age (29) + occupation (journalist) + city (Jaipur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

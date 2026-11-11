@@ -1,0 +1,104 @@
+{
+  "doc_id": "c15fb3ed4c7c1cfd",
+  "text": "Intake note (Property team, 22 August 2021). Our client Shalini Karve is a 72-year-old truck driver who lives at House No. 150, Dwarka, New Delhi 110057 and can be reached on 86517 18108 or shalini.karve@example.com. The client's PAN VDCPK2330S, Aadhaar 7218 5351 4608.\nThe client consulted us about a land dispute matter against Rahul Shetty. The land dispute with Rahul Shetty concerns agricultural land valued at Rs 74,80,000; the occupant claims ownership by adverse possession.\nThe matter was filed as R.C.S. No. 2871/2022 before the New Delhi District Court on 9 February 2022.",
+  "spans": [
+    {
+      "text": "22 August 2021",
+      "category": "DATE",
+      "start": 28,
+      "end": 42
+    },
+    {
+      "text": "Shalini Karve",
+      "category": "NAME",
+      "start": 56,
+      "end": 69
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 99
+    },
+    {
+      "text": "House No. 150, Dwarka, New Delhi 110057",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 152
+    },
+    {
+      "text": "86517 18108",
+      "category": "PHONE",
+      "start": 175,
+      "end": 186
+    },
+    {
+      "text": "shalini.karve@example.com",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 215
+    },
+    {
+      "text": "VDCPK2330S",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "7218 5351 4608",
+      "category": "ID_NUMBER",
+      "start": 254,
+      "end": 268
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 302,
+      "end": 314
+    },
+    {
+      "text": "Rahul Shetty",
+      "category": "NAME",
+      "start": 330,
+      "end": 342
+    },
+    {
+      "text": "Rahul Shetty",
+      "category": "NAME",
+      "start": 366,
+      "end": 378
+    },
+    {
+      "text": "Rs 74,80,000",
+      "category": "MONEY",
+      "start": 416,
+      "end": 428
+    },
+    {
+      "text": "R.C.S. No. 2871/2022",
+      "category": "CASE_NUMBER",
+      "start": 507,
+      "end": 527
+    },
+    {
+      "text": "New Delhi District Court",
+      "category": "COURT",
+      "start": 539,
+      "end": 563
+    },
+    {
+      "text": "9 February 2022",
+      "category": "DATE",
+      "start": 567,
+      "end": 582
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

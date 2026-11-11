@@ -1,0 +1,52 @@
+{
+  "doc_id": "87e79e4251b8db57",
+  "routing": [
+    {
+      "text": "S.C.C. No. 995/2024",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Joseph Bose",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Emerald Enterprises",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "19 December 2024",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Rs 24,40,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

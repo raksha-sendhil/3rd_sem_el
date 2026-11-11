@@ -1,0 +1,38 @@
+{
+  "doc_id": "1659919ed42356fc",
+  "text": "Subject: Your land dispute matter\n\nDear Ms. Swamy,\n\nThank you for meeting us on 7 March 2019 about your dispute with Vikram Sen. As we understand it, construction has started on the disputed plot.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "Swamy",
+      "category": "NAME",
+      "start": 44,
+      "end": 49
+    },
+    {
+      "text": "7 March 2019",
+      "category": "DATE",
+      "start": 80,
+      "end": 92
+    },
+    {
+      "text": "Vikram Sen",
+      "category": "NAME",
+      "start": 117,
+      "end": 127
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 392,
+      "end": 411
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

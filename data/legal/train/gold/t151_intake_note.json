@@ -1,0 +1,110 @@
+{
+  "doc_id": "48a7016bc7542a51",
+  "text": "Intake note - Commercial team\nDate: 3 March 2024\nClient: Ramesh Gokhale, a 46-year-old farmer from Mangaluru.\nAddress: Bungalow 6, Kadri, Mangaluru 575011\nPhone: +91 85255 43136. Email: ramesh.gokhale@example.in. PAN PHYPG2959H.\nMatter: wrongful termination\nOpposing party: M/s Everest Pharma Ltd\nFacts: The wrongful termination claim against Everest Pharma Ltd is for Rs 26,50,000; the employer offered to settle.\nThe matter was filed as Complaint No. 2253/2024 before the Mangaluru Labour Court on 1 April 2024.",
+  "spans": [
+    {
+      "text": "3 March 2024",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Ramesh Gokhale",
+      "category": "NAME",
+      "start": 57,
+      "end": 71
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 93
+    },
+    {
+      "text": "Mangaluru",
+      "category": "LOCATION",
+      "start": 99,
+      "end": 108
+    },
+    {
+      "text": "Bungalow 6, Kadri, Mangaluru 575011",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 154
+    },
+    {
+      "text": "+91 85255 43136",
+      "category": "PHONE",
+      "start": 162,
+      "end": 177
+    },
+    {
+      "text": "ramesh.gokhale@example.in",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 211
+    },
+    {
+      "text": "PHYPG2959H",
+      "category": "ID_NUMBER",
+      "start": 217,
+      "end": 227
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 237,
+      "end": 257
+    },
+    {
+      "text": "Everest Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 278,
+      "end": 296
+    },
+    {
+      "text": "Everest Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 343,
+      "end": 361
+    },
+    {
+      "text": "Rs 26,50,000",
+      "category": "MONEY",
+      "start": 369,
+      "end": 381
+    },
+    {
+      "text": "Complaint No. 2253/2024",
+      "category": "CASE_NUMBER",
+      "start": 439,
+      "end": 462
+    },
+    {
+      "text": "Mangaluru Labour Court",
+      "category": "COURT",
+      "start": 474,
+      "end": 496
+    },
+    {
+      "text": "1 April 2024",
+      "category": "DATE",
+      "start": 500,
+      "end": 512
+    },
+    {
+      "text": "age (46) + occupation (farmer) + city (Mangaluru) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

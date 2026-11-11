@@ -1,0 +1,44 @@
+{
+  "doc_id": "a6a9cd9e028498d4",
+  "text": "Subject: Your breach of contract matter (Project Peacock)\n\nDear Mr. Sathe,\n\nThank you for meeting us on 28 April 2021 about your dispute with Mishra Infotech Pvt Ltd. As we understand it, the goods supplied were defective.\n\nOur advice is to claim liquidated damages as fixed in the contract. Please collect the inspection reports and the rejection notices and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Peacock",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 56
+    },
+    {
+      "text": "Sathe",
+      "category": "NAME",
+      "start": 68,
+      "end": 73
+    },
+    {
+      "text": "28 April 2021",
+      "category": "DATE",
+      "start": 104,
+      "end": 117
+    },
+    {
+      "text": "Mishra Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 142,
+      "end": 165
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 403,
+      "end": 418
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "2ab3ec959ad6c1f0",
+  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 2883/2024\n\nDear Mr. Srivastava,\n\nThank you for meeting us on 13/10/2024 about your dispute with Pandey Foods Pvt Ltd. As we understand it, the rival product uses the protected regional name on its label.\n\nOur advice is to rely on the registered GI certificate and seek an injunction against the infringing label. Please collect the registered GI certificate and samples of the infringing label and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 45
+    },
+    {
+      "text": "CS(COMM) 2883/2024",
+      "category": "CASE_NUMBER",
+      "start": 55,
+      "end": 73
+    },
+    {
+      "text": "Srivastava",
+      "category": "NAME",
+      "start": 84,
+      "end": 94
+    },
+    {
+      "text": "13/10/2024",
+      "category": "DATE",
+      "start": 125,
+      "end": 135
+    },
+    {
+      "text": "Pandey Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 160,
+      "end": 180
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 505,
+      "end": 521
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

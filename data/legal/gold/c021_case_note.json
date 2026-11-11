@@ -1,0 +1,74 @@
+{
+  "doc_id": "0b6dbc781123acc5",
+  "text": "Case note: S.C.C. No. 1034/2019\nClient: Ajay Shah (retired bank officer, Kolkata)\nOpposing party: Asha Saxena\nCourt: Judicial Magistrate First Class Court at Kolkata\nFiled on: 30 June 2019\nClaim amount: 23.9 lakh rupees\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.\nWitness: Ashok Hegde",
+  "spans": [
+    {
+      "text": "S.C.C. No. 1034/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Ajay Shah",
+      "category": "NAME",
+      "start": 40,
+      "end": 49
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 51,
+      "end": 71
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 73,
+      "end": 80
+    },
+    {
+      "text": "Asha Saxena",
+      "category": "NAME",
+      "start": 98,
+      "end": 109
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kolkata",
+      "category": "COURT",
+      "start": 117,
+      "end": 165
+    },
+    {
+      "text": "30 June 2019",
+      "category": "DATE",
+      "start": 176,
+      "end": 188
+    },
+    {
+      "text": "23.9 lakh rupees",
+      "category": "MONEY",
+      "start": 203,
+      "end": 219
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 227,
+      "end": 240
+    },
+    {
+      "text": "Ashok Hegde",
+      "category": "NAME",
+      "start": 583,
+      "end": 594
+    },
+    {
+      "text": "occupation (retired bank officer) + city (Kolkata) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

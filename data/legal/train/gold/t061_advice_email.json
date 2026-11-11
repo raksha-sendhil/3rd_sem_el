@@ -1,0 +1,50 @@
+{
+  "doc_id": "e6bd53360521d651",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 632/2021\n\nDear Mr. Khan,\n\nThank you for meeting us on 06/10/2021 about your dispute with Thomas Sen. As we understand it, the tenant has sublet the flat without permission.\n\nOur advice is to collect evidence of unauthorised subletting such as utility bills in the occupant's name. Please collect utility bills in the occupant's name and statements of the neighbours and send copies to this office. We will pursue the full claim of ₹5,05,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 632/2021",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 59
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 70,
+      "end": 74
+    },
+    {
+      "text": "06/10/2021",
+      "category": "DATE",
+      "start": 105,
+      "end": 115
+    },
+    {
+      "text": "Thomas Sen",
+      "category": "NAME",
+      "start": 140,
+      "end": 150
+    },
+    {
+      "text": "₹5,05,000",
+      "category": "MONEY",
+      "start": 482,
+      "end": 491
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 508,
+      "end": 520
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

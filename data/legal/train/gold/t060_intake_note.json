@@ -1,0 +1,116 @@
+{
+  "doc_id": "51bb59338b44c249",
+  "text": "Intake note - Commercial team\nDate: 27 May 2024\nClient: Abhishek Gaikwad, a 58-year-old truck driver from Kochi.\nAddress: Flat 8C, Kakkanad, Kochi 682007\nPhone: +91 70657 47741. Email: abhishek.gaikwad@example.in. PAN CPYPG1646K.\nMatter: maritime salvage claim (Project Heron)\nOpposing party: M/s Swamy Shipping Pvt Ltd\nFacts: The maritime salvage claim against Swamy Shipping Pvt Ltd is for Rs 41,13,00,000; the vessel is about to leave port.\nThe matter was filed as A.S. No. 1810/2024 before the Kerala High Court on 9 November 2024.",
+  "spans": [
+    {
+      "text": "27 May 2024",
+      "category": "DATE",
+      "start": 36,
+      "end": 47
+    },
+    {
+      "text": "Abhishek Gaikwad",
+      "category": "NAME",
+      "start": 56,
+      "end": 72
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 100
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 111
+    },
+    {
+      "text": "Flat 8C, Kakkanad, Kochi 682007",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 153
+    },
+    {
+      "text": "+91 70657 47741",
+      "category": "PHONE",
+      "start": 161,
+      "end": 176
+    },
+    {
+      "text": "abhishek.gaikwad@example.in",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 212
+    },
+    {
+      "text": "CPYPG1646K",
+      "category": "ID_NUMBER",
+      "start": 218,
+      "end": 228
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 260
+    },
+    {
+      "text": "Project Heron",
+      "category": "MATTER_CODENAME",
+      "start": 262,
+      "end": 275
+    },
+    {
+      "text": "Swamy Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 297,
+      "end": 319
+    },
+    {
+      "text": "Swamy Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 362,
+      "end": 384
+    },
+    {
+      "text": "Rs 41,13,00,000",
+      "category": "MONEY",
+      "start": 392,
+      "end": 407
+    },
+    {
+      "text": "A.S. No. 1810/2024",
+      "category": "CASE_NUMBER",
+      "start": 468,
+      "end": 486
+    },
+    {
+      "text": "Kerala High Court",
+      "category": "COURT",
+      "start": 498,
+      "end": 515
+    },
+    {
+      "text": "9 November 2024",
+      "category": "DATE",
+      "start": 519,
+      "end": 534
+    },
+    {
+      "text": "age (58) + occupation (truck driver) + city (Kochi) + issue (maritime salvage claim)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "63bdb29722211bb8",
+  "text": "Intake note (Property team, 1 January 2019). Our client Vandana Khan is a 30-year-old professor who lives at Flat 9A, Sitabuldi, Nagpur 440004 and can be reached on +91 95744 07496 or vandana.khan91@example.in. The client's PAN QTZPK7998K.\nThe client consulted us about a land dispute matter against Sameer Bhatt. The land dispute with Sameer Bhatt concerns agricultural land valued at Rs 2,34,00,000; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 2996/2019 before the Nagpur District Court on 15/05/2019.",
+  "spans": [
+    {
+      "text": "1 January 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 42
+    },
+    {
+      "text": "Vandana Khan",
+      "category": "NAME",
+      "start": 56,
+      "end": 68
+    },
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "professor",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 95
+    },
+    {
+      "text": "Flat 9A, Sitabuldi, Nagpur 440004",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 142
+    },
+    {
+      "text": "+91 95744 07496",
+      "category": "PHONE",
+      "start": 165,
+      "end": 180
+    },
+    {
+      "text": "vandana.khan91@example.in",
+      "category": "EMAIL",
+      "start": 184,
+      "end": 209
+    },
+    {
+      "text": "QTZPK7998K",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 272,
+      "end": 284
+    },
+    {
+      "text": "Sameer Bhatt",
+      "category": "NAME",
+      "start": 300,
+      "end": 312
+    },
+    {
+      "text": "Sameer Bhatt",
+      "category": "NAME",
+      "start": 336,
+      "end": 348
+    },
+    {
+      "text": "Rs 2,34,00,000",
+      "category": "MONEY",
+      "start": 386,
+      "end": 400
+    },
+    {
+      "text": "O.S. No. 2996/2019",
+      "category": "CASE_NUMBER",
+      "start": 484,
+      "end": 502
+    },
+    {
+      "text": "Nagpur District Court",
+      "category": "COURT",
+      "start": 514,
+      "end": 535
+    },
+    {
+      "text": "15/05/2019",
+      "category": "DATE",
+      "start": 539,
+      "end": 549
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

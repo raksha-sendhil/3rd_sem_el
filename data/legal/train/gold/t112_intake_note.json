@@ -1,0 +1,110 @@
+{
+  "doc_id": "f661f54262d0c968",
+  "text": "Intake note - Family team\nDate: 26/08/2024\nClient: Sanjay Natarajan, a 44-year-old schoolteacher from Ahmedabad.\nAddress: Flat 8B, Navrangpura, Ahmedabad 380004\nPhone: 60480 78081. Email: sanjay.natarajan64@example.com. PAN EFNPN7359A.\nMatter: divorce by mutual consent\nOpposing party: Madhuri Joshi\nFacts: The divorce by mutual consent with Madhuri Joshi includes a settlement of INR 7,05,000/-; the spouses agree on a single payment instead of maintenance.\nThe matter was filed as Petition No. 1041/2024 before the Family Court at Ahmedabad on 12 October 2024.",
+  "spans": [
+    {
+      "text": "26/08/2024",
+      "category": "DATE",
+      "start": 32,
+      "end": 42
+    },
+    {
+      "text": "Sanjay Natarajan",
+      "category": "NAME",
+      "start": 51,
+      "end": 67
+    },
+    {
+      "text": "44-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 96
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 102,
+      "end": 111
+    },
+    {
+      "text": "Flat 8B, Navrangpura, Ahmedabad 380004",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 160
+    },
+    {
+      "text": "60480 78081",
+      "category": "PHONE",
+      "start": 168,
+      "end": 179
+    },
+    {
+      "text": "sanjay.natarajan64@example.com",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 218
+    },
+    {
+      "text": "EFNPN7359A",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 244,
+      "end": 269
+    },
+    {
+      "text": "Madhuri Joshi",
+      "category": "NAME",
+      "start": 286,
+      "end": 299
+    },
+    {
+      "text": "Madhuri Joshi",
+      "category": "NAME",
+      "start": 342,
+      "end": 355
+    },
+    {
+      "text": "INR 7,05,000/-",
+      "category": "MONEY",
+      "start": 381,
+      "end": 395
+    },
+    {
+      "text": "Petition No. 1041/2024",
+      "category": "CASE_NUMBER",
+      "start": 483,
+      "end": 505
+    },
+    {
+      "text": "Family Court at Ahmedabad",
+      "category": "COURT",
+      "start": 517,
+      "end": 542
+    },
+    {
+      "text": "12 October 2024",
+      "category": "DATE",
+      "start": 546,
+      "end": 561
+    },
+    {
+      "text": "age (44) + occupation (schoolteacher) + city (Ahmedabad) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

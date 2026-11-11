@@ -1,0 +1,82 @@
+{
+  "doc_id": "c20e20a26f6d4ade",
+  "routing": [
+    {
+      "text": "27 November 2019",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Neha Karve",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "44-year-old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Plot 110, Kuvempunagar, Mysuru 570028",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "91976 38376",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "neha.karve@example.com",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "SBKPK9209U",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "Revathi Shetty",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Revathi Shetty",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "Rs 8,25,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "R.C.S. No. 2123/2020",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "2 April 2020",
+      "category": "DATE",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

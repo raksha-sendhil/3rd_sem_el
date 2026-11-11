@@ -1,0 +1,56 @@
+{
+  "doc_id": "878d6097ce279491",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2934/2025\n\nDear Mr. Gowda,\n\nThank you for meeting us on 01/08/2025 about your dispute with Pooja Shetty. As we understand it, the landlord needs the premises for the family's own use. The matter is listed before the Chennai District Court.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office. We will pursue the full claim of ₹3,85,000.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 2934/2025",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Gowda",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "01/08/2025",
+      "category": "DATE",
+      "start": 107,
+      "end": 117
+    },
+    {
+      "text": "Pooja Shetty",
+      "category": "NAME",
+      "start": 142,
+      "end": 154
+    },
+    {
+      "text": "Chennai District Court",
+      "category": "COURT",
+      "start": 267,
+      "end": 289
+    },
+    {
+      "text": "₹3,85,000",
+      "category": "MONEY",
+      "start": 538,
+      "end": 547
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 564,
+      "end": 583
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

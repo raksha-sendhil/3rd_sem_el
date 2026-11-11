@@ -1,0 +1,80 @@
+{
+  "doc_id": "cdf835f7e5eb9dd0",
+  "text": "Subject: Need help with a breach of contract case\n\nHello, my name is Suresh Bose. I am a 41-year-old hardware dealer living in Vadodara. Our company has a breach of contract claim of Rs. 14,55,00,000 against Orchid Logistics Ltd, and the counterparty terminated the contract without notice. My case number is CS(COMM) 1066/2019 in the Vadodara Commercial Court. Can your firm advise me on what to do next? You can call me on +91 72698 97261 or email suresh.bose@example.com.",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Suresh Bose",
+      "category": "NAME",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "41-year-old",
+      "category": "AGE",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 101,
+      "end": 116
+    },
+    {
+      "text": "Vadodara",
+      "category": "LOCATION",
+      "start": 127,
+      "end": 135
+    },
+    {
+      "text": "Rs. 14,55,00,000",
+      "category": "MONEY",
+      "start": 183,
+      "end": 199
+    },
+    {
+      "text": "Orchid Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 208,
+      "end": 228
+    },
+    {
+      "text": "CS(COMM) 1066/2019",
+      "category": "CASE_NUMBER",
+      "start": 309,
+      "end": 327
+    },
+    {
+      "text": "Vadodara Commercial Court",
+      "category": "COURT",
+      "start": 335,
+      "end": 360
+    },
+    {
+      "text": "+91 72698 97261",
+      "category": "PHONE",
+      "start": 425,
+      "end": 440
+    },
+    {
+      "text": "suresh.bose@example.com",
+      "category": "EMAIL",
+      "start": 450,
+      "end": 473
+    },
+    {
+      "text": "age (41) + occupation (hardware dealer) + city (Vadodara) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

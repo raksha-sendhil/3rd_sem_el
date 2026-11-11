@@ -1,0 +1,80 @@
+{
+  "doc_id": "f0ac9aff4ab24077",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Abhishek Saxena. I am a 53-year-old shopkeeper living in New Delhi. Nikhil Subramanian gave me a cheque for 28.5 lakh rupees to repay a loan, but the cheque was returned unpaid for insufficient funds. My case number is CC/2573/2019 in the Judicial Magistrate First Class Court at New Delhi. Can your firm advise me on what to do next? You can call me on +91 89941 89927 or email abhishek.saxena@example.com.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Abhishek Saxena",
+      "category": "NAME",
+      "start": 64,
+      "end": 79
+    },
+    {
+      "text": "53-year-old",
+      "category": "AGE",
+      "start": 88,
+      "end": 99
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 100,
+      "end": 110
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 121,
+      "end": 130
+    },
+    {
+      "text": "Nikhil Subramanian",
+      "category": "NAME",
+      "start": 132,
+      "end": 150
+    },
+    {
+      "text": "28.5 lakh rupees",
+      "category": "MONEY",
+      "start": 172,
+      "end": 188
+    },
+    {
+      "text": "CC/2573/2019",
+      "category": "CASE_NUMBER",
+      "start": 283,
+      "end": 295
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at New Delhi",
+      "category": "COURT",
+      "start": 303,
+      "end": 353
+    },
+    {
+      "text": "+91 89941 89927",
+      "category": "PHONE",
+      "start": 418,
+      "end": 433
+    },
+    {
+      "text": "abhishek.saxena@example.com",
+      "category": "EMAIL",
+      "start": 443,
+      "end": 470
+    },
+    {
+      "text": "age (53) + occupation (shopkeeper) + city (New Delhi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "40ed31b82e18c0a7",
+  "text": "Intake note (Property team, 23 May 2022). Our client Anjali DSouza is a 37-year-old taxi driver who lives at Flat 6D, Kothrud, Pune 411009 and can be reached on 07222926339 or anjali.dsouza@example.com. The client's PAN FZKPD9819S.\nThe client consulted us about a tenancy eviction matter against Kiran Shah. The tenancy dispute with Kiran Shah concerns rent arrears of INR 7,25,000/-; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.S. No. 1099/2022 before the Pune District Court on 23/06/2022.",
+  "spans": [
+    {
+      "text": "23 May 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 39
+    },
+    {
+      "text": "Anjali DSouza",
+      "category": "NAME",
+      "start": 53,
+      "end": 66
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "Flat 6D, Kothrud, Pune 411009",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 138
+    },
+    {
+      "text": "07222926339",
+      "category": "PHONE",
+      "start": 161,
+      "end": 172
+    },
+    {
+      "text": "anjali.dsouza@example.com",
+      "category": "EMAIL",
+      "start": 176,
+      "end": 201
+    },
+    {
+      "text": "FZKPD9819S",
+      "category": "ID_NUMBER",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 264,
+      "end": 280
+    },
+    {
+      "text": "Kiran Shah",
+      "category": "NAME",
+      "start": 296,
+      "end": 306
+    },
+    {
+      "text": "Kiran Shah",
+      "category": "NAME",
+      "start": 333,
+      "end": 343
+    },
+    {
+      "text": "INR 7,25,000/-",
+      "category": "MONEY",
+      "start": 369,
+      "end": 383
+    },
+    {
+      "text": "R.C.S. No. 1099/2022",
+      "category": "CASE_NUMBER",
+      "start": 467,
+      "end": 487
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 499,
+      "end": 518
+    },
+    {
+      "text": "23/06/2022",
+      "category": "DATE",
+      "start": 522,
+      "end": 532
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

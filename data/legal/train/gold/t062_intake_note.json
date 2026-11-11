@@ -1,0 +1,104 @@
+{
+  "doc_id": "8b0cabbb7bdda515",
+  "text": "Intake note (Property team, 24 August 2022). Our client Divya Ahuja is a 58-year-old dentist who lives at Plot 62, Rajarampuri, Kolhapur 416015 and can be reached on +91 91544 93210 or divya.ahuja@example.in. The client's PAN TGLPA5052H, Aadhaar 6641 1477 3155.\nThe client consulted us about a tenancy eviction matter against Fatima Sathe. The tenancy dispute with Fatima Sathe concerns rent arrears of INR 8,80,000/-; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.A. No. 790/2022 before the Kolhapur District Court on 30 September 2022.",
+  "spans": [
+    {
+      "text": "24 August 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 42
+    },
+    {
+      "text": "Divya Ahuja",
+      "category": "NAME",
+      "start": 56,
+      "end": 67
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 92
+    },
+    {
+      "text": "Plot 62, Rajarampuri, Kolhapur 416015",
+      "category": "ADDRESS",
+      "start": 106,
+      "end": 143
+    },
+    {
+      "text": "+91 91544 93210",
+      "category": "PHONE",
+      "start": 166,
+      "end": 181
+    },
+    {
+      "text": "divya.ahuja@example.in",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 207
+    },
+    {
+      "text": "TGLPA5052H",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "6641 1477 3155",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 260
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 294,
+      "end": 310
+    },
+    {
+      "text": "Fatima Sathe",
+      "category": "NAME",
+      "start": 326,
+      "end": 338
+    },
+    {
+      "text": "Fatima Sathe",
+      "category": "NAME",
+      "start": 365,
+      "end": 377
+    },
+    {
+      "text": "INR 8,80,000/-",
+      "category": "MONEY",
+      "start": 403,
+      "end": 417
+    },
+    {
+      "text": "R.C.A. No. 790/2022",
+      "category": "CASE_NUMBER",
+      "start": 501,
+      "end": 520
+    },
+    {
+      "text": "Kolhapur District Court",
+      "category": "COURT",
+      "start": 532,
+      "end": 555
+    },
+    {
+      "text": "30 September 2022",
+      "category": "DATE",
+      "start": 559,
+      "end": 576
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

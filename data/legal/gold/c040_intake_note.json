@@ -1,0 +1,116 @@
+{
+  "doc_id": "a5fe3814f759a169",
+  "text": "Intake note - Commercial team\nDate: 1 August 2020\nClient: Smita Kurian, a 33-year-old shopkeeper from Kolkata.\nAddress: Bungalow 32, Ballygunge, Kolkata 700012\nPhone: 68799 20795. Email: smita.kurian20@example.in. PAN QSYPK9724W, Aadhaar 8692 0756 9884.\nMatter: cheque bounce\nOpposing party: Zenith Traders\nFacts: A cheque for ₹9,50,000 issued by M/s Zenith Traders bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 1048/2020 before the Judicial Magistrate First Class Court at Kolkata on 19 December 2020.",
+  "spans": [
+    {
+      "text": "1 August 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Smita Kurian",
+      "category": "NAME",
+      "start": 58,
+      "end": 70
+    },
+    {
+      "text": "33-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 96
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 102,
+      "end": 109
+    },
+    {
+      "text": "Bungalow 32, Ballygunge, Kolkata 700012",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 159
+    },
+    {
+      "text": "68799 20795",
+      "category": "PHONE",
+      "start": 167,
+      "end": 178
+    },
+    {
+      "text": "smita.kurian20@example.in",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 212
+    },
+    {
+      "text": "QSYPK9724W",
+      "category": "ID_NUMBER",
+      "start": 218,
+      "end": 228
+    },
+    {
+      "text": "8692 0756 9884",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 252
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 262,
+      "end": 275
+    },
+    {
+      "text": "Zenith Traders",
+      "category": "ORGANIZATION",
+      "start": 292,
+      "end": 306
+    },
+    {
+      "text": "₹9,50,000",
+      "category": "MONEY",
+      "start": 327,
+      "end": 336
+    },
+    {
+      "text": "Zenith Traders",
+      "category": "ORGANIZATION",
+      "start": 351,
+      "end": 365
+    },
+    {
+      "text": "S.C.C. No. 1048/2020",
+      "category": "CASE_NUMBER",
+      "start": 463,
+      "end": 483
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kolkata",
+      "category": "COURT",
+      "start": 495,
+      "end": 543
+    },
+    {
+      "text": "19 December 2020",
+      "category": "DATE",
+      "start": 547,
+      "end": 563
+    },
+    {
+      "text": "age (33) + occupation (shopkeeper) + city (Kolkata) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

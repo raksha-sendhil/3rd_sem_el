@@ -1,0 +1,50 @@
+{
+  "doc_id": "eac48524ea418cba",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 940/2020\n\nDear Mr. Khan,\n\nThank you for meeting us on 26 February 2021 about your dispute with Rahul Reddy. As we understand it, the neighbour has encroached on the boundary of the plot.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of INR 4,60,00,000/-.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 940/2020",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 55
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 66,
+      "end": 70
+    },
+    {
+      "text": "26 February 2021",
+      "category": "DATE",
+      "start": 101,
+      "end": 117
+    },
+    {
+      "text": "Rahul Reddy",
+      "category": "NAME",
+      "start": 142,
+      "end": 153
+    },
+    {
+      "text": "INR 4,60,00,000/-",
+      "category": "MONEY",
+      "start": 439,
+      "end": 456
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 473,
+      "end": 492
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

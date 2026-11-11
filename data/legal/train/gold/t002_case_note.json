@@ -1,0 +1,74 @@
+{
+  "doc_id": "0fdbda57821a7bf0",
+  "text": "Case note: C.C. No. 948/2022\nClient: Bhavana Iyengar (truck driver, Mysuru)\nOpposing party: M/s Zenith Builders Pvt Ltd\nCourt: Mysuru District Consumer Disputes Redressal Commission\nFiled on: 1 June 2022\nClaim amount: Rs 2,18,00,000\nIssue: consumer complaint. The builder keeps promising possession by email but never delivers.\nAdvice given: Keep every written promise of possession because each one extends the period of limitation.\nOutcome: The complaint was admitted and notice was issued to the builder.\nRecommended next step: File the evidence affidavit.\nWitness: Radhika Dutta",
+  "spans": [
+    {
+      "text": "C.C. No. 948/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 28
+    },
+    {
+      "text": "Bhavana Iyengar",
+      "category": "NAME",
+      "start": 37,
+      "end": 52
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 66
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 68,
+      "end": 74
+    },
+    {
+      "text": "Zenith Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 96,
+      "end": 119
+    },
+    {
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 127,
+      "end": 181
+    },
+    {
+      "text": "1 June 2022",
+      "category": "DATE",
+      "start": 192,
+      "end": 203
+    },
+    {
+      "text": "Rs 2,18,00,000",
+      "category": "MONEY",
+      "start": 218,
+      "end": 232
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 240,
+      "end": 258
+    },
+    {
+      "text": "Radhika Dutta",
+      "category": "NAME",
+      "start": 569,
+      "end": 582
+    },
+    {
+      "text": "occupation (truck driver) + city (Mysuru) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

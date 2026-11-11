@@ -1,0 +1,56 @@
+{
+  "doc_id": "aaa88f25182f121e",
+  "text": "Subject: Your anticipatory bail matter - Anticipatory Bail Application No. 2376/2021\n\nDear Mr. Bhandari,\n\nThank you for meeting us on 14/04/2021 about your dispute with Sujata More. As we understand it, the complaint turns a business disagreement into a criminal case. The matter is listed before the Coimbatore Sessions Court.\n\nOur advice is to argue that the dispute is civil in nature and offer to cooperate with the investigation. Please collect the partnership papers and the correspondence with the complainant and send copies to this office. We will pursue the full claim of 64.4 lakh rupees.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Anticipatory Bail Application No. 2376/2021",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 84
+    },
+    {
+      "text": "Bhandari",
+      "category": "NAME",
+      "start": 95,
+      "end": 103
+    },
+    {
+      "text": "14/04/2021",
+      "category": "DATE",
+      "start": 134,
+      "end": 144
+    },
+    {
+      "text": "Sujata More",
+      "category": "NAME",
+      "start": 169,
+      "end": 180
+    },
+    {
+      "text": "Coimbatore Sessions Court",
+      "category": "COURT",
+      "start": 301,
+      "end": 326
+    },
+    {
+      "text": "64.4 lakh rupees",
+      "category": "MONEY",
+      "start": 582,
+      "end": 598
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 615,
+      "end": 627
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

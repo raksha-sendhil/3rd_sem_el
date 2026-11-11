@@ -1,0 +1,74 @@
+{
+  "doc_id": "0563d91f233133c5",
+  "text": "Case note: CC/1548/2020\nClient: Mahesh Pandey (architect, Thiruvananthapuram)\nOpposing party: Nambiar Traders\nCourt: Judicial Magistrate First Class Court at Thiruvananthapuram\nFiled on: 6 August 2020\nClaim amount: INR 33,90,000/-\nIssue: cheque bounce. The drawer stopped the cheque with a stop-payment instruction.\nAdvice given: Argue that a stop-payment instruction does not protect the drawer when the debt is admitted.\nOutcome: The drawer's application to discharge the complaint was rejected.\nRecommended next step: Press for an early date for cross-examination.\nWitness: Arjun Kulkarni",
+  "spans": [
+    {
+      "text": "CC/1548/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Mahesh Pandey",
+      "category": "NAME",
+      "start": 32,
+      "end": 45
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 47,
+      "end": 56
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 58,
+      "end": 76
+    },
+    {
+      "text": "Nambiar Traders",
+      "category": "ORGANIZATION",
+      "start": 94,
+      "end": 109
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 117,
+      "end": 176
+    },
+    {
+      "text": "6 August 2020",
+      "category": "DATE",
+      "start": 187,
+      "end": 200
+    },
+    {
+      "text": "INR 33,90,000/-",
+      "category": "MONEY",
+      "start": 215,
+      "end": 230
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 251
+    },
+    {
+      "text": "Arjun Kulkarni",
+      "category": "NAME",
+      "start": 577,
+      "end": 591
+    },
+    {
+      "text": "occupation (architect) + city (Thiruvananthapuram) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

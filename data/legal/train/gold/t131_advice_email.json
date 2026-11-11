@@ -1,0 +1,38 @@
+{
+  "doc_id": "1a3e2868c6dc27dd",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Goyal,\n\nThank you for meeting us on 3 January 2020 about your dispute with Joseph More. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Goyal",
+      "category": "NAME",
+      "start": 45,
+      "end": 50
+    },
+    {
+      "text": "3 January 2020",
+      "category": "DATE",
+      "start": 81,
+      "end": 95
+    },
+    {
+      "text": "Joseph More",
+      "category": "NAME",
+      "start": 120,
+      "end": 131
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 493,
+      "end": 505
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

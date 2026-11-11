@@ -1,0 +1,98 @@
+{
+  "doc_id": "60d21d9dcb326770",
+  "text": "Intake note (Property team, 24 June 2020). Our client Divya Pawar is a 30-year-old nurse who lives at Flat 4D, Mavoor Road, Kozhikode 673016 and can be reached on +91 97965 98630 or divya.pawar@example.in. The client's PAN LXRPP6947Z.\nThe client consulted us about a consumer complaint matter against Vindhya Developers. The consumer complaint against Vindhya Developers concerns a flat bought for Rs. 7,67,00,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as C.C. No. 2518/2021 before the Kozhikode District Consumer Disputes Redressal Commission on 7 January 2021.",
+  "spans": [
+    {
+      "text": "24 June 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 40
+    },
+    {
+      "text": "Divya Pawar",
+      "category": "NAME",
+      "start": 54,
+      "end": 65
+    },
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 88
+    },
+    {
+      "text": "Flat 4D, Mavoor Road, Kozhikode 673016",
+      "category": "ADDRESS",
+      "start": 102,
+      "end": 140
+    },
+    {
+      "text": "+91 97965 98630",
+      "category": "PHONE",
+      "start": 163,
+      "end": 178
+    },
+    {
+      "text": "divya.pawar@example.in",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 204
+    },
+    {
+      "text": "LXRPP6947Z",
+      "category": "ID_NUMBER",
+      "start": 223,
+      "end": 233
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 267,
+      "end": 285
+    },
+    {
+      "text": "Vindhya Developers",
+      "category": "ORGANIZATION",
+      "start": 301,
+      "end": 319
+    },
+    {
+      "text": "Vindhya Developers",
+      "category": "ORGANIZATION",
+      "start": 352,
+      "end": 370
+    },
+    {
+      "text": "Rs. 7,67,00,000",
+      "category": "MONEY",
+      "start": 398,
+      "end": 413
+    },
+    {
+      "text": "C.C. No. 2518/2021",
+      "category": "CASE_NUMBER",
+      "start": 507,
+      "end": 525
+    },
+    {
+      "text": "Kozhikode District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 537,
+      "end": 594
+    },
+    {
+      "text": "7 January 2021",
+      "category": "DATE",
+      "start": 598,
+      "end": 612
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

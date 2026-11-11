@@ -1,0 +1,68 @@
+{
+  "doc_id": "e876183ff08ccff3",
+  "text": "Subject: Need help with a wrongful termination case\n\nHello, my name is Vivek Tiwari. I am a 26-year-old dentist living in Nashik. My employer M/s Reddy Industries owes me Rs 35,90,000 after firing me, and the employee was dismissed without any enquiry. Can your firm advise me on what to do next? You can call me on 79622 56699 or email vivek.tiwari@example.in.",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 46
+    },
+    {
+      "text": "Vivek Tiwari",
+      "category": "NAME",
+      "start": 71,
+      "end": 83
+    },
+    {
+      "text": "26-year-old",
+      "category": "AGE",
+      "start": 92,
+      "end": 103
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 104,
+      "end": 111
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 122,
+      "end": 128
+    },
+    {
+      "text": "Reddy Industries",
+      "category": "ORGANIZATION",
+      "start": 146,
+      "end": 162
+    },
+    {
+      "text": "Rs 35,90,000",
+      "category": "MONEY",
+      "start": 171,
+      "end": 183
+    },
+    {
+      "text": "79622 56699",
+      "category": "PHONE",
+      "start": 316,
+      "end": 327
+    },
+    {
+      "text": "vivek.tiwari@example.in",
+      "category": "EMAIL",
+      "start": 337,
+      "end": 360
+    },
+    {
+      "text": "age (26) + occupation (dentist) + city (Nashik) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

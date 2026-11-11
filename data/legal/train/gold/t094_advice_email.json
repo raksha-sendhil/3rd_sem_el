@@ -1,0 +1,50 @@
+{
+  "doc_id": "cddbe4853ed9ba9b",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 400/2021\n\nDear Mr. Desai,\n\nThank you for meeting us on 18 March 2022 about your dispute with Konark Traders. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Chennai.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 400/2021",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Desai",
+      "category": "NAME",
+      "start": 67,
+      "end": 72
+    },
+    {
+      "text": "18 March 2022",
+      "category": "DATE",
+      "start": 103,
+      "end": 116
+    },
+    {
+      "text": "Konark Traders",
+      "category": "ORGANIZATION",
+      "start": 141,
+      "end": 155
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Chennai",
+      "category": "COURT",
+      "start": 274,
+      "end": 322
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 599,
+      "end": 614
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

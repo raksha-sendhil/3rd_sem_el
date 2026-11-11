@@ -1,0 +1,116 @@
+{
+  "doc_id": "8946671c3c56fd13",
+  "text": "Intake note - Family team\nDate: 19 October 2020\nClient: Ananya Kulkarni, a 40-year-old farmer from Coimbatore.\nAddress: Plot 55, Saibaba Colony, Coimbatore 641015\nPhone: 71962 46846. Email: ananya.kulkarni56@example.in. PAN CGCPK5672C, Aadhaar 4064 0274 3740.\nMatter: divorce by mutual consent\nOpposing party: Harish Jadhav\nFacts: The divorce by mutual consent with Harish Jadhav includes a settlement of INR 31,00,000/-; the couple has a young child.\nThe matter was filed as Petition No. 2215/2020 before the Family Court at Coimbatore on 27 November 2020.",
+  "spans": [
+    {
+      "text": "19 October 2020",
+      "category": "DATE",
+      "start": 32,
+      "end": 47
+    },
+    {
+      "text": "Ananya Kulkarni",
+      "category": "NAME",
+      "start": 56,
+      "end": 71
+    },
+    {
+      "text": "40-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 93
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 99,
+      "end": 109
+    },
+    {
+      "text": "Plot 55, Saibaba Colony, Coimbatore 641015",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 162
+    },
+    {
+      "text": "71962 46846",
+      "category": "PHONE",
+      "start": 170,
+      "end": 181
+    },
+    {
+      "text": "ananya.kulkarni56@example.in",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 218
+    },
+    {
+      "text": "CGCPK5672C",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "4064 0274 3740",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 258
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 268,
+      "end": 293
+    },
+    {
+      "text": "Harish Jadhav",
+      "category": "NAME",
+      "start": 310,
+      "end": 323
+    },
+    {
+      "text": "Harish Jadhav",
+      "category": "NAME",
+      "start": 366,
+      "end": 379
+    },
+    {
+      "text": "INR 31,00,000/-",
+      "category": "MONEY",
+      "start": 405,
+      "end": 420
+    },
+    {
+      "text": "Petition No. 2215/2020",
+      "category": "CASE_NUMBER",
+      "start": 476,
+      "end": 498
+    },
+    {
+      "text": "Family Court at Coimbatore",
+      "category": "COURT",
+      "start": 510,
+      "end": 536
+    },
+    {
+      "text": "27 November 2020",
+      "category": "DATE",
+      "start": 540,
+      "end": 556
+    },
+    {
+      "text": "age (40) + occupation (farmer) + city (Coimbatore) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

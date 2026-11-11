@@ -1,0 +1,56 @@
+{
+  "doc_id": "85956427336caa3c",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 2696/2019\n\nDear Mr. Banerjee,\n\nThank you for meeting us on 20/10/2019 about your dispute with Sunanda Fernandes. As we understand it, construction has started on the disputed plot. The matter is listed before the Thane District Court.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office. We will pursue the full claim of Rs 3,47,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 2696/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 56
+    },
+    {
+      "text": "Banerjee",
+      "category": "NAME",
+      "start": 67,
+      "end": 75
+    },
+    {
+      "text": "20/10/2019",
+      "category": "DATE",
+      "start": 106,
+      "end": 116
+    },
+    {
+      "text": "Sunanda Fernandes",
+      "category": "NAME",
+      "start": 141,
+      "end": 158
+    },
+    {
+      "text": "Thane District Court",
+      "category": "COURT",
+      "start": 260,
+      "end": 280
+    },
+    {
+      "text": "Rs 3,47,00,000",
+      "category": "MONEY",
+      "start": 495,
+      "end": 509
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 526,
+      "end": 542
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

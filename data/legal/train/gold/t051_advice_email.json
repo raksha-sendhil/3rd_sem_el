@@ -1,0 +1,56 @@
+{
+  "doc_id": "c7c04c511865abfc",
+  "text": "Subject: Your cheque bounce matter - CC/2635/2020\n\nDear Ms. Qureshi,\n\nThank you for meeting us on 21 December 2020 about your dispute with Kiran Naidu. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Kochi.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of Rs 43,60,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/2635/2020",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 49
+    },
+    {
+      "text": "Qureshi",
+      "category": "NAME",
+      "start": 60,
+      "end": 67
+    },
+    {
+      "text": "21 December 2020",
+      "category": "DATE",
+      "start": 98,
+      "end": 114
+    },
+    {
+      "text": "Kiran Naidu",
+      "category": "NAME",
+      "start": 139,
+      "end": 150
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 268,
+      "end": 314
+    },
+    {
+      "text": "Rs 43,60,000",
+      "category": "MONEY",
+      "start": 573,
+      "end": 585
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 602,
+      "end": 614
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

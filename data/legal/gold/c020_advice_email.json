@@ -1,0 +1,56 @@
+{
+  "doc_id": "1cca08181bce58b3",
+  "text": "Subject: Your cheque bounce matter - CC/239/2019\n\nDear Ms. Chatterjee,\n\nThank you for meeting us on 9 February 2020 about your dispute with Aravali Textiles Pvt Ltd. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Warangal.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of 35.7 lakh rupees.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/239/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 48
+    },
+    {
+      "text": "Chatterjee",
+      "category": "NAME",
+      "start": 59,
+      "end": 69
+    },
+    {
+      "text": "9 February 2020",
+      "category": "DATE",
+      "start": 100,
+      "end": 115
+    },
+    {
+      "text": "Aravali Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 140,
+      "end": 164
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Warangal",
+      "category": "COURT",
+      "start": 282,
+      "end": 331
+    },
+    {
+      "text": "35.7 lakh rupees",
+      "category": "MONEY",
+      "start": 590,
+      "end": 606
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 623,
+      "end": 635
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

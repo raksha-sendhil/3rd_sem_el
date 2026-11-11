@@ -1,0 +1,38 @@
+{
+  "doc_id": "e5c0ec5fa686d89f",
+  "text": "Subject: Your divorce by mutual consent matter\n\nDear Mr. Natarajan,\n\nThank you for meeting us on 26/01/2025 about your dispute with Madhuri Joshi. As we understand it, the spouses agree on a single payment instead of maintenance.\n\nOur advice is to record the one-time alimony settlement in the consent terms. Please collect income tax returns and the draft consent terms and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Natarajan",
+      "category": "NAME",
+      "start": 57,
+      "end": 66
+    },
+    {
+      "text": "26/01/2025",
+      "category": "DATE",
+      "start": 97,
+      "end": 107
+    },
+    {
+      "text": "Madhuri Joshi",
+      "category": "NAME",
+      "start": 132,
+      "end": 145
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 418,
+      "end": 430
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

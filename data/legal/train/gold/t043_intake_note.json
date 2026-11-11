@@ -1,0 +1,98 @@
+{
+  "doc_id": "f31e4200592f8e49",
+  "text": "Intake note (Commercial team, 02/02/2025). Our client Debashish Kapoor is a 44-year-old truck driver who lives at House No. 15, Kazipet, Warangal 506023 and can be reached on 09134592651 or debashish.kapoor94@example.com. The client's PAN LEXPK7468K.\nThe client consulted us about a cheque bounce matter against M/s Menon Traders. A cheque for Rs 37,30,000 issued by Menon Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as CC/127/2025 before the Judicial Magistrate First Class Court at Warangal on 11 April 2025.",
+  "spans": [
+    {
+      "text": "02/02/2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Debashish Kapoor",
+      "category": "NAME",
+      "start": 54,
+      "end": 70
+    },
+    {
+      "text": "44-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 100
+    },
+    {
+      "text": "House No. 15, Kazipet, Warangal 506023",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 152
+    },
+    {
+      "text": "09134592651",
+      "category": "PHONE",
+      "start": 175,
+      "end": 186
+    },
+    {
+      "text": "debashish.kapoor94@example.com",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 220
+    },
+    {
+      "text": "LEXPK7468K",
+      "category": "ID_NUMBER",
+      "start": 239,
+      "end": 249
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 283,
+      "end": 296
+    },
+    {
+      "text": "Menon Traders",
+      "category": "ORGANIZATION",
+      "start": 316,
+      "end": 329
+    },
+    {
+      "text": "Rs 37,30,000",
+      "category": "MONEY",
+      "start": 344,
+      "end": 356
+    },
+    {
+      "text": "Menon Traders",
+      "category": "ORGANIZATION",
+      "start": 367,
+      "end": 380
+    },
+    {
+      "text": "CC/127/2025",
+      "category": "CASE_NUMBER",
+      "start": 477,
+      "end": 488
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Warangal",
+      "category": "COURT",
+      "start": 500,
+      "end": 549
+    },
+    {
+      "text": "11 April 2025",
+      "category": "DATE",
+      "start": 553,
+      "end": 566
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,110 @@
+{
+  "doc_id": "254adad3cba83e9c",
+  "text": "Intake note (Commercial team, 29 December 2021). Our client Charulata Natarajan is a 65-year-old chartered accountant who lives at Bungalow 24, Altinho, Panaji 403041 and can be reached on +91 77042 41274 or charulata.natarajan@example.in. The client's PAN XJVPN1063P, Aadhaar 7349 6633 9619.\nThe client consulted us about a breach of contract matter (Project Flamingo) against Qureshi Motors Ltd. The breach of contract claim against Qureshi Motors Ltd is for Rs. 9,39,00,000; the claim must be filed as a commercial suit.\nThe matter was filed as CS(COMM) 1505/2022 before the Panaji Commercial Court on 02/03/2022.",
+  "spans": [
+    {
+      "text": "29 December 2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Charulata Natarajan",
+      "category": "NAME",
+      "start": 60,
+      "end": 79
+    },
+    {
+      "text": "65-year-old",
+      "category": "AGE",
+      "start": 85,
+      "end": 96
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 97,
+      "end": 117
+    },
+    {
+      "text": "Bungalow 24, Altinho, Panaji 403041",
+      "category": "ADDRESS",
+      "start": 131,
+      "end": 166
+    },
+    {
+      "text": "+91 77042 41274",
+      "category": "PHONE",
+      "start": 189,
+      "end": 204
+    },
+    {
+      "text": "charulata.natarajan@example.in",
+      "category": "EMAIL",
+      "start": 208,
+      "end": 238
+    },
+    {
+      "text": "XJVPN1063P",
+      "category": "ID_NUMBER",
+      "start": 257,
+      "end": 267
+    },
+    {
+      "text": "7349 6633 9619",
+      "category": "ID_NUMBER",
+      "start": 277,
+      "end": 291
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 325,
+      "end": 343
+    },
+    {
+      "text": "Project Flamingo",
+      "category": "MATTER_CODENAME",
+      "start": 352,
+      "end": 368
+    },
+    {
+      "text": "Qureshi Motors Ltd",
+      "category": "ORGANIZATION",
+      "start": 378,
+      "end": 396
+    },
+    {
+      "text": "Qureshi Motors Ltd",
+      "category": "ORGANIZATION",
+      "start": 435,
+      "end": 453
+    },
+    {
+      "text": "Rs. 9,39,00,000",
+      "category": "MONEY",
+      "start": 461,
+      "end": 476
+    },
+    {
+      "text": "CS(COMM) 1505/2022",
+      "category": "CASE_NUMBER",
+      "start": 548,
+      "end": 566
+    },
+    {
+      "text": "Panaji Commercial Court",
+      "category": "COURT",
+      "start": 578,
+      "end": 601
+    },
+    {
+      "text": "02/03/2022",
+      "category": "DATE",
+      "start": 605,
+      "end": 615
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,38 @@
+{
+  "doc_id": "7c62495fbe7b32b7",
+  "text": "Subject: Your breach of contract matter\n\nDear Mr. Bhosale,\n\nThank you for meeting us on 31 July 2021 about your dispute with Apte Logistics Ltd. As we understand it, the goods supplied were defective.\n\nOur advice is to claim liquidated damages as fixed in the contract. Please collect the inspection reports and the rejection notices and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Bhosale",
+      "category": "NAME",
+      "start": 50,
+      "end": 57
+    },
+    {
+      "text": "31 July 2021",
+      "category": "DATE",
+      "start": 88,
+      "end": 100
+    },
+    {
+      "text": "Apte Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 125,
+      "end": 143
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 381,
+      "end": 397
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

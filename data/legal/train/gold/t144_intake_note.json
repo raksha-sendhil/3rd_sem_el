@@ -1,0 +1,98 @@
+{
+  "doc_id": "187da77c64ab6494",
+  "text": "Intake note (Property team, 6 April 2023). Our client Gayatri Menon is a 58-year-old hardware dealer who lives at House No. 125, Aliganj, Lucknow 226054 and can be reached on +91 71825 49495 or gayatri.menon@example.in. The client's PAN WTRPM9249L.\nThe client consulted us about a land dispute matter against Naveen Kulkarni. The land dispute with Naveen Kulkarni concerns agricultural land valued at 58 lakh rupees; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 2855/2023 before the Lucknow District Court on 24/07/2023.",
+  "spans": [
+    {
+      "text": "6 April 2023",
+      "category": "DATE",
+      "start": 28,
+      "end": 40
+    },
+    {
+      "text": "Gayatri Menon",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 100
+    },
+    {
+      "text": "House No. 125, Aliganj, Lucknow 226054",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 152
+    },
+    {
+      "text": "+91 71825 49495",
+      "category": "PHONE",
+      "start": 175,
+      "end": 190
+    },
+    {
+      "text": "gayatri.menon@example.in",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 218
+    },
+    {
+      "text": "WTRPM9249L",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 281,
+      "end": 293
+    },
+    {
+      "text": "Naveen Kulkarni",
+      "category": "NAME",
+      "start": 309,
+      "end": 324
+    },
+    {
+      "text": "Naveen Kulkarni",
+      "category": "NAME",
+      "start": 348,
+      "end": 363
+    },
+    {
+      "text": "58 lakh rupees",
+      "category": "MONEY",
+      "start": 401,
+      "end": 415
+    },
+    {
+      "text": "O.S. No. 2855/2023",
+      "category": "CASE_NUMBER",
+      "start": 499,
+      "end": 517
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 529,
+      "end": 551
+    },
+    {
+      "text": "24/07/2023",
+      "category": "DATE",
+      "start": 555,
+      "end": 565
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

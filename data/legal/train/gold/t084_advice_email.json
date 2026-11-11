@@ -1,0 +1,44 @@
+{
+  "doc_id": "05a29c2c6d05fac0",
+  "text": "Subject: Your breach of contract matter\n\nDear Ms. Qureshi,\n\nThank you for meeting us on 19/10/2020 about your dispute with M/s Coastal Industries. As we understand it, the goods supplied were defective. The matter is listed before the Kochi Commercial Court.\n\nOur advice is to claim liquidated damages as fixed in the contract. Please collect the inspection reports and the rejection notices and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Qureshi",
+      "category": "NAME",
+      "start": 50,
+      "end": 57
+    },
+    {
+      "text": "19/10/2020",
+      "category": "DATE",
+      "start": 88,
+      "end": 98
+    },
+    {
+      "text": "Coastal Industries",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 145
+    },
+    {
+      "text": "Kochi Commercial Court",
+      "category": "COURT",
+      "start": 235,
+      "end": 257
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 439,
+      "end": 451
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

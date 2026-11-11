@@ -1,0 +1,104 @@
+{
+  "doc_id": "184de8ff4df692de",
+  "text": "Intake note (Family team, 2 December 2018). Our client Mohan Menon is a 52-year-old nurse who lives at House No. 59, Tallakulam, Madurai 625010 and can be reached on +91 72412 54764 or mohan.menon@example.in. The client's PAN LDKPM8369B, Aadhaar 8799 8134 6238.\nThe client consulted us about a divorce by mutual consent matter against Anjali Fernandes. The divorce by mutual consent with Anjali Fernandes includes a settlement of INR 8,20,000/-; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 2736/2019 before the Family Court at Madurai on 8 March 2019.",
+  "spans": [
+    {
+      "text": "2 December 2018",
+      "category": "DATE",
+      "start": 26,
+      "end": 41
+    },
+    {
+      "text": "Mohan Menon",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "52-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 89
+    },
+    {
+      "text": "House No. 59, Tallakulam, Madurai 625010",
+      "category": "ADDRESS",
+      "start": 103,
+      "end": 143
+    },
+    {
+      "text": "+91 72412 54764",
+      "category": "PHONE",
+      "start": 166,
+      "end": 181
+    },
+    {
+      "text": "mohan.menon@example.in",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 207
+    },
+    {
+      "text": "LDKPM8369B",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "8799 8134 6238",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 260
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 294,
+      "end": 319
+    },
+    {
+      "text": "Anjali Fernandes",
+      "category": "NAME",
+      "start": 335,
+      "end": 351
+    },
+    {
+      "text": "Anjali Fernandes",
+      "category": "NAME",
+      "start": 388,
+      "end": 404
+    },
+    {
+      "text": "INR 8,20,000/-",
+      "category": "MONEY",
+      "start": 430,
+      "end": 444
+    },
+    {
+      "text": "Petition No. 2736/2019",
+      "category": "CASE_NUMBER",
+      "start": 519,
+      "end": 541
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 553,
+      "end": 576
+    },
+    {
+      "text": "8 March 2019",
+      "category": "DATE",
+      "start": 580,
+      "end": 592
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

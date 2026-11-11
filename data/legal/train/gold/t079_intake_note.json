@@ -1,0 +1,110 @@
+{
+  "doc_id": "210c996e52087a4b",
+  "text": "Intake note - Commercial team\nDate: 5 June 2020\nClient: Suresh Rathore, a 75-year-old software engineer from Pune.\nAddress: Flat 2B, Aundh, Pune 411010\nPhone: +91 87072 32389. Email: suresh.rathore@example.in. PAN GXWPR4302A.\nMatter: cheque bounce\nOpposing party: Radhika Pai\nFacts: A cheque for INR 29,70,000/- issued by Radhika Pai bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2575/2020 before the Judicial Magistrate First Class Court at Pune on 16 July 2020.",
+  "spans": [
+    {
+      "text": "5 June 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 47
+    },
+    {
+      "text": "Suresh Rathore",
+      "category": "NAME",
+      "start": 56,
+      "end": 70
+    },
+    {
+      "text": "75-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 103
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 109,
+      "end": 113
+    },
+    {
+      "text": "Flat 2B, Aundh, Pune 411010",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 151
+    },
+    {
+      "text": "+91 87072 32389",
+      "category": "PHONE",
+      "start": 159,
+      "end": 174
+    },
+    {
+      "text": "suresh.rathore@example.in",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 208
+    },
+    {
+      "text": "GXWPR4302A",
+      "category": "ID_NUMBER",
+      "start": 214,
+      "end": 224
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 234,
+      "end": 247
+    },
+    {
+      "text": "Radhika Pai",
+      "category": "NAME",
+      "start": 264,
+      "end": 275
+    },
+    {
+      "text": "INR 29,70,000/-",
+      "category": "MONEY",
+      "start": 296,
+      "end": 311
+    },
+    {
+      "text": "Radhika Pai",
+      "category": "NAME",
+      "start": 322,
+      "end": 333
+    },
+    {
+      "text": "CC/2575/2020",
+      "category": "CASE_NUMBER",
+      "start": 420,
+      "end": 432
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 444,
+      "end": 489
+    },
+    {
+      "text": "16 July 2020",
+      "category": "DATE",
+      "start": 493,
+      "end": 505
+    },
+    {
+      "text": "age (75) + occupation (software engineer) + city (Pune) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

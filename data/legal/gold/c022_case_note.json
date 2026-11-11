@@ -1,0 +1,68 @@
+{
+  "doc_id": "b36ab599423b8b29",
+  "text": "Case note: CC/2548/2023\nClient: Priyanka Apte (schoolteacher, Surat)\nOpposing party: M/s Meridian Traders\nCourt: Judicial Magistrate First Class Court at Surat\nFiled on: 02/05/2023\nClaim amount: INR 15,40,000/-\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.",
+  "spans": [
+    {
+      "text": "CC/2548/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Priyanka Apte",
+      "category": "NAME",
+      "start": 32,
+      "end": 45
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 47,
+      "end": 60
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 62,
+      "end": 67
+    },
+    {
+      "text": "Meridian Traders",
+      "category": "ORGANIZATION",
+      "start": 89,
+      "end": 105
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Surat",
+      "category": "COURT",
+      "start": 113,
+      "end": 159
+    },
+    {
+      "text": "02/05/2023",
+      "category": "DATE",
+      "start": 170,
+      "end": 180
+    },
+    {
+      "text": "INR 15,40,000/-",
+      "category": "MONEY",
+      "start": 195,
+      "end": 210
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 218,
+      "end": 231
+    },
+    {
+      "text": "occupation (schoolteacher) + city (Surat) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

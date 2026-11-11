@@ -1,0 +1,38 @@
+{
+  "doc_id": "c7508be533a69059",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Tiwari,\n\nThank you for meeting us on 3 January 2023 about your dispute with M/s Trident Traders. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Tiwari",
+      "category": "NAME",
+      "start": 45,
+      "end": 51
+    },
+    {
+      "text": "3 January 2023",
+      "category": "DATE",
+      "start": 82,
+      "end": 96
+    },
+    {
+      "text": "Trident Traders",
+      "category": "ORGANIZATION",
+      "start": 125,
+      "end": 140
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 465,
+      "end": 480
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

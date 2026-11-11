@@ -1,0 +1,44 @@
+{
+  "doc_id": "e0ad15f07fd768b5",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Iyer,\n\nThank you for meeting us on 4 January 2020 about your dispute with Deccan Developers. As we understand it, possession of the flat is long overdue.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office. We will pursue the full claim of Rs. 5,89,00,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Iyer",
+      "category": "NAME",
+      "start": 50,
+      "end": 54
+    },
+    {
+      "text": "4 January 2020",
+      "category": "DATE",
+      "start": 85,
+      "end": 99
+    },
+    {
+      "text": "Deccan Developers",
+      "category": "ORGANIZATION",
+      "start": 124,
+      "end": 141
+    },
+    {
+      "text": "Rs. 5,89,00,000",
+      "category": "MONEY",
+      "start": 452,
+      "end": 467
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 484,
+      "end": 501
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

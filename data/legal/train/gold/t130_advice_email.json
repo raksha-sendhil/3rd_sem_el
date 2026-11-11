@@ -1,0 +1,50 @@
+{
+  "doc_id": "5efc46aa1f05577c",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2625/2024\n\nDear Ms. Pawar,\n\nThank you for meeting us on 23 December 2024 about your dispute with Emerald Traders. As we understand it, the cheque came back with the remark account closed. The matter is listed before the Judicial Magistrate First Class Court at Kozhikode.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 2625/2024",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Pawar",
+      "category": "NAME",
+      "start": 68,
+      "end": 73
+    },
+    {
+      "text": "23 December 2024",
+      "category": "DATE",
+      "start": 104,
+      "end": 120
+    },
+    {
+      "text": "Emerald Traders",
+      "category": "ORGANIZATION",
+      "start": 145,
+      "end": 160
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kozhikode",
+      "category": "COURT",
+      "start": 268,
+      "end": 318
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 604,
+      "end": 620
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

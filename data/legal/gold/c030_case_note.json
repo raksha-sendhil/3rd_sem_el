@@ -1,0 +1,68 @@
+{
+  "doc_id": "f4b12cf1c2f5980c",
+  "text": "Case note: S.C.C. No. 1737/2025\nClient: Ashok Chandran (fashion designer, Hubballi)\nOpposing party: Pranav Mukherjee\nCourt: Judicial Magistrate First Class Court at Hubballi\nFiled on: 5 October 2025\nClaim amount: Rs 8,75,000\nIssue: cheque bounce. The cheque was dishonoured because the signature did not match.\nAdvice given: Obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law.\nOutcome: The magistrate accepted that a signature mismatch is a dishonour.\nRecommended next step: Lead evidence through the bank official.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 1737/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Ashok Chandran",
+      "category": "NAME",
+      "start": 40,
+      "end": 54
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 56,
+      "end": 72
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 74,
+      "end": 82
+    },
+    {
+      "text": "Pranav Mukherjee",
+      "category": "NAME",
+      "start": 100,
+      "end": 116
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hubballi",
+      "category": "COURT",
+      "start": 124,
+      "end": 173
+    },
+    {
+      "text": "5 October 2025",
+      "category": "DATE",
+      "start": 184,
+      "end": 198
+    },
+    {
+      "text": "Rs 8,75,000",
+      "category": "MONEY",
+      "start": 213,
+      "end": 224
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 232,
+      "end": 245
+    },
+    {
+      "text": "occupation (fashion designer) + city (Hubballi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

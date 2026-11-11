@@ -1,0 +1,104 @@
+{
+  "doc_id": "bf3b8f2cbd284854",
+  "text": "Intake note (Commercial team, 14 March 2022). Our client Manoj Trivedi is a 73-year-old hardware dealer who lives at Plot 58, Kakkanad, Kochi 682057 and can be reached on 06789248902 or manoj.trivedi90@example.com. The client's PAN PXPPT1074F, Aadhaar 6899 0735 5404.\nThe client consulted us about a cheque bounce matter against Farhan Karve. A cheque for ₹20,70,000 issued by Farhan Karve bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as S.C.C. No. 91/2022 before the Judicial Magistrate First Class Court at Kochi on 2 June 2022.",
+  "spans": [
+    {
+      "text": "14 March 2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 43
+    },
+    {
+      "text": "Manoj Trivedi",
+      "category": "NAME",
+      "start": 57,
+      "end": 70
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 103
+    },
+    {
+      "text": "Plot 58, Kakkanad, Kochi 682057",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 148
+    },
+    {
+      "text": "06789248902",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "manoj.trivedi90@example.com",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 213
+    },
+    {
+      "text": "PXPPT1074F",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "6899 0735 5404",
+      "category": "ID_NUMBER",
+      "start": 252,
+      "end": 266
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 300,
+      "end": 313
+    },
+    {
+      "text": "Farhan Karve",
+      "category": "NAME",
+      "start": 329,
+      "end": 341
+    },
+    {
+      "text": "₹20,70,000",
+      "category": "MONEY",
+      "start": 356,
+      "end": 366
+    },
+    {
+      "text": "Farhan Karve",
+      "category": "NAME",
+      "start": 377,
+      "end": 389
+    },
+    {
+      "text": "S.C.C. No. 91/2022",
+      "category": "CASE_NUMBER",
+      "start": 478,
+      "end": 496
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 508,
+      "end": 554
+    },
+    {
+      "text": "2 June 2022",
+      "category": "DATE",
+      "start": 558,
+      "end": 569
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

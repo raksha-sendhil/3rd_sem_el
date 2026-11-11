@@ -1,0 +1,98 @@
+{
+  "doc_id": "9823b207cd28b974",
+  "text": "Intake note (Family team, 05/01/2019). Our client Sneha Bansal is a 61-year-old fashion designer who lives at House No. 87, Nadakkavu, Kozhikode 673054 and can be reached on 08122147873 or sneha.bansal20@example.com. The client's PAN SGZPB6921V.\nThe client consulted us about a divorce by mutual consent matter against Mohan Rane. The divorce by mutual consent with Mohan Rane includes a settlement of ₹70,40,000; the couple has a young child.\nThe matter was filed as Petition No. 2471/2019 before the Family Court at Kozhikode on 26 June 2019.",
+  "spans": [
+    {
+      "text": "05/01/2019",
+      "category": "DATE",
+      "start": 26,
+      "end": 36
+    },
+    {
+      "text": "Sneha Bansal",
+      "category": "NAME",
+      "start": 50,
+      "end": 62
+    },
+    {
+      "text": "61-year-old",
+      "category": "AGE",
+      "start": 68,
+      "end": 79
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 80,
+      "end": 96
+    },
+    {
+      "text": "House No. 87, Nadakkavu, Kozhikode 673054",
+      "category": "ADDRESS",
+      "start": 110,
+      "end": 151
+    },
+    {
+      "text": "08122147873",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "sneha.bansal20@example.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 215
+    },
+    {
+      "text": "SGZPB6921V",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 278,
+      "end": 303
+    },
+    {
+      "text": "Mohan Rane",
+      "category": "NAME",
+      "start": 319,
+      "end": 329
+    },
+    {
+      "text": "Mohan Rane",
+      "category": "NAME",
+      "start": 366,
+      "end": 376
+    },
+    {
+      "text": "₹70,40,000",
+      "category": "MONEY",
+      "start": 402,
+      "end": 412
+    },
+    {
+      "text": "Petition No. 2471/2019",
+      "category": "CASE_NUMBER",
+      "start": 468,
+      "end": 490
+    },
+    {
+      "text": "Family Court at Kozhikode",
+      "category": "COURT",
+      "start": 502,
+      "end": 527
+    },
+    {
+      "text": "26 June 2019",
+      "category": "DATE",
+      "start": 531,
+      "end": 543
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

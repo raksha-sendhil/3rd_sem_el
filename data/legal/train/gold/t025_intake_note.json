@@ -1,0 +1,104 @@
+{
+  "doc_id": "4746a9d494fd9487",
+  "text": "Intake note (Property team, 24 November 2019). Our client Pooja Bansal is a 62-year-old schoolteacher who lives at Flat 11A, Peelamedu, Coimbatore 641060 and can be reached on +91 98113 78789 or pooja.bansal@example.in. The client's PAN PPQPB4025Y, Aadhaar 3553 4503 3431.\nThe client consulted us about a tenancy eviction matter against Rekha Naidu. The tenancy dispute with Rekha Naidu concerns rent arrears of ₹3,50,000; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.A. No. 1652/2020 before the Coimbatore District Court on 5 March 2020.",
+  "spans": [
+    {
+      "text": "24 November 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Pooja Bansal",
+      "category": "NAME",
+      "start": 58,
+      "end": 70
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 101
+    },
+    {
+      "text": "Flat 11A, Peelamedu, Coimbatore 641060",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 153
+    },
+    {
+      "text": "+91 98113 78789",
+      "category": "PHONE",
+      "start": 176,
+      "end": 191
+    },
+    {
+      "text": "pooja.bansal@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 218
+    },
+    {
+      "text": "PPQPB4025Y",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "3553 4503 3431",
+      "category": "ID_NUMBER",
+      "start": 257,
+      "end": 271
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 305,
+      "end": 321
+    },
+    {
+      "text": "Rekha Naidu",
+      "category": "NAME",
+      "start": 337,
+      "end": 348
+    },
+    {
+      "text": "Rekha Naidu",
+      "category": "NAME",
+      "start": 375,
+      "end": 386
+    },
+    {
+      "text": "₹3,50,000",
+      "category": "MONEY",
+      "start": 412,
+      "end": 421
+    },
+    {
+      "text": "R.C.A. No. 1652/2020",
+      "category": "CASE_NUMBER",
+      "start": 525,
+      "end": 545
+    },
+    {
+      "text": "Coimbatore District Court",
+      "category": "COURT",
+      "start": 557,
+      "end": 582
+    },
+    {
+      "text": "5 March 2020",
+      "category": "DATE",
+      "start": 586,
+      "end": 598
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

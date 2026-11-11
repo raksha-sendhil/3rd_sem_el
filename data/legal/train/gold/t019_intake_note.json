@@ -1,0 +1,98 @@
+{
+  "doc_id": "7133ea9d19bba039",
+  "text": "Intake note (Commercial team, 11 June 2022). Our client Abhishek Bansal is a 47-year-old taxi driver who lives at House No. 99, Navrangpura, Ahmedabad 380049 and can be reached on +91 93359 68045 or abhishek.bansal@example.in. The client's PAN ZXUPB6867B.\nThe client consulted us about a wrongful termination matter against M/s Shetty Technologies Pvt Ltd. The wrongful termination claim against M/s Shetty Technologies Pvt Ltd is for Rs 21,40,000; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 763/2022 before the Ahmedabad Labour Court on 5 July 2022.",
+  "spans": [
+    {
+      "text": "11 June 2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Abhishek Bansal",
+      "category": "NAME",
+      "start": 56,
+      "end": 71
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "House No. 99, Navrangpura, Ahmedabad 380049",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 157
+    },
+    {
+      "text": "+91 93359 68045",
+      "category": "PHONE",
+      "start": 180,
+      "end": 195
+    },
+    {
+      "text": "abhishek.bansal@example.in",
+      "category": "EMAIL",
+      "start": 199,
+      "end": 225
+    },
+    {
+      "text": "ZXUPB6867B",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 254
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 288,
+      "end": 308
+    },
+    {
+      "text": "Shetty Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 328,
+      "end": 355
+    },
+    {
+      "text": "Shetty Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 400,
+      "end": 427
+    },
+    {
+      "text": "Rs 21,40,000",
+      "category": "MONEY",
+      "start": 435,
+      "end": 447
+    },
+    {
+      "text": "Complaint No. 763/2022",
+      "category": "CASE_NUMBER",
+      "start": 526,
+      "end": 548
+    },
+    {
+      "text": "Ahmedabad Labour Court",
+      "category": "COURT",
+      "start": 560,
+      "end": 582
+    },
+    {
+      "text": "5 July 2022",
+      "category": "DATE",
+      "start": 586,
+      "end": 597
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

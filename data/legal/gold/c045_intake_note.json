@@ -1,0 +1,98 @@
+{
+  "doc_id": "d36a946eacd833f8",
+  "text": "Intake note (Property team, 27/06/2018). Our client Pallavi Sathe is a 27-year-old textile trader who lives at Plot 109, Vidyanagar, Hubballi 580024 and can be reached on 68083 39523 or pallavi.sathe95@example.in. The client's PAN LQDPS5753G.\nThe client consulted us about a tenancy eviction matter against Arjun Sandhu. The tenancy dispute with Arjun Sandhu concerns rent arrears of Rs 6,30,000; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.A. No. 390/2019 before the Hubballi District Court on 5 January 2019.",
+  "spans": [
+    {
+      "text": "27/06/2018",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Pallavi Sathe",
+      "category": "NAME",
+      "start": 52,
+      "end": 65
+    },
+    {
+      "text": "27-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 97
+    },
+    {
+      "text": "Plot 109, Vidyanagar, Hubballi 580024",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 148
+    },
+    {
+      "text": "68083 39523",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "pallavi.sathe95@example.in",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 212
+    },
+    {
+      "text": "LQDPS5753G",
+      "category": "ID_NUMBER",
+      "start": 231,
+      "end": 241
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 275,
+      "end": 291
+    },
+    {
+      "text": "Arjun Sandhu",
+      "category": "NAME",
+      "start": 307,
+      "end": 319
+    },
+    {
+      "text": "Arjun Sandhu",
+      "category": "NAME",
+      "start": 346,
+      "end": 358
+    },
+    {
+      "text": "Rs 6,30,000",
+      "category": "MONEY",
+      "start": 384,
+      "end": 395
+    },
+    {
+      "text": "R.C.A. No. 390/2019",
+      "category": "CASE_NUMBER",
+      "start": 479,
+      "end": 498
+    },
+    {
+      "text": "Hubballi District Court",
+      "category": "COURT",
+      "start": 510,
+      "end": 533
+    },
+    {
+      "text": "5 January 2019",
+      "category": "DATE",
+      "start": 537,
+      "end": 551
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

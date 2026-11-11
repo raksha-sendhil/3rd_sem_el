@@ -1,0 +1,44 @@
+{
+  "doc_id": "05480617c2be9c2f",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Ms. Malhotra,\n\nThank you for meeting us on 19 May 2020 about your dispute with Rupali Chauhan. As we understand it, the complaint alleges negligence during treatment. The matter is listed before the Surat Sessions Court.\n\nOur advice is to rely on the expert committee opinion that there was no gross negligence. Please collect the treatment records and the expert committee opinion and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Malhotra",
+      "category": "NAME",
+      "start": 49,
+      "end": 57
+    },
+    {
+      "text": "19 May 2020",
+      "category": "DATE",
+      "start": 88,
+      "end": 99
+    },
+    {
+      "text": "Rupali Chauhan",
+      "category": "NAME",
+      "start": 124,
+      "end": 138
+    },
+    {
+      "text": "Surat Sessions Court",
+      "category": "COURT",
+      "start": 244,
+      "end": 264
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 474,
+      "end": 493
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

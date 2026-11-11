@@ -1,0 +1,98 @@
+{
+  "doc_id": "84490fece6fc57e5",
+  "text": "Intake note (Property team, 2 June 2025). Our client Rahul Chandran is a 67-year-old pharmacist who lives at Bungalow 20, Edappally, Kochi 682030 and can be reached on +91 96512 96462 or rahul.chandran@example.in. The client's PAN PBEPC7438W.\nThe client consulted us about a consumer complaint matter against M/s Qureshi Developers. The consumer complaint against Qureshi Developers concerns a flat bought for ₹9,02,00,000; the flat was handed over with serious construction defects.\nThe matter was filed as C.C. No. 2078/2025 before the Kochi District Consumer Disputes Redressal Commission on 14 October 2025.",
+  "spans": [
+    {
+      "text": "2 June 2025",
+      "category": "DATE",
+      "start": 28,
+      "end": 39
+    },
+    {
+      "text": "Rahul Chandran",
+      "category": "NAME",
+      "start": 53,
+      "end": 67
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 95
+    },
+    {
+      "text": "Bungalow 20, Edappally, Kochi 682030",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 145
+    },
+    {
+      "text": "+91 96512 96462",
+      "category": "PHONE",
+      "start": 168,
+      "end": 183
+    },
+    {
+      "text": "rahul.chandran@example.in",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 212
+    },
+    {
+      "text": "PBEPC7438W",
+      "category": "ID_NUMBER",
+      "start": 231,
+      "end": 241
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 275,
+      "end": 293
+    },
+    {
+      "text": "Qureshi Developers",
+      "category": "ORGANIZATION",
+      "start": 313,
+      "end": 331
+    },
+    {
+      "text": "Qureshi Developers",
+      "category": "ORGANIZATION",
+      "start": 364,
+      "end": 382
+    },
+    {
+      "text": "₹9,02,00,000",
+      "category": "MONEY",
+      "start": 410,
+      "end": 422
+    },
+    {
+      "text": "C.C. No. 2078/2025",
+      "category": "CASE_NUMBER",
+      "start": 508,
+      "end": 526
+    },
+    {
+      "text": "Kochi District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 538,
+      "end": 591
+    },
+    {
+      "text": "14 October 2025",
+      "category": "DATE",
+      "start": 595,
+      "end": 610
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

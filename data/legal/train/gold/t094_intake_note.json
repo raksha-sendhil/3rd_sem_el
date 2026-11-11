@@ -1,0 +1,98 @@
+{
+  "doc_id": "0778ab3bbc763d3c",
+  "text": "Intake note (Commercial team, 22 March 2021). Our client Ajay Desai is a 37-year-old professor who lives at Bungalow 29, Anna Nagar, Chennai 600017 and can be reached on +91 98359 92333 or ajay.desai18@example.com. The client's PAN JRQPD7803W.\nThe client consulted us about a cheque bounce matter against M/s Konark Traders. A cheque for 41.8 lakh rupees issued by Konark Traders bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 400/2021 before the Judicial Magistrate First Class Court at Chennai on 23 August 2021.",
+  "spans": [
+    {
+      "text": "22 March 2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 43
+    },
+    {
+      "text": "Ajay Desai",
+      "category": "NAME",
+      "start": 57,
+      "end": 67
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "professor",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 94
+    },
+    {
+      "text": "Bungalow 29, Anna Nagar, Chennai 600017",
+      "category": "ADDRESS",
+      "start": 108,
+      "end": 147
+    },
+    {
+      "text": "+91 98359 92333",
+      "category": "PHONE",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "ajay.desai18@example.com",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 213
+    },
+    {
+      "text": "JRQPD7803W",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 276,
+      "end": 289
+    },
+    {
+      "text": "Konark Traders",
+      "category": "ORGANIZATION",
+      "start": 309,
+      "end": 323
+    },
+    {
+      "text": "41.8 lakh rupees",
+      "category": "MONEY",
+      "start": 338,
+      "end": 354
+    },
+    {
+      "text": "Konark Traders",
+      "category": "ORGANIZATION",
+      "start": 365,
+      "end": 379
+    },
+    {
+      "text": "S.C.C. No. 400/2021",
+      "category": "CASE_NUMBER",
+      "start": 477,
+      "end": 496
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Chennai",
+      "category": "COURT",
+      "start": 508,
+      "end": 556
+    },
+    {
+      "text": "23 August 2021",
+      "category": "DATE",
+      "start": 560,
+      "end": 574
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

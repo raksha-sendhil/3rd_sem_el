@@ -1,0 +1,44 @@
+{
+  "doc_id": "415901cbae56c2ef",
+  "text": "Subject: Your land dispute matter - O.S. No. 2855/2023\n\nDear Ms. Menon,\n\nThank you for meeting us on 8 October 2023 about your dispute with Naveen Kulkarni. As we understand it, the neighbour has encroached on the boundary of the plot.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2855/2023",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Menon",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "8 October 2023",
+      "category": "DATE",
+      "start": 101,
+      "end": 115
+    },
+    {
+      "text": "Naveen Kulkarni",
+      "category": "NAME",
+      "start": 140,
+      "end": 155
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 423,
+      "end": 439
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,49 @@
+{
+  "doc_id": "dca370edcdd19d73",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Dalvi",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Revathi Pawar",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Judicial Magistrate First Class Court at Thane",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "CC/1613/2025",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "advised",
+      "value": "obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "documents_requested",
+      "value": "the bank's certificate on the signature mismatch and the drawer's earlier cheques",
+      "importance": "high"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

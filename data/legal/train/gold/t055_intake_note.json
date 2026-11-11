@@ -1,0 +1,110 @@
+{
+  "doc_id": "3f54d7e67c5c5cff",
+  "text": "Intake note (Commercial team, 15 November 2020). Our client Pooja Pai is a 47-year-old mechanical engineer who lives at House No. 170, Mavoor Road, Kozhikode 673001 and can be reached on +91 75476 01413 or pooja.pai@example.in. The client's PAN QTWPP6832G.\nThe client consulted us about a cheque bounce matter against Coastal Enterprises. A cheque for 17.9 lakh rupees issued by M/s Coastal Enterprises bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 278535092770 (IFSC SBIN0861538).\nThe matter was filed as CC/2485/2021 before the Judicial Magistrate First Class Court at Kozhikode on 28 February 2021.",
+  "spans": [
+    {
+      "text": "15 November 2020",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Pooja Pai",
+      "category": "NAME",
+      "start": 60,
+      "end": 69
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 106
+    },
+    {
+      "text": "House No. 170, Mavoor Road, Kozhikode 673001",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 164
+    },
+    {
+      "text": "+91 75476 01413",
+      "category": "PHONE",
+      "start": 187,
+      "end": 202
+    },
+    {
+      "text": "pooja.pai@example.in",
+      "category": "EMAIL",
+      "start": 206,
+      "end": 226
+    },
+    {
+      "text": "QTWPP6832G",
+      "category": "ID_NUMBER",
+      "start": 245,
+      "end": 255
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 289,
+      "end": 302
+    },
+    {
+      "text": "Coastal Enterprises",
+      "category": "ORGANIZATION",
+      "start": 318,
+      "end": 337
+    },
+    {
+      "text": "17.9 lakh rupees",
+      "category": "MONEY",
+      "start": 352,
+      "end": 368
+    },
+    {
+      "text": "Coastal Enterprises",
+      "category": "ORGANIZATION",
+      "start": 383,
+      "end": 402
+    },
+    {
+      "text": "278535092770",
+      "category": "FINANCIAL",
+      "start": 518,
+      "end": 530
+    },
+    {
+      "text": "SBIN0861538",
+      "category": "FINANCIAL",
+      "start": 537,
+      "end": 548
+    },
+    {
+      "text": "CC/2485/2021",
+      "category": "CASE_NUMBER",
+      "start": 575,
+      "end": 587
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kozhikode",
+      "category": "COURT",
+      "start": 599,
+      "end": 649
+    },
+    {
+      "text": "28 February 2021",
+      "category": "DATE",
+      "start": 653,
+      "end": 669
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

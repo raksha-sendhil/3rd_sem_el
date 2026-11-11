@@ -1,0 +1,82 @@
+{
+  "doc_id": "eab902885886d3dd",
+  "routing": [
+    {
+      "text": "10 March 2025",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Sanjay Patil",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "31-year-old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Plot 47, Madhapur, Hyderabad 500053",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "+91 82350 46895",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "sanjay.patil@example.in",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "CCHPP8166Q",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "Karve Constructions",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Karve Constructions",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Rs. 8,29,00,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "CC/2745/2025",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "26 April 2025",
+      "category": "DATE",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

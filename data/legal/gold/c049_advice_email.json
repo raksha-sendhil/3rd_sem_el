@@ -1,0 +1,44 @@
+{
+  "doc_id": "6e2fdca6d326f9a4",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Ms. Iyengar,\n\nThank you for meeting us on 22 May 2024 about your dispute with Siddharth Karve. As we understand it, the tenant has stopped paying rent for many months.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office. We will pursue the full claim of Rs 2,15,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Iyengar",
+      "category": "NAME",
+      "start": 48,
+      "end": 55
+    },
+    {
+      "text": "22 May 2024",
+      "category": "DATE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "Siddharth Karve",
+      "category": "NAME",
+      "start": 122,
+      "end": 137
+    },
+    {
+      "text": "Rs 2,15,000",
+      "category": "MONEY",
+      "start": 480,
+      "end": 491
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 508,
+      "end": 520
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

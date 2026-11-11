@@ -1,0 +1,98 @@
+{
+  "doc_id": "1943bd7f6f5985d1",
+  "text": "Intake note (Commercial team, 04/03/2024). Our client Pranav Srivastava is a 43-year-old insurance agent who lives at House No. 175, Aliganj, Lucknow 226055 and can be reached on 07835561294 or pranav.srivastava@example.in. The client's PAN LKMPS9819R.\nThe client consulted us about a geographical-indication dispute matter against Pandey Foods Pvt Ltd. The geographical-indication dispute with Pandey Foods Pvt Ltd involves sales of ₹2,10,00,000; the rival product uses the protected regional name on its label.\nThe matter was filed as CS(COMM) 2883/2024 before the Allahabad High Court on 26/03/2024.",
+  "spans": [
+    {
+      "text": "04/03/2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Pranav Srivastava",
+      "category": "NAME",
+      "start": 54,
+      "end": 71
+    },
+    {
+      "text": "43-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "insurance agent",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 104
+    },
+    {
+      "text": "House No. 175, Aliganj, Lucknow 226055",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 156
+    },
+    {
+      "text": "07835561294",
+      "category": "PHONE",
+      "start": 179,
+      "end": 190
+    },
+    {
+      "text": "pranav.srivastava@example.in",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 222
+    },
+    {
+      "text": "LKMPS9819R",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 251
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 285,
+      "end": 316
+    },
+    {
+      "text": "Pandey Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 332,
+      "end": 352
+    },
+    {
+      "text": "Pandey Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 395,
+      "end": 415
+    },
+    {
+      "text": "₹2,10,00,000",
+      "category": "MONEY",
+      "start": 434,
+      "end": 446
+    },
+    {
+      "text": "CS(COMM) 2883/2024",
+      "category": "CASE_NUMBER",
+      "start": 537,
+      "end": 555
+    },
+    {
+      "text": "Allahabad High Court",
+      "category": "COURT",
+      "start": 567,
+      "end": 587
+    },
+    {
+      "text": "26/03/2024",
+      "category": "DATE",
+      "start": 591,
+      "end": 601
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "3afbdac88543f23c",
+  "text": "Subject: Your cheque bounce matter - CC/634/2022\n\nDear Mr. Das,\n\nThank you for meeting us on 23 August 2022 about your dispute with Pioneer Enterprises. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Thane.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of Rs 6,50,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/634/2022",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 48
+    },
+    {
+      "text": "Das",
+      "category": "NAME",
+      "start": 59,
+      "end": 62
+    },
+    {
+      "text": "23 August 2022",
+      "category": "DATE",
+      "start": 93,
+      "end": 107
+    },
+    {
+      "text": "Pioneer Enterprises",
+      "category": "ORGANIZATION",
+      "start": 132,
+      "end": 151
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "start": 270,
+      "end": 316
+    },
+    {
+      "text": "Rs 6,50,000",
+      "category": "MONEY",
+      "start": 611,
+      "end": 622
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 639,
+      "end": 651
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,104 @@
+{
+  "doc_id": "f0df8db8c3014070",
+  "text": "Intake note (Property team, 4 May 2022). Our client Simran Srivastava is a 62-year-old journalist who lives at Bungalow 26, Rajarampuri, Kolhapur 416027 and can be reached on 66564 25751 or simran.srivastava@example.com. The client's PAN BYEPS2677G, Aadhaar 3059 6304 5336.\nThe client consulted us about a land dispute matter against Kavya Pawar. The land dispute with Kavya Pawar concerns agricultural land valued at ₹85,20,000; relatives dispute who owns the ancestral land.\nThe matter was filed as R.C.S. No. 1465/2022 before the Kolhapur District Court on 25 May 2022.",
+  "spans": [
+    {
+      "text": "4 May 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Simran Srivastava",
+      "category": "NAME",
+      "start": 52,
+      "end": 69
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 97
+    },
+    {
+      "text": "Bungalow 26, Rajarampuri, Kolhapur 416027",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 152
+    },
+    {
+      "text": "66564 25751",
+      "category": "PHONE",
+      "start": 175,
+      "end": 186
+    },
+    {
+      "text": "simran.srivastava@example.com",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 219
+    },
+    {
+      "text": "BYEPS2677G",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 248
+    },
+    {
+      "text": "3059 6304 5336",
+      "category": "ID_NUMBER",
+      "start": 258,
+      "end": 272
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 306,
+      "end": 318
+    },
+    {
+      "text": "Kavya Pawar",
+      "category": "NAME",
+      "start": 334,
+      "end": 345
+    },
+    {
+      "text": "Kavya Pawar",
+      "category": "NAME",
+      "start": 369,
+      "end": 380
+    },
+    {
+      "text": "₹85,20,000",
+      "category": "MONEY",
+      "start": 418,
+      "end": 428
+    },
+    {
+      "text": "R.C.S. No. 1465/2022",
+      "category": "CASE_NUMBER",
+      "start": 501,
+      "end": 521
+    },
+    {
+      "text": "Kolhapur District Court",
+      "category": "COURT",
+      "start": 533,
+      "end": 556
+    },
+    {
+      "text": "25 May 2022",
+      "category": "DATE",
+      "start": 560,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

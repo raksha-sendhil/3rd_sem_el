@@ -1,0 +1,50 @@
+{
+  "doc_id": "1527c3ddeb23a117",
+  "text": "Subject: Your anticipatory bail matter - Anticipatory Bail Application No. 683/2019\n\nDear Mr. Ahuja,\n\nThank you for meeting us on 20 November 2019 about your dispute with Suresh Kulkarni. As we understand it, the complaint turns a business disagreement into a criminal case.\n\nOur advice is to argue that the dispute is civil in nature and offer to cooperate with the investigation. Please collect the partnership papers and the correspondence with the complainant and send copies to this office. We will pursue the full claim of ₹55,80,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Anticipatory Bail Application No. 683/2019",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 83
+    },
+    {
+      "text": "Ahuja",
+      "category": "NAME",
+      "start": 94,
+      "end": 99
+    },
+    {
+      "text": "20 November 2019",
+      "category": "DATE",
+      "start": 130,
+      "end": 146
+    },
+    {
+      "text": "Suresh Kulkarni",
+      "category": "NAME",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "₹55,80,000",
+      "category": "MONEY",
+      "start": 529,
+      "end": 539
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 556,
+      "end": 572
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}
