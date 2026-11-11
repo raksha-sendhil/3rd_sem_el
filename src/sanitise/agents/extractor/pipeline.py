@@ -137,6 +137,39 @@ def _words(value: str) -> str:
     return " ".join(w.lower() for w in _WORD.findall(value))
 
 
+# Agent 1 categories that identify or locate someone: a clinical detail containing one of these
+# is not kept in full (its condition is still kept, in Agent 1's words)
+_IDENTIFYING = {C.NAME, C.PHONE, C.EMAIL, C.ID_NUMBER, C.ADDRESS, C.LOCATION, C.DATE, C.AGE,
+                C.OCCUPATION, C.PHYSICAL, C.OTHER}  # fmt: skip
+_FILLER = {"a", "an", "the", "of", "with", "and", "or", "in", "on", "mild", "some", "slight",
+           "possible", "suspected", "likely", "probable", "known", "case"}  # fmt: skip
+
+
+def _clinical_detail(f: FactTuple, spans: list[SensitiveSpan], text: str) -> str | None:
+    """A condition the model gave with more than Agent 1's words ("Adenocarcinoma, Gleason
+    score 4+3=7 (Grade Group 3)" for "Adenocarcinoma"): the full wording, kept as an
+    ``assessment`` so the grade, stage, site or size is not lost when the fact takes Agent 1's
+    wording. Only for a condition, only words from the record, and never with an identifying
+    detail in it."""
+    if f.relation != "has_condition" or not in_record(f.value, text):
+        return None
+    value = " ".join(f.value.split())
+    inside = [
+        s for s in spans if s.category in SPAN_RELATIONS["has_condition"] and _within(s.text, value)
+    ]
+    if not inside:
+        return None
+    # what the value says beyond the condition's own words: a number (grade, score, size) or
+    # at least two content words (a site, a type); "a mild cold" for "cold" adds nothing
+    known = {w for s in inside for w in _words(s.text).split()}
+    extra = [w for w in _words(value).split() if w not in known and w not in _FILLER]
+    if not (any(w.isdigit() for w in extra) or len(extra) >= 2):
+        return None
+    if any(s.category in _IDENTIFYING and _within(s.text, value) for s in spans):
+        return None
+    return value
+
+
 def check_facts(
     text: str,
     facts: list[FactTuple],
@@ -150,7 +183,8 @@ def check_facts(
     * A relation in ``SPAN_RELATIONS`` must name a detail Agent 1 found, of a matching category
       (the value contains it or is part of it). The fact takes the detected text as its value;
       one fact per detail. Anything else is dropped: "sunlight" as a symptom, an email domain
-      as a home.
+      as a home. A condition the model gave in fuller words (a grade, stage, site or size)
+      also keeps those words as an ``assessment`` (``_clinical_detail``), unless they identify.
     * ``symptom_duration`` must be a length of time and ``sex`` a sex. The rest (medication,
       procedures, ``other``) must be worded from the record.
     * Of two facts with the same subject and relation, one whose words are contained in the
@@ -168,6 +202,7 @@ def check_facts(
     for f in facts:
         categories = SPAN_RELATIONS.get(f.relation)
         if categories is not None:
+            owners = []
             for s in spans:
                 if (
                     s.category in categories
@@ -176,6 +211,10 @@ def check_facts(
                 ):
                     owner = f.subject if trust_subjects else _subject_at(text, s.start, subjects)
                     placed.append(_fact(owner or f.subject, f.relation, s.text))
+                    owners.append(owner or f.subject)
+            detail = _clinical_detail(f, spans, text)
+            if owners and detail:
+                placed.append(_fact(owners[0], "assessment", detail))
             continue
         if (f.relation == "other" and not trust_subjects) or not in_record(f.value, text):
             continue

@@ -191,8 +191,9 @@ def build_user_prompt(text: str, subject: Subject, spans: list[SensitiveSpan]) -
 
 
 DOCUMENT_PROMPT = """\
-You read one private record (a patient's message to a doctor, or a workplace email) and list \
-the facts it states about the people in it. Each fact is {"subject", "relation", "value"}.
+You read one private record (a patient's message to a doctor, possibly with the doctor's \
+reply, or a workplace email) and list the facts it states about the people in it. Each fact is \
+{"subject", "relation", "value"}.
 
 subject: the id of the person the fact is about, from SUBJECTS. "writer" is the person who \
 wrote the record; "writer.<relative>" is one of their relatives; "person_<n>" is anyone else, \
@@ -213,10 +214,20 @@ triggers it
 - took_medication, had_procedure: a drug they take; an operation or test they had
 - event_date: a specific date of an event in their life (diagnosis, admission, leave)
 - height, weight: body measurements
+- vital_sign: a measured vital sign with its value ("BP 150/95", "temperature 101 F")
+- test_result: a test, scan or lab result with its value or finding ("Hb 9.8 g/dL", "X-ray \
+clear")
+- allergy: an allergy, or that there is none
+- assessment: a doctor's opinion of the cause, or of what a finding means ("likely a side \
+effect of the tablet")
+- plan: a next step or a piece of advice for the person: a medicine to take or stop, a test to \
+get, what to avoid, when to see someone. Advice a doctor gives in a reply is about the patient.
+- progress: how a symptom, condition or treatment is going ("cough now improving")
 - other: anything else the record states that matters about the person's health or \
 situation, such as smoking history ("former smoker")
 
-value: the detail in a few words, copied from the record's own wording.
+value: the detail copied from the record's own wording. Keep its specifics: a dose, number, \
+grade, stage, size, percentage or body site stays in the value ("losartan 50 mg once daily").
 
 Rules:
 - Names, ID numbers, phone numbers, email addresses and family relationships are handled \
@@ -225,7 +236,8 @@ elsewhere: never list them.
 works_as "student". A habit or a past habit is not a job. A general statement or a question \
 ("is a cough for months normal?") is not a fact, but the details it gives about the writer \
 are ("cough", "over 6 months").
-- One fact per detail; never list the same detail for two people.
+- One fact per detail; never list the same detail for two people. List every symptom, finding, \
+result, medicine and piece of advice as its own fact: do not summarise or leave any out.
 - If there are no facts, return {"facts": []}.
 
 EXAMPLE 1
@@ -279,6 +291,31 @@ OUTPUT:
  {"subject": "writer", "relation": "had_procedure", "value": "knee surgery"}
 ]}
 (The review date is about a meeting, not a person; the record states nothing about Dana.)
+
+EXAMPLE 4
+DOCUMENT:
+Patient: Hi doctor, I am 52 and have had a tickly cough for three weeks, since I started a new \
+blood pressure tablet, lisinopril 10 mg. My last BP reading was 150/95.
+Doctor: Hello. A tickly cough is a known side effect of lisinopril. Ask your physician to switch \
+you to losartan 50 mg once daily. Avoid cough syrups with codeine, and get a chest X-ray if the \
+cough continues two weeks after the switch.
+SUBJECTS:
+- writer: the writer
+OUTPUT:
+{"facts": [
+ {"subject": "writer", "relation": "age", "value": "52"},
+ {"subject": "writer", "relation": "has_symptom", "value": "tickly cough"},
+ {"subject": "writer", "relation": "symptom_duration", "value": "three weeks"},
+ {"subject": "writer", "relation": "took_medication", "value": "lisinopril 10 mg"},
+ {"subject": "writer", "relation": "vital_sign", "value": "BP 150/95"},
+ {"subject": "writer", "relation": "assessment", "value": "tickly cough is a known side effect of \
+lisinopril"},
+ {"subject": "writer", "relation": "plan", "value": "switch to losartan 50 mg once daily"},
+ {"subject": "writer", "relation": "plan", "value": "avoid cough syrups with codeine"},
+ {"subject": "writer", "relation": "plan", "value": "chest X-ray if the cough continues two \
+weeks after the switch"}
+]}
+(The doctor's reply is advice to the writer, so its facts belong to the writer.)
 """
 
 # Clinical records only (``sanitise.casefile``): the six clinical relations, the words that
@@ -319,7 +356,9 @@ positive for P. vivax", "X-ray: no fracture")
 situation, such as smoking history ("former smoker") or a finding that is absent ("no \
 icterus")
 
-value: the detail in a few words, copied from the record's own wording. Keep the words that \
+value: the detail copied from the record's own wording. Keep its specifics: a dose, number, \
+grade, stage, score, size, percentage or body site stays in the value ("Adenocarcinoma, Gleason \
+score 3+4=7", "tumour in 40% of the tissue"). Keep the words that \
 say how something is going or how sure it is (improving, still, persistent, resolved, \
 suspected): "My cough has got better but the headaches remain" gives has_symptom "cough", \
 progress "cough has got better", has_symptom "headaches", progress "headaches remain".
@@ -337,7 +376,8 @@ elsewhere: never list them.
 works_as "student". A habit or a past habit is not a job. A general statement or a question \
 ("is a cough for months normal?") is not a fact, but the details it gives about the writer \
 are ("cough", "over 6 months").
-- One fact per detail; never list the same detail for two people.
+- One fact per detail; never list the same detail for two people. List every finding, result, \
+medicine and recommendation as its own fact, with its numbers: do not summarise or leave any out.
 - If there are no facts, return {"facts": []}.
 
 EXAMPLE 1
@@ -488,7 +528,9 @@ async def extract_facts(
         result = await llm.json_call(
             CASE_DOCUMENT_PROMPT if case else DOCUMENT_PROMPT,
             build_document_prompt(text, subjects, spans),
-            document_schema([s.id for s in subjects], CASE_RELATIONS if case else MODEL_RELATIONS),
+            # every relation for both prompts: a patient's message may carry a doctor's reply
+            # (results, an assessment, advice), not only a clinical record
+            document_schema([s.id for s in subjects], CASE_RELATIONS),
         )
         return [
             FactTuple(

@@ -256,6 +256,34 @@ from `docs/phase3_plan.md`, section 8.
 | 4 (28 Oct, facts attributed by position) | llama3:8b | - | - | - | - | 0 | 0 | 12.0 |
 | 5 (Agents 2-3 on Gemini, one call per document) | gemini-3.5-flash-lite, 3.1 as fallback | - | - | - | - | 0 | 0 | 34.8 (4.5 s request spacing, busy-server waits) |
 
+### Clinical content kept (11 Nov)
+
+The evaluation's end-to-end check (real clinical scans) showed Agent 3's rewrites losing most
+clinical detail. Agent 3 writes from Agent 2's facts alone, and Agent 2 was losing them in
+three ways:
+
+* A condition's grade, stage or site was cut to Agent 1's words: "Adenocarcinoma, Gleason Score
+  4+3=7" became "Adenocarcinoma", because a condition fact takes the detected wording.
+* The model summarised long reports and left findings out.
+* A patient message with a doctor's reply (ChatDoctor dialogues) had no relation for results,
+  an assessment or advice, so the doctor's advice was dropped.
+
+What changed:
+
+* Both one-call prompts (`DOCUMENT_PROMPT`, `CASE_DOCUMENT_PROMPT`) offer every relation,
+  including `test_result`, `assessment` and `plan`. "Advice a doctor gives in a reply" is
+  `plan` about the patient.
+* Both prompts say to keep specifics (dose, number, grade, stage, size, percentage, site) and
+  to list every finding separately rather than summarise.
+* `DOCUMENT_PROMPT` gains a fourth example, a patient message with the doctor's reply.
+* In code (`pipeline._clinical_detail`), a condition given in fuller words also keeps them as an
+  `assessment`. That happens only when the extra words carry a number or two or more content
+  words, and never when they contain an identifying detail.
+
+On the same pathology report, the rewrite now keeps the Gleason score, the tumour percentage,
+the findings and the recommendation. On a ChatDoctor dialogue it keeps the doctor's assessment
+and advice. Identifiers are still tokens and there are no residual leaks.
+
 ## Tuning without overfitting
 
 Cell 2 runs the 20 fixtures, and D's scorers grade the same 20. A prompt change made to fix an

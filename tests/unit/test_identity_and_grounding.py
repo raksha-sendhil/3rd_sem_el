@@ -239,3 +239,33 @@ async def test_no_facts_means_no_model_call_and_no_made_up_text() -> None:
         "d", DetectorOutput(doc_id="d", spans=[]), ExtractorOutput(doc_id="d", facts=[]), llm
     )
     assert trace.output.safe_text == NO_FACTS and llm.calls == []
+
+
+def test_a_condition_keeps_its_grade_as_an_assessment() -> None:
+    from sanitise.agents.extractor.pipeline import check_facts
+    from sanitise.schemas import FactTuple, Importance, PIICategory, SensitiveSpan, Subject
+
+    text = "Final Diagnosis: Adenocarcinoma, Gleason score 3+4=7, seen at Pune Clinic."
+    start = text.index("Adenocarcinoma")
+    spans = [
+        SensitiveSpan(text="Adenocarcinoma", category=PIICategory.MEDICAL_CONDITION, method="rule",
+                      start=start, end=start + 14),
+        SensitiveSpan(text="Pune", category=PIICategory.LOCATION, method="rule",
+                      start=text.index("Pune"), end=text.index("Pune") + 4),
+    ]  # fmt: skip
+    writer = [Subject(id="writer", label="the writer", mentions=[])]
+
+    def fact(value: str) -> FactTuple:
+        return FactTuple(subject="writer", relation="has_condition", value=value,
+                         importance=Importance.HIGH)  # fmt: skip
+
+    got = check_facts(text, [fact("Adenocarcinoma, Gleason score 3+4=7")], spans, writer,
+                      trust_subjects=True)  # fmt: skip
+    assert {(f.relation, f.value) for f in got} == {
+        ("has_condition", "Adenocarcinoma"),
+        ("assessment", "Adenocarcinoma, Gleason score 3+4=7"),
+    }
+    # never with an identifying detail in it: the condition alone is kept
+    got = check_facts(text, [fact("Adenocarcinoma, Gleason score 3+4=7, seen at Pune Clinic")],
+                      spans, writer, trust_subjects=True)  # fmt: skip
+    assert {(f.relation, f.value) for f in got} == {("has_condition", "Adenocarcinoma")}
