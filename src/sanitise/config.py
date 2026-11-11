@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     domains_file: str = "config/domains.json"
 
     # ---- LLM backend
-    llm_backend: Literal["ollama", "mock"] = "ollama"
+    llm_backend: Literal["ollama", "gemini", "mock"] = "ollama"
     ollama_base_url: str = "http://localhost:11434"
     model: str = "llama3:8b"
     fallback_model: str = "qwen2.5:7b-instruct"
@@ -44,8 +44,8 @@ class Settings(BaseSettings):
     # allowance thinking and return no JSON, so the legal profile sets false. None = not sent.
     llm_think: bool | None = None
 
-    # ---- Legal build spec, "Model choice": Gemini answers from cleaned text only; Gemma 4
-    # (Ollama, or transformers with the LoRA adapter for Agent 1) sees raw text.
+    # ---- Models: answers come from answer_backend. The legal profile on this branch runs the
+    # agents on Gemini too (llm_backend "gemini"), so Gemini sees raw text: fictional data only.
     # answer_backend "same" answers with the agents' model (the medical set-up).
     answer_backend: Literal["same", "gemini", "ollama", "mock"] = "same"
     gemini_model: str = "gemini-3.5-flash"  # or "gemini-3.8-flash": one-word change
@@ -58,6 +58,8 @@ class Settings(BaseSettings):
     gemini_daily_token_budget: int = Field(default=0, ge=0)  # per key; 0 = no budget
     gemini_overload_retries: int = Field(default=8, ge=0)  # after a 503: tries before failing
     gemini_overload_wait_s: float = Field(default=15.0, ge=0)  # first wait; doubles, 5 min at most
+    # When every key is resting for at most this long, wait instead of failing the document.
+    gemini_max_key_wait_s: float = Field(default=300.0, ge=0)
     gemini_cache_dir: str = "data/cache/gemini"  # every answer cached on disk (rate limits)
     gemini_rpm: int = Field(default=10, ge=1)  # calls per minute
     # Agent 1's LLM pass: "same" uses the agents' model; "transformers" loads the base Gemma

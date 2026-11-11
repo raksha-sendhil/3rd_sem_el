@@ -108,8 +108,8 @@ def create_app(
     mock = settings.llm_backend == "mock"
     replay = settings.replay_dir  # a Kaggle run exported by sanitise.legal.export
 
-    # One model per role per domain, built on first use: the agents' model (Ollama) and the
-    # answering model (Gemini for legal), as config/domains.json sets them. A test's ``llm``,
+    # One model per role per domain, built on first use: the agents' model and the answering
+    # model, as config/domains.json sets them (Gemini for both in legal). A test's ``llm``,
     # mock mode and replay serve every domain with the same stand-in.
     fixed_llm = llm is not None or mock or bool(replay)
 
@@ -443,7 +443,7 @@ def create_app(
             status = await llm.health()
             reachable, usable = status["reachable"], status["model_available"]
         else:
-            # Mock backend: the API is usable without a model; still report whether Ollama is up.
+            # Mock or Gemini: Ollama is not needed; still report whether it is up.
             async with OllamaClient.from_settings(settings) as probe:
                 reachable = (await probe.health())["reachable"]
             usable = True
