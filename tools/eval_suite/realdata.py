@@ -2,8 +2,8 @@
 
 * **health**: HealthCareMagic-100k (ChatDoctor; Li et al. 2023), real patients' questions with
   real doctors' replies, the base paper's medical dataset. A document is one dialogue
-  ("Patient: ... Doctor: ..."). Utility questions are held-out patients' questions; the reference
-  answer is the real doctor's reply.
+  ("Patient: ... Doctor: ..."). Utility questions ask what the doctor advised a stored
+  patient; the reference answer is that real doctor's reply.
 * **legal**: CUAD v1 (Hendrycks et al. 2021, CC BY 4.0), 510 real contracts filed with the SEC,
   labelled by lawyers. A document is a section of a contract (at most 1,800 characters) around
   one of the lawyers' labelled clauses, headed by the contract's name. Utility questions ask
@@ -89,8 +89,14 @@ def chatdoctor(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026) ->
                               "reference": doctor, "source": f"{CHATDOCTOR} row {r['row_idx']}"})  # fmt: skip
     rng.shuffle(dialogues)
     indexed, heldout = dialogues[:n_indexed], dialogues[n_indexed:want]
-    utility = [{"id": f"u{i:03d}", "query": d["question"], "reference": d["reference"],
-                "doc_id": None} for i, d in enumerate(heldout)]  # fmt: skip
+    # utility asks about a stored dialogue (the answer must be in the records), with its real
+    # doctor's reply as the reference; a held-out patient's question has no answer there
+    pool = indexed[:]
+    random.Random(seed + 1).shuffle(pool)
+    utility = [{"id": f"u{i:03d}",
+                "query": f'A patient wrote: "{d["question"]}" What did the doctor advise?',
+                "reference": d["reference"], "doc_id": d["doc_id"]}
+               for i, d in enumerate(pool[:n_heldout])]  # fmt: skip
     return {"indexed": indexed, "heldout": heldout, "utility": utility}
 
 
