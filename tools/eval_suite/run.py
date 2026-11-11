@@ -268,9 +268,26 @@ async def _ask(ctx, llm, items: list[dict], path: Path) -> None:
     await _run_all(todo, play, path, path.stem)
 
 
+def _ollama_up() -> bool:
+    import urllib.request
+
+    url = os.environ.get("SANITISE_OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
+    try:
+        urllib.request.urlopen(f"{url}/api/version", timeout=3)
+        return True
+    except Exception:
+        return False
+
+
 async def _with_llm(work) -> None:
     from sanitise.llm.factory import close_llm_client
 
+    # health answers on Ollama (legal may answer on Gemini, so it is not checked here)
+    if D.name == "health" and not os.environ.get("EVAL_MOCK") and not _ollama_up():
+        raise SystemExit(
+            "Ollama is not running at localhost:11434, so no answer can be written. In the "
+            "notebook run cell 1 again (or colab_cache.start_ollama()), then this cell."
+        )
     llm, label = D.answer_llm()
     _dump(WORK / "answers" / "answer_model.json", {"answer_model": label, "k": D.k})
     try:

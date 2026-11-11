@@ -116,6 +116,7 @@ os.environ.update({
 })
 RUN = f"python tools/eval_suite/run.py {{step}} --domain health --work {WORK} --scale {SCALE}"
 def run(step, extra=""):
+    colab_cache.start_ollama()  # back up if it stopped (e.g. a cell was interrupted)
     cmd = RUN.format(step=step) + " " + extra
     print("$", cmd, flush=True)
     subprocess.run(cmd, shell=True, check=False)
@@ -201,6 +202,13 @@ os.environ.update({
 })
 SUITE = MAIN / "tools/eval_suite/run.py"
 def run(step, extra="", repo=LEGAL):
+    if not ollama_up():  # back up if it stopped (e.g. a cell was interrupted)
+        env = {{**os.environ, **({{"CUDA_VISIBLE_DEVICES": "0"}} if AGENT1_ADAPTER else {{}})}}
+        subprocess.Popen(["ollama", "serve"], stdout=open(W / "ollama.log", "a"),
+                         stderr=subprocess.STDOUT, env=env, start_new_session=True)
+        for _ in range(30):
+            if ollama_up(): break
+            time.sleep(2)
     cmd = (f"python {{SUITE}} {{step}} --domain legal --work {{WORK}} --scale {{SCALE}} "
            f"--repo {{repo}} --main-repo {{MAIN}} {{extra}}")
     print("$", cmd, flush=True)

@@ -102,7 +102,10 @@ def start_ollama() -> None:
     MODELS.mkdir(parents=True, exist_ok=True)
     env = {**os.environ, "OLLAMA_MODELS": str(MODELS), "OLLAMA_KEEP_ALIVE": "1h"}
     with open(CONTENT / "ollama.log", "a") as log:
-        subprocess.Popen(["ollama", "serve"], stdout=log, stderr=subprocess.STDOUT, env=env)
+        # its own session: stopping a notebook cell (an interrupt to the kernel's process group)
+        # must not take the server down with it
+        subprocess.Popen(["ollama", "serve"], stdout=log, stderr=subprocess.STDOUT, env=env,
+                         start_new_session=True)  # fmt: skip
     for _ in range(60):
         if ollama_up():
             return
