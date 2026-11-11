@@ -11,9 +11,8 @@
     preflight  checks the set-up: spaCy model, domains, Gemini keys, Ollama, GPU, HF token
     check      one document through Agents 1, 2 and 3 (and one answer), step by step
 
-The models are the legal profile's in ``config/domains.json`` (``model`` for Agents 2-3
-through Ollama, ``answer_backend``/``gemini_model`` for the answers, ``agent1_backend`` and
-``agent1_adapter`` for the fine-tuned Agent 1). ``--mock`` runs
+The models are the legal profile's in ``config/domains.json`` (``llm_backend`` and
+``gemini_model`` for Agents 1-3, ``answer_backend`` for the answers). ``--mock`` runs
 everything without a model: rule pass, deterministic rewrite and canned answers.
 """
 
@@ -149,9 +148,10 @@ def _preflight(data: Path) -> bool:
         answer = ds.gemini_model if ds.answer_backend == "gemini" else ds.answer_backend
         _status(True, name, f"agents {ds.model}, answers {answer}, agent 1 {ds.agent1_backend}")
 
-    print("Gemini (answers)")
+    agents_on_gemini = settings.llm_backend == "gemini"
+    print("Gemini (agents and answers)" if agents_on_gemini else "Gemini (answers)")
     keys = gemini_api_keys(settings.gemini_api_key, settings.gemini_api_keys)
-    needs_gemini = settings.answer_backend == "gemini"
+    needs_gemini = agents_on_gemini or settings.answer_backend == "gemini"
     fingerprints = ", ".join(fingerprint(k) for k in keys)
     _status(
         True if keys else (False if needs_gemini else None),
@@ -164,10 +164,13 @@ def _preflight(data: Path) -> bool:
     )
     _status(has_genai or None, "google-genai", "" if has_genai else "pip install google-genai")
 
-    print(f"Ollama (Agents 2-3: {settings.model})")
-    health = asyncio.run(_ollama_health(settings))
-    ok &= _status(health["reachable"], "server", settings.ollama_base_url)
-    ok &= _status(health["model_available"], f"model {settings.model}", health["detail"] or "")
+    if agents_on_gemini:
+        _status(None, "raw text", "Agents 1-3 send originals to Gemini: fictional data only")
+    else:
+        print(f"Ollama (Agents 2-3: {settings.model})")
+        health = asyncio.run(_ollama_health(settings))
+        ok &= _status(health["reachable"], "server", settings.ollama_base_url)
+        ok &= _status(health["model_available"], f"model {settings.model}", health["detail"] or "")
 
     print("GPU and Agent 1")
     gpus = "none"
@@ -184,7 +187,8 @@ def _preflight(data: Path) -> bool:
         adapter = settings.agent1_adapter
         ok &= _status(bool(adapter) and Path(adapter).is_dir(), "LoRA adapter", str(adapter))
     else:
-        _status(None, "Agent 1 LLM pass", f"base model through Ollama ({settings.model})")
+        through = "Gemini" if agents_on_gemini else "Ollama"
+        _status(None, "Agent 1 LLM pass", f"base model through {through} ({settings.model})")
     _status(
         True if os.environ.get("HF_TOKEN") else None,
         "HF_TOKEN",

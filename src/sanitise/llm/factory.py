@@ -31,12 +31,15 @@ def build_llm_client(
         return MockLLM(model=model or "mock-llm", **retry_kwargs)
     if backend == "ollama":
         return OllamaClient.from_settings(settings, model=model)
-    raise ValueError(f"unknown LLM backend {backend!r} (expected 'ollama' or 'mock')")
+    if backend == "gemini":
+        from sanitise.llm.gemini import GeminiClient
+
+        return GeminiClient.from_settings(settings, model=model)
+    raise ValueError(f"unknown LLM backend {backend!r} (expected 'ollama', 'gemini' or 'mock')")
 
 
 def build_answer_llm(settings: Settings, agents: BaseJSONClient) -> BaseJSONClient:
-    """The answering model (legal build spec: Gemini on cleaned text only). ``answer_backend``
-    "same" reuses the agents' model."""
+    """The answering model. ``answer_backend`` "same" reuses the agents' model."""
     backend = settings.answer_backend
     if backend == "same":
         return agents
