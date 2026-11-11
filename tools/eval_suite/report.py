@@ -456,7 +456,7 @@ def _strip(res: dict) -> dict:
 
 
 def write(d, work: Path, scale: str) -> None:
-    from sanitise.rag.store import SqliteDocumentStore
+    SqliteDocumentStore = d.mod("rag.store").SqliteDocumentStore
 
     a = work / "answers"
     res: dict = {"domain": d.name, "scale": scale, "commit": _commit(d.repo),

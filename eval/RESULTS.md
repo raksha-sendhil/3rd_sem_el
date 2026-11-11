@@ -80,6 +80,6 @@ A regression was caught on real data and fixed: "Hi, doctor," was briefly being 
 
 ## Caveats
 
-- **The gold sets are drafts.** Both were written and annotated by Claude, not Person D, and nobody has reviewed them yet. The official figure comes from D's reviewed gold set on real HealthCareMagic and Enron records.
+- **The gold sets are drafts.** Both were written and annotated with a language model, not by Person D, and nobody has reviewed them yet. The official figure comes from D's reviewed gold set on real HealthCareMagic and Enron records.
 - **The held-out set is small.** With 98 spans, ±0.05 is a fair error bar on recall.
 - **This is the rule pass only.** It has no LLM pass, and MEDICAL_CONDITION, SYMPTOM and QUASI_COMBO are not scored.

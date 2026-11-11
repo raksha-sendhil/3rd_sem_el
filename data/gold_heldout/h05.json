@@ -52,6 +52,6 @@
       "end": 263
     }
   ],
-  "annotator": "claude-draft",
+  "annotator": "model-draft",
   "reviewed_by": null
 }
