@@ -125,8 +125,13 @@ else:
         "code",
         """# 4. The real documents
 import asyncio, json
+import os, sys
 import pandas as pd
 from IPython.display import HTML, Markdown, display
+# The editable install only reaches a running kernel after a restart, so use the code where it is
+os.chdir("/kaggle/working/repo")
+if "/kaggle/working/repo/src" not in sys.path:
+    sys.path.insert(0, "/kaggle/working/repo/src")
 from sanitise.config import get_settings
 get_settings.cache_clear()  # pick up the settings above, also after re-running them
 from sanitise.legal.real_docs import (
