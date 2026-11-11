@@ -135,6 +135,6 @@ def test_the_agents_notebook_runs_only_the_agents() -> None:
         (REPO / "notebooks" / "legal_agents_kaggle.ipynb").read_text(encoding="utf-8")
     )
     code = "".join("".join(c["source"]) for c in notebook["cells"] if c["cell_type"] == "code")
-    assert "-b a/legal-pipeline" in code and "run_agents(" in code and "load_inputs(" in code
+    assert "-b law-pipeline-final" in code and "run_agents(" in code and "load_inputs(" in code
     for absent in ("monitor", "attack", "legal evaluate", "legal export", "finetune", "dashboard"):
         assert absent not in code.lower(), absent

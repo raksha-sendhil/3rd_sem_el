@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 REPO = "https://github.com/raksha-sendhil/3rd_sem_el.git"
-BRANCH = "a/legal-pipeline"
+BRANCH = "law-pipeline-final"
 
 CELLS: list[tuple[str, str]] = [
     (

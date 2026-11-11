@@ -10,7 +10,7 @@ monitor is a teammate's part.
 
 1. Go to <https://www.kaggle.com/code>, then **New Notebook**, then **File**, **Import Notebook**.
    Choose the **GitHub** tab and paste
-   `https://github.com/raksha-sendhil/3rd_sem_el/blob/a/legal-pipeline/notebooks/legal_agents_kaggle.ipynb`.
+   `https://github.com/raksha-sendhil/3rd_sem_el/blob/law-pipeline-final/notebooks/legal_agents_kaggle.ipynb`.
    You can also download the `.ipynb` from GitHub and upload it under the **File** tab.
 2. In the right-hand panel, **Session options**:
    - **Accelerator**: GPU T4 x2. Only one GPU is used.
@@ -45,7 +45,7 @@ Click **Run All**, or run the cells one by one from the top.
 
 | Cell | What happens | What you should see |
 |---|---|---|
-| 2 | clones `a/legal-pipeline`, installs the packages and the spaCy model | `code version: <hash> ...` |
+| 2 | clones `law-pipeline-final`, installs the packages and the spaCy model | `code version: <hash> ...` |
 | 3 | installs Ollama, starts it and pulls `gemma4:e4b` (about 10 min the first time) | `gemma4:e4b` in the `ollama list` table |
 | 4 | loads the 14 documents | a table of ids, courts, types and sources |
 | Baseline | the rules alone, with no model | totals, about 75% of the must-hide identifiers hidden |
