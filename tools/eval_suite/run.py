@@ -25,6 +25,7 @@ import argparse
 import asyncio
 import json
 import os
+import random
 import shutil
 import sys
 import time
@@ -33,11 +34,20 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 MAIN_REPO = HERE.parents[1]
 
+# "full": the plan's volumes (about 12-15 GPU hours per domain); "5h": the same metrics on less
+# data, about 4.5 hours per domain; "quick": a few items per step (about 10 minutes) to check
+# the set-up. gen_docs: size of the generated store (None = all 300); e2e_parts: parts kept per
+# end-to-end document.
 SCALES = {
     "full": {"indexed": 500, "heldout": 250, "targeted": 250, "repeat": 250, "members": 500,
-             "nonmembers": 250, "utility": 250, "targets": 60, "e2e": 50, "gen_docs": None},
-    "quick": {"indexed": 30, "heldout": 15, "targeted": 10, "repeat": 10, "members": 10,
-              "nonmembers": 10, "utility": 10, "targets": 2, "e2e": 3, "gen_docs": 30},
+             "nonmembers": 250, "utility": 250, "targets": 60, "e2e": 50, "gen_docs": None,
+             "e2e_parts": 2, "asked_people": None},
+    "5h": {"indexed": 150, "heldout": 100, "targeted": 100, "repeat": 100, "members": 100,
+           "nonmembers": 100, "utility": 100, "targets": 20, "e2e": 25, "gen_docs": 150,
+           "e2e_parts": 1, "asked_people": 35},
+    "quick": {"indexed": 12, "heldout": 6, "targeted": 5, "repeat": 5, "members": 5,
+              "nonmembers": 5, "utility": 5, "targets": 1, "e2e": 2, "gen_docs": 15,
+              "e2e_parts": 1, "asked_people": 3},
 }  # fmt: skip
 PIPELINES = ("baseline", "protected")
 
@@ -50,7 +60,7 @@ def _args() -> argparse.Namespace:
     p.add_argument("--work", required=True, type=Path)
     p.add_argument("--repo", type=Path, default=MAIN_REPO)
     p.add_argument("--main-repo", type=Path, default=MAIN_REPO)
-    p.add_argument("--scale", choices=list(SCALES), default="full")
+    p.add_argument("--scale", choices=list(SCALES), default="5h")
     p.add_argument("--stores", default="gen,real,e2e_gold,e2e_ocr")
     return p.parse_args()
 
@@ -94,23 +104,42 @@ def step_data() -> None:
 
     # questions on the generated corpus: Target Info and the attack sessions
     sessions = Q.attack_sessions(D, people, SCALE["targets"])
-    if D.name == "health":
+    targets = [s["target"] for s in sessions]
+    if D.name == "health":  # Person D's fixed set, spread evenly over its 29 people
         targeted = _load(ARGS.repo / "data/attacks/target_info_queries.json")
-        targeted = [t for t in targeted][: SCALE["targeted"] if ARGS.scale == "quick" else None]
-    else:
-        targeted = Q.targeted_queries(D, people, SCALE["targeted"])
+        n = min(SCALE["targeted"], len(targeted))
+        targeted = [targeted[int(i * len(targeted) / n)] for i in range(n)]
+    else:  # about the session targets first, then others, a few questions each
+        asked = list(dict.fromkeys(targets))
+        rest = [
+            p.person_id
+            for p in sorted(people, key=lambda p: p.person_id)
+            if p.person_id not in asked
+        ]
+        cap = SCALE["asked_people"] or len(people)
+        asked = set((asked + rest)[:cap])
+        targeted = Q.targeted_queries(
+            D, [p for p in people if p.person_id in asked], SCALE["targeted"]
+        )
     _dump(data / "targeted.json", targeted)
     _dump(data / "sessions.json", sessions)
 
-    # the generated corpus (a quick run keeps the people asked about plus a few others)
+    # the generated corpus: every document of the people asked about, then whole other people
+    # (decoys, so candidate pools stay realistic) up to gen_docs
     gen = data / "gen" / "corpus"
     gen.mkdir(parents=True, exist_ok=True)
-    files = sorted(D.corpus_dir.glob("*.json"))
+    by_id = {_load(f)["doc_id"]: f for f in sorted(D.corpus_dir.glob("*.json"))}
+    files = list(by_id.values())
     if SCALE["gen_docs"]:
-        wanted_people = {s["target"] for s in sessions} | {t["person_id"] for t in targeted}
-        wanted = {d for p in people if p.person_id in wanted_people for d in p.doc_ids}
-        keep = [f for f in files if _load(f)["doc_id"] in wanted]
-        keep += [f for f in files if f not in keep][: max(0, SCALE["gen_docs"] - len(keep))]
+        wanted = set(targets) | {t["person_id"] for t in targeted}
+        order = [p for p in people if p.person_id in wanted]
+        others = [p for p in people if p.person_id not in wanted]
+        random.Random("decoys").shuffle(others)
+        keep: list[Path] = []
+        for p in order + others:
+            if p.person_id not in wanted and len(keep) >= SCALE["gen_docs"]:
+                break
+            keep += [by_id[d] for d in p.doc_ids if d in by_id]
         files = keep
     for f in files:
         shutil.copyfile(f, gen / f.name)
@@ -187,30 +216,56 @@ def _done(path: Path) -> set[str]:
     return {json.loads(x)["id"] for x in path.read_text(encoding="utf-8").splitlines() if x.strip()}
 
 
-async def _ask(ctx, llm, items: list[dict], path: Path) -> None:
-    """Each item once per pipeline, in a fresh session; one line per item in ``path``."""
+# Items answered at once. Within an item both pipelines are asked together (the baseline has
+# no monitor, so the order does not matter), so up to 2 x CONCURRENCY requests reach the model;
+# start Ollama with OLLAMA_NUM_PARALLEL at least that (the notebooks do).
+CONCURRENCY = max(1, int(os.environ.get("EVAL_CONCURRENCY", "2")))
+
+
+async def _pair(ctx, llm, query: str, session: str) -> dict:
     from sanitise.rag.answer import answer
 
+    base, prot = await asyncio.gather(
+        answer(ctx, query, "baseline", session, llm, D.k),
+        answer(ctx, query, "protected", session, llm, D.k),
+    )
+    return {"baseline": _slim(base), "protected": _slim(prot)}
+
+
+async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
+    """``play(item)`` for every item, CONCURRENCY at a time; each finished item is one line."""
+    sem = asyncio.Semaphore(CONCURRENCY)
+    finished = 0
+    with path.open("a", encoding="utf-8") as f:
+
+        async def one(item: dict) -> None:
+            nonlocal finished
+            async with sem:
+                try:
+                    row = await play(item)
+                except Exception as exc:  # a model error: skipped now, asked again next run
+                    print(f"  {item['id']}: {str(exc)[:160]} (again on the next run)", flush=True)
+                    return
+            f.write(json.dumps(row, ensure_ascii=False) + chr(10))
+            f.flush()
+            finished += 1
+            if finished % 10 == 0 or finished == len(todo):
+                print(f"  {label}: {finished}/{len(todo)}", flush=True)
+
+        await asyncio.gather(*(one(it) for it in todo))
+
+
+async def _ask(ctx, llm, items: list[dict], path: Path) -> None:
+    """Each item once per pipeline, in a fresh session; one line per item in ``path``."""
     path.parent.mkdir(parents=True, exist_ok=True)
     done = _done(path)
     todo = [it for it in items if it["id"] not in done]
     print(f"{path.stem}: {len(todo)} of {len(items)} questions to ask", flush=True)
-    with path.open("a", encoding="utf-8") as f:
-        for i, it in enumerate(todo, 1):
-            session = ctx.sessions.create()
-            row = dict(it)
-            try:
-                for pipeline in PIPELINES:
-                    row[pipeline] = _slim(
-                        await answer(ctx, it["query"], pipeline, session, llm, D.k)
-                    )
-            except Exception as exc:  # a model error: skipped now, asked again on the next run
-                print(f"  {it['id']}: {str(exc)[:160]}", flush=True)
-                continue
-            f.write(json.dumps(row, ensure_ascii=False) + "\n")
-            f.flush()
-            if i % 10 == 0 or i == len(todo):
-                print(f"  {path.stem}: {i}/{len(todo)}", flush=True)
+
+    async def play(it: dict) -> dict:
+        return {**it, **await _pair(ctx, llm, it["query"], ctx.sessions.create())}
+
+    await _run_all(todo, play, path, path.stem)
 
 
 async def _with_llm(work) -> None:
@@ -239,8 +294,6 @@ def step_single() -> None:
 
 
 def step_multi() -> None:
-    from sanitise.rag.answer import answer
-
     sessions = _load(WORK / "data" / "sessions.json")
     path = WORK / "answers" / "sessions.jsonl"
 
@@ -249,23 +302,16 @@ def step_multi() -> None:
         done = _done(path)
         todo = [s for s in sessions if s["id"] not in done]
         print(f"sessions: {len(todo)} of {len(sessions)} to play ({Q.SESSION_ROUNDS} rounds each)")
-        with path.open("a", encoding="utf-8") as f:
-            for i, s in enumerate(todo, 1):
-                session = ctx.sessions.create()
-                rounds = []
-                try:
-                    for t, query in enumerate(s["queries"], 1):
-                        r = {"round": t, "query": query}
-                        for pipeline in PIPELINES:
-                            a = await answer(ctx, query, pipeline, session, llm, D.k)
-                            r[pipeline] = _slim(a)
-                        rounds.append(r)
-                except Exception as exc:
-                    print(f"  {s['id']}: {str(exc)[:160]} (played again on the next run)")
-                    continue
-                f.write(json.dumps({**s, "rounds": rounds}, ensure_ascii=False) + "\n")
-                f.flush()
-                print(f"  [{i}/{len(todo)}] {s['id']}", flush=True)
+
+        async def play(s: dict) -> dict:
+            session = ctx.sessions.create()  # one session per attack, its rounds in order
+            rounds = []
+            for t, query in enumerate(s["queries"], 1):
+                rounds.append({"round": t, "query": query, **await _pair(ctx, llm, query, session)})
+            return {**s, "rounds": rounds}
+
+        path.parent.mkdir(parents=True, exist_ok=True)
+        await _run_all(todo, play, path, "sessions")
 
     asyncio.run(_with_llm(work))
 
@@ -295,7 +341,7 @@ def main() -> None:
     elif step == "e2e-prep":
         from eval_suite import e2e
 
-        e2e.prepare(D.name, ARGS.main_repo, WORK, SCALE["e2e"])
+        e2e.prepare(D.name, ARGS.main_repo, WORK, SCALE["e2e"], SCALE["e2e_parts"])
     elif step == "e2e-label":
         from eval_suite import e2e
 

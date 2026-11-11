@@ -96,7 +96,7 @@ def _as_dict(obj) -> dict | None:
     return dataclasses.asdict(obj) if dataclasses.is_dataclass(obj) else dict(vars(obj))
 
 
-def prepare(domain: str, main_repo: Path, work: Path, n: int) -> None:
+def prepare(domain: str, main_repo: Path, work: Path, n: int, max_parts: int = MAX_PARTS) -> None:
     """Select the documents, OCR them, and write the A and B parts (needs main's sanitise)."""
     from sanitise.config import get_settings
     from sanitise.ingest import ingest_bytes
@@ -125,8 +125,8 @@ def prepare(domain: str, main_repo: Path, work: Path, n: int) -> None:
             t = time.perf_counter()
             res = await ingest_bytes(path.read_bytes(), path.name, reader=reader, settings=settings)
             seconds = time.perf_counter() - t
-            ocr_parts = split_parts(res.text, PART_CHARS)[:MAX_PARTS]
-            gold_parts = split_parts(d["gold"], PART_CHARS)[:MAX_PARTS]
+            ocr_parts = split_parts(res.text, PART_CHARS)[:max_parts]
+            gold_parts = split_parts(d["gold"], PART_CHARS)[:max_parts]
             gold_text, ocr_text = "\n\n".join(gold_parts), "\n\n".join(ocr_parts)
             quality = score_text(ocr_text, gold_text) if ocr_text else None
             entry = {**{k: v for k, v in d.items() if k != "gold"}, "gold_text": gold_text,

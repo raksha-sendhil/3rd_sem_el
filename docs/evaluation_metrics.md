@@ -155,7 +155,38 @@ a rate.
 * **Answering:** about 5-6 GPU hours.
 * **OCR:** under an hour.
 
-The run spans 2-3 Kaggle sessions, and every step resumes.
+The full run spans 2-3 Kaggle sessions, and every step resumes.
+
+### The 5-hour scale (what we run now)
+
+We have about 5 hours of compute per domain, so the notebooks default to `SCALE = "5h"`. It
+measures **every metric** on less data. The error bars get wider, but the large gaps expected
+between no privacy and ours (Target Info, Session Leak Success) stay clearly significant.
+
+| Item | Full | 5h | 95% interval on a rate |
+|---|---|---|---|
+| Generated store | 300 documents | 150 (everyone the questions ask about, plus whole decoy people) | |
+| Real store, indexed / held out | 500 / 250 | 150 / 100 | |
+| Target Info questions | 251 (health) / 250 | 100 | about ±10 points |
+| Repeat / ROUGE prompts (one set of answers for both) | 250 | 100 | about ±10 |
+| Membership probes, members + non-members | 500 + 250 | 100 + 100 | enough for TPR at 1% FPR |
+| Utility questions | 250 | 100 | about ±10 |
+| Attack sessions | 60 targets × 3 = 180 | 20 targets × 3 protocols = 60 | about ±13 |
+| End-to-end scans | 50, 2 parts each | 25, first part each | about ±20 (case study) |
+| Documents through Agents 1-3 | about 900-1,000 | about 350 | |
+| Answers, both pipelines | about 6,700 | about 2,400 | |
+
+**Time per domain:** setup 15 min, OCR 20 min, build about 2 h, answers about 1.5-2 h. Two
+questions are answered at a time and both pipelines are asked together; Ollama serves up to 4
+requests at once (`OLLAMA_NUM_PARALLEL=4`, `EVAL_CONCURRENCY=2`).
+
+**What the paper should say about the 5h scale:**
+* **Health's Target Info questions** are 100 of Person D's 251, spread evenly over all 29
+  people they ask about.
+* **The smaller generated store** holds every document of the people the questions and
+  sessions are about, plus whole decoy people. The health monitor counts candidate pools over
+  the store, so with 150 documents its pools are smaller and it is somewhat stricter than with
+  300. The legal monitor counts over the client table, so it is unaffected.
 
 ## 5. Running it (one person per domain)
 
@@ -178,26 +209,25 @@ The run spans 2-3 Kaggle sessions, and every step resumes.
    * Health: several keys, comma-separated, in that one secret.
    * Legal: `GEMINI_API_KEY_2` ... `GEMINI_API_KEY_9` as separate secrets.
 
-**First run, quick scale.** Leave `SCALE = "quick"` in cell 1 and run every cell in order. It
-asks a few questions per step (about 30-45 minutes) and shows whether everything works. Quick
-results go to a separate folder (`eval/<domain>_quick`).
-
-**Full run.** Set `SCALE = "full"` in cell 1 and run every cell in order.
+**The run.** Leave `SCALE = "5h"` in cell 1 and run every cell in order (about 4.5 hours).
+To check the set-up first, run all cells once with `SCALE = "quick"` (about 10 minutes, a few
+items per step). Each scale keeps its results in its own folder (`eval/<domain>_5h`,
+`eval/<domain>_quick`); `SCALE = "full"` runs the plan's full volumes (12-15 hours).
 
 * When a session ends (12-hour limit, or idle): open the notebook again, run **cell 1**, then
   run on from the first cell that had not finished. Every step skips what is already on disk.
 * Cell 4 (labels) prints how many private values and questions each scan got. Open
-  `eval/<domain>/e2e/labels.json`, check 10 documents by eye, and note any wrong label.
+  `eval/<domain>_5h/e2e/labels.json`, check 10 documents by eye, and note any wrong label.
 * Cell 9 shows `REPORT.md` and the figures.
 
 **Saving the results and pushing them to the repo:**
 
-1. Run cell 10. It writes `/kaggle/working/eval_results_<domain>.zip`, which holds:
+1. Run cell 10. It writes `/kaggle/working/eval_results_<domain>_5h.zip`, which holds:
    * the results: `REPORT.md`, `results.json`, figures;
    * every answer;
    * the questions;
    * the end-to-end labels.
-2. Download it: right sidebar → **Output** → `eval_results_<domain>.zip` → download. Or use
+2. Download it: right sidebar → **Output** → `eval_results_<domain>_5h.zip` → download. Or use
    **Save Version** and download from the version's Output tab.
 3. On your laptop, on `main`:
 
@@ -205,9 +235,9 @@ results go to a separate folder (`eval/<domain>_quick`).
    git checkout main
    git pull
    mkdir -p results/eval
-   unzip ~/Downloads/eval_results_<domain>.zip -d results/eval/   # makes results/eval/<domain>/
+   unzip ~/Downloads/eval_results_<domain>_5h.zip -d results/eval/   # makes results/eval/<domain>/
    git add results/eval/<domain>
-   git commit -m "Evaluation results: <domain>, full scale"
+   git commit -m "Evaluation results: <domain>, 5h scale"
    git push
    ```
 

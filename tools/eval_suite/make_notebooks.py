@@ -45,29 +45,30 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
   (so `/kaggle/working` survives between sessions and every step resumes).
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
 
-| Cell | What it does | Time, full scale |
+| Cell | What it does | Time at `SCALE = "5h"` |
 |---|---|---|
 | 1 Setup | clone, install, Ollama and the models, keys | ~15 min (every session) |
-| 2 Data | download the real data, copy the generated corpus, write the questions | ~5 min |
-| 3 OCR | read the 50 real scans (end-to-end check) | ~30-60 min |
-| 4 Labels | Gemini marks private values and writes questions for the 50 scans | ~10 min |
-| 5 Build | Agents 1-3 over every document (~{docs} documents) | {build} |
-| 6 Single | the single-question attacks and utility questions (~1,500 answers per pipeline) | ~2-3 h |
-| 7 Multi | 180 attack sessions x 8 rounds | ~2-3 h |
-| 8 End to end | the 50 scans' questions on both stores | ~15 min |
-| 9 Report | every number, REPORT.md and the figures | ~5 min |
-| 10 Pack | `eval_results_{domain}.zip` to download and commit | ~1 min |
+| 2 Data | download the real data, copy the generated corpus, write the questions | ~3 min |
+| 3 OCR | read 25 real scans (end-to-end check) | ~20 min |
+| 4 Labels | Gemini marks private values and writes questions for the 25 scans | ~5 min |
+| 5 Build | Agents 1-3 over ~350 documents (150 generated, 150 real, 2 x 25 scan parts) | ~2 h |
+| 6 Single | 100 Target Info, 100 repeat, 200 membership and 100 utility questions | ~1 h |
+| 7 Multi | 60 attack sessions (20 targets x 3 protocols) x 8 rounds | ~45 min |
+| 8 End to end | the scans' questions on both stores | ~10 min |
+| 9 Report | every number, REPORT.md and the figures | ~3 min |
+| 10 Pack | `eval_results_{domain}_5h.zip` to download and commit | ~1 min |
 
-The whole run does not fit in one 12-hour session. Run cell 1 at the start of every session,
-then carry on from the first unfinished cell: each one skips what is already on disk.
-First run with `SCALE = "quick"` (a few items per step, ~30 min) to check everything works, then
-set `SCALE = "full"` and run again (quick results are kept apart).
+`SCALE = "5h"` (the default) fits in about 4.5 hours. Optionally run `SCALE = "quick"` first
+(about 10 minutes, a few items per step) to check the set-up; `SCALE = "full"` is the plan's
+full volumes (12-15 hours). Each scale keeps its results in its own folder. If a session stops,
+run cell 1 again and carry on from the first unfinished cell: every step skips what is already
+on disk.
 """
 
 
 HEALTH_SETUP = """
 # 1 Setup (run at the start of every session)
-SCALE = "quick"   # "quick" = a few items per step to check the set-up; then "full"
+SCALE = "5h"   # "5h": every metric on less data, ~4.5 h; "quick": ~10 min check; "full": the plan's volumes (~12-15 h)
 MODEL = "llama3:8b"                       # answers, both pipelines (as the dashboard)
 GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-3.1-flash-lite"   # Agents 1-3 (fallback order)
 OCR_MODEL = "qwen3-vl:8b-instruct"        # reads the scans (end-to-end check)
@@ -79,6 +80,8 @@ from pathlib import Path
 W = Path("/kaggle/working")
 REPO = W / "3rd_sem_el"
 os.environ["SANITISE_WORKDIR"] = "/tmp/sanitise"      # models stay out of /kaggle/working
+os.environ["OLLAMA_NUM_PARALLEL"] = "4"   # answers are asked 2 questions x 2 pipelines at once
+os.environ["EVAL_CONCURRENCY"] = "2"
 if REPO.exists():
     subprocess.run(["git", "-C", str(REPO), "pull", "--ff-only"], check=True)
 else:
@@ -100,7 +103,7 @@ try:
 except Exception as exc:
     raise RuntimeError("Add the Kaggle secret GEMINI_API_KEY (Add-ons -> Secrets), tick it as "
                        "attached to this notebook, and run this cell again.") from exc
-WORK = W / "eval" / ("health" if SCALE == "full" else "health_quick")
+WORK = W / "eval" / ("health" if SCALE == "full" else f"health_{SCALE}")
 os.environ.update({
     "SANITISE_LLM_BACKEND": "ollama", "SANITISE_MODEL": MODEL, "SANITISE_LLM_TIMEOUT_S": "600",
     "SANITISE_RETRIEVAL_MODE": "hybrid", "SANITISE_OCR_MODEL": OCR_MODEL,
@@ -119,7 +122,7 @@ print(f"ready: answers {MODEL} | Agents 1-3 {GEMINI_MODEL} ({len(key.split(','))
 
 LEGAL_SETUP = """
 # 1 Setup (run at the start of every session)
-SCALE = "quick"   # "quick" = a few items per step to check the set-up; then "full"
+SCALE = "5h"   # "5h": every metric on less data, ~4.5 h; "quick": ~10 min check; "full": the plan's volumes (~12-15 h)
 LEGAL_BRANCH = "law-pipeline-final"   # the branch with the legal agents
 ANSWERS = "ollama"   # "ollama": the legal profile's Ollama model answers (fits the time);
                      # "gemini": the profile's Gemini answer model (needs many keys and days)
@@ -130,6 +133,8 @@ import json, os, subprocess, sys, time, urllib.request
 from pathlib import Path
 
 W = Path("/kaggle/working")
+os.environ["OLLAMA_NUM_PARALLEL"] = "4"   # answers are asked 2 questions x 2 pipelines at once
+os.environ["EVAL_CONCURRENCY"] = "2"
 MAIN = W / "main"      # this evaluation suite and the OCR (step 0) come from main
 LEGAL = W / "legal"    # the legal pipeline (Agents 1-3, monitor, scorer) comes from the branch
 for path, branch in ((MAIN, "main"), (LEGAL, LEGAL_BRANCH)):
@@ -184,7 +189,7 @@ if AGENT1_ADAPTER:
 json.dump(profile, open(LEGAL / "config/domains.json", "w"), indent=2)
 print(json.dumps(profile["legal"], indent=1))
 
-WORK = W / "eval" / ("legal" if SCALE == "full" else "legal_quick")
+WORK = W / "eval" / ("legal" if SCALE == "full" else f"legal_{SCALE}")
 os.environ.update({
     "SANITISE_DOMAIN": "legal", "SANITISE_LLM_BACKEND": "ollama", "SANITISE_LLM_TIMEOUT_S": "300",
     "SANITISE_RETRIEVAL_MODE": "hybrid", "SANITISE_OCR_MODEL": OCR_MODEL,
@@ -243,7 +248,7 @@ for fig in sorted((WORK / "results" / "figures").glob("*.png")):
     "pack": """
 # 10 Pack the results to download (Output tab, or Save Version) and commit to the repo
 import shutil, zipfile
-zip_path = W / f"eval_results_{domain}{{'' if SCALE == 'full' else '_quick'}}.zip"
+zip_path = W / f"eval_results_{domain}{{'' if SCALE == 'full' else '_' + SCALE}}.zip"
 keep = ["results", "answers", "data/targeted.json", "data/sessions.json", "data/repeat.json",
         "data/membership.json", "data/utility.json", "e2e/labels.json", "e2e/manifest.json"]
 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
