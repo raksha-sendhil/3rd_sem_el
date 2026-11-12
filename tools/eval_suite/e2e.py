@@ -131,7 +131,7 @@ def prepare(domain: str, main_repo: Path, work: Path, n: int, max_parts: int = M
             gold_text, ocr_text = "\n\n".join(gold_parts), "\n\n".join(ocr_parts)
             quality = score_text(ocr_text, gold_text) if ocr_text else None
             entry = {**{k: v for k, v in d.items() if k != "gold"}, "gold_text": gold_text,
-                     "ocr_text": ocr_text, "ocr_seconds": round(seconds, 1),
+                     "ocr_text": ocr_text, "ocr_seconds": round(seconds, 1), "pages": len(res.pages),
                      "ocr_quality": _as_dict(quality),
                      "gold_parts": [], "ocr_parts": []}  # fmt: skip
             for side, parts in (("gold", gold_parts), ("ocr", ocr_parts)):

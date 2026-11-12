@@ -252,6 +252,29 @@ def reidentification(d, rows: list[dict], k: int = 5) -> dict:
 # ---------------------------------------------------------------- end to end
 
 
+def ocr_time(manifest: list[dict]) -> dict | None:
+    """Seconds step 0 took to read each scan (``e2e.prepare``). The first document also loads
+    the vision model, so the median is the figure to quote; per page when the pages were
+    counted (runs after 12 Nov)."""
+    timed = [m for m in manifest if m.get("ocr_seconds") is not None]
+    if not timed:
+        return None
+    secs = [m["ocr_seconds"] for m in timed]
+    out: dict = {"documents": len(secs), "median_s": M.median(secs), "mean_s": M.mean(secs),
+                 "max_s": max(secs), "first_s": timed[0]["ocr_seconds"]}  # fmt: skip
+    rest = secs[1:]
+    if rest:
+        out["mean_s_without_first"] = M.mean(rest)
+    paged = [m for m in timed if m.get("pages")]
+    if paged:
+        out["median_s_per_page"] = M.median([m["ocr_seconds"] / m["pages"] for m in paged])
+    out["by_type"] = {
+        kind: M.median([m["ocr_seconds"] for m in timed if m.get("type") == kind])
+        for kind in sorted({m.get("type", "?") for m in timed})
+    }
+    return out
+
+
 def e2e(work: Path) -> dict | None:
     from eval_suite.e2e import value_found
 
@@ -262,7 +285,8 @@ def e2e(work: Path) -> dict | None:
     manifest = json.loads((work / "e2e" / "manifest.json").read_text(encoding="utf-8"))
     values = sorted({v["value"] for lab in labels.values() for v in lab["private_values"]})
     out: dict = {"documents": len(labels), "private_values": len(values),
-                 "ocr_cer_mean": M.mean([m["ocr_quality"]["cer"] for m in manifest if m.get("ocr_quality")])}  # fmt: skip
+                 "ocr_cer_mean": M.mean([m["ocr_quality"]["cer"] for m in manifest if m.get("ocr_quality")]),
+                 "ocr_time": ocr_time(manifest)}  # fmt: skip
     for side in ("gold", "ocr"):
         rows = _rows(work / "answers" / f"e2e_{side}.jsonl")
         targeted = [r for r in rows if r["kind"] == "targeted"]
@@ -681,6 +705,15 @@ def markdown(res: dict, figures_made: list[str]) -> str:
               f"{o['baseline']['target_info'] - g['baseline']['target_info']} |",
               f"| Target Info, ours | {g['protected']['target_info']} | {o['protected']['target_info']} | "
               f"{e['gap_target_info_ours']} |"]  # fmt: skip
+        if t := e.get("ocr_time"):
+            per_page = (f"; median per page {t['median_s_per_page']:.1f} s"
+                        if "median_s_per_page" in t else "")  # fmt: skip
+            L += ["", f"OCR time (step 0, vision model on a T4): median {t['median_s']:.1f} s per "
+                      f"document{per_page}; mean {t['mean_s']:.1f} s, or {t.get('mean_s_without_first', t['mean_s']):.1f} s "
+                      f"without the first document, which also loads the model ({t['first_s']:.0f} s); "
+                      f"slowest {t['max_s']:.0f} s.", "",
+                  "| Kind of scan | Median OCR seconds |", "|---|---:|"]  # fmt: skip
+            L += [f"| {k} | {v:.1f} |" for k, v in t["by_type"].items()]
         for side, name in (("gold", "A: gold text"), ("ocr", "B: scan + OCR")):
             if bt := e[side].get("by_type"):
                 L += ["", f"Utility by kind of scan, {name}:", "",
