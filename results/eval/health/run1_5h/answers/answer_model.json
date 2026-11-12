@@ -1,0 +1,4 @@
+{
+ "answer_model": "llama3:8b (Ollama)",
+ "k": 3
+}

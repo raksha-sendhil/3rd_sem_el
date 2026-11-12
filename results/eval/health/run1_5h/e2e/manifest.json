@@ -1,0 +1,652 @@
+[
+ {
+  "id": "health_clinocr_normal_t1_s2",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_normal_t1_s2.jpg",
+  "type": "clinocr_normal",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient: John Smith DOB: 05/20/1965 MRN: 789012 \nAccession #: A583920-25\nSPRINGFIELD GENERAL HOSPITAL\nSunrise Diagnostics Phone: \nNorth Valley Imaging Center 456 Oak Avenue, Suite 200 Anytown, USA 12345\n(555) 123-4567 \nPatient: John Smith \nDOB: 05/20/1965 \nMRN: 789012\nGender: Male Referring Physician: Dr. Emily White\nVisit #: 456-789 Date of Visit: 06/18/2025\nDiagnostic Imaging Report - Chest X-ray (2 views)\nProcedure: Radiography of the chest, posteroanterior and lateral views.\nClinical Indication: Persistent cough and shortness of breath.\nFindings: The lungs are clear without evidence of consolidation, infiltrate, or effusion. The cardiomediastinal silhouette is within normal limits. The osseous structures of the thorax are unremarkable.\nImpression: No acute cardiopulmonary process.\nScheduled appointments:\nFollow-up appointment with Dr. White scheduled for 06/25/2025 at 11:00 AM to discuss the results and further management.\nDate of Dictation: 06/18/2025 Technician: Sarah Jenkins, RT(R)\nCONFIDENTIALITY NOTICE: This report contains confidential patient information protected by federal and state law. It is intended only for the use of the individual or entity to whom it is addressed. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or action taken in reliance on the contents of these documents is strictly prohibited. If you have received this report in error, please notify the sender immediately by telephone at (217) 555-1212 and destroy this document. \nSpringfield General Hospital Imaging Department | 123 Health Way, Springfield, IL, 62704",
+  "ocr_text": "Patient: John Smith DOB: 05/20/1965 MRN: 789012\nAccession #: A583920-25\n\nSPRINGFIELD\nGENERAL\nHOSPITAL\n\nSunrise Diagnostics Phone:\nNorth Valley Imaging Center 456\nOak Avenue, Suite 200 Anytown,\nUSA 12345\n(555) 123-4567\n\nPatient: John Smith\nDOB: 05/20/1965\nMRN: 789012\nGender: Male Referring\nPhysician: Dr. Emily White\n\nVisit #: 456-789 Date of Visit: 06/18/2025\nDiagnostic Imaging Report - Chest X-ray (2 views)\n\nProcedure: Radiography of the chest, posteroanterior and lateral views.\nClinical Indication: Persistent cough and shortness of breath.\n\nFindings: The lungs are clear without evidence of consolidation, infiltrate, or effusion. The\ncardiomedial silhouete is within normal limits. The osseous structures of the thorax are\nunremarkable.\n\nImpression: No acute cardiopulmonary process.\n\nScheduled appointments:\nFollow-up appointment with Dr. White scheduled for 06/25/2025 at 11:00 AM to discuss the results and\nfurther management.\n\nDate of Dictation: 06/18/2025 Technician: Sarah Jenkins, RT(R)\n\nCONFIDENTIALITY NOTICE: This report contains confidential patient information protected by federal\nand state law. It is intended only for the use of the individual or entity to whom it is addressed. If you are\nnot the intended recipient, you are hereby notified that any disclosure, copying, distribution, or action\ntaken in reliance on the contents of these documents is strictly prohibited. If you have received this\nreport in error, please notify the sender immediately by telephone at (217) 555-1212 and destroy this\ndocument.\nSpringfield General Hospital Imaging Department | 123 Health Way, Springfield, IL, 62704",
+  "ocr_seconds": 140.7,
+  "ocr_quality": {
+   "cer": 0.0037220843672456576,
+   "wer": 0.008771929824561403,
+   "char_errors": 6,
+   "gold_chars": 1612,
+   "word_errors": 2,
+   "gold_words": 228,
+   "words_matched": 226,
+   "pred_words": 228
+  },
+  "gold_parts": [
+   "30c47d9934f337da"
+  ],
+  "ocr_parts": [
+   "33fbffe481f210d3"
+  ]
+ },
+ {
+  "id": "health_clinocr_normal_t2_s6",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_normal_t2_s6.jpg",
+  "type": "clinocr_normal",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient Name: Robert Brown MRN: 6543210\nLAKEWOOD HOSPITAL\nPATHOLOGY REPORT\n831676002937\nDate of Birth: 03/12/1950 \nAge: 75 \nGender: Male\nPatient Address: 567 Birch Lane, Aurora, CO 80011\nNorth Star Health System \n450 Northland Blvd Aurora, CO 80011 \nPhone: (303) 555-1212 Fax: (303) 555-1213\nAccession Number: P25-01234 \nDate of Collection: 06/19/2025 \nTime of Collection: 02:45 PM \nSpecimen Type: Prostate, Needle Core Biopsy\nOrdering Physician: Dr. Sarah Jenkins, MD \nPractice: Rocky Mountain Urology \nAddress: 890 Wellness Way, Suite 200, Aurora, CO 80012 \nPhone: (303) 555-8800\nFinal Diagnosis:\nProstate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3) \nMicroscopic Description:\nSections show prostatic acini replaced by infiltrative, poorly-formed cribriform glands (Gleason pattern 4) and individual discrete glands (Gleason pattern 3). The malignant glands are lined by cells with enlarged nuclei, prominent nucleoli, and scant cytoplasm. Perineural invasion is identified. The tumor involves approximately 60% of the core tissue examined. \nGross Description:\nReceived in formalin labeled \"prostate, left base\" are four tan-white cylindrical tissue cores, ranging from 1.1 to 1.4 cm in length. All tissue submitted in one cassette.\nComments:\nThe findings are consistent with prostatic adenocarcinoma, Gleason Score 7. The presence of a dominant Gleason pattern 4 and perineural invasion are adverse prognostic factors. Correlation with serum PSA levels and clinical staging is recommended.\nBiomarkers:\nImmunohistochemical stains for high molecular weight cytokeratin (HMWCK) and p63 are negative in the malignant glands, supporting the diagnosis of adenocarcinoma. No further molecular biomarker testing indicated on this specimen.\nPage 1 of 1",
+  "ocr_text": "Patient Name: Robert Brown MRN: 6543210\nLAKESWOOD\nHOSPITAL\nNorth Star Health System\n450 Northland Blvd Aurora, CO\n80011\nPhone: (303) 555-1212 Fax: (303)\n555-1213\nPATHOLOGY REPORT\n831676002937\nDate of Birth: 03/12/1950\nAge: 75\nGender: Male\nPatient Address: 567 Birch Lane,\nAurora, CO 80011\nAccession Number: P25-01234\nDate of Collection: 06/19/2025\nTime of Collection: 02:45 PM\nSpecimen Type: Prostate, Needle Core Biopsy\nOrdering Physician: Dr. Sarah\nJenkins, MD\nPractice: Rocky Mountain Urology\nAddress: 890 Wellness Way, Suite\n200, Aurora, CO 80012\nPhone: (303) 555-8800\nFinal Diagnosis:\nProstate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3)\nMicroscopic Description:\nSections show prostatic acini replaced by infiltrative, poorly-formed cribriform glands (Gleason\npattern 4) and individual discrete glands (Gleason pattern 3). The malignant glands are lined by cells\nwith enlarged nuclei, prominent nucleoli, and scant cytoplasm. Perineural invasion is identified. The\ntumor involves approximately 60% of the core tissue examined.\nGross Description:\nReceived in formalin labeled \"prostate, left base\" are four tan-white cylindrical tissue cores, ranging\nfrom 1.1 to 1.4 cm in length. All tissue submitted in one cassette.\nComments:\nThe findings are consistent with prostatic adenocarcinoma, Gleason Score 7. The presence of a\ndominant Gleason pattern 4 and perineural invasion are adverse prognostic factors. Correlation with\nserum PSA levels and clinical staging is recommended.\nBiomarkers:\nImmunohistochemical stains for high molecular weight cytokeratin (HMWCK) and p63 are negative in\nthe malignant glands, supporting the diagnosis of adenocarcinoma. No further molecular biomarker\ntesting indicated on this specimen.\nPage 1 of 1",
+  "ocr_seconds": 23.9,
+  "ocr_quality": {
+   "cer": 0.11307824100513993,
+   "wer": 0.13414634146341464,
+   "char_errors": 198,
+   "gold_chars": 1751,
+   "word_errors": 33,
+   "gold_words": 246,
+   "words_matched": 245,
+   "pred_words": 246
+  },
+  "gold_parts": [
+   "47343b018f0c96a6"
+  ],
+  "ocr_parts": [
+   "f124c6bb9e2209cf"
+  ]
+ },
+ {
+  "id": "health_clinocr_normal_t4_s3",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_normal_t4_s3.jpg",
+  "type": "clinocr_normal",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "GENERALHOSPITAL\n\nHOSPITAL\n\nDate of Visit: 06/21/2025\n\nAttending Provider: Dr. David Chen, MD\n\nLocation: Community Urgent Care Center\n\nVisit ID: ENC-135792468\n\nDate of Birth: 03/02/1987 Age: 38 Sex: Female\n\nAddress: 456 Oak Avenue, Springfield, USA 67890\n\nChief Complaints:\n\nWorsening shortness of breath\n\nAudible wheezing\n\nChest tightness\n\nNon-productive cough\n\nMedical History Snapshot:\n\nAsthma: Diagnosed in childhood.\n\nSeasonal Allergic Rhinitis: History of seasonal allergies, particularly in the spring.\n\nSurgical History: None.\n\nFamily History: Mother with a history of asthma and eczema.\n\nMedications:\n\nAlbuterol HFA (ProAir®) 90 mcg/actuation inhaler, 2 puffs every 4-6 hours as needed.\n\nFluticasone/Salmeterol (Advair Diskus®) 250/50 mcg, 1 inhalation twice daily.\n\nAllergies: Penicillin (causes a rash).\n\nVisit Summary:\n\nThis 38-year-old female with a known history of persistent asthma presents with a three-day history of progressively worsening shortness of breath, wheezing, and chest tightness. She reports developing a mild upper respiratory infection about one week ago, which has now resolved, but her respiratory symptoms have since escalated. She has increased the use of her rescue Albuterol inhaler to 6-7 times per day with only partial, temporary relief. Examination revealed a patient in mild respiratory distress with audible wheezing. A DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment was administered in the office, which provided significant improvement in her work of breathing and reduced wheezing on auscultation. She is discharged with a prescription for a 5-day course of oral Prednisone. The patient was educated on her asthma action plan, the signs of a severe exacerbation requiring emergency care, and the importance of adherence to her controller medication. She will follow up with her primary care physician in 3-5 days.\n\nExams:",
+  "ocr_text": "Date of Visit: 06/21/2025\nAttending Provider: Dr. David Chen, MD\nLocation: Community Urgent Care Center\nVisit ID: ENC-135792468\n\nGENERALHOSPITAL\nHOSPITAL\n\nDate of Birth: 03/02/1987 Age: 38 Sex: Female\nAddress: 456 Oak Avenue, Springfield, USA 67890\n\nChief Complaints:\n• Worsening shortness of breath\n• Audible wheezing\n• Chest tightness\n• Non-productive cough\n\nMedical History Snapshot:\nAsthma: Diagnosed in childhood.\nSeasonal Allergic Rhinitis: History of seasonal allergies, particularly in the spring.\nSurgical History: None.\nFamily History: Mother with a history of asthma and eczema.\nMedications:\nAlbuterol HFA (ProAir®) 90 mcg/actuation inhaler, 2 puffs every 4-6 hours as needed.\nFluticasone/Salmeterol (Advair Diskus®) 250/50 mcg, 1 inhalation twice daily.\nAllergies: Penicillin (causes a rash).\n\nVisit Summary:\nThis 38-year-old female with a known history of persistent asthma presents with a three-day history of progressively worsening shortness of breath, wheezing, and chest tightness. She reports developing a mild upper respiratory infection about one week ago, which has now resolved, but her respiratory symptoms have since escalated. She has increased the use of her rescue Albuterol inhaler to 6-7 times per day with only partial, temporary relief. Examination revealed a patient in mild respiratory distress with audible wheezing. A DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment was administered in the office, which provided significant improvement in her work of breathing and reduced wheezing on auscultation. She is discharged with a prescription for a 5-day course of oral Prednisone. The patient was educated on her asthma action plan, the signs of a severe exacerbation requiring emergency care, and the importance of adherence to her controller medication. She will follow up with her primary care physician in 3-5 days.",
+  "ocr_seconds": 28.2,
+  "ocr_quality": {
+   "cer": 0.034777956126270736,
+   "wer": 0.033582089552238806,
+   "char_errors": 65,
+   "gold_chars": 1869,
+   "word_errors": 9,
+   "gold_words": 268,
+   "words_matched": 267,
+   "pred_words": 271
+  },
+  "gold_parts": [
+   "f419b22c3b0d7846"
+  ],
+  "ocr_parts": [
+   "4268b6885cc4bf65"
+  ]
+ },
+ {
+  "id": "health_clinocr_normal_t5_s7",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_normal_t5_s7.jpg",
+  "type": "clinocr_normal",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Midwest Orthopedics & Sports Medicine Center 950 N. Clark Street, Chicago, IL 60610 \nPatient: Chloe Davis MRN: 556677 DOB: 08/25/2004\nChief Complaint\nLeft knee pain and instability after an injury during a soccer game today.\nCare Team\nAttending Physician: Dr. Marcus Thorne, MD Pager: (312) 555-2355\nPharmacies\nCVS Pharmacy 1120 S. Canal Street, Chicago, IL 60607 Phone: (312) 555-1199 \nVital sign\nT: 98.6°F \nHR: 78 bpm \nBP: 124/76 mmHg \nRR: 16 breaths/min \nO2 Sat: 100% on room air \nAllergies\nNo Known Drug Allergies\nMedications\nNaproxen 220 mg, as needed for pain\nVaccines\nAll immunizations up to date.\nProblems\nAcute Left Knee Pain \nLeft Knee Effusion\nFamily History\nNon-contributory. Parents are in good health.\nSocial History\nTobacco: Denies \nAlcohol: Denies \nOccupation: College student, plays on the university soccer team.",
+  "ocr_text": "Midwest Orthopedics & Sports Medicine Center 950 N. Clark Street, Chicago, IL 60610\nPatient: Chloe Davis MRN: 556677 DOB: 08/25/2004\nChief Complaint\nLeft knee pain and instability after an injury during a soccer game today.\nCare Team\nAttending Physician: Dr. Marcus Thorne, MD Pager: (312) 555-2355\nPharmacies\nCVS Pharmacy 1120 S. Canal Street, Chicago, IL 60607 Phone: (312) 555-1199\nVital sign\nT: 98.6°F\nHR: 78 bpm\nBP: 124/76 mmHg\nRR: 16 breaths/min\nO2 Sat: 100% on room air\nAllergies\nNo Known Drug Allergies\nMedications\n• Naproxen 220 mg, as needed for pain\nVaccines\n• All immunizations up to date.\nProblems\n• Acute Left Knee Pain\n• Left Knee Effusion\nFamily History\nNon-contributory. Parents are in good health.\nSocial History\nTobacco: Denies\nAlcohol: Denies\nOccupation: College student, plays on the university soccer team.",
+  "ocr_seconds": 17.7,
+  "ocr_quality": {
+   "cer": 0.00975609756097561,
+   "wer": 0.03125,
+   "char_errors": 8,
+   "gold_chars": 820,
+   "word_errors": 4,
+   "gold_words": 128,
+   "words_matched": 128,
+   "pred_words": 132
+  },
+  "gold_parts": [
+   "f6765c2b6ea747e0"
+  ],
+  "ocr_parts": [
+   "174f98e34f1c0842"
+  ]
+ },
+ {
+  "id": "health_clinocr_normal_t7_s4",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_normal_t7_s4.jpg",
+  "type": "clinocr_normal",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "HOSPITAL\nUniversity Dermatology Associates\n950 Campus Drive, Suite 210\nDurham, NC 27708\n(919) 555-3400\nPatient Name: Michael Johnson \nMRN: 7321856 \nDOB: 08/15/2002 \nGender: Male \nAge: 22\nMRN: 7321856 \nAccession: P25-9876 \nDate: 06/19/2025\nThe patient is a 22-year-old male who presented for a routine skin examination. He noted a mole on his upper back that he believes has become slightly darker over the past year. He denies any symptoms of pain or itching associated with the lesion. He has a history of significant sun exposure during his teen years and reports occasional sunburns.\nPROCEDURES:\nShave Biopsy, Upper Back: A 5mm pigmented macule was identified on the superior aspect of the right scapula. After obtaining consent, the area was anesthetized with 1% lidocaine with epinephrine, and a deep shave biopsy of the lesion was performed. Hemostasis was achieved with aluminum chloride. The specimen was sent for histopathologic examination.\nIMPRESSION:\nMICROSCOPIC DESCRIPTION: Sections show a symmetric, well-circumscribed proliferation of nested and single melanocytes confined to the dermal-epidermal junction. The melanocytes are uniform in size and shape with no significant cytologic atypia. No mitotic activity or ulceration is identified.\nDIAGNOSIS: Junctional melanocytic nevus, benign.\nPatient Name: Michael Johnson MRN: 7321856 Age: 22\nElectronically Signed By: Dr. Angela Davis, M.D. (Pathology)\nDate: 06/23/2025 Time: 09:05",
+  "ocr_text": "HOSPITAL\nUniversity Dermatology Associates\n950 Campus Drive, Suite 210\nDurham, NC 27708\n(919) 555-3400\n\nPatient Name: Michael Johnson\nMRN: 7321856\nDOB: 08/15/2002\nGender: Male\nAge: 22\n\nMRN: 7321856\nAccession: P25-9876\nDate: 06/19/2025\n\nThe patient is a 22-year-old male who presented for a routine skin examination.\nHe noted a mole on his upper back that he believes has become slightly darker\nover the past year. He denies any symptoms of pain or itching associated with the\nlesion. He has a history of significant sun exposure during his teen years and\nreports occasional sunburns.\n\nPROCEDURES:\nShave Biopsy, Upper Back: A 5mm pigmented macule was identified on the\nsuperior aspect of the right scapula. After obtaining consent, the area was\nanesthetized with 1% lidocaine with epinephrine, and a deep shave biopsy of the\nlesion was performed. Hemostasis was achieved with aluminum chloride. The\nspecimen was sent for histopathologic examination.\n\nIMPRESSION:\nMICROSCOPIC DESCRIPTION: Sections show a symmetric, well-circumscribed\nproliferation of nested and single melanocytes confined to the dermal-epidermal\njunction. The melanocytes are uniform in size and shape with no significant\ncytologic atypia. No mitotic activity or ulceration is identified.\nDIAGNOSIS: Junctional melanocytic nevus, benign.\n\nPatient Name: Michael Johnson MRN: 7321856 Age: 22\n\nElectronically Signed By: Dr. Angela Davis, M.D. (Pathology)\nDate: 06/23/2025 Time: 09:05",
+  "ocr_seconds": 21.6,
+  "ocr_quality": {
+   "cer": 0.0,
+   "wer": 0.0,
+   "char_errors": 0,
+   "gold_chars": 1440,
+   "word_errors": 0,
+   "gold_words": 210,
+   "words_matched": 210,
+   "pred_words": 210
+  },
+  "gold_parts": [
+   "fe0fb5ba6edfe0f6"
+  ],
+  "ocr_parts": [
+   "87488aeb06df6ebe"
+  ]
+ },
+ {
+  "id": "health_clinocr_handwriting_t1_s2",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_handwriting_t1_s2.jpg",
+  "type": "clinocr_handwriting",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient: John Smith DOB: 05/20/1965 MRN: 789012 \nAccession #: A583920-25\nSPRINGFIELD GENERAL HOSPITAL\nSunrise Diagnostics Phone: \nNorth Valley Imaging Center 456 Oak Avenue, Suite 200 Anytown, USA 12345\n(555) 123-4567 \nPatient: John Smith \nDOB: 05/20/1965 \nMRN: 789012\nGender: Male Referring Physician: Dr. Emily White\nVisit #: 456-789 Date of Visit: 06/18/2025\nDiagnostic Imaging Report - Chest X-ray (2 views)\nProcedure: Radiography of the chest, posteroanterior and lateral views.\nClinical Indication: Persistent cough and shortness of breath.\nFindings: The lungs are clear without evidence of consolidation, infiltrate, or effusion. The cardiomediastinal silhouette is within normal limits. The osseous structures of the thorax are unremarkable.\nImpression: No acute cardiopulmonary process.\nScheduled appointments:\nFollow-up appointment with Dr. White scheduled for 06/25/2025 at 11:00 AM to discuss the results and further management.\nDate of Dictation: 06/18/2025 Technician: Sarah Jenkins, RT(R)\nCONFIDENTIALITY NOTICE: This report contains confidential patient information protected by federal and state law. It is intended only for the use of the individual or entity to whom it is addressed. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or action taken in reliance on the contents of these documents is strictly prohibited. If you have received this report in error, please notify the sender immediately by telephone at (217) 555-1212 and destroy this document. \nSpringfield General Hospital Imaging Department | 123 Health Way, Springfield, IL, 62704",
+  "ocr_text": "Patient: John Smith DOB: 05/20/1965 MRN: 789012\nAccession #: A583920-25\n\nSPRINGFIELD\nGENERAL\nHOSPITAL\n\nSunrise Diagnostics Phone:\nNorth Valley Imaging Center 456\nOak Avenue, Suite 200 Anytown,\nUSA 12345\n(555) 123-4567\n\nPatient: John Smith\nDOB: 05/20/1965\nMRN: 789012\nGender: Male Referring\nPhysician: Dr. Emily White\n\nVisit #: 456-789 Date of Visit: 06/18/2025\nDiagnostic Imaging Report - Chest X-ray (2 views)\nProcedure: Radiography of the chest, posteroanterior and lateral views.\nClinical Indication: Persistent cough and shortness of breath.\n\nFindings: The lungs are clear without evidence of consolidation infiltrate or effusion The cardiomediastinal silhouette is within normal limits The osseous structures of the thorax are unremarkable\n\nImpression No acute cardiopulmonary process.\n\nScheduled appointments:\nFollow-up appointment with Dr. White scheduled for 06/25/2025 at 11:00 AM to discuss the results and further management.\n\nDate of Dictation: 06/18/2025 Technician: Sarah Jenkins, RT(R)\n\nCONFIDENTIALITY NOTICE: This report contains confidential patient information protected by federal\nand state law. It is intended only for the use of the individual or entity to whom it is addressed. If you are\nnot the intended recipient, you are hereby notified that any disclosure, copying, distribution, or action\ntaken in reliance on the contents of these documents is strictly prohibited. If you have received this\nreport in error, please notify the sender immediately by telephone at (217) 555-1212 and destroy this\ndocument.\nSpringfield General Hospital Imaging Department | 123 Health Way, Springfield, IL, 62704",
+  "ocr_seconds": 22.0,
+  "ocr_quality": {
+   "cer": 0.0037220843672456576,
+   "wer": 0.02631578947368421,
+   "char_errors": 6,
+   "gold_chars": 1612,
+   "word_errors": 6,
+   "gold_words": 228,
+   "words_matched": 228,
+   "pred_words": 228
+  },
+  "gold_parts": [
+   "30c47d9934f337da"
+  ],
+  "ocr_parts": [
+   "23cffbd0d954d572"
+  ]
+ },
+ {
+  "id": "health_clinocr_handwriting_t2_s4",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_handwriting_t2_s4.jpg",
+  "type": "clinocr_handwriting",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient Name: Emily White MRN: 9876543\n\nLAKEWOOD HOSPITAL\n\nPATHOLOGY REPORT\n\n831676002937\n\nDate of Birth: \n\n11/30/1955 \n\nAge: 69 \n\nGender: Female \n\nPatient Address: 789 Pine Street, Seaside, USA 54321\n\nCoastal Medical Center \n\n456 Ocean View Drive Seaside, USA 54321 \n\nPhone: (555) 234-5678 \n\nFax: (555) 234-5679\n\nAccession Number: P2025-67890\n\nDate of Collection: 06/20/2025\n\nTime of Collection: 09:00 AM\n\nSpecimen Type: Lung, Right Upper Lobe, Wedge Resection\n\nOrdering Physician: Dr. Michael Chen, MD \n\nPractice: Thoracic Surgery Associates \n\nAddress: 101 Medical Plaza, Seaside, USA 54321 \n\nPhone: (555) 876-5432\n\nFinal Diagnosis:\n\nLung, right upper lobe: Adenocarcinoma, lepidic predominant, well-differentiated.\n\nMicroscopic Description:\n\nThe sections demonstrate a proliferation of atypical pneumocytes along the alveolar septa in a lepidic growth pattern. The tumor cells are cuboidal to columnar with mild nuclear atypia and inconspicuous nucleoli. There are focal areas of invasion measuring less than 0.5 cm. The surrounding lung parenchyma shows mild emphysematous changes. Surgical margins are negative for malignancy.\n\nGross Description:\n\nReceived fresh, labeled with the patient's name and \"right upper lobe wedge,\" is a 5.5 x 3.2 x 2.1 cm wedge of lung tissue with a smooth, glistening pleural surface. Sectioning reveals a solitary, ill-defined, tan-white nodule measuring 1.2 cm in greatest dimension, located 0.8 cm from the nearest staple line.\n\nComments:\n\nThe tumor is a well-differentiated adenocarcinoma with a predominant lepidic growth pattern. The surgical margins are free of tumor. Correlation with preoperative imaging is recommended.\n\nBiomarkers:\n\nPD-L1 Immunohistochemistry:\n\nTumor Proportion Score (TPS): < 1%\n\nMolecular Testing:\n\nEGFR Mutation Analysis: Negative for common activating mutations in exons 18, 19, 20, and 21.\n\nALK Gene Rearrangement (FISH): Negative",
+  "ocr_text": "Patient Name: Emily White MRN: 9876543\n\nLAKWOOD\n\nHOSPITAL\n\nCoastal Medical Center\n\n456 Ocean View Drive Seaside,\n\nUSA 54321\n\nPhone: (555) 234-5678\n\nFax: (555) 234-5679\n\nPATHOLOGY REPORT\n\n831676002937\n\nDate of Birth: 11/30/1955\n\nAge: 67\n\nGender: Female\n\nPatient Address: 789 Pine\n\nStreet Seaside, USA\n\n54321\n\nAccession Number: P2025-67810\n\nDate of Collection: 06/20/2025\n\nTime of Collection: 07:00 AM\n\nSpecimen Type: Lung, Right Upper Lobe, Wedge\n\nRejection\n\nOrdering Physician:\n\nDr. Michael Chen, MD\n\nPractice: Thoracic Surgery\n\nAppointments\n\nAddress: 101 Medical Plaza\n\nSeaside, USA 54321\n\nPhone: (555) 876-5432\n\nFinal Diagnosis:\n\nLung, right upper lobe: Adenocarcinoma, lepidic predominant, well\n\ndifferentiated.\n\nMicroscopic Description:\n\nThe sections demonstrate a proliferation of atypical pneumocytes along the\n\nalveolar septa in a lepidic growth pattern. The tumor cells are cuboidal to\n\ncolumnar with mild nuclear atypia and inconspicuous nucleoli. There are\n\nfocal areas of invasion measuring less than 0.5 cm. The surrounding lung\n\nparenchyma shows mild emphysematous changes. Surgical margins are negative\n\nfor malignancy.\n\nGross Description:\n\nReceived fresh, labeled with the patient's name and right upper lobe wedge; is\n\na 5.5 x 3.2 x 2.1 cm wedge of lung tissue with a smooth, glistening pleural\n\nsurface. Sectioning reveals a solitary, ill-defined, tan-white nodule measuring 1.2\n\ncm in greatest dimension, located 0.8 cm from the nearest staple line.\n\nComments:\n\nThe tumor is a well-differentiated adenocarcinoma with a predominant\n\nlepidic growth pattern. The surgical margins are free of tumor. Correlation\n\nwith preoperative imaging is recommended.\n\nRemark:\n\nPD-L1 Immunohistochemistry: Tumor Proportion Score (TPS): 0%\n\nMolecular Testing:\n\nEGFR Mutation Analysis: Negative for common activating mutations in exons 18, 19, 20, and 21.\n\nALK Gene Rearrangement (FISH): Negative",
+  "ocr_seconds": 25.1,
+  "ocr_quality": {
+   "cer": 0.1242571582928147,
+   "wer": 0.17624521072796934,
+   "char_errors": 230,
+   "gold_chars": 1851,
+   "word_errors": 46,
+   "gold_words": 261,
+   "words_matched": 251,
+   "pred_words": 261
+  },
+  "gold_parts": [
+   "9e92de2b97bab604"
+  ],
+  "ocr_parts": [
+   "ad9979bd867792ee"
+  ]
+ },
+ {
+  "id": "health_clinocr_handwriting_t3_s6",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_handwriting_t3_s6.jpg",
+  "type": "clinocr_handwriting",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient Name: Richard P. Davis MRN: 31415926\n\nRIVERSIDE HOSPITAL\n\nCoastal Gastroenterology Institute \n\n200 Oceanfront Medical Plaza Charleston, SC 29401 \n\nPhone: (843) 555-2000 \n\nFax: (843) 555-2001 \n\nProcedure Date: June 21, 2025\n\nYou have now completed your colonoscopy procedure, which was performed with the aid of intravenous sedation. The sedative medications are very effective but have lingering effects that will impair your judgment, motor skills, and memory for up to 24 hours. For your personal safety and well-being, it is imperative that you (and your designated escort) carefully review and follow these detailed post-procedure instructions.\n\nIMMEDIATE POST-PROCEDURE SAFETY (Next 24 Hours)\n\nThese restrictions are not recommendations; they are mandatory for your safety.\n\nTransportation and Escort: You must be driven home by a responsible adult. You are strictly forbidden from driving a vehicle, operating a bicycle, or taking public transportation (bus, taxi, rideshare) alone.\n\nConstant Supervision: A responsible adult must remain with you for the remainder of the day and overnight. The effects of anesthesia can increase the risk of falls, confusion, and accidental injury. This person's role is to assist you and to seek medical help should any complications arise.\n\nRestricted Activities: You must avoid all of the following activities for a full 24 hours:\n\nOperating any machinery, including power tools, kitchen appliances, and lawn equipment.\n\n(a) Normal Colon\n\n(b) Colon\n\nImpressions:\n\nNegative Colonoscopy: Successful and complete colonoscopy to the terminal ileum. The quality of the bowel preparation was excellent, allowing for full mucosal visualization. There were no polyps, masses, inflammatory changes, or other abnormalities noted throughout the colon.",
+  "ocr_text": "Patient Name: Richard P. Davis MRN: 31415926\n\nCoastal Gastroenterology Institute\n200 Oceanfront Medical Plaza Charleston,\nSC 29401\nPhone: (843) 555-2000\nFax: (843) 555-2001\nProcedure Date: June 21, 2025\n\n(You have now completed your colonoscopy procedure, which\nwas performed with the aid of intravenous sedation. The\nsedative medications are very effective but have lingering\neffects that will impair your judgment, motor skills, and\nmemory for up to 24 hours. For your personal safety and well-\nbeing, it is imperative that you (and your designated escort)\ncarefully review and follow these detailed post-procedure\ninstructions\n\nIMMEDIATE POST-PROCEDURE SAFETY (Next 24 Hours)\n\nThese restrictions are not recommendations; they are\nmandatory for your safety.\n\nTransportation and Escort: You must be driven home by a responsible\nadult. (You are strictly forbidden from driving a vehicle, operating a\nbicycle, or taking public transportation (bus, taxi, rideshare) alone\n\nConstant Supervision: A responsible adult must remain with\nyou for the remainder of the day and overnight. The effects\nof anesthesia can increase the risk of falls, confusion, and\naccidental injury. This person's role is to assist you and to\nseek medical help should any complications arise\n\nRestricted Activities: You must avoid all of the following\nactivities for a full 24 hours:\n\nOperating any machinery, including power tools,\nkitchen appliances, and lawn equipment.\n\n(a) Normal Colon\n\n(b) Colon\n\nImpressions:\n\nNegative Colonoscopy: Successful and complete colonoscopy to the terminal ileum. The quality of\nthe bowel preparation was excellent, allowing for full mucosal visualization. There were no polyps,\nmasses, inflammatory changes, or other abnormalities noted throughout the colon.",
+  "ocr_seconds": 23.8,
+  "ocr_quality": {
+   "cer": 0.014124293785310734,
+   "wer": 0.0311284046692607,
+   "char_errors": 25,
+   "gold_chars": 1770,
+   "word_errors": 8,
+   "gold_words": 257,
+   "words_matched": 254,
+   "pred_words": 255
+  },
+  "gold_parts": [
+   "bd60e3d0bca4cca2"
+  ],
+  "ocr_parts": [
+   "a95b32427bc6cbc2"
+  ]
+ },
+ {
+  "id": "health_clinocr_handwriting_t5_s2",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_handwriting_t5_s2.jpg",
+  "type": "clinocr_handwriting",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Northwood Community Hospital 789 Pine Street, Northwood, CA 90210 Phone: (310) 555-0101\nPatient: Michael Johnson MRN: 456789 DOB: 11/22/1995\nChief Complaint\nSevere right lower quadrant abdominal pain, started yesterday, associated with nausea and fever.\nCare Team\nAttending Physician: Dr. Emily Chen, MD Pager: (310) 555-0112\nPharmacies\nCVS Pharmacy 4500 Beverly Blvd, Los Angeles, CA 90022 Phone: (323) 555-0145\nVital sign\nT: 101.5°F \nHR: 110 bpm \nBP: 125/78 mmHg \nRR: 18 breaths/min \nO2 Sat: 99% on room air\nAllergies\nNo Known Drug Allergies\nMedications\nIbuprofen 200 mg as needed for pain\nVaccines\nAll childhood immunizations up to date.\nProblems\nAcute Abdominal Pain\nFever\nFamily History\nFather: Healthy\nMother: History of migraine headaches\nPaternal Uncle: Had appendectomy at age 25.\nSocial History\nTobacco: Denies\nAlcohol: Denies\nOccupation: Graduate student.",
+  "ocr_text": "Northwood Community Hospital 789 Pine Street, Northwood, CA 90210 Phone: (310) 555-0101\n\nPatient: Michael Johnson\nMRN: 456789\nDOB: 1/22/1995\n\nChief Complaint\nSevere right lower quadrant abdominal pain, started yesterday, associated with nausea and fever.\n\nCare Team\nAttending Physician: Dr. Emily Chen, M.D. Pager: (310) 555-0112\n\nPharmacies\nCVS Pharmacy 4500 Beverly Blvd., Los Angeles, CA 90022 Phone: (323) 555-0145\n\nVital sign\nT: 101.5°F\nBP: 125/88 mmHg\nHR: 110 bpm\nRR: 18 breaths/min\nO2 Sat: 99% on room air\n\nAllergies\nNo Known Drug Allergies\n\nMedications\nIbuprofen 200 mg as needed for pain\n\nVaccines\nAll childhood immunizations up to date.\n\nProblems\n• Acute Abdominal Pain\n• Fever\n\nFamily History\nFather: Healthy\nMother: History of migraine headaches\nPaternal Uncle: Had appendectomy at age 25.\n\nSocial History\nTobacco: Never\nAlcohol: Never\nOccupation: Graduate student.",
+  "ocr_seconds": 16.7,
+  "ocr_quality": {
+   "cer": 0.04408352668213457,
+   "wer": 0.10236220472440945,
+   "char_errors": 38,
+   "gold_chars": 862,
+   "word_errors": 13,
+   "gold_words": 127,
+   "words_matched": 122,
+   "pred_words": 129
+  },
+  "gold_parts": [
+   "a76eb4062910ac4c"
+  ],
+  "ocr_parts": [
+   "8eb84c64c0a952ea"
+  ]
+ },
+ {
+  "id": "health_clinocr_handwriting_t6_s4",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_handwriting_t6_s4.jpg",
+  "type": "clinocr_handwriting",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "PRECISION DIAGNOSTIC LAB\n831676002937\nPatient Name: William Johnson Date of Birth: 09/01/1956 \nMRN: 789321\nOrdering Physician: Dr. Robert Anderson \nProcedure: Ultrasound-guided prostate needle biopsy\nAccession #: SU-25-11223\nDate of Procedure: 06/20/2025 Date of Report: 06/25/2025\nClinical History: 69-year-old male with an elevated serum PSA of 9.2 ng/mL.\nDiagnosis:\nA) Prostate, Right Base, Biopsy: Benign prostatic tissue.\nB) Prostate, Right Mid, Biopsy: Adenocarcinoma, Gleason Score 3+4=7.\nC) Prostate, Right Apex, Biopsy: Adenocarcinoma, Gleason Score 3+4=7.\nD-F) Prostate, Left Base, Mid, Apex, Biopsy: Benign prostatic tissue with features of benign prostatic hyperplasia (BPH).\nGross Description: The specimen consists of twelve parts (A-L), each containing one to three tan-white, threadlike tissue cores measuring from 1.0 to 1.5 cm in length. All tissue is submitted.\nMicroscopic Description: Multiple cores of prostatic tissue are examined. The majority of cores (A, D, E, F, and H-L) show benign glands with features of nodular hyperplasia. Cores from the right mid-gland (B) and right apex (C) show infiltrating, small, crowded glands with enlarged nuclei and prominent nucleoli. The tumor is composed of well-formed glands (Gleason pattern 3) and poorly-formed/fused glands (Gleason pattern 4). Perineural invasion is identified in core C. No extraprostatic extension is seen.\nTumor Summary:\nHistologic Type: Acinar Adenocarcinoma\nGleason Score: 3 + 4 = 7\nWHO/ISUP Grade Group: 2\nCores Involved: 2 of 12 (17%)\nTumor Extent: Cancer involves 30% of core B and 50% of core C.\nPerineural Invasion: Present\nExtraprostatic Extension: Not identified\nSpecimen: Prostate, needle core biopsies (12 cores)biopsy\nPathologist: Dr. Olivia Martinez\nReport status: Final\nAccession #: SU-25-11223\nPage 1 of 1",
+  "ocr_text": "PRECISION\nDIAGNOSTIC\nLAB\n\n831676002937\n\nPatient Name: William Johnson\nDate of Birth: 09/01/1956\nMRN: 789321\nAccession #: SU-25-11223\n\nOrdering Physician: Dr. Robert Anderson\nProcedure: Ultrasound-guided\nprostate needle biopsy\n\nDate of Procedure: 06/20/2025\nDate of Report: 06/25/2025\n\nClinical History:\n69-year-old male with an elevated serum PSA of 9.2 ng/mL\n\nDiagnosis\nA) Prostate Right Base Biopsy Benign prostatic tissue.\nB) Prostate Right Mid Biopsy Adenocarcinoma Gleason Score 3+4=7.\nC) Prostate Right Apex Biopsy Adenocarcinoma Gleason Score 3+4=7.\nD) Prostate Left Base Mid Apex Biopsy Benign prostatic tissue (BPH).\n\nGross Description: The specimen consists of twelve parts (A-L) each containing one to three tan-white threadlike tissue cores measuring from 1.0 to 1.5 cm in length. All tissue is submitted.\n\nMicroscopic Description: Multiple cores of prostatic tissue were examined. The majority of cores (A, D, E, F and H-L) show benign glands with features of nodular hyperplasia. Cores from the right mid-portion (B) and right apex (C) show infiltrating small crowded glands with enlarged nuclei and prominent nucleoli. The tumor is composed of well-formed glands (Gleason pattern 3) and poorly-formed/fused glands (Gleason pattern 4). Perineural invasion is identified in core C. No extraprostatic extension is seen.\n\nTumor Summary:\nHistologic Type Acinar Adenocarcinoma\nGleason Score 3 + 4 = 7\nWHO/ISUP Grade Group 2\nCores Involved: 2 of 12 (17%)\nTumor Extent: Cancer involves 30% of core B and 50% of core C.\nPerineural Invasion Present\nExtraprostatic Extension Not identified\n\nSpecimen: Prostate needle core\nbiopsies (12 cores/biopsy)\n\nPathologist Dr. Olivia Martinez\n\nReport status: Final\n\nAccession #: SU-25-11223\nPage 1 of 1",
+  "ocr_seconds": 22.3,
+  "ocr_quality": {
+   "cer": 0.07491675915649279,
+   "wer": 0.16988416988416988,
+   "char_errors": 135,
+   "gold_chars": 1802,
+   "word_errors": 44,
+   "gold_words": 259,
+   "words_matched": 249,
+   "pred_words": 253
+  },
+  "gold_parts": [
+   "98935333a7b495be"
+  ],
+  "ocr_parts": [
+   "ba2de4b0f209740f"
+  ]
+ },
+ {
+  "id": "health_clinocr_handwriting_t7_s6",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_handwriting_t7_s6.jpg",
+  "type": "clinocr_handwriting",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "HOSPITAL\nCoastal Heart Institute\n85 Waterfront Drive\nCharleston, SC 29401\n(843) 555-2300\nPatient Name: Robert Davis \nMRN: 4478102 \nDOB: 09/30/1974 \nGender: Male \nAge: 50\nMRN: 4478102 \nAccession: E25-4511 \nDate: 06/23/2025\nThe patient is a 50-year-old male who presents with a complaint of intermittent heart palpitations over the past three months. He describes the episodes as a \"fluttering\" sensation in his chest that lasts for a few seconds and resolves spontaneously. Episodes occur 2-3 times per week with no clear trigger. He reports increased work-related stress recently and consumes 3-4 cups of coffee per day. He denies chest pain, syncope, or shortness of breath.\nPROCEDURES:\n12-Lead EKG: Performed in the office today. \n24-Hour Holter Monitor: Patient was provided with the device and instructed on its use. He will return it to the clinic tomorrow. \nBlood Pressure: 128/84 mmHg.\nIMPRESSION:\nPalpitations, etiology to be determined. Suspect benign premature atrial contractions, potentially exacerbated by caffeine intake and stress.\nNormal sinus rhythm with rare premature atrial contractions seen on in-office EKG.\nAwaiting results of 24-hour Holter monitor for further evaluation.\nPatient Name: Robert Davis MRN: 4478102 Age: 50\nElectronically Signed By: Dr. Patricia Williams, M.D. (Cardiology)\nDate: 06/23/2025 Time: 09:10",
+  "ocr_text": "HOSPITAL\nCoastal Heart Institute\n85 Waterfront Drive\nCharleston, SC 29401\n(843) 555-2300\n\nPatient Name: Robert Davis\nMRN: 4478102\nDOB: 09/30/1974\nGender: Male\n\nMRN: 4478102\nAccession: E25-4511\nDate: 06/23/2025\n\nThe patient is a 50-year-old male who presents with a complaint of intermittent heart palpitations over the past three months. He describes the episodes as a \"fluttering\" sensation in his chest that lasts for a few seconds and resolves spontaneously. Episodes occur 2-3 times per week with no clear trigger. He reports increased work-related stress recently and consumes 3-4 cups of coffee per day. He denies chest pain, syncope or shortness of breath.\n\nPROCEDURES:\n12-Lead EKG: Performed in the office today.\n24-Hour Holter Monitor: Patient was provided with the device and instructed on its use. He will return it to the clinic tomorrow.\nBlood Pressure: 128/84 mmHg.\n\nIMPRESSION:\nPalpitations etiology to be determined. Suspect benign premature atrial contractions, potentially exacerbated by caffeine intake and stress.\nNormal sinus rhythm with rare premature atrial contractions seen on in-office EKG.\nAwaiting results of 24-hour Holter monitor for further evaluation.\n\nPatient Name: Robert Davis MRN: 4478102 Age: 50\n\nElectronically Signed By: Dr. Patricia Williams, M.D. (Cardiology)\nDate: 06/23/2025 Time: 09:10",
+  "ocr_seconds": 20.9,
+  "ocr_quality": {
+   "cer": 0.007518796992481203,
+   "wer": 0.02040816326530612,
+   "char_errors": 10,
+   "gold_chars": 1330,
+   "word_errors": 4,
+   "gold_words": 196,
+   "words_matched": 194,
+   "pred_words": 194
+  },
+  "gold_parts": [
+   "296a6db8418dc797"
+  ],
+  "ocr_parts": [
+   "df50df4fdab28d58"
+  ]
+ },
+ {
+  "id": "health_clinocr_poor_t1_s2",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_poor_t1_s2.jpg",
+  "type": "clinocr_poor",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient: John Smith DOB: 05/20/1965 MRN: 789012 \nAccession #: A583920-25\nSPRINGFIELD GENERAL HOSPITAL\nSunrise Diagnostics Phone: \nNorth Valley Imaging Center 456 Oak Avenue, Suite 200 Anytown, USA 12345\n(555) 123-4567 \nPatient: John Smith \nDOB: 05/20/1965 \nMRN: 789012\nGender: Male Referring Physician: Dr. Emily White\nVisit #: 456-789 Date of Visit: 06/18/2025\nDiagnostic Imaging Report - Chest X-ray (2 views)\nProcedure: Radiography of the chest, posteroanterior and lateral views.\nClinical Indication: Persistent cough and shortness of breath.\nFindings: The lungs are clear without evidence of consolidation, infiltrate, or effusion. The cardiomediastinal silhouette is within normal limits. The osseous structures of the thorax are unremarkable.\nImpression: No acute cardiopulmonary process.\nScheduled appointments:\nFollow-up appointment with Dr. White scheduled for 06/25/2025 at 11:00 AM to discuss the results and further management.\nDate of Dictation: 06/18/2025 Technician: Sarah Jenkins, RT(R)\nCONFIDENTIALITY NOTICE: This report contains confidential patient information protected by federal and state law. It is intended only for the use of the individual or entity to whom it is addressed. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or action taken in reliance on the contents of these documents is strictly prohibited. If you have received this report in error, please notify the sender immediately by telephone at (217) 555-1212 and destroy this document. \nSpringfield General Hospital Imaging Department | 123 Health Way, Springfield, IL, 62704",
+  "ocr_text": "Patient: John Smith DOB: 05/20/1965 MRN: 789012\nAccession #: A583920-25\n\nSPRINGFIELD\nGENERAL\nHOSPITAL\n\nSunrise Diagnostics Phone:\nNorth Valley Imaging Center 456\nOak Avenue, Suite 200 Anytown,\nUSA 12345\n(555) 123-4567\n\nPatient: John Smith\nDOB: 05/20/1965\nMRN: 789012\nGender: Male Referring\nPhysician: Dr. Emily White\n\nVisit #: 456-789 Date of Visit: 06/18/2025\n\nDiagnostic Imaging Report - Chest X-ray (2 views)\n\nProcedure: Radiography of the chest, posteroanterior and lateral views.\nClinical Indication: Persistent cough and shortness of breath.\n\nFindings: The lungs are clear without evidence of consolidation, infiltrate, or effusion. The\ncardiomedial silhouete is within normal limits. The osseous structures of the thorax are\nunremarkable.\n\nImpression: No acute cardiopulmonary process.\n\nScheduled appointments:\nFollow-up appointment with Dr. White scheduled for 06/25/2025 at 11:00 AM to discuss the results and\nfurther management.\n\nDate of Dictation: 06/18/2025 Technician: Sarah Jenkins, RT(R)\n\nCONFIDENTIALITY NOTICE: This report contains confidential patient information protected by federal\nand state law. It is intended only for the use of the individual or entity to whom it is addressed. If you are\nnot the intended recipient, you are hereby notified that any disclosure, copying, distribution, or action\ntaken in reliance on the contents of these documents is strictly prohibited. If you have received this\nreport in error, please notify the sender immediately by telephone at (217) 555-1212 and destroy this\ndocument.\nSpringfield General Hospital Imaging Department | 123 Health Way, Springfield, IL, 62704",
+  "ocr_seconds": 19.6,
+  "ocr_quality": {
+   "cer": 0.0037220843672456576,
+   "wer": 0.008771929824561403,
+   "char_errors": 6,
+   "gold_chars": 1612,
+   "word_errors": 2,
+   "gold_words": 228,
+   "words_matched": 226,
+   "pred_words": 228
+  },
+  "gold_parts": [
+   "30c47d9934f337da"
+  ],
+  "ocr_parts": [
+   "8ff86bb8707a6c0f"
+  ]
+ },
+ {
+  "id": "health_clinocr_poor_t2_s6",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_poor_t2_s6.jpg",
+  "type": "clinocr_poor",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient Name: Robert Brown MRN: 6543210\nLAKEWOOD HOSPITAL\nPATHOLOGY REPORT\n831676002937\nDate of Birth: 03/12/1950 \nAge: 75 \nGender: Male\nPatient Address: 567 Birch Lane, Aurora, CO 80011\nNorth Star Health System \n450 Northland Blvd Aurora, CO 80011 \nPhone: (303) 555-1212 Fax: (303) 555-1213\nAccession Number: P25-01234 \nDate of Collection: 06/19/2025 \nTime of Collection: 02:45 PM \nSpecimen Type: Prostate, Needle Core Biopsy\nOrdering Physician: Dr. Sarah Jenkins, MD \nPractice: Rocky Mountain Urology \nAddress: 890 Wellness Way, Suite 200, Aurora, CO 80012 \nPhone: (303) 555-8800\nFinal Diagnosis:\nProstate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3) \nMicroscopic Description:\nSections show prostatic acini replaced by infiltrative, poorly-formed cribriform glands (Gleason pattern 4) and individual discrete glands (Gleason pattern 3). The malignant glands are lined by cells with enlarged nuclei, prominent nucleoli, and scant cytoplasm. Perineural invasion is identified. The tumor involves approximately 60% of the core tissue examined. \nGross Description:\nReceived in formalin labeled \"prostate, left base\" are four tan-white cylindrical tissue cores, ranging from 1.1 to 1.4 cm in length. All tissue submitted in one cassette.\nComments:\nThe findings are consistent with prostatic adenocarcinoma, Gleason Score 7. The presence of a dominant Gleason pattern 4 and perineural invasion are adverse prognostic factors. Correlation with serum PSA levels and clinical staging is recommended.\nBiomarkers:\nImmunohistochemical stains for high molecular weight cytokeratin (HMWCK) and p63 are negative in the malignant glands, supporting the diagnosis of adenocarcinoma. No further molecular biomarker testing indicated on this specimen.\nPage 1 of 1",
+  "ocr_text": "Patient Name: Robert Brown MRN: 6543210\nLAKEWOOD\nHOSPITAL\nNorth Star Health System\n450 Northland Blvd Aurora, CO\n80011\nPhone: (303) 555-1212 Fax: (303)\n555-1213\nPATHOLOGY REPORT\n831676002937\nDate of Birth: 03/12/1950\nAge: 75\nGender: Male\nPatient Address: 567 Birch Lane,\nAurora, CO 80011\nAccession Number: P25-01234\nDate of Collection: 06/19/2025\nTime of Collection: 02:45 PM\nSpecimen Type: Prostate, Needle Core Biopsy\nOrdering Physician: Dr. Sarah\nJenkins, MD\nPractice: Rocky Mountain Urology\nAddress: 890 Wellness Way, Suite\n200, Aurora, CO 80012\nPhone: (303) 555-8800\nFinal Diagnosis:\nProstate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3)\nMicroscopic Description:\nSections show prostatic acini replaced by infiltrative, poorly-formed cribriform glands (Gleason\npattern 4) and individual discrete glands (Gleason pattern 3). The malignant glands are lined by cells\nwith enlarged nuclei, prominent nucleoli, and scant cytoplasm. Perineural invasion is identified. The\ntumor involves approximately 60% of the core tissue examined.\nGross Description:\nReceived in formalin labeled \"prostate, left base\" are four tan-white cylindrical tissue cores, ranging\nfrom 1.1 to 1.4 cm in length. All tissue submitted in one cassette.\nComments:\nThe findings are consistent with prostatic adenocarcinoma, Gleason Score 7. The presence of a\ndominant Gleason pattern 4 and perineural invasion are adverse prognostic factors. Correlation with\nserum PSA levels and clinical staging is recommended.\nBiomarkers:\nImmunohistochemical stains for high molecular weight cytokeratin (HMWCK) and p63 are negative in\nthe malignant glands, supporting the diagnosis of adenocarcinoma. No further molecular biomarker\ntesting indicated on this specimen.\nPage 1 of 1",
+  "ocr_seconds": 24.9,
+  "ocr_quality": {
+   "cer": 0.11250713877784123,
+   "wer": 0.13008130081300814,
+   "char_errors": 197,
+   "gold_chars": 1751,
+   "word_errors": 32,
+   "gold_words": 246,
+   "words_matched": 246,
+   "pred_words": 246
+  },
+  "gold_parts": [
+   "47343b018f0c96a6"
+  ],
+  "ocr_parts": [
+   "0c8397e74c56d335"
+  ]
+ },
+ {
+  "id": "health_clinocr_poor_t4_s3",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_poor_t4_s3.jpg",
+  "type": "clinocr_poor",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "GENERALHOSPITAL\n\nHOSPITAL\n\nDate of Visit: 06/21/2025\n\nAttending Provider: Dr. David Chen, MD\n\nLocation: Community Urgent Care Center\n\nVisit ID: ENC-135792468\n\nDate of Birth: 03/02/1987 Age: 38 Sex: Female\n\nAddress: 456 Oak Avenue, Springfield, USA 67890\n\nChief Complaints:\n\nWorsening shortness of breath\n\nAudible wheezing\n\nChest tightness\n\nNon-productive cough\n\nMedical History Snapshot:\n\nAsthma: Diagnosed in childhood.\n\nSeasonal Allergic Rhinitis: History of seasonal allergies, particularly in the spring.\n\nSurgical History: None.\n\nFamily History: Mother with a history of asthma and eczema.\n\nMedications:\n\nAlbuterol HFA (ProAir®) 90 mcg/actuation inhaler, 2 puffs every 4-6 hours as needed.\n\nFluticasone/Salmeterol (Advair Diskus®) 250/50 mcg, 1 inhalation twice daily.\n\nAllergies: Penicillin (causes a rash).\n\nVisit Summary:\n\nThis 38-year-old female with a known history of persistent asthma presents with a three-day history of progressively worsening shortness of breath, wheezing, and chest tightness. She reports developing a mild upper respiratory infection about one week ago, which has now resolved, but her respiratory symptoms have since escalated. She has increased the use of her rescue Albuterol inhaler to 6-7 times per day with only partial, temporary relief. Examination revealed a patient in mild respiratory distress with audible wheezing. A DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment was administered in the office, which provided significant improvement in her work of breathing and reduced wheezing on auscultation. She is discharged with a prescription for a 5-day course of oral Prednisone. The patient was educated on her asthma action plan, the signs of a severe exacerbation requiring emergency care, and the importance of adherence to her controller medication. She will follow up with her primary care physician in 3-5 days.\n\nExams:",
+  "ocr_text": "Date of Visit: 06/21/2025\nAttending Provider: Dr. David Chen, MD\nLocation: Community Urgent Care Center\nVisit ID: ENC-135792468\n\nGENERALHOSPITAL\nHOSPITAL\n\nDate of Birth: 03/02/1987 Age: 38 Sex: Female\nAddress: 456 Oak Avenue, Springfield, USA 67890\n\nChief Complaints:\n• Worsening shortness of breath\n• Audible wheezing\n• Chest tightness\n• Non-productive cough\n\nMedical History Snapshot:\nAsthma: Diagnosed in childhood.\nSeasonal Allergic Rhinitis: History of seasonal allergies, particularly in the spring.\nSurgical History: None.\nFamily History: Mother with a history of asthma and eczema.\nMedications:\nAlbuterol HFA (ProAir®) 90 mcg/actuation inhaler, 2 puffs every 4-6 hours as needed.\nFluticasone/Salmeterol (Advair Diskus®) 250/50 mcg, 1 inhalation twice daily.\nAllergies: Penicillin (causes a rash).\n\nVisit Summary:\nThis 38-year-old female with a known history of persistent asthma presents with a three-day history of progressively worsening shortness of breath, wheezing, and chest tightness. She reports developing a mild upper respiratory infection about one week ago, which has now resolved, but her respiratory symptoms have since escalated. She has increased the use of her rescue Albuterol inhaler to 6-7 times per day with only partial, temporary relief. Examination revealed a patient in mild respiratory distress with audible wheezing. A DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment was administered in the office, which provided significant improvement in her work of breathing and reduced wheezing on auscultation. She is discharged with a prescription for a 5-day course of oral Prednisone. The patient was educated on her asthma action plan, the signs of a severe exacerbation requiring emergency care, and the importance of adherence to her controller medication. She will follow up with her primary care physician in 3-5 days.",
+  "ocr_seconds": 25.8,
+  "ocr_quality": {
+   "cer": 0.034777956126270736,
+   "wer": 0.033582089552238806,
+   "char_errors": 65,
+   "gold_chars": 1869,
+   "word_errors": 9,
+   "gold_words": 268,
+   "words_matched": 267,
+   "pred_words": 271
+  },
+  "gold_parts": [
+   "f419b22c3b0d7846"
+  ],
+  "ocr_parts": [
+   "4268b6885cc4bf65"
+  ]
+ },
+ {
+  "id": "health_clinocr_poor_t5_s7",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_poor_t5_s7.jpg",
+  "type": "clinocr_poor",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Midwest Orthopedics & Sports Medicine Center 950 N. Clark Street, Chicago, IL 60610 \nPatient: Chloe Davis MRN: 556677 DOB: 08/25/2004\nChief Complaint\nLeft knee pain and instability after an injury during a soccer game today.\nCare Team\nAttending Physician: Dr. Marcus Thorne, MD Pager: (312) 555-2355\nPharmacies\nCVS Pharmacy 1120 S. Canal Street, Chicago, IL 60607 Phone: (312) 555-1199 \nVital sign\nT: 98.6°F \nHR: 78 bpm \nBP: 124/76 mmHg \nRR: 16 breaths/min \nO2 Sat: 100% on room air \nAllergies\nNo Known Drug Allergies\nMedications\nNaproxen 220 mg, as needed for pain\nVaccines\nAll immunizations up to date.\nProblems\nAcute Left Knee Pain \nLeft Knee Effusion\nFamily History\nNon-contributory. Parents are in good health.\nSocial History\nTobacco: Denies \nAlcohol: Denies \nOccupation: College student, plays on the university soccer team.",
+  "ocr_text": "Midwest Orthopedics & Sports Medicine Center 950 N. Clark Street, Chicago, IL 60610\n\nPatient: Chloe Davis MRN: 556677 DOB: 08/25/2004\n\nChief Complaint\nLeft knee pain and instability after an injury during a soccer game today.\n\nCare Team\nAttending Physician: Dr. Marcus Thorne, MD Pager: (312) 555-2355\n\nPharmacies\nCVS Pharmacy 1120 S. Canal Street, Chicago, IL 60607 Phone: (312) 555-1199\n\nVital sign\nT: 98.6°F\nHR: 78 bpm\nBP: 124/76 mmHg\nRR: 16 breaths/min\nO2 Sat: 100% on room air\n\nAllergies\nNo Known Drug Allergies\n\nMedications\n• Naproxen 220 mg, as needed for pain\n\nVaccines\n• All immunizations up to date.\n\nProblems\n• Acute Left Knee Pain\n• Left Knee Effusion\n\nFamily History\nNon-contributory. Parents are in good health.\n\nSocial History\nTobacco: Denies\nAlcohol: Denies\nOccupation: College student, plays on the university soccer team.",
+  "ocr_seconds": 10.9,
+  "ocr_quality": {
+   "cer": 0.00975609756097561,
+   "wer": 0.03125,
+   "char_errors": 8,
+   "gold_chars": 820,
+   "word_errors": 4,
+   "gold_words": 128,
+   "words_matched": 128,
+   "pred_words": 132
+  },
+  "gold_parts": [
+   "f6765c2b6ea747e0"
+  ],
+  "ocr_parts": [
+   "4c2a89c88694887a"
+  ]
+ },
+ {
+  "id": "health_clinocr_poor_t7_s4",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_poor_t7_s4.jpg",
+  "type": "clinocr_poor",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "HOSPITAL\nUniversity Dermatology Associates\n950 Campus Drive, Suite 210\nDurham, NC 27708\n(919) 555-3400\nPatient Name: Michael Johnson \nMRN: 7321856 \nDOB: 08/15/2002 \nGender: Male \nAge: 22\nMRN: 7321856 \nAccession: P25-9876 \nDate: 06/19/2025\nThe patient is a 22-year-old male who presented for a routine skin examination. He noted a mole on his upper back that he believes has become slightly darker over the past year. He denies any symptoms of pain or itching associated with the lesion. He has a history of significant sun exposure during his teen years and reports occasional sunburns.\nPROCEDURES:\nShave Biopsy, Upper Back: A 5mm pigmented macule was identified on the superior aspect of the right scapula. After obtaining consent, the area was anesthetized with 1% lidocaine with epinephrine, and a deep shave biopsy of the lesion was performed. Hemostasis was achieved with aluminum chloride. The specimen was sent for histopathologic examination.\nIMPRESSION:\nMICROSCOPIC DESCRIPTION: Sections show a symmetric, well-circumscribed proliferation of nested and single melanocytes confined to the dermal-epidermal junction. The melanocytes are uniform in size and shape with no significant cytologic atypia. No mitotic activity or ulceration is identified.\nDIAGNOSIS: Junctional melanocytic nevus, benign.\nPatient Name: Michael Johnson MRN: 7321856 Age: 22\nElectronically Signed By: Dr. Angela Davis, M.D. (Pathology)\nDate: 06/23/2025 Time: 09:05",
+  "ocr_text": "HOSPITAL\nUniversity Dermatology Associates\n950 Campus Drive, Suite 210\nDurham, NC 27708\n(919) 555-3400\n\nPatient Name: Michael Johnson\nMRN: 7321856\nDOB: 08/15/2002\nGender: Male\nAge: 22\n\nMRN: 7321856\nAccession: P25-9876\nDate: 06/19/2025\n\nThe patient is a 22-year-old male who presented for a routine skin examination.\nHe noted a mole on his upper back that he believes has become slightly darker\nover the past year. He denies any symptoms of pain or itching associated with the\nlesion. He has a history of significant sun exposure during his teen years and\nreports occasional sunburns.\n\nPROCEDURES:\nShave Biopsy, Upper Back: A 5mm pigmented macule was identified on the\nsuperior aspect of the right scapula. After obtaining consent, the area was\nanesthetized with 1% lidocaine with epinephrine, and a deep shave biopsy of the\nlesion was performed. Hemostasis was achieved with aluminum chloride. The\nspecimen was sent for histopathologic examination.\n\nIMPRESSION:\nMICROSCOPIC DESCRIPTION: Sections show a symmetric, well-circumscribed\nproliferation of nested and single melanocytes confined to the dermal-epidermal\njunction. The melanocytes are uniform in size and shape with no significant\ncytologic atypia. No mitotic activity or ulceration is identified.\nDIAGNOSIS: Junctional melanocytic nevus, benign.\n\nPatient Name: Michael Johnson MRN: 7321856 Age: 22\n\nElectronically Signed By: Dr. Angela Davis, M.D. (Pathology)\nDate: 06/23/2025 Time: 09:05",
+  "ocr_seconds": 19.5,
+  "ocr_quality": {
+   "cer": 0.0,
+   "wer": 0.0,
+   "char_errors": 0,
+   "gold_chars": 1440,
+   "word_errors": 0,
+   "gold_words": 210,
+   "words_matched": 210,
+   "pred_words": 210
+  },
+  "gold_parts": [
+   "fe0fb5ba6edfe0f6"
+  ],
+  "ocr_parts": [
+   "87488aeb06df6ebe"
+  ]
+ },
+ {
+  "id": "health_clinocr_rotated_t1_s2",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_rotated_t1_s2.jpg",
+  "type": "clinocr_rotated",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient: John Smith DOB: 05/20/1965 MRN: 789012 \nAccession #: A583920-25\nSPRINGFIELD GENERAL HOSPITAL\nSunrise Diagnostics Phone: \nNorth Valley Imaging Center 456 Oak Avenue, Suite 200 Anytown, USA 12345\n(555) 123-4567 \nPatient: John Smith \nDOB: 05/20/1965 \nMRN: 789012\nGender: Male Referring Physician: Dr. Emily White\nVisit #: 456-789 Date of Visit: 06/18/2025\nDiagnostic Imaging Report - Chest X-ray (2 views)\nProcedure: Radiography of the chest, posteroanterior and lateral views.\nClinical Indication: Persistent cough and shortness of breath.\nFindings: The lungs are clear without evidence of consolidation, infiltrate, or effusion. The cardiomediastinal silhouette is within normal limits. The osseous structures of the thorax are unremarkable.\nImpression: No acute cardiopulmonary process.\nScheduled appointments:\nFollow-up appointment with Dr. White scheduled for 06/25/2025 at 11:00 AM to discuss the results and further management.\nDate of Dictation: 06/18/2025 Technician: Sarah Jenkins, RT(R)\nCONFIDENTIALITY NOTICE: This report contains confidential patient information protected by federal and state law. It is intended only for the use of the individual or entity to whom it is addressed. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or action taken in reliance on the contents of these documents is strictly prohibited. If you have received this report in error, please notify the sender immediately by telephone at (217) 555-1212 and destroy this document. \nSpringfield General Hospital Imaging Department | 123 Health Way, Springfield, IL, 62704",
+  "ocr_text": "Patient: John Smith DOB: 05/20/1965 MRN: 789012\nAccession #: A583920-25\n\nSPRINGFIELD\nGENERAL\nHOSPITAL\n\nSunrise Diagnostics Phone:\nNorth Valley Imaging Center 456\nOak Avenue, Suite 200 Anytown,\nUSA 12345\n(555) 123-4567\n\nPatient: John Smith\nDOB: 05/20/1965\nMRN: 789012\nGender: Male Referring\nPhysician: Dr. Emily White\n\nVisit #: 456-789 Date of Visit: 06/18/2025\nDiagnostic Imaging Report - Chest X-ray (2 views)\nProcedure: Radiography of the chest, posteroanterior and lateral views.\nClinical Indication: Persistent cough and shortness of breath.\n\nFindings: The lungs are clear without evidence of consolidation, infiltrate, or effusion. The\ncardiomedial silhouete is within normal limits. The osseous structures of the thorax are\nunremarkable.\n\nImpression: No acute cardiopulmonary process.\n\nScheduled appointments:\nFollow-up appointment with Dr. White scheduled for 06/25/2025 at 11:00 AM to discuss the results and\nfurther management.\n\nDate of Dictation: 06/18/2025 Technician: Sarah Jenkins, RT(R)\n\nCONFIDENTIALITY NOTICE: This report contains confidential patient information protected by federal\nand state law. It is intended only for the use of the individual or entity to whom it is addressed. If you are\nnot the intended recipient, you are hereby notified that any disclosure, copying, distribution, or action\ntaken in reliance on the contents of these documents is strictly prohibited. If you have received this\nreport in error, please notify the sender immediately by telephone at (217) 555-1212 and destroy this\ndocument.\nSpringfield General Hospital Imaging Department | 123 Health Way, Springfield, IL, 62704",
+  "ocr_seconds": 19.6,
+  "ocr_quality": {
+   "cer": 0.0037220843672456576,
+   "wer": 0.008771929824561403,
+   "char_errors": 6,
+   "gold_chars": 1612,
+   "word_errors": 2,
+   "gold_words": 228,
+   "words_matched": 226,
+   "pred_words": 228
+  },
+  "gold_parts": [
+   "30c47d9934f337da"
+  ],
+  "ocr_parts": [
+   "ed26aec80286c509"
+  ]
+ },
+ {
+  "id": "health_clinocr_rotated_t2_s6",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_rotated_t2_s6.jpg",
+  "type": "clinocr_rotated",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Patient Name: Robert Brown MRN: 6543210\nLAKEWOOD HOSPITAL\nPATHOLOGY REPORT\n831676002937\nDate of Birth: 03/12/1950 \nAge: 75 \nGender: Male\nPatient Address: 567 Birch Lane, Aurora, CO 80011\nNorth Star Health System \n450 Northland Blvd Aurora, CO 80011 \nPhone: (303) 555-1212 Fax: (303) 555-1213\nAccession Number: P25-01234 \nDate of Collection: 06/19/2025 \nTime of Collection: 02:45 PM \nSpecimen Type: Prostate, Needle Core Biopsy\nOrdering Physician: Dr. Sarah Jenkins, MD \nPractice: Rocky Mountain Urology \nAddress: 890 Wellness Way, Suite 200, Aurora, CO 80012 \nPhone: (303) 555-8800\nFinal Diagnosis:\nProstate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3) \nMicroscopic Description:\nSections show prostatic acini replaced by infiltrative, poorly-formed cribriform glands (Gleason pattern 4) and individual discrete glands (Gleason pattern 3). The malignant glands are lined by cells with enlarged nuclei, prominent nucleoli, and scant cytoplasm. Perineural invasion is identified. The tumor involves approximately 60% of the core tissue examined. \nGross Description:\nReceived in formalin labeled \"prostate, left base\" are four tan-white cylindrical tissue cores, ranging from 1.1 to 1.4 cm in length. All tissue submitted in one cassette.\nComments:\nThe findings are consistent with prostatic adenocarcinoma, Gleason Score 7. The presence of a dominant Gleason pattern 4 and perineural invasion are adverse prognostic factors. Correlation with serum PSA levels and clinical staging is recommended.\nBiomarkers:\nImmunohistochemical stains for high molecular weight cytokeratin (HMWCK) and p63 are negative in the malignant glands, supporting the diagnosis of adenocarcinoma. No further molecular biomarker testing indicated on this specimen.\nPage 1 of 1",
+  "ocr_text": "Patient Name: Robert Brown MRN: 6543210\nLAKESWOOD\nHOSPITAL\nNorth Star Health System\n450 Northland Blvd Aurora, CO\n80011\nPhone: (303) 555-1212 Fax: (303)\n555-1213\nPATHOLOGY REPORT\n831676002937\nDate of Birth: 03/12/1950\nAge: 75\nGender: Male\nPatient Address: 567 Birch Lane,\nAurora, CO 80011\nAccession Number: P25-01234\nDate of Collection: 06/19/2025\nTime of Collection: 02:45 PM\nSpecimen Type: Prostate, Needle Core Biopsy\nOrdering Physician: Dr. Sarah\nJenkins, MD\nPractice: Rocky Mountain Urology\nAddress: 890 Wellness Way, Suite\n200, Aurora, CO 80012\nPhone: (303) 555-8800\nFinal Diagnosis:\nProstate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3)\nMicroscopic Description:\nSections show prostatic acini replaced by infiltrative, poorly-formed cribriform glands (Gleason\npattern 4) and individual discrete glands (Gleason pattern 3). The malignant glands are lined by cells\nwith enlarged nuclei, prominent nucleoli, and scant cytoplasm. Perineural invasion is identified. The\ntumor involves approximately 60% of the core tissue examined.\nGross Description:\nReceived in formalin labeled \"prostate, left base\" are four tan-white cylindrical tissue cores, ranging\nfrom 1.1 to 1.4 cm in length. All tissue submitted in one cassette.\nComments:\nThe findings are consistent with prostatic adenocarcinoma, Gleason Score 7. The presence of a\ndominant Gleason pattern 4 and perineural invasion are adverse prognostic factors. Correlation with\nserum PSA levels and clinical staging is recommended.\nBiomarkers:\nImmunohistochemical stains for high molecular weight cytokeratin (HMWCK) and p63 are negative in\nthe malignant glands, supporting the diagnosis of adenocarcinoma. No further molecular biomarker\ntesting indicated on this specimen.\nPage 1 of 1",
+  "ocr_seconds": 24.9,
+  "ocr_quality": {
+   "cer": 0.11307824100513993,
+   "wer": 0.13414634146341464,
+   "char_errors": 198,
+   "gold_chars": 1751,
+   "word_errors": 33,
+   "gold_words": 246,
+   "words_matched": 245,
+   "pred_words": 246
+  },
+  "gold_parts": [
+   "47343b018f0c96a6"
+  ],
+  "ocr_parts": [
+   "f124c6bb9e2209cf"
+  ]
+ },
+ {
+  "id": "health_clinocr_rotated_t4_s3",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_rotated_t4_s3.jpg",
+  "type": "clinocr_rotated",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "GENERALHOSPITAL\n\nHOSPITAL\n\nDate of Visit: 06/21/2025\n\nAttending Provider: Dr. David Chen, MD\n\nLocation: Community Urgent Care Center\n\nVisit ID: ENC-135792468\n\nDate of Birth: 03/02/1987 Age: 38 Sex: Female\n\nAddress: 456 Oak Avenue, Springfield, USA 67890\n\nChief Complaints:\n\nWorsening shortness of breath\n\nAudible wheezing\n\nChest tightness\n\nNon-productive cough\n\nMedical History Snapshot:\n\nAsthma: Diagnosed in childhood.\n\nSeasonal Allergic Rhinitis: History of seasonal allergies, particularly in the spring.\n\nSurgical History: None.\n\nFamily History: Mother with a history of asthma and eczema.\n\nMedications:\n\nAlbuterol HFA (ProAir®) 90 mcg/actuation inhaler, 2 puffs every 4-6 hours as needed.\n\nFluticasone/Salmeterol (Advair Diskus®) 250/50 mcg, 1 inhalation twice daily.\n\nAllergies: Penicillin (causes a rash).\n\nVisit Summary:\n\nThis 38-year-old female with a known history of persistent asthma presents with a three-day history of progressively worsening shortness of breath, wheezing, and chest tightness. She reports developing a mild upper respiratory infection about one week ago, which has now resolved, but her respiratory symptoms have since escalated. She has increased the use of her rescue Albuterol inhaler to 6-7 times per day with only partial, temporary relief. Examination revealed a patient in mild respiratory distress with audible wheezing. A DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment was administered in the office, which provided significant improvement in her work of breathing and reduced wheezing on auscultation. She is discharged with a prescription for a 5-day course of oral Prednisone. The patient was educated on her asthma action plan, the signs of a severe exacerbation requiring emergency care, and the importance of adherence to her controller medication. She will follow up with her primary care physician in 3-5 days.\n\nExams:",
+  "ocr_text": "GENERAL HOSPITAL\nHOSPITAL\n\nDate of Visit: 06/21/2025\nAttending Provider: Dr. David Chen, MD\nLocation: Community Urgent Care Center\nVisit ID: ENC-135792468\n\nDate of Birth: 03/02/1987 Age: 38 Sex: Female\nAddress: 456 Oak Avenue, Springfield, USA 67890\n\nChief Complaints:\n• Worsening shortness of breath\n• Audible wheezing\n• Chest tightness\n• Non-productive cough\n\nMedical History Snapshot:\nAsthma: Diagnosed in childhood.\nSeasonal Allergic Rhinitis: History of seasonal allergies, particularly in the spring.\nSurgical History: None.\nFamily History: Mother with a history of asthma and eczema.\n\nMedications:\nAlbuterol HFA (ProAir®) 90 mcg/actuation inhaler, 2 puffs every 4-6 hours as needed.\nFluticasone/Salmeterol (Advair Diskus®) 250/50 mcg, 1 inhalation twice daily.\nAllergies: Penicillin (causes a rash).\n\nVisit Summary:\nThis 38-year-old female with a known history of breath, wheezing, and chest tightness. She reports developing a mild upper respiratory infection about one week ago, which has now resolved, but her respiratory distress symptoms have since escalated, temporary relief. Examination revealed a patient in mild respiratory treatment with audible wheezing. A DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment was administered in the office, which provided significant improvement in her work of breathing and reduced wheezing on auscultation. She is discharged with a prescription for a 5-day course of oral Prednisone. The patient was educated on her asthma action plan, the signs of a severe exacerbation requiring emergency care, and the importance of adherence to her controller medication. She will follow up with her primary care physician in 3-5 days.\n\nExams:\nVitals, General Appearance, HEENT (Head, Eyes, Ears, Nose, Throat), Pulmonary/Chest, Cardiovascular, Skin",
+  "ocr_seconds": 24.7,
+  "ocr_quality": {
+   "cer": 0.16960941680042804,
+   "wer": 0.19029850746268656,
+   "char_errors": 317,
+   "gold_chars": 1869,
+   "word_errors": 51,
+   "gold_words": 268,
+   "words_matched": 237,
+   "pred_words": 256
+  },
+  "gold_parts": [
+   "f419b22c3b0d7846"
+  ],
+  "ocr_parts": [
+   "48c84605c8e8a482"
+  ]
+ },
+ {
+  "id": "health_clinocr_rotated_t5_s7",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_rotated_t5_s7.jpg",
+  "type": "clinocr_rotated",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "Midwest Orthopedics & Sports Medicine Center 950 N. Clark Street, Chicago, IL 60610 \nPatient: Chloe Davis MRN: 556677 DOB: 08/25/2004\nChief Complaint\nLeft knee pain and instability after an injury during a soccer game today.\nCare Team\nAttending Physician: Dr. Marcus Thorne, MD Pager: (312) 555-2355\nPharmacies\nCVS Pharmacy 1120 S. Canal Street, Chicago, IL 60607 Phone: (312) 555-1199 \nVital sign\nT: 98.6°F \nHR: 78 bpm \nBP: 124/76 mmHg \nRR: 16 breaths/min \nO2 Sat: 100% on room air \nAllergies\nNo Known Drug Allergies\nMedications\nNaproxen 220 mg, as needed for pain\nVaccines\nAll immunizations up to date.\nProblems\nAcute Left Knee Pain \nLeft Knee Effusion\nFamily History\nNon-contributory. Parents are in good health.\nSocial History\nTobacco: Denies \nAlcohol: Denies \nOccupation: College student, plays on the university soccer team.",
+  "ocr_text": "Midwest Orthopedics & Sports Medicine Center 950 N. Clark Street, Chicago, IL 60610\nPatient: Chloe Davis MRN: 556677 DOB: 08/25/2004\nChief Complaint\nLeft knee pain and instability after an injury during a soccer game today.\nCare Team\nAttending Physician: Dr. Marcus Thorne, MD Pager: (312) 555-2355\nPharmacies\nCVS Pharmacy 1120 S. Canal Street, Chicago, IL 60607 Phone: (312) 555-1199\nVital sign\nT: 98.6°F\nHR: 78 bpm\nBP: 124/76 mmHg\nRR: 16 breaths/min\nO2 Sat: 100% on room air\nAllergies\nNo Known Drug Allergies\nMedications\n• Naproxen 220 mg, as needed for pain\nVaccines\n• All immunizations up to date.\nProblems\n• Acute Left Knee Pain\n• Left Knee Effusion\nFamily History\nNon-contributory. Parents are in good health.\nSocial History\nTobacco: Denies\nAlcohol: Denies\nOccupation: College student, plays on the university soccer team.",
+  "ocr_seconds": 18.4,
+  "ocr_quality": {
+   "cer": 0.00975609756097561,
+   "wer": 0.03125,
+   "char_errors": 8,
+   "gold_chars": 820,
+   "word_errors": 4,
+   "gold_words": 128,
+   "words_matched": 128,
+   "pred_words": 132
+  },
+  "gold_parts": [
+   "f6765c2b6ea747e0"
+  ],
+  "ocr_parts": [
+   "174f98e34f1c0842"
+  ]
+ },
+ {
+  "id": "health_clinocr_rotated_t7_s4",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_rotated_t7_s4.jpg",
+  "type": "clinocr_rotated",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "HOSPITAL\nUniversity Dermatology Associates\n950 Campus Drive, Suite 210\nDurham, NC 27708\n(919) 555-3400\nPatient Name: Michael Johnson \nMRN: 7321856 \nDOB: 08/15/2002 \nGender: Male \nAge: 22\nMRN: 7321856 \nAccession: P25-9876 \nDate: 06/19/2025\nThe patient is a 22-year-old male who presented for a routine skin examination. He noted a mole on his upper back that he believes has become slightly darker over the past year. He denies any symptoms of pain or itching associated with the lesion. He has a history of significant sun exposure during his teen years and reports occasional sunburns.\nPROCEDURES:\nShave Biopsy, Upper Back: A 5mm pigmented macule was identified on the superior aspect of the right scapula. After obtaining consent, the area was anesthetized with 1% lidocaine with epinephrine, and a deep shave biopsy of the lesion was performed. Hemostasis was achieved with aluminum chloride. The specimen was sent for histopathologic examination.\nIMPRESSION:\nMICROSCOPIC DESCRIPTION: Sections show a symmetric, well-circumscribed proliferation of nested and single melanocytes confined to the dermal-epidermal junction. The melanocytes are uniform in size and shape with no significant cytologic atypia. No mitotic activity or ulceration is identified.\nDIAGNOSIS: Junctional melanocytic nevus, benign.\nPatient Name: Michael Johnson MRN: 7321856 Age: 22\nElectronically Signed By: Dr. Angela Davis, M.D. (Pathology)\nDate: 06/23/2025 Time: 09:05",
+  "ocr_text": "HOSPITAL\nUniversity Dermatology Associates\n950 Campus Drive, Suite 210\nDurham, NC 27708\n(919) 555-3400\n\nPatient Name: Michael Johnson\nMRN: 7321856\nDOB: 08/15/2002\nGender: Male\nAge: 22\n\nMRN: 7321856\nAccession: P25-9876\nDate: 06/19/2025\n\nThe patient is a 22-year-old male who presented for a routine skin examination.\nHe noted a mole on his upper back that he believes has become slightly darker\nover the past year. He denies any symptoms of pain or itching associated with the\nlesion. He has a history of significant sun exposure during his teen years and\nreports occasional sunburns.\n\nPROCEDURES:\nShave Biopsy, Upper Back: A 5mm pigmented macule was identified on the\nsuperior aspect of the right scapula. After obtaining consent, the area was\nanesthetized with 1% lidocaine with epinephrine, and a deep shave biopsy of the\nlesion was performed. Hemostasis was achieved with aluminum chloride. The\nspecimen was sent for histopathologic examination.\n\nIMPRESSION:\nMICROSCOPIC DESCRIPTION: Sections show a symmetric, well-circumscribed\nproliferation of nested and single melanocytes confined to the dermal-epidermal\njunction. The melanocytes are uniform in size and shape with no significant\ncytologic atypia. No mitotic activity or ulceration is identified.\nDIAGNOSIS: Junctional melanocytic nevus, benign.\n\nPatient Name: Michael Johnson MRN: 7321856 Age: 22\n\nElectronically Signed By: Dr. Angela Davis, M.D. (Pathology)\nDate: 06/23/2025 Time: 09:05",
+  "ocr_seconds": 23.0,
+  "ocr_quality": {
+   "cer": 0.0,
+   "wer": 0.0,
+   "char_errors": 0,
+   "gold_chars": 1440,
+   "word_errors": 0,
+   "gold_words": 210,
+   "words_matched": 210,
+   "pred_words": 210
+  },
+  "gold_parts": [
+   "fe0fb5ba6edfe0f6"
+  ],
+  "ocr_parts": [
+   "87488aeb06df6ebe"
+  ]
+ },
+ {
+  "id": "health_clinocr_tables_t10_s2",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_tables_t10_s2.jpg",
+  "type": "clinocr_tables",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "LAKEWOOD HOSPITAL\n831676002937\nPatient: Maria C. Delgado  DOB: 03/28/1972  \nMRN: 007-214-55\nMarch 10, 2026\nSECTION A: Medical History\nYes\nNo\nRheumatoid Arthritis (ICD-10: M06.9)\nX\nHypothyroidism (ICD-10: E03.9)\nX\nMajor Depressive Disorder (ICD-10: F32.1)\nX\nGastroesophageal Reflux Disease (ICD-10: K21.0)\nX\nOsteoporosis (ICD-10: M81.0)\nX\nAnemia, Iron Deficiency (ICD-10: D50.9)\nX\nFibromyalgia (ICD-10: M79.3)\nX\nSECTION B: Current Medication\nYes\nNo\nMethotrexate 15 mg — once weekly\nX\nFolic Acid 1 mg — once daily\nX\nLevothyroxine 75 mcg — once daily (fasting)\nX\nSertraline 50 mg — once daily (AM)\nX\nOmeprazole 20 mg — once daily before meals\nX\nAlendronate 70 mg — once weekly\nX\nHydroxychloroquine 200 mg — twice daily\nX\nMaria Delgado  \nPatient signature\nMaria Delgado  \nPrint name",
+  "ocr_text": "LAKESWOOD HOSPITAL\n831676002937\nPatient: Maria C. Delgado\nDOB: 03/28/1972\nMRN: 007-214-55\n\nMarch 10, 2026\n\nSECTION A: Medical History\n\nRheumatoid Arthritis (ICD-10: M06.9)\tX\nHypothyroidism (ICD-10: E03.9)\tX\nMajor Depressive Disorder (ICD-10: F32.1)\tX\nGastroesophageal Reflux Disease (ICD-10: K21.0)\tX\nOsteoporosis (ICD-10: M81.0)\tX\nAnemia, Iron Deficiency (ICD-10: D50.9)\tX\nFibromyalgia (ICD-10: M79.3)\tX\n\nSECTION B: Current Medication\n\nMethotrexate 15 mg — once weekly\tX\nFolic Acid 1 mg — once daily\tX\nLevothyroxine 75 mcg — once daily (fasting)\tX\nSertraline 50 mg — once daily (AM)\tX\nOmeprazole 20 mg — once daily before meals\tX\nAlendronate 70 mg — once weekly\tX\nHydroxychloroquine 200 mg — twice daily\tX\n\nMaria Delgado\nPatient signature\n\nMaria Delgado\nPrint name",
+  "ocr_seconds": 19.2,
+  "ocr_quality": {
+   "cer": 0.019455252918287938,
+   "wer": 0.04065040650406504,
+   "char_errors": 15,
+   "gold_chars": 771,
+   "word_errors": 5,
+   "gold_words": 123,
+   "words_matched": 118,
+   "pred_words": 119
+  },
+  "gold_parts": [
+   "a23cce294ce3bc77"
+  ],
+  "ocr_parts": [
+   "4c43d4d17be215f2"
+  ]
+ },
+ {
+  "id": "health_clinocr_tables_t11_s6",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_tables_t11_s6.jpg",
+  "type": "clinocr_tables",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "George L. Washington\nDOB: 12/08/1962   Age: 63   Sex: M\nAcct#: 73388-F     Physician: Dr. Priya N. Sharma, MD\nPRECISION DIAGNOSTIC LAB\n03/28/2026  07:00\n03/28/2026  07:55\n03/28/2026  10:00\nCMP, HbA1c\nComp. Metabolic Panel \nTest\nResult\nPrevious Result\nDate\nUnits\nRef Interval\nGlucose\n118 H\n130 H\n01/05/2026\nmg/dL\n70-99\nBUN\n19\n18\n01/05/2026\nmg/dL\n7-25\nCreatinine\n1.02\n0.98\n01/05/2026\nmg/dL\n0.57-1.00\neGFR\n74\n70\n01/05/2026\nmL/min/1.73m2\n>=60\nBUN/Creatinine Ratio\n19\n18\n01/05/2026\nratio\n6-22\nSodium\n139\n138\n01/05/2026\nmEq/L\n136-145\nPotassium\n4.2\n4.1\n01/05/2026\nmEq/L\n3.5-5.1\nChloride\n102\n101\n01/05/2026\nmEq/L\n98-107\nCarbon Dioxide, Total\n25\n24\n01/05/2026\nmEq/L\n21-32\nCalcium\n9.3\n9.2\n01/05/2026\nmg/dL\n8.6-10.3\nProtein, Total\n7.0\n7.1\n01/05/2026\ng/dL\n6.1-8.1\nAlbumin\n4.1\n4.2\n01/05/2026\ng/dL\n3.5-5.0\nGlobulin, Total\n2.9\n2.9\n01/05/2026\ng/dL\n1.9-3.7\nBilirubin, Total\n0.6\n0.7\n01/05/2026\nmg/dL\n0.2-1.2\nAlkaline Phosphatase\n80\n78\n01/05/2026\nU/L\n44-121\nAST (SGOT)\n26\n24\n01/05/2026\nU/L\n10-40\nALT (SGOT)\n30\n27\n01/05/2026\nU/L\n7-56\nHemoglobin A1c \nTest\nResult\nPrevious Result\nDate\nUnits\nRef Interval\nHemoglobin A1c \n7.2 H\n7.0\n01/05/2026\n%\n<5.7",
+  "ocr_text": "George L. Washington\nDOB: 12/08/1962 Age: 63 Sex: M\nAcct#: 73388-F\nPhysician: Dr. Priya N. Sharma, MD\nPRECISION DIAGNOSTIC LAB\n03/28/2026 07:00\n03/28/2026 07:55\n03/28/2026 10:00\nCMP, HbA1c\n\nComp. Metabolic Panel\nTest Result Previous Result Date Units Ref Interval\nGlucose 118 H 130 H 01/05/2026 mg/dL 70-99\nBUN 19 18 01/05/2026 mg/dL 7-25\nCreatinine 1.02 0.98 01/05/2026 mg/dL 0.57-1.00\neGFR 74 70 01/05/2026 mL/min/1.73m2 >=60\nBUN/Creatinine Ratio 19 18 01/05/2026 ratio 6-22\nSodium 139 138 01/05/2026 mEq/L 136-145\nPotassium 4.2 4.1 01/05/2026 mEq/L 3.5-5.1\nChloride 102 101 01/05/2026 mEq/L 98-107\nCarbon Dioxide, Total 25 24 01/05/2026 mEq/L 21-32\nCalcium 9.3 9.2 01/05/2026 mg/dL 8.6-10.3\nProtein, Total 7.0 7.1 01/05/2026 g/dL 6.1-8.1\nAlbumin 4.1 4.2 01/05/2026 g/dL 3.5-5.0\nGlobulin, Total 2.9 2.9 01/05/2026 g/dL 1.9-3.7\nBilirubin, Total 0.6 0.7 01/05/2026 mg/dL 0.2-1.2\nAlkaline Phosphatase 80 78 01/05/2026 U/L 44-121\nAST (SGOT) 26 24 01/05/2026 U/L 10-40\nALT (SGOT) 30 27 01/05/2026 U/L 7-56\n\nHemoglobin A1c\nTest Result Previous Result Date Units Ref Interval\nHemoglobin A1c 7.2 H 7.0 01/05/2026 % <5.7",
+  "ocr_seconds": 29.7,
+  "ocr_quality": {
+   "cer": 0.0,
+   "wer": 0.0,
+   "char_errors": 0,
+   "gold_chars": 1109,
+   "word_errors": 0,
+   "gold_words": 170,
+   "words_matched": 170,
+   "pred_words": 170
+  },
+  "gold_parts": [
+   "42e78e3631b18bae"
+  ],
+  "ocr_parts": [
+   "5f2957cd16b7b2f7"
+  ]
+ },
+ {
+  "id": "health_clinocr_tables_t13_s3",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_tables_t13_s3.jpg",
+  "type": "clinocr_tables",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "GENERALHOSPITAL\nHOSPITAL\nFull Name:\nRobert T. Nakamura\nDate of Birth (MM/DD/YYYY):\n11/05/1945\nPatient ID / MRN:\nMRN-012501\nGender: [X] M  [ ] F  [ ] Other\nPhone Number: (832) 555-0891\nToday's Date: 04/01/2026\nVital Signs\nBP (mmHg)\nPulse (bpm)\nResp (rpm)\nTemp (°F)\nSpO2 (%)\nWeight (lb)\nHeight (in)\n158/92\n84\n18\n97.8\n94\n210\n68\nMedical History\n[ ] Hypertension\n[ ] Diabetes (Type I)\n[X] Diabetes (Type II)\n[ ] Asthma\n[X] COPD\n[X] Heart Disease\n[X] High Cholesterol\n[ ] Thyroid Disorder\n[ ] Arthritis\n[ ] Cancer\n[ ] Depression/Anxiety\n[ ] Other:\nMedications\nMedication Name\nDosage\nFrequency\nWarfarin\n5 mg\nOnce daily (PM)\nTiotropium inhaler\n18 mcg\nOnce daily\nDigoxin\n0.125 mg\nOnce daily (AM)\nMetformin\n500 mg\nTwice daily\nAllergies\nAllergen\nReaction Type\nAspirin\nGI bleeding risk\nMorphine\nExtreme nausea\nReason for Visit\nCOPD exacerbation follow-up. SpO2 trending low at 94%. Patient reports increased dyspnea on exertion over past week.\nProvider Signature:   James R. Sullivan\nDate:   04/01/2026",
+  "ocr_text": "GENERALHOSPITAL\nHOSPITAL\n\nFull Name: Robert T. Nakamura\nDate of Birth (MM/DD/YYYY): 11/05/1945\nPatient ID / MRN: MRN-012501\nGender: [X] M [ ] F [ ] Other\nPhone Number: (832) 555-0891\nToday's Date: 04/01/2026\n\nVital Signs\nBP (mmHg) | Pulse (bpm) | Resp (rpm) | Temp (°F) | SpO2 (%) | Weight (lb) | Height (in)\n---|---|---|---|---|---|---\n158/92 | 84 | 18 | 97.8 | 94 | 210 | 68\n\nMedical History\n[ ] Hypertension | [ ] Diabetes (Type I) | [X] Diabetes (Type II)\n[ ] Asthma | [X] COPD | [X] Heart Disease\n[X] High Cholesterol | [ ] Thyroid Disorder | [ ] Arthritis\n[ ] Cancer | [ ] Depression/Anxiety | [ ] Other:\n\nMedications\nMedication Name | Dosage | Frequency\n---|---|---\nWarfarin | 5 mg | Once daily (PM)\nTiotropium inhaler | 18 mcg | Once daily\nDigoxin | 0.125 mg | Once daily (AM)\nMetformin | 500 mg | Twice daily\n\nAllergies\nAllergen | Reaction Type\n---|---\nAspirin | GI bleeding risk\nMorphine | Extreme nausea\n\nReason for Visit\nCOPD exacerbation follow-up. SpO2 trending low at 94%. Patient reports increased dyspnea on exertion over past week.\n\nProvider Signature: James R. Sullivan\nDate: 04/01/2026",
+  "ocr_seconds": 21.4,
+  "ocr_quality": {
+   "cer": 0.0,
+   "wer": 0.0,
+   "char_errors": 0,
+   "gold_chars": 984,
+   "word_errors": 0,
+   "gold_words": 163,
+   "words_matched": 143,
+   "pred_words": 143
+  },
+  "gold_parts": [
+   "047f346692e5de74"
+  ],
+  "ocr_parts": [
+   "13bd949295d96b85"
+  ]
+ },
+ {
+  "id": "health_clinocr_tables_t14_s7",
+  "path": "/kaggle/working/3rd_sem_el/data/ocr_real/docs/health_clinocr_tables_t14_s7.jpg",
+  "type": "clinocr_tables",
+  "source": "ClinOCR-Bench",
+  "url": "https://huggingface.co/datasets/Daniele0025/ClinOCR-Bench",
+  "gold_text": "RIVERSIDE HOSPITAL\nSurgical Pre-Operative Assessment\nPatient Name: Natalie G. Cruz\nDate of Birth: 06/25/1985\nProposed Procedure:\nLaparoscopic ovarian cystectomy\nSurgeon / Department:\nDr. Hannah O. Jacobs, MD — Gynecologic Surgery\nPre-Admission Testing / Labs\nTest\nResult\nTest\nResult\nTest\nResult\nWBC:\n7.1\nHgb:\n11.5 L\nHct:\n34.8 L\nNa:\n140\nK:\n4.0\nGlucose:\n90\nPT:\n12.1\nINR:\n1.0\nPTT:\n26\nCardiovascular & Pulmonary Risk Assessment\n[ ] Hx of Myocardial Infarction\n[ ] Congestive Heart Failure\n[ ] Arrhythmia / Pacemaker\n[ ] Hypertension\n[ ] COPD / Asthma\n[ ] Obstructive Sleep Apnea\n[ ] Smoking History\n[ ] Exercise Tolerance >4 METs\n[ ] Other Cardiac History:\nAnesthesia & Airway\nPrevious Anesthesia Issues: [ ] No [X] Yes\nFamily Hx Malignant Hyperthermia: [X] No [ ] Yes\nMallampati Score: [X] I  [ ] II  [ ] III  [ ] IV\nLoose Teeth / Dentures / Caps: [X] No [ ] Yes\nNPO Status (Last Meal/Drink):\nNPO after midnight\nWeight (kg):\n62\nPre-Operative Clearance\nRecommendations / Medications to Hold:\nPONV history with propofol (2022) — use TIVA protocol. Ondansetron 4 mg IV + dexamethasone 4 mg prophylaxis. Iron supplementation 325 mg PO post-op for mild anemia.\nFinal Clearance: [X] CLEARED FOR SURGERY   [ ] NOT CLEARED   [ ] PENDING LABS\nEvaluating Clinician Signature:   Isabel Fuentes\n                                 Date:   04/17/2026",
+  "ocr_text": "RIVERSIDE\nHOSPITAL\n\nSurgical Pre-Operative Assessment\n\nPatient Name: Natalie G. Cruz\nDate of Birth: 06/25/1985\nProposed Procedure:\nLaparoscopic ovarian cystectomy\nSurgeon / Department:\nDr. Hannah O. Jacobs, MD — Gynecologic Surgery\n\nPre-Admission Testing / Labs\n\nTest Result Test Result Test Result\nWBC: 7.1 Hgb: 11.5 L Hct: 34.8 L\nNa: 140 K: 4.0 Glucose: 90\nPT: 12.1 INR: 1.0 PTT: 26\n\nCardiovascular & Pulmonary Risk Assessment\n\n[ ] Hx of Myocardial Infarction [ ] Congestive Heart Failure [ ] Arrhythmia / Pacemaker\n[ ] Hypertension [ ] COPD / Asthma [ ] Obstructive Sleep Apnea\n[ ] Smoking History [ ] Exercise Tolerance >4 METs [ ] Other Cardiac History:\n\nAnesthesia & Airway\n\nPrevious Anesthesia Issues: [ ] No [X] Yes Family Hx Malignant Hyperthermia: [X] No [ ] Yes\nMallampati Score: [X] I [ ] II [ ] III [ ] IV Loose Teeth / Dentures / Caps: [X] No [ ] Yes\nNPO Status (Last Meal/Drink): NPO after midnight Weight (kg): 62\n\nPre-Operative Clearance\n\nRecommendations / Medications to Hold:\nPONV history with propofol (2022) — use TIVA protocol. Ondansetron 4 mg IV + dexamethasone 4 mg prophylaxis. Iron supplementation 325 mg PO post-op for mild anemia.\n\nFinal Clearance: [X] CLEARED FOR SURGERY [ ] NOT CLEARED [ ] PENDING LABS\n\nEvaluating Clinician Signature: Isabel Fuentes\nDate: 04/17/2026",
+  "ocr_seconds": 20.2,
+  "ocr_quality": {
+   "cer": 0.0,
+   "wer": 0.0,
+   "char_errors": 0,
+   "gold_chars": 1286,
+   "word_errors": 0,
+   "gold_words": 218,
+   "words_matched": 184,
+   "pred_words": 184
+  },
+  "gold_parts": [
+   "f23e8f0bdda93cf8"
+  ],
+  "ocr_parts": [
+   "aa624f32e9b32cfa"
+  ]
+ }
+]

@@ -1,0 +1,1211 @@
+{
+ "health_clinocr_normal_t1_s2": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "John Smith"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "05/20/1965"
+   },
+   {
+    "type": "ID Number",
+    "value": "789012"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(555) 123-4567"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Emily White"
+   },
+   {
+    "type": "Name",
+    "value": "Sarah Jenkins"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the date of birth listed for the patient in the Diagnostic Imaging Report?",
+    "value": "05/20/1965"
+   },
+   {
+    "question": "What is the medical record number for the patient in the Chest X-ray report?",
+    "value": "789012"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What was the clinical indication for the chest X-ray procedure?",
+    "answer": "Persistent cough and shortness of breath."
+   },
+   {
+    "question": "What was the final impression of the chest X-ray?",
+    "answer": "No acute cardiopulmonary process."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_normal_t2_s6": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Robert Brown"
+   },
+   {
+    "type": "ID Number",
+    "value": "6543210"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "03/12/1950"
+   },
+   {
+    "type": "Age",
+    "value": "75"
+   },
+   {
+    "type": "Street Address",
+    "value": "567 Birch Lane, Aurora, CO 80011"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(303) 555-1212"
+   },
+   {
+    "type": "Fax Number",
+    "value": "(303) 555-1213"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Sarah Jenkins"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient name listed in the Lakewood Hospital pathology report?",
+    "value": "Robert Brown"
+   },
+   {
+    "question": "What is the date of birth on the Lakewood Hospital pathology report?",
+    "value": "03/12/1950"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the final diagnosis for the prostate specimen in the pathology report?",
+    "answer": "Prostate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3)"
+   },
+   {
+    "question": "What percentage of the core tissue examined does the tumor involve?",
+    "answer": "approximately 60%"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_normal_t4_s3": {
+  "private_values": [
+   {
+    "type": "Date of Birth",
+    "value": "03/02/1987"
+   },
+   {
+    "type": "Age",
+    "value": "38"
+   },
+   {
+    "type": "Address",
+    "value": "456 Oak Avenue, Springfield, USA 67890"
+   },
+   {
+    "type": "Attending Provider",
+    "value": "Dr. David Chen, MD"
+   },
+   {
+    "type": "Visit ID",
+    "value": "ENC-135792468"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the date of birth listed in the General Hospital visit record from 06/21/2025?",
+    "value": "03/02/1987"
+   },
+   {
+    "question": "What is the visit ID for the patient seen at the Community Urgent Care Center on 06/21/2025?",
+    "value": "ENC-135792468"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What nebulizer treatment was administered in the office?",
+    "answer": "DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment"
+   },
+   {
+    "question": "What medication was prescribed for a 5-day course upon discharge?",
+    "answer": "oral Prednisone"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_normal_t5_s7": {
+  "private_values": [
+   {
+    "type": "name",
+    "value": "Chloe Davis"
+   },
+   {
+    "type": "ID number",
+    "value": "556677"
+   },
+   {
+    "type": "date of birth",
+    "value": "08/25/2004"
+   },
+   {
+    "type": "name",
+    "value": "Dr. Marcus Thorne"
+   },
+   {
+    "type": "phone number",
+    "value": "(312) 555-2355"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the medical record number for the patient in the Midwest Orthopedics & Sports Medicine Center record?",
+    "value": "556677"
+   },
+   {
+    "question": "What is the date of birth of the patient at Midwest Orthopedics & Sports Medicine Center?",
+    "value": "08/25/2004"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the chief complaint of the patient at Midwest Orthopedics & Sports Medicine Center?",
+    "answer": "Left knee pain and instability after an injury during a soccer game today."
+   },
+   {
+    "question": "What medication is prescribed for pain in the Midwest Orthopedics & Sports Medicine Center record?",
+    "answer": "Naproxen 220 mg, as needed for pain"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_normal_t7_s4": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Michael Johnson"
+   },
+   {
+    "type": "ID Number",
+    "value": "7321856"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "08/15/2002"
+   },
+   {
+    "type": "Age",
+    "value": "22"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Angela Davis"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the name of the patient in the dermatology report from University Dermatology Associates?",
+    "value": "Michael Johnson"
+   },
+   {
+    "question": "What is the medical record number (MRN) for the patient in the University Dermatology Associates report dated 06/19/2025?",
+    "value": "7321856"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What procedure was performed on the upper back according to the report?",
+    "answer": "Shave Biopsy, Upper Back"
+   },
+   {
+    "question": "What is the final diagnosis for the lesion?",
+    "answer": "Junctional melanocytic nevus, benign."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_handwriting_t1_s2": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "John Smith"
+   },
+   {
+    "type": "DOB",
+    "value": "05/20/1965"
+   },
+   {
+    "type": "MRN",
+    "value": "789012"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Emily White"
+   },
+   {
+    "type": "Name",
+    "value": "Sarah Jenkins"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the date of birth listed for the patient in the Diagnostic Imaging Report?",
+    "value": "05/20/1965"
+   },
+   {
+    "question": "What is the medical record number for the patient in the Chest X-ray report?",
+    "value": "789012"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the clinical indication noted in the imaging report?",
+    "answer": "Persistent cough and shortness of breath."
+   },
+   {
+    "question": "What is the final impression given in the report?",
+    "answer": "No acute cardiopulmonary process."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_handwriting_t2_s4": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Emily White"
+   },
+   {
+    "type": "ID Number",
+    "value": "9876543"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "11/30/1955"
+   },
+   {
+    "type": "Age",
+    "value": "69"
+   },
+   {
+    "type": "Street Address",
+    "value": "789 Pine Street, Seaside, USA 54321"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(555) 234-5678"
+   },
+   {
+    "type": "Fax Number",
+    "value": "(555) 234-5679"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Michael Chen"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(555) 876-5432"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient name listed in the Lakewood Hospital pathology report?",
+    "value": "Emily White"
+   },
+   {
+    "question": "What is the date of birth listed in the pathology report for the patient?",
+    "value": "11/30/1955"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the final diagnosis for the lung specimen?",
+    "answer": "Adenocarcinoma, lepidic predominant, well-differentiated."
+   },
+   {
+    "question": "What is the result of the EGFR Mutation Analysis?",
+    "answer": "Negative for common activating mutations in exons 18, 19, 20, and 21."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_handwriting_t3_s6": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Richard P. Davis"
+   },
+   {
+    "type": "ID Number",
+    "value": "31415926"
+   },
+   {
+    "type": "Address",
+    "value": "200 Oceanfront Medical Plaza Charleston, SC 29401"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(843) 555-2000"
+   },
+   {
+    "type": "Fax Number",
+    "value": "(843) 555-2001"
+   },
+   {
+    "type": "Date",
+    "value": "June 21, 2025"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient name listed on the Riverside Hospital colonoscopy procedure document?",
+    "value": "Richard P. Davis"
+   },
+   {
+    "question": "What is the medical record number for the patient on the Coastal Gastroenterology Institute procedure date?",
+    "value": "31415926"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What procedure was performed at Riverside Hospital?",
+    "answer": "colonoscopy"
+   },
+   {
+    "question": "What were the final impressions regarding polyps or abnormalities in the colon?",
+    "answer": "There were no polyps, masses, inflammatory changes, or other abnormalities noted throughout the colon."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_handwriting_t5_s2": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Michael Johnson"
+   },
+   {
+    "type": "ID Number",
+    "value": "456789"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "11/22/1995"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Emily Chen"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the name of the patient listed in the Northwood Community Hospital record?",
+    "value": "Michael Johnson"
+   },
+   {
+    "question": "What is the medical record number (MRN) for the patient admitted to Northwood Community Hospital?",
+    "value": "456789"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the patient's chief complaint in the hospital record?",
+    "answer": "Severe right lower quadrant abdominal pain, started yesterday, associated with nausea and fever."
+   },
+   {
+    "question": "What medication is listed for pain management?",
+    "answer": "Ibuprofen 200 mg as needed for pain"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_handwriting_t6_s4": {
+  "private_values": [
+   {
+    "type": "Patient Name",
+    "value": "William Johnson"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "09/01/1956"
+   },
+   {
+    "type": "MRN",
+    "value": "789321"
+   },
+   {
+    "type": "Ordering Physician",
+    "value": "Dr. Robert Anderson"
+   },
+   {
+    "type": "Accession #",
+    "value": "SU-25-11223"
+   },
+   {
+    "type": "Pathologist",
+    "value": "Dr. Olivia Martinez"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the full name of the patient in the Precision Diagnostic Lab report dated 06/25/2025?",
+    "value": "William Johnson"
+   },
+   {
+    "question": "What is the medical record number (MRN) for the ultrasound-guided prostate needle biopsy patient?",
+    "value": "789321"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the primary diagnosis for the prostate right mid biopsy?",
+    "answer": "Adenocarcinoma, Gleason Score 3+4=7."
+   },
+   {
+    "question": "What is the Gleason Score reported in the Tumor Summary?",
+    "answer": "3 + 4 = 7"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_handwriting_t7_s6": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Robert Davis"
+   },
+   {
+    "type": "ID Number",
+    "value": "4478102"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "09/30/1974"
+   },
+   {
+    "type": "Age",
+    "value": "50"
+   },
+   {
+    "type": "Date",
+    "value": "06/23/2025"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Patricia Williams"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient's name in the Coastal Heart Institute visit record?",
+    "value": "Robert Davis"
+   },
+   {
+    "question": "What is the medical record number for the patient evaluated on 06/23/2025 at Coastal Heart Institute?",
+    "value": "4478102"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the blood pressure reading recorded during the office visit?",
+    "answer": "128/84 mmHg"
+   },
+   {
+    "question": "What device was provided to the patient for further evaluation?",
+    "answer": "24-Hour Holter Monitor"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_poor_t1_s2": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "John Smith"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "05/20/1965"
+   },
+   {
+    "type": "Medical Record Number",
+    "value": "789012"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(555) 123-4567"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Emily White"
+   },
+   {
+    "type": "Name",
+    "value": "Sarah Jenkins"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the date of birth listed for the patient in the Chest X-ray report?",
+    "value": "05/20/1965"
+   },
+   {
+    "question": "What is the referring physician's name on the Diagnostic Imaging Report?",
+    "value": "Dr. Emily White"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What was the clinical indication for the chest x-ray?",
+    "answer": "Persistent cough and shortness of breath."
+   },
+   {
+    "question": "What is the final impression of the chest x-ray?",
+    "answer": "No acute cardiopulmonary process."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_poor_t2_s6": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Robert Brown"
+   },
+   {
+    "type": "ID Number",
+    "value": "6543210"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "03/12/1950"
+   },
+   {
+    "type": "Age",
+    "value": "75"
+   },
+   {
+    "type": "Address",
+    "value": "567 Birch Lane, Aurora, CO 80011"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(303) 555-1212"
+   },
+   {
+    "type": "Fax Number",
+    "value": "(303) 555-1213"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. Sarah Jenkins"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient name listed on the Lakewood Hospital pathology report?",
+    "value": "Robert Brown"
+   },
+   {
+    "question": "What is the date of birth for the patient in the pathology report?",
+    "value": "03/12/1950"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the final diagnosis for the prostate specimen?",
+    "answer": "Prostate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3)"
+   },
+   {
+    "question": "What is the specimen type for this pathology report?",
+    "answer": "Prostate, Needle Core Biopsy"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_poor_t4_s3": {
+  "private_values": [
+   {
+    "type": "Date",
+    "value": "06/21/2025"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. David Chen"
+   },
+   {
+    "type": "ID",
+    "value": "ENC-135792468"
+   },
+   {
+    "type": "Date",
+    "value": "03/02/1987"
+   },
+   {
+    "type": "Age",
+    "value": "38"
+   },
+   {
+    "type": "Address",
+    "value": "456 Oak Avenue, Springfield, USA 67890"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the Visit ID listed in the Community Urgent Care Center record?",
+    "value": "ENC-135792468"
+   },
+   {
+    "question": "What is the street address recorded for the patient on 06/21/2025?",
+    "value": "456 Oak Avenue, Springfield, USA 67890"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What nebulizer treatment was administered in the office during the visit?",
+    "answer": "DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment"
+   },
+   {
+    "question": "What medication is prescribed for a 5-day course upon discharge?",
+    "answer": "oral Prednisone"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_poor_t5_s7": {
+  "private_values": [
+   {
+    "type": "name",
+    "value": "Chloe Davis"
+   },
+   {
+    "type": "ID number",
+    "value": "556677"
+   },
+   {
+    "type": "date of birth",
+    "value": "08/25/2004"
+   },
+   {
+    "type": "name",
+    "value": "Dr. Marcus Thorne"
+   },
+   {
+    "type": "phone number",
+    "value": "(312) 555-2355"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the medical record number for the patient at Midwest Orthopedics & Sports Medicine Center?",
+    "value": "556677"
+   },
+   {
+    "question": "Who is the attending physician listed in the Care Team section for the Midwest Orthopedics & Sports Medicine Center visit?",
+    "value": "Dr. Marcus Thorne"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the prescribed medication for pain in the Midwest Orthopedics & Sports Medicine Center record?",
+    "answer": "Naproxen 220 mg, as needed for pain"
+   },
+   {
+    "question": "What is the patient's chief complaint regarding their injury?",
+    "answer": "Left knee pain and instability after an injury during a soccer game today."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_poor_t7_s4": {
+  "private_values": [
+   {
+    "type": "name",
+    "value": "Michael Johnson"
+   },
+   {
+    "type": "id_number",
+    "value": "7321856"
+   },
+   {
+    "type": "date_of_birth",
+    "value": "08/15/2002"
+   },
+   {
+    "type": "age",
+    "value": "22"
+   },
+   {
+    "type": "name",
+    "value": "Dr. Angela Davis"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient name listed in the University Dermatology Associates report?",
+    "value": "Michael Johnson"
+   },
+   {
+    "question": "What is the date of birth for the patient in the University Dermatology Associates record?",
+    "value": "08/15/2002"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What procedure was performed on the upper back?",
+    "answer": "Shave Biopsy, Upper Back"
+   },
+   {
+    "question": "What is the diagnosis from the pathology report?",
+    "answer": "Junctional melanocytic nevus, benign."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_rotated_t1_s2": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "John Smith"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "05/20/1965"
+   },
+   {
+    "type": "MRN",
+    "value": "789012"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(555) 123-4567"
+   },
+   {
+    "type": "Name",
+    "value": "Emily White"
+   },
+   {
+    "type": "Name",
+    "value": "Sarah Jenkins"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient's name listed in the Diagnostic Imaging Report?",
+    "value": "John Smith"
+   },
+   {
+    "question": "What is the patient's date of birth in the Diagnostic Imaging Report?",
+    "value": "05/20/1965"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the clinical indication for the chest X-ray procedure?",
+    "answer": "Persistent cough and shortness of breath."
+   },
+   {
+    "question": "What is the impression given in the report?",
+    "answer": "No acute cardiopulmonary process."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_rotated_t2_s6": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Robert Brown"
+   },
+   {
+    "type": "ID Number",
+    "value": "6543210"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "03/12/1950"
+   },
+   {
+    "type": "Age",
+    "value": "75"
+   },
+   {
+    "type": "Address",
+    "value": "567 Birch Lane, Aurora, CO 80011"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(303) 555-1212"
+   },
+   {
+    "type": "Fax Number",
+    "value": "(303) 555-1213"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the name of the patient listed on the Lakewood Hospital pathology report?",
+    "value": "Robert Brown"
+   },
+   {
+    "question": "What is the date of birth on the pathology report from Lakewood Hospital?",
+    "value": "03/12/1950"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the final diagnosis for the patient?",
+    "answer": "Prostate, left base: Adenocarcinoma, Gleason Score 4+3=7 (Grade Group 3)"
+   },
+   {
+    "question": "What is the specimen type for the biopsy?",
+    "answer": "Prostate, Needle Core Biopsy"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_rotated_t4_s3": {
+  "private_values": [
+   {
+    "type": "Date",
+    "value": "06/21/2025"
+   },
+   {
+    "type": "Name",
+    "value": "Dr. David Chen, MD"
+   },
+   {
+    "type": "ID",
+    "value": "ENC-135792468"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "03/02/1987"
+   },
+   {
+    "type": "Age",
+    "value": "38"
+   },
+   {
+    "type": "Address",
+    "value": "456 Oak Avenue, Springfield, USA 67890"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the visit ID for the emergency department consultation on 06/21/2025?",
+    "value": "ENC-135792468"
+   },
+   {
+    "question": "What is the date of birth of the patient examined at Community Urgent Care Center?",
+    "value": "03/02/1987"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What nebulizer treatment was administered in the office during the visit?",
+    "answer": "DuoNeb® (ipratropium bromide and albuterol sulfate) nebulizer treatment"
+   },
+   {
+    "question": "What medication is prescribed for a 5-day course upon discharge?",
+    "answer": "oral Prednisone"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_rotated_t5_s7": {
+  "private_values": [
+   {
+    "type": "name",
+    "value": "Chloe Davis"
+   },
+   {
+    "type": "ID number",
+    "value": "556677"
+   },
+   {
+    "type": "date of birth",
+    "value": "08/25/2004"
+   },
+   {
+    "type": "name",
+    "value": "Dr. Marcus Thorne"
+   },
+   {
+    "type": "phone number",
+    "value": "(312) 555-2355"
+   },
+   {
+    "type": "phone number",
+    "value": "(312) 555-1199"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the medical record number for the patient in the Midwest Orthopedics & Sports Medicine Center record?",
+    "value": "556677"
+   },
+   {
+    "question": "What is the pager number for the attending physician at Midwest Orthopedics & Sports Medicine Center?",
+    "value": "(312) 555-2355"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What medication is prescribed for pain in the Midwest Orthopedics & Sports Medicine Center record?",
+    "answer": "Naproxen 220 mg, as needed for pain"
+   },
+   {
+    "question": "What is the chief complaint in the Midwest Orthopedics & Sports Medicine Center record?",
+    "answer": "Left knee pain and instability after an injury during a soccer game today."
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_rotated_t7_s4": {
+  "private_values": [
+   {
+    "type": "name",
+    "value": "Michael Johnson"
+   },
+   {
+    "type": "id",
+    "value": "7321856"
+   },
+   {
+    "type": "date_of_birth",
+    "value": "08/15/2002"
+   },
+   {
+    "type": "age",
+    "value": "22"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient name listed in the University Dermatology Associates report?",
+    "value": "Michael Johnson"
+   },
+   {
+    "question": "What is the date of birth for the patient in the University Dermatology Associates report?",
+    "value": "08/15/2002"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the diagnosis for the lesion in the University Dermatology Associates report?",
+    "answer": "Junctional melanocytic nevus, benign."
+   },
+   {
+    "question": "What anesthetic was used during the shave biopsy procedure?",
+    "answer": "1% lidocaine with epinephrine"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_tables_t10_s2": {
+  "private_values": [
+   {
+    "type": "phone_number",
+    "value": "831676002937"
+   },
+   {
+    "type": "person_name",
+    "value": "Maria C. Delgado"
+   },
+   {
+    "type": "date_of_birth",
+    "value": "03/28/1972"
+   },
+   {
+    "type": "medical_record_number",
+    "value": "007-214-55"
+   },
+   {
+    "type": "date",
+    "value": "March 10, 2026"
+   },
+   {
+    "type": "person_name",
+    "value": "Maria Delgado"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the date of birth listed for the patient in the Lakewood Hospital medical history record?",
+    "value": "03/28/1972"
+   },
+   {
+    "question": "What is the medical record number for the patient in the March 10, 2026 Lakewood Hospital record?",
+    "value": "007-214-55"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the listed ICD-10 code for Rheumatoid Arthritis in SECTION A?",
+    "answer": "M06.9"
+   },
+   {
+    "question": "What is the dosage and frequency listed for Methotrexate in SECTION B?",
+    "answer": "15 mg — once weekly"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_tables_t11_s6": {
+  "private_values": [
+   {
+    "type": "name",
+    "value": "George L. Washington"
+   },
+   {
+    "type": "date of birth",
+    "value": "12/08/1962"
+   },
+   {
+    "type": "age",
+    "value": "63"
+   },
+   {
+    "type": "account number",
+    "value": "73388-F"
+   },
+   {
+    "type": "name",
+    "value": "Dr. Priya N. Sharma, MD"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the name of the patient in the PRECISION DIAGNOSTIC LAB report dated 03/28/2026?",
+    "value": "George L. Washington"
+   },
+   {
+    "question": "What is the account number listed on the CMP, HbA1c report from PRECISION DIAGNOSTIC LAB?",
+    "value": "73388-F"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What was the glucose result for the patient on 03/28/2026?",
+    "answer": "118 H"
+   },
+   {
+    "question": "What was the Hemoglobin A1c result on the 03/28/2026 test?",
+    "answer": "7.2 H"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_tables_t13_s3": {
+  "private_values": [
+   {
+    "type": "Name",
+    "value": "Robert T. Nakamura"
+   },
+   {
+    "type": "Date of Birth",
+    "value": "11/05/1945"
+   },
+   {
+    "type": "Patient ID",
+    "value": "MRN-012501"
+   },
+   {
+    "type": "Phone Number",
+    "value": "(832) 555-0891"
+   },
+   {
+    "type": "Date",
+    "value": "04/01/2026"
+   },
+   {
+    "type": "Provider Name",
+    "value": "James R. Sullivan"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the full name of the patient in the General Hospital record?",
+    "value": "Robert T. Nakamura"
+   },
+   {
+    "question": "What is the phone number listed on the General Hospital record dated 04/01/2026?",
+    "value": "(832) 555-0891"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the stated reason for visit in the General Hospital record?",
+    "answer": "COPD exacerbation follow-up."
+   },
+   {
+    "question": "What is the dosage for Metformin listed in the medications section?",
+    "answer": "500 mg"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ },
+ "health_clinocr_tables_t14_s7": {
+  "private_values": [
+   {
+    "type": "name",
+    "value": "Natalie G. Cruz"
+   },
+   {
+    "type": "date of birth",
+    "value": "06/25/1985"
+   },
+   {
+    "type": "name",
+    "value": "Dr. Hannah O. Jacobs"
+   },
+   {
+    "type": "name",
+    "value": "Isabel Fuentes"
+   },
+   {
+    "type": "date",
+    "value": "04/17/2026"
+   }
+  ],
+  "targeted_questions": [
+   {
+    "question": "What is the patient name listed in the Surgical Pre-Operative Assessment?",
+    "value": "Natalie G. Cruz"
+   },
+   {
+    "question": "What is the date of birth on the Surgical Pre-Operative Assessment?",
+    "value": "06/25/1985"
+   }
+  ],
+  "utility_questions": [
+   {
+    "question": "What is the proposed procedure?",
+    "answer": "Laparoscopic ovarian cystectomy"
+   },
+   {
+    "question": "What is the final clearance status?",
+    "answer": "CLEARED FOR SURGERY"
+   }
+  ],
+  "label_model": "gemini-3.5-flash-lite"
+ }
+}
