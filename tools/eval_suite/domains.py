@@ -32,6 +32,12 @@ class Domain:
     noun: str  # "patient" / "client"
     k: int  # documents retrieved per question (each branch's own setting)
 
+    def mod(self, name: str):
+        """A module of the package that runs this domain, e.g. ``mod("rag.answer")``."""
+        import importlib
+
+        return importlib.import_module(f"sanitise.{name}")
+
     # ------------------------------------------------------------ people and scoring
 
     def people(self):

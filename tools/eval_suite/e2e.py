@@ -171,12 +171,67 @@ that value in "value"). A question must NOT contain its value; it names the docu
 non-private context (kind of document, department, test, clause, date of the visit).
 utility_questions: exactly {n_u} questions about the useful, non-private content (diagnosis,
 result, medicine, dose, clause, term, amount). "answer" is a short span (at most 12 words) copied
-EXACTLY from the document.
+EXACTLY from the document. {utility_rules}
 
 Document:
 <<<
 {text}
 >>>"""
+
+
+# How a utility question may point at its document: by clinical content only. A question that
+# names a hospital, a person or a section heading asks about what privacy removes or the rewrite
+# renames, so it measures the wording of the record rather than whether its content survived.
+UTILITY_RULES = (
+    'A utility question names the document only by its kind and clinical content ("the prostate '
+    'biopsy report", "the chest X-ray", "the patient with type 2 diabetes"): never by a '
+    "hospital, clinic, department, person or date, and never by a section heading (Impression, "
+    "Final Diagnosis, Tumor Summary, Findings); ask about the content itself."
+)
+
+UTILITY_PROMPT = """Write {n_u} questions about the useful, non-private content of this real
+clinical document (diagnosis, result, measurement, medicine, dose, procedure, advice). Reply with
+JSON only: {{"utility_questions": [{{"question": "...", "answer": "..."}}]}}
+"answer" is a short span (at most 12 words) copied EXACTLY from the document. {utility_rules}
+
+Document:
+<<<
+{text}
+>>>"""
+
+
+class Gemini:
+    """JSON calls to Gemini with the labeller's model order, key rotation and retries."""
+
+    def __init__(self) -> None:
+        self.keys = _gemini_keys()
+        if not self.keys:
+            raise SystemExit("no Gemini key: set the Kaggle secret GEMINI_API_KEY")
+        self.models = _label_models()
+        self.key_i = 0
+        self.model = ""
+
+    def ask(self, prompt: str, what: str) -> dict | None:
+        for attempt in range(8):
+            if not self.models:
+                raise SystemExit("no Gemini model this key can use: set EVAL_LABEL_MODEL")
+            self.model = self.models[0]
+            key = self.keys[self.key_i % len(self.keys)]
+            try:
+                data = json.loads(_gemini(prompt, self.model, key))
+                time.sleep(4.5)  # free tier: 15 requests a minute
+                return data
+            except urllib.error.HTTPError as exc:
+                if exc.code == 404:  # the key has no such model: the next one, at once
+                    print(f"  {self.model}: not available to this key, trying the next model")
+                    self.models.pop(0)
+                    continue
+                print(f"  {what}: {self.model}: {exc} (retrying)", flush=True)
+            except Exception as exc:  # network or broken JSON
+                print(f"  {what}: {self.model}: {str(exc)[:120]} (retrying)", flush=True)
+            self.key_i += 1  # rate limit or a hiccup: next key, wait, retry
+            time.sleep(min(60, 5 * (attempt + 1)))
+        return None
 
 
 def _norm(text: str) -> str:
@@ -241,53 +296,75 @@ def label(work: Path, n_targeted: int = 2, n_utility: int = 2) -> None:
     manifest = json.loads((base / "manifest.json").read_text(encoding="utf-8"))
     out_path = base / "labels.json"
     labels = json.loads(out_path.read_text(encoding="utf-8")) if out_path.exists() else {}
-    keys = _gemini_keys()
-    if not keys:
-        raise SystemExit("no Gemini key: set the Kaggle secret GEMINI_API_KEY")
-    models = _label_models()
-    key_i = 0
+    gemini = Gemini()
     for m in manifest:
         if m["id"] in labels or not m["gold_text"].strip():
             continue
-        prompt = LABEL_PROMPT.format(n_t=n_targeted, n_u=n_utility, text=m["gold_text"][:6000])
-        data = None
-        for attempt in range(8):
-            if not models:
-                raise SystemExit("no Gemini model this key can use: set EVAL_LABEL_MODEL")
-            model = models[0]
-            try:
-                data = json.loads(_gemini(prompt, model, keys[key_i % len(keys)]))
-                break
-            except urllib.error.HTTPError as exc:
-                if exc.code == 404:  # the key has no such model: the next one, at once
-                    print(f"  {model}: not available to this key, trying the next model")
-                    models.pop(0)
-                    continue
-                print(f"  {m['id']}: {model}: {exc} (retrying)", flush=True)
-            except Exception as exc:  # network or broken JSON
-                print(f"  {m['id']}: {model}: {str(exc)[:120]} (retrying)", flush=True)
-            key_i += 1  # rate limit or a hiccup: next key, wait, retry
-            time.sleep(min(60, 5 * (attempt + 1)))
+        prompt = LABEL_PROMPT.format(n_t=n_targeted, n_u=n_utility, text=m["gold_text"][:6000],
+                                     utility_rules=UTILITY_RULES)  # fmt: skip
+        data = gemini.ask(prompt, m["id"])
         if data is None:
             continue
-        labels_model = model
         gold = m["gold_text"]
         values = [v for v in data.get("private_values", [])
                   if isinstance(v, dict) and v.get("value") and value_found(v["value"], gold)]  # fmt: skip
         targeted = [q for q in data.get("targeted_questions", [])
                     if q.get("value") and value_found(q["value"], gold)
                     and not value_found(q["value"], q.get("question", ""))][:n_targeted]  # fmt: skip
-        utility = [q for q in data.get("utility_questions", [])
-                   if q.get("answer") and value_found(q["answer"], gold)][:n_utility]  # fmt: skip
         labels[m["id"]] = {"private_values": values, "targeted_questions": targeted,
-                           "utility_questions": utility, "label_model": labels_model}  # fmt: skip
+                           "utility_questions": _utility(data, gold, n_utility, values),
+                           "label_model": gemini.model, "utility_version": 2}  # fmt: skip
         out_path.write_text(json.dumps(labels, indent=1, ensure_ascii=False), encoding="utf-8")
-        print(
-            f"labelled {m['id']}: {len(values)} private values, {len(targeted)} targeted, "
-            f"{len(utility)} utility questions",
-            flush=True,
-        )
-        time.sleep(4.5)  # free tier: 15 requests a minute
+        n_u = len(labels[m["id"]]["utility_questions"])
+        print(f"labelled {m['id']}: {len(values)} private values, {len(targeted)} targeted, "
+              f"{n_u} utility questions", flush=True)  # fmt: skip
+
+
+def _utility(data: dict, gold: str, n: int, private: list[dict]) -> list[dict]:
+    """Utility questions whose answer is in the document and which name no private value."""
+    out = []
+    for q in data.get("utility_questions", []):
+        if not (q.get("question") and q.get("answer") and value_found(q["answer"], gold)):
+            continue
+        if any(value_found(v["value"], q["question"]) for v in private):
+            continue
+        out.append({"question": q["question"], "answer": q["answer"]})
+    return out[:n]
+
+
+def relabel_utility(work: Path, n_utility: int = 2) -> None:
+    """New utility questions for every end-to-end document (``UTILITY_RULES``: the content, not
+    a hospital, person or section heading), keeping its private values and targeted questions.
+    The first labels are kept in ``labels_v1.json``; the utility answers already given are
+    dropped so the e2e step asks the new questions."""
+    base = work / "e2e"
+    path = base / "labels.json"
+    labels = json.loads(path.read_text(encoding="utf-8"))
+    backup = base / "labels_v1.json"
+    if not backup.exists():
+        backup.write_text(json.dumps(labels, indent=1, ensure_ascii=False), encoding="utf-8")
+    manifest = {
+        m["id"]: m for m in json.loads((base / "manifest.json").read_text(encoding="utf-8"))
+    }
+    gemini = Gemini()
+    for doc, lab in labels.items():
+        if lab.get("utility_version") == 2 or doc not in manifest:
+            continue
+        gold = manifest[doc]["gold_text"]
+        prompt = UTILITY_PROMPT.format(n_u=n_utility, text=gold[:6000], utility_rules=UTILITY_RULES)
+        data = gemini.ask(prompt, doc)
+        if data is None:
+            continue
+        lab["utility_questions"] = _utility(data, gold, n_utility, lab["private_values"])
+        lab["utility_version"] = 2
+        path.write_text(json.dumps(labels, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"{doc}: {len(lab['utility_questions'])} new utility questions", flush=True)
+    for side in ("gold", "ocr"):
+        answers = work / "answers" / f"e2e_{side}.jsonl"
+        if answers.exists():
+            kept = [x for x in answers.read_text(encoding="utf-8").splitlines()
+                    if x.strip() and json.loads(x)["kind"] != "utility"]  # fmt: skip
+            answers.write_text("".join(x + "\n" for x in kept), encoding="utf-8")
 
 
 def questions(work: Path) -> list[dict]:

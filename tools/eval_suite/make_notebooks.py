@@ -302,6 +302,73 @@ def build(domain: str) -> dict:
     return notebook(cells)
 
 
+RERUN_INTRO = """
+# Evaluation, health: rerun the utility questions on a finished run (Kaggle, ~1 hour)
+
+The first utility questions asked about a record's *wording* (ChatDoctor questions quoted the
+patient; scan questions named hospitals and section headings), which the rewrite changes, so
+ours often answered "The records do not say" with the right record in hand. This notebook asks
+new questions about the *content* (`tools/eval_suite/utility_questions.py`) on the stores your
+5h run already built, and writes a new report. Nothing is rebuilt; every other number is the
+same as in the 5h run.
+
+**Before running:**
+1. Session options: **GPU T4 x2**, Internet **On**; secret **GEMINI_API_KEY** attached.
+2. Right sidebar → **Input** → **+ Add Input** → **Your Work** → pick the evaluation notebook
+   whose 5h version finished → **Add**. Its output (the stores, answers and questions) appears
+   under `/kaggle/input/`.
+3. **Save Version → Save & Run All (Commit)**, then close Kaggle. When it finishes, the
+   version's **Output** tab holds `eval_results_health_5h.zip` (the new full report).
+
+| Cell | What it does | Time |
+|---|---|---|
+| 1 Setup | clone main, install, Ollama + llama3:8b (no vision model needed) | ~12 min |
+| 2 Restore | copy the 5h run from the attached input | ~1 min |
+| 3 New questions | Gemini rewrites 100 ChatDoctor and 50 scan questions about content | ~12 min |
+| 4 Answer | the new utility questions, both pipelines, on the saved stores | ~15 min |
+| 5 End to end | the scans' new questions on both scan stores | ~10 min |
+| 6 Report + pack | the full report (all metrics) and the zip | ~3 min |
+"""
+
+RERUN_RESTORE = """
+# 2 Restore the finished 5h run from the attached input (its stores, answers and questions)
+import shutil
+found = [p.parent for p in Path("/kaggle/input").rglob("stores") if p.parent.name == "health_5h"]
+if not found:
+    raise RuntimeError("No finished 5h run under /kaggle/input: add the evaluation notebook's "
+                       "output as an input (right sidebar -> Input -> + Add Input -> Your Work).")
+if not (WORK / "stores" / "real.sqlite").exists():
+    shutil.copytree(found[0], WORK, dirs_exist_ok=True)
+print("restored", found[0], "->", WORK, "| stores:", sorted(p.name for p in (WORK / "stores").iterdir()))
+"""
+
+RERUN_STEPS = [
+    """
+# 3 New utility questions about content (Gemini): ChatDoctor and the scans
+run("utility-questions")
+""",
+    """
+# 4 Answer the new ChatDoctor utility questions, both pipelines, on the saved real store
+run("single", "--only utility")
+""",
+    """
+# 5 Answer the scans' new utility questions on both scan stores (gold text and OCR)
+run("e2e")
+""",
+]
+
+
+def build_rerun() -> dict:
+    setup = HEALTH_SETUP.replace("{repo_url}", REPO_URL)
+    setup = setup.replace('SCALE = "5h"', 'SCALE = "5h"  # the run being redone; keep "5h"')
+    setup = setup.replace("colab_cache.install_ollama_and_model(OCR_MODEL)\n", "")
+    cells = [md(RERUN_INTRO), code(setup), code(RERUN_RESTORE)]
+    cells += [code(c) for c in RERUN_STEPS]
+    cells.append(code(STEPS["report"]))
+    cells.append(code(STEPS["pack"].format(domain="health")))
+    return notebook(cells)
+
+
 def main() -> None:
     for domain in ("health", "legal"):
         path = ROOT / "notebooks" / f"eval_{domain}_kaggle.ipynb"
@@ -309,6 +376,11 @@ def main() -> None:
             json.dumps(build(domain), indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
         )
         print("wrote", path.relative_to(ROOT))
+    path = ROOT / "notebooks" / "eval_health_rerun_utility_kaggle.ipynb"
+    path.write_text(
+        json.dumps(build_rerun(), indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print("wrote", path.relative_to(ROOT))
 
 
 if __name__ == "__main__":

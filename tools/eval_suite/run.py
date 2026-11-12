@@ -55,13 +55,15 @@ PIPELINES = ("baseline", "protected")
 def _args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("step", choices=["data", "build", "single", "multi", "e2e-prep", "e2e-label",
-                                    "e2e", "report"])  # fmt: skip
+                                    "utility-questions", "e2e", "report"])  # fmt: skip
     p.add_argument("--domain", required=True, choices=["health", "legal"])
     p.add_argument("--work", required=True, type=Path)
     p.add_argument("--repo", type=Path, default=MAIN_REPO)
     p.add_argument("--main-repo", type=Path, default=MAIN_REPO)
     p.add_argument("--scale", choices=list(SCALES), default="5h")
     p.add_argument("--stores", default="gen,real,e2e_gold,e2e_ocr")
+    p.add_argument("--only", default="target_info,repeat,membership,utility",
+                   help="single: which question sets to ask")  # fmt: skip
     return p.parse_args()
 
 
@@ -301,11 +303,18 @@ def step_single() -> None:
     data = WORK / "data"
     targeted = [{"id": t["query_id"], **t} for t in _load(data / "targeted.json")]
 
+    only = set(ARGS.only.split(","))
+
     async def work(llm) -> None:
-        await _ask(_context("gen"), llm, targeted, WORK / "answers" / "target_info.jsonl")
-        real = _context("real")
-        for name in ("repeat", "membership", "utility"):
-            await _ask(real, llm, _load(data / f"{name}.json"), WORK / "answers" / f"{name}.jsonl")
+        if "target_info" in only:
+            await _ask(_context("gen"), llm, targeted, WORK / "answers" / "target_info.jsonl")
+        sets = [n for n in ("repeat", "membership", "utility") if n in only]
+        if sets:
+            real = _context("real")
+            for name in sets:
+                await _ask(
+                    real, llm, _load(data / f"{name}.json"), WORK / "answers" / f"{name}.jsonl"
+                )
 
     asyncio.run(_with_llm(work))
 
@@ -363,6 +372,14 @@ def main() -> None:
         from eval_suite import e2e
 
         e2e.label(WORK)
+    elif step == "utility-questions":
+        # utility questions about content, not wording (eval_suite.utility_questions, e2e)
+        from eval_suite import e2e, utility_questions
+
+        if D.name == "health":
+            utility_questions.rewrite_health(WORK)
+        if (WORK / "e2e" / "labels.json").exists():
+            e2e.relabel_utility(WORK)
     elif step == "e2e":
         step_e2e()
     elif step == "report":

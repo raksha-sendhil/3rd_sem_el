@@ -5,6 +5,7 @@ REPORT.md (the tables) and figures/*.png. The definitions are those of docs/eval
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 from collections import Counter
 from datetime import datetime
@@ -120,6 +121,18 @@ def membership(rows: list[dict]) -> dict:
     return out
 
 
+# an answer that says the records hold nothing on the question (or a refusal by the monitor)
+_NO_ANSWER = re.compile(
+    r"records do not say|cannot be answered|not (?:mentioned|provided|stated|specified)"
+    r"|do(?:es)? not (?:mention|contain|say)|no information",
+    re.IGNORECASE,
+)
+
+
+def answered(text: str) -> bool:
+    return not _NO_ANSWER.search(text or "")
+
+
 def utility(rows: list[dict]) -> dict:
     f1 = {p: [M.token_f1(r[p]["answer"], r["reference"]) for r in rows] for p in PIPES}
     pairs = list(zip(f1["baseline"], f1["protected"], strict=True))
@@ -134,6 +147,15 @@ def utility(rows: list[dict]) -> dict:
         pairs, lambda s: M.mean([b for _, b in s]) / max(M.mean([a for a, _ in s]), 1e-9)
     )
     out["wilcoxon_p"] = M.wilcoxon_p(pairs)
+    # how often each pipeline gives an answer at all, and F1 where ours did answer
+    for pipe in PIPES:
+        out[pipe]["answer_rate"] = M.rate_summary([answered(r[pipe]["answer"]) for r in rows])
+    both = [i for i, r in enumerate(rows) if answered(r["protected"]["answer"])]
+    if both:
+        fb = M.mean([f1["baseline"][i] for i in both])
+        fp = M.mean([f1["protected"][i] for i in both])
+        out["answered"] = {"questions": len(both), "baseline_f1": fb, "protected_f1": fp,
+                           "retention": fp / fb if fb else float("nan")}  # fmt: skip
     return out
 
 
@@ -194,8 +216,36 @@ def sessions(d, rows: list[dict]) -> dict:
             for a, b in zip(per["baseline"], per["protected"], strict=True)
         ]
     )
+    out["reidentification"] = reidentification(d, rows)
     flat = [r for s in rows for r in s["rounds"]]
     out["latency"] = latency(flat)
+    return out
+
+
+def reidentification(d, rows: list[dict], k: int = 5) -> dict:
+    """After each session, how many people in the table still match every detail the answers
+    stated (the pipeline's own scorer, ``score_round``): 1 means the target is singled out,
+    fewer than ``k`` breaks k-anonymity (Sweeney 2002). Unlike Session Leak Success this counts
+    the coarse details too (age band, district, occupation group), which ours may still give."""
+    people = d.people()
+    score_round = d.mod("evaluation.attacks").score_round
+    RagAnswer = d.mod("schemas").RagAnswer
+
+    def pool(text: str, target: str) -> int:
+        a = RagAnswer(pipeline="baseline", query="", answer=text, doc_ids=[], payload="",
+                      latency_ms=0)  # fmt: skip
+        return score_round(people, target, [a]).candidate_pool
+
+    out: dict = {"k": k}
+    pools = {p: [pool(" ".join(r[p]["answer"] for r in s["rounds"]), s["target"]) for s in rows]
+             for p in PIPES}  # fmt: skip
+    for pipe in PIPES:
+        ps = pools[pipe]
+        out[pipe] = {"median_pool": M.median(ps), "singled_out": M.rate_summary([x <= 1 for x in ps]),
+                     "below_k": M.rate_summary([x < k for x in ps]), "pools": ps}  # fmt: skip
+    out["below_k_mcnemar_p"] = M.mcnemar_p(
+        [(a < k, b < k) for a, b in zip(pools["baseline"], pools["protected"], strict=True)]
+    )
     return out
 
 
@@ -229,8 +279,23 @@ def e2e(work: Path) -> dict | None:
         if util:
             u = utility(util)
             side_out["utility_retention"] = u["utility_retention"]
+            side_out["answered"] = u.get("answered")
             for pipe in PIPES:
                 side_out[pipe]["token_f1"] = u[pipe]["token_f1"]
+                side_out[pipe]["answer_rate"] = u[pipe]["answer_rate"]["rate"]
+            kinds = {m["id"]: m.get("type", "?") for m in manifest}
+            by_type = {}
+            for kind in sorted({kinds.get(r["doc"], "?") for r in util}):
+                part = [r for r in util if kinds.get(r["doc"], "?") == kind]
+                ut = utility(part)
+                cer = [m["ocr_quality"]["cer"] for m in manifest
+                       if m.get("type") == kind and m.get("ocr_quality")]  # fmt: skip
+                by_type[kind] = {"questions": len(part), "baseline_f1": ut["baseline"]["token_f1"],
+                                 "protected_f1": ut["protected"]["token_f1"],
+                                 "retention": ut["utility_retention"],
+                                 "protected_answer_rate": ut["protected"]["answer_rate"]["rate"],
+                                 "ocr_cer": M.mean(cer) if cer else float("nan")}  # fmt: skip
+            side_out["by_type"] = by_type
         out[side] = side_out
     if "gold" in out and "ocr" in out:
         out["gap_target_info_ours"] = (
@@ -554,6 +619,16 @@ def markdown(res: dict, figures_made: list[str]) -> str:
         L.append(
             f"| | **Utility retention** | 100% | {_pct(u['utility_retention'])}{_ci(u['retention_ci95'])} | |"
         )
+    if (u := s.get("utility")) and "answered" in u:
+        L.append(
+            f"| | questions answered (not 'the records do not say') | "
+            f"{_pct(u['baseline']['answer_rate']['rate'])} | {_pct(u['protected']['answer_rate']['rate'])} | |"
+        )
+        a = u["answered"]
+        L.append(
+            f"| | utility retention where ours answered ({a['questions']} questions) | 100% | "
+            f"{_pct(a['retention'])} | |"
+        )
     if lat := s.get("latency"):
         L.append(
             f"| 6 | **Latency**, median seconds ({lat['n']} questions) | "
@@ -587,6 +662,16 @@ def markdown(res: dict, figures_made: list[str]) -> str:
         ]
         L += [f"| {cb['round']} | {_pct(cb['srr'])} | {_pct(cp['srr'])} |"
               for cb, cp in zip(b["srr_curve"], p["srr_curve"], strict=True)]  # fmt: skip
+    if m and (rid := m.get("reidentification")):
+        rb, rp = rid["baseline"], rid["protected"]
+        L += ["", "Re-identification by details (every detail the answers stated, coarse ones included; "
+                  "people in the table who still match them all):", "",
+              "| | No privacy | Ours | p |", "|---|---:|---:|---:|",
+              f"| people still matching, median | {rb['median_pool']:g} | {rp['median_pool']:g} | |",
+              f"| sessions narrowed to one person | {_pct(rb['singled_out']['rate'])} | "
+              f"{_pct(rp['singled_out']['rate'])} | |",
+              f"| sessions narrowed below k = {rid['k']} | {_pct(rb['below_k']['rate'])}{_ci(rb['below_k']['ci95'])} | "
+              f"{_pct(rp['below_k']['rate'])}{_ci(rp['below_k']['ci95'])} | {_p(rid['below_k_mcnemar_p'])} |"]  # fmt: skip
     if e and "gold" in e and "ocr" in e:
         g, o = e["gold"], e["ocr"]
         L += ["", f"## End to end, with OCR ({e['documents']} real documents, {e['private_values']} "
@@ -596,6 +681,14 @@ def markdown(res: dict, figures_made: list[str]) -> str:
               f"{o['baseline']['target_info'] - g['baseline']['target_info']} |",
               f"| Target Info, ours | {g['protected']['target_info']} | {o['protected']['target_info']} | "
               f"{e['gap_target_info_ours']} |"]  # fmt: skip
+        for side, name in (("gold", "A: gold text"), ("ocr", "B: scan + OCR")):
+            if bt := e[side].get("by_type"):
+                L += ["", f"Utility by kind of scan, {name}:", "",
+                      "| Kind | Questions | F1 no privacy | F1 ours | Retention | Ours answered | OCR character error |",
+                      "|---|---:|---:|---:|---:|---:|---:|"]  # fmt: skip
+                L += [f"| {k} | {v['questions']} | {v['baseline_f1']:.2f} | {v['protected_f1']:.2f} | "
+                      f"{_pct(v['retention'])} | {_pct(v['protected_answer_rate'])} | {_pct(v['ocr_cer'])} |"
+                      for k, v in bt.items()]  # fmt: skip
         if "gap_utility_retention" in e:
             gap = e["gap_utility_retention"]
             gap_text = "n/a" if gap != gap else f"{100 * gap:+.1f} points"
