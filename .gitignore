@@ -41,3 +41,8 @@ data/ocr_test/.iam/
 data/ocr_real/.cache/
 # OCR evaluation: per-document readings (report.md / report.json are kept)
 results/ocr/*/pred/
+
+# finance runs (rebuild from data/finance)
+data/finance/store.sqlite
+data/finance/index/
+data/finance/monitor.sqlite
