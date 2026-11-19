@@ -378,6 +378,8 @@ def main() -> None:
 
         if D.name == "health":
             utility_questions.rewrite_health(WORK)
+        else:
+            utility_questions.rewrite_legal(WORK)
         if (WORK / "e2e" / "labels.json").exists():
             e2e.relabel_utility(WORK)
     elif step == "e2e":

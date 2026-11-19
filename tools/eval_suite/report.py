@@ -252,6 +252,29 @@ def reidentification(d, rows: list[dict], k: int = 5) -> dict:
 # ---------------------------------------------------------------- end to end
 
 
+def aligned_cer(ocr: str, gold: str) -> float:
+    """Character error rate of the OCR text on the stretch of the gold text it covers.
+
+    The end-to-end check keeps the first part of each document, cut separately from the gold
+    text and the OCR text; on a long document the two cuts fall in different places (a dropped
+    header moves the boundary), so comparing them whole counts text that is simply in the other
+    part as errors. Here the shorter text is aligned inside the longer one first
+    (``rapidfuzz.fuzz.partial_ratio_alignment``) and only that stretch is compared."""
+    from rapidfuzz import fuzz
+    from rapidfuzz.distance import Levenshtein
+
+    o, g = " ".join(ocr.lower().split()), " ".join(gold.lower().split())
+    if not o or not g:
+        return float("nan")
+    if len(o) <= len(g):
+        a = fuzz.partial_ratio_alignment(o, g)
+        g = g[a.dest_start : a.dest_end]
+    else:
+        a = fuzz.partial_ratio_alignment(g, o)
+        o = o[a.dest_start : a.dest_end]
+    return Levenshtein.distance(o, g) / max(len(g), 1)
+
+
 def ocr_time(manifest: list[dict]) -> dict | None:
     """Seconds step 0 took to read each scan (``e2e.prepare``). The first document also loads
     the vision model, so the median is the figure to quote; per page when the pages were
@@ -284,8 +307,14 @@ def e2e(work: Path) -> dict | None:
     labels = json.loads(labels_path.read_text(encoding="utf-8"))
     manifest = json.loads((work / "e2e" / "manifest.json").read_text(encoding="utf-8"))
     values = sorted({v["value"] for lab in labels.values() for v in lab["private_values"]})
+    for m in manifest:  # OCR error on the stretch both texts cover (``aligned_cer``)
+        if m.get("ocr_text") and m.get("gold_text"):
+            m["cer_aligned"] = aligned_cer(m["ocr_text"], m["gold_text"])
+    cers = [m["cer_aligned"] for m in manifest if m.get("cer_aligned") == m.get("cer_aligned")
+            and "cer_aligned" in m]  # fmt: skip
     out: dict = {"documents": len(labels), "private_values": len(values),
-                 "ocr_cer_mean": M.mean([m["ocr_quality"]["cer"] for m in manifest if m.get("ocr_quality")]),
+                 "ocr_cer_mean": M.mean(cers), "ocr_cer_median": M.median(cers),
+                 "ocr_cer_as_cut": M.mean([m["ocr_quality"]["cer"] for m in manifest if m.get("ocr_quality")]),
                  "ocr_time": ocr_time(manifest)}  # fmt: skip
     for side in ("gold", "ocr"):
         rows = _rows(work / "answers" / f"e2e_{side}.jsonl")
@@ -312,8 +341,8 @@ def e2e(work: Path) -> dict | None:
             for kind in sorted({kinds.get(r["doc"], "?") for r in util}):
                 part = [r for r in util if kinds.get(r["doc"], "?") == kind]
                 ut = utility(part)
-                cer = [m["ocr_quality"]["cer"] for m in manifest
-                       if m.get("type") == kind and m.get("ocr_quality")]  # fmt: skip
+                cer = [m["cer_aligned"] for m in manifest
+                       if m.get("type") == kind and "cer_aligned" in m]  # fmt: skip
                 by_type[kind] = {"questions": len(part), "baseline_f1": ut["baseline"]["token_f1"],
                                  "protected_f1": ut["protected"]["token_f1"],
                                  "retention": ut["utility_retention"],
@@ -699,7 +728,8 @@ def markdown(res: dict, figures_made: list[str]) -> str:
     if e and "gold" in e and "ocr" in e:
         g, o = e["gold"], e["ocr"]
         L += ["", f"## End to end, with OCR ({e['documents']} real documents, {e['private_values']} "
-                  f"labelled private values, mean OCR character error rate {_pct(e['ocr_cer_mean'])})", "",
+                  f"labelled private values, OCR character error rate {_pct(e['ocr_cer_mean'])} mean, "
+                  f"{_pct(e.get('ocr_cer_median', float('nan')))} median)", "",
               "| Metric | A: gold text | B: scan + OCR | Gap B - A |", "|---|---:|---:|---:|",
               f"| Target Info, no privacy | {g['baseline']['target_info']} | {o['baseline']['target_info']} | "
               f"{o['baseline']['target_info'] - g['baseline']['target_info']} |",

@@ -183,14 +183,16 @@ Document:
 # names a hospital, a person or a section heading asks about what privacy removes or the rewrite
 # renames, so it measures the wording of the record rather than whether its content survived.
 UTILITY_RULES = (
-    'A utility question names the document only by its kind and clinical content ("the prostate '
-    'biopsy report", "the chest X-ray", "the patient with type 2 diabetes"): never by a '
-    "hospital, clinic, department, person or date, and never by a section heading (Impression, "
-    "Final Diagnosis, Tumor Summary, Findings); ask about the content itself."
+    'A utility question names the document only by its kind and content ("the prostate '
+    'biopsy report", "the chest X-ray", "the software licence agreement", "the supply agreement '
+    'for medical devices"): never by a hospital, clinic, department, company, party, person, '
+    "reference number or date, and never by a section heading (Impression, Final Diagnosis, "
+    "Tumor Summary, Findings, Schedule A); ask about the content itself."
 )
 
 UTILITY_PROMPT = """Write {n_u} questions about the useful, non-private content of this real
-clinical document (diagnosis, result, measurement, medicine, dose, procedure, advice). Reply with
+document (a clinical record: diagnosis, result, measurement, medicine, dose, procedure, advice;
+a contract or form: an obligation, term, amount, period, right, condition). Reply with
 JSON only: {{"utility_questions": [{{"question": "...", "answer": "..."}}]}}
 "answer" is a short span (at most 12 words) copied EXACTLY from the document. {utility_rules}
 
