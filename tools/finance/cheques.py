@@ -34,9 +34,10 @@ import html
 import io
 import re
 import sys
+import tempfile
 import zipfile
 from itertools import zip_longest
-from pathlib import PurePosixPath
+from pathlib import Path, PurePosixPath
 
 from common import FINANCE, Folder
 
@@ -44,6 +45,26 @@ LABELS = FINANCE / "cheques" / "labels.csv"
 FIELDS = ["payee", "payee_2", "amount", "amount_words", "account_number", "date"]
 COLUMNS = ["file", "bank", *FIELDS]
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp", ".webp"}
+
+
+def as_zip(path: str) -> str:
+    """Kaggle unpacks an uploaded zip: given a folder, find the zip inside it, or pack the
+    folder's images and DATA.xlsx into a temporary zip."""
+    folder = Path(path)
+    if not folder.is_dir():
+        return path
+    inner = sorted(folder.rglob("*.zip"))
+    if inner:
+        return str(inner[0])
+    files = [p for p in folder.rglob("*") if p.suffix.lower() in IMAGE_SUFFIXES | {".xlsx"}]
+    if not files:
+        sys.exit(f"no cheque images or zip under {folder}")
+    out = Path(tempfile.gettempdir()) / "idrbt_cheques.zip"
+    with zipfile.ZipFile(out, "w") as z:
+        for p in files:
+            z.write(p, p.relative_to(folder).as_posix())
+    print(f"{len(files)} files packed from {folder}")
+    return str(out)
 
 
 def read_xlsx(data: bytes) -> list[list[str]]:
@@ -174,12 +195,14 @@ def fetch_cheques(f: Folder, zip_path: str, limit: int) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--zip", required=True, help="the IDRBT zip (a private Kaggle dataset)")
+    ap.add_argument("--zip", required=True,
+                    help="the IDRBT zip, or the folder Kaggle unpacked it into")  # fmt: skip
     ap.add_argument("--limit", type=int, default=30)
     ap.add_argument("--list", action="store_true", help="only list the images in the zip")
     ap.add_argument("--make-labels", action="store_true",
                     help="write labels.csv from the zip's DATA.xlsx (typed columns are kept)")  # fmt: skip
     args = ap.parse_args()
+    args.zip = as_zip(args.zip)
     if args.make_labels:
         make_labels(args.zip)
         return
