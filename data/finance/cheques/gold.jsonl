@@ -1,1 +1,0 @@
-{"id": "cheque_sample", "file": "scans/cheque_sample.pdf", "type": "cheque", "fields": {"payee": "Ramesh Gupta", "amount": "12,000", "account_number": "004512345678"}, "private": ["payee", "account_number"], "questions": [{"question": "What amount is the cheque written for?", "answer": "12,000"}]}
