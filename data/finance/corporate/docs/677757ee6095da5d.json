@@ -1,0 +1,19 @@
+{
+ "doc_id": "677757ee6095da5d",
+ "text": "From: charlie.graham@enron.com\nTo: rick.kile@enron.com, lynn.blair@enron.com, harry.woodson@enron.com\nDate: 2001-10-25\nSubject: Mt. Jesus Drip\n\nI have just been informed that a wire from ONEOK was received yesterday for delinquent/disputed mmbtu reimbursement at the Mt. Jesus drip.  ONEOK had been withholding payment since April 2000.  The wire funds received not only included the $72,745.13 for April 2000 through June 2001 period  as requested in Dave Neubauer's September 24 letter, but also subsequently invoiced amounts for July and August 2001.  Looks like things are caught up and back on track.\n\nCharlie Graham\nPhone 402-398-7061\nFax 402-398-7122 \nOMA 0629",
+ "source": "corporate",
+ "private": [
+  "charlie.graham@enron.com",
+  "rick.kile@enron.com",
+  "lynn.blair@enron.com",
+  "harry.woodson@enron.com",
+  "Charlie Graham",
+  "402-398-7061",
+  "402-398-7122"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "blair-l/customer___oneok/23.",
+  "message_id": "<1031728.1075853051507.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "doc_id": "946692235c8e18bc",
+ "text": "From: enron.announcements@enron.com\nTo: all.states@enron.com\nDate: 2001-05-01\nSubject: iBuyit Payables Is Now Available\n\nI am pleased to announce that iBuyit Payables has been activated for all \norganizations supported by Houston Accounts Payable.  iBuyit Payables is an \ninnovative tool that will enable us to code and approve invoices for goods \nand services online.\n\nWho is impacted?\nBeginning today, all coders and approvers of invoices that were previously \nsubmitted to Houston Accounts Payable for processing and payment, will code \nand approve invoices through iBuyit Payables.  Invoices entered directly into \nSAP, will not be impacted by this process.\n\nNote:  Beginning May 8th, any invoices with coding sheets received by \nAccounts Payable will be entered into iBuyit Payables and electronically \nrouted back to the coder. The invoice will then need to be coded and approved \n(again) in iBuyit Payables to generate a payment. \n\nHow do I receive training?\nOnline system demonstrations and quick reference cards are available on the \nEnron intranet in the Integrated Solutions Center Document Library at <\nhttp://sap.enron.com/sap_doclib/user/file_list.asp?cabinet_id=265>.  \nNote:  You must use the Enron standard Microsoft Internet Explorer to view \nthese materials.\n\nWho do I call for help?\n*  For help using the iBuyit Payables system, contact the ISC Call Center at \n(713) 345-4727.\n*  For invoice payment status, contact the Accounts Payable Call Center at \n(713) 853-7127\n or toll free at (866) AP ENRON, or send an e-mail to \niBuyit.payables@enron.com <mailto:iBuyit.payables@enron.com>.\n\nQuestions?\nFor general information about iBuyit, send an e-mail to <\nmailto:ibuyit@enron.com>.",
+ "source": "corporate",
+ "private": [
+  "enron.announcements@enron.com",
+  "all.states@enron.com",
+  "(713) 345-4727",
+  "(713) 853-7127"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/525.",
+  "message_id": "<1971201.1075841274357.JavaMail.evans@thyme>"
+ }
+}

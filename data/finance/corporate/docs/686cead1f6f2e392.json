@@ -1,0 +1,18 @@
+{
+ "doc_id": "686cead1f6f2e392",
+ "text": "From: dave.fuller@enron.com\nTo: tori.kuykendall@enron.com, dan.hyvl@enron.com, anne.bike@enron.com\nDate: 2001-01-19\nSubject: Mesa Restructure\n\nI have a proposed restructuring transaction with City of Mesa, Arizona.  It \nworks like this:\n\n1) Half their volume is currently priced at 3.74 (fixed, physical deal with \nus)\n2) That deal runs through July 01\n3) I want to reprice that deal at a higher price and use that equity to \nfinance a discount to index for an extra six months.\n4) They will do one of two transactions (shown below) one extends half the \nvolume one extends the full volume.\n\n\n       \n\nI need help with a couple of things:\n\n1) Since they canceled their Enfolio Agmt. can I get a contract from legal \nthat will allow us to transact without it.\n2) How do we get this deal in Mike's book and the risk system\n\nThanks,\n\nDave Fuller\n503-464-3732",
+ "source": "corporate",
+ "private": [
+  "dave.fuller@enron.com",
+  "tori.kuykendall@enron.com",
+  "dan.hyvl@enron.com",
+  "anne.bike@enron.com",
+  "Dave Fuller",
+  "503-464-3732"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/mesa/1.",
+  "message_id": "<7717035.1075842260443.JavaMail.evans@thyme>"
+ }
+}

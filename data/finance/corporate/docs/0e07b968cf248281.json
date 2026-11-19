@@ -1,0 +1,17 @@
+{
+ "doc_id": "0e07b968cf248281",
+ "text": "From: priscilla.hamic@enron.com\nTo: scott.tackett@enron.com\nDate: 2002-01-15\nSubject: Demand reimbursement charges for VNG Nov prod.\n\nScott - \n\nPlease zero out the demand charges for Virginia Natural Gas November 2001 production on the following deals:\n\n602027\n602028\n602021\n602018\n602019\n602020\n\nI also need the deal 1020386 price for November 2001 to be changed to zero.  The volumes need to stay the way they are but this is a pass through charge to the customer and they have paid this amount to Transco.\n\nPlease call me if you have any questions and please let me know when this is done so I can process it in the back office.\n\nThanks for your assistance.\n\nPriscilla Hamic\nEnron North America Corp.\nTel: 713-345-3736\nFax: 713-646-8420\nE-mail: priscilla.hamic@enron.com",
+ "source": "corporate",
+ "private": [
+  "priscilla.hamic@enron.com",
+  "scott.tackett@enron.com",
+  "Priscilla Hamic",
+  "713-345-3736",
+  "713-646-8420"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/inbox/294.",
+  "message_id": "<31649343.1075840186821.JavaMail.evans@thyme>"
+ }
+}

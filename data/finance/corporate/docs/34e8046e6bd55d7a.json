@@ -1,0 +1,15 @@
+{
+ "doc_id": "34e8046e6bd55d7a",
+ "text": "From: jensminger@msn.com\nTo: elizabeth.sager@enron.com\nDate: 2001-06-08\nSubject: DRAM forwards\n\nMs. Sager:\nI'm trying to find out more about Enron's memory  chip futures--specifically \nI'd like to see if I could publish a standard  contract for the instruments.? \nA search of Enron's website did not yield  anything (though probably I don't \nknow how to search the site).? Neither  could I find any corporate site for \nKenneth Wang, listed as director of your  Global Semiconductor Group.? Any \nhelp you could give me in this regard  would be appreciated.\n?\nThanks,\nJohn Ensminger, Publisher\nDelta Hedge Publications\njensminger@msn.com\n718-624-5730",
+ "source": "corporate",
+ "private": [
+  "jensminger@msn.com",
+  "elizabeth.sager@enron.com",
+  "718-624-5730"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "sager-e/notes_inbox/52.",
+  "message_id": "<16016729.1075853426007.JavaMail.evans@thyme>"
+ }
+}

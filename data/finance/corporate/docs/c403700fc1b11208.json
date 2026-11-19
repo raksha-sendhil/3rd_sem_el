@@ -1,0 +1,17 @@
+{
+ "doc_id": "c403700fc1b11208",
+ "text": "From: rick.dietz@enron.com\nTo: drew.fossum@enron.com, britt.davis@enron.com, phil.lowry@enron.com\nDate: 2001-08-01\nSubject: ONEOK Payment\n\nAs we discussed, a wire was sent to ONEOK this afternoon as awarded by the arbitration panel.  The wire, in the amount of $1,143,231.01, was calculated as shown below.\n\n\t$1,192,857.73\t\tAmount due ONEOK per the arbitration panel\n\t     (49,626.72)\t\tLess interest due NNG ($56,097.69 less $6,470.97;\n\t\t\t\t$196.09 interest per day times 33 days = $6,470.97; \t\t\t\t\t33 days calculated from arbitration order date 6/27/01 - 8/1/01)\n\t____________\n\t$1,143,231.01\t\tNet Amount due ONEOK and wired on 8/1/01\n\t===========\n\nIf you have any questions, please give me a call at (713) 853-5691.\n\nRick",
+ "source": "corporate",
+ "private": [
+  "rick.dietz@enron.com",
+  "drew.fossum@enron.com",
+  "britt.davis@enron.com",
+  "phil.lowry@enron.com",
+  "(713) 853-5691"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "blair-l/customer___oneok/28.",
+  "message_id": "<20713060.1075853051687.JavaMail.evans@thyme>"
+ }
+}

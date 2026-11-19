@@ -1,0 +1,15 @@
+{
+ "doc_id": "9d5e8f71499e45f7",
+ "text": "From: bill.iii@enron.com\nTo: portland.shift@enron.com\nDate: 2001-04-24\nSubject: Montana\n\nGroup,\nI will be visiting MPC from Tuesday 04/24 through Thursday 04/26.  I will be \nback in on the afternoon of the 26th.  I should be available on my cell phone \nat 503-887-3449.  However, if you cannot reach me, please refer trading or \nservice questions to Geir or Ryan. \n\nThanks,\n\nBill",
+ "source": "corporate",
+ "private": [
+  "bill.iii@enron.com",
+  "portland.shift@enron.com",
+  "503-887-3449"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "linder-e/all_documents/749.",
+  "message_id": "<24398803.1075841015281.JavaMail.evans@thyme>"
+ }
+}

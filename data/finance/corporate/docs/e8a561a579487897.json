@@ -1,0 +1,17 @@
+{
+ "doc_id": "e8a561a579487897",
+ "text": "From: debra.perlingiere@enron.com\nTo: twinegas@aol.com\nDate: 2001-07-27\nSubject: Agreement\n\nFurther to our conversation,  please see the attached contract for execution.  Please print two originals sign, and return same to my attention at the address below.  Please give me a call if you have any questions.  Upon final execution, I will forward an original for your records.  As discussed I will notify credit so you may trade on Monday if necessary.  \n\n \nRegards,\nDebra Perlingiere\nEnron North America Legal\n1400 Smith Street, EB 3885\nHouston, Texas 77002\ndperlin@enron\n713-853-7658\n713-646-3490 Fax",
+ "source": "corporate",
+ "private": [
+  "debra.perlingiere@enron.com",
+  "twinegas@aol.com",
+  "Debra Perlingiere",
+  "713-853-7658",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "perlingiere-d/sent_items/508.",
+  "message_id": "<11029611.1075858537394.JavaMail.evans@thyme>"
+ }
+}

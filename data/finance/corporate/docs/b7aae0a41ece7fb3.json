@@ -1,0 +1,12 @@
+{
+ "doc_id": "b7aae0a41ece7fb3",
+ "text": "Share-Based Compensation\nThese NQs with market-based vesting criteria were valued using a Monte Carlo simulation model. The weighted average Monte Carlo input assumptions\nThe following table shows a summary of share-based compensation expense included in the Consolidated Statements of Operations during the periods\nused for calculating the fair value of these market-based stock options are as follows:\npresented (in thousands):\nFiscal Years\nFiscal Years\n2019 2018 2017\n2019 2018 2017\nRisk-free interest rate 2.8% 2.3% 1.9%\nCost of revenue $ 2,936 $ 3,869 $ 3,189\nExpected term (years) 3.9 3.4 7.0\nResearch and development 8,551 13,448 10,565\nExpected volatility 51.9% 45.8% 32.3%\nSelling, general and administrative 12,305 14,620 22,581\nTarget price $53.87 $98.99 $67.39\nTotal $ 23,792 $ 31,937 $ 36,335\nDuring our fiscal first quarter of 2019, we canceled 1,122,500 performance-based stock options with a concurrent grant of 748,328 PRSUs for 13 employees,\nAmounts presented above include share-based compensation expense of $0.8 million for fiscal year 2017, which is recorded as discontinued operations\nwhich was accounted for as a modification. The incremental compensation cost resulting from the modification was $8.2 million, and was being recognized as share-based compensation expense over the requisite service period of three years for the new PRSU awards. As a result of subsequent actions that resulted in forfeitures, the remaining compensation expense associated with this modification as of September 27, 2019 is $2.8 million.\nrelated to employees of our Compute business.\nRestricted Stock Awards and Units\nAs of September 27, 2019, the total unrecognized compensation costs related to outstanding stock options, restricted stock awards and units including awards\nA summary of restricted stock awards and units activity for fiscal year 2019 is as follows (in thousands):",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "e75ae83697fa878824fb62a150fa6d92",
+  "page": 2,
+  "report": "macom-technology_2019.pdf"
+ }
+}

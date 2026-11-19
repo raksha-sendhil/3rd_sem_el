@@ -1,0 +1,19 @@
+{
+ "doc_id": "def64cb18223d656",
+ "text": "From: debra.perlingiere@enron.com\nTo: darren.vanek@enron.com, veronica.espinoza@enron.com, .williams@enron.com\nDate: 2001-07-27\nSubject: Twine Gas and Power Inc.\n\nBe advised I have  a partially executed agreement for Twine.  Please allow  them to trade on Monday.\n\n\n\nDebra Perlingiere\nEnron North America Legal\n1400 Smith Street, EB 3885\nHouston, Texas 77002\ndperlin@enron\n713-853-7658\n713-646-3490 Fax",
+ "source": "corporate",
+ "private": [
+  "debra.perlingiere@enron.com",
+  "darren.vanek@enron.com",
+  "veronica.espinoza@enron.com",
+  ".williams@enron.com",
+  "Debra Perlingiere",
+  "713-853-7658",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "perlingiere-d/sent_items/509.",
+  "message_id": "<19999511.1075858537416.JavaMail.evans@thyme>"
+ }
+}

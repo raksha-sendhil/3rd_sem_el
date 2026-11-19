@@ -1,0 +1,17 @@
+{
+ "doc_id": "b9d70f1d2c0ba5c6",
+ "text": "From: maureen.mcvicker@enron.com\nTo: andou_wdc@nikkei.com\nDate: 2001-01-24\nSubject: Follow ups\n\nI am Mr. Kean's assistant, Maureen McVicker.  I will try to get you the \nanswers to these questions as soon as possible.\nI will also send you an email picture of Mr. Kean.\n\n   Maureen McVicker\n\n\n\n\n\t\"Kiyoshi Ando\" <andou_wdc@nikkei.com>\n\t01/23/2001 10:04 AM\n\t\t \n\t\t To: <skean@enron.com>\n\t\t cc: \n\t\t Subject: Follow ups\n\nMr. Steve Kean\nExecutive Vice President\nEnron Corp\n \nDear Mr. Steve Kean\n It was such a pleasure having chance do an interview last week. I have a few \nfollow up questions.\n1)According to today's Wall Street Journal, Mr. Jeffrey Skilling, president \nand chief executive-elect of Enron, is saying the company could sell some \npower to PG&E and SoCal at 55 cents per kilowatt hour. Am I understanding \nyour position right? Is it going to be something like a 5 year contract? Will \nit help your business at all?\n2)California Power Exchange has decided to cease its operation by the end of \nApril. Do you think this is the right decision? How do you think you can set \nup a new competitive market? Or, won't you need such a market? Will it be \nbetter to use the markets outside Califorinia or to rely on direct trading?\n3)How much supply do you have in excess from which you can offer power to \nCalifornia?\n******************************************************************************\n*\nI understand you are very busy but I would really appreciate if you could \nsend me a reply at your earliest convenience.\nThank you very much.\n****************************************************************************\nKiyoshi Ando\nNIKKEI News\nTEL 202-204-2104\nFAX 202-737-0170\ne-mail andou_wdc@nikkei.com\n815, Connecticut Ave. NW #310\nWashington DC 20006",
+ "source": "corporate",
+ "private": [
+  "maureen.mcvicker@enron.com",
+  "andou_wdc@nikkei.com",
+  "Maureen Mcvicker",
+  "202-204-2104",
+  "202-737-0170"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "kean-s/sent/1725.",
+  "message_id": "<3421261.1075848261183.JavaMail.evans@thyme>"
+ }
+}

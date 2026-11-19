@@ -1,0 +1,16 @@
+{
+ "doc_id": "c02a76a8db020783",
+ "text": "From: frank.cernosek@enron.com\nTo: dutch.quigley@enron.com\nDate: 2001-11-26\nSubject: Margin by Commodity 11/19/01 Trade Date\n\nDutch,\n \nWe are in the process of updated Tuesday/Wednesday activity and will send when completed. Anticipated completion 10:00am today....\n \n \n\nFrank F. Cernosek \nExchange Accounting \nFinancial Operations \n713-853-1581",
+ "source": "corporate",
+ "private": [
+  "frank.cernosek@enron.com",
+  "dutch.quigley@enron.com",
+  "Frank F. Cernosek",
+  "713-853-1581"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "quigley-d/_exchange/31.",
+  "message_id": "<15491992.1075861293290.JavaMail.evans@thyme>"
+ }
+}

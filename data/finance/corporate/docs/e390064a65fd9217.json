@@ -1,0 +1,17 @@
+{
+ "doc_id": "e390064a65fd9217",
+ "text": "From: tracy.ngo@enron.com\nTo: bob.schorr@enron.com, bob.shults@enron.com, daniel.diamond@enron.com\nDate: 2000-12-13\nSubject: Updated Power Credit Watch List 12/13/00\n\nAttached please find an updated EPMI Power Credit Watch List as of 12/13/00.  \nPlease direct any questions and/or comments to the Credit Hotline \n(713-853-1803).\n\nRegards,\nTracy",
+ "source": "corporate",
+ "private": [
+  "tracy.ngo@enron.com",
+  "bob.schorr@enron.com",
+  "bob.shults@enron.com",
+  "daniel.diamond@enron.com",
+  "713-853-1803"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "sager-e/notes_inbox/529.",
+  "message_id": "<16907391.1075859544903.JavaMail.evans@thyme>"
+ }
+}

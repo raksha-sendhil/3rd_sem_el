@@ -1,0 +1,16 @@
+{
+ "doc_id": "f1df4335ac8badb7",
+ "text": "From: fred.mitro@enron.com\nTo: kay.mann@enron.com\nDate: 2001-05-01\nSubject: DealBench Transaction Invitation\n\nDear kay mann,\n\n\nYou are invited to participate in the following transaction on \nwww.dealbench.com:\n\nIssuing Entity / Deal Sponsor: Enron North America Corp.\nDeal Description: Florida - Midway Power\nPlant Site; St. Lucie\nCounty, Florida\n\n\n\n\nTo Access the Transaction:\n\n1. Log on to www.dealbench.com.\n\n2. FIRST TIME USERS: Click on Register Now to create your Username and \nPassword, complete your contact information, and enter your DealKey.\n\n3. REPEAT USERS: Enter your Username and password. on Update Profile at the \ntop of the screen and enter your DealKey at the bottom of your User Profile.\n\n4. Your DealKey is: 98873079696224441\n\n5. Click on the Acquisitions & Divestitures Domain to access the transaction.\n\nIf you have any questions regarding DealBench, please contact DealBench \nCustomer Support:\n\nEmail: Webmaster@DealBench.com\nPhone:  +1-713853-9438\nToll-free: 1-877-367-7170 (from the US) or 0800 0853437 (from the UK).\n\nFor Questions about the transaction, please contact the undersigned.\n\nRegards,\nFred Mitro , Enron North America Corp.\n853-5406",
+ "source": "corporate",
+ "private": [
+  "fred.mitro@enron.com",
+  "kay.mann@enron.com",
+  "Fred Mitro",
+  "877-367-7170"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "mann-k/all_documents/5307.",
+  "message_id": "<21656450.1075845708275.JavaMail.evans@thyme>"
+ }
+}

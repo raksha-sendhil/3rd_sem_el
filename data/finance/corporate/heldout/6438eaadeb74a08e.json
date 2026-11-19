@@ -1,0 +1,17 @@
+{
+ "doc_id": "6438eaadeb74a08e",
+ "text": "From: smarra@isda.org\nTo: usregcomm@isda.org\nDate: 2001-12-07\nSubject: NEXT US REGULATORY CALL....\n\nPlease note that our regularly scheduled US Regulatory will take place on\nFriday, December 7th at 10 AM\n\nDial in details remain the same.\n\nUSA Toll Free Number: 888-904-9318\nPASSCODE: \tUSREG\nLEADER:            Ms Stacy Carey\n\nScott Marra \nAdministrator for Policy and Media Relations\nInternational Swaps and Derivatives Association \n600 Fifth Avenue \nRockefeller Center - 27th floor \nNew York, NY 10020 \nPhone: (212) 332-2578 \nFax: (212) 332-1212 \nEmail: smarra@isda.org",
+ "source": "corporate",
+ "private": [
+  "smarra@isda.org",
+  "usregcomm@isda.org",
+  "888-904-9318",
+  "(212) 332-2578",
+  "(212) 332-1212"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "haedicke-m/inbox/261.",
+  "message_id": "<70776.1075859391584.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "doc_id": "8726cef8f72a8cfe",
+ "text": "From: benjamin.rogers@enron.com\nTo: dplflan@aol.com\nDate: 2000-10-12\nSubject: Site Visit\n\nSusan:\n\nThis e-mail will confirm the site visit by your company at Wheatland.  The \nrelevant information is as follows:\n\n\n\nPursuant to the Site Visit Procedures sent you by CSFB, if you have not \nalready done so, please send me the following:\nList of your team members and titles\nFor outside consultants, state their employer\nName, phone number (office and mobile) and e-mail address of your designated \ndeal team leader\n\nLastly, I will serve as the due diligence coordinator for Wheatland, handling \nall questions and responses.  Should you have any due diligence questions or \nrequire copies of any oversized documents, please contact me at 713.853-7998.",
+ "source": "corporate",
+ "private": [
+  "benjamin.rogers@enron.com",
+  "dplflan@aol.com",
+  "713.853-7998"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "rogers-b/sent/215.",
+  "message_id": "<27638759.1075857230745.JavaMail.evans@thyme>"
+ }
+}

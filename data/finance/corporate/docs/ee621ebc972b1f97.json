@@ -1,0 +1,18 @@
+{
+ "doc_id": "ee621ebc972b1f97",
+ "text": "From: sara.shackleton@enron.com\nTo: jason.williams@enron.com, kim.ward@enron.com\nDate: 2001-04-21\nSubject: Salt River Project (\"SRP\")\n\nJust spoke with Mark Russell.  SRP will be in Houston next week on Wednesday and Thursday and would like to meet to discuss the ISDA with legal and credit.  I told Mark that I was available Wed. and Thurs. morning.  Are you guys available at the same time?\n\nJay - please call me with your bond rating info so that I can email a draft agreement to SRP.\n\nSara Shackleton\nEnron North America Corp.\n1400 Smith Street, EB 3801a\nHouston, Texas  77002\n713-853-5620 (phone)\n713-646-3490 (fax)\nsara.shackleton@enron.com",
+ "source": "corporate",
+ "private": [
+  "sara.shackleton@enron.com",
+  "jason.williams@enron.com",
+  "kim.ward@enron.com",
+  "Sara Shackleton",
+  "713-853-5620",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ward-k/srp/1.",
+  "message_id": "<27886324.1075852880058.JavaMail.evans@thyme>"
+ }
+}

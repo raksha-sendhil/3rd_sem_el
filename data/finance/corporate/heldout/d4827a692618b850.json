@@ -1,0 +1,15 @@
+{
+ "doc_id": "d4827a692618b850",
+ "text": "From: carol.clair@enron.com\nTo: zachary.may@weil.com\nDate: 2000-04-05\nSubject: KCS Amendments\n\nMr. May:\nI am working with Lisa Mellencamp on this matter and I just wanted to let you \nknow that we will be sending you sometime tomorrow a completed draft of the \namendment to the financial derivative and physical agreements that we want \nthe Court to approve.  The purpose of the amendment is to expand our setoff \nrights and to add additional events of default/termination events that relate \nto events that may occur during the bankruptcy proceeding.  We will be out of \nthe office the rest of the week at our legal conference but you can leave me \nor Lisa a voice mail message with any comments or questions that you may \nhave.  My number is 713-853-3989.\n  Enclosed is a preliminary draft that just deals with the financial \nderivative agreement.  Another lawyer in our group is handling the physical \nagreement amendments.\n\nCarol St. Clair",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "zachary.may@weil.com",
+  "713-853-3989"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/22.",
+  "message_id": "<29309090.1075842110147.JavaMail.evans@thyme>"
+ }
+}

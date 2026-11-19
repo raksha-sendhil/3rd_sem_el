@@ -1,0 +1,16 @@
+{
+ "doc_id": "b4d7005725cfa676",
+ "text": "From: carol.clair@enron.com\nTo: lemelpe@nu.com\nDate: 2001-05-29\nSubject: LOC Form\n\nPhyllis:\nI am checking with our LOC credit person on the form of LOC that Valerie \nMooney sent around.  As soon as she signs off on it, I will let you know so \nthat we can hopefully proceed to execute the EEI Master.\n\nCarol St. Clair\nEB 3889\n713-853-3989 (Phone)\n713-646-3393 (Fax)\ncarol.st.clair@enron.com",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "lemelpe@nu.com",
+  "713-853-3989",
+  "713-646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/2262.",
+  "message_id": "<13087152.1075842206505.JavaMail.evans@thyme>"
+ }
+}

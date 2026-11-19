@@ -1,0 +1,16 @@
+{
+ "doc_id": "00801b3dc10f2d4a",
+ "text": "From: mark.taylor@enron.com\nTo: craig.young@enron.com\nDate: 2000-10-31\nSubject: ISDA\n\nCraig:\n\nSorry I couldn't get back to you earlier.  I  asked Tana Jones to get you \naccess to our database that keeps track of financial master agreement \nnegotiations so you will always be up to date on where we stand with the \nprocess.  If you haven't heard from her, please let me know.  Any word from \nJustin on which Enron entity we will use for trading in the U.S.?\n\nMark\n\n\n\n\tCraig Young\n\t10/31/2000 10:09 AM\n\t\t \n\t\t To: Mark Taylor/HOU/ECT@ECT, Justin Boyd/LON/ECT@ECT\n\t\t cc: Craig Young/NY/ECT@ECT\n\t\t Subject: ISDA\n\nAs a start could you advise if we have an ISDA with the following firms\n\nCoke\nPepsi\nAnheuser Busch\nGen Motors\nFord\nMercedes Benz\nSteel Companies\nMetal Companies\nContainer Companies\nHedgd Funds\nEmerson Electric\nHydro Quebec\nBonneville \n\nDo we have a clearing house for global ISDA agreements?\n\nCraig Young\n212-715-2342",
+ "source": "corporate",
+ "private": [
+  "mark.taylor@enron.com",
+  "craig.young@enron.com",
+  "Mark Taylor",
+  "212-715-2342"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "taylor-m/all_documents/3601.",
+  "message_id": "<17889540.1075859966696.JavaMail.evans@thyme>"
+ }
+}

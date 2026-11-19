@@ -1,0 +1,17 @@
+{
+ "doc_id": "35e3fc255b5be8e3",
+ "text": "From: sherri.sera@enron.com\nTo: clement@netactive.co.za\nDate: 2000-12-19\nSubject: Airfreight from South Africa\n\nDear Hilary,\n\nThe items Mr. Skilling purchased have arrived in Houston and I'm working with \na customs broker to get them out of KLM Cargo.  The broker has indicated that \nthe packing list and tax invoice are not descriptive enough to get the items \nout of customs, so I need to provide them with a detailed list of items, what \nthey are made of and what he paid for them.  Unfortunately, Mr. Skilling is \nout of the country until January 2, 2001, and KLM will only hold these items \nuntil December 23 when they send them to some government warehouse.  If you \ncould e-mail or fax me this information asap it is greatly appreciated.\n\nThank you for your assistance.\n\nRegards,\nSherri Sera\nAssistant to Jeff Skilling\n713.853.5984\n713.646.8381 (fax)\nsherri.sera@enron.com\n\n\n\n\n\"Clementina v.d. Walt\" <clement@netactive.co.za> on 12/04/2000 01:55:46 AM\nPlease respond to \"Clementina v.d. Walt\" <clement@netactive.co.za>\nTo: <jeff.skilling@enron.com>\ncc:  \n\nSubject: Airfreight from South Africa\n\n\n\nDear Sherri Sera and Jeffrey Skilling\nThe numbers requested corresonded with the card  that was used.\nThe transaction has gone through and we are  dispatching the goods to our \nairgreight agent today. I will contact you shortly  with the flight details.\nRegards\nHilary Cruywagen",
+ "source": "corporate",
+ "private": [
+  "sherri.sera@enron.com",
+  "clement@netactive.co.za",
+  "Sherri Sera",
+  "713.853.5984",
+  "713.646.8381"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "skilling-j/all_documents/1252.",
+  "message_id": "<28989267.1075845484908.JavaMail.evans@thyme>"
+ }
+}

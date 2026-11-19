@@ -1,0 +1,16 @@
+{
+ "doc_id": "0be94be98c0f0349",
+ "text": "From: s..ward@enron.com\nTo: igsinc@ix.netcom.com\nDate: 2001-06-01\nSubject: San Joaquin Refining - Round 2\n\nMark,\n\nAttached is a term sheet detailing our proposal.  I have also attached a sample contract which will have credit terms attached once we are able to obtain proper credit information. \n\nPlease let me know if you have any questions.\n\nThanks,\n\nKim Ward\nManager, West Gas Origination\n713-853-0685",
+ "source": "corporate",
+ "private": [
+  "s..ward@enron.com",
+  "igsinc@ix.netcom.com",
+  "Kim Ward",
+  "713-853-0685"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ward-k/sent_items/80.",
+  "message_id": "<33414975.1075852867573.JavaMail.evans@thyme>"
+ }
+}

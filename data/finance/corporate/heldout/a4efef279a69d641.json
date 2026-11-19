@@ -1,0 +1,16 @@
+{
+ "doc_id": "a4efef279a69d641",
+ "text": "From: d..hare@enron.com\nTo: casey.evans@enron.com, john.postlethwaite@enron.com, john.valdes@enron.com\nDate: 2002-01-11\nSubject: Book Requests\n\nThe attached Book Requests have been completed, to include the Power Trader contacts.\n\nCasey,\n\nI made the changes to the subporfolio name in the Enpower Book (in red) request as follows:\n\nFrom MGMT, To Management and Options to Options-Trading\n\n\nJohn P.\n\nI made the changes to the Enpower-West Sub-Portfolio (in red) as follows:\n\nFrom NORTHWEST/SOUTHWEST/CALIFORNIA, To NORTHWEST\n\n\n\n    \n\nBill",
+ "source": "corporate",
+ "private": [
+  "d..hare@enron.com",
+  "casey.evans@enron.com",
+  "john.postlethwaite@enron.com",
+  "john.valdes@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/inbox/329.",
+  "message_id": "<8566885.1075840187721.JavaMail.evans@thyme>"
+ }
+}

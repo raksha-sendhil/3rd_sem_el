@@ -1,0 +1,17 @@
+{
+ "doc_id": "d2f6a2cce8a217aa",
+ "text": "From: debra.perlingiere@enron.com\nTo: bryant.frihart@enron.com\nDate: 2001-08-06\nSubject: Confidentiality Agreement with Arkansas Gas Consumers Group\n\nI spoke to Mr. Hoggard this morning regarding the CA for gas trading.  He will be sending me their CA and information.\n\nDebra Perlingiere\nEnron North America Legal\n1400 Smith Street, EB 3885\nHouston, Texas 77002\ndperlin@enron\n713-853-7658\n713-646-3490 Fax",
+ "source": "corporate",
+ "private": [
+  "debra.perlingiere@enron.com",
+  "bryant.frihart@enron.com",
+  "Debra Perlingiere",
+  "713-853-7658",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "perlingiere-d/sent_items/547.",
+  "message_id": "<33481530.1075858538259.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "doc_id": "7339ca35b107ae22",
+ "text": "From: kim.ward@enron.com\nTo: eolhelp@enrononline.com\nDate: 2000-11-30\nSubject: EnronOnline Guest Account\n\nI have a customer that would like to be set up on Enron Online.  He is a \nwimby and under our contract with him, he will back to back each trade with \npublic Service Company of colorado.  In other words, he doesn't have his own \ncredit.  Could you set him up, at least with a temporary password?  His info \nis as follows:\n\nSandia Resources\nJerry Padilla\njerrypadilla@msn.com\n303-332-9725\n\nLet me know if you have any questions.  And please let me know when you send \nhim a password.\n\nThanks,\n\nKim Ward\nPortland",
+ "source": "corporate",
+ "private": [
+  "kim.ward@enron.com",
+  "eolhelp@enrononline.com",
+  "Kim Ward",
+  "303-332-9725"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ward-k/sent/1.",
+  "message_id": "<7713289.1075851873238.JavaMail.evans@thyme>"
+ }
+}

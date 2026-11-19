@@ -1,0 +1,14 @@
+{
+ "doc_id": "929cd8b118dfa231",
+ "text": "From: c..kenne@enron.com\nTo: kam.keiser@enron.com\nDate: 2002-01-11\nSubject: Trader Log In\n\nKam,\n\nAs we discussed this morning, the traders will be using their physical books to log onto EOL with the exception of the financial desk (John Arnold and team).  Behind the scenes, EOL will  set these traders up in the Counterparty Alternates table to have the books \"flip\" to the respective financial book when a financial trade is hit.  \n\nAlso, any word yet on the traders wanting a different book for price, basis and index.  We are still under the assumption that the trades will book under one book.\n\nPlease let me know if you have any further questions.\n\nThanks,\nDawn",
+ "source": "corporate",
+ "private": [
+  "c..kenne@enron.com",
+  "kam.keiser@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/inbox/333.",
+  "message_id": "<25059294.1075840187821.JavaMail.evans@thyme>"
+ }
+}

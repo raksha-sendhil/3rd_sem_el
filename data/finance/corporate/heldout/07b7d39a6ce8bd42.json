@@ -1,0 +1,12 @@
+{
+ "doc_id": "07b7d39a6ce8bd42",
+ "text": "AMERICAN TOWER CORPORATION AND SUBSIDIARIES NOTES TO CONSOLIDATED FINANCIAL STATEMENTS\n(Tabular amounts in millions, unless otherwise disclosed)\nF-51\n18. EARNINGS PER COMMON SHARE\nThe following table sets forth basic and diluted net income per common share computational data for the years ended December 31, (shares in thousands, except per share data):\n2019 2018 2017\nNet income attributable to American Tower Corporation stockholders $ 1,887.8 $ 1,236.4 $ 1,238.9\nDividends on preferred stock — (9.4) (87.4)\nNet income attributable to American Tower Corporation common stockholders $ 1,887.8 $ 1,227.0 $ 1,151.5\nBasic weighted average common shares outstanding 442,319 439,606 428,181 Dilutive securities 3,201 3,354 3,507\nDiluted weighted average common shares outstanding 445,520 442,960 431,688\nBasic net income attributable to American Tower Corporation common stockholders per common share $ 4.27 $ 2.79 $ 2.69\nDiluted net income attributable to American Tower Corporation common stockholders per common share $ 4.24 $ 2.77 $ 2.67\nShares Excluded From Dilutive Effect\nThe following shares were not included in the computation of diluted earnings per share because the effect would be anti- dilutive for the years ended December 31, (in thousands, on a weighted average basis):\n2019 2018 2017\nRestricted stock awards 2 — 3\nStock options — — 4\nPreferred stock — 1,456 14,040\n19. COMMITMENTS AND CONTINGENCIES\nLitigation —The Company periodically becomes involved in various claims, lawsuits and proceedings that are incidental to its business. In the opinion of Company management, after consultation with counsel, there are no matters currently pending that would, in the event of an adverse outcome, materially impact the Company’s consolidated financial position, results of operations or liquidity.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "e0e37989c1b2a2a688220c3057f07276",
+  "page": 1,
+  "report": "american-tower-corporation_2019.pdf"
+ }
+}

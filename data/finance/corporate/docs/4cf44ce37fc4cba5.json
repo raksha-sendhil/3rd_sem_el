@@ -1,0 +1,16 @@
+{
+ "doc_id": "4cf44ce37fc4cba5",
+ "text": "From: janice.moore@enron.com\nTo: elizabeth.sager@enron.com\nDate: 2000-12-12\nSubject: City of Memphis\n\nShould I ask Baker, Donelson (the law firm that Richard Sanders recommended \nfor selected issues on the TEPAC deal) to do some due diligence on this \nentity, since it's fairly certain we're going to do this deal w/ them?  \nThanks.\nRegards,\nJanice\n\nEB3861\nAssistant General Counsel, Enron North America Corp.\n713-853-1794 (Fax:  713-646-4842)",
+ "source": "corporate",
+ "private": [
+  "janice.moore@enron.com",
+  "elizabeth.sager@enron.com",
+  "713-853-1794",
+  "713-646-4842"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "sager-e/notes_inbox/516.",
+  "message_id": "<6785864.1075859544312.JavaMail.evans@thyme>"
+ }
+}

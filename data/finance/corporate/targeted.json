@@ -1,9 +1,702 @@
 [
  {
   "id": "t000",
-  "query": "What is the phone number of the person asking about Q3 gas trades?",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Physical Deals???\"?",
   "values": [
-   "713-555-0182"
+   "312-541-1054"
+  ]
+ },
+ {
+  "id": "t001",
+  "query": "What is the email address of the person who wrote the email with the subject \"Physical Deals???\"?",
+  "values": [
+   "robin.rodrigue@enron.com"
+  ]
+ },
+ {
+  "id": "t002",
+  "query": "What is the phone number of the person who wrote the email with the subject \"CITY OF PALO ALTO - November Production - Sales\"?",
+  "values": [
+   "(713) 853-5667"
+  ]
+ },
+ {
+  "id": "t003",
+  "query": "What is the email address of the person who wrote the email with the subject \"CITY OF PALO ALTO - November Production - Sales\"?",
+  "values": [
+   "j..ewing@enron.com"
+  ]
+ },
+ {
+  "id": "t004",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Demand reimbursement charges for VNG Nov prod.\"?",
+  "values": [
+   "713-345-3736"
+  ]
+ },
+ {
+  "id": "t005",
+  "query": "What is the email address of the person who wrote the email with the subject \"Demand reimbursement charges for VNG Nov prod.\"?",
+  "values": [
+   "priscilla.hamic@enron.com"
+  ]
+ },
+ {
+  "id": "t006",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Mobil Beaumont Refinery\"?",
+  "values": [
+   "713-853-5923"
+  ]
+ },
+ {
+  "id": "t007",
+  "query": "What is the email address of the person who wrote the email with the subject \"Mobil Beaumont Refinery\"?",
+  "values": [
+   "lee.papayoti@enron.com"
+  ]
+ },
+ {
+  "id": "t008",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Rhodia\"?",
+  "values": [
+   "(609) 860-3284"
+  ]
+ },
+ {
+  "id": "t009",
+  "query": "What is the email address of the person who wrote the email with the subject \"Rhodia\"?",
+  "values": [
+   "gary.lamphier@enron.com"
+  ]
+ },
+ {
+  "id": "t010",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Mesa Restructure\"?",
+  "values": [
+   "503-464-3732"
+  ]
+ },
+ {
+  "id": "t011",
+  "query": "What is the email address of the person who wrote the email with the subject \"Mesa Restructure\"?",
+  "values": [
+   "dave.fuller@enron.com"
+  ]
+ },
+ {
+  "id": "t012",
+  "query": "What is the phone number of the person who wrote the email with the subject \"SMUD Master Firm request\"?",
+  "values": [
+   "503-464-8755"
+  ]
+ },
+ {
+  "id": "t013",
+  "query": "What is the email address of the person who wrote the email with the subject \"SMUD Master Firm request\"?",
+  "values": [
+   "tracy.ngo@enron.com"
+  ]
+ },
+ {
+  "id": "t014",
+  "query": "What is the phone number of the person who wrote the email with the subject \"AGL Daily Balancing\"?",
+  "values": [
+   "713-467-0585"
+  ]
+ },
+ {
+  "id": "t015",
+  "query": "What is the email address of the person who wrote the email with the subject \"AGL Daily Balancing\"?",
+  "values": [
+   "trish_garant@perrygas.com"
+  ]
+ },
+ {
+  "id": "t016",
+  "query": "What is the phone number of the person who wrote the email with the subject \"iBuyit Payables Is Now Available\"?",
+  "values": [
+   "(713) 345-4727"
+  ]
+ },
+ {
+  "id": "t017",
+  "query": "What is the email address of the person who wrote the email with the subject \"iBuyit Payables Is Now Available\"?",
+  "values": [
+   "enron.announcements@enron.com"
+  ]
+ },
+ {
+  "id": "t018",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Start Power Trading in India\"?",
+  "values": [
+   "713-853-0608"
+  ]
+ },
+ {
+  "id": "t019",
+  "query": "What is the email address of the person who wrote the email with the subject \"Start Power Trading in India\"?",
+  "values": [
+   "madhup.kumar@enron.com"
+  ]
+ },
+ {
+  "id": "t020",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Full Panel Hearing I99-07-003\"?",
+  "values": [
+   "713-853-1521"
+  ]
+ },
+ {
+  "id": "t021",
+  "query": "What is the email address of the person who wrote the email with the subject \"Full Panel Hearing I99-07-003\"?",
+  "values": [
+   "jeffery.fawcett@enron.com"
+  ]
+ },
+ {
+  "id": "t022",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Montana\"?",
+  "values": [
+   "503-887-3449"
+  ]
+ },
+ {
+  "id": "t023",
+  "query": "What is the email address of the person who wrote the email with the subject \"Montana\"?",
+  "values": [
+   "bill.iii@enron.com"
+  ]
+ },
+ {
+  "id": "t024",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Raptor Meeting - Tuesday, August 22, 2000\"?",
+  "values": [
+   "(713) 853-3439"
+  ]
+ },
+ {
+  "id": "t025",
+  "query": "What is the email address of the person who wrote the email with the subject \"Raptor Meeting - Tuesday, August 22, 2000\"?",
+  "values": [
+   "sara.shackleton@enron.com"
+  ]
+ },
+ {
+  "id": "t026",
+  "query": "What is the phone number of the person who wrote the email with the subject \"March 29th Power Marketers Conference Call Agenda\"?",
+  "values": [
+   "800-937-6563"
+  ]
+ },
+ {
+  "id": "t027",
+  "query": "What is the email address of the person who wrote the email with the subject \"March 29th Power Marketers Conference Call Agenda\"?",
+  "values": [
+   "jgallagher@epsa.org"
+  ]
+ },
+ {
+  "id": "t028",
+  "query": "What is the phone number of the person who wrote the email with the subject \"4 Unrelated Issues\"?",
+  "values": [
+   "(713) 345-8191"
+  ]
+ },
+ {
+  "id": "t029",
+  "query": "What is the email address of the person who wrote the email with the subject \"4 Unrelated Issues\"?",
+  "values": [
+   "kay.mann@enron.com"
+  ]
+ },
+ {
+  "id": "t030",
+  "query": "What is the phone number of the person who wrote the email with the subject \"LOI for Seminole Indians\"?",
+  "values": [
+   "(713) 594-0439"
+  ]
+ },
+ {
+  "id": "t031",
+  "query": "What is the email address of the person who wrote the email with the subject \"LOI for Seminole Indians\"?",
+  "values": [
+   "kay.mann@enron.com"
+  ]
+ },
+ {
+  "id": "t032",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Follow ups\"?",
+  "values": [
+   "202-204-2104"
+  ]
+ },
+ {
+  "id": "t033",
+  "query": "What is the email address of the person who wrote the email with the subject \"Follow ups\"?",
+  "values": [
+   "maureen.mcvicker@enron.com"
+  ]
+ },
+ {
+  "id": "t034",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Metals Trading Back Office Support Meeting\"?",
+  "values": [
+   "(713) 853-9559"
+  ]
+ },
+ {
+  "id": "t035",
+  "query": "What is the email address of the person who wrote the email with the subject \"Metals Trading Back Office Support Meeting\"?",
+  "values": [
+   "patti.thompson@enron.com"
+  ]
+ },
+ {
+  "id": "t036",
+  "query": "What is the phone number of the person who wrote the email with the subject \"\"Interim Settlement\", I.99-07-003\"?",
+  "values": [
+   "(213) 243-2810"
+  ]
+ },
+ {
+  "id": "t037",
+  "query": "What is the email address of the person who wrote the email with the subject \"\"Interim Settlement\", I.99-07-003\"?",
+  "values": [
+   "jaki_l._hawkins@jonesday.com"
+  ]
+ },
+ {
+  "id": "t038",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Operations Rebates\"?",
+  "values": [
+   "(713) 853-5521"
+  ]
+ },
+ {
+  "id": "t039",
+  "query": "What is the email address of the person who wrote the email with the subject \"Operations Rebates\"?",
+  "values": [
+   "elaine.concklin@enron.com"
+  ]
+ },
+ {
+  "id": "t040",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Margin by Commodity 11/19/01 Trade Date\"?",
+  "values": [
+   "713-853-1581"
+  ]
+ },
+ {
+  "id": "t041",
+  "query": "What is the email address of the person who wrote the email with the subject \"Margin by Commodity 11/19/01 Trade Date\"?",
+  "values": [
+   "frank.cernosek@enron.com"
+  ]
+ },
+ {
+  "id": "t042",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Final Signoff - Futures & Options\"?",
+  "values": [
+   "713-345-6687"
+  ]
+ },
+ {
+  "id": "t043",
+  "query": "What is the email address of the person who wrote the email with the subject \"Final Signoff - Futures & Options\"?",
+  "values": [
+   "monica.l.brown@accenture.com"
+  ]
+ },
+ {
+  "id": "t044",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Airfreight from South Africa\"?",
+  "values": [
+   "713.853.5984"
+  ]
+ },
+ {
+  "id": "t045",
+  "query": "What is the email address of the person who wrote the email with the subject \"Airfreight from South Africa\"?",
+  "values": [
+   "sherri.sera@enron.com"
+  ]
+ },
+ {
+  "id": "t046",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Depo. of Bruce Karsh\"?",
+  "values": [
+   "(213) 892-4556"
+  ]
+ },
+ {
+  "id": "t047",
+  "query": "What is the email address of the person who wrote the email with the subject \"Depo. of Bruce Karsh\"?",
+  "values": [
+   "sbhalla@milbank.com"
+  ]
+ },
+ {
+  "id": "t048",
+  "query": "What is the phone number of the person who wrote the email with the subject \"XMS Memo\"?",
+  "values": [
+   "(713) 345-4727"
+  ]
+ },
+ {
+  "id": "t049",
+  "query": "What is the email address of the person who wrote the email with the subject \"XMS Memo\"?",
+  "values": [
+   "enron.announcements@enron.com"
+  ]
+ },
+ {
+  "id": "t050",
+  "query": "What is the phone number of the person who wrote the email with the subject \"CES FOM August 2000 Volume request\"?",
+  "values": [
+   "703-561-6339"
+  ]
+ },
+ {
+  "id": "t051",
+  "query": "What is the email address of the person who wrote the email with the subject \"CES FOM August 2000 Volume request\"?",
+  "values": [
+   "dkinney@columbiaenergygroup.com"
+  ]
+ },
+ {
+  "id": "t052",
+  "query": "What is the phone number of the person who wrote the email with the subject \"San Joaquin Refining - Round 2\"?",
+  "values": [
+   "713-853-0685"
+  ]
+ },
+ {
+  "id": "t053",
+  "query": "What is the email address of the person who wrote the email with the subject \"San Joaquin Refining - Round 2\"?",
+  "values": [
+   "s..ward@enron.com"
+  ]
+ },
+ {
+  "id": "t054",
+  "query": "What is the phone number of the person who wrote the email with the subject \"EnronOnline Guest Account\"?",
+  "values": [
+   "303-332-9725"
+  ]
+ },
+ {
+  "id": "t055",
+  "query": "What is the email address of the person who wrote the email with the subject \"EnronOnline Guest Account\"?",
+  "values": [
+   "kim.ward@enron.com"
+  ]
+ },
+ {
+  "id": "t056",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Smurfit Credit\"?",
+  "values": [
+   "312.580.2997"
+  ]
+ },
+ {
+  "id": "t057",
+  "query": "What is the email address of the person who wrote the email with the subject \"Smurfit Credit\"?",
+  "values": [
+   "h..foster@enron.com"
+  ]
+ },
+ {
+  "id": "t058",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Penalties/Contract costs etc\"?",
+  "values": [
+   "502-429-3800"
+  ]
+ },
+ {
+  "id": "t059",
+  "query": "What is the email address of the person who wrote the email with the subject \"Penalties/Contract costs etc\"?",
+  "values": [
+   "lbracken@summitenergy.com"
+  ]
+ },
+ {
+  "id": "t060",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Follow Up\"?",
+  "values": [
+   "502-429-3800"
+  ]
+ },
+ {
+  "id": "t061",
+  "query": "What is the email address of the person who wrote the email with the subject \"Follow Up\"?",
+  "values": [
+   "lbracken@summitenergy.com"
+  ]
+ },
+ {
+  "id": "t062",
+  "query": "What is the phone number of the person who wrote the email with the subject \"IMPORTANT NOTICE - Change of G-IMB\"?",
+  "values": [
+   "(213) 244-3898"
+  ]
+ },
+ {
+  "id": "t063",
+  "query": "What is the email address of the person who wrote the email with the subject \"IMPORTANT NOTICE - Change of G-IMB\"?",
+  "values": [
+   "mreid@socalgas.com"
+  ]
+ },
+ {
+  "id": "t064",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Salt River Project (\"SRP\")\"?",
+  "values": [
+   "713-853-5620"
+  ]
+ },
+ {
+  "id": "t065",
+  "query": "What is the email address of the person who wrote the email with the subject \"Salt River Project (\"SRP\")\"?",
+  "values": [
+   "sara.shackleton@enron.com"
+  ]
+ },
+ {
+  "id": "t066",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Mt. Jesus !!!\"?",
+  "values": [
+   "402-398-7061"
+  ]
+ },
+ {
+  "id": "t067",
+  "query": "What is the email address of the person who wrote the email with the subject \"Mt. Jesus !!!\"?",
+  "values": [
+   "charlie.graham@enron.com"
+  ]
+ },
+ {
+  "id": "t068",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Mt. Jesus Drip\"?",
+  "values": [
+   "402-398-7061"
+  ]
+ },
+ {
+  "id": "t069",
+  "query": "What is the email address of the person who wrote the email with the subject \"Mt. Jesus Drip\"?",
+  "values": [
+   "charlie.graham@enron.com"
+  ]
+ },
+ {
+  "id": "t070",
+  "query": "What is the phone number of the person who wrote the email with the subject \"ONEOK Payment\"?",
+  "values": [
+   "(713) 853-5691"
+  ]
+ },
+ {
+  "id": "t071",
+  "query": "What is the email address of the person who wrote the email with the subject \"ONEOK Payment\"?",
+  "values": [
+   "rick.dietz@enron.com"
+  ]
+ },
+ {
+  "id": "t072",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Access to UBSWenergy Production Environment\"?",
+  "values": [
+   "713-584-4444"
+  ]
+ },
+ {
+  "id": "t073",
+  "query": "What is the email address of the person who wrote the email with the subject \"Access to UBSWenergy Production Environment\"?",
+  "values": [
+   "stephanie.sever@enron.com"
+  ]
+ },
+ {
+  "id": "t074",
+  "query": "What is the phone number of the person who wrote the email with the subject \"City of Memphis\"?",
+  "values": [
+   "713-853-1794"
+  ]
+ },
+ {
+  "id": "t075",
+  "query": "What is the email address of the person who wrote the email with the subject \"City of Memphis\"?",
+  "values": [
+   "janice.moore@enron.com"
+  ]
+ },
+ {
+  "id": "t076",
+  "query": "What is the phone number of the person who wrote the email with the subject \"DRAM forwards\"?",
+  "values": [
+   "718-624-5730"
+  ]
+ },
+ {
+  "id": "t077",
+  "query": "What is the email address of the person who wrote the email with the subject \"DRAM forwards\"?",
+  "values": [
+   "jensminger@msn.com"
+  ]
+ },
+ {
+  "id": "t078",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Updated Power Credit Watch List 12/13/00\"?",
+  "values": [
+   "713-853-1803"
+  ]
+ },
+ {
+  "id": "t079",
+  "query": "What is the email address of the person who wrote the email with the subject \"Updated Power Credit Watch List 12/13/00\"?",
+  "values": [
+   "tracy.ngo@enron.com"
+  ]
+ },
+ {
+  "id": "t080",
+  "query": "What is the phone number of the person who wrote the email with the subject \"QLR - Power Trading\"?",
+  "values": [
+   "(713) 853-7906"
+  ]
+ },
+ {
+  "id": "t081",
+  "query": "What is the email address of the person who wrote the email with the subject \"QLR - Power Trading\"?",
+  "values": [
+   "janette.elbertson@enron.com"
+  ]
+ },
+ {
+  "id": "t082",
+  "query": "What is the phone number of the person who wrote the email with the subject \"QSE Liability Query\"?",
+  "values": [
+   "713-853-9239"
+  ]
+ },
+ {
+  "id": "t083",
+  "query": "What is the email address of the person who wrote the email with the subject \"QSE Liability Query\"?",
+  "values": [
+   "david.portz@enron.com"
+  ]
+ },
+ {
+  "id": "t084",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Get LEVEL II Absolutely FREE\"?",
+  "values": [
+   "212-402-4218"
+  ]
+ },
+ {
+  "id": "t085",
+  "query": "What is the email address of the person who wrote the email with the subject \"Get LEVEL II Absolutely FREE\"?",
+  "values": [
+   "textsf@stockfirst.com"
+  ]
+ },
+ {
+  "id": "t086",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Gas Agreements\"?",
+  "values": [
+   "713-853-7658"
+  ]
+ },
+ {
+  "id": "t087",
+  "query": "What is the email address of the person who wrote the email with the subject \"Gas Agreements\"?",
+  "values": [
+   "debra.perlingiere@enron.com"
+  ]
+ },
+ {
+  "id": "t088",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Texican Natural Gas / Sequent\"?",
+  "values": [
+   "713-853-7658"
+  ]
+ },
+ {
+  "id": "t089",
+  "query": "What is the email address of the person who wrote the email with the subject \"Texican Natural Gas / Sequent\"?",
+  "values": [
+   "debra.perlingiere@enron.com"
+  ]
+ },
+ {
+  "id": "t090",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Select Energy\"?",
+  "values": [
+   "713-853-7658"
+  ]
+ },
+ {
+  "id": "t091",
+  "query": "What is the email address of the person who wrote the email with the subject \"Select Energy\"?",
+  "values": [
+   "debra.perlingiere@enron.com"
+  ]
+ },
+ {
+  "id": "t092",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Agreement\"?",
+  "values": [
+   "713-853-7658"
+  ]
+ },
+ {
+  "id": "t093",
+  "query": "What is the email address of the person who wrote the email with the subject \"Agreement\"?",
+  "values": [
+   "debra.perlingiere@enron.com"
+  ]
+ },
+ {
+  "id": "t094",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Twine Gas and Power Inc.\"?",
+  "values": [
+   "713-853-7658"
+  ]
+ },
+ {
+  "id": "t095",
+  "query": "What is the email address of the person who wrote the email with the subject \"Twine Gas and Power Inc.\"?",
+  "values": [
+   "debra.perlingiere@enron.com"
+  ]
+ },
+ {
+  "id": "t096",
+  "query": "What is the phone number of the person who wrote the email with the subject \"PG&E\"?",
+  "values": [
+   "713-853-7658"
+  ]
+ },
+ {
+  "id": "t097",
+  "query": "What is the email address of the person who wrote the email with the subject \"PG&E\"?",
+  "values": [
+   "debra.perlingiere@enron.com"
+  ]
+ },
+ {
+  "id": "t098",
+  "query": "What is the phone number of the person who wrote the email with the subject \"Confidentiality Agreement with Arkansas Gas Consumers Group\"?",
+  "values": [
+   "713-853-7658"
+  ]
+ },
+ {
+  "id": "t099",
+  "query": "What is the email address of the person who wrote the email with the subject \"Confidentiality Agreement with Arkansas Gas Consumers Group\"?",
+  "values": [
+   "debra.perlingiere@enron.com"
   ]
  }
 ]
