@@ -1,0 +1,104 @@
+[
+ {
+  "person_id": "b001",
+  "name": "Asha Rao",
+  "town": "Mysuru",
+  "district": "Mysuru",
+  "state": "Karnataka",
+  "bank": "Canara Bank",
+  "branch": "Saraswathipuram",
+  "conditions": [
+   "home loan"
+  ],
+  "account_number": "50100234567",
+  "phone": "+91 98450 11223",
+  "doc_ids": [
+   "c63ad1a97735ef39"
+  ]
+ },
+ {
+  "person_id": "b002",
+  "name": "Vikram Shetty",
+  "town": "Mysuru",
+  "district": "Mysuru",
+  "state": "Karnataka",
+  "bank": "Canara Bank",
+  "branch": "Kuvempunagar",
+  "conditions": [
+   "home loan"
+  ],
+  "account_number": "50100298811",
+  "phone": "+91 98450 33445",
+  "doc_ids": [
+   "681913bf4b0fef7a"
+  ]
+ },
+ {
+  "person_id": "b003",
+  "name": "Neha Kulkarni",
+  "town": "Hubli",
+  "district": "Dharwad",
+  "state": "Karnataka",
+  "bank": "State Bank of India",
+  "branch": "Vidyanagar",
+  "conditions": [
+   "credit card"
+  ],
+  "account_number": "30219987650",
+  "phone": "+91 99860 55667",
+  "doc_ids": [
+   "70bf6bc8f0d100e3"
+  ]
+ },
+ {
+  "person_id": "b004",
+  "name": "Rahul Desai",
+  "town": "Dharwad",
+  "district": "Dharwad",
+  "state": "Karnataka",
+  "bank": "State Bank of India",
+  "branch": "Malmaddi",
+  "conditions": [
+   "credit card"
+  ],
+  "account_number": "30218876543",
+  "phone": "+91 99860 77889",
+  "doc_ids": [
+   "0ae2fe47a0d6a51b"
+  ]
+ },
+ {
+  "person_id": "b005",
+  "name": "Meena Iyer",
+  "town": "Coimbatore",
+  "district": "Coimbatore",
+  "state": "Tamil Nadu",
+  "bank": "Indian Bank",
+  "branch": "RS Puram",
+  "conditions": [
+   "personal loan"
+  ],
+  "account_number": "64012233445",
+  "phone": "+91 94430 12121",
+  "doc_ids": [
+   "fe682b6978e35bdc"
+  ]
+ },
+ {
+  "person_id": "b006",
+  "name": "Karthik Raman",
+  "town": "Coimbatore",
+  "district": "Coimbatore",
+  "state": "Tamil Nadu",
+  "bank": "Indian Bank",
+  "branch": "Gandhipuram",
+  "conditions": [
+   "personal loan"
+  ],
+  "account_number": "64019988776",
+  "phone": "+91 94430 34343",
+  "doc_ids": [
+   "08902991a84fd372"
+  ]
+ }
+]

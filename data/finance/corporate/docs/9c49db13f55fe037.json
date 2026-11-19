@@ -1,0 +1,14 @@
+{
+ "doc_id": "9c49db13f55fe037",
+ "text": "From: jeff.morgan@example-energy.com\nTo: lisa.chen@example-energy.com\nSubject: Q3 gas trades\n\nLisa, the Q3 gas hedges closed 4% under budget. Call me on 713-555-0182 before the board call.\nJeff Morgan",
+ "source": "corporate",
+ "private": [
+  "jeff.morgan@example-energy.com",
+  "lisa.chen@example-energy.com",
+  "713-555-0182",
+  "Jeff Morgan"
+ ],
+ "meta": {
+  "sample": true
+ }
+}

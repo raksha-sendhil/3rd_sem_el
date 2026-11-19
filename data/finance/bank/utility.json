@@ -1,0 +1,14 @@
+[
+ {
+  "id": "u000",
+  "query": "What fee did the card customer complain about?",
+  "reference": "a late fee",
+  "doc_id": "4db3277de97788e4"
+ },
+ {
+  "id": "u001",
+  "query": "How many times was the home loan EMI debited?",
+  "reference": "twice",
+  "doc_id": "6002a3929127ddd5"
+ }
+]

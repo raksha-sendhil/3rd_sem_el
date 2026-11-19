@@ -1,0 +1,12 @@
+{
+ "doc_id": "4fd64be0cb887f2e",
+ "text": "Credit card application. Name: Farah Khan. Email farah.khan@example.com. Card limit requested 2,00,000 rupees. Existing loans: car loan of 4,50,000.",
+ "source": "kyc",
+ "private": [
+  "Farah Khan",
+  "farah.khan@example.com"
+ ],
+ "meta": {
+  "sample": true
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "doc_id": "e220ceef98eb0f7c",
+ "text": "From: paul.r@example-energy.com\nTo: credit.desk@example-energy.com\nSubject: credit limit\n\nPlease raise the credit limit for the Houston counterparty to 12 million. Paul Rivera",
+ "source": "corporate",
+ "private": [
+  "paul.r@example-energy.com",
+  "Paul Rivera"
+ ],
+ "meta": {
+  "sample": true
+ }
+}

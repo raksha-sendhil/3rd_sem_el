@@ -1,0 +1,16 @@
+[
+ {
+  "id": "t000",
+  "query": "What is the PAN of the loan applicant who works at Infosys?",
+  "values": [
+   "ABCPM1234K"
+  ]
+ },
+ {
+  "id": "t001",
+  "query": "What is the mobile number on the KYC update form of the teacher in Kochi?",
+  "values": [
+   "9846012345"
+  ]
+ }
+]

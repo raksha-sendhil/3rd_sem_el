@@ -1,0 +1,13 @@
+{
+ "doc_id": "f79d2beec5716da5",
+ "text": "From: sara.d@example-energy.com\nSubject: travel\n\nI will be in London for the LNG deal until Friday; my mobile is 832-555-0144. Sara Diaz",
+ "source": "corporate",
+ "private": [
+  "sara.d@example-energy.com",
+  "832-555-0144",
+  "Sara Diaz"
+ ],
+ "meta": {
+  "sample": true
+ }
+}
