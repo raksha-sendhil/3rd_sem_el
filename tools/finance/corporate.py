@@ -28,6 +28,7 @@ import json
 import lzma
 import random
 import re
+import shutil
 import sys
 import time
 import urllib.parse
@@ -46,6 +47,7 @@ N_DOCS, N_HELD = 100, 60  # the 2h scale: indexed, held out
 ENRON_DOCS, ENRON_HELD = 50, 30  # the rest of each is TAT-DQA pages
 TAT_DOCS, TAT_HELD = N_DOCS - ENRON_DOCS, N_HELD - ENRON_HELD
 MAX_QUESTIONS_PER_PAGE = 3
+EARLY = 1600  # characters: a scan value must be this near the top of its page
 
 
 def get(url: str, name: str | None = None) -> bytes:
@@ -300,9 +302,9 @@ def fetch_kleister(f: Folder, n: int) -> None:
     Reuses the page finder of tools/fetch_real_testset.py."""
     sys.path.insert(0, str(ROOT / "tools"))
     import pymupdf
-    from fetch_real_testset import KLEISTER_RAW, KLEISTER_S3, kleister_pages, money_variants
+    from fetch_real_testset import KLEISTER_RAW, KLEISTER_S3, money_variants
 
-    from sanitise.ingest.metrics import detail_hits
+    from sanitise.ingest.metrics import normalise
     from sanitise.ingest.pdf import text_layer
 
     rows = lzma.decompress(get(KLEISTER_RAW + "dev-0/in.tsv.xz", "kleister/in.tsv.xz")).decode(
@@ -315,66 +317,81 @@ def fetch_kleister(f: Folder, n: int) -> None:
         .rstrip("\n")
         .split("\n")
     )
+    shutil.rmtree(f.path / "scans", ignore_errors=True)
     order = list(range(len(rows)))
     random.Random("kleister-finance").shuffle(order)
     want_scans = round(n * 2 / 3)
-    scans = typed = 0
+    count = {"scan": 0, "typed": 0, "address": 0, "money": 0}
+
+    def early(page_text: str, detail: str) -> bool:
+        """The value is on the page within its first EARLY characters: the pipeline keeps one
+        1,900-character part of a scan, so a value further down could not be read or asked."""
+        t = normalise(page_text)
+        return any(0 <= t.find(normalise(form)) < EARLY for form in detail.split(" || "))
+
     for i in order:
-        if scans + typed == n:
+        if count["scan"] + count["typed"] >= n:
             break
         name = rows[i].split("\t")[0]
         key = dict(kv.split("=", 1) for kv in expected[i].split() if "=" in kv)
         key = {k: v.replace("_", " ") for k, v in key.items()}
-        street, town, postcode = (key.get("address__street_line", ""), key.get("address__post_town", ""),
-                                  key.get("address__postcode", ""))  # fmt: skip
-        income, spending = (
-            key.get("income_annually_in_british_pounds"),
-            key.get("spending_annually_in_british_pounds"),
-        )
-        if not (street and postcode and income and spending):
-            continue
+        street, postcode = key.get("address__street_line", ""), key.get("address__postcode", "")
+        income = key.get("income_annually_in_british_pounds")
+        spending = key.get("spending_annually_in_british_pounds")
         try:
             pointer = get(KLEISTER_RAW + f"documents/{name}", f"kleister/ptr_{name}").decode()
             m = re.search(r"(SHA256E-s(\d+)--\w+\.pdf)", pointer)
             if not m or int(m.group(2)) > 3_000_000:
                 continue
-            doc = pymupdf.open(
-                stream=get(KLEISTER_S3 + m.group(1), f"kleister/{m.group(1)}"), filetype="pdf"
-            )
+            data = get(KLEISTER_S3 + m.group(1), f"kleister/{m.group(1)}")
+            doc = pymupdf.open(stream=data, filetype="pdf")
         except Exception:
             continue
-        details = [street, postcode, money_variants(income), money_variants(spending)]
-        pages, found = kleister_pages(doc, details)
-        if len(found) < 4:  # every labelled value must be on the pages we keep
-            continue
-        scanned = sum(not text_layer(doc[p])[0] for p in pages) > len(pages) / 2
-        if (scanned and scans >= want_scans) or (not scanned and typed >= n - want_scans):
-            continue
-        part = pymupdf.open()
-        for page in pages:
-            part.insert_pdf(doc, from_page=page, to_page=page)
-        text = None
-        if all(text_layer(page)[0] for page in part):
-            text = "\n\n".join(page.get_text() for page in part).strip()
-            if not all(detail_hits(text, details)):
-                text = None
-        pounds = lambda v: f"£{round(float(v)):,}"  # noqa: E731
-        fields = {"address": f"{street}, {town}".strip(", "), "postcode": postcode,
-                  "income": pounds(income), "spending": pounds(spending)}  # fmt: skip
-        if key.get("report_date"):
-            fields["report_date"] = key["report_date"]
-        f.scan(part.tobytes(garbage=3, deflate=True), f"kleister_{scans + typed + 1:02d}.pdf",
-               type="annual_report", fields=fields, private=["address", "postcode"],
-               questions=[{"question": "What was the charity's total income for the year?", "answer": fields["income"]},
-                          {"question": "What was the charity's total spending for the year?", "answer": fields["spending"]}],
-               text=text)  # fmt: skip
-        scans += scanned
-        typed += not scanned
-        print(
-            f"kleister: {scans + typed}/{n} ({'scan' if scanned else 'typed'}, pages {[p + 1 for p in pages]} of {name})",
-            flush=True,
-        )
-    print(f"kleister: {scans} scanned, {typed} typed")
+        texts = [page.get_text() for page in doc]  # text layer, or the filing's hidden OCR layer
+        # one page with the address and postcode (private), one with income and spending
+        wanted = []
+        if street and postcode:
+            p = next(
+                (j for j, t in enumerate(texts) if early(t, street) and early(t, postcode)), None
+            )
+            if p is not None:
+                wanted.append(("address", p))
+        if income and spending:
+            mi, ms = money_variants(income), money_variants(spending)
+            p = next((j for j, t in enumerate(texts) if early(t, mi) and early(t, ms)), None)
+            if p is not None and all(p != q for _, q in wanted):
+                wanted.append(("money", p))
+        for kind, p in wanted:
+            if count["scan"] + count["typed"] >= n:
+                break
+            scanned = not text_layer(doc[p])[0]
+            mode = "scan" if scanned else "typed"
+            if count[mode] >= (want_scans if scanned else n - want_scans):
+                continue
+            part = pymupdf.open()
+            part.insert_pdf(doc, from_page=p, to_page=p)
+            if kind == "address":
+                fields = {"address": street, "postcode": postcode}
+                private, questions = ["address", "postcode"], []
+            else:
+                fields = {
+                    "income": f"{round(float(income)):,}",
+                    "spending": f"{round(float(spending)):,}",
+                }
+                private = []
+                questions = [
+                    {"question": "What was the charity's total income for the year?", "answer": fields["income"]},
+                    {"question": "What was the charity's total spending for the year?", "answer": fields["spending"]},
+                ]  # fmt: skip
+            text = texts[p].strip() if not scanned else None  # typed pages: the text layer
+            count[mode] += 1
+            count[kind] += 1
+            f.scan(part.tobytes(garbage=3, deflate=True),
+                   f"kleister_{count['scan'] + count['typed']:02d}_{kind}.pdf", type="annual_report",
+                   fields=fields, private=private, questions=questions, text=text)  # fmt: skip
+            print(f"kleister: {count['scan'] + count['typed']}/{n} ({mode}, {kind}, page {p + 1} of {name})", flush=True)  # fmt: skip
+    print(f"kleister: {count['scan']} scanned, {count['typed']} typed; "
+          f"{count['address']} address pages, {count['money']} income/spending pages")  # fmt: skip
 
 
 def main() -> None:
