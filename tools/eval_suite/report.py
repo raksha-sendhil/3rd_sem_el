@@ -80,6 +80,27 @@ def target_info(d, rows: list[dict]) -> dict:
     return out
 
 
+def target_info_values(rows: list[dict]) -> dict:
+    """Target Info where the private values are the dataset's own labels (each question lists
+    them): distinct labelled values an answer states that its question did not contain."""
+    from eval_suite.e2e import value_found
+
+    out: dict = {"questions": len(rows)}
+    flags = {}
+    for pipe in PIPES:
+        seen: set = set()
+        per = []
+        for r in rows:
+            got = {v for v in r["values"]
+                   if value_found(v, r[pipe]["answer"]) and not value_found(v, r["query"])}  # fmt: skip
+            seen |= got
+            per.append(bool(got))
+        flags[pipe] = per
+        out[pipe] = {"target_info": len(seen), "questions_leaking": M.rate_summary(per)}
+    out["mcnemar_p"] = M.mcnemar_p(list(zip(flags["baseline"], flags["protected"], strict=True)))
+    return out
+
+
 def repeat_rouge(rows: list[dict], store) -> dict:
     out: dict = {"questions": len(rows)}
     flags: dict[str, dict[str, list]] = {p: {"repeat": [], "rouge": [], "rl": []} for p in PIPES}
@@ -275,6 +296,33 @@ def aligned_cer(ocr: str, gold: str) -> float:
     return Levenshtein.distance(o, g) / max(len(g), 1)
 
 
+def fields_read(manifest: list[dict]) -> dict | None:
+    """Share of a scan's labelled field values (payee, amount, account number...) that appear in
+    what OCR read: the OCR accuracy measure for scans that come with fields but no full
+    transcription (cheques, forms)."""
+    from eval_suite.e2e import value_found
+
+    per = {}
+    for m in manifest:
+        vals = [v for v in (m.get("fields") or {}).values() if v]
+        if vals and m.get("ocr_text") is not None:
+            per[m["id"]] = (
+                m.get("type", "?"),
+                sum(value_found(v, m["ocr_text"]) for v in vals),
+                len(vals),
+            )
+    if not per:
+        return None
+    found, total = sum(f for _, f, _ in per.values()), sum(t for _, _, t in per.values())
+    by_type = {}
+    for kind in sorted({k for k, _, _ in per.values()}):
+        f = sum(x for k, x, _ in per.values() if k == kind)
+        t = sum(y for k, _, y in per.values() if k == kind)
+        by_type[kind] = f / t if t else float("nan")
+    return {"documents": len(per), "fields": total, "rate": found / total if total else float("nan"),
+            "by_type": by_type}  # fmt: skip
+
+
 def ocr_time(manifest: list[dict]) -> dict | None:
     """Seconds step 0 took to read each scan (``e2e.prepare``). The first document also loads
     the vision model, so the median is the figure to quote; per page when the pages were
@@ -315,9 +363,11 @@ def e2e(work: Path) -> dict | None:
     out: dict = {"documents": len(labels), "private_values": len(values),
                  "ocr_cer_mean": M.mean(cers), "ocr_cer_median": M.median(cers),
                  "ocr_cer_as_cut": M.mean([m["ocr_quality"]["cer"] for m in manifest if m.get("ocr_quality")]),
-                 "ocr_time": ocr_time(manifest)}  # fmt: skip
+                 "ocr_time": ocr_time(manifest), "fields_read": fields_read(manifest)}  # fmt: skip
     for side in ("gold", "ocr"):
         rows = _rows(work / "answers" / f"e2e_{side}.jsonl")
+        if not rows:
+            continue
         targeted = [r for r in rows if r["kind"] == "targeted"]
         util = [r for r in rows if r["kind"] == "utility"]
         side_out: dict = {"targeted_questions": len(targeted), "utility_questions": len(util)}
@@ -574,7 +624,7 @@ def _strip(res: dict) -> dict:
 
 
 def write(d, work: Path, scale: str) -> None:
-    from sanitise.rag.store import SqliteDocumentStore
+    SqliteDocumentStore = d.mod("rag.store").SqliteDocumentStore
 
     a = work / "answers"
     res: dict = {"domain": d.name, "scale": scale, "commit": _commit(d.repo),
@@ -584,7 +634,10 @@ def write(d, work: Path, scale: str) -> None:
         res.update(json.loads(model.read_text(encoding="utf-8")))
     single: dict = {}
     if rows := _rows(a / "target_info.jsonl"):
-        single["target_info"] = target_info(d, rows)
+        if people_rows := [r for r in rows if "values" not in r]:
+            single["target_info"] = target_info(d, people_rows)
+        if value_rows := [r for r in rows if "values" in r]:
+            single["target_info_values"] = target_info_values(value_rows)
     if (rows := _rows(a / "repeat.jsonl")) and (work / "stores" / "real.sqlite").exists():
         single["repeat_rouge"] = repeat_rouge(
             rows, SqliteDocumentStore(work / "stores" / "real.sqlite")
@@ -630,6 +683,13 @@ def markdown(res: dict, figures_made: list[str]) -> str:
          "docs/evaluation_metrics.md.", "",
          "## Single-question attacks", "",
          "| # | Metric | No privacy | Ours | p |", "|---|---|---:|---:|---:|"]  # fmt: skip
+    if tv := s.get("target_info_values"):
+        L.append(
+            f"| 1 | **Target Info** on the dataset's labelled values ({tv['questions']} questions) | "
+            f"{tv['baseline']['target_info']} | {tv['protected']['target_info']} | |"
+        )
+        L.append(f"| | questions leaking a labelled value | {_pct(tv['baseline']['questions_leaking']['rate'])} | "
+                 f"{_pct(tv['protected']['questions_leaking']['rate'])} | {_p(tv['mcnemar_p'])} |")  # fmt: skip
     if ti := s.get("target_info"):
         L.append(
             f"| 1 | **Target Info** (distinct private values, {ti['questions']} questions) | "
@@ -725,16 +785,37 @@ def markdown(res: dict, figures_made: list[str]) -> str:
               f"{_pct(rp['singled_out']['rate'])} | |",
               f"| sessions narrowed below k = {rid['k']} | {_pct(rb['below_k']['rate'])}{_ci(rb['below_k']['ci95'])} | "
               f"{_pct(rp['below_k']['rate'])}{_ci(rp['below_k']['ci95'])} | {_p(rid['below_k_mcnemar_p'])} |"]  # fmt: skip
-    if e and "gold" in e and "ocr" in e:
-        g, o = e["gold"], e["ocr"]
-        L += ["", f"## End to end, with OCR ({e['documents']} real documents, {e['private_values']} "
-                  f"labelled private values, OCR character error rate {_pct(e['ocr_cer_mean'])} mean, "
-                  f"{_pct(e.get('ocr_cer_median', float('nan')))} median)", "",
-              "| Metric | A: gold text | B: scan + OCR | Gap B - A |", "|---|---:|---:|---:|",
-              f"| Target Info, no privacy | {g['baseline']['target_info']} | {o['baseline']['target_info']} | "
-              f"{o['baseline']['target_info'] - g['baseline']['target_info']} |",
-              f"| Target Info, ours | {g['protected']['target_info']} | {o['protected']['target_info']} | "
-              f"{e['gap_target_info_ours']} |"]  # fmt: skip
+    if e and "ocr" in e:
+        o = e["ocr"]
+        g = e.get("gold")
+        head = (f"## End to end, with OCR ({e['documents']} real documents, {e['private_values']} "
+                f"labelled private values, OCR character error rate {_pct(e['ocr_cer_mean'])} mean, "
+                f"{_pct(e.get('ocr_cer_median', float('nan')))} median)")  # fmt: skip
+        if g:
+            L += ["", head, "", "| Metric | A: gold text | B: scan + OCR | Gap B - A |",
+                  "|---|---:|---:|---:|",
+                  f"| Target Info, no privacy | {g['baseline']['target_info']} | {o['baseline']['target_info']} | "
+                  f"{o['baseline']['target_info'] - g['baseline']['target_info']} |",
+                  f"| Target Info, ours | {g['protected']['target_info']} | {o['protected']['target_info']} | "
+                  f"{e['gap_target_info_ours']} |"]  # fmt: skip
+            if "gap_utility_retention" in e:
+                gap = e["gap_utility_retention"]
+                gap_text = "n/a" if gap != gap else f"{100 * gap:+.1f} points"
+                L.append(f"| Utility retention, ours | {_pct(g['utility_retention'])} | "
+                         f"{_pct(o['utility_retention'])} | {gap_text} |")  # fmt: skip
+        else:  # scans without a full transcription: run B only
+            L += ["", head, "", "| Metric (scan + OCR) | No privacy | Ours |", "|---|---:|---:|",
+                  f"| Target Info (the dataset's labelled values) | {o['baseline']['target_info']} | "
+                  f"{o['protected']['target_info']} |"]  # fmt: skip
+            if "utility_retention" in o:
+                L.append(
+                    f"| Token F1 | {o['baseline']['token_f1']:.3f} | {o['protected']['token_f1']:.3f} |"
+                )
+                L.append(f"| Utility retention | 100% | {_pct(o['utility_retention'])} |")
+        if fr := e.get("fields_read"):
+            kinds = ", ".join(f"{k} {_pct(v)}" for k, v in fr["by_type"].items())
+            L += ["", f"Field values read correctly by OCR (the dataset's own labels): {_pct(fr['rate'])} "
+                      f"of {fr['fields']} values in {fr['documents']} documents ({kinds})."]  # fmt: skip
         if t := e.get("ocr_time"):
             per_page = (f"; median per page {t['median_s_per_page']:.1f} s"
                         if "median_s_per_page" in t else "")  # fmt: skip
@@ -745,20 +826,13 @@ def markdown(res: dict, figures_made: list[str]) -> str:
                   "| Kind of scan | Median OCR seconds |", "|---|---:|"]  # fmt: skip
             L += [f"| {k} | {v:.1f} |" for k, v in t["by_type"].items()]
         for side, name in (("gold", "A: gold text"), ("ocr", "B: scan + OCR")):
-            if bt := e[side].get("by_type"):
+            if side in e and (bt := e[side].get("by_type")):
                 L += ["", f"Utility by kind of scan, {name}:", "",
                       "| Kind | Questions | F1 no privacy | F1 ours | Retention | Ours answered | OCR character error |",
                       "|---|---:|---:|---:|---:|---:|---:|"]  # fmt: skip
                 L += [f"| {k} | {v['questions']} | {v['baseline_f1']:.2f} | {v['protected_f1']:.2f} | "
                       f"{_pct(v['retention'])} | {_pct(v['protected_answer_rate'])} | {_pct(v['ocr_cer'])} |"
                       for k, v in bt.items()]  # fmt: skip
-        if "gap_utility_retention" in e:
-            gap = e["gap_utility_retention"]
-            gap_text = "n/a" if gap != gap else f"{100 * gap:+.1f} points"
-            L.append(
-                f"| Utility retention, ours | {_pct(g['utility_retention'])} | "
-                f"{_pct(o['utility_retention'])} | {gap_text} |"
-            )
     if ti := s.get("target_info"):
         for pipe in PIPES:
             leaked = ti[pipe]["leaked"]

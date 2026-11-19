@@ -45,6 +45,9 @@ SCALES = {
     "5h": {"indexed": 150, "heldout": 100, "targeted": 100, "repeat": 100, "members": 100,
            "nonmembers": 100, "utility": 100, "targets": 20, "e2e": 25, "gen_docs": 150,
            "e2e_parts": 1, "asked_people": 35},
+    "2h": {"indexed": 100, "heldout": 60, "targeted": 60, "repeat": 60, "members": 60,
+           "nonmembers": 60, "utility": 60, "targets": 10, "e2e": 20, "gen_docs": 100,
+           "e2e_parts": 1, "asked_people": 20},
     "quick": {"indexed": 12, "heldout": 6, "targeted": 5, "repeat": 5, "members": 5,
               "nonmembers": 5, "utility": 5, "targets": 1, "e2e": 2, "gen_docs": 15,
               "e2e_parts": 1, "asked_people": 3},
@@ -56,7 +59,8 @@ def _args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("step", choices=["data", "build", "single", "multi", "e2e-prep", "e2e-label",
                                     "utility-questions", "e2e", "report"])  # fmt: skip
-    p.add_argument("--domain", required=True, choices=["health", "legal"])
+    p.add_argument("--domain", required=True, choices=["health", "legal", "finance"])
+    p.add_argument("--source", default="", help="finance: bank, kyc, corporate or cheques")
     p.add_argument("--work", required=True, type=Path)
     p.add_argument("--repo", type=Path, default=MAIN_REPO)
     p.add_argument("--main-repo", type=Path, default=MAIN_REPO)
@@ -81,7 +85,7 @@ from eval_suite import questions as Q  # noqa: E402
 from eval_suite.domains import get_domain  # noqa: E402
 
 SCALE = SCALES[ARGS.scale]
-D = get_domain(ARGS.domain, ARGS.repo)
+D = get_domain(ARGS.domain, ARGS.repo, ARGS.source)
 
 
 def _dump(path: Path, data) -> None:
@@ -192,9 +196,9 @@ def step_build() -> None:
 
 
 def _context(name: str):
-    from sanitise.rag.answer import RagContext
-    from sanitise.rag.dense import build_retriever
-    from sanitise.rag.store import SqliteDocumentStore
+    RagContext = D.mod("rag.answer").RagContext
+    build_retriever = D.mod("rag.dense").build_retriever
+    SqliteDocumentStore = D.mod("rag.store").SqliteDocumentStore
 
     path = WORK / "stores" / f"{name}.sqlite"
     if not path.exists():
@@ -225,7 +229,7 @@ CONCURRENCY = max(1, int(os.environ.get("EVAL_CONCURRENCY", "2")))
 
 
 async def _pair(ctx, llm, query: str, session: str) -> dict:
-    from sanitise.rag.answer import answer
+    answer = D.mod("rag.answer").answer
 
     base, prot = await asyncio.gather(
         answer(ctx, query, "baseline", session, llm, D.k),
@@ -247,6 +251,10 @@ async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
                     row = await play(item)
                 except Exception as exc:  # a model error: skipped now, asked again next run
                     print(f"  {item['id']}: {str(exc)[:160]} (again on the next run)", flush=True)
+                    if os.environ.get("EVAL_DEBUG"):  # the whole traceback, to find a bug
+                        import traceback
+
+                        traceback.print_exc()
                     return
             f.write(json.dumps(row, ensure_ascii=False) + chr(10))
             f.flush()
@@ -282,7 +290,7 @@ def _ollama_up() -> bool:
 
 
 async def _with_llm(work) -> None:
-    from sanitise.llm.factory import close_llm_client
+    close_llm_client = D.mod("llm.factory").close_llm_client
 
     # health answers on Ollama (legal may answer on Gemini, so it is not checked here)
     if D.name == "health" and not os.environ.get("EVAL_MOCK") and not _ollama_up():
@@ -306,10 +314,14 @@ def step_single() -> None:
     only = set(ARGS.only.split(","))
 
     async def work(llm) -> None:
-        if "target_info" in only:
-            await _ask(_context("gen"), llm, targeted, WORK / "answers" / "target_info.jsonl")
-        sets = [n for n in ("repeat", "membership", "utility") if n in only]
-        if sets:
+        if "target_info" in only:  # each question on the store it is about (finance: two)
+            for store in ("gen", "real"):
+                part = [t for t in targeted if t.get("store", "gen") == store]
+                if part and (WORK / "stores" / f"{store}.sqlite").exists():
+                    await _ask(_context(store), llm, part, WORK / "answers" / "target_info.jsonl")
+        sets = [n for n in ("repeat", "membership", "utility")
+                if n in only and (data / f"{n}.json").exists() and _load(data / f"{n}.json")]  # fmt: skip
+        if sets and (WORK / "stores" / "real.sqlite").exists():
             real = _context("real")
             for name in sets:
                 await _ask(
@@ -320,7 +332,11 @@ def step_single() -> None:
 
 
 def step_multi() -> None:
-    sessions = _load(WORK / "data" / "sessions.json")
+    file = WORK / "data" / "sessions.json"
+    sessions = _load(file) if file.exists() else []
+    if not sessions or not (WORK / "stores" / "gen.sqlite").exists():
+        print("no attack sessions for this run (finance: only the bank source has a population)")
+        return
     path = WORK / "answers" / "sessions.jsonl"
 
     async def work(llm) -> None:
@@ -345,18 +361,28 @@ def step_multi() -> None:
 def step_e2e() -> None:
     from eval_suite import e2e
 
+    if not (WORK / "e2e" / "labels.json").exists():
+        print("no end-to-end documents for this run")
+        return
     rows = e2e.questions(WORK)
 
     async def work(llm) -> None:
-        for side in ("gold", "ocr"):
-            await _ask(_context(f"e2e_{side}"), llm, rows, WORK / "answers" / f"e2e_{side}.jsonl")
+        for side in ("gold", "ocr"):  # run A only where the dataset has full transcriptions
+            if (WORK / "stores" / f"e2e_{side}.sqlite").exists():
+                await _ask(
+                    _context(f"e2e_{side}"), llm, rows, WORK / "answers" / f"e2e_{side}.jsonl"
+                )
 
     asyncio.run(_with_llm(work))
 
 
 def main() -> None:
     step = ARGS.step
-    if step == "data":
+    if step == "data" and D.name == "finance":
+        from eval_suite import finance
+
+        finance.step_data(D, ARGS.repo, WORK, SCALE, Q)
+    elif step == "data":
         step_data()
     elif step == "build":
         step_build()
@@ -367,19 +393,29 @@ def main() -> None:
     elif step == "e2e-prep":
         from eval_suite import e2e
 
-        e2e.prepare(D.name, ARGS.main_repo, WORK, SCALE["e2e"], SCALE["e2e_parts"])
+        if D.name == "finance":  # the source's scans, labelled by the dataset's own fields
+            from eval_suite import finance
+
+            finance.prepare_e2e(D, ARGS.repo, WORK, SCALE["e2e"], SCALE["e2e_parts"])
+        else:
+            e2e.prepare(D.name, ARGS.main_repo, WORK, SCALE["e2e"], SCALE["e2e_parts"])
     elif step == "e2e-label":
         from eval_suite import e2e
 
-        e2e.label(WORK)
+        if D.name == "finance":
+            print("finance: the end-to-end labels come from the dataset's fields (e2e-prep)")
+        else:
+            e2e.label(WORK)
     elif step == "utility-questions":
         # utility questions about content, not wording (eval_suite.utility_questions, e2e)
         from eval_suite import e2e, utility_questions
 
         if D.name == "health":
             utility_questions.rewrite_health(WORK)
-        else:
+        elif D.name == "legal":
             utility_questions.rewrite_legal(WORK)
+        else:
+            print("finance: each source writes its utility questions about content already")
         if (WORK / "e2e" / "labels.json").exists():
             e2e.relabel_utility(WORK)
     elif step == "e2e":
