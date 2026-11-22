@@ -34,7 +34,7 @@ def client_for(answers: list[str], monitor: bool = True) -> TestClient:
     return TestClient(create_app(Settings(llm_backend="mock"), llm=llm, rag=ctx))
 
 
-def test_stepwise_questions_get_allowed_then_blocked() -> None:
+def test_stepwise_questions_get_allowed_then_generalised() -> None:
     with client_for(ANSWERS) as client:
         session = client.post("/v1/sessions").json()["session_id"]
         verdicts = []
@@ -49,8 +49,8 @@ def test_stepwise_questions_get_allowed_then_blocked() -> None:
             assert "draft_answer" not in body and "revised_answer" not in body["monitor"]
             verdicts.append((body["monitor"]["verdict"], body["monitor"]["candidate_pool"]))
         assert verdicts[:3] == [("allowed", 11), ("allowed", 8), ("allowed", 6)]
-        assert verdicts[3][0] == "blocked"
-        assert "cannot be answered" in body["answer"] and "Nilgiris" not in body["answer"]
+        assert verdicts[3][0] == "generalised"  # N does not count the condition; k still holds
+        assert "Nilgiris" not in body["answer"]
 
         ledger = client.get(f"/v1/sessions/{session}/monitor").json()
         assert (ledger["monitor"], ledger["k"], ledger["max_attributes"]) == ("ledger", 5, 3)
@@ -107,7 +107,7 @@ async def test_attack_rounds_score_rewriting_alone_too() -> None:
     llm = MockLLM(by_schema={TEXT_CALL: [a for a in ANSWERS for _ in (0, 1)]})
     run = await run_attack(ctx, attack, [target], llm)
     last = run.rounds[-1]
-    assert last.protected.monitor.verdict == "blocked"
+    assert last.protected.monitor.verdict == "generalised"
     # without the monitor the town (the Nilgiris district) would have gone out
     assert "district" in last.unmonitored_leakage.disclosed
     assert "district" not in last.protected_leakage.disclosed

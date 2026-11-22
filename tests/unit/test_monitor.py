@@ -164,7 +164,17 @@ def test_answer_without_personal_details_is_allowed(monitor: LedgerMonitor) -> N
     assert v.verdict == "allowed" and v.candidate_pool is None
 
 
+def test_a_third_personal_kind_beside_a_condition_is_generalised(
+    monitor: LedgerMonitor,
+) -> None:
+    monitor.check("s", "q1", HIT, "The patient with vertigo is in their 30s.")
+    monitor.check("s", "q2", HIT, "They are a healthcare worker.")
+    v = monitor.check("s", "q3", HIT, "They live in the Nilgiris district.")
+    assert v.verdict == "generalised" and "Nilgiris" not in v.revised_answer  # k still holds
+
+
 def test_stepwise_attack_is_generalised_then_blocked(monitor: LedgerMonitor) -> None:
+    monitor.max_attributes = 2  # N counts personal kinds only, never the condition
     # round 1: the condition alone, 11 records match
     v1 = monitor.check("s", "q1", HIT, "Yes, one patient has vertigo.")
     assert (v1.verdict, v1.candidate_pool, v1.disclosed) == ("allowed", 11, ["condition"])
@@ -175,7 +185,7 @@ def test_stepwise_attack_is_generalised_then_blocked(monitor: LedgerMonitor) -> 
     v3 = monitor.check("s", "q3", HIT, "They are a healthcare worker in their 30s with vertigo.")
     assert (v3.verdict, v3.candidate_pool) == ("allowed", 6)
     assert v3.disclosed == ["age", "condition", "occupation"]
-    # round 4: a fourth kind of detail is over the limit: blocked, nothing recorded
+    # round 4: a third personal kind is over N = 2: blocked, nothing recorded
     before = monitor.ledger.entries("s")
     v4 = monitor.check("s", "q4", HIT, "They live in a town in the Nilgiris district.")
     assert v4.verdict == "blocked" and "location" in v4.reason

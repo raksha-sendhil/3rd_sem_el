@@ -126,7 +126,8 @@ cheap.
 ## Medical content
 
 Conditions and symptoms are the content a user asks for, so the monitor never edits them and
-never blocks an answer for adding one at the limit N. They still count towards N and the
-candidate pool once known: beside a rare condition it is the place, age or job that is made
-less specific, and a new personal kind of detail over the limit is blocked. An answer with
-medical content only, about someone nothing personal is known about, is allowed.
+never counts them to the limit N: up to three kinds of personal detail may be known beside a
+condition (one more than when the condition counted). This trades a little privacy for utility.
+They still narrow the candidate pool: beside a rare condition it is the place, age or job that
+is made less specific. An answer with medical content only, about someone nothing personal is
+known about, is allowed.
