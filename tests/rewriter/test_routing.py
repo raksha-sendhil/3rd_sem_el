@@ -71,7 +71,7 @@ def test_generalised_replacements_filled_placeholders_left() -> None:
     assert decisions[1].replacement == "in their 30s"
 
 
-def test_common_condition_kept_rare_generalised() -> None:
+def test_every_condition_is_kept_rare_ones_too() -> None:
     text = "Diagnosed with type 2 diabetes and amyloidosis."
     decisions = route(
         [
@@ -81,9 +81,8 @@ def test_common_condition_kept_rare_generalised() -> None:
         [],
     )
     assert decisions[0].action is A.KEEP
-    assert decisions[1].action is A.GENERALISE
-    assert "rare" in decisions[1].reason
-    assert decisions[1].replacement == "a rare protein disorder"
+    assert decisions[1].action is A.KEEP
+    assert "medical content" in decisions[1].reason
 
 
 def test_combo_members_by_text() -> None:
@@ -122,11 +121,10 @@ def test_combo_members_climb_two_steps() -> None:
     assert d[0].replacement == "in their 30s"  # not a member: one step
     assert d[1].replacement == "a working professional"  # member: two steps
     assert "two steps" in d[1].reason
-    assert d[3].action is A.GENERALISE  # condition in a combination
-    assert d[3].replacement == "a balance or hearing problem"  # ... one step only
+    assert d[3].action is A.KEEP  # medical content stays: the personal members climb
 
 
-def test_all_keep_combo_is_broken_by_least_important_member() -> None:
+def test_a_combination_of_symptoms_only_stays_whole() -> None:
     text = "My son has left-sided abdominal pain and bilateral pelvic pain."
     spans = [
         positional(text, "My son", C.RELATION),
@@ -141,9 +139,7 @@ def test_all_keep_combo_is_broken_by_least_important_member() -> None:
                   value="bilateral pelvic pain", importance="medium"),
     ]  # fmt: skip
     d = route(spans, facts)
-    assert [x.action for x in d[:3]] == [A.KEEP, A.KEEP, A.GENERALISE]
-    assert d[2].replacement == "pelvic pain"
-    assert "break the combination" in d[2].reason
+    assert [x.action for x in d[:3]] == [A.KEEP, A.KEEP, A.KEEP]
 
 
 def test_combo_without_any_member_changes_nothing() -> None:

@@ -60,8 +60,8 @@ ONTOLOGY_DIR = Path(__file__).resolve().parents[4] / "data" / "ontology"
 
 GENERIC: dict[PIICategory, str] = {
     C.AGE: "an adult",
-    C.DATE: "an earlier date",
-    C.LOCATION: "a town in the region",
+    C.DATE: "an unspecified date",
+    C.LOCATION: "a place",
     C.OCCUPATION: "a working professional",
     C.PHYSICAL: "of typical build",
     C.MEDICAL_CONDITION: "a medical condition",

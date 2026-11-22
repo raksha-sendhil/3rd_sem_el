@@ -23,7 +23,7 @@ from __future__ import annotations
 
 import re
 
-from sanitise.agents.rewriter import leakcheck, ontology
+from sanitise.agents.rewriter import fidelity, leakcheck, ontology
 from sanitise.casefile import CASE_FILE
 from sanitise.llm.base import LLMClient
 from sanitise.schemas import Action, FactTuple, PIICategory, RoutingDecision, SensitiveSpan
@@ -44,30 +44,42 @@ Rules:
 condition or any other detail that is not in the facts.
 2. Copy placeholder tokens exactly, brackets included. Every token in the facts must appear \
 in your record, contact details too.
-3. Keep vague phrases vague. You may change their grammar to fit the sentence ("in their 40s" \
-can become "in my 40s"), but never make them more specific. Fit them in naturally: "I am a \
-working professional", not "I work as a working professional".
-4. Write as the original writer would: first person for facts about "the writer" ("I", "my \
-wife"). Two to five plain sentences, no headings, no lists. Say each detail once.
-5. Leave out a fact that carries no information, such as a value that only says "the writer".
-6. Return only the rewritten record.
+3. Keep vague phrases vague. You may change their grammar to fit the sentence, but never make \
+them more specific. Fit them in naturally: "The patient is a working professional", not \
+"works as a working professional".
+4. Write in the third person throughout. Never write "I", "my", "we" or "you": say "the \
+patient", "the writer", "their wife", "the doctor".
+5. Keep who said what. A fact marked "(said by the patient)" is what the patient reported; a \
+fact marked "(said by the doctor)" is what the doctor told the patient: write "The doctor \
+advised ...", "The doctor said it may be ...". Never turn a doctor's advice or opinion into \
+something the patient did, has or plans, and never write that the doctor "planned" it. First \
+what the patient reported. Then the doctor's reply as one part that begins "In reply, the \
+doctor advised" or "In reply, the doctor explained": advice, opinions and explanations alike.
+6. Keep every medical term, drug, dose, number, duration and finding exactly, and put the \
+words around them in your own phrasing: reorder and reword, so that you never copy ten or \
+more words in a row from a fact.
+7. Plain sentences, as many as the facts need, no headings, no lists. Say each detail once. \
+Leave out a fact that carries no information, such as a value that only says "the writer".
+8. Return only the rewritten record.
 
 EXAMPLE
 FACTS:
-the writer - name: [PERSON_1].
-the writer - age: in their 40s.
-the writer - works as: a transport worker.
-the writer - lives in: a city in Karnataka.
-the writer - has symptom: chest tightness when I climb stairs.
-the writer - symptom duration: two months.
-the writer - has condition: angina.
-the writer - took medication: aspirin.
-the writer - contact: [PHONE_1].
-the writer's wife - has condition: psoriasis.
+the patient - name: [PERSON_1].
+the patient - age (said by the patient): in their 40s.
+the patient - works as (said by the patient): a transport worker.
+the patient - lives in (said by the patient): a city in Karnataka.
+the patient - has symptom (said by the patient): chest tightness when I climb stairs.
+the patient - symptom duration (said by the patient): two months.
+the patient - took medication (said by the patient): aspirin.
+the patient - contact: [PHONE_1].
+the patient's wife - has condition (said by the patient): psoriasis.
+the patient - opinion (said by the doctor): may be angina.
+the patient - advice (said by the doctor): get a treadmill test before their next climb.
 OUTPUT:
-I am [PERSON_1], in my 40s, and I work as a transport worker in a city in Karnataka. For two \
-months I have had chest tightness when I climb stairs, and I have been told it may be angina. \
-I take aspirin. My wife has psoriasis. You can reach me on [PHONE_1].
+The patient, [PERSON_1], is in their 40s, is a transport worker in a city in Karnataka and \
+can be reached on [PHONE_1]. They reported chest tightness on climbing stairs for two months, \
+take aspirin and said their wife has psoriasis. In reply, the doctor explained that this may \
+be angina and advised a treadmill test before they next climb.
 """
 
 
@@ -161,10 +173,9 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     )
     for d in removed:
         assert d.replacement is not None
-        span = re.escape(d.span_text.strip())
-        if CASE_FILE.get():  # a clinical record: whole words only, so "M" (a sex marker)
-            # does not hit the m of "antimalarials", nor the age "9" the 9 of "Hb 9.8"
-            span = rf"(?<!\w)(?<!\d\.){span}(?!\w)(?!\.\d)"
+        # whole words only, so "Tab" does not hit "tablet", "M" (a sex marker) the m of
+        # "antimalarials", nor the age "9" the 9 of "Hb 9.8"
+        span = rf"(?<!\w)(?<!\d\.){re.escape(d.span_text.strip())}(?!\w)(?!\.\d)"
         if d.action is Action.GENERALISE and re.search(span, value, re.IGNORECASE):
             # a vague phrase cannot replace a few words inside a longer one ("tore my anterior
             # cruciate ligament" -> "tore my a joint injury"); when the detail is most of the
@@ -184,12 +195,14 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
         if d.category in _NAMED and _leftover(value, d.span_text):
             assert d.replacement is not None
             value = d.replacement
+    value = DOUBLE_ARTICLE.sub(r"\1", value)  # "in a Pune hospital" -> "in a hospital"
     if not CASE_FILE.get():
         return value
     # a clinical record's date made vague to its year: "Review on 23/10/2026" -> "Review in 2026"
     return _ON_YEAR.sub(lambda m: ("In " if m.group(1) == "O" else "in ") + m.group(2), value)
 
 
+DOUBLE_ARTICLE = re.compile(r"\b(?:an?|the)\s+(an?\s+\w)")
 _ON_YEAR = re.compile(r"\b([Oo])n (\d{4}|the \d{4}s)\b")
 
 
@@ -226,6 +239,7 @@ def safe_facts(
     return out
 
 
+_OWN_HEALTH = {"has_condition", "has_symptom", "took_medication"}
 _OTHERS = ["another person", "a second other person", "a third other person"]
 
 
@@ -235,6 +249,12 @@ def subject_labels(safe: list[tuple[FactTuple, str]]) -> dict[str, str]:
     person", never by an id such as "person 3", which the model would copy into the record."""
     labels: dict[str, str] = {}
     unnamed = 0
+    # the writer of a health message is "the patient", unless only their relative is ill
+    ill = {f.subject for f, _ in safe if f.relation in _OWN_HEALTH}
+    relative_is_ill = any(s.startswith("writer.") for s in ill)
+    consulted = any(f.said_by == "doctor" for f, _ in safe)
+    patient = "writer" in ill or (consulted and not relative_is_ill)
+    writer = "the patient" if patient else "the writer"
     for f, _ in safe:
         subject = f.subject
         if subject in labels:
@@ -244,9 +264,9 @@ def subject_labels(safe: list[tuple[FactTuple, str]]) -> dict[str, str]:
         elif subject.startswith("patient."):
             labels[subject] = "the patient's " + subject.removeprefix("patient.").replace("_", " ")
         elif subject == "writer":
-            labels[subject] = "the writer"
+            labels[subject] = writer
         elif subject.startswith("writer."):
-            labels[subject] = "the writer's " + subject.removeprefix("writer.").replace("_", " ")
+            labels[subject] = f"{writer}'s " + subject.removeprefix("writer.").replace("_", " ")
         else:
             name = next(
                 (
@@ -282,7 +302,13 @@ def draft(facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
         label = labels[f.subject]
         if f.relation == "identifier" and value == label:
             continue
-        line = f"{label} - {relation_label(f.relation, value)}: {value}."
+        said = f" (said by the {f.said_by})" if f.said_by else ""
+        if f.said_by:  # "your X-ray", said by the doctor, is the patient's
+            value = fidelity.third_person(value)
+        relation = relation_label(f.relation, value)
+        if f.said_by and f.said_by != "patient":  # a reply's plan is advice, not a plan
+            relation = {"plan": "advice", "assessment": "opinion"}.get(f.relation, relation)
+        line = f"{label} - {relation}{said}: {value}."
         if line not in lines:
             lines.append(line)
     return "\n".join(lines)
@@ -292,6 +318,7 @@ def build_user_prompt(
     facts: list[FactTuple],
     decisions: list[RoutingDecision],
     feedback: list[SensitiveSpan] | None = None,
+    notes: list[str] | None = None,
 ) -> str:
     prompt = f"FACTS:\n{draft(facts, decisions) or '(no facts)'}"
     if feedback:
@@ -301,6 +328,9 @@ def build_user_prompt(
             f"not in the facts ({kinds}). Write it again using only the tokens and phrases in "
             "the facts."
         )
+    if notes:
+        prompt += "\n\nYour previous version was wrong:\n" + "\n".join(f"- {n}" for n in notes)
+        prompt += "\nWrite it again."
     return prompt + "\nOUTPUT:"
 
 
@@ -310,7 +340,8 @@ async def reconstruct(
     placeholders: dict[str, str],
     llm: LLMClient,
     feedback: list[SensitiveSpan] | None = None,
+    notes: list[str] | None = None,
 ) -> str:
     system = CASE_FILE_PROMPT if is_case_file(facts) else SYSTEM_PROMPT
-    reply = await llm.text_call(system, build_user_prompt(facts, decisions, feedback))
+    reply = await llm.text_call(system, build_user_prompt(facts, decisions, feedback, notes))
     return PREAMBLE.sub("", reply).strip()

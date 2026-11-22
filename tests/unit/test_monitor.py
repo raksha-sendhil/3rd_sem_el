@@ -198,12 +198,12 @@ def test_a_too_specific_detail_climbs_the_ladder(monitor: LedgerMonitor) -> None
     assert "4 -> 6" in v.reason and v.disclosed == ["location"]
 
 
-def test_only_the_generic_phrase_can_be_safe(monitor: LedgerMonitor) -> None:
-    # acne: 2 records; "a skin condition": 2 records; the generic phrase reveals nothing
+def test_content_alone_is_never_edited(monitor: LedgerMonitor) -> None:
+    # acne: 2 records, but nothing personal is known, so there is no one to single out
     hit = [RetrievalHit(doc_id="p9", score=1.0)]
     v = monitor.check("s", "q", hit, "The patient has acne.")
-    assert v.verdict == "generalised" and v.revised_answer == "The patient has a medical condition."
-    assert v.disclosed == [] and monitor.ledger.entries("s") == []  # nothing was revealed
+    assert v.verdict == "allowed" and not v.revised_answer
+    assert v.disclosed == ["condition"]  # still counted against later personal details
 
 
 def test_blocked_when_generalising_is_not_allowed(store: MemoryDocumentStore) -> None:

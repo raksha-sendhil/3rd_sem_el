@@ -141,6 +141,7 @@ class FactTuple(BaseModel):
     relation: str
     value: str
     importance: Importance
+    said_by: str | None = None  # the labelled speaker who stated it (set in code, not by a model)
 
 
 class ExtractorOutput(BaseModel):

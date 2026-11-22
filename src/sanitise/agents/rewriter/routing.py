@@ -10,22 +10,19 @@ NAME, PHONE, EMAIL, ID_NUMBER,     placeholder  token filled later by ``allocate
 ADDRESS, OTHER
 AGE, DATE, LOCATION, OCCUPATION,   generalise   one step up the ladder (``ontology``)
 PHYSICAL
-MEDICAL_CONDITION                  keep         generalised instead when it is rare
-                                                (``ontology.is_rare``) or part of a QUASI_COMBO
-SYMPTOM, RELATION                  keep         generalised only to break a QUASI_COMBO
+MEDICAL_CONDITION, SYMPTOM         keep         always: medical content is never altered
+RELATION                           keep         generalised only to break a QUASI_COMBO
 QUASI_COMBO                        generalise   no position of its own; broken through members
 =================================  ===========  ============================================
 
-**QUASI_COMBO.** A combination is broken by generalising its members, the positional spans it
-is made of. Members are found by text (a span whose words appear in the combination, or a part
-of the combination that appears in the span: ``lighthouse keeper + Port Isaac``) or, when the
-combination only describes its parts (``child age + named school + small town``), by the
-categories it names. Members in a category that is generalised by default climb **two** steps
-instead of one (plan section 9); a condition in a combination is generalised one step (it is
-kept otherwise), so the record still says what kind of illness it was. If no member would be
-generalised by default (a combination of symptoms, say), the one with the least important fact
-behind it is generalised, preferring a condition, then a symptom, then a relation, so the
-combination no longer narrows the candidate pool.
+**QUASI_COMBO.** A combination is broken by generalising its members that identify, the
+positional spans it is made of. Members are found by text (a span whose words appear in the
+combination, or a part of the combination that appears in the span: ``lighthouse keeper + Port
+Isaac``) or, when the combination only describes its parts (``child age + named school + small
+town``), by the categories it names. Members in a category that is generalised by default climb
+**two** steps instead of one (plan section 9). **Medical content never gives way**, rare or not:
+the details around it do, here and in the session monitor. With no such member, a relation is
+generalised.
 
 For generalised spans the ``replacement`` is filled here (so the two-step members get their
 two-step phrase); placeholders are left to ``allocate_placeholders``. ``facts`` decide which
@@ -85,7 +82,7 @@ _COMBO_WORDS: list[tuple[str, tuple[PIICategory, ...]]] = [
     (r"height|weight|build|\btall\b|physical", (C.PHYSICAL,)),
 ]
 # which kept member gives way first when a combination has no generalised member
-_BREAK_ORDER = [C.MEDICAL_CONDITION, C.SYMPTOM, C.RELATION]
+_BREAK_ORDER = [C.RELATION]  # never a condition or a symptom: that is the content
 _IMPORTANCE_RANK = {Importance.LOW: 0, Importance.MEDIUM: 1, Importance.HIGH: 2}
 
 
@@ -133,20 +130,13 @@ def route(spans: list[SensitiveSpan], facts: list[FactTuple]) -> list[RoutingDec
     levels = [1] * len(spans)
 
     for i, span in enumerate(spans):
-        if span.category is C.MEDICAL_CONDITION:
-            if ontology.is_rare(span.text):
-                actions[i] = Action.GENERALISE
-                reasons[i] = "rare condition: it would narrow the candidate pool"
-            else:
-                reasons[i] = "common condition: kept for clinical usefulness"
+        if span.category in (C.MEDICAL_CONDITION, C.SYMPTOM):
+            reasons[i] = "medical content: always kept"
 
     for combo in (s for s in spans if s.category is C.QUASI_COMBO):
         members = combo_members(combo, spans)
         if not members:
             continue
-        for i in members:
-            if spans[i].category is C.MEDICAL_CONDITION:
-                actions[i] = Action.GENERALISE
         if not any(actions[i] is not Action.KEEP for i in members):
             keepers = [i for i in members if spans[i].category in _BREAK_ORDER]
             changes = [

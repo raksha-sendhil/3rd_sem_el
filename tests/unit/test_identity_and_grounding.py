@@ -123,7 +123,7 @@ def test_mask_replaces_every_flagged_span() -> None:
 
 
 async def test_a_made_up_name_is_retried_then_masked(fake_rules: None) -> None:
-    invented = "My son, Arthur Penrose, is in his 30s and works as a lighthouse keeper."
+    invented = "The writer's son, Arthur Penrose, is in his 30s and works as a lighthouse keeper."
     llm = MockLLM(
         by_schema={
             "FactList": [{"facts": []}, {"facts": [{"relation": "age", "value": "32 years old"}]}],

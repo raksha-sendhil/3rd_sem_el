@@ -122,3 +122,11 @@ cheap.
 * **Mock mode** has only the 20 fixtures, in which almost every detail is unique, so nearly
   every detail is generalised. The built corpus (`data/corpus`) was designed with shared
   attributes, which is where the allowed → generalised → blocked progression shows.
+
+## Medical content
+
+Conditions and symptoms are the content a user asks for, so the monitor never edits them and
+never blocks an answer for adding one at the limit N. They still count towards N and the
+candidate pool once known: beside a rare condition it is the place, age or job that is made
+less specific, and a new personal kind of detail over the limit is blocked. An answer with
+medical content only, about someone nothing personal is known about, is allowed.

@@ -16,6 +16,10 @@ Deterministic, no model involved. For every protected answer, before it leaves t
    "a town in Tamil Nadu"), until the pool is back to ``k`` or more: the answer is returned
    **generalised**. If that is not enough, it is **blocked**.
 
+**Medical content** (``attributes.CONTENT_TYPES``) is never edited and never the reason for a
+block at N: only a new personal kind can go over the limit. It does count in the pool, so next to a rare condition the place, age or job is what climbs. An
+answer that gives only content about a person, with nothing personal known, is always allowed.
+
 Only what is actually released is written to the ledger (as keyed hashes). The verdict reports
 the riskiest person: the smallest pool and the attribute types known about them.
 
@@ -28,7 +32,13 @@ from __future__ import annotations
 from collections import defaultdict
 from dataclasses import dataclass
 
-from sanitise.monitor.attributes import Attribute, mentioned, record_attributes, replace_form
+from sanitise.monitor.attributes import (
+    CONTENT_TYPES,
+    Attribute,
+    mentioned,
+    record_attributes,
+    replace_form,
+)
 from sanitise.monitor.ledger import DisclosureLedger
 from sanitise.rag.store import DocumentStore
 from sanitise.schemas import MonitorVerdict, RetrievalHit, SanitisedRecord
@@ -100,8 +110,8 @@ class LedgerMonitor:
         # 1. threshold: a type once revealed cannot be taken back by generalising
         for s in subjects.values():
             types = set(s.known) | {a.type for a in s.released}
-            if len(types) > self.max_attributes:
-                new = sorted({a.type for a in s.released} - set(s.known))
+            new = sorted({a.type for a in s.released} - set(s.known) - CONTENT_TYPES)
+            if new and len(types) > self.max_attributes:
                 return MonitorVerdict(
                     verdict="blocked",
                     candidate_pool=self.pool(self._merged(s, {})),
@@ -117,7 +127,11 @@ class LedgerMonitor:
         before = {sid: self.pool(self._merged(s, level)) for sid, s in subjects.items()}
         while True:
             pools = {sid: self.pool(self._merged(s, level)) for sid, s in subjects.items()}
-            small = [sid for sid, p in pools.items() if p < self.k]
+            small = [
+                sid
+                for sid, p in pools.items()
+                if p < self.k and self._personal(subjects[sid], level)
+            ]
             if not small:
                 break
             climbed = False
@@ -125,13 +139,13 @@ class LedgerMonitor:
                 for a in subjects[sid].released:
                     # what the session was already told cannot be taken back, so only new
                     # details climb; one past the ladder is the generic phrase (says nothing)
-                    if self._is_new(subjects[sid], a) and level[a] < min(
-                        len(a.ladder), self.max_climb
-                    ):
+                    if a.type in CONTENT_TYPES or not self._is_new(subjects[sid], a):
+                        continue
+                    if level[a] < min(len(a.ladder), self.max_climb):
                         level[a] += 1
                         climbed = True
             if not climbed:
-                sid = min(pools, key=pools.get)
+                sid = min(small, key=pools.get)
                 return MonitorVerdict(
                     verdict="blocked",
                     candidate_pool=pools[sid],
@@ -213,6 +227,12 @@ class LedgerMonitor:
 
     def _is_new(self, s: _Subject, a: Attribute) -> bool:
         return self.ledger.hash(a.type, a.shown) not in s.known.get(a.type, set())
+
+    @staticmethod
+    def _personal(s: _Subject, level: dict[Attribute, int]) -> bool:
+        """Is anything that identifies (not content) known or being revealed about them?"""
+        kinds = set(s.known) | {a.type for a in s.released if a.reveals(level.get(a, 0))}
+        return bool(kinds - CONTENT_TYPES)
 
     @staticmethod
     def _types(s: _Subject, level: dict[Attribute, int]) -> list[str]:

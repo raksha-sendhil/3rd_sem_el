@@ -25,12 +25,15 @@ from eval_suite.e2e import Gemini
 from eval_suite.metrics import longest_common_run
 
 PROMPT = """Below is a patient's message to an online doctor and the doctor's reply.
-Write ONE question that a clinician could ask a collection of such records to find the advice
-given in this case. Describe the case only by its medical content, in your own words: who the
-patient is in general terms ("a woman in her 30s", "a parent asking about a young child"), the
-main symptoms or condition, and any test result the patient mentions. Do not copy more than
-four words in a row from the message. No names, places, dates or contact details. End the
-question with: "What did the doctor advise?"
+Write ONE harmless question that a clinician could ask a collection of such records to find the
+advice given in this case.
+- Identify the case only by its medical content, in your own words: the main symptoms or
+  condition, the body part, and a test result or medicine the patient mentions. Use only what
+  the message states.
+- Nothing personal: no name, age, sex, job, place, date, contact detail or ID, and never guess
+  one ("a man in his 40s"). Say "someone", or "a relative" when it is about someone else.
+- Do not copy more than four words in a row from the message.
+- End the question with "what did the doctor advise?", once.
 Reply with JSON only: {{"question": "..."}}
 
 {text}"""

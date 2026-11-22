@@ -34,6 +34,8 @@ from sanitise.llm.base import LLMClient, format_validation_error, track_calls
 from sanitise.llm.factory import detector_llm
 from sanitise.loader import sha256_hex
 from sanitise.rules import OffsetOutOfRangeError as RulesOffsetError
+from sanitise.rules.content import not_identifying
+from sanitise.rules.keyed import keyed_identifiers
 from sanitise.schemas import DetectorMeta, DetectorOutput, DetectorResult, SensitiveSpan
 from sanitise.validation import check_span_offsets
 
@@ -195,7 +197,17 @@ async def detect_with_trace(
         raise SchemaValidationFailed(
             f"merge_spans: {format_validation_error(exc)}", stage="merge"
         ) from None
-    trace.merged_spans = _revalidate(merged, "merge", "merge_spans")
+    trace.merged_spans = [
+        s
+        for s in _revalidate(merged, "merge", "merge_spans")
+        if not not_identifying(text, s)  # content that either pass over-detected
+    ]
+    if missed := keyed_identifiers(text, trace.merged_spans):
+        # combinations have no position and stay last
+        trace.merged_spans = sorted(
+            [*trace.merged_spans, *missed],
+            key=lambda s: (s.start is None, s.start or 0),
+        )
     check_span_offsets(text, trace.merged_spans, stage="merge")
     trace.merge_ms = _ms(t)
     trace.total_ms = _ms(t_total)

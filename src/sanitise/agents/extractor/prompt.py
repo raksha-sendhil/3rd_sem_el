@@ -238,6 +238,12 @@ works_as "student". A habit or a past habit is not a job. A general statement or
 are ("cough", "over 6 months").
 - One fact per detail; never list the same detail for two people. List every symptom, finding, \
 result, medicine and piece of advice as its own fact: do not summarise or leave any out.
+- In a doctor's reply nothing clinical is a "general statement": every cause, explanation, \
+possible diagnosis, reassurance, warning, expected course and treatment option is an \
+assessment or a plan, each as its own fact. Only greetings and sign-offs are left out.
+- What led to the complaint (an injury, a fall, a delivery) and what the writer is worried \
+about, asks about or refuses are "other" facts ("fell down steps", "asks whether it is the \
+gallbladder", "does not want surgery").
 - If there are no facts, return {"facts": []}.
 
 EXAMPLE 1
@@ -504,21 +510,37 @@ def document_schema(
     )
 
 
-def build_document_prompt(text: str, subjects: list[Subject], spans: list[SensitiveSpan]) -> str:
+def build_document_prompt(
+    text: str,
+    subjects: list[Subject],
+    spans: list[SensitiveSpan],
+    missed: list[str] | None = None,
+) -> str:
     people = "\n".join(f"- {s.id}: {_names(s)}" for s in subjects)
     hints = (
         "\n".join(f"- {s.category.value}: {s.text}" for s in spans if s.category in HINT_CATEGORIES)
         or "(none)"
     )
+    task = "List every fact in this document about the subjects above."
+    if missed:
+        task = (
+            "An earlier pass left out the reply's sentences below. List the facts in these "
+            "sentences only, as assessment, plan, or other facts about the person they advise:\n"
+            + "\n".join(f"- {s}" for s in missed)
+        )
     return (
         f"DOCUMENT:\n{text}\n\nSUBJECTS:\n{people}\n\n"
         "DETAILS FOUND IN THE RECORD (each belongs to someone; some may be mislabelled):\n"
-        f"{hints}\n\nList every fact in this document about the subjects above.\nOUTPUT:"
+        f"{hints}\n\n{task}\nOUTPUT:"
     )
 
 
 async def extract_facts(
-    text: str, subjects: list[Subject], spans: list[SensitiveSpan], llm: LLMClient
+    text: str,
+    subjects: list[Subject],
+    spans: list[SensitiveSpan],
+    llm: LLMClient,
+    missed: list[str] | None = None,
 ) -> list[FactTuple]:
     """One call per document for a strong model, one per subject otherwise. The importance of
     each fact is set here, by its relation."""
@@ -527,7 +549,7 @@ async def extract_facts(
         case = is_case_file(text)
         result = await llm.json_call(
             CASE_DOCUMENT_PROMPT if case else DOCUMENT_PROMPT,
-            build_document_prompt(text, subjects, spans),
+            build_document_prompt(text, subjects, spans, missed),
             # every relation for both prompts: a patient's message may carry a doctor's reply
             # (results, an assessment, advice), not only a clinical record
             document_schema([s.id for s in subjects], CASE_RELATIONS),
