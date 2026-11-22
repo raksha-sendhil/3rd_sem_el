@@ -29,7 +29,7 @@ from sanitise_finance.schemas import Action, PIICategory, SanitisedRecord
 
 C = PIICategory
 
-# The useful content: revealed freely, never edited, never a reason to block at the limit. It counts
+# The useful content: revealed freely, never edited, never counted to the limit. It counts
 # in the candidate pool, so the personal details around it are what climb.
 CONTENT_TYPES = frozenset({"product"})
 TYPE_OF: dict[PIICategory, str] = {

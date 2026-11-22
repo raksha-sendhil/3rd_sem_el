@@ -16,9 +16,9 @@ Deterministic, no model involved. For every protected answer, before it leaves t
    "a town in Tamil Nadu"), until the pool is back to ``k`` or more: the answer is returned
    **generalised**. If that is not enough, it is **blocked**.
 
-**Financial content** (``attributes.CONTENT_TYPES``) is never edited and never the reason for a
-block at N: only a new personal kind can go over the limit. It does count in the pool, so next to
-a rare product the place, age or job is what climbs. An
+**Financial content** (``attributes.CONTENT_TYPES``) is never edited and never counts to N, so
+N = 3 personal kinds may sit beside it (chosen for utility, at a small cost in privacy). It does
+count in the pool: next to a rare product the place, age or job is what climbs. An
 answer that gives only content about a person, with nothing personal known, is always allowed.
 
 Only what is actually released is written to the ledger (as keyed hashes). The verdict reports
@@ -110,9 +110,9 @@ class LedgerMonitor:
 
         # 1. threshold: a type once revealed cannot be taken back by generalising
         for s in subjects.values():
-            types = set(s.known) | {a.type for a in s.released}
-            new = sorted({a.type for a in s.released} - set(s.known) - CONTENT_TYPES)
-            if new and len(types) > self.max_attributes:
+            types = (set(s.known) | {a.type for a in s.released}) - CONTENT_TYPES
+            if len(types) > self.max_attributes:
+                new = sorted({a.type for a in s.released} - set(s.known) - CONTENT_TYPES)
                 return MonitorVerdict(
                     verdict="blocked",
                     candidate_pool=self.pool(self._merged(s, {})),
@@ -197,7 +197,8 @@ class LedgerMonitor:
             candidate_pool=pools[sid],
             disclosed=types,
             reason=(
-                f"{len(types)} of {self.max_attributes} kinds of detail known about one person; "
+                f"{len(set(types) - CONTENT_TYPES)} of {self.max_attributes} kinds of personal "
+                "detail known about one person; "
                 f"{pools[sid]} records still match (k = {self.k})"
             ),
         )
