@@ -6,7 +6,8 @@ the answer model and the session monitor.
   ``data/corpus/people.json``.
 * **legal** runs on the legal branch (``law-pipeline-final``): ``python -m sanitise.legal build``
   with the legal profile of ``config/domains.json`` (legal prompts and models), the client table
-  ``data/legal/clients.json`` and that branch's candidate-pool monitor.
+  ``data/legal/clients.json`` (scoring only) and that branch's candidate-pool monitor, which
+  sees the store's sanitised records and never that table.
 
 Everything else (the questions, the answer loop, the metrics) is shared and only uses what both
 branches have: ``sanitise.rag.answer.answer``, ``RagContext``, ``SqliteDocumentStore``,
@@ -115,7 +116,10 @@ class Domain:
         settings = legal_settings()
         agents = build_llm_client(settings)
         llm = build_answer_llm(settings, agents)
-        label = settings.gemini_model if settings.answer_backend == "gemini" else settings.model
+        label = {
+            "gemini": settings.gemini_model,
+            "ollama": getattr(settings, "answer_model", settings.model),
+        }.get(settings.answer_backend, settings.model)
         return llm, f"{label} ({settings.answer_backend})"
 
     def monitor(self, store):
@@ -125,7 +129,7 @@ class Domain:
             from sanitise.config import get_settings
 
             return build_monitor(get_settings(), store)
-        return build_monitor(self.people_path, 5)
+        return build_monitor(store, 5)  # its own records, never the test's client table
 
 
 def get_domain(name: str, repo: Path) -> Domain:

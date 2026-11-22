@@ -117,7 +117,18 @@ QUESTIONS = {
     "Non-Compete": "What non-compete obligations does the {c} contain?",
     "Insurance": "What insurance must be kept under the {c}?",
     "Minimum Commitment": "What minimum commitment does the {c} require?",
+    "Anti-Assignment": "Can the {c} be assigned, and with whose consent?",
+    "Audit Rights": "What rights to audit or inspect records does the {c} give?",
+    "Change Of Control": "What happens under the {c} on a change of control?",
+    "Warranty Duration": "How long does the warranty in the {c} last?",
+    "Non-Disparagement": "What non-disparagement obligation does the {c} contain?",
+    "Liquidated Damages": "What liquidated damages does the {c} provide for?",
+    "No-Solicit Of Employees": "What restriction on soliciting employees does the {c} contain?",
+    "Post-Termination Services": "What must be done after the {c} ends?",
+    "Revenue/Profit Sharing": "How is revenue or profit shared under the {c}?",
 }
+# their answer is a party, date or place: what the pipeline removes. Privacy only, never utility.
+PRIVATE = {"Parties", "Agreement Date", "Effective Date", "Expiration Date", "Governing Law"}
 _CATEGORY = re.compile(r'related to "([^"]+)"')
 
 
@@ -143,6 +154,11 @@ def _window(context: str, start: int, length: int) -> tuple[int, int]:
     return lo, max(hi, start + length)
 
 
+def _private(question: str) -> bool:
+    m = _CATEGORY.search(question)
+    return bool(m) and m.group(1) in PRIVATE
+
+
 def _sections(contract: dict) -> list[dict]:
     title = contract["title"]
     name = contract_name(title)
@@ -150,7 +166,8 @@ def _sections(contract: dict) -> list[dict]:
     taken: list[tuple[int, int]] = []
     for para in contract["paragraphs"]:
         context = para["context"]
-        for qa in para["qas"]:
+        # clause questions first, so that a contract's sections hold content to ask about
+        for qa in sorted(para["qas"], key=lambda q: _private(q["question"])):
             m = _CATEGORY.search(qa["question"])
             if not m or m.group(1) not in QUESTIONS or not qa["answers"]:
                 continue
@@ -190,7 +207,7 @@ def cuad(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026) -> dict:
         else:
             break
     indexed, heldout = indexed[:n_indexed], heldout[:n_heldout]
-    pool = indexed[:]
+    pool = [s for s in indexed if s["category"] not in PRIVATE]
     rng.shuffle(pool)
     utility = [{"id": f"u{i:03d}", "query": s["question"], "reference": s["reference"],
                 "doc_id": s["doc_id"]} for i, s in enumerate(pool[:n_heldout])]  # fmt: skip

@@ -128,7 +128,7 @@ LEGAL_SETUP = """
 # 1 Setup (run at the start of every session)
 SCALE = "5h"   # "5h": every metric on less data, ~4.5 h; "quick": ~10 min check; "full": the plan's volumes (~12-15 h)
 LEGAL_BRANCH = "law-pipeline-final"   # the branch with the legal agents
-ANSWERS = "ollama"   # "ollama": the legal profile's Ollama model answers (fits the time);
+ANSWERS = "ollama"   # "ollama": the legal profile's answer_model (llama3:8b, as in health);
                      # "gemini": the profile's Gemini answer model (needs many keys and days)
 AGENT1_ADAPTER = ""  # optional: path of a fine-tuned Agent 1 LoRA adapter (else the base model)
 OCR_MODEL = "qwen3-vl:8b-instruct"    # reads the scans (end-to-end check; main's OCR)
@@ -170,7 +170,7 @@ if not ollama_up():
         if ollama_up(): break
         time.sleep(2)
 profile = json.load(open(LEGAL / "config/domains.json"))
-subprocess.run(["ollama", "pull", profile["legal"]["model"]], check=True)
+subprocess.run(["ollama", "pull", profile["legal"]["answer_model"]], check=True)
 subprocess.run(["ollama", "pull", OCR_MODEL], check=True)
 
 # keys from the Kaggle secrets, as the legal notebook reads them
@@ -184,9 +184,8 @@ for name in ["GEMINI_API_KEY"] + [f"GEMINI_API_KEY_{{i}}" for i in range(2, 10)]
 if not keys:
     raise RuntimeError("Add the Kaggle secret GEMINI_API_KEY (Add-ons -> Secrets) and attach it.")
 
-# the legal profile: answers on Ollama unless ANSWERS = "gemini"; optional fine-tuned Agent 1
-if ANSWERS == "ollama":
-    profile["legal"]["answer_backend"] = "same"
+# the legal profile: Agents 1-3 on Gemini, answers on Ollama unless ANSWERS = "gemini"
+profile["legal"]["answer_backend"] = ANSWERS
 if AGENT1_ADAPTER:
     profile["legal"].update(agent1_backend="transformers", agent1_adapter=AGENT1_ADAPTER)
     os.environ["SANITISE_AGENT1_DEVICE"] = "cuda:1"
@@ -198,7 +197,7 @@ os.environ.update({
     "SANITISE_DOMAIN": "legal", "SANITISE_LLM_BACKEND": "ollama", "SANITISE_LLM_TIMEOUT_S": "300",
     "SANITISE_RETRIEVAL_MODE": "hybrid", "SANITISE_OCR_MODEL": OCR_MODEL,
     "GEMINI_API_KEYS": ",".join(keys), "SANITISE_GEMINI_CACHE_DIR": str(W / "gemini_cache"),
-    "SANITISE_GEMINI_RPM": "10", "SANITISE_GEMINI_KEY_COOLDOWN_S": "60",
+    "SANITISE_GEMINI_RPM": str(10 * len(keys)), "SANITISE_GEMINI_KEY_COOLDOWN_S": "60",
 })
 SUITE = MAIN / "tools/eval_suite/run.py"
 def run(step, extra="", repo=LEGAL):
@@ -230,6 +229,10 @@ run("e2e-prep"{repo_arg})
 # 4 End to end, part 2: Gemini marks each scan's private values and writes 2 questions after them
 # and 2 about the content (saved in e2e/labels.json: open it and check a few, see the guide)
 run("e2e-label")
+""",
+    "questions": """
+# 4b Utility questions: harmless, about the content only, the same for both pipelines
+run("utility-questions")
 """,
     "build": """
 # 5 Build: Agents 1-3 over the generated corpus, the real corpus and both end-to-end sets
@@ -279,11 +282,10 @@ def build(domain: str) -> dict:
     secrets = ("`GEMINI_API_KEY` (several keys, comma-separated, are used in turn when one runs "
                "out of daily requests)." if domain == "health" else
                "`GEMINI_API_KEY`, optionally `GEMINI_API_KEY_2` ... `GEMINI_API_KEY_9` (used for "
-               "labelling the scans, and by the legal profile wherever it calls Gemini).")  # fmt: skip
+               "Agents 1-3, the utility questions and labelling the scans).")  # fmt: skip
     intro = INTRO.format(title=title, domain=domain, secrets=secrets,
                          docs="1,000" if domain == "legal" else "900",
-                         build="~4-6 h (Gemini rate limit)" if domain == "health"
-                         else "~5-7 h (Gemma on Ollama)")  # fmt: skip
+                         build="~4-6 h (Gemini rate limit)")  # fmt: skip
     if domain == "health":
         setup = HEALTH_SETUP
     else:  # written with doubled braces; plain Python once undoubled

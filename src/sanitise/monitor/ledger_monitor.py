@@ -17,7 +17,8 @@ Deterministic, no model involved. For every protected answer, before it leaves t
    **generalised**. If that is not enough, it is **blocked**.
 
 **Medical content** (``attributes.CONTENT_TYPES``) is never edited and never the reason for a
-block at N: only a new personal kind can go over the limit. It does count in the pool, so next to a rare condition the place, age or job is what climbs. An
+block at N: only a new personal kind can go over the limit. It does count in the pool, so next to
+a rare condition the place, age or job is what climbs. An
 answer that gives only content about a person, with nothing personal known, is always allowed.
 
 Only what is actually released is written to the ledger (as keyed hashes). The verdict reports

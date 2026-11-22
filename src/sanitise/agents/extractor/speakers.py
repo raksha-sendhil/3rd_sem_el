@@ -55,7 +55,12 @@ def attribute(text: str, facts: list[FactTuple]) -> list[FactTuple]:
         phrase = f" {' '.join(words)} "
         reply = f.relation in _REPLY_RELATIONS
         scored = [
-            (phrase in body, sum(f" {w} " in body for w in content), (who in _REPLIER) == reply, who)
+            (
+                phrase in body,
+                sum(f" {w} " in body for w in content),
+                (who in _REPLIER) == reply,
+                who,
+            )
             for who, body in said
         ]
         _, share, _, speaker = max(scored, key=lambda s: s[:3])

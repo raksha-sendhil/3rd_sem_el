@@ -44,7 +44,10 @@ SYNC = [
 
 ASYNC = [
     (extractor_prompt.extract_facts, ["text", "subjects", "spans", "llm", "missed"]),
-    (rewriter_prompt.reconstruct, ["facts", "decisions", "placeholders", "llm", "feedback", "notes"]),
+    (
+        rewriter_prompt.reconstruct,
+        ["facts", "decisions", "placeholders", "llm", "feedback", "notes"],
+    ),
     (extractor_pipeline.extract, ["doc_id", "text", "detected", "llm"]),
     # no raw text, by design (Phase 2 spec 10.2): Agent 3 rebuilds from spans and facts
     (rewriter_pipeline.rewrite, ["doc_id", "detected", "extracted", "llm"]),
