@@ -67,10 +67,12 @@ def get_analyzer(
 # spaCy tags durations and relative expressions as DATE. Those don't identify
 # anyone on their own ("for 2 days", "yesterday") and would swamp the output, so
 # they are dropped. Anchored dates ("March 3, 2021", "3 years ago") are kept.
+# A run of digits is one item: when it could be split ("12" = "1" + "2"), a failed match tried
+# every split and a 24-digit account number took 38 seconds. Matches the same strings as before.
 _VAGUE_DATE = re.compile(
     r"^(?:(?:for|about|around|approximately|approx\.?|almost|nearly|over|under|past|last|next|the|a|an|"
     r"every|few|couple|several|of|some|more|than|less|one|two|three|four|five|six|seven|eight|nine|ten|"
-    r"\d+(?:\.\d+)?|\d+-\d+|half|and|or|-)\s*)*"
+    r"\d+(?!\d)(?:\.\d\d+(?=\.))*(?:\.\d+(?!\d))?|half|and|or|-)\s*)*"
     r"(?:seconds?|minutes?|mins?|hours?|hrs?|days?|nights?|weeks?|wks?|months?|years?|yrs?|decades?)$"
     r"|^(?:today|tonight|yesterday|tomorrow|now|currently|recently|daily|weekly|monthly|yearly|annually"
     r"|morning|evening|afternoon|night|this\s+(?:morning|evening|afternoon|week|month|year)"
