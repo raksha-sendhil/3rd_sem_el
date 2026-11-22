@@ -308,7 +308,7 @@ def agent_settings(
     backend "ollama" (Gemma 4 on the notebook's own GPU; text never leaves it), "gemini"
     (Google's API: the original text goes to Google) or "mock" (rules only, no model)."""
     from sanitise.config import get_settings
-    from sanitise.domain import settings_for
+    from sanitise.domain import profile, settings_for
 
     base = get_settings().model_copy(update={"llm_backend": backend})
     settings = settings_for(base, "legal")
@@ -318,6 +318,8 @@ def agent_settings(
         "llm_timeout_s": timeout_s,
         **overrides,
     }
+    if backend == "ollama":  # chosen here: it wins over the profile's Gemini agents
+        update.update(llm_backend="ollama", model=profile("legal", base).model, llm_think=False)
     if model:
         update["gemini_model" if backend == "gemini" else "model"] = model
         if backend == "gemini":

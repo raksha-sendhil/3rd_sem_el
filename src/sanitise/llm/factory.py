@@ -47,7 +47,9 @@ def build_answer_llm(settings: Settings, agents: BaseJSONClient) -> BaseJSONClie
         from sanitise.llm.gemini import GeminiClient
 
         return GeminiClient.from_settings(settings)
-    return build_llm_client(settings, backend=backend)
+    # settings.model is the agents' model (a Gemini one when they run there), so name it
+    model = settings.answer_model if backend == "ollama" else None
+    return build_llm_client(settings, backend=backend, model=model)
 
 
 def build_agent1_llm(settings: Settings, agents: BaseJSONClient) -> BaseJSONClient:

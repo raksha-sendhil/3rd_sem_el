@@ -208,6 +208,7 @@ RELATIONS: tuple[str, ...] = (
     "outcome",
     "next_step",
     "employed_by",
+    "clause",  # what a contract provides
     "other",
 )
 
@@ -270,6 +271,8 @@ class MonitorVerdict(BaseModel):
     candidate_pool: int | None = None  # filled by the Phase 3b monitor
     disclosed: list[str] = Field(default_factory=list)
     reason: str = "no monitor installed"
+    # "generalised": the answer to give instead of the draft. Never serialised.
+    revised_answer: str | None = Field(default=None, exclude=True, repr=False)
 
 
 class RagAnswer(BaseModel):

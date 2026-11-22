@@ -111,7 +111,7 @@ def test_route_policy():
     assert "role=client" in route(spans, [])[0].reason
 
 
-def test_rare_legal_issue_is_generalised(monkeypatch):
+def test_rare_legal_issue_is_kept_as_content(monkeypatch):
     from sanitise.agents.rewriter import ontology
 
     monkeypatch.setattr(
@@ -129,7 +129,7 @@ def test_rare_legal_issue_is_generalised(monkeypatch):
         ),
     )
     [d] = route([span("maritime salvage claim", C.LEGAL_ISSUE)], [])
-    assert d.action is Action.GENERALISE
+    assert d.action is Action.KEEP
     assert generalise("maritime salvage claim", C.LEGAL_ISSUE) == "a specialised admiralty dispute"
 
 
@@ -152,14 +152,14 @@ def test_quasi_combo_members_climb_two_steps():
     assert all(d.start == s.start for d, s in zip(ds, spans, strict=True))
 
 
-def test_quasi_combo_of_kept_members_breaks_one():
+def test_quasi_combo_of_content_only_stays_whole():
     spans = [
         span("land dispute", C.LEGAL_ISSUE, 0),
         span("my client's wife", C.RELATION, 20),
         span("land dispute + my client's wife", C.QUASI_COMBO, method="llm"),
     ]
     ds = route(spans, [])
-    assert ds[0].action is Action.GENERALISE
+    assert ds[0].action is Action.KEEP
     assert ds[1].action is Action.KEEP
 
 

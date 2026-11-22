@@ -50,7 +50,7 @@ async def test_mock_run_end_to_end(tmp_path: Path) -> None:
         for r in results["attack_outcomes"]
         if r["attack_id"] == "stepwise_c001" and r["monitor"] == "monitor"
     )
-    assert stepwise["blocked_rounds"][0] == 2  # "which one involves a doctor?"
+    assert stepwise["blocked_rounds"][0] == 3  # a question alone (round 2) discloses nothing
 
     assert (write_report(results, cfg.out_dir)).is_file()
     bundle = export_bundle(data, cfg.store_path, cfg.out_dir, tmp_path / "bundle")

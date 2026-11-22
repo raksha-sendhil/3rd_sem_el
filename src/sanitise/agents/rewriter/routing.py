@@ -7,8 +7,9 @@
 * placeholder: NAME, PHONE, EMAIL, ID_NUMBER, FINANCIAL, CASE_NUMBER, ADDRESS,
   MATTER_CODENAME (``[CLIENT_1]``, ``[CASE_1]``, ``[MATTER_1]``, ...)
 * generalise:  ORGANIZATION, COURT, LOCATION, DATE, MONEY, AGE, OCCUPATION, PHYSICAL
-* keep:        RELATION, SYMPTOM, and LEGAL_ISSUE / MEDICAL_CONDITION unless they are rare
-  (``ontology.is_rare``), since the legal issue is what lawyers search for
+* keep:        RELATION, SYMPTOM, the LEGAL_ISSUE always (it is what lawyers search for), an
+  amount that a contract clause states, and MEDICAL_CONDITION unless it is rare
+  (``ontology.is_rare``)
 * QUASI_COMBO: every member of the combination is generalised two steps instead of one; if
   no member would otherwise change, the first keepable member is generalised, so the
   combination no longer narrows the pool to one client.
@@ -59,10 +60,10 @@ DEFAULT_ACTION: dict[PIICategory, Action] = {
     C.RELATION: Action.KEEP,
     C.OTHER: Action.PLACEHOLDER,
 }
-_RARE_CHECKED = {C.LEGAL_ISSUE, C.MEDICAL_CONDITION}
+_RARE_CHECKED = {C.MEDICAL_CONDITION}
 # Kept categories that may be generalised to break a combination. RELATION ("my client's
 # wife") and SYMPTOM carry no searchable attribute, so changing them would not help.
-_BREAKABLE = (C.OCCUPATION, C.LOCATION, C.AGE, C.DATE, C.LEGAL_ISSUE, C.MEDICAL_CONDITION)
+_BREAKABLE = (C.OCCUPATION, C.LOCATION, C.AGE, C.DATE, C.MEDICAL_CONDITION)
 # Categories whose co-occurrence makes an implicit combination (legal domain).
 _IMPLICIT = (C.AGE, C.OCCUPATION, C.LOCATION, C.DATE)
 
@@ -110,6 +111,10 @@ def _members(combo: SensitiveSpan, spans: list[SensitiveSpan]) -> list[int]:
 
 def route(spans: list[SensitiveSpan], facts: list[FactTuple]) -> list[RoutingDecision]:
     decisions = [_default(span) for span in spans]
+    clauses = " | ".join(f.value.lower() for f in facts if f.relation == "clause")
+    for span, d in zip(spans, decisions, strict=True):
+        if clauses and span.category is C.MONEY and span.text.strip().lower() in clauses:
+            d.action, d.reason = Action.KEEP, "an amount a contract clause states: content"
     for combo in (s for s in spans if s.category is C.QUASI_COMBO):
         members = _members(combo, spans)
         if not members:

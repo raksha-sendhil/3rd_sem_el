@@ -34,6 +34,7 @@ _TABLE: dict[str, Importance] = {
     "outcome": Importance.HIGH,
     "documents_requested": Importance.HIGH,
     "next_step": Importance.HIGH,
+    "clause": Importance.HIGH,
     "filed_on": Importance.MEDIUM,
     "claim_amount": Importance.MEDIUM,
     "works_as": Importance.MEDIUM,

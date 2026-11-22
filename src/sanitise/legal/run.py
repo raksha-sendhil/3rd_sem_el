@@ -240,7 +240,7 @@ async def _evaluate(
     llm = RecordingLLM(answer_llm)
     clients = data / "clients.json"
     guarded = RagContext(
-        store=store, retriever=recorder, monitor=build_monitor(clients, cfg.min_pool)
+        store=store, retriever=recorder, monitor=build_monitor(store, cfg.min_pool)
     )
     unguarded = RagContext(store=store, retriever=recorder, monitor=AllowAllMonitor())
     collected = _Collected()

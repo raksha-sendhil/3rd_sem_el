@@ -134,8 +134,8 @@ OUTPUT:
 
 LEGAL_SYSTEM_PROMPT = """\
 You turn one document from a litigation firm's past matter (an intake note, an advice email \
-from a lawyer to a client, a case note, or a client's enquiry) into a list of facts. Each fact \
-is {"subject", "relation", "value", "importance"}.
+from a lawyer to a client, a case note, a client's enquiry, or a section of a contract) into a \
+list of facts. Each fact is {"subject", "relation", "value", "importance"}.
 
 subject: the id of the person the fact is about, from SUBJECTS. "client" is the firm's \
 client, "opposing_party" the other side, "witness" a witness, "person_<n>" anyone else \
@@ -153,17 +153,23 @@ relation: exactly one of these names:
 - represented_by: the lawyer acting; employed_by: the person's employer
 - age, sex, works_as, lives_in: about the person
 - contact: a phone number or email; identifier: a name, PAN, Aadhaar or case number
+- clause: in a contract, one thing it provides: a right, duty, limit, term, notice period, \
+licence, exception or amount, and which party it binds (subject "client")
 - other: anything else that describes the person or the matter
 
-value: the detail in a few words, copied from the document's own wording. Do not add words.
+value: the detail in a few words, copied from the document's own wording. Do not add words. \
+A clause is the exception: say it in your own short words (who must, may or may not do what), \
+keeping every number, period, defined term and condition exactly, under 40 words.
 
-importance: "high" for has_legal_issue, advised, documents_requested, filed_in, outcome and \
-next_step; "medium" for filed_on, claim_amount, age, works_as and lives_in; "low" for \
+importance: "high" for has_legal_issue, advised, documents_requested, filed_in, outcome, \
+next_step and clause; "medium" for filed_on, claim_amount, age, works_as and lives_in; "low" for \
 everything else.
 
 Rules:
 - One fact per detail. Every name, contact detail, ID, case number, court, amount and date \
 is a fact, and so is the advice, every document asked for, the outcome and the next step.
+- In a contract every provision is a clause fact, one per right, duty, limit or exception. \
+Also give the kind of agreement and what it is about as a clause.
 - Never invent a detail that the document does not state.
 - If there are no facts, return {"facts": []}.
 
@@ -198,6 +204,22 @@ before any division", "importance": "high"},
 "importance": "high"},
  {"subject": "client", "relation": "next_step", "value": "File objections to the valuation \
 report", "importance": "high"}
+]}
+
+EXAMPLE OF A CONTRACT
+DOCUMENT:
+Contract: catering agreement
+The Caterer shall keep public liability cover of not less than Rs. 20 lakh, and either party \
+may end this Agreement on forty-five (45) days' written notice.
+SUBJECTS:
+- client: the client
+OUTPUT:
+{"facts": [
+ {"subject": "client", "relation": "clause", "value": "catering agreement", "importance": "high"},
+ {"subject": "client", "relation": "clause", "value": "the Caterer must hold public liability \
+cover of at least Rs. 20 lakh", "importance": "high"},
+ {"subject": "client", "relation": "clause", "value": "each party can terminate with forty-five \
+(45) days of written notice", "importance": "high"}
 ]}
 """
 

@@ -279,13 +279,14 @@ def test_the_factory_builds_gemini_for_every_agent(tmp_path: Path) -> None:
     from sanitise.domain import settings_for
     from sanitise.llm.factory import build_agent1_llm, build_answer_llm, build_llm_client
 
-    # this branch keeps the legal profile on Ollama; SANITISE_LLM_BACKEND=gemini switches it
+    # the legal profile runs the agents on Gemini and answers with the Ollama model
     base = Settings(llm_backend="gemini", gemini_api_keys="k", gemini_cache_dir=str(tmp_path))
     s = settings_for(base, "legal")
     agents = build_llm_client(s)
-    assert isinstance(agents, GeminiClient) and agents.model == "gemini-3.5-flash"
+    assert isinstance(agents, GeminiClient) and agents.model == "gemini-3.5-flash-lite"
+    assert agents.models[1] == "gemini-3.1-flash-lite"
     assert build_agent1_llm(s, agents) is agents
-    assert isinstance(build_answer_llm(s, agents), GeminiClient)
+    assert build_answer_llm(s, agents).model == "llama3:8b"
 
 
 def test_a_global_mock_backend_beats_the_profile() -> None:
@@ -364,8 +365,9 @@ def test_domains_pick_their_own_models_and_data() -> None:
     base = Settings(domain="medical", model="llama3:8b", llm_backend="ollama")
     assert {"medical", "legal"} <= set(profiles(base))
     legal = settings_for(base, "legal")
-    assert (legal.model, legal.answer_backend, legal.retrieval_k) == ("gemma4:e4b", "gemini", 4)
-    assert legal.llm_backend == "ollama"
+    assert (legal.answer_model, legal.answer_backend) == ("llama3:8b", "ollama")
+    assert legal.retrieval_k == 4
+    assert legal.llm_backend == "gemini" and legal.model == legal.gemini_model
     assert legal.store_path == "data/legal/store.sqlite"
     medical = settings_for(base, "medical")
     assert (medical.model, medical.answer_backend, medical.retrieval_k) == ("llama3:8b", "same", 3)

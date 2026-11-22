@@ -23,6 +23,7 @@ from pydantic import ValidationError
 
 from sanitise.agents.detector import merge, quasi, rules
 from sanitise.config import get_settings
+from sanitise.domain import is_legal
 from sanitise.errors import (
     DocTooLong,
     OffsetOutOfRange,
@@ -33,6 +34,8 @@ from sanitise.errors import (
 from sanitise.llm.base import LLMClient, format_validation_error, track_calls
 from sanitise.loader import sha256_hex
 from sanitise.rules import OffsetOutOfRangeError as RulesOffsetError
+from sanitise.rules.content import not_identifying
+from sanitise.rules.keyed import keyed_identifiers
 from sanitise.schemas import DetectorMeta, DetectorOutput, DetectorResult, SensitiveSpan
 from sanitise.validation import check_span_offsets
 
@@ -194,6 +197,12 @@ async def detect_with_trace(
             f"merge_spans: {format_validation_error(exc)}", stage="merge"
         ) from None
     trace.merged_spans = _revalidate(merged, "merge", "merge_spans")
+    if is_legal():
+        kept = [s for s in trace.merged_spans if not not_identifying(text, s)]
+        if missed := keyed_identifiers(text, kept):
+            # combinations have no position and stay last
+            kept = sorted([*kept, *missed], key=lambda s: (s.start is None, s.start or 0))
+        trace.merged_spans = kept
     check_span_offsets(text, trace.merged_spans, stage="merge")
     trace.merge_ms = _ms(t)
     trace.total_ms = _ms(t_total)

@@ -12,37 +12,22 @@ an unreachable or timed-out model still fails the document, so a re-run can proc
 
 from __future__ import annotations
 
-import re
 import time
 
 from sanitise.agents.detector.pipeline import detect, detect_rules
 from sanitise.agents.extractor import canonical
 from sanitise.agents.extractor.pipeline import extract, rules_only_facts
 from sanitise.agents.rewriter.pipeline import rewrite_in_place, rewrite_with_trace
+from sanitise.agents.rewriter.prompt import dropped
 from sanitise.domain import is_legal
 from sanitise.errors import LeakCheckFailed, SchemaValidationFailed
 from sanitise.llm.base import LLMClient, track_calls
 from sanitise.loader import sha256_hex
-from sanitise.schemas import FactTuple, SanitisedRecord, SanitiseMeta
+from sanitise.schemas import SanitisedRecord, SanitiseMeta
 
 
 def _ms(start: float) -> int:
     return round((time.perf_counter() - start) * 1000)
-
-
-_WORD = re.compile(r"[a-z0-9]+")
-
-
-def _keeps_advice(facts: list[FactTuple], safe_text: str) -> bool:
-    """Is most of each piece of advice still in the rewrite? A paraphrase passes; a rewrite that
-    dropped it does not. The advice is what lawyers search for."""
-    said = set(_WORD.findall(safe_text.lower()))
-    for fact in facts:
-        if fact.relation == "advised":
-            words = set(_WORD.findall(fact.value.lower()))
-            if words and len(words & said) / len(words) < 0.6:
-                return False
-    return True
 
 
 async def sanitise(
@@ -83,7 +68,9 @@ async def sanitise(
                 usable = (
                     bool(extracted.facts)
                     and bool(trace.output.safe_text.strip())
-                    and _keeps_advice(extracted.facts, trace.output.safe_text)
+                    and not dropped(
+                        trace.output.safe_text, extracted.facts, trace.output.decisions
+                    )
                 )
             except (SchemaValidationFailed, LeakCheckFailed):
                 if not legal:
