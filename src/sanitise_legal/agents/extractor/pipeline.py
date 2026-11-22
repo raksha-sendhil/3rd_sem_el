@@ -69,6 +69,11 @@ async def extract(
         if is_legal() and not any(s.id == "client" for s in subs):
             subs.append(Subject(id="client", label="the client"))
         raw = await prompt.extract_facts(text, subs, detected.spans, llm)
+        if is_legal():  # a clause is about the matter, whoever the model filed it under
+            raw = [
+                f.model_copy(update={"subject": "client"}) if f.relation == "clause" else f
+                for f in raw
+            ]
         facts = [
             FactTuple.model_validate(f.model_dump()) for f in canonical.normalise_facts(raw, subs)
         ]

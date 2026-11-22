@@ -48,6 +48,7 @@ class Settings(BaseSettings):
     # agents on Gemini too (llm_backend "gemini"), so Gemini sees raw text: fictional data only.
     # answer_backend "same" answers with the agents' model (the medical set-up).
     answer_backend: Literal["same", "gemini", "ollama", "mock"] = "same"
+    answer_model: str = "llama3:8b"  # answer_backend "ollama": the model that writes answers
     gemini_model: str = "gemini-3.5-flash"  # or "gemini-3.8-flash": one-word change
     # Keys are rotated: when one hits its rate limit or quota, or uses up its daily token
     # budget, the next one is used. Read from here, then GEMINI_API_KEYS (comma-separated),

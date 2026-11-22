@@ -80,7 +80,11 @@ async def test_broken_agent2_rewrites_in_place_without_identifiers() -> None:
 async def test_a_rewrite_that_drops_the_advice_is_replaced(rewrite: str) -> None:
     with use_domain("legal"):
         record = await sanitise("d", TEXT, FakeLLM(rewrite=rewrite))
-    assert record.meta.fallback == ["agent3_in_place"]
+    if rewrite:  # the lost advice is put back by code, without the original's wording
+        assert record.meta.fallback == []
+        assert "The firm advised: " in record.rewriter.safe_text
+    else:
+        assert record.meta.fallback == ["agent3_in_place"]
     assert "07700 900123" not in record.rewriter.safe_text
 
 
@@ -124,10 +128,10 @@ async def test_think_is_sent_only_when_set() -> None:
     assert bodies[0]["think"] is False and "think" not in bodies[1]
 
 
-def test_the_legal_profile_turns_thinking_off() -> None:
+def test_the_legal_profile_sets_the_retry_and_token_limits() -> None:
     from sanitise_legal.config import Settings
     from sanitise_legal.domain import settings_for
 
     legal = settings_for(Settings(domain="medical"), "legal")
-    assert (legal.llm_think, legal.llm_retries, legal.llm_num_predict) == (False, 1, 2048)
+    assert (legal.llm_think, legal.llm_retries, legal.llm_num_predict) == (None, 1, 2048)
     assert settings_for(Settings(domain="medical"), "medical").llm_think is None

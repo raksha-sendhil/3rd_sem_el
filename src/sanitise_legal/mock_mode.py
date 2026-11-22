@@ -192,5 +192,5 @@ async def build_mock_context(llm: LLMClient, fixtures_dir: Path | None = None) -
         store.put(doc["doc_id"], doc["text"], record)
         originals[doc["doc_id"]] = doc["text"]
     clients = _repo_path(p.clients_path)
-    monitor = build_monitor(clients) if clients and clients.is_file() else AllowAllMonitor()
+    monitor = build_monitor(store) if clients and clients.is_file() else AllowAllMonitor()
     return RagContext(store=store, retriever=BM25Retriever(originals), monitor=monitor)

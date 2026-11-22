@@ -84,7 +84,7 @@ def replay_context(bundle: str | Path, min_pool: int = 5) -> RagContext:
     return RagContext(
         store=store,
         retriever=RecordedRetriever(_recorded(root).get("retrieval", {}), fallback),
-        monitor=build_monitor(root / "clients.json", min_pool),
+        monitor=build_monitor(store, min_pool),
     )
 
 

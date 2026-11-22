@@ -1,149 +1,135 @@
 """Session privacy monitor (Phase 3b).  OWNER: Person A (Deterministic Logic).
 
-Legal build spec, step 12: count the clients that still match everything revealed in the
-session so far, and block the answer when fewer than ``min_pool`` (5) remain. Plain Python,
-no LLM.
+Legal build spec, step 12: count who still matches everything revealed in the session, and stop
+fewer than ``min_pool`` (5) remaining. Plain Python, no LLM.
 
-What counts as revealed: every attribute value from the client table that appears in the
-question or in the draft answer (the attacker knows their own question, and the answer
-confirms or extends it). Values are matched against the table's own vocabulary, so a
-number such as "1881" (the year of the NI Act) constrains nothing unless some client filed
-in 1881. Within one attribute the values a session mentions are alternatives (a client
-matches if it has any of them); across attributes they combine.
+The monitor only knows what the system itself stores: the sanitised records. It has no client
+table, so it cannot know who an evaluation will attack.
 
-``check`` never commits a blocked round, so the pool reported to the session never drops
-below ``min_pool``: the attacker learns nothing from a refusal except that it was refused.
-
-The client table is ``data/clients.json`` (legal build spec, "Data"): a list of objects with
-``city``, ``district``, ``state``, ``occupation``, ``occupation_group``, ``legal_issue``,
-``court``, ``filing_date`` and ``age``. The medical person table's ``town`` and
-``conditions`` fields are read too, so the sample data works unchanged.
+* The population is the store. Each record's attributes are the forms its rewrite shows
+  ("a city in Karnataka", "in their 50s", "a district court"), never a removed value.
+* Revealed = those forms, of the retrieved records, in the draft answer. The question counts
+  only when the draft confirms or denies it ("Yes", "No, ..."): otherwise naming a detail in a
+  question would be taken for a disclosure.
+* The legal issue and a medical condition are content: never edited, and never the reason for
+  a block when nothing personal is known. They do narrow the pool.
+* A new personal detail that leaves fewer than ``min_pool`` records is replaced by its generic
+  phrase (**generalised**). When that is impossible or not enough, the answer is **blocked**.
+  Only what is released is remembered.
 """
 
 from __future__ import annotations
 
-import json
-import logging
 import re
-from collections.abc import Callable, Iterable
-from pathlib import Path
-from typing import Any
 
-from sanitise_legal.agents.rewriter.ontology import court_type
-from sanitise_legal.schemas import MonitorVerdict, RetrievalHit
+from sanitise_legal.agents.rewriter.ontology import _GENERIC
+from sanitise_legal.rag.store import DocumentStore
+from sanitise_legal.schemas import (
+    Action,
+    MonitorVerdict,
+    PIICategory,
+    RetrievalHit,
+    SanitisedRecord,
+)
 
-log = logging.getLogger(__name__)
-
+C = PIICategory
 DEFAULT_MIN_POOL = 5
+CONTENT_TYPES = frozenset({"legal_issue", "condition"})
+TYPE_OF = {
+    C.LOCATION: "location",
+    C.OCCUPATION: "occupation",
+    C.AGE: "age",
+    C.DATE: "date",
+    C.COURT: "court",
+    C.ORGANIZATION: "organisation",
+    C.MONEY: "amount",
+    C.PHYSICAL: "physical",
+    C.LEGAL_ISSUE: "legal_issue",
+    C.MEDICAL_CONDITION: "condition",
+}
+TYPES = tuple(TYPE_OF.values())
+_GENERIC_OF = {kind: _GENERIC.get(c, "an adult") for c, kind in TYPE_OF.items()}
 _NON_ALNUM = re.compile(r"[^0-9a-z]+")
+_LEAD = re.compile(
+    r"^(?:in (?:their|his|her) |(?:a|an|the) )?"
+    r"(?:(?:town|city|village|place|district|state) (?:in|of|near) (?:the )?)?"
+)
+_CONFIRMS = re.compile(
+    r"^\W*(?:yes|no|correct|that(?: is|'s) (?:right|correct|true)|confirmed)\b", re.IGNORECASE
+)
 
 
 def _norm(text: str) -> str:
-    return " " + _NON_ALNUM.sub(" ", text.lower()).strip() + " "
+    return _NON_ALNUM.sub(" ", text.lower()).strip()
 
 
-def _values(*fields: str) -> Callable[[dict[str, Any]], set[str]]:
-    def read(client: dict[str, Any]) -> set[str]:
-        out: set[str] = set()
-        for f in fields:
-            value = client.get(f)
-            for v in value if isinstance(value, list) else [value]:
-                if isinstance(v, str) and v.strip():
-                    out.add(_norm(v).strip())
-        return out
-
-    return read
+_SAYS_NOTHING = {_norm(p) for p in _GENERIC.values()} | {"an adult", "a person", "india"}
 
 
-def _court(client: dict[str, Any]) -> set[str]:
-    court = client.get("court")
-    if not isinstance(court, str) or not court.strip():
-        return set()
-    return {re.sub(r"^(?:a|an|the) ", "", _norm(court_type(court)).strip())}
+def _variants(form: str) -> list[str]:
+    """The form and the core a model tends to repeat: "Karnataka" for "a city in Karnataka"."""
+    core = _LEAD.sub("", form)
+    return [form, core] if core != form and len(core) >= 3 else [form]
 
 
-def _filing_year(client: dict[str, Any]) -> set[str]:
-    match = re.search(r"(?:19|20)\d{2}", str(client.get("filing_date") or ""))
-    return {match.group()} if match else set()
+def _mentioned(text: str, form: str) -> bool:
+    said = f" {_norm(text)} "
+    return any(f" {v} " in said for v in _variants(form))
 
 
-def _age_band(client: dict[str, Any]) -> set[str]:
-    age = client.get("age")
-    return {f"{int(age) // 10 * 10}s"} if isinstance(age, int | float) else set()
-
-
-# attribute -> how to read a client's values. Order is the order ``disclosed`` lists them in.
-ATTRIBUTES: dict[str, Callable[[dict[str, Any]], set[str]]] = {
-    "legal_issue": _values("legal_issue", "conditions"),
-    "state": _values("state"),
-    "district": _values("district"),
-    "city": _values("city", "town"),
-    "occupation": _values("occupation"),
-    "occupation_group": _values("occupation_group"),
-    "court_type": _court,
-    "filing_year": _filing_year,
-    "age_band": _age_band,
-}
-
-_AGE_PHRASES = [
-    re.compile(r"\b([1-9])0\s*['’]?s\b"),  # "in their 50s"
-    re.compile(r"\b(\d{2})[\s-]*(?:years?|yrs?)[\s-]*old\b", re.I),
-    re.compile(r"\baged?\s+(\d{2})\b", re.I),
-]
-
-
-def _ages(text: str) -> set[str]:
-    found = set()
-    for pattern in _AGE_PHRASES:
-        for m in pattern.finditer(text):
-            number = m.group(1)
-            found.add(f"{number}0s" if len(number) == 1 else f"{int(number) // 10 * 10}s")
-    return found
+def _replace(text: str, form: str, new: str) -> str:
+    for variant in _variants(form):
+        words = r"[^0-9A-Za-z]+".join(re.escape(w) for w in variant.split())
+        text = re.sub(
+            rf"(?<![0-9A-Za-z]){words}(?![0-9A-Za-z])", lambda _: new, text, flags=re.IGNORECASE
+        )
+    return text
 
 
 Disclosure = dict[str, set[str]]
 
 
+def record_attributes(record: SanitisedRecord) -> Disclosure:
+    """What the record's sanitised text shows, by type."""
+    out: Disclosure = {}
+    for d in record.rewriter.decisions:
+        kind = TYPE_OF.get(d.category)
+        if kind is None or d.start is None or d.action is Action.PLACEHOLDER:
+            continue
+        if d.action is Action.KEEP and kind == "amount":
+            continue  # an amount that is the content of a contract clause
+        shown = _norm(d.span_text if d.action is Action.KEEP else d.replacement or "")
+        if shown and shown not in _SAYS_NOTHING:
+            out.setdefault(kind, set()).add(shown)
+    return out
+
+
 class CandidatePoolMonitor:
-    """Blocks a protected answer when it would leave fewer than ``min_pool`` clients."""
+    """Stops a protected answer that would leave fewer than ``min_pool`` matching records."""
 
-    def __init__(self, clients: Iterable[dict[str, Any]], min_pool: int = DEFAULT_MIN_POOL):
+    def __init__(self, store: DocumentStore, min_pool: int = DEFAULT_MIN_POOL):
         self.min_pool = min_pool
-        # each client's values per attribute, computed once
-        self._clients = [{a: read(c) for a, read in ATTRIBUTES.items()} for c in clients]
-        self._vocab: dict[str, set[str]] = {a: set() for a in ATTRIBUTES}
-        for client in self._clients:
-            for attribute, values in client.items():
-                self._vocab[attribute] |= values
-        self._sessions: dict[str, Disclosure] = {}
+        self.store = store
+        self._records: dict[str, Disclosure] = {}
+        self._sessions: dict[str, dict[str, Disclosure]] = {}
+        self._refresh()
 
-    @classmethod
-    def from_file(cls, path: str | Path, min_pool: int = DEFAULT_MIN_POOL) -> CandidatePoolMonitor:
-        return cls(json.loads(Path(path).read_text(encoding="utf-8")), min_pool)
-
-    # ------------------------------------------------------------------ disclosure
-
-    def disclosed_in(self, text: str) -> Disclosure:
-        """Attribute values from the client table that ``text`` mentions."""
-        haystack = _norm(text)
-        found: Disclosure = {}
-        for attribute, vocab in self._vocab.items():
-            if attribute == "age_band":
-                hits = _ages(text) & vocab
-            else:
-                # "land disputes" and "doctors" disclose "land dispute" and "doctor"
-                hits = {v for v in vocab if any(f" {v}{s} " in haystack for s in ("", "s", "es"))}
-            if hits:
-                found[attribute] = hits
-        return found
+    def _refresh(self) -> None:
+        for doc_id in self.store.ids():
+            if doc_id not in self._records:
+                self._records[doc_id] = record_attributes(self.store.sanitised(doc_id))
 
     def pool(self, disclosure: Disclosure) -> int:
         return sum(
-            all(client[a] & values for a, values in disclosure.items()) for client in self._clients
+            all(values <= record.get(kind, set()) for kind, values in disclosure.items())
+            for record in self._records.values()
         )
 
-    def session(self, session_id: str) -> Disclosure:
-        return {a: set(v) for a, v in self._sessions.get(session_id, {}).items()}
+    def session(self, session_id: str) -> dict[str, Disclosure]:
+        return {
+            doc: {kind: set(values) for kind, values in known.items()}
+            for doc, known in self._sessions.get(session_id, {}).items()
+        }
 
     def reset(self, session_id: str) -> None:
         self._sessions.pop(session_id, None)
@@ -153,39 +139,98 @@ class CandidatePoolMonitor:
     def check(
         self, session_id: str, query: str, hits: list[RetrievalHit], draft_answer: str
     ) -> MonitorVerdict:
-        committed = self.session(session_id)
-        merged = self.session(session_id)
-        for attribute, values in self.disclosed_in(f"{query}\n{draft_answer}").items():
-            merged.setdefault(attribute, set()).update(values)
+        if any(h.doc_id not in self._records for h in hits):
+            self._refresh()  # the store grew after the monitor was built
+        known = self.session(session_id)
+        said = f"{query}\n{draft_answer}" if _CONFIRMS.match(draft_answer) else draft_answer
+        released: dict[str, Disclosure] = {}
+        swaps: dict[str, str] = {}
+        for hit in hits:
+            doc = hit.doc_id
+            before = known.get(doc, {})
+            new: Disclosure = {}
+            for kind, forms in self._records.get(doc, {}).items():
+                for form in forms - before.get(kind, set()):
+                    if _mentioned(said, form):
+                        new.setdefault(kind, set()).add(form)
+            if not new:
+                continue
+            if self._unsafe(before, new):
+                for kind in [k for k in new if k not in CONTENT_TYPES]:
+                    for form in new.pop(kind):
+                        if not _mentioned(draft_answer, form):
+                            # only the question says it: confirming cannot be made vaguer
+                            return self._blocked(before, "confirming a detail in the question")
+                        swaps[form] = _GENERIC_OF[kind]
+                if self._unsafe(before, new):
+                    return self._blocked(before, "even with the new details made generic")
+            released[doc] = new
 
-        after = self.pool(merged)
-        names = [a for a in ATTRIBUTES if a in merged]
-        if merged != committed and after < self.min_pool:
-            before = self.pool(committed)
-            return MonitorVerdict(
-                verdict="blocked",
-                candidate_pool=before,
-                disclosed=[a for a in ATTRIBUTES if a in committed],
-                reason=(
-                    f"answering would leave {after} matching client(s) "
-                    f"(minimum {self.min_pool}); disclosing {', '.join(names)}"
-                ),
+        revised = draft_answer
+        for form in sorted(swaps, key=len, reverse=True):
+            revised = _replace(revised, form, swaps[form])
+        if any(_mentioned(revised, form) for form in swaps):
+            return self._blocked({}, "a detail that cannot be made less specific")
+        if swaps:  # what another record released is gone from the revised answer too
+            for new in released.values():
+                for kind in list(new):
+                    new[kind] -= set(swaps)
+                    if not new[kind]:
+                        del new[kind]
+
+        merged = {doc: self._merge(known.get(doc, {}), new) for doc, new in released.items()}
+        merged = {doc: d for doc, d in merged.items() if d}
+        self._sessions[session_id] = {**known, **merged}
+        pool, names = None, []
+        if merged:
+            pool, riskiest = min(
+                ((self.pool(d), d) for d in merged.values()), key=lambda found: found[0]
             )
-        self._sessions[session_id] = merged
+            names = [t for t in TYPES if t in riskiest]
+        if swaps:
+            return MonitorVerdict(
+                verdict="generalised",
+                candidate_pool=pool,
+                disclosed=names,
+                reason=f"details made generic: fewer than {self.min_pool} records would match",
+                revised_answer=revised,
+            )
         return MonitorVerdict(
             verdict="allowed",
-            candidate_pool=after,
+            candidate_pool=pool,
             disclosed=names,
-            reason=f"{after} clients still match everything disclosed in this session",
+            reason=(
+                "no attribute of a retrieved record in this answer"
+                if pool is None
+                else f"{pool} records still match everything disclosed in this session"
+            ),
+        )
+
+    # ------------------------------------------------------------------ helpers
+
+    @staticmethod
+    def _merge(before: Disclosure, new: Disclosure) -> Disclosure:
+        merged = {kind: set(values) for kind, values in before.items()}
+        for kind, values in new.items():
+            merged.setdefault(kind, set()).update(values)
+        return merged
+
+    def _unsafe(self, before: Disclosure, new: Disclosure) -> bool:
+        if not new:
+            return False  # nothing more is revealed
+        merged = self._merge(before, new)
+        personal = set(merged) - CONTENT_TYPES
+        return bool(personal) and self.pool(merged) < self.min_pool
+
+    def _blocked(self, before: Disclosure, why: str) -> MonitorVerdict:
+        return MonitorVerdict(
+            verdict="blocked",
+            candidate_pool=self.pool(before),
+            disclosed=[t for t in TYPES if t in before],
+            reason=f"fewer than {self.min_pool} records would match ({why})",
         )
 
 
-def build_monitor(clients_path: str | Path, min_pool: int = DEFAULT_MIN_POOL):
-    """The candidate-pool monitor over ``clients_path``, or the allow-all stub if it is missing."""
-    from sanitise_legal.monitor import AllowAllMonitor
-
-    path = Path(clients_path)
-    if not path.is_file():
-        log.warning("client table %s not found: the session monitor allows every answer", path)
-        return AllowAllMonitor()
-    return CandidatePoolMonitor.from_file(path, min_pool)
+def build_monitor(store: DocumentStore, min_pool: int = DEFAULT_MIN_POOL) -> CandidatePoolMonitor:
+    """The candidate-pool monitor over the store's sanitised records."""
+    return CandidatePoolMonitor(store, min_pool)

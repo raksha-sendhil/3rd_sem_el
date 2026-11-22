@@ -18,6 +18,7 @@ from dataclasses import dataclass, field
 from pydantic import ValidationError
 
 from sanitise_legal.agents.rewriter import leakcheck, ontology, placeholders, prompt, routing
+from sanitise_legal.domain import is_legal
 from sanitise_legal.errors import LeakCheckFailed, PipelineError, SchemaValidationFailed
 from sanitise_legal.llm.base import LLMClient, format_validation_error
 from sanitise_legal.schemas import (
@@ -132,11 +133,15 @@ async def rewrite_with_trace(
         decisions, tokens = plan_decisions(detected, extracted)
         removed = removed_decisions(decisions)
         safe = await prompt.reconstruct(extracted.facts, decisions, tokens, llm)
+        if is_legal():  # a lost clause or piece of advice is put back by code
+            safe = prompt.restore(safe, extracted.facts, decisions)
         leaks = leakcheck.leak_check(removed, safe)
         retries = 0
         if leaks:
             retries = 1
             safe = await prompt.reconstruct(extracted.facts, decisions, tokens, llm, feedback=leaks)
+            if is_legal():
+                safe = prompt.restore(safe, extracted.facts, decisions)
             leaks = leakcheck.leak_check(removed, safe)
         if leaks:
             safe = leakcheck.mask_fallback(safe, leaks, tokens)

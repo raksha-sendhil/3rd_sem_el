@@ -83,6 +83,8 @@ async def answer(
         raise exc.with_stage("answer") from None
     if verdict.verdict == "blocked":
         text = "This question cannot be answered: it would narrow the records down too far."
+    elif verdict.verdict == "generalised" and verdict.revised_answer:
+        text = verdict.revised_answer
     return RagAnswer(
         pipeline=pipeline,
         query=query,

@@ -255,7 +255,7 @@ def create_app(
             model_name=ds.embedding_model,
         )
         monitor = (
-            build_monitor(ds.clients_path, ds.monitor_min_pool)
+            build_monitor(store, ds.monitor_min_pool)
             if ds.monitor == "candidate_pool"
             else AllowAllMonitor()
         )
@@ -280,6 +280,8 @@ def create_app(
                         if mock
                         else ds.gemini_model
                         if answer_backend == "gemini"
+                        else ds.answer_model
+                        if answer_backend == "ollama"
                         else ds.model
                     ),
                     agent1=(

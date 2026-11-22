@@ -67,9 +67,12 @@ def test_check_command_prints_every_agent(capsys) -> None:
 
 
 def test_preflight_reports_missing_keys(monkeypatch, capsys) -> None:
+    from sanitise_legal.config import get_settings
     from sanitise_legal.legal import __main__ as cli
     from sanitise_legal.llm.gemini import KEY_NAMES
 
+    monkeypatch.setenv("SANITISE_LLM_BACKEND", "ollama")  # not mock: the profile's Gemini agents
+    get_settings.cache_clear()
     for name in (*KEY_NAMES, "GEMINI_API_KEYS"):
         monkeypatch.delenv(name, raising=False)
 
@@ -80,4 +83,4 @@ def test_preflight_reports_missing_keys(monkeypatch, capsys) -> None:
     monkeypatch.chdir(REPO)
     assert cli._preflight(REPO / "data" / "legal") is False
     out = capsys.readouterr().out
-    assert "[FAIL] 0 key(s)" in out and "legal: agents gemma4:e4b" in out
+    assert "[FAIL] 0 key(s)" in out and "legal: agents gemini-3.5-flash-lite" in out

@@ -53,6 +53,7 @@ class DomainProfile(BaseModel):
     llm_num_predict: int | None = None  # output token limit per call
     llm_retries: int | None = None  # repair attempts after broken JSON
     answer_backend: str | None = None  # same | gemini | ollama | mock
+    answer_model: str | None = None  # the Ollama model behind answer_backend "ollama"
     gemini_model: str | None = None
     agent1_backend: str | None = None  # same | transformers
     agent1_base_model: str | None = None
@@ -100,6 +101,7 @@ _SETTING_FIELDS = (
     "llm_num_predict",
     "llm_retries",
     "answer_backend",
+    "answer_model",
     "gemini_model",
     "agent1_backend",
     "agent1_base_model",

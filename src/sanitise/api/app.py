@@ -478,7 +478,7 @@ def create_app(
 
         @app.get("/legal/v1/sessions/{session_id}/monitor", response_model=MonitorLedger)
         async def get_legal_monitor(session_id: str) -> MonitorLedger:
-            """The legal monitor counts candidates over the client table and keeps no ledger of
+            """The legal monitor counts candidates over its sanitised store and keeps no ledger of
             kinds of detail; its verdicts come with every answer."""
             return MonitorLedger(session_id=session_id, monitor="pool", k=5)
 

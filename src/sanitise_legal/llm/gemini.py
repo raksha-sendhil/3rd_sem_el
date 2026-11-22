@@ -167,6 +167,11 @@ class KeyPool:
             + (f"; the first is free again in {soonest:.0f} s" if soonest > 0 else "")
         )
 
+    def wake(self) -> None:
+        """Limits are per model: every key may be tried again on another model."""
+        for entry in self._keys:
+            entry.rest_until = 0.0
+
     def rest(self, entry: _Key, message: str) -> None:
         daily = bool(_DAILY.search(message))
         entry.rest_until = self.clock() + (DAY_S if daily else self.cooldown_s)
@@ -196,7 +201,9 @@ class GeminiClient(BaseJSONClient):
         sdk_factory: Callable[[str], Any] | None = None,
         **kwargs: Any,
     ) -> None:
-        super().__init__(model=model, **kwargs)
+        models = [m.strip() for m in model.split(",") if m.strip()] or [model]
+        super().__init__(model=models[0], **kwargs)
+        self.models = models  # the next takes over when every key is at this one's limit
         self.cache_dir = Path(cache_dir) if cache_dir else None
         keys = list(api_keys or []) or gemini_api_keys(api_key)
         if sdk_client is not None and not keys:
@@ -241,7 +248,7 @@ class GeminiClient(BaseJSONClient):
     # ---------------------------------------------------------------- cache
 
     def _key(self, messages: list[Message], json_schema: dict | None, *settings: Any) -> str:
-        blob = json.dumps([self.model, messages, json_schema, settings], sort_keys=True)
+        blob = json.dumps([",".join(self.models), messages, json_schema, settings], sort_keys=True)
         return hashlib.sha256(blob.encode("utf-8")).hexdigest()
 
     def _cached(self, key: str) -> str | None:
@@ -314,7 +321,7 @@ class GeminiClient(BaseJSONClient):
             config["response_mime_type"] = "application/json"
             config["response_json_schema"] = json_schema
 
-        rate_limited = overloaded = key_waits = 0
+        rate_limited = overloaded = key_waits = switches = 0
         while True:
             free_in = self.pool.free_in()
             if 0 < free_in <= self.max_key_wait_s and key_waits < self.overload_retries:
@@ -340,6 +347,13 @@ class GeminiClient(BaseJSONClient):
                 if _RATE_LIMITED.search(str(exc)):
                     self.pool.rest(entry, str(exc))
                     rate_limited += 1
+                    if rate_limited >= len(self.pool) and switches < len(self.models) - 1:
+                        switches += 1
+                        at = self.models.index(self.model)
+                        self.model = self.models[(at + 1) % len(self.models)]
+                        log.warning("Every key is at its limit: switching to %s", self.model)
+                        self.pool.wake()
+                        rate_limited = 0
                     continue  # the next key
                 if _OVERLOADED.search(str(exc)) and overloaded < self.overload_retries:
                     wait = min(self.overload_wait_s * 2**overloaded, OVERLOAD_MAX_WAIT_S)

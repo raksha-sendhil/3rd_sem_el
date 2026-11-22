@@ -58,8 +58,9 @@ I take aspirin. My wife has psoriasis. You can reach me on [PHONE_1].
 
 
 LEGAL_SYSTEM_PROMPT = """\
-You rewrite a document from a litigation firm's past matter from a list of facts, so it can \
-be shared inside the firm without identifying the client or anyone else. The facts have \
+You rewrite a document from a law firm's files (a past matter, or a section of a contract) \
+from a list of facts, so it can be shared inside the firm without identifying the client or \
+anyone else. The facts have \
 already been made safe: some details are placeholder tokens such as [CLIENT_1], [PARTY_1] \
 or [CASE_1], and some are deliberately vague phrases such as "a High Court" or "between \
 ₹1 lakh and ₹10 lakh".
@@ -69,10 +70,14 @@ Rules:
 case number or any other detail that is not in the facts.
 2. Copy placeholder tokens exactly, brackets included.
 3. Keep vague phrases vague; you may change their grammar to fit the sentence.
-4. Keep the advice, the documents requested, the outcome and the next step in full: they \
-are what the lawyers will search for.
-5. Write a short case summary in plain sentences, three to six of them, no headings or lists.
-6. Return only the rewritten document.
+4. Keep the advice, the documents requested, the outcome, the next step and every contract \
+clause in full: they are what the lawyers will search for.
+5. Write in the third person, never "I", "we" or "you": say who advised ("the firm advised"), \
+and for a clause which party must, may or may not do what, by its role ("the Supplier").
+6. Put it in your own words: keep terms, numbers and periods exactly, but never copy a run of ten \
+words from a fact.
+7. Write plain sentences, as many as the facts need, no headings or lists.
+8. Return only the rewritten document.
 
 EXAMPLE
 FACTS:
@@ -87,7 +92,7 @@ the client - outcome: The court appointed a valuer.
 the client - next step: File objections to the valuation report.
 OUTPUT:
 [CLIENT_1], a healthcare worker in a city in Karnataka, brought a partition suit against \
-[PARTY_1] before a civil court. We advised the client to ask the court to appoint a valuer \
+[PARTY_1] before a civil court. The firm advised the client to ask the court to appoint a valuer \
 before any division. The court appointed a valuer. The recommended next step is to file \
 objections to the valuation report.
 """
@@ -106,7 +111,9 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     )
     for d in removed:
         assert d.replacement is not None
-        value = re.sub(re.escape(d.span_text.strip()), d.replacement, value, flags=re.IGNORECASE)
+        # whole words only: the span "US" is not inside "business"
+        span = rf"(?<!\w){re.escape(d.span_text.strip())}(?!\w)"
+        value = re.sub(span, lambda _, new=d.replacement: new, value, flags=re.IGNORECASE)
     return value
 
 
@@ -123,10 +130,43 @@ def subject_label(subject: str) -> str:
 def draft(facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
     """One line per fact, with removed details already replaced."""
     return "\n".join(
-        f"{subject_label(f.subject)} - {f.relation.replace('_', ' ')}: "
+        f"{'the contract' if f.relation == 'clause' else subject_label(f.subject)}"
+        f" - {f.relation.replace('_', ' ')}: "
         f"{safe_value(f.value, decisions)}."
         for f in facts
     )
+
+
+_MUST_STAY = {
+    "clause": "The contract provides",
+    "advised": "The firm advised",
+    "outcome": "The outcome",
+    "next_step": "The next step",
+}
+_WORD = re.compile(r"[a-z0-9]+")
+
+
+def dropped(
+    text: str, facts: list[FactTuple], decisions: list[RoutingDecision]
+) -> list[tuple[str, str]]:
+    """(relation, safe value) of the content facts with under 60% of their words in ``text``."""
+    said = set(_WORD.findall(text.lower()))
+    out = []
+    for f in facts:
+        if f.relation in _MUST_STAY:
+            value = safe_value(f.value, decisions)
+            words = set(_WORD.findall(value.lower()))
+            if words and len(words & said) / len(words) < 0.6:
+                out.append((f.relation, value))
+    return out
+
+
+def restore(text: str, facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
+    """``text`` plus a sentence for each content fact it lost, from safe values only."""
+    if not text.strip():
+        return text
+    added = [f"{_MUST_STAY[r]}: {value}." for r, value in dropped(text, facts, decisions)]
+    return " ".join([text.rstrip(), *dict.fromkeys(added)]) if added else text
 
 
 def build_user_prompt(
