@@ -1,0 +1,25 @@
+{
+ "doc_id": "5a5455d16c224b83",
+ "text": "---\n**Credit Counseling Loan Application**\n\n**Personal Information**\n\n* Full Name: John Smith\n* Date of Birth: 01/01/1980\n* Social Security Number: 123-45-6789\n* Contact Address: 123 Main Street, Anytown, USA\n* Phone Number: (123) 456-7890\n* Email Address: [john.smith@email.com](mailto:john.smith@email.able%20com)\n\n**Financial Information**\n\n* Employment Status: Full-time Employee\n* Occupation: Software Engineer\n* Monthly Income: $7,501 - $10,000\n* Monthly Expenses:\n\t+ Rent/Mortgage: $1,500\n\t+ Utilities: $200\n\t+ Transportation: $250\n\t+ Groceries: $400\n\t+ Healthcare: $250\n\t+ Other Expenses: $500\n* Total Debt: $25,000\n\n**Loan Information**\n\n* Loan Amount Requested: $15,00C\n* Loan Purpose: Debt Consolidation\n\n**Employment Information**\n\n* Employer Name: XYZ Inc.\n* Supervisor Name: Jane Doe\n* Supervisor Phone Number: (123) 000-1234\n* Employment Start Date: 05/01/2015\n* Expected End Date (if applicable): N/A\n\n**Credit Counseling and Financial Education Resources**\n\nBased on your financial situation, we recommend the following resources for credit counseling and financial education:\n\n1. National Foundation for Credit Counseling (NFCC): The NFCC is the largest and longest-estab1shd non-profit financial counseling organization in the United States. They provide a variety of services, including credit counseling, budgeting, and debt management.\n\nWebsite: [www.nfcc.org](http://www.nfcc.org)\nPhone: 1-800-38",
+ "source": "kyc",
+ "private": [
+  "John Smith",
+  "01/01/1980",
+  "123-45-6789",
+  "123 Main Street, Anytown, USA",
+  "(123) 456-7890",
+  "[john.smith@email.com]",
+  "XYZ Inc.",
+  "Jane Doe",
+  "(123) 000-1234",
+  "National Foundation for Credit Counseling (NFCC)",
+  "john.smith@email.able"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4147,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "doc_id": "b48a1daa69393b8e",
+ "text": "-------------------------------------------------------------------------------------------------------------------\n\n**Credit Card Statement**\n\nCard ending in 1234\n\n**Billing Period:** \nJanuary 1, 2023 - January 31, 2023\n\n**Due Date:** \nFebruary 25, 2023\n\n**Interest Rate:** \n18.9% p.a. (variable)\n\n**Minimum Payment:** \n£50 or 3% of the new balance, whichever is greater.\n\n-------------------------------------------------------------------------------------------------------------------\n\n| Date | Description | Type | Amount (GBP) | Running Balance (GBP) |\n| --- | --- | --- | --- | --- |\n| 01-Jan | Purchase at Tesco | Purchase | 50.45 | 50.45 |\n| 03-Jan | Purchase at Amazon | Purchase | 124.99 | 175.44 |\n| 05-Jan | Annual Membership Fee | Fee | 12.00 | 187.44 |\n| 10-Jan | Purchase at Starbucks | Purchase | 5.60 | 193.04 |\n| 15-Jan | Purchase at Marks & Spencer | Purchase | 78.35 | 271.39 |\n| 20-Jan | Purchase at Apple | Purchase | 345.00 | 616.39 |\n| 25-Jan | Payment Received | Payment | -150.00 | 466.39 |\n| 30-Jan | Interest Charged | Interest | 7.21 | 473.60 |\n\n-------------------------------------------------------------------------------------------------------------------\n\n**Notice:**\nLate payment may result in a fee and negatively impact your credit score. Please contact us if you are experiencing financial difficulties.\n\n-------------------------------------------------------------------------------------------------------------------\n\n**Customer Service:**\nPhone: +44-800-123-456\nEmail: customer.service@bank.com",
+ "source": "kyc",
+ "private": [
+  "Amazon",
+  "customer.service@bank.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 287,
+  "type": "Bank Statement",
+  "synthetic": true
+ }
+}

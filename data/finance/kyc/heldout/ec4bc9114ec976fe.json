@@ -1,0 +1,18 @@
+{
+ "doc_id": "ec4bc9114ec976fe",
+ "text": "VACATION RENTAL PROPERTY FINANCING AGREEMENT\n\nThis Vacation Rental Property Financing Agreement (the \"Agreement\"), dated as of the 15th day of March, 2023 (the \"Effective Date\"), is entered into between Jason Mark Roberts, a natural person with a passport number G14090771 (the \"Borrower\"), and Sapphire Coast Finance, a corporation organized and existing under the laws of the Province of British Columbia, with its head office located at 1200 - 1090 West Georgia Street, Vancouver, British Columbia, V6E 3V7 (the \"Lender\").\n\nWHEREAS, Borrower desires to borrow funds from Lender for the purpose of financing the acquisition of a vacation rental property, and Lender is willing to lend such funds on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN. Subject to the terms and conditions of this Agreement, Lender agrees to loan to Borrower the principal sum of Five Hundred Thousand Dollars ($500,000.00) (the \"Loan Amount\").\n\n2. INTEREST. The Loan Amount shall bear interest at a rate of 5.5% per annum, calculated on the outstanding principal balance of the Loan Amount.\n\n3. REPAYMENT. The Loan Amount, together with all accrued and unpaid interest thereon, shall be repaid by Borrower to Lender in equal monthly installments of Four Thousand Three Hundred Thirty-Eight Dollars and Twenty-Seven Cents ($4,338.27) over a term of thirty-six (36) months, commencing on the first day of April, 2023.\n\n4. PROPERTY. The Loan Amount shall be secured by a first mortgage on the following property:\n\n   A vacation rental property located at 963 Martinez Burgs, East Juliaborough, consisting of a three-bedroom",
+ "source": "kyc",
+ "private": [
+  "Jason Mark Roberts",
+  "G14090771",
+  "Sapphire Coast Finance",
+  "963 Martinez Burgs, East Juliaborough"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3790,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

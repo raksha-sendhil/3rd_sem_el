@@ -1,0 +1,24 @@
+{
+ "doc_id": "0d2548cf8b791b6a",
+ "text": "---\nLoan Application\n\nFull Name: John Doe\nDate: March 15, 2023\nLoan Type: Credit Counseling\n\nPersonal Information:\n----------------------\nAddress: 123 Maple Street, Anytown, USA\nEmail: johndoe@example.com\nPhone: (123) 456-7890\nDate of Birth: 01/01/1980\nSocial Security Number: 123-45-6789\n\nFinancial Information:\n---------------------\nMonthly Income: $4,000\nMonthly Expenses: $2,500\nCurrent Debts: $15,000 (credit cards, personal loans)\nCredit Score: 650\n\nEmployment Information:\n--------------------\nEmployer: XYZ Corporation\nPosition: Software Engineer\nYears with Employer: 5 years\n\nLoan Information:\n---------------\nLoan Amount: $10,000\nLoan Purpose: Debt Consolidation\n\nRecommendation for Credit Counseling:\n\nBased on your financial situation, we recommend that you seek credit counseling to better manage your debts and improve your credit score. Here are some resources for credit counseling and financial education:\n\n1. National Foundation for Credit Counseling (NFCC): A nonprofit organization that provides credit counseling, debt management, and financial education services. (<https://www.nfcc.org/>)\n2. Financial Counseling Association of America (FCAA): A professional association of certified and trained financial counselors. (<https://www.fcaa.org/>)\n3. Credit.org: A nonprofit credit counseling agency that provides financial education, debt management, and housing counseling services. (<https://www.credit.org/>)\n4. The Federal Trade Commission (FTC): Provides resources on how to choose a credit counselor and avoid scams. (<https://www.ftc.gov/search?q=credit+counseling>)\n\nPlease provide the following documents to support your loan application:\n\n1. Recent pay stubs\n2. Recent bank statements\n3. W-2s or",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "123 Maple Street, Anytown, USA",
+  "johndoe@example.com",
+  "(123) 456-7890",
+  "01/01/1980",
+  "123-45-6789",
+  "XYZ Corporation",
+  "National Foundation for Credit Counseling (NFCC)",
+  "Financial Counseling Association of America (FCAA)",
+  "Federal Trade Commission (FTC)"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3962,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

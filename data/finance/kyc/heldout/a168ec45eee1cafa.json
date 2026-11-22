@@ -1,0 +1,20 @@
+{
+ "doc_id": "a168ec45eee1cafa",
+ "text": "---\n**Loan Application Form**\n\n**Part 1: Personal Information**\n\nFull Name: Sarah Thompson\nDate of Birth: 01/02/1980\nEmail Address: [sarah.thompson@email.com](mailto:sarloan_purpose.md)\nPhone Number: (123) 456-7890\n\n**Part 1.1: Address**\n\nStreet Address: 123 Sunny Lane\nCity: Toronto\nProvince/State: Ontario\nPostal/Zip Code: M1A 2B3\n\n**Part Loan_Purpose: Loan Purpose**\n\nLoan Amount Requested: $15,001\nLoan Purpose: Home Improvement\n\n**Part 3: Employment Information**\n\nEmployer Name: XYZ Inc.\nAddress: 456 Main Street, Toronto, Ontario, M2N 3P1\nPosition: Marketing Manager\nMonthly Income: $7,500\nYears at Current Employer: 5\n\n**Part 4: Financial Information**\n\nBank Name: Royal Bank of Canada\nAccount Type: Checking\nAccount Number: 123456789\nMonthly Net Income: $6,500\nMonthly Expenses: $3,000\n\n**Part 5: Supporting Documentation**\n\n* Copy of government-issued photo ID\n* Recent pay stub\n* Bank statement\n* Proof of residence\n* Quote for home improvement\n\n---\n\n**Note:** By signing below, you certify that the information provided in this loan application is true and complete to the best of your knowledge.\n\nSignature: Sarah Thompson\nDate: 12/12/2023",
+ "source": "kyc",
+ "private": [
+  "Sarah Thompson",
+  "01/02/1980",
+  "(123) 456-7890",
+  "XYZ Inc.",
+  "456 Main Street, Toronto, Ontario, M2N 3P1",
+  "sarah.thompson@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 884,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

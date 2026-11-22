@@ -1,0 +1,17 @@
+{
+ "doc_id": "da1fadb6955c03fc",
+ "text": "Emergency Loan Application\n\nFull Name: Néstor Teruel\n\nMailing Address:\n57006 Hunter Terrace Suite 974\n\nContact Information:\nPhone: [Your Phone Number]\nEmail: [Your Email Address]\n\nEmployment Information:\nEmployer: [Your Employer]\nJob Title: [Your Job Title]\nMonthly Income: [Your Monthly Income]\n\nLoan Information:\nLoan Amount Requested: $10,000\nLoan Purpose: To cover unexpected medical expenses for a family member.\nEmergency Details: [Your Family Member] was in a serious accident and required immediate surgery. The medical bills have amounted to $15,000, and I am seeking a loan to cover the remaining balance after insurance.\n\nBank Account Information:\nBank Name: [Your Bank Name]\nBBAN: FOQR06144583189469\n\nI confirm that all the information provided is true and accurate to the best of my knowledge. I understand that providing false or misleading information is a criminal offense.\n\nSignature: [Your Signature]\nDate: [Today's Date]",
+ "source": "kyc",
+ "private": [
+  "Néstor Teruel",
+  "57006 Hunter Terrace Suite 974",
+  "FOQR06144583189469"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5386,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

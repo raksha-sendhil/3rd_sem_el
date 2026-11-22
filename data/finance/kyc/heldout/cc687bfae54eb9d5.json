@@ -1,0 +1,17 @@
+{
+ "doc_id": "cc687bfae54eb9d5",
+ "text": "**SME LOAN AGREEMENT**\n\nThis SME Loan Agreement (the \"Agreement\") is made and entered into on this 1st day of March, 2023, by and between Andreas, a sole proprietor having their principal place of business at 34 Keith light, Flat 95T (hereinafter referred to as the \"Borrower\"), and Sharon Whitehead, a resident of the United Kingdom, with a mailing address at 34 Keith light, Flat 95T (hereinafter referred to as the \"Lender\").\n\n**WHEREAS**, the Borrower has requested a loan from the Lender for the purpose of expanding their business; and\n\n**WHEREAS**, the Lender has agreed to provide such a loan on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. **LOAN**. The Lender agrees to provide the Borrower with a loan in the amount of £100,000 (the \"Loan\"). The Loan shall be disbursed to the Borrower in one lump sum within three (3) business days following the execution of this Agreement.\n\n2. **INTEREST**. The Loan shall bear interest at a rate of 5% per annum, calculated on a 360-day year basis.\n\n3. **REPAYMENT**. The Borrower shall repay the Loan, together with all accrued and unpaid interest, in thirty-six (36) equal monthly installments, commencing on the first day of the month next following the disbursement of the Loan and continuing on the first day of each month thereafter. Each installment shall be in the amount of £2,951.03.\n\n4. **SECURITY**. To secure the repayment of the Loan, the Borrower grants the Lender a security interest in all of the Borrower's right, title, and interest in and to the following property (the \"Collateral\"):\n\n(a) all of the Borrower's inventory, equipment, and accounts receivable, whether now owned or hereafter acquired;\n\n(",
+ "source": "kyc",
+ "private": [
+  "Andreas",
+  "34 Keith light, Flat 95T",
+  "Sharon Whitehead"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1335,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

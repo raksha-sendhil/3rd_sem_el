@@ -1,0 +1,18 @@
+{
+ "doc_id": "3c767dff6f0ca9f3",
+ "text": "Loan Application\n\nDate: March 15, 2023\n\nApplicant Information:\n\nFull Name: Daniele Cesarotti-Ruggeri\nStreet Address: 024 Benson Fields, Hodgebury, 24041\nDriver's License Number: CF40266452\n\nLoan Information:\n\nLoan Amount Requested: $150,000\nLoan Purpose: Home Renovation\n\nFinancial Information:\n\nEmployment Status: Full-time\nOccupation: Software Engineer\nEmployer Name: SoftDev Inc.\nAnnual Income: $120,000\n\nAssets:\nChecking Account: $35,000\nSavings Account: $50,000\nRetirement Account: $200,000\n\nLiabilities:\nMortgage: $200,000\nCredit Card Debt: $10,000\n\nRegulatory Compliance:\n\nBy submitting this loan application, I hereby authorize SoftBank Lending, its agents, and assignees to obtain and verify any information contained in this application, or any other information related to my credit, employment, and personal history, including my credit score. I understand that this information will be used to determine my eligibility for the loan I am applying for. I also understand that any misrepresentation of the facts in this application may result in the denial of my loan application or the termination of any existing loan agreement.\n\nI hereby consent to the disclosure of any non-public personal information about me to SoftBank Lending, its agents, and assignees, as permitted by law. I understand that this information will be kept confidential and used solely for the purpose of processing my loan application.\n\nI have read and understand the terms and conditions of this loan application, and I certify that all of the information provided is true and accurate to the best of my knowledge.\n\nSignature: Daniele Cesarotti-Ruggeri\nDate: March 15, 2023\n\nPlease include the following documents with your application:\n\n* Copy of driver's license\n* Copy of the most recent pay stub\n*",
+ "source": "kyc",
+ "private": [
+  "Daniele Cesarotti-Ruggeri",
+  "024 Benson Fields, Hodgebury, 24041",
+  "CF40266452",
+  "SoftDev Inc."
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4955,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

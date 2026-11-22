@@ -1,0 +1,18 @@
+{
+ "doc_id": "8ed29dc42899fc66",
+ "text": "MOBILE HOME PARK FINANCING AGREEMENT\n\nThis Mobile Home Park Financing Agreement (the \"Agreement\"), dated as of the 1st day of August, 2021, is entered into between Melina A. Toso, a resident of 65778 Matthew Bypass, Apt. 139, hereinafter referred to as the \"Borrower,\" and Alpha Finance, Inc., a corporation organized and existing under the laws of the state of Delaware, hereinafter referred to as the \"Lender.\"\n\nWHEREAS, the Borrower owns and operates a mobile home park, hereinafter referred to as the \"Property,\" located at 12345 Maple Leaf Lane, Anytown, USA, and desires to borrow funds from the Lender for the purpose of refinancing the existing debt on the Property; and\n\nWHEREAS, the Lender is willing to provide such financing on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN AMOUNT. The Lender shall provide to the Borrower a loan in the principal amount of Five Million Dollars ($5,000,000.00) (the \"Loan Amount\").\n\n2. INTEREST RATE. The Loan Amount shall bear interest at a rate of 5.00% per annum.\n\n3. REPAYMENT SCHEDULE. The Loan Amount shall be repaid in equal monthly installments over a term of thirty (30) years, with the first such installment due on the first day of the month next succeeding the date of this Agreement. Each installment shall consist of principal and interest, calculated on a thirty (30) year amortization schedule.\n\n4. PROPERTY DETAILS. The Property is a mobile home park consisting of 100 developed sites, with an occupancy rate of 95%. The Property includes a community clubhouse, swimming pool, and playground. The infrastructure includes paved roads, underground utilities, and a central water system",
+ "source": "kyc",
+ "private": [
+  "Melina A. Toso",
+  "65778 Matthew Bypass, Apt. 139",
+  "Alpha Finance, Inc.",
+  "12345 Maple Leaf Lane, Anytown, USA"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1060,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

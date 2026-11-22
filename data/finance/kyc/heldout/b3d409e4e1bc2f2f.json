@@ -1,0 +1,18 @@
+{
+ "doc_id": "b3d409e4e1bc2f2f",
+ "text": "------------------------------------------------------------------------------------------------------------------------\nLate Fee Breakdown\n\nAccount Holder: Herwig J. Hamann\nDate of Birth: 01/27/1992\nAccount Number: **** 1234 (Last four digits)\n\nStatement Date: 03/01/2023\nDue Date: 03/25/2023\nLate After: 03/26/2023\n\n------------------------------------------------------------------------------------------------------------------------\n\nRecent Transactions:\n\nDate | Description | Amount (USD) | Status\n--- | --- | --- | ---\n02/15/2023 | Purchase at Amazon | 125.49 | Pending\n02/22/2023 | Payment | -500.00 | Posted\n02/23/2023 | Purchase at Walmart | 78.95 | Pending\n02/25/2023 | Payment | -250.00 | Posted\n02/28/2023 | Purchase at Gas Station | 34.67 | Pending\n\n------------------------------------------------------------------------------------------------------------------------\n\nLate Fee Breakdown:\n\nA late fee of $35.00 is applied to the account because the minimum payment due of $250.00 was not received by the due date (03/25/2023). The new due date is now 04/23/2023.\n\nOutstanding Balance: $369.11\nMinimum Payment Due: $250.00\nNew Due Date: 04/23/2023\n\n------------------------------------------------------------------------------------------------------------------------\n\nBill To:\nHerwig J. Hamann\n36057 Karla Brooks\nJennifertown, 85937\n\n------------------------------------------------------------------------------------------------------------------------\n\nPlease remit your payment to:\n[Company Name]\nP.O. Box 1234\nNew York, NY 10012\n\nOr pay online at www.companywebsite.com\n\nFor customer",
+ "source": "kyc",
+ "private": [
+  "Herwig J. Hamann",
+  "01/27/1992",
+  "Amazon",
+  "Bill"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4476,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

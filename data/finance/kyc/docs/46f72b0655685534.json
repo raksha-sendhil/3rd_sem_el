@@ -1,0 +1,15 @@
+{
+ "doc_id": "46f72b0655685534",
+ "text": "---\nLoan Application Supporting Documents\n\nApplicant Name: John Doe\nLoan Amount: $200,000\nLoan Purpose: Home Purchase\n\n1. Identification\n\nPassport\n----------------------\n\n<img src=\"data:image/jpeg;base64,[Insert encrypted passport image here]\" alt=\"Passport\" width=\"300\">\n\n2. Proof of Income\n\nRecent Pay Stubs\n-----------------\n\n<img src=\"data:image/jpeg;base64,[Insert encrypted pay stub image here]\" alt=\"Pay Stub\" width=\"300\">\n\n3. Bank Statements\n\nSavings Account\n--------------\n\n<img src=\"data:image/jpeg;base64,[Insert encrypted savings account image here]\" alt=\"Savings Account\" width=\"300\">\n\nChecking Account\n----------------\n\n<img src=\"data:image/jpeg;base64,[Insert encrypted checking account image here]\" alt=\"Checking Account\" width=\"300\">\n\n4. Employment Verification\n\nEmployment Letter\n-----------------\n\n[Insert encrypted employment letter text here]\n\n5. Other Supporting Documents\n\nProperty Appraisal\n------------------\n\n<img src=\"data:image/jpeg;base64,[Insert encrypted property appraisal image here]\" alt=\"Property Appraisal\" width=\"300\">\n\n---",
+ "source": "kyc",
+ "private": [
+  "John Doe"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4585,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

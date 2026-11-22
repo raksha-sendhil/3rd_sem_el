@@ -1,0 +1,18 @@
+{
+ "doc_id": "9c524be883f2c6dc",
+ "text": "LOAN AGREEMENT\n\nTHIS AGREEMENT is made and entered into this 00th day of July, 2023 (the \"Effective Date\"), by and between ABC Corporation, a company organized and existing under the laws of the State of Delaware, with its principal place of business at 123 Main Street, Anytown, DE 19999 (the \"Lender\"), and Henry Jones, an individual with a mailing address at 9576 Brian Run, Suite 015, Anytown, DE 19999 (the \"Borrower\").\n\nWHEREAS, the Borrower desires to borrow the sum of Five Hundred Thousand Dollars ($500,000) from the Lender (the \"Loan Amount\") for the purpose of expanding its business operations;\n\nNOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN. Subject to the terms and conditions set forth herein, the Lender agrees to provide the Loan Amount to the Borrower in the form of a business loan (the \"Loan\").\n\n2. PURPOSE. The Loan proceeds shall be used solely for the purpose of expanding the Borrower's business operations.\n\n3. TERM. The term of the Loan shall be five (5) years from the Effective Date.\n\n4. INTEREST. The outstanding principal balance of the Loan shall bear interest at a rate of 8% per annum, payable quarterly in arrears.\n\n5. REPAYMENT. The Borrower shall repay the Loan in 24 equal monthly installments, beginning on the first day of the month next following the Effective Date, in amounts sufficient to amortize the outstanding principal and accrued interest over the term of the Lo security agreement.\n\n6. COLLATERAL. The following property shall be pledged by the Borrower as collateral for the Loan (the \"Collateral\"):\n\na. All inventory and accounts receivable of the Borrower, now owned or hereafter acquired;\nb.",
+ "source": "kyc",
+ "private": [
+  "ABC Corporation",
+  "123 Main Street, Anytown, DE 19999",
+  "Henry Jones",
+  "9576 Brian Run, Suite 015, Anytown, DE 19999"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3397,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

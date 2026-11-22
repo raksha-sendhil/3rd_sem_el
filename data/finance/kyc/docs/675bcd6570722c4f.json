@@ -1,0 +1,17 @@
+{
+ "doc_id": "675bcd6570722c4f",
+ "text": "MORTGAGE CONTRACT\n\nThis Mortgage Contract (the \"Agreement\"), dated as of 23rd May, 2012, is entered into between Olivia Davies-Cooke, residing at 060 Nicholas Fall, Suite 684 (the \"Borrower\"), and XYZ Financial Corporation, a corporation organized and existing under the laws of the Province of Ontario, with its head office located at 4567 Main Street, Toronto, Ontario (the \"Lender\").\n\nWHEREAS, the Borrower desires to borrow the principal sum of $500,000 (the \"Loan\") from the Lender, and the Lender is willing to provide the Loan on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN. The Lender agrees to provide the Loan to the Borrower in the amount of $500,000, which shall be disbursed to the Borrower at the Closing.\n\n2. INTEREST-FIRST MORTGAGE. This Mortgage is an Interest-First Mortgage. The Borrower shall make monthly payments of principal and interest, with the initial payments being applied first to interest and thereafter to principal.\n\n3. INTEREST RATE. The interest rate for the Loan shall be 5.00% per annum.\n\n4. TERM. The term of the Loan shall be fifteen (15) years.\n\n5. SECURITY. The Loan shall be secured by a mortgage on the following property (the \"Mortgaged Property\"):\n\n060 Nicholas Fall, Suite 684\n\n6. REPAYMENT. The Borrower shall repay the Loan in equal monthly installments over the term of the Loan, with such installments being applied first to interest and thereafter to principal.\n\n7. DEFAULT. If the Borrower fails to make any payment when due or breaches any other term or condition of this Agreement, the Lender may declare the entire outstanding balance of the Loan immediately due and payable",
+ "source": "kyc",
+ "private": [
+  "Olivia Davies-Cooke",
+  "060 Nicholas Fall, Suite 684",
+  "4567 Main Street, Toronto, Ontario"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4453,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

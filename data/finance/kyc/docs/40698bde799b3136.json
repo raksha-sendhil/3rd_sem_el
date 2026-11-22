@@ -1,0 +1,22 @@
+{
+ "doc_id": "40698bde799b3136",
+ "text": "---\nLoan Application\n\nFull Legal Name: John Doe\n\nDate: 01/01/2023\n\nLoan Type: Real Estate\n\nLoan Amount Requested: $500,000\n\nProperty Details:\n- Address: 123 Main Street, Anytown, USA\n- Property Type: Residential\n- Property Description: Single-family home, 4 bedrooms, 3 bathrooms, 2,500 sq ft\n- Age of Property: 10 years\n- Current Market Value: $600,000\n- Current Mortgage Balance (if applicable): $200,000\n\nValuation Information:\n- Valuation Method: Appraisal by licensed appraiser\n- Valuation Date: 12/15/2022\n- Estimated Value: $600,000\n\nPurpose of Loan:\n- Purchase of Property: No\n- Refinance of Existing Mortgage: Yes\n- Cash Out: Yes\n- Proposed Usage of Funds: Home renovation and investment property\n\nPersonal Information:\n- Date of Birth: 01/01/1980\n- Social Security Number: 123-45-6789\n- Contact Information:\n-- Address: 456 Elm Street, Anytown, USA\n-- Phone: 555-555-5555\n-- Email: johndoe@example.com\n\nEmployment Information:\n- Employer: ABC Corporation\n- Job Title: Software Engineer\n- Years with Employer: 5\n- Annual Income: $120,000\n\nFinancial Information:\n- Other Real Estate Owned: No\n- Other Debts:\n-- Credit Card Debt: $10,000\n-- Car Loan: $0\n-- Student Loans: $50,000\n- Monthly Expenses:\n-- Mortgage/Rent: $2,000\n-- Utilities: $200\n-- Transportation: $300\n-- Other: $500\n- Liquid Assets:\n-- Checking Account: $2",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "123 Main Street, Anytown, USA",
+  "01/01/1980",
+  "123-45-6789",
+  "456 Elm Street, Anytown, USA",
+  "555-555-5555",
+  "johndoe@example.com",
+  "ABC Corporation"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 664,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

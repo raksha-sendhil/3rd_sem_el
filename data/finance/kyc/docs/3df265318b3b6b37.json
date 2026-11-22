@@ -1,0 +1,19 @@
+{
+ "doc_id": "3df265318b3b6b37",
+ "text": "Loan Application\n\nFull Legal Name: Luigi Clelia Togliatti\nDate of Birth: 11/27/1967\n\nMailing Address:\n4893 Justin Terrace\n[City, State, Zip Code]\n\nPhone Number: [(123) 456-7890]\nEmail Address: [luigi.togliatti@email.com]\n\nEducational Institution: University of Toronto\nExpected Graduation Date: [Graduation Year]\n\nProgram of Study: Bachelor of Science in Computer Science\n\nFuture Career Plans: After graduation, I plan to pursue a career as a software engineer at a tech company. I am particularly interested in the field of artificial intelligence and machine learning.\n\nLoan Amount Requested: $20,000\n\nPersonal Financial Information:\n\n* Monthly Income: $2,500\n* Monthly Expenses: $1,500\n* Total Assets: $10,000\n* Total Debts: $5,000\n\nI confirm that all the information provided is true and accurate to the best of my knowledge.\n\nSignature: Luigi Clelia Togliatti\nDate: [Today's Date]",
+ "source": "kyc",
+ "private": [
+  "Luigi Clelia Togliatti",
+  "11/27/1967",
+  "4893 Justin Terrace",
+  "University of Toronto",
+  "luigi.togliatti@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

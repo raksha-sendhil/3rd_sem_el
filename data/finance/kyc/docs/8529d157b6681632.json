@@ -1,0 +1,17 @@
+{
+ "doc_id": "8529d157b6681632",
+ "text": "Travel Loan Application\n\nApplication Date: 10:31 AM, Today\n\nApplicant Name: Evi Coret-Coredo\nAddress: 2 avenue Faure, [City], [Postal Code], United Kingdom\n\nLoan Details:\nLoan Amount: £5000\nLoan Purpose: Travel Loan\nDestination: Paris, France\nDuration: 10 days\nEstimated Travel Costs: £4500 (hotel, meals, and local transportation)\n\nCredit Card Information:\nCredit Card Number: 3498-2391-8851-275\nCard Holder's Name: Evi Coret-Coredo\nExpiration Date: [MM/YYYY]\nCVV: [CVV]\n\nEmployment Details:\nEmployer Name: [Employer Name]\nPosition: [Position]\nMonthly Income: £[Monthly Income]\n\nI confirm that the above information is true and correct to the best of my knowledge.\n\nSignature: Evi Coret-Coredo\nDate: [Date]\n\nNote: Please attach/upload the required documents for verification.\n\n[End of Document]",
+ "source": "kyc",
+ "private": [
+  "Evi Coret-Coredo",
+  "2 avenue Faure",
+  "3498-2391-8851-275"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4248,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

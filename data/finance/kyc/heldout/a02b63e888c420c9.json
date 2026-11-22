@@ -1,0 +1,18 @@
+{
+ "doc_id": "a02b63e888c420c9",
+ "text": "**MORTGAGE CONTRACT**\n\nThis Mortgage Contract (the \"Agreement\"), dated as of the 1st day of August, 2021, is entered into between Elvira B. Jönsson, a resident of 395 Hans-J.-Hering-Platz, 82195, Tirschenreuth (the \"Borrower\"), and Apex Mortgage Lenders Ltd, a company organized and existing under the laws of the United Kingdom, with its head office located at 435 Oxford Street, London, W1C 2PE (the \"Lender\").\n\n**1. LOAN APPROVAL AND SECURITY**\n\nThe Lender has approved the Borrower's application for a mortgage loan in the amount of £200,000 (the \"Loan Amount\"). The Borrower has agreed to secure the Loan Amount with the property located at 395 Hans-J.-Hering-Platz, 82195, Tirschenreuth (the \"Property\").\n\n**2. REPAYMENT TERMS**\n\nThe Borrower shall repay the Loan Amount, together with interest, in equal monthly installments over a term of 30 years (the \"Term\"), according to the following schedule:\n\n(a) For the first 15 years of the Term, the Borrower shall pay only the interest accruing on the Loan Amount at a fixed rate of 3.5% per annum (the \"Interest-Only Period\").\n\n(b) After the Interest-Only Period, the Borrower shall pay both the interest and principal, at a fixed rate of 4.5% per annum, according to a standard amortization schedule (the \"Amortization Period\").\n\nThe Borrower acknowledges that, during the Interest-Only Period, the Borrower will not build any equity in the Property.\n\n**3. INTEREST-FIRST STRUCTURE**\n\nThe Borrower understands and agrees that, during the Interest-Only Period, the monthly payments shall be applied first to the accrued interest and then, if any amount remains, to the reduction of the outstanding principal.\n\n**4. DEFAULT AND ACCELERATION**",
+ "source": "kyc",
+ "private": [
+  "Elvira B. Jönsson",
+  "395 Hans-J.-Hering-Platz, 82195, Tirschenreuth",
+  "Apex Mortgage Lenders Ltd",
+  "435 Oxford Street, London, W1C 2PE"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4024,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "doc_id": "49d701c0414967f6",
+ "text": "Loan Application\n\nFull Legal Name: Torquato Tropea-Doria\n\nContact Information:\nPhone Number: 001-679-236-4484 x698\nStreet Address: 87357 Steven Row, 05304, West Craig\n\nLoan Details:\nLoan Amount: $200,000\nLoan Purpose: Home Purchase\n\nFinancial Details:\n\nMonthly Income:\n- Salary: $8,000\n- Rental Income: $2,500\nTotal Monthly Income: $10,500\n\nMonthly Debt Payments:\n- Mortgage: $2,000\n- Car Loan: $500\n- Credit Card: $300\nTotal Monthly Debt Payments: $3,300\n\nEmployment Details:\nEmployer: XYZ Corporation\nJob Title: Software Engineer\nYears with Employer: 5 years\n\nPlease attach the following supporting documents:\n- Last 2 months' pay stubs\n- Last 2 years' W-2s\n- Last 2 years' tax returns\n- Recent credit report\n- Proof of assets and liabilities\n\nDebt-to-Income Ratio:\nTotal Monthly Debt Payments / Total Monthly Income = $3,300 / $10,500 = 0.314 or 31.4%\n\nBy submitting this application, I certify that all information provided is true and correct. I understand that providing false or misleading information may result in denial of credit or other legal consequences.\n\nSignature: ______________________ Date: _________________",
+ "source": "kyc",
+ "private": [
+  "Torquato Tropea-Doria",
+  "001-679-236-4484 x698",
+  "87357 Steven Row, 05304, West Craig",
+  "XYZ Corporation"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1890,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

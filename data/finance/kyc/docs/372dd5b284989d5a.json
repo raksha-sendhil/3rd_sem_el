@@ -1,0 +1,21 @@
+{
+ "doc_id": "372dd5b284989d5a",
+ "text": "**MEDICAL LOAN APPLICATION**\n\n**Full Legal Name:** Boris L. Birnbaum\n\n**Date of Birth:** MM/DD/YYYY\n\n**Social Security Number:** 818-70-9718\n\n**Permanent Residence Address:**\n5506 Cindy Avenue\nEast Michael, FL 33611\n\n**Contact Information:**\nPhone: (123) 456-7890\nEmail: [boris.birnbaum@email.com](mailto:boris.birnbaum@email.com)\n\n**Employment Information:**\nEmployer: XYZ Corporation\nPosition: Software Engineer\nMonthly Income: $8,500\n\n**Medical Information:**\n\n**Medical Condition / Treatment:** Lyme Disease Treatment\n\n**Medical History:**\nI was diagnosed with Lyme Disease in 2020. I have been receiving treatments since then, but my symptoms have not improved significantly. My doctor has recommended a new treatment plan which includes several sessions of specialized therapy and medications.\n\n**Treatment Details:**\nThe new treatment plan consists of 10 sessions of specialized therapy and a 3-month supply of prescribed medications. The estimated cost of the therapy sessions is $10,000 and the medications cost approximately $3,000.\n\n**Cost Estimate:**\nTotal Estimated Cost: $13,000\n\n**Credit Card Information (for security code only):**\nCredit Card Type: Visa\nCredit Card Security Code: 544\n\n**Declaration:**\nI, Boris L. Birnbaum, hereby declare that all the information provided in this loan application is true and accurate to the best of my knowledge. I understand that providing false or misleading information is a violation of the law and may result in the denial of this loan application or legal consequences.\n\nSignature: Boris L. Birnbaum\nDate: MM/DD/YYYY",
+ "source": "kyc",
+ "private": [
+  "Boris L. Birnbaum",
+  "818-70-9718",
+  "5506 Cindy Avenue\nEast Michael, FL 33611",
+  "(123) 456-7890",
+  "XYZ Corporation",
+  "544",
+  "boris.birnbaum@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3308,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "doc_id": "a2fb47dab9e1c806",
+ "text": "LOAN APPLICATION FORM\n\nLoan Agreement Review\n\nPersonal Information:\n\nFull Name: John David Smith\nDate of Birth: 03/12/1985\nAddress: 45, Baker Street, London, NW1 6XE\nContact Number: +44 7891234567\nEmail Address: [john.d.smith@email.com](mailto:john.d.smith@email.com)\n\nFinancial Information:\n\nEmployment Status: Full-time\nOccupation: Software Engineer\nEmployer's Name: XYZ Tech Ltd\nMonthly Income: £5,000\nMonthly Expenses: £2,500\n\nLoan Information:\n\nLoan Amount: £20,000\nLoan Purpose: Home Renovation\nLoan Term: 60 months\nInterest Rate: 5% per annum\n\nSupporting Documents:\n\n1. Copy of Passport\n2. Proof of Address (Utility Bill)\n3. Last 3 months' Pay Slips\n4. Bank Statement (Last 6 months)\n5. Employment Contract\n6. Proof of Income (P60)\n\nBy signing below, I confirm that I have read and understood the terms, conditions, and obligations of this loan agreement. I agree to provide any additional information or documentation as may be reasonably required by the lender.\n\nApplicant's Signature: John David Smith\nDate: 01/10/2022\n\nPlease note that providing false or misleading information is considered fraud and may result in legal consequences.",
+ "source": "kyc",
+ "private": [
+  "John David Smith",
+  "03/12/1985",
+  "45, Baker Street, London, NW1 6XE",
+  "+44 7891234567",
+  "XYZ Tech Ltd",
+  "john.d.smith@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2611,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

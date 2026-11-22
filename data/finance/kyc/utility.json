@@ -1,8 +1,602 @@
 [
  {
   "id": "u000",
-  "query": "What monthly income is stated on the home loan application?",
-  "reference": "92,000 rupees",
-  "doc_id": "d571a98e3c439610"
+  "query": "What is the monthly income on the loan application (collateral assessment) with an interest rate of 5%?",
+  "reference": "£5,000",
+  "doc_id": "0ab88915f133c672"
+ },
+ {
+  "id": "u001",
+  "query": "What is the monthly income on the loan application (credit counseling) with a loan amount of $10,000?",
+  "reference": "$4,000",
+  "doc_id": "0d2548cf8b791b6a"
+ },
+ {
+  "id": "u002",
+  "query": "What is the annual income on the loan application (agricultural)?",
+  "reference": "$75,000",
+  "doc_id": "0d53a840c208f9a3"
+ },
+ {
+  "id": "u003",
+  "query": "What is the annual income on the loan application (collateral assessment) with a loan amount of £150,000?",
+  "reference": "£75,000",
+  "doc_id": "10f09557c2d18832"
+ },
+ {
+  "id": "u004",
+  "query": "What is the loan term on the loan application (language preferences)?",
+  "reference": "30 years",
+  "doc_id": "11d7e1b9c7846639"
+ },
+ {
+  "id": "u005",
+  "query": "What is the annual income on the loan application (credit history) with a loan amount of $15,000?",
+  "reference": "$85,000",
+  "doc_id": "125ade92ff267a5e"
+ },
+ {
+  "id": "u006",
+  "query": "What is the monthly income on the loan application (risk assessment)?",
+  "reference": "$12,000",
+  "doc_id": "1431a40261e809c0"
+ },
+ {
+  "id": "u007",
+  "query": "What is the minimum payment on the credit card statement (merchant insights) with an interest rate of 18.99%?",
+  "reference": "$30.00",
+  "doc_id": "1587a7d153776e14"
+ },
+ {
+  "id": "u008",
+  "query": "What is the purpose of the loan on the loan application (debt-to-income ratio) with a monthly income of $8,500?",
+  "reference": "Purchase of a new primary residence",
+  "doc_id": "15b494ba1a22eac3"
+ },
+ {
+  "id": "u009",
+  "query": "What is the monthly income on the loan application (financial statement review)?",
+  "reference": "$8,500",
+  "doc_id": "18142acf54a91432"
+ },
+ {
+  "id": "u010",
+  "query": "What is the interest rate on the real estate loan agreement (vacation rental property financing agreement)?",
+  "reference": "4.50%",
+  "doc_id": "19f082c9df1adfd4"
+ },
+ {
+  "id": "u011",
+  "query": "What is the monthly income on the loan application (residence verification)?",
+  "reference": "$7,500",
+  "doc_id": "1e4cd9566fd1360c"
+ },
+ {
+  "id": "u012",
+  "query": "What is the loan term on the loan agreement (sme loan agreement)?",
+  "reference": "60 months",
+  "doc_id": "250d987d338ae419"
+ },
+ {
+  "id": "u013",
+  "query": "What is the monthly income on the credit application (green energy loan)?",
+  "reference": "$7,500",
+  "doc_id": "26863624b54c3298"
+ },
+ {
+  "id": "u014",
+  "query": "What is the annual income on the credit application (education loan)?",
+  "reference": "£45,000",
+  "doc_id": "27e62b09960976ef"
+ },
+ {
+  "id": "u015",
+  "query": "What is the annual income on the loan application (business)?",
+  "reference": "$150,000",
+  "doc_id": "2a3f11283d5e941f"
+ },
+ {
+  "id": "u016",
+  "query": "What is the loan term on the loan application (renewal opportunities)?",
+  "reference": "20 years",
+  "doc_id": "2bfb054d1b4436e3"
+ },
+ {
+  "id": "u017",
+  "query": "What is the interest rate on the mortgage contract (reverse mortgage)?",
+  "reference": "4.00%",
+  "doc_id": "2cb8ddfcb0d4325f"
+ },
+ {
+  "id": "u018",
+  "query": "What is the minimum payment on the credit card statement (merchant insights) with an interest rate of 18.9%?",
+  "reference": "£200.00",
+  "doc_id": "2ce65992c07e5487"
+ },
+ {
+  "id": "u019",
+  "query": "What is the loan term on the loan application (credit score improvement plan)?",
+  "reference": "24 months",
+  "doc_id": "2d9842e6105ac0f6"
+ },
+ {
+  "id": "u020",
+  "query": "What is the interest rate on the loan agreement (microfinance loan agreement)?",
+  "reference": "10%",
+  "doc_id": "2f358c491bd7e688"
+ },
+ {
+  "id": "u021",
+  "query": "What is the interest rate on the mortgage contract (interest-only mortgage)?",
+  "reference": "4.00%",
+  "doc_id": "2f636de0786df106"
+ },
+ {
+  "id": "u022",
+  "query": "What is the minimum payment on the credit card statement (transaction trends)?",
+  "reference": "$50.00",
+  "doc_id": "3167bdf68cb04cbe"
+ },
+ {
+  "id": "u023",
+  "query": "What is the loan term on the loan application (real estate) with a loan amount of $350,000?",
+  "reference": "30 years",
+  "doc_id": "31785db9cf8c7591"
+ },
+ {
+  "id": "u024",
+  "query": "What is the monthly income on the loan application (financial hardship evaluation) with a loan term of 36 months?",
+  "reference": "£5,500",
+  "doc_id": "31a94c7252ff69f9"
+ },
+ {
+  "id": "u025",
+  "query": "What is the annual income on the loan application (co-applicant details)?",
+  "reference": "£60,000",
+  "doc_id": "321ac663dd0a7680"
+ },
+ {
+  "id": "u026",
+  "query": "What is the loan term on the real estate loan agreement (low-income housing tax credit financing contract)?",
+  "reference": "20 years",
+  "doc_id": "327dc7b4bc2ffd3d"
+ },
+ {
+  "id": "u027",
+  "query": "What is the loan term on the credit application (medical loan)?",
+  "reference": "48 months",
+  "doc_id": "32b70f9ad94f9a2e"
+ },
+ {
+  "id": "u028",
+  "query": "What is the purpose of the loan on the credit application (artistic endeavor loan)?",
+  "reference": "Funding for an artistic project",
+  "doc_id": "3460a199da352aa9"
+ },
+ {
+  "id": "u029",
+  "query": "What is the loan term on the loan agreement (vacation loan agreement) with a loan amount of $10,000?",
+  "reference": "12 months",
+  "doc_id": "362ccaf855bbca07"
+ },
+ {
+  "id": "u030",
+  "query": "What is the monthly income on the loan application (employment history)?",
+  "reference": "$15,000",
+  "doc_id": "366ec5ef2de299e6"
+ },
+ {
+  "id": "u031",
+  "query": "What is the monthly payment on the loan application (loan repayment analysis)?",
+  "reference": "£139",
+  "doc_id": "36bd5cf6f091417f"
+ },
+ {
+  "id": "u032",
+  "query": "What is the minimum payment on the credit card statement (installment plan analysis)?",
+  "reference": "$50.00",
+  "doc_id": "37ac9fde79038e81"
+ },
+ {
+  "id": "u033",
+  "query": "What is the loan term on the loan agreement (personal loan agreement)?",
+  "reference": "36 months",
+  "doc_id": "39a0607e90463846"
+ },
+ {
+  "id": "u034",
+  "query": "What is the loan term on the credit application (equipment financing)?",
+  "reference": "60 months",
+  "doc_id": "3aea48b37b986b57"
+ },
+ {
+  "id": "u035",
+  "query": "What is the annual income on the loan application (regulatory compliance)?",
+  "reference": "$120,000",
+  "doc_id": "3c767dff6f0ca9f3"
+ },
+ {
+  "id": "u036",
+  "query": "What is the loan term on the mortgage contract (balloon mortgage)?",
+  "reference": "5 years",
+  "doc_id": "3c9dd02184b22477"
+ },
+ {
+  "id": "u037",
+  "query": "What is the monthly payment on the financial aid application (student loan application)?",
+  "reference": "$133.91",
+  "doc_id": "3d48a95219e0025f"
+ },
+ {
+  "id": "u038",
+  "query": "What is the monthly income on the loan application (student)?",
+  "reference": "$2,500",
+  "doc_id": "3df265318b3b6b37"
+ },
+ {
+  "id": "u039",
+  "query": "What is the annual income on the loan application (real estate) with a loan amount of $500,000?",
+  "reference": "$120,000",
+  "doc_id": "40698bde799b3136"
+ },
+ {
+  "id": "u040",
+  "query": "What is the interest rate on the real estate loan agreement (commercial property loan contract)?",
+  "reference": "6.00%",
+  "doc_id": "40ae50d9864b21b0"
+ },
+ {
+  "id": "u041",
+  "query": "What is the monthly payment on the loan application (loan agreement review)?",
+  "reference": "£605.20",
+  "doc_id": "41c327e91723de2e"
+ },
+ {
+  "id": "u042",
+  "query": "What is the loan amount on the mortgage contract (interest-adjustable mortgage) with an interest rate of 4.00%?",
+  "reference": "$500,000",
+  "doc_id": "43f25e6f3c88a7c6"
+ },
+ {
+  "id": "u043",
+  "query": "What is the interest rate on the loan agreement (franchise loan agreement) with a loan amount of $500,000?",
+  "reference": "8%",
+  "doc_id": "46d7a8852b304364"
+ },
+ {
+  "id": "u044",
+  "query": "What is the purpose of the loan on the loan application (supporting documents)?",
+  "reference": "Home Purchase",
+  "doc_id": "46f72b0655685534"
+ },
+ {
+  "id": "u045",
+  "query": "What is the minimum payment on the credit card statement (reward points summary)?",
+  "reference": "$50.00",
+  "doc_id": "483462d391bd9adb"
+ },
+ {
+  "id": "u046",
+  "query": "What is the purpose of the loan on the loan application (debt-to-income ratio) with a monthly income of $10,500?",
+  "reference": "Home Purchase",
+  "doc_id": "49d701c0414967f6"
+ },
+ {
+  "id": "u047",
+  "query": "What is the monthly income on the loan application (disbursement details)?",
+  "reference": "$7,50",
+  "doc_id": "530aa772cd026d0e"
+ },
+ {
+  "id": "u048",
+  "query": "What is the loan term on the loan agreement (real estate loan agreement)?",
+  "reference": "30 years",
+  "doc_id": "531997567c55ea35"
+ },
+ {
+  "id": "u049",
+  "query": "What is the annual income on the financial aid application (community scholarship application)?",
+  "reference": "$55,000",
+  "doc_id": "540abdb426f5cda4"
+ },
+ {
+  "id": "u050",
+  "query": "What is the requested amount on the loan application (property details)?",
+  "reference": "£150,000",
+  "doc_id": "589217c247434cda"
+ },
+ {
+  "id": "u051",
+  "query": "What is the monthly income on the loan application (insurance verification) with a loan amount of $100,000?",
+  "reference": "$7,500",
+  "doc_id": "5938f4f5f56c554d"
+ },
+ {
+  "id": "u052",
+  "query": "What is the monthly income on the loan application (credit counseling) with a loan amount of $15,00?",
+  "reference": "$7,501",
+  "doc_id": "5a5455d16c224b83"
+ },
+ {
+  "id": "u053",
+  "query": "What is the loan amount on the mortgage contract (interest-adjustable mortgage) with an interest rate of 2.00%?",
+  "reference": "$500,000",
+  "doc_id": "5b3c37a289713f1f"
+ },
+ {
+  "id": "u054",
+  "query": "What is the annual income on the loan application (travel)?",
+  "reference": "£52,000",
+  "doc_id": "5b5caf6166b9bd1e"
+ },
+ {
+  "id": "u055",
+  "query": "What is the loan term on the credit application (vacation property loan)?",
+  "reference": "30 years",
+  "doc_id": "5ecc94147ad8db75"
+ },
+ {
+  "id": "u056",
+  "query": "What is the annual income on the loan application (customer satisfaction)?",
+  "reference": "$85,000",
+  "doc_id": "5f0b39abd4581bce"
+ },
+ {
+  "id": "u057",
+  "query": "What is the loan term on the loan application (nonprofit)?",
+  "reference": "5 years",
+  "doc_id": "5fefe242cdd9301b"
+ },
+ {
+  "id": "u058",
+  "query": "What is the annual income on the loan application (loan purpose analysis)?",
+  "reference": "$80,000",
+  "doc_id": "61838eb74abb2991"
+ },
+ {
+  "id": "u059",
+  "query": "What is the monthly income on the loan application (insurance verification) with a loan amount of $200,000?",
+  "reference": "£7,500",
+  "doc_id": "653293a6910100f4"
+ },
+ {
+  "id": "u060",
+  "query": "What is the monthly income on the financial aid application (financial hardship application)?",
+  "reference": "$0",
+  "doc_id": "664ebfbbcbb3cd12"
+ },
+ {
+  "id": "u061",
+  "query": "What is the interest rate on the mortgage contract (interest-first mortgage)?",
+  "reference": "5.00%",
+  "doc_id": "675bcd6570722c4f"
+ },
+ {
+  "id": "u062",
+  "query": "What is the annual income on the loan application (individual details)?",
+  "reference": "£52,000",
+  "doc_id": "6c723d081dc48ed8"
+ },
+ {
+  "id": "u063",
+  "query": "What is the credit limit on the loan application (loan default risk analysis)?",
+  "reference": "$15,000",
+  "doc_id": "7516c5bc0321d0dd"
+ },
+ {
+  "id": "u064",
+  "query": "What is the interest rate on the loan agreement (franchise loan agreement) with a loan amount of $200,000?",
+  "reference": "6%",
+  "doc_id": "796b40a4b3678e12"
+ },
+ {
+  "id": "u065",
+  "query": "What is the loan term on the loan application (credit history check)?",
+  "reference": "30 years",
+  "doc_id": "79e53da7f106d458"
+ },
+ {
+  "id": "u066",
+  "query": "What is the monthly income on the loan application (financial hardship evaluation) with a loan amount of £10,000?",
+  "reference": "£2,500",
+  "doc_id": "7a852122e4a91e0b"
+ },
+ {
+  "id": "u067",
+  "query": "What is the monthly income on the credit application (renovation loan)?",
+  "reference": "$15,000",
+  "doc_id": "7cc5649c61a1c6f8"
+ },
+ {
+  "id": "u068",
+  "query": "What is the monthly income on the loan application (emergency)?",
+  "reference": "$5,000",
+  "doc_id": "80dc5fae762abafc"
+ },
+ {
+  "id": "u069",
+  "query": "What is the loan amount on the credit application (travel loan)?",
+  "reference": "£5000",
+  "doc_id": "8529d157b6681632"
+ },
+ {
+  "id": "u070",
+  "query": "What is the annual income on the loan application (reference check)?",
+  "reference": "£60,000",
+  "doc_id": "8822f33afd6cc790"
+ },
+ {
+  "id": "u071",
+  "query": "What is the requested amount on the credit application (emergency loan)?",
+  "reference": "£5000",
+  "doc_id": "8905792efec171d1"
+ },
+ {
+  "id": "u072",
+  "query": "What is the annual income on the loan application (credit counseling) with a loan amount of £15,000?",
+  "reference": "£62,000",
+  "doc_id": "89178dd7a6c53d7a"
+ },
+ {
+  "id": "u073",
+  "query": "What is the requested amount on the loan application (financial hardship evaluation) with a monthly income of $7,500?",
+  "reference": "$15,000",
+  "doc_id": "8b0778d381a201ae"
+ },
+ {
+  "id": "u074",
+  "query": "What is the credit limit on the loan application (credit history) with a loan amount of $20,000?",
+  "reference": "$5,000",
+  "doc_id": "8b7bcc95e722f073"
+ },
+ {
+  "id": "u075",
+  "query": "What is the interest rate on the bank statement (loan statement)?",
+  "reference": "4.5%",
+  "doc_id": "8e12eb090d25a457"
+ },
+ {
+  "id": "u076",
+  "query": "What is the interest rate on the real estate loan agreement (mobile home park financing agreement)?",
+  "reference": "5.00%",
+  "doc_id": "8ed29dc42899fc66"
+ },
+ {
+  "id": "u077",
+  "query": "What is the monthly payment on the loan agreement (consolidation loan agreement)?",
+  "reference": "$1,971.74",
+  "doc_id": "8f06851791ba8be8"
+ },
+ {
+  "id": "u078",
+  "query": "What is the opening balance on the bank statement (interest summary) with a closing balance of $5,020.03?",
+  "reference": "$5,000.00",
+  "doc_id": "94054471fd14d0c5"
+ },
+ {
+  "id": "u079",
+  "query": "What is the loan term on the loan application (eco-friendly) with an interest rate of 6%?",
+  "reference": "7 years",
+  "doc_id": "97a5dac85d933e04"
+ },
+ {
+  "id": "u080",
+  "query": "What is the previous balance on the credit card statement (credit score impact)?",
+  "reference": "$2,546.00",
+  "doc_id": "98ebd01a014bf57f"
+ },
+ {
+  "id": "u081",
+  "query": "What is the interest rate on the real estate loan agreement (cooperative housing loan agreement)?",
+  "reference": "5.00%",
+  "doc_id": "9a1d2bd938e7f58d"
+ },
+ {
+  "id": "u082",
+  "query": "What is the monthly payment on the credit application (wedding loan)?",
+  "reference": "£500",
+  "doc_id": "9ae386d882e29f49"
+ },
+ {
+  "id": "u083",
+  "query": "What is the loan term on the loan application (collateral assessment) with a monthly income of £5,000?",
+  "reference": "20 years",
+  "doc_id": "0ab88915f133c672"
+ },
+ {
+  "id": "u084",
+  "query": "What is the purpose of the loan on the loan application (credit counseling) with a loan amount of $10,000?",
+  "reference": "Debt Consolidation",
+  "doc_id": "0d2548cf8b791b6a"
+ },
+ {
+  "id": "u085",
+  "query": "What is the requested amount on the loan application (agricultural)?",
+  "reference": "$150,00",
+  "doc_id": "0d53a840c208f9a3"
+ },
+ {
+  "id": "u086",
+  "query": "What is the purpose of the loan on the loan application (collateral assessment) with a loan amount of £150,000?",
+  "reference": "Business Expansion",
+  "doc_id": "10f09557c2d18832"
+ },
+ {
+  "id": "u087",
+  "query": "What is the annual income on the loan application (language preferences)?",
+  "reference": "$120,000",
+  "doc_id": "11d7e1b9c7846639"
+ },
+ {
+  "id": "u088",
+  "query": "What is the requested amount on the loan application (credit history) with an annual income of $85,000?",
+  "reference": "$15,000",
+  "doc_id": "125ade92ff267a5e"
+ },
+ {
+  "id": "u089",
+  "query": "What is the requested amount on the loan application (risk assessment)?",
+  "reference": "$150,000",
+  "doc_id": "1431a40261e809c0"
+ },
+ {
+  "id": "u090",
+  "query": "What is the interest rate on the credit card statement (merchant insights) with a minimum payment of $30.00?",
+  "reference": "18.99%",
+  "doc_id": "1587a7d153776e14"
+ },
+ {
+  "id": "u091",
+  "query": "What is the loan amount on the loan application (debt-to-income ratio) with a monthly income of $8,500?",
+  "reference": "$200,000",
+  "doc_id": "15b494ba1a22eac3"
+ },
+ {
+  "id": "u092",
+  "query": "What is the requested amount on the loan application (financial statement review)?",
+  "reference": "$50,000",
+  "doc_id": "18142acf54a91432"
+ },
+ {
+  "id": "u093",
+  "query": "What is the requested amount on the loan application (residence verification)?",
+  "reference": "$50,000",
+  "doc_id": "1e4cd9566fd1360c"
+ },
+ {
+  "id": "u094",
+  "query": "What is the interest rate on the loan agreement (sme loan agreement)?",
+  "reference": "6.00%",
+  "doc_id": "250d987d338ae419"
+ },
+ {
+  "id": "u095",
+  "query": "What is the requested amount on the credit application (education loan)?",
+  "reference": "£70,000",
+  "doc_id": "27e62b09960976ef"
+ },
+ {
+  "id": "u096",
+  "query": "What is the annual income on the loan application (renewal opportunities)?",
+  "reference": "$120,000",
+  "doc_id": "2bfb054d1b4436e3"
+ },
+ {
+  "id": "u097",
+  "query": "What is the loan amount on the mortgage contract (reverse mortgage)?",
+  "reference": "$500,000",
+  "doc_id": "2cb8ddfcb0d4325f"
+ },
+ {
+  "id": "u098",
+  "query": "What is the interest rate on the credit card statement (merchant insights) with a minimum payment of £200.00?",
+  "reference": "18.9%",
+  "doc_id": "2ce65992c07e5487"
+ },
+ {
+  "id": "u099",
+  "query": "What is the loan amount on the loan application (credit score improvement plan)?",
+  "reference": "£5,000",
+  "doc_id": "2d9842e6105ac0f6"
  }
 ]

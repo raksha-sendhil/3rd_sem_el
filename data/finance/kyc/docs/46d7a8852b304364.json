@@ -1,0 +1,18 @@
+{
+ "doc_id": "46d7a8852b304364",
+ "text": "**FRANCHISE LOAN AGREEMENT**\n\nThis Franchise Loan Agreement (the \"Agreement\") is entered into as of this 1st day of January, 2023 (the \"Effective Date\"), by and between Ariel Caridad Cuesta, a resident of 356 Andrew Stream, Apt. 7817 (the \"Borrower\"), and XYZ Financing Inc., a corporation organized and existing under the laws of the Province of Ontario, with its head office located at 123 Main Street, Toronto, Ontario (the \"Lender\").\n\n**RECITALS**\n\nWHEREAS, the Borrower desires to obtain a loan from the Lender in the amount of $500,000 (the \"Loan\") for the purpose of acquiring a franchise; and\n\nWHEREAS, the Lender is willing to provide the Loan to the Borrower on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. **LOAN**. The Lender shall advance to the Borrower the Loan in the amount of $500,000. The Borrower shall use the Loan solely for the purpose of acquiring a franchise.\n\n2. **REPAYMENT**. The Borrower shall repay the Loan in 60 equal monthly installments of principal and interest, with the first installment due on the first day of the month next succeeding the month in which the Loan is disbursed. The interest rate on the Loan shall be 8% per annum.\n\n3. **SECURITY**. The Loan shall be secured by a security interest in all of the Borrower's right, title, and interest in and to the franchise, including but not limited to the franchise fee, royalty payments, business plan, and any other rights or property of the Borrower related to the franchise.\n\n4. **FRANCHISE FEES AND ROYALTY PAYMENTS**. The Borrower shall pay all franchise fees and royalty payments when due in accordance with the franchise",
+ "source": "kyc",
+ "private": [
+  "Ariel Caridad Cuesta",
+  "356 Andrew Stream, Apt. 7817",
+  "XYZ Financing Inc.",
+  "123 Main Street, Toronto, Ontario"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3809,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

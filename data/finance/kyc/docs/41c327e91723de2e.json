@@ -1,0 +1,20 @@
+{
+ "doc_id": "41c327e91723de2e",
+ "text": "---\n**Loan Agreement Review: Loan Application**\n\n**Loan Application ID:** 2023-00123\n\n**Loan Applicant Information**\n\n* Full Name: John Alexander Smith\n* Date of Birth: 08/12/1985\n* Contact Address: 45, Baker Street, London, NW1 6XE\n* Phone Number: +44 20 1234 5678\n* Email Address: [john.smith@email.com](mailto:john.smith@email.com)\n\n**Financial Information**\n\n* Employment Status: Full-time employee\n* Employer Name: ABC Corporation\n* Job Title: Senior Software Engineer\n* Annual Income: £75,000\n* Monthly Net Income: £5,542 (after tax and deductions)\n* Bank Name: HSBC Bank\n* Account Number: 12345678 (for verification purposes only)\n* Credit Score: 720 (Excellent)\n\n**Loan Information**\n\n* Loan Amount Requested: £30,000\n* Loan Purpose: Home Renovation\n* Loan Term: 60 months (5 years)\n* Interest Rate: 5.25% per annum (fixed)\n* Monthly Payment: £605.20\n* Total Repayment Amount: £36,312.00\n\n**Supporting Documents**\n\n1. Copy of a valid photo ID (passport, driving license)\n2. Proof of income (last 3 months' payslips)\n3. Bank statements (last 3 months)\n4. Proof of residence (utility bill)\n5. Credit report\n6. Loan agreement (if applicable)\n\n**Loan Agreement Review**\n\nThe following terms and conditions apply to the loan agreement between ABC Lending and the loan applicant, John Alexander Smith. By signing below, the applicant acknowledges and agrees to the following terms and obligations:\n\n1. The loan amount of £30,000 will be disbursed to the applicant's HSBC Bank account",
+ "source": "kyc",
+ "private": [
+  "John Alexander Smith",
+  "08/12/1985",
+  "45, Baker Street, London, NW1 6XE",
+  "+44 20 1234 5678",
+  "ABC Corporation",
+  "john.smith@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 136,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

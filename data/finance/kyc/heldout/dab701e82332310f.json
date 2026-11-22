@@ -1,0 +1,20 @@
+{
+ "doc_id": "dab701e82332310f",
+ "text": "Loan Application Reference Check Form\n\nLoan Applicant Details:\n\n- Full Name: Paige Clements-Harvey\n- Date of Birth: [DD/MM/YYYY]\n- Contact Number: [555-123-4567]\n- Email Address: paige.clements-harvey@email.com\n\nLoan Details:\n\n- Loan Amount: $200,000\n- Loan Purpose: Home Purchase\n- Loan Term: 30 years\n- Interest Rate: [Market Rate]\n\nEmployment Details:\n\n- Employer Name: XYZ Corporation\n- Employee ID: I1449965\n- Job Title: Senior Software Engineer\n- Employment Start Date: [MM/YYYY]\n- Monthly Salary: $15,000\n\nPersonal References:\n\n- Name: Barrett5478\n- Relationship: Friend\n- Contact Number: [555-987-6543]\n- Address: 14710 Ryan Canyon, [City, State ZIP Code]\n\nProfessional References:\n\n- Name: [Supervisor's Name]\n- Relationship: Supervisor\n- Contact Number: [555-111-2222]\n- Address: XYZ Corporation, [Company Address]\n\nSupporting Documents:\n\n- Copy of Government-issued ID: [Driver's License/Passport]\n- Proof of Income: [Latest Pay Slips/Tax Returns]\n- Bank Statements: [Last 3 months]\n- Property Valuation Report: [If applicable]\n\nBy submitting this application, I confirm that all the information provided is true and accurate to the best of my knowledge. I authorize XYZ Corporation to contact my personal and professional references for the purpose of this loan application.\n\nSignature: [Paige Clements-Harvey]\nDate: [DD/MM/YYYY]",
+ "source": "kyc",
+ "private": [
+  "Paige Clements-Harvey",
+  "paige.clements-harvey@email.com",
+  "XYZ Corporation",
+  "I1449965",
+  "14710 Ryan Canyon",
+  "Barrett5478"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2848,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

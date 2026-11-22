@@ -1,0 +1,22 @@
+{
+ "doc_id": "32b70f9ad94f9a2e",
+ "text": "---\nCredit Application\n\nFull Name: John Doe\nDate of Birth: 01/01/1980\nContact Address: 123 Maple Street, Anytown, USA\nContact Number: (123) 456-7890\nEmail Address: john.doe@example.com\n\nEmployment Information\nEmployer Name: ABC Corporation\nJob Title: Software Engineer\nAnnual Income: $80,000\nYears with Current Employer: 5 years\n\nLoan Information\nLoan Amount Requested: $20,000\nLoan Purpose: Medical Expenses\n\nMedical Treatment Information\nTreatment Type: Surgery\nMedical Provider Information\nMedical Provider Name: XYZ Hospital\nProvider Address: 456 Oak Street, Anytown, USA\nProvider Contact: (987) 654-3210\n\nCost Breakdown\nSurgeon Fee: $10,000\nAnesthesiologist Fee: $3,000\nHospital Stay: $5,000\nMedication: $2,000\n\nLoan Repayment Information\nProposed Repayment Term: 48 months\nMonthly Payment Amount: $509.68\n\nDeclaration\nI, John Doe, hereby declare that all the information provided in this application is true and accurate to the best of my knowledge. I understand that providing false or misleading information is a criminal offence.\n\nSignature: John Doe\nDate: 01/01/2023\n\n---",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "01/01/1980",
+  "123 Maple Street, Anytown, USA",
+  "(123) 456-7890",
+  "john.doe@example.com",
+  "ABC Corporation",
+  "456 Oak Street, Anytown, USA",
+  "(987) 654-3210"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 307,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

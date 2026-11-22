@@ -1,0 +1,20 @@
+{
+ "doc_id": "b31d930f6682c7fa",
+ "text": "---\nCredit Application\n\nFull Name: John Doe\n\nDate of Birth: 01/01/1980\n\nAddress: 123 Maple Street, Anytown, USA\n\nContact Number: 123-456-7890\n\nEmail Address: johndoe@email.com\n\nEmployment Status: Full-time\n\nOccupation: Software Engineer\n\nName of Employer: XYZ Corp.\n\nAnnual Income: $80,000\n\nType of Loan Requested: Emergency Loan\n\nNature of Emergency: Unexpected medical expenses for a family member\n\nCost of Emergency: $10,000\n\nLoan Amount Requested: $10,000\n\nLoan Duration: 24 months\n\nPurpose of Loan: To cover the medical expenses and avoid high-interest credit card debt\n\nStatement of Financial Stability: I have been employed at XYZ Corp. for the past 5 years and have a stable income. I have no previous bankruptcies or foreclosures. I have always made my debt payments on time.\n\n---\n\nNote: This is a fictional credit application and should not be used for any real-world purposes.",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "01/01/1980",
+  "123 Maple Street, Anytown, USA",
+  "123-456-7890",
+  "johndoe@email.com",
+  "XYZ Corp."
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4320,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

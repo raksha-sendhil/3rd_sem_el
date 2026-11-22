@@ -1,0 +1,18 @@
+{
+ "doc_id": "2a3f11283d5e941f",
+ "text": "Loan Application\n\nLoan Applicant Information:\n\nBusiness Name: Joshua Rose Enterprises\nIndustry: Retail - Online Clothing Store\nContact Name: Joshua Rose\nContact Street Address: 11096 Copeland Island, Suite 065\nContact Local Latitude, Longitude: 67.1603725, 60.176596\nContact IPv4 Address: 207.63.159.138\n\nBusiness Financials:\n\nGross Revenue: $500,000 (last fiscal year)\nNet Profit: $100,000 (last fiscal year)\nTotal Assets: $250,000\nTotal Liabilities: $50,000\n\nPersonal Financials:\n\nJoshua Rose's Annual Salary: $150,000\nJoshua Rose's Net Worth: $300,000\n\nBusiness Plan:\n\nJoshua Rose Enterprises is an online clothing store that specializes in sustainable and ethically sourced fashion. The business was started in 2018 and has seen consistent growth since its inception. The loan will be used to expand the product line and increase marketing efforts to reach a wider audience. The company has a proven track record of financial responsibility and a strong online presence. With the requested loan, Joshua Rose Enterprises plans to increase revenue by 30% in the next fiscal year.\n\nAdditional Information:\n\nJoshua Rose has a bachelor's degree in business administration and has 10 years of experience in the retail industry. The company currently has 5 employees and operates primarily online, with a small warehouse for storage and shipping. Joshua Rose Enterprises is committed to reducing its carbon footprint and donates a portion of its profits to environmental conservation efforts.",
+ "source": "kyc",
+ "private": [
+  "Joshua Rose",
+  "11096 Copeland Island, Suite 065",
+  "67.1603725, 60.176596",
+  "207.63.159.138"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1430,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

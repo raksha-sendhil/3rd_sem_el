@@ -1,0 +1,17 @@
+{
+ "doc_id": "31785db9cf8c7591",
+ "text": "Loan Application\n\nFull Legal Name: Amico Eugenia Veltroni Keudel\n\nContact Information:\nStreet Address: 6058 Christie Mills\nCity: \nState/Province: \nPostal Code: \nCountry: \nPhone Number: \nEmail Address: \n\nProperty Information:\nProperty Address: \nCity: \nState/Province: \nPostal Code: \nProperty Type: Residential\nProperty Value: $500,000\n\nLoan Information:\nLoan Amount Requested: $350,000\nLoan Purpose: Purchase of Primary Residence\nLoan Type: Fixed-Rate Mortgage\nLoan Term: 30 years\n\nEmployment and Income Information:\nEmployer: \nJob Title: \nAnnual Income: $80,000\nYears Employed: 10\n\nFinancial Information:\nAssets:\n- Checking Account: $25,000\n- Savings Account: $50,000\n- Investments: $75,000\n\nLiabilities:\n- Credit Card Debt: $10,000\n- Car Loan: $15,000\n- Student Loan: $20,000\n\nDeclaration:\nI, Amico Eugenia Veltroni Keudel, hereby certify that all information provided in this loan application is true and correct to the best of my knowledge. I understand that any misrepresentation or omission of material facts may result in the denial of this loan application or the termination of any loan previously approved.\n\nSignature: Amico Eugenia Veltroni Keudel\nDate: \n\nPlease note that some fields have been left blank for you to fill in with the appropriate information.",
+ "source": "kyc",
+ "private": [
+  "Amico Eugenia Veltroni",
+  "Keudel",
+  "6058 Christie Mills"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4851,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

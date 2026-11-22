@@ -1,0 +1,19 @@
+{
+ "doc_id": "d76d3836350f1803",
+ "text": "**Loan Application Form**\n\nFull Name: Charlie G. Pearce\n\nStreet Address: 108 Samantha Square, Apt. 533\n\nLoan Details:\n- Requested Amount: $15,000\n- Loan Purpose: Home Renovation\n- Loan Term: 36 months\n- Expected Monthly Payment: $463.81\n\nFinancial Information:\n- Employer: MMCP Ltd.\n- Occupation: Senior Software Engineer\n- Gross Monthly Income: $6,500\n- Bank Account Details:\n  - IBAN: GB67MMCP94900732436904\n  - SWIFT BIC Code: VFLLDEJE110\n\nSupporting Documents:\n- Last 3 months' payslips\n- Last 3 months' bank statements\n- Proof of residence (utility bill)\n- Signed employment contract\n\nCustomer Satisfaction Data:\n- Satisfaction Rating: 9/10\n- Feedback: \"The loan application process was straightforward and efficient. The team was very helpful and responsive to my queries.\"\n- Comments: \"I am pleased with the quick approval and the transparent terms of the loan. I would definitely recommend this service to others.\"",
+ "source": "kyc",
+ "private": [
+  "Charlie G. Pearce",
+  "108 Samantha Square, Apt. 533",
+  "MMCP Ltd.",
+  "GB67MMCP94900732436904",
+  "VFLLDEJE110"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4607,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

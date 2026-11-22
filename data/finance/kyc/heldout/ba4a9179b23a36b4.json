@@ -1,0 +1,17 @@
+{
+ "doc_id": "ba4a9179b23a36b4",
+ "text": "------------------------------------------------------------------------------------------------------------------\nCredit Card Statement\n------------------------------------------------------------------------------------------------------------------\n\nCardholder Name: Michelle Constance Voisin\nStatement Period: 01/01/2023 - 01/31/2023\nAccount Number: **** 1234 (Last 4 digits)\nSwift BIC Code: APSXUSHZ620\n\nAccount Activity\n------------------------------------------------------------------------------------------------------------------\n\nDate | Description | Type | Amount (Local Currency) | Exchange Rate | Amount (USD) | Fees (USD)\n\n01/05/2023 | Purchase at Shopping Mall, Paris, France | Foreign Purchase | 500 EUR | 1.1234 | 561.70 | 9.50\n01/10/2023 | Hotel Stay, London, UK | Foreign Purchase | 750 GBP | 1.2567 | 942.53 | 14.04\n01/15/2023 | Online Purchase, Canada | Foreign Purchase | 200 CAD | 0.7891 | 157.82 | 2.60\n01/20/2023 | Fuel Purchase, Mexico | Foreign Purchase | 350 MXN | 0.0512 | 18.02 | 0.30\n\nTotal Foreign Transactions: $1,770.07\nTotal Fees: $26.44\n\nPayment Information\n------------------------------------------------------------------------------------------------------------------\n\nMinimum Payment Due: $200.00\nDue Date: 02/20/2023\n\nStatement Balance: $2,023.45\nInterest Rate: 14.99% APR\n\nAddress\n------------------------------------------------------------------------------------------------------------------\n\nMichelle Constance Voisin\n80971 Mccarty Crossroad\nAnytown, USA\nZip Code: 12345\n\n------------------------------------------------------------------------------------------------------------------\nPlease call our",
+ "source": "kyc",
+ "private": [
+  "Michelle Constance Voisin",
+  "APSXUSHZ620",
+  "80971 Mccarty Crossroad"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2619,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

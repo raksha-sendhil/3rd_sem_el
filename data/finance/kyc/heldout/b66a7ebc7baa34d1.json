@@ -1,0 +1,20 @@
+{
+ "doc_id": "b66a7ebc7baa34d1",
+ "text": "---\nLoan Application\n\nLoan Applicant Information:\n\nLegal Name: Zachary Gregory\nSwift BIC Code: BTCTUSMU635\n\nMailing Address:\n0008 Kent Springs\nAimeeside\n\nContact Information:\nPhone: [Provide Phone Number]\nEmail: [Provide Email Address]\n\nLoan Information:\nRequested Loan Amount: $50,000\nLoan Purpose: Cultural preservation and promotion of traditional music in local schools and community centers.\n\nCultural Significance:\nThe proposed project aims to preserve and promote traditional music, an essential aspect of our cultural heritage. By teaching traditional music in local schools and community centers, we hope to foster a deeper appreciation for our cultural roots and strengthen community bonds.\n\nCommunity Involvement:\nWe plan to collaborate with local schools, community centers, and cultural organizations to ensure the project's success. By engaging with these institutions, we aim to reach a wide audience and make a significant impact on the community.\n\nProject Outcomes:\nUpon completion of the project, we expect to see increased interest in traditional music and a stronger sense of community. We also hope to inspire future generations to continue preserving and promoting our cultural heritage.\n\nFinancial Information:\nAnnual Revenue: $75,000\nAnnual Expenses: $50,000\nNet Income: $25,000\n\nAttachments:\n- Resume/CV of the Applicant\n- Financial Statements for the past three years\n- Project Proposal and Budget\n\nDeclaration:\nI, Zachary Gregory, hereby declare that all the information provided in this loan application is true and accurate to the best of my knowledge.\n\nSignature: Zachary Gregory\nDate: [Provide Date]\n\n---",
+ "source": "kyc",
+ "private": [
+  "Zachary Gregory",
+  "BTCTUSMU635",
+  "0008 Kent Springs\nAimeeside",
+  "[Provide Phone Number]",
+  "[Provide Email Address]",
+  "local schools and community centers"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5171,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

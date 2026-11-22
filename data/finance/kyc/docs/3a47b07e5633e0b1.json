@@ -1,0 +1,22 @@
+{
+ "doc_id": "3a47b07e5633e0b1",
+ "text": "Empowerment Scholarship Application\n\nDate: March 15, 2023\n\nApplication for: Empowerment Scholarship\n\nFull Legal Name: Emperatriz Pedro Niño\n\nMailing Address:\n3885 Jones Mission, Apt. 800\nCity, State, Zip Code\n\nEmail Address: [emp.nino@email.com](mailto:emp.nino@email.com)\n\nPhone Number: (123) 456-7890\n\nDate of Birth: January 10, 1995\n\nIP Address: 60af:efc8:4302:4bfd:76c4:6558:cbb4:e2cc\n\nCredit Card Security Code: 210\n\nEducational Background:\n- High School Name: Jones High School\n- Graduation Date: June 2013\n- GPA: 3.5/4.0\n- SAT Score: 1200/1600\n- Major/Field of Study: Business Administration\n\nEmployment History (if any):\n- Company Name: XYZ Corporation\n- Job Title: Administrative Assistant\n- Dates of Employment: January 2015 - Present\n- Annual Income: $30,000\n\nPersonal Statement:\nI am Emperatriz Pedro Niño, a dedicated and hardworking individual who has faced numerous challenges in my life. Despite growing up in a low-income household, I have always been determined to pursue my education and make a better life for myself. I have worked tirelessly to maintain good grades, participate in extracurricular activities, and hold down a part-time job. I am proud to say that I have overcome many obstacles and am now on the path to achieving my dreams.\n\nI am applying for the Empowerment Scholarship because I believe that it will help me reach my full potential. With this scholarship, I will be able to focus on my studies and not worry about the financial burden of tuition and other expenses. I am confident that I have what it takes to succeed in college and beyond.\n\nThank you for considering my application. I look forward to the opportunity to further discuss my qualifications and",
+ "source": "kyc",
+ "private": [
+  "Emperatriz Pedro Niño",
+  "3885 Jones Mission, Apt. 800",
+  "(123) 456-7890",
+  "January 10, 1995",
+  "60af:efc8:4302:4bfd:76c4:6558:cbb4:e2cc",
+  "210",
+  "XYZ Corporation",
+  "emp.nino@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3919,
+  "type": "Financial Aid Application",
+  "synthetic": true
+ }
+}

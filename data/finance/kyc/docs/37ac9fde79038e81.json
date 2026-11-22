@@ -1,0 +1,18 @@
+{
+ "doc_id": "37ac9fde79038e81",
+ "text": "-----------------------------------------------------------------------------------------------------------------\nCredit Card Statement\n\nAccount Holder: Peter Sam Griffiths\nAccount Number: 1234-5678-9012-3456 (last 4 digits)\nSecurity Code: 434\nBill Date: 03/01/2023\nDue Date: 03/30/2023\nMinimum Payment: $50.00\nTotal Amount Due: $875.34\n\nStatement Summary:\n\n| Transaction Type | Date | Description | Amount |\n| --- | --- | --- | --- |\n| Purchase | 02/15/2023 | Gas - Sunoco | $45.89 |\n| Purchase | 02/17/2023 | Groceries - Southmart | $123.56 |\n| Purchase | 02/21/2023 | Clothing - Martinchester Mall | $250.00 |\n| Purchase | 02/23/2023 | Dining - The Gourmet Corner | $120.00 |\n| Payment | 02/25/2023 | Payment | -$500.00 |\n| Installment | 02/26/2023 | Car Loan - Martinchester Auto | -$250.00 |\n| Installment | 02/26/2023 | Student Loan - University of Southmart | -$125.00 |\n\nCurrent Balance: $1,573.14\nInterest Charge: $52.84\nMinimum Payment Warning: If you make only the minimum payment, it will take 23 months and cost $213.42 in interest to pay off your balance.\n\nPayment Instructions:\nTo make a payment, please visit our website at www.paymentcenter.com or call our automated phone system at 1-800-123-4567.\n\nStatement Mailing Address:\nLouis 778\n1938 Sean Skyway\nSouth Martinchester, XX",
+ "source": "kyc",
+ "private": [
+  "Peter Sam Griffiths",
+  "1234-5678-9012-3456",
+  "434",
+  "Louis 778"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5013,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

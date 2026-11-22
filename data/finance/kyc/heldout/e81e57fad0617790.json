@@ -1,0 +1,24 @@
+{
+ "doc_id": "e81e57fad0617790",
+ "text": "---\nCredit Application\n\nFull Legal Name: John Michael Doe\nDate of Birth: 01/01/1980\nSocial Security Number: 123-45-6789\nContact Address: 123 Maple Street, Anytown, USA, ZIP 12345\nMailing Address (if different from above): N/A\nPhone Number: (123) 456-7890\nEmail Address: johndoe@email.com\n\nEmployment Status: Employed\nEmployer Name: XYZ Corporation\nOccupation: Software Engineer\nBusiness Address: 456 Oak Street, Anytown, USA, ZIP 12345\nYears with Employer: 5\nMonthly Income: $7,500\n\nHousing Information:\nProperty Address: 321 Pine Street, Anytown, USA, ZIP 12345\nProperty Type: Single Family Home\nProperty Value: $250,000\nCurrent Mortgage Balance: $150,000\nMortgage Lender: ABC Bank\n\nRenovation Loan Information:\nRenovation Type: Kitchen Remodel\nScope of Work: New cabinets, countertops, appliances, and flooring\nEstimated Project Cost: $30,000\nContractor Name: DEF Construction\nContractor Contact Information: (987) 654-3210, [defconstruction@email.com](mailto:defconstruction@email.com)\n\nLoan Amount Requested: $30,000\nLoan Term: 15 years\nPurpose of Loan: To finance the kitchen remodel\n\nDeclaration: I, John Michael Doe, hereby declare that all the information provided in this application is true and accurate to the best of my knowledge. I understand that any misrepresentation of facts may result in the denial of this loan application or the termination of an approved loan.\n\nSignature: John Michael Doe\nDate: 01/01/2023\n\n---",
+ "source": "kyc",
+ "private": [
+  "John Michael Doe",
+  "01/01/1980",
+  "123-45-6789",
+  "123 Maple Street, Anytown, USA, ZIP 12345",
+  "(123) 456-7890",
+  "johndoe@email.com",
+  "XYZ Corporation",
+  "456 Oak Street, Anytown, USA, ZIP 12345",
+  "(987) 654-3210",
+  "defconstruction@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3145,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

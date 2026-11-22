@@ -1,0 +1,21 @@
+{
+ "doc_id": "8b0778d381a201ae",
+ "text": "Financial Hardship Evaluation Loan Application\n\nDate: March 15, 2023\n\nLoan Applicant Information:\n\nFull Legal Name: Julie Guy Hoareau\nDate of Birth: 09/09/2012\nStreet Address: 36401 Elizabeth Ports, Suite 627\n\nLoan Information:\n\nLoan Amount Requested: $15,000\nPurpose of Loan: To cover unexpected medical bills and living expenses due to temporary unemployment\n\nEmployment Information:\n\nEmployer Name: Tech Innovations Inc.\nJob Title: Senior Software Engineer\nSupervisor Name: John Doe\nSupervisor Contact Information: (555) 123-4567, [johndoe@techinnovations.com](mailto:johndoe@techinnovations.com)\nDate Hired: 01/01/2020\nMonthly Income: $7,500 (before taxes)\n\nFinancial Hardship Details:\n\nDescription of Financial Hardship:\nThe applicant, Julie Guy Hoareau, has recently experienced a financial hardship due to an unexpected job loss. She was laid off from her position as a Senior Software Engineer at Tech Innovations Inc. on February 15, 2023. As a result, Ms. Hoareau has been unable to meet her financial obligations, including rent, utility bills, and medical expenses.\n\nMedical Expenses:\nMs. Hoareau has incurred significant medical bills due to a recent surgery, amounting to $12,000. She has already paid $2,000 towards these bills and needs the loan to cover the remaining balance.\n\nTemporary Unemployment:\nMs. Hoareau has been actively seeking new employment opportunities and is confident in her ability to secure a new position soon. She has been receiving unemployment benefits of $2,000 per month, but these benefits are not sufficient to cover her living expenses and medical bills.\n\nSupporting Documents:\n\n1. Medical bills (total amount: $12,000)\n2. Unemployment benefits statement\n3. Layoff notice from Tech Innovations Inc.\n4. Resume and",
+ "source": "kyc",
+ "private": [
+  "Julie Guy Hoareau",
+  "09/09/2012",
+  "36401 Elizabeth Ports, Suite 627",
+  "(555) 123-4567",
+  "John Doe",
+  "Hoareau",
+  "johndoe@techinnovations.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3247,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "doc_id": "5938f4f5f56c554d",
+ "text": "**Loan Application - Insurance Verification**\n\n**Personal Information**\n\nFull Name: Jeffrey Gonzalez\nDate of Birth: [DD/MM/YYYY]\nSocial Security Number: 083-03-8551\nContact Number: (123) 456-7890\nEmail Address: [jgonzalez@email.com](mailto:jgonzalez@email.com)\nStreet Address: 2622 Diaz Glens\nCity: [City Name]\nState: [State Name]\nZip Code: [Zip Code]\n\n**Financial Information**\n\nLoan Amount Requested: $100,000\nLoan Purpose: Purchase of a new vehicle\nEmployment Status: Full-time\nMonthly Income: $7,500\nBank Name: [Bank Name]\nBank Account Number: [Account Number]\n\n**Employment Information**\n\nEmployer Name: Meyer Ltd\nEmployer Address: [Employer Address]\nPosition: [Position]\nYears with Current Employer: 5\nSupervisor Name: [Supervisor Name]\nSupervisor Contact Number: (123) 456-7890\n\n**Insurance Verification**\n\nPlease confirm the applicant's existing insurance coverage for the following assets:\n\n* Vehicle: [Vehicle Make and Model]\n* Home: [Home Address]\n* Other: [Other Asset]\n\n**Supporting Documents**\n\nPlease upload the following documents:\n\n* Proof of Income (last 3 months)\n* Bank Statement (last 3 months)\n* Insurance Policy Declaration Page\n* Vehicle Registration (if applicable)\n* Proof of Residency (if applicable)\n\nBy submitting this application, I certify that all the information provided is true and accurate to the best of my knowledge. I authorize [Bank Name] to verify the information provided and to obtain a credit report. I understand that providing false or misleading information is grounds for denial of this loan application.\n\nSignature: \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ Date: \\_\\_\\_\\_\\_\\_\\_\\",
+ "source": "kyc",
+ "private": [
+  "Jeffrey Gonzalez",
+  "083-03-8551",
+  "(123) 456-7890",
+  "[jgonzalez@email.com]",
+  "2622 Diaz Glens",
+  "Meyer Ltd",
+  "jgonzalez@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3481,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

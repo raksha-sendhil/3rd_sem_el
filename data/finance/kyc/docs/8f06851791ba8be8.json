@@ -1,0 +1,19 @@
+{
+ "doc_id": "8f06851791ba8be8",
+ "text": "CONSOLIDATION LOAN AGREEMENT\n\nThis Consolidation Loan Agreement (the \"Agreement\"), dated as of the 1st day of March, 2023, is entered into between Blanca M. Baños, residing at 4732 Benjamin Villages, Laurenport (hereinafter referred to as the \"Borrower\"), and Finebank PLC, a company incorporated under the laws of England and Wales, with its head office located at 123 High Street, London (hereinafter referred to as the \"Lender\").\n\nWHEREAS, the Borrower has multiple outstanding debts with various creditors and seeks to consolidate such debts into a single loan; and\n\nWHEREAS, the Lender is willing to provide the Borrower with a consolidation loan, subject to the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. LOAN AMOUNT\n\nThe Lender shall provide the Borrower with a consolidation loan in the amount of $100,000 (the \"Loan Amount\"). The Loan Amount shall be used solely to pay off the Borrower's existing debts.\n\n2. INTEREST RATE\n\nThe Loan Amount shall bear interest at a fixed rate of 7.00% per annum.\n\n3. REPAYMENT TERMS\n\nThe Loan Amount shall be repaid in equal monthly installments over a term of 60 months, with the first installment due on the first day of the month next succeeding the date of this Agreement. Each installment shall be in the amount of $1,971.74, which includes both principal and interest.\n\n4. COLLATERAL\n\nAs security for the timely payment of the Loan Amount and interest, the Borrower hereby grants the Lender a security interest in the following property:\n\n(a) All right, title, and interest in and to the bank account held at Finebank PLC, with the IBAN number GB39QVJU16266457179728 (the \"Secured Account\"); and",
+ "source": "kyc",
+ "private": [
+  "Blanca M. Baños",
+  "4732 Benjamin Villages, Laurenport",
+  "Finebank PLC",
+  "123 High Street, London",
+  "GB39QVJU16266457179728"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3290,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

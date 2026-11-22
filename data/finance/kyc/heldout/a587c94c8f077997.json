@@ -1,0 +1,26 @@
+{
+ "doc_id": "a587c94c8f077997",
+ "text": "LOAN APPLICATION\n\nLoan Application ID: 2234567\nLoan Amount: $200,000\nLoem Purpose: Home Renovation\n\nPersonal Details:\n------------------\nFull Name: John Jameson\nDate of Birth: 12/05/1985\nSocial Security Number: 123-45-6789\nPermanent Address: 221B Baker Street, London, UK\nContact Number: +44 20 7224 3688\nEmail Address: john.jameson@email.com\n\nFinancial Details:\n------------------\nMonthly Income: $15,000\nMonthly Expenses: $5,00 Employer: ABC Inc.\nDesignation: Senior Software Engineer\nDuration: 5 years\nContact Person: Jane Smith\nContact Email: jane.smith@abcinc.com\n\nPrevious Employment:\n--------------------\nEmployer: XYZ Ltd.\nDesignation: Software Engineer\nDuration: 3 years\nContact Person: David Johnson\nContact Email: david.johnson@xyzltd.com\n\nSupporting Documents:\n---------------------\n* Recent pay stubs from ABC Inc.\n* W-2 from ABC Inc.\n* Recent pay stubs from XYZ Ltd.\n* W-2 from XYZ Ltd.\n* Copy of valid photo ID\n* Recent utility bill\n* Bank statements for the past 3 months",
+ "source": "kyc",
+ "private": [
+  "John Jameson",
+  "12/05/1985",
+  "123-45-6789",
+  "221B Baker Street, London, UK",
+  "+44 20 7224 3688",
+  "john.jameson@email.com",
+  "ABC Inc.",
+  "Jane Smith",
+  "jane.smith@abcinc.com",
+  "XYZ Ltd.",
+  "David Johnson",
+  "david.johnson@xyzltd.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2860,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

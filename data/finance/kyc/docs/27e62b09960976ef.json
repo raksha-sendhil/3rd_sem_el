@@ -1,0 +1,20 @@
+{
+ "doc_id": "27e62b09960976ef",
+ "text": "---\nCredit Application: Education Loan\n\nFull Name: Olivia Thompson\nDate of Birth: 12/10/1995\nContact Address: 45, High Street, London, SE1 1LT, UK\nPhone Number: +44 712345678\nEmail Address: olivia.thompson@email.com\n\nEmployment Status: Full-time Employee\nEmployer Name: ABC Corporation\nJob Title: Marketing Specialist\nAnnual Income: £45,000\n\nEducation Details:\nName of Institution: Oxford University\nProgram of Study: Master of Business Administration (MBA)\nStart Date: September 2023\nEnd Date: August 2025\nEstimated Tuition Fees: £60,000\nAdditional Expenses (if any): £10,000 (accommodation and living expenses)\n\nLoan Amount Requested: £70,000\nLoan Term (in years): 5\n\nPersonal Statement:\nI am currently employed as a Marketing Specialist at ABC Corporation, and I have been working there for the past 4 years. I am looking to advance my career by pursuing an MBA at Oxford University. I am confident that the knowledge and skills I acquire during the program will enable me to contribute significantly to my employer and the industry as a whole. I am committed to repaying the loan in a timely and responsible manner.\n\nDeclaration:\nI hereby declare that all the information provided above is true and accurate to the best of my knowledge. I understand that any false or misleading information may result in the cancellation of my loan application.\n\nSignature: Olivia Thompson\nDate: 01/12/2022\n\n---",
+ "source": "kyc",
+ "private": [
+  "Olivia Thompson",
+  "12/10/1995",
+  "45, High Street, London, SE1 1LT, UK",
+  "olivia.thompson@email.com",
+  "ABC Corporation",
+  "Oxford University"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2255,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "doc_id": "7cc5649c61a1c6f8",
+ "text": "---\nCredit Application\n\nFull Legal Name: Heiko Oderwald-Pergande\nPassport Number: 815576688\n\nPermanent Residential Address:\n793 Robert Harbors\n\nLoan Type: Renovation Loan\n\nLoan Amount Requested: $150,000\n\nProperty Information:\n- Property Type: Residential\n- Property Address: 793 Robert Harbors\n- Estimated Property Value: $500,000\n- Mortgage Balance (if applicable): $200,000\n\nRenovation Project Details:\n- Description of Renovation: Full kitchen and bathroom remodel, new flooring throughout, and exterior painting\n- Estimated Project Cost: $120,000\n- Expected Completion Date: 12 months from approval date\n\nEmployment Information:\n- Employer: XYZ Corporation\n- Job Title: Senior Software Engineer\n- Monthly Income: $15,000\n- Years at Current Employer: 5 years\n\nFinancial Information:\n- Other Debts: Car loan ($300/month), Credit Card 1 ($200/month), Credit Card 2 ($100/month)\n- Monthly Expenses: Rent ($2,000), Utilities ($200), Groceries ($500), Transportation ($300), Other ($500)\n\nPersonal References:\n- Name: Jane Doe\n- Relationship: Friend\n- Phone Number: 555-555-5555\n- Name: John Smith\n- Relationship: Colleague\n- Phone Number: 555-555-5556\n\n---",
+ "source": "kyc",
+ "private": [
+  "Heiko Oderwald-Pergande",
+  "815576688",
+  "793 Robert Harbors",
+  "XYZ Corporation",
+  "Jane Doe",
+  "555-555-5555",
+  "John Smith",
+  "555-555-5556"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4751,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

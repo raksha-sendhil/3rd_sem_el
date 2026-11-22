@@ -1,0 +1,18 @@
+{
+ "doc_id": "d0d3f308b37810f3",
+ "text": "MORTGAGE LOAN AGREEMENT\n\nTHIS AGREEMENT is made this 1st day of January, 2023, by and between XYZ Bank, a financial institution located at 555 Main Street, Anytown, USA (hereinafter \"Lender\"), and Cecilia Reyes-Cortés, residing at 347 Hernandez Parks, Kimberlyburgh, 22283 (hereinafter \"Borrower\").\n\nWHEREAS, Borrower desires to borrow the sum of $300,00 (hereinafter \"Loan Amount\") from Lender, and Lender is willing to lend the sum to Borrower on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein, the parties hereto agree as follows:\n\n1. LOAN AMOUNT AND INITIAL INTEREST RATE\n\nLender agrees to loan to Borrower the sum of $300,00, and Borrower agrees to repay the same, together with interest, as hereinafter provided. The initial rate of interest shall be 3.5% per annum.\n\n2. ADJUSTABLE INTEREST RATE\n\nThe interest rate on the unpaid balance of the loan shall be an adjustable rate, which shall be determined by adding a margin to the applicable index. The initial index shall be the 1-Year Constant Maturity Treasury Yield, as published by the Federal Reserve, and the initial margin shall be 2.25%.\n\n3. INITIAL INTEREST RATE PERIOD\n\nThe initial interest rate shall be in effect for the first five (5) years from the date hereof.\n\n4. SUBSEQUENT INTEREST RATE ADJUSTMENTS\n\nThereafter, the interest rate shall be adjusted annually on each anniversary date of this Agreement, based on the applicable index and margin as defined herein.\n\n5. REPAYMENT TERMS\n\nThe loan shall be repaid in monthly installments over a term of thirty (30) years, commencing on the first day of the month next succeeding the date hereof.\n CID-191917\n\n6",
+ "source": "kyc",
+ "private": [
+  "XYZ Bank",
+  "555 Main Street, Anytown, USA",
+  "Cecilia Reyes-Cortés",
+  "347 Hernandez Parks, Kimberlyburgh, 22283"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5017,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

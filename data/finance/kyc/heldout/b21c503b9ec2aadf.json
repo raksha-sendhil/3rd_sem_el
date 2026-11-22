@@ -1,0 +1,18 @@
+{
+ "doc_id": "b21c503b9ec2aadf",
+ "text": "VACATION RENTAL PROPERTY FINANCING AGREEMENT\n\nThis Vacation Rental Property Financing Agreement (the \"Agreement\"), dated as of the 1st day of August, 2021, is entered into by and between Néstor Teruel, a resident of 79344 Lisa Forges (the \"Borrower\"), and XYZ Financial Corporation, a corporation organized and existing under the laws of the Province of Ontario, Canada, with its head office located at 3456 Maple Leaf Drive, Toronto, Ontario (the \"Lender\").\n\nWHEREAS, Borrower desires to borrow the sum of $500,000.00 (the \"Loan Amount\") from Lender for the purpose of financing a vacation rental property located at (-75.792653, 118.804157) (the \"Property\");\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN. Lender agrees to loan to Borrower the Loan Amount, which shall be disbursed to Borrower in accordance with the disbursement schedule set forth in Exhibit A attached hereto.\n\n2. INTEREST RATE. The Loan Amount shall bear interest at a rate of 5.5% per annum.\n\n3. REPAYMENT SCHEDULE. The Loan Amount shall be repaid in accordance with the repayment schedule set forth in Exhibit B attached hereto.\n\n4. PROPERTY. The Property shall be used as security for the Loan Amount and shall be held by Lender in accordance with the terms of a security agreement entered into by the parties concurrently herewith. The Property is currently being used as a vacation rental property and has a proven rental history. It is located near several popular tourist attractions and offers a range of amenities to renters.\n\n5. REPRESENTATIONS AND WARRANTIES. Borrower represents and warrants to Lender that: (a) Borrower has the full right, power and authority to enter into this Agreement",
+ "source": "kyc",
+ "private": [
+  "Néstor Teruel",
+  "79344 Lisa Forges",
+  "3456 Maple Leaf Drive, Toronto, Ontario",
+  "(-75.792653, 118.804157)"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3127,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

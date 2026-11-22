@@ -1,0 +1,19 @@
+{
+ "doc_id": "3f19333f97bd2acb",
+ "text": "SENIOR HOUSING FACILITY FINANCING AGREEMENT\n\nTHIS AGREEMENT is made and entered into as of the 1st day of August, 2022 (the \"Effective Date\"), by and between ABC Investments, a corporation organized and existing under the laws of the State of Delaware, with its principal place of business at 123 Main Street, Wilmington, DE 19801 (the \"Lender\"), and Golden Years Senior Living, a corporation organized and existing under the laws of the State of California, with its principal place of business at 456 Oak Avenue, Los Angeles, CA 90001 (the \"Borrower\").\n\nWHEREAS, Borrower desires to borrow from Lender the sum of $15,000,000 (the \"Loan Amount\") for the purpose of financing the construction and operation of a senior housing facility located at 789 Pine Street, San Francisco, CA 94102 (the \"Property\"); and\n\nWHEREAS, Lender is willing to advance the Loan Amount to Borrower on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN. Lender agrees to advance the Loan Amount to Borrower, and Borrower agrees to accept the Loan Amount from Lender, on the terms and conditions set forth herein.\n\n2. INTEREST. The Loan Amount shall bear interest at a rate of 6.0% per annum, calculated on a 360-day year basis.\n\n3. REPAYMENT. Borrower shall repay the Loan Amount, together with all accrued and unpaid interest thereon, in equal monthly installments of $122,572.19, commencing on the first day of the month next succeeding the date of disbursement of the Loan Amount, and on the first day of each month thereafter, until the entire outstanding principal balance and accrued interest have been paid in full.\n\n4.",
+ "source": "kyc",
+ "private": [
+  "ABC Investments",
+  "123 Main Street, Wilmington, DE 19801",
+  "Golden Years Senior Living",
+  "456 Oak Avenue, Los Angeles, CA 90001",
+  "789 Pine Street, San Francisco, CA 94102"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2166,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

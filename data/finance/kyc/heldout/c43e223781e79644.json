@@ -1,0 +1,20 @@
+{
+ "doc_id": "c43e223781e79644",
+ "text": "---\nLoan Application\n---\n\nFull Legal Name: John Doe\nDate of Birth: 01/01/1980\n\nAddress: 123 Main Street, Anytown, UK, Anytown, AB 12345\n\nPhone Number: +44 123 456 7890\nEmail Address: john.doe@example.mail\n\nEmployment Status: Full-time Employee\nEmployer Name: XYZ Corporation\nPosition: Senior Software Engineer\nAnnual Income: £60,000\n\nEmergency Description:\nI am seeking an emergency loan of £10,000 due to an unexpected medical emergency. I was recently diagnosed with a serious medical condition and require immediate medical treatment, which is not covered by my health insurance. The treatment costs are estimated to be £12,000, and I have already arranged for a loan of £2,000 from a family member.\n\nFinancial Impact:\nThe emergency has had a significant financial impact on my family as I have had to take time off work to undergo the medical treatment. I have also had to pay for additional expenses such as transportation and medication. My monthly expenses are £3,000, and I have £5,000 in savings.\n\nRepayment Plan:\nI plan to repay the loan over a period of 24 months. I will make monthly payments of £500, which is affordable based on my monthly income and expenses. I have attached my most recent bank statements and payslips to support my application.\n\nDeclaration:\nI declare that the information provided in this loan application is true and accurate to the best of my knowledge. I understand that providing false or misleading information may result in the rejection of my loan application or legal action.\n\nSignature: John Doe\nDate: 01/01/2023\n\n---\n\nNote: This is a fictional loan application and any resemblance to real persons, living or dead, or actual events, is purely coincidental.",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "01/01/1980",
+  "123 Main Street, Anytown, UK, Anytown, AB 12345",
+  "+44 123 456 7890",
+  "john.doe@example.mail",
+  "XYZ Corporation"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3005,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "doc_id": "c615a0eb7f1b7810",
+ "text": "Community Scholarship Application\n\nDate: March 15, 2023\n\nName: Lauren Wagner-Price\nStreet Address: 16555 Garner Shoals\nCity: Ottawa, ON K2M 1X6\nCountry: Canada\n\nPhone: (123) 456-7890\nEmail: [lauren.wagnerprice@email.com](mailto:lauren.wagnerprice@email.com)\nPassport Number: A49237301\n\nEducation:\nHigh School: Ottawa High School\nGraduation Date: June 2023\nGPA: 3.8 / 4.0\n\nPost-Secondary Institution: University of Ottawa\nIntended Major: Political Science\nAnticipated Start Date: September 2023\n\nFinancial Information:\nEstimated Annual Income: $45,000\nEstimated Annual Expenses (Tuition, Fees, Books, Supplies): $12,000\nNumber of Dependents: 0\n\nNarrative:\n\nI am a dedicated student with a strong commitment to community involvement and academic excellence. Throughout my high school years, I have consistently maintained a high GPA while being actively engaged in various extracurricular activities and community service initiatives. I have volunteered at the local food bank, participated in school-organized charity events, and served as the president of the student council.\n\nMy passion for political science and my aspiration to contribute to society have driven me to apply for the Community Scholarship. I am confident that the University of Ottawa's Political Science program will equip me with the necessary skills and knowledge to achieve my career goal of becoming a policy analyst, enabling me to contribute positively to society.\n\nI am grateful for the opportunity to apply for the Community Scholarship, and I am committed to making the most of this financial assistance to further my education and achieve my career aspirations.\n\nCredit Card Information (if applicable):\nCard Type: Visa\nCard Number: **** **** **** 824 (Last 4 digits)\nCardholder's Name: Lauren Wagner-Price\nExpiration Date: 12/25\n\nSignature:\n\nDate",
+ "source": "kyc",
+ "private": [
+  "Lauren Wagner-Price",
+  "16555 Garner Shoals",
+  "(123) 456-7890",
+  "A49237301",
+  "University of Ottawa",
+  "824",
+  "lauren.wagnerprice@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 132,
+  "type": "Financial Aid Application",
+  "synthetic": true
+ }
+}

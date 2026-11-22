@@ -1,0 +1,17 @@
+{
+ "doc_id": "9f97170e035abfd8",
+ "text": "**GOVERNMENT-SPONSORED HOUSING LOAN CONTRACT**\n\nThis Real Estate Loan Agreement (the \"Agreement\"), dated as of 04:29:48 AM on the 1st day of August, 2023 (the \"Effective Date\"), is entered into by and between the United States Department of Housing and Urban Development (the \"Lender\") and Anthony Sawyer-Graham, with a mailing address at 89305 Lori Villages, Apt. 322 (the \"Borrower\").\n\n**WHEREAS**, the Borrower desires to finance the purchase of a residential property, and the Lender is willing to provide financing on the terms and conditions set forth herein;\n\n**NOW, THEREFORE**, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. **Loan Amount**: The Lender shall provide the Borrower with a loan in the amount of $350,000 (the \"Loan Amount\").\n\n2. **Interest Rate**: The Loan Amount shall bear interest at a fixed rate of 3.00% per annum (the \"Interest Rate\").\n\n3. **Repayment Schedule**: The Borrower shall repay the Loan Amount, together with all accrued and unpaid interest, in monthly installments over a term of 30 years (the \"Term\"), with the first such installment due on the first day of the month next succeeding the month in which the Closing Date occurs.\n\n4. **Property Details**: The real property that is the subject of this Agreement (the \"Property\") is a single-family residence located at 89305 Lori Villages, Apt. 322. The Property has been appraised at a value of $400,000.\n\n5. **Eligibility Criteria**: The Borrower represents and warrants that he or she meets the eligibility criteria for a government-sponsored housing loan, including but not limited to, the ability to demonstrate creditworthiness, sufficient income to support the debt obligations, and an intention to occupy the Property as a primary residence.\n\n6. **Inspections and Compl",
+ "source": "kyc",
+ "private": [
+  "United States Department of Housing and Urban Development",
+  "Anthony Sawyer-Graham",
+  "89305 Lori Villages, Apt. 322"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2156,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

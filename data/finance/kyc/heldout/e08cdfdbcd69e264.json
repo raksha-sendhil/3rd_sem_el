@@ -1,0 +1,20 @@
+{
+ "doc_id": "e08cdfdbcd69e264",
+ "text": "Loan Application\n\nLoan Application ID: 123456\nDate Received: 01/10/2022\n\nApplicant Information:\n---------------------\n\nFull Name: Arcelia Cañete-Lamas\nIBAN: GB41UKIX82079321511380\nStreet Address: 96447 Gonzales Mountains, Apt. 819\nCity: Anytown\nState/Province: Anystate\nPostal Code: 12345\nCountry: United Kingdom\n\nEmployment Information:\n----------------------\n\nEmployer Name: Blue Skies Corporation\nJob Title: Senior Software Engineer\nYears with Current Employer: 5\nMonthly Income (after taxes): £6,500\n\nLoan Information:\n----------------\n\nLoan Amount Requested: £25,000\nLoan Purpose: Home Renovation\nLoan Term (in months): 60\n\nCredit History:\n---------------\n\nAccount Type: Credit Card\nAccount Name: Visa Signature\nAccount Open Date: 01/01/2015\nCredit Limit: £10,000\nCurrent Balance: £3,500\nPercentage Utilized: 35%\nPayment History: On-time payments for the last 36 months\n\nAccount Type: Personal Loan\nAccount Name: Bank of London\nAccount Open Date: 04/01/2018\nLoan Amount: £15,000\nLoan Term (in months): 36\nCurrent Balance: £5,000\nPercentage Utilized: 33%\nPayment History: On-time payments for the last 24 months\n\nAccount Type: Auto Loan\nAccount Name: Santander UK\nAccount Open Date: 07/01/2017\nLoan Amount: £20,000\nLoan Term (in months): 60\nCurrent Balance: £8,000\nPercentage Utilized: 40%\nPayment History: On-time payments for the last 36 months\n\nSupporting Documents:",
+ "source": "kyc",
+ "private": [
+  "Arcelia Cañete-Lamas",
+  "GB41UKIX82079321511380",
+  "96447 Gonzales Mountains, Apt. 819",
+  "Blue Skies Corporation",
+  "Santander UK",
+  "123456"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4588,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

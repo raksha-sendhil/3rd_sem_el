@@ -1,0 +1,23 @@
+{
+ "doc_id": "89178dd7a6c53d7a",
+ "text": "Loan Application Form\n\nDate: 13/05/2023\nTime: 13:15:26\n\nApplicant Information:\nName: Thomas Daniel-Gros\nAddress: 690 avenue de Foucher, Brun\n\nLoan Information:\nLoan Amount: £15,000\nLoan Purpose: Debt Consolidation\n\nEmployment Information:\nEmployer: Greenfield Enterprises\nPosition: Senior Project Manager\nAnnual Income: £62,000\n\nFinancial Information:\nBank Name: HSBC\nAccount Number: 12345678\nCredit Score: 720\n\nReferences:\n1. Jane Doe, Accountant at Greenfield Enterprises\n2. John Smith, Financial Advisor at Barclays Bank\n\nAdditional Information:\nMs. Francoise Isabelle, our credit counselor, has reviewed your application and recommends that you consider credit counseling or financial education to better manage your finances and debt. We suggest the following resources:\n\n1. National Debtline: A charity offering free and impartial advice on dealing with debt: <https://www.nationaldebtline.org/>\n2. The Money Advice Service: A free service, funded by the UK government, providing unbiased money advice: <https://www.moneyadviceservice.org.uk/>\n\nPlease enclose the following documents with your application:\n\n1. Copy of your ID (passport or driving license)\n2. Proof of income (last 3 payslips)\n3. Bank statements for the last 6 months\n4. Proof of residence (utility bill)\n\nPlease note that all documents must be originals or certified copies.\n\nThank you for choosing our services. We will review your application and contact you as soon as possible.",
+ "source": "kyc",
+ "private": [
+  "Thomas Daniel-Gros",
+  "690 avenue de Foucher, Brun",
+  "Greenfield Enterprises",
+  "Jane Doe",
+  "John Smith",
+  "Barclays Bank",
+  "Ms. Francoise Isabelle",
+  "National Debtline",
+  "12345678"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2924,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

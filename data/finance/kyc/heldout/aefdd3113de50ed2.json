@@ -1,0 +1,17 @@
+{
+ "doc_id": "aefdd3113de50ed2",
+ "text": "Loan Application\n\nFull Legal Name: June K. Robertson\n\nContact Information:\nStreet Address: 5347 Kevin Lodge, Christopherport\nCity: \nState: \nZip Code: \nPhone Number: \nEmail Address: \n\nEmployment Information:\nEmployer: \nJob Title: \nYears with Employer: \nMonthly Income: \n\nLoan Information:\nPurpose of Loan: Real Estate Purchase\nProperty Address: \nProperty Description: \nEstimated Property Value: \nLoan Amount Requested: \nDown Payment Amount: \n\nBank Account Information:\nBank Name: \nBank Routing Number: 903969573\nBank Account Type: \nBank Account Number: \n\nReferences:\nReference 1 Name: \nReference 1 Phone Number: \nReference 2 Name: \nReference 2 Phone Number: \n\nDeclaration: I, June K. Robertson, hereby declare that all the information provided in this loan application is true and accurate to the best of my knowledge. I understand that any false or misleading statements may result in the denial of this loan application or legal action.\n\nSignature: June K. Robertson\nDate: \n\nNote: Please attach all required documentation, including proof of income, bank statements, and property appraisal.",
+ "source": "kyc",
+ "private": [
+  "June K. Robertson",
+  "5347 Kevin Lodge, Christopherport",
+  "903969573"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2999,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

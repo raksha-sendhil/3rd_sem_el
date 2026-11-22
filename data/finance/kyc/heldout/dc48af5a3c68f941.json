@@ -1,0 +1,16 @@
+{
+ "doc_id": "dc48af5a3c68f941",
+ "text": "MORTGAGE LOAN AGREEMENT\n\nTHIS AGREEMENT is made and entered into this 1st day of August, 2021, by and between the Federal Housing Administration (hereinafter \"Lender\") and Oscar Roger Wieloch (hereinafter \"Borrower\").\n\nWHEREAS, Borrower desires to obtain a mortgage loan in the amount of Two Hundred Thousand Dollars ($200,000.00) to purchase real property located at 5802 Joel Crossing Apt. 846 (hereinafter \"Property\"); and\n\nWHEREAS, Lender is willing to provide such a loan on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN AMOUNT: Lender shall provide Borrower with a mortgage loan in the amount of Two Hundred Thousand Dollars ($200,000.00).\n\n2. INTEREST RATE: The interest rate on the loan shall be 3.00% per annum.\n\n3. REPAYMENT TERMS: The loan shall be repayable in monthly installments of principal and interest, amortized over a term of thirty (30) years.\n\n4. COLLATERAL: The loan shall be secured by a mortgage on the Property.\n\n5. FHA LOAN: This loan is a Federal Housing Administration (FHA) Insured Loan. Borrower acknowledges and agrees to the terms and conditions of the FHA Insurance Contract, including the requirement to pay an upfront mortgage insurance premium and annual mortgage insurance premiums.\n\n6. BORROWER QUALIFICATIONS: Borrower represents and warrants that he meets the qualifications for an FHA loan, including but not limited to, the ability to make the monthly mortgage payments, a credit score of at least 580, and a debt-to-income ratio of no more than 43%.\n\n7. PROPERTY ELIGIBILITY: Borrower represents and warrants that the Property meets the eligibility",
+ "source": "kyc",
+ "private": [
+  "Oscar Roger Wieloch",
+  "5802 Joel Crossing Apt. 846"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5526,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

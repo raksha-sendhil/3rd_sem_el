@@ -1,0 +1,18 @@
+{
+ "doc_id": "c4f938eda23eda26",
+ "text": "**Loan Application Form**\n\nFull Name: Lauren Andrea Perry\n\nPermanent Address: 9 Juliaring, Mander\n\nSwift BIC Code: BDCKDEPA219\n\nLoan Amount Requested: £15,000\n\nLoan Purpose: Home Improvement\n\nDetails of Loan Purpose: The loan will be used to finance the renovation of my home, specifically to update the kitchen and bathroom. The estimated cost of the project is £14,500. I will provide the detailed quotations from the contractors as part of the supporting documents.\n\nEmployment Details:\n\n- Employer's Name: Mander Enterprises\n- Position: Marketing Manager\n- Monthly Salary: £3,500\n- Length of Employment: 5 years\n\nFinancial Details:\n\n- Other Current Debts: None\n- Monthly Expenses: Rent - £800, Utilities - £150, Groceries - £300, Transportation - £100, Other - £200\n- Monthly Income: £3,500\n- Savings: £5,000\n\nSupporting Documents:\n\n- Latest 3 months' payslips\n- Bank statement for the last 6 months\n- Proof of residence\n- Detailed quotations from the contractors\n\nI hereby confirm that all the information provided is true and accurate to the best of my knowledge.\n\nSignature: ______________________ Date: _________\n\nPlease note: All the provided PII values are synthetic and do not represent any real individual.",
+ "source": "kyc",
+ "private": [
+  "Lauren Andrea Perry",
+  "9 Juliaring, Mander",
+  "BDCKDEPA219",
+  "Mander Enterprises"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3688,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

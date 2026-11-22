@@ -1,0 +1,20 @@
+{
+ "doc_id": "3aea48b37b986b57",
+ "text": "Equipment Financing Application\n\nApplication ID: 123456\nDate: 01/10/2023\n\nApplicant Information:\nFull Name: Ignaz Huhn\nStreet Address: 826 Miller Rapid, Christopherhaven, 07235\nCity: Christopherhaven\nState: NJ\nZip Code: 07235\nPhone Number: (123) 456-7890\nEmail: [ihuhn@email.com](mailto:ihuhn@email.com)\n\nBusiness Information:\nBusiness Name: IHuhn Enterprises\nYears in Business: 5\nIndustry: Manufacturing\nAnnual Revenue: $1,200,000\n\nEquipment Information:\nEquipment Type: CNC Machine\nQuantity: 3\nTotal Cost: $300,000\nVendor Name: CNCPro\nVendor Contact: (987) 654-3210\n\nFinancing Information:\nLoan Amount Requested: $300,000\nLoan Term: 60 months\nPurpose of Financing: Equipment Purchase\n\nPersonal Guarantee: Yes\n\nDeclaration:\nI, Ignaz Huhn, hereby certify that all the information provided in this Equipment Financing Application is true and correct to the best of my knowledge.\n\nSignature: Ignaz Huhn\nDate: 01/10/2023",
+ "source": "kyc",
+ "private": [
+  "Ignaz Huhn",
+  "(123) 456-7890",
+  "IHuhn Enterprises",
+  "(987) 654-3210",
+  "123456",
+  "ihuhn@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1894,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

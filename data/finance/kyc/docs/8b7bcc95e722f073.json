@@ -1,0 +1,23 @@
+{
+ "doc_id": "8b7bcc95e722f073",
+ "text": "**Loan Application**\n\n**Personal Information**\n\nFull Name: John Doe\nDate of Birth: 01/01/1980\nSocial Security Number: 123-45-6789\nAddress: 123 Maple Street, Anytown, USA\nEmail: johndoe@email.com\nPhone Number: (123) 456-7890\n\n**Financial Information**\n\nEmployment Status: Full-time\nEmployer: XYZ Corporation\nPosition: Software Engineer\nAnnual Income: $80,000\n\nBank Accounts:\n\n1. Bank of America Checking Account\nAccount Number: 123456789\nCurrent Balance: $10,000\n2. Chase Savings Account\nAccount Number: 987654321\nCurrent Balance: $5,000\n\n**Credit History**\n\nCredit Card Accounts:\n\n1. Chase Freedom Credit Card\nAccount Number: 1111-2222-3333-4444\nCredit Limit: $5,000\nCredit Utilization: 30%\nPayment History: On-time payments for the last 24 months\n2. American Express Gold Card\nAccount Number: 5555-6666-7777-8888\nCredit Limit: $10,000\nCredit Utilization: 20%\nPayment History: On-time payments for the last 36 months\n\nLoan Accounts:\n\n1. Wells Fargo Auto Loan\nAccount Number: 111-222-333\nLoan Amount: $20,000\nLoan Purpose: Car\nPayment History: On-time payments for the last 12 months\n\n**Supporting Documents**\n\n* Copy of driver's license\n* Copy of recent pay stubs\n* Copy of bank statements for the last 3 months\n* Copy of credit card statements for the last 6 months\n* Copy of loan statements for the last 6 months",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "01/01/1980",
+  "123-45-6789",
+  "123 Maple Street, Anytown, USA",
+  "johndoe@email.com",
+  "(123) 456-7890",
+  "XYZ Corporation",
+  "1111-2222-3333-4444",
+  "5555-6666-7777-8888"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2753,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

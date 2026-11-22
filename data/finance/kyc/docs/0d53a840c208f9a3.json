@@ -1,0 +1,20 @@
+{
+ "doc_id": "0d53a840c208f9a3",
+ "text": "Loan Application\n\nLoan Applicant Information:\n\nFull Legal Name: Johnathan Green\nDate: 01/12/25\n\nContact Information:\n\nMailing Address: 123 Maple Street, Springfield, ON, N0L 1T0\nPhone Number: (519) 222-3334\nEmail Address: [johnathan.green@email.com](mailto:johnathan.green@email.com)\n\nBusiness Information:\n\nBusiness Name: Green's Organic Farm\nBusiness Address: 456 Oak Street, Springfield, ON, N0L 1T0\nYears in Business: 5\nIndustry: Organic Vegetable Farming\n\nLoan Information:\n\nLoan Amount Requested: $150,00\nLoan Purpose: Purchase of farming equipment and expansion of farming land\n\nPersonal Financial Information:\n\nGross Annual Income: $75,000\nNet Worth: $250, Farming Equipment: $50,000\nReal Estate: $300,000, Other Assets: $20,00\n\nFarming Practices:\n\nCurrently farming on a 5-acre land, growing organic vegetables such as tomatoes, cucumble, and bell peppers. Utilizing crop rotation and companion planting to maintain soil health and reduce pest pressure.\n\nEquip Tractors, plows, seeders, and irrigation systems are currently being used for farming operations.\n\nExpected Yield:\n\nAnticipated yield for the upcoming season is 15,000 pounds of tomatoes, 12,000 pounds of cucumbers, and 10,000 pounds of bell peppers.\n\nAdditional Information:\n\nPrevious lending history is limited, but has always made on-time payments.\n\nSignature: Johnathan Green\nDate: 01/12/25",
+ "source": "kyc",
+ "private": [
+  "Johnathan Green",
+  "123 Maple Street, Springfield, ON, N0L 1T0",
+  "(519) 222-3334",
+  "Green's Organic Farm",
+  "456 Oak Street, Springfield, ON, N0L 1T0",
+  "johnathan.green@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2637,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

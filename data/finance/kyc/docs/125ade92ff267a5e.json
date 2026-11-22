@@ -1,0 +1,20 @@
+{
+ "doc_id": "125ade92ff267a5e",
+ "text": "Loan Application\n\nPersonal Information:\n\n* First Name: Audrey\n* Last Name: Romiti\n* Full Name: Angelica M. Romiti\n* IBAN: GB90JFFS31015356649741\n* Street Address: 1650 Freeman Parks, Suite 241\n\nFinancial Details:\n\n* Loan Amount Requested: $15,000\n* Loan Purpose: Home Renovation\n\nEmployment Information:\n\n* Employer: XYZ Construction Inc.\n* Position: Project Manager\n* Annual Income: $85,000\n* Years with Current Employer: 5 years\n\nCredit History:\n\n* Credit Utilization: 30%\n* Account Types: 2 credit cards, 1 auto loan, 1 mortgage\n* Payment History: Excellent, no late payments in the past 7 years\n* Oldest Account Age: 10 years\n* Total Open Accounts: 4\n* Credit Inquiries in the Past 12 Months: 1\n\nSupporting Documents:\n\n* Copy of Government-issued ID\n* Proof of Income (last 2 pay stubs)\n* Bank Statements (last 3 months)\n* Credit Report\n* Proof of Residence (utility bill)\n* Quote for Home Renovation Project",
+ "source": "kyc",
+ "private": [
+  "Audrey",
+  "Angelica M. Romiti",
+  "GB90JFFS31015356649741",
+  "1650 Freeman Parks, Suite 241",
+  "XYZ Construction Inc.",
+  "Romiti"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3557,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

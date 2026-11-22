@@ -1,0 +1,18 @@
+{
+ "doc_id": "43f25e6f3c88a7c6",
+ "text": "MORTGAGE CONTRACT\n\nThis Mortgage Contract (the \"Agreement\"), dated as of the 1st day of August, 2023 (the \"Effective Date\"), is entered into between Clark, Moses and Dixon, a company organized and existing under the laws of the State of Delaware, with its head office located at 123 Main Street, Anytown, DE 12345 (the \"Lender\"), and Erwin Trüb-Henck, an individual with a mailing address at 249 Haley Wall, Anytown, DE 12345 (the \"Borrower\").\n\nWHEREAS, the Borrower desires to borrow from the Lender the principal amount of $500,000 (the \"Loan\"), and the Lender is willing to provide the Loan on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN. The Lender agrees to provide the Loan to the Borrower in the amount of $500,000, and the Borrower agrees to accept the Loan and repay the Loan in accordance with the terms and conditions of this Agreement.\n\n2. INTEREST-ADJUSTABLE MORTGAGE. This is an Interest-Adjustable Mortgage, which means that the interest rate on the Loan will be subject to periodic adjustments based on specific criteria.\n\n3. INTEREST RATE. The initial interest rate on the Loan will be 4.00% per annum. The interest rate will be adjusted every five (5) years based on the then-current yield of the 5-year U.S. Treasury note, as published by the Federal Reserve, on the first business day of the applicable adjustment period. The interest rate will be calculated by adding a margin of 2.00% to the 5-year U.S. Treasury note yield.\n\n4. REPAYMENT TERMS. The Loan shall be repaid in equal monthly installments over a term of thirty (30) years, with the first",
+ "source": "kyc",
+ "private": [
+  "Clark, Moses and Dixon",
+  "123 Main Street, Anytown, DE 12345",
+  "Erwin Trüb-Henck",
+  "249 Haley Wall"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 152,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

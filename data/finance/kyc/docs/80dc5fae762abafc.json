@@ -1,0 +1,20 @@
+{
+ "doc_id": "80dc5fae762abafc",
+ "text": "Emergency Loan Application\n\nFull Name: Deborah Michael Lyons\n\nDate: Today's Date\n\nContact Information:\n\n* Address: 0176 Debra Streets, City, State, Zip Code\n* Phone: (555) 123-4567\n* Email: [dlyons@email.com](mailto:dlyons@email.com)\n\nEmployment Information:\n\n* Employer: XYZ Corporation\n* Job Title: Marketing Manager\n* Monthly Income: $5,000\n* Years with Current Employer: 5 years\n\nLoan Information:\n\n* Loan Amount Requested: $5,000\n* Purpose of Loan: Unexpected medical expenses\n* Repayment Plan: I plan to repay the loan in 12 monthly installments of $458.33.\n* Credit Card Security Code: 415 (for verification purposes only)\n\nDeclaration:\n\nI, Deborah Michael Lyons, hereby declare that all the information provided in this loan application is true and accurate to the best of my knowledge. I understand that providing false or misleading information is a criminal offense.\n\nSignature: Deborah Michael Lyons\n\nDate: Today's Date",
+ "source": "kyc",
+ "private": [
+  "Deborah Michael Lyons",
+  "0176 Debra Streets",
+  "(555) 123-4567",
+  "XYZ Corporation",
+  "415",
+  "dlyons@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2227,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

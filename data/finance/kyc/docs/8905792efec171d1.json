@@ -1,0 +1,17 @@
+{
+ "doc_id": "8905792efec171d1",
+ "text": "Emergency Loan Application\n\nFull Name: Angelica Tamburini-Renzi\nDate of Birth: 25th November 1990\n\nContact Address: 203 Industrigatan, 19100, Umeå\n\nLoan Amount Requested: £5000\n\nPurpose of Loan: I am writing to apply for an emergency loan to cover unexpected medical expenses. Recently, I was involved in an accident that resulted in substantial medical bills. Despite having medical insurance, I am still left with a significant amount to pay out of pocket. I have exhausted my savings and need financial assistance to cover the remaining costs.\n\nI have enclosed all necessary documentation to support my application, including proof of income, bank statements, and medical bills. I would like to assure you that I have a stable source of income and a good credit history. I am confident that I will be able to repay the loan in a timely manner.\n\nThank you for considering my application. I look forward to hearing from you soon.\n\nYours sincerely,\nAngelica Tamburini-Renzi",
+ "source": "kyc",
+ "private": [
+  "Angelica Tamburini-Renzi",
+  "25th November 1990",
+  "203 Industrigatan, 19100, Umeå"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 475,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

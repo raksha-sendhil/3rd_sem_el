@@ -1,0 +1,19 @@
+{
+ "doc_id": "26863624b54c3298",
+ "text": "Green Energy Loan Application\n\nI, Andre Kenan Karz, hereby apply for a loan to fund a green energy project. I understand that the provision of false or misleading information in this application may result in the withdrawal of the loan offer or the termination of the loan agreement.\n\nPersonal Information:\n\n* Full Name: Andre Kenan Karz\n* Date of Birth: 12/09/1963\n* Street Address: 83076 Kristen Valley, Apt. 239\n\nFinancial Information:\n\n* Employment Status: Employed\n* Monthly Income: $7,500\n* Monthly Expenses: $3,000\n* Source of Income: Salary\n\nGreen Energy Project Information:\n\n* Project Name: Karz Solar Farm\n* Project Description: The project involves the installation of a 500 kW solar farm on a 5-acre plot of land. The solar farm will generate clean, renewable energy and reduce carbon emissions.\n* Environmental Impact: The project is expected to reduce carbon emissions by 800 metric tons per year.\n* Cost Breakdown:\n\t+ Solar Panels: $250,000\n\t+ Inverters: $100,000\n\t+ Mounting Systems: $80,000\n\t+ Wiring and Electrical: $60,000\n\t+ Engineering and Permitting: $40,000\n\t+ Contingency: $30,000\n\t+ Total: $560,000\n\nCredit Card Information:\n\n* Credit Card Number: **** **** **** 331 (for security purposes, only the last 3 digits of the credit card security code are provided)\n\nI confirm that I have read and understood the terms and conditions of this loan application and agree to provide any additional information as may be required.\n\nSignature: Andre Kenan Karz\nDate: 03/12/2023",
+ "source": "kyc",
+ "private": [
+  "Andre Kenan Karz",
+  "12/09/1963",
+  "83076 Kristen Valley, Apt. 239",
+  "Karz Solar Farm",
+  "331"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3894,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

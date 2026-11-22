@@ -1,0 +1,19 @@
+{
+ "doc_id": "2f636de0786df106",
+ "text": "**MORTGAGE CONTRACT**\n\nTHIS AGREEMENT is made this ______ day of ________, 20______, by and between ABC LENDING INC., a corporation organized and existing under the laws of the Province of Ontario, with its head office located at 123 Main Street, Toronto, Ontario (hereinafter \"Lender\"), and Traci V. Lee, of 8957 Hooper Crossroad, Kristashire (hereinafter \"Borrower\").\n\nWHEREAS, Borrower desires to borrow the sum of $500,000 (the \"Mortgage Loan\") from Lender, and Lender is willing to advance the Mortgage Loan to Borrower on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual promises and covenants contained herein, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. **MORTGAGE LOAN.** Lender agrees to advance the Mortgage Loan to Borrower, and Borrower agrees to accept the Mortgage Loan from Lender, on the terms and conditions set forth herein.\n\n2. **INTEREST-ONLY PHASE.** The Mortgage Loan shall be an interest-only mortgage for an initial term of five (5) years, during which time Borrower shall pay only the interest due on the outstanding principal balance of the Mortgage Loan. The interest rate on the Mortgage Loan shall be 4.00% per annum, calculated on the outstanding principal balance and payable monthly.\n\n3. **FULL PAYMENT PHASE.** At the end of the initial five (5) year term, the Mortgage Loam shall become due and payable in full. Borrower shall thereafter make monthly payments of principal and interest, based on a 30-year amortization period, at an interest rate of 5.00% per annum, calculated on the outstanding principal balance.\n\n4. **SECURITY.** The Mortgage Loan shall be secured by a mortgage on the following property:\n\n8957 Hooper Crossroad, Kristashire\nPassport No. Z22136274\n\n5. **DEFAULT.** If Borrower fails to make any",
+ "source": "kyc",
+ "private": [
+  "ABC LENDING INC.",
+  "123 Main Street, Toronto, Ontario",
+  "Traci V. Lee",
+  "8957 Hooper Crossroad, Kristashire",
+  "Z22136274"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2866,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

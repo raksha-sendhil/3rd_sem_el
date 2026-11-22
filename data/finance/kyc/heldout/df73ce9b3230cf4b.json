@@ -1,0 +1,18 @@
+{
+ "doc_id": "df73ce9b3230cf4b",
+ "text": "**Loan Application**\n\n**Personal Information**\n\nFull Name: Maria V. Camuccini\n\nStreet Address: 0538 Michael Crossroad, Suite 673\n\n**Financial Details**\n\nMonthly Income: $7,500\n\nCurrent Employer: XYZ Tech Inc.\n\nEmployment Duration: 5 years\n\nCredit Score: 720\n\n**Loan Details**\n\nLoan Amount: $30,000 - $35,000\n\nLoan Purpose: Home Renovation\n\n**Supporting Documents**\n\n1. Last 3 months' pay stubs\n2. Last 2 years' tax returns\n3. Recent bank statements\n4. Proof of residence (utility bill)\n5. Credit report (obtainable from any major credit bureau)\n\n**Declaration**\n\nI, Maria V. Camuccini, hereby declare that all the information provided above is true and correct to the best of my knowledge. I understand that providing false or misleading information is a breach of the terms and conditions of this loan application.\n\n**API Key for Application Status**\n\nSKj3PekDmOcF5TjvoGWqBwFTPsDPH9TwgJ\n\nPlease note that the loan amount is subject to approval based on a thorough evaluation of the provided information and documents. The approval process may take up to 10 business days.",
+ "source": "kyc",
+ "private": [
+  "Maria V. Camuccini",
+  "0538 Michael Crossroad, Suite 673",
+  "XYZ Tech Inc.",
+  "SKj3PekDmOcF5TjvoGWqBwFTPsDPH9TwgJ"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1334,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

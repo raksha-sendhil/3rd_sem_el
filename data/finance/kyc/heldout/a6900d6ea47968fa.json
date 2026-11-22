@@ -1,0 +1,17 @@
+{
+ "doc_id": "a6900d6ea47968fa",
+ "text": "-------------------------------------------------------------------------------------------------------------------\n\nE-STATEMENT\n\nAccount Summary\n-------------------------------------------------------------------------------------------------------------------\n\nAccount Holder: Donald Gerald Smith\nEmail: jcarroll@lee.com\nAccount Number: 123456789\nBranch: Downtown Branch\nAddress: 863 Rodriguez Station, Springfield, IL 62701\n\nAccount Type: Checking\nStatement Period: 01/01/2023 - 01/31/2023\n\nBeginning Balance: $2,500.00\nTotal Deposits: $1,000.00\nTotal Withdrawals: $500.00\nEnding Balance: $3,000.00\n\n-------------------------------------------------------------------------------------------------------------------\n\nTransaction Details\n-------------------------------------------------------------------------------------------------------------------\n\nDate | Description | Type | Amount | Running Balance\n01/05/2023 | Payroll Deposit | Deposit | $1,000.00 | $3,500.00\n01/10/2023 | Groceries | Withdrawal | -$200.00 | $3,300.00\n01/15/2023 | Rent | Withdrawal | -$800.00 | $2,500.00\n01/20/2023 | Utility Bill Payment | Deposit | $300.00 | $2,800.00\n01/25/2023 | Gasoline | Withdrawal | -$50.00 | $2,750.00\n01/30/2023 | Interest Credit | Deposit | $100.00 | $2,850.00\n01/31/2023 | ATM Withdrawal | Withdrawal | -$100.00 | $2,750.00\n\n-------------------------------------------------------------------------------------------------------------------\n\nDigital Signature:\n----------------------------------------------------------------------------------------------------------------",
+ "source": "kyc",
+ "private": [
+  "Donald Gerald Smith",
+  "jcarroll@lee.com",
+  "863 Rodriguez Station"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3124,
+  "type": "Bank Statement",
+  "synthetic": true
+ }
+}

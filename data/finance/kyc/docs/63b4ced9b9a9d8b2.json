@@ -1,0 +1,19 @@
+{
+ "doc_id": "63b4ced9b9a9d8b2",
+ "text": "SENIOR HOUSING FACILITY FINANCING AGREEMENT\n\nTHIS AGREEMENT is made and entered into as of the 1st day of August, 2022 (the \"Effective Date\"), by and between ABC Senior Living Corporation, a Delaware corporation having its principal place of business at 1234 Oak Street, Wilmington, DE 19803 (the \"Borrower\"), and XYZ Bank, a national banking association having its head office at 5678 Maple Avenue, New York, NY 10019 (the \"Lender\").\n\nWHEREAS, Borrower owns and operates a senior housing facility located at 901 Pine Road, Philadelphia, PA 19130 (the \"Property\"), which consists of 150 independent living units, 100 assisted living units, and 50 memory care units; and\n\nWHEREAS, Borrower desires to borrow from Lender and Lender desires to lend to Borrower, the sum of $20,000,000 (the \"Loan Amount\") for the purpose of financing the Property;\n\nNOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN. Lender agrees to make a loan to Borrower in the amount of $20,000,000, which shall be disbursed to Borrower at the Closing (as defined below) by wire transfer to an account designated by Borrower.\n\n2. INTEREST. The outstanding principal balance of the Loan shall bear interest at a rate of 5.00% per annum, calculated on a 360-day year basis.\n\n3. REPAYMENT. The Loan shall be repaid in equal monthly installments of principal and interest, commencing on the first day of the month next succeeding the Closing and continuing on the first day of each month thereafter until the Loan is fully repaid. Each monthly installment shall be in an amount equal to the principal and interest then due.\n\n4. SECURITY. The Lo",
+ "source": "kyc",
+ "private": [
+  "ABC Senior Living Corporation",
+  "1234 Oak Street, Wilmington, DE 19803",
+  "XYZ Bank",
+  "5678 Maple Avenue, New York, NY 10019",
+  "901 Pine Road, Philadelphia, PA 19130"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1201,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

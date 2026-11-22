@@ -1,0 +1,17 @@
+{
+ "doc_id": "a6ca474c4dc95b04",
+ "text": "Loan Application\n\nPersonal Information\n----------------------\n\nFull Name: Dietrich Deborah Niemeier\n\nDate of Birth:\n\nContact Information\n-------------------\n\nStreet Address: 965 Navarro Views, Lake Robert\nCity: \nState/Province: \nPostal Code: \nCountry: \nEmail: \nPhone Number: \n\nEmployment Information\n---------------------\n\nEmployer: \nJob Title: \nAnnual Income: \n\nGovernment-issued ID\n--------------------\n\nType: Passport\nNumber: \nIssuing Country: \nExpiration Date: \n\nLoan Information\n---------------\n\nLoan Amount: $50,000\nLoan Purpose: Debt Consolidation\n\nCredit Card Information\n---------------------\n\nCredit Card Number (last 4 digits): 1211\nCredit Card Type: \nCredit Card Expiration Date: \n\nBiometric Data (optional)\n-------------------------\n\nFacial Recognition: Not Provided\nFingerprints: Not Provided\nVoice Sample: Not Provided\n\nAdditional Documents\n--------------------\n\nPlease upload any additional documents to support your loan application.\n\nSignature\n---------\n\nSignature: \nDate: \n\nBy signing this application, you confirm that all the information provided is true and accurate to the best of your knowledge.",
+ "source": "kyc",
+ "private": [
+  "Dietrich Deborah Niemeier",
+  "965 Navarro Views, Lake Robert",
+  "121"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4087,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

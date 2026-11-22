@@ -1,0 +1,18 @@
+{
+ "doc_id": "5231c45ed3dc0174",
+ "text": "**Loan Application Form**\n\n**Applicant Information**\n\nFull Name: Nicolas Dobes\n\nDate of Birth: 14/05/1969\n\n**Contact Information**\n\nStreet Address: Flat 2, Gareth Ridge\n\n**Loan Information**\n\nLoan Amount: £100,000\n\nPurpose of Loan: Business Expansion\n\n**Collateral Assessment**\n\n1. **Real Estate:**\n   - Property Address: 2 Gareth Ridge, Apartment 2\n   - Property Type: Residential Apartment",
+ "source": "kyc",
+ "private": [
+  "Nicolas Dobes",
+  "14/05/1969",
+  "Flat 2, Gareth Ridge",
+  "2 Gareth Ridge, Apartment 2"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 513,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

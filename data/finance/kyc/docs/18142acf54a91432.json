@@ -1,0 +1,18 @@
+{
+ "doc_id": "18142acf54a91432",
+ "text": "Loan Application\n\nFull Name: Daniel Pearce-Hawkins\n\nStreet Address: 181 Mccoy Ville\n\nContact Information: [provide later]\n\nLoan Details:\n- Requested Amount: $50,000\n- Loan Purpose: Business Expansion\n\nFinancial Information:\n- Employment Status: Employed\n- Monthly Income: $8,500\n- Bank Name: Royal Bank of Canada\n- Credit Card Number (last 4 digits): 1234\n- Credit Card Security Code: 198\n\nEmployment Details:\n- Employer Name: XYZ Corporation\n- Job Title: Senior Manager\n- Years with Current Employer: 10 years\n- Supervisor's Contact Information: [provide later]\n\nFinancial Statement Review:\nAs part of the loan application process, we require a review of the applicant's financial statements to understand their overall financial health and stability. Please provide the following:\n- Last two years of personal tax returns\n- Last two years of business tax returns (if applicable)\n- Last three months of bank statements\n- Last three months of credit card statements\n- Proof of income (pay stubs, employment contract, etc.)\n\nBy signing below, I confirm that all the information provided is true and accurate to the best of my knowledge.\n\nApplicant's Signature: \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ Date: \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\n\nNote: The above document is a synthetically generated example and should not be used for any actual loan application process. It is intended for training a named entity recognition system only.",
+ "source": "kyc",
+ "private": [
+  "Daniel Pearce-Hawkins",
+  "181 Mccoy Ville",
+  "198",
+  "XYZ Corporation"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1793,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}
