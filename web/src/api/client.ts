@@ -50,9 +50,9 @@ export function setRequestDomain(domain: string | null): void {
   requestDomain = domain;
 }
 
-// Legal runs on its own pipeline (src/sanitise_legal), which the API serves under /legal with the
-// same paths; healthcare uses the paths as they are.
-const DOMAIN_PREFIX: Record<string, string> = { legal: "/legal" };
+// Legal and finance run on their own pipelines (src/sanitise_legal, src/sanitise_finance), which
+// the API serves under /legal and /finance with the same paths; healthcare uses the paths as they are.
+const DOMAIN_PREFIX: Record<string, string> = { legal: "/legal", finance: "/finance" };
 
 function withDomain(path: string): string {
   if (!requestDomain) return path;

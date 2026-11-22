@@ -1,5 +1,7 @@
 "use client";
 
+import { useDomain } from "@/components/Providers";
+import type { DomainId } from "@/lib/domains";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Radio, X } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -13,20 +15,36 @@ import { SIDES, VARIANTS } from "./sides";
 // src/sanitise/rag/answer.py and config.py. The API returns only the user message, so these
 // stay in step with the backend by hand.
 const OLLAMA = "localhost:11434";
-const SYSTEM_PROMPT = `You answer questions about a collection of records (patients' messages to doctors and workplace emails), using only the records under CONTEXT.
+const SYSTEM_PROMPTS: Record<DomainId, string> = {
+  medical: `You answer questions about a collection of records (patients' messages to doctors and workplace emails), using only the records under CONTEXT.
 - Answer in one to three sentences.
 - State details exactly as the records give them, including tokens such as [PERSON_1].
 - If the records do not contain the answer, reply: "The records do not say."
 - Do not guess or add anything that is not in the records.
-`;
+`,
+  legal: `You answer lawyers' questions about the firm's past matters (intake notes, advice emails, case notes and client enquiries), using only the documents under CONTEXT.
+- Answer in one to four sentences, and say what the firm advised when the documents say it.
+- State details exactly as the documents give them, including tokens such as [CLIENT_1].
+- If the documents do not contain the answer, reply: "The records do not say."
+- Do not guess or add anything that is not in the documents.
+`,
+  finance: `You answer questions about a collection of records (customers' messages and financial documents such as forms, statements, reports and emails), using only the records under CONTEXT.
+- Answer in one to three sentences.
+- State details exactly as the records give them, including tokens such as [PERSON_1].
+- If the records do not contain the answer, reply: "The records do not say."
+- Do not guess or add anything that is not in the records.
+`,
+};
+// legal answers on its profile's answer_model, while its API reports the agents' model
+const ANSWER_MODEL: Partial<Record<DomainId, string>> = { legal: "llama3:8b" };
 const OPTIONS = { temperature: 0.4, num_ctx: 4096, seed: 42, top_p: 0.9, num_predict: 512 };
 
 /** The request split where the user message starts: only that part carries the records. */
-function request(model: string, userMessage: string): [string, string] {
+function request(domain: DomainId, model: string, userMessage: string): [string, string] {
   const body = {
     model,
     messages: [
-      { role: "system", content: SYSTEM_PROMPT },
+      { role: "system", content: SYSTEM_PROMPTS[domain] },
       { role: "user", content: userMessage },
     ],
     stream: false,
@@ -51,6 +69,7 @@ export const PayloadDialog = ({
   model: string;
   onClose: () => void;
 }) => {
+  const { domain } = useDomain();
   const [index, setIndex] = useState(0);
   const [captured, setCaptured] = useState<Record<string, Captured>>({});
   const [error, setError] = useState<string | null>(null);
@@ -135,7 +154,7 @@ export const PayloadDialog = ({
                       <pre className="max-h-[56vh] overflow-y-auto whitespace-pre-wrap break-words bg-[#FBFAF7] px-4 py-3 font-mono text-[12px] leading-[1.8] text-[#2A2840]">
                         {answer && shot ? (
                           (() => {
-                            const [head, user] = request(model, answer.payload);
+                            const [head, user] = request(domain.id, ANSWER_MODEL[domain.id] ?? model, answer.payload);
                             return (
                               <>
                                 {head}

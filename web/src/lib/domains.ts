@@ -40,8 +40,7 @@ export const DOMAINS: Domain[] = [
   {
     id: "finance",
     label: "Finance",
-    ready: false,
-    why: "Coming soon: the finance pipeline has not been built yet",
+    ready: true,
     accent: "#F5A300",
     blurb: "Customer records: statements, invoices, KYC forms, loan files",
     placeholder: "Paste a customer note, or choose a statement, invoice or KYC scan",

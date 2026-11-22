@@ -33,7 +33,12 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
 
-from sanitise_finance.agents.detector.pipeline import detect, detect_llm, detect_rules, detect_with_trace
+from sanitise_finance.agents.detector.pipeline import (
+    detect,
+    detect_llm,
+    detect_rules,
+    detect_with_trace,
+)
 from sanitise_finance.agents.extractor.pipeline import extract
 from sanitise_finance.agents.pipeline import sanitise
 from sanitise_finance.agents.rewriter.pipeline import rewrite
@@ -73,7 +78,7 @@ from sanitise_finance.llm.factory import build_llm_client, close_llm_client
 from sanitise_finance.llm.ollama import OllamaClient
 from sanitise_finance.loader import compute_doc_id
 from sanitise_finance.mock_mode import (
-    SAMPLE_DIR,
+    DATA_DIR,
     build_mock_context,
     mock_facts,
     mock_llm,
@@ -217,11 +222,11 @@ def create_app(
         return request.app.state.rag
 
     def attack_sources() -> tuple[Path, Path]:
-        """D's attack scripts and person table; the sample ones (over the 20 fixtures) in mock
+        """D's attack scripts and person table; the repository's finance ones in mock
         mode or until D's scripts are in place."""
         attacks_dir = Path(settings.attacks_dir)
-        if mock or not any(attacks_dir.glob("*.json")):
-            return SAMPLE_DIR / "attacks", SAMPLE_DIR / "people.json"
+        if not any(attacks_dir.glob("*.json")):
+            return DATA_DIR / "attacks", DATA_DIR / "people.json"  # finance's own, from any directory
         return attacks_dir, Path(settings.people_path)
 
     @app.post("/v1/sanitise", response_model=SanitisedRecord)

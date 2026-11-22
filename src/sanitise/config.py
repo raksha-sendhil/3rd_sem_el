@@ -116,6 +116,8 @@ class Settings(BaseSettings):
     # The legal pipeline (src/sanitise_legal, from the legal branch) served under /legal, picked
     # by the dashboard's Healthcare / Legal toggle. False: healthcare only.
     legal_enabled: bool = True
+    # The finance pipeline (src/sanitise_finance) served under /finance, the same way.
+    finance_enabled: bool = True
 
     # ---- HTTP API
     api_host: str = "127.0.0.1"

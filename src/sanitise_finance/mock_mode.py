@@ -24,7 +24,11 @@ from typing import Any
 from sanitise_finance.agents.detector.pipeline import detect
 from sanitise_finance.agents.extractor import canonical, importance
 from sanitise_finance.agents.rewriter import leakcheck
-from sanitise_finance.agents.rewriter.pipeline import apply_decisions, plan_decisions, removed_decisions
+from sanitise_finance.agents.rewriter.pipeline import (
+    apply_decisions,
+    plan_decisions,
+    removed_decisions,
+)
 from sanitise_finance.agents.rewriter.prompt import draft
 from sanitise_finance.llm.base import LLMClient
 from sanitise_finance.llm.mock import TEXT_CALL, MockCall, MockLLM, fabricate
@@ -43,8 +47,9 @@ from sanitise_finance.schemas import (
 )
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-FIXTURES_DIR = REPO_ROOT / "data" / "fixtures"
+FIXTURES_DIR = REPO_ROOT / "data" / "finance" / "demo" / "docs"
 SAMPLE_DIR = REPO_ROOT / "data" / "sample"
+DATA_DIR = REPO_ROOT / "data" / "finance"
 
 C = PIICategory
 _RELATION_FOR: dict[PIICategory, str] = {

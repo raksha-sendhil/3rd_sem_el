@@ -16,6 +16,7 @@ import { ReadView, type Upload as FileUpload } from "@/components/documents/Read
 import { UploadBox } from "@/components/documents/UploadBox";
 import { ErrorNote, Legend, PageHead } from "@/components/PageHead";
 import { useDomain } from "@/components/Providers";
+import type { DomainId } from "@/lib/domains";
 
 const KINDS = {
   patient: { title: "Patient message", icon: MessageSquare, accent: "#FF4D3D" },
@@ -32,10 +33,17 @@ const LEGAL_KINDS = {
   client: { title: "Client file", icon: MessageSquare, accent: "#FF4D3D" },
 };
 
+// the finance demo: bank statements and other customer records
+const FINANCE_KINDS = {
+  statement: { title: "Bank statement", icon: FileText, accent: "#F5A300" },
+  record: { title: "Customer record", icon: MessageSquare, accent: "#2D8CFF" },
+};
+
 /** What a record is, from how its text starts. */
-function kindOf(d: DocumentSummary, legal = false) {
+function kindOf(d: DocumentSummary, domain: DomainId) {
   const first = d.preview.trim().split("\n")[0];
-  if (legal) {
+  if (domain === "finance") return /^statement/i.test(first) ? FINANCE_KINDS.statement : FINANCE_KINDS.record;
+  if (domain === "legal") {
     if (/^intake note/i.test(first)) return LEGAL_KINDS.intake;
     if (/^case note/i.test(first)) return LEGAL_KINDS.case;
     if (/^(from|to|subject|dear)\b/i.test(first)) return LEGAL_KINDS.email;
@@ -216,7 +224,7 @@ export default function Documents() {
           onClick={() => !running && setDocId(OWN)}
         />
         {docs.map((d) => {
-          const k = kindOf(d, domain.id === "legal");
+          const k = kindOf(d, domain.id);
           return (
             <Option
               key={d.doc_id}

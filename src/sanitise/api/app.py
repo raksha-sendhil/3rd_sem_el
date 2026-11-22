@@ -7,6 +7,7 @@
     GET  /v1/health   -> { status, ollama_reachable, model, pipeline_version }
     POST /v1/ingest   { filename, content_base64 | text } -> IngestResult (file -> text)
     POST /v1/ingest/sanitise  (same body)              -> SanitisedRecord
+    /finance/...      the finance pipeline (src/sanitise_finance, its own API), same paths
     /legal/...        the legal pipeline (src/sanitise_legal, its own API), same paths; files
                       are read by this API's step 0 (POST /legal/v1/ingest)
 
@@ -123,6 +124,23 @@ def legal_app(settings: Settings) -> FastAPI | None:
     return create_legal_app(LegalSettings(**overrides))
 
 
+def finance_app(settings: Settings) -> FastAPI | None:
+    """The finance pipeline's own API (``sanitise_finance``: its prompts, rules, monitor and
+    data); None when switched off or missing."""
+    if not settings.finance_enabled:
+        return None
+    try:
+        from sanitise_finance.api.app import create_app as create_finance_app
+        from sanitise_finance.config import Settings as FinanceSettings
+    except ImportError as exc:
+        log.warning("finance pipeline not available: %s", exc)
+        return None
+    overrides: dict = {}
+    if settings.llm_backend == "mock":
+        overrides = {"llm_backend": "mock", "monitor_db_path": ":memory:"}
+    return create_finance_app(FinanceSettings(**overrides))
+
+
 def create_app(
     settings: Settings | None = None,
     llm: BaseJSONClient | None = None,
@@ -144,9 +162,10 @@ def create_app(
         app.state.vision = make_reader(settings)  # mock, local model or Gemini
         try:
             async with AsyncExitStack() as stack:
-                legal = getattr(app.state, "legal", None)
-                if legal is not None:  # a mounted app's start-up does not run by itself
-                    await stack.enter_async_context(legal.router.lifespan_context(legal))
+                for name in ("legal", "finance"):
+                    mounted = getattr(app.state, name, None)
+                    if mounted is not None:  # a mounted app's start-up does not run by itself
+                        await stack.enter_async_context(mounted.router.lifespan_context(mounted))
                 yield
         finally:
             await app.state.vision.aclose()
@@ -483,5 +502,9 @@ def create_app(
             return MonitorLedger(session_id=session_id, monitor="pool", k=5)
 
         app.mount("/legal", app.state.legal)
+
+    app.state.finance = finance_app(settings)  # its API has every path, file reading included
+    if app.state.finance is not None:
+        app.mount("/finance", app.state.finance)
 
     return app

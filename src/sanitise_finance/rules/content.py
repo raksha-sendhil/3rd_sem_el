@@ -9,6 +9,7 @@ a span, by rules only:
   ("3 months", "2D", "5 minutes"). A date of birth is never dropped.
 * OCCUPATION that is the role of a speaker or of the service ("Customer", "Agent", "customer
   service representative"), unless the text says it is someone's job ("I am a nurse").
+* the words of a statement line ("Dr", "NEFT") and a lone country code ("+91").
 * LOCATION made only of common facility nouns in lower case ("nursing facility", "school").
 * PHYSICAL that is a sex or the size of a finding ("female", "7 inches"), not a body measure.
 * a "URL" made by a missing space after a full stop ("side.Co", "area.pl" of "area.please").
@@ -80,6 +81,12 @@ _LENGTH_ONLY = re.compile(
 _HEIGHT_CUE = re.compile(r"(?:\bheight|\btall|\bi\s+am|\bi['’]m)[^.\n]{0,15}$", re.IGNORECASE)
 
 
+# the words of a statement line, which the recognisers take for names and phones ("Dr" = debit)
+_LEDGER_WORDS = {
+    "dr", "cr", "neft", "rtgs", "imps", "upi", "ach", "micr", "chq", "clg", "atm", "txn", "bal",
+}  # fmt: skip
+
+
 def _service_role(value: str, before: str, after: str) -> bool:
     if not _ROLE.fullmatch(value):
         return False
@@ -107,6 +114,10 @@ def not_identifying(text: str, span) -> bool:
     before = text[max(0, span.start - 60) : span.start]
     after = text[span.end : span.end + 30]
     kind = span.category.value
+    if kind in ("NAME", "LOCATION", "OTHER") and value.lower().rstrip(".") in _LEDGER_WORDS:
+        return not (value.lower().startswith("dr") and re.match(r"[.]?\s+[A-Z][a-z]{2}", after))
+    if kind == "PHONE" and value.lstrip("+").isdigit() and len(value.lstrip("+")) <= 3:
+        return True  # a country code on its own: the number after it is a span of its own
     if kind == "DATE":
         dated = _CALENDAR.search(span.text) or _MAY_MARCH.search(span.text)
         return not dated and not _BIRTH.search(before)

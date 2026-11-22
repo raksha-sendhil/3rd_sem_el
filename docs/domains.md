@@ -1,18 +1,25 @@
-# Healthcare and legal: two pipelines, one app
+# Healthcare, legal and finance: three pipelines, one app
 
 The dashboard's **Healthcare / Legal** toggle switches between two complete pipelines:
 
 | | Healthcare | Legal |
 |---|---|---|
 | Code | `src/sanitise` (this repo's own pipeline) | `src/sanitise_legal` (the legal branch's pipeline, imported as it is) |
-| Agents 1-3 | rules + Gemini (`SANITISE_AGENTS_*`) | rules + the legal profile in `config/domains.json` (`gemma4:e4b` on Ollama by default) |
+| Agents 1-3 | rules + Gemini (`SANITISE_AGENTS_*`) | rules + the legal profile in `config/domains.json` (Gemini; answers on `llama3:8b`) |
 | Data | `data/corpus`, `data/attacks`, `data/fixtures` | `data/legal` (120 fictional clients, attacks, QA, real judgments), `data/legal/ontology` |
-| Session monitor | ledger of kinds of detail + candidate pool over the store (`docs/session_monitor.md`) | candidate pool over the client table (`sanitise_legal.monitor.pool`) |
+| Session monitor | ledger of kinds of detail + candidate pool over the store (`docs/session_monitor.md`) | candidate pool over the sanitised store (`sanitise_legal.monitor.pool`) |
 | API paths | `/v1/...` | `/legal/v1/...`, the same paths |
 | Reading files (step 0: PDF, scans, photos) | `/v1/ingest` | `/legal/v1/ingest`: the same reader, then the legal agents |
 
 Choosing Healthcare runs exactly the code that was on `main` before the legal pipeline came in;
 nothing in `src/sanitise`'s agents, prompts, monitor or scoring changed.
+
+## Finance
+
+Finance is the third toggle: `src/sanitise_finance`, with its own prompts, rules (amounts and
+products are kept), monitor and data (`data/finance`), served at `/finance/v1/...` by its own
+API. Legal and finance need their demo stores before the API starts:
+`python tools/build_demo_stores.py` (cell 4b of `notebooks/backend_kaggle.ipynb`).
 
 ## How the legal code got here
 
