@@ -1,0 +1,17 @@
+{
+ "doc_id": "3460a199da352aa9",
+ "text": "---\n\nArtistic Endeavor Loan Credit Application\n\nFull Name: Ana Sofía Emiliano Marcos\nDate: [Current Date]\n\nContact Information:\n- Address: 7 Canale Verri, Apt. 32, [City], [Postal Code]\n- Phone: [Phone Number]\n- Email: [Email Address]\n\nEmployment Information:\n- Employer: [Employer Name]\n- Job Title: [Job Title]\n- Length of Employment: [Length of Employment]\n- Monthly Income: [Monthly Income]\n\nLoan Information:\n- Requested Loan Amount: £[Loan Amount]\n- Loan Purpose: Funding for an artistic project\n- Project Details: [Brief Description of the Artistic Project]\n- Budget Breakdown:\n  - Production Costs: £[Production Costs]\n  - Marketing & Promotion: £[Marketing & Promotion]\n  - Personnel Costs: £[Personnel Costs]\n  - Other Expenses: £[Other Expenses]\n\nPortfolio: [Link to Online Portfolio or Attach Samples]\n\nPersonal References:\n- Name: [Reference Name]\n- Relationship: [Relationship to Applicant]\n- Phone: [Reference Phone Number]\n- Email: [Reference Email Address]\n\nBanking Information:\n- Bank Name: [Bank Name]\n- Routing Number: 372820003\n- Account Holder Name: Ana Sofía Emiliano Marcos\n- Account Number: [Account Number]\n\nAdditional Information:\n- Emergency Contact: [Emergency Contact Name]\n- Emergency Contact Phone: [Emergency Contact Phone Number]\n\nSignature: ________________________ Date: _________________\n\n---\n\nNote: Please ensure that all information provided is accurate and true to the best of your knowledge. Providing false or misleading information may result in the denial of your loan application or legal consequences.",
+ "source": "kyc",
+ "private": [
+  "Ana Sofía Emiliano Marcos",
+  "7 Canale Verri, Apt. 32",
+  "372820003"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 766,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

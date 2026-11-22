@@ -1,0 +1,25 @@
+{
+ "doc_id": "b09d9d712a3976f0",
+ "text": "INDIVIDUAL CREDIT APPLICATION\n\nFull Legal Name: John Michael Doe\n\nDate of Birth: 08/12/1985\n\nCurrent Address: 456 Oak Street, Toronto, ON, M6H 2L8\n\nPhone Number: (416) 123-4567\n\nEmail Address: john.m.doe@email.com\n\nEmployment History:\n\nPosition: Software Engineer\nCompany: XYZ Inc.\nAddress: 789 Yonge Street, Toronto, ON, M5E 1G7\nEmployment Period: 06/01/2015 - Present\nSalary: $85,000 per annum\n\nPosition: Junior Software Developer\nCompany: ABC Ltd.\nAddress: 321 Bay Street, Toronto, ON, M5H 2S1\nEmployment Period: 01/01/2013 - 05/31/2015\nSalary: $50,000 per annum\n\nFinancial Information:\n\nBank Name: Royal Bank of Canada\nAccount Type: Chequing\nAccount Number: 123456789\n\nCredit Card Information (if applicable):\n\nCard Type: Visa\nCard Number: 1234-1234-1234-1234 (last 4 digits only)\nExpiration Date: 05/2024\nCredit Limit: $15,000\n\nMonthly Expenses:\nRent: $1,500\nUtilities: $200\nGroceries: $400\nTransportation: $250\nEntertainment: $300\nOther: $200\n\nPurpose of Credit: Debt Consolidation\n\nDeclaration:\nI, John Michael Doe, hereby declare that all the information provided above is true and accurate to the best of my knowledge. I understand that any false or misleading information may result in the rejection of this application or legal consequences.\n\nSignature: John M. Doe\nDate: 01/10/2023",
+ "source": "kyc",
+ "private": [
+  "John Michael Doe",
+  "08/12/1985",
+  "456 Oak Street, Toronto, ON, M6H 2L8",
+  "(416) 123-4567",
+  "john.m.doe@email.com",
+  "XYZ Inc.",
+  "789 Yonge Street, Toronto, ON, M5E 1G7",
+  "ABC Ltd.",
+  "321 Bay Street, Toronto, ON, M5H 2S1",
+  "1234-1234-1234-1234",
+  "John M. Doe"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1369,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

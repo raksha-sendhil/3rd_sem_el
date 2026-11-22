@@ -1,0 +1,12 @@
+{
+ "doc_id": "5f94bc75f6651ab4",
+ "text": "Movements in allowances for impairment of trade receivables and contract assets\n2019 2018\nOpening balance 4,123 4,575 Decrease (–)/increase (+) in allowance –737 420 Write-offs –382 –890 Translation difference –21 18\nClosing balance 1) 2,983 4,123\n1) Of which SEK 0 (15) million relates to contract assets.\nThe distribution of trade receivables and contract assets closely follows the distribution of the Company’s sales, see note B1, “Segment information.” The ten largest customers represented 49% (53%) of the total trade receivables and contract assets in 2019.\nAging analysis of gross values by risk category at December 31, 2019\nDays past due 1–90 91–180 181–360 >360 Total\nCountry risk: Low 1,347 125 127 313 1,912 Country risk: Medium 891 725 600 819 3,035 Country risk: High 583 365 217 1,315 2,480\nTotal past due 2,821 1,215 944 2,447 7,427",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "168d8b4e350cd1466e20530e331c8765",
+  "page": 1,
+  "report": "lm-ericsson-telephone-company_2019.pdf"
+ }
+}

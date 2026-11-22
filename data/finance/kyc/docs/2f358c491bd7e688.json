@@ -1,0 +1,17 @@
+{
+ "doc_id": "2f358c491bd7e688",
+ "text": "MICROFINANCE LOAN AGREEMENT\n\nThis Microfinance Loan Agreement (the \"Agreement\"), dated as of the Effective Date, is entered into between Becker-Padilla, a company organized and existing under the laws of the United States, with its head office located at 171 Garcia Plaza (\"Lender\"), and Jerónimo I. Conde, a natural person (\"Borrower\").\n\nWHEREAS, Borrower desires to borrow funds from Lender, and Lender desires to lend funds to Borrower, on the terms and conditions set forth in this Agreement;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN\n\n1.1 Amount. Lender agrees to make a loan to Borrower in the amount of Ten Thousand Dollars ($10,000) (the \"Loan\"), which amount shall be disbursed to Borrower in accordance with the disbursement schedule set forth in Exhibit A attached hereto.\n\n1.2 Purpose. The Loan shall be used by Borrower for the purpose of starting a small business.\n\n2. REPAYMENT\n\n2.1 Repayment Schedule. The Loan shall be repaid in 24 equal monthly installments, with the first installment due on the first day of the month next succeeding the Effective Date. Each installment shall consist of both principal and interest, as set forth in Exhibit B attached hereto.\n\n2.2 Late Payments. If any installment payment is not received by Lender within five (5) business days after the due date, Borrower shall pay a late fee in the amount of five percent (5%) of the overdue amount.\n\n3. INTEREST\n\n3.1 Interest Rate. The annual interest rate for the Loan shall be ten percent (10%).\n\n3.2 Interest Calculation. Interest shall be calculated on the outstanding principal balance of the Loan on a 360-day year basis.\n\n4. COLLATERAL\n\n4.1 Collateral. As collateral for the Loan",
+ "source": "kyc",
+ "private": [
+  "Becker-Padilla",
+  "171 Garcia Plaza",
+  "Jerónimo I. Conde"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5202,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

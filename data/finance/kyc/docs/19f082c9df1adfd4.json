@@ -1,0 +1,18 @@
+{
+ "doc_id": "19f082c9df1adfd4",
+ "text": "VACATION RENTAL PROPERTY FINANCING AGREEMENT\n\nThis Vacation Rental Property Financing Agreement (the \"Agreement\"), dated as of March 1, 2023 (the \"Effective Date\"), is entered into between DHLUGBVR032, a bank located at 983929623, with a SWIFT/BIC code of DHLUGBVR032 (the \"Lender\"), and Purificación Martorell-Morell, residing at 6084 Ramos Mill, Apt. 22403 (the \"Borrower\").\n\nWHEREAS, the Borrower desires to borrow funds from the Lender for the purpose of financing a vacation rental property, and the Lender is willing to lend such funds on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. LOAN AMOUNT. The Lender shall loan to the Borrower the principal sum of Five Hundred Thousand Dollars ($500,000.00) (the \"Loan Amount\").\n\n2. INTEREST RATE. The Loan Amount shall bear interest at a fixed rate of 4.50% per annum.\n\n3. REPAYMENT SCHEDULE. The Borrower shall repay the Loan Amount, together with all accrued and unpaid interest, in thirty-six (36) equal monthly installments, commencing on the first day of the month next following the Effective Date, and on the first day of each month thereafter.\n\n4. PROPERTY DETAILS. The property financed by the Loan Amount is a beach house located in Miami, Florida, featuring four (4) bedrooms, three (3) bathrooms, and a private pool. The property is situated in close proximity to popular tourist attractions, including the Miami Seaquarium and the Art Deco Historic District. The property has a strong rental history, with an average occupancy rate of 75% and an average daily rate of $350.\n\n5. REPRESENTATIONS AND WARRANTIES. The Borrower represents",
+ "source": "kyc",
+ "private": [
+  "DHLUGBVR032",
+  "983929623",
+  "Purificación Martorell-Morell",
+  "6084 Ramos Mill, Apt. 22403"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2885,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "doc_id": "1908a3b603c479d7",
+ "text": "From: enron.announcements@enron.com\nTo: all.us@enron.com\nDate: 2000-10-31\nSubject: XMS Memo\n\nOver the next several months Enron will be phasing in a new expense-reporting \nproduct, Concur Technologies\u0001, Expense Management System (XMS).  You will be \nable to prepare your expense report, send it for approval, and transmit it \nfor payment using the Intranet.  It will be far more user-friendly than the \nExcel-based form currently in use and will provide a truly paperless \nprocess.  In addition, the system efficiently integrates with the SAP \naccounting system.  \n\nOn October 16, employees who used a prior version of the product upgraded to \nthe most current release.  On October 30, it will be available to Enron Corp \nemployees, Company 0011.  The rollout to other groups will continue through \nJanuary 2001.  Rollout announcements will be made to each business unit. \n\nIn Houston, IT Central will provide four training sessions per week. To \nenroll in a class go to itcentral.enron.com and click on \nServices>Training>Schedules. Those in outlying locations and those who prefer \non-line training can use LEAP by signing on to sap.enron.com and clicking on \nTraining, then LEAP.  Use xms (lower case) as the User ID and Password.  \n\nWe are excited about this new system and hope you will find it useful.  If \nyou have questions regarding its use contact IT Central at (713) 345-4727 or \nvisit their website.",
+ "source": "corporate",
+ "private": [
+  "enron.announcements@enron.com",
+  "all.us@enron.com",
+  "(713) 345-4727"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "nemec-g/all_documents/1830.",
+  "message_id": "<24258864.1075842623444.JavaMail.evans@thyme>"
+ }
+}

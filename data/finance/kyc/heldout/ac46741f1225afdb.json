@@ -1,0 +1,19 @@
+{
+ "doc_id": "ac46741f1225afdb",
+ "text": "MEDICAL LOAN AGREEMENT\n\nThis Medical Loan Agreement (the \"Agreement\") is entered into as of this 1st day of August, 2021, by and between Michael Roman-Johnson, with a mailing address of 41276 Christina Islands, 54374, West Davidmouth (\"Borrower\"), and Virtuoso Ventures Bank, a registered banking institution located at 1205 Wall Street, New York, NY 10005 (\"Lender\").\n\nWHEREAS, Borrower seeks to obtain a loan from Lender to cover certain medical expenses; and\n\nWHEREAS, Lender is willing to provide such a loan to Borrower, subject to the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. LOAN AMOUNT\n\nLender shall provide Borrower with a medical loan in the amount of $50,000 (the \"Loan Amount\").\n\n2. INTEREST RATE\n\nThe Loan Amount shall bear interest at a rate of 4% per annum.\n\n3. REPAYMENT TERMS\n\nBorrower shall repay the Loan Amount, together with all accrued interest, in equal monthly installments over a term of 60 months, commencing on the first day of the month next succeeding the date of this Agreement. Each installment shall be in the amount of $951.52.\n\n4. COLLATERAL\n\nAs collateral for the Loan Amount, Borrower hereby grants Lender a security interest in the following property:\n\n- All of Borrower's right, title, and interest in and to the sum of £20,000 currently on deposit in account number GB96VVBA33108070229590 at VirtualBank, a division of GlobalBank, plc;\n- All of Borrower's right, title, and interest in and to any and all medical bills, insurance claims, or other receivables related to the medical procedures for which the Loan Amount is being obtained.\n5",
+ "source": "kyc",
+ "private": [
+  "Michael Roman-Johnson",
+  "41276 Christina Islands, 54374, West Davidmouth",
+  "Virtuoso Ventures Bank",
+  "1205 Wall Street, New York, NY 10005",
+  "GB96VVBA33108070229590"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3881,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

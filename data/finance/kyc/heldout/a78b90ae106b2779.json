@@ -1,0 +1,22 @@
+{
+ "doc_id": "a78b90ae106b2779",
+ "text": "Loan Application\n\nCollateral Assessment Form\n\nDate: March 15, 2023\n\nFull Legal Name: Camille Marthe Laurent\nPassport Number: 268103824\n\nContact Information:\n- Permanent Address: 16987 Paul Village, 05305, Janetberg\n- Email: [camille.laurent@email.com](mailto:camille.laurent@email.com)\n- Phone: [+1 (123) 456-7890](ntouch://call/+1%20123%20456-7890)\n\nLoan Details:\n- Loan Amount Requested: $200,000\n- Purpose of Loan: Business Expansion\n- Loan Term: 60 months\n- Interest Rate: 6.5%\n\nEmployment Information:\n- Employer: ABC Enterprises\n- Job Title: Marketing Director\n- Years with Employer: 10 years\n- Monthly Income: $12,500\n\nCollateral Information:\n- Collateral Type: Real Estate\n- Property Address: 2445 Orchard Lane, Janetberg, 05305\n- Property Value: $350,000\n- Mortgage Balance: $150,000\n\nSupporting Documents:\n- Copy of Passport\n- Recent Pay Stubs\n- Bank Statements (last 3 months)\n- Property Appraisal Report\n- Mortgage Statement\n\nApplicant's Declaration:\nI, Camille Marthe Laurent, hereby declare that all the information provided in this loan application is true and accurate to the best of my knowledge. I understand that providing false or misleading information is a criminal offense.\n\nSignature: Camille Marthe Laurent\nDate: March 15, 2023",
+ "source": "kyc",
+ "private": [
+  "Camille Marthe Laurent",
+  "268103824",
+  "16987 Paul Village, 05305, Janetberg",
+  "[camille.laurent@email.com]",
+  "[+1 (123) 456-7890]",
+  "ABC Enterprises",
+  "2445 Orchard Lane, Janetberg, 05305",
+  "camille.laurent@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2780,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

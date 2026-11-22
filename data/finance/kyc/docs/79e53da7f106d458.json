@@ -1,0 +1,21 @@
+{
+ "doc_id": "79e53da7f106d458",
+ "text": "---\nLoan Application\n\nFull Name: John Michael Doe\nDate of Birth: 01/10/1985\nContact Address: 123 Maple Street, Toronto, ON, Canada\nEmail Address: johndoe@email.com\nPhone Number: (123) 456-7890\n\nLoan Details\nLoan Amount: $250,000\nLoan Purpose: Purchase of a new home\nLoan Term: 30 years\n\nEmployment Details\nEmployer: XYZ Corporation\nPosition: Senior Software Engineer\nAnnual Income: $120,000\nEmployment Duration: 8 years\n\nFinancial Details\nBank Name: Royal Bank of Canada\nAccount Type: Checking\nAccount Balance: $35,000\n\nCredit History Check\nCredit Bureau: Equifax Canada\nCredit Score: 760 (Excellent)\nCredit History:\n- 2010-2014: TD Bank, Credit Card, Limit $5,000, Paid in Full\n- 2014-2018: Scotiabank, Auto Loan, $20,000, Paid as Agreed\n- 2018-Present: Royal Bank of Canada, Mortgage, $180,000, Paid as Agreed\n\nSupporting Documents\n- Copy of government-issued ID\n- Recent pay stubs\n- Last 2 years' tax returns\n- Bank statements for the last 6 months\n- Proof of employment\n- Property appraisal report\n\n---\n\nNote: This is a fictional loan application generated for illustrative purposes only. Any resemblance to real persons, living or dead, or actual events, is purely coincidental.",
+ "source": "kyc",
+ "private": [
+  "John Michael Doe",
+  "01/10/1985",
+  "123 Maple Street, Toronto, ON, Canada",
+  "johndoe@email.com",
+  "(123) 456-7890",
+  "XYZ Corporation",
+  "Royal Bank of Canada"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 365,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "doc_id": "799f6f53fe21c886",
+ "text": "We canceled an extended warranty on an RV loan we have with BMO Harris Bank. The dealer sent BMO the check for {$3900.00}. The check was cashed but never applied to our account. After XXXX attempts they can not find the payment.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "consumer loan",
+  "issue": "Managing the loan or lease",
+  "state": "GA"
+ }
+}

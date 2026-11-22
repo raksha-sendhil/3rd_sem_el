@@ -1,0 +1,11 @@
+{
+ "doc_id": "36bc1d93c42fa4d5",
+ "text": "Says loan was taken out XXXX XXXX XXXX XXXX XXXX XXXX {$1800.00}. XXXX. Ref XXXX. Online loan never received.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "personal loan",
+  "issue": "Was approved for a loan, but didn't receive the money",
+  "state": "FL"
+ }
+}

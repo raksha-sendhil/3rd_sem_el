@@ -1,0 +1,18 @@
+{
+ "doc_id": "589217c247434cda",
+ "text": "**Property Loan Application**\n\n**Loan Applicant Details**\n\nFull Name: Charles Pineau\nPermanent Address: 4 Callejón Tamara Seguí, 08394, Toledo\n\n**Financial Details**\n\nLoan Amount Requested: £150,000\nLoan Purpose: Property Purchase\n\n**Employment Details**\n\nNot Applicable (Provide employment details in the main loan application)\n\n**Property Details**\n\nProperty Address: 12 Elm Street, London, SE1 5JQ\nProperty Value: £200,000\nProperty Ownership Status: Currently Owned\nProperty Type: Residential\n\n**Supporting Documents**\n\nPlease upload the following documents:\n1. Proof of Identity (Passport/Driving License)\n2. Proof of Address (Utility Bill)\n3. Three months' salary slips\n4. Last six months' bank statements\n5. Property Valuation Report\n\nPlease note: The IP address used for this application is f448:22d4:c7b5:b34d:e2ca:f896:f0c7:fb8e.\n\nThank you for choosing our bank for your loan application. Our team will review your application and contact you within 5 business days.",
+ "source": "kyc",
+ "private": [
+  "Charles Pineau",
+  "4 Callejón Tamara Seguí, 08394, Toledo",
+  "12 Elm Street, London, SE1 5JQ",
+  "f448:22d4:c7b5:b34d:e2ca:f896:f0c7:fb8e"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3730,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

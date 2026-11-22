@@ -1,0 +1,24 @@
+{
+ "doc_id": "dad95478815ba756",
+ "text": "---\nCredit Application - Medical Loan\n\nFull Name: John Smith\nDate of Birth: 01/01/1980\nAddress: 123 Maple Street, Anytown, USA\nEmail: john.smith@email.com\nPhone: (123) 456-7890\n\nEmployment Information\n\nEmployer Name: XYZ Corporation\nAddress: 456 Oak Street, Anytown, USA\nJob Title: Software Engineer\nMonthly Income: $7,500\n\nLoan Details\n\nLoan Amount: $25,000\nLoan Purpose: Cover medical expenses for upcoming surgery\n\nMedical Provider Information\n\nProvider Name: Dr. Jane Doe\nAddress: 789 Pine Street, Anytown, USA\nPhone: (987) 654-3210\n\nTreatment Details\n\nDescription of Medical Services:\n- Pre-surgery consultation and testing\n- Complex knee surgery\n- Post-surgery rehabilitation\n\nCost Breakdown\n\n- Pre-surgery consultation and testing: $3,500\n- Surgery: $20,000\n- Rehabilitation: $1,500\n- Total: $25,000\n\nI, John Smith, hereby authorize the release of my medical and financial information to the necessary parties for the purpose of processing this loan application.\n\nSignature: John Smith\nDate: 01/15/2023\n\n---",
+ "source": "kyc",
+ "private": [
+  "John Smith",
+  "01/01/1980",
+  "123 Maple Street, Anytown, USA",
+  "john.smith@email.com",
+  "(123) 456-7890",
+  "XYZ Corporation",
+  "456 Oak Street, Anytown, USA",
+  "Dr. Jane Doe",
+  "789 Pine Street, Anytown, USA",
+  "(987) 654-3210"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 27,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

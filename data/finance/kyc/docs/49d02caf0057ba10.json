@@ -1,0 +1,19 @@
+{
+ "doc_id": "49d02caf0057ba10",
+ "text": "[Application for Empowerment Scholarship]\n\nFull Name: Jane Doe\nDate of Birth: 01/01/1998\nAddress: 45, Baker Street, London, NW1 6XE\nContact Number: 0712345678\nEmail Address: jane.doe@example.com\n\nPersonal Statement:\nI am Jane Doe, a 22-year-old woman from London. I am applying for the Empowerment Scholarship to pursue my dream of becoming a software engineer. I have always been passionate about technology and its potential to change the world. However, my journey to this point has not been easy.\n\nGrowing up, my family faced financial hardships. Despite this, I was determined to succeed in my studies. I worked part-time jobs to support myself while pursuing my education. Despite the challenges, I managed to graduate from high school with distinction.\n\nUnfortunately, my financial situation has not improved. I cannot afford to fund my higher education without financial aid. This scholarship would not only help me financially but also serve as a testament to my resilience and determination.\n\nAcademic Achievements:\n- GCSEs: 5 A*s, 4 As\n- A-Levels: 2 A*s, 1 A\n- BTEC Level 3 Diploma in IT: Distinction*\n\nFinancial Details:\n- Total Annual Income: £15,000\n- Total Annual Expenditure: £18,000\n- Savings: £2,000\n\nNarrative of Overcoming Adversity:\nI was raised in a single-parent household in a low-income area. My mother worked two jobs to provide for us, but we still struggled to make ends meet. Despite this, she instilled in me the value of education and the importance of perseverance.\n\nI faced numerous challenges throughout my academic journey. I often had to choose between working extra hours to support my family and focusing on my studies. However, I never let these obstacles deter me. I worked hard, sought help when needed, and remained committed to my goals.\n\nMy experiences have shaped me into a resilient and determined individual. I am confident that with this scholarship",
+ "source": "kyc",
+ "private": [
+  "Jane Doe",
+  "01/01/1998",
+  "45, Baker Street, London, NW1 6XE",
+  "0712345678",
+  "jane.doe@example.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1150,
+  "type": "Financial Aid Application",
+  "synthetic": true
+ }
+}

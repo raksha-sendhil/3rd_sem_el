@@ -1,0 +1,166 @@
+{
+  "acne": {
+    "category": "a skin condition",
+    "rare": false
+  },
+  "acromegaly": {
+    "category": "a rare hormonal disorder",
+    "rare": true
+  },
+  "amyloidosis": {
+    "category": "a rare protein disorder",
+    "rare": true
+  },
+  "anaemia": {
+    "category": "a blood condition",
+    "rare": false
+  },
+  "anemia": {
+    "category": "a blood condition",
+    "rare": false
+  },
+  "angina": {
+    "category": "a heart condition",
+    "rare": false
+  },
+  "anterior cruciate ligament": {
+    "category": "a knee injury",
+    "rare": false
+  },
+  "asthma": {
+    "category": "a lung condition",
+    "rare": false
+  },
+  "atrial fibrillation": {
+    "category": "a heart rhythm condition",
+    "rare": false
+  },
+  "back pain": {
+    "category": "a back problem",
+    "rare": false
+  },
+  "cellulitis": {
+    "category": "a skin infection",
+    "rare": false
+  },
+  "contact dermatitis": {
+    "category": "a skin condition",
+    "rare": false
+  },
+  "copd": {
+    "category": "a lung condition",
+    "rare": false
+  },
+  "coronary artery disease": {
+    "category": "a heart condition",
+    "rare": false
+  },
+  "diabetes": {
+    "category": "a metabolic condition",
+    "rare": false
+  },
+  "dyslipidemia": {
+    "category": "a cholesterol condition",
+    "rare": false
+  },
+  "eczema": {
+    "category": "a skin condition",
+    "rare": false
+  },
+  "enlarged lymph nodes": {
+    "category": "a lymph node problem",
+    "rare": false
+  },
+  "gastritis": {
+    "category": "a digestive condition",
+    "rare": false
+  },
+  "gout": {
+    "category": "a joint condition",
+    "rare": false
+  },
+  "high blood pressure": {
+    "category": "a blood pressure condition",
+    "rare": false
+  },
+  "hypertension": {
+    "category": "a blood pressure condition",
+    "rare": false
+  },
+  "hypothyroidism": {
+    "category": "a thyroid condition",
+    "rare": false
+  },
+  "ischemic stroke": {
+    "category": "a stroke",
+    "rare": false
+  },
+  "kidney stones": {
+    "category": "a kidney condition",
+    "rare": false
+  },
+  "leukocytosis": {
+    "category": "a blood condition",
+    "rare": false
+  },
+  "malaria": {
+    "category": "an infection",
+    "rare": false
+  },
+  "migraine": {
+    "category": "a neurological condition",
+    "rare": false
+  },
+  "multiple myeloma": {
+    "category": "a rare blood cancer",
+    "rare": true
+  },
+  "myocardial infarction": {
+    "category": "a heart attack",
+    "rare": false
+  },
+  "neuropathy": {
+    "category": "a nerve condition",
+    "rare": false
+  },
+  "p. vivax malaria": {
+    "category": "an infection",
+    "rare": false
+  },
+  "psoriasis": {
+    "category": "a skin condition",
+    "rare": false
+  },
+  "sarcoidosis": {
+    "category": "a rare inflammatory disease",
+    "rare": true
+  },
+  "sinusitis": {
+    "category": "a sinus condition",
+    "rare": false
+  },
+  "supraventricular tachycardia": {
+    "category": "a heart rhythm condition",
+    "rare": false
+  },
+  "thyroid cancer": {
+    "category": "a type of cancer",
+    "rare": false
+  },
+  "thyroid nodule": {
+    "category": "a thyroid growth",
+    "rare": false
+  },
+  "tonsillitis": {
+    "category": "a throat infection",
+    "rare": false
+  },
+  "type 2 diabetes": {
+    "category": "a metabolic condition",
+    "rare": false
+  },
+  "vertigo": {
+    "category": "a balance or hearing problem",
+    "rare": false
+  }
+}

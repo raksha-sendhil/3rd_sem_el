@@ -1,0 +1,16 @@
+{
+ "doc_id": "e27ecf6fb7d261a8",
+ "text": "From: norman.lee@enron.com\nTo: w..white@enron.com, casey.evans@enron.com, wayne.vinson@enron.com\nDate: 2002-01-11\nSubject: Power PortCalc STAGE Release 01/10/2002 Version 4.2.3s2\n\nDear All,\n\n\tThis Stage release is aiming to consolated the three different PortCalc executables that we currently use, and keep it simple for Estate support in the future.\n\nPlease test the Stage Release of PortCalc version 4.2.3s2 and let us know of the results.  \n\nThe executable is      /stage/egs-home/ermt/bin/pwrcalc_slr        \n\n\tNew Features:\n\nVersion 4.2.3s2\n\nChanges Affecting All:\n\n\tIndex Forward :\n\nPortCalc can now calculate Index Forward deals with Basis.\n\n\nPerformance improvement for 2D Option Sensitivities.\n\n\nImplemented EAST and WEST Bankruptcy evaluation. ( Backport from ProdFix v4.2.2.1 12/10/2001 )\n\n\nVersion 4.2.3s1\n\nImplemented 2D Option Sensitivities calculation. This allows scenario calculations with changes in two of the following simultaneously : Price, Volatility, Time and Interest Rate.\n\n\nPlease do not hesitate to ask if there is any questions.\n\n\tThanks,\n\n\nNorman.\nx36976.",
+ "source": "corporate",
+ "private": [
+  "norman.lee@enron.com",
+  "w..white@enron.com",
+  "casey.evans@enron.com",
+  "wayne.vinson@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/inbox/338.",
+  "message_id": "<11114689.1075840187940.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "doc_id": "563925750bab4227",
+ "text": "On Friday, XX/XX/year>, I was shopping at XXXX when I tried to pay for my item, I was surprised to find that my Bank of America credit card ( BOACC ) was declined. I tried the second time with no success. So, I paid for the items that I purchased with a different card. The next day, I received a prompt from my Apple Pay saying that I needed to remove the BOACC from its platform. I thought a mistake had occurred. I called BOACC customer service on Saturday XX/XX/year>. They did not give me any reason for the issue except that I needed to call the collection department on Monday. On Monday XX/XX/year>, I called BOACC and was transferred to the collection department and asked why my account in the collection is even though I had never missed a payment and my balance of BOACC was {$100.00} out of a credit limit of {$3000.00} by which I paid it right away thinking that was the issue even though no payment was due. The customer service employee did not know what the issue was and told me that my account was and is in good standing she did not know why my account was closed except that I needed to talk to the Risk department and then she said if anybody told you about the closure of the account, I replied that no one from BOACC reached out to me. She apologized and told me that she would file a complaint on my behalf. The following day, I received an email thanking me for the payment of {$100.00}. As of this filing, no one called me about the closure of my account. FYI : CC account # XXXX XXXX XXXX XXXX",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Closing your account",
+  "state": "CO"
+ }
+}

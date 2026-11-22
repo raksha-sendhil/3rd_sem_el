@@ -1,0 +1,19 @@
+{
+ "doc_id": "e2ba59cda390c890",
+ "text": "From: debra.perlingiere@enron.com\nTo: veronica.espinoza@enron.com, rudwell.johnson@enron.com, darren.vanek@enron.com\nDate: 2001-07-26\nSubject: Select Energy\n\nSelect is ready to negotiate the attached agreement prepared in 11/2000.  Do you have any changes to the credit section?  Please advise.\n\n  \n\nDebra Perlingiere\nEnron North America Legal\n1400 Smith Street, EB 3885\nHouston, Texas 77002\ndperlin@enron\n713-853-7658\n713-646-3490 Fax",
+ "source": "corporate",
+ "private": [
+  "debra.perlingiere@enron.com",
+  "veronica.espinoza@enron.com",
+  "rudwell.johnson@enron.com",
+  "darren.vanek@enron.com",
+  "Debra Perlingiere",
+  "713-853-7658",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "perlingiere-d/sent_items/499.",
+  "message_id": "<22145190.1075858537196.JavaMail.evans@thyme>"
+ }
+}

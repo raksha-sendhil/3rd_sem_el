@@ -1,0 +1,11 @@
+{
+ "doc_id": "5a27af65b352c779",
+ "text": "The collections account holder is PBCAPIGRP and the account number is XXXX. XXXX XXXX XXXX is filing for bankruptcy and yet they are still requesting money from me. They went with P & B collections and say that as of XX/XX/2022, I owed : {$1800.00}. I requested early on that I am not interested in their service and they did not contact me after that.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "debt collection",
+  "issue": "Attempts to collect debt not owed",
+  "state": "IN"
+ }
+}

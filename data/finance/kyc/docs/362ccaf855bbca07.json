@@ -1,0 +1,18 @@
+{
+ "doc_id": "362ccaf855bbca07",
+ "text": "**VACATION FINANCE AGREEMENT**\n\nThis Vacation Finance Agreement (the \"Agreement\"), dated as of the date of acceptance, is entered into between Daniele C. Gucci, residing at 430 Johnson Crossing, Apt. 231 (the \"Borrower\"), and Vacation Financials Inc., a corporation organized and existing under the laws of the United States, with its head office located at 1213 Main Street, Anytown, USA (the \"Lender\").\n\n**1. LOAN APPLICATION AND APPROVAL**\n\nThe Borrower hereby applies for a vacation loan in the amount of $10,000 (the \"Loan Amount\") from the Lender for the purpose of financing a vacation (the \"Purpose\"). The Lender hereby approves the Borrower's application for the Loan Amount, subject to the terms and conditions set forth in this Agreement.\n\n**2. REPAYMENT TERMS**\n\nThe Loan Amount shall be repaid in equal monthly installments over a term of 12 months, with the first installment due on the first business day following the expiration of a 30-day grace period from the date of this Agreement. The monthly installment amount shall be $873.10, which includes both principal and interest. The interest rate on the Loan Amount shall be 8% per annum.\n\n**3. COLLATERAL**\n\nAs security for the Loan Amount and the Borrower's obligations under this Agreement, the Borrower hereby grants the Lender a security interest in the Borrower's right, title, and interest in and to the following property (the \"Collateral\"):\n\n- The Borrower's right to receive payment under any travel insurance policy purchased in connection with the Purpose; and\n- Any other property pledged by the Borrower as collateral for the Loan Amount.\n\n**4. CANCELLATION POLICY**\n\nIn the event that the Borrower cancels the Purpose prior to the completion of the trip, the Borrower shall be responsible for paying any cancellation fees or penalties incurred as a result of the cancellation. The Borrow",
+ "source": "kyc",
+ "private": [
+  "Daniele C. Gucci",
+  "430 Johnson Crossing, Apt. 231",
+  "Vacation Financials Inc.",
+  "1213 Main Street, Anytown, USA"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3681,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

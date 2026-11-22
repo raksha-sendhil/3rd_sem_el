@@ -1,0 +1,17 @@
+{
+ "doc_id": "94054471fd14d0c5",
+ "text": "------------------------------------------------------------------------------------------------------------------------\nInterest Summary Statement\n\nAccount Holder: Trinidad Gracia\nAccount Number: 123456789\n------------------------------------------------------------------------------------------------------------------------\n\nStatement Period: 01/01/2022 - 31/01/2022\n\nOpening Balance: $5,000.00\n\nInterest Rate: 0.02%\n\nInterest Earned:\nDate | Description | Debit (USD) | Credit (USD) | Running Balance (USD)\n01/01/2022 | Interest Earned | - | 10.00 | 5,010.00\n31/01/2022 | Interest Earned | - | 10.03 | 5,020.03\n\nFinal Balance: $5,020.03\n\n------------------------------------------------------------------------------------------------------------------------\nAddress: 7564 Mary River, 15813, North Keith\nCredit Card Security Code: 273\n------------------------------------------------------------------------------------------------------------------------\n\nPlease note that this summary does not reflect the activity of your checking or savings account. It is solely an Interest Summary Statement. For detailed transaction history, please refer to your full bank statements.",
+ "source": "kyc",
+ "private": [
+  "Trinidad Gracia",
+  "7564 Mary River, 15813, North Keith",
+  "273"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 913,
+  "type": "Bank Statement",
+  "synthetic": true
+ }
+}

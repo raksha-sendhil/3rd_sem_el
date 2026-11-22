@@ -1,0 +1,11 @@
+{
+ "doc_id": "878d680ba2431fa9",
+ "text": "Dear CFPB, I trust this message finds you well. I am writing to bring to your attention the matter regarding a claim made on XX/XX/. Upon thorough investigation by the bank, it has been determined that there was no error detected on their end. However, I would like to draw your attention to a discrepancy observed during the transaction in question, supported by an eyewitness account. The incident involves a payment to XXXX XXXX XXXX XXXX XXXX movers, wherein the agreed-upon amount was {$780.00}. Regrettably, only {$480.00} was received by the movers. This occurrence was witnessed by the movers themselves at the automated teller machine ( ATM ). It has been acknowledged that there exists a deficit of {$300.00}, which we are committed to rectifying promptly. In the course of discussing this matter with a representative, a brief hold was experienced to review the claim thoroughly. Subsequently, the representative affirmed the validity of the claim. We appreciate your attention to this matter and kindly request your assistance in addressing and resolving this discrepancy at your earliest convenience. Your prompt attention to this matter is highly valued. Thank you for your cooperation. Sincerely,",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Managing an account",
+  "state": "GA"
+ }
+}

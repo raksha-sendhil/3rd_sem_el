@@ -1,0 +1,18 @@
+{
+ "doc_id": "b509934a5e9fa8ff",
+ "text": "**Loan Application - Financial Statement Review**\n\n**Applicant Information**\n\nFull Name: Gerald Chloe Lyons\nStreet Address: 908 Frazier Underpass\n\n**Loan Information**\n\nLoan Amount: $150,000\nLoan Purpose: Home Renovation\n\n**Employment Information**\n\nEmployer: ABC Corporation\nPosition: Senior Software Engineer\nAnnual Income: $125,000\n\n**Financial Information**\n\nBank Name: XYZ Bank\nAccount Type: Checking\nAccount Balance: $55,000\n\nCredit Card Information (if applicable)\n\nCard Name: Visa Platinum\nCredit Limit: $20,000\nOutstanding Balance: $5,000\n\n**Supporting Documents**\n\n1. Latest three months' bank statements\n2. Latest three months' pay stubs\n3. Last two years' tax returns\n4. Proof of home ownership (for mortgage applicants)\n\n**Declaration**\n\nI, Gerald Chloe Lyons, hereby declare that all the information provided above is true and accurate to the best of my knowledge. I understand that providing false or misleading information is a breach of the terms and conditions of this loan application and may lead to legal consequences.\n\nSignature: _______________ Date: _______________\n\n**Confidentiality Agreement**\n\nI, Gerald Chloe Lyons, agree that all the information provided in this loan application, including but not limited to financial and personal information, will be kept confidential by the lending institution and used solely for the purpose of processing this loan application.\n\nSignature: _______________ Date: _______________\n\n**Password for Secure Online Access**\n\nPassword: ClO2YZdR(@_8OU\n\nPlease note that the password is case sensitive and should be kept confidential.",
+ "source": "kyc",
+ "private": [
+  "Gerald Chloe Lyons",
+  "908 Frazier Underpass",
+  "ABC Corporation",
+  "ClO2YZdR(@_8OU"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 399,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

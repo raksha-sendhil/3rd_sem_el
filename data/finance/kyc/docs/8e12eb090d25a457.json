@@ -1,0 +1,16 @@
+{
+ "doc_id": "8e12eb090d25a457",
+ "text": "------------------------------------------------------------------------------------------------------------------\n\nLoan Statement\n\nAccount Holder: John Doe\nAccount Number: 123456789\nLoan Type: Home Improvement Loan\nInterest Rate: 4.5%\nLoan Amount: $25,000\n\nPayment Schedule: 48 Monthly Payments\nFirst Payment Date: 01/05/2023\n\nPayment Schedule Details:\n\n| Date | Principal | Interest | Total Payment | Remaining Balance |\n| --- | --- | --- | --- | --- |\n| 01/05/23 | $500.00 | $95.83 | $595.83 | $24,404.17 |\n| 01/06/23 | $500.00 | $93.17 | $593.17 | $23,901.17 |\n| 01/07/23 | $500.00 | $90.51 | $590.51 | $23,401.66 |\n| 01/08/23 | $500.00 | $87.86 | $587.86 | $22,901.20 |\n| 01/09/23 | $500.00 | $85.22 | $585.22 | $22,401.98 |\n| 01/10/23 | $500.00 | $82.58 | $582.58 | $21,902.40 |\n| 01/11/23 | $500.00 | $79.95 | $579.95 | $21,402.95 |\n| 01/12/23 | $500.00 | $77.33 | $577.33 | $20,903.42 |\n| 01/13/2",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "123456789"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5175,
+  "type": "Bank Statement",
+  "synthetic": true
+ }
+}

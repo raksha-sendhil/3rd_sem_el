@@ -1,0 +1,21 @@
+{
+ "doc_id": "250d987d338ae419",
+ "text": "LOAN AGREEMENT\n\nThis Loan Agreement (the \"Agreement\") is made and entered into as of this 1st day of August, 2021 (the \"Effective Date\"), by and between Alan Lisa Goodwin, a resident of 3397 Mullins Locks, East Davidside (the \"Borrower\"), and XYZ Bank, a banking institution located at 1234 Main Street, Anytown, with SWIFT BIC Code LJKCUSDJ525 and Bank Routing Number 907577964 (the \"Lender\").\n\nWHEREAS, the Borrower desires to borrow funds from the Lender for the purpose of financing the Borrower's small and medium-sized enterprise (the \"SME\"); and\n\nWHEREAS, the Lender is willing to provide such funds to the Borrower on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. LOAN. The Lender agrees to provide the Borrower with a loan in the amount of $500,000 (the \"Loan Amount\") on the Effective Date. The Loan Amount shall be disbursed to the Borrower's account at the Lender's branch located at 5678 Business Road, Anytown.\n\n2. INTEREST. The Loan Amount shall bear interest at a rate of 6.00% per annum, calculated on a 360-day year basis.\n\n3. REPAYMENT. The Borrower shall repay the Loan Amount, together with all accrued and unpaid interest, in equal monthly installments over a term of 60 months, with the first installment due on the first day of the month next succeeding the month in which the Loan Amount is disbursed.\n\n4. COLLATERAL. As security for the payment and performance of the Borrower's obligations under this Agreement, the Borrower hereby grants to the Lender a security interest in all of the Borrower's right, title, and interest in and to the following property (the \"",
+ "source": "kyc",
+ "private": [
+  "Alan Lisa Goodwin",
+  "3397 Mullins Locks, East Davidside",
+  "XYZ Bank",
+  "1234 Main Street, Anytown",
+  "LJKCUSDJ525",
+  "907577964",
+  "5678 Business Road, Anytown"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2529,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

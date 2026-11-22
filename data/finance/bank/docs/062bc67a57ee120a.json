@@ -1,0 +1,11 @@
+{
+ "doc_id": "062bc67a57ee120a",
+ "text": "I found the following improper hard inquiries on my credit reports. Specifically, there are duplicate hard inquiries for pre-approved mortgages : XXXX XXXX XXXX XXXX XXXX XXXX, XXXX XXXX XXXX XXXX, XXXX XXXX XXXX XXXX XX/XX/XXXX XXXX XXXX XXXX XX/XX/XXXX XXXX XXXX XXXX XX/XX/XXXX XXXX XXXX XX/XX/XXXX There are duplicate hard inquiries for pre-approved car loans : XXXX XXXX XXXX XX/XX/XXXX XXXX XXXX XXXX XX/XX/XXXX There are unnecessary hard inquiries for pre-approved credit card applications : XXXX XX/XX/XXXX XXXX XX/XX/XXXX XXXX",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "personal loan",
+  "issue": "Improper use of your report",
+  "state": "IL"
+ }
+}

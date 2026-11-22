@@ -1,0 +1,20 @@
+{
+ "doc_id": "5fefe242cdd9301b",
+ "text": "---\nLoan Application\n\nNonprofit Name: Hope for All Foundation\n\nMission Statement: The Hope for All Foundation is dedicated to alleviating poverty and promoting education in underprivileged communities. We aim to empower individuals and families to break the cycle of poverty and achieve self-sufficiency.\n\nPrograms: Our programs focus on providing access to quality education, job training, and financial literacy. We operate community centers that offer after-school tutoring, vocational classes, and counseling services.\n\nFinancial Sustainability: The Hope for All Foundation has a diverse funding base, including individual donors, corporate sponsors, and government grants. Our annual revenue has consistently grown over the past five years, with a 15% increase in 2021. We maintain a reserve fund to ensure financial stability and continuity of services.\n\nLoan Information:\n- Purpose of Loan: Expansion of community center in a new location\n- Loan Amount Requested: $500,000\n- Repayment Term: 5 years\n- Interest Rate: Market rate\n\nOrganization Information:\n- Legal Name: Hope for All Foundation\n- Tax ID: 12-3456789\n- Contact Name: Arnaude V. Delattre, Executive Director\n- Contact Address: 051 Hill Village, Apt. 664, London, NW1 6XB, UK\n- Contact Phone: [+44] 20-12345678\n- Contact Email: arnaude.delattre@hopeforallfoundation.org\n\nAdditional Information:\n- Local Latitude/Longitude of New Community Center: -36.975016, 0.096182\n- Account Pin for Secure Communication: 1902\n\nWe have attached our financial statements, annual reports, and board meeting minutes for your review. Thank you for considering our loan application.\n\nSincerely,\nArnaude V. Delattre\nExecutive Director\nHope for All Foundation",
+ "source": "kyc",
+ "private": [
+  "Hope for All Foundation",
+  "Arnaude V. Delattre",
+  "051 Hill Village, Apt. 664",
+  "[+44] 20-12345678",
+  "arnaude.delattre@hopeforallfoundation.org",
+  "1902"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5273,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

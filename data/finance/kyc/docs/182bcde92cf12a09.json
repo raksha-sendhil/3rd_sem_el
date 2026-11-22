@@ -1,0 +1,17 @@
+{
+ "doc_id": "182bcde92cf12a09",
+ "text": "------------------------------------------------------------------------------------------------------------------\nCredit Card Statement\n\nCardholder Name: Gloria Brown-Thornton\nAccount Number: **** **** **** 1234 (last 4 digits)\nStatement Period: 01/01/2023 - 01/31/2023\nBill Due Date: 02/23/2023\n\nPayment Information:\n------------------\n\nAmount Due: $2,567.45\nMinimum Payment: $150.00\nLate Fee: $35.00 (if payment is not received by 02/23/2023)\n\nTransactions:\n-------------\n\nDate | Description | Type | Amount (Local Currency) | Exchange Rate | Amount (USD) | Fees (USD)\n-----|-------------|------|--------------------------|---------------|--------------|-----------\n01/05/2023 | Purchase at El Corte Inglés | Retail | 350.00 € | 1.11 | $393.50 | $11.25\n01/10/2023 | Hotel booking with Booking.com | Travel | 650.00 GBP | 1.32 | $862.00 | $17.24\n01/15/2023 | Dinner at Gordon Ramsay's Bread Street Kitchen, London | Dining | 220.00 GBP | 1.32 | $292.40 | $3.46\n01/20/2023 | Withdrawal from ATM in Paris, France | Cash Advance | 200.00 EUR | 1.11 | $222.00 | $5.55\n\nForeign Transaction Fees: $37.45\nTotal Amount Due: $2,604.90\n\nPlease ensure you pay the full amount due by the due date to avoid late fees and potential interest charges. For any inquiries related to your transactions, please contact us at 1-800-123-4",
+ "source": "kyc",
+ "private": [
+  "Gloria Brown-Thornton",
+  "El Corte Inglés",
+  "Gordon Ramsay's"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 638,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

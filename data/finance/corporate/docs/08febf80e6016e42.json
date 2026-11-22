@@ -1,0 +1,18 @@
+{
+ "doc_id": "08febf80e6016e42",
+ "text": "From: mreid@socalgas.com\nTo: olaveson.angela@enron.com, sergesketter.angie@enron.com, holmes/dynegy.beverly@enron.com\nDate: 2001-06-18\nSubject: IMPORTANT NOTICE - Change of G-IMB\n\nThe attached was posted on GasSelect.  Please make sure you read so that you become familiar with the new standby procurement penalty rules for the G-IMB tariff.\nIn a nut shell: \n         \n1) Penalty is now calculated at 150% of highest daily border price index at the SoCal border. \n2) The charge should begin from the first day of the \"flow month\" and end five days prior to the start of each corresponding imbalance trading period.\n3)  The charge will be posted at least one day in advance of each corresponding imbalance trading period. \nSince this became effective on June 1, SoCalGas will determine the highest daily border price during the period of June 1 through July 20 and post it no later than July 24.  Customers are assessed this penalty for any underdeliveries outside the 10% tolerance for trades that take place from July 25 -30 for June imbalances.\nPlease call me if you have questions regarding this new G-IMB calculation. \nThanks. \nMary \nmreid@socalgas.com \nph (213) 244-3898 \nfx  (213) 244-3897 \n <<RG-3305.PDF>>  <<G-IMB-S2.PDF>> \n\n - RG-3305.PDF \n - G-IMB-S2.PDF",
+ "source": "corporate",
+ "private": [
+  "mreid@socalgas.com",
+  "olaveson.angela@enron.com",
+  "sergesketter.angie@enron.com",
+  "holmes/dynegy.beverly@enron.com",
+  "(213) 244-3898",
+  "(213) 244-3897"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ward-k/socal_gas/2.",
+  "message_id": "<29067868.1075852880010.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "doc_id": "5b3c37a289713f1f",
+ "text": "MORTGAGE CONTRACT\n\nThis Mortgage Contract (the \"Agreement\") is entered into as of this 1st day of January, 2023 (the \"Effective Date\"), by and between Jason R. Brookes, a natural person, with a mailing address of 9417 Jerry Route, 15836, New Dale (the \"Borrower\"), and MZWMDEEA020, a mortgage lender institution (the \"Lender\").\n\nWHEREAS, Borrower desires to borrow funds from Lender for the purpose of purchasing a residential property; and\n\nWHEREAS, Lender is willing to lend such funds to Borrower on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. LOAN AMOUNT. Lender shall provide Borrower with a loan in the amount of $500,000 (the \"Loan Amount\").\n\n2. INTEREST RATE. The interest rate on the Loan Amount shall be an adjustable rate, initially set at 3.00% per annum. The interest rate shall be subject to adjustment on each anniversary of the Effective Date, based on the then-current 1-year LIBOR rate, as published in The Wall Street Journal on the first business day of each such anniversary. The interest rate shall be adjusted by adding a margin of 2.00% to the 1-year LIBOR rate.\n\n3. REPAYMENT TERM. The term of the Loan Amount shall be 30 years (the \"Term\").\n\n4. REPAYMENT. Borrower shall make monthly payments of principal and interest on the Loan Amount, commencing on the first day of the month next following the Effective Date. The amount of each monthly payment shall be determined based on the then-current interest rate, as set forth in Section 2 hereof, and the outstanding principal balance of the Loan Amount.\n\n5. COLLATERAL. The Loan Amount shall be secured by a mortgage on the real property located at 9417 Jerry Route, 15836, New Dale (the \"Property",
+ "source": "kyc",
+ "private": [
+  "Jason R. Brookes",
+  "9417 Jerry Route, 15836, New Dale",
+  "MZWMDEEA020"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1824,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

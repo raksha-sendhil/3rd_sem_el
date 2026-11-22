@@ -1,0 +1,11 @@
+{
+ "doc_id": "1c6824896231c94b",
+ "text": "Mailed letter on XXXX opting out of reporting for account dated XXXX XXXX in the amount of {$110.00}.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "debt collection",
+  "issue": "Attempts to collect debt not owed",
+  "state": "TN"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "doc_id": "d7ae167d5170168c",
+ "text": "From: janette.elbertson@enron.com\nTo: elizabeth.sager@enron.com, christian.yoder@enron.com\nDate: 2001-06-07\nSubject: QLR - Power Trading\n\nMark Haedicke requested the QLR scheduled for today at 3:30 p.m. Central time \nbe rescheduled.  I will contact your assistants to reschedule it sometime \nafter Monday, July 18.\n\nThank you.\n\nJanette Elbertson\nEnron Wholesale Services\nLegal Department - EB3326\nTelephone:  (713) 853-7906\nFax:  (713) 646-2600\njanette.elbertson@enron.com",
+ "source": "corporate",
+ "private": [
+  "janette.elbertson@enron.com",
+  "elizabeth.sager@enron.com",
+  "christian.yoder@enron.com",
+  "Janette Elbertson",
+  "(713) 853-7906",
+  "(713) 646-2600"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "sager-e/notes_inbox/71.",
+  "message_id": "<21640127.1075853426524.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "doc_id": "815ed8ef9ad9ecda",
+ "text": "---\nLoan Application\n\nLoan Applicant Information:\n-----------------------------\n\nFull Name: John Doe\nDate of Birth: 01/01/1980\nContact Number: +1 (123) 456-7890\nEmail Address: johndoe@example.com\nMailing Address: 1234 Eco Street, Toronto, ON, Canada, M4N 1K7\n\nBusiness Information (if applicable):\n-------------------------------------\n\nBusiness Name: GreenTech Innovations Inc.\nYears in Business: 5\nIndustry: Renewable Energy Solutions\nContact Number: +1 (123) 456-7891\nEmail Address: greentech@example.com\nMailing Address: 1234 Eco Street, Toronto, ON, Canada, M4N 1K7\n\nLoan Information:\n----------------\n\nLoan Amount Requested: $500,000\nLoan Purpose: Implementing Solar Panel Installation and Battery Storage Solutions\nLoan Term (years): 7\n\nEco-friendly Initiatives:\n------------------------\n\n1. Solar Panel Installation: We plan to install solar panels on the rooftops of commercial buildings to generate clean and renewable energy. The installation will reduce our dependency on non-renewable energy sources and lower our carbon footprint.\n2. Battery Storage Solutions: We will implement battery storage systems to store excess energy produced by the solar panels. This stored energy can be used during peak hours or when sunlight is not available, ensuring consistent power supply.\n\nCost Analysis:\n-------------\n\n* Solar Panel System: $350,000\n* Battery Storage System: $120,000\n* Installation and Labor Costs: $30,000\n\nTotal Project Cost: $500,000\n\nExpected Impact on Sustainability:\n----------------------------------\n\n* Reduction in greenhouse gas emissions by an estimated 250 metric tons of CO2 equivalent annually\n* Energy cost savings of approximately 30% over the loan term\n* Increased public awareness of renewable energy solutions and sustainability practices\n\nDeclaration:\n------------\n\nI, John Doe,",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "01/01/1980",
+  "+1 (123) 456-7890",
+  "johndoe@example.com",
+  "1234 Eco Street, Toronto, ON, Canada, M4N 1K7",
+  "+1 (123) 456-7891",
+  "greentech@example.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1235,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

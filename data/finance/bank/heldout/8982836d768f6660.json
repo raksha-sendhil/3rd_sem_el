@@ -1,0 +1,11 @@
+{
+ "doc_id": "8982836d768f6660",
+ "text": "I sent a wire transfer from my Wells Fargo bank to my XXXX XXXX account on XX/XX/XXXX. It is no XX/XX/XXXX and the wire transfer has not been received and it is not in my Wells Fargo account either. It is just missing. I filed a case with Wells Fargo on XX/XX/XXXX to find out where the wire transfer went and they still have no answer and have not credited back the wire to my account. There is just XXXX XXXX missing and no one has an answer. I have checked with XXXX XXXX and they have not received any wire.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "money transfer",
+  "issue": "Money was not available when promised",
+  "state": "CA"
+ }
+}

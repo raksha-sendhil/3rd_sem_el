@@ -1,0 +1,18 @@
+{
+ "doc_id": "d22dc265a569b9f1",
+ "text": "----------------------------------------\nBarclays Bank PLC\n19 Lydia Key, CV78 9GP, Port Thomas\n\nAccount Closure Statement\nAccount Name: Valerie Schrik\nAccount Number: 12345678\nSort Code: 11-22-33\n\nClosure Date: 01/12/2022\n\nAccount Activity:\n\nDate | Description | Debit (£) | Credit (£) | Balance (£)\n\n01/11/2022 | Opening Balance | - | - | 1,256.34\n03/11/2022 | Salary Deposit | - | 2,500.00 | 3,756.34\n15/11/2022 | Groceries Purchase | 125.67 | - | 3,630.67\n25/11/2022 | Utility Bill Payment | 150.00 | - | 3,480.67\n30/11/2022 | Closing Balance | - | - | 3,480.67\n\nDistribution of Remaining Balance:\nClosing Balance: £3,480.67\nAccount Closure Fee: £25.00\nTotal Funds Returned: £3,455.67\n\nPayment Details:\nAccount Name: Valerie Schrik\nAccount Number: 12345678\nSort Code: 11-22-33\nBank Name: Barclays Bank PLC\n\nPlease allow 5-7 working days for the funds to be returned to the account.\n\nFor any queries, please contact our customer service team on:\nPhone: 008-105 75 57\nMon-Fri: 8am - 8pm\nSat: 9am - 5pm\n\nThank you for banking with us.\n----------------------------------------",
+ "source": "kyc",
+ "private": [
+  "Barclays Bank PLC",
+  "19 Lydia Key, CV78 9GP, Port Thomas",
+  "Valerie Schrik",
+  "008-105 75 57"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 881,
+  "type": "Bank Statement",
+  "synthetic": true
+ }
+}

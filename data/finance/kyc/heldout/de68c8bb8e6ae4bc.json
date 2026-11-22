@@ -1,0 +1,18 @@
+{
+ "doc_id": "de68c8bb8e6ae4bc",
+ "text": "Disbursement Details\n\nLoan Application Form\n\nFull Name: Stewart Callum Williams\nDate: 03/15/2023\n\nLoan Details:\n- Loan Amount: $25,000\n- Loan Purpose: Home Renovation\n- Loan Term: 60 months\n- Interest Rate: 5.5% per annum\n- Monthly Payment: $476.51\n\nDisbursement Details:\n- Disbursement Method: Direct Deposit\n- Account Name: Stewart Callum Williams\n- Account Number: 123456789 (for confidentiality, last 4 digits: 1179)\n- Bank Name: Royal Bank of Canada\n- Bank Address: 200 Bay Street, Toronto, ON, M5J 2J1\n\nSupporting Documents:\n- Copy of Government-issued ID: Passport\n- Proof of Income: Last 3 months' payslips\n- Proof of Residence: Utility bill\n- Property Documents: Property deed, property tax assessment\n\nConfirmation:\nI, Stewart Callum Williams, confirm that the above-mentioned information is true and accurate to the best of my knowledge. I understand and agree to the terms and conditions of this loan.\n\nApplicant Signature: Stewart Callum Williams\nDate: 03/15/2023\n\nNote: Please allow 1-2 business days for disbursement processing. Once disbursed, the loan amount will be credited to the account mentioned above.",
+ "source": "kyc",
+ "private": [
+  "Stewart Callum Williams",
+  "1179",
+  "Royal Bank of Canada",
+  "200 Bay Street, Toronto, ON, M5J 2J1"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2031,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

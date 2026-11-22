@@ -1,0 +1,18 @@
+{
+ "doc_id": "1431a40261e809c0",
+ "text": "Loan Application - Risk Assessment\n\nDate: March 15, 2023\n\nLoan Applicant Information:\n\nFull Name: Chus Sebastián\nAccount PIN: 9720\nStreet Address: 937 Alyssa Road\n\nLoan Information:\n\nLoan Amount Requested: $150,000\nLoan Purpose: Business Expansion\n\nFinancial Information:\n\nGross Monthly Income: $12,000\nNet Worth: $500,000\nCredit Score: 750\n\nEmployment Information:\n\nEmployer Name: XYZ Corporation\nPosition: Senior Manager\nEmployment Duration: 10 years\n\nRisk Assessment:\n\nBased on the provided information, Chus Sebastián's loan application has been assessed for risk. The following factors were considered:\n\n1. Credit Score: A credit score of 750 indicates a low risk.\n2. Net Worth: A net worth of $500,000 indicates a low risk.\n3. Employment History: With a stable employment history of 10 years, this indicates a low risk.\n4. Loan Amount: The requested loan amount of $150,000 is high, which increases the risk slightly.\n5. Loan Purpose: The loan purpose of business expansion is considered a moderate risk.\n\nRisk Score: Low-Moderate\n\nRisk Mitigation Measures:\n\n1. The applicant's strong credit score and net worth offset the slightly higher risk associated with the loan amount and purpose.\n2. The applicant's stable employment history reduces the risk associated with the loan.\n3. It is recommended that the applicant provides additional supporting documents, such as business plans and financial statements, to further support the loan application.\n\nRequired Supporting Documents:\n\n1. Business Plan\n2. Financial Statements (Profit & Loss, Balance Sheet, Cash Flow)\n3. Income Tax Returns (last 3 years)\n4. Proof of Income (last 3 months)\n5. Proof of Identity (Driver's License or Passport)\n6. Proof of Address (Utility",
+ "source": "kyc",
+ "private": [
+  "Chus Sebastián",
+  "9720",
+  "937 Alyssa Road",
+  "XYZ Corporation"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 180,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

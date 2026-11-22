@@ -1,0 +1,11 @@
+{
+ "doc_id": "091ddf2e6be77d9e",
+ "text": "On XX/XX/year> I transferred {$3000.00} from my XXXX credit card to Wells Fargo credit card. The balance transfer went through but the {$3000.00} is also still showing up on my XXXX card. Have called both companies multiple times each month with the same answer. Wells Fargo has told me that the money got sent to XXXX ( confirmation of balance transfer : XXXX ). Trace number XXXX. XXXX still says they dont have any record of a balance transfer despite Wells Fargo saying the money was sent to the correct card ( after verifying the card number multiple times ).",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Other features, terms, or problems",
+  "state": "CA"
+ }
+}

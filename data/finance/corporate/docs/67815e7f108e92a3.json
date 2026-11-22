@@ -1,0 +1,15 @@
+{
+ "doc_id": "67815e7f108e92a3",
+ "text": "From: robin.rodrigue@enron.com\nTo: kam.keiser@enron.com\nDate: 2002-01-17\nSubject: Physical Deals???\n\nKam,\n\nI hear you get the pleasure of investigating this.   So here are the deals that were booked as physical but that Richard believes are financial.  \n\nV63990\nV67692\nV73350\nV82405\nVK6281\nVS8407\nVY1883\n\nLet me know if you have any questions. \nRobin\n312-541-1054",
+ "source": "corporate",
+ "private": [
+  "robin.rodrigue@enron.com",
+  "kam.keiser@enron.com",
+  "312-541-1054"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/inbox/276.",
+  "message_id": "<3587082.1075840186369.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "doc_id": "aefa84d9f67691f9",
+ "text": "******************************************\nATM RECEIPT\n******************************************\n\nDate: 06/15/2022\nTime: 10:25 AM\n\nAccount Holder: Toby Wayne Elliott\nAccount Number: [REDACTED]\n\nBranch Location:\n739 Kimberly Pass\nCity, State, Zip: Anytown, CA, 94111\n\nTransaction Type: Withdrawal\nAmount: $200.00\nNew Balance: $2,356.45\n\n******************************************\nTHANK YOU FOR BANKING WITH US!\n******************************************",
+ "source": "kyc",
+ "private": [
+  "Toby Wayne Elliott",
+  "739 Kimberly Pass"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2124,
+  "type": "Bank Statement",
+  "synthetic": true
+ }
+}

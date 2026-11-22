@@ -1,0 +1,16 @@
+{
+ "doc_id": "56db25269ad38a4e",
+ "text": "From: david.portz@enron.com\nTo: jean.ryall@enron.com\nDate: 2001-05-16\nSubject: QSE Liability Query\n\nJean -- Could you please determine how (if at all) the Protocols will treat \nthese specific circumstances:   When a QSE becomes unable to pay its \nobligations to the  ERCOT ISO, does the ERCOT ISO have any ability (or is \nthere any guidance anywhere on whether it will have any ability) to impose \nliability on the remaining functioning QSEs to cover dollar liabilities of \nthe defaulting QSE not satisfied by the defaulting QSE's credit support?  \nMike Curry said a while ago that he understood the the new CFO in ERCOT to be \ngearing up to address/resolve this issue.  For purposes of the QSE agreements \nEnron Power Marketing, Inc. is trying to complete  with customers, we are \nseeking as much information on this as possible, when and as available.  I \nunderstand that in California the ISO sought to impose such liabilities on \nthe remaining healthy scheduling entities, which authority remains in \ndispute.  Please call Mike or me to discuss if the substance of this query if \nnot clear.  \n\nThanks,  \nDavid Portz \nENA Legal (tel.: 713-853-9239)",
+ "source": "corporate",
+ "private": [
+  "david.portz@enron.com",
+  "jean.ryall@enron.com",
+  "David Portz",
+  "713-853-9239"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "sager-e/notes_inbox/722.",
+  "message_id": "<24186720.1075859604347.JavaMail.evans@thyme>"
+ }
+}

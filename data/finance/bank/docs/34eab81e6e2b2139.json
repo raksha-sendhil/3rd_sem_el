@@ -1,0 +1,11 @@
+{
+ "doc_id": "34eab81e6e2b2139",
+ "text": "On XXXX XXXX there was a fraudulent transaction posted on my checking account ending XXXX for the amount of {$8700.00} by XXXX XXXX XXXX XXXX Bank of America and filed a claim on XXXX XXXX XXXX XXXX XXXX. On XX/XX/ Bank of America sent a letter stating they are unable to approve the claim. Checking Account XXXX XXXX XXXX XXXX XXXX Bank of America",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Problem with a lender or other company charging your account",
+  "state": "TX"
+ }
+}

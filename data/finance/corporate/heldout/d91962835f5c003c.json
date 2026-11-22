@@ -1,0 +1,16 @@
+{
+ "doc_id": "d91962835f5c003c",
+ "text": "From: carol.clair@enron.com\nTo: wendy.conwell@enron.com\nDate: 2001-05-29\nSubject: EPMI/Morgan Consent to assignment\n\nWendy:\nHave you had a chance to take a look at this and if so, do you have any \ncredit issues with this assignment?\n\nCarol St. Clair\nEB 3889\n713-853-3989 (Phone)\n713-646-3393 (Fax)\ncarol.st.clair@enron.com",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "wendy.conwell@enron.com",
+  "713-853-3989",
+  "713-646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/2258.",
+  "message_id": "<21741648.1075842206413.JavaMail.evans@thyme>"
+ }
+}

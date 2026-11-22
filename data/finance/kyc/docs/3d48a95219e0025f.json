@@ -1,0 +1,24 @@
+{
+ "doc_id": "3d48a95219e0025f",
+ "text": "[Financial Aid Application]\n\nStudent Loan Application\n\nFull Legal Name: John Alexander Smith\nDate of Birth: 01/02/1999\nMailing Address: 123 Maple Street, Anytown, USA\nPhone Number: (123) 456-7890\nEmail Address: [john.smith@email.com](mailto:john.smith@email.com)\n\nPersonal Information\n\nSocial Security Number: 123-45-6789\nMarital Status: Single\nNumber of Dependents: 0\n\nEducational Information\n\nName of School: Anytown University\nEnrollment Status: Full-time\nAnticipated Graduation Date: May 2023\nField of Study: Computer Science\nEstimated Cost of Attendance: $25,000 per year\n\nEmployment Information\n\nEmployer Name: XYZ Corporation\nEmployer Address: 456 Oak Street, Anytown, USA\nJob Title: Software Developer\nSupervisor Name: Jane Doe\nSupervisor Phone Number: (123) 456-7891\nStart Date: 06/01/2021\nEnd Date (if applicable): N/A\nHourly Wage: $25.00\nHours per Week: 40\n\nAdditional Income\n\nOther Sources of Income: N/A\nAmount: N/A\n\nExpenses\n\nHousing: $800 per month\nUtilities: $100 per month\nGroceries: $200 per month\nTransportation: $100 per month\nMiscellaneous: $100 per month\n\nTotal Monthly Expenses: $1300\n\nLoan Information\n\nLoan Amount Requested: $12,000 per year\nInterest Rate: 4.5%\nTerm: 10 years\nProjected Monthly Payment: $133.91\n\nLoan Signature: John Alexander Smith\nDate: 01/01/2022\n\nBy signing this application, I certify that all information provided is true and correct to the best of my",
+ "source": "kyc",
+ "private": [
+  "John Alexander Smith",
+  "01/02/1999",
+  "123 Maple Street, Anytown, USA",
+  "(123) 456-7890",
+  "123-45-6789",
+  "XYZ Corporation",
+  "456 Oak Street, Anytown, USA",
+  "Jane Doe",
+  "(123) 456-7891",
+  "john.smith@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3492,
+  "type": "Financial Aid Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "doc_id": "c054bb2b68dc77da",
+ "text": "Loan Application for Eco-friendly Initiatives\n\nFull Name: Susanne G. Valentin\n\nContact Address: 7351 Greer Burg, Suite 982\n\nLocal Latitude-Longitude: 0.657532 S, 52.322795 W\n\nEmail: [susanne.valentin@email.com](mailto:susanne.valentin@email.com)\nPhone: [+1-555-123-4567](ntouch://call/+1-555-123-4567)\n\nLoan Amount Requested: $150,000\n\nLoan Purpose:\nThe requested loan is intended to fund the implementation of eco-friendly practices for my small business, \"Susanne's Sweets and Savouries.\" The investment will enable us to reduce our carbon footprint, decrease energy consumption, and promote sustainability within our local community.\n\nEco-friendly Initiatives:\n1. Solar Panel Installation: We plan to install a 50 kW solar panel system on the roof of our facility, generating approximately 75,000 kWh of electricity per year. This will reduce our reliance on grid electricity and lower our energy costs.\n2. Energy-efficient Lighting: We will replace all existing lighting with energy-efficient LED lights, reducing our energy consumption by an estimated 60%.\n3. Green Office Supplies: We will transition to using 100% recycled office supplies, such as paper, pens, and packaging materials.\n4. Employee Training: We will provide training on eco-friendly practices, encouraging staff to adopt sustainable habits both at work and at home.\n\nCost Analysis:\n- Solar Panel Installation: $80,000\n- Energy-efficient Lighting: $10,000\n- Green Office Supplies: $5,000\n- Employee Training: $2,000\n- Contingency Fund: $10,000\n\nTotal Project Cost: $107,000\n\nExpected Impact on Sustainability:\n- Reduction in energy consumption by an estimated 60%\n- Decrease in greenhouse gas",
+ "source": "kyc",
+ "private": [
+  "Susanne G. Valentin",
+  "7351 Greer Burg, Suite 982",
+  "0.657532 S, 52.322795 W",
+  "[+1-555-123-4567]",
+  "Susanne's Sweets and Savouries",
+  "susanne.valentin@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2056,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

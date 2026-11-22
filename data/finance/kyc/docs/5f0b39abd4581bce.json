@@ -1,0 +1,20 @@
+{
+ "doc_id": "5f0b39abd4581bce",
+ "text": "**Loan Application Form**\n\nFull Name: Andrei Adolph\nAccount PIN: 1517\n\nStreet Address: 408 William Pines\n\nLoan Details:\nLoan Amount: $15,000\nLoan Purpose: Home Renovation\n\nEmployment Details:\nEmployer: Tech Innovations Ltd.\nPosition: Senior Software Engineer\nAnnual Income: $85,000\n\nFinancial Details:\nBank Name: Royal Bank\nAccount Type: Checking\nAccount Number: 123456789 (for reference only, will not be recorded)\n\nIdentification Details:\nDriver's License Number: 42-220791-68\n\nCustomer Satisfaction Survey:\nOn a scale of 1-10, how would you rate your overall experience with our loan application process? 9\n\nWhat did you like most about our loan application process? The process was straightforward and the online application was user-friendly.\n\nWhat can we improve about our loan application process? It would be helpful to have a live chat feature for any questions that arise during the application process.\n\nAny additional comments or feedback? I am very satisfied with the speed of the application process and the professionalism of the loan officer.\n\nBy signing below, you confirm that the information provided in this application is true and accurate to the best of your knowledge.\n\nApplicant Signature: Andrei Adolph\nDate: 03/12/2023\n\nNote: This is a synthetically generated document and does not represent a real loan application.",
+ "source": "kyc",
+ "private": [
+  "Andrei Adolph",
+  "1517",
+  "408 William Pines",
+  "Tech Innovations Ltd.",
+  "42-220791-68",
+  "123456789"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5346,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

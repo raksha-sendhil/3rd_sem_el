@@ -1,0 +1,20 @@
+{
+ "doc_id": "3c344a7a49f41fed",
+ "text": "From: robert.bruce@enron.com\nTo: becky.spencer@enron.com, brenda.whitehead@enron.com, brent.hendry@enron.com\nDate: 2000-10-31\nSubject: Out of office -- reminder\n\nAs I reminder, I have to meet a contractor at my house this afternoon and \nwill be leaving at 2 p.m., which means that I will miss the legal/credit \ngroup meeting.\n\nPlease assure the credit group that only the ugly spectre of foundation \nrepair could prevent a member of the legal team from missing our bi-weekly \nmeeting.  Seriously, though, if anyone has a question about any deal I am \nworking on, I do not mind at all if you call me on my cell phone \n(713-594-2683).\n\n\nRobert E. Bruce\nSenior Counsel\nEnron North America Corp.\nT (713) 345-7780\nF (713) 646-3393\nrobert.bruce@enron.com",
+ "source": "corporate",
+ "private": [
+  "robert.bruce@enron.com",
+  "becky.spencer@enron.com",
+  "brenda.whitehead@enron.com",
+  "brent.hendry@enron.com",
+  "Robert E. Bruce",
+  "713-594-2683",
+  "(713) 345-7780",
+  "(713) 646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "taylor-m/all_documents/3591.",
+  "message_id": "<32052213.1075859966449.JavaMail.evans@thyme>"
+ }
+}

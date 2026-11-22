@@ -1,0 +1,17 @@
+{
+ "doc_id": "2cdcbcec6563e3ec",
+ "text": "From: stephanie.sever@enron.com\nTo: larry.may@enron.com\nDate: 2002-02-06\nSubject: Access to UBSWenergy Production Environment\n\nIMPORTANT - THE IDS BELOW WILL BE YOUR PERMANENT ACCESS TO PRODUCTION\n\nYour PRODUCTION User ID and Password has been set up on UBSWenergy.  Please follow the steps below to access the new environment:\n\nFrom Internet Explorer connect to the UBSWenergy Production Cluster through the following link:\nhttp://remoteservices.netco.enron.com/ica/ubswenergy.ica  (use your UBSWenergy/Enron NT Log In & Password)\n\nFrom the second Start menu,  select appropriate application:\n\nSTACK MANAGER\nUser ID: LMAY2\nPassword: q#9M#npX\t(Please Change)\n\nBelow is a special internal use only link for the simulation purposes only to get to the trading area of the website.\nDO NOT PROVIDE THIS LINK TO ANYONE NOT PART OF THE SIMULATION. \n(customers should be directed to go to the direct link www.ubsenergy.com).\n\nhttp://www.ubswenergy.com/site_index.html  (FOR SIMULATION ONLY)\n\nWEBSITE - Book (FB-FINANCIAL 3)\nUser ID: MUS92175\nPassword: WELCOME!\nPLEASE DO NOT TRANSACT BEFORE SIMULATION TOMORROW!\n\nShould you have any questions or issues, please contact me at x33465 or the Call Center at 713-584-4444\n\n\nThank you,\n\nStephanie Sever\n713-853-3465",
+ "source": "corporate",
+ "private": [
+  "stephanie.sever@enron.com",
+  "larry.may@enron.com",
+  "Stephanie Sever",
+  "713-584-4444",
+  "713-853-3465"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "may-l/inbox/4.",
+  "message_id": "<12240049.1075841190088.JavaMail.evans@thyme>"
+ }
+}

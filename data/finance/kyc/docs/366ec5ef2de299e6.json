@@ -1,0 +1,23 @@
+{
+ "doc_id": "366ec5ef2de299e6",
+ "text": "---\nLoan Application\n\nLoan Details:\nLoan Amount: $200,000\nPurpose: Purchase of a residential property\n\nPersonal Details:\nFirst Name: John\nLast Name: Smith\nDate of Birth: 01/10/1980\nEmail: john.smith@example.com\nContact Number: 123-456-7890\nPermanent Address: 123 Main Street, Anytown, USA\n\nFinancial Details:\nMonthly Income: $15,000\nMonthly Expenses: $5,000\nOther Sources of Income: Rental Income - $2,000\n\nEmployment History:\n\n1. Employer: XYZ Corporation\nPosition: Software Development Manager\nTenure: 05/2015 - Present\nResponsibilities: Led a team of software developers in designing and implementing software solutions for clients. Managed project timelines, resources, and budgets.\n\n2. Employer: ABC Inc.\nPosition: Senior Software Developer\nTenure: 01/2012 - 04/2015\nResponsibilities: Developed and maintained software applications using various programming languages and tools. Collaborated with cross-functional teams to deliver project milestones.\n\n3. Employer: DEF Co.\nPosition: Junior Software Developer\nTenure: 06/2009 - 12/2011\nResponsibilities: Assisted in the development and testing of software applications. Participated in code reviews and debugging sessions.\n\nSupporting Documents:\n- W-2 forms for the past 3 years\n- Recent pay stubs\n- Bank statements for the past 6 months\n- Proof of rental income (if applicable)\n- Signed authorization for employment verification\n\n---",
+ "source": "kyc",
+ "private": [
+  "01/10/1980",
+  "john.smith@example.com",
+  "123-456-7890",
+  "123 Main Street, Anytown, USA",
+  "XYZ Corporation",
+  "ABC Inc.",
+  "DEF Co.",
+  "John",
+  "Smith"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2058,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

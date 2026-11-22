@@ -1,0 +1,23 @@
+{
+ "doc_id": "d11ca2001cbec4ed",
+ "text": "---\nCredit Application\nArtistic Endeavor Loan\n\nFull Name: Emily O'Connell\nDate: March 15, 2023\n\nContact Information:\nMailing Address: 47 Maple Street, Toronto, ON, M5H 3Z1\nPhone Number: (416) 555-1234\nEmail Address: [emily.oconnell@email.com](mailto:emily.oconnell@email.com)\n\nBusiness Information (if applicable):\nBusiness Name: Maple Leaf Art Studio\nBusiness Address: 120 Yonge Street, Toronto, ON, M5C 1T4\nBusiness Phone Number: (416) 555-4567\nBusiness Email Address: [info@mapleleafartstudio.com](mailto:info@mapleleafartstudio.com)\n\nLoan Details:\nRequested Loan Amount: $50,000\nLoan Purpose: Financing for an art exhibition showcasing Canadian talent\nProjected Event Date: June 15, 2023\n\nProject Details:\nTitle: \"Northern Lights: A Celebration of Canadian Art\"\nDescription: A group exhibition featuring 20 emerging and established artists from across Canada, showcasing various artistic mediums including painting, sculpture, photography, and mixed media installations. The event will be held at the historic Toronto Armoury and will include a gala opening, artist talks, and workshops for aspiring artists.\n\nBudget Breakdown:\n- Venue rental: $20,000\n- Artwork transportation and insurance: $5,000\n- Artist fees and honoraria: $15,000\n- Marketing and promotion: $7,500\n- Catering and event staff: $2,500\n\nArtistic Portfolio:\nPlease visit [www.mapleleafartstudio.com/northernlights](http://www.mapleleafartstudio.com/northernlights) to view the online portfolio for \"Northern Lights: A Celebration of Canadian Art\".\n\nPersonal Financial Details:\nGross Annual Income: $75,0",
+ "source": "kyc",
+ "private": [
+  "Emily O'Connell",
+  "47 Maple Street, Toronto, ON, M5H 3Z1",
+  "(416) 555-1234",
+  "[emily.oconnell@email.com]",
+  "Maple Leaf Art Studio",
+  "120 Yonge Street, Toronto, ON, M5C 1T4",
+  "(416) 555-4567",
+  "emily.oconnell@email.com",
+  "info@mapleleafartstudio.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4314,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

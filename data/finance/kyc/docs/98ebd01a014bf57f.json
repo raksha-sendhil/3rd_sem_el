@@ -1,0 +1,15 @@
+{
+ "doc_id": "98ebd01a014bf57f",
+ "text": "------------------------------------------------------------------------------------------------------------------\nCredit Card Statement\n\nAccount Holder: Alex Maillard\nAccount Number: **** 3564 **** **** 1952 61\n\nStatement Period: 01/01/2023 - 01/31/2023\nDue Date: 02/25/2023\n\nPayment Information:\nPrevious Balance: $2,546.00\nCurrent Balance: $2,782.34\nMinimum Payment: $50.00\nLate Fee: $0.00\nInterest Charge: $116.34\n\nPayment Method:\nCheck - 0001234567890\nDate: 02/15/2023\nAmount: $300.00\n\nCredit Score Impact:\nAs of 01/31/2023, your credit score is 720. This is a decrease of 10 points from the previous statement period. The following factors have influenced this change:\n\n1. Payment History:\nYour payment history has slightly decreased due to the late payment of your utility bill (Account Number: UT123456789). This has resulted in a decrease of 5 points.\n\n2. Credit Utilization:\nYour credit utilization has increased from 25% to 30%. This has resulted in a decrease of 5 points.\n\n3. Length of Credit History:\nYour length of credit history has remained the same. No change in score.\n\n4. New Credit:\nNo new credit has been opened. No change in score.\n\n5. Credit Inquiries:\nNo new credit inquiries have been made. No change in score.\n\nRecent Transactions:\n\nDate | Description | Type | Amount | Balance\n01/05/2023 | Groceries | Debit | $150.00 | $2,396.00\n01/10/2023 | Gasoline | Debit | $60.00 | $2,336.00\n01/15",
+ "source": "kyc",
+ "private": [
+  "Alex Maillard"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 618,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

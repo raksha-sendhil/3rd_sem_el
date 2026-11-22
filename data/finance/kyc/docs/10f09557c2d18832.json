@@ -1,0 +1,22 @@
+{
+ "doc_id": "10f09557c2d18832",
+ "text": "LOAN APPLICATION FORM\n\nLoan Application No.: 223456\nDate: 08/10/2022\n\nLoan Details:\nLoan Amount: £150,000\nLoan Purpose: Business Expansion\nLoan Type: Collateral Assessment\n\nApplicant Information:\nName: Natasha Marshall\nDate of Birth: 01/12/1985\nContact Number: +44 7123456789\nEmail Address: natasha.marshall@example.com\n\nResidential Address:\nStreet Address: 874 Jamie Islands, Apt. 3599\nCity: London\nPostal Code: NW1 3JE\n\nEmployment Information:\nEmployer Name: ABC Enterprises Ltd\nEmployment Type: Full-time\nPosition: Marketing Manager\nAnnual Income: £75,000\n\nCollateral Details:\nAsset Type: Property\nAsset Details: 3-bedroom house\nLocation: 45 Oaktree Lane, Manchester\nAssessed Value: £200,000\nCondition: Good\n\nBank Account Information:\nBank Name: XYZ Bank\nBBAN: KDYF54692125732550\nIPV6: 1556:7f38:32e0:c693:e05d:4964:2ab2:b711\n\nSupporting Documents:\n1. Passport Copy\n2. Proof of Residence\n3. Last 3 months' Bank Statement\n4. Employment Contract\n5. Property Valuation Report\n\nPlease note that all information provided is true and accurate to the best of my knowledge. I understand that providing false or misleading information is considered fraudulent and may result in the rejection of this loan application or legal consequences.\n\nSignature: Natasha Marshall\nDate: 08/10/2022",
+ "source": "kyc",
+ "private": [
+  "Natasha Marshall",
+  "01/12/1985",
+  "+44 7123456789",
+  "natasha.marshall@example.com",
+  "874 Jamie Islands, Apt. 3599",
+  "ABC Enterprises Ltd",
+  "KDYF54692125732550",
+  "1556:7f38:32e0:c693:e05d:4964:2ab2:b711"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 476,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

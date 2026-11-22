@@ -1,0 +1,22 @@
+{
+ "doc_id": "a1967756615e9aa9",
+ "text": "**Agricultural Loan Application**\n\n**Applicant Information**\n\nFull Name: Isabela Orozco\n\nDate of Birth: 1942-07-30\n\nEmail: [lriley@curry.com](mailto:lriley@curry.com) (Please note that this email is incorrect. It should be updated to isabelaorozco@email.com)\n\nMailing Address: 0273 Jennifer Rapids, Apt. 180\n\n**Business Information**\n\nBusiness Name: Green Earth Farms\n\nBusiness Address: 456 Oak Grove Lane, Springfield, USA\n\nBusiness Phone: (123) 456-7890\n\n**Loan Information**\n\nLoan Amount Requested: $500,000\n\nLoan Purpose: Purchase of new farming equipment and expansion of crop yield\n\n**Farming Practices and Equipment Needs**\n\n1. Type of Farm: Organic Vegetable Farm\n2. Acres of Land: 100 acres\n3. Current Equipment: Tractors, plows, seeders, and irrigation systems\n4. Equipment Needed: New tractors, automated irrigation systems, and refrigerated storage units\n5. Yield Expectations: Current yield is 50,000 lbs of vegetables per year. With the new equipment, we expect to increase the yield by 50% in the first year and double it in the second year.\n\n**Financial Information**\n\nGross Annual Sales: $1,000,000\n\nNet Profit: $250,000\n\nYears in Business: 10 years\n\nCollateral: Farm land and equipment\n\n**Personal Financial Statement**\n\nLiquid Assets: $100,000\n\nReal Estate: $500,000\n\nRetirement Accounts: $300,000\n\nLiabilities: $150,000 (Mortgage)\n\n**Additional Information**\n\nPlease provide any additional information that you believe would support your loan application.\n\nI, Isabela Orozco, hereby",
+ "source": "kyc",
+ "private": [
+  "Isabela Orozco",
+  "1942-07-30",
+  "lriley@curry.com",
+  "0273 Jennifer Rapids, Apt. 180",
+  "Green Earth Farms",
+  "456 Oak Grove Lane, Springfield, USA",
+  "(123) 456-7890",
+  "isabelaorozco@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2295,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

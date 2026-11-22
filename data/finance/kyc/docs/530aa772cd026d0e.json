@@ -1,0 +1,20 @@
+{
+ "doc_id": "530aa772cd026d0e",
+ "text": "**Loan Application - Disbursement Details*\n\n*Personal Information*\n\nFull Name: Jacqueline Brooks-Price\nStreet Address: 1005 Williams Plains, Apt.  Bank: ABC Bank\nCity: Seattle State: WA Zip Code: 98101\nPhone Number: (206) 555-0122 Email: [jacqueline.brooksprice@email.com](mailto:jacqu loan_purpose: Home Renovation\n\n*Financial Information*\n\nMonthly Income: $7,50credit_card_security_card_number: 831 3780 2272 6397 912\n\n*Employment Information*\n\nOccupation: Software Engineer Employer: XYZ Corp.\nAnnual Income: $90,000 Employment Status: Full-time\n\n*Loan Information*\n\nLoan Amount: $50,000 Loan Term: 60 months\nInterest Rate: 5.5% APR\n\n*Disbursement Details*\n\nDisbursement Method: Direct Deposit Account Number: 1234567890 Routing Number: 111010021\n\n*Supporting Documents*\n\n- Copy of Government-issued ID\n- Recent pay stubs or proof of income\n- Bank statements\n- Proof of residence\n\n*Loan Application Signature*\n\n_____________________________ Date: 05/12/2023\n\n*Loan Officer*\n\n_____________________________ Date: 05/12/2023\n\n*Notes*\n\n- The loan will be disbursed in one lump sum to the borrower's designated account.\n- The borrower will receive a confirmation email once the loan has been disbursed.\n- The borrower is responsible for ensuring that the disbursement information provided is accurate.\n- The borrower should contact the lender if there are any changes to their contact or bank account information.\n- The borrower will receive monthly statements via email.\n\n*Please note that",
+ "source": "kyc",
+ "private": [
+  "Jacqueline Brooks-Price",
+  "(206) 555-0122",
+  "831",
+  "3780 2272 6397 912",
+  "XYZ Corp.",
+  "jacqueline.brooksprice@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2562,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

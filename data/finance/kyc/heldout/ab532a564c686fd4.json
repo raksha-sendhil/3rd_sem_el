@@ -1,0 +1,18 @@
+{
+ "doc_id": "ab532a564c686fd4",
+ "text": "SENIOR HOUSING FACILITY FINANCING AGREEMENT\n\nThis Senior Housing Facility Financing Agreement (the \"Agreement\") is entered into as of this 1st day of March, 2023 (the \"Effective Date\"), by and between Gioele Aulenti, a resident of 474 Justin Dale, Apt. 98126 (\"Borrower\"), and XYZ Financial Corporation, a corporation organized and existing under the laws of the Province of Ontario, Canada, with its head office located at 1234 Bank Street, Ottawa, Ontario K1P 5K9 (\"Lender\").\n\nRECITALS\n\nWHEREAS, Borrower is the owner of a senior housing facility located at -63.653143, -39.337449 (the \"Property\"), which provides independent living, assisted living, and memory care services;\n\nWHEREAS, Borrower desires to borrow funds from Lender for the purpose of financing the Property and related expenses; and\n\nWHEREAS, Lender is willing to provide such financing on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. LOAN AMOUNT\n\nLender shall make a loan to Borrower in the principal amount of Ten Million Dollars ($10,000,000.00) (the \"Loan Amount\").\n\n2. INTEREST RATE\n\nThe Loan Amount shall bear interest at a rate of 5.00% per annum.\n\n3. REPAYMENT SCHEDULE\n\nBorrower shall repay the Loan Amount, together with all accrued and unpaid interest thereon, in thirty-six (36) equal monthly installments commencing on the first day of the month next following the date of this Agreement.\n\n4. PROPERTY DETAILS\n\nThe Property is a senior housing facility located at -63.653143, -39.337449, consisting of 150 units, of which 50 units are designated for independent living",
+ "source": "kyc",
+ "private": [
+  "Gioele Aulenti",
+  "474 Justin Dale, Apt. 98126",
+  "1234 Bank Street, Ottawa, Ontario K1P 5K9",
+  "-63.653143, -39.337449"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 701,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

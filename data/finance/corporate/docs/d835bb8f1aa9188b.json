@@ -1,0 +1,12 @@
+{
+ "doc_id": "d835bb8f1aa9188b",
+ "text": "Timing of revenue recognition may differ from the timing of invoicing to customers. The Company records an accrued receivable when revenue is recognized prior to invoicing and the Company’s right to consideration only requires the passage of time, or deferred revenue when revenue is recognized subsequent to invoicing. Total receivables represent amounts billed and amounts earned that are to be billed in the future (i.e., accrued receivables). Included in accrued receivables are services and SaaS and PaaS revenues earned in the current period but billed in the following period and amounts due under multi-year software license arrangements with extended payment terms for which the Company has an unconditional right to invoice and receive payment subsequent to invoicing. Total receivables, net is comprised of the following (in thousands):\nDecember 31,\n2019 2018\nBilled receivables $ 213,654 $ 239,275\nAllowance for doubtful accounts (5,149 ) (3,912 )\nBilled receivables, net 208,505 235,363\nAccrued receivables 399,302 336,858\nSignificant financing component (35,569 ) (35,029 )\nTotal accrued receivables, net 363,733 301,829\nLess: current accrued receivables 161,714 123,053\nLess: current significant financing component (11,022 ) (10,234 )\nTotal long-term accrued receivables, net 213,041 189,010\nTotal receivables, net $ 572,238 $ 537,192\nNo customer accounted for more than 10% of the Company’s consolidated receivables balance as of December 31, 2019 and 2018.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "34e9805ed7b89d06c59ac3a065dcca54",
+  "page": 1,
+  "report": "aci-worldwide-inc_2019.pdf"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "doc_id": "61838eb74abb2991",
+ "text": "---\nLoan Application\nLoan Purpose Analysis\n\nPersonal Information\n--------------------\n\nFull Name: John Doe\nDate of Birth: 01/01/1980\nAddress: 123 Maple Street, Anytown, CA 12345\nContact Number: (123) 456-7890\nEmail: johndoe@example.com\n\nFinancial Information\n---------------------\n\nEmployment Information\n---------------------\n\nEmployer: ABC Corporation\nPosition: Software Engineer\nAnnual Income: $80,000\nYears with Current Employer: 5 years\n\nLoan Information\n----------------\n\nLoan Amount: $20,000\nLoan Purpose: Home Renovation\n\nSupporting Documents\n--------------------\n\n* Recent pay stubs\n* W-2 forms for the past two years\n* Bank statements for the past three months\n* Proof of home ownership\n* Detailed quote for home renovation from a licensed contractor\n\nLoan Purpose Analysis\n--------------------\n\nThe loan purpose of home renovation is considered viable based on the applicant's financial status and supporting documents. The applicant has a stable employment history with a steady income, and the loan amount is reasonable compared to their annual income. The detailed quote from a licensed contractor supports the loan purpose and the applicant has provided the necessary documentation to verify their home ownership.\n\n---",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "01/01/1980",
+  "123 Maple Street, Anytown, CA 12345",
+  "(123) 456-7890",
+  "johndoe@example.com",
+  "ABC Corporation"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5066,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

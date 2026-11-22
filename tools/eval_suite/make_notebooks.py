@@ -371,6 +371,70 @@ def build_rerun() -> dict:
     return notebook(cells)
 
 
+FINANCE_INTRO = """
+# Evaluation, finance domain (Kaggle): one source per run
+
+Finance has four sources (docs/finance_plan.md); each owner runs **their** source on **their**
+Kaggle account, so the runs go in parallel: set `SOURCE` in cell 1.
+
+| SOURCE | Owner | Data (fetched into `data/finance/<source>/`) | Metrics |
+|---|---|---|---|
+| `bank` | A | CFPB complaints (real) + AgamiAI statements (population) | single-question + **multi-question** |
+| `kyc` | B | Gretel documents (labelled) + NIST tax forms (scans) | single-question + end to end |
+| `corporate` | C | Enron emails + TAT-DQA pages (real) + Kleister reports (scans) | single-question + end to end |
+| `cheques` | C | IDRBT handwritten cheques (real scans) | end to end (handwriting OCR) |
+
+**Before running:** GPU **T4 x2**, Internet **On**, secret **GEMINI_API_KEY** attached. For
+`cheques`, also add your private Kaggle dataset with the IDRBT zip as an input and set
+`CHEQUES_ZIP`. Then **Save Version -> Save & Run All (Commit)** and close Kaggle; the version's
+**Output** holds `eval_results_finance_<source>_<scale>.zip`.
+
+Steps a source does not have are skipped (`cheques` has only scans; only `bank` has attack
+sessions). `SCALE = "quick"` checks the set-up in ~10 minutes; `"2h"` is the real run.
+"""
+
+
+def build_finance() -> dict:
+    setup = HEALTH_SETUP.replace("{repo_url}", REPO_URL)
+    for old, new in (
+        ('SCALE = "5h"', 'SOURCE = "bank"   # bank | kyc | corporate | cheques (your source)\n'
+                         'CHEQUES_ZIP = ""  # cheques only: path of the IDRBT zip under /kaggle/input\n'
+                         'SCALE = "2h"'),
+        ('BRANCH = "main"', 'BRANCH = "finance"'),
+        ('WORK = W / "eval" / ("health" if SCALE == "full" else f"health_{SCALE}")',
+         'WORK = W / "eval" / f"finance_{SOURCE}_{SCALE}"'),
+        ("--domain health --work", "--domain finance --source {SOURCE} --work"),
+    ):  # fmt: skip
+        assert old in setup, old
+        setup = setup.replace(old, new, 1)
+    setup = setup.replace(
+        '"5h": every metric on less data, ~4.5 h; "quick": ~10 min check; "full": the plan\'s '
+        "volumes (~12-15 h)",
+        '"2h": the real run, ~2 h per source; "quick": ~10 min check',
+    )
+    fetch = """
+# 2 Data: the source's folder is in the repo (each owner commits theirs); cheques are fetched
+# here from your private Kaggle dataset, since the images are never committed
+if SOURCE == "cheques":
+    !python tools/finance/cheques.py --zip "{CHEQUES_ZIP}"
+run("data")
+"""
+    cells = [md(FINANCE_INTRO), code(setup), code(fetch)]
+    for step, note in (
+        ("e2e-prep", "3 End to end: the source's scans through OCR (labels from the dataset's fields)"),
+        ("build", "4 Build: the finance agents over the source's documents (resumes)"),
+        ("single", "5 Single-question attacks and utility"),
+        ("multi", "6 Multi-question attacks (bank only; skipped otherwise)"),
+        ("e2e", "7 End to end: the scans' questions"),
+    ):  # fmt: skip
+        cells.append(code(f'# {note}\nrun("{step}")\n'))
+    cells.append(code(STEPS["report"]))
+    cells.append(code(STEPS["pack"].format(domain="finance").replace(
+        'f"eval_results_finance', 'f"eval_results_finance_{SOURCE}').replace(
+        'f"finance/" +', 'f"finance_{SOURCE}/" +')))  # fmt: skip
+    return notebook(cells)
+
+
 def main() -> None:
     for domain in ("health", "legal"):
         path = ROOT / "notebooks" / f"eval_{domain}_kaggle.ipynb"
@@ -378,6 +442,11 @@ def main() -> None:
             json.dumps(build(domain), indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
         )
         print("wrote", path.relative_to(ROOT))
+    path = ROOT / "notebooks" / "eval_finance_kaggle.ipynb"
+    path.write_text(
+        json.dumps(build_finance(), indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    print("wrote", path.relative_to(ROOT))
     path = ROOT / "notebooks" / "eval_health_rerun_utility_kaggle.ipynb"
     path.write_text(
         json.dumps(build_rerun(), indent=1, ensure_ascii=False) + "\n", encoding="utf-8"

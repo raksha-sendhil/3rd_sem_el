@@ -1,0 +1,19 @@
+{
+ "doc_id": "0fab051796565321",
+ "text": "**MEDICAL LOAN APPLICATION**\n\n**Applicant Information**\n\nName: Corina Salz-Bohnbach\n\nUser Name: jimmy\\_74\n\nStreet Address: 82398 Crystal Spur Suite 932\n\nCredit Card Number: 5238597745685972\n\n**Medical History**\n\nI, Corina Salz-Bohnbach, hereby authorize the release of my medical information to facilitate the processing of this loan application.\n\nChronic Conditions: None\n\nAllergies: N/A\n\nPrevious Surgeries: Appendix removal (2005), Tonsillectomy (1990)\n\nCurrent Medications: None\n\n**Treatment Details**\n\nTreatment Required: Laser Eye Surgery\n\nEstimated Cost: $5,000\n\nRecommending Physician: Dr. Jane Doe, Eye Specialists Inc.\n\n**Financial Information**\n\nMonthly Income: $7,500\n\nMonthly Expenses: $3,000\n\nEmployment Status: Full-time\n\nI confirm that the above information is true and accurate to the best of my knowledge.\n\nSignature: Corina Salz-Bohnbach\n\nDate: 03/12/2023\n\n**Note**: The credit card number is provided for identity verification purposes only and will not be charged without explicit consent from the applicant.",
+ "source": "kyc",
+ "private": [
+  "Corina Salz-Bohnbach",
+  "82398 Crystal Spur Suite 932",
+  "5238597745685972",
+  "Dr. Jane Doe",
+  "Eye Specialists Inc."
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1781,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

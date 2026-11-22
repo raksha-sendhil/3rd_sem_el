@@ -1,0 +1,24 @@
+{
+ "doc_id": "5ecc94147ad8db75",
+ "text": "---\nCredit Application\n\nLoan Type: Vacation Property Loan\n\nBorrower Information:\n\nFirst Name: Sarah\nLast Name: Johnson\nDate of Birth: 05/12/1985\nSocial Security Number: ****-**-1234 (UK/CA: **** **** **** 1234)\nContact Address: 123 Maple Street, Anytown, USA\nPhone Number: (123) 456-7890\nEmail Address: [sarah.johnson@email.com](mailto:sarah.johnson@email.com)\nEmployment Information:\n\nEmployer's Name: XYZ Corporation\nEmployer's Address: 456 Oak Avenue, Anytown, USA\nPosition: Marketing Manager\nAnnual Income: $85,000\nYears Employed: 5\n\nProperty Information:\n\nProperty Location: 789 Seaside Lane, Beach City, USA\nProperty Type: Single-Family Home\nPurchase Price: $350,000\nEstimated Down Payment: $70,000\nLoan Amount Requested: $280,000\nLoan Term: 30 years\nLoan Purpose: Purchase of vacation property\n\nFinancial Information:\n\nMonthly Debts:\n- Mortgage: $1,200\n- Car Loan: $300\n- Credit Cards: $500\n- Student Loan: $200\n- Other: $0\nTotal Monthly Debts: $2,200\nAssets:\n- Checking Account: $15,000\n- Savings Account: $30,000\n- Retirement Account: $50,000\n- Other Assets: $10,000\n\nDeclaration:\nI, Sarah Johnson, hereby declare that all the information provided in this credit application is true and accurate to the best of my knowledge. I understand that any false or misleading statements may result in the denial of this loan application or legal consequences.\n\nSignature: Sarah Johnson\nDate: 03/15/2023",
+ "source": "kyc",
+ "private": [
+  "05/12/1985",
+  "****-**-1234",
+  "123 Maple Street, Anytown, USA",
+  "(123) 456-7890",
+  "XYZ Corporation",
+  "456 Oak Avenue, Anytown, USA",
+  "Sarah",
+  "Johnson",
+  "Sarah Johnson",
+  "sarah.johnson@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2874,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

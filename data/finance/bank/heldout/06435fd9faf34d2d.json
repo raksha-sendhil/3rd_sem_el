@@ -1,0 +1,11 @@
+{
+ "doc_id": "06435fd9faf34d2d",
+ "text": "Netspend sent me a debit card, with a valid magnetic strip and number that appears non-generic, without me having previously done business with the company, and without my permission. It was my understanding that sending payment cards thru the mail to unsolicited recipients was unlawful.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Problem getting a card or closing an account",
+  "state": "MN"
+ }
+}

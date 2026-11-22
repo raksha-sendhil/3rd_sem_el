@@ -1,0 +1,30 @@
+{
+ "doc_id": "8822f33afd6cc790",
+ "text": "---\nLoan Application Form\n\nLoan Application Reference Check\n\nPersonal Information:\n\nFull Name: John David Smith\nDate of Birth: 01/10/1985\nAddress: 45, Baker Street, London, NW1 6XE\nEmail: john.d.smith@email.com\nPhone: +44 20 1234 5678\n\nFinancial Information:\nEmployment Status: Full-time\nOccupation: Software Engineer\nAnnual Income: £60,000\nLoan Amount Requested: £20,000\nLoan Purpose: Home Renovation\n\nEmployment Details (Current Employer):\n\nEmployer Name: FinTech Solutions Ltd\nEmployer Address: 123, Oxford Street, London, W1A 1JB\nEmployer Phone: +44 20 9876 5432\nSupervisor Name: Jane Doe\nSupervisor Contact: jane.doe@fintechsolutions.com\nEmployment Duration: 3 years\n\nPersonal References:\n\nReference Name: Rebecca Lee\nReference Relationship: Friend\nReference Contact: rebecca.lee@email.com\nReference Phone: +44 20 5555 6666\n\nReference Name: Robert Brown\nReference Relationship: Supervisor (Previous Employment)\nReference Contact: robert.brown@previousemployer.com\nReference Phone: +44 20 7777 8888\n\nSupporting Documents:\n\n1. Copy of Passport\n2. Copy of recent bank statements (last 3 months)\n3. Proof of income (last 3 payslips)\n4. Employment contract\n5. Proof of address (utility bill)\n\nApplicant Signature: John David Smith\nDate: 01/03/2023\n\nNote: By signing this application, I hereby authorize FinTech Solutions Ltd and its representatives to verify the information provided and obtain a credit report. I understand that any misrepresentation of information may result in denial of credit or cancellation of the loan.",
+ "source": "kyc",
+ "private": [
+  "John David Smith",
+  "01/10/1985",
+  "45, Baker Street, London, NW1 6XE",
+  "john.d.smith@email.com",
+  "+44 20 1234 5678",
+  "FinTech Solutions Ltd",
+  "123, Oxford Street, London, W1A 1JB",
+  "+44 20 9876 5432",
+  "Jane Doe",
+  "jane.doe@fintechsolutions.com",
+  "Rebecca Lee",
+  "rebecca.lee@email.com",
+  "+44 20 5555 6666",
+  "Robert Brown",
+  "robert.brown@previousemployer.com",
+  "+44 20 7777 8888"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1626,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "doc_id": "321ac663dd0a7680",
+ "text": "---\nLoan Application: Co-Applicant Details\n\nFull Name: Olivia Thompson\n\nDate of Birth: 01/10/1985\n\nContact Details:\nAddress: 45, King's Road, London, SW3 4UD, UK\nPhone: +44 7911 123 456\nEmail: [olivia.thompson@email.com](mailto:olivia.thompson@email.com)\n\nRelationship to Primary Applicant: Sister\n\nEmployment Details:\nEmployer: The Royal Bank of Scotland\nPosition: Senior Account Manager\nAnnual Income: £60,000\n\nFinancial Information:\nCurrent Bank: HSBC\nAccount Balance: £25,000\nSavings Account Balance: £15,000\n\nLoan Details:\nLoan Amount: £150,000\nLoan Purpose: Purchase of a residential property\n\nSupporting Documents:\n1. Recent payslips (last 3 months)\n2. Bank statements (last 6 months)\n3. Proof of address (utility bill)\n4. Identification (passport or driver's license)\n\nDeclaration:\nI, Olivia Thompson, hereby declare that all the information provided in this loan application is true and accurate to the best of my knowledge. I understand that providing false or misleading information is a criminal offence.\n\nSignature: Olivia Thompson\nDate: 01/03/2023\n\n---",
+ "source": "kyc",
+ "private": [
+  "Olivia Thompson",
+  "01/10/1985",
+  "+44 7911 123 456",
+  "olivia.thompson@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4540,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

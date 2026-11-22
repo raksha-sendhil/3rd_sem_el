@@ -1,0 +1,11 @@
+{
+ "doc_id": "7a1be9ec42f9d72f",
+ "text": "Received a 30 day late on my account that was due to a fraudulent charge. The charge was removed, but they have still reported me as 30 days late.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Incorrect information on your report",
+  "state": "PA"
+ }
+}

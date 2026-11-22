@@ -1,0 +1,19 @@
+{
+ "doc_id": "9a1d2bd938e7f58d",
+ "text": "COOPERATIVE HOUSING LOAN AGREEMENT\n\nTHIS AGREEMENT is made this ______ day of ___________, 20__, by and between ABC COOPERATIVE HOUSING INC., a corporation organized and existing under the laws of the State of New York, with its principal place of business at 123 Main Street, New York, NY 10001 (hereinafter referred to as \"Cooperative\"), and XYZ BANK, a national banking association with its main office at 456 Wall Street, New York, NY 10005 (hereinafter referred to as \"Lender\").\n\nWHEREAS, the Cooperative is the owner of a residential apartment complex located at 789 Park Avenue, New York, NY 10005, and desires to borrow from the Lender the sum of $5,000,000.00 for the purpose of financing the acquisition and improvement of the property; and\n\nWHEREAS, the Lender is willing to advance said sum to the Cooperative upon the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN AMOUNT: The Lender shall advance to the Cooperative the principal sum of $5,000,000.00 (the \"Loan Amount\").\n\n2. INTEREST RATE: The Loan Amount shall bear interest at a rate of 5.00% per annum.\n\n3. REPAYMENT TERMS: The Loan Amount shall be repayable in equal monthly installments of principal and interest, amortized over a period of thirty (30) years, with the first installment due on the first day of the month next succeeding the date of this Agreement.\n\n4. SECURITY: The Loan Amount shall be secured by a mortgage on the property, in favor of the Lender, and by the shares and proprietary leasehold interests of the Cooperative and its shareholders in and to the property.\n\n5. GOVERNING DOCUMENTS: This Agreement shall be governed by and",
+ "source": "kyc",
+ "private": [
+  "ABC COOPERATIVE HOUSING INC.",
+  "123 Main Street, New York, NY 10001",
+  "XYZ BANK",
+  "456 Wall Street, New York, NY 10005",
+  "789 Park Avenue, New York, NY 10005"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 549,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

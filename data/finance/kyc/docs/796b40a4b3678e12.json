@@ -1,0 +1,19 @@
+{
+ "doc_id": "796b40a4b3678e12",
+ "text": "LOAN AGREEMENT\n\nThis Loan Agreement (the \"Agreement\") is made and entered into as of this 1st day of August, 2021 (the \"Effective Date\"), by and between Gina Lawson-Hernandez, with a mailing address at 8902 Brown Loop (the \"Borrower\"), and Anita Schwartz, with a phone number of 518.594.8855 (the \"Lender\").\n\nWHEREAS, the Borrower is seeking to finance the acquisition of a franchise business; and\n\nWHEREAS, the Lender is willing to provide such financing on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. LOAN. Subject to the terms and conditions of this Agreement, the Lender agrees to loan to the Borrower the principal sum of $200,000 (the \"Loan\"). The Loan shall be evidenced by a promissory note in the form attached hereto as Exhibit A.\n\n2. INTEREST. The Loan shall bear interest at a rate of 6% per annum, calculated on a 360-day year.\n\n3. REPAYMENT. The Borrower shall repay the Loan, together with all accrued and unpaid interest, in equal monthly installments of $4,166.67, commencing on the first day of the month next succeeding the date of this Agreement and continuing on the first day of each month thereafter, until the Loan is fully repaid.\n\n4. COLLATERAL. As security for the Loan, the Borrower grants to the Lender a security interest in all of the Borrower's right, title, and interest in and to the franchise business being financed with the proceeds of the Loan, including all related personal property and intangible assets.\n\n5. FRANCHISE FEES. The Borrower shall pay all franchise fees and other charges required by the franchisor in accordance with the terms of the franchise agreement.\n\n6. ROYALTY PAYMENTS. The Borrower shall make",
+ "source": "kyc",
+ "private": [
+  "Gina Lawson-Hernandez",
+  "8902 Brown Loop",
+  "Anita Schwartz",
+  "518.594.8855",
+  "franchise business"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3805,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

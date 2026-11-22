@@ -1,0 +1,18 @@
+{
+ "doc_id": "1587a7d153776e14",
+ "text": "Credit Card Statement\n\nCardholder Name: Ferdinando Viridiana Calvo\nCard Number: **** **** **** 802\n\nStatement Period: 01/01/2023 - 01/31/2023\n\nMerchant Insights:\n\n1. Amazon.com - $250.00\n2. Tesco - £150.00\n3. Walmart - $120.00\n4. Starbucks - $80.00\n5. Apple Inc. - $75.00\n\nOther Transactions:\n\nDate | Description | Amount | Currency |\n--- | --- | --- | --- |\n01/03/2023 | Tran Springs Suite 267 Rent | $1,000.00 | USD |\n01/10/2023 | Gasoline Purchase | $50.00 | USD |\n01/15/2023 | Groceries | $100.00 | USD |\n01/20/2023 | Netflix Subscription | $15.99 | USD |\n01/25/2023 | Uber Ride | $25.00 | USD |\n\nTotal Charges: $1,710.99\nMinimum Payment Due: $30.00\nDue Date: 02/20/2023\n\nInterest Rate: 18.99% APR\nLate Payment Fee: $35.00\n\nPlease note that this statement is computer-generated and does not require a signature. For any questions or concerns, please contact our customer service department at 1-800-123-4567. Thank you for choosing our credit card services.",
+ "source": "kyc",
+ "private": [
+  "Ferdinando Viridiana Calvo",
+  "Amazon.com",
+  "Apple Inc.",
+  "1-800-123-4567"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5371,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

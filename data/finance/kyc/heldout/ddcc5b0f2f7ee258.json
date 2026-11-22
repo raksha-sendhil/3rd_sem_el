@@ -1,0 +1,18 @@
+{
+ "doc_id": "ddcc5b0f2f7ee258",
+ "text": "Credit Card Statement\n\nAccount Holder: Heimo H. Gnatz\nAccount Number: **** 1234\n\nStatement Period: 01/03/2023 - 31/03/2023\nDue Date: 25/04/2023\n\nPayment Amount: £500.00\nMinimum Payment: £250.00\n\nInterest Rate: 18.9% p.a. (variable)\n\nRecent Transactions:\n\nDate | Description | Amount (GBP) | Credit/Debit | Running Balance (GBP)\n03/03/2023 | Purchase at Tesco, 0/2 Justus-Bender-Straße, Luckau | -120.50 | Debit | 4,364.40\n05/03/2023 | Purchase at Amazon.co.uk | -78.64 | Debit | 4,443.54\n10/03/2023 | Payment | 500.00 | Credit | 3,943.54\n15/03/2023 | Purchase at Sainsbury's | -65.23 | Debit | 3,998.77\n20/03/2023 | Cash Advance | -200.00 | Debit | 4,198.77\n25/03/2023 | Annual Fee | -95.00 | Debit | 4,293.77\n31/03/2023 | Interest Charged | -32.11 | Debit | 4,325.88\n\nCredit Score Impact:\nYour credit score has slightly decreased this month due to the following factors:\n- Cash advance of £200.00, which is considered a high-risk transaction.\n- Higher credit utilization ratio due to the recent purchases and cash advance.\n- Annual fee of £95.00 charged to your account.\n\nPlease note that maintaining a low credit util",
+ "source": "kyc",
+ "private": [
+  "Heimo H. Gnatz",
+  "0/2 Justus-Bender-Straße, Luckau",
+  "Amazon.co.uk",
+  "Sainsbury's"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3459,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

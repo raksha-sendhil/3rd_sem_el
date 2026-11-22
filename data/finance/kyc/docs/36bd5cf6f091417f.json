@@ -1,0 +1,20 @@
+{
+ "doc_id": "36bd5cf6f091417f",
+ "text": "**Loan Application**\n\n**Loan Repayment Analysis**\n\n**Applicant Details**\n\nFull Name: Johnathan Smith\nDate of Birth: 01/12/1985\nContact Number: +44 77 1234 5678\nEmail Address: johnathan.smith@email.com\nResidential Address: 123, High Street, London, UK\n\n**Financial Details**\n\nMonthly Income: £4,500\nMonthly Expenses: £2,000\nCurrent Debts: £10,000 (car loan and credit card debt)\n\n**Employment Details**\n\nEmployer Name: ABC Corporation Ltd\nPosition: Senior Software Engineer\nEmployment Start Date: 01/04/2015\nMonthly Salary: £4,000\n\n**Loan Details**\n\nLoan Amount: £20,000\nLoan Purpose: Home Renovation\nLoan Term: 60 months\nInterest Rate: 5%\n\n**Repayment History**\n\nCar Loan: \n• Amount: £8,000\n• Start Date: 01/01/2016\n• End Date: 01/01/2019\n• Monthly Payment: £139\n• Repayment History: Made all payments on time\n\nCredit Card Debt: \n• Amount: £2,000\n• Start Date: 01/04/2018\n• End Date: 01/04/2021\n• Monthly Payment: £50\n• Repayment History: Made all payments on time\n\n**Supporting Documents**\n\n1. Copy of Passport\n2. Copy of Utility Bill\n3. Last 3 months' bank statements\n4. Proof of Income (payslips)\n5. Employer's Contact Details\n6. Loan Agreement for existing loans\n\n**Declaration**\n\nI, Johnathan Smith, hereby declare that all the information provided in this loan application is true and correct to the best of my knowledge. I understand that providing false information may",
+ "source": "kyc",
+ "private": [
+  "Johnathan Smith",
+  "01/12/1985",
+  "+44 77 1234 5678",
+  "johnathan.smith@email.com",
+  "123, High Street, London, UK",
+  "ABC Corporation Ltd"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1025,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

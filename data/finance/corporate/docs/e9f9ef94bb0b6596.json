@@ -1,0 +1,15 @@
+{
+ "doc_id": "e9f9ef94bb0b6596",
+ "text": "From: tracy.ngo@enron.com\nTo: dan.hyvl@enron.com\nDate: 2001-03-07\nSubject: SMUD Master Firm request\n\nDan,\n\nPer the request of Jay Williams, attached please find a credit worksheet for \na draft Enfolio Master Firm Purchase and Sale Agreement between ENA and \nSacramento Municipal Utility District.  Please note that there are tiered \ncollateral threshold and third-party cross default matrices.  Additionally, \nthe attachment contains a second sheet elaborating on the Enron Corp. \nguaranty amount as well as a Compliance Letter as an additional CP Event of \nDefault.\n\nShari Stack is working on the draft EEI Master Power agreement as well as the \nISDA Master Swap agreement.  Please contact Shari Stack should you need \nclarification to the legal terms in the contract in order to ensure \nconsistency across all three trading agreements.\n\nI am also available should you have any questions pertaining to credit.\n\nRegards,\nTracy\n503-464-8755",
+ "source": "corporate",
+ "private": [
+  "tracy.ngo@enron.com",
+  "dan.hyvl@enron.com",
+  "503-464-8755"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/sacramento/1.",
+  "message_id": "<4320251.1075842261761.JavaMail.evans@thyme>"
+ }
+}

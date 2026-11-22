@@ -1,0 +1,23 @@
+{
+ "doc_id": "11d7e1b9c7846639",
+ "text": "Loan Application\n\nLoan Application ID: 123456\nDate: 01/12/2022\n\nApplicant Information:\n\nFirst Name: Elaine\nMiddle Name: David\nLast Name: Nixon\nStreet Address: 8103 Richardson Extensions, Richardsonhaven\nCity: Richardsonhaven\nState: TX\nPostal Code: 75080\nCountry: United States\n\nLanguage Preferences:\n\nCommunication: English (US)\nDocumentation: English (UK)\n\nEmployment Information:\n\nEmployer Name: Tech Innovations Inc.\nPosition: Senior Software Engineer\nAnnual Income: $120,000\nYears with Current Employer: 5\n\nLoan Information:\n\nLoan Amount Requested: $50,000\nLoan Purpose: Home Renovation\nLoan Term: 30 years\n\nSupporting Documents:\n\n* Copy of government-issued ID\n* Recent pay stubs\n* Last 2 years of tax returns\n* Proof of income (W-2 or 1099)\n* Recent bank statements\n* Credit report\n\nCredit Card Information:\n\nCredit Card Number: **** **** **** 762 (last 4 digits)\nCredit Card Expiration Date: 05/23\nCredit Card Security Code: 762\n\nDeclaration:\n\nI, Elaine David Nixon, hereby declare that all the information provided above is true and accurate to the best of my knowledge. I understand that providing false or misleading information may result in the denial of my loan application or legal consequences.\n\nSignature: Elaine D. Nixon\nDate: 01/12/2022\n\nNote: The credit card information provided above is used for verification purposes only and will not be stored or used for any other purpose.",
+ "source": "kyc",
+ "private": [
+  "8103 Richardson Extensions, Richardsonhaven",
+  "762",
+  "Elaine David Nixon",
+  "123456",
+  "Elaine",
+  "David",
+  "Nixon",
+  "75080",
+  "Elaine D. Nixon"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 357,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

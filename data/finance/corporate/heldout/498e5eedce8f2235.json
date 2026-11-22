@@ -1,0 +1,16 @@
+{
+ "doc_id": "498e5eedce8f2235",
+ "text": "From: carol.clair@enron.com\nTo: rosteen@powersrc.com\nDate: 2001-05-24\nSubject: Credit Support provider Language\n\nRandy:\nWe are still discussing internally the time period that should be specified \nin the definition of Credit Support Provider.  We are not comfortable with \nspecifying October 2002 as the date.  What is the reason for this?  We are \ntrying to make this language as transaction specific as possible.  Is there \nanything else that we can add to it to make it more precise?  Please call me \nin the morning.  I'm in by 8:30.  Thanks.\n\nCarol St. Clair\nEB 3889\n713-853-3989 (Phone)\n713-646-3393 (Fax)\ncarol.st.clair@enron.com",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "rosteen@powersrc.com",
+  "713-853-3989",
+  "713-646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/2233.",
+  "message_id": "<7608510.1075842205824.JavaMail.evans@thyme>"
+ }
+}

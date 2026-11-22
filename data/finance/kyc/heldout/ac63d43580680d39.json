@@ -1,0 +1,17 @@
+{
+ "doc_id": "ac63d43580680d39",
+ "text": "Credit Card Statement\n\nCardholder Name: Gastone B. Veneziano\nCard Number: **** **** **** 4205 (Last 4 digits)\n\nBilling Period: 01/01/2023 - 01/31/2023\nStatement Date: 02/05/2023\nDue Date: 02/25/2023\n\nPayment Information:\nPrevious Balance: $2,546.35\nPayments & Credits: $1,000.00\nNew Balance: $1,546.35\n\nInterest Charges Analysis:\nInterest Rate: 18.99%\nOutstanding Balance: $1,546.35\nDays in Billing Cycle: 31\nInterest Charged: $23.42\n\nTransactions:\nDate | Description | Amount | Type\n01/05/2023 | Groceries - Fresh Food Market | -$123.54 | Debit\n01/08/2023 | Gasoline - Speedy Fuel | -$45.67 | Debit\n01/12/2023 | Online Purchase - Shopper's Paradise | -$350.00 | Debit\n01/15/2023 | Restaurant - Gourmet Delights | -$78.95 | Debit\n01/20/2023 | Pharmacy - Medicine Depot | -$25.45 | Debit\n01/22/2023 | Clothing - Fashion Hub | -$129.00 | Debit\n\nAddress:\nGastone B. Veneziano\n4099 Evan Coves\nLake Jamieville, [Postal Code]\n\nPlease ensure that your payment reaches us by the due date to avoid any late fees or damage to your credit score. If you have any questions or concerns, please contact us at 1-800-123-4567. Thank you for choosing our services.",
+ "source": "kyc",
+ "private": [
+  "Gastone B. Veneziano",
+  "4099 Evan Coves\nLake Jamieville, [Postal Code]",
+  "1-800-123-4567"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1435,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

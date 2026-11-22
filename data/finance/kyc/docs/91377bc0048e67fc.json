@@ -1,0 +1,16 @@
+{
+ "doc_id": "91377bc0048e67fc",
+ "text": "-----------------------------------------------------------------------------------------------------------------\nCredit Card Statement\n-----------------------------------------------------------------------------------------------------------------\n\nAccount Holder: John Doe\nAccount Number: 1234-5678-9012-3456 (last 4 digits)\nStatement Period: 01/01/2023 - 31/01/2023\nDue Date: 28/02/2023\nMinimum Payment: £25.00 or stated balance, whichever is greater\n\nCard Type: Platinum Rewards (Upgraded from Classic Rewards on 15/01/2023)\nBenefits:\n- Earn 2 points per £1 spent on travel and dining\n- Earn 1 point per £1 spent on all other purchases\n- Annual Fee: £90.00 (previously £0.00)\n- Complimentary airport lounge access\n- Travel insurance\n- Purchase protection\n- Concierge service\n\n-----------------------------------------------------------------------------------------------------------------\nTransactions\n-----------------------------------------------------------------------------------------------------------------\n\nDate | Description | Type | Amount (GBP) | Points Earned | Running Balance\n\n05-Jan | Sainsbury's | Purchase | 125.35 | 125 | 125.35\n07-Jan | Starbucks | Purchase | 14.20 | 28 | 143.55\n10-Jan | Amazon | Purchase | 54.99 | 55 | 201.54\n15-Jan | Credit Card Upgrade Fee | Charge | 90.00 | - | 291.54\n18-Jan | Shell | Purchase | 45.78 | 45 | 337.32\n22-Jan | Tesco | Purchase | 83.12 | 83 | 423.44\n25-Jan | Uber | Purchase | 24.55 | 25 | 451.99\n28-Jan | British Airways | P",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "1234-5678-9012-3456"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2906,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

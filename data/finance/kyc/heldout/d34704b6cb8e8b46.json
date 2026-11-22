@@ -1,0 +1,19 @@
+{
+ "doc_id": "d34704b6cb8e8b46",
+ "text": "-------------------------------------------------------------------------------------------------------------------\nCredit Card Statement\n\nAccount Holder: Danielle P. Martin\nAccount Number: **** 1234 (Last 4 digits)\nExpiration Date: 12/23\nBank Routing Number: 632333694\n\nStatement Period: 01/01/2022 - 01/31/2022\n\nBillable Date: 02/05/2022\nDue Date: 02/25/2022\nMinimum Payment: $150.00\n\nMerchant Insights:\n\n1. Amazon.com - $256.45\n2. Tesco Supermarket - £180.00\n3. Walmart - $125.34\n4. Starbucks - $44.67\n5. Uber - $68.50\n\nRecent Transactions:\n\nDate | Description | Amount | Type\n01/03/2022 | Amazon.com Purchase | -$256.45 | Purchase\n01/05/2022 | Tesco Supermarket | -£180.00 | Purchase\n01/07/2022 | Walmart Groceries | -$125.34 | Purchase\n01/10/2022 | Starbucks Coffee | -$44.67 | Purchase\n01/15/2022 | Uber Ride to Airport | -$68.50 | Purchase\n01/20/2022 | Payment | $500.00 | Payment\n\nPlease note: For security reasons, do not share your account details with anyone. If you suspect any fraudulent activity, contact us immediately at 1-800-123-4567.\n\nEmail us at customersupport@mybank.com or visit our website at www.mybank.com for more information.\n\nThank you for choosing MyBank as your financial partner.\n-------------------------------------------------------------------------------------------------------------------",
+ "source": "kyc",
+ "private": [
+  "Danielle P. Martin",
+  "632333694",
+  "Amazon.com",
+  "1-800-123-4567",
+  "customersupport@mybank.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 529,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

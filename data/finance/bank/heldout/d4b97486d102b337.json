@@ -1,0 +1,11 @@
+{
+ "doc_id": "d4b97486d102b337",
+ "text": "I called Wells Fargo to ask why I wasn't able to pay back my cash advance ( taken out on XX/XX/XXXXXXXX ) in full after being charged interest ( first time on XX/XX/XXXX and was XXXX cents, second time was on XX/XX/XXXX and was {$1.00} ) on it. I was told that I had to pay my minimum credit card balance each month and the extra would go to the cash advance payment. I only borrowed {$45.00}, so I was confused on why none of it was paid since I paid {$150.00} in payments in the month of XXXX, and only {$0.00} was applied to what I owe. on XX/XX/XXXX I called Wells Fargo and asked about why I didn't have the option to pay my balance on my cash advance in full. I was told that the extra payments I made would go to the balance with the highest ARP percentage, however, both the credit card and cash advance have an ARP of XXXX. So Wells Fargo would apply my extra payments to my credit card balance, and pay basically XXXX to my cash advance, all the while charging me interest on something they won't give me the chance to pay back in full.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Other features, terms, or problems",
+  "state": "NC"
+ }
+}

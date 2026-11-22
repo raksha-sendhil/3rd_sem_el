@@ -1,0 +1,21 @@
+{
+ "doc_id": "2bfb054d1b4436e3",
+ "text": "Loan Application\n\nRenewal Opportunities\n\nApplication ID: 0012345\nCustomer ID: Rn-10770\n\nName: Andrew Jones-Palmer\nDate of Birth: 01/15/1985\nContact Number: +1 (123) 456-7890\nEmail Address: [ajp@email.com](mailto:ajp@email.com)\n\nResidential Address:\n3859 Janet Ports, Apt. 979\nCity: Toronto\nProvince/State: Ontario\nPostal Code/Zip Code: M3J 2L4\n\nEmployment Details:\nEmployer Name: SoftTech Inc.\nPosition: Senior Software Engineer\nAnnual Income: $120,000\nYears with Current Employer: 5 years\n\nLoan Details:\nLoan Type: Renewal\nLoan Amount: $200,000\nLoan Purpose: Home Renovation\nInterest Rate: 4.5%\nLoan Term: 20 years\nFirst Payment Date: 08/01/2023\n\nSupporting Documents:\n1. Latest 3 months' pay stubs\n2. Notice of Assessment (NOA) or Tax Returns for the last 2 years\n3. Employment Verification Letter\n4. Property Appraisal Report\n5. Copy of Property Insurance\n\nAdditional Information:\n- The applicant has a history of making timely payments on their existing loan.\n- The applicant's credit score is 760.\n- The applicant is eligible for a loan renewal based on their performance and payment history.\n\nBy submitting this application, I, Andrew Jones-Palmer, hereby authorize SoftTech Bank to verify the information provided in this application and to obtain a credit report. I understand that the information provided in this application will be used to determine my creditworthiness.\n\nSignature: Andrew Jones-Palmer\nDate: 03/15/2023",
+ "source": "kyc",
+ "private": [
+  "Rn-10770",
+  "Andrew Jones-Palmer",
+  "01/15/1985",
+  "+1 (123) 456-7890",
+  "3859 Janet Ports, Apt. 979",
+  "SoftTech Inc.",
+  "ajp@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1712,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "doc_id": "531997567c55ea35",
+ "text": "LOAN AGREEMENT\n\nTHIS LOAN AGREEMENT (the \"Agreement\") is made and entered into as of this 1st day of January, 2023 (the \"Effective Date\"), by and between Katherine Elizabeth Gonzalez, with a mailing address at 48584 White Landing (hereinafter \"Borrower\"), and XYZ Mortgage Corp., a corporation organized and existing under the laws of the State of Delaware, with its principal place of business at 123 Main Street, Anytown, USA (hereinafter \"Lender\").\n\nWHEREAS, Borrower desires to borrow funds from Lender for the purpose of purchasing a real property, and Lender is willing to lend such funds to Borrower on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual promises, covenants, and conditions contained herein, the parties hereto agree as follows:\n\n1. LOAN. Lender agrees to loan to Borrower the principal sum of $500,000 (the \"Loan\"), which shall be disbursed to Borrower in accordance with the terms and conditions of this Agreement.\n\n2. INTEREST. The Loan shall bear interest at a fixed rate of 4.00% per annum.\n\n3. REPAYMENT TERMS. The Loan shall be repaid in equal monthly installments over a term of 30 years (the \"Term\"), with the first installment due on the first day of the month next succeeding the month in which the Loan is disbursed. Each installment shall consist of both principal and interest.\n\n4. PROPERTY APPRAISAL. Borrower acknowledges that Lender has obtained an appraisal of the real property that is the subject of this Agreement (the \"Property\"), and that the Loan amount is based on the appraised value of the Property.\n\n5. MORTGAGE TERMS. As security for the Loan, Borrower grants to Lender a mortgage on the Property (the \"Mortgage\"). The Mortgage shall be in the form attached hereto as Exhibit A.\n\n6. ESCROW ARRANGEMENTS. Borrower shall establish an esc",
+ "source": "kyc",
+ "private": [
+  "Katherine Elizabeth Gonzalez",
+  "48584 White Landing",
+  "XYZ Mortgage Corp.",
+  "123 Main Street, Anytown, USA"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2863,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "doc_id": "eeadcd064bcb9b82",
+ "text": "M & T Bank did three international wire transfer on XX/XX/year> without my knowledge or permission on a joint estate account that required two signatures on all transactions. I requested the bank to send me copies of cashed checks, signatures for the international wire transfers and the name of the person who approved of the international wire transfers that totaled {$120000.00} PLUS {$220.00} in wire fees. I was denied that information.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "money transfer",
+  "issue": "Other transaction problem",
+  "state": "PA"
+ }
+}

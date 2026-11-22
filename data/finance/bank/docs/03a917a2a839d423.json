@@ -1,0 +1,11 @@
+{
+ "doc_id": "03a917a2a839d423",
+ "text": "I had an online savings account with Vio Bank. At some point, this account was closed. I called them to get information on the last transaction or disposition of the account, and they told me that they could not provide me with that information. I tried logging into my online account, and gave them my username, which then has a popup to verify my account by texting me at my mobile phone. I received the account code and tried to log in and it said that I needed to check my cookie setting. Which is wrong. So I called them to see if I had closed the account, or if it had been closed because of inactivity or something. They verified my information, but then told me that I had no account and they could not tell me when my account was closed or how it was, but that they would never close an account if it had a balance in it. I told them that wasn't true, there are state escheat laws that could require them to forfeit an account to a state under some circumstances. They said nevertheless they had no information and could not retrieve anything, but were sure I would have gotten my money from the account. it is possible that I even closed it, but in order to ensure that the money came to me, I want to be certain.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Closing an account",
+  "state": "MN"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "doc_id": "540abdb426f5cda4",
+ "text": "---\nCommunity Scholarship Application\n\nFull Name: Emily Thompson\n\nDate of Birth: 08/12/2001\n\nMailing Address: 123 Maple Street, Toronto, ON, M5J 1K5\n\nPhone Number: (416) 123-4567\n\nEmail Address: emily.thompson@email.com\n\nHigh School: Etobicoke Collegiate Institute\n\nExpected Graduation Date: June 2022\n\nGPA: 3.8 / 4.0\n\nIntended Major: Computer Science\n\nPost-Secondary Institution: University of Toronto\n\nAnticipated Enrollment Date: September 2022\n\nFinancial Information\n\nTotal Annual Income: $55,000\n\nNumber of Dependents: 3\n\nParent / Guardian Occupation: IT Manager, Retail Salesperson, Administrative Assistant\n\nEducation Expenses\n\nTuition: $7,500 per semester\n\nBooks & Supplies: $1,200 per year\n\nHousing: $7,200 per year\n\nTransportation: $1,500 per year\n\nPersonal Expenses: $2,000 per year\n\nEstimated Total Expenses: $20,400 per year\n\nCommunity Involvement\n\n1. Volunteer, Toronto Public Library - Assisted with children's programming and book organization for 15 hours per month for 2 years.\n2. Member, Etobicoke Youth Council - Participated in community improvement projects and youth advocacy for 2 years.\n3. Tutor, Math and Science, Local Community Center - Provided tutoring services for underprivileged students for 10 hours per week for 1 year.\n\nPersonal Statement\n\nGrowing up in a low-income family has taught me the value of education and the importance of perseverance. I have always been driven to excel in my studies and contribute positively to my community. As a future Computer Science major, I aspire to create innovative solutions that address real-world challenges and make a difference in people's lives. The Community Scholarship would help me achieve my",
+ "source": "kyc",
+ "private": [
+  "Emily Thompson",
+  "08/12/2001",
+  "123 Maple Street, Toronto, ON, M5J 1K5",
+  "(416) 123-4567",
+  "emily.thompson@email.com",
+  "Etobicoke Collegiate Institute",
+  "University of Toronto",
+  "Toronto Public Library",
+  "Etobicoke Youth Council"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 319,
+  "type": "Financial Aid Application",
+  "synthetic": true
+ }
+}

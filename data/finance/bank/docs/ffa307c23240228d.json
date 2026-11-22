@@ -1,0 +1,11 @@
+{
+ "doc_id": "ffa307c23240228d",
+ "text": "Opened a checking account with an advertised {$500.00} bonus. Multiple customer service representatives confirmed over multiple weeks that all terms for the offer were met and that the bonus would post within 90 days of account opening. It has not. A ticket was created for escalation last week and I was told Id receive a call back within 2-3 business days by the team confirming the bonus was applied, this has not happened.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Opening an account",
+  "state": "VA"
+ }
+}

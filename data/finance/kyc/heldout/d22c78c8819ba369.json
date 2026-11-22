@@ -1,0 +1,16 @@
+{
+ "doc_id": "d22c78c8819ba369",
+ "text": "COOPERATIVE HOUSING LOAN AGREEMENT\n\nThis Cooperative Housing Loan Agreement (the \"Agreement\"), dated as of the 15th day of March, 2023, is entered into between Cameron A. Sykes, a resident of 1211 Floyd Lane, Suite 817 (the \"Borrower\"), and the cooperative housing entity (the \"Lender\").\n\nWHEREAS, the Borrower is a member of the Lender and is entitled to occupy a unit in the cooperative housing property owned by the Lender; and\n\nWHEREAS, the Borrower desires to obtain a loan from the Lender to finance the purchase of shares allocated to the unit occupied by the Borrower, and the Lender is willing to provide such a loan on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein, the parties hereto agree as follows:\n\n1. LOAN AMOUNT. The Lender agrees to provide the Borrower with a loan in the amount of One Hundred Thousand Dollars ($100,000) (the \"Loan Amount\").\n\n2. INTEREST RATE. The Loan Amount shall bear interest at the rate of 4.0% per annum.\n\n3. REPAYMENT TERMS. The Borrower shall repay the Loan Amount, together with all accrued and unpaid interest, in equal monthly installments over a term of 15 years, commencing on the first day of the month next following the date of this Agreement. Each installment shall be in the amount of $739.61.\n\n4. SECURITY. The Loan Amount shall be secured by a mortgage on the real property owned by the Lender and occupied by the Borrower, as well as by an assignment of the Borrower's right, title, and interest in and to the shares allocated to the unit occupied by the Borrower.\n\n5. OCCUPANCY RULES. The Borrower shall comply with all occupancy rules and regulations adopted by the Lender from time to time.\n\n6. GOVERNING DOCUMENTS. This Agreement shall be governed by",
+ "source": "kyc",
+ "private": [
+  "Cameron A. Sykes",
+  "1211 Floyd Lane, Suite 817"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2113,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

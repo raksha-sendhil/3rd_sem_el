@@ -1,0 +1,22 @@
+{
+ "doc_id": "2ce65992c07e5487",
+ "text": "Credit Card Statement\n\nAccount Holder: Gianpaolo M. Marino\nAccount Number: **** 1234 (last 4 digits)\nBank Routing Number: 302701684\nEmployee ID: K-137396-Z\n\nStatement Period: 01/01/2023 - 31/01/2023\n\nMerchant Insights:\n\n1. Tesco Supermarket - Ringtorget 94, London, SE1 7BN - £450.00\n2. BP Petrol Station - Westminster Bridge Rd, London, SE1 7QD - £150.00\n3. Amazon.co.uk - Online Purchase - £300.00\n4. London Underground - Oyster Card Top-up - £100.00\n5. Pret A Manger - Westminster, London, SW1A 2JR - £50.00\n\nTotal Expenditure: £1050.00\nMinimum Payment Due: £200.00\nDue Date: 20/02/2023\n\nLate Payment Fee: £15.00 (if not paid by due date)\nInterest Rate: 18.9% p.a. (variable)\n\nPlease note: This is a simulation and does not reflect actual transactions.",
+ "source": "kyc",
+ "private": [
+  "Gianpaolo M. Marino",
+  "302701684",
+  "K-137396-Z",
+  "Ringtorget 94",
+  "BP Petrol Station",
+  "Westminster Bridge Rd, London, SE1 7QD",
+  "Amazon.co.uk",
+  "Westminster, London, SW1A 2JR"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 488,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "doc_id": "f563752398f6ec03",
+ "text": "On XX/XX/XXXX, I filed a complaint with Wells Fargo regarding an unauthorized charge that had been recurring on my debit card since 2021. This charge, amounting to {$4.00} every month, had accumulated to over {$100.00}. After contacting Wells Fargo 's claim department, they acknowledged the total amount and assured me that an investigation would commence, with a promise to refund the money if the charges were confirmed as unauthorized. However, upon the conclusion of their investigation on XX/XX/XXXX, I discovered that only {$1.00} had been credited back to my account. This was contrary to my initial understanding based on our conversations. Further inquiries revealed that Wells Fargo 's policy only permitted refunds for unauthorized charges made within 60 days of the first occurrence by the same vendor. This policy was not communicated to me during our initial discussion and seems inconsistent with their assurances. As a consumer, I find this outcome unacceptable and inconsistent with the expectations set by Wells Fargo during our initial interactions.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Managing an account",
+  "state": "CA"
+ }
+}

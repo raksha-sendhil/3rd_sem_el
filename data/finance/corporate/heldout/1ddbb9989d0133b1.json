@@ -1,0 +1,18 @@
+{
+ "doc_id": "1ddbb9989d0133b1",
+ "text": "From: carol.clair@enron.com\nTo: edward.sacks@enron.com, wendy.conwell@enron.com, james.bouillion@enron.com\nDate: 2001-05-29\nSubject: Surety Bond Issues\n\nBelow is a summary of the surety bond issues that I believe we need to \nresolve in order to feel comfortable accepting it as a form of collateral to \nsecure a counterparty's obligations with respect to physical power purchase \nand sale transactions:\n\n1.  Determine whether an issuer can refuse to honor a draw made under a \nsurety bond if after issuance, it determines that the bond was issued in \nviolation of the appleton statute.  What type of legal comfort should we \nreceive from the issuer at the outset to get comfortable that the bond was \nvalidly issued and is enforceable against such issuer?\n\n2. Determine the proper minimum credit rating(s) that should apply to the \nissuer.\n\n3. In the form of bond that we were given, the \"Now Therefore\" language in \nthe third paragraph is not acceptable.  Determine what can be said in its \nplace to establish the necessary linkage back to the transaction covered by \nthe Confirmation.\n\n4. Make sure that the bond can be drawn down no matter what type of Event of \nDefault occurs, even if such event is not related to the transaction that the \nbond references.  The Notice of Claim language needs to be written more \ngenerically to accommodate this. \n\n5. Does credit need a \"pre-bankruptcy\" trigger that would require Reliant to \nconvert all outstanding bonds into LC's or cash collateral?  If so, what \nwould this trigger be?\n\nLet me know if you have any additional issues.  I will be discussing some of \nthese with our outside counsel shortly.     \n\nCarol St. Clair\nEB 3889\n713-853-3989 (Phone)\n713-646-3393 (Fax)\ncarol.st.clair@enron.com",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "edward.sacks@enron.com",
+  "wendy.conwell@enron.com",
+  "james.bouillion@enron.com",
+  "713-853-3989",
+  "713-646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/2269.",
+  "message_id": "<23637539.1075842206667.JavaMail.evans@thyme>"
+ }
+}

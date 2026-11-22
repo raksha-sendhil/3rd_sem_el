@@ -1,0 +1,21 @@
+{
+ "doc_id": "b705a8e5a0c2ad09",
+ "text": "Loan Application\n\nFull Legal Name: Daniel Pearce-Hawkins\n\nStreet Address: 2157 Phillip View\n\nCity: Toronto\n\nProvince/State: Ontario\n\nPostal Code/Zip Code: M3J 2T9\n\nPhone Number: (416) 123-4567\n\nEmail Address: [dpearcehawkins@email.com](mailto:dpearcehawkins@email.com)\n\nDate of Birth: 03/12/1998\n\nSocial Insurance Number/Social Security Number: 123-456-789 (For verification purposes only. Your information will be kept confidential and secure.)\n\nEducational Institution: University of Toronto\n\nProgram of Study: Computer Science\n\nAnticipated Graduation Date: May 2022\n\nEstimated Total Cost of Attendance: $35,000 CAD\n\nLoan Amount Requested: $25,000 CAD\n\nAccount PIN (for future correspondence): 6799\n\nCareer Goals and Employment Outlook: After graduation, I plan to pursue a career in software development. According to the Government of Canada's Job Bank, the employment outlook for software developers is positive, with a high demand for skilled professionals in this field.\n\nPersonal Statement: I am committed to my education and have maintained a strong academic record throughout my studies. I am confident that with the support of this loan, I will be able to successfully complete my degree and launch a successful career in software development.\n\nBy signing below, I confirm that all the information provided is true and accurate to the best of my knowledge.\n\nApplicant Signature: Daniel Pearce-Hawkins\n\nDate: 01/10/2022",
+ "source": "kyc",
+ "private": [
+  "Daniel Pearce-Hawkins",
+  "2157 Phillip View",
+  "(416) 123-4567",
+  "03/12/1998",
+  "University of Toronto",
+  "6799",
+  "dpearcehawkins@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1102,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

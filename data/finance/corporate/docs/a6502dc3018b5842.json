@@ -1,0 +1,12 @@
+{
+ "doc_id": "a6502dc3018b5842",
+ "text": "41\n42\nDATA CENTER COMPUTING MARKETS\nThe following table sets forth, for the periods indicated, the percentage of sales represented by certain items reflected in our Consolidated Statements of Operations:\nFollowing the acquisition of Artesyn’s Embedded Power business in September 2019, Advanced Energy entered the Data Center Computing market with industry-leading products and low-voltage power conversion technologies. We sell to many data center server and storage manufacturers, original design manufacturers of server and storage systems, and cloud service providers, or hyperscalers, who are designing and deploying their own data center server and storage equipment. Driven by the growing adoption of cloud computing and increased consumer internet traffic, market demand for server and storage equipment has shifted from enterprise on-premise computing to the data center. This trend drove a strong year of data center investments in 2018, but the industry moderated investments in the first half of 2019 before recovering in the second half of 2019. With a growing presence at both cloud service providers, hyperscalers, and industry-leading data center server and storage vendors, we believe Advanced Energy is well positioned to continue to capitalize on the ongoing shift towards cloud computing. We generated revenue from the Data Center Computing market during the third and fourth quarters of 2019.\nYear Ended December 31, 2019 2018\nTELECOM & NETWORKING MARKETS\nSales . 100.0 % 100.0 %",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "525032451ab45a3ba6d2629c06d68d1d",
+  "page": 2,
+  "report": "advanced-energy_2019.pdf"
+ }
+}

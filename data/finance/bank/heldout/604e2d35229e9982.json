@@ -1,0 +1,11 @@
+{
+ "doc_id": "604e2d35229e9982",
+ "text": "Somebody opened an account in my name without my permission. I notified the bank and they refused to assist me unless I provided more personal information, which I was not willing to do considering there was fraud involved in opening the account",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Closing an account",
+  "state": "NY"
+ }
+}

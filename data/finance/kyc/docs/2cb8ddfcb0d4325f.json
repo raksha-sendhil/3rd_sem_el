@@ -1,0 +1,18 @@
+{
+ "doc_id": "2cb8ddfcb0d4325f",
+ "text": "REVERSE MORTGAGE AGREEMENT\n\nThis Reverse Mortgage Agreement (the \"Agreement\"), dated as of the Effective Date set forth below, is entered into between Yilmaz F. Jäntsch, a resident of 727 Sarah Road, Johnchester (the \"Borrower\"), and ABC Reverse Mortgage Lenders, a Delaware corporation with its principal place of business at 123 Main Street, Anytown, USA (the \"Lender\").\n\nWHEREAS, Borrower is the owner of the real property located at 727 Sarah Road, Johnchester (the \"Property\"); and\n\nWHEREAS, Borrower desires to obtain a reverse mortgage loan from Lender on the Property, and Lender is willing to make such a loan to Borrower, subject to the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN AMOUNT. Subject to the terms and conditions of this Agreement, Lender agrees to make a reverse mortgage loan to Borrower in the maximum principal amount of $500,000 (the \"Loan Amount\").\n\n2. ELIGIBILITY. Borrower represents and warrants that, as of the Effective Date, Borrower (a) is at least 62 years of age, (b) has sufficient home equity in the Property, and (c) has not previously participated in any other reverse mortgage program.\n\n3. LOAN DISBURSEMENT. Upon the satisfaction of all conditions precedent to the disbursement of the Loan Amount, Lender shall disburse the Loan Amount to Borrower in the form of a lump sum payment.\n\n4. INTEREST RATE. The Loan Amount shall bear interest at a fixed rate of 4.00% per annum.\n\n5. REPAYMENT. The Loan Amount, together with all accrued and unpaid interest, shall be due and payable in full upon the occurrence of the first to occur of the following events: (a) the death of Borrower,",
+ "source": "kyc",
+ "private": [
+  "Yilmaz F. Jäntsch",
+  "727 Sarah Road, Johnchester",
+  "ABC Reverse Mortgage Lenders",
+  "123 Main Street, Anytown, USA"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2824,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

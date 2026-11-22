@@ -1,0 +1,11 @@
+{
+ "doc_id": "ebe59d41098614c1",
+ "text": "I used my Wells Fargo credit card to load money into my XXXX account. I did not realize this transaction would be a cash advance, and would be charged interest as such. Wells Fargo did waive the initial cash advance fee and interest fee, which I appreciated because I made a mistake, however, I asked if all I needed to do was to pay my next statement balance in full to avoid paying any future interest, they said yes. I received another interest fee, due to the standing cash advance, which they waived again, and then I immediately paid of my whole statement in full to clear both cash advance and general credit card balance. Here is the issue, there is no separate line item in my Wells Fargo mobile app for current cash advance balance. The cash advance itself looks the same as any other credit card transaction, however the interest treatment is different than a credit card transaction, since interest occurs from the date of advance instead after carrying a balance ( like a normal credit card transaction ). Luckily, I pay attention to these things and I was able to rectify my mistake which Wells Fargo did assist me with, no issues there. However, not explicitly calling out cash advance current balance nor giving an option to explicitly pay off that balance as its own separate credit type, is predatory. I am sure many consumers are paying at least 2 months of interest if not more for a cash advance balance they do not know they have, and if different transaction types carry different interest treatments, they should be separated out. Thank you.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Fees or interest",
+  "state": "NC"
+ }
+}

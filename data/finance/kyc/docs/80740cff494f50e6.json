@@ -1,0 +1,19 @@
+{
+ "doc_id": "80740cff494f50e6",
+ "text": "Credit Card Statement\n\nAccount Holder: Honoré Marcel Lefèvre\nAddress: 81513 Gary Walk, Brittneyhaven\n\nCard Type: Credit Card Upgrades Platinum\nBenefits: Rewards points, travel insurance, concierge service\nAnnual Fee: $450 (previously $350)\n\nStatement Period: 01/01/2023 - 01/31/2023\nDue Date: 02/28/2023\n\nTransactions:\n\nDate | Description | Amount (USD) | Rewards Points\n01/05/2023 | Purchase at ABC Store | $150.99 | 151\n01/10/2023 | Online purchase at XYZ.com | $234.56 | 235\n01/15/2023 | Gasoline purchase at Speedy Gas | $67.89 | 68\n01/20/2023 | Dining at Fine Dine Restaurant | $112.45 | 113\n01/25/2023 | Groceries at Fresh Mart | $98.76 | 99\n\nTotal Amount Due: $662.65\nMinimum Payment Due: $30.00\nLate Payment Fee: $35.00 (if payment is not received by due date)\n\nInterest Rate: 18.99% APR\nUnpaid Balance: $662.65\n\nPayment Information:\nTo make a payment, visit our website or call our customer service line at 1-800-123-4567.\n\nLocal Latitude/Longitude: -47.4725755, 143.783249\n\nThank you for choosing Credit Card Upgrades. We appreciate your business.",
+ "source": "kyc",
+ "private": [
+  "Honoré Marcel Lefèvre",
+  "81513 Gary Walk, Brittneyhaven",
+  "Credit Card Upgrades",
+  "Speedy Gas",
+  "1-800-123-4567"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2280,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "doc_id": "be93ff74cbb0a707",
+ "text": "**Credit Counseling Loan Application**\n\nDate: May 29, 1999\n\nFull Legal Name: Aimée Charles Moulin\n\nStreet Address: 9900 Hunter Port, South Bryan\n\nLoan Details:\n- Loan Amount Requested: $15,000\n- Loan Purpose: Consolidate high-interest debt\n\nFinancial Information:\n- Employment Status: Full-time\n- Monthly Income: $5,500\n- Monthly Expenses: $4,300\n- Savings Amount: $12,000\n- Assets: Car, valued at $8,000\n- Account PIN (for verification): 9675\n\nEmployment Details:\n- Employer Name: Blue Sky Industries\n- Occupation: Senior Marketing Specialist\n- Employment Length: 8 years\n\nRecommendation for Credit Counseling:\nBased on your financial situation, we recommend that you consider credit counseling or financial education. This will help you better manage your debt and improve your financial literacy. You can find reputable credit counseling agencies through the National Foundation for Credit Counseling (NFCC) at www.nfcc.org or by calling 1-800-388-2227.\n\nSupporting Documents:\nTo expedite the processing of your loan application, please provide the following documents:\n- Copy of your government-issued photo ID\n- Proof of income (last 3 months of pay stubs)\n- Recent bank statements\n- Proof of residence (utility bill or lease agreement)\n\nPlease sign and date below to acknowledge that you have read, understood, and agreed to the terms and conditions.\n\n---\n\nApplicant Signature:\n\n---\n\nDate: May 29, 1999\n\n---\n\nLoan Officer Signature:\n\n---\n\nDate: May 29, 9999\n\n---\n\nLoan Officer Name:\n\n---\n\nDate: May 29, 1999",
+ "source": "kyc",
+ "private": [
+  "Aimée Charles Moulin",
+  "9900 Hunter Port, South Bryan",
+  "9675",
+  "Blue Sky Industries",
+  "1-800-388-2227"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1538,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

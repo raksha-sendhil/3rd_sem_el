@@ -1,0 +1,23 @@
+{
+ "doc_id": "9ae386d882e29f49",
+ "text": "---\nWedding Loan Credit Application\n\nFull Name: Adam Kenneth Törnqvist\nLast Name: Törnqvist\nDriver License Number: C25-9308-090-52\nPermanent Address: 5 Cooper Trace, NR4Y 9LJ, Port Bernard\n\nLoan Details:\nLoan Amount Requested: £25,000\nLoan Purpose: Wedding Expenses\nWedding Date: 12th June 2023\n\nEmployment Details:\nEmployer Name: XYZ Ltd\nPosition: Software Engineer\nAnnual Income: £60,000\nYears Employed: 5\n\nFinancial Information:\nMonthly Rent/Mortgage: £1,500\nOther Loans: None\nCredit Card Information:\n- Card Name: Visa\n- Limit: £10,000\n- Monthly Payment: £500\n- Card Open Date: 1st January 2018\n\nBank Account Information:\n- Bank Name: HSBC\n- Account Type: Current Account\n- Account Number: 12345678\n- Routing Number: 11-22-33\n- Average Monthly Balance: £3,000\n\nReferences:\n- Name: John Doe\n- Phone: 0712345678\n- Email: [john.doe@email.com](mailto:john.doe@email.com)\n\nDeclaration:\nI, Adam Kenneth Törnqvist, hereby declare that all the information provided above is true and accurate to the best of my knowledge. I understand that providing false or misleading information may result in the rejection of my loan application or legal consequences.\n\nSignature: Adam Kenneth Törnqvist\nDate: 1st January 2023\n\n---",
+ "source": "kyc",
+ "private": [
+  "Adam Kenneth Törnqvist",
+  "C25-9308-090-52",
+  "5 Cooper Trace, NR4Y 9LJ, Port Bernard",
+  "XYZ Ltd",
+  "0712345678",
+  "[john.doe@email.com]",
+  "Törnqvist",
+  "John Doe",
+  "john.doe@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4554,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

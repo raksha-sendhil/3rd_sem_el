@@ -1,0 +1,21 @@
+{
+ "doc_id": "7516c5bc0321d0dd",
+ "text": "**Loan Default Risk Analysis Application**\n\n**Personal Information**\n\nFull Name: Angelo Marion Häring\n\nDate of Birth: [DD/MM/YYYY]\n\nContact Number: [555-555-5555]\n\nEmail Address: [angelo.haring@email.com](mailto:angelo.haring@email.com)\n\nStreet Address: 77256 Hamilton Crescent, Lanefurt\n\n**Financial Information**\n\nEmployment Information:\n\nEmployer Name: [TechCorp Inc.]\n\nPosition: [Software Engineer]\n\nAnnual Income: $80,000\n\nOther Sources of Income: [Rental Income - $12,000]\n\nMonthly Expenses:\n\nMortgage/Rent: $1,500\n\nUtilities: $250\n\nTransportation: $300\n\nGroceries: $400\n\nOther Expenses: $200\n\n**Loan Information**\n\nLoan Amount Requested: $50,000\n\nLoan Purpose: Home Renovation\n\nLoan Term: 5 years\n\nCredit History:\n\nCredit Card Details:\n\nCredit Card Holder Name: Angelo Marion Häring\n\nCredit Card Number: [XXXX-XXXX-XXXX-411] (Last 4 digits)\n\nCredit Card Type: Visa\n\nCredit Limit: $15,000\n\nCredit Score: [720]\n\n**Supporting Documents**\n\n1. Copy of Government-issued ID\n2. Recent pay stubs (last 3 months)\n3. Bank statements (last 6 months)\n4. Proof of other income (if any)\n5. Credit card statement (last 3 months)\n\n**Declaration**\n\nI, Angelo Marion Häring, hereby declare that all the information provided in this application is true and correct to the best of my knowledge. I understand that providing false or misleading information may result in the rejection of my loan application or legal consequences.\n\nSignature: [Angelo",
+ "source": "kyc",
+ "private": [
+  "Angelo Marion Häring",
+  "[angelo.haring@email.com]",
+  "77256 Hamilton Crescent, Lanefurt",
+  "[XXXX-XXXX-XXXX-411]",
+  "411",
+  "Angelo",
+  "angelo.haring@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3150,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "doc_id": "6c723d081dc48ed8",
+ "text": "Loan Application - Individual Details\n\nFull Name: John Michael Thompson\nDate of Birth: 03/12/1985\nGender: Male\n\nContact Information:\nStreet Address: 45, Kingfisher Drive\nCity: Manchester\nPostal Code: M12 3CD\nCountry: United Kingdom\nPhone Number: +44 123 456 7890\nEmail Address: [john.thompson@email.com](mailto:john.thompson@email.com)\n\nEmployment Details:\nEmployer Name: Manchester University\nPosition: Research Scientist\nEmployment Type: Full-time\nAnnual Income: £52,000\nYears with Current Employer: 6 years\n\nFinancial Details:\nLoan Amount Requested: £15,000\nLoan Purpose: Home Renovation\nExisting Debts: Credit Card (£3,000), Car Loan (£8,000)\nSavings: £12,000\n\nSupporting Documents:\n1. Copy of Passport\n2. Proof of Address (Utility Bill)\n3. Last Three Months' Bank Statements\n4. Employment Contract\n5. Latest PAYG Summary\n\nBy submitting this application, I confirm that the information provided is true and accurate to the best of my knowledge. I understand that any misrepresentation of facts may result in the cancellation of this loan application or repayment of the loan amount, if approved.\n\nSignature: John M. Thompson\nDate: 05/04/2023",
+ "source": "kyc",
+ "private": [
+  "John Michael Thompson",
+  "03/12/1985",
+  "+44 123 456 7890",
+  "Manchester University",
+  "John M. Thompson",
+  "john.thompson@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2836,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

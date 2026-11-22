@@ -1,0 +1,18 @@
+{
+ "doc_id": "c8a3522fcc353225",
+ "text": "MORTGAGE CONTRACT\n\nThis Mortgage Contract (the \"Agreement\"), dated as of 28th day of March, 2023 (the \"Effective Date\"), is entered into between Harry Newman-Whitehead, residing at 25082 Garcia Isle Apt. 089 (the \"Borrower\"), and BestLend Mortgage Corporation, a corporation organized and existing under the laws of the Province of Ontario, with its head office located at 1234 Main Street, Toronto, Ontario (the \"Lender\").\n\nWHEREAS, Borrower desires to borrow the principal sum of $500,000 (the \"Loan\") from Lender, and Lender is willing to advance the Loan to Borrower, on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN. Lender shall advance the Loan to Borrower in the amount of $500,000, which shall be evidenced by a promissory note (the \"Note\") in favor of Lender and executed by Borrower.\n\n2. INTEREST. The Loan shall bear interest at a rate per annum equal to the greater of (i) 3.50% per annum, or (ii) the sum of the Federal Funds Rate (as published by the Federal Reserve) plus 2.00% per annum (the \"Base Rate\"). The Base Rate shall be adjusted on the first day of January, April, July, and October of each year, commencing on the first day of January, 2024.\n\n3. REPAYMENT. The Loan shall be repaid in equal monthly installments over a term of thirty (30) years, with the first such installment due on the first day of the month next succeeding the date that is three (3) months after the Effective Date. Each installment shall consist of both principal and interest, as set forth in a repayment schedule provided by Lender to Borrower.\n\n4. SECURITY. The Loan shall be",
+ "source": "kyc",
+ "private": [
+  "Harry Newman-Whitehead",
+  "25082 Garcia Isle Apt. 089",
+  "BestLend Mortgage Corporation",
+  "1234 Main Street, Toronto, Ontario"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 265,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "doc_id": "a21d84c6ad6333a7",
+ "text": "CONSOLIDATION LOAN AGREEMENT\n\nThis Consolidation Loan Agreement (the \"Agreement\"), dated as of the 1st day of March, 2023, is entered into between Joseph Denise Gibbs, a resident of 66120 Timothy Summit, Apt. 0484 (the \"Borrower\"), and XYZ Financial Corporation, a corporation organized and existing under the laws of the state of Delaware, with its principal place of business at 12345 Maple Street, Suite 987 (the \"Lender\").\n\nWHEREAS, Borrower has multiple outstanding debts with various creditors and desires to consolidate such debts into a single loan; and\n\nWHEREAS, Lender is willing to extend credit to Borrower in the amount of $50,000, subject to the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN AMOUNT\n\nLender shall make a loan to Borrower in the original principal amount of $50,000 (the \"Loan Amount\"). The Loan Amount shall be disbursed to Borrower in a single disbursement, less any applicable fees or charges.\n\n2. INTEREST RATE\n\nThe Loan Amount shall bear interest at a fixed rate of 8% per annum.\n\n3. REPAYMENT TERMS\n\nBorrower shall repay the Loan Amount, together with all accrued and unpaid interest, in equal monthly installments over a term of 60 months. The first installment shall be due on the first day of the month next succeeding the date of this Agreement. Each installment shall be in the amount of $1,030.26.\n\n4. COLLATERAL\n\nAs security for the payment and performance of Borrower's obligations under this Agreement, Borrower grants to Lender a security interest in the following property (the \"Collateral\"): all of Borrower's right, title, and interest",
+ "source": "kyc",
+ "private": [
+  "Joseph Denise Gibbs",
+  "66120 Timothy Summit, Apt. 0484",
+  "12345 Maple Street, Suite 987"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3653,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

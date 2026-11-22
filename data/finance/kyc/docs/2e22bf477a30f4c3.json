@@ -1,0 +1,17 @@
+{
+ "doc_id": "2e22bf477a30f4c3",
+ "text": "Barclays Bank UK PLC\nCredit Card Statement\nAccount Holder: John Doe\nAccount Number: 123456789012\nPeriod: 01/03/2023 - 31/03/2023\n\nTransactions:\n\nDate | Description | Currency | Amount | GBP Equivalent | Fees (GBP)\n05/03/2023 | Purchase at Shopping Mall, Paris | EUR | 200.00 | 175.34 | 5.00\n07/03/2023 | Dinner at Restaurant, Rome | EUR | 100.00 | 87.67 | 2.50\n12/03/2023 | Hotel Stay, Berlin | EUR | 500.00 | 438.34 | 10.00\n15/03/2023 | Fuel at Gas Station, Amsterdam | EUR | 60.00 | 52.58 | 1.50\n20/03/2023 | Purchase at Duty-Free, Frankfurt | USD | 150.00 | 122.44 | 3.00\n\nTotal Spend: 1067.42 EUR\nTotal Fees: 21.00 GBP\nExchange Rate (as of 31/03/2023): 1 EUR = 0.8723 GBP\nGBP Equivalent of Total Spend: 928.71 GBP\n\nMinimum Payment Due: 115.35 GBP\nPayment Due Date: 25/04/2023\n\nInterest Rate: 18.9% p.a. (variable)\nLate Payment Fee: 12.00 GBP\n\nPlease note that any payments received after the payment due date may be subject to interest charges. If you have any queries regarding this statement, please contact us on 0333 200 1012.\n\nThank you for choosing Barclays",
+ "source": "kyc",
+ "private": [
+  "Barclays Bank UK PLC",
+  "John Doe",
+  "0333 200 1012"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4906,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

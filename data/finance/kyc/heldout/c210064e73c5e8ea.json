@@ -1,0 +1,16 @@
+{
+ "doc_id": "c210064e73c5e8ea",
+ "text": "Sure, here is a simplified example of a credit card statement with a focus on interest charges analysis:\n\n---\n**Credit Card Statement**\n\nCardholder: John Doe\nAccount Number: 1234-5678-9012-3456\nBill Cycle: 01/01/2022 - 01/31/2022\nDue Date: 02/28/2022\n\n**Interest Charges Analysis**\n\nOutstanding Balance: £2,000.00\nInterest Rate: 18.9% APR\n\nNumber of Days in Billing Cycle: 31 days\nInterest-Free Period: 56 days\n\nInterest Charged:\n- Balance from previous billing cycle: £1,500.00\n- Interest rate: 18.9% / 365 days = 0.0519% per day\n- Interest accrued: £1,500.00 x 0.0519% x 31 days = £23.23\n\nTotal Amount Due: £2,023.23\n\n---\n\nThis statement shows that the cardholder, John Doe, has an outstanding balance of £2,000.00 at the end of the billing cycle. The interest rate for this account is 18.9% APR. The interest charges for this billing cycle are calculated based on the outstanding balance from the previous billing cycle, which is £1,500.00. The interest rate is divided by 365 days to get the daily interest rate, and then multiplied by the number of days in the billing cycle (31 days) to get the total interest accrued. The total amount due is the sum of the outstanding balance and the interest accrued.",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "1234-5678-9012-3456"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4384,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

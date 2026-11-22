@@ -1,0 +1,23 @@
+{
+ "doc_id": "653293a6910100f4",
+ "text": "Loan Application – Insurance Verification\n\nLoan Details:\nLoan Amount: $200,000\nLoan Purpose: Purchase of a new primary residence\n\nPersonal Details:\nFull Name: John Michael Smith\nDate of Birth: 05/12/1980\nAddress: 123, High Street, London, SE1 1BG, UK\nEmail Address: john.smith@email.com\nContact Number: +44 20 1234 5678\nMarital Status: Married\nSpouse', if any: Jane Elizabeth Smith\nNumber of Dependents: 2\n\nFinancial Details:\nMonthly Income: £7,500\nMonthly Expenses: £2,500\nOther Sources of Income: Rental Income - £1,500\n\nEmployment Details:\nEmployer Name: ABC Corporation\nAddress: 456, Oxford Street, London, W1 2AB, UK\nContact Number: +44 20 9876 5432\nPosition: Senior Software Developer\nYears with Current Employer: 10 years\n\nAssets:\nPrimary Residence: 123, High Street, London, SE1 1BG, UK\nValue: £300,000\nCurrent Mortgage: £150,000\n\nInvestments:\nInvestment Account: XYZ Wealth Management\nAccount Number: 123456789\nValue: £150,000\n\nVehicles:\n1. 2018 BMW X5\nValue: £30,000\n2. 2020 Audi A6\nValue: £40,000\n\nInsurance Verification:\n1. Homeowner’s Insurance: Yes, through XYZ Insurance\nPolicy Number: 123456789\nEffective Date: 01/01/2021\nExpiration Date: 01/01/2022\n\n2. Vehicle Insurance: Yes, through ABC Insurance\nPolicy Number: 987654321",
+ "source": "kyc",
+ "private": [
+  "John Michael Smith",
+  "05/12/1980",
+  "123, High Street, London, SE1 1BG, UK",
+  "john.smith@email.com",
+  "+44 20 1234 5678",
+  "Jane Elizabeth Smith",
+  "ABC Corporation",
+  "456, Oxford Street, London, W1 2AB, UK",
+  "+44 20 9876 5432"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1933,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

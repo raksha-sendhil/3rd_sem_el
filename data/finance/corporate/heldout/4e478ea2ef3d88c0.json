@@ -1,0 +1,16 @@
+{
+ "doc_id": "4e478ea2ef3d88c0",
+ "text": "From: carol.clair@enron.com\nTo: jack.falconi@guarantygroup.com\nDate: 2001-05-24\nSubject: Meeting\n\nJack:\nMy assistant will be calling you to set up a time next week when Ken Curry \nand I can discuss your comments with you and your credit person.  Her name is \nSuzanne Adams.\n\nCarol St. Clair\nEB 3889\n713-853-3989 (Phone)\n713-646-3393 (Fax)\ncarol.st.clair@enron.com",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "jack.falconi@guarantygroup.com",
+  "713-853-3989",
+  "713-646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/2228.",
+  "message_id": "<11566827.1075842205684.JavaMail.evans@thyme>"
+ }
+}

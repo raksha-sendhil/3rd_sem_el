@@ -1,0 +1,21 @@
+{
+ "doc_id": "15b494ba1a22eac3",
+ "text": "---\nLoan Application\n\nFull Legal Name: John Doe\nDate of Birth: 01/01/1980\nSocial Security Number: 123-45-6789\nAddress: 123 Main St, Anytown, USA\nPhone Number: (123) 456-7890\nEmail Address: johndoe@email.com\n\nLoan Information:\nLoan Amount: $200,000\nLoan Purpose: Purchase of a new primary residence\n\nEmployment Information:\nEmployer Name: XYZ Corporation\nPosition: Senior Software Engineer\nEmployment Status: Full-time\nMonthly Salary: $8,500\n\nFinancial Information:\nBank Name: ABC Bank\nAccount Number: 123456789\nAccount Balance: $35,000\n\nOther Debts:\nCreditor Name: DEF Lender\nLoan Amount: $50,00",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "01/01/1980",
+  "123-45-6789",
+  "123 Main St, Anytown, USA",
+  "(123) 456-7890",
+  "johndoe@email.com",
+  "XYZ Corporation"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 177,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "doc_id": "e078907d2e6d400c",
+ "text": "PAYDAY LOAN AGREEMENT\n\nThis Payday Loan Agreement (the \"Agreement\") is made and entered into as of the 1st day of August, 2021 (the \"Effective Date\"), by and between Easy Money Inc., a corporation organized and existing under the laws of the State of Delaware, with its principal place of business at 1234 Easy Street, Wilmington, DE 19801 (hereinafter \"Lender\"), and John Doe, an individual with a mailing address at 5678 Main Street, Anytown, UK AB1 2CD (hereinafter \"Borrower\").\n\nWHEREAS, Borrower is in need of a loan in the amount of One Thousand Five Hundred Dollars ($1,500.00) (the \"Loan Amount\") and Lender is willing to provide such Loan Amount to Borrower on the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual promises, covenants, and conditions contained herein, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN AMOUNT AND INTEREST RATE. Lender agrees to provide Borrower with a Loan Amount of $1,500.00, which Borrower hereby accepts. The Loan Amount shall bear interest at a rate of 45% per annum.\n\n2. REPAYMENT TERMS. The Loan Amount, together with all accrued and unpaid interest thereon, shall be due and payable in full on the Borrower's next payday, which shall be on or about the 15th day of August, 2021 (the \"Maturity Date\").\n\n3. AUTOMATIC REPAYMENT. Borrower hereby authorizes Lender to automatically debit Borrower's bank account on the Maturity Date for the full amount due hereunder. Borrower shall ensure that sufficient funds are available in such account on the Maturity Date to cover the full amount due hereunder.\n\n4. ROLLOVER PROVISIONS. If Borrower is unable to repay the Loan Am",
+ "source": "kyc",
+ "private": [
+  "Easy Money Inc.",
+  "1234 Easy Street, Wilmington, DE 19801",
+  "John Doe",
+  "5678 Main Street, Anytown, UK AB1 2CD"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 69,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

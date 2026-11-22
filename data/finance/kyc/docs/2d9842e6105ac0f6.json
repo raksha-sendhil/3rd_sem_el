@@ -1,0 +1,15 @@
+{
+ "doc_id": "2d9842e6105ac0f6",
+ "text": "**Credit Score Improvement Plan Loan Application**\n\nFull Name: Elisabeth Nilsson-Johannesson\n\nDate: 31st July 2000\n\nStreet Address: Studio 36H, Byrne Forges, [Your City, Your Postal Code]\n\nLoan Amount: £5,000\n\nLoan Purpose: Credit Score Improvement\n\nEmployment Information:\n\n- Employer's Name: [Company Name]\n- Position: [Job Title]\n- Monthly Income: £[Your Monthly Income]\n- Years with Current Employer: [Number of Years]\n\nFinancial Information:\n\n- Bank Name: [Bank Name]\n- Account Type: [Account Type]\n- Average Account Balance: £[Average Balance]\n- Monthly Debt Payments: £[Monthly Debt Payments]\n\nCredit Information:\n\n- Current Credit Score: [Current Credit Score]\n- Credit Card Information: [Number of Credit Cards]\n- Late Payments in Last 12 Months: [Number of Late Payments]\n\nLoan Repayment Information:\n\n- Proposed Repayment Term: 24 months\n- Proposed Monthly Payment: £[Proposed Monthly Payment]\n\nSupporting Documents:\n\n- Copy of a valid photo ID (passport, driver's license)\n- Proof of income (last 3 payslips)\n- Proof of address (utility bill)\n- Last 3 months' bank statements\n- Credit report\n\nImprovement Plan:\n\n1. Make timely payments on all existing debts.\n2. Reduce credit card utilization to below 30%.\n3. Avoid applying for new credit in the next 6 months.\n4. Maintain a healthy average account balance.\n5. Consider debt consolidation if applicable.\n\nBy signing below, you confirm that the information provided is true and accurate to the best of your knowledge.\n\nApplicant's Signature: ______________ Date: ______________\n\nNote: Providing false or misleading information is considered fraudulent and will result in the rejection of this application and potential legal consequences.",
+ "source": "kyc",
+ "private": [
+  "Elisabeth Nilsson-Johannesson"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4406,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

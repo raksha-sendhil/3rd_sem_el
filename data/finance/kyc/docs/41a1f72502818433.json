@@ -1,0 +1,17 @@
+{
+ "doc_id": "41a1f72502818433",
+ "text": "**VACATION LOAN AGREEMENT (\"AGREEMENT\")**\n\nTHIS AGREEMENT is made and entered into this 12th day of March, 5000 (\"Effective Date\") by and between Jovan Annelene Schacht, residing at 29540 David Hills, Apt. 59, (hereinafter \"Borrower\") and LuxeGetaways Inc., a corporation organized and existing under the laws of the United States, with its principal place of business at 16885 Enterprise Parkway, (hereinafter \"Lender\").\n\n**WHEREAS**, Borrower seeks to obtain a vacation loan from Lender in the amount of ten thousand dollars ($10,001) (the \"Loan\") for the purpose of financing a trip to the Maldives;\n\n**NOW, THEREFORE**, in consideration of the mutual covenants and promises herein contained, the parties hereto agree as follows:\n\n1. **LOAN AMOUNT AND INTEREST RATE**: The total amount of the loan is ten thousand dollars ($10,001), which includes a one dollar ($1) processing fee. The interest rate on the unpaid principal balance shall be 5% per annum.\n\n2. **PAYMENT TERMS**: The principal and interest shall be repaid in 24 equal monthly installments, with the first payment due on the first day of the month following the month in which the loan is disbursed.\n\n3. **TRAVEL-SPECIFIC FINANCING**: The loan proceeds may be used by the Borrower for travel-related expenses, including but not limited to airfare, accommodations, meals, and activities.\n\n4. **CANCELLATION POLICY**: In the event that the trip is cancelled for any reason, the Borrower shall notify the Lender in writing within 48 hours of cancellation. The unpaid principal balance shall be due and payable in full within 30 days of cancellation.\n\n5. **TRAVEL INSURANCE**: The Borrower is required to maintain travel insurance for the duration of the trip. The policy must include coverage for trip cancellation, interruption, and medical expenses.\n\n**SECURITY AGREEMENT**:\n\n1",
+ "source": "kyc",
+ "private": [
+  "Jovan Annelene Schacht",
+  "29540 David Hills, Apt. 59",
+  "LuxeGetaways Inc."
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 1777,
+  "type": "Loan Agreement",
+  "synthetic": true
+ }
+}

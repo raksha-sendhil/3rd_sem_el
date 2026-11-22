@@ -1,0 +1,16 @@
+{
+ "doc_id": "bb972291410edfd3",
+ "text": "From: carol.clair@enron.com\nTo: david.portz@enron.com\nDate: 2001-05-22\nSubject: Carolina Power & Light\n\nDavid:\nCP&L has marked up a confirm that we sent to them for a deal that was done \n5/8/2001 to make it subject to their 5/18/98 Tariff agreement.  We are in the \nprocess of negotiating an EEI Master with them but have some outstanding \ncredit issues.  How should I respond to their mark-up?  This was one of \nJanice's files.\n\nCarol St. Clair\nEB 3889\n713-853-3989 (Phone)\n713-646-3393 (Fax)\ncarol.st.clair@enron.com",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "david.portz@enron.com",
+  "713-853-3989",
+  "713-646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/2221.",
+  "message_id": "<23813860.1075842205520.JavaMail.evans@thyme>"
+ }
+}

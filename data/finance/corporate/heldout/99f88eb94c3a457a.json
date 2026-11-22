@@ -1,0 +1,16 @@
+{
+ "doc_id": "99f88eb94c3a457a",
+ "text": "From: carol.clair@enron.com\nTo: suzanne.adams@enron.com\nDate: 2001-05-29\nSubject: Meeting With Ken Curry\n\nSuzanne:\nPlease set up a 1 hour meeting with Ken Curry after today to discuss Inland \ncredit issues.  Jack Falconi wants me to send him an issues list before we \nset up a meeting with him. \n\nCarol St. Clair\nEB 3889\n713-853-3989 (Phone)\n713-646-3393 (Fax)\ncarol.st.clair@enron.com",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "suzanne.adams@enron.com",
+  "713-853-3989",
+  "713-646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/2259.",
+  "message_id": "<4119403.1075842206435.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "doc_id": "31a94c7252ff69f9",
+ "text": "Financial Hardship Evaluation Loan Application\n\nDate: March 15, 2023\n\nLoan Application ID: F-361728-X\n\nApplicant Name: Sükrü Junitz-Klapp\nStreet Address: 0547 Cooper Mews\n\nLoan Information:\n- Loan Amount Requested: $15,000\n- Purpose of Loan: To cover medical bills due to an unexpected illness\n- Proposed Repayment Term: 36 months\n\nPersonal Information:\n- Date of Birth: December 23, 1985\n- Marital Status: Married\n- Number of Dependents: 2\n- Email Address: [sjunitzklapp@email.com](mailto:sjunitzklapp@email.com)\n- Phone Number: (123) 456-7890\n\nEmployment Information:\n- Employer Name: SoftDev Inc.\n- Employer Address: 55 High St, London, UK\n- Job Title: Senior Software Engineer\n- Monthly Salary: £5,500\n- Years Employed: 8 years\n\nFinancial Information:\n- Monthly Expenses:\n  - Mortgage/Rent: £1,500\n  - Utilities: £200\n  - Transportation: £250\n  - Groceries: £400\n  - Insurance: £100\n  - Other: £200\n- Assets:\n  - Savings Account: £8,000\n  - Checking Account: £2,000\n  - Retirement Account: £25,000\n  - Vehicle: £12,000\n\nFinancial Hardship Explanation:\nThe applicant, Sükrü Junitz-Klapp, has recently been diagnosed with a serious medical condition that requires extensive and ongoing treatment. The medical bills have already reached $10,000 and are expected to increase significantly over the next few months. Despite having medical insurance, the out-of-pocket costs have become overwhelming for the applicant and their family.\n\nThe applicant has been employed at SoftDev",
+ "source": "kyc",
+ "private": [
+  "F-361728-X",
+  "Sükrü Junitz-Klapp",
+  "0547 Cooper Mews",
+  "December 23, 1985",
+  "(123) 456-7890",
+  "SoftDev Inc.",
+  "55 High St, London, UK",
+  "sjunitzklapp@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4307,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

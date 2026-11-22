@@ -1,0 +1,11 @@
+{
+ "doc_id": "39015d1f07dac228",
+ "text": "Loancare keeps reporting my balance as {$10000.00} more than its supposed to be. Ive tried fixing this over the past year countless times by disputing it with the credit bureaus. It gets fixed temporarily, but then gets reported wrong again. Now, there was an error of {$10000.00} on my XXXX from them : XXXX XXXX XXXX XXXXXXXX {$180000.00} XXXX XXXX XXXX XXXX XXXXXXXX XXXX Another mistake by $ XXXX. The beginning balance was correct, but someone in the company cant do math. I also tried to fix this and the actually added $ XXXX to the beginning balance when it should have been subtracted from the ending balance. uGH! I AM SO SICK IF THIS COMPANY",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "mortgage",
+  "issue": "Incorrect information on your report",
+  "state": "MI"
+ }
+}

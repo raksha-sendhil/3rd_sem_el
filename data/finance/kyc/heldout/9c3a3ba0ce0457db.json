@@ -1,0 +1,19 @@
+{
+ "doc_id": "9c3a3ba0ce0457db",
+ "text": "Sure, here's a sample credit card statement for a transaction trends analysis:\n\nCredit Card Statement\nAccount Holder: John Doe\nAccount Number: 1234-5678-9012-3456\nStatement Period: 01/01/2023 - 01/31/2023\n\nTransaction Summary:\nTotal Transactions: 15\nTotal Amount Spent: $2,547.89\nAverage Transaction Amount: $169.86\n\nTop Merchants:\n\n1. Starbucks - $215.00 (4 Transactions)\n2. Amazon - $456.78 (3 Transactions)\n3. Uber - $201.50 (2 Transactions)\n4. Whole Foods - $192.35 (2 Transactions)\n5. Netflix - $15.99 (1 Transaction)\n\nSpending Trends:\n- Peak spending days: Tuesdays and Fridays\n- Average transaction amount is highest on Fridays at $212.50\n- Monthly recurring transactions: Netflix, gym membership, and phone bill\n- Total of 6 transactions between 12am-6am, indicating late-night or early-morning purchases\n\nPayment Information:\nDue Date: 02/25/2023\nMinimum Payment: $50.00\nCurrent Balance: $2,547.89\n\nPlease note that this is a synthetic data and should not be used for any real-world transactions or financial decisions.",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "1234-5678-9012-3456",
+  "Amazon",
+  "Whole Foods",
+  "Netflix"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 98,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

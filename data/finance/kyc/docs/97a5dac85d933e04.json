@@ -1,0 +1,19 @@
+{
+ "doc_id": "97a5dac85d933e04",
+ "text": "---\nLoan Application\n\nFull Name: Alex Johnson\nDate: 01/15/2023\nLoan Type: Eco-friendly\n\nContact Information:\n--------------------\nAddress: 123 Main Street, Anytown, USA\nPhone: (123) 456-7890\nEmail: [alexjohnson@email.com](mailto:alexjohnson@email.com)\n\nBusiness Information:\n-------------------\nBusiness Name: GreenTech Solutions\nAddress: 123 Main Street, Anytown, USA\nIndustry: Renewable Energy Solutions\nNumber of Employees: 25\nYears in Business: 5\n\nLoan Information:\n---------------\nRequested Amount: $500,000\nLoan Purpose: To purchase and install a new solar panel manufacturing line, reducing our carbon footprint and increasing our production capacity.\nLoan Term: 7 years\nInterest Rate: Fixed, 6%\n\nEco-friendly Initiatives:\n------------------------\n\n1. Solar Panel Manufacturing: We are a renewable energy solutions company that specializes in the design and manufacturing of solar panels. With this loan, we plan to purchase and install a new solar panel manufacturing line, which will allow us to produce more panels and reduce our carbon footprint.\n2. Energy Efficiency: We are committed to reducing our energy consumption and carbon emissions. Our new manufacturing line will be powered by renewable energy sources and will be designed to minimize energy waste.\n3. Sustainable Materials: We are dedicated to using sustainable materials in our manufacturing process. Our new manufacturing line will use recycled materials whenever possible and will be designed to minimize waste.\n\nCost Analysis:\n-------------\n\n1. Solar Panel Manufacturing Line: $450,000\n\t* Equipment: $350,000\n\t* Installation: $100,000\n2. Training and Education: $25,000\n3. Marketing and Promotion: $25,000\n\nTotal Cost: $500,000\n\nExpected Impact on Sustainability:\n---------------------------------\n\n1. Reduced Carbon Footprint: The new manufacturing line will be powered",
+ "source": "kyc",
+ "private": [
+  "Alex Johnson",
+  "123 Main Street, Anytown, USA",
+  "(123) 456-7890",
+  "GreenTech Solutions",
+  "alexjohnson@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 932,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

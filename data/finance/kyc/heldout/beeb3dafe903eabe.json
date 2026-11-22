@@ -1,0 +1,19 @@
+{
+ "doc_id": "beeb3dafe903eabe",
+ "text": "**INTERNATIONAL LOAN APPLICATION**\n\n**Full Legal Name:** Madeleine Cheryl Olivia Carr\n\n**Permanent Residential Address:** 8868 Little Meadow, Williamhaven\n\n**Type of Loan Applied For:** International Business Loan\n\n**Loan Amount Requested:** USD 500,000\n\n**Loan Purpose:** Expansion of export business to Europe\n\n**Business Name and Address:** Global Exports Inc., 8921 Kingfisher Lane, Williamhaven\n\n**Years in Business:** 10\n\n**Annual Revenue:** GBP 2,000,000 (based on current foreign exchange rates)\n\n**Industry Type:** Wholesale Trade\n\n**International Regulations Familiarity:** High - The business has been exporting to various countries for several years and is familiar with international trade regulations.\n\n**Global Market Trends Awareness:** High - The business keeps track of global market trends and adjusts its strategies accordingly.\n\n**Personal Guarantee:** Yes, Madeleine Cheryl Olivia Carr is willing to provide a personal guarantee for the loan.\n\n**Credit History:** Excellent - Madeleine Cheryl Olivia Carr has a proven track record of managing debts and credits responsibly.\n\n**Collateral:** Yes, the business will provide collateral in the form of business assets.\n\n**Additional Information:** The business is looking to expand its operations to Europe, particularly in the United Kingdom and Germany. The loan will be used for working capital, inventory, and marketing expenses. The business has a strong management team with extensive experience in international trade.\n\n**Declaration:** I, Madeleine Cheryl Olivia Carr, hereby declare that all the information provided in this loan application is true and correct to the best of my knowledge.\n\n**Date:** Today's Date\n\n**Signature:** Madeleine Cheryl Olivia Carr",
+ "source": "kyc",
+ "private": [
+  "Madeleine",
+  "Cheryl Olivia Carr",
+  "8868 Little Meadow, Williamhaven",
+  "Global Exports Inc.",
+  "8921 Kingfisher Lane, Williamhaven"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5270,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "doc_id": "327dc7b4bc2ffd3d",
+ "text": "LOW-INCOME HOUSING TAX CREDIT FINANCING CONTRACT\n\nTHIS AGREEMENT is made and entered into this 8th day of April, 2019, by and between XYZ Financing Corp., a corporation organized and existing under the laws of the State of Delaware, with its principal place of business at 1234 Fifth Avenue, New York, NY 10022 (hereinafter \"Lender\"), and Francesca Mattarella-Abbagnale, an individual with a driver's license number O549-3065-703-2 and a current address of 5744 Joseph Parkway, Suite 710, Anytown, USA (hereinafter \"Borrower\").\n\nWHEREAS, Lender has agreed to provide financing to Borrower for the purpose of acquiring, constructing, rehabilitating, and/or otherwise improving a low-income housing project located at 5744 Joseph Parkway, Suite 710, Anytown, USA (hereinafter \"Property\"); and\n\nWHEREAS, Borrower desires to obtain such financing and agrees to the terms and conditions set forth herein;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties hereto agree as follows:\n\n1. LOAN AMOUNT. Lender shall provide to Borrower a loan in the amount of $5,000,000 (the \"Loan Amount\") for the purpose of acquiring, constructing, rehabilitating, and/or otherwise improving the Property.\n\n2. INTEREST RATE. The Loan shall bear interest at a fixed rate of 4.00% per annum.\n\n3. REPAYMENT TERM. The Loan shall be repaid in equal monthly installments over a term of 20 years, with the first such installment due on the first day of the month next succeeding the date of this Agreement.\n\n4. PROPERTY DETAILS. The Property shall consist of a low-income housing project containing 100 residential units, with income restrictions in accordance",
+ "source": "kyc",
+ "private": [
+  "XYZ Financing Corp.",
+  "1234 Fifth Avenue, New York, NY 10022",
+  "Francesca Mattarella-Abbagnale",
+  "O549-3065-703-2",
+  "5744 Joseph Parkway, Suite 710"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5288,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

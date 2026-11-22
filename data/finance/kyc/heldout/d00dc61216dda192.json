@@ -1,0 +1,23 @@
+{
+ "doc_id": "d00dc61216dda192",
+ "text": "---\nLoan Application Form\n\nLoan Applicant Information:\n\nFirst Name: Sarah\nLast Name: Johnson\nDate of Birth: 01/10/1985\nContact Number: +1 (123) 456-7890\nEmail Address: [sarah.johnson@email.com](mailto:sarah.johnson@email.com)\nResidential Address: 1234 Main Street, Anytown, CA 95121, USA\n\nEmployment Information:\n\nEmployer Name: ABC Corporation\nJob Title: Marketing Manager\nAnnual Income: $85,000\nYears with Current Employer: 5 years\n\nLoan Information:\n\nLoan Amount Requested: $150,000\nLoan Purpose: Business Expansion\nLoan Term: 60 months\n\nCollateral Information:\n\nCollateral Type: Real Estate\nCollateral Description: Single-family residential property\nCollateral Address: 5678 Elm Street, Anytown, CA 95121, USA\nCollateral Value: $250,000\nCollateral Assessment:\nThe collateral is a single-family residential property located in Anytown, CA. The property is in good condition, and a recent appraisal has been conducted, estimating its market value to be $250,000. The property is owned outright by the applicant, with no existing mortgages or liens.\n\nSupporting Documents:\n\n1. Copy of driver's license or passport\n2. Recent pay stubs or proof of income\n3. Recent bank statements\n4. Property appraisal report\n5. Proof of property ownership (deed or title)\n\nI, Sarah Johnson, hereby confirm that the information provided in this loan application is true and accurate to the best of my knowledge.\n\nSignature: Sarah Johnson\nDate: 01/10/2023\n\n---",
+ "source": "kyc",
+ "private": [
+  "01/10/1985",
+  "+1 (123) 456-7890",
+  "1234 Main Street, Anytown, CA 95121, USA",
+  "ABC Corporation",
+  "5678 Elm Street, Anytown, CA 95121, USA",
+  "Sarah",
+  "Johnson",
+  "Sarah Johnson",
+  "sarah.johnson@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4646,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

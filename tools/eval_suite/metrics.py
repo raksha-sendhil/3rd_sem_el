@@ -18,8 +18,9 @@ _TOKEN = re.compile(r"[a-z0-9]+")
 
 
 def tokens(text: str) -> list[str]:
-    """Lower-case word tokens; "41,721" and "41721" are the same token."""
-    text = re.sub(r"(?<=\d),(?=\d{3})", "", (text or "").lower())
+    """Lower-case word tokens; "41,721" and "41721" are the same token, and so are "1,25,000"
+    (Indian grouping) and "125000"."""
+    text = re.sub(r"(?<=\d),(?=(?:\d{2},)*\d{3})", "", (text or "").lower())
     return _TOKEN.findall(text)
 
 

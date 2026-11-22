@@ -1,0 +1,542 @@
+[
+ {
+  "id": "u000",
+  "query": "What does the company's compensation plan allow?",
+  "reference": "a group of employees within the U.S. to contribute base salary and commissions or incentive compensation on a tax deferred basis in excess of the IRS limits imposed on 401(k) plans.",
+  "doc_id": "9d1e4ac08fc38890"
+ },
+ {
+  "id": "u001",
+  "query": "Where does the company reports the intangible impairment charges?",
+  "reference": "within the Asset impairment expense line of our Consolidated Statements of Operations.",
+  "doc_id": "e0a33ad72b39d954"
+ },
+ {
+  "id": "u002",
+  "query": "What are the respective values of operating lease obligations that are less than one year and between 2-5 years?",
+  "reference": "$773; $2,055",
+  "doc_id": "bd23102f498e022f"
+ },
+ {
+  "id": "u003",
+  "query": "What are the respective values of total contractual obligations that are less than one year and between 2-5 years?",
+  "reference": "$3,423; $4,055",
+  "doc_id": "bd23102f498e022f"
+ },
+ {
+  "id": "u004",
+  "query": "What is the value of operating lease obligations that are due in less than one year as a percentage of the total contractual obligations?",
+  "reference": "22.58%",
+  "doc_id": "bd23102f498e022f"
+ },
+ {
+  "id": "u005",
+  "query": "How much was the actual and constant percentage change in interest expense?",
+  "reference": "3%; 3%",
+  "doc_id": "6240a932b2f36ed3"
+ },
+ {
+  "id": "u006",
+  "query": "When was the financial year end?",
+  "reference": "Year Ended May 31",
+  "doc_id": "6240a932b2f36ed3"
+ },
+ {
+  "id": "u007",
+  "query": "What is the difference between the average investment income and average financing costs?",
+  "reference": "2140 million",
+  "doc_id": "e80b7882a396782d"
+ },
+ {
+  "id": "u008",
+  "query": "How many years did servicing fees exceed $3,000 thousand?",
+  "reference": "1",
+  "doc_id": "66da659033070dc7"
+ },
+ {
+  "id": "u009",
+  "query": "What does the distribution of trade receivables and contract assets follow?",
+  "reference": "distribution of the Company’s sales",
+  "doc_id": "5f94bc75f6651ab4"
+ },
+ {
+  "id": "u010",
+  "query": "What is the difference in low and medium country risk due for 1-90 days past due?",
+  "reference": "456",
+  "doc_id": "5f94bc75f6651ab4"
+ },
+ {
+  "id": "u011",
+  "query": "What is the difference between 1-90 and 91-180 days past due in low risk country?",
+  "reference": "1222",
+  "doc_id": "5f94bc75f6651ab4"
+ },
+ {
+  "id": "u012",
+  "query": "When did the FASB issued new authoritative guidance for revenue from contracts with customers?",
+  "reference": "May 2014",
+  "doc_id": "970f5883f467be1f"
+ },
+ {
+  "id": "u013",
+  "query": "What was the result of the adoption of the new revenue recognition guidance?",
+  "reference": "net revenue for fiscal 2019 increased $47 million, and our operating expenses decreased $12 million",
+  "doc_id": "970f5883f467be1f"
+ },
+ {
+  "id": "u014",
+  "query": "What is the percentage increase in Total assets after adoption of new standard?",
+  "reference": "0.72%",
+  "doc_id": "970f5883f467be1f"
+ },
+ {
+  "id": "u015",
+  "query": "How many years did net sales from Americas exceed $200,000 thousand?",
+  "reference": "2",
+  "doc_id": "2d34479f0d0ee0cf"
+ },
+ {
+  "id": "u016",
+  "query": "What is included among non-financial assets and liabilities that are not required to be measured at fair value on a recurring basis?",
+  "reference": "inventories, net property and equipment, goodwill, intangible assets and asset retirement obligations.",
+  "doc_id": "cc3d97d75d903eeb"
+ },
+ {
+  "id": "u017",
+  "query": "How was foreign tax credit carryforwards calculated?",
+  "reference": "based on the deferral method and includes foreign investment tax credits",
+  "doc_id": "2fa6ec5889e0a977"
+ },
+ {
+  "id": "u018",
+  "query": "What was the amount of domestic-state income tax net operating loss carryforwards?",
+  "reference": "$57,299",
+  "doc_id": "2fa6ec5889e0a977"
+ },
+ {
+  "id": "u019",
+  "query": "What was the sum of all Income tax net operating loss carryforwards?",
+  "reference": "622908 thousand",
+  "doc_id": "2fa6ec5889e0a977"
+ },
+ {
+  "id": "u020",
+  "query": "What are the business segments the company operates in?",
+  "reference": "Specialty Alloys Operations (“SAO”) and Performance Engineered Products (“PEP”).",
+  "doc_id": "e63fe3fbf0d5b8e4"
+ },
+ {
+  "id": "u021",
+  "query": "Is the defined benefit plan open to new members?",
+  "reference": "The defined benefit plan is closed to new members.",
+  "doc_id": "b6d03c25e5c206ed"
+ },
+ {
+  "id": "u022",
+  "query": "What is another name for the defined benefit plan?",
+  "reference": "Woolworths Group Superannuation Plan",
+  "doc_id": "b6d03c25e5c206ed"
+ },
+ {
+  "id": "u023",
+  "query": "What is aggregate intrinsic value?",
+  "reference": "the value of the Company’s closing stock price on the last trading day of the fiscal period in excess of the weighted-average exercise price, multiplied by the number of options outstanding and exercisable",
+  "doc_id": "3c7c12921c9afb0a"
+ },
+ {
+  "id": "u024",
+  "query": "What does working capital consist of?",
+  "reference": "current assets less current liabilities.",
+  "doc_id": "cde91db2efc40336"
+ },
+ {
+  "id": "u025",
+  "query": "What does total debt outstanding consist of?",
+  "reference": "taxable revenue bonds due to the State of Alabama Industrial Development Authority.",
+  "doc_id": "cde91db2efc40336"
+ },
+ {
+  "id": "u026",
+  "query": "How many years did net income exceed $30,000 thousand?",
+  "reference": "1",
+  "doc_id": "5f7b15382c8525c1"
+ },
+ {
+  "id": "u027",
+  "query": "When does the company record an accrued receivable?",
+  "reference": "when revenue is recognized prior to invoicing",
+  "doc_id": "d835bb8f1aa9188b"
+ },
+ {
+  "id": "u028",
+  "query": "What does the table show?",
+  "reference": "Professional Service and Other",
+  "doc_id": "a34a3a18df09acb4"
+ },
+ {
+  "id": "u029",
+  "query": "What does Cost of professional service and other revenues consists primarily of?",
+  "reference": "costs of providing integration, configuration and training with respect to our various software products. The most significant components of these costs are personnel-related expenses, travel costs and third party subcontracting",
+  "doc_id": "a34a3a18df09acb4"
+ },
+ {
+  "id": "u030",
+  "query": "What is the average annual GAAP-based Professional Service and Other Gross Margin %?",
+  "reference": "19.43%",
+  "doc_id": "a34a3a18df09acb4"
+ },
+ {
+  "id": "u031",
+  "query": "What are the segments of revenue?",
+  "reference": "Services; Software and other",
+  "doc_id": "1316dd7b0863253c"
+ },
+ {
+  "id": "u032",
+  "query": "What does services revenue comprise of?",
+  "reference": "Consists primarily of fees for customer support services generated from our partners",
+  "doc_id": "1316dd7b0863253c"
+ },
+ {
+  "id": "u033",
+  "query": "What does software and other revenue comprise of?",
+  "reference": "Comprised primarily of fees for end-user software products provided through direct customer",
+  "doc_id": "1316dd7b0863253c"
+ },
+ {
+  "id": "u034",
+  "query": "Why is the amount of unfunded pension and postretirement benefit obligations not include in the table?",
+  "reference": "the unfunded obligations are remeasured each fiscal year, thereby resulting in our inability to accurately predict the ultimate amount and timing of any future required contributions to such plans",
+  "doc_id": "05197ae4680ad9bc"
+ },
+ {
+  "id": "u035",
+  "query": "How much does the company estimate to fund its pension and postretirement plans over the next twelve months, respectively?",
+  "reference": "$14.2 million; $10.8 million",
+  "doc_id": "05197ae4680ad9bc"
+ },
+ {
+  "id": "u036",
+  "query": "What is the total gross emissions (Scope 1 and 2) for FY19?",
+  "reference": "87,128",
+  "doc_id": "5902f291fa0d4e13"
+ },
+ {
+  "id": "u037",
+  "query": "What is the total gross emissions (Scope 1 and 2) for FY18?",
+  "reference": "98,725",
+  "doc_id": "5902f291fa0d4e13"
+ },
+ {
+  "id": "u038",
+  "query": "What is the Combustion of fuel and operation of facilities (Scope 1) in FY19?",
+  "reference": "59,495",
+  "doc_id": "5902f291fa0d4e13"
+ },
+ {
+  "id": "u039",
+  "query": "What is the average Cost of sales?",
+  "reference": "5579.33 million",
+  "doc_id": "82ca10587844d155"
+ },
+ {
+  "id": "u040",
+  "query": "What is the average Gross profit?",
+  "reference": "3609.67 million",
+  "doc_id": "82ca10587844d155"
+ },
+ {
+  "id": "u041",
+  "query": "What is the average Gross margin (as percentage of net revenues)?",
+  "reference": "39.3%",
+  "doc_id": "82ca10587844d155"
+ },
+ {
+  "id": "u042",
+  "query": "Where are personnel expense included in the consolidated statement?",
+  "reference": "cost of sales and in operating expenses",
+  "doc_id": "44406aa56b60bcb1"
+ },
+ {
+  "id": "u043",
+  "query": "Which factors are considered when constructing the long-term rate of return assumption for our defined benefit pension plans?",
+  "reference": "Factors such as asset class allocations, long-term rates of return (actual and expected), and results of periodic asset liability modeling studies are considered when constructing the long-term rate of return assumption for our defined benefit pension plans.",
+  "doc_id": "f50d758f802c4a0f"
+ },
+ {
+  "id": "u044",
+  "query": "How much is the weighted average expected long-term rate of return for the plan assets?",
+  "reference": "The weighted-average expected long-term rate of return for the plan assets is 3.3%.",
+  "doc_id": "f50d758f802c4a0f"
+ },
+ {
+  "id": "u045",
+  "query": "When did the Ninth Circuit Court of Appeals deny the plaintiff's request for an en banc rehearing?",
+  "reference": "November 12, 2019",
+  "doc_id": "2dccb2d38476e4ef"
+ },
+ {
+  "id": "u046",
+  "query": "What does the table show us?",
+  "reference": "the carrying value of goodwill by segment",
+  "doc_id": "618ab0b2f7b37f6b"
+ },
+ {
+  "id": "u047",
+  "query": "What do purchase obligations represent?",
+  "reference": "an estimate of open purchase orders and contractual obligations in the normal course of business for which we have not received the goods or services as of December 31, 2019",
+  "doc_id": "b1ccb3118139eca7"
+ },
+ {
+  "id": "u048",
+  "query": "What are the respective values of the company's operating lease and financing obligations that are between 1 to 3 years?",
+  "reference": "19,812; 5,912",
+  "doc_id": "b1ccb3118139eca7"
+ },
+ {
+  "id": "u049",
+  "query": "What are the respective values of the company's operating lease and financing obligations that are between 3 to 5 years?",
+  "reference": "6,551; 0",
+  "doc_id": "b1ccb3118139eca7"
+ },
+ {
+  "id": "u050",
+  "query": "In which segment was the Remaining Expected Charges the largest?",
+  "reference": "Transportation Solutions",
+  "doc_id": "7d19802945ccfb42"
+ },
+ {
+  "id": "u051",
+  "query": "What was the difference in total expected charges between Transportation Solutions and Industrial Solutions?",
+  "reference": "80 million",
+  "doc_id": "7d19802945ccfb42"
+ },
+ {
+  "id": "u052",
+  "query": "What was the average amount of total expected charges per segment?",
+  "reference": "96.33 million",
+  "doc_id": "7d19802945ccfb42"
+ },
+ {
+  "id": "u053",
+  "query": "How are the deferred costs amortised?",
+  "reference": "from the date of commercial release on a straight-line basis over the period of the expected benefit",
+  "doc_id": "a0f8a28c1853b19f"
+ },
+ {
+  "id": "u054",
+  "query": "How long is the period of expected benefit?",
+  "reference": "varies from 2 to 10 years",
+  "doc_id": "a0f8a28c1853b19f"
+ },
+ {
+  "id": "u055",
+  "query": "How many countries does the company distribute content to?",
+  "reference": "over 50 countries",
+  "doc_id": "7d48cffb916fd193"
+ },
+ {
+  "id": "u056",
+  "query": "What is included in the global distribution network?",
+  "reference": "includes relationships with distribution partners, sub-distributors, producers, directors and prominent figures within the Indian film industry and distribution arena.",
+  "doc_id": "7d48cffb916fd193"
+ },
+ {
+  "id": "u057",
+  "query": "What was the Deferred income tax assets as reported?",
+  "reference": "22,626",
+  "doc_id": "56eefee789fd3c04"
+ },
+ {
+  "id": "u058",
+  "query": "What was the Deferred income tax assets without the adoption of ASC 606?",
+  "reference": "22,094",
+  "doc_id": "56eefee789fd3c04"
+ },
+ {
+  "id": "u059",
+  "query": "What were the total Assets as reported?",
+  "reference": "64509 thousand",
+  "doc_id": "56eefee789fd3c04"
+ },
+ {
+  "id": "u060",
+  "query": "What does the table show?",
+  "reference": "for the periods indicated, the percentage of sales represented by certain items reflected in our Consolidated Statements of Operations",
+  "doc_id": "a6502dc3018b5842"
+ },
+ {
+  "id": "u061",
+  "query": "What is the amount of cash the Company has raised in consideration for issuances of Common Stock and warrants in private placements and public offerings as well as proceeds from warrants exercises? ",
+  "reference": "$64,000",
+  "doc_id": "5988fd58732f4a27"
+ },
+ {
+  "id": "u062",
+  "query": "In which period is the warrants outstanding the highest?",
+  "reference": "Aug 2007- Jan 2011",
+  "doc_id": "5988fd58732f4a27"
+ },
+ {
+  "id": "u063",
+  "query": "What is liquidity risk?",
+  "reference": "the risk that we will be unable to meet our financial obligations",
+  "doc_id": "636636c0ce6f29c3"
+ },
+ {
+  "id": "u064",
+  "query": "What do concentrations indicate?",
+  "reference": "the relative sensitivity of the Group’s performance to developments affecting a particular industry.",
+  "doc_id": "636636c0ce6f29c3"
+ },
+ {
+  "id": "u065",
+  "query": "What is the implication for reserving debit elements?",
+  "reference": "the special reserve in the amount equal to the reversal may be released for earnings distribution or offsetting accumulated deficits.",
+  "doc_id": "c7d09d8a144b28b9"
+ },
+ {
+  "id": "u066",
+  "query": "How often are the executive officers of the company elected?",
+  "reference": "annually",
+  "doc_id": "b3bcfd3778685ac4"
+ },
+ {
+  "id": "u067",
+  "query": "Who is the company's Chief Financial Officer?",
+  "reference": "Andrew R. Kaiser",
+  "doc_id": "b3bcfd3778685ac4"
+ },
+ {
+  "id": "u068",
+  "query": "What is included in the restructuring plans?",
+  "reference": "terminating employees, vacating certain leased facilities, and cancellation of contracts.",
+  "doc_id": "732b5735aeceddb4"
+ },
+ {
+  "id": "u069",
+  "query": "What is the percentage change in the total amount of emissions from Combustion of fuel and operation of facilities and Electricity, heat, steam and cooling purchased for own use?",
+  "reference": "6.14 per cent",
+  "doc_id": "60370702d10cdea6"
+ },
+ {
+  "id": "u070",
+  "query": "What are the scopes of emissions?",
+  "reference": "Scope 1; Scope 2",
+  "doc_id": "60370702d10cdea6"
+ },
+ {
+  "id": "u071",
+  "query": "What was the change in total emissions?",
+  "reference": "-301.9",
+  "doc_id": "60370702d10cdea6"
+ },
+ {
+  "id": "u072",
+  "query": "When does the company grant NQs?",
+  "reference": "only upon the market price of our underlying public stock closing above a certain price target withins even years of the date of grant.",
+  "doc_id": "b7aae0a41ece7fb3"
+ },
+ {
+  "id": "u073",
+  "query": "What was the net sales in the third quarter?",
+  "reference": "115,651",
+  "doc_id": "66bb9965bed9455f"
+ },
+ {
+  "id": "u074",
+  "query": "What was the gross margin in the first quarter?",
+  "reference": "40,615",
+  "doc_id": "66bb9965bed9455f"
+ },
+ {
+  "id": "u075",
+  "query": "What were the operating earnings in the fourth quarter?",
+  "reference": "12,391",
+  "doc_id": "66bb9965bed9455f"
+ },
+ {
+  "id": "u076",
+  "query": "How much was the charge due to a reversal of a previously recorded benefit?",
+  "reference": "$872 million",
+  "doc_id": "57aab92217f15281"
+ },
+ {
+  "id": "u077",
+  "query": "What was the increase in our cost of license and subscription revenue?",
+  "reference": "$29.3 million",
+  "doc_id": "3a2f24772cc52e5f"
+ },
+ {
+  "id": "u078",
+  "query": "What was the reason for the increase in the Orders?",
+  "reference": "Order intake increased in all businesses year-over-year due to a higher volume from large orders. Sharp order growth in Asia, Australia included two large orders for offshore wind-farms including service in Taiwan totaling € 2.3 billion.",
+  "doc_id": "b63b40ae88a605c3"
+ },
+ {
+  "id": "u079",
+  "query": "What was the reason for the increase in the Adjusted EBITDA?",
+  "reference": "Adjusted EBITA was on the prior-year level as positive effects from productivity improvements and higher revenue were offset by price declines, a less favorable project mix and higher expenses for integration costs and capacity adjustments including severance.",
+  "doc_id": "b63b40ae88a605c3"
+ },
+ {
+  "id": "u080",
+  "query": "What does investment in associates comprise of?",
+  "reference": "32.4 per cent holding in the ordinary shares of Prozone Intu Properties Limited (Prozone); a 26.8 per cent direct holding in the ordinary shares of Empire Mall Private Limited (Empire)",
+  "doc_id": "ed613137ee698392"
+ },
+ {
+  "id": "u081",
+  "query": "How was the fair value of the options determined?",
+  "reference": "Black-Scholes model",
+  "doc_id": "55c1ed503eb2b9ff"
+ },
+ {
+  "id": "u082",
+  "query": "What was the average Tax exempt interest income?",
+  "reference": "-168 thousand",
+  "doc_id": "0841d46cb5472f9a"
+ },
+ {
+  "id": "u083",
+  "query": "How are land, property, and equipment stated in the report?",
+  "reference": "at cost, net of accumulated depreciation and amortization",
+  "doc_id": "b49a0dfc3199b7aa"
+ },
+ {
+  "id": "u084",
+  "query": "What is the company's ongoing involvement limited to?",
+  "reference": "the remittance of customer payments to the financial institutions with respect to the sold trade receivables",
+  "doc_id": "e8ce946c6251f160"
+ },
+ {
+  "id": "u085",
+  "query": "What has the component of accounts receivable that consisted of unbilled contract receivables as reported under ASC 605 been reclassified to? ",
+  "reference": "contract assets under ASC 606",
+  "doc_id": "e8ce946c6251f160"
+ },
+ {
+  "id": "u086",
+  "query": "What types of accounts receivable are there?",
+  "reference": "Billed; Unbilled",
+  "doc_id": "e8ce946c6251f160"
+ },
+ {
+  "id": "u087",
+  "query": "What are the two main currencies involved in the systems business?",
+  "reference": "Substantially all of our systems business net sales during 2019 were denominated in U.S. dollars and Australian dollars.",
+  "doc_id": "d265f832716b6565"
+ },
+ {
+  "id": "u088",
+  "query": "What is the most expensive currency?",
+  "reference": "GBP",
+  "doc_id": "edce3a89461327e8"
+ },
+ {
+  "id": "u089",
+  "query": "What is the least expensive currency?",
+  "reference": "USD",
+  "doc_id": "edce3a89461327e8"
+ }
+]

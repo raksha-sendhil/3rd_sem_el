@@ -1,0 +1,20 @@
+{
+ "doc_id": "d22d49096b6af600",
+ "text": "---\nLoan Application\nInsurance Verification\n\nFull Name: John David Smith\nDate of Birth: 03/12/1985\n\nContact Information\n------------------\n\nAddress: 123 Maple Street, Toronto, ON, Canada\nPhone: (123) 456-7890\nEmail: [john.david.smith@email.com](mailto:john.david.smith@email.com)\n\nEmployment Details\n------------------\n\nEmployer: ABC Corporation\nPosition: Software Engineer\nAnnual Income: CAD 85,000\nYears with Employer: 6\n\nFinancial Details\n----------------\n\nLoan Amount Requested: CAD 200,000\nLoan Purpose: Home Renovation\n\nAssets to be used as Collateral\n------------------------------\n\n* Property: 123 Maple Street, Toronto, ON, Canada\n* Current Market Value: CAD 500,000\n* Mortgage Balance: CAD 150,000\n\nInsurance Verification\n---------------------\n\nExisting Insurance Coverage:\n\n* Home Insurance: Yes, through XYZ Insurance. Coverage Amount: CAD 500,000\n* Life Insurance: Yes, through ABC Insurance. Coverage Amount: CAD 300,000\n\nSupporting Documents\n-------------------\n\n* Copy of Government-issued ID\n* Proof of Income (Last 3 months of pay stubs)\n* Employment Verification Letter\n* Property Appraisal Report\n* Current Mortgage Statement\n* Insurance Policy Documents\n\nApplicant Signature: John David Smith\nDate: 01/10/2023\n\n---",
+ "source": "kyc",
+ "private": [
+  "John David Smith",
+  "03/12/1985",
+  "123 Maple Street, Toronto, ON, Canada",
+  "(123) 456-7890",
+  "ABC Corporation",
+  "john.david.smith@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3584,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

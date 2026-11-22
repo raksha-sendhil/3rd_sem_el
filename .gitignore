@@ -41,3 +41,11 @@ data/ocr_test/.iam/
 data/ocr_real/.cache/
 # OCR evaluation: per-document readings (report.md / report.json are kept)
 results/ocr/*/pred/
+
+# finance runs (rebuild from data/finance)
+data/finance/store.sqlite
+data/finance/index/
+data/finance/monitor.sqlite
+# IDRBT cheque images have no licence: never committed (labels.csv is)
+data/finance/cheques/scans/
+data/finance/cheques/gold.jsonl

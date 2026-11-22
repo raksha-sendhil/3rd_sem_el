@@ -1,0 +1,11 @@
+{
+ "doc_id": "2d0d05e1d0e23e1c",
+ "text": "I opened up this savings account in a Wells Fargo branch on XX/XX/XXXX, for the {$520.00} bonus promotion. The banker inputted the bonus code at the time of account opening. The promotion I enrolled in stated that I had to deposit {$25000.00} within 30 days of account opening and that I had to maintain the {$25000.00} for 90 days from account opening. I deposited the {$25000.00} on XX/XX/XXXX, and kept the balance until XX/XX/XXXX. The {$25000.00} was deposited within 30 days of account opening and the {$25000.00} was in the account over 90 days from account opening. I fulfilled the requirements of the bonus, and I should have received a {$520.00} bonus per the terms and conditions of the bonus. I still have not received the bonus. Please credit my {$520.00} bonus as the terms stated.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Managing an account",
+  "state": "NY"
+ }
+}

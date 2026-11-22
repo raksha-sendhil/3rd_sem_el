@@ -1,0 +1,17 @@
+{
+ "doc_id": "866365f67888827c",
+ "text": "---\nHome Improvement Loan Credit Application\n\nDate: 07/05/1989 03:05 PM\n\nFull Name: Ann T. Davis\nStreet Address: 63895 Cole Circles, 22289, Port Lauren\n\nSwift BIC Code: EQREUSUQ895\n\nLoan Request:\nI, Ann T. Davis, am applying for a Home Improvement Loan to finance the following project:\n\nScope of Work:\n- Kitchen Remodel: Replace countertops, cabinets, and appliances\n- Bathroom Update: Install new tile flooring and vanity\n- Exterior Painting: Repaint entire house\n\nEstimated Costs:\n- Kitchen Remodel: $15,000\n- Bathroom Update: $5,000\n- Exterior Painting: $3,000\n\nTotal Loan Amount Requested: $23,000\n\nI confirm that the information provided in this application is true and accurate to the best of my knowledge. I understand that any misrepresentation or omission of material facts may result in the denial of this loan application or the termination of any existing loan agreement.\n\nSignature: Ann T. Davis\nDate: 07/05/1989\n\n---",
+ "source": "kyc",
+ "private": [
+  "Ann T. Davis",
+  "63895 Cole Circles, 22289, Port Lauren",
+  "EQREUSUQ895"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5113,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "doc_id": "ac8dc90c56be1179",
+ "text": "MORTGAGE CONTRACT\n\nThis Mortgage Contract (the \"Agreement\"), dated as of the 1st day of January, 2023, is entered into between Emily Grant-Cole, residing at 069 Lukepad, 4132 YI, Bussum (the \"Borrower\"), and Best Mortgage Lenders Ltd, a company incorporated under the laws of the United Kingdom, having its registered office at 55 High Street, London (the \"Lender\").\n\nWHEREAS, the Borrower desires to borrow the sum of £200,000 (the \"Loan Amount\") from the Lender, and the Lender is willing to provide the Loan Amount to the Borrower on the terms and conditions set forth in this Agreement;\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN AND REPAYMENT\n\n(a) Loan. The Lender agrees to provide the Loan Amount to the Borrower for the purpose of purchasing a residential property located at the local latlng of (-4.099581, 126.327729).\n\n(b) Repayment. The Borrower agrees to repay the Loan Amount in monthly installments, according to the following schedule:\n\n- Initial Payment: £500 per month for the first 24 months.\n- Balloon Payment: The remaining balance of the Loan Amount, due on the 25th month.\n\n(c) Late Payment. If the Borrower fails to make any payment when due, the Lender may charge a late fee of £25 per occurrence.\n\n2. INTEREST RATE\n\nThe annual interest rate for the Loan Amount is 3.5%.\n\n3. COLLATERAL\n\nThe Loan Amount is secured by a mortgage on the residential property located at the local latlng of (-4.099581, 126.327729).\n\n4. REFINANCING AND PAYMENT OPTIONS",
+ "source": "kyc",
+ "private": [
+  "Emily Grant-Cole",
+  "069 Lukepad, 4132 YI, Bussum",
+  "Best Mortgage Lenders Ltd",
+  "55 High Street, London",
+  "(-4.099581, 126.327729)"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2702,
+  "type": "Mortgage Contract",
+  "synthetic": true
+ }
+}

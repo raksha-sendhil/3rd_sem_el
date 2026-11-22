@@ -1,0 +1,11 @@
+{
+ "doc_id": "06f6e43525b01e4d",
+ "text": "On XX/XX/XXXX Bank of West changed to BMO Bank. Account numbers for my existing XXXX account changed. I was making {$500.00} principal payments through automatic payment method, from my BMO checking account ; dates XX/XX/XXXX, XX/XX/XXXX, XX/XX/XXXX, an extra payment on XX/XX/XXXX, XX/XX/XXXX and another extra payment on XX/XX/XXXX. According to my records the payment XX/XX/XXXX posted to my XXXX account, and after talking to BMO, Representative XXXX, she was able to refund {$500.00} on XX/XX/XXXX to my BMO checking account. After numerous calls to XXXX, I have gotten no resolve nor explanation of this matter. There is still {$2000.00} owed to me. I have been making interest payments regularly. I have corrected the account number change issue, and making other principal payments. Any help resolving this matter would be greatly appreciated",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "mortgage",
+  "issue": "Trouble during payment process",
+  "state": "OK"
+ }
+}

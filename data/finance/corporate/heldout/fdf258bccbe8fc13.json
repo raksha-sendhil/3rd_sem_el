@@ -1,0 +1,17 @@
+{
+ "doc_id": "fdf258bccbe8fc13",
+ "text": "From: carol.clair@enron.com\nTo: russell.diamond@enron.com, veronica.espinoza@enron.com\nDate: 2001-05-25\nSubject: Tenaska\n\nRussell and Veronica:\nHave you made any progress on resolving the open credit issues that we \ndiscussed with your counterparts at Tenaska?\n\nCarol St. Clair\nEB 3889\n713-853-3989 (Phone)\n713-646-3393 (Fax)\ncarol.st.clair@enron.com",
+ "source": "corporate",
+ "private": [
+  "carol.clair@enron.com",
+  "russell.diamond@enron.com",
+  "veronica.espinoza@enron.com",
+  "713-853-3989",
+  "713-646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "stclair-c/sent/2247.",
+  "message_id": "<6422714.1075842206155.JavaMail.evans@thyme>"
+ }
+}

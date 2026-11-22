@@ -1,0 +1,20 @@
+{
+ "doc_id": "0ab88915f133c672",
+ "text": "---\nLoan Application Form\n\nLoan Applicant Details:\n------------------------\n\nFull Name: Johnathan David Smith\nDate of Birth: 01/02/1980\nNational Insurance Number: AB123456C\nContact Address: 45, Baker Street, London, NW1 6XE\nPhone Number: 020 1234 5678\nEmail Address: john.smith@example.com\n\nEmployment Details:\n------------------\n\nEmployer's Name: XYZ Ltd\nJob Title: IT Manager\nEmployment Duration: 10 years\nMonthly Income: £5,000\n\nLoan Details:\n-------------\n\nLoan Amount: £100,000\nLoan Purpose: Business Expansion\nLoan Term: 20 years\nInterest Rate: 5% per annum\n\nCollateral Details:\n------------------\n\nCollateral Type: Property\nCollateral Address: 12, High Street, London, NW1 7XY\nMarket Value: £150,000\nCondition: Good\nMortgage Balance: £50,000\n\nSupporting Documents:\n---------------------\n\n1. Passport\n2. Driving License\n3. Latest 3 months' payslips\n4. Latest P60\n5. Bank Statements (last 6 months)\n6. Property Valuation Report\n7. Mortgage Statement\n\nDeclaration:\n-----------\n\nI, Johnathan David Smith, hereby declare that all the information provided in this loan application is true and accurate to the best of my knowledge. I understand that providing false or misleading information may lead to the rejection of my loan application or legal consequences.\n\nSignature: Johnathan David Smith\nDate: 01/03/2023\n\n---",
+ "source": "kyc",
+ "private": [
+  "Johnathan David Smith",
+  "01/02/1980",
+  "45, Baker Street, London, NW1 6XE",
+  "john.smith@example.com",
+  "XYZ Ltd",
+  "12, High Street, London, NW1 7XY"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4297,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

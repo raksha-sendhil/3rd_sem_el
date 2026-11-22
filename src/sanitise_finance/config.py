@@ -1,0 +1,129 @@
+"""Runtime configuration via pydantic-settings.
+
+Values come from, in order of precedence: explicit keyword arguments, the
+process environment, a ``.env`` file in the working directory, then the
+defaults below. Every environment variable is prefixed with ``SANITISE_``
+(see ``.env.example``).
+"""
+
+from __future__ import annotations
+
+from functools import lru_cache
+from typing import Literal
+
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_prefix="SANITISE_",
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
+
+    # ---- LLM backend
+    llm_backend: Literal["ollama", "mock"] = "ollama"
+    ollama_base_url: str = "http://localhost:11434"
+    model: str = "llama3:8b"
+    fallback_model: str = "qwen2.5:7b-instruct"
+    llm_timeout_s: float = Field(default=120.0, gt=0)
+    llm_num_ctx: int = Field(default=4096, ge=512)
+    # Fixed sampling seed so repeated runs (and the metrics report) are reproducible.
+    # None lets Ollama pick a random seed.
+    llm_seed: int | None = 42
+    # Upper bound on generated tokens per call, so a runaway generation cannot stall a run.
+    llm_num_predict: int = Field(default=1024, ge=64)
+
+    # ---- Agents 2 and 3 may run on a different model than Agent 1 and the RAG answers (None:
+    # the same one). With thinking on (Ollama's "think"), the model reasons before it answers;
+    # the reasoning needs room, so these calls get their own context and output budget, and
+    # the sampling a reasoning model expects (greedy decoding makes it repeat itself).
+    # "gemini": Agents 2 and 3 call the Gemini API (free tier) with ``agents_model``; None or
+    # "ollama": they use Ollama like Agent 1.
+    agents_backend: Literal["ollama", "gemini"] | None = None
+    agents_model: str | None = None
+    agents_think: bool | None = None
+    agents_num_ctx: int = Field(default=16384, ge=512)
+    agents_num_predict: int = Field(default=8192, ge=64)
+    agents_temperature: float = Field(default=0.6, ge=0.0, le=2.0)
+    agents_top_p: float = Field(default=0.95, gt=0.0, le=1.0)
+    # ---- Gemini (agents_backend="gemini"). Several keys, comma-separated, are used in turn
+    # when one reaches its daily limit (keys must come from different Google Cloud projects).
+    gemini_api_key: str | None = None
+    # Agent 1's LLM pass on Gemini too (its rule pass always runs locally)
+    gemini_for_agent1: bool = True
+    gemini_thinking_level: str | None = "low"  # minimal / low / medium / high; None: default
+    gemini_temperature: float | None = None  # None: the model's default
+    gemini_max_output_tokens: int = Field(default=16384, ge=64)
+    gemini_min_interval_s: float = Field(default=4.5, ge=0.0)  # 15 requests a minute
+
+    # ---- Validation retry loop: "retries up to three times with an escalating temperature"
+    llm_retries: int = Field(default=3, ge=0, le=10)
+    llm_temperature: float = Field(default=0.0, ge=0.0, le=2.0)
+    llm_temperature_step: float = Field(default=0.2, ge=0.0, le=1.0)
+    llm_temperature_max: float = Field(default=1.0, ge=0.0, le=2.0)
+    # Extra attempts on a refused connection only (Ollama still starting up).
+    # Timeouts are not retried.
+    transport_retries: int = Field(default=1, ge=0, le=5)
+
+    # ---- Document load
+    max_doc_chars: int = Field(default=2000, ge=1)
+    # ChatDoctor records hold the patient's question in "input" and the doctor's reply in
+    # "output". By default only the patient text is used as the document.
+    chatdoctor_include_answer: bool = False
+
+    # ---- Phase 3a: storage, retrieval and attacks (docs/phase3_plan.md). Paths are relative
+    # to the working directory; mock mode ignores them and uses the repository's data/sample/.
+    store_path: str = "data/finance/store.sqlite"
+    attacks_dir: str = "data/finance/attacks"
+    people_path: str = "data/finance/people.json"
+    retrieval_k: int = Field(default=3, ge=1, le=20)
+    # "hybrid" = BM25 + bge-m3 dense vectors (needs `pip install -e .[retrieval]`, falls back
+    # to BM25 with a warning when the packages are missing); "bm25" = keyword search only.
+    retrieval_mode: Literal["hybrid", "bm25"] = "hybrid"
+    index_dir: str = "data/finance/index"
+    embedding_model: str = "BAAI/bge-m3"
+
+    # ---- PDF / image input (sanitise_finance.ingest). PDF pages with a real text layer are read
+    # directly; scanned pages and images go to a vision model on Ollama.
+    # "ollama": a local vision model (the page never leaves the machine); "gemini": the Gemini
+    # API with gemini_api_key (no GPU needed, but the page image goes to Google)
+    ocr_backend: Literal["ollama", "gemini"] = "ollama"
+    ocr_model: str = "qwen3-vl:8b-instruct"
+    ocr_gemini_model: str = "gemini-2.5-flash"
+    ocr_timeout_s: float = Field(default=600.0, gt=0)
+    ocr_num_ctx: int = Field(default=16384, ge=2048)
+    ocr_num_predict: int = Field(default=4096, ge=256)
+    ocr_dpi: int = Field(default=200, ge=72, le=400)  # scanned PDF pages are rendered at this
+    ocr_max_side: int = Field(default=2000, ge=640)  # longest image side sent to the model
+    ocr_min_side: int = Field(default=1200, ge=320)  # smaller photos are enlarged to this
+    ingest_max_mb: float = Field(default=25.0, gt=0)
+    ingest_max_pages: int = Field(default=30, ge=1)
+    ingest_strip_headers: bool = True
+
+    # ---- Session privacy monitor (sanitise_finance.monitor, docs/session_monitor.md). "ledger": track
+    # what each session has been told about each person and generalise or block an answer that
+    # would single someone out; "off": allow everything (for comparison).
+    monitor: Literal["ledger", "off"] = "ledger"
+    monitor_k: int = Field(default=5, ge=1)  # fewest records that must still match a person
+    monitor_max_attributes: int = Field(default=3, ge=1)  # attribute types per person per session
+    monitor_max_climb: int = Field(default=2, ge=0)  # generalisation steps before blocking
+    monitor_db_path: str = "data/finance/monitor.sqlite"  # the disclosure ledger (":memory:" allowed)
+    # key for the ledger's value hashes; None draws a random one per process
+    monitor_salt: str | None = None
+
+    # ---- HTTP API
+    api_host: str = "127.0.0.1"
+    api_port: int = 8000
+    # Origins allowed to call the API from a browser (the Phase 3 Next.js dashboard).
+    api_cors_origins: list[str] = ["http://localhost:3000", "http://127.0.0.1:3000"]
+
+    log_level: str = "INFO"
+
+
+@lru_cache(maxsize=1)
+def get_settings() -> Settings:
+    """Process-wide settings, read once. Tests build ``Settings(...)`` directly instead."""
+    return Settings()

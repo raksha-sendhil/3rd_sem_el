@@ -1,0 +1,11 @@
+{
+ "doc_id": "cd434bc701959f2f",
+ "text": "On XX/XX/XXXX I was called by a person that was using the Bank of America. Customer service number and they informed me my account was being hacked, and the only way I was able to stop it was to send {$1100.00} of money to myself through XXXX. The people on the phone were able to tell me how much I had in my bank account, they informed me what the last 4 of my debit card was, so at the time, I had no reason to believe they were not employed by Bank of America. Bank of America told me they were unable to return my funds to me.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "money transfer",
+  "issue": "Unauthorized transactions or other transaction problem",
+  "state": "MO"
+ }
+}

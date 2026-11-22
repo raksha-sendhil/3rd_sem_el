@@ -1,0 +1,20 @@
+{
+ "doc_id": "9d7248068468775c",
+ "text": "CARDHOLDER NAME: John Doe\nCREDIT CARD NUMBER: **** **** **** 1234 (last 4 digits)\nPERIOD: 01/01/2023 - 31/01/2023\n\nTRANSACTIONS:\nDate | Description | Amount (GBP) | Balance (GBP)\n05-Jan | Purchase at Tesco | 50.00 | 50.00\n10-Jan | Purchase at Amazon | 125.34 | 175.34\n15-Jan | Purchase at Shell | 34.87 | 210.21\n20-Jan | Purchase at John Lewis | 89.99 | 299.20\n25-Jan | Cash Advance at Barclays | 100.00 | 399.20\n30-Jan | Interest Charged | 5.21 | 404.41\n\nPAYMENTS:\nDate | Type | Amount (GBP) | New Balance (GBP)\n05-Jan | Minimum Payment | 25.00 | 369.41\n25-Jan | Full Payment | 404.41 | 0.00\n\nNOTES:\n- Minimum payment is calculated as 2% of the balance or £5.00, whichever is higher.\n- Interest is calculated at an annual rate of 18.9% (variable) and is applied to the daily balance.\n- Late payment fee of £12.00 will be charged if the minimum payment is not received by the due date.\n- Cash advances have a higher interest rate (21.9%) and are not included in the minimum payment calculation.\n- For more information or to report a lost or stolen card, call us at 0800 123 4567 (24/7).\n- To avoid interest charges, pay your entire balance by the due date.\n\nPlease note that this is a synthetic example and should not be considered a real credit card statement.",
+ "source": "kyc",
+ "private": [
+  "John Doe",
+  "Amazon",
+  "Shell",
+  "John Lewis",
+  "Barclays",
+  "0800 123 4567"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2014,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "doc_id": "40ae50d9864b21b0",
+ "text": "COMMERCIAL PROPERTY LOAN CONTRACT\n\nThis Commercial Property Loan Contract (the \"Agreement\") is entered into as of the 1st day of August, 2022 (the \"Effective Date\"), by and between Thierry Joly-Launay, a natural person with a date of birth of March 14, 1952, and having a mailing address of 72171 John Circles, 80606, New Lori (hereinafter referred to as the \"Borrower\"), and XYZ Bank, a banking institution organized and existing under the laws of the United States, with its head office located at 123 Main Street, Anytown, USA (hereinafter referred to as the \"Lender\").\n\nWHEREAS, Borrower owns certain commercial real property located at 72171 John Circles, 80606, New Lori (hereinafter referred to as the \"Property\"); and\n\nWHEREAS, Borrower desires to borrow from Lender, and Lender desires to lend to Borrower, the sum of $5,000,000 (the \"Loan Amount\") on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual covenants and promises contained herein and for other good and valuable consideration, the receipt and sufficiency of which is hereby acknowledged, the parties agree as follows:\n\n1. LOAN. Lender agrees to loan to Borrower the Loan Amount, and Borrower agrees to accept the Loan Amount from Lender, on the terms and conditions set forth herein.\n\n2. INTEREST. The outstanding principal balance of the Loan Amount shall bear interest at a rate of 6.00% per annum.\n\n3. REPAYMENT. Borrower shall repay the Loan Amount, together with all accrued and unpaid interest, in thirty-six (36) equal monthly installments beginning on the first day of the month next succeeding the date of disbursement of the Loan Amount and continuing on the first day of each month thereafter.\n\n4. PROPERTY. The Property is currently zoned for commercial use and is improved with a",
+ "source": "kyc",
+ "private": [
+  "Thierry Joly-Launay",
+  "March 14, 1952",
+  "72171 John Circles, 80606, New Lori",
+  "XYZ Bank",
+  "123 Main Street, Anytown, USA"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3534,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

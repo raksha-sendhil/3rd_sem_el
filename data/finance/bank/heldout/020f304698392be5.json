@@ -1,0 +1,11 @@
+{
+ "doc_id": "020f304698392be5",
+ "text": "Case ID XXXX Name XXXX XXXX XXXX Macys Credit card # last XXXX digits XXXX Total amount {$440.00} Police Case # XXXXXXXX XXXX XXXX XXXX XXXXXXXX XXXX XXXX # XXXX Order made online at XXXX XXXX # XXXX. on XX/XX/ According to Macys, merchandise was left at a secured location, but the tracking numbers stated was supposedly left at the front door. Is very disrespectful for macys to blame me for their mistake by wanting to charge me a merchandise never received.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Problem with a purchase shown on your statement",
+  "state": "FL"
+ }
+}

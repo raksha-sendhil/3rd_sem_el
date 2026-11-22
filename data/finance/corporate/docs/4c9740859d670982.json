@@ -1,0 +1,17 @@
+{
+ "doc_id": "4c9740859d670982",
+ "text": "From: debra.perlingiere@enron.com\nTo: steve.van@enron.com\nDate: 2001-08-01\nSubject: PG&E\n\nThe name of the two counter parties at issue are:  PG&E Energy Trading, Canada Corp.(96021046)  and PG&E Energy Trading / Gas Corp.(96013297)\n\nDebra Perlingiere\nEnron North America Legal\n1400 Smith Street, EB 3885\nHouston, Texas 77002\ndperlin@enron\n713-853-7658\n713-646-3490 Fax",
+ "source": "corporate",
+ "private": [
+  "debra.perlingiere@enron.com",
+  "steve.van@enron.com",
+  "Debra Perlingiere",
+  "713-853-7658",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "perlingiere-d/sent_items/535.",
+  "message_id": "<17728715.1075858537991.JavaMail.evans@thyme>"
+ }
+}

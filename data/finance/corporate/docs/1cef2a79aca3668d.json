@@ -1,0 +1,16 @@
+{
+ "doc_id": "1cef2a79aca3668d",
+ "text": "From: patti.thompson@enron.com\nTo: joya.davis@enron.com\nDate: 2000-07-24\nSubject: Metals Trading Back Office Support Meeting\n\nJoya,\n\nI put in on Sally's calendar.\n\nPatti\n\n\nTo: Shona Wilson/NA/Enron@Enron, Brent A Price/HOU/ECT@ECT, Sally \nBeck/HOU/ECT@ECT\ncc: Maria Sandoval/HOU/ECT@ECT, Chantelle Villanueva/HOU/ECT@ECT, Alan \nAronowitz/HOU/ECT@ECT \nSubject: Metals Trading Back Office Support Meeting\n\nI have scheduled a meeting for Thursday, August 3, 2000 from 3:30pm to 4:30pm \nin Alan's Office (EB3860) to discuss the above-referenced matter.\n\nThank you.\n\n\nAssistant to Alan Aronowitz\nJoya' F. Davis\nSr. Admin. Assistant\nENA Legal Department\nEB3855A\njoya.davis@enron.com\n(713) 853-9559 DID\n(713) 646-4842 FAX",
+ "source": "corporate",
+ "private": [
+  "patti.thompson@enron.com",
+  "joya.davis@enron.com",
+  "(713) 853-9559",
+  "(713) 646-4842"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "beck-s/sent/356.",
+  "message_id": "<26304609.1075855905096.JavaMail.evans@thyme>"
+ }
+}

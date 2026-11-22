@@ -1,0 +1,20 @@
+{
+ "doc_id": "e923c9b9a11bfd0a",
+ "text": "First National Bank\nInterest Summary\n\nAccount Holder: Anthony Carpeter\nAccount Number: 123456789\n\nPeriod: 01 Dec 2015 - 31 Dec 2é2015\n\n| Date | Description | Debit (GBP) | Credit (GBP) | Running Balance (GBP) |\n| --- | --- | --- | --- | --- |\n01 Dec 2015 | Opening Balance | | | 5,000.00 |\n17 Dec 2015 | Monthly Interest | | 250.00 | 5,250.00 |\n31 Dec 23 2015 | End of Period | | | 5,250.00 |\n\nInterest Summary:\nInterest Rate: 5.00%\nOpening Balance: 5,000.34\nInterest Earned: 250.00\nFinal Balance: 5,250.00\n\nThank you for choosing First National Bank.\n\n*Statement mailed to: Édith Anthony Carpenter*\n*2345 River Road, Apt. 091*\n*San Francisco, CA 94112*\n\n*[This is a simulated statement for testing and development purposes only.]*",
+ "source": "kyc",
+ "private": [
+  "First National Bank",
+  "Édith",
+  "Anthony Carpenter",
+  "2345 River Road, Apt. 091",
+  "San Francisco, CA 94112",
+  "Anthony Carpeter"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2993,
+  "type": "Bank Statement",
+  "synthetic": true
+ }
+}

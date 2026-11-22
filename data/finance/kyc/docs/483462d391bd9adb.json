@@ -1,0 +1,19 @@
+{
+ "doc_id": "483462d391bd9adb",
+ "text": "------------------------------------------------------------------------------------------------------------------\n**Credit Card Statement**\n\nCardholder Name: Olivia Drake-Ward\nAccount Number: (last 4 digits) 1234\n\nStatement Period: 01/01/2023 - 01/31/2023\n\nPayment Due Date: 02/25/2023\n\nCurrent Balance: $2,547.89\nMinimum Payment Due: $50.00\n\n**Reward Points Summary**\n\nEarned Points:\n\n* Purchase at Groceries Plus: 4,500 points\n* Gasoline at Speedway: 2,000 points\n* Online Shopping at Amazon: 3,000 points\n* Dining at The Olive Garden: 1,500 points\n\nTotal Earned Points: 11,000 points\n\nRedeemed Points:\n\n* Movie Tickets at Fandango: -3,000 points\n\nTotal Redeemed Points: -3,000 points\n\nNet Earned Points: 8,000 points\n\n**Recent Transactions**\n\nDate | Description | Amount | Earned Points | Net Points\n--- | --- | --- | --- | ---\n01/03/2023 | Groceries Plus | $200.00 | 4,500 | 4,500\n01/05/2023 | Speedway | $50.00 | 2,000 | 6,500\n01/10/2023 | Amazon | $150.00 | 3,000 | 9,500\n01/15/2023 | The Olive Garden | $100.00 | 1,500 | 11,000\n01/20/2023 | Fandango | -$40.00 | -3,000 | 8,000\n\n**Address**\nOlivia Drake-Ward\n92765 Horton Mountains",
+ "source": "kyc",
+ "private": [
+  "Olivia Drake-Ward",
+  "Groceries Plus",
+  "Amazon",
+  "The Olive Garden",
+  "92765 Horton Mountains"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 968,
+  "type": "Credit Card Statement",
+  "synthetic": true
+ }
+}

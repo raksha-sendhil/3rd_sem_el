@@ -1,0 +1,22 @@
+{
+ "doc_id": "664ebfbbcbb3cd12",
+ "text": "Financial Hardship Application\n\nDate: March 15, 2023\n\nTo Whom It May Concern,\n\nI am writing to apply for financial aid due to my current financial hardship. I am determined to pursue my education and need assistance to achieve this goal. I have provided all the necessary information below for your consideration.\n\nPersonal Information:\n\nName: Elly Kade\nDate of Birth: January 12, 1995\nMailing Address: 0075 Joshua Trace, Apt. 34707, Toronto, ON, M3H 5K2, Canada\nContact Number: (123) 456-7890\nEmail Address: [elly.kade@email.com](mailto:elly.kade@email.com)\n\nFinancial Information:\n\nBank Account Number: DFMQ03190423535210\nDriver's License Number: W13510427\nEmployment Status: Currently Unemployed\nMonthly Income: $0\n\nCurrent Financial Challenges:\n\nI have recently lost my job due to the pandemic, and I have been unable to find a new one. My savings have been depleted, and I am currently relying on the support of my family and friends. I am doing my best to make ends meet, but it has become increasingly difficult to pay for my living expenses and education costs. I have explored all possible options, including part-time jobs and scholarships, but I have not been successful in securing any financial assistance.\n\nEducation Goals:\n\nI am determined to pursue my education and obtain a degree in Computer Science from the University of Toronto. I have always been passionate about technology and want to make a career in this field. I am confident that with the right education and support, I can achieve my goals and contribute to the industry.\n\nI would like to request financial aid to cover my tuition fees, books, and other related expenses. I am committed to my education and will do everything in my power to succeed. I appreciate your time and consideration of my application.\n\nSincerely,\nElly Kade",
+ "source": "kyc",
+ "private": [
+  "Elly Kade",
+  "January 12, 1995",
+  "0075 Joshua Trace, Apt. 34707",
+  "(123) 456-7890",
+  "DFMQ03190423535210",
+  "W13510427",
+  "University of Toronto",
+  "elly.kade@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 4080,
+  "type": "Financial Aid Application",
+  "synthetic": true
+ }
+}

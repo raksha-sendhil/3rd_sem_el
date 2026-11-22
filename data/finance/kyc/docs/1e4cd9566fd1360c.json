@@ -1,0 +1,24 @@
+{
+ "doc_id": "1e4cd9566fd1360c",
+ "text": "Loan Application\n\nLoan Application ID: 123456\nDate: 01/10/2023\n\nApplicant Information:\n\nFull Name: Dawn B. Neal\nDate of Birth: 05/08/1985\nSocial Security Number: 272-36-9173\nContact Phone Number: (123) 456-7890\nEmail Address: [dneal@email.com](mailto:dneal@email.com)\n\nResidence Verification:\n\nCurrent Street Address: 22298 Williams Junction\nCity: Toronto\nState/Province/Region: ON\nPostal/Zip Code: M1M 1M1\n\nPrevious Street Addresses (if any):\n\n1. 2150 Elm Street, Vancouver, BC, V6B 2V6\n2. 345 Maple Avenue, Calgary, AB, T2M 2T2\n\nMonths at Current Address: 12\nMonths at Previous Address (if applicable): 24\n\nUtility Bills:\n\nPlease attach copies of your most recent utility bills for the current and previous addresses as proof of residence.\n\nRental Agreements or Mortgage Statements:\n\nPlease attach copies of your most recent rental agreements or mortgage statements for the current and previous addresses as proof of residence.\n\nLoan Information:\n\nLoan Amount Requested: $50,000\nLoan Purpose: Home Renovation\n\nEmployment Information:\n\nEmployer Name: XYZ Corporation\nEmployer Address: 789 Main Street, Toronto, ON, M3C 3C3\nJob Title: Marketing Manager\nMonthly Income: $7,500\nYears with Current Employer: 5\n\nDeclaration:\n\nI, Dawn B. Neal, hereby declare that all the information provided in this loan application is true and correct to the best of my knowledge. I understand that providing false or misleading information is a criminal offense.\n\nSignature: Dawn B. Neal\nDate: 01/10/2023",
+ "source": "kyc",
+ "private": [
+  "Dawn B. Neal",
+  "05/08/1985",
+  "272-36-9173",
+  "(123) 456-7890",
+  "22298 Williams Junction",
+  "2150 Elm Street, Vancouver, BC, V6B 2V6",
+  "345 Maple Avenue, Calgary, AB, T2M 2T2",
+  "XYZ Corporation",
+  "789 Main Street, Toronto, ON, M3C 3C3",
+  "dneal@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2417,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

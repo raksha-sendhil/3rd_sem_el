@@ -1,0 +1,19 @@
+{
+ "doc_id": "5b5caf6166b9bd1e",
+ "text": "---\nLoan Application\n\nFull Name: Olivia Thompson\nDate: 04/12/2022\n\nContact Information:\nAddress: 45 King's Cross, London, WC1X 9LW, UK\nPhone Number: +44 7123 456789\nEmail: [olivia.thompson@email.com](mailto:olivia.thompson@email.com)\n\nEmployment Information:\nEmployer: Thompson & Co. Ltd.\nPosition: Marketing Manager\nAnnual Income: £52,000\n\nLoan Information:\nLoan Type: Travel\nLoan Amount: £8,000\nLoan Purpose: Family trip to Australia and New Zealand\nTravel Dates: 15/12/2022 - 31/01/2023\n\nItinerary:\n1. Arrival in Sydney, Australia on 15/12/2022\n2. 5 days in Sydney, visiting the Opera House, Bondi Beach, and Taronga Zoo\n3. Flight to Melbourne on 20/12/2022\n4. 4 days in Melbourne, visiting the Great Ocean Road and Philip Island\n5. Flight to Auckland, New Zealand on 24/12/2022\n6. 4 days in Auckland, visiting the Sky Tower and Waiheke Island\n7. Flight to Queenstown on 28/12/2022\n8. 5 days in Queenstown, visiting Milford Sound and hiking the Routeburn Track\n9. Flight to Christchurch on 02/01/2023\n10. 3 days in Christchurch, visiting the Botanic Gardens and the International Antarctic Centre\n11. Departure from Christchurch on 31/01/2023\n\nEstimated Expenses:\nAirfare: £3,500\nAccommodation: £2,500\nFood and Beverages: £1,200\nTransportation: £800\nActivities and Tours: £1,500\nTr",
+ "source": "kyc",
+ "private": [
+  "Olivia Thompson",
+  "45 King's Cross, London, WC1X 9LW, UK",
+  "+44 7123 456789",
+  "Thompson & Co. Ltd.",
+  "olivia.thompson@email.com"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3752,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

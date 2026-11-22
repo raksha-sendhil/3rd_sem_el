@@ -1,0 +1,12 @@
+{
+ "doc_id": "5f7b15382c8525c1",
+ "text": "Debt Obligations\nBecause of these and other limitations, you should consider Adjusted EBITDA alongside our other GAAP-based financial performance measures, net income and our other GAAP financial results. The following table presents a reconciliation of Adjusted EBITDA to net income, the most directly comparable GAAP measure, for each of the periods indicated (in thousands):\nOn October 6, 2017, we entered into a $125.0 million senior secured revolving credit facility, or the 2017 Facility, with SVB, as administrative agent, PNC Bank, National Association, as documentation agent, and a syndicate of lenders. Upon entry into the 2017 Facility, we borrowed $72.0 million, which was used to repay the previously outstanding balance under our previous credit facility. The 2017 Facility matures in October 2022 and includes an option to further increase the borrowing capacity to $175.0 million with the consent of the lenders. Costs incurred in connection with the 2017 Facility were capitalized and are being amortized as interest expense over the term of the 2017 Facility. The 2017 Facility is secured by substantially all of our assets, including our intellectual property. During each of the years ended December 31, 2019 and 2018, we repaid $4.0 million of the outstanding balance of the 2017 Facility.\nYear Ended December 31, 2019 2018 2017 Adjusted EBITDA: Net income $ 53,330 $ 21,524 $ 29,251 Adjustments: Interest expense, interest income and other income, net (8,483) 503 1,133 Provision for / (benefit from) income taxes 5,566 (9,825) 2,990 Amortization and depreciation expense 22,134 21,721 17,734 Stock-based compensation expense 20,603 13,429 7,413 Acquisition-related expense 2,403 — 5,895 Litigation expense 12,754 45,729 7,212 Total adjustments 54,977 71,557 42,377 Adjusted EBITDA $ 108,307 $ 93,081 $ 71,628",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "77610b37cb6c2e2a308336999e888bff",
+  "page": 2,
+  "report": "alarmcom-holdings-inc_2019.pdf"
+ }
+}

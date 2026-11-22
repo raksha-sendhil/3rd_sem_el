@@ -1,0 +1,19 @@
+{
+ "doc_id": "56c9af78495ab8f3",
+ "text": "---\nHome Improvement Loan Credit Application\n\nLoan Applicant Information:\n\nFull Name: Lia S. Kusch\nStreet Address: 408 Carlos Vista, Apt. 642\nLocal Latitude-Longitude: (-83.3330175, -37.102495)\n\nContact Information:\nPhone Number: [Applicant's Phone Number]\nEmail Address: [Applicant's Email Address]\n\nEmployment Information:\nEmployer Name: [Applicant's Employer]\nJob Title: [Applicant's Job Title]\nAnnual Income: [Applicant's Annual Income]\n\nLoan Request Information:\nLoan Amount Requested: $ [Desired Loan Amount]\nLoan Purpose: Home Improvement Project\nScope of Work: [Brief Description of Home Improvement Project]\nEstimated Project Cost: $ [Estimated Project Cost]\n\nCredit Card Information (for credit verification):\nCredit Card Number (last 4 digits): 426\nCredit Card Security Code: **** (Please do not include the actual security code for security reasons)\n\nProperty Information:\nProperty Type: [Property Type]\nProperty Address: [Property Address]\nEstimated Property Value: $ [Estimated Property Value]\n\nDeclaration:\nI, Lia S. Kusch, hereby declare that all the information provided in this application is true and accurate to the best of my knowledge. I understand that providing false or misleading information may result in the denial of this loan application or legal consequences.\n\nSignature: __________________________ Date: _________________\n\nPlease return the completed application, along with any required documentation, to our office or email it to [Company Email Address]. If you have any questions, please contact us at [Company Contact Information]. Thank you for considering [Company Name] for your home improvement loan needs.",
+ "source": "kyc",
+ "private": [
+  "Lia S. Kusch",
+  "408 Carlos Vista, Apt. 642",
+  "(-83.3330175, -37.102495)",
+  "[Applicant's Email Address]",
+  "426"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 3775,
+  "type": "Credit Application",
+  "synthetic": true
+ }
+}

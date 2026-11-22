@@ -1,0 +1,18 @@
+{
+ "doc_id": "b892004a9e375999",
+ "text": "INTERNATIONAL REAL ESTATE INVESTMENT LOAN AGREEMENT\n\nThis International Real Estate Investment Loan Agreement (the \"Agreement\"), dated as of the 15th day of June, 2023 (the \"Effective Date\"), is entered into between Irma Valier-Barsanti, a resident of 4636 Walker Crescent, 70891, Timothyside (the \"Borrower\"), and a lender (the \"Lender\").\n\nWHEREAS, the Borrower desires to obtain a loan from the Lender in the amount of Five Hundred Thousand Dollars (USD 500,000) (the \"Loan Amount\") for the purpose of financing the acquisition of a residential property located in Barcelona, Spain (the \"Property\"); and\n\nWHEREAS, the Lender is willing to provide the Loan Amount to the Borrower on the terms and conditions set forth herein.\n\nNOW, THEREFORE, in consideration of the mutual promises, covenants, and conditions set forth herein, the parties hereto agree as follows:\n\n1. LOAN AMOUNT\n\nThe Lender shall advance to the Borrower, on the Effective Date, the Loan Amount of USD 500,000.\n\n2. INTEREST RATE\n\nThe outstanding principal balance of the Loan Amount shall bear interest at a rate per annum equal to 4.5% (the \"Interest Rate\").\n\n3. REPAYMENT SCHEDULE\n\n(a) The Borrower shall repay the Loan Amount, together with all accrued and unpaid interest thereon, in thirty-six (36) equal monthly installments (each, an \"Installment\") commencing on the first day of the month next succeeding the Effective Date. Each Installment shall be in the amount of USD 14,732.10.\n\n(b) The Borrower shall make each Installment payment by electronic funds transfer to the Lender's account at Bank of America, N.A., located at 100 North Tryon Street, Charlotte, North Carolina 28202, USA.\n\n4. PROPERTY\n\nThe Property is",
+ "source": "kyc",
+ "private": [
+  "Irma Valier-Barsanti",
+  "4636 Walker Crescent, 70891, Timothyside",
+  "Bank of America, N.A.",
+  "100 North Tryon Street, Charlotte, North Carolina 28202, USA"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 5576,
+  "type": "Real Estate Loan Agreement",
+  "synthetic": true
+ }
+}

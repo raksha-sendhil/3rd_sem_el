@@ -1,0 +1,17 @@
+{
+ "doc_id": "513d91ba5463ee92",
+ "text": "Loan Application\n\nLoan Applicant Information:\n\nFull Name: Rembrandt G. Schiaparelli\n\nMailing Address: 269 Norma Groves, Suite 384\n\nContact Number: [Applicant to provide]\n\nEmail Address: [Applicant to provide]\n\nProperty Information:\n\nProperty Address: [Applicant to provide]\n\nProperty Type: [Applicant to provide]\n\nProperty Description: [Applicant to provide]\n\nEstimated Property Value: [Applicant to provide]\n\nLoan Information:\n\nLoan Amount Requested: $ [Applicant to provide]\n\nLoan Purpose: Purchase of Residential Property\n\nSource of Income: [Applicant to provide]\n\nEmployment Information: [Applicant to provide]\n\nBank Account Information:\n\nBank Name: [Applicant to provide]\n\nBank Routing Number: 292534067\n\nBank Account Number: [Applicant to provide]\n\nAdditional Documents:\n\nPlease attach the following documents:\n\n* Copy of Government-issued ID\n* Proof of Income (last 2 months)\n* Property Appraisal Report\n* Pre-approval Letter (if available)\n\nI confirm that all the information provided is true and accurate to the best of my knowledge. I understand that any false or misleading statements may result in the denial of this loan application or legal consequences.\n\nSignature: [Applicant to provide]\n\nDate: [Applicant to provide]",
+ "source": "kyc",
+ "private": [
+  "Rembrandt G. Schiaparelli",
+  "269 Norma Groves, Suite 384",
+  "292534067"
+ ],
+ "meta": {
+  "dataset": "gretelai/synthetic_pii_finance_multilingual",
+  "split": "test",
+  "row": 2806,
+  "type": "Loan Application",
+  "synthetic": true
+ }
+}

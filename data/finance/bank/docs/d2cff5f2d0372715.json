@@ -1,0 +1,11 @@
+{
+ "doc_id": "d2cff5f2d0372715",
+ "text": "I received an invoice from XXXX account number XXXX and called them on XX/XX/XXXX to let them know that this is a fraudulent account. It. I spoke to employee XXXX employee number XXXX. She stated that it would be canceled. Unfortunately it was turned over to a collection company at some point. This is not my account and I never requested the service.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "debt collection",
+  "issue": "Attempts to collect debt not owed",
+  "state": "AZ"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "doc_id": "e4e67618ecd6a878",
+ "text": "On XX/XX/XXXX I requested a wire in the amount of {$350000.00} from my savings account to Citibank to a brokerage account at XXXX. I was later informed by XXXX that the recipient information was incorrect. On XX/XX/XXXX I provided Citi with the corrected recipient information and was told the wire would be processed. After 3 days of trying it became clear to me Citi was not able to send the wire, so I cancelled the transaction on XX/XX/XXXX. I was told it could take up to ten business days for the funds to be returned to my account. In spite of multiple inquires each week, it took until XX/XX/XXXX for any of the amount to be return, and only {$340000.00} has been returned to date. Multiple Citi customer service professionals have told me they do not know why the full amount has not been returned, and they don't know hold long it might take to resolve this matter.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "money transfer",
+  "issue": "Other transaction problem",
+  "state": "NJ"
+ }
+}
