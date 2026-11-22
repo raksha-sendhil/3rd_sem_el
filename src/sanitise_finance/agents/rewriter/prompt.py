@@ -12,6 +12,9 @@ fact (the subject label already says "the writer's son"; a separate line made th
 that a reader would accept as the original message with the identifying details taken out.
 A leading "Here is the rewritten record:" is removed from the reply.
 
+``missing_figures`` is the backstop for "amounts must survive": a figure of the safe facts
+that the model left out is added back, from the safe fact, after the checks.
+
 ``feedback`` (on the retry) lists what the leak check and the grounding check found in the
 previous attempt; only the categories are shown to the model, never the leaked text.
 
@@ -35,39 +38,49 @@ _WORD = re.compile(r"[A-Za-z0-9]+")
 PREAMBLE = re.compile(r"\A\s*(?:sure[,!.]?\s*)?(?:here\s+is|here's|below\s+is)[^:\n]*:\s*", re.I)
 
 SYSTEM_PROMPT = """\
-You rewrite a private record from a list of facts so it can be shared without identifying \
-anyone. The facts have already been made safe: some details are placeholder tokens such as \
-[PERSON_1] or [PHONE_1], and some are deliberately vague phrases such as "a town in Kerala".
+You rewrite a private financial record from a list of facts so it can be shared without \
+identifying anyone. The facts have already been made safe: some details are placeholder tokens \
+such as [PERSON_1] or [ID_1], and some are deliberately vague phrases such as "a public-sector \
+bank" or "a company".
 
 Rules:
-1. Use every fact, and only the facts. Never add a name, age, place, date, number, job, \
-condition or any other detail that is not in the facts.
+1. Use every fact, and only the facts. Never add a name, age, place, date, number, product or \
+any other detail that is not in the facts.
 2. Copy placeholder tokens exactly, brackets included. Every token in the facts must appear \
-in your record, contact details too.
-3. Keep vague phrases vague. You may change their grammar to fit the sentence ("in their 40s" \
-can become "in my 40s"), but never make them more specific. Fit them in naturally: "I am a \
-working professional", not "I work as a working professional".
-4. Write as the original writer would: first person for facts about "the writer" ("I", "my \
-wife"). Two to five plain sentences, no headings, no lists. Say each detail once.
-5. Leave out a fact that carries no information, such as a value that only says "the writer".
+in your record.
+3. Copy every amount, rate, percentage, term and year exactly as the facts write it, next to \
+the words that say what it is. Never round, convert, total or drop one, however many there are.
+4. Keep vague phrases vague. You may change their grammar, but never make them more specific.
+5. A customer's message or an email: write it as the writer would, in the first person. A form, \
+statement, agreement or report (facts about "the record"): write plain statements in the third \
+person. Use as many short sentences as the facts need. Say each detail once.
 6. Return only the rewritten record.
 
-EXAMPLE
+EXAMPLE 1
 FACTS:
 the writer - name: [PERSON_1].
-the writer - age: in their 40s.
-the writer - works as: a transport worker.
-the writer - lives in: a city in Karnataka.
-the writer - has symptom: chest tightness when I climb stairs.
-the writer - symptom duration: two months.
-the writer - has condition: angina.
-the writer - took medication: aspirin.
-the writer - contact: [PHONE_1].
-the writer's wife - has condition: psoriasis.
+the writer - ID number: [ID_1].
+the writer - employer: a company.
+the writer - income: earns 46,000 a month.
+the record - product: car loan.
+the record - amount: car loan instalment: 8,250.
+the record - issue: instalment taken twice in May.
+the record - account event: second debit bounced rent cheque.
+the record - plan: reverse the debit.
 OUTPUT:
-I am [PERSON_1], in my 40s, and I work as a transport worker in a city in Karnataka. For two \
-months I have had chest tightness when I climb stairs, and I have been told it may be angina. \
-I take aspirin. My wife has psoriasis. You can reach me on [PHONE_1].
+I am [PERSON_1], account [ID_1]. I work for a company and earn 46,000 a month. My car loan \
+instalment of 8,250 was taken twice in May, and the second debit bounced my rent cheque. \
+Please reverse the debit.
+
+EXAMPLE 2
+FACTS:
+the record - amount: segment results, Nurseries (thousands): 2022: 6,614; 2021: 6,020.
+the record - amount: segment results, Landscaping (thousands): 2022: 1,187; 2021: 1,342.
+the record - other: Landscaping fell as two council contracts ended.
+OUTPUT:
+The segment results (thousands) for Nurseries were 6,614 in 2022 and 6,020 in 2021. The segment \
+results (thousands) for Landscaping were 1,187 in 2022 and 1,342 in 2021. Landscaping fell as \
+two council contracts ended.
 """
 
 
@@ -161,15 +174,18 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     )
     for d in removed:
         assert d.replacement is not None
-        span = re.escape(d.span_text.strip())
-        if CASE_FILE.get():  # a clinical record: whole words only, so "M" (a sex marker)
-            # does not hit the m of "antimalarials", nor the age "9" the 9 of "Hb 9.8"
-            span = rf"(?<!\w)(?<!\d\.){span}(?!\w)(?!\.\d)"
+        # whole words and whole numbers only: "12" must not hit the 12 of "4,312" or "12.5"
+        span = r"\s+".join(re.escape(w) for w in d.span_text.split())
+        span = rf"(?<!\w)(?<!\d[.,]){span}(?!\w)(?![.,]\d)"
         if d.action is Action.GENERALISE and re.search(span, value, re.IGNORECASE):
             # a vague phrase cannot replace a few words inside a longer one ("tore my anterior
             # cruciate ligament" -> "tore my a joint injury"); when the detail is most of the
             # value, the vague phrase is the whole value
-            if 2 * len(_WORD.findall(d.span_text)) >= len(_WORD.findall(TOKEN.sub(" ", value))):
+            rest = re.sub(span, " ", value, flags=re.IGNORECASE)
+            # ... unless the rest holds a figure: "4,318 in March 2016" keeps its 4,318
+            if not re.search(r"\d", TOKEN.sub(" ", rest)) and 2 * len(
+                _WORD.findall(d.span_text)
+            ) >= len(_WORD.findall(TOKEN.sub(" ", value))):
                 value = d.replacement
                 continue
         value = re.sub(span, d.replacement, value, flags=re.IGNORECASE)
@@ -183,7 +199,10 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
         # value is that detail in another form, so the whole value becomes its replacement
         if d.category in _NAMED and _leftover(value, d.span_text):
             assert d.replacement is not None
-            value = d.replacement
+            if re.search(r"\d", TOKEN.sub(" ", value)):  # only the words go, the figure stays
+                value = _without_leftover(value, d.span_text, d.replacement)
+            else:
+                value = d.replacement
     if not CASE_FILE.get():
         return value
     # a clinical record's date made vague to its year: "Review on 23/10/2026" -> "Review in 2026"
@@ -200,13 +219,31 @@ _GENERIC_PLACE_WORDS = {
     "apartments", "apartment", "flat", "house", "tower", "towers", "court", "block", "sector",
     "phase", "main", "cross", "north", "south", "east", "west", "city", "town", "district",
     "state", "the",
+    # the ordinary words of an organisation's name: "Acme Home Loans Ltd" leaves "loans" alone
+    "account", "annual", "associates", "bank", "business", "capital", "card", "company", "corp",
+    "corporation", "credit", "energy", "enterprises", "finance", "financial", "global", "group",
+    "holdings", "home", "housing", "income", "incorporated", "insurance", "interest", "limited",
+    "loan", "loans", "mortgage", "national", "public", "savings", "securities", "services",
+    "society", "trading", "trust", "union",
 }  # fmt: skip
 
 
-def _leftover(value: str, span_text: str) -> bool:
-    words = {w for w in re.findall(r"[A-Z][A-Za-z'-]{3,}", span_text)} - {
-        w.title() for w in _GENERIC_PLACE_WORDS
+def _distinctive(span_text: str) -> set[str]:
+    return {
+        w
+        for w in re.findall(r"[A-Z][A-Za-z'-]{3,}", span_text)
+        if w.lower() not in _GENERIC_PLACE_WORDS
     }
+
+
+def _without_leftover(value: str, span_text: str, replacement: str) -> str:
+    for word in sorted(_distinctive(span_text), key=len, reverse=True):
+        value = re.sub(rf"(?<![A-Za-z\[]){re.escape(word)}(?![A-Za-z])", replacement, value)
+    return value
+
+
+def _leftover(value: str, span_text: str) -> bool:
+    words = _distinctive(span_text)
     outside = TOKEN.sub(" ", value)
     return any(re.search(rf"(?<![A-Za-z]){re.escape(w)}(?![A-Za-z])", outside) for w in words)
 
@@ -271,6 +308,11 @@ def relation_label(relation: str, value: str) -> str:
     return relation.replace("_", " ")
 
 
+# facts about the record rather than about whoever wrote it
+RECORD_RELATIONS = {"product", "issue", "amount", "account_event", "plan", "other"}
+_FIGURE = re.compile(r"\d[\d,]*(?:\.\d+)?")
+
+
 def draft(facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
     """One line per fact the model may see, with removed details already replaced. A line is
     never repeated ("Laura Fenn" and "Laura" are one token, so one name line), and a person
@@ -280,12 +322,32 @@ def draft(facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
     lines: list[str] = []
     for f, value in safe:
         label = labels[f.subject]
+        if f.subject == "writer" and f.relation in RECORD_RELATIONS:
+            label = "the record"
         if f.relation == "identifier" and value == label:
             continue
         line = f"{label} - {relation_label(f.relation, value)}: {value}."
         if line not in lines:
             lines.append(line)
     return "\n".join(lines)
+
+
+def missing_figures(facts: list[FactTuple], decisions: list[RoutingDecision], text: str) -> list[str]:
+    """Safe content facts with a figure the rewrite left out, as short lines to add. A long
+    table is where a model drops one, and the figures are what questions ask for."""
+
+    def figures(value: str) -> set[str]:
+        return {m.replace(",", "") for m in _FIGURE.findall(TOKEN.sub(" ", value))}
+
+    said = figures(text)
+    lines: list[str] = []
+    for f, value in safe_facts(facts, decisions):
+        if f.relation not in RECORD_RELATIONS | {"income"} or figures(value) <= said:
+            continue
+        line = f"{f.relation.replace('_', ' ').capitalize()}: {value}."
+        if line not in lines:
+            lines.append(line)
+    return lines
 
 
 def build_user_prompt(

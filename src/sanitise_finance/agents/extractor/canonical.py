@@ -268,6 +268,13 @@ _RELATION_SYNONYMS = {
     "phone_number": "contact", "telephone": "contact",
     "id": "identifier", "name": "identifier", "patient_id": "identifier",
     "policy_number": "identifier", "employee_id": "identifier", "id_number": "identifier",
+    "account_number": "identifier", "card_number": "identifier", "loan_number": "identifier",
+    "financial_product": "product", "account_type": "product", "loan_type": "product",
+    "complaint": "issue", "problem": "issue", "dispute": "issue",
+    "sum": "amount", "balance": "amount", "fee": "amount", "rate": "amount", "term": "amount",
+    "interest_rate": "amount", "limit": "amount", "transaction": "account_event",
+    "salary": "income", "wages": "income", "earns": "income", "earnings": "income",
+    "works_for": "employer", "employed_by": "employer",
 }  # fmt: skip
 
 # (token prefixes, relation), checked in order on the tokens of an unknown relation name

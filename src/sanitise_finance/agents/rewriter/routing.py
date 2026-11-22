@@ -13,6 +13,10 @@ PHYSICAL
 MEDICAL_CONDITION                  keep         generalised instead when it is rare
                                                 (``ontology.is_rare``) or part of a QUASI_COMBO
 SYMPTOM, RELATION                  keep         generalised only to break a QUASI_COMBO
+AMOUNT, PRODUCT                    keep         content: never generalised here, not even in
+                                                a combination ("amounts, products and issues
+                                                must survive. Only identities get replaced.")
+DATE that is only a year           keep         a reporting year (``money.is_reporting_year``)
 QUASI_COMBO                        generalise   no position of its own; broken through members
 =================================  ===========  ============================================
 
@@ -37,6 +41,7 @@ from __future__ import annotations
 import re
 
 from sanitise_finance.agents.rewriter import ontology
+from sanitise_finance.rules.money import is_reporting_year
 from sanitise_finance.schemas import (
     Action,
     FactTuple,
@@ -63,6 +68,8 @@ DEFAULT_ACTION: dict[PIICategory, Action] = {
     C.MEDICAL_CONDITION: Action.KEEP,
     C.SYMPTOM: Action.KEEP,
     C.RELATION: Action.KEEP,
+    C.AMOUNT: Action.KEEP,
+    C.PRODUCT: Action.KEEP,
     C.OTHER: Action.PLACEHOLDER,
 }
 assert set(DEFAULT_ACTION) == set(PIICategory), "every category needs a default action"
@@ -140,6 +147,15 @@ def route(spans: list[SensitiveSpan], facts: list[FactTuple]) -> list[RoutingDec
             else:
                 reasons[i] = "common condition: kept for clinical usefulness"
 
+    years = set()
+    for i, span in enumerate(spans):
+        if span.category is C.DATE and is_reporting_year(span.text):
+            years.add(i)
+            actions[i] = Action.KEEP
+            reasons[i] = "only a year: identifies no one, and tells a report's figures apart"
+        elif span.category in (C.AMOUNT, C.PRODUCT):
+            reasons[i] = "financial content: kept"
+
     for combo in (s for s in spans if s.category is C.QUASI_COMBO):
         members = combo_members(combo, spans)
         if not members:
@@ -169,7 +185,7 @@ def route(spans: list[SensitiveSpan], facts: list[FactTuple]) -> list[RoutingDec
             reasons[pick] = f"generalised to break the combination '{combo.text}'"
             continue  # a kept detail gives way by one step only
         for i in members:
-            if DEFAULT_ACTION[spans[i].category] is Action.GENERALISE:
+            if DEFAULT_ACTION[spans[i].category] is Action.GENERALISE and i not in years:
                 levels[i] = 2
                 reasons[i] = f"member of the combination '{combo.text}': generalised two steps"
             elif actions[i] is Action.GENERALISE:

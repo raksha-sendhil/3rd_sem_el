@@ -7,7 +7,7 @@ nothing. Each such detail is an ``Attribute``:
 
 * ``subject_id``: whose detail it is, ``<doc_id>:<subject>`` (Agent 2's subject, e.g.
   ``writer``); one record per person, as the sanitised store keeps records unlinkable;
-* ``type``: age, date, location, occupation, condition or physical (``ATTRIBUTE_TYPES``);
+* ``type``: age, date, location, occupation, condition, physical or product (``ATTRIBUTE_TYPES``);
   symptoms and relations are left out, they describe almost everyone;
 * ``ladder``: the form shown in the sanitised text first, then coarser forms from Agent 3's
   generalisation ladder (``ontology.generalise``), e.g. "a town in the Nilgiris district" ->
@@ -37,6 +37,7 @@ TYPE_OF: dict[PIICategory, str] = {
     C.OCCUPATION: "occupation",
     C.MEDICAL_CONDITION: "condition",
     C.PHYSICAL: "physical",
+    C.PRODUCT: "product",  # finance's condition: what an attacker starts from. Amounts are not one.
 }
 ATTRIBUTE_TYPES = tuple(dict.fromkeys(TYPE_OF.values()))
 _GENERIC = {phrase.lower() for phrase in GENERIC.values()}

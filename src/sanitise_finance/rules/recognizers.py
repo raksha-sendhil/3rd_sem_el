@@ -8,6 +8,8 @@
     general     explicit identifiers Presidio misses in any domain: street addresses,
                 labelled ID numbers, occupations.
     healthcare  named hospitals and clinics (ChatDoctor).
+    finance     accounts, cards, IFSC, PAN, UPI, IBAN, MICR, organisations, and the content
+                that is kept: amounts and products (rules/finance.py).
     email       Enron-style signatures and phone formats (713/853-1234, x3-5761,
                 title lines). Switch off if the fixture set has no emails.
 
@@ -16,21 +18,11 @@ the span (e.g. ``MRN: 00451234`` yields ``00451234``), otherwise the whole match
 """
 
 import re
-from dataclasses import dataclass, field
 
 from presidio_analyzer import EntityRecognizer, RecognizerResult
 
-
-@dataclass(frozen=True)
-class Rule:
-    name: str
-    pattern: str
-    score: float
-    flags: int = re.IGNORECASE
-    regex: re.Pattern = field(init=False, repr=False, compare=False)
-
-    def __post_init__(self) -> None:
-        object.__setattr__(self, "regex", re.compile(self.pattern, self.flags))
+from sanitise_finance.rules.finance import FINANCE_LAYER
+from sanitise_finance.rules.rule import Rule
 
 
 class RegexRecognizer(EntityRecognizer):
@@ -49,6 +41,8 @@ class RegexRecognizer(EntityRecognizer):
             for m in rule.regex.finditer(text):
                 start, end = m.span("value") if has_value else m.span()
                 if start < 0 or start == end:
+                    continue
+                if rule.check and not rule.check(text[start:end]):
                     continue
                 results.append(
                     RecognizerResult(
@@ -511,6 +505,7 @@ LAYERS: dict[str, list[tuple[str, str, list[Rule]]]] = {
     "healthcare": [
         ("FacilityRecognizer", "LOCATION", FACILITY_RULES),
     ],
+    "finance": FINANCE_LAYER,
     "email": [
         ("EmailPhoneRecognizer", "PHONE", EMAIL_PHONE_RULES),
         ("SignatureTitleRecognizer", "OCCUPATION", SIGNATURE_TITLE_RULES),

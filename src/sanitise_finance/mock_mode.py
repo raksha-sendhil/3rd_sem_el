@@ -61,6 +61,8 @@ _RELATION_FOR: dict[PIICategory, str] = {
     C.EMAIL: "contact",
     C.ID_NUMBER: "identifier",
     C.RELATION: "relation_to",
+    C.AMOUNT: "amount",
+    C.PRODUCT: "product",
 }
 
 

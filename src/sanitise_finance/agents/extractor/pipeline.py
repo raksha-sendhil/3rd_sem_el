@@ -14,7 +14,8 @@ Two parts of the result never come from the model:
   symptom or condition the model lists must match a detail Agent 1 detected, of the right
   kind; it takes Agent 1's wording and goes to the person mentioned last before it in its
   sentence ("My son ... has abdominal pain" -> the son). A fact that matches nothing is
-  dropped, so the model cannot add a detail ("sunlight" as a symptom, an email domain as a
+  dropped (finance content is checked by its words and its figures instead, see
+  ``CONTENT_RELATIONS``), so the model cannot add a detail ("sunlight" as a symptom, an email domain as a
   home) or give one person's detail to another. Medication and procedures, which Agent 1 does
   not detect, must be worded from the record; ``other`` is never kept.
 
@@ -58,6 +59,8 @@ SPAN_RELATIONS: dict[str, set[PIICategory]] = {
     "studies_at": {C.LOCATION, C.ADDRESS},
     "treated_at": {C.LOCATION, C.ADDRESS},
     "works_as": {C.OCCUPATION},
+    # an employer identifies: only one Agent 1 found, so that Agent 3 says it as "a company"
+    "employer": {C.LOCATION},
     "event_date": {C.DATE},
     "has_condition": {C.MEDICAL_CONDITION, C.SYMPTOM},
     "has_symptom": {C.SYMPTOM, C.MEDICAL_CONDITION},
@@ -127,6 +130,16 @@ def in_record(value: str, text: str) -> bool:
         return True
     present = {w.lower() for w in _WORD.findall(text)}
     return sum(w in present for w in words) * 2 >= len(words)
+
+
+_NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?")
+# finance content: free wording from the record, whose figures must all be the record's own
+CONTENT_RELATIONS = {"product", "issue", "amount", "account_event", "income", "plan", "other"}
+
+
+def figures(text: str) -> set[str]:
+    """The numbers of a text, without grouping commas: "1,25,000" -> "125000"."""
+    return {m.replace(",", "").removesuffix(".00") for m in _NUMBER.findall(text)}
 
 
 def _within(short: str, long: str) -> bool:
@@ -218,6 +231,8 @@ def check_facts(
             continue
         if (f.relation == "other" and not trust_subjects) or not in_record(f.value, text):
             continue
+        if f.relation in CONTENT_RELATIONS and not figures(f.value) <= figures(text):
+            continue  # a figure the record does not have: added up, rounded or made up
         if f.relation == "symptom_duration" and not _DURATION.search(f.value):
             continue
         if f.relation == "sex" and not sex.fullmatch(f.value.strip()):

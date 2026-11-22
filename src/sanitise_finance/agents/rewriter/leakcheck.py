@@ -57,8 +57,21 @@ _WEIGHT_UNIT = r"(?:lbs?|pounds?|kgs?|kilograms?|kilos?|stone)"
 _LENGTH_UNIT = r"(?:cm|cms|centimet(?:er|re)s?|m|meters?|metres?)"
 
 
+# the legal form at the end of "Acme Trading, Limited" is not that company on its own
+_ORG_FORM = re.compile(r"(?:limited|incorporated|corporation|company|bank|holdings)\.?", re.I)
+
+
 def _bounded(body: str) -> str:
     return r"(?<![A-Za-z0-9])" + body + r"(?![A-Za-z0-9])"
+
+
+def _short_number(text: str) -> str | None:
+    """A removed short number ("5205", a PIN) is only itself as a whole number: not the 5205 of
+    "15,5205.50". Longer numbers keep the looser match (a phone after "+1.")."""
+    value = text.strip()
+    if not (value.isdigit() and len(value) <= 6):
+        return None
+    return rf"(?<![A-Za-z0-9])(?<!\d[.,]){value}(?![A-Za-z0-9])(?![.,]\d)"
 
 
 def _flex(text: str) -> str | None:
@@ -105,7 +118,8 @@ def _physical_variants(text: str) -> list[str]:
 @lru_cache(maxsize=4096)
 def _patterns(text: str, category: PIICategory) -> tuple[tuple[str, re.Pattern[str]], ...]:
     found: list[tuple[str, str, int]] = []  # (kind, regex, flags)
-    whole = _flex(text)
+    short = _short_number(text)
+    whole = short or _flex(text)
     words = _WORD.findall(text)
     # a lone short number ("28", an age) only counts with an age word next to it
     if whole and not (category is C.AGE and len(words) == 1):
@@ -122,7 +136,7 @@ def _patterns(text: str, category: PIICategory) -> tuple[tuple[str, re.Pattern[s
             found.append(("digits", _bounded(_SEP.join(digits[-10:])), 0))
     elif category is C.ID_NUMBER:
         chars = re.sub(r"[^A-Za-z0-9]", "", text)
-        if len(chars) >= 4:
+        if len(chars) >= 4 and not short:
             found.append(("reformatted", _bounded(_SEP.join(map(re.escape, chars))), re.I))
         digits = re.sub(r"\D", "", text)
         if len(digits) >= 5 and digits != chars:
@@ -137,6 +151,7 @@ def _patterns(text: str, category: PIICategory) -> tuple[tuple[str, re.Pattern[s
                 bool(re.search(r"\d", part)) or len(_WORD.findall(part)) >= 2
                 if category is C.ADDRESS
                 else len(re.sub(r"[^A-Za-z]", "", part)) >= 4
+                and not _ORG_FORM.fullmatch(part)
             )
             if part != text.strip() and distinctive and (pattern := _flex(part)):
                 found.append(("part of the place", pattern, re.IGNORECASE))

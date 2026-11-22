@@ -110,7 +110,7 @@ class Settings(BaseSettings):
     monitor_k: int = Field(default=5, ge=1)  # fewest records that must still match a person
     monitor_max_attributes: int = Field(default=3, ge=1)  # attribute types per person per session
     monitor_max_climb: int = Field(default=2, ge=0)  # generalisation steps before blocking
-    monitor_db_path: str = "data/monitor.sqlite"  # the disclosure ledger (":memory:" allowed)
+    monitor_db_path: str = "data/finance/monitor.sqlite"  # the disclosure ledger (":memory:" allowed)
     # key for the ledger's value hashes; None draws a random one per process
     monitor_salt: str | None = None
 

@@ -11,6 +11,7 @@ from presidio_analyzer.predefined_recognizers import PhoneRecognizer
 
 from sanitise_finance.casefile import is_case_file
 from sanitise_finance.rules.categories import ENTITY_TO_CATEGORY, REQUESTED_ENTITIES
+from sanitise_finance.rules.money import is_content
 from sanitise_finance.rules.normalise import normalise_spans
 from sanitise_finance.rules.recognizers import ALL_LAYERS, custom_recognizers
 from sanitise_finance.schemas import PIICategory, SensitiveSpan
@@ -67,10 +68,12 @@ def get_analyzer(
 # spaCy tags durations and relative expressions as DATE. Those don't identify
 # anyone on their own ("for 2 days", "yesterday") and would swamp the output, so
 # they are dropped. Anchored dates ("March 3, 2021", "3 years ago") are kept.
+# A run of digits is one item: when "\d+" could be split ("12" = "1" + "2") a failed match tried
+# every split, 2^n of them, and a 24-digit account number took 38 seconds.
 _VAGUE_DATE = re.compile(
     r"^(?:(?:for|about|around|approximately|approx\.?|almost|nearly|over|under|past|last|next|the|a|an|"
     r"every|few|couple|several|of|some|more|than|less|one|two|three|four|five|six|seven|eight|nine|ten|"
-    r"\d+(?:\.\d+)?|\d+-\d+|half|and|or|-)\s*)*"
+    r"\d+(?!\d)(?:\.\d+(?!\d))?|half|and|or|-)\s*)*"
     r"(?:seconds?|minutes?|mins?|hours?|hrs?|days?|nights?|weeks?|wks?|months?|years?|yrs?|decades?)$"
     r"|^(?:today|tonight|yesterday|tomorrow|now|currently|recently|daily|weekly|monthly|yearly|annually"
     r"|morning|evening|afternoon|night|this\s+(?:morning|evening|afternoon|week|month|year)"
@@ -165,7 +168,29 @@ def _keep(category: PIICategory, fragment: str, case: bool = False) -> bool:
         return False
     if case and category in (C.DATE, C.PHONE, C.ID_NUMBER) and _MEASUREMENT.match(f):
         return False
+    if is_content(category, fragment):
+        return False
+    if category in (C.NAME, C.LOCATION):
+        words = re.findall(r"[^\W\d_]+(?:-[^\W\d_]+)*", f)
+        if words and all(w in _FORM_WORDS for w in words):
+            return False
     return not (category is C.NAME and f in _NAME_STOPLIST)
+
+
+# A form's own words, which spaCy tags as people and places ("Total", "Monthly Income"). A span
+# is dropped only when every word of it is one. Words that are also surnames are left out
+# (Price, Cash, King, Banks, Grant, Bill).
+_FORM_WORDS = set(
+    "account amount annual applicant application balance borrower card closing co-applicant "
+    "contact credit customer date debit deposit description details direct due employer "
+    "employment equity expenses fee financial fiscal gross holder income information instalment "
+    "installment interest invoice lender liabilities limit loan maturity minimum monthly mortgage "
+    "name net number opening outstanding overdraft payee payment payments payroll period phone "
+    "principal purchase purpose rate reference repayment requested revenue salary savings "
+    "signature statement subtotal summary tax term total transaction transfer type utilities "
+    "withdrawal id iban bic swift pin ssn email atm emi kyc apr gbp usd eur inr api xbrl".split()
+)
+_LABEL_LINE = re.compile(r"(?:[ \t]+[A-Za-z]+){0,3}[ \t]*\*{0,2}[ \t]*:")
 
 
 # About 1 in 11 ten-digit numbers passes the UK NHS checksum, so without this an Indian
@@ -186,6 +211,12 @@ def _to_span(text: str, r: RecognizerResult, case: bool = False) -> SensitiveSpa
             start = heading.end()
         if gap := _FIELD_GAP.search(text, start, end):
             end = gap.start()
+    if category in (C.NAME, C.LOCATION) and "\n" in text[start:end]:
+        # spaCy runs a name into the next line's label ("Asha Rao\nDate: 01/10/2023")
+        last = text.rindex("\n", start, end)
+        # the rest of that line is a label ("Mailing Address: ...") or the span ends in one
+        if text[start:last].strip() and _LABEL_LINE.match(text, end):
+            end = len(text[:last].rstrip())
     fragment = text[start:end]
     if not fragment.strip() or not _keep(category, fragment, case):
         return None
@@ -203,6 +234,39 @@ def _to_span(text: str, r: RecognizerResult, case: bool = False) -> SensitiveSpa
         confidence=min(max(float(r.score), 0.0), 1.0),
         rationale=f"{source}:{detail}",
     )
+
+
+# a detail found once is hidden everywhere it is written: the lender named in the first line of
+# an agreement is the same lender five clauses later, where no rule's pattern fits
+_REPEATED = {C.NAME, C.LOCATION, C.ID_NUMBER, C.ADDRESS}
+
+
+def _repeats(text: str, spans: list[SensitiveSpan]) -> list[SensitiveSpan]:
+    """The other places a found detail occurs, written the same way, whole words only."""
+    taken = [(s.start, s.end) for s in spans if s.category is not C.PRODUCT]
+    extra: list[SensitiveSpan] = []
+    for category, value in dict.fromkeys((s.category, s.text) for s in spans):
+        if category not in _REPEATED or len(value) < 4:
+            continue
+        # a lone lower-case word or short number is too common to spread
+        if value.islower() or (value.isdigit() and len(value) < 6):
+            continue
+        for m in re.finditer(rf"(?<![\w]){re.escape(value)}(?!\w)", text):
+            if any(a < m.end() and m.start() < b for a, b in taken):
+                continue
+            taken.append((m.start(), m.end()))
+            extra.append(
+                SensitiveSpan(
+                    text=m.group(),
+                    category=category,
+                    start=m.start(),
+                    end=m.end(),
+                    method="rule",
+                    confidence=0.6,
+                    rationale="repeat: the same detail elsewhere in the document",
+                )
+            )
+    return extra
 
 
 def rule_detect(
@@ -228,7 +292,10 @@ def rule_detect(
     case = is_case_file(text)
     spans = [s for r in results if (s := _to_span(text, r, case)) is not None]
     if not case:
-        return normalise_spans(spans, text)
+        # what is left of a span cut by an amount must pass the content test again
+        found = [s for s in normalise_spans(spans, text) if not is_content(s.category, s.text)]
+        repeated = _repeats(text, found)
+        return normalise_spans(found + repeated, text) if repeated else found
     # overlap resolution can leave a remainder that would not pass on its own ("Date of
     # Service" from "Date of Service: 09/14/2026"), so the filters run again
     return [s for s in normalise_spans(spans, text) if _keep(s.category, s.text, case)]

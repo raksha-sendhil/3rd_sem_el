@@ -26,6 +26,10 @@ PHYSICAL           ``6 ft 3 inches`` -> ``between 6 ft and    ``tall``
                    ``between 220 and 240 pounds``
 SYMPTOM            ``left-sided abdominal pain`` ->           ``a symptom``
                    ``abdominal pain`` (qualifiers dropped)
+AMOUNT             ``₹18,400`` -> ``about ₹20,000``          ``a five-figure sum``
+PRODUCT            ``home loan`` -> ``a secured loan``        ``a financial product``
+bank               ``Canara Bank`` -> ``a public-sector       ``a bank``
+(a LOCATION)       bank`` (banks.json)
 RELATION           ``my son`` -> ``a family member``          same
 =================  ========================================  ===============================
 
@@ -34,6 +38,10 @@ over everything else; without them the keyword groups and generic phrases below 
 the pipeline works before the tables land. Whatever the ladder produces is checked with the
 leak check's matcher: a phrase that would still contain the original detail climbs another
 step, and if nothing is safe the generic phrase for the category is used.
+
+Amounts and products are content: ``routing`` keeps them exact. Their ladders are for whoever
+has to say them less precisely: the session monitor climbs the product's when a product would
+single someone out; nothing climbs the amount's on its own.
 
 ``is_rare(condition)`` tells ``route`` which conditions to generalise rather than keep:
 ``"rare": true`` in conditions.json, or, for a condition the table does not list, a short
@@ -61,13 +69,15 @@ ONTOLOGY_DIR = Path(__file__).resolve().parents[4] / "data" / "finance" / "ontol
 GENERIC: dict[PIICategory, str] = {
     C.AGE: "an adult",
     C.DATE: "an earlier date",
-    C.LOCATION: "a town in the region",
+    C.LOCATION: "a named place or organisation",
     C.OCCUPATION: "a working professional",
     C.PHYSICAL: "of typical build",
     C.MEDICAL_CONDITION: "a medical condition",
     C.SYMPTOM: "a symptom",
     C.RELATION: "a family member",
     C.QUASI_COMBO: "a combination of personal details",
+    C.AMOUNT: "a sum of money",
+    C.PRODUCT: "a financial product",
 }
 
 
@@ -168,7 +178,9 @@ def _date(text: str, level: int) -> str:
         (i for i, name in enumerate(_MONTHS) if re.search(rf"\b{name[:3].lower()}", lower)), None
     )
     year_m = re.search(r"\b((?:19|20)\d{2})\b", lower)
-    numeric = re.search(r"\b\d{1,2}[/.-]\d{1,2}[/.-](\d{2,4})\b", lower)
+    numeric = re.search(r"\b\d{1,2}[/.-]\d{1,2}[/.-](\d{2,4})\b", lower) or re.search(
+        r"\b((?:19|20)\d{2})[/.-]\d{1,2}[/.-]\d{1,2}\b", lower
+    )
     year = int(year_m.group(1)) if year_m else None
     if year is None and numeric:
         y = numeric.group(1)
@@ -218,8 +230,35 @@ def _place_phrase(name: str, entry: dict[str, Any], level: int, kind: str | None
     return f"{kind} in the region"
 
 
+# named organisations (Agent 1's finance layer), the most specific kind first
+_ORG_KINDS: list[tuple[str, str]] = [
+    (r"\binsurance\b|\bassurance\b|\binsurers?\b", "an insurer"),
+    (r"\bcredit union\b|\bco-?operative bank\b|\bbuilding society\b", "a co-operative lender"),
+    (r"\bbank\b|\bbankers\b|\bbancorp\b", "a bank"),
+    (r"\bmortgage\b|\bfinance\b|\bfinancial\b|\blending\b|\bloans?\b|\bcapital\b", "a lender"),
+    (r"\buniversity\b|\bcollege\b", "a university"),
+    (
+        r"\b(?:ltd|limited|inc|incorporated|llc|llp|plc|corp|corporation|gmbh|co|company|holdings"
+        r"|associates|pvt|group|enterprises|ventures|securities|logistics)\b",
+        "a company",
+    ),
+]
+
+
+def _organisation(key: str, level: int) -> str | None:
+    banks = table("banks")
+    known = max(
+        (b for b in banks if re.search(rf"(?<!\w){re.escape(b)}(?!\w)", key)), key=len, default=None
+    )
+    if known:
+        return str(banks[known]) if level == 1 else "a bank"
+    return next((kind for pattern, kind in _ORG_KINDS if re.search(pattern, key)), None)
+
+
 def _location(text: str, level: int) -> str:
     key = _key(text)
+    if not CASE_FILE.get() and not _place(key) and (org := _organisation(key, level)):
+        return org
     parts = [p.strip() for p in re.split(r",|\bin\b", text) if p.strip()]
     entry = _place(key)
     if entry:
@@ -442,6 +481,44 @@ def _symptom(text: str, level: int) -> str:
     return stripped if stripped and _key(stripped) != _key(text) else GENERIC[C.SYMPTOM]
 
 
+# ---------------------------------------------------------------- AMOUNT and PRODUCT
+
+_WORDS_FOR = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+_MULTIPLIER = {"thousand": 10**3, "lakh": 10**5, "lakhs": 10**5, "lac": 10**5, "lacs": 10**5,
+               "crore": 10**7, "crores": 10**7, "cr": 10**7, "million": 10**6, "mn": 10**6,
+               "billion": 10**9, "bn": 10**9, "trillion": 10**12}  # fmt: skip
+
+
+def _amount(text: str, level: int) -> str:
+    number = re.search(r"\d[\d,]*(?:\.\d+)?", text)
+    if not number:
+        return GENERIC[C.AMOUNT]
+    value = float(number.group().replace(",", ""))
+    for word in re.findall(r"[a-z]+", text[number.end() :].lower()):
+        value *= _MULTIPLIER.get(word, 1)
+    if value < 1 or level > 2:
+        return GENERIC[C.AMOUNT]
+    digits = len(str(int(value)))
+    if level == 1:
+        step = 10 ** (digits - 1)
+        rounded = int(value / step + 0.5) * step
+        before = re.search(r"([$£€₹¥]|\b(?:USD|GBP|EUR|INR|Rs\.?))\s?$", text[: number.start()], re.I)
+        mark = before.group(1) if before else ""
+        return f"about {mark}{' ' if mark[-1:].isalnum() else ''}{rounded:,}"
+    count = _WORDS_FOR[digits] if digits < len(_WORDS_FOR) else "many"
+    article = "an" if count.startswith("eight") else "a"
+    return f"{article} {count}-figure sum"
+
+
+def _product(text: str, level: int) -> str:
+    if level == 1:
+        key, products = _key(text), table("products")
+        for candidate in (key, key.removesuffix("s")):
+            if candidate in products:
+                return str(products[candidate])
+    return GENERIC[C.PRODUCT]
+
+
 # ---------------------------------------------------------------- entry point
 
 _LADDERS = {
@@ -452,6 +529,8 @@ _LADDERS = {
     C.MEDICAL_CONDITION: _condition,
     C.PHYSICAL: _physical,
     C.SYMPTOM: _symptom,
+    C.AMOUNT: _amount,
+    C.PRODUCT: _product,
 }
 
 

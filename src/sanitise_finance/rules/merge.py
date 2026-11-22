@@ -2,12 +2,21 @@
 
 import re
 
-from sanitise_finance.rules.normalise import is_positional, resolve_overlaps, trim, union_same_category
+from sanitise_finance.rules.money import is_content
+from sanitise_finance.rules.normalise import (
+    is_positional,
+    resolve_overlaps,
+    trim,
+    union_same_category,
+)
 from sanitise_finance.schemas import SensitiveSpan
 
 # How an LLM combination lists its parts: "left-sided abdominal + bilateral pelvic pain"
 _PART_SPLIT = re.compile(r"\s*(?:\+|&|;|,|\band\b|\bwith\b|\bplus\b)\s*", re.IGNORECASE)
 _NON_ALNUM = re.compile(r"[^0-9a-z]+")
+
+
+_CONTENT = {"AMOUNT", "PRODUCT"}
 
 
 def _norm(s: str) -> str:
@@ -33,13 +42,16 @@ def merge_spans(
     Returns positional spans sorted by offset, followed by the non-positional LLM
     spans in the order the model produced them (deduplicated by category + text).
     """
-    explicit_norms = [_norm(s.text) for s in rule_spans]
+    # content rules are not identifiers: the model may find a company around a product's words
+    explicit_norms = [_norm(s.text) for s in rule_spans if s.category.value not in _CONTENT]
 
     positional = [s for s in rule_spans if is_positional(s)]
     inferred: list[SensitiveSpan] = []
     seen: set[tuple[str, str]] = set()
     for s in llm_spans:
         if not s.text.strip() or restates_explicit(s, explicit_norms):
+            continue
+        if is_content(s.category, s.text):  # the model took an amount or a term for a detail
             continue
         if is_positional(s):
             positional.append(s)

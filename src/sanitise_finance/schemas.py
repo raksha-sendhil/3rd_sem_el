@@ -37,6 +37,8 @@ class PIICategory(str, Enum):
     PHYSICAL = "PHYSICAL"  # height, weight, build
     MEDICAL_CONDITION = "MEDICAL_CONDITION"
     SYMPTOM = "SYMPTOM"  # added 22 Oct (decision D21): a symptom a person reports
+    AMOUNT = "AMOUNT"  # finance content, kept: a sum of money
+    PRODUCT = "PRODUCT"  # finance content, kept: a kind of account, loan, card or policy
     QUASI_COMBO = "QUASI_COMBO"  # multi-attribute linkage
     OTHER = "OTHER"
 
@@ -189,6 +191,13 @@ RELATIONS: tuple[str, ...] = (
     "allergy",
     "assessment",
     "plan",
+    # finance (Agent 2)
+    "product",
+    "issue",
+    "amount",
+    "account_event",
+    "income",
+    "employer",
     "relation_to",
     "height",
     "weight",

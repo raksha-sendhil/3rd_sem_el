@@ -5,8 +5,8 @@ from sanitise_finance.schemas import PIICategory
 C = PIICategory
 
 # Presidio entity type -> project category. Entities not listed here are never
-# requested from Presidio (ORGANIZATION is deliberately left out: in the Enron
-# corpus it is almost always the employer itself and drowns the signal).
+# requested from Presidio (ORGANIZATION is deliberately left out: it is noisy. Named
+# organisations come from the finance layer's rules, rules/finance.py).
 ENTITY_TO_CATEGORY: dict[str, PIICategory] = {
     # Presidio built-ins
     "PERSON": C.NAME,
@@ -36,6 +36,8 @@ ENTITY_TO_CATEGORY: dict[str, PIICategory] = {
     "ADDRESS": C.ADDRESS,
     "ID_NUMBER": C.ID_NUMBER,
     "PHONE": C.PHONE,
+    "AMOUNT": C.AMOUNT,
+    "PRODUCT": C.PRODUCT,
 }
 
 REQUESTED_ENTITIES: list[str] = sorted(ENTITY_TO_CATEGORY)
@@ -49,12 +51,14 @@ CATEGORY_PRECEDENCE: list[PIICategory] = [
     C.ID_NUMBER,
     C.PHONE,
     C.ADDRESS,
+    C.AMOUNT,  # "5,205" is not a date, a weight or an age
     C.AGE,
     C.PHYSICAL,
     C.DATE,
     C.NAME,
     C.OCCUPATION,
     C.LOCATION,
+    C.PRODUCT,
     C.RELATION,
     C.MEDICAL_CONDITION,
     C.SYMPTOM,

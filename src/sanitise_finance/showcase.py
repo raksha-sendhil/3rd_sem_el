@@ -43,6 +43,10 @@ REASONS: dict[PIICategory, str] = {
     C.MEDICAL_CONDITION: "Health information about a specific person.",
     C.SYMPTOM: "A health complaint a specific person has; part of their medical picture.",
     C.QUASI_COMBO: "Details that identify the person when taken together.",
+    C.AMOUNT: "#dcfce7",
+    C.PRODUCT: "#ccfbf1",
+    C.AMOUNT: "A sum of money: content, kept.",
+    C.PRODUCT: "A financial product: content, kept.",
     C.OTHER: "Another detail that could identify the person.",
 }
 

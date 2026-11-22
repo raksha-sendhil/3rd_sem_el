@@ -5,6 +5,7 @@
       -> on a problem: reconstruct once more with feedback (C)
       -> still a problem: mask_fallback (A), then grounding.mask (C)
       -> still a problem: LEAK_CHECK_FAILED
+      -> figures of the safe facts that the model left out are added back (checked the same way)
 
 The leak check finds the removed details in any form; the grounding check finds names,
 numbers and email addresses that are not in the facts the model was given at all.
@@ -112,6 +113,15 @@ async def rewrite_with_trace(
         return await _rewrite(doc_id, detected, extracted, llm)
 
 
+def _complete(safe: str, lines: list[str], problems) -> str:
+    """Add the left-out figures, each only if it passes the same checks as the rewrite."""
+    for line in lines:
+        longer = f"{safe}\n{line}"
+        if not problems(longer):
+            safe = longer
+    return safe
+
+
 async def _rewrite(
     doc_id: str, detected: DetectorOutput, extracted: ExtractorOutput, llm: LLMClient
 ) -> RewriteTrace:
@@ -142,6 +152,7 @@ async def _rewrite(
                 f"{len(leaks)} removed details still present after retry and masking",
                 stage="rewrite",
             )
+        safe = _complete(safe, prompt.missing_figures(extracted.facts, decisions, safe), problems)
         output = RewriterOutput(
             doc_id=doc_id, safe_text=safe, decisions=decisions, placeholders=tokens
         )

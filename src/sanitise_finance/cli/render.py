@@ -39,6 +39,8 @@ CATEGORY_STYLE: dict[PIICategory, str] = {
     PIICategory.OCCUPATION: "blue",
     PIICategory.RELATION: "green",
     PIICategory.PHYSICAL: "bright_magenta",
+    PIICategory.AMOUNT: "green",
+    PIICategory.PRODUCT: "bright_green",
     PIICategory.MEDICAL_CONDITION: "bright_cyan",
     PIICategory.SYMPTOM: "bright_blue",
     PIICategory.QUASI_COMBO: "bold bright_red",

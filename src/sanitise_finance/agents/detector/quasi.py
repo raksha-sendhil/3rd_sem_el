@@ -67,8 +67,8 @@ class LLMQuasiList(BaseModel):
 # ------------------------------------------------------------------ prompt
 
 SYSTEM_PROMPT = """\
-You are a privacy analyst. You read one document (a patient's question to a doctor, \
-or a workplace email) and list the details that could re-identify the person it is about.
+You are a privacy analyst. You read one financial document (a customer's message, a form, \
+a statement, a report or a workplace email) and list the details that could re-identify the person it is about.
 A rule-based detector has ALREADY found most explicit identifiers (names, ages, dates, \
 phone numbers, emails, ID numbers, addresses, relations, body measurements). They are \
 listed under ALREADY FOUND. Never repeat anything listed there. Do not return dates, \
@@ -236,8 +236,8 @@ class FullDetection(BaseModel):
 
 
 FULL_SYSTEM_PROMPT = """\
-You are a privacy analyst. You read one document (a patient's message to a doctor, an \
-email, a note) and list EVERY detail that could help identify ANY person in it: the \
+You are a privacy analyst. You read one financial document (a customer's message, a form, a \
+statement, a report, an email) and list EVERY detail that could help identify ANY person in it: the \
 writer, the people it is sent to or copied to, and everyone it mentions. Email headers \
 (From, To, Cc, Sent), signatures and quoted earlier messages count like the body.
 
@@ -249,22 +249,28 @@ Not titles (Dr., Mr.), companies, products, hospitals or diseases.
 Not vague times ("recently", "two weeks").
 - PHONE: phone and fax numbers, including short internal extensions ("3-5620", "x31647").
 - EMAIL: email addresses.
-- ID_NUMBER: account, member, policy, case, employee or other reference numbers and \
+- ID_NUMBER: account, card, member, policy, case, customer, loan, employee or other \
+reference numbers, bank codes (IFSC, SWIFT, routing), UPI ids, PINs, security codes and \
 account usernames.
 - ADDRESS: street addresses, room or office numbers, P.O. boxes, postcodes.
-- LOCATION: a named place: city, town, state, country, hospital, clinic, school, \
-university, hotel, workplace site.
+- LOCATION: a named place (city, town, state, country, school, hotel, workplace site) or a \
+named organisation: a bank, lender, employer, insurer, merchant or other company.
 - OCCUPATION: a person's job, title or role ("crane operator", "Senior Counsel", "student").
-- MEDICAL_CONDITION: a diagnosis, disease or clinical finding someone has or may have, \
-including suspected ones and pregnancy.
-- SYMPTOM: a symptom or complaint someone has, with the body part when given \
-("back pain", "coughing", "pain in the left knee"). Not a negated or hypothetical one.
+- MEDICAL_CONDITION: a diagnosis or disease someone has.
+- SYMPTOM: a bodily symptom someone has. A complaint about a bank is not a symptom.
 - RELATION: a family or personal relationship to someone ("my son", "Dad", "his wife"). \
 Not a group addressed in a greeting or at work ("Hi team", "all", "everyone", "colleagues").
 - PHYSICAL: height, weight or another body measurement.
 - OTHER: any other secret or identifying value (a password, a licence plate).
 - QUASI_COMBO: at most two combinations of details about one person that together \
-single them out when each alone would not, written as parts joined with " + ".
+single them out when each alone would not, written as parts joined with " + ". Never put an \
+amount, a product or an issue in one.
+
+Never list these; they are the content of the record and must stay readable: amounts and \
+balances, percentages and interest rates, loan terms and periods ("30 years", "12 months"), \
+products ("home loan", "credit card"), what went wrong ("charged twice"), table and column \
+headings, line items of a financial report ("Total revenue", "Finance costs"), financial years \
+and quarters ("2019", "FY2016", "Q3").
 
 HINTS lists what a rule-based detector found. It may be incomplete and sometimes wrong: \
 include the hints that are right (with the right category) and add everything it missed. \
@@ -302,24 +308,22 @@ OUTPUT:
 
 EXAMPLE 2
 DOCUMENT:
-Hi doctor, my mother is 68 and since 2nd May she has had swelling in both ankles and \
-gets breathless climbing stairs. She had a heart attack in 2019 at St. Anne's in Pune. \
-She is 5 ft 1 and was a schoolteacher. Is it heart failure?
+PERSONAL LOAN REQUEST
+Applicant: Tobias Renn    Born: 4 June 1979
+Employer: Quillfeather Printing    Role: press operator
+Salary: 2,900 a month
+Amount requested: 12,500 over 48 months, for a kitchen refit
+Pay into: Norbury Savings Bank, account 40771829
 OUTPUT:
 {"details": [
- {"text": "my mother", "category": "RELATION", "rationale": "the patient"},
- {"text": "68", "category": "AGE", "rationale": "mother's age"},
- {"text": "2nd May", "category": "DATE", "rationale": "onset date"},
- {"text": "swelling in both ankles", "category": "SYMPTOM", "rationale": "mother's symptom"},
- {"text": "breathless climbing stairs", "category": "SYMPTOM", "rationale": "mother's symptom"},
- {"text": "heart attack", "category": "MEDICAL_CONDITION", "rationale": "past diagnosis"},
- {"text": "2019", "category": "DATE", "rationale": "year of the heart attack"},
- {"text": "St. Anne's", "category": "LOCATION", "rationale": "named hospital"},
- {"text": "Pune", "category": "LOCATION", "rationale": "city"},
- {"text": "5 ft 1", "category": "PHYSICAL", "rationale": "height"},
- {"text": "schoolteacher", "category": "OCCUPATION", "rationale": "mother's former job"},
- {"text": "heart failure", "category": "MEDICAL_CONDITION", "rationale": "suspected diagnosis"}
+ {"text": "Tobias Renn", "category": "NAME", "rationale": "applicant"},
+ {"text": "4 June 1979", "category": "DATE", "rationale": "date of birth"},
+ {"text": "Quillfeather Printing", "category": "LOCATION", "rationale": "employer"},
+ {"text": "press operator", "category": "OCCUPATION", "rationale": "applicant's job"},
+ {"text": "Norbury Savings Bank", "category": "LOCATION", "rationale": "applicant's bank"},
+ {"text": "40771829", "category": "ID_NUMBER", "rationale": "account number"}
 ]}
+(Not listed: 2,900, 12,500, 48 months, kitchen refit: content, not identity.)
 """
 
 # Clinical records only (``sanitise_finance.casefile``): the same task, plus the labelled fields of a
@@ -341,16 +345,15 @@ Not titles (Dr., Mr.), companies, products, hospitals or diseases.
 Not vague times ("recently", "two weeks").
 - PHONE: phone and fax numbers, including short internal extensions ("3-5620", "x31647").
 - EMAIL: email addresses.
-- ID_NUMBER: account, member, policy, case, employee or other reference numbers and \
+- ID_NUMBER: account, card, member, policy, case, customer, loan, employee or other \
+reference numbers, bank codes (IFSC, SWIFT, routing), UPI ids, PINs, security codes and \
 account usernames.
 - ADDRESS: street addresses, room or office numbers, P.O. boxes, postcodes.
-- LOCATION: a named place: city, town, state, country, hospital, clinic, school, \
-university, hotel, workplace site.
+- LOCATION: a named place (city, town, state, country, school, hotel, workplace site) or a \
+named organisation: a bank, lender, employer, insurer, merchant or other company.
 - OCCUPATION: a person's job, title or role ("crane operator", "Senior Counsel", "student").
-- MEDICAL_CONDITION: a diagnosis, disease or clinical finding someone has or may have, \
-including suspected ones and pregnancy.
-- SYMPTOM: a symptom or complaint someone has, with the body part when given \
-("back pain", "coughing", "pain in the left knee"). Not a negated or hypothetical one.
+- MEDICAL_CONDITION: a diagnosis or disease someone has.
+- SYMPTOM: a bodily symptom someone has. A complaint about a bank is not a symptom.
 - RELATION: a family or personal relationship to someone ("my son", "Dad", "his wife"). \
 Not a group addressed in a greeting or at work ("Hi team", "all", "everyone", "colleagues").
 - PHYSICAL: height, weight or another measurement of the body's size.

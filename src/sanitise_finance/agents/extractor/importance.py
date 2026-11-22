@@ -5,8 +5,9 @@ it when the model's importance is missing or not one of high / medium / low, and
 utility metric counts how many ``high`` facts survive the rewrite, so this table decides what
 the system treats as the useful content of a record (docs/phase3_plan.md, Person A, item 3).
 
-The table follows one rule: **high** is the clinical content a legitimate user asks about
-(conditions, symptoms, medication, procedures); **medium** is context that changes the
+The table follows one rule: **high** is the content a legitimate user asks about (product,
+issue, amount, account event, income; and the clinical relations copied from healthcare);
+**medium** is context that changes the
 clinical reading but also narrows who the person is (age, sex, where they live, their job,
 how long it has lasted, when it happened); **low** is detail that mostly identifies (contact
 details, identifiers, the hospital, height and weight). Relation names are normalised first,
@@ -29,6 +30,12 @@ IMPORTANCE: dict[str, Importance] = {
     "test_result": H,
     "allergy": H,
     "assessment": H,
+    "product": H,
+    "issue": H,
+    "amount": H,
+    "account_event": H,
+    "income": H,
+    "employer": M,
     "vital_sign": M,
     "plan": M,
     "symptom_duration": M,

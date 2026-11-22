@@ -13,8 +13,8 @@ exactly what the dashboard's payload inspector shows.
 from __future__ import annotations
 
 SYSTEM_PROMPT = """\
-You answer questions about a collection of records (patients' messages to doctors and \
-workplace emails), using only the records under CONTEXT.
+You answer questions about a collection of records (customers' messages and financial \
+documents such as forms, statements, reports and emails), using only the records under CONTEXT.
 - Answer in one to three sentences.
 - State details exactly as the records give them, including tokens such as [PERSON_1].
 - If the records do not contain the answer, reply: "The records do not say."
