@@ -26,8 +26,10 @@ import asyncio
 import hashlib
 import json
 import random
+import re
 import shutil
 import time
+from collections import Counter
 from pathlib import Path
 
 
@@ -132,10 +134,58 @@ def step_data(d, repo: Path, work: Path, scale: dict, q) -> None:
 # ---------------------------------------------------------------- end to end (field labels)
 
 
+def e2e_questions(rows: list[dict], default_kind: str) -> dict[str, tuple[list[dict], list[dict]]]:
+    """(targeted, utility) questions per scan. When several scans in one store would get the same
+    question ("What was the charity's total income for the year?"), retrieval cannot know which
+    is meant, so the question also gives a non-private field that only that scan has: the same
+    question for both pipelines, and never the answer. A scan without such a field keeps the
+    plain question."""
+
+    def squash(value) -> str:
+        return re.sub(r"[^0-9a-z]", "", str(value).lower())
+
+    def kind(g: dict) -> str:
+        return g.get("type", default_kind).replace("_", " ")
+
+    plain_targeted = {}
+    for g in rows:
+        fields = g.get("fields", {})
+        plain_targeted[g["id"]] = [
+            {"question": f"What is the {f.replace('_', ' ')} on the {kind(g)}?",
+             "value": str(fields[f])} for f in g.get("private", []) if fields.get(f)]  # fmt: skip
+    asked = Counter(q["question"] for qs in plain_targeted.values() for q in qs)
+    asked.update(x["question"] for g in rows for x in g.get("questions", []))
+    uses = Counter((f, squash(v)) for g in rows for f, v in g.get("fields", {}).items())
+
+    def anchored(g: dict, question: str, answer: str) -> str:
+        if asked[question] < 2:
+            return question
+        fields = g.get("fields", {})
+        answered = [f for f, v in fields.items() if squash(v) == squash(answer)]
+        for f, v in fields.items():
+            if f in g.get("private", []) or len(squash(v)) < 3 or uses[(f, squash(v))] > 1:
+                continue
+            if squash(answer) in squash(v) or any(f.startswith(a) for a in answered):
+                continue  # the answer, or another form of it ("amount_words" for "amount")
+            about = f"the {kind(g)} with {f.replace('_', ' ')} {v}"
+            return f"{question.rstrip('?')} ({about})?"
+        return question
+
+    out = {}
+    for g in rows:
+        targeted = [{**q, "question": anchored(g, q["question"], q["value"])}
+                    for q in plain_targeted[g["id"]]]  # fmt: skip
+        utility = [{"question": anchored(g, x["question"], x["answer"]), "answer": x["answer"]}
+                   for x in g.get("questions", [])]  # fmt: skip
+        out[g["id"]] = (targeted, utility)
+    return out
+
+
 def prepare_e2e(d, repo: Path, work: Path, n: int, max_parts: int) -> None:
     """The source's scans through step 0 (OCR). The labels come from the dataset's own fields,
     not from a model: each private field becomes a targeted question ("What is the account
-    number on the bank statement?"), and the dataset's questions are the utility questions.
+    number on the bank statement?"), and the dataset's questions are the utility questions
+    (see ``e2e_questions`` for how scans of one type are told apart).
     A scan with a full transcription (``text``) is also built as run A (gold text)."""
     from sanitise.config import get_settings
     from sanitise.ingest import ingest_bytes
@@ -160,18 +210,17 @@ def prepare_e2e(d, repo: Path, work: Path, n: int, max_parts: int) -> None:
     settings = get_settings()
     reader = make_reader(settings)
     labels = {}
+    questions = e2e_questions(rows, d.source)
 
     async def run() -> None:
         for i, g in enumerate(rows, 1):
             fields = g.get("fields", {})
             private = [str(fields[f]) for f in g.get("private", []) if fields.get(f)]
-            kind = g.get("type", d.source).replace("_", " ")
+            targeted, utility = questions[g["id"]]
             labels[g["id"]] = {
                 "private_values": [{"type": f, "value": str(fields[f])} for f in g.get("private", []) if fields.get(f)],
-                "targeted_questions": [{"question": f"What is the {f.replace('_', ' ')} on the {kind}?",
-                                        "value": str(fields[f])} for f in g.get("private", []) if fields.get(f)],
-                "utility_questions": [{"question": x["question"], "answer": x["answer"]}
-                                      for x in g.get("questions", [])],
+                "targeted_questions": targeted,
+                "utility_questions": utility,
                 "label_model": "dataset fields", "utility_version": 2,
             }  # fmt: skip
             if g["id"] in done:
