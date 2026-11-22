@@ -1,0 +1,11 @@
+{
+ "doc_id": "8e4afd3a0df0d26f",
+ "text": "Home Depot notified me of a Fraud Charge in XX/XX/XXXX ; they assured me the issue was going to get fixed. XX/XX/XXXX, I received a bill and called Home Depot ; they notified me the fraud claim was denied. I re-opened the claim. XX/XX/XXXX, I receive another bill. I call once again, they say the claim has been denied once again. They are not able to tell me why this claim is being denied.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Problem with a purchase shown on your statement",
+  "state": "TX"
+ }
+}

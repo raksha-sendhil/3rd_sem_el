@@ -1,0 +1,11 @@
+{
+ "doc_id": "552ff4c20c896892",
+ "text": "I made a {$4600.00} deposit on my Citibank checking account and the atm only counted {$3600.00} which is {$950.00} less The deposit was made XXXX XXXX XXXX",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Managing an account",
+  "state": "NY"
+ }
+}

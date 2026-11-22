@@ -1,0 +1,11 @@
+{
+ "doc_id": "ac75d28e85537f16",
+ "text": "Date and Time of fraudulent charge : XX/XX/year> in the amount of {$2700.00} Received text on XX/XX/year>, replied NO I called the next day XX/XX/XXXX at XXXX am and I told the Wells Fargo rep that this was a fraudulent charge Received a letter to contact Wells Fargo, called was told that my claim was under investigation On XX/XX/year> I called Wells Fargo and was told my claim was denied. I never received a call or letter regarding the denied claim. On XX/XX/year> contacted by XXXX XXXX from executive offices and was told that my claim was being reopened. Case number : XXXX Information I have shared with Wells Fargo Representatives, Fraud Claim Department, and XXXX XXXX from Executive Offices : I did not make this transaction in person as its impossible to be at two places at once I work on the XXXX XXXX XXXX XXXX and the vendor is located on the XXXXXXXX XXXX XXXX XXXX I have a record of logging into work at XXXX XXXX on XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX who can verify that I was working on XX/XX/year> Look at past transaction, I have never made a purchase over {$1000.00} or shop on the XXXX XXXX XXXX I have never done business with the vendor XXXX XXXX XXXX XXXX",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Problem with a purchase shown on your statement",
+  "state": "IL"
+ }
+}

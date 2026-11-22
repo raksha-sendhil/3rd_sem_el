@@ -1,0 +1,11 @@
+{
+ "doc_id": "e7e71732141b449b",
+ "text": "In XXXX, I signed up for auto-debit which allowed MOHELA to automatically withdraw money from my account every month when my payments were due. By doing so, they would decrease my monthly payment by {$30.00}. I received a confirmation email on XX/XX/26 stating that I will be enrolled in this program. However the last few payments that have been automatically deducted still did not reduce the payment by {$30.00}. I am still paying the full amount monthly AND being automatically withdrawn from my account.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "student loan",
+  "issue": "Dealing with your lender or servicer",
+  "state": "CA"
+ }
+}

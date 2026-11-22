@@ -1,0 +1,11 @@
+{
+ "doc_id": "9aa8e63f59d4c209",
+ "text": "Unauthorized cash withdrawals from my Citibank savings account occurred on XX/XX/2023. There were two fraud withdrawals : first of {$1000.00} from ATM and second of {$5000.00} from bank teller all in cash. After the first withdrawal of {$1000.00}, I immediately went to a branch and notified a banker at the branch. While I was physically present in the branch and talking to a banker, the second fraud withdrawal of {$5000.00} was done at another branch. The savings account was immediately blocked and the transaction was disputed. I also filed a police report at a local police station. However, Citibank has denied my dispute of the {$5000.00} fraud transaction twice on the grounds that it was not fraud. Citibank has the video evidences of me physically present in the branch and of the person impersonating me and committing the fraud at another branch. I have also provided Citibank with the name and information of the banker who was with me while the second fraud of {$5000.00} happened. Citibank has enough information to prove this is an unauthorized transaction but is refusing their responsibility to investigate the fraud case fully and to refund me the lost amount of money due to this fraud.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Managing an account",
+  "state": "NY"
+ }
+}

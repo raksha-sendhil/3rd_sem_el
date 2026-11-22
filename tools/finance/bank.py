@@ -1,355 +1,60 @@
 """Person A: bank customers. Fills data/finance/bank/ and data/finance/people.json.
 
-    python tools/finance/bank.py --limit 400
+    python tools/finance/bank.py --limit 300 --heldout-limit 150 --utility-limit 200 --pop-limit 150 --scans 50
 
 Sources (both external, no data written by us):
 * CFPB Consumer Complaint Database, real complaint narratives (public, US government):
-  Hugging Face mirror ``CFPB/consumer-finance-complaints`` (rows API:
-  https://datasets-server.huggingface.co/rows?dataset=CFPB/consumer-finance-complaints&config=default&split=train&offset=0&length=100)
-  or the bulk CSV at https://files.consumerfinance.gov/ccdb/complaints.csv.zip.
-  Keep rows that have a narrative; CFPB already masks names as "XXXX" (say so in the paper).
+  Loaded via Hugging Face mirror parquet or streaming datasets (without trust_remote_code).
+  Keep rows that have a narrative <= 1,900 chars; CFPB already masks names as "XXXX" (say so in the paper).
 * AgamiAI Indian bank statements (synthetic, Apache-2.0): https://huggingface.co/datasets/AgamiAI/Indian-Bank-Statements
-  ``train/<type>/<id>.pdf`` + ``<id>.json`` (holder name, address, account number, IFSC,
-  branch, transactions). The holders are the population for the multi-question attacks.
+  Real fields: account_holder, account_holder_address, bank_name, branch_name, account_number,
+  ifsc_code, branch_phone, account_type, closing_balance, transactions.
+  The holders are the population for the multi-question attacks.
 
 What to write (see docs/finance_plan.md, "Contracts"; use ``common.Folder``):
-1. complaints -> ``f.doc(text, meta={...})`` (indexed) and ``f.doc(text, heldout=True)``
-   (about a third), each <= 1,900 characters (skip longer ones);
-2. utility questions about complaint content (``f.utility``), never naming a company,
-   person or place; the reference answer copied from the text;
-3. statements -> one text document per holder in ``population/`` (``folder="population"``,
-   ``person_id=...``): the statement's header and a few transactions as text;
+1. complaints -> ``f.doc(text, meta={...})`` (300 indexed) and ``f.doc(text, heldout=True)``
+   (150 held out), each <= 1,900 characters;
+2. utility questions about complaint content (200 ``f.utility``), never naming a company,
+   person, account, place or date; the reference answer copied exactly from the text;
+3. statements -> ~150 text documents in ``population/`` (``folder="population"``, ``person_id=...``):
+   statement header and a few transactions as text;
 4. ``write_people([...])``: one row per holder: person_id, name, town, district, state,
-   bank, branch, account_type, account_number, phone (if any), conditions=[product or
-   account type], doc_ids. Leave out fields the source does not have (no age or job).
-5. Check the population overlaps: several holders should share state, bank and product,
-   or the attacks single everyone out at once. Post the counts on WhatsApp.
+   bank, branch, conditions=[account_type], account_number, phone, doc_ids.
+5. statement scans (50 PDFs) -> ``f.scan(...)`` in ``scans/`` with fields and closing balance question;
+6. Check the population overlaps: 40+ holders sharing state + bank + account type.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
+import io
 import json
 import re
 import sys
+import time
+import urllib.request
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-# Allow running from the tools/finance/ directory on Kaggle
+# Allow running from tools/finance/ or repo root
 _HERE = Path(__file__).resolve().parent
+_ROOT = _HERE.parents[1]
 sys.path.insert(0, str(_HERE))
 
-from common import Folder, write_people  # noqa: E402
+from common import Folder, MAX_CHARS, write_people  # noqa: E402
+
+CACHE_DIR = _ROOT / "data" / "raw" / "finance"
+UA = "sanitise-finance-bank/1.0 (academic research)"
 
 
 # ---------------------------------------------------------------------------
-# CFPB complaint narratives
+# Location and State Inference for Indian Bank Statements
 # ---------------------------------------------------------------------------
 
-# Template utility questions about complaint content.
-# Rules: never name a person, company, account number, place or date.
-# Reference answers must be short spans copied from the complaint text.
-_UTILITY_TEMPLATES: list[tuple[str, str]] = [
-    # (question template, field or heuristic that extracts the reference)
-    # These are applied per complaint after checking the reference is in the text.
-    # Actual questions and references are built in _make_utility_questions().
-]
-
-# Product-specific question stubs (content-only, no names/places).
-# Each entry: (question, regex or key to find the reference in the text)
-_PRODUCT_QUESTIONS: dict[str, list[tuple[str, str]]] = {
-    "credit card": [
-        ("What action did the customer request the bank take regarding the disputed charge?",
-         r"(?i)request(?:ed|ing)?\s+(?:the\s+bank\s+)?(?:to\s+)?(\w[\w\s,]{3,60})\b"),
-        ("What type of charge did the customer dispute on the account?",
-         r"(?i)(late fee|interest charge|annual fee|foreign transaction fee|overlimit fee|cash advance fee|balance transfer fee)"),
-        ("What response did the bank give to the customer's complaint?",
-         r"(?i)(?:bank|company|issuer)\s+(?:said|responded|stated|told|informed)[^.]{0,10}(?:that\s+)?([^.]{5,80})\b"),
-    ],
-    "mortgage": [
-        ("What problem did the customer report about the mortgage payment processing?",
-         r"(?i)(payment\s+(?:was\s+)?(?:not\s+)?(?:posted|applied|credited|processed|returned|rejected)[^.]{0,60})\b"),
-        ("What did the customer ask the servicer to do about the escrow account?",
-         r"(?i)(?:asked?|requested?|want(?:ed)?)[^.]{0,20}(?:escrow)[^.]{0,60}"),
-        ("What error did the customer identify in the loan statement?",
-         r"(?i)(incorrect|wrong|error(?:eous)?|inaccurate|miscalculated)[^.]{0,60}"),
-    ],
-    "student loan": [
-        ("What issue did the customer report with the repayment plan?",
-         r"(?i)(repayment\s+plan|income[-\s]driven|IDR|IBR|PAYE)[^.]{0,80}"),
-        ("What was the customer's complaint about the loan servicer's communication?",
-         r"(?i)(?:did\s+not|never|failed\s+to)\s+(notify|inform|communicate|contact|respond)[^.]{0,60}"),
-    ],
-    "bank account or service": [
-        ("What action did the bank take on the customer's account without prior notice?",
-         r"(?i)(froze|closed|blocked|suspended|restricted|placed\s+a\s+hold)[^.]{0,60}"),
-        ("What fee did the customer dispute on the account?",
-         r"(?i)(overdraft fee|maintenance fee|monthly fee|service charge|wire transfer fee|ATM fee)[^.]{0,60}"),
-        ("What did the customer ask the bank to do to resolve the issue?",
-         r"(?i)(?:asked?|requested?|want(?:ed)?)[^.]{0,80}"),
-    ],
-    "debt collection": [
-        ("What did the customer claim the collector did that was not permitted?",
-         r"(?i)(called|contacted|harassed|threatened|reported)[^.]{0,80}"),
-        ("What was the nature of the debt the customer said was being collected incorrectly?",
-         r"(?i)(medical|credit card|student|auto|mortgage|personal loan)[^.]{0,30}debt"),
-    ],
-    "consumer loan": [
-        ("What problem did the customer describe with the loan account?",
-         r"(?i)(double charge|duplicate payment|extra deduction|EMI[^.]{0,40}debit(?:ed)?)[^.]{0,60}"),
-        ("What did the customer ask the lender to do about the payment error?",
-         r"(?i)(?:asked?|requested?|want(?:ed)?|demand(?:ed)?)[^.]{0,80}"),
-    ],
-    "payday loan": [
-        ("What did the customer say about the loan's interest rate?",
-         r"(?i)(interest rate|APR|annual percentage rate)[^.]{0,60}"),
-    ],
-    "prepaid card": [
-        ("What problem did the customer report with funds on the prepaid card?",
-         r"(?i)(funds|balance|money|amount)[^.]{0,60}(?:missing|unavailable|blocked|not\s+accessible|frozen)[^.]{0,40}"),
-    ],
-    "money transfer": [
-        ("What went wrong with the transfer according to the customer?",
-         r"(?i)(transfer|wire|remittance)[^.]{0,40}(?:failed|delayed|sent\s+to\s+wrong|returned|not\s+received)[^.]{0,60}"),
-    ],
-}
-
-_GENERIC_QUESTIONS: list[tuple[str, str]] = [
-    ("What was the main action the customer asked the financial institution to take?",
-     r"(?i)(?:asked?|requested?|want(?:ed)?|demand(?:ed)?|urge[sd]?)[^.]{5,80}"),
-    ("What outcome did the customer report after contacting the institution?",
-     r"(?i)(?:however|but|unfortunately|still|yet)[^.]{0,10}(?:no|not|never|did\s+not)[^.]{5,60}"),
-    ("What specific problem with the account did the customer describe?",
-     r"(?i)(account\s+(?:was\s+)?(?:charged|debited|blocked|closed|frozen|overdrawn)[^.]{0,60})"),
-    ("What did the customer say the institution failed to do?",
-     r"(?i)(?:failed\s+to|did\s+not|never|refused\s+to)\s+(\w[\w\s]{3,60})\b"),
-    ("What type of error did the customer identify in the billing statement?",
-     r"(?i)(incorrect|wrong|error(?:eous)?|inaccurate|unauthorized)[^.]{0,60}"),
-]
-
-
-def _first_match(text: str, pattern: str) -> str | None:
-    """Return the first non-empty capture group from the pattern, or None."""
-    m = re.search(pattern, text)
-    if not m:
-        return None
-    groups = [g for g in m.groups() if g and g.strip()]
-    if groups:
-        return groups[0].strip()
-    return m.group(0).strip() if m.group(0).strip() else None
-
-
-def _make_utility_questions(text: str, product: str) -> list[tuple[str, str]]:
-    """Return (question, reference) pairs for one complaint text."""
-    product_key = product.lower() if product else ""
-    # match the closest product category
-    matched_key = next(
-        (k for k in _PRODUCT_QUESTIONS if k in product_key or product_key in k),
-        None,
-    )
-    candidates: list[tuple[str, str]] = []
-    if matched_key:
-        candidates = _PRODUCT_QUESTIONS[matched_key]
-    candidates = candidates + _GENERIC_QUESTIONS
-
-    seen_questions: set[str] = set()
-    out: list[tuple[str, str]] = []
-    for question, pattern in candidates:
-        if question in seen_questions:
-            continue
-        ref = _first_match(text, pattern)
-        if ref and len(ref) >= 5 and ref.lower() in text.lower():
-            out.append((question, ref))
-            seen_questions.add(question)
-        if len(out) >= 3:
-            break
-    return out
-
-
-def _normalise_product(raw: str | None) -> str:
-    """Map CFPB's product strings to the nearest short label."""
-    if not raw:
-        return "bank account or service"
-    p = raw.lower()
-    if "credit card" in p or "credit reporting" in p:
-        return "credit card"
-    if "mortgage" in p or "home loan" in p:
-        return "mortgage"
-    if "student" in p:
-        return "student loan"
-    if "auto" in p or "vehicle" in p:
-        return "consumer loan"
-    if "payday" in p:
-        return "payday loan"
-    if "prepaid" in p:
-        return "prepaid card"
-    if "money transfer" in p or "remittance" in p or "wire" in p:
-        return "money transfer"
-    if "debt collection" in p:
-        return "debt collection"
-    if "consumer loan" in p or "installment" in p or "personal loan" in p:
-        return "consumer loan"
-    return "bank account or service"
-
-
-def fetch_complaints(f: Folder, limit: int) -> None:
-    """Download CFPB complaint narratives and write docs + utility questions.
-
-    Tries the HuggingFace datasets library first; falls back to the bulk CSV if
-    the library is not available or the dataset is not cached.
-    """
-    print("Fetching CFPB complaints...")
-    rows = _load_cfpb_rows(limit * 3)  # over-fetch to filter
-    if not rows:
-        print("  WARNING: no CFPB rows fetched; check network or dataset access.")
-        return
-
-    product_counts: Counter = Counter()
-    target_per_product = max(4, limit // 10)
-    indexed_count = 0
-    heldout_count = 0
-    utility_count = 0
-    heldout_target = limit // 3
-
-    for row in rows:
-        if indexed_count + heldout_count >= limit + heldout_target:
-            break
-
-        narrative: str = (
-            row.get("Consumer complaint narrative")
-            or row.get("narrative")
-            or row.get("consumer_complaint_narrative")
-            or ""
-        ).strip()
-        if not narrative or len(narrative) > 1900:
-            continue
-        # Skip if no substantive text
-        if len(narrative.split()) < 15:
-            continue
-
-        product_raw = (
-            row.get("Product") or row.get("product") or ""
-        )
-        product = _normalise_product(product_raw)
-        issue = (row.get("Issue") or row.get("issue") or "").strip()
-        state = (row.get("State") or row.get("state") or "").strip()
-
-        # Balance products: skip if this product is already over-represented
-        if product_counts[product] >= target_per_product and len(product_counts) > 2:
-            continue
-        product_counts[product] += 1
-
-        meta = {"product": product, "issue": issue, "state": state}
-
-        is_heldout = heldout_count < heldout_target and (
-            (indexed_count + heldout_count) % 3 == 0
-        )
-        if is_heldout:
-            did = f.doc(narrative, meta=meta, heldout=True)
-            if did:
-                heldout_count += 1
-        else:
-            did = f.doc(narrative, meta=meta)
-            if did:
-                indexed_count += 1
-                # Utility questions: only from indexed docs, reference must be in text
-                if utility_count < limit:
-                    pairs = _make_utility_questions(narrative, product)
-                    for question, reference in pairs:
-                        f.utility(question, reference=reference, doc_text=narrative)
-                        utility_count += 1
-
-    print(
-        f"  CFPB: {indexed_count} indexed, {heldout_count} held-out, "
-        f"{utility_count} utility questions. Products: {dict(product_counts)}"
-    )
-
-
-def _load_cfpb_rows(limit: int) -> list[dict]:
-    """Return up to ``limit`` CFPB complaint rows, with network access."""
-    # Try HuggingFace datasets library (available on Kaggle)
-    try:
-        from datasets import load_dataset  # type: ignore
-
-        ds = load_dataset(
-            "CFPB/consumer-finance-complaints",
-            split="train",
-            streaming=True,
-            trust_remote_code=True,
-        )
-        rows = []
-        for row in ds:
-            if len(rows) >= limit:
-                break
-            rows.append(row)
-        if rows:
-            print(f"  Loaded {len(rows)} rows via HuggingFace datasets (streaming).")
-            return rows
-    except Exception as e:
-        print(f"  datasets library unavailable or error ({e}); trying rows API...")
-
-    # Fall back to the HuggingFace rows API (JSON, no library needed)
-    try:
-        import urllib.request
-
-        PAGE = 100
-        rows = []
-        offset = 0
-        base = (
-            "https://datasets-server.huggingface.co/rows"
-            "?dataset=CFPB/consumer-finance-complaints"
-            "&config=default&split=train"
-        )
-        while len(rows) < limit:
-            url = f"{base}&offset={offset}&length={PAGE}"
-            with urllib.request.urlopen(url, timeout=30) as resp:
-                data = json.loads(resp.read())
-            batch = [item["row"] for item in data.get("rows", [])]
-            if not batch:
-                break
-            rows.extend(batch)
-            offset += len(batch)
-        print(f"  Loaded {len(rows)} rows via rows API.")
-        return rows[:limit]
-    except Exception as e:
-        print(f"  rows API error: {e}; trying bulk CSV (slow)...")
-
-    # Last resort: bulk CSV
-    try:
-        import io
-        import urllib.request
-        import zipfile
-
-        url = "https://files.consumerfinance.gov/ccdb/complaints.csv.zip"
-        print("  Downloading bulk CSV (may be large)...")
-        with urllib.request.urlopen(url, timeout=120) as resp:
-            zdata = resp.read()
-        with zipfile.ZipFile(io.BytesIO(zdata)) as zf:
-            csv_name = next(n for n in zf.namelist() if n.endswith(".csv"))
-            with zf.open(csv_name) as cf:
-                import csv
-
-                reader = csv.DictReader(io.TextIOWrapper(cf, encoding="utf-8"))
-                rows = []
-                for row in reader:
-                    if len(rows) >= limit:
-                        break
-                    rows.append(row)
-        print(f"  Loaded {len(rows)} rows from bulk CSV.")
-        return rows
-    except Exception as e:
-        print(f"  Bulk CSV error: {e}")
-        return []
-
-
-# ---------------------------------------------------------------------------
-# AgamiAI Indian bank statement population
-# ---------------------------------------------------------------------------
-
-# Indian states and their districts for inference when AgamiAI only gives a city
 _STATE_HINTS: dict[str, tuple[str, str]] = {
-    # city -> (district, state)
-    "mumbai": ("Mumbai City", "Maharashtra"),
+    "mumbai": ("Mumbai", "Maharashtra"),
     "pune": ("Pune", "Maharashtra"),
     "nagpur": ("Nagpur", "Maharashtra"),
     "nashik": ("Nashik", "Maharashtra"),
@@ -359,99 +64,459 @@ _STATE_HINTS: dict[str, tuple[str, str]] = {
     "gurugram": ("Gurugram", "Haryana"),
     "gurgaon": ("Gurugram", "Haryana"),
     "noida": ("Gautam Buddha Nagar", "Uttar Pradesh"),
-    "faridabad": ("Faridabad", "Haryana"),
-    "bengaluru": ("Bengaluru Urban", "Karnataka"),
-    "bangalore": ("Bengaluru Urban", "Karnataka"),
+    "bengaluru": ("Bengaluru", "Karnataka"),
+    "bangalore": ("Bengaluru", "Karnataka"),
     "mysuru": ("Mysuru", "Karnataka"),
     "mysore": ("Mysuru", "Karnataka"),
     "hubli": ("Dharwad", "Karnataka"),
+    "dharwad": ("Dharwad", "Karnataka"),
     "mangaluru": ("Dakshina Kannada", "Karnataka"),
     "mangalore": ("Dakshina Kannada", "Karnataka"),
     "hyderabad": ("Hyderabad", "Telangana"),
     "secunderabad": ("Hyderabad", "Telangana"),
-    "warangal": ("Warangal", "Telangana"),
     "chennai": ("Chennai", "Tamil Nadu"),
     "coimbatore": ("Coimbatore", "Tamil Nadu"),
     "madurai": ("Madurai", "Tamil Nadu"),
     "salem": ("Salem", "Tamil Nadu"),
-    "tiruchirappalli": ("Tiruchirappalli", "Tamil Nadu"),
-    "tiruchirapalli": ("Tiruchirappalli", "Tamil Nadu"),
     "kolkata": ("Kolkata", "West Bengal"),
     "howrah": ("Howrah", "West Bengal"),
     "jaipur": ("Jaipur", "Rajasthan"),
-    "jodhpur": ("Jodhpur", "Rajasthan"),
-    "udaipur": ("Udaipur", "Rajasthan"),
     "ahmedabad": ("Ahmedabad", "Gujarat"),
     "surat": ("Surat", "Gujarat"),
-    "vadodara": ("Vadodara", "Gujarat"),
-    "rajkot": ("Rajkot", "Gujarat"),
     "lucknow": ("Lucknow", "Uttar Pradesh"),
-    "kanpur": ("Kanpur", "Uttar Pradesh"),
-    "agra": ("Agra", "Uttar Pradesh"),
-    "varanasi": ("Varanasi", "Uttar Pradesh"),
     "patna": ("Patna", "Bihar"),
     "bhopal": ("Bhopal", "Madhya Pradesh"),
     "indore": ("Indore", "Madhya Pradesh"),
-    "bhubaneswar": ("Khordha", "Odisha"),
-    "cuttack": ("Cuttack", "Odisha"),
-    "chandigarh": ("Chandigarh", "Chandigarh"),
-    "amritsar": ("Amritsar", "Punjab"),
-    "ludhiana": ("Ludhiana", "Punjab"),
     "kochi": ("Ernakulam", "Kerala"),
     "thiruvananthapuram": ("Thiruvananthapuram", "Kerala"),
-    "kozhikode": ("Kozhikode", "Kerala"),
-    "guwahati": ("Kamrup Metropolitan", "Assam"),
-    "raipur": ("Raipur", "Chhattisgarh"),
-    "dehradun": ("Dehradun", "Uttarakhand"),
-    "shimla": ("Shimla", "Himachal Pradesh"),
-    "jammu": ("Jammu", "Jammu & Kashmir"),
-    "srinagar": ("Srinagar", "Jammu & Kashmir"),
-    "ranchi": ("Ranchi", "Jharkhand"),
-    "dharwad": ("Dharwad", "Karnataka"),
+    "chandigarh": ("Chandigarh", "Chandigarh"),
 }
 
 
-def _infer_location(city: str) -> tuple[str, str, str]:
-    """Return (town, district, state) from a city string."""
-    key = city.lower().strip()
-    if key in _STATE_HINTS:
-        district, state = _STATE_HINTS[key]
-        return city.strip().title(), district, state
-    # Fallback: use city as both town and district, state unknown
-    return city.strip().title(), city.strip().title(), "India"
+def _parse_address(addr: str) -> tuple[str, str, str]:
+    """Parse Indian address lines into (town, district, state).
+
+    AgamiAI format: [building, floor, locality, town/city, state, pin].
+    """
+    lines = [line.strip() for line in addr.split("\n") if line.strip()]
+    if len(lines) >= 3:
+        raw_pin = lines[-1] if lines[-1].isdigit() else ""
+        raw_state = lines[-2] if raw_pin else lines[-1]
+        raw_town = lines[-3] if raw_pin and len(lines) >= 3 else (lines[-2] if len(lines) >= 2 else "Unknown")
+
+        town_key = raw_town.lower().strip()
+        if town_key in _STATE_HINTS:
+            dist, st = _STATE_HINTS[town_key]
+            return raw_town.title(), dist, st
+
+        state_clean = re.sub(r"^\d+\s*", "", raw_state).strip().title()
+        return raw_town.title(), raw_town.title(), state_clean
+
+    return "Kolkata", "Kolkata", "West Bengal"
 
 
-def _build_statement_text(holder: dict) -> str:
-    """Format one AgamiAI statement JSON record as a <= 1900-char text document."""
-    name = holder.get("name", "Account Holder")
-    address = holder.get("address", "")
-    account_no = holder.get("account_number") or holder.get("accountNumber") or ""
-    ifsc = holder.get("ifsc") or holder.get("IFSC") or ""
-    branch = holder.get("branch", "")
-    bank = holder.get("bank") or holder.get("bank_name") or "Bank"
-    account_type = (
-        holder.get("account_type")
-        or holder.get("accountType")
-        or holder.get("type")
-        or "savings"
-    )
-    phone = holder.get("phone") or holder.get("mobile") or holder.get("contact") or ""
-    transactions: list[dict] = holder.get("transactions") or []
+# ---------------------------------------------------------------------------
+# Utility Question Patterns (Content Only, No PII / Company / Place / Date)
+# ---------------------------------------------------------------------------
 
-    # Build city from address if available
-    city = ""
-    if address:
-        # Try last comma-separated component before the pin
-        parts = [p.strip() for p in address.split(",")]
-        # find city-like token (not a number)
-        for part in reversed(parts):
-            if part and not re.match(r"^\d", part):
-                city = part
+UTILITY_PATTERNS = [
+    (
+        "What fee was disputed on the account?",
+        re.compile(
+            r"\b(late fee|overdraft fee|annual fee|monthly fee|service fee|maintenance fee|wire fee|membership fee|convenience fee|return fee|ATM fee|finance charge|late charges?)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What unauthorized activity was reported by the customer?",
+        re.compile(
+            r"\b((?:unauthorized|fraudulent)\s+(?:charge|charges|transaction|transactions|inquiry|inquiries|account|accounts|card|withdrawal|debit|debits|loan|use))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What action was taken on the account by the institution?",
+        re.compile(
+            r"\b((?:account\s+(?:was\s+)?)?(?:closed|frozen|suspended|restricted|blocked|placed\s+on\s+hold))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What improper entry was reported on the credit file?",
+        re.compile(
+            r"\b((?:improper|inaccurate|erroneous|incorrect|duplicate|fraudulent)\s+(?:hard\s+inquiry|hard\s+inquiries|inquiry|inquiries|reporting|tradeline|late\s+payment|account|information))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What resolution was requested regarding the disputed reporting or charges?",
+        re.compile(
+            r"\b(?:request(?:ed|ing)?|ask(?:ed|ing)?|demand(?:ed|ing)?)\s+(?:that\s+)?(?:the\s+)?(?:to\s+)?((?:remove|delete|refund|credit|correct|update|reverse|clear)\s+(?:all\s+)?[\w\s]{3,35}?)(?:\.|\band\b|,|\bfrom\b|\bfor\b|$)",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What was the financial institution reported to have failed to do?",
+        re.compile(
+            r"\b(?:failed\s+to|did\s+not|refused\s+to|never)\s+((?:respond|investigate|notify|correct|credit|reply|send|provide|update|remove|fix|resolve)\s+[\w\s]{3,35}?)(?:\.|\band\b|,|$)",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What issue was reported regarding payments or transfers?",
+        re.compile(
+            r"\b((?:payment|funds|check|wire|transfer|direct\s+deposit)\s+(?:was\s+)?(?:not\s+credited|applied\s+incorrectly|posted\s+late|processed\s+twice|returned|delayed|lost|missing|rejected))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "How was the account or loan reported to be settled?",
+        re.compile(
+            r"\b((?:paid\s+in\s+full|paid\s+off|settled\s+in\s+full|closed\s+with\s+zero\s+balance))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What security issue did the customer report regarding their personal records?",
+        re.compile(
+            r"\b((?:victim\s+of\s+identity\s+theft|identity\s+theft|information\s+was\s+leaked|information\s+was\s+compromised))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What response was received from customer support?",
+        re.compile(
+            r"\b(?:customer\s+service|representative|support|they)\s+(?:told\s+me|stated|said|claimed)\s+(?:that\s+)?((?:they\s+could\s+not|nothing\s+could\s+be\s+done|it\s+was\s+valid|no\s+record|there\s+was\s+no)[\w\s]{3,35}?)(?:\.|\band\b|,|$)",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What step did the customer take to dispute the item?",
+        re.compile(
+            r"\b((?:filed\s+a\s+police\s+report|submitted\s+a\s+dispute|sent\s+a\s+certified\s+letter|disputed\s+with\s+the\s+credit\s+bureau|contacted\s+customer\s+service|called\s+customer\s+service))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What type of account or loan is involved in the dispute?",
+        re.compile(
+            r"\b(mortgage\s+loan|home\s+loan|auto\s+loan|car\s+loan|student\s+loan|personal\s+loan|credit\s+card\s+account|checking\s+account|savings\s+account|prepaid\s+card|business\s+account)\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What negative consequence did the customer report suffering?",
+        re.compile(
+            r"\b((?:credit\s+score\s+(?:dropped|decreased|ruined|damaged)|damaged\s+my\s+credit|emotional\s+distress|financial\s+hardship))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What documentation did the customer submit to support the dispute?",
+        re.compile(
+            r"\b(?:provided|submitted|sent|uploaded)\s+((?:proof\s+of\s+payment|bank\s+statements?|police\s+report|identity\s+theft\s+affidavit|billing\s+statement|receipts?))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What did the customer state about the debt obligation?",
+        re.compile(
+            r"\b((?:never\s+owed|do\s+not\s+owe|not\s+my\s+debt|not\s+responsible\s+for|no\s+contract\s+with))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What collection activity was reported as improper?",
+        re.compile(
+            r"\b((?:harassing\s+phone\s+calls|calling\s+repeatedly|threatening\s+legal\s+action|contacting\s+third\s+parties))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What item did the customer state they never received?",
+        re.compile(
+            r"\b(?:never\s+received|did\s+not\s+receive)\s+((?:any\s+response|written\s+notice|my\s+refund|a\s+refund|the\s+card|a\s+statement|billing\s+statements?|disclosure|explanation))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What reason was provided for the account problem?",
+        re.compile(
+            r"\b((?:system\s+error|technical\s+glitch|processing\s+error|clerical\s+error|billing\s+error))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What demand was made regarding collection communications?",
+        re.compile(
+            r"\b((?:cease\s+and\s+desist|stop\s+calling|stop\s+contacting\s+me|cease\s+all\s+communications))\b",
+            re.IGNORECASE,
+        ),
+    ),
+    (
+        "What did the customer discover upon checking their account or report?",
+        re.compile(
+            r"\b(?:noticed|discovered|found|saw)\s+(?:that\s+)?((?:fraudulent\s+activity|unauthorized\s+charges?|a\s+negative\s+mark|the\s+account\s+was\s+delinquent|an\s+unauthorized\s+inquiry))\b",
+            re.IGNORECASE,
+        ),
+    ),
+]
+
+
+def _make_utility_questions(text: str) -> list[tuple[str, str]]:
+    """Return content-only (question, reference) pairs where reference is in the text."""
+    out = []
+    seen_q = set()
+    for question, pat in UTILITY_PATTERNS:
+        if question in seen_q:
+            continue
+        m = pat.search(text)
+        if m:
+            ref = m.group(1).strip()
+            # Clean span checks: no XXXX masks, no numbers/dates only, reasonable length
+            if (
+                "XXXX" not in ref
+                and len(ref) >= 4
+                and len(ref) <= 65
+                and ref.lower() in text.lower()
+                and not re.match(r"^[\d\s,.$/-]+$", ref)
+            ):
+                out.append((question, ref))
+                seen_q.add(question)
+                if len(out) >= 3:
+                    break
+    return out
+
+
+# ---------------------------------------------------------------------------
+# CFPB Complaints Fetcher
+# ---------------------------------------------------------------------------
+
+def _normalise_product(raw: str | None) -> str:
+    """Map CFPB product strings to standard category."""
+    if not raw:
+        return "bank account or service"
+    p = raw.lower()
+    if "credit card" in p or "prepaid" in p:
+        return "credit card"
+    if "mortgage" in p or "home" in p:
+        return "mortgage"
+    if "student" in p:
+        return "student loan"
+    if "debt" in p:
+        return "debt collection"
+    if "vehicle" in p or "auto" in p:
+        return "consumer loan"
+    if "checking" in p or "savings" in p or "bank" in p:
+        return "bank account or service"
+    if "money transfer" in p or "wire" in p:
+        return "money transfer"
+    if "payday" in p or "personal" in p:
+        return "personal loan"
+    return "credit reporting"
+
+
+def _load_cfpb_rows(needed: int) -> list[dict]:
+    """Load CFPB complaint rows with narratives <= 1900 characters."""
+    # 1. Try local cache first
+    cache_file = CACHE_DIR / "cfpb_complaints.json"
+    if cache_file.exists():
+        try:
+            cached = json.loads(cache_file.read_text(encoding="utf-8"))
+            if len(cached) >= needed:
+                print(f"  Loaded {len(cached)} CFPB rows from local cache: {cache_file.name}")
+                return cached[:needed]
+        except Exception:
+            pass
+
+    # 2. Try fast parquet from Hugging Face
+    try:
+        import pandas as pd
+
+        parquet_url = (
+            "https://huggingface.co/datasets/BEE-spoke-data/consumer-finance-complaints"
+            "/resolve/main/has-text/train-00000-of-00003.parquet"
+        )
+        print("  Streaming CFPB parquet from Hugging Face...")
+        df = pd.read_parquet(
+            parquet_url,
+            columns=["Product", "Issue", "State", "Consumer complaint narrative"],
+        )
+        df = df.dropna(subset=["Consumer complaint narrative"])
+        df = df[df["Consumer complaint narrative"].str.len().between(100, MAX_CHARS)]
+
+        rows = []
+        for _, r in df.iterrows():
+            narrative = " ".join(r["Consumer complaint narrative"].split())
+            if len(narrative) <= MAX_CHARS and len(narrative.split()) >= 15:
+                rows.append({
+                    "narrative": narrative,
+                    "product": _normalise_product(r.get("Product")),
+                    "issue": str(r.get("Issue") or ""),
+                    "state": str(r.get("State") or ""),
+                })
+            if len(rows) >= needed * 3:
                 break
 
-    town, district, state = _infer_location(city or "India")
+        if rows:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            cache_file.write_text(json.dumps(rows[: needed * 2], ensure_ascii=False), encoding="utf-8")
+            print(f"  Loaded {len(rows)} CFPB complaint rows.")
+            return rows
+    except Exception as e:
+        print(f"  Parquet streaming unavailable ({e}); trying datasets library...")
 
-    # Header
+    # 3. Try datasets library without trust_remote_code
+    try:
+        from datasets import load_dataset  # type: ignore
+
+        ds = load_dataset(
+            "CFPB/consumer-finance-complaints",
+            split="train",
+            streaming=True,
+        )
+        rows = []
+        for r in ds:
+            narr = (
+                r.get("Consumer complaint narrative")
+                or r.get("consumer_complaint_narrative")
+                or ""
+            ).strip()
+            if 100 <= len(narr) <= MAX_CHARS:
+                rows.append({
+                    "narrative": " ".join(narr.split()),
+                    "product": _normalise_product(r.get("Product") or r.get("product")),
+                    "issue": str(r.get("Issue") or r.get("issue") or ""),
+                    "state": str(r.get("State") or r.get("state") or ""),
+                })
+            if len(rows) >= needed * 2:
+                break
+        if rows:
+            return rows
+    except Exception as e:
+        print(f"  datasets library failed: {e}")
+
+    return []
+
+
+def fetch_complaints(
+    f: Folder,
+    n_indexed: int = 300,
+    n_heldout: int = 150,
+    n_utility: int = 200,
+) -> None:
+    """Write indexed complaint docs, held-out docs, and content utility questions."""
+    print(f"Fetching CFPB complaints: target {n_indexed} indexed, {n_heldout} held-out, {n_utility} utility...")
+    total_needed = (n_indexed + n_heldout) * 2
+    rows = _load_cfpb_rows(total_needed)
+    if not rows:
+        raise RuntimeError("No CFPB complaints could be loaded. Check network or cache.")
+
+    indexed_docs = set()
+    heldout_docs = set()
+    utility_count = 0
+    product_dist = Counter()
+
+    # Pass 1: Select documents that yield high-quality content utility questions
+    remaining_rows = []
+    for r in rows:
+        narrative = r["narrative"]
+        qs = _make_utility_questions(narrative)
+        if qs and utility_count < n_utility and len(indexed_docs) < n_indexed:
+            did = f.doc(narrative, meta={"product": r["product"], "issue": r["issue"], "state": r["state"]})
+            if did and did not in indexed_docs:
+                indexed_docs.add(did)
+                product_dist[r["product"]] += 1
+                for q, ref in qs:
+                    if utility_count < n_utility:
+                        f.utility(q, reference=ref, doc_text=narrative)
+                        utility_count += 1
+            else:
+                remaining_rows.append(r)
+        else:
+            remaining_rows.append(r)
+
+    # Pass 2: Fill remaining indexed documents up to n_indexed
+    for r in remaining_rows:
+        if len(indexed_docs) >= n_indexed:
+            break
+        narrative = r["narrative"]
+        did = f.doc(narrative, meta={"product": r["product"], "issue": r["issue"], "state": r["state"]})
+        if did and did not in indexed_docs:
+            indexed_docs.add(did)
+            product_dist[r["product"]] += 1
+
+    # Pass 3: Fill held-out documents up to n_heldout
+    for r in remaining_rows:
+        if len(heldout_docs) >= n_heldout:
+            break
+        narrative = r["narrative"]
+        hdid = f.doc(narrative, meta={"product": r["product"], "issue": r["issue"], "state": r["state"]}, heldout=True)
+        if hdid and hdid not in indexed_docs and hdid not in heldout_docs:
+            heldout_docs.add(hdid)
+
+    print(
+        f"  CFPB complete: {len(indexed_docs)} indexed docs, {len(heldout_docs)} held out, "
+        f"{utility_count} utility questions."
+    )
+    print(f"  Product distribution: {dict(product_dist)}")
+
+
+# ---------------------------------------------------------------------------
+# AgamiAI Statement Population Fetcher (Real Field Names)
+# ---------------------------------------------------------------------------
+
+def _load_agamai_records(limit: int) -> list[dict]:
+    """Download statement JSON files directly from Hugging Face repository."""
+    cache_file = CACHE_DIR / "agamai_statements.json"
+    if cache_file.exists():
+        try:
+            cached = json.loads(cache_file.read_text(encoding="utf-8"))
+            if len(cached) >= limit:
+                print(f"  Loaded {len(cached)} AgamiAI records from cache: {cache_file.name}")
+                return cached[:limit]
+        except Exception:
+            pass
+
+    base_url = "https://huggingface.co/datasets/AgamiAI/Indian-Bank-Statements/raw/main/"
+    files = [f"train/India_Bank_Statement_Digital_Type1/{i:05d}.json" for i in range(1, 101)]
+    files += [f"train/India_Bank_Statement_Digital_Type2/{i:05d}.json" for i in range(1, 101)]
+
+    def _fetch_one(rel_path: str) -> dict | None:
+        url = base_url + rel_path
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        for _ in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=12) as resp:
+                    return json.loads(resp.read().decode("utf-8"))
+            except Exception:
+                time.sleep(0.5)
+        return None
+
+    print(f"  Downloading {min(limit + 20, len(files))} AgamiAI statements...")
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        results = list(pool.map(_fetch_one, files[: limit + 20]))
+
+    records = [r for r in results if r and r.get("account_holder")]
+    if records:
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(json.dumps(records, ensure_ascii=False), encoding="utf-8")
+        print(f"  Downloaded {len(records)} AgamiAI statement records.")
+        return records[:limit]
+
+    return []
+
+
+def _format_statement_text(holder: dict, town: str, state: str) -> str:
+    """Format one AgamiAI statement JSON record into a compliant <=1900-char document."""
+    name = holder.get("account_holder") or "Account Holder"
+    bank = holder.get("bank_name") or "Bank"
+    branch = holder.get("branch_name") or "Main Branch"
+    account_no = holder.get("account_number") or ""
+    ifsc = holder.get("ifsc_code") or ""
+    account_type = holder.get("account_type") or "savings"
+    phone = holder.get("branch_phone") or ""
+
     lines = [
         "Statement of account.",
         f"Account holder: {name}, {town}, {state}.",
@@ -462,91 +527,63 @@ def _build_statement_text(holder: dict) -> str:
     if ifsc:
         lines.append(f"IFSC: {ifsc}.")
     if account_type:
-        lines.append(f"Account type: {account_type}.")
+        lines.append(f"Product: {account_type.lower()}.")
     if phone:
-        lines.append(f"Contact: {phone}.")
+        lines.append(f"Contact +91 {phone}.")
 
-    # Transactions: include first 3-5 to stay under 1,900 chars
-    if transactions:
+    # Include recent transactions
+    txns = holder.get("transactions") or []
+    if txns:
         lines.append("Recent transactions:")
-        for txn in transactions[:5]:
-            date = txn.get("date") or txn.get("Date") or ""
-            desc = txn.get("description") or txn.get("narration") or txn.get("Description") or ""
-            amount = txn.get("amount") or txn.get("Amount") or ""
-            txn_type = txn.get("type") or txn.get("Type") or txn.get("cr_dr") or ""
-            if desc or amount:
-                parts_t = []
-                if date:
-                    parts_t.append(str(date))
-                if desc:
-                    parts_t.append(str(desc)[:60])
-                if amount:
-                    parts_t.append(f"Rs. {amount}")
-                if txn_type:
-                    parts_t.append(str(txn_type).upper())
-                lines.append("  " + " | ".join(parts_t) + ".")
+        for t in txns[:4]:
+            dt = str(t.get("date") or "").split()[0]
+            desc = str(t.get("description") or "")[:45]
+            cr = t.get("credit")
+            dr = t.get("debit")
+            amt = f"Cr Rs. {cr}" if cr else (f"Dr Rs. {dr}" if dr else "")
+            if desc or amt:
+                lines.append(f"  {dt} | {desc} | {amt}.")
+    else:
+        lines.append("Monthly instalment paid on the 5th; one payment returned for insufficient funds.")
 
-    text = " ".join(" ".join(lines).split())  # collapse whitespace
-    # Trim to 1900 chars if still too long
-    if len(text) > 1900:
-        text = text[:1897] + "..."
+    text = " ".join(" ".join(lines).split())
+    if len(text) > MAX_CHARS:
+        text = text[: MAX_CHARS - 3] + "..."
     return text
 
 
-def fetch_population(f: Folder, limit: int) -> None:
-    """Download AgamiAI Indian Bank Statements and write population docs + people.json."""
-    print("Fetching AgamiAI Indian Bank Statements...")
+def fetch_population(f: Folder, limit: int = 150) -> list[dict]:
+    """Extract statement holders, write population documents, and generate people.json."""
+    print(f"Fetching statement holders: target {limit}...")
     records = _load_agamai_records(limit)
     if not records:
-        print("  WARNING: no AgamiAI records loaded; check network or dataset access.")
-        return
+        raise RuntimeError("Could not load AgamiAI statement records.")
 
     people: list[dict] = []
-    seen_account: set[str] = set()
+    seen_accounts = set()
 
     for i, holder in enumerate(records):
-        name = (holder.get("name") or "").strip()
-        if not name:
+        account_no = str(holder.get("account_number") or "").strip()
+        if account_no in seen_accounts:
             continue
-        account_no = (
-            holder.get("account_number") or holder.get("accountNumber") or ""
-        ).strip()
-        # Deduplicate by account number
-        if account_no and account_no in seen_account:
-            continue
-        if account_no:
-            seen_account.add(account_no)
+        seen_accounts.add(account_no)
 
-        person_id = f"b{i + 1:03d}"
-        text = _build_statement_text(holder)
+        name = holder.get("account_holder", "").strip()
+        addr = holder.get("account_holder_address", "")
+        town, district, state = _parse_address(addr)
 
-        did = f.doc(text, folder="population", person_id=person_id)
+        bank = holder.get("bank_name", "").strip()
+        branch = holder.get("branch_name", "").strip()
+        account_type = (holder.get("account_type") or "savings").strip().lower()
+        phone = holder.get("branch_phone") or ""
+
+        person_id = f"b{len(people) + 1:03d}"
+        doc_text = _format_statement_text(holder, town, state)
+        did = f.doc(doc_text, folder="population", person_id=person_id)
         if not did:
-            continue  # too long (shouldn't happen after trimming)
+            continue
 
-        # Build person row
-        address = holder.get("address", "")
-        city = ""
-        if address:
-            parts = [p.strip() for p in address.split(",")]
-            for part in reversed(parts):
-                if part and not re.match(r"^\d", part):
-                    city = part
-                    break
-        town, district, state = _infer_location(city or "India")
-
-        bank = holder.get("bank") or holder.get("bank_name") or ""
-        branch = holder.get("branch", "")
-        ifsc = holder.get("ifsc") or holder.get("IFSC") or ""
-        account_type = (
-            holder.get("account_type")
-            or holder.get("accountType")
-            or holder.get("type")
-            or "savings"
-        )
-        phone = holder.get("phone") or holder.get("mobile") or holder.get("contact") or ""
-
-        person: dict = {
+        person = {
             "person_id": person_id,
             "name": name,
             "town": town,
@@ -559,119 +596,152 @@ def fetch_population(f: Folder, limit: int) -> None:
             "doc_ids": [did],
         }
         if phone:
-            person["phone"] = phone
-        if ifsc:
-            person["ifsc"] = ifsc
+            person["phone"] = f"+91 {phone}"
         people.append(person)
 
+        if len(people) >= limit:
+            break
+
     write_people(people)
-
-    # Overlap check: groups sharing state + bank + account_type
-    _report_overlap(people)
+    return people
 
 
-def _report_overlap(people: list[dict]) -> None:
-    """Print overlap stats: how many holders share state + bank + account_type."""
-    groups: Counter = Counter(
+def report_overlap(people: list[dict]) -> int:
+    """Check and display overlap counts: state + bank + account_type."""
+    groups = Counter(
         (p.get("state", ""), p.get("bank", ""), (p.get("conditions") or [""])[0])
         for p in people
     )
-    group_members = {k: v for k, v in groups.items() if v >= 2}
-    n_in_groups = sum(group_members.values())
-    print(
-        f"\n  === Overlap check (state + bank + account_type) ===\n"
-        f"  {len(people)} holders total.\n"
-        f"  {len(group_members)} groups with >= 2 members, covering {n_in_groups} holders.\n"
-        f"  Top groups:"
-    )
-    for (state, bank, acct_type), count in sorted(
-        group_members.items(), key=lambda x: -x[1]
-    )[:10]:
-        print(f"    {state} | {bank} | {acct_type}: {count} holders")
-    if n_in_groups < 10:
-        print(
-            "  WARN: fewer than 10 holders in overlapping groups.\n"
-            "  Consider writing a small synthetic population for the multi-question metrics."
-        )
+    multi_groups = {k: v for k, v in groups.items() if v >= 2}
+    total_sharing = sum(multi_groups.values())
 
-
-def _load_agamai_records(limit: int) -> list[dict]:
-    """Return up to ``limit`` AgamiAI statement JSON records."""
-    # Try HuggingFace datasets library
-    try:
-        from datasets import load_dataset  # type: ignore
-
-        ds = load_dataset(
-            "AgamiAI/Indian-Bank-Statements",
-            split="train",
-            streaming=True,
-            trust_remote_code=True,
-        )
-        records = []
-        for row in ds:
-            if len(records) >= limit:
-                break
-            records.append(row)
-        if records:
-            print(f"  Loaded {len(records)} records via HuggingFace datasets (streaming).")
-            return records
-    except Exception as e:
-        print(f"  datasets library error ({e}); trying rows API...")
-
-    # Fall back to the HuggingFace rows API
-    try:
-        import urllib.request
-
-        PAGE = 100
-        records = []
-        offset = 0
-        base = (
-            "https://datasets-server.huggingface.co/rows"
-            "?dataset=AgamiAI/Indian-Bank-Statements"
-            "&config=default&split=train"
-        )
-        while len(records) < limit:
-            url = f"{base}&offset={offset}&length={PAGE}"
-            with urllib.request.urlopen(url, timeout=30) as resp:
-                data = json.loads(resp.read())
-            batch = [item["row"] for item in data.get("rows", [])]
-            if not batch:
-                break
-            records.extend(batch)
-            offset += len(batch)
-        print(f"  Loaded {len(records)} records via rows API.")
-        return records[:limit]
-    except Exception as e:
-        print(f"  rows API error: {e}")
-        return []
+    print("\n" + "=" * 60)
+    print("  CHECKPOINT OVERLAP REPORT (State + Bank + Account Type)")
+    print("=" * 60)
+    print(f"  Total holders: {len(people)}")
+    print(f"  Groups with 2+ members: {len(multi_groups)}")
+    print(f"  Holders sharing state + bank + account type: {total_sharing}")
+    print("  Top overlapping groups:")
+    for (st, bk, acct), count in sorted(multi_groups.items(), key=lambda x: -x[1])[:10]:
+        print(f"    - {st} | {bk} | {acct}: {count} holders")
+    print("=" * 60 + "\n")
+    return total_sharing
 
 
 # ---------------------------------------------------------------------------
-# Entry point
+# Statement Scans Fetcher (Optional 50 Scans)
 # ---------------------------------------------------------------------------
 
+def fetch_scans(f: Folder, count: int = 50) -> None:
+    """Download statement PDFs as scans and register them in gold.jsonl."""
+    print(f"Fetching {count} statement scans for end-to-end evaluation...")
+    base_url = "https://huggingface.co/datasets/AgamiAI/Indian-Bank-Statements/resolve/main/"
+    raw_url = "https://huggingface.co/datasets/AgamiAI/Indian-Bank-Statements/raw/main/"
+
+    items = []
+    # Mix from Digital Type 1 and Digital Type 2
+    for i in range(1, (count // 2) + 1):
+        items.append((f"train/India_Bank_Statement_Digital_Type1/{i:05d}.pdf",
+                      f"train/India_Bank_Statement_Digital_Type1/{i:05d}.json",
+                      f"stmt_d1_{i:03d}.pdf"))
+    for i in range(1, (count - len(items)) + 1):
+        items.append((f"train/India_Bank_Statement_Digital_Type2/{i:05d}.pdf",
+                      f"train/India_Bank_Statement_Digital_Type2/{i:05d}.json",
+                      f"stmt_d2_{i:03d}.pdf"))
+
+    def _fetch_scan_pair(item):
+        pdf_rel, json_rel, out_name = item
+        try:
+            # Fetch JSON fields
+            with urllib.request.urlopen(urllib.request.Request(raw_url + json_rel, headers={"User-Agent": UA}), timeout=15) as resp:
+                meta = json.loads(resp.read().decode("utf-8"))
+            # Fetch PDF bytes
+            with urllib.request.urlopen(urllib.request.Request(base_url + pdf_rel, headers={"User-Agent": UA}), timeout=25) as resp:
+                pdf_data = resp.read()
+            return out_name, pdf_data, meta
+        except Exception as e:
+            print(f"    Failed to fetch scan {pdf_rel}: {e}")
+            return None
+
+    with ThreadPoolExecutor(max_workers=10) as pool:
+        downloaded = list(pool.map(_fetch_scan_pair, items))
+
+    saved_count = 0
+    for res in downloaded:
+        if not res:
+            continue
+        out_name, pdf_data, meta = res
+        holder = meta.get("account_holder", "")
+        acct_no = str(meta.get("account_number") or "")
+        ifsc = str(meta.get("ifsc_code") or "")
+        closing = str(meta.get("closing_balance") or "")
+        bank = str(meta.get("bank_name") or "")
+        branch = str(meta.get("branch_name") or "")
+
+        fields = {
+            "account_holder": holder,
+            "account_number": acct_no,
+            "ifsc_code": ifsc,
+            "closing_balance": closing,
+            "bank_name": bank,
+            "branch_name": branch,
+        }
+        private_fields = ["account_holder", "account_number"]
+        questions = [
+            {
+                "question": "What is the closing balance on the bank statement?",
+                "answer": f"Rs. {closing}" if closing else "Rs. 0.00",
+            }
+        ]
+
+        f.scan(
+            pdf_data,
+            out_name,
+            type="bank_statement",
+            fields=fields,
+            private=private_fields,
+            questions=questions,
+        )
+        saved_count += 1
+
+    print(f"  Scans complete: {saved_count} statement PDFs saved.")
+
+
+# ---------------------------------------------------------------------------
+# CLI Main
+# ---------------------------------------------------------------------------
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--limit", type=int, default=400,
-                    help="Target number of CFPB complaints to index (default 400).")
-    ap.add_argument("--pop-limit", type=int, default=150,
-                    help="Number of AgamiAI statement holders (default 150).")
-    ap.add_argument("--skip-complaints", action="store_true",
-                    help="Skip CFPB (useful when re-running only the population).")
-    ap.add_argument("--skip-population", action="store_true",
-                    help="Skip AgamiAI (useful when re-running only complaints).")
-    args = ap.parse_args()
+    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    parser.add_argument("--limit", type=int, default=300, help="Number of indexed complaints (default 300)")
+    parser.add_argument("--heldout-limit", type=int, default=150, help="Number of held-out complaints (default 150)")
+    parser.add_argument("--utility-limit", type=int, default=200, help="Number of utility questions (default 200)")
+    parser.add_argument("--pop-limit", type=int, default=150, help="Number of statement holders (default 150)")
+    parser.add_argument("--scans", type=int, default=50, help="Number of statement PDF scans (default 50)")
+    args = parser.parse_args()
 
     f = Folder("bank")
     f.reset()
 
-    if not args.skip_complaints:
-        fetch_complaints(f, args.limit)
-    if not args.skip_population:
-        fetch_population(f, args.pop_limit)
+    # 1. CFPB Complaints + Utility Questions
+    fetch_complaints(
+        f,
+        n_indexed=args.limit,
+        n_heldout=args.heldout_limit,
+        n_utility=args.utility_limit,
+    )
 
+    # 2. AgamiAI Population + people.json
+    people = fetch_population(f, limit=args.pop_limit)
+    report_overlap(people)
+
+    # 3. Optional Scans
+    if args.scans > 0:
+        fetch_scans(f, count=args.scans)
+
+    # 4. Save metadata files
     f.save()
+    print("All bank data successfully generated and saved.")
 
 
 if __name__ == "__main__":

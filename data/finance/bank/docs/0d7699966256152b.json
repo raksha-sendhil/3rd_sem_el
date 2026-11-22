@@ -1,0 +1,11 @@
+{
+ "doc_id": "0d7699966256152b",
+ "text": "I submitted a credit card dispute to USAA Bank on XX/XX/2023 for an unauthorized charged on my credit card. A Company named XXXX XXXX XXXX in Florida charged me for an stay at their location even though I never stayed there. I disputen the charge and USAA did not acredite my credit card they refuse to.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Problem with a purchase shown on your statement",
+  "state": "PR"
+ }
+}

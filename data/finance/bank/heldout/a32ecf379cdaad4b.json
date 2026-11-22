@@ -1,0 +1,11 @@
+{
+ "doc_id": "a32ecf379cdaad4b",
+ "text": "On XX/XX/ I attempted to open an account with \" XXXX '' online banking service, and was denied without notification as to why. The parent bank is \" XXXXXXXX XXXX XXXX XXXXXXXX ''.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Opening an account",
+  "state": "TX"
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "doc_id": "028a91171812ab87",
+ "text": "Major issue with US Bank. Sold my car, a XXXX XXXX XXXX XXXX, the lien, loan was paid off via wire to US Bank {$100000.00} on a Monday XX/XX/XXXX, they confirmed successful transfer on Tuesday with par number on XX/XX/XXXX and said my account would close XXXX XXXX Buyer also confirmed on their end that they received a federal transfer number. Now 5-days later, they cant confirm completion or close out the account at all. They literally do not know what happened to the wired funds and are now investigating. They have also been charging interest on the account and refuse to provide anymore information or details. Vehicle no longer in my possession and they said they would maybe get back to me on XXXX. Im extremely scared.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "money transfer",
+  "issue": "Other transaction problem",
+  "state": "CA"
+ }
+}

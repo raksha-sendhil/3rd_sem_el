@@ -1,0 +1,11 @@
+{
+ "doc_id": "c14ca08cace60305",
+ "text": "I obtained Bankruptcy relief from this account. The bankruptcy was finalized and this debt was successfully discharged in XXXX XXXX The XXXX credit report is reporting this account as a bad debt/collection with a current balance due of {$2400.00}. I called the company and also disputed through XXXX and they continue confirming the same information.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "personal loan",
+  "issue": "Incorrect information on your report",
+  "state": "CA"
+ }
+}

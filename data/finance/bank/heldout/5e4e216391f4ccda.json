@@ -1,0 +1,11 @@
+{
+ "doc_id": "5e4e216391f4ccda",
+ "text": "On XX/XX/XXXX, I made an online payment to Costco Anywhere Visa credit card by Citibank. In the process, instead of intended payment amount of {$3200.00}, I mistakenly processed payment of {$32000.00}. I called Citibank and requested a refund, but Citibank has been extremely unreasonable. They tell me that it could take weeks for the fund to be cleared. The paying bank debited ( paid from ) my account immediately so I am puzzled by Citibank 's response. 12 days later, on XX/XX/XXXX, I called them again and after spending over an hour on the phone, one the Citibank managers confirmed that the {$32000.00} was cleared, and promised to expedite the refund request. Citibank could have contacted me sooner, and we could have called the issuing bank together much faster, but Citibank did not call me. On XX/XX/XXXX, I am told that the refund via ACH to the linked bank account has been approved. Right now is XXXX XXXX XXXX XXXX on XXXX and Citibank has not yet posted debit transaction for refund in my credit card statement. Citibank constantly blames receiving bank, saying \" it can take a few days to show refund '' when Citibank did not process the refund yet. The negative balance is {$24000.00} as of XXXX XXXX XXXX XXXX XXXX. I am beyond furious, and this practice is absolutely unacceptable.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Other features, terms, or problems",
+  "state": "CA"
+ }
+}

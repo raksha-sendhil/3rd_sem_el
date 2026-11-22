@@ -1,0 +1,11 @@
+{
+ "doc_id": "18f98495e826f8c8",
+ "text": "I paid XXXX XXXX XXXX {$620.00} on XX/XX/23 for services. They did not perform the services and agreed to refund my {$620.00}. I received a letter from US Bank and need help filling out the return form enclosed in the letter. The letter says it needs to be returned by a fax machine. I don't have a fax machine or access to a fax machine. I need to send the information via e-mail. I have been calling US Bank and they have not returned my calls.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Problem with a purchase shown on your statement",
+  "state": "FL"
+ }
+}

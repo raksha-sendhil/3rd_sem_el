@@ -1,0 +1,11 @@
+{
+ "doc_id": "ec1f1fb05b5175f5",
+ "text": "When reviewing an alert on my credit report, I noticed that there was an attempted collection of a debt that does not belong to me. This collection company put on my report a series of addresses where I have never lived in order to collect a fraudulent debt. It is evident that they used my information to commit fraud. I have never requested these types of services and I have never resided at those addresses. I have never had an account with XXXX XXXX XXXX On several occasions I tried to call this collection company, but they did not answer. The information of this collection company is : SOUTHWEST RECOVERY SER XXXXXXXX XXXX XXXX XXXX XXXX XXXX, TX XXXX Phone number ( XXXX ) XXXX SOUTHWEST RECOVERY SER Original creditor : XXXX XXXX XXXX Balance {$590.00} Account number XXXX Date opened XX/XX/2023 Account type Collection Status Collection account. {$590.00} past due as of XX/XX/2023. Status updated. XX/XX/2023 Fraudulent address provided by this collection company : XXXX XXXX XXXX XXXX XXXX, TX XXXX",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "debt collection",
+  "issue": "Attempts to collect debt not owed",
+  "state": "TX"
+ }
+}

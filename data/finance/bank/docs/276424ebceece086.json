@@ -1,0 +1,11 @@
+{
+ "doc_id": "276424ebceece086",
+ "text": "In a period between XX/XX/XXXX and XX/XX/XXXX, Truist bank charged me more than {$540.00} in overdraft and returned item fees that need to be returned to me. On XX/XX/XXXX, a company incorrectly initatied a ach debit out of my Business checking account ending in XXXX of {$2000.00}. I did not authorize this debit and since I did not even have that amount in my Truist account, Truist should have not paid the charge and declined it. I have never authorized Truist to make my account go into the negative. I was charged a {$36.00} overdraft fee for this. The real problem began on XXXX, when I made other purchases with my Truist debit card. Truist did not notify me that my account was overdrawn and approved all of these charges when I made them. They then proceeded to return all the charges and charged me XXXX returned item fees of {$36.00} each. I was only notified of the issue AFTER all these charges were initally approved by Truist and then returned. None of these transactions would have put my account overdrawn if Truist had not approved the first {$2000.00} transaction that made my account go negative. WHY would Truist continue to approve charges only to turn around and return them and charge me {$36.00} for each returned transaction?? This is absolute robbery!",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "bank account or service",
+  "issue": "Problem caused by your funds being low",
+  "state": "TN"
+ }
+}

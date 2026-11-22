@@ -1,0 +1,11 @@
+{
+ "doc_id": "9d4a3d058eca63b1",
+ "text": "On XX/XX/24 Citibank withdrew {$2000.00} as a payment without authorization. On XX/XX/24 after contacting them and indicating their actions were unauthorized, they returned the money to my account. On XX/XX/24 the again withdrew {$2200.00} out of my account without authorization. They currently have not returned the money.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Problem with a purchase shown on your statement",
+  "state": "MI"
+ }
+}

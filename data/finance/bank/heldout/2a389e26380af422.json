@@ -1,0 +1,11 @@
+{
+ "doc_id": "2a389e26380af422",
+ "text": "There are two charges from XXXX in the amount of {$620.00}. One hit my account on XX/XX/23 and the other on XX/XX/23. I have no idea what these charges are for. I have never ordered anything from this vendor. I have called the company at least three times trying to resolve the matter. They insist the charges are valid despite my statements that neither of these charges were made by me. As a result, I am over my credit limit and being charged late fees.",
+ "source": "bank",
+ "private": [],
+ "meta": {
+  "product": "credit card",
+  "issue": "Problem with a purchase shown on your statement",
+  "state": "CT"
+ }
+}

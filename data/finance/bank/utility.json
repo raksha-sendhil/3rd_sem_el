@@ -1,14 +1,1202 @@
 [
  {
   "id": "u000",
-  "query": "What fee did the card customer complain about?",
-  "reference": "a late fee",
-  "doc_id": "4db3277de97788e4"
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "cfbd4d31c8ae960d"
  },
  {
   "id": "u001",
-  "query": "How many times was the home loan EMI debited?",
-  "reference": "twice",
-  "doc_id": "6002a3929127ddd5"
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "unauthorized inquiries",
+  "doc_id": "9f51fc85412e3842"
+ },
+ {
+  "id": "u002",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "9f51fc85412e3842"
+ },
+ {
+  "id": "u003",
+  "query": "What reason was provided for the account problem?",
+  "reference": "clerical error",
+  "doc_id": "9f51fc85412e3842"
+ },
+ {
+  "id": "u004",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "inaccurate reporting",
+  "doc_id": "d81efa9778638f06"
+ },
+ {
+  "id": "u005",
+  "query": "What fee was disputed on the account?",
+  "reference": "membership fee",
+  "doc_id": "eefbbc872bfab25c"
+ },
+ {
+  "id": "u006",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "Account was closed",
+  "doc_id": "3dfe776500a23a8b"
+ },
+ {
+  "id": "u007",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "3a1aa9bc7b6a779a"
+ },
+ {
+  "id": "u008",
+  "query": "What issue was reported regarding payments or transfers?",
+  "reference": "check returned",
+  "doc_id": "3a1aa9bc7b6a779a"
+ },
+ {
+  "id": "u009",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "d3eea2fb72436002"
+ },
+ {
+  "id": "u010",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "3be5ab7409e0c4d9"
+ },
+ {
+  "id": "u011",
+  "query": "What demand was made regarding collection communications?",
+  "reference": "Cease and Desist",
+  "doc_id": "3be5ab7409e0c4d9"
+ },
+ {
+  "id": "u012",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "028a91171812ab87"
+ },
+ {
+  "id": "u013",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "6b40dbc18a8fdc84"
+ },
+ {
+  "id": "u014",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "incorrect information",
+  "doc_id": "ceab525f44e9461f"
+ },
+ {
+  "id": "u015",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "unauthorized inquiries",
+  "doc_id": "c9d932e52bcf850a"
+ },
+ {
+  "id": "u016",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "credit card account",
+  "doc_id": "28f63fc747a11d9b"
+ },
+ {
+  "id": "u017",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "credit card account",
+  "doc_id": "1a3fa8307333464c"
+ },
+ {
+  "id": "u018",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "erroneous information",
+  "doc_id": "40035cf8d57e1dcc"
+ },
+ {
+  "id": "u019",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "40035cf8d57e1dcc"
+ },
+ {
+  "id": "u020",
+  "query": "What did the customer state about the debt obligation?",
+  "reference": "do not owe",
+  "doc_id": "4ca64b021c3d805e"
+ },
+ {
+  "id": "u021",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "credit card account",
+  "doc_id": "c7825e582d1d781e"
+ },
+ {
+  "id": "u022",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "8f45817c450e7e48"
+ },
+ {
+  "id": "u023",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "c2b89549ae688a13"
+ },
+ {
+  "id": "u024",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "Identity Theft",
+  "doc_id": "c2b89549ae688a13"
+ },
+ {
+  "id": "u025",
+  "query": "What step did the customer take to dispute the item?",
+  "reference": "filed a police report",
+  "doc_id": "c2b89549ae688a13"
+ },
+ {
+  "id": "u026",
+  "query": "What demand was made regarding collection communications?",
+  "reference": "stop contacting me",
+  "doc_id": "a94047a3f8b13fb0"
+ },
+ {
+  "id": "u027",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "d03ef4896016bcca"
+ },
+ {
+  "id": "u028",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "inaccurate information",
+  "doc_id": "4f3ba733b7c4800d"
+ },
+ {
+  "id": "u029",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "Identity theft",
+  "doc_id": "25e850412fb1fe71"
+ },
+ {
+  "id": "u030",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "6c6e888d0f573db7"
+ },
+ {
+  "id": "u031",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "Fraudulent Accounts",
+  "doc_id": "bc7d5f664ace1e02"
+ },
+ {
+  "id": "u032",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "bc7d5f664ace1e02"
+ },
+ {
+  "id": "u033",
+  "query": "What was the financial institution reported to have failed to do?",
+  "reference": "correct their error",
+  "doc_id": "78321bad9e0a5a7d"
+ },
+ {
+  "id": "u034",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid in full",
+  "doc_id": "78321bad9e0a5a7d"
+ },
+ {
+  "id": "u035",
+  "query": "What fee was disputed on the account?",
+  "reference": "overdraft fee",
+  "doc_id": "276424ebceece086"
+ },
+ {
+  "id": "u036",
+  "query": "What was the financial institution reported to have failed to do?",
+  "reference": "notify me that my account was overdrawn",
+  "doc_id": "276424ebceece086"
+ },
+ {
+  "id": "u037",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "276424ebceece086"
+ },
+ {
+  "id": "u038",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "bbf45dafc01aea07"
+ },
+ {
+  "id": "u039",
+  "query": "What negative consequence did the customer report suffering?",
+  "reference": "financial hardship",
+  "doc_id": "bbf45dafc01aea07"
+ },
+ {
+  "id": "u040",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "blocked",
+  "doc_id": "91c430099526cc75"
+ },
+ {
+  "id": "u041",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "Identity Theft",
+  "doc_id": "78dff7485b6908c6"
+ },
+ {
+  "id": "u042",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "3237d3228ff6d86f"
+ },
+ {
+  "id": "u043",
+  "query": "What issue was reported regarding payments or transfers?",
+  "reference": "check returned",
+  "doc_id": "7ea729f3c40759ae"
+ },
+ {
+  "id": "u044",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "f12391ef7bca36f9"
+ },
+ {
+  "id": "u045",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "6953107b834038a2"
+ },
+ {
+  "id": "u046",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent transaction",
+  "doc_id": "34eab81e6e2b2139"
+ },
+ {
+  "id": "u047",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "34eab81e6e2b2139"
+ },
+ {
+  "id": "u048",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "auto loan",
+  "doc_id": "711482ce0541320f"
+ },
+ {
+  "id": "u049",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "unauthorized account",
+  "doc_id": "f225174ae50709c3"
+ },
+ {
+  "id": "u050",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "f225174ae50709c3"
+ },
+ {
+  "id": "u051",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "3df926845cd0fb93"
+ },
+ {
+  "id": "u052",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "ad8bab8ad142874d"
+ },
+ {
+  "id": "u053",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "unauthorized charge",
+  "doc_id": "4f18c046d599c528"
+ },
+ {
+  "id": "u054",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "026d5522e3b86bdf"
+ },
+ {
+  "id": "u055",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "suspended",
+  "doc_id": "b538bac7ed5ef16a"
+ },
+ {
+  "id": "u056",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "blocked",
+  "doc_id": "1e9a26c7ec129140"
+ },
+ {
+  "id": "u057",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "1e9a26c7ec129140"
+ },
+ {
+  "id": "u058",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "home loan",
+  "doc_id": "884b5fd27198f7e7"
+ },
+ {
+  "id": "u059",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "e33b55654018c47c"
+ },
+ {
+  "id": "u060",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "e33b55654018c47c"
+ },
+ {
+  "id": "u061",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "71b91967e3a5df25"
+ },
+ {
+  "id": "u062",
+  "query": "What fee was disputed on the account?",
+  "reference": "Late Charges",
+  "doc_id": "f251157c1c714605"
+ },
+ {
+  "id": "u063",
+  "query": "What fee was disputed on the account?",
+  "reference": "late charge",
+  "doc_id": "caf945023412dec7"
+ },
+ {
+  "id": "u064",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "Identity Theft",
+  "doc_id": "4459163d36f25b02"
+ },
+ {
+  "id": "u065",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent account",
+  "doc_id": "9e22e09f065d0b8d"
+ },
+ {
+  "id": "u066",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "fraudulent account",
+  "doc_id": "9e22e09f065d0b8d"
+ },
+ {
+  "id": "u067",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "9e22e09f065d0b8d"
+ },
+ {
+  "id": "u068",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "24dcef594fa21d9d"
+ },
+ {
+  "id": "u069",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "24dcef594fa21d9d"
+ },
+ {
+  "id": "u070",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "inaccurate information",
+  "doc_id": "6afd63a89574dfd0"
+ },
+ {
+  "id": "u071",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "213e64d1d0adb060"
+ },
+ {
+  "id": "u072",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "213e64d1d0adb060"
+ },
+ {
+  "id": "u073",
+  "query": "What did the customer state about the debt obligation?",
+  "reference": "not responsible for",
+  "doc_id": "213e64d1d0adb060"
+ },
+ {
+  "id": "u074",
+  "query": "What fee was disputed on the account?",
+  "reference": "late charges",
+  "doc_id": "daa2e428d80c8878"
+ },
+ {
+  "id": "u075",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "mortgage loan",
+  "doc_id": "daa2e428d80c8878"
+ },
+ {
+  "id": "u076",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent account",
+  "doc_id": "d2cff5f2d0372715"
+ },
+ {
+  "id": "u077",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "fraudulent account",
+  "doc_id": "d2cff5f2d0372715"
+ },
+ {
+  "id": "u078",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "8cea648849777a8a"
+ },
+ {
+  "id": "u079",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "20b09d6a78f0f6a1"
+ },
+ {
+  "id": "u080",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "student loan",
+  "doc_id": "bc7c8d5897cba9d6"
+ },
+ {
+  "id": "u081",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "savings account",
+  "doc_id": "e4e67618ecd6a878"
+ },
+ {
+  "id": "u082",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "90c44e518236f802"
+ },
+ {
+  "id": "u083",
+  "query": "What fee was disputed on the account?",
+  "reference": "late charges",
+  "doc_id": "0bd299933a460d5b"
+ },
+ {
+  "id": "u084",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "car loan",
+  "doc_id": "9b434ee3db30e41a"
+ },
+ {
+  "id": "u085",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "0f6d5a67fd56512e"
+ },
+ {
+  "id": "u086",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "a77a855c3c70e976"
+ },
+ {
+  "id": "u087",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "a77a855c3c70e976"
+ },
+ {
+  "id": "u088",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "9cb3180973540bc4"
+ },
+ {
+  "id": "u089",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "9cb3180973540bc4"
+ },
+ {
+  "id": "u090",
+  "query": "What demand was made regarding collection communications?",
+  "reference": "cease and desist",
+  "doc_id": "cd130244d47ef902"
+ },
+ {
+  "id": "u091",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "ad8caea811215ef4"
+ },
+ {
+  "id": "u092",
+  "query": "What fee was disputed on the account?",
+  "reference": "late charge",
+  "doc_id": "58f7a592f7d2535f"
+ },
+ {
+  "id": "u093",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "frozen",
+  "doc_id": "58f7a592f7d2535f"
+ },
+ {
+  "id": "u094",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "credit card account",
+  "doc_id": "b9d1108d0a57c8cd"
+ },
+ {
+  "id": "u095",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "b5e485aec9afe43a"
+ },
+ {
+  "id": "u096",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "a218740dcf0f71f1"
+ },
+ {
+  "id": "u097",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "dc45df7618e17aba"
+ },
+ {
+  "id": "u098",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "auto loan",
+  "doc_id": "92fa2dcc61af767d"
+ },
+ {
+  "id": "u099",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "credit card account",
+  "doc_id": "0be240e35a4164cf"
+ },
+ {
+  "id": "u100",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "53c1d2ac61854c84"
+ },
+ {
+  "id": "u101",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "62dd6446256f548f"
+ },
+ {
+  "id": "u102",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid in full",
+  "doc_id": "de8bb8a3d068972f"
+ },
+ {
+  "id": "u103",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "auto loan",
+  "doc_id": "9d70d0807b8452cc"
+ },
+ {
+  "id": "u104",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "74999d1a6c9f774f"
+ },
+ {
+  "id": "u105",
+  "query": "What fee was disputed on the account?",
+  "reference": "overdraft fee",
+  "doc_id": "9a004882eb6fae8d"
+ },
+ {
+  "id": "u106",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent inquiries",
+  "doc_id": "0c134957571c3814"
+ },
+ {
+  "id": "u107",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "fraudulent inquiries",
+  "doc_id": "0c134957571c3814"
+ },
+ {
+  "id": "u108",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "2cb93d43520a73f8"
+ },
+ {
+  "id": "u109",
+  "query": "What did the customer state about the debt obligation?",
+  "reference": "do not owe",
+  "doc_id": "2cb93d43520a73f8"
+ },
+ {
+  "id": "u110",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "credit card account",
+  "doc_id": "44c0b352f2ffe7bc"
+ },
+ {
+  "id": "u111",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "auto loan",
+  "doc_id": "e3d83a34aeaf2f6a"
+ },
+ {
+  "id": "u112",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "552ff4c20c896892"
+ },
+ {
+  "id": "u113",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "incorrect information",
+  "doc_id": "7657413f6cfb428b"
+ },
+ {
+  "id": "u114",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "blocked",
+  "doc_id": "8fab481552996658"
+ },
+ {
+  "id": "u115",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "account was closed",
+  "doc_id": "563925750bab4227"
+ },
+ {
+  "id": "u116",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "student loan",
+  "doc_id": "9945542a48dbbf27"
+ },
+ {
+  "id": "u117",
+  "query": "What fee was disputed on the account?",
+  "reference": "service fee",
+  "doc_id": "8bad66e3e33f4190"
+ },
+ {
+  "id": "u118",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "8bad66e3e33f4190"
+ },
+ {
+  "id": "u119",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "ffa307c23240228d"
+ },
+ {
+  "id": "u120",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "7d5e52da5ea49dc7"
+ },
+ {
+  "id": "u121",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "9b64b8c7f1eebd9f"
+ },
+ {
+  "id": "u122",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "670e11d57aa34ac5"
+ },
+ {
+  "id": "u123",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "erroneous account",
+  "doc_id": "89845297c0d29656"
+ },
+ {
+  "id": "u124",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "28368e47d12082b3"
+ },
+ {
+  "id": "u125",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "inaccurate information",
+  "doc_id": "28368e47d12082b3"
+ },
+ {
+  "id": "u126",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "41895589e4a248ee"
+ },
+ {
+  "id": "u127",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "Checking account",
+  "doc_id": "41895589e4a248ee"
+ },
+ {
+  "id": "u128",
+  "query": "What did the customer state about the debt obligation?",
+  "reference": "no contract with",
+  "doc_id": "3f533369a9fd1760"
+ },
+ {
+  "id": "u129",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "credit card account",
+  "doc_id": "34887e66645a17b6"
+ },
+ {
+  "id": "u130",
+  "query": "What fee was disputed on the account?",
+  "reference": "late charges",
+  "doc_id": "5357a06fb3214cf8"
+ },
+ {
+  "id": "u131",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "information was leaked",
+  "doc_id": "00da4fda2198414d"
+ },
+ {
+  "id": "u132",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "5b276d70c4913e86"
+ },
+ {
+  "id": "u133",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "information was compromised",
+  "doc_id": "19254ec1138abc14"
+ },
+ {
+  "id": "u134",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "incorrect information",
+  "doc_id": "ed664e4981a58a92"
+ },
+ {
+  "id": "u135",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "student loan",
+  "doc_id": "3bf555498ce564dc"
+ },
+ {
+  "id": "u136",
+  "query": "What demand was made regarding collection communications?",
+  "reference": "Cease and Desist",
+  "doc_id": "530c4c330527a965"
+ },
+ {
+  "id": "u137",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "daa8611b35afff1e"
+ },
+ {
+  "id": "u138",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "inaccurate information",
+  "doc_id": "daa8611b35afff1e"
+ },
+ {
+  "id": "u139",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "06f6e43525b01e4d"
+ },
+ {
+  "id": "u140",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "3fed8abd06bdad22"
+ },
+ {
+  "id": "u141",
+  "query": "What fee was disputed on the account?",
+  "reference": "late charges",
+  "doc_id": "03f6ceace73868e0"
+ },
+ {
+  "id": "u142",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "03f6ceace73868e0"
+ },
+ {
+  "id": "u143",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid in full",
+  "doc_id": "03f6ceace73868e0"
+ },
+ {
+  "id": "u144",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "identity theft",
+  "doc_id": "98818f5a4b158372"
+ },
+ {
+  "id": "u145",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent transaction",
+  "doc_id": "4b7106e0b77bcaa7"
+ },
+ {
+  "id": "u146",
+  "query": "What was the financial institution reported to have failed to do?",
+  "reference": "send an email about automatic renewal",
+  "doc_id": "ce42e2eae3343e59"
+ },
+ {
+  "id": "u147",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "ce42e2eae3343e59"
+ },
+ {
+  "id": "u148",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "c1bf65b996a734a4"
+ },
+ {
+  "id": "u149",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "43a1939582aa818c"
+ },
+ {
+  "id": "u150",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "Closed",
+  "doc_id": "13bc3237aac81e2c"
+ },
+ {
+  "id": "u151",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "auto loan",
+  "doc_id": "1decbceb3071b489"
+ },
+ {
+  "id": "u152",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "account was closed",
+  "doc_id": "03a917a2a839d423"
+ },
+ {
+  "id": "u153",
+  "query": "What response was received from customer support?",
+  "reference": "they could not provide me with that information",
+  "doc_id": "03a917a2a839d423"
+ },
+ {
+  "id": "u154",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "savings account",
+  "doc_id": "03a917a2a839d423"
+ },
+ {
+  "id": "u155",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent charge",
+  "doc_id": "7a1be9ec42f9d72f"
+ },
+ {
+  "id": "u156",
+  "query": "What step did the customer take to dispute the item?",
+  "reference": "filed a police report",
+  "doc_id": "75a73af5c4ac8ffa"
+ },
+ {
+  "id": "u157",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "unauthorized charge",
+  "doc_id": "f563752398f6ec03"
+ },
+ {
+  "id": "u158",
+  "query": "What was the financial institution reported to have failed to do?",
+  "reference": "send me anything",
+  "doc_id": "8e5c9523eeba4e36"
+ },
+ {
+  "id": "u159",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "student loan",
+  "doc_id": "8e5c9523eeba4e36"
+ },
+ {
+  "id": "u160",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "incorrect information",
+  "doc_id": "acea3d3746a980ff"
+ },
+ {
+  "id": "u161",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent charges",
+  "doc_id": "1f49fbacc6613ebe"
+ },
+ {
+  "id": "u162",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "savings account",
+  "doc_id": "2d0d05e1d0e23e1c"
+ },
+ {
+  "id": "u163",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "1eb80a9814282274"
+ },
+ {
+  "id": "u164",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "4fdd0c7a5fc8322c"
+ },
+ {
+  "id": "u165",
+  "query": "How was the account or loan reported to be settled?",
+  "reference": "paid off",
+  "doc_id": "9714a4439ad506b1"
+ },
+ {
+  "id": "u166",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "incorrect reporting",
+  "doc_id": "ced0503bd5fa1b02"
+ },
+ {
+  "id": "u167",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "ffd0a6f4566ae622"
+ },
+ {
+  "id": "u168",
+  "query": "What demand was made regarding collection communications?",
+  "reference": "stop calling",
+  "doc_id": "140e3935c0bb29cd"
+ },
+ {
+  "id": "u169",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "1753ea8a8e682195"
+ },
+ {
+  "id": "u170",
+  "query": "What did the customer state about the debt obligation?",
+  "reference": "do not owe",
+  "doc_id": "1753ea8a8e682195"
+ },
+ {
+  "id": "u171",
+  "query": "What fee was disputed on the account?",
+  "reference": "late fee",
+  "doc_id": "80df7dc7c84bb642"
+ },
+ {
+  "id": "u172",
+  "query": "What did the customer state about the debt obligation?",
+  "reference": "no contract with",
+  "doc_id": "3c3b79b4325b91b2"
+ },
+ {
+  "id": "u173",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "58ebcb15393ad364"
+ },
+ {
+  "id": "u174",
+  "query": "What fee was disputed on the account?",
+  "reference": "late fee",
+  "doc_id": "7ee2ddb303ff1f54"
+ },
+ {
+  "id": "u175",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "53aa1dab19ddd950"
+ },
+ {
+  "id": "u176",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "improper hard inquiries",
+  "doc_id": "062bc67a57ee120a"
+ },
+ {
+  "id": "u177",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "car loan",
+  "doc_id": "5e8e8bfc2adfe220"
+ },
+ {
+  "id": "u178",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "inaccurate information",
+  "doc_id": "8f3d76510681950a"
+ },
+ {
+  "id": "u179",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "erroneous account",
+  "doc_id": "de0659a1b76fc8ef"
+ },
+ {
+  "id": "u180",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "unauthorized inquiries",
+  "doc_id": "508b125b5cfa87f5"
+ },
+ {
+  "id": "u181",
+  "query": "What resolution was requested regarding the disputed reporting or charges?",
+  "reference": "remove from all bureaus",
+  "doc_id": "508b125b5cfa87f5"
+ },
+ {
+  "id": "u182",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "unauthorized transaction",
+  "doc_id": "9aa8e63f59d4c209"
+ },
+ {
+  "id": "u183",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "blocked",
+  "doc_id": "9aa8e63f59d4c209"
+ },
+ {
+  "id": "u184",
+  "query": "What step did the customer take to dispute the item?",
+  "reference": "filed a police report",
+  "doc_id": "9aa8e63f59d4c209"
+ },
+ {
+  "id": "u185",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "9c4fcaeae18ea49d"
+ },
+ {
+  "id": "u186",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "1d9b4a641602e734"
+ },
+ {
+  "id": "u187",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent charge",
+  "doc_id": "ac75d28e85537f16"
+ },
+ {
+  "id": "u188",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "e034c49561228fb5"
+ },
+ {
+  "id": "u189",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "e034c49561228fb5"
+ },
+ {
+  "id": "u190",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "frozen",
+  "doc_id": "8e07ab1f77f0fdc5"
+ },
+ {
+  "id": "u191",
+  "query": "What action was taken on the account by the institution?",
+  "reference": "closed",
+  "doc_id": "2c5ce92908195c1f"
+ },
+ {
+  "id": "u192",
+  "query": "What improper entry was reported on the credit file?",
+  "reference": "erroneous reporting",
+  "doc_id": "95f6ffdfbd5e70f2"
+ },
+ {
+  "id": "u193",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "unauthorized inquiries",
+  "doc_id": "741de7ae562dccf2"
+ },
+ {
+  "id": "u194",
+  "query": "What step did the customer take to dispute the item?",
+  "reference": "filed a police report",
+  "doc_id": "dbb249647c28c890"
+ },
+ {
+  "id": "u195",
+  "query": "What step did the customer take to dispute the item?",
+  "reference": "called customer service",
+  "doc_id": "338b13cf5ebafe38"
+ },
+ {
+  "id": "u196",
+  "query": "What type of account or loan is involved in the dispute?",
+  "reference": "checking account",
+  "doc_id": "b2d6a161e34627c1"
+ },
+ {
+  "id": "u197",
+  "query": "What unauthorized activity was reported by the customer?",
+  "reference": "fraudulent charges",
+  "doc_id": "6a1a62e71bf0cfdc"
+ },
+ {
+  "id": "u198",
+  "query": "What security issue did the customer report regarding their personal records?",
+  "reference": "victim of identity theft",
+  "doc_id": "6a1a62e71bf0cfdc"
+ },
+ {
+  "id": "u199",
+  "query": "What step did the customer take to dispute the item?",
+  "reference": "filed a police report",
+  "doc_id": "6a1a62e71bf0cfdc"
  }
 ]
