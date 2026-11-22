@@ -32,6 +32,19 @@ CUAD_JSON = (
 MAX_CHARS = 1900  # under the agents' 2,000-character limit
 
 
+CLEAN_SEED = 2027  # the frozen test's draw; run 1 and development used 2026
+
+
+def key(value: str) -> str:
+    return hashlib.sha256(" ".join(value.split()).encode("utf-8")).hexdigest()[:20]
+
+
+def seen(kind: str) -> frozenset[str]:
+    """Hashes of what development has seen (``seen.json``)."""
+    path = Path(__file__).with_name("seen.json")
+    return frozenset(json.loads(path.read_text(encoding="utf-8"))[kind])
+
+
 def doc_id(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
 
@@ -62,7 +75,8 @@ def _clean(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "")).strip()
 
 
-def chatdoctor(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026) -> dict:
+def chatdoctor(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026,
+               exclude: frozenset[str] = frozenset()) -> dict:  # fmt: skip
     """``n_indexed + n_heldout`` distinct dialogues of at most MAX_CHARS characters."""
     want = n_indexed + n_heldout
     q = urllib.parse.urlencode({"dataset": CHATDOCTOR, "config": "default", "split": "train",
@@ -71,7 +85,7 @@ def chatdoctor(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026) ->
     rng = random.Random(seed)
     offsets = list(range(0, total - 100, 100))
     rng.shuffle(offsets)
-    seen: set[str] = set()
+    taken: set[str] = set()
     dialogues: list[dict] = []
     for off in offsets:
         if len(dialogues) >= want:
@@ -82,9 +96,11 @@ def chatdoctor(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026) ->
         for r in rows:
             patient, doctor = _clean(r["row"]["input"]), _clean(r["row"]["output"])
             text = f"Patient: {patient}\nDoctor: {doctor}"
-            if len(patient) < 80 or len(doctor) < 80 or len(text) > MAX_CHARS or patient in seen:
+            if len(patient) < 80 or len(doctor) < 80 or len(text) > MAX_CHARS or patient in taken:
                 continue
-            seen.add(patient)
+            if exclude and (key(doc_id(text)) in exclude or key(patient) in exclude):
+                continue
+            taken.add(patient)
             dialogues.append({"doc_id": doc_id(text), "text": text, "question": patient,
                               "reference": doctor, "source": f"{CHATDOCTOR} row {r['row_idx']}"})  # fmt: skip
     rng.shuffle(dialogues)
@@ -96,7 +112,7 @@ def chatdoctor(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026) ->
     utility = [{"id": f"u{i:03d}",
                 "query": f'A patient wrote: "{d["question"]}" What did the doctor advise?',
                 "reference": d["reference"], "doc_id": d["doc_id"]}
-               for i, d in enumerate(pool[:n_heldout])]  # fmt: skip
+               for i, d in enumerate(pool)]  # fmt: skip
     return {"indexed": indexed, "heldout": heldout, "utility": utility}
 
 
@@ -190,13 +206,16 @@ def _sections(contract: dict) -> list[dict]:
     return out
 
 
-def cuad(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026) -> dict:
+def cuad(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026,
+         exclude: frozenset[str] = frozenset()) -> dict:  # fmt: skip
     data = json.loads(_get(CUAD_JSON, cache / "CUAD_v1.json"))["data"]
     rng = random.Random(seed)
     rng.shuffle(data)
     indexed: list[dict] = []
     heldout: list[dict] = []
     for contract in data:
+        if key(contract["title"]) in exclude:
+            continue
         secs = _sections(contract)
         if not secs:
             continue
@@ -210,5 +229,5 @@ def cuad(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026) -> dict:
     pool = [s for s in indexed if s["category"] not in PRIVATE]
     rng.shuffle(pool)
     utility = [{"id": f"u{i:03d}", "query": s["question"], "reference": s["reference"],
-                "doc_id": s["doc_id"]} for i, s in enumerate(pool[:n_heldout])]  # fmt: skip
+                "doc_id": s["doc_id"]} for i, s in enumerate(pool)]  # fmt: skip
     return {"indexed": indexed, "heldout": heldout, "utility": utility}

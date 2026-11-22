@@ -298,3 +298,23 @@ EVAL_MOCK=1 SANITISE_LLM_BACKEND=mock SANITISE_RETRIEVAL_MODE=bm25 \
 
 Then run `build`, `single`, `multi` and `report` the same way. Numbers from mock mode mean
 nothing; it only checks the plumbing.
+
+## The clean test
+
+Every scale but `quick` is the clean test: evaluate once, on data development never saw.
+
+* **Real text**: new ChatDoctor dialogues and CUAD contracts (seed 2027). Everything run 1 and
+  development saw is excluded by hash (`tools/eval_suite/seen.json`).
+* **Scans**: health uses scans outside `data/ocr_real` and run 1's. The legal scans are the only
+  public ones available and were seen: an OCR check, not an unseen test.
+* **People**: `data/eval_clean/clean_people.json`, written outside the project, checked by
+  `python tools/eval_suite/population.py data/eval_clean/clean_people.json`. Anyone in a table,
+  a development corpus or the code is dropped; the records come from new templates. Legal uses
+  the same people with matters outside its vocabulary.
+* **Frozen code**: the notebooks clone the tag `eval-freeze-1`. Only data (the people, finance's
+  source folders) is taken from main afterwards. A change to the pipeline after seeing a result
+  needs a new tag and new people.
+* **Always refuse**: the report sets every leak score beside a system that answers "The records
+  do not say." to everything, and beside how often each pipeline answered.
+* **Finance** uses each source's external data, which was visible during development. The report
+  says so.

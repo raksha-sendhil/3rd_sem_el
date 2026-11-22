@@ -35,6 +35,8 @@ import time
 import urllib.error
 from pathlib import Path
 
+from eval_suite.realdata import key, seen
+
 MAX_PARTS = 2
 PART_CHARS = 1900
 
@@ -43,7 +45,9 @@ def _id(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()[:16]
 
 
-def _select(domain: str, main_repo: Path, work: Path, n: int) -> list[dict]:
+def _select(domain: str, main_repo: Path, work: Path, n: int, clean: bool = False) -> list[dict]:
+    if clean and domain == "health":  # not the dev folder's scans, not run 1's
+        return _more_clinocr(main_repo, work, set(), n, seen("scans"))
     real = main_repo / "data" / "ocr_real"
     rows = [
         json.loads(x)
@@ -62,7 +66,8 @@ def _select(domain: str, main_repo: Path, work: Path, n: int) -> list[dict]:
     return picked
 
 
-def _more_clinocr(main_repo: Path, work: Path, have: set[str], k: int) -> list[dict]:
+def _more_clinocr(main_repo: Path, work: Path, have: set[str], k: int,
+                  exclude: frozenset[str] = frozenset()) -> list[dict]:  # fmt: skip
     sys.path.insert(0, str(main_repo / "tools"))
     from fetch_real_testset import CLINOCR_SUBSETS, Fetcher, save_image
 
@@ -75,7 +80,16 @@ def _more_clinocr(main_repo: Path, work: Path, have: set[str], k: int) -> list[d
             rid = f"health_clinocr_{r['doc_id']}"
             if rid not in have and r.get("ground_truth"):
                 candidates.append((subset, rid, r))
-    random.Random("e2e-clinocr").shuffle(candidates)
+    random.Random("e2e-clean" if exclude else "e2e-clinocr").shuffle(candidates)
+    if exclude:  # unseen, and each document once (it exists in several kinds of scan)
+        texts, fresh = set(), []
+        for c in candidates:
+            start = key(c[2]["ground_truth"][:300])
+            if key(c[1]) in exclude or start in exclude or start in texts:
+                continue
+            texts.add(start)
+            fresh.append(c)
+        candidates = fresh
     picked = []
     for subset, rid, r in candidates[:k]:
         path = out / f"{rid}.jpg"
@@ -97,7 +111,8 @@ def _as_dict(obj) -> dict | None:
     return dataclasses.asdict(obj) if dataclasses.is_dataclass(obj) else dict(vars(obj))
 
 
-def prepare(domain: str, main_repo: Path, work: Path, n: int, max_parts: int = MAX_PARTS) -> None:
+def prepare(domain: str, main_repo: Path, work: Path, n: int, max_parts: int = MAX_PARTS,
+            clean: bool = False) -> None:  # fmt: skip
     """Select the documents, OCR them, and write the A and B parts (needs main's sanitise)."""
     from sanitise.config import get_settings
     from sanitise.ingest import ingest_bytes
@@ -112,7 +127,7 @@ def prepare(domain: str, main_repo: Path, work: Path, n: int, max_parts: int = M
         if manifest_path.exists()
         else {}
     )
-    docs = _select(domain, main_repo, work, n)
+    docs = _select(domain, main_repo, work, n, clean)
     settings = get_settings()
     reader = make_reader(settings)
     for side in ("gold", "ocr"):

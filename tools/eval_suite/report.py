@@ -623,6 +623,105 @@ def _strip(res: dict) -> dict:
     return r
 
 
+REFUSAL = "The records do not say."
+
+
+def refusing(rows: list[dict]) -> list[dict]:
+    """The same rows with ours replaced by a system that always refuses: zero leakage, and no
+    use. A leak score means nothing without this next to it."""
+
+    def refused(r: dict) -> dict:
+        return {**r, "protected": {**r["protected"], "answer": REFUSAL}}
+
+    return [{**r, "rounds": [refused(x) for x in r["rounds"]]} if "rounds" in r else refused(r)
+            for r in rows]  # fmt: skip
+
+
+def responses(rows: list[dict]) -> dict:
+    turns = [x for r in rows for x in r.get("rounds", [r])]
+    out = {p: {"answered": M.mean([float(answered(t[p]["answer"])) for t in turns])} for p in PIPES}
+    verdicts = [t["protected"].get("verdict") for t in turns]
+    for verdict in ("blocked", "generalised"):
+        out["protected"][verdict] = M.mean([float(v == verdict) for v in verdicts])
+    return out
+
+
+def sanity(d, work: Path, res: dict) -> dict:
+    """Every leak metric next to always refusing and to how often an answer was given."""
+    a, out = work / "answers", []
+
+    def add(metric: str, rows: list[dict], score, base: float, ours: float, pct: bool = True):
+        out.append({"metric": metric, "baseline": base, "protected": ours, "percent": pct,
+                    "refuse": score(refusing(rows)), "responses": responses(rows)})  # fmt: skip
+
+    s = res.get("single", {})
+    rows = _rows(a / "target_info.jsonl")
+    if (t := s.get("target_info")) and (part := [r for r in rows if "values" not in r]):
+        add("Target Info", part, lambda x: target_info(d, x)["protected"]["target_info"],
+            t["baseline"]["target_info"], t["protected"]["target_info"], False)  # fmt: skip
+    if (t := s.get("target_info_values")) and (part := [r for r in rows if "values" in r]):
+        add("Target Info, labelled values", part,
+            lambda x: target_info_values(x)["protected"]["target_info"],
+            t["baseline"]["target_info"], t["protected"]["target_info"], False)  # fmt: skip
+    if t := s.get("repeat_rouge"):
+        store = d.mod("rag.store").SqliteDocumentStore(work / "stores" / "real.sqlite")
+        rows = _rows(a / "repeat.jsonl")
+        for key, name in (("repeat_prompt", "Repeat Prompt"), ("rouge_prompt", "ROUGE Prompt")):
+            add(name, rows, lambda x, k=key: repeat_rouge(x, store)["protected"][k]["rate"],
+                t["baseline"][key]["rate"], t["protected"][key]["rate"])  # fmt: skip
+    if t := s.get("membership"):
+        add("Membership AUC", _rows(a / "membership.jsonl"),
+            lambda x: membership(x)["protected"]["auc"],
+            t["baseline"]["auc"], t["protected"]["auc"], False)  # fmt: skip
+    if m := res.get("multi"):
+        rows = _rows(a / "sessions.jsonl")
+        refused = sessions(d, refusing(rows))["protected"]
+        add("Secret Recovery Rate", rows, lambda _: refused["final_srr"],
+            m["baseline"]["final_srr"], m["protected"]["final_srr"])  # fmt: skip
+        add("Session Leak Success", rows, lambda _: refused["sls"]["rate"],
+            m["baseline"]["sls"]["rate"], m["protected"]["sls"]["rate"])  # fmt: skip
+    if u := s.get("utility"):
+        add("Utility retention (higher is better)", _rows(a / "utility.jsonl"),
+            lambda x: utility(x)["utility_retention"], 1.0, u["utility_retention"])  # fmt: skip
+    return {"refusal": REFUSAL, "rows": out}
+
+
+def export_rewrites(d, work: Path, out: Path) -> None:
+    """Every rewrite, for the results zip. Sanitised text only."""
+    stores = sorted((work / "stores").glob("*.sqlite"))
+    with (out / "rewrites.jsonl").open("w", encoding="utf-8") as f:
+        for path in stores:
+            if path.stem == "monitor":
+                continue
+            store = d.mod("rag.store").SqliteDocumentStore(path)
+            for doc in store.ids():
+                safe = store.sanitised(doc).rewriter.safe_text
+                f.write(json.dumps({"store": path.stem, "doc_id": doc, "safe_text": safe},
+                                   ensure_ascii=False) + chr(10))  # fmt: skip
+            store.close()
+
+
+def data_note(res: dict) -> list[str]:
+    p = res.get("data") or {}
+    if res["domain"] == "finance":
+        return ["Data: each source's external dataset as committed. It was visible during "
+                "development (two statement rules were fixed on the bank demo), so this is not "
+                "an unseen test as health and legal are."]  # fmt: skip
+    if not p.get("clean"):
+        return ["**Set-up check on data seen during development: not a result.**"]
+    note = (
+        f"**Clean test**: {p.get('people')} new people ({p.get('people_dropped')} dropped as not "
+        f"new) in {p.get('generated_documents_indexed')} records, "
+        f"{p.get('real_indexed')} unseen real documents indexed and {p.get('real_heldout')} held "
+        f"out (seed {p.get('seed')}, everything in seen.json excluded), "
+        f"{p.get('utility_questions')} utility questions, {p.get('attack_sessions')} attack "
+        "sessions. The code was frozen before this data was run."
+    )
+    if res["domain"] == "legal":
+        note += " The legal scans are the only public ones available and were seen in development."
+    return [note]
+
+
 def write(d, work: Path, scale: str) -> None:
     SqliteDocumentStore = d.mod("rag.store").SqliteDocumentStore
 
@@ -657,9 +756,13 @@ def write(d, work: Path, scale: str) -> None:
     if rows := _rows(a / "sessions.jsonl"):
         res["multi"] = sessions(d, rows)
     res["e2e"] = e2e(work)
+    if (work / "data" / "provenance.json").exists():
+        res["data"] = json.loads((work / "data" / "provenance.json").read_text(encoding="utf-8"))
+    res["sanity"] = sanity(d, work, res)
 
     out = work / "results"
     out.mkdir(parents=True, exist_ok=True)
+    export_rewrites(d, work, out)
     try:
         made = figures(res, out / "figures")
     except ImportError:  # matplotlib missing: the numbers are still written
@@ -681,6 +784,7 @@ def markdown(res: dict, figures_made: list[str]) -> str:
          "with the session monitor. Brackets are 95% bootstrap intervals; p-values are McNemar "
          "(yes/no per question or session) or Wilcoxon (paired scores). Definitions: "
          "docs/evaluation_metrics.md.", "",
+         *data_note(res), "",
          "## Single-question attacks", "",
          "| # | Metric | No privacy | Ours | p |", "|---|---|---:|---:|---:|"]  # fmt: skip
     if tv := s.get("target_info_values"):
@@ -775,6 +879,26 @@ def markdown(res: dict, figures_made: list[str]) -> str:
         ]
         L += [f"| {cb['round']} | {_pct(cb['srr'])} | {_pct(cp['srr'])} |"
               for cb, cp in zip(b["srr_curve"], p["srr_curve"], strict=True)]  # fmt: skip
+    if rows := (res.get("sanity") or {}).get("rows"):
+        L += ["", "## Against a system that always refuses", "",
+              f"Always answering '{res['sanity']['refusal']}' leaks nothing and is useless. Read "
+              "each score with the answer rates beside it.", "",
+              "| Metric | No privacy | Ours | Always refuse | Answered, no privacy | Answered, ours "
+              "| Ours blocked | Ours generalised |",
+              "|---|---:|---:|---:|---:|---:|---:|---:|"]  # fmt: skip
+        for r in rows:
+            show = _pct if r["percent"] else (lambda x: f"{x:.3g}")
+            rb, rp = r["responses"]["baseline"], r["responses"]["protected"]
+            values = [show(r[k]) for k in ("baseline", "protected", "refuse")]
+            values += [_pct(rb["answered"]), _pct(rp["answered"]), _pct(rp["blocked"]),
+                       _pct(rp["generalised"])]  # fmt: skip
+            L.append(f"| {r['metric']} | {' | '.join(values)} |")
+    if ti := s.get("target_info"):
+        fb, fp = ti["baseline"]["by_field"], ti["protected"]["by_field"]
+        if fb or fp:
+            L += ["", "Target Info by field (conditions and legal matters are content, kept on "
+                  "purpose):", "", "| Field | No privacy | Ours |", "|---|---:|---:|"]  # fmt: skip
+            L += [f"| {k} | {fb.get(k, 0)} | {fp.get(k, 0)} |" for k in sorted({*fb, *fp})]
     if m and (rid := m.get("reidentification")):
         rb, rp = rid["baseline"], rid["protected"]
         L += ["", "Re-identification by details (every detail the answers stated, coarse ones included; "

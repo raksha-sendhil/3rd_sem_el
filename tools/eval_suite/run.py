@@ -34,14 +34,18 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 MAIN_REPO = HERE.parents[1]
 
-# "full": the plan's volumes (about 12-15 GPU hours per domain); "5h": the same metrics on less
-# data, about 4.5 hours per domain; "quick": a few items per step (about 10 minutes) to check
-# the set-up. gen_docs: size of the generated store (None = all 300); e2e_parts: parts kept per
+# "high": the clean test's volumes (about 8 hours per domain); "5h" and "2h": the same metrics on
+# less data; "full": more than one Kaggle session holds; "quick": a few items per step (about 10
+# minutes) to check the set-up, on data development has already seen. Every scale but "quick" is
+# the clean test: unseen real data (seen.json) and new people (population.py). gen_docs: size of the generated store (None = all 300); e2e_parts: parts kept per
 # end-to-end document.
 SCALES = {
     "full": {"indexed": 500, "heldout": 250, "targeted": 250, "repeat": 250, "members": 500,
              "nonmembers": 250, "utility": 250, "targets": 60, "e2e": 50, "gen_docs": None,
              "e2e_parts": 2, "asked_people": None},
+    "high": {"indexed": 300, "heldout": 150, "targeted": 200, "repeat": 200, "members": 200,
+             "nonmembers": 150, "utility": 200, "targets": 40, "e2e": 50, "gen_docs": 300,
+             "e2e_parts": 1, "asked_people": 70},
     "5h": {"indexed": 150, "heldout": 100, "targeted": 100, "repeat": 100, "members": 100,
            "nonmembers": 100, "utility": 100, "targets": 20, "e2e": 25, "gen_docs": 150,
            "e2e_parts": 1, "asked_people": 35},
@@ -64,7 +68,8 @@ def _args() -> argparse.Namespace:
     p.add_argument("--work", required=True, type=Path)
     p.add_argument("--repo", type=Path, default=MAIN_REPO)
     p.add_argument("--main-repo", type=Path, default=MAIN_REPO)
-    p.add_argument("--scale", choices=list(SCALES), default="5h")
+    p.add_argument("--scale", choices=list(SCALES), default="high")
+    p.add_argument("--people-file", type=Path, help="the clean test's people (population.py)")
     p.add_argument("--stores", default="gen,real,e2e_gold,e2e_ocr")
     p.add_argument("--only", default="target_info,repeat,membership,utility",
                    help="single: which question sets to ask")  # fmt: skip
@@ -86,6 +91,10 @@ from eval_suite.domains import get_domain  # noqa: E402
 
 SCALE = SCALES[ARGS.scale]
 D = get_domain(ARGS.domain, ARGS.repo, ARGS.source)
+CLEAN = ARGS.scale != "quick" and D.name != "finance"  # finance: each source's own external data
+if CLEAN:  # the clean population replaces the development corpus and its person table
+    D.people_path = WORK / "data" / "population" / "people.json"
+    D.corpus_dir = WORK / "data" / "population" / "docs"
 
 
 def _dump(path: Path, data) -> None:
@@ -104,14 +113,20 @@ def step_data() -> None:
     from eval_suite import realdata
 
     data = WORK / "data"
-    people = D.people()
+    made: dict = {}
+    if CLEAN:
+        from eval_suite import population
+
+        file = ARGS.people_file or ARGS.repo / population.PEOPLE_FILE
+        made = population.build(D.name, file, data / "population", ARGS.repo)
+    people = D.people() if D.people_path.exists() else []
     if not people:
         raise SystemExit(f"no person table at {D.people_path}")
 
     # questions on the generated corpus: Target Info and the attack sessions
     sessions = Q.attack_sessions(D, people, SCALE["targets"])
     targets = [s["target"] for s in sessions]
-    if D.name == "health":  # Person D's fixed set, spread evenly over its 29 people
+    if D.name == "health" and not CLEAN:  # Person D's fixed set, spread evenly over its 29 people
         targeted = _load(ARGS.repo / "data/attacks/target_info_queries.json")
         n = min(SCALE["targeted"], len(targeted))
         targeted = [targeted[int(i * len(targeted) / n)] for i in range(n)]
@@ -156,7 +171,10 @@ def step_data() -> None:
 
     # real public text
     fetch = realdata.chatdoctor if D.name == "health" else realdata.cuad
-    real = fetch(SCALE["indexed"], SCALE["heldout"], WORK / ".cache")
+    options = {}
+    if CLEAN:
+        options = {"seed": realdata.CLEAN_SEED, "exclude": realdata.seen(D.name)}
+    real = fetch(SCALE["indexed"], SCALE["heldout"], WORK / ".cache", **options)
     corpus = data / "real" / "corpus"
     corpus.mkdir(parents=True, exist_ok=True)
     for d in real["indexed"]:
@@ -166,6 +184,13 @@ def step_data() -> None:
     _dump(data / "repeat.json", Q.repeat_prompts(real["heldout"], SCALE["repeat"]))
     _dump(data / "membership.json", Q.membership_probes(real["indexed"], real["heldout"],
                                                         SCALE["members"], SCALE["nonmembers"]))  # fmt: skip
+    _dump(data / "provenance.json", {
+        "clean": CLEAN, **made, "generated_documents_indexed": len(files),
+        "attack_sessions": len(sessions), "target_info_questions": len(targeted),
+        "real_indexed": len(real["indexed"]), "real_heldout": len(real["heldout"]),
+        "utility_questions": len(real["utility"][: SCALE["utility"]]),
+        "seed": options.get("seed", 2026), "excluded_as_seen": len(options.get("exclude", ())),
+    })  # fmt: skip
     print(
         f"real corpus: {len(real['indexed'])} indexed, {len(real['heldout'])} held out; "
         f"{len(real['utility'][: SCALE['utility']])} utility questions"
@@ -178,6 +203,7 @@ STORE_DATA = {"gen": "data/gen", "real": "data/real", "e2e_gold": "e2e/gold", "e
 
 
 def step_build() -> None:
+    short = []
     for name in ARGS.stores.split(","):
         data_dir = WORK / STORE_DATA[name]
         if not (data_dir / "corpus").is_dir():
@@ -189,7 +215,29 @@ def step_build() -> None:
         store.parent.mkdir(parents=True, exist_ok=True)
         t = time.perf_counter()
         D.build(data_dir, store)
-        print(f"{name}: done in {(time.perf_counter() - t) / 60:.0f} min", flush=True)
+        built = _built(store)
+        minutes = (time.perf_counter() - t) / 60
+        print(f"{name}: {built} of {n} built, done in {minutes:.0f} min", flush=True)
+        if n - built > max(1, MAX_UNBUILT * n):
+            short.append(f"{name} {built}/{n}")
+    if short:  # answers over a partly built store would be reported as the pipeline's
+        raise SystemExit(
+            f"BUILD INCOMPLETE ({', '.join(short)}): under 95% built. Usually the Gemini quota: add "
+            "keys from other projects or wait for the reset, then run this step again (it resumes)."
+        )
+
+
+MAX_UNBUILT = 0.05
+
+
+def _built(store: Path) -> int:
+    if not store.exists():
+        return 0
+    opened = D.mod("rag.store").SqliteDocumentStore(store)
+    try:
+        return len(opened.ids())
+    finally:
+        opened.close()
 
 
 # ---------------------------------------------------------------- answering
@@ -398,7 +446,7 @@ def main() -> None:
 
             finance.prepare_e2e(D, ARGS.repo, WORK, SCALE["e2e"], SCALE["e2e_parts"])
         else:
-            e2e.prepare(D.name, ARGS.main_repo, WORK, SCALE["e2e"], SCALE["e2e_parts"])
+            e2e.prepare(D.name, ARGS.main_repo, WORK, SCALE["e2e"], SCALE["e2e_parts"], CLEAN)
     elif step == "e2e-label":
         from eval_suite import e2e
 

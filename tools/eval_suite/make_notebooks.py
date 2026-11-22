@@ -3,8 +3,7 @@
     python tools/eval_suite/make_notebooks.py
 
 The two notebooks run the same steps (tools/eval_suite/run.py); they differ only in set-up:
-health runs main's healthcare pipeline, legal runs the legal branch's pipeline, with this suite
-and main's OCR taken from a clone of main.
+each runs its own package from one clone of main, pinned to the freeze tag.
 """
 
 from __future__ import annotations
@@ -13,6 +12,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+FREEZE = "eval-freeze-1"  # the clean test's code: change nothing after it has been run
 REPO_URL = "https://github.com/raksha-sendhil/3rd_sem_el.git"
 
 
@@ -44,38 +44,41 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 * **Session options**: Accelerator **GPU T4 x2**, Internet **On**.
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
 
-**To let it run on its own** (recommended): with `SCALE = "5h"` in cell 1, click **Save Version
+**This is the clean test.** The code is frozen at the tag `eval-freeze-1`, the real data is
+unseen and the people are new (`data/eval_clean/clean_people.json` on main). Run it once and
+report what comes out.
+
+**To let it run on its own** (recommended): set `SCALE` in cell 1, click **Save Version
 -> Save & Run All (Commit) -> Save** (top right) and close Kaggle. Every cell runs in the
-background; when it finishes, the version's **Output** tab holds `eval_results_{domain}_5h.zip`.
+background; when it finishes, the version's **Output** tab holds `eval_results_{domain}_<SCALE>.zip`.
 
-| Cell | What it does | Time at `SCALE = "5h"` |
-|---|---|---|
-| 1 Setup | clone, install, Ollama and the models, keys | ~15 min (every session) |
-| 2 Data | download the real data, copy the generated corpus, write the questions | ~3 min |
-| 3 OCR | read 25 real scans (end-to-end check) | ~20 min |
-| 4 Labels | Gemini marks private values and writes questions for the 25 scans | ~5 min |
-| 5 Build | Agents 1-3 over ~350 documents (150 generated, 150 real, 2 x 25 scan parts) | ~2 h |
-| 6 Single | 100 Target Info, 100 repeat, 200 membership and 100 utility questions | ~1 h |
-| 7 Multi | 60 attack sessions (20 targets x 3 protocols) x 8 rounds | ~45 min |
-| 8 End to end | the scans' questions on both stores | ~10 min |
-| 9 Report | every number, REPORT.md and the figures | ~3 min |
-| 10 Pack | `eval_results_{domain}_5h.zip` to download and commit | ~1 min |
+| Documents and questions per test | high | 5h | 2h | quick |
+|---|---:|---:|---:|---:|
+| Real documents indexed | 300 | 150 | 100 | 12 |
+| Real documents held out | 150 | 100 | 60 | 6 |
+| Generated records of new people, up to | 300 | 150 | 100 | 15 (seen) |
+| Target Info questions | 200 | 100 | 60 | 5 |
+| Repeat / ROUGE Prompt questions | 200 | 100 | 60 | 5 |
+| Membership, members + non-members | 200 + 150 | 100 + 100 | 60 + 60 | 5 + 5 |
+| Utility questions | 200 | 100 | 60 | 5 |
+| Multi-question sessions (8 rounds) | 120 | 60 | 30 | 3 |
+| Scans, end to end (as many as exist) | 50 | 25 | 20 | 2 |
+| Gemini requests, about | 2,400 | 1,300 | 900 | 150 |
+| Time, about (estimated) | 8 h | 4.5 h | 2.5 h | 10-20 min |
 
-`SCALE = "5h"` (the default) fits in about 4.5 hours. Optionally run `SCALE = "quick"` first
-(about 10 minutes, a few items per step) to check the set-up; `SCALE = "full"` is the plan's
-full volumes (12-15 hours). Each scale keeps its results in its own folder. Run interactively,
-a session stops when the tab closes: run cell 1 again and carry on from the first unfinished
-cell, since every step skips what is already on disk.
+`SCALE = "quick"` only checks the set-up, on data development has seen: run it first. Kaggle
+stops a session at 12 hours. If the build stops on the Gemini quota, add keys from other projects
+and run again: every step skips what is already on disk in the same session.
 """
 
 
 HEALTH_SETUP = """
 # 1 Setup (run at the start of every session)
-SCALE = "5h"   # "5h": every metric on less data, ~4.5 h; "quick": ~10 min check; "full": the plan's volumes (~12-15 h)
+SCALE = "high"   # "high" (~8 h) | "5h" | "2h" | "quick" (set-up check on seen data, 10-20 min)
 MODEL = "llama3:8b"                       # answers, both pipelines (as the dashboard)
 GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-3.1-flash-lite"   # Agents 1-3 (fallback order)
 OCR_MODEL = "qwen3-vl:8b-instruct"        # reads the scans (end-to-end check)
-BRANCH = "main"
+FREEZE = "eval-freeze-1"   # the frozen code: do not change it for the clean test
 
 import os, subprocess, sys
 from pathlib import Path
@@ -85,15 +88,20 @@ REPO = W / "3rd_sem_el"
 os.environ["SANITISE_WORKDIR"] = "/tmp/sanitise"      # models stay out of /kaggle/working
 os.environ["OLLAMA_NUM_PARALLEL"] = "4"   # answers are asked 2 questions x 2 pipelines at once
 os.environ["EVAL_CONCURRENCY"] = "2"
-if REPO.exists():
-    subprocess.run(["git", "-C", str(REPO), "pull", "--ff-only"], check=True)
-else:
-    subprocess.run(["git", "clone", "--depth", "1", "-b", BRANCH, "{repo_url}", str(REPO)], check=True)
+if not REPO.exists():
+    subprocess.run(["git", "clone", "--depth", "1", "-b", FREEZE, "{repo_url}", str(REPO)], check=True)
 os.chdir(REPO)
 !git log --oneline -1
+# the new people are data, so they may reach main after the code was frozen
+PEOPLE = "data/eval_clean/clean_people.json"
+PEOPLE_FILE = W / "clean_people.json"
+if not PEOPLE_FILE.exists() and subprocess.run(["git", "fetch", "-q", "--depth", "1", "origin", "main"]).returncode == 0:
+    found = subprocess.run(["git", "show", f"FETCH_HEAD:{PEOPLE}"], capture_output=True)
+    if found.returncode == 0:
+        PEOPLE_FILE.write_bytes(found.stdout)
 !pip install -q -r requirements.txt
 !pip install -q -e ".[retrieval]" --no-deps
-!pip install -q "sentence-transformers>=3.0" "chromadb>=0.5" matplotlib
+!pip install -q "sentence-transformers>=3.0" "chromadb>=0.5" "google-genai>=1.0" matplotlib
 sys.path.insert(0, str(REPO / "tools"))
 import colab_cache
 colab_cache.install_ollama_and_model(MODEL)
@@ -101,11 +109,17 @@ colab_cache.install_ollama_and_model(OCR_MODEL)
 colab_cache.start_ollama()
 
 from kaggle_secrets import UserSecretsClient
-try:
-    key = UserSecretsClient().get_secret("GEMINI_API_KEY")
-except Exception as exc:
+secrets, keys = UserSecretsClient(), []
+for name in ["GEMINI_API_KEY"] + [f"GEMINI_API_KEY_{i}" for i in range(2, 10)]:
+    try:
+        keys += [k.strip() for k in secrets.get_secret(name).split(",") if k.strip()]
+    except Exception:
+        pass
+keys = list(dict.fromkeys(keys))
+if not keys:
     raise RuntimeError("Add the Kaggle secret GEMINI_API_KEY (Add-ons -> Secrets), tick it as "
-                       "attached to this notebook, and run this cell again.") from exc
+                       "attached to this notebook, and run this cell again.")
+key = ",".join(keys)
 WORK = W / "eval" / ("health" if SCALE == "full" else f"health_{SCALE}")
 os.environ.update({
     "SANITISE_LLM_BACKEND": "ollama", "SANITISE_MODEL": MODEL, "SANITISE_LLM_TIMEOUT_S": "600",
@@ -114,107 +128,34 @@ os.environ.update({
     "SANITISE_GEMINI_API_KEY": key, "GEMINI_API_KEYS": key,
     "SANITISE_MONITOR_DB_PATH": str(WORK / "stores" / "monitor.sqlite"),
 })
-RUN = f"python tools/eval_suite/run.py {{step}} --domain health --work {WORK} --scale {SCALE}"
+RUN = f"python tools/eval_suite/run.py {{step}} --domain health --work {WORK} --scale {SCALE} --people-file {PEOPLE_FILE}"
 def run(step, extra=""):
     colab_cache.start_ollama()  # back up if it stopped (e.g. a cell was interrupted)
     cmd = RUN.format(step=step) + " " + extra
     print("$", cmd, flush=True)
-    subprocess.run(cmd, shell=True, check=False)
+    code = subprocess.run(cmd, shell=True, check=False).returncode
+    if code and step in ("data", "build"):  # stop here: later numbers would be wrong
+        raise RuntimeError(f"{step} failed: read the last lines above")
 print(f"ready: answers {MODEL} | Agents 1-3 {GEMINI_MODEL} ({len(key.split(','))} key(s)) | "
       f"OCR {OCR_MODEL} | results in {WORK}")
 """
 
-LEGAL_SETUP = """
-# 1 Setup (run at the start of every session)
-SCALE = "5h"   # "5h": every metric on less data, ~4.5 h; "quick": ~10 min check; "full": the plan's volumes (~12-15 h)
-LEGAL_BRANCH = "law-pipeline-final"   # the branch with the legal agents
-ANSWERS = "ollama"   # "ollama": the legal profile's answer_model (llama3:8b, as in health);
-                     # "gemini": the profile's Gemini answer model (needs many keys and days)
-AGENT1_ADAPTER = ""  # optional: path of a fine-tuned Agent 1 LoRA adapter (else the base model)
-OCR_MODEL = "qwen3-vl:8b-instruct"    # reads the scans (end-to-end check; main's OCR)
+def legal_setup() -> str:
+    """Health's set-up, running main's legal package (src/sanitise_legal) with its own profile."""
+    setup = HEALTH_SETUP
+    for old, new in (
+        ('WORK = W / "eval" / ("health" if SCALE == "full" else f"health_{SCALE}")',
+         'WORK = W / "eval" / ("legal" if SCALE == "full" else f"legal_{SCALE}")'),
+        ("--domain health --work", "--domain legal --work"),
+        ('"SANITISE_LLM_BACKEND": "ollama", "SANITISE_MODEL"',
+         '"SANITISE_DOMAIN": "legal", "SANITISE_GEMINI_RPM": str(10 * len(keys)),\n'
+         '    "SANITISE_GEMINI_CACHE_DIR": str(W / "gemini_cache"),\n'
+         '    "SANITISE_LLM_BACKEND": "ollama", "SANITISE_MODEL"'),
+    ):  # fmt: skip
+        assert old in setup, old
+        setup = setup.replace(old, new, 1)
+    return setup
 
-import json, os, subprocess, sys, time, urllib.request
-from pathlib import Path
-
-W = Path("/kaggle/working")
-os.environ["OLLAMA_NUM_PARALLEL"] = "4"   # answers are asked 2 questions x 2 pipelines at once
-os.environ["EVAL_CONCURRENCY"] = "2"
-MAIN = W / "main"      # this evaluation suite and the OCR (step 0) come from main
-LEGAL = W / "legal"    # the legal pipeline (Agents 1-3, monitor, scorer) comes from the branch
-for path, branch in ((MAIN, "main"), (LEGAL, LEGAL_BRANCH)):
-    if path.exists():
-        subprocess.run(["git", "-C", str(path), "pull", "--ff-only"], check=True)
-    else:
-        subprocess.run(["git", "clone", "--depth", "1", "-b", branch, "{repo_url}", str(path)], check=True)
-!git -C /kaggle/working/main log --oneline -1
-!git -C /kaggle/working/legal log --oneline -1
-os.chdir(LEGAL)
-!pip install -q -r /kaggle/working/main/requirements.txt
-!pip install -q -U transformers accelerate peft bitsandbytes google-genai presidio-analyzer sentence-transformers chromadb rank_bm25 rapidfuzz rouge-score matplotlib
-!pip install -q -e /kaggle/working/legal
-!python -m spacy download en_core_web_lg -q
-
-# Ollama on both GPUs (on GPU 0 only when a fine-tuned Agent 1 takes GPU 1)
-!apt-get update -qq && apt-get install -y -qq zstd
-!which ollama || (curl -fsSL https://ollama.com/install.sh | sh)
-def ollama_up():
-    try:
-        urllib.request.urlopen("http://localhost:11434/api/tags", timeout=2); return True
-    except Exception:
-        return False
-if not ollama_up():
-    env = {{**os.environ, **({{"CUDA_VISIBLE_DEVICES": "0"}} if AGENT1_ADAPTER else {{}})}}
-    subprocess.Popen(["ollama", "serve"], stdout=open(W / "ollama.log", "a"),
-                     stderr=subprocess.STDOUT, env=env, start_new_session=True)
-    for _ in range(30):
-        if ollama_up(): break
-        time.sleep(2)
-profile = json.load(open(LEGAL / "config/domains.json"))
-subprocess.run(["ollama", "pull", profile["legal"]["answer_model"]], check=True)
-subprocess.run(["ollama", "pull", OCR_MODEL], check=True)
-
-# keys from the Kaggle secrets, as the legal notebook reads them
-from kaggle_secrets import UserSecretsClient
-secrets, keys = UserSecretsClient(), []
-for name in ["GEMINI_API_KEY"] + [f"GEMINI_API_KEY_{{i}}" for i in range(2, 10)]:
-    try:
-        keys.append(secrets.get_secret(name))
-    except Exception:
-        pass
-if not keys:
-    raise RuntimeError("Add the Kaggle secret GEMINI_API_KEY (Add-ons -> Secrets) and attach it.")
-
-# the legal profile: Agents 1-3 on Gemini, answers on Ollama unless ANSWERS = "gemini"
-profile["legal"]["answer_backend"] = ANSWERS
-if AGENT1_ADAPTER:
-    profile["legal"].update(agent1_backend="transformers", agent1_adapter=AGENT1_ADAPTER)
-    os.environ["SANITISE_AGENT1_DEVICE"] = "cuda:1"
-json.dump(profile, open(LEGAL / "config/domains.json", "w"), indent=2)
-print(json.dumps(profile["legal"], indent=1))
-
-WORK = W / "eval" / ("legal" if SCALE == "full" else f"legal_{SCALE}")
-os.environ.update({
-    "SANITISE_DOMAIN": "legal", "SANITISE_LLM_BACKEND": "ollama", "SANITISE_LLM_TIMEOUT_S": "300",
-    "SANITISE_RETRIEVAL_MODE": "hybrid", "SANITISE_OCR_MODEL": OCR_MODEL,
-    "GEMINI_API_KEYS": ",".join(keys), "SANITISE_GEMINI_CACHE_DIR": str(W / "gemini_cache"),
-    "SANITISE_GEMINI_RPM": str(10 * len(keys)), "SANITISE_GEMINI_KEY_COOLDOWN_S": "60",
-})
-SUITE = MAIN / "tools/eval_suite/run.py"
-def run(step, extra="", repo=LEGAL):
-    if not ollama_up():  # back up if it stopped (e.g. a cell was interrupted)
-        env = {{**os.environ, **({{"CUDA_VISIBLE_DEVICES": "0"}} if AGENT1_ADAPTER else {{}})}}
-        subprocess.Popen(["ollama", "serve"], stdout=open(W / "ollama.log", "a"),
-                         stderr=subprocess.STDOUT, env=env, start_new_session=True)
-        for _ in range(30):
-            if ollama_up(): break
-            time.sleep(2)
-    cmd = (f"python {{SUITE}} {{step}} --domain legal --work {{WORK}} --scale {{SCALE}} "
-           f"--repo {{repo}} --main-repo {{MAIN}} {{extra}}")
-    print("$", cmd, flush=True)
-    subprocess.run(cmd, shell=True, check=False)
-print(f"ready: legal pipeline {{LEGAL_BRANCH}} | {{len(keys)}} Gemini key(s) | OCR {{OCR_MODEL}} | "
-      f"results in {{WORK}}")
-"""
 
 STEPS = {
     "data": """
@@ -288,15 +229,15 @@ def build(domain: str) -> dict:
                          build="~4-6 h (Gemini rate limit)")  # fmt: skip
     if domain == "health":
         setup = HEALTH_SETUP
-    else:  # written with doubled braces; plain Python once undoubled
-        setup = LEGAL_SETUP.replace("{{", "{").replace("}}", "}")
+    else:
+        setup = legal_setup()
     setup = setup.replace("{repo_url}", REPO_URL)
     cells = [md(intro), code(setup)]
     for name, src in STEPS.items():
         if name == "ocr":
             src = src.format(
-                repo_note="" if domain == "health" else "\n# (main's code reads the scans; the legal agents take the parts in cell 5)",
-                repo_arg="" if domain == "health" else ", repo=MAIN",
+                repo_note="",
+                repo_arg="",
             )  # fmt: skip
         elif name == "pack":
             src = src.format(domain=domain)
@@ -390,32 +331,34 @@ Kaggle account, so the runs go in parallel: set `SOURCE` in cell 1.
 **Output** holds `eval_results_finance_<source>_<scale>.zip`.
 
 Steps a source does not have are skipped (`cheques` has only scans; only `bank` has attack
-sessions). `SCALE = "quick"` checks the set-up in ~10 minutes; `"2h"` is the real run.
+sessions). `SCALE = "quick"` checks the set-up in ~10 minutes; `"high"` is the real run and takes
+all the documents a source has, up to 300 + 150 held out and 50 scans (`"5h"`, `"2h"`: fewer).
 """
 
 
 def build_finance() -> dict:
     setup = HEALTH_SETUP.replace("{repo_url}", REPO_URL)
     for old, new in (
-        ('SCALE = "5h"', 'SOURCE = "bank"   # bank | kyc | corporate | cheques (your source)\n'
+        ('SCALE = "high"', 'SOURCE = "kyc"   # bank | kyc | corporate | cheques (your source)\n'
                          'CHEQUES_ZIP = ""  # cheques only: path of the IDRBT zip under /kaggle/input\n'
-                         'SCALE = "2h"'),
-        ('BRANCH = "main"', 'BRANCH = "finance"'),
+                         'SCALE = "high"'),
         ('WORK = W / "eval" / ("health" if SCALE == "full" else f"health_{SCALE}")',
          'WORK = W / "eval" / f"finance_{SOURCE}_{SCALE}"'),
         ("--domain health --work", "--domain finance --source {SOURCE} --work"),
     ):  # fmt: skip
         assert old in setup, old
         setup = setup.replace(old, new, 1)
-    setup = setup.replace(
-        '"5h": every metric on less data, ~4.5 h; "quick": ~10 min check; "full": the plan\'s '
-        "volumes (~12-15 h)",
-        '"2h": the real run, ~2 h per source; "quick": ~10 min check',
-    )
     fetch = """
 # 2 Data: the source's folder is in the repo (each owner commits theirs); cheques are fetched
-# here from your private Kaggle dataset, since the images are never committed
+# here from your private Kaggle dataset, since the images are never committed. The code stays
+# frozen; the data is main's newest, so each owner's data goes to main.
+subprocess.run(["git", "fetch", "-q", "--depth", "1", "origin", "main"], check=True)
+subprocess.run(["git", "checkout", "FETCH_HEAD", "--", "data/finance/" + SOURCE], check=True)
 if SOURCE == "cheques":
+    import shutil
+    # labels with the account numbers and dates stay in the owner's private Kaggle dataset
+    for labels in sorted(Path("/kaggle/input").rglob("labels.csv"))[:1]:
+        shutil.copy(labels, REPO / "data/finance/cheques/labels.csv")
     !python tools/finance/cheques.py --zip "{CHEQUES_ZIP}"
 run("data")
 """
@@ -445,11 +388,6 @@ def main() -> None:
     path = ROOT / "notebooks" / "eval_finance_kaggle.ipynb"
     path.write_text(
         json.dumps(build_finance(), indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
-    print("wrote", path.relative_to(ROOT))
-    path = ROOT / "notebooks" / "eval_health_rerun_utility_kaggle.ipynb"
-    path.write_text(
-        json.dumps(build_rerun(), indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     print("wrote", path.relative_to(ROOT))
 
