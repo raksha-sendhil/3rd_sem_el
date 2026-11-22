@@ -1,9 +1,9 @@
 """Agent 3 orchestration.  OWNER: Person C (Platform and Integration).
 
     route (A) -> allocate_placeholders (A) -> generalise (A) -> reconstruct (C)
-      -> leak_check (A) + grounding check (C)
+      -> leak_check (A) + grounding check (C) + fidelity check (C)
       -> on a problem: reconstruct once more with feedback (C)
-      -> still a problem: mask_fallback (A), then grounding.mask (C)
+      -> still a problem: fidelity.repair, mask_fallback (A), then grounding.mask (C)
       -> still a problem: LEAK_CHECK_FAILED
       -> figures of the safe facts that the model left out are added back (checked the same way)
 
@@ -23,6 +23,7 @@ from dataclasses import dataclass, field
 from pydantic import ValidationError
 
 from sanitise_finance.agents.rewriter import (
+    fidelity,
     grounding,
     leakcheck,
     ontology,
@@ -129,23 +130,32 @@ async def _rewrite(
         decisions, tokens = plan_decisions(detected, extracted)
         removed = removed_decisions(decisions)
         facts_text = prompt.draft(extracted.facts, decisions)
+        shown = prompt.safe_facts(extracted.facts, decisions)
+        labels = prompt.subject_labels(shown)
+        # what code may write into a rewrite counts as grounded too
+        grounded = f"{facts_text}\n{fidelity.render(shown, labels)}"
 
         def problems(text: str) -> list[SensitiveSpan]:
-            return leakcheck.leak_check(removed, text) + grounding.ungrounded(text, facts_text)
+            return leakcheck.leak_check(removed, text) + grounding.ungrounded(text, grounded)
 
         if not facts_text:  # nothing to write from: no model call, no made-up text
             safe = NO_FACTS
         else:
             safe = await prompt.reconstruct(extracted.facts, decisions, tokens, llm)
         leaks = problems(safe)
+        notes = fidelity.problems(safe, shown) if facts_text else []
         retries = 0
-        if leaks:
-            retries = 1
-            safe = await prompt.reconstruct(extracted.facts, decisions, tokens, llm, feedback=leaks)
+        if leaks or notes:
+            retries = int(bool(leaks))
+            safe = await prompt.reconstruct(
+                extracted.facts, decisions, tokens, llm, feedback=leaks, notes=notes
+            )
+            if facts_text:  # still unfaithful: code puts it right, whatever the model did
+                safe = fidelity.repair(safe, shown, labels)
             leaks = problems(safe)
         if leaks:
             safe = leakcheck.mask_fallback(safe, leakcheck.leak_check(removed, safe), tokens)
-            safe = grounding.mask(safe, grounding.ungrounded(safe, facts_text))
+            safe = grounding.mask(safe, grounding.ungrounded(safe, grounded))
             leaks = problems(safe)
         if leaks:
             raise LeakCheckFailed(

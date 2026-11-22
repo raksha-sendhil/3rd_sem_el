@@ -31,7 +31,7 @@ import re
 
 from pydantic import ValidationError
 
-from sanitise_finance.agents.extractor import canonical, casefile, importance, prompt
+from sanitise_finance.agents.extractor import canonical, casefile, importance, prompt, speakers
 from sanitise_finance.errors import PipelineError, SchemaValidationFailed
 from sanitise_finance.llm.base import LLMClient, format_validation_error
 from sanitise_finance.llm.factory import agents_llm
@@ -225,6 +225,10 @@ def check_facts(
                     owner = f.subject if trust_subjects else _subject_at(text, s.start, subjects)
                     placed.append(_fact(owner or f.subject, f.relation, s.text))
                     owners.append(owner or f.subject)
+            if trust_subjects and not owners and f.relation == "event_date":
+                # "18 months ago": no calendar date, so nothing to hide, and it is content
+                if _DURATION.search(f.value) and in_record(f.value, text):
+                    placed.append(_fact(f.subject, "symptom_duration", f.value))
             detail = _clinical_detail(f, spans, text)
             if owners and detail:
                 placed.append(_fact(owners[0], "assessment", detail))
@@ -264,6 +268,10 @@ async def extract(
             subs = casefile.relabel(subs, patient)
         model = agents_llm(llm)
         raw = await prompt.extract_facts(text, subs, detected.spans, model)
+        if getattr(model, "one_call_per_document", False):
+            # code, not the model, decides whether a reply was extracted completely
+            if missed := speakers.uncovered(text, [f.value for f in raw]):
+                raw += await prompt.extract_facts(text, subs, detected.spans, model, missed=missed)
         checked = check_facts(
             text,
             raw,
@@ -293,4 +301,4 @@ async def extract(
     if patient is not None:
         subs = [s.model_copy(update={"id": casefile.rename(s.id, patient)}) for s in subs]
         kept = [f.model_copy(update={"subject": casefile.rename(f.subject, patient)}) for f in kept]
-    return subs, ExtractorOutput(doc_id=doc_id, facts=kept)
+    return subs, ExtractorOutput(doc_id=doc_id, facts=speakers.attribute(text, kept))

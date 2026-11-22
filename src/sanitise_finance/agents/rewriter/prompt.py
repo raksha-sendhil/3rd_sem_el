@@ -26,7 +26,7 @@ from __future__ import annotations
 
 import re
 
-from sanitise_finance.agents.rewriter import leakcheck, ontology
+from sanitise_finance.agents.rewriter import fidelity, leakcheck, ontology
 from sanitise_finance.casefile import CASE_FILE
 from sanitise_finance.llm.base import LLMClient
 from sanitise_finance.schemas import Action, FactTuple, PIICategory, RoutingDecision, SensitiveSpan
@@ -51,26 +51,33 @@ in your record.
 3. Copy every amount, rate, percentage, term and year exactly as the facts write it, next to \
 the words that say what it is. Never round, convert, total or drop one, however many there are.
 4. Keep vague phrases vague. You may change their grammar, but never make them more specific.
-5. A customer's message or an email: write it as the writer would, in the first person. A form, \
-statement, agreement or report (facts about "the record"): write plain statements in the third \
-person. Use as many short sentences as the facts need. Say each detail once.
-6. Return only the rewritten record.
+5. Write in the third person throughout, never "I", "my", "we" or "you". In a customer's \
+message, complaint or email say "the writer" or "the customer" and what they reported or asked.
+6. Keep who said what. A fact marked "(said by the agent)" is what the agent told the customer: \
+write "The agent advised ..." or "The agent explained ...". Never turn it into something the \
+customer said, did or plans.
+7. Put the words around figures and product names in your own phrasing: never copy ten or \
+more words in a row from a fact. Use as many short sentences as the facts need. Say each \
+detail once.
+8. Return only the rewritten record.
 
 EXAMPLE 1
 FACTS:
-the writer - name: [PERSON_1].
-the writer - ID number: [ID_1].
-the writer - employer: a company.
-the writer - income: earns 46,000 a month.
-the record - product: car loan.
-the record - amount: car loan instalment: 8,250.
-the record - issue: instalment taken twice in May.
-the record - account event: second debit bounced rent cheque.
-the record - plan: reverse the debit.
+the customer - name: [PERSON_1].
+the customer - ID number: [ID_1].
+the customer - employer: a company.
+the customer - income (said by the customer): earns 46,000 a month.
+the customer - product (said by the customer): car loan.
+the customer - amount (said by the customer): car loan instalment: 8,250.
+the customer - issue (said by the customer): instalment taken twice in May.
+the customer - account event (said by the customer): second debit bounced rent cheque.
+the customer - plan (said by the customer): reverse the debit.
+the customer - advice (said by the agent): wait five working days for the refund.
 OUTPUT:
-I am [PERSON_1], account [ID_1]. I work for a company and earn 46,000 a month. My car loan \
-instalment of 8,250 was taken twice in May, and the second debit bounced my rent cheque. \
-Please reverse the debit.
+The customer, [PERSON_1], account [ID_1], works for a company and earns 46,000 a month. They \
+reported that their car loan instalment of 8,250 was taken twice in May and that the second \
+debit bounced their rent cheque, and asked for the debit to be reversed. The agent advised \
+waiting five working days for the refund.
 
 EXAMPLE 2
 FACTS:
@@ -203,12 +210,14 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
                 value = _without_leftover(value, d.span_text, d.replacement)
             else:
                 value = d.replacement
+    value = DOUBLE_ARTICLE.sub(r"\1", value)  # "in a Pune branch" -> "in a branch"
     if not CASE_FILE.get():
         return value
     # a clinical record's date made vague to its year: "Review on 23/10/2026" -> "Review in 2026"
     return _ON_YEAR.sub(lambda m: ("In " if m.group(1) == "O" else "in ") + m.group(2), value)
 
 
+DOUBLE_ARTICLE = re.compile(r"\b(?:an?|the)\s+(an?\s+\w)")
 _ON_YEAR = re.compile(r"\b([Oo])n (\d{4}|the \d{4}s)\b")
 
 
@@ -272,6 +281,9 @@ def subject_labels(safe: list[tuple[FactTuple, str]]) -> dict[str, str]:
     person", never by an id such as "person 3", which the model would copy into the record."""
     labels: dict[str, str] = {}
     unnamed = 0
+    # in a conversation with a bank the writer is "the customer"
+    spoke = any(f.said_by == "customer" for f, _ in safe)
+    writer = "the customer" if spoke else "the writer"
     for f, _ in safe:
         subject = f.subject
         if subject in labels:
@@ -281,9 +293,9 @@ def subject_labels(safe: list[tuple[FactTuple, str]]) -> dict[str, str]:
         elif subject.startswith("patient."):
             labels[subject] = "the patient's " + subject.removeprefix("patient.").replace("_", " ")
         elif subject == "writer":
-            labels[subject] = "the writer"
+            labels[subject] = writer
         elif subject.startswith("writer."):
-            labels[subject] = "the writer's " + subject.removeprefix("writer.").replace("_", " ")
+            labels[subject] = f"{writer}'s " + subject.removeprefix("writer.").replace("_", " ")
         else:
             name = next(
                 (
@@ -322,11 +334,16 @@ def draft(facts: list[FactTuple], decisions: list[RoutingDecision]) -> str:
     lines: list[str] = []
     for f, value in safe:
         label = labels[f.subject]
-        if f.subject == "writer" and f.relation in RECORD_RELATIONS:
+        if f.subject == "writer" and f.relation in RECORD_RELATIONS and not f.said_by:
             label = "the record"
         if f.relation == "identifier" and value == label:
             continue
-        line = f"{label} - {relation_label(f.relation, value)}: {value}."
+        said = f" (said by the {f.said_by})" if f.said_by else ""
+        value = fidelity.third_person(value)
+        relation = relation_label(f.relation, value)
+        if f.said_by not in (None, "customer", "client") and f.relation == "plan":
+            relation = "advice"  # a reply's plan is advice, not the customer's plan
+        line = f"{label} - {relation}{said}: {value}."
         if line not in lines:
             lines.append(line)
     return "\n".join(lines)
@@ -344,7 +361,8 @@ def missing_figures(facts: list[FactTuple], decisions: list[RoutingDecision], te
     for f, value in safe_facts(facts, decisions):
         if f.relation not in RECORD_RELATIONS | {"income"} or figures(value) <= said:
             continue
-        line = f"{f.relation.replace('_', ' ').capitalize()}: {value}."
+        label = f.relation.replace("_", " ").capitalize()
+        line = f"{label}: {fidelity.third_person(value)}."
         if line not in lines:
             lines.append(line)
     return lines
@@ -354,6 +372,7 @@ def build_user_prompt(
     facts: list[FactTuple],
     decisions: list[RoutingDecision],
     feedback: list[SensitiveSpan] | None = None,
+    notes: list[str] | None = None,
 ) -> str:
     prompt = f"FACTS:\n{draft(facts, decisions) or '(no facts)'}"
     if feedback:
@@ -363,6 +382,9 @@ def build_user_prompt(
             f"not in the facts ({kinds}). Write it again using only the tokens and phrases in "
             "the facts."
         )
+    if notes:
+        prompt += "\n\nYour previous version was wrong:\n" + "\n".join(f"- {n}" for n in notes)
+        prompt += "\nWrite it again."
     return prompt + "\nOUTPUT:"
 
 
@@ -372,7 +394,8 @@ async def reconstruct(
     placeholders: dict[str, str],
     llm: LLMClient,
     feedback: list[SensitiveSpan] | None = None,
+    notes: list[str] | None = None,
 ) -> str:
     system = CASE_FILE_PROMPT if is_case_file(facts) else SYSTEM_PROMPT
-    reply = await llm.text_call(system, build_user_prompt(facts, decisions, feedback))
+    reply = await llm.text_call(system, build_user_prompt(facts, decisions, feedback, notes))
     return PREAMBLE.sub("", reply).strip()

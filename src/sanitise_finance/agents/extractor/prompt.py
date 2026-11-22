@@ -198,6 +198,9 @@ facts. An empty blank or a placeholder such as "[Amount]" gives none.
 relationships are handled elsewhere: never list them, and leave them out of every value. \
 Leave company names out of values too, except in employer.
 - Only what the record states.
+- In an agent's or the bank's reply every explanation, reason, instruction, condition and offer \
+is an "other" or "plan" fact, each on its own. Only greetings and sign-offs are left out.
+- What the writer asks about, disputes or refuses is a fact ("asks whether the fee is legal").
 - Only if the record has no content at all, return {"facts": []}.
 
 EXAMPLE 1
@@ -288,21 +291,37 @@ def document_schema(
     )
 
 
-def build_document_prompt(text: str, subjects: list[Subject], spans: list[SensitiveSpan]) -> str:
+def build_document_prompt(
+    text: str,
+    subjects: list[Subject],
+    spans: list[SensitiveSpan],
+    missed: list[str] | None = None,
+) -> str:
     people = "\n".join(f"- {s.id}: {_names(s)}" for s in subjects)
     hints = (
         "\n".join(f"- {s.category.value}: {s.text}" for s in spans if s.category in HINT_CATEGORIES)
         or "(none)"
     )
+    task = "List every fact in this document, with every figure."
+    if missed:
+        task = (
+            "An earlier pass left out the reply's sentences below. List the facts in these "
+            "sentences only, as plan, amount, account_event or other facts:\n"
+            + "\n".join(f"- {s}" for s in missed)
+        )
     return (
         f"DOCUMENT:\n{text}\n\nSUBJECTS:\n{people}\n\n"
         "DETAILS FOUND IN THE RECORD (each belongs to someone; some may be mislabelled):\n"
-        f"{hints}\n\nList every fact in this document, with every figure.\nOUTPUT:"
+        f"{hints}\n\n{task}\nOUTPUT:"
     )
 
 
 async def extract_facts(
-    text: str, subjects: list[Subject], spans: list[SensitiveSpan], llm: LLMClient
+    text: str,
+    subjects: list[Subject],
+    spans: list[SensitiveSpan],
+    llm: LLMClient,
+    missed: list[str] | None = None,
 ) -> list[FactTuple]:
     """One call per document for a strong model, one per subject otherwise. The importance of
     each fact is set here, by its relation."""
@@ -310,7 +329,7 @@ async def extract_facts(
     if getattr(llm, "one_call_per_document", False):
         result = await llm.json_call(
             DOCUMENT_PROMPT,
-            build_document_prompt(text, subjects, spans),
+            build_document_prompt(text, subjects, spans, missed),
             document_schema([s.id for s in subjects]),
         )
         return [

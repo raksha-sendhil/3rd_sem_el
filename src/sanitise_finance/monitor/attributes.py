@@ -29,6 +29,9 @@ from sanitise_finance.schemas import Action, PIICategory, SanitisedRecord
 
 C = PIICategory
 
+# The useful content: revealed freely, never edited, never a reason to block at the limit. It counts
+# in the candidate pool, so the personal details around it are what climb.
+CONTENT_TYPES = frozenset({"product"})
 TYPE_OF: dict[PIICategory, str] = {
     C.AGE: "age",
     C.DATE: "date",
@@ -37,7 +40,7 @@ TYPE_OF: dict[PIICategory, str] = {
     C.OCCUPATION: "occupation",
     C.MEDICAL_CONDITION: "condition",
     C.PHYSICAL: "physical",
-    C.PRODUCT: "product",  # finance's condition: what an attacker starts from. Amounts are not one.
+    C.PRODUCT: "product",  # content: never edited, narrows the pool. Amounts are not one.
 }
 ATTRIBUTE_TYPES = tuple(dict.fromkeys(TYPE_OF.values()))
 _GENERIC = {phrase.lower() for phrase in GENERIC.values()}
@@ -158,6 +161,9 @@ def replace_form(text: str, old: str, new: str) -> str:
     """``text`` with every mention of ``old`` said as ``new`` instead. A mention of only the
     core ("the Nilgiris district", "her thirties") is replaced, with the words around it that
     belong to it, by the whole new phrase ("a town in Tamil Nadu", "a young adult")."""
+    if re.match(r"an?\s", new):  # the new phrase brings its own article
+        whole = _pattern(_variants(old)[0]).pattern
+        text = re.sub(rf"\b(?:an?|the)\s+(?={whole})", "", text, flags=re.IGNORECASE)
     for i, variant in enumerate(_variants(old)):
         text = _pattern(variant, around=i > 0).sub(new, text)
     return text
