@@ -1,0 +1,44 @@
+{
+  "doc_id": "51b198acafc7bbda",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Chandran,\n\nThank you for meeting us on 12 June 2026 about your dispute with Pranav Mukherjee. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Hubballi.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Chandran",
+      "category": "NAME",
+      "start": 45,
+      "end": 53
+    },
+    {
+      "text": "12 June 2026",
+      "category": "DATE",
+      "start": 84,
+      "end": 96
+    },
+    {
+      "text": "Pranav Mukherjee",
+      "category": "NAME",
+      "start": 121,
+      "end": 137
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hubballi",
+      "category": "COURT",
+      "start": 256,
+      "end": 305
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 582,
+      "end": 599
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

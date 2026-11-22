@@ -1,0 +1,68 @@
+{
+  "doc_id": "424b3b016acf0d94",
+  "text": "Subject: Need help with a wrongful termination case\n\nHello, my name is Pranav Goyal. I am a 26-year-old nurse living in New Delhi. My employer M/s Hegde Technologies Pvt Ltd owes me INR 48,90,000/- after firing me, and the employee was dismissed without any enquiry. Can your firm advise me on what to do next? You can call me on 09513100923 or email pranav.goyal39@example.com.",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 46
+    },
+    {
+      "text": "Pranav Goyal",
+      "category": "NAME",
+      "start": 71,
+      "end": 83
+    },
+    {
+      "text": "26-year-old",
+      "category": "AGE",
+      "start": 92,
+      "end": 103
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 104,
+      "end": 109
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 120,
+      "end": 129
+    },
+    {
+      "text": "Hegde Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 147,
+      "end": 173
+    },
+    {
+      "text": "INR 48,90,000/-",
+      "category": "MONEY",
+      "start": 182,
+      "end": 197
+    },
+    {
+      "text": "09513100923",
+      "category": "PHONE",
+      "start": 330,
+      "end": 341
+    },
+    {
+      "text": "pranav.goyal39@example.com",
+      "category": "EMAIL",
+      "start": 351,
+      "end": 377
+    },
+    {
+      "text": "age (26) + occupation (nurse) + city (New Delhi) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

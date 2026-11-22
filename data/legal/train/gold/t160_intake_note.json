@@ -1,0 +1,104 @@
+{
+  "doc_id": "e406e5d07c57d701",
+  "text": "Intake note (Commercial team, 31 July 2024). Our client Mahesh Khan is a 34-year-old hardware dealer who lives at Bungalow 40, Sitabuldi, Nagpur 440012 and can be reached on 06507187554 or mahesh.khan36@example.in. The client's PAN LVZPK7730J, Aadhaar 4067 6010 7685.\nThe client consulted us about a cheque bounce matter against M/s Harbour Traders. A cheque for Rs 22,70,000 issued by Harbour Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as CC/2002/2024 before the Judicial Magistrate First Class Court at Nagpur on 29/10/2024.",
+  "spans": [
+    {
+      "text": "31 July 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Mahesh Khan",
+      "category": "NAME",
+      "start": 56,
+      "end": 67
+    },
+    {
+      "text": "34-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 100
+    },
+    {
+      "text": "Bungalow 40, Sitabuldi, Nagpur 440012",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 151
+    },
+    {
+      "text": "06507187554",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "mahesh.khan36@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 213
+    },
+    {
+      "text": "LVZPK7730J",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "4067 6010 7685",
+      "category": "ID_NUMBER",
+      "start": 252,
+      "end": 266
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 300,
+      "end": 313
+    },
+    {
+      "text": "Harbour Traders",
+      "category": "ORGANIZATION",
+      "start": 333,
+      "end": 348
+    },
+    {
+      "text": "Rs 22,70,000",
+      "category": "MONEY",
+      "start": 363,
+      "end": 375
+    },
+    {
+      "text": "Harbour Traders",
+      "category": "ORGANIZATION",
+      "start": 386,
+      "end": 401
+    },
+    {
+      "text": "CC/2002/2024",
+      "category": "CASE_NUMBER",
+      "start": 490,
+      "end": 502
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 514,
+      "end": 561
+    },
+    {
+      "text": "29/10/2024",
+      "category": "DATE",
+      "start": 565,
+      "end": 575
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "49d917786ae4289c",
+  "text": "Intake note (Commercial team, 11 November 2024). Our client Pranav Sathe is a 46-year-old bank manager who lives at House No. 79, Peelamedu, Coimbatore 641034 and can be reached on 09528847228 or pranav.sathe@example.in. The client's PAN JREPS7367H.\nThe client consulted us about a wrongful termination matter against M/s Chatterjee Technologies Pvt Ltd. The wrongful termination claim against M/s Chatterjee Technologies Pvt Ltd is for ₹8,60,000; the employer offered to settle.\nThe matter was filed as Complaint No. 89/2024 before the Coimbatore Labour Court on 13 December 2024.",
+  "spans": [
+    {
+      "text": "11 November 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Pranav Sathe",
+      "category": "NAME",
+      "start": 60,
+      "end": 72
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 102
+    },
+    {
+      "text": "House No. 79, Peelamedu, Coimbatore 641034",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 158
+    },
+    {
+      "text": "09528847228",
+      "category": "PHONE",
+      "start": 181,
+      "end": 192
+    },
+    {
+      "text": "pranav.sathe@example.in",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 219
+    },
+    {
+      "text": "JREPS7367H",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 248
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 282,
+      "end": 302
+    },
+    {
+      "text": "Chatterjee Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 322,
+      "end": 353
+    },
+    {
+      "text": "Chatterjee Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 398,
+      "end": 429
+    },
+    {
+      "text": "₹8,60,000",
+      "category": "MONEY",
+      "start": 437,
+      "end": 446
+    },
+    {
+      "text": "Complaint No. 89/2024",
+      "category": "CASE_NUMBER",
+      "start": 504,
+      "end": 525
+    },
+    {
+      "text": "Coimbatore Labour Court",
+      "category": "COURT",
+      "start": 537,
+      "end": 560
+    },
+    {
+      "text": "13 December 2024",
+      "category": "DATE",
+      "start": 564,
+      "end": 580
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

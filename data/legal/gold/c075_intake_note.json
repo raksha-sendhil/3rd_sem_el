@@ -1,0 +1,110 @@
+{
+  "doc_id": "f8aeeb0610af2d29",
+  "text": "Intake note - Property team\nDate: 01/10/2023\nClient: Anand Varghese, a 39-year-old orthopaedic surgeon from Surat.\nAddress: Bungalow 13, Adajan, Surat 395012\nPhone: 64176 56864. Email: anand.varghese@example.in. PAN SSNPV5975S.\nMatter: land dispute\nOpposing party: Harish Patil\nFacts: The land dispute with Harish Patil concerns agricultural land valued at Rs 2,31,00,000; relatives dispute who owns the ancestral land.\nThe matter was filed as O.S. No. 319/2023 before the Surat District Court on 19 December 2023.",
+  "spans": [
+    {
+      "text": "01/10/2023",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Anand Varghese",
+      "category": "NAME",
+      "start": 53,
+      "end": 67
+    },
+    {
+      "text": "39-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 102
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 113
+    },
+    {
+      "text": "Bungalow 13, Adajan, Surat 395012",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 157
+    },
+    {
+      "text": "64176 56864",
+      "category": "PHONE",
+      "start": 165,
+      "end": 176
+    },
+    {
+      "text": "anand.varghese@example.in",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 210
+    },
+    {
+      "text": "SSNPV5975S",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 248
+    },
+    {
+      "text": "Harish Patil",
+      "category": "NAME",
+      "start": 265,
+      "end": 277
+    },
+    {
+      "text": "Harish Patil",
+      "category": "NAME",
+      "start": 307,
+      "end": 319
+    },
+    {
+      "text": "Rs 2,31,00,000",
+      "category": "MONEY",
+      "start": 357,
+      "end": 371
+    },
+    {
+      "text": "O.S. No. 319/2023",
+      "category": "CASE_NUMBER",
+      "start": 444,
+      "end": 461
+    },
+    {
+      "text": "Surat District Court",
+      "category": "COURT",
+      "start": 473,
+      "end": 493
+    },
+    {
+      "text": "19 December 2023",
+      "category": "DATE",
+      "start": 497,
+      "end": 513
+    },
+    {
+      "text": "age (39) + occupation (orthopaedic surgeon) + city (Surat) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

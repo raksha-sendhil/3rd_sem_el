@@ -1,0 +1,68 @@
+{
+  "doc_id": "e7ec82a2bbf39971",
+  "text": "Case note: C.P.(IB) No. 2741/2022\nClient: Divya Ghosh (software engineer, Surat)\nOpposing party: Lotus Holdings Ltd\nCourt: NCLT Mumbai\nFiled on: 1 July 2022\nClaim amount: Rs. 17,75,00,000\nIssue: cross-border insolvency. The debtor is in insolvency proceedings in two countries.\nAdvice given: File the claim with the resolution professional before the deadline.\nOutcome: The claim was admitted in full.\nRecommended next step: Vote on the resolution plan.",
+  "spans": [
+    {
+      "text": "C.P.(IB) No. 2741/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 33
+    },
+    {
+      "text": "Divya Ghosh",
+      "category": "NAME",
+      "start": 42,
+      "end": 53
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 72
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 74,
+      "end": 79
+    },
+    {
+      "text": "Lotus Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 97,
+      "end": 115
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 123,
+      "end": 134
+    },
+    {
+      "text": "1 July 2022",
+      "category": "DATE",
+      "start": 145,
+      "end": 156
+    },
+    {
+      "text": "Rs. 17,75,00,000",
+      "category": "MONEY",
+      "start": 171,
+      "end": 187
+    },
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 195,
+      "end": 218
+    },
+    {
+      "text": "occupation (software engineer) + city (Surat) + issue (cross-border insolvency)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

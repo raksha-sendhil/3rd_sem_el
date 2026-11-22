@@ -1,0 +1,104 @@
+{
+  "doc_id": "9c4750021c668cef",
+  "text": "Intake note (Family team, 28/12/2023). Our client Sameer Patil is a 27-year-old insurance agent who lives at Plot 48, Kakkanad, Kochi 682037 and can be reached on +91 73640 12283 or sameer.patil37@example.in. The client's PAN JTFPP7773D, Aadhaar 6446 8931 0185.\nThe client consulted us about a divorce by mutual consent matter against Sujata Gaikwad. The divorce by mutual consent with Sujata Gaikwad includes a settlement of 85.7 lakh rupees; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 854/2024 before the Family Court at Kochi on 02/04/2024.",
+  "spans": [
+    {
+      "text": "28/12/2023",
+      "category": "DATE",
+      "start": 26,
+      "end": 36
+    },
+    {
+      "text": "Sameer Patil",
+      "category": "NAME",
+      "start": 50,
+      "end": 62
+    },
+    {
+      "text": "27-year-old",
+      "category": "AGE",
+      "start": 68,
+      "end": 79
+    },
+    {
+      "text": "insurance agent",
+      "category": "OCCUPATION",
+      "start": 80,
+      "end": 95
+    },
+    {
+      "text": "Plot 48, Kakkanad, Kochi 682037",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 140
+    },
+    {
+      "text": "+91 73640 12283",
+      "category": "PHONE",
+      "start": 163,
+      "end": 178
+    },
+    {
+      "text": "sameer.patil37@example.in",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 207
+    },
+    {
+      "text": "JTFPP7773D",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "6446 8931 0185",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 260
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 294,
+      "end": 319
+    },
+    {
+      "text": "Sujata Gaikwad",
+      "category": "NAME",
+      "start": 335,
+      "end": 349
+    },
+    {
+      "text": "Sujata Gaikwad",
+      "category": "NAME",
+      "start": 386,
+      "end": 400
+    },
+    {
+      "text": "85.7 lakh rupees",
+      "category": "MONEY",
+      "start": 426,
+      "end": 442
+    },
+    {
+      "text": "Petition No. 854/2024",
+      "category": "CASE_NUMBER",
+      "start": 517,
+      "end": 538
+    },
+    {
+      "text": "Family Court at Kochi",
+      "category": "COURT",
+      "start": 550,
+      "end": 571
+    },
+    {
+      "text": "02/04/2024",
+      "category": "DATE",
+      "start": 575,
+      "end": 585
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

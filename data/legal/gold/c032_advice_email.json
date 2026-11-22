@@ -1,0 +1,50 @@
+{
+  "doc_id": "ad66305d669ea70e",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 1107/2021\n\nDear Ms. Rajan,\n\nThank you for meeting us on 21 July 2021 about your dispute with Yogesh Dutta. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Vadodara.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 1107/2021",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Rajan",
+      "category": "NAME",
+      "start": 68,
+      "end": 73
+    },
+    {
+      "text": "21 July 2021",
+      "category": "DATE",
+      "start": 104,
+      "end": 116
+    },
+    {
+      "text": "Yogesh Dutta",
+      "category": "NAME",
+      "start": 141,
+      "end": 153
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Vadodara",
+      "category": "COURT",
+      "start": 272,
+      "end": 321
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 598,
+      "end": 614
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

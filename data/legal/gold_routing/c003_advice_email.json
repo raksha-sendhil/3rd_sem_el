@@ -1,0 +1,47 @@
+{
+  "doc_id": "c35cab90b888fcc9",
+  "routing": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "CC/2745/2025",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Patil",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "03/11/2025",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Karve Constructions",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "Rs. 8,29,00,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

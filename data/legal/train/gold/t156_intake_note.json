@@ -1,0 +1,110 @@
+{
+  "doc_id": "3b1787287671dce6",
+  "text": "Intake note - Commercial team\nDate: 11 April 2020\nClient: Uma Chauhan, a 73-year-old schoolteacher from Pune.\nAddress: Bungalow 25, Koregaon Park, Pune 411046\nPhone: +91 60028 14419. Email: uma.chauhan@example.in. PAN WJJPC7260Q.\nMatter: wrongful termination\nOpposing party: Goyal Industries\nFacts: The wrongful termination claim against M/s Goyal Industries is for 22.8 lakh rupees; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 2451/2020 before the Pune Labour Court on 04/10/2020.",
+  "spans": [
+    {
+      "text": "11 April 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Uma Chauhan",
+      "category": "NAME",
+      "start": 58,
+      "end": 69
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 98
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 108
+    },
+    {
+      "text": "Bungalow 25, Koregaon Park, Pune 411046",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 158
+    },
+    {
+      "text": "+91 60028 14419",
+      "category": "PHONE",
+      "start": 166,
+      "end": 181
+    },
+    {
+      "text": "uma.chauhan@example.in",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 212
+    },
+    {
+      "text": "WJJPC7260Q",
+      "category": "ID_NUMBER",
+      "start": 218,
+      "end": 228
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 258
+    },
+    {
+      "text": "Goyal Industries",
+      "category": "ORGANIZATION",
+      "start": 275,
+      "end": 291
+    },
+    {
+      "text": "Goyal Industries",
+      "category": "ORGANIZATION",
+      "start": 342,
+      "end": 358
+    },
+    {
+      "text": "22.8 lakh rupees",
+      "category": "MONEY",
+      "start": 366,
+      "end": 382
+    },
+    {
+      "text": "Complaint No. 2451/2020",
+      "category": "CASE_NUMBER",
+      "start": 456,
+      "end": 479
+    },
+    {
+      "text": "Pune Labour Court",
+      "category": "COURT",
+      "start": 491,
+      "end": 508
+    },
+    {
+      "text": "04/10/2020",
+      "category": "DATE",
+      "start": 512,
+      "end": 522
+    },
+    {
+      "text": "age (73) + occupation (schoolteacher) + city (Pune) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

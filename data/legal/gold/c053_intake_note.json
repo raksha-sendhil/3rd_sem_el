@@ -1,0 +1,116 @@
+{
+  "doc_id": "343cbc21cf703de6",
+  "text": "Intake note - Property team\nDate: 20/08/2022\nClient: Siddharth Tiwari, a 25-year-old railway employee from Panaji.\nAddress: Plot 94, Miramar, Panaji 403001\nPhone: 08792598276. Email: siddharth.tiwari@example.in. PAN RFHPT2995B, Aadhaar 5893 9903 5246.\nMatter: tenancy eviction\nOpposing party: Suresh Joshi\nFacts: The tenancy dispute with Suresh Joshi concerns rent arrears of ₹4,65,000; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.S. No. 2767/2022 before the Panaji District Court on 14 September 2022.",
+  "spans": [
+    {
+      "text": "20/08/2022",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Siddharth Tiwari",
+      "category": "NAME",
+      "start": 53,
+      "end": 69
+    },
+    {
+      "text": "25-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 101
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 113
+    },
+    {
+      "text": "Plot 94, Miramar, Panaji 403001",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 155
+    },
+    {
+      "text": "08792598276",
+      "category": "PHONE",
+      "start": 163,
+      "end": 174
+    },
+    {
+      "text": "siddharth.tiwari@example.in",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 210
+    },
+    {
+      "text": "RFHPT2995B",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "5893 9903 5246",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 250
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 260,
+      "end": 276
+    },
+    {
+      "text": "Suresh Joshi",
+      "category": "NAME",
+      "start": 293,
+      "end": 305
+    },
+    {
+      "text": "Suresh Joshi",
+      "category": "NAME",
+      "start": 338,
+      "end": 350
+    },
+    {
+      "text": "₹4,65,000",
+      "category": "MONEY",
+      "start": 376,
+      "end": 385
+    },
+    {
+      "text": "R.C.S. No. 2767/2022",
+      "category": "CASE_NUMBER",
+      "start": 489,
+      "end": 509
+    },
+    {
+      "text": "Panaji District Court",
+      "category": "COURT",
+      "start": 521,
+      "end": 542
+    },
+    {
+      "text": "14 September 2022",
+      "category": "DATE",
+      "start": 546,
+      "end": 563
+    },
+    {
+      "text": "age (25) + occupation (railway employee) + city (Panaji) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

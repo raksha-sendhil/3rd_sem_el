@@ -1,0 +1,110 @@
+{
+  "doc_id": "34b9d5d0951811a9",
+  "text": "Intake note - Commercial team\nDate: 3 April 2022\nClient: Divya Ghosh, a 74-year-old software engineer from Surat.\nAddress: Bungalow 25, Vesu, Surat 395033\nPhone: +91 65274 64872. Email: divya.ghosh69@example.in. PAN GZWPG3632Q.\nMatter: cross-border insolvency\nOpposing party: Lotus Holdings Ltd\nFacts: The cross-border insolvency matter involving M/s Lotus Holdings Ltd concerns claims of Rs. 17,75,00,000; the debtor is in insolvency proceedings in two countries.\nThe matter was filed as C.P.(IB) No. 2741/2022 before the NCLT Mumbai on 1 July 2022.",
+  "spans": [
+    {
+      "text": "3 April 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Divya Ghosh",
+      "category": "NAME",
+      "start": 57,
+      "end": 68
+    },
+    {
+      "text": "74-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 101
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 112
+    },
+    {
+      "text": "Bungalow 25, Vesu, Surat 395033",
+      "category": "ADDRESS",
+      "start": 123,
+      "end": 154
+    },
+    {
+      "text": "+91 65274 64872",
+      "category": "PHONE",
+      "start": 162,
+      "end": 177
+    },
+    {
+      "text": "divya.ghosh69@example.in",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 210
+    },
+    {
+      "text": "GZWPG3632Q",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 259
+    },
+    {
+      "text": "Lotus Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 276,
+      "end": 294
+    },
+    {
+      "text": "Lotus Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 351,
+      "end": 369
+    },
+    {
+      "text": "Rs. 17,75,00,000",
+      "category": "MONEY",
+      "start": 389,
+      "end": 405
+    },
+    {
+      "text": "C.P.(IB) No. 2741/2022",
+      "category": "CASE_NUMBER",
+      "start": 489,
+      "end": 511
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 523,
+      "end": 534
+    },
+    {
+      "text": "1 July 2022",
+      "category": "DATE",
+      "start": 538,
+      "end": 549
+    },
+    {
+      "text": "age (74) + occupation (software engineer) + city (Surat) + issue (cross-border insolvency)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

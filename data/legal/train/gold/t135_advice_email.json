@@ -1,0 +1,44 @@
+{
+  "doc_id": "0e5a8687fa166e1b",
+  "text": "Subject: Your cross-border insolvency matter\n\nDear Ms. Ghosh,\n\nThank you for meeting us on 25 April 2023 about your dispute with M/s Lotus Holdings Ltd. As we understand it, the debtor is in insolvency proceedings in two countries. The matter is listed before the NCLT Mumbai.\n\nOur advice is to file the claim with the resolution professional before the deadline. Please collect the loan documents and the statement of the amount due and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 37
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 55,
+      "end": 60
+    },
+    {
+      "text": "25 April 2023",
+      "category": "DATE",
+      "start": 91,
+      "end": 104
+    },
+    {
+      "text": "Lotus Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 133,
+      "end": 151
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 264,
+      "end": 275
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 481,
+      "end": 498
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

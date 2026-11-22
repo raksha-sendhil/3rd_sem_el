@@ -1,0 +1,68 @@
+{
+  "doc_id": "c0afb44e3b4985c5",
+  "text": "Subject: Need help with a wrongful termination case\n\nHello, my name is Siddharth Pai. I am a 47-year-old truck driver living in Panaji. My employer M/s Emerald Technologies Pvt Ltd owes me INR 36,50,000/- after firing me, and the dismissal followed a one-sided domestic enquiry. Can your firm advise me on what to do next? You can call me on 90128 56052 or email siddharth.pai@example.in.",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 46
+    },
+    {
+      "text": "Siddharth Pai",
+      "category": "NAME",
+      "start": 71,
+      "end": 84
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 93,
+      "end": 104
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 105,
+      "end": 117
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 128,
+      "end": 134
+    },
+    {
+      "text": "Emerald Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 152,
+      "end": 180
+    },
+    {
+      "text": "INR 36,50,000/-",
+      "category": "MONEY",
+      "start": 189,
+      "end": 204
+    },
+    {
+      "text": "90128 56052",
+      "category": "PHONE",
+      "start": 342,
+      "end": 353
+    },
+    {
+      "text": "siddharth.pai@example.in",
+      "category": "EMAIL",
+      "start": 363,
+      "end": 387
+    },
+    {
+      "text": "age (47) + occupation (truck driver) + city (Panaji) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

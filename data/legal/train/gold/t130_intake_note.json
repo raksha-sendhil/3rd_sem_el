@@ -1,0 +1,110 @@
+{
+  "doc_id": "66b76768a542547d",
+  "text": "Intake note - Commercial team\nDate: 5 December 2023\nClient: Nandini Pawar, a 30-year-old truck driver from Kozhikode.\nAddress: Plot 40, Nadakkavu, Kozhikode 673043\nPhone: +91 71888 74107. Email: nandini.pawar47@example.com. PAN GKPPP5751F.\nMatter: cheque bounce\nOpposing party: Emerald Traders\nFacts: A cheque for 37 lakh rupees issued by Emerald Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 2625/2024 before the Judicial Magistrate First Class Court at Kozhikode on 9 March 2024.",
+  "spans": [
+    {
+      "text": "5 December 2023",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Nandini Pawar",
+      "category": "NAME",
+      "start": 60,
+      "end": 73
+    },
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 101
+    },
+    {
+      "text": "Kozhikode",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 116
+    },
+    {
+      "text": "Plot 40, Nadakkavu, Kozhikode 673043",
+      "category": "ADDRESS",
+      "start": 127,
+      "end": 163
+    },
+    {
+      "text": "+91 71888 74107",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "nandini.pawar47@example.com",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 222
+    },
+    {
+      "text": "GKPPP5751F",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 248,
+      "end": 261
+    },
+    {
+      "text": "Emerald Traders",
+      "category": "ORGANIZATION",
+      "start": 278,
+      "end": 293
+    },
+    {
+      "text": "37 lakh rupees",
+      "category": "MONEY",
+      "start": 314,
+      "end": 328
+    },
+    {
+      "text": "Emerald Traders",
+      "category": "ORGANIZATION",
+      "start": 339,
+      "end": 354
+    },
+    {
+      "text": "S.C.C. No. 2625/2024",
+      "category": "CASE_NUMBER",
+      "start": 441,
+      "end": 461
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kozhikode",
+      "category": "COURT",
+      "start": 473,
+      "end": 523
+    },
+    {
+      "text": "9 March 2024",
+      "category": "DATE",
+      "start": 527,
+      "end": 539
+    },
+    {
+      "text": "age (30) + occupation (truck driver) + city (Kozhikode) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

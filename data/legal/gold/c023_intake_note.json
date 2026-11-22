@@ -1,0 +1,110 @@
+{
+  "doc_id": "fc01fdc40dc5cfe1",
+  "text": "Intake note - Commercial team\nDate: 19 October 2022\nClient: Aarti Saxena, a 45-year-old electrician from Panaji.\nAddress: Bungalow 33, Miramar, Panaji 403012\nPhone: 95870 73728. Email: aarti.saxena73@example.com. PAN JJRPS7054M.\nMatter: cheque bounce\nOpposing party: Sterling Textiles Pvt Ltd\nFacts: A cheque for ₹35,20,000 issued by M/s Sterling Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/712/2023 before the Judicial Magistrate First Class Court at Panaji on 23 March 2023.",
+  "spans": [
+    {
+      "text": "19 October 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Aarti Saxena",
+      "category": "NAME",
+      "start": 60,
+      "end": 72
+    },
+    {
+      "text": "45-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 99
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 105,
+      "end": 111
+    },
+    {
+      "text": "Bungalow 33, Miramar, Panaji 403012",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 157
+    },
+    {
+      "text": "95870 73728",
+      "category": "PHONE",
+      "start": 165,
+      "end": 176
+    },
+    {
+      "text": "aarti.saxena73@example.com",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 211
+    },
+    {
+      "text": "JJRPS7054M",
+      "category": "ID_NUMBER",
+      "start": 217,
+      "end": 227
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 237,
+      "end": 250
+    },
+    {
+      "text": "Sterling Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 267,
+      "end": 292
+    },
+    {
+      "text": "₹35,20,000",
+      "category": "MONEY",
+      "start": 313,
+      "end": 323
+    },
+    {
+      "text": "Sterling Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 338,
+      "end": 363
+    },
+    {
+      "text": "CC/712/2023",
+      "category": "CASE_NUMBER",
+      "start": 450,
+      "end": 461
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 473,
+      "end": 520
+    },
+    {
+      "text": "23 March 2023",
+      "category": "DATE",
+      "start": 524,
+      "end": 537
+    },
+    {
+      "text": "age (45) + occupation (electrician) + city (Panaji) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

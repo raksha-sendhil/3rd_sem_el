@@ -1,0 +1,104 @@
+{
+  "doc_id": "199952621c9cd032",
+  "text": "Intake note (Commercial team, 14 January 2020). Our client Prakash Gill is a 70-year-old civil engineer who lives at House No. 13, Aundh, Pune 411004 and can be reached on 71894 82191 or prakash.gill88@example.com. The client's PAN KTFPG5223V.\nThe client consulted us about a maritime salvage claim matter (Project Kingfisher) against Subramanian Marine Ltd. The maritime salvage claim against Subramanian Marine Ltd is for ₹41.3 crore; the owners dispute the value of the salvage.\nThe matter was filed as A.S. No. 2756/2020 before the Bombay High Court on 16 June 2020.",
+  "spans": [
+    {
+      "text": "14 January 2020",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Prakash Gill",
+      "category": "NAME",
+      "start": 59,
+      "end": 71
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 103
+    },
+    {
+      "text": "House No. 13, Aundh, Pune 411004",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 149
+    },
+    {
+      "text": "71894 82191",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "prakash.gill88@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 213
+    },
+    {
+      "text": "KTFPG5223V",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 276,
+      "end": 298
+    },
+    {
+      "text": "Project Kingfisher",
+      "category": "MATTER_CODENAME",
+      "start": 307,
+      "end": 325
+    },
+    {
+      "text": "Subramanian Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 335,
+      "end": 357
+    },
+    {
+      "text": "Subramanian Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 394,
+      "end": 416
+    },
+    {
+      "text": "₹41.3 crore",
+      "category": "MONEY",
+      "start": 424,
+      "end": 435
+    },
+    {
+      "text": "A.S. No. 2756/2020",
+      "category": "CASE_NUMBER",
+      "start": 506,
+      "end": 524
+    },
+    {
+      "text": "Bombay High Court",
+      "category": "COURT",
+      "start": 536,
+      "end": 553
+    },
+    {
+      "text": "16 June 2020",
+      "category": "DATE",
+      "start": 557,
+      "end": 569
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

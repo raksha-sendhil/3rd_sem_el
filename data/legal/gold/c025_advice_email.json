@@ -1,0 +1,50 @@
+{
+  "doc_id": "9c138ca2d6e6616f",
+  "text": "Subject: Your cheque bounce matter - CC/185/2019\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 22 February 2020 about your dispute with Anand Menon. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Jaipur.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/185/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 48
+    },
+    {
+      "text": "Bhandari",
+      "category": "NAME",
+      "start": 59,
+      "end": 67
+    },
+    {
+      "text": "22 February 2020",
+      "category": "DATE",
+      "start": 98,
+      "end": 114
+    },
+    {
+      "text": "Anand Menon",
+      "category": "NAME",
+      "start": 139,
+      "end": 150
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Jaipur",
+      "category": "COURT",
+      "start": 269,
+      "end": 316
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 593,
+      "end": 608
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

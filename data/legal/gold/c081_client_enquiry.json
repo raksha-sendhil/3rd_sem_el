@@ -1,0 +1,68 @@
+{
+  "doc_id": "2fd44d7c7600ee19",
+  "text": "Subject: Need help with a divorce by mutual consent case\n\nHello, my name is Lakshmi Ranade. I am a 73-year-old mechanical engineer living in Madurai. My spouse Vandana Sathe and I want a divorce by mutual consent with a settlement of ₹9,45,000, and the spouses agree on a single payment instead of maintenance. Can your firm advise me on what to do next? You can call me on 98323 90037 or email lakshmi.ranade@example.com.",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 51
+    },
+    {
+      "text": "Lakshmi Ranade",
+      "category": "NAME",
+      "start": 76,
+      "end": 90
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 99,
+      "end": 110
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 111,
+      "end": 130
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 141,
+      "end": 148
+    },
+    {
+      "text": "Vandana Sathe",
+      "category": "NAME",
+      "start": 160,
+      "end": 173
+    },
+    {
+      "text": "₹9,45,000",
+      "category": "MONEY",
+      "start": 234,
+      "end": 243
+    },
+    {
+      "text": "98323 90037",
+      "category": "PHONE",
+      "start": 374,
+      "end": 385
+    },
+    {
+      "text": "lakshmi.ranade@example.com",
+      "category": "EMAIL",
+      "start": 395,
+      "end": 421
+    },
+    {
+      "text": "age (73) + occupation (mechanical engineer) + city (Madurai) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

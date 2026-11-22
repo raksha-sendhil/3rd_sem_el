@@ -1,0 +1,74 @@
+{
+  "doc_id": "df1e0c16ed3073ba",
+  "text": "Case note: Petition No. 1489/2023\nClient: Mary Hegde (schoolteacher, Madurai)\nOpposing party: Shalini Rao\nCourt: Family Court at Madurai\nFiled on: 6 April 2023\nClaim amount: ₹22,20,000\nIssue: divorce by mutual consent. Both spouses have lived apart for a long time.\nAdvice given: Apply to waive the statutory cooling-off period.\nOutcome: The cooling-off period was waived.\nRecommended next step: Attend the second motion hearing.\nWitness: Nandini Karve",
+  "spans": [
+    {
+      "text": "Petition No. 1489/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 33
+    },
+    {
+      "text": "Mary Hegde",
+      "category": "NAME",
+      "start": 42,
+      "end": 52
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 69,
+      "end": 76
+    },
+    {
+      "text": "Shalini Rao",
+      "category": "NAME",
+      "start": 94,
+      "end": 105
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 113,
+      "end": 136
+    },
+    {
+      "text": "6 April 2023",
+      "category": "DATE",
+      "start": 147,
+      "end": 159
+    },
+    {
+      "text": "₹22,20,000",
+      "category": "MONEY",
+      "start": 174,
+      "end": 184
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 192,
+      "end": 217
+    },
+    {
+      "text": "Nandini Karve",
+      "category": "NAME",
+      "start": 439,
+      "end": 452
+    },
+    {
+      "text": "occupation (schoolteacher) + city (Madurai) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "6d7c273dbb01a013",
+  "text": "Intake note (Property team, 23 June 2021). Our client Girish Khan is a 71-year-old chartered accountant who lives at House No. 208, Gangapur Road, Nashik 422056 and can be reached on +91 61122 36709 or girish.khan@example.com. The client's PAN MHPPK2558U.\nThe client consulted us about a tenancy eviction matter against Thomas Sen. The tenancy dispute with Thomas Sen concerns rent arrears of ₹5,05,000; the tenant has sublet the flat without permission.\nThe matter was filed as R.C.S. No. 632/2021 before the Nashik District Court on 14 September 2021.",
+  "spans": [
+    {
+      "text": "23 June 2021",
+      "category": "DATE",
+      "start": 28,
+      "end": 40
+    },
+    {
+      "text": "Girish Khan",
+      "category": "NAME",
+      "start": 54,
+      "end": 65
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 103
+    },
+    {
+      "text": "House No. 208, Gangapur Road, Nashik 422056",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 160
+    },
+    {
+      "text": "+91 61122 36709",
+      "category": "PHONE",
+      "start": 183,
+      "end": 198
+    },
+    {
+      "text": "girish.khan@example.com",
+      "category": "EMAIL",
+      "start": 202,
+      "end": 225
+    },
+    {
+      "text": "MHPPK2558U",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 254
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 288,
+      "end": 304
+    },
+    {
+      "text": "Thomas Sen",
+      "category": "NAME",
+      "start": 320,
+      "end": 330
+    },
+    {
+      "text": "Thomas Sen",
+      "category": "NAME",
+      "start": 357,
+      "end": 367
+    },
+    {
+      "text": "₹5,05,000",
+      "category": "MONEY",
+      "start": 393,
+      "end": 402
+    },
+    {
+      "text": "R.C.S. No. 632/2021",
+      "category": "CASE_NUMBER",
+      "start": 479,
+      "end": 498
+    },
+    {
+      "text": "Nashik District Court",
+      "category": "COURT",
+      "start": 510,
+      "end": 531
+    },
+    {
+      "text": "14 September 2021",
+      "category": "DATE",
+      "start": 535,
+      "end": 552
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

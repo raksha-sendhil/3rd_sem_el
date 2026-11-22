@@ -1,0 +1,98 @@
+{
+  "doc_id": "e8d83cd832652b3f",
+  "text": "Intake note (Property team, 26 July 2023). Our client Aarti Iyengar is a 54-year-old software engineer who lives at Plot 96, Adyar, Chennai 600029 and can be reached on 07026717132 or aarti.iyengar@example.in. The client's PAN MZDPI5766Y.\nThe client consulted us about a tenancy eviction matter against Siddharth Karve. The tenancy dispute with Siddharth Karve concerns rent arrears of 2.1 lakh rupees; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.S. No. 2480/2023 before the Chennai District Court on 13 December 2023.",
+  "spans": [
+    {
+      "text": "26 July 2023",
+      "category": "DATE",
+      "start": 28,
+      "end": 40
+    },
+    {
+      "text": "Aarti Iyengar",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "54-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 102
+    },
+    {
+      "text": "Plot 96, Adyar, Chennai 600029",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 146
+    },
+    {
+      "text": "07026717132",
+      "category": "PHONE",
+      "start": 169,
+      "end": 180
+    },
+    {
+      "text": "aarti.iyengar@example.in",
+      "category": "EMAIL",
+      "start": 184,
+      "end": 208
+    },
+    {
+      "text": "MZDPI5766Y",
+      "category": "ID_NUMBER",
+      "start": 227,
+      "end": 237
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 271,
+      "end": 287
+    },
+    {
+      "text": "Siddharth Karve",
+      "category": "NAME",
+      "start": 303,
+      "end": 318
+    },
+    {
+      "text": "Siddharth Karve",
+      "category": "NAME",
+      "start": 345,
+      "end": 360
+    },
+    {
+      "text": "2.1 lakh rupees",
+      "category": "MONEY",
+      "start": 386,
+      "end": 401
+    },
+    {
+      "text": "R.C.S. No. 2480/2023",
+      "category": "CASE_NUMBER",
+      "start": 479,
+      "end": 499
+    },
+    {
+      "text": "Chennai District Court",
+      "category": "COURT",
+      "start": 511,
+      "end": 533
+    },
+    {
+      "text": "13 December 2023",
+      "category": "DATE",
+      "start": 537,
+      "end": 553
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

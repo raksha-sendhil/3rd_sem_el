@@ -1,0 +1,50 @@
+{
+  "doc_id": "57745d0808810769",
+  "text": "Subject: Your land dispute matter\n\nDear Mr. Rajan,\n\nThank you for meeting us on 26 August 2026 about your dispute with Varun Srivastava. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Pune District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of ₹1.7 crore.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "Rajan",
+      "category": "NAME",
+      "start": 44,
+      "end": 49
+    },
+    {
+      "text": "26 August 2026",
+      "category": "DATE",
+      "start": 80,
+      "end": 94
+    },
+    {
+      "text": "Varun Srivastava",
+      "category": "NAME",
+      "start": 119,
+      "end": 135
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 248,
+      "end": 267
+    },
+    {
+      "text": "₹1.7 crore",
+      "category": "MONEY",
+      "start": 474,
+      "end": 484
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 501,
+      "end": 513
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

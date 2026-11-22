@@ -1,0 +1,34 @@
+{
+  "_comment": [
+    "One entry per domain. The pipeline is the same for all of them; a domain picks the prompts, the data and the models.",
+    "null = use the global setting (SANITISE_MODEL, SANITISE_ANSWER_BACKEND, ...).",
+    "model: Agents 2-3 through Ollama (and Agent 1's LLM pass unless agent1_backend is 'transformers').",
+    "answer_backend: same | gemini | ollama | mock. gemini_model: gemini-3.5-flash or gemini-3.8-flash.",
+    "agent1_backend: same | transformers (Gemma 4 + the LoRA adapter at agent1_adapter, on a GPU).",
+    "prompts: which prompt family the agents use (medical or legal). A new domain uses one of them until its own prompts are written.",
+    "To add a domain, copy the legal entry, give it a new name and point its paths at that domain's data.",
+    "llm_think: Ollama's thinking mode (false for Gemma 4). llm_num_predict: output token limit. llm_retries: repair attempts after broken JSON (the spec asks for one)."
+  ],
+  "medical": {
+    "label": "Medical",
+    "prompts": "medical",
+    "model": null,
+    "answer_backend": null,
+    "gemini_model": null,
+    "agent1_backend": null,
+    "agent1_adapter": null
+  },
+  "legal": {
+    "label": "Legal",
+    "prompts": "legal",
+    "model": "gemma4:e4b",
+    "llm_think": false,
+    "llm_num_predict": 2048,
+    "llm_retries": 1,
+    "answer_backend": "gemini",
+    "gemini_model": "gemini-3.5-flash",
+    "agent1_backend": "same",
+    "agent1_base_model": "google/gemma-4-E4B-it",
+    "agent1_adapter": null
+  }
+}

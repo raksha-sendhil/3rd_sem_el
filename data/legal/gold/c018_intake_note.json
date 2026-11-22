@@ -1,0 +1,116 @@
+{
+  "doc_id": "9cda9f2d3773a05e",
+  "text": "Intake note - Commercial team\nDate: 3 March 2019\nClient: Vandana Naidu, a 70-year-old nurse from Madurai.\nAddress: Flat 11A, KK Nagar, Madurai 625042\nPhone: +91 79481 56262. Email: vandana.naidu33@example.com. PAN AUEPN3191U, Aadhaar 9630 9411 0572.\nMatter: cheque bounce\nOpposing party: Gokhale Traders\nFacts: A cheque for Rs 6,75,000 issued by Gokhale Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/1036/2019 before the Judicial Magistrate First Class Court at Madurai on 29 June 2019.",
+  "spans": [
+    {
+      "text": "3 March 2019",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Vandana Naidu",
+      "category": "NAME",
+      "start": 57,
+      "end": 70
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 91
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 97,
+      "end": 104
+    },
+    {
+      "text": "Flat 11A, KK Nagar, Madurai 625042",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 149
+    },
+    {
+      "text": "+91 79481 56262",
+      "category": "PHONE",
+      "start": 157,
+      "end": 172
+    },
+    {
+      "text": "vandana.naidu33@example.com",
+      "category": "EMAIL",
+      "start": 181,
+      "end": 208
+    },
+    {
+      "text": "AUEPN3191U",
+      "category": "ID_NUMBER",
+      "start": 214,
+      "end": 224
+    },
+    {
+      "text": "9630 9411 0572",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 248
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 258,
+      "end": 271
+    },
+    {
+      "text": "Gokhale Traders",
+      "category": "ORGANIZATION",
+      "start": 288,
+      "end": 303
+    },
+    {
+      "text": "Rs 6,75,000",
+      "category": "MONEY",
+      "start": 324,
+      "end": 335
+    },
+    {
+      "text": "Gokhale Traders",
+      "category": "ORGANIZATION",
+      "start": 346,
+      "end": 361
+    },
+    {
+      "text": "CC/1036/2019",
+      "category": "CASE_NUMBER",
+      "start": 448,
+      "end": 460
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Madurai",
+      "category": "COURT",
+      "start": 472,
+      "end": 520
+    },
+    {
+      "text": "29 June 2019",
+      "category": "DATE",
+      "start": 524,
+      "end": 536
+    },
+    {
+      "text": "age (70) + occupation (nurse) + city (Madurai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

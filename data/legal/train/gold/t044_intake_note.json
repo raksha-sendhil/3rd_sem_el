@@ -1,0 +1,110 @@
+{
+  "doc_id": "00f1cac2d84018d9",
+  "text": "Intake note (Commercial team, 4 January 2022). Our client Venkat Patel is a 47-year-old taxi driver who lives at Flat 13C, Vidyanagar, Hubballi 580006 and can be reached on +91 79016 63203 or venkat.patel16@example.com. The client's PAN CBHPP3215D, Aadhaar 7014 0823 8523.\nThe client consulted us about a breach of contract matter (Project Heron) against Banyan Infotech Pvt Ltd. The breach of contract claim against Banyan Infotech Pvt Ltd is for Rs. 14,66,00,000; the claim must be filed as a commercial suit.\nThe matter was filed as CS(COMM) 2463/2022 before the Hubballi Commercial Court on 27 January 2022.",
+  "spans": [
+    {
+      "text": "4 January 2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 44
+    },
+    {
+      "text": "Venkat Patel",
+      "category": "NAME",
+      "start": 58,
+      "end": 70
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 99
+    },
+    {
+      "text": "Flat 13C, Vidyanagar, Hubballi 580006",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 150
+    },
+    {
+      "text": "+91 79016 63203",
+      "category": "PHONE",
+      "start": 173,
+      "end": 188
+    },
+    {
+      "text": "venkat.patel16@example.com",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 218
+    },
+    {
+      "text": "CBHPP3215D",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "7014 0823 8523",
+      "category": "ID_NUMBER",
+      "start": 257,
+      "end": 271
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 305,
+      "end": 323
+    },
+    {
+      "text": "Project Heron",
+      "category": "MATTER_CODENAME",
+      "start": 332,
+      "end": 345
+    },
+    {
+      "text": "Banyan Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 355,
+      "end": 378
+    },
+    {
+      "text": "Banyan Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 417,
+      "end": 440
+    },
+    {
+      "text": "Rs. 14,66,00,000",
+      "category": "MONEY",
+      "start": 448,
+      "end": 464
+    },
+    {
+      "text": "CS(COMM) 2463/2022",
+      "category": "CASE_NUMBER",
+      "start": 536,
+      "end": 554
+    },
+    {
+      "text": "Hubballi Commercial Court",
+      "category": "COURT",
+      "start": 566,
+      "end": 591
+    },
+    {
+      "text": "27 January 2022",
+      "category": "DATE",
+      "start": 595,
+      "end": 610
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,50 @@
+{
+  "doc_id": "45273cdbf4a901da",
+  "text": "Subject: Your breach of contract matter - Com. S. No. 1211/2019\n\nDear Ms. Mehra,\n\nThank you for meeting us on 24/01/2020 about your dispute with Meridian Logistics Ltd. As we understand it, the counterparty has not paid the invoices for delivered goods. The matter is listed before the Kolkata Commercial Court.\n\nOur advice is to invoke the arbitration clause and seek interim relief to secure the amount. Please collect the contract, the invoices and the delivery challans and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Com. S. No. 1211/2019",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 63
+    },
+    {
+      "text": "Mehra",
+      "category": "NAME",
+      "start": 74,
+      "end": 79
+    },
+    {
+      "text": "24/01/2020",
+      "category": "DATE",
+      "start": 110,
+      "end": 120
+    },
+    {
+      "text": "Meridian Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 145,
+      "end": 167
+    },
+    {
+      "text": "Kolkata Commercial Court",
+      "category": "COURT",
+      "start": 286,
+      "end": 310
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 521,
+      "end": 540
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

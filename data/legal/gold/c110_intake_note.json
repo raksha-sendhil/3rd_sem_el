@@ -1,0 +1,104 @@
+{
+  "doc_id": "7a84812e0a4a01d2",
+  "text": "Intake note (Commercial team, 14 October 2023). Our client Ramesh Bansal is a 44-year-old hardware dealer who lives at Plot 84, Koregaon Park, Pune 411003 and can be reached on +91 79949 22281 or ramesh.bansal@example.com. The client's PAN URDPB6394Q, Aadhaar 3785 1264 3833.\nThe client consulted us about a wrongful termination matter against Everest Industries. The wrongful termination claim against M/s Everest Industries is for Rs 14,80,000; the employer withheld the last salary.\nThe matter was filed as Complaint No. 1327/2023 before the Pune Labour Court on 20 December 2023.",
+  "spans": [
+    {
+      "text": "14 October 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Ramesh Bansal",
+      "category": "NAME",
+      "start": 59,
+      "end": 72
+    },
+    {
+      "text": "44-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 105
+    },
+    {
+      "text": "Plot 84, Koregaon Park, Pune 411003",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 154
+    },
+    {
+      "text": "+91 79949 22281",
+      "category": "PHONE",
+      "start": 177,
+      "end": 192
+    },
+    {
+      "text": "ramesh.bansal@example.com",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 221
+    },
+    {
+      "text": "URDPB6394Q",
+      "category": "ID_NUMBER",
+      "start": 240,
+      "end": 250
+    },
+    {
+      "text": "3785 1264 3833",
+      "category": "ID_NUMBER",
+      "start": 260,
+      "end": 274
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 308,
+      "end": 328
+    },
+    {
+      "text": "Everest Industries",
+      "category": "ORGANIZATION",
+      "start": 344,
+      "end": 362
+    },
+    {
+      "text": "Everest Industries",
+      "category": "ORGANIZATION",
+      "start": 407,
+      "end": 425
+    },
+    {
+      "text": "Rs 14,80,000",
+      "category": "MONEY",
+      "start": 433,
+      "end": 445
+    },
+    {
+      "text": "Complaint No. 1327/2023",
+      "category": "CASE_NUMBER",
+      "start": 510,
+      "end": 533
+    },
+    {
+      "text": "Pune Labour Court",
+      "category": "COURT",
+      "start": 545,
+      "end": 562
+    },
+    {
+      "text": "20 December 2023",
+      "category": "DATE",
+      "start": 566,
+      "end": 582
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

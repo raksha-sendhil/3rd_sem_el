@@ -1,0 +1,56 @@
+{
+  "doc_id": "169a67b75cb5bd37",
+  "text": "Subject: Your land dispute matter - O.S. No. 2030/2019\n\nDear Ms. Bose,\n\nThank you for meeting us on 10 April 2020 about your dispute with Gaurav Sen. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Lucknow District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of ₹23,30,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2030/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Bose",
+      "category": "NAME",
+      "start": 65,
+      "end": 69
+    },
+    {
+      "text": "10 April 2020",
+      "category": "DATE",
+      "start": 100,
+      "end": 113
+    },
+    {
+      "text": "Gaurav Sen",
+      "category": "NAME",
+      "start": 138,
+      "end": 148
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 261,
+      "end": 283
+    },
+    {
+      "text": "₹23,30,000",
+      "category": "MONEY",
+      "start": 490,
+      "end": 500
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 517,
+      "end": 533
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

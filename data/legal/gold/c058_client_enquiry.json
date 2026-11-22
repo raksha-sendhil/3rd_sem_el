@@ -1,0 +1,68 @@
+{
+  "doc_id": "791fb6c0a2fae66f",
+  "text": "Subject: Need help with a consumer complaint case\n\nHello, my name is Yogesh Ranade. I am a 50-year-old shopkeeper living in Hyderabad. I paid M/s Harbour Realty ₹7,29,00,000 for a flat, and the builder never obtained the occupancy certificate. Can your firm advise me on what to do next? You can call me on +91 94525 65261 or email yogesh.ranade28@example.com.",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Yogesh Ranade",
+      "category": "NAME",
+      "start": 69,
+      "end": 82
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 91,
+      "end": 102
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 103,
+      "end": 113
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 124,
+      "end": 133
+    },
+    {
+      "text": "Harbour Realty",
+      "category": "ORGANIZATION",
+      "start": 146,
+      "end": 160
+    },
+    {
+      "text": "₹7,29,00,000",
+      "category": "MONEY",
+      "start": 161,
+      "end": 173
+    },
+    {
+      "text": "+91 94525 65261",
+      "category": "PHONE",
+      "start": 307,
+      "end": 322
+    },
+    {
+      "text": "yogesh.ranade28@example.com",
+      "category": "EMAIL",
+      "start": 332,
+      "end": 359
+    },
+    {
+      "text": "age (50) + occupation (shopkeeper) + city (Hyderabad) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

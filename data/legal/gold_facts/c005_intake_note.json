@@ -1,0 +1,91 @@
+{
+  "doc_id": "cc8d90609049fe71",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Sujata Dalvi",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "age",
+      "value": "67-year-old",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "general physician",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "House No. 101, Vartak Nagar, Thane 400639",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "08288932683",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "sujata.dalvi@example.in",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "KVNPD1739R",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "2378 9739 8538",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Revathi Pawar",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "₹38,70,000",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Judicial Magistrate First Class Court at Thane",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "CC/1613/2025",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_on",
+      "value": "12 July 2025",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

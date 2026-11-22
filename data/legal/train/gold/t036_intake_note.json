@@ -1,0 +1,98 @@
+{
+  "doc_id": "454c5931c759154a",
+  "text": "Intake note (Commercial team, 21 August 2024). Our client Vivek Tiwari is a 26-year-old dentist who lives at House No. 118, Gangapur Road, Nashik 422010 and can be reached on 79622 56699 or vivek.tiwari@example.in. The client's PAN LZZPT6175Y.\nThe client consulted us about a wrongful termination matter against M/s Reddy Industries. The wrongful termination claim against M/s Reddy Industries is for ₹35,90,000; the employee was dismissed without any enquiry.\nThe matter was filed as Complaint No. 2334/2024 before the Nashik Labour Court on 7 October 2024.",
+  "spans": [
+    {
+      "text": "21 August 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 44
+    },
+    {
+      "text": "Vivek Tiwari",
+      "category": "NAME",
+      "start": 58,
+      "end": 70
+    },
+    {
+      "text": "26-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 95
+    },
+    {
+      "text": "House No. 118, Gangapur Road, Nashik 422010",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 152
+    },
+    {
+      "text": "79622 56699",
+      "category": "PHONE",
+      "start": 175,
+      "end": 186
+    },
+    {
+      "text": "vivek.tiwari@example.in",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 213
+    },
+    {
+      "text": "LZZPT6175Y",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 276,
+      "end": 296
+    },
+    {
+      "text": "Reddy Industries",
+      "category": "ORGANIZATION",
+      "start": 316,
+      "end": 332
+    },
+    {
+      "text": "Reddy Industries",
+      "category": "ORGANIZATION",
+      "start": 377,
+      "end": 393
+    },
+    {
+      "text": "₹35,90,000",
+      "category": "MONEY",
+      "start": 401,
+      "end": 411
+    },
+    {
+      "text": "Complaint No. 2334/2024",
+      "category": "CASE_NUMBER",
+      "start": 485,
+      "end": 508
+    },
+    {
+      "text": "Nashik Labour Court",
+      "category": "COURT",
+      "start": 520,
+      "end": 539
+    },
+    {
+      "text": "7 October 2024",
+      "category": "DATE",
+      "start": 543,
+      "end": 557
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

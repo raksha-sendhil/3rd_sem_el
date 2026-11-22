@@ -1,0 +1,44 @@
+{
+  "doc_id": "4dfeae3029d5ea04",
+  "text": "Subject: Your breach of contract matter (Project Eagle)\n\nDear Ms. Pai,\n\nThank you for meeting us on 26 October 2019 about your dispute with Menon Motors Ltd. As we understand it, the counterparty has not paid the invoices for delivered goods.\n\nOur advice is to invoke the arbitration clause and seek interim relief to secure the amount. Please collect the contract, the invoices and the delivery challans and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Eagle",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 54
+    },
+    {
+      "text": "Pai",
+      "category": "NAME",
+      "start": 66,
+      "end": 69
+    },
+    {
+      "text": "26 October 2019",
+      "category": "DATE",
+      "start": 100,
+      "end": 115
+    },
+    {
+      "text": "Menon Motors Ltd",
+      "category": "ORGANIZATION",
+      "start": 140,
+      "end": 156
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 452,
+      "end": 468
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

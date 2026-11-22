@@ -113,6 +113,9 @@ class Settings(BaseSettings):
     monitor_db_path: str = "data/monitor.sqlite"  # the disclosure ledger (":memory:" allowed)
     # key for the ledger's value hashes; None draws a random one per process
     monitor_salt: str | None = None
+    # The legal pipeline (src/sanitise_legal, from the legal branch) served under /legal, picked
+    # by the dashboard's Healthcare / Legal toggle. False: healthcare only.
+    legal_enabled: bool = True
 
     # ---- HTTP API
     api_host: str = "127.0.0.1"

@@ -1,0 +1,122 @@
+{
+  "doc_id": "519120743dc55f6e",
+  "text": "Intake note - Commercial team\nDate: 07/12/2018\nClient: Rahul Ghosh, a 62-year-old government clerk from Ahmedabad.\nAddress: House No. 85, Navrangpura, Ahmedabad 380039\nPhone: +91 72724 46271. Email: rahul.ghosh38@example.com. PAN BNJPG2774W.\nMatter: cheque bounce\nOpposing party: Shalini Chatterjee\nFacts: A cheque for ₹1,95,000 issued by Shalini Chatterjee bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 239121654350 (IFSC UTIB0713460).\nThe matter was filed as S.C.C. No. 459/2019 before the Judicial Magistrate First Class Court at Ahmedabad on 25 June 2019.",
+  "spans": [
+    {
+      "text": "07/12/2018",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Rahul Ghosh",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 98
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 113
+    },
+    {
+      "text": "House No. 85, Navrangpura, Ahmedabad 380039",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 167
+    },
+    {
+      "text": "+91 72724 46271",
+      "category": "PHONE",
+      "start": 175,
+      "end": 190
+    },
+    {
+      "text": "rahul.ghosh38@example.com",
+      "category": "EMAIL",
+      "start": 199,
+      "end": 224
+    },
+    {
+      "text": "BNJPG2774W",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 250,
+      "end": 263
+    },
+    {
+      "text": "Shalini Chatterjee",
+      "category": "NAME",
+      "start": 280,
+      "end": 298
+    },
+    {
+      "text": "₹1,95,000",
+      "category": "MONEY",
+      "start": 319,
+      "end": 328
+    },
+    {
+      "text": "Shalini Chatterjee",
+      "category": "NAME",
+      "start": 339,
+      "end": 357
+    },
+    {
+      "text": "239121654350",
+      "category": "FINANCIAL",
+      "start": 483,
+      "end": 495
+    },
+    {
+      "text": "UTIB0713460",
+      "category": "FINANCIAL",
+      "start": 502,
+      "end": 513
+    },
+    {
+      "text": "S.C.C. No. 459/2019",
+      "category": "CASE_NUMBER",
+      "start": 540,
+      "end": 559
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 571,
+      "end": 621
+    },
+    {
+      "text": "25 June 2019",
+      "category": "DATE",
+      "start": 625,
+      "end": 637
+    },
+    {
+      "text": "age (62) + occupation (government clerk) + city (Ahmedabad) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

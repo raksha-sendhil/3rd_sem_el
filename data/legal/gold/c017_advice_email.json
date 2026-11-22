@@ -1,0 +1,50 @@
+{
+  "doc_id": "e00d3dfff3b80df6",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Rane,\n\nThank you for meeting us on 01/05/2023 about your dispute with Banyan Textiles Pvt Ltd. As we understand it, the cheque was returned unpaid for insufficient funds. The matter is listed before the Judicial Magistrate First Class Court at Mangaluru.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of Rs 32,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Rane",
+      "category": "NAME",
+      "start": 45,
+      "end": 49
+    },
+    {
+      "text": "01/05/2023",
+      "category": "DATE",
+      "start": 80,
+      "end": 90
+    },
+    {
+      "text": "Banyan Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 115,
+      "end": 138
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mangaluru",
+      "category": "COURT",
+      "start": 248,
+      "end": 298
+    },
+    {
+      "text": "Rs 32,00,000",
+      "category": "MONEY",
+      "start": 595,
+      "end": 607
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 624,
+      "end": 640
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

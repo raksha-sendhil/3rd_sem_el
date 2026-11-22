@@ -1,0 +1,80 @@
+{
+  "doc_id": "902d3ce2ae5bbd4c",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Leena Iyer. I am a 35-year-old general physician living in Hubballi. I have a tenancy problem with Anjali Patil involving Rs. 65,000 in rent, and the landlord is trying to evict the tenant after a rent increase was refused. My case number is R.C.S. No. 2463/2020 in the Hubballi District Court. Can your firm advise me on what to do next? You can call me on 81087 08291 or email leena.iyer@example.com.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Leena Iyer",
+      "category": "NAME",
+      "start": 67,
+      "end": 77
+    },
+    {
+      "text": "35-year-old",
+      "category": "AGE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 98,
+      "end": 115
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 126,
+      "end": 134
+    },
+    {
+      "text": "Anjali Patil",
+      "category": "NAME",
+      "start": 166,
+      "end": 178
+    },
+    {
+      "text": "Rs. 65,000",
+      "category": "MONEY",
+      "start": 189,
+      "end": 199
+    },
+    {
+      "text": "R.C.S. No. 2463/2020",
+      "category": "CASE_NUMBER",
+      "start": 309,
+      "end": 329
+    },
+    {
+      "text": "Hubballi District Court",
+      "category": "COURT",
+      "start": 337,
+      "end": 360
+    },
+    {
+      "text": "81087 08291",
+      "category": "PHONE",
+      "start": 425,
+      "end": 436
+    },
+    {
+      "text": "leena.iyer@example.com",
+      "category": "EMAIL",
+      "start": 446,
+      "end": 468
+    },
+    {
+      "text": "age (35) + occupation (general physician) + city (Hubballi) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

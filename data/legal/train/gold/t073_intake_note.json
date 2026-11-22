@@ -1,0 +1,110 @@
+{
+  "doc_id": "dbfa7b6eb9f0934c",
+  "text": "Intake note - Property team\nDate: 24 November 2021\nClient: Mohan Sandhu, a 62-year-old electrician from Chennai.\nAddress: House No. 123, Anna Nagar, Chennai 600042\nPhone: 06926818780. Email: mohan.sandhu@example.com. PAN VWDPS1315J.\nMatter: consumer complaint\nOpposing party: M/s Goyal Developers\nFacts: The consumer complaint against Goyal Developers concerns a flat bought for Rs 3,26,00,000; the builder keeps promising possession by email but never delivers.\nThe matter was filed as CC/57/2022 before the Chennai District Consumer Disputes Redressal Commission on 31 March 2022.",
+  "spans": [
+    {
+      "text": "24 November 2021",
+      "category": "DATE",
+      "start": 34,
+      "end": 50
+    },
+    {
+      "text": "Mohan Sandhu",
+      "category": "NAME",
+      "start": 59,
+      "end": 71
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 111
+    },
+    {
+      "text": "House No. 123, Anna Nagar, Chennai 600042",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 163
+    },
+    {
+      "text": "06926818780",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "mohan.sandhu@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 215
+    },
+    {
+      "text": "VWDPS1315J",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 241,
+      "end": 259
+    },
+    {
+      "text": "Goyal Developers",
+      "category": "ORGANIZATION",
+      "start": 280,
+      "end": 296
+    },
+    {
+      "text": "Goyal Developers",
+      "category": "ORGANIZATION",
+      "start": 335,
+      "end": 351
+    },
+    {
+      "text": "Rs 3,26,00,000",
+      "category": "MONEY",
+      "start": 379,
+      "end": 393
+    },
+    {
+      "text": "CC/57/2022",
+      "category": "CASE_NUMBER",
+      "start": 487,
+      "end": 497
+    },
+    {
+      "text": "Chennai District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 509,
+      "end": 564
+    },
+    {
+      "text": "31 March 2022",
+      "category": "DATE",
+      "start": 568,
+      "end": 581
+    },
+    {
+      "text": "age (62) + occupation (electrician) + city (Chennai) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

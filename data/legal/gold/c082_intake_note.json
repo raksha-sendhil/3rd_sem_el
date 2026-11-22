@@ -1,0 +1,116 @@
+{
+  "doc_id": "798816f91a9aa2a2",
+  "text": "Intake note - Family team\nDate: 12/07/2024\nClient: Sanjay Reddy, a 52-year-old journalist from Vadodara.\nAddress: House No. 170, Fatehgunj, Vadodara 390028\nPhone: 81610 41358. Email: sanjay.reddy@example.in. PAN FSSPR6417Y, Aadhaar 4312 1172 0629.\nMatter: divorce by mutual consent\nOpposing party: Tanvi More\nFacts: The divorce by mutual consent with Tanvi More includes a settlement of Rs 13,10,000; the couple has a young child.\nThe matter was filed as Petition No. 1960/2024 before the Family Court at Vadodara on 27 August 2024.",
+  "spans": [
+    {
+      "text": "12/07/2024",
+      "category": "DATE",
+      "start": 32,
+      "end": 42
+    },
+    {
+      "text": "Sanjay Reddy",
+      "category": "NAME",
+      "start": 51,
+      "end": 63
+    },
+    {
+      "text": "52-year-old",
+      "category": "AGE",
+      "start": 67,
+      "end": 78
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 79,
+      "end": 89
+    },
+    {
+      "text": "Vadodara",
+      "category": "LOCATION",
+      "start": 95,
+      "end": 103
+    },
+    {
+      "text": "House No. 170, Fatehgunj, Vadodara 390028",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 155
+    },
+    {
+      "text": "81610 41358",
+      "category": "PHONE",
+      "start": 163,
+      "end": 174
+    },
+    {
+      "text": "sanjay.reddy@example.in",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 206
+    },
+    {
+      "text": "FSSPR6417Y",
+      "category": "ID_NUMBER",
+      "start": 212,
+      "end": 222
+    },
+    {
+      "text": "4312 1172 0629",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 246
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 256,
+      "end": 281
+    },
+    {
+      "text": "Tanvi More",
+      "category": "NAME",
+      "start": 298,
+      "end": 308
+    },
+    {
+      "text": "Tanvi More",
+      "category": "NAME",
+      "start": 351,
+      "end": 361
+    },
+    {
+      "text": "Rs 13,10,000",
+      "category": "MONEY",
+      "start": 387,
+      "end": 399
+    },
+    {
+      "text": "Petition No. 1960/2024",
+      "category": "CASE_NUMBER",
+      "start": 455,
+      "end": 477
+    },
+    {
+      "text": "Family Court at Vadodara",
+      "category": "COURT",
+      "start": 489,
+      "end": 513
+    },
+    {
+      "text": "27 August 2024",
+      "category": "DATE",
+      "start": 517,
+      "end": 531
+    },
+    {
+      "text": "age (52) + occupation (journalist) + city (Vadodara) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

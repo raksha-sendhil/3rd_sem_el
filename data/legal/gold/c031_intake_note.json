@@ -1,0 +1,122 @@
+{
+  "doc_id": "38eb4e983ba5a0e6",
+  "text": "Intake note - Commercial team\nDate: 21 July 2023\nClient: Meera Gill, a 46-year-old restaurant owner from Hyderabad.\nAddress: Bungalow 9, Madhapur, Hyderabad 500004\nPhone: 65809 21201. Email: meera.gill17@example.com. PAN XYBPG2103Z.\nMatter: cheque bounce\nOpposing party: Naveen Deshpande\nFacts: A cheque for ₹10,40,000 issued by Naveen Deshpande bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 904500571619 (IFSC HDFC0050549).\nThe matter was filed as CC/2551/2024 before the Judicial Magistrate First Class Court at Hyderabad on 27 January 2024.",
+  "spans": [
+    {
+      "text": "21 July 2023",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Meera Gill",
+      "category": "NAME",
+      "start": 57,
+      "end": 67
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 99
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 105,
+      "end": 114
+    },
+    {
+      "text": "Bungalow 9, Madhapur, Hyderabad 500004",
+      "category": "ADDRESS",
+      "start": 125,
+      "end": 163
+    },
+    {
+      "text": "65809 21201",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "meera.gill17@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 215
+    },
+    {
+      "text": "XYBPG2103Z",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 241,
+      "end": 254
+    },
+    {
+      "text": "Naveen Deshpande",
+      "category": "NAME",
+      "start": 271,
+      "end": 287
+    },
+    {
+      "text": "₹10,40,000",
+      "category": "MONEY",
+      "start": 308,
+      "end": 318
+    },
+    {
+      "text": "Naveen Deshpande",
+      "category": "NAME",
+      "start": 329,
+      "end": 345
+    },
+    {
+      "text": "904500571619",
+      "category": "FINANCIAL",
+      "start": 463,
+      "end": 475
+    },
+    {
+      "text": "HDFC0050549",
+      "category": "FINANCIAL",
+      "start": 482,
+      "end": 493
+    },
+    {
+      "text": "CC/2551/2024",
+      "category": "CASE_NUMBER",
+      "start": 520,
+      "end": 532
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hyderabad",
+      "category": "COURT",
+      "start": 544,
+      "end": 594
+    },
+    {
+      "text": "27 January 2024",
+      "category": "DATE",
+      "start": 598,
+      "end": 613
+    },
+    {
+      "text": "age (46) + occupation (restaurant owner) + city (Hyderabad) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

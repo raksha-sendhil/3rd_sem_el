@@ -1,0 +1,122 @@
+{
+  "doc_id": "36282dc2598e987d",
+  "text": "Intake note - Commercial team\nDate: 29/10/2020\nClient: Aarti Rajan, a 63-year-old orthopaedic surgeon from Vadodara.\nAddress: Bungalow 40, Alkapuri, Vadodara 390009\nPhone: +91 78847 61405. Email: aarti.rajan@example.in. PAN PFZPR6547Q.\nMatter: cheque bounce\nOpposing party: Yogesh Dutta\nFacts: A cheque for INR 26,00,000/- issued by Yogesh Dutta bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 452253207551 (IFSC HDFC0334112).\nThe matter was filed as S.C.C. No. 1107/2021 before the Judicial Magistrate First Class Court at Vadodara on 3 March 2021.",
+  "spans": [
+    {
+      "text": "29/10/2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Aarti Rajan",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 101
+    },
+    {
+      "text": "Vadodara",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 115
+    },
+    {
+      "text": "Bungalow 40, Alkapuri, Vadodara 390009",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 164
+    },
+    {
+      "text": "+91 78847 61405",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "aarti.rajan@example.in",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 218
+    },
+    {
+      "text": "PFZPR6547Q",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 244,
+      "end": 257
+    },
+    {
+      "text": "Yogesh Dutta",
+      "category": "NAME",
+      "start": 274,
+      "end": 286
+    },
+    {
+      "text": "INR 26,00,000/-",
+      "category": "MONEY",
+      "start": 307,
+      "end": 322
+    },
+    {
+      "text": "Yogesh Dutta",
+      "category": "NAME",
+      "start": 333,
+      "end": 345
+    },
+    {
+      "text": "452253207551",
+      "category": "FINANCIAL",
+      "start": 472,
+      "end": 484
+    },
+    {
+      "text": "HDFC0334112",
+      "category": "FINANCIAL",
+      "start": 491,
+      "end": 502
+    },
+    {
+      "text": "S.C.C. No. 1107/2021",
+      "category": "CASE_NUMBER",
+      "start": 529,
+      "end": 549
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Vadodara",
+      "category": "COURT",
+      "start": 561,
+      "end": 610
+    },
+    {
+      "text": "3 March 2021",
+      "category": "DATE",
+      "start": 614,
+      "end": 626
+    },
+    {
+      "text": "age (63) + occupation (orthopaedic surgeon) + city (Vadodara) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

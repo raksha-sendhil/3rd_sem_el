@@ -1,0 +1,98 @@
+{
+  "doc_id": "f4e5a182d46a905b",
+  "text": "Intake note (Criminal team, 02/12/2018). Our client Vandana Rathore is a 71-year-old orthopaedic surgeon who lives at House No. 193, Alkapuri, Vadodara 390029 and can be reached on +91 88954 10986 or vandana.rathore@example.com. The client's PAN ZSVPR1568T.\nThe client consulted us about a anticipatory bail matter against Abhishek Swamy. The anticipatory bail matter arises from a complaint by Abhishek Swamy about ₹73,10,000; the complaint alleges negligence during treatment.\nThe matter was filed as Anticipatory Bail Application No. 955/2019 before the Vadodara Sessions Court on 21 March 2019.",
+  "spans": [
+    {
+      "text": "02/12/2018",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Vandana Rathore",
+      "category": "NAME",
+      "start": 52,
+      "end": 67
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 104
+    },
+    {
+      "text": "House No. 193, Alkapuri, Vadodara 390029",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 158
+    },
+    {
+      "text": "+91 88954 10986",
+      "category": "PHONE",
+      "start": 181,
+      "end": 196
+    },
+    {
+      "text": "vandana.rathore@example.com",
+      "category": "EMAIL",
+      "start": 200,
+      "end": 227
+    },
+    {
+      "text": "ZSVPR1568T",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 256
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 290,
+      "end": 307
+    },
+    {
+      "text": "Abhishek Swamy",
+      "category": "NAME",
+      "start": 323,
+      "end": 337
+    },
+    {
+      "text": "Abhishek Swamy",
+      "category": "NAME",
+      "start": 395,
+      "end": 409
+    },
+    {
+      "text": "₹73,10,000",
+      "category": "MONEY",
+      "start": 416,
+      "end": 426
+    },
+    {
+      "text": "Anticipatory Bail Application No. 955/2019",
+      "category": "CASE_NUMBER",
+      "start": 503,
+      "end": 545
+    },
+    {
+      "text": "Vadodara Sessions Court",
+      "category": "COURT",
+      "start": 557,
+      "end": 580
+    },
+    {
+      "text": "21 March 2019",
+      "category": "DATE",
+      "start": 584,
+      "end": 597
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

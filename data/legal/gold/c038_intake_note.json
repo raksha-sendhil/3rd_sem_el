@@ -1,0 +1,128 @@
+{
+  "doc_id": "9963702f7a73aa2b",
+  "text": "Intake note - Commercial team\nDate: 29 August 2020\nClient: Madhuri Rao, a 32-year-old government clerk from Bengaluru.\nAddress: Flat 10B, Jayanagar, Bengaluru 560018\nPhone: +91 95846 48409. Email: madhuri.rao@example.in. PAN KDJPR1736U, Aadhaar 5791 7230 4261.\nMatter: cheque bounce\nOpposing party: Joseph Ghosh\nFacts: A cheque for ₹44,10,000 issued by Joseph Ghosh bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 366976825636 (IFSC HDFC0337975).\nThe matter was filed as S.C.C. No. 2347/2021 before the Judicial Magistrate First Class Court at Bengaluru on 21 February 2021.",
+  "spans": [
+    {
+      "text": "29 August 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 50
+    },
+    {
+      "text": "Madhuri Rao",
+      "category": "NAME",
+      "start": 59,
+      "end": 70
+    },
+    {
+      "text": "32-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Bengaluru",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 117
+    },
+    {
+      "text": "Flat 10B, Jayanagar, Bengaluru 560018",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 165
+    },
+    {
+      "text": "+91 95846 48409",
+      "category": "PHONE",
+      "start": 173,
+      "end": 188
+    },
+    {
+      "text": "madhuri.rao@example.in",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 219
+    },
+    {
+      "text": "KDJPR1736U",
+      "category": "ID_NUMBER",
+      "start": 225,
+      "end": 235
+    },
+    {
+      "text": "5791 7230 4261",
+      "category": "ID_NUMBER",
+      "start": 245,
+      "end": 259
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 269,
+      "end": 282
+    },
+    {
+      "text": "Joseph Ghosh",
+      "category": "NAME",
+      "start": 299,
+      "end": 311
+    },
+    {
+      "text": "₹44,10,000",
+      "category": "MONEY",
+      "start": 332,
+      "end": 342
+    },
+    {
+      "text": "Joseph Ghosh",
+      "category": "NAME",
+      "start": 353,
+      "end": 365
+    },
+    {
+      "text": "366976825636",
+      "category": "FINANCIAL",
+      "start": 483,
+      "end": 495
+    },
+    {
+      "text": "HDFC0337975",
+      "category": "FINANCIAL",
+      "start": 502,
+      "end": 513
+    },
+    {
+      "text": "S.C.C. No. 2347/2021",
+      "category": "CASE_NUMBER",
+      "start": 540,
+      "end": 560
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Bengaluru",
+      "category": "COURT",
+      "start": 572,
+      "end": 622
+    },
+    {
+      "text": "21 February 2021",
+      "category": "DATE",
+      "start": 626,
+      "end": 642
+    },
+    {
+      "text": "age (32) + occupation (government clerk) + city (Bengaluru) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "02a889b51a209f62",
+  "text": "Subject: Need help with a land dispute case\n\nHello, my name is Meera Bose. I am a 42-year-old pharmacist living in Lucknow. I have a land dispute with Gaurav Sen over land worth Rs 23,30,000, and the neighbour has encroached on the boundary of the plot. Can your firm advise me on what to do next? You can call me on +91 66238 55768 or email meera.bose@example.in.",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 38
+    },
+    {
+      "text": "Meera Bose",
+      "category": "NAME",
+      "start": 63,
+      "end": 73
+    },
+    {
+      "text": "42-year-old",
+      "category": "AGE",
+      "start": 82,
+      "end": 93
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 94,
+      "end": 104
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 115,
+      "end": 122
+    },
+    {
+      "text": "Gaurav Sen",
+      "category": "NAME",
+      "start": 151,
+      "end": 161
+    },
+    {
+      "text": "Rs 23,30,000",
+      "category": "MONEY",
+      "start": 178,
+      "end": 190
+    },
+    {
+      "text": "+91 66238 55768",
+      "category": "PHONE",
+      "start": 317,
+      "end": 332
+    },
+    {
+      "text": "meera.bose@example.in",
+      "category": "EMAIL",
+      "start": 342,
+      "end": 363
+    },
+    {
+      "text": "age (42) + occupation (pharmacist) + city (Lucknow) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

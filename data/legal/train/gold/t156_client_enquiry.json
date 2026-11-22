@@ -1,0 +1,68 @@
+{
+  "doc_id": "145855062ccada19",
+  "text": "Subject: Need help with a wrongful termination case\n\nHello, my name is Uma Chauhan. I am a 73-year-old schoolteacher living in Pune. My employer M/s Goyal Industries owes me ₹22,80,000 after firing me, and the employee was dismissed without any enquiry. Can your firm advise me on what to do next? You can call me on +91 60028 14419 or email uma.chauhan@example.in.",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 46
+    },
+    {
+      "text": "Uma Chauhan",
+      "category": "NAME",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 91,
+      "end": 102
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 103,
+      "end": 116
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 127,
+      "end": 131
+    },
+    {
+      "text": "Goyal Industries",
+      "category": "ORGANIZATION",
+      "start": 149,
+      "end": 165
+    },
+    {
+      "text": "₹22,80,000",
+      "category": "MONEY",
+      "start": 174,
+      "end": 184
+    },
+    {
+      "text": "+91 60028 14419",
+      "category": "PHONE",
+      "start": 317,
+      "end": 332
+    },
+    {
+      "text": "uma.chauhan@example.in",
+      "category": "EMAIL",
+      "start": 342,
+      "end": 364
+    },
+    {
+      "text": "age (73) + occupation (schoolteacher) + city (Pune) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

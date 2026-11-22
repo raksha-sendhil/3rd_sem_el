@@ -1,0 +1,110 @@
+{
+  "doc_id": "063da89efebe3680",
+  "text": "Intake note - Property team\nDate: 10 June 2021\nClient: Pallavi Jadhav, a 46-year-old mechanical engineer from Hyderabad.\nAddress: House No. 220, Madhapur, Hyderabad 500019\nPhone: 09974066818. Email: pallavi.jadhav51@example.in. PAN HANPJ6945G.\nMatter: consumer complaint\nOpposing party: M/s Coastal Constructions\nFacts: The consumer complaint against M/s Coastal Constructions concerns a flat bought for ₹8,80,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 1032/2021 before the Hyderabad District Consumer Disputes Redressal Commission on 6 October 2021.",
+  "spans": [
+    {
+      "text": "10 June 2021",
+      "category": "DATE",
+      "start": 34,
+      "end": 46
+    },
+    {
+      "text": "Pallavi Jadhav",
+      "category": "NAME",
+      "start": 55,
+      "end": 69
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 104
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 119
+    },
+    {
+      "text": "House No. 220, Madhapur, Hyderabad 500019",
+      "category": "ADDRESS",
+      "start": 130,
+      "end": 171
+    },
+    {
+      "text": "09974066818",
+      "category": "PHONE",
+      "start": 179,
+      "end": 190
+    },
+    {
+      "text": "pallavi.jadhav51@example.in",
+      "category": "EMAIL",
+      "start": 199,
+      "end": 226
+    },
+    {
+      "text": "HANPJ6945G",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 252,
+      "end": 270
+    },
+    {
+      "text": "Coastal Constructions",
+      "category": "ORGANIZATION",
+      "start": 291,
+      "end": 312
+    },
+    {
+      "text": "Coastal Constructions",
+      "category": "ORGANIZATION",
+      "start": 355,
+      "end": 376
+    },
+    {
+      "text": "₹8,80,00,000",
+      "category": "MONEY",
+      "start": 404,
+      "end": 416
+    },
+    {
+      "text": "C.C. No. 1032/2021",
+      "category": "CASE_NUMBER",
+      "start": 482,
+      "end": 500
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 512,
+      "end": 569
+    },
+    {
+      "text": "6 October 2021",
+      "category": "DATE",
+      "start": 573,
+      "end": 587
+    },
+    {
+      "text": "age (46) + occupation (mechanical engineer) + city (Hyderabad) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

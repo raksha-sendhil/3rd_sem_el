@@ -1,0 +1,44 @@
+{
+  "doc_id": "81d96681fc010e99",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Mr. Mittal,\n\nThank you for meeting us on 23/10/2025 about your dispute with Ashok Dutta. As we understand it, the complaint turns a business disagreement into a criminal case. The matter is listed before the Kolhapur Sessions Court.\n\nOur advice is to argue that the dispute is civil in nature and offer to cooperate with the investigation. Please collect the partnership papers and the correspondence with the complainant and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Mittal",
+      "category": "NAME",
+      "start": 49,
+      "end": 55
+    },
+    {
+      "text": "23/10/2025",
+      "category": "DATE",
+      "start": 86,
+      "end": 96
+    },
+    {
+      "text": "Ashok Dutta",
+      "category": "NAME",
+      "start": 121,
+      "end": 132
+    },
+    {
+      "text": "Kolhapur Sessions Court",
+      "category": "COURT",
+      "start": 253,
+      "end": 276
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 514,
+      "end": 529
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

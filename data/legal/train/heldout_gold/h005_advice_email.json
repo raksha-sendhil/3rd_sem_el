@@ -1,0 +1,50 @@
+{
+  "doc_id": "420fa43a4443c357",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2792/2020\n\nDear Mr. Bhandari,\n\nThank you for meeting us on 16 February 2021 about your dispute with Mehra Enterprises. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Surat.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 2792/2020",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Bhandari",
+      "category": "NAME",
+      "start": 68,
+      "end": 76
+    },
+    {
+      "text": "16 February 2021",
+      "category": "DATE",
+      "start": 107,
+      "end": 123
+    },
+    {
+      "text": "Mehra Enterprises",
+      "category": "ORGANIZATION",
+      "start": 148,
+      "end": 165
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Surat",
+      "category": "COURT",
+      "start": 284,
+      "end": 330
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 607,
+      "end": 622
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

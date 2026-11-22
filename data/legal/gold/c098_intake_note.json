@@ -1,0 +1,122 @@
+{
+  "doc_id": "6389015b48ec80ff",
+  "text": "Intake note - Commercial team\nDate: 5 July 2020\nClient: Karthik Sathe, a 61-year-old college lecturer from Pune.\nAddress: House No. 88, Aundh, Pune 411041\nPhone: 62734 00122. Email: karthik.sathe@example.com. PAN STJPS1773E, Aadhaar 6346 8393 7782.\nMatter: breach of contract (Project Peacock)\nOpposing party: Mishra Infotech Pvt Ltd\nFacts: The breach of contract claim against Mishra Infotech Pvt Ltd is for INR 7,31,00,000/-; the goods supplied were defective.\nThe matter was filed as CS(COMM) 1110/2020 before the Pune Commercial Court on 29 July 2020.",
+  "spans": [
+    {
+      "text": "5 July 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 47
+    },
+    {
+      "text": "Karthik Sathe",
+      "category": "NAME",
+      "start": 56,
+      "end": 69
+    },
+    {
+      "text": "61-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 101
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 111
+    },
+    {
+      "text": "House No. 88, Aundh, Pune 411041",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 154
+    },
+    {
+      "text": "62734 00122",
+      "category": "PHONE",
+      "start": 162,
+      "end": 173
+    },
+    {
+      "text": "karthik.sathe@example.com",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 207
+    },
+    {
+      "text": "STJPS1773E",
+      "category": "ID_NUMBER",
+      "start": 213,
+      "end": 223
+    },
+    {
+      "text": "6346 8393 7782",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 247
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 257,
+      "end": 275
+    },
+    {
+      "text": "Project Peacock",
+      "category": "MATTER_CODENAME",
+      "start": 277,
+      "end": 292
+    },
+    {
+      "text": "Mishra Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 310,
+      "end": 333
+    },
+    {
+      "text": "Mishra Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 378,
+      "end": 401
+    },
+    {
+      "text": "INR 7,31,00,000/-",
+      "category": "MONEY",
+      "start": 409,
+      "end": 426
+    },
+    {
+      "text": "CS(COMM) 1110/2020",
+      "category": "CASE_NUMBER",
+      "start": 487,
+      "end": 505
+    },
+    {
+      "text": "Pune Commercial Court",
+      "category": "COURT",
+      "start": 517,
+      "end": 538
+    },
+    {
+      "text": "29 July 2020",
+      "category": "DATE",
+      "start": 542,
+      "end": 554
+    },
+    {
+      "text": "age (61) + occupation (college lecturer) + city (Pune) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

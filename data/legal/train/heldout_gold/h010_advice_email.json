@@ -1,0 +1,56 @@
+{
+  "doc_id": "31959e78f317036d",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 423/2022\n\nDear Ms. Rajan,\n\nThank you for meeting us on 14 August 2023 about your dispute with Ajay Malhotra. As we understand it, relatives dispute who owns the ancestral land. The matter is listed before the Bengaluru District Court.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office. We will pursue the full claim of ₹84,60,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 423/2022",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 55
+    },
+    {
+      "text": "Rajan",
+      "category": "NAME",
+      "start": 66,
+      "end": 71
+    },
+    {
+      "text": "14 August 2023",
+      "category": "DATE",
+      "start": 102,
+      "end": 116
+    },
+    {
+      "text": "Ajay Malhotra",
+      "category": "NAME",
+      "start": 141,
+      "end": 154
+    },
+    {
+      "text": "Bengaluru District Court",
+      "category": "COURT",
+      "start": 256,
+      "end": 280
+    },
+    {
+      "text": "₹84,60,000",
+      "category": "MONEY",
+      "start": 499,
+      "end": 509
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 526,
+      "end": 541
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

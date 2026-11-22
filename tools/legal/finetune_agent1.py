@@ -1,0 +1,275 @@
+"""Fine-tune Gemma 4 E4B for Agent 1's legal LLM pass with QLoRA (legal build spec, Part 3).
+
+OWNER: Person C. Runs on one Kaggle T4. Three sub-commands, in the spec's order:
+
+    python tools/legal/finetune_agent1.py eval  --out before.json           # 1. base model
+    python tools/legal/finetune_agent1.py train --adapter /kaggle/working/agent1_lora
+    python tools/legal/finetune_agent1.py eval  --adapter /kaggle/working/agent1_lora \\
+        --out after.json                                                    # 3. tuned model
+
+Training data is ``data/legal/train/sft.jsonl`` (written by the generator): the legal
+detection prompt plus one document, and the exact target ``{"spans": [...]}``. The loss is on
+the JSON answer only (prompt tokens are masked with -100). Settings are the spec's table:
+
+    4-bit NF4 + double quantisation, float16 compute (T4: no bfloat16; --fp32 if the loss is nan)
+    LoRA r=16, alpha=32, dropout=0.05 on attention and MLP projections of the language model
+    1 epoch, lr 2e-4, batch 1 x grad accumulation 8, cosine, 3% warm-up,
+    gradient checkpointing, paged_adamw_8bit, loss logged every 10 steps
+
+One setting differs from the spec: max length is 1536, not 1024. The detection prompt alone
+is about 830 tokens, so 1024 would cut off the target JSON in most examples. The script
+prints how many examples were cut with the real tokenizer, and skips any with no target left.
+
+``eval`` runs the model (``sanitise_legal.llm.hf.TransformersClient``, same prompt as the pipeline)
+on the 40 held-out documents and scores its spans against the held-out gold with the project's
+span scorer (overlap + same category), restricted to the LLM-pass categories.
+"""
+
+from __future__ import annotations
+
+import argparse
+import asyncio
+import json
+import math
+import os
+from pathlib import Path
+
+DATA = Path("data/legal/train")
+BASE = "google/gemma-4-E4B-it"
+TARGET_MODULES = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+
+# ---------------------------------------------------------------- data
+
+
+def load_examples(path: Path) -> list[dict]:
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
+
+
+def encode(example: dict, tokenizer, apply_template, max_length: int) -> dict:
+    """input_ids and labels with the prompt masked out (-100), truncated to max_length."""
+    messages = [
+        {"role": "system", "content": example["system"]},
+        {"role": "user", "content": example["user"]},
+    ]
+    prompt = apply_template(messages, add_generation_prompt=True, tokenize=False)
+    full = apply_template(
+        [*messages, {"role": "assistant", "content": example["target"]}], tokenize=False
+    )
+    prompt_ids = tokenizer(prompt, add_special_tokens=False)["input_ids"]
+    full_ids = tokenizer(full, add_special_tokens=False)["input_ids"][:max_length]
+    labels = [-100] * min(len(prompt_ids), len(full_ids)) + full_ids[len(prompt_ids) :]
+    return {"input_ids": full_ids, "labels": labels[: len(full_ids)]}
+
+
+def warmup_steps(n_examples: int, epochs: float, accumulation: int = 8) -> int:
+    """3% of the optimiser steps, as a whole number: transformers 5 removed ``warmup_ratio``,
+    and an integer means the same in every version."""
+    total = math.ceil(n_examples / accumulation * epochs)
+    return max(1, round(0.03 * total))
+
+
+def usable(encoded: list[dict], max_length: int) -> tuple[list[dict], int, int]:
+    """(examples with some target left, how many were cut at max_length, how many dropped)."""
+    kept = [e for e in encoded if any(label != -100 for label in e["labels"])]
+    cut = sum(len(e["input_ids"]) >= max_length for e in kept)
+    return kept, cut, len(encoded) - len(kept)
+
+
+def collate(batch: list[dict], pad_id: int) -> dict:
+    import torch
+
+    width = max(len(b["input_ids"]) for b in batch)
+    ids = [b["input_ids"] + [pad_id] * (width - len(b["input_ids"])) for b in batch]
+    labels = [b["labels"] + [-100] * (width - len(b["labels"])) for b in batch]
+    mask = [[1] * len(b["input_ids"]) + [0] * (width - len(b["input_ids"])) for b in batch]
+    return {
+        "input_ids": torch.tensor(ids),
+        "labels": torch.tensor(labels),
+        "attention_mask": torch.tensor(mask),
+    }
+
+
+# ---------------------------------------------------------------- train
+
+
+def train(args: argparse.Namespace) -> None:
+    import torch
+    import transformers
+    from peft import LoraConfig, get_peft_model
+    from transformers import AutoProcessor, BitsAndBytesConfig, Trainer, TrainingArguments
+
+    dtype = torch.float32 if args.fp32 else torch.float16
+    quant = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_compute_dtype=dtype,
+    )
+    processor = AutoProcessor.from_pretrained(args.base)
+    tokenizer = getattr(processor, "tokenizer", processor)
+    model_cls = getattr(transformers, "AutoModelForMultimodalLM", None) or (
+        transformers.AutoModelForCausalLM
+    )
+    model = model_cls.from_pretrained(
+        args.base, quantization_config=quant, device_map={"": 0}, dtype=dtype
+    )
+    # Not peft's prepare_model_for_kbit_training: it casts every non-quantised weight to
+    # float32, and Gemma 4's large embedding tables then need another ~10 GB, more than a T4
+    # has. The frozen weights stay in float16; peft keeps the LoRA weights in float32.
+    model.config.use_cache = False
+    model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+    model.enable_input_require_grads()
+    lora = LoraConfig(
+        r=16,
+        lora_alpha=32,
+        lora_dropout=0.05,
+        bias="none",
+        task_type="CAUSAL_LM",
+        # language model only: leave the vision and audio towers frozen
+        target_modules=r".*language_model.*\.(" + "|".join(TARGET_MODULES) + r")$",
+    )
+    model = get_peft_model(model, lora)
+    model.print_trainable_parameters()
+
+    examples = load_examples(args.data / "sft.jsonl")
+    for extra in args.extra or []:  # e.g. the Gemini-reworded train_aug set
+        examples += load_examples(Path(extra))
+    encoded = [
+        encode(e, tokenizer, processor.apply_chat_template, args.max_length) for e in examples
+    ]
+    longest = max(len(e["input_ids"]) for e in encoded)
+    encoded, cut, dropped = usable(encoded, args.max_length)
+    print(
+        f"{len(encoded)} training examples; longest {longest} tokens (limit {args.max_length}); "
+        f"{cut} with the target cut off, {dropped} dropped with no target left"
+    )
+    if not encoded:
+        raise SystemExit("No example has any target left: raise --max-length.")
+
+    trainer = Trainer(
+        model=model,
+        train_dataset=encoded,
+        data_collator=lambda b: collate(b, tokenizer.pad_token_id or 0),
+        args=TrainingArguments(
+            output_dir=str(Path(args.adapter).parent / "agent1_checkpoints"),
+            num_train_epochs=args.epochs,
+            learning_rate=2e-4,
+            per_device_train_batch_size=1,
+            gradient_accumulation_steps=8,
+            lr_scheduler_type="cosine",
+            warmup_steps=warmup_steps(len(encoded), args.epochs),
+            gradient_checkpointing=True,
+            gradient_checkpointing_kwargs={"use_reentrant": False},
+            optim="paged_adamw_8bit",
+            fp16=not args.fp32,
+            logging_steps=10,
+            save_steps=10,  # one epoch of 400 examples is only 50 optimiser steps
+            save_total_limit=2,
+            report_to="none",
+            remove_unused_columns=False,
+        ),
+    )
+    trainer.train(resume_from_checkpoint=args.resume or None)
+    model.save_pretrained(args.adapter)
+    processor.save_pretrained(args.adapter)
+    print(f"adapter saved to {args.adapter}")
+
+
+# ---------------------------------------------------------------- evaluate
+
+
+async def _detect_all(client, docs: list[dict]) -> tuple[list, int]:
+    """Spans per document, and how many documents gave unusable JSON after the retries. Only
+    that counts as "found nothing"; any other error (a model that will not load) stops the run,
+    so a failure is never written down as a score of zero."""
+    from sanitise_legal.agents.detector.quasi import infer_quasi
+    from sanitise_legal.domain import use_domain
+    from sanitise_legal.errors import SchemaValidationFailed
+    from sanitise_legal.schemas import DetectorOutput
+
+    out = []
+    broken = 0
+    with use_domain("legal"):
+        for i, d in enumerate(docs, 1):
+            try:
+                spans = await infer_quasi(d["text"], [], client)
+            except SchemaValidationFailed as exc:
+                print(f"  {d['doc_id']}: {exc}")
+                spans = []
+                broken += 1
+            out.append(DetectorOutput(doc_id=d["doc_id"], spans=spans))
+            print(f"  [{i}/{len(docs)}] {len(spans)} spans", flush=True)
+    return out, broken
+
+
+def evaluate(args: argparse.Namespace) -> None:
+    from sanitise_legal.agents.detector.quasi import LEGAL_LLM_CATEGORIES
+    from sanitise_legal.evaluation.scoring import load_dir, score
+    from sanitise_legal.llm.hf import TransformersClient
+
+    if args.adapter and not (Path(args.adapter) / "adapter_config.json").is_file():
+        raise SystemExit(
+            f"No trained adapter at {args.adapter} (adapter_config.json is missing). "
+            "Finish the train step first; nothing was scored."
+        )
+    docs = [
+        json.loads(p.read_text(encoding="utf-8"))
+        for p in sorted((args.data / "heldout").glob("*.json"))
+    ]
+    gold = load_dir(args.data / "heldout_gold", gold=True)
+    for g in gold:
+        g.spans = [s for s in g.spans if s.category.value in LEGAL_LLM_CATEGORIES]
+    client = TransformersClient(model=args.base, adapter=args.adapter, device="cuda:0", retries=1)
+    pred, broken = asyncio.run(_detect_all(client, docs))
+    if broken == len(docs):
+        raise SystemExit(f"All {broken} documents gave unusable JSON; {args.out} was not written.")
+    m = score(pred, gold)
+    result = {
+        "model": client.model,
+        "precision": m.precision,
+        "recall": m.recall,
+        "f1": m.f1,
+        "documents": len(docs),
+        "documents_with_broken_json": broken,
+        "per_category": m.per_category,
+    }
+    Path(args.out).write_text(json.dumps(result, indent=2), encoding="utf-8")
+    print(
+        f"{client.model}: P {m.precision:.3f} R {m.recall:.3f} F1 {m.f1:.3f}, "
+        f"{broken} documents with broken JSON -> {args.out}"
+    )
+
+
+def main() -> None:
+    p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    p.add_argument("command", choices=("train", "eval"))
+    p.add_argument("--base", default=BASE)
+    p.add_argument("--data", type=Path, default=DATA)
+    p.add_argument("--adapter", default=None, help="train: where to save; eval: adapter to load")
+    p.add_argument("--extra", nargs="*", help="more sft.jsonl files (train_aug)")
+    p.add_argument("--epochs", type=float, default=1.0)
+    p.add_argument("--max-length", type=int, default=1536)
+    p.add_argument("--fp32", action="store_true", help="if the float16 loss shows nan")
+    p.add_argument("--resume", default=None, help="checkpoint folder to resume from")
+    p.add_argument("--out", default="agent1_eval.json")
+    p.add_argument(
+        "--gpu",
+        default="1",
+        help="GPU to use (default 1: on Kaggle's T4 x2, Ollama holds GPU 0); 0 on one GPU",
+    )
+    args = p.parse_args()
+    # before torch is imported: the chosen GPU becomes cuda:0 for this process, and the
+    # allocator returns freed blocks instead of fragmenting
+    os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
+    os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+    if args.command == "train":
+        if not args.adapter:
+            p.error("train needs --adapter (e.g. /kaggle/working/agent1_lora)")
+        train(args)
+    else:
+        evaluate(args)
+
+
+if __name__ == "__main__":
+    main()

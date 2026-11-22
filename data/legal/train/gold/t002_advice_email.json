@@ -1,0 +1,50 @@
+{
+  "doc_id": "0637e6dad477f944",
+  "text": "Subject: Your consumer complaint matter\n\nDear Ms. Iyengar,\n\nThank you for meeting us on 5 March 2023 about your dispute with Zenith Builders Pvt Ltd. As we understand it, the builder keeps promising possession by email but never delivers. The matter is listed before the Mysuru District Consumer Disputes Redressal Commission.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office. We will pursue the full claim of Rs. 2,18,00,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Iyengar",
+      "category": "NAME",
+      "start": 50,
+      "end": 57
+    },
+    {
+      "text": "5 March 2023",
+      "category": "DATE",
+      "start": 88,
+      "end": 100
+    },
+    {
+      "text": "Zenith Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 125,
+      "end": 148
+    },
+    {
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 271,
+      "end": 325
+    },
+    {
+      "text": "Rs. 2,18,00,000",
+      "category": "MONEY",
+      "start": 621,
+      "end": 636
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 653,
+      "end": 668
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

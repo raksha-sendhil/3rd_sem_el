@@ -1,0 +1,104 @@
+{
+  "doc_id": "aaa9ea5eafee8514",
+  "text": "Intake note (Property team, 9 February 2023). Our client Harpreet Rajan is a 49-year-old retired bank officer who lives at Bungalow 4, Kowdiar, Thiruvananthapuram 695003 and can be reached on +91 91109 01650 or harpreet.rajan@example.in. The client's PAN YSSPR9852W, Aadhaar 3865 3084 8511.\nThe client consulted us about a consumer complaint matter against M/s Chatterjee Builders Pvt Ltd. The consumer complaint against Chatterjee Builders Pvt Ltd concerns a flat bought for Rs 6,76,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 1013/2023 before the Thiruvananthapuram District Consumer Disputes Redressal Commission on 22 April 2023.",
+  "spans": [
+    {
+      "text": "9 February 2023",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Harpreet Rajan",
+      "category": "NAME",
+      "start": 57,
+      "end": 71
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 109
+    },
+    {
+      "text": "Bungalow 4, Kowdiar, Thiruvananthapuram 695003",
+      "category": "ADDRESS",
+      "start": 123,
+      "end": 169
+    },
+    {
+      "text": "+91 91109 01650",
+      "category": "PHONE",
+      "start": 192,
+      "end": 207
+    },
+    {
+      "text": "harpreet.rajan@example.in",
+      "category": "EMAIL",
+      "start": 211,
+      "end": 236
+    },
+    {
+      "text": "YSSPR9852W",
+      "category": "ID_NUMBER",
+      "start": 255,
+      "end": 265
+    },
+    {
+      "text": "3865 3084 8511",
+      "category": "ID_NUMBER",
+      "start": 275,
+      "end": 289
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 323,
+      "end": 341
+    },
+    {
+      "text": "Chatterjee Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 361,
+      "end": 388
+    },
+    {
+      "text": "Chatterjee Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 421,
+      "end": 448
+    },
+    {
+      "text": "Rs 6,76,00,000",
+      "category": "MONEY",
+      "start": 476,
+      "end": 490
+    },
+    {
+      "text": "C.C. No. 1013/2023",
+      "category": "CASE_NUMBER",
+      "start": 556,
+      "end": 574
+    },
+    {
+      "text": "Thiruvananthapuram District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 586,
+      "end": 652
+    },
+    {
+      "text": "22 April 2023",
+      "category": "DATE",
+      "start": 656,
+      "end": 669
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

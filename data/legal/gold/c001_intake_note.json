@@ -1,0 +1,110 @@
+{
+  "doc_id": "8a1b0b4ce44f35e5",
+  "text": "Intake note (Commercial team, 9 September 2024). Our client Joseph Bose is a 52-year-old cardiologist who lives at House No. 159, Aundh, Pune 411005 and can be reached on 07556653413 or joseph.bose6@example.in. The client's PAN APGPB9213Q.\nThe client consulted us about a cheque bounce matter against M/s Emerald Enterprises. A cheque for ₹24,40,000 issued by Emerald Enterprises bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 955735154280 (IFSC UTIB0848537).\nThe matter was filed as S.C.C. No. 995/2024 before the Judicial Magistrate First Class Court at Pune on 19 December 2024.",
+  "spans": [
+    {
+      "text": "9 September 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Joseph Bose",
+      "category": "NAME",
+      "start": 60,
+      "end": 71
+    },
+    {
+      "text": "52-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 101
+    },
+    {
+      "text": "House No. 159, Aundh, Pune 411005",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 148
+    },
+    {
+      "text": "07556653413",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "joseph.bose6@example.in",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 209
+    },
+    {
+      "text": "APGPB9213Q",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 272,
+      "end": 285
+    },
+    {
+      "text": "Emerald Enterprises",
+      "category": "ORGANIZATION",
+      "start": 305,
+      "end": 324
+    },
+    {
+      "text": "₹24,40,000",
+      "category": "MONEY",
+      "start": 339,
+      "end": 349
+    },
+    {
+      "text": "Emerald Enterprises",
+      "category": "ORGANIZATION",
+      "start": 360,
+      "end": 379
+    },
+    {
+      "text": "955735154280",
+      "category": "FINANCIAL",
+      "start": 505,
+      "end": 517
+    },
+    {
+      "text": "UTIB0848537",
+      "category": "FINANCIAL",
+      "start": 524,
+      "end": 535
+    },
+    {
+      "text": "S.C.C. No. 995/2024",
+      "category": "CASE_NUMBER",
+      "start": 562,
+      "end": 581
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 593,
+      "end": 638
+    },
+    {
+      "text": "19 December 2024",
+      "category": "DATE",
+      "start": 642,
+      "end": 658
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

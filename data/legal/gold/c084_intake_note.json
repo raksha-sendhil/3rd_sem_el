@@ -1,0 +1,110 @@
+{
+  "doc_id": "758273d9594b63dd",
+  "text": "Intake note - Family team\nDate: 20 February 2021\nClient: Neha Jadhav, a 30-year-old railway employee from Kozhikode.\nAddress: Plot 70, Mavoor Road, Kozhikode 673011\nPhone: 86643 33823. Email: neha.jadhav@example.in. PAN QKLPJ9817U.\nMatter: divorce by mutual consent\nOpposing party: Swati Tiwari\nFacts: The divorce by mutual consent with Swati Tiwari includes a settlement of 30.2 lakh rupees; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 2350/2021 before the Family Court at Kozhikode on 05/04/2021.",
+  "spans": [
+    {
+      "text": "20 February 2021",
+      "category": "DATE",
+      "start": 32,
+      "end": 48
+    },
+    {
+      "text": "Neha Jadhav",
+      "category": "NAME",
+      "start": 57,
+      "end": 68
+    },
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 100
+    },
+    {
+      "text": "Kozhikode",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 115
+    },
+    {
+      "text": "Plot 70, Mavoor Road, Kozhikode 673011",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 164
+    },
+    {
+      "text": "86643 33823",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "neha.jadhav@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 214
+    },
+    {
+      "text": "QKLPJ9817U",
+      "category": "ID_NUMBER",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 240,
+      "end": 265
+    },
+    {
+      "text": "Swati Tiwari",
+      "category": "NAME",
+      "start": 282,
+      "end": 294
+    },
+    {
+      "text": "Swati Tiwari",
+      "category": "NAME",
+      "start": 337,
+      "end": 349
+    },
+    {
+      "text": "30.2 lakh rupees",
+      "category": "MONEY",
+      "start": 375,
+      "end": 391
+    },
+    {
+      "text": "Petition No. 2350/2021",
+      "category": "CASE_NUMBER",
+      "start": 466,
+      "end": 488
+    },
+    {
+      "text": "Family Court at Kozhikode",
+      "category": "COURT",
+      "start": 500,
+      "end": 525
+    },
+    {
+      "text": "05/04/2021",
+      "category": "DATE",
+      "start": 529,
+      "end": 539
+    },
+    {
+      "text": "age (30) + occupation (railway employee) + city (Kozhikode) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

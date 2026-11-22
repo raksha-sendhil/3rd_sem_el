@@ -1,0 +1,50 @@
+{
+  "doc_id": "2a683c362c0aa309",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2056/2020\n\nDear Mr. Hegde,\n\nThank you for meeting us on 18 November 2020 about your dispute with Madhuri Kurian. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Nashik District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 2056/2020",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Hegde",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "18 November 2020",
+      "category": "DATE",
+      "start": 107,
+      "end": 123
+    },
+    {
+      "text": "Madhuri Kurian",
+      "category": "NAME",
+      "start": 148,
+      "end": 162
+    },
+    {
+      "text": "Nashik District Court",
+      "category": "COURT",
+      "start": 295,
+      "end": 316
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 546,
+      "end": 563
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

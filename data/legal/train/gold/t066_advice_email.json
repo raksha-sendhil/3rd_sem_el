@@ -1,0 +1,44 @@
+{
+  "doc_id": "82e16c0c5c305da5",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 2471/2019\n\nDear Ms. Bansal,\n\nThank you for meeting us on 21 April 2020 about your dispute with Mohan Rane. As we understand it, the couple has a young child.\n\nOur advice is to agree a joint parenting plan before the second motion. Please collect the school records of the child and the draft parenting plan and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 2471/2019",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 71
+    },
+    {
+      "text": "Bansal",
+      "category": "NAME",
+      "start": 82,
+      "end": 88
+    },
+    {
+      "text": "21 April 2020",
+      "category": "DATE",
+      "start": 119,
+      "end": 132
+    },
+    {
+      "text": "Mohan Rane",
+      "category": "NAME",
+      "start": 157,
+      "end": 167
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 416,
+      "end": 433
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

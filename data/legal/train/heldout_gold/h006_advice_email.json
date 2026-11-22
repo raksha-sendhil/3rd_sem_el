@@ -1,0 +1,50 @@
+{
+  "doc_id": "5a783856092cdcd3",
+  "text": "Subject: Your anticipatory bail matter - Anticipatory Bail Application No. 303/2019\n\nDear Mr. Bose,\n\nThank you for meeting us on 12 April 2020 about your dispute with Venkat DSouza. As we understand it, the complaint alleges negligence during treatment.\n\nOur advice is to rely on the expert committee opinion that there was no gross negligence. Please collect the treatment records and the expert committee opinion and send copies to this office. We will pursue the full claim of 31.1 lakh rupees.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Anticipatory Bail Application No. 303/2019",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 83
+    },
+    {
+      "text": "Bose",
+      "category": "NAME",
+      "start": 94,
+      "end": 98
+    },
+    {
+      "text": "12 April 2020",
+      "category": "DATE",
+      "start": 129,
+      "end": 142
+    },
+    {
+      "text": "Venkat DSouza",
+      "category": "NAME",
+      "start": 167,
+      "end": 180
+    },
+    {
+      "text": "31.1 lakh rupees",
+      "category": "MONEY",
+      "start": 480,
+      "end": 496
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 513,
+      "end": 525
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

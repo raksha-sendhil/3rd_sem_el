@@ -1,0 +1,68 @@
+{
+  "doc_id": "31b1a5009ca639c9",
+  "text": "Case note: Anticipatory Bail Application No. 303/2019\nClient: Abhishek Bose (bank manager, Kolkata)\nOpposing party: Venkat DSouza\nCourt: Kolkata Sessions Court\nFiled on: 19/09/2019\nClaim amount: ₹31,10,000\nIssue: anticipatory bail. The complaint alleges negligence during treatment.\nAdvice given: Rely on the expert committee opinion that there was no gross negligence.\nOutcome: Anticipatory bail was granted on the strength of the expert opinion.\nRecommended next step: Apply for quashing of the case.",
+  "spans": [
+    {
+      "text": "Anticipatory Bail Application No. 303/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 53
+    },
+    {
+      "text": "Abhishek Bose",
+      "category": "NAME",
+      "start": 62,
+      "end": 75
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 77,
+      "end": 89
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 91,
+      "end": 98
+    },
+    {
+      "text": "Venkat DSouza",
+      "category": "NAME",
+      "start": 116,
+      "end": 129
+    },
+    {
+      "text": "Kolkata Sessions Court",
+      "category": "COURT",
+      "start": 137,
+      "end": 159
+    },
+    {
+      "text": "19/09/2019",
+      "category": "DATE",
+      "start": 170,
+      "end": 180
+    },
+    {
+      "text": "₹31,10,000",
+      "category": "MONEY",
+      "start": 195,
+      "end": 205
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 213,
+      "end": 230
+    },
+    {
+      "text": "occupation (bank manager) + city (Kolkata) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

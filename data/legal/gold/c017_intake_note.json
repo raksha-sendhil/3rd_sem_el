@@ -1,0 +1,110 @@
+{
+  "doc_id": "99fbf8e4141eee75",
+  "text": "Intake note - Commercial team\nDate: 3 December 2022\nClient: Aarti Rane, a 56-year-old pharmacist from Mangaluru.\nAddress: Flat 12C, Bejai, Mangaluru 575008\nPhone: 66529 46445. Email: aarti.rane@example.com. PAN ZPTPR9336M.\nMatter: cheque bounce\nOpposing party: Banyan Textiles Pvt Ltd\nFacts: A cheque for ₹32,00,000 issued by Banyan Textiles Pvt Ltd bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as CC/2393/2023 before the Judicial Magistrate First Class Court at Mangaluru on 24 January 2023.",
+  "spans": [
+    {
+      "text": "3 December 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Aarti Rane",
+      "category": "NAME",
+      "start": 60,
+      "end": 70
+    },
+    {
+      "text": "56-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "pharmacist",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 96
+    },
+    {
+      "text": "Mangaluru",
+      "category": "LOCATION",
+      "start": 102,
+      "end": 111
+    },
+    {
+      "text": "Flat 12C, Bejai, Mangaluru 575008",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 155
+    },
+    {
+      "text": "66529 46445",
+      "category": "PHONE",
+      "start": 163,
+      "end": 174
+    },
+    {
+      "text": "aarti.rane@example.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 205
+    },
+    {
+      "text": "ZPTPR9336M",
+      "category": "ID_NUMBER",
+      "start": 211,
+      "end": 221
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 231,
+      "end": 244
+    },
+    {
+      "text": "Banyan Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 261,
+      "end": 284
+    },
+    {
+      "text": "₹32,00,000",
+      "category": "MONEY",
+      "start": 305,
+      "end": 315
+    },
+    {
+      "text": "Banyan Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 326,
+      "end": 349
+    },
+    {
+      "text": "CC/2393/2023",
+      "category": "CASE_NUMBER",
+      "start": 438,
+      "end": 450
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mangaluru",
+      "category": "COURT",
+      "start": 462,
+      "end": 512
+    },
+    {
+      "text": "24 January 2023",
+      "category": "DATE",
+      "start": 516,
+      "end": 531
+    },
+    {
+      "text": "age (56) + occupation (pharmacist) + city (Mangaluru) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

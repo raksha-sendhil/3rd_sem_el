@@ -1,0 +1,806 @@
+{
+  "members": [
+    {
+      "doc_id": "508c6b010c7288ea",
+      "query": "Do we have a file containing this passage? \"As we understand it, the wife wants her jewellery and gifts returned.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "29a5568b106f8051",
+      "query": "Do we have a file containing this passage? \"As we understand it, the spouses agree on a single payment instead of maintenance.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a418adee5192e120",
+      "query": "Do we have a file containing this passage? \"Facts: The land dispute with Siddharth Patel concerns agricultural land valued at INR 1,28,00,000/-; construction has started on the disputed plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "0953823c39d96d64",
+      "query": "Do we have a file containing this passage? \"As we understand it, both spouses have lived apart for a long time.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "5604176c9c5c61bb",
+      "query": "Do we have a file containing this passage? \"The divorce by mutual consent with Pranav DSouza includes a settlement of 10.2 lakh rupees; both spouses have lived apart for a long time.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a5fe3814f759a169",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for ₹9,50,000 issued by M/s Zenith Traders bounced: the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "9b1566619b2cf6d0",
+      "query": "Do we have a file containing this passage? \"A cheque for ₹36,20,000 issued by M/s Trident Textiles Pvt Ltd bounced: the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "168a7e4ad638c588",
+      "query": "Do we have a file containing this passage? \"A cheque for Rs 15,40,000 issued by M/s Meridian Traders bounced: the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "49c29ad5afdfae4d",
+      "query": "Do we have a file containing this passage? \"As we understand it, the employer offered to settle.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "6c5000f324851cd5",
+      "query": "Do we have a file containing this passage? \"Patil Traders gave me a cheque for ₹31,30,000 to repay a loan, but the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "4e3fb35754b4db8c",
+      "query": "Do we have a file containing this passage? \"Joseph Tiwari gave me a cheque for Rs 22,40,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e2e3be0042a801cb",
+      "query": "Do we have a file containing this passage? \"The land dispute with Venkat Menon concerns agricultural land valued at ₹3,55,00,000; relatives dispute who owns the ancestral land.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "6a782df28b34241b",
+      "query": "Do we have a file containing this passage? \"As we understand it, the landlord needs the premises for the family's own use.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "58468b34a5d13c56",
+      "query": "Do we have a file containing this passage? \"4,60,00,000; the neighbour has encroached on the boundary of the plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "354f7b234feaa662",
+      "query": "Do we have a file containing this passage? \"As we understand it, the occupant claims ownership by adverse possession.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "136c10d0fa7f31c9",
+      "query": "Do we have a file containing this passage? \"Facts: The tenancy dispute with Anirudh Gaikwad concerns rent arrears of 7.3 lakh rupees; the landlord needs the premises for the family's own use.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "495b4e8cf4b4efcc",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for ₹20,00,000 issued by M/s Saffron Enterprises bounced: the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "167d2e8789f3fe56",
+      "query": "Do we have a file containing this passage? \"As we understand it, the builder never obtained the occupancy certificate.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "878b90afd7e78c3a",
+      "query": "Do we have a file containing this passage? \"Karve Textiles Pvt Ltd gave me a cheque for ₹12,50,000 to repay a loan, but the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "01871c656f959cf1",
+      "query": "Do we have a file containing this passage? \"As we understand it, a conflicting trademark was registered.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "87e79e4251b8db57",
+      "query": "Do we have a file containing this passage? \"The drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "2424f78b91de275b",
+      "query": "Do we have a file containing this passage? \"The consumer complaint against Subramanian Builders Pvt Ltd concerns a flat bought for ₹8,52,00,000; possession of the flat is long overdue.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "354ee79129294663",
+      "query": "Do we have a file containing this passage? \"As we understand it, the complaint turns a business disagreement into a criminal case.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "ad66305d669ea70e",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "8e96a36c5065f6d7",
+      "query": "Do we have a file containing this passage? \"Facts: The tenancy dispute with Charulata Sandhu concerns rent arrears of INR 8,60,000/-; the tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "ac256dfd086f163f",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "c1463ea16ce800c4",
+      "query": "Do we have a file containing this passage? \"As we understand it, construction has started on the disputed plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a0bf28acfb66e2e8",
+      "query": "Do we have a file containing this passage? \"As we understand it, the complaint alleges negligence during treatment.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "199952621c9cd032",
+      "query": "Do we have a file containing this passage? \"The maritime salvage claim against Subramanian Marine Ltd is for ₹41.3 crore; the owners dispute the value of the salvage.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "f64b1b99b9d4dd13",
+      "query": "Do we have a file containing this passage? \"The landlord is trying to evict the tenant after a rent increase was refused.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "bc64e4917a79f79f",
+      "query": "Do we have a file containing this passage? \"The anticipatory bail matter arises from a complaint by Suresh Apte about Rs 6,70,000; the complaint was filed during a matrimonial dispute.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "9963702f7a73aa2b",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for ₹44,10,000 issued by Joseph Ghosh bounced: the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "bfd623afac83f63d",
+      "query": "Do we have a file containing this passage? \"As we understand it, the landlord needs the premises for the family's own use.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "79ba2fd285437ac6",
+      "query": "Do we have a file containing this passage? \"A cheque for 31.3 lakh rupees issued by Patil Traders bounced: the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "7f64fbbcb0f49660",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for ₹6,10,000 issued by Ghosh Enterprises bounced: the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "8f25b244883d328a",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "c033859cedec14de",
+      "query": "Do we have a file containing this passage? \"The vessel is about to leave port.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "83d0bc63e50cc435",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for Rs 9,90,000 issued by M/s Everest Traders bounced: the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "5a39dccdcaf14f05",
+      "query": "Do we have a file containing this passage? \"As we understand it, the vessel is about to leave port.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "91160443d83a10ac",
+      "query": "Do we have a file containing this passage? \"As we understand it, the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "063da89efebe3680",
+      "query": "Do we have a file containing this passage? \"Facts: The consumer complaint against M/s Coastal Constructions concerns a flat bought for ₹8,80,00,000; possession of the flat is long overdue.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "65a3aca1e8075519",
+      "query": "Do we have a file containing this passage? \"As we understand it, the tenant has sublet the flat without permission.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "6bdef8f979a81ef4",
+      "query": "Do we have a file containing this passage? \"Facts: The tenancy dispute with Charulata Kulkarni concerns rent arrears of 8.7 lakh rupees; the tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "1042fe50d4be7651",
+      "query": "Do we have a file containing this passage? \"As we understand it, the landlord is trying to evict the tenant after a rent increase was refused.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "4eb688080f3a5ba4",
+      "query": "Do we have a file containing this passage? \"As we understand it, the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "95b8124dd9153885",
+      "query": "Do we have a file containing this passage? \"As we understand it, the rival product uses the protected regional name on its label.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "aa48d977501cc159",
+      "query": "Do we have a file containing this passage? \"As we understand it, the foreign administrator wants control of the assets in this country.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "03dd22ac29000aab",
+      "query": "Do we have a file containing this passage? \"The complainant alleges cheating over a failed deal.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a8a4cac5ba3ea9cd",
+      "query": "Do we have a file containing this passage? \"5,09,00,000; the vessel is about to leave port.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "424b3b016acf0d94",
+      "query": "Do we have a file containing this passage? \"My employer M/s Hegde Technologies Pvt Ltd owes me INR 48,90,000/- after firing me, and the employee was dismissed without any enquiry.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "fcea7f690158ca39",
+      "query": "Do we have a file containing this passage? \"Facts: The consumer complaint against Harbour Realty concerns a flat bought for ₹7.3 crore; the builder never obtained the occupancy certificate.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "eab902885886d3dd",
+      "query": "Do we have a file containing this passage? \"8,29,00,000; the builder keeps promising possession by email but never delivers.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "c77a034b0cc3aee0",
+      "query": "Do we have a file containing this passage? \"The consumer complaint against Sunrise Realty concerns a flat bought for 61.5 lakh rupees; the builder never obtained the occupancy certificate.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "3e66d3a98d2bf87d",
+      "query": "Do we have a file containing this passage? \"The wife wants her jewellery and gifts returned.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "b43060079ae51c9b",
+      "query": "Do we have a file containing this passage? \"A cheque for INR 37,10,000/- issued by Sunanda Khan bounced: the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "b97d6788033b9cb7",
+      "query": "Do we have a file containing this passage? \"Facts: The aircraft lease repossession against M/s Skyline Airways Ltd concerns arrears of ₹1,97,65,00,000; the airline has stopped paying lease rentals.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "23fd7cdda84e6fa5",
+      "query": "Do we have a file containing this passage? \"As we understand it, relatives dispute who owns the ancestral land.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "21a86fb75f5ea8ce",
+      "query": "Do we have a file containing this passage? \"The tenancy dispute with Mohan Natarajan concerns rent arrears of INR 7,30,000/-; the landlord is trying to evict the tenant after a rent increase was refused.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "1be2e243ca09689c",
+      "query": "Do we have a file containing this passage? \"Facts: The tenancy dispute with Rahul Das concerns rent arrears of Rs 1,60,000; the tenant has sublet the flat without permission.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a2224b96532af93d",
+      "query": "Do we have a file containing this passage? \"A cheque for INR 14,10,000/- issued by Fernandes Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "ebd32b32e837c6af",
+      "query": "Do we have a file containing this passage? \"As we understand it, the airline sought protection from its creditors.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "c39a9d0883f5c8e0",
+      "query": "Do we have a file containing this passage? \"The wrongful termination claim against Zenith Industries is for ₹59,80,000; the employee was dismissed without any enquiry.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "9be2f24a595eaeaa",
+      "query": "Do we have a file containing this passage? \"The complainant alleges cheating over a failed deal.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "902d3ce2ae5bbd4c",
+      "query": "Do we have a file containing this passage? \"65,000 in rent, and the landlord is trying to evict the tenant after a rent increase was refused.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "f75643871945d10b",
+      "query": "Do we have a file containing this passage? \"Facts: The breach of contract claim against M/s Aravali Infotech Pvt Ltd is for ₹16.8 crore; the claim must be filed as a commercial suit.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "343cbc21cf703de6",
+      "query": "Do we have a file containing this passage? \"Facts: The tenancy dispute with Suresh Joshi concerns rent arrears of ₹4,65,000; the landlord is trying to evict the tenant after a rent increase was refused.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "72d4d98de222d84c",
+      "query": "Do we have a file containing this passage? \"The cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "74d31a00371b10a0",
+      "query": "Do we have a file containing this passage? \"The geographical-indication dispute with M/s Zenith Foods Pvt Ltd involves sales of ₹5,34,00,000; the rival product uses the protected regional name on its label.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "68dacafeb0d972b4",
+      "query": "Do we have a file containing this passage? \"The consumer complaint against Rao Builders Pvt Ltd concerns a flat bought for INR 6,65,00,000/-; possession of the flat is long overdue.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "dd52b50cd11e736a",
+      "query": "Do we have a file containing this passage? \"The divorce by mutual consent with Harpreet Chauhan includes a settlement of 30.6 lakh rupees; the spouses agree on a single payment instead of maintenance.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e1f36a5bd2a4e3c7",
+      "query": "Do we have a file containing this passage? \"As we understand it, the builder never obtained the occupancy certificate.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "3ee4a64a8f8dd534",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "d59809a5e9e4f38e",
+      "query": "Do we have a file containing this passage? \"As we understand it, the couple has a young child.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "3ec1d91e432e1151",
+      "query": "Do we have a file containing this passage? \"The tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e26ab4b08740cb88",
+      "query": "Do we have a file containing this passage? \"The wrongful termination claim against Hegde Technologies Pvt Ltd is for 48.9 lakh rupees; the employee was dismissed without any enquiry.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "3572521feb3ca512",
+      "query": "Do we have a file containing this passage? \"The tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "81d96681fc010e99",
+      "query": "Do we have a file containing this passage? \"As we understand it, the complaint turns a business disagreement into a criminal case.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e29f9a55f7858fb4",
+      "query": "Do we have a file containing this passage? \"The consumer complaint against M/s Emerald Builders Pvt Ltd concerns a flat bought for INR 9,19,00,000/-; the builder keeps promising possession by email but never delivers.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e32ae65a311a4021",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "dd876cec48020cc0",
+      "query": "Do we have a file containing this passage? \"The tenancy dispute with Sujata Khan concerns rent arrears of ₹7,85,000; the tenant has sublet the flat without permission.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "2d9f9ecdbad40215",
+      "query": "Do we have a file containing this passage? \"Sterling Textiles Pvt Ltd gave me a cheque for ₹35,20,000 to repay a loan, but the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "cd3243c07f20f911",
+      "query": "Do we have a file containing this passage? \"Facts: The anticipatory bail matter arises from a complaint by Harish More about ₹74,80,000; the complainant alleges cheating over a failed deal.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "c0afb44e3b4985c5",
+      "query": "Do we have a file containing this passage? \"My employer M/s Emerald Technologies Pvt Ltd owes me INR 36,50,000/- after firing me, and the dismissal followed a one-sided domestic enquiry.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "57b84eb47241d95e",
+      "query": "Do we have a file containing this passage? \"As we understand it, the builder keeps promising possession by email but never delivers.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "dea96bca21ff1b11",
+      "query": "Do we have a file containing this passage? \"The landlord needs the premises for the family's own use.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "d1ed83b61aea378d",
+      "query": "Do we have a file containing this passage? \"As we understand it, the builder keeps promising possession by email but never delivers.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "cc8d90609049fe71",
+      "query": "Do we have a file containing this passage? \"A cheque for ₹38,70,000 issued by Revathi Pawar bounced: the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "3260d1a5c5b52d14",
+      "query": "Do we have a file containing this passage? \"As we understand it, the tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a6a9cd9e028498d4",
+      "query": "Do we have a file containing this passage? \"As we understand it, the goods supplied were defective.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "f8aeeb0610af2d29",
+      "query": "Do we have a file containing this passage? \"Facts: The land dispute with Harish Patil concerns agricultural land valued at Rs 2,31,00,000; relatives dispute who owns the ancestral land.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "6da8c41ac5226518",
+      "query": "Do we have a file containing this passage? \"The neighbour has encroached on the boundary of the plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "1ff04753d6b0aab4",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "01d21bd4638d662b",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e79b053355f7dbf1",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for 27.6 lakh rupees issued by Arjun Rajan bounced: the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "f43b2e009b516e03",
+      "query": "Do we have a file containing this passage? \"As we understand it, possession of the flat is long overdue.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "82fff4f2e5a24250",
+      "query": "Do we have a file containing this passage? \"As we understand it, the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e8d83cd832652b3f",
+      "query": "Do we have a file containing this passage? \"The tenancy dispute with Siddharth Karve concerns rent arrears of 2.1 lakh rupees; the tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "85956427336caa3c",
+      "query": "Do we have a file containing this passage? \"As we understand it, construction has started on the disputed plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "2362e31ed797f38e",
+      "query": "Do we have a file containing this passage? \"As we understand it, the builder never obtained the occupancy certificate.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e7cb3ded70abf760",
+      "query": "Do we have a file containing this passage? \"A cheque for Rs 28,40,000 issued by Pioneer Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    }
+  ],
+  "nonmembers": [
+    {
+      "doc_id": "c86675844955e2fb",
+      "query": "Do we have a file containing this passage? \"As we understand it, the occupant claims ownership by adverse possession.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "237c4adea99ffbce",
+      "query": "Do we have a file containing this passage? \"As we understand it, the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "8fe51c8a92e679bf",
+      "query": "Do we have a file containing this passage? \"The land dispute with Nandini Kapoor concerns agricultural land valued at Rs 74,10,000; construction has started on the disputed plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "6c149d3971dd6ad8",
+      "query": "Do we have a file containing this passage? \"Bhavana Bhatt gave me a cheque for ₹16,20,000 to repay a loan, but the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a2680a82ad5e565f",
+      "query": "Do we have a file containing this passage? \"I have a tenancy problem with Manoj Hegde involving INR 1,60,000/- in rent, and the tenant has sublet the flat without permission.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "ec4c6ec09da498e0",
+      "query": "Do we have a file containing this passage? \"My employer Sterling Pharma Ltd owes me 41.7 lakh rupees after firing me, and the employer offered to settle.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "042f6ff7639837fc",
+      "query": "Do we have a file containing this passage? \"The cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "635f120c7037dec0",
+      "query": "Do we have a file containing this passage? \"Facts: The tenancy dispute with Sujata Subramanian concerns rent arrears of ₹2,80,000; the landlord is trying to evict the tenant after a rent increase was refused.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a15fb59c4488093f",
+      "query": "Do we have a file containing this passage? \"As we understand it, possession of the flat is long overdue.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a46ee9417f714673",
+      "query": "Do we have a file containing this passage? \"The builder never obtained the occupancy certificate.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "49e604ce817dd7c1",
+      "query": "Do we have a file containing this passage? \"Our company has a breach of contract claim of INR 7,00,00,000/- against Lotus Logistics Ltd, and the claim must be filed as a commercial suit.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "2c29d81a00b3966b",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "e4c58a5346d7b8fe",
+      "query": "Do we have a file containing this passage? \"Nikhil Bansal gave me a cheque for ₹12,70,000 to repay a loan, but the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "c81b0e5fd4928d85",
+      "query": "Do we have a file containing this passage? \"A cheque for ₹18,00,000 issued by Venkat Ghosh bounced: the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "18424f8a61f32277",
+      "query": "Do we have a file containing this passage? \"The landlord needs the premises for the family's own use.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "812f78fd84a44b86",
+      "query": "Do we have a file containing this passage? \"The tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "61a19c0f7ecd6a58",
+      "query": "Do we have a file containing this passage? \"Our company is owed Rs 16,50,00,000 by M/s Meridian Industries, which is insolvent here and abroad, and the debtor is in insolvency proceedings in two countries.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "58912b47116708ab",
+      "query": "Do we have a file containing this passage? \"Construction has started on the disputed plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "387e5ef2c89f234c",
+      "query": "Do we have a file containing this passage? \"Our salvage crew rescued a vessel owned by M/s Malhotra Shipping Pvt Ltd and we claim ₹29.8 crore, and the vessel is about to leave port.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "7f536d6b97d51e61",
+      "query": "Do we have a file containing this passage? \"I have a land dispute with Harish Varghese over land worth 48.5 lakh rupees, and relatives dispute who owns the ancestral land.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "d1ae2ee676882f23",
+      "query": "Do we have a file containing this passage? \"Divya More has filed a police complaint against me over Rs 13,40,000, and the complainant alleges cheating over a failed deal.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "523ad55c601153f5",
+      "query": "Do we have a file containing this passage? \"The builder keeps promising possession by email but never delivers.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "88ba426f54636469",
+      "query": "Do we have a file containing this passage? \"As we understand it, the airline sought protection from its creditors.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "086dbc0f22475a94",
+      "query": "Do we have a file containing this passage? \"The flat was handed over with serious construction defects.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "8491c227b4d0c9d4",
+      "query": "Do we have a file containing this passage? \"Relatives dispute who owns the ancestral land.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "8a4d12e7d24181a9",
+      "query": "Do we have a file containing this passage? \"The complainant alleges cheating over a failed deal.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "d99cb9ab01907847",
+      "query": "Do we have a file containing this passage? \"The geographical-indication dispute with Jadhav Foods Pvt Ltd involves sales of Rs 6,98,00,000; the rival product uses the protected regional name on its label.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "ea60c2ede2697c0e",
+      "query": "Do we have a file containing this passage? \"The wrongful termination claim against M/s Karve Technologies Pvt Ltd is for INR 26,40,000/-; the employee was dismissed without any enquiry.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "5793e6a6444c3f1e",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "6ea45fa722ebf577",
+      "query": "Do we have a file containing this passage? \"As we understand it, the complaint turns a business disagreement into a criminal case.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a1b23e3848e630ed",
+      "query": "Do we have a file containing this passage? \"Facts: The tenancy dispute with Abhishek Fernandes concerns rent arrears of INR 3,35,000/-; the tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "ec2a0c5da374065b",
+      "query": "Do we have a file containing this passage? \"As we understand it, the landlord is trying to evict the tenant after a rent increase was refused.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a39d343fa9ab4798",
+      "query": "Do we have a file containing this passage? \"The owners dispute the value of the salvage.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "322c624312fd3e57",
+      "query": "Do we have a file containing this passage? \"As we understand it, possession of the flat is long overdue.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "b21cc611c8fb7531",
+      "query": "Do we have a file containing this passage? \"The breach of contract claim against M/s Malhotra Motors Ltd is for Rs 16,04,00,000; the counterparty terminated the contract without notice.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "3832ab2d8692a52f",
+      "query": "Do we have a file containing this passage? \"The breach of contract claim against M/s Saffron Motors Ltd is for ₹17.9 crore; the claim must be filed as a commercial suit.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "b36d7c58bcba9c9b",
+      "query": "Do we have a file containing this passage? \"2,38,00,000 for a flat, and the builder keeps promising possession by email but never delivers.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "dff2fe67b429f18f",
+      "query": "Do we have a file containing this passage? \"The drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "4dff30d6ba1cbce0",
+      "query": "Do we have a file containing this passage? \"As we understand it, the airline has stopped paying lease rentals.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "82a0549100514a10",
+      "query": "Do we have a file containing this passage? \"As we understand it, the landlord is trying to evict the tenant after a rent increase was refused.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "8258cae270ee89c0",
+      "query": "Do we have a file containing this passage? \"I have a land dispute with Nikhil Tiwari over land worth INR 3,86,00,000/-, and the neighbour has encroached on the boundary of the plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "597c90a070cbff1b",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "b428738d1446b840",
+      "query": "Do we have a file containing this passage? \"The cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "696e49a0b4bcf89f",
+      "query": "Do we have a file containing this passage? \"The wrongful termination claim against Pioneer Technologies Pvt Ltd is for ₹12,90,000; the employee was dismissed without any enquiry.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a619cde16d7eec57",
+      "query": "Do we have a file containing this passage? \"The cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "4f7942c0310c06bb",
+      "query": "Do we have a file containing this passage? \"As we understand it, the landlord needs the premises for the family's own use.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "758c5d419c2aa455",
+      "query": "Do we have a file containing this passage? \"Our company has a breach of contract claim of ₹16.2 crore against M/s Sathe Motors Ltd, and the goods supplied were defective.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a50d57b73130f891",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for Rs 17,00,000 issued by Orchid Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "5bb041eeeed7ef13",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "91bf6025b4b3a883",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for INR 33,80,000/- issued by Harish Chandran bounced: the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "d7ca994a86a4add9",
+      "query": "Do we have a file containing this passage? \"The anticipatory bail matter arises from a complaint by Karthik Hegde about Rs 4,05,000; the complaint alleges negligence during treatment.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "575459910f41f3d5",
+      "query": "Do we have a file containing this passage? \"As we understand it, the occupant claims ownership by adverse possession.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "bfe2ba5b9879b88a",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for ₹41,70,000 issued by Gaurav Tiwari bounced: the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "c36df0aaf83a1179",
+      "query": "Do we have a file containing this passage? \"I paid M/s Everest Realty Rs 87,90,000 for a flat, and the flat was handed over with serious construction defects.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "cdd8a911299193f6",
+      "query": "Do we have a file containing this passage? \"My spouse Naveen Menon and I want a divorce by mutual consent with a settlement of Rs 70,80,000, and the spouses agree on a single payment instead of maintenance.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "421b328c4753e1b9",
+      "query": "Do we have a file containing this passage? \"Facts: The geographical-indication dispute with Kapoor Foods Pvt Ltd involves sales of Rs 1,39,00,000; the rival product uses the protected regional name on its label.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "d3b7853b64650222",
+      "query": "Do we have a file containing this passage? \"As we understand it, the tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "09d64eb65da2012d",
+      "query": "Do we have a file containing this passage? \"Our company is owed Rs 56,03,00,000 by Naidu Holdings Ltd, which is insolvent here and abroad, and the foreign administrator wants control of the assets in this country.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "26d19db507e80098",
+      "query": "Do we have a file containing this passage? \"6,54,00,000; possession of the flat is long overdue.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "79d00aca300391d3",
+      "query": "Do we have a file containing this passage? \"My spouse Asha Agarwal and I want a divorce by mutual consent with a settlement of INR 69,50,000/-, and the wife wants her jewellery and gifts returned.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "ac18ef56837d8451",
+      "query": "Do we have a file containing this passage? \"A cheque for 28.8 lakh rupees issued by Bansal Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "44185da18916ae9b",
+      "query": "Do we have a file containing this passage? \"As we understand it, the counterparty has not paid the invoices for delivered goods.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "4e7c6ea7aaa5a442",
+      "query": "Do we have a file containing this passage? \"As we understand it, the dismissal followed a one-sided domestic enquiry.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "4c6d3e862f256b32",
+      "query": "Do we have a file containing this passage? \"The cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "253c8dd33a939f24",
+      "query": "Do we have a file containing this passage? \"My spouse Venkat Sandhu and I want a divorce by mutual consent with a settlement of Rs 75,70,000, and the wife wants her jewellery and gifts returned.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "cddf05d628248d21",
+      "query": "Do we have a file containing this passage? \"The tenant has sublet the flat without permission.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "87ae83554e8689ae",
+      "query": "Do we have a file containing this passage? \"As we understand it, the builder never obtained the occupancy certificate.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "311b21ffdc3bd1a6",
+      "query": "Do we have a file containing this passage? \"Both spouses have lived apart for a long time.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "fdd39813b5f25f97",
+      "query": "Do we have a file containing this passage? \"Ishita Jadhav gave me a cheque for ₹38,00,000 to repay a loan, but the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "7a9665b1dfeae393",
+      "query": "Do we have a file containing this passage? \"As we understand it, the tenant has stopped paying rent for many months.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a320e559d595f3c6",
+      "query": "Do we have a file containing this passage? \"Facts: A cheque for Rs 20,50,000 issued by Ramesh Pawar bounced: the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "f08e32a44ec41a97",
+      "query": "Do we have a file containing this passage? \"I have a land dispute with Simran Bose over land worth ₹1,56,00,000, and relatives dispute who owns the ancestral land.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "dee2f04589243ee9",
+      "query": "Do we have a file containing this passage? \"The cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "3d1cc56298e5657f",
+      "query": "Do we have a file containing this passage? \"The drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a1dbde9cc2759b6b",
+      "query": "Do we have a file containing this passage? \"I have a tenancy problem with Harpreet Das involving 8.5 lakh rupees in rent, and the tenant has sublet the flat without permission.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "18c5ce112ebdfb5d",
+      "query": "Do we have a file containing this passage? \"The counterparty terminated the contract without notice.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "fbb74df00edb3b21",
+      "query": "Do we have a file containing this passage? \"As we understand it, the counterparty has not paid the invoices for delivered goods.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "5bc277854f8c3fd1",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "1378f080c62c2445",
+      "query": "Do we have a file containing this passage? \"The goods supplied were defective.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "6b9f6ce7e9a22232",
+      "query": "Do we have a file containing this passage? \"As we understand it, both spouses have lived apart for a long time.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "330df4d68ccb4bfc",
+      "query": "Do we have a file containing this passage? \"The cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "303c66df416d9c7c",
+      "query": "Do we have a file containing this passage? \"A cheque for ₹19,80,000 issued by Vandana Rajan bounced: the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "34e19973fb8eaa33",
+      "query": "Do we have a file containing this passage? \"As we understand it, possession of the flat is long overdue.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "84b7a1643dcc867a",
+      "query": "Do we have a file containing this passage? \"Farhan Gill has filed a police complaint against me over ₹17,70,000, and the complaint turns a business disagreement into a criminal case.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "5894891a3c666e07",
+      "query": "Do we have a file containing this passage? \"7,79,00,000; the vessel is about to leave port.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "cc9661d6152b8869",
+      "query": "Do we have a file containing this passage? \"As we understand it, the builder never obtained the occupancy certificate.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "613f3ba77595142e",
+      "query": "Do we have a file containing this passage? \"I have a land dispute with Shruti Apte over land worth INR 64,70,000/-, and the neighbour has encroached on the boundary of the plot.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "5cd8b6866021eb33",
+      "query": "Do we have a file containing this passage? \"Ravi Gowda gave me a cheque for ₹5,80,000 to repay a loan, but the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "3b9fd303bf42a8e3",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "95fc2171861bca99",
+      "query": "Do we have a file containing this passage? \"As we understand it, the employer withheld the last salary.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "75ff1df3fa73dba9",
+      "query": "Do we have a file containing this passage? \"Saxena Enterprises gave me a cheque for 14.6 lakh rupees to repay a loan, but the cheque was returned unpaid for insufficient funds.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "a7fac57f8d1d5171",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "d2e6c88cb2799b9d",
+      "query": "Do we have a file containing this passage? \"As we understand it, the cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "1ce46537bcd468b1",
+      "query": "Do we have a file containing this passage? \"My employer M/s Saffron Technologies Pvt Ltd owes me Rs 20,60,000 after firing me, and the dismissal followed a one-sided domestic enquiry.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "f79bc9261617aecc",
+      "query": "Do we have a file containing this passage? \"Ravi Bhosale gave me a cheque for Rs 1,50,000 to repay a loan, but the cheque came back with the remark account closed.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "cf97e2a0a33edcf8",
+      "query": "Do we have a file containing this passage? \"The spouses agree on a single payment instead of maintenance.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "0c592689ab55584b",
+      "query": "Do we have a file containing this passage? \"The drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "0a84018b7cb17de3",
+      "query": "Do we have a file containing this passage? \"As we understand it, the landlord needs the premises for the family's own use.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "2b9f2f3bb4a157c6",
+      "query": "Do we have a file containing this passage? \"The cheque was dishonoured because the signature did not match.\" Quote what our file says about this matter."
+    },
+    {
+      "doc_id": "5f5cf0c8a3254681",
+      "query": "Do we have a file containing this passage? \"Ashok Sandhu gave me a cheque for Rs 8,05,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction.\" Quote what our file says about this matter."
+    }
+  ]
+}

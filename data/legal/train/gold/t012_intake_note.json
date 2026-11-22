@@ -1,0 +1,110 @@
+{
+  "doc_id": "f5d64981f4a57143",
+  "text": "Intake note (Commercial team, 3 February 2019). Our client Smita Ahuja is a 75-year-old restaurant owner who lives at Bungalow 3, Naupada, Thane 400624 and can be reached on +91 61742 37860 or smita.ahuja@example.in. The client's PAN YEMPA5551F.\nThe client consulted us about a cheque bounce matter against M/s Goyal Traders. A cheque for INR 8,65,000/- issued by M/s Goyal Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 755144171602 (IFSC ICIC0363865).\nThe matter was filed as CC/2264/2019 before the Judicial Magistrate First Class Court at Thane on 03/07/2019.",
+  "spans": [
+    {
+      "text": "3 February 2019",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Smita Ahuja",
+      "category": "NAME",
+      "start": 59,
+      "end": 70
+    },
+    {
+      "text": "75-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Bungalow 3, Naupada, Thane 400624",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 151
+    },
+    {
+      "text": "+91 61742 37860",
+      "category": "PHONE",
+      "start": 174,
+      "end": 189
+    },
+    {
+      "text": "smita.ahuja@example.in",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 215
+    },
+    {
+      "text": "YEMPA5551F",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 278,
+      "end": 291
+    },
+    {
+      "text": "Goyal Traders",
+      "category": "ORGANIZATION",
+      "start": 311,
+      "end": 324
+    },
+    {
+      "text": "INR 8,65,000/-",
+      "category": "MONEY",
+      "start": 339,
+      "end": 353
+    },
+    {
+      "text": "Goyal Traders",
+      "category": "ORGANIZATION",
+      "start": 368,
+      "end": 381
+    },
+    {
+      "text": "755144171602",
+      "category": "FINANCIAL",
+      "start": 499,
+      "end": 511
+    },
+    {
+      "text": "ICIC0363865",
+      "category": "FINANCIAL",
+      "start": 518,
+      "end": 529
+    },
+    {
+      "text": "CC/2264/2019",
+      "category": "CASE_NUMBER",
+      "start": 556,
+      "end": 568
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "start": 580,
+      "end": 626
+    },
+    {
+      "text": "03/07/2019",
+      "category": "DATE",
+      "start": 630,
+      "end": 640
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

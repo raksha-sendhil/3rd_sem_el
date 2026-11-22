@@ -1,0 +1,68 @@
+{
+  "doc_id": "ffd2c4534a299d20",
+  "text": "Subject: Need help with a land dispute case\n\nHello, my name is Tanvi Ranade. I am a 34-year-old railway employee living in Coimbatore. I have a land dispute with Asha Fernandes over land worth ₹5,99,00,000, and the neighbour has encroached on the boundary of the plot. Can your firm advise me on what to do next? You can call me on +91 80987 31948 or email tanvi.ranade45@example.in.",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 38
+    },
+    {
+      "text": "Tanvi Ranade",
+      "category": "NAME",
+      "start": 63,
+      "end": 75
+    },
+    {
+      "text": "34-year-old",
+      "category": "AGE",
+      "start": 84,
+      "end": 95
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 96,
+      "end": 112
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 123,
+      "end": 133
+    },
+    {
+      "text": "Asha Fernandes",
+      "category": "NAME",
+      "start": 162,
+      "end": 176
+    },
+    {
+      "text": "₹5,99,00,000",
+      "category": "MONEY",
+      "start": 193,
+      "end": 205
+    },
+    {
+      "text": "+91 80987 31948",
+      "category": "PHONE",
+      "start": 332,
+      "end": 347
+    },
+    {
+      "text": "tanvi.ranade45@example.in",
+      "category": "EMAIL",
+      "start": 357,
+      "end": 382
+    },
+    {
+      "text": "age (34) + occupation (railway employee) + city (Coimbatore) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

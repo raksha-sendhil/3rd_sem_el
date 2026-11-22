@@ -1,0 +1,110 @@
+{
+  "doc_id": "1be2e243ca09689c",
+  "text": "Intake note - Property team\nDate: 8 September 2024\nClient: Kavya Ghosh, a 74-year-old insurance agent from Bengaluru.\nAddress: House No. 68, Jayanagar, Bengaluru 560009\nPhone: 09247100126. Email: kavya.ghosh@example.com. PAN DMMPG4835J.\nMatter: tenancy eviction\nOpposing party: Rahul Das\nFacts: The tenancy dispute with Rahul Das concerns rent arrears of Rs 1,60,000; the tenant has sublet the flat without permission.\nThe matter was filed as R.C.A. No. 2342/2025 before the Bengaluru District Court on 16 February 2025.",
+  "spans": [
+    {
+      "text": "8 September 2024",
+      "category": "DATE",
+      "start": 34,
+      "end": 50
+    },
+    {
+      "text": "Kavya Ghosh",
+      "category": "NAME",
+      "start": 59,
+      "end": 70
+    },
+    {
+      "text": "74-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "insurance agent",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 101
+    },
+    {
+      "text": "Bengaluru",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 116
+    },
+    {
+      "text": "House No. 68, Jayanagar, Bengaluru 560009",
+      "category": "ADDRESS",
+      "start": 127,
+      "end": 168
+    },
+    {
+      "text": "09247100126",
+      "category": "PHONE",
+      "start": 176,
+      "end": 187
+    },
+    {
+      "text": "kavya.ghosh@example.com",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 219
+    },
+    {
+      "text": "DMMPG4835J",
+      "category": "ID_NUMBER",
+      "start": 225,
+      "end": 235
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 245,
+      "end": 261
+    },
+    {
+      "text": "Rahul Das",
+      "category": "NAME",
+      "start": 278,
+      "end": 287
+    },
+    {
+      "text": "Rahul Das",
+      "category": "NAME",
+      "start": 320,
+      "end": 329
+    },
+    {
+      "text": "Rs 1,60,000",
+      "category": "MONEY",
+      "start": 355,
+      "end": 366
+    },
+    {
+      "text": "R.C.A. No. 2342/2025",
+      "category": "CASE_NUMBER",
+      "start": 443,
+      "end": 463
+    },
+    {
+      "text": "Bengaluru District Court",
+      "category": "COURT",
+      "start": 475,
+      "end": 499
+    },
+    {
+      "text": "16 February 2025",
+      "category": "DATE",
+      "start": 503,
+      "end": 519
+    },
+    {
+      "text": "age (74) + occupation (insurance agent) + city (Bengaluru) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

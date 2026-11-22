@@ -1,0 +1,50 @@
+{
+  "doc_id": "3b021e7bd490a04f",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 787/2020\n\nDear Ms. Bose,\n\nThank you for meeting us on 10 November 2020 about your dispute with Pranav Kapoor. As we understand it, the couple has a young child. The matter is listed before the Family Court at Madurai.\n\nOur advice is to agree a joint parenting plan before the second motion. Please collect the school records of the child and the draft parenting plan and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 787/2020",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 70
+    },
+    {
+      "text": "Bose",
+      "category": "NAME",
+      "start": 81,
+      "end": 85
+    },
+    {
+      "text": "10 November 2020",
+      "category": "DATE",
+      "start": 116,
+      "end": 132
+    },
+    {
+      "text": "Pranav Kapoor",
+      "category": "NAME",
+      "start": 157,
+      "end": 170
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 255,
+      "end": 278
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 476,
+      "end": 488
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

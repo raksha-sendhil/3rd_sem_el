@@ -1,0 +1,56 @@
+{
+  "doc_id": "ec2b111e4c15f9b5",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2252/2020\n\nDear Ms. Khan,\n\nThank you for meeting us on 27/08/2020 about your dispute with M/s Das Traders. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Nagpur.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of ₹12,00,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 2252/2020",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 68,
+      "end": 72
+    },
+    {
+      "text": "27/08/2020",
+      "category": "DATE",
+      "start": 103,
+      "end": 113
+    },
+    {
+      "text": "Das Traders",
+      "category": "ORGANIZATION",
+      "start": 142,
+      "end": 153
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 271,
+      "end": 318
+    },
+    {
+      "text": "₹12,00,000",
+      "category": "MONEY",
+      "start": 577,
+      "end": 587
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 604,
+      "end": 616
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

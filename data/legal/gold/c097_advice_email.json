@@ -1,0 +1,50 @@
+{
+  "doc_id": "33f714181e877fa4",
+  "text": "Subject: Your breach of contract matter - Com. S. No. 1159/2021\n\nDear Ms. Dutta,\n\nThank you for meeting us on 28 October 2021 about your dispute with M/s Deshpande Industries. As we understand it, the counterparty terminated the contract without notice. The matter is listed before the Chennai Commercial Court.\n\nOur advice is to send a notice of breach giving the cure period required by the contract. Please collect the contract, the termination letter and the board minutes and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Com. S. No. 1159/2021",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 63
+    },
+    {
+      "text": "Dutta",
+      "category": "NAME",
+      "start": 74,
+      "end": 79
+    },
+    {
+      "text": "28 October 2021",
+      "category": "DATE",
+      "start": 110,
+      "end": 125
+    },
+    {
+      "text": "Deshpande Industries",
+      "category": "ORGANIZATION",
+      "start": 154,
+      "end": 174
+    },
+    {
+      "text": "Chennai Commercial Court",
+      "category": "COURT",
+      "start": 286,
+      "end": 310
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 524,
+      "end": 539
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

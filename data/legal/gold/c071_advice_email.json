@@ -1,0 +1,44 @@
+{
+  "doc_id": "894d074cf1193155",
+  "text": "Subject: Your land dispute matter - O.S. No. 1157/2019\n\nDear Ms. Nambiar,\n\nThank you for meeting us on 22 May 2020 about your dispute with Siddharth Patel. As we understand it, construction has started on the disputed plot.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 1157/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Nambiar",
+      "category": "NAME",
+      "start": 65,
+      "end": 72
+    },
+    {
+      "text": "22 May 2020",
+      "category": "DATE",
+      "start": 103,
+      "end": 114
+    },
+    {
+      "text": "Siddharth Patel",
+      "category": "NAME",
+      "start": 139,
+      "end": 154
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 419,
+      "end": 438
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

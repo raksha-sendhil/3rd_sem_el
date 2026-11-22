@@ -1,0 +1,104 @@
+{
+  "doc_id": "cc8d90609049fe71",
+  "text": "Intake note (Commercial team, 04/06/2025). Our client Sujata Dalvi is a 67-year-old general physician who lives at House No. 101, Vartak Nagar, Thane 400639 and can be reached on 08288932683 or sujata.dalvi@example.in. The client's PAN KVNPD1739R, Aadhaar 2378 9739 8538.\nThe client consulted us about a cheque bounce matter against Revathi Pawar. A cheque for ₹38,70,000 issued by Revathi Pawar bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as CC/1613/2025 before the Judicial Magistrate First Class Court at Thane on 12 July 2025.",
+  "spans": [
+    {
+      "text": "04/06/2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Sujata Dalvi",
+      "category": "NAME",
+      "start": 54,
+      "end": 66
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 101
+    },
+    {
+      "text": "House No. 101, Vartak Nagar, Thane 400639",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 156
+    },
+    {
+      "text": "08288932683",
+      "category": "PHONE",
+      "start": 179,
+      "end": 190
+    },
+    {
+      "text": "sujata.dalvi@example.in",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 217
+    },
+    {
+      "text": "KVNPD1739R",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "2378 9739 8538",
+      "category": "ID_NUMBER",
+      "start": 256,
+      "end": 270
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 304,
+      "end": 317
+    },
+    {
+      "text": "Revathi Pawar",
+      "category": "NAME",
+      "start": 333,
+      "end": 346
+    },
+    {
+      "text": "₹38,70,000",
+      "category": "MONEY",
+      "start": 361,
+      "end": 371
+    },
+    {
+      "text": "Revathi Pawar",
+      "category": "NAME",
+      "start": 382,
+      "end": 395
+    },
+    {
+      "text": "CC/1613/2025",
+      "category": "CASE_NUMBER",
+      "start": 493,
+      "end": 505
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "start": 517,
+      "end": 563
+    },
+    {
+      "text": "12 July 2025",
+      "category": "DATE",
+      "start": 567,
+      "end": 579
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

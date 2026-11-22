@@ -1,0 +1,68 @@
+{
+  "doc_id": "2011bf6357441041",
+  "text": "Case note: S.C.C. No. 364/2022\nClient: Fatima Saxena (restaurant owner, Lucknow)\nOpposing party: M/s Mehra Textiles Pvt Ltd\nCourt: Judicial Magistrate First Class Court at Lucknow\nFiled on: 28 July 2022\nClaim amount: 15.8 lakh rupees\nIssue: cheque bounce. The cheque came back with the remark account closed.\nAdvice given: Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount.\nOutcome: The court issued summons and the drawer offered a settlement.\nRecommended next step: Insist on payment of the full amount with costs.",
+  "spans": [
+    {
+      "text": "S.C.C. No. 364/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Fatima Saxena",
+      "category": "NAME",
+      "start": 39,
+      "end": 52
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 70
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 72,
+      "end": 79
+    },
+    {
+      "text": "Mehra Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 101,
+      "end": 123
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Lucknow",
+      "category": "COURT",
+      "start": 131,
+      "end": 179
+    },
+    {
+      "text": "28 July 2022",
+      "category": "DATE",
+      "start": 190,
+      "end": 202
+    },
+    {
+      "text": "15.8 lakh rupees",
+      "category": "MONEY",
+      "start": 217,
+      "end": 233
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 241,
+      "end": 254
+    },
+    {
+      "text": "occupation (restaurant owner) + city (Lucknow) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

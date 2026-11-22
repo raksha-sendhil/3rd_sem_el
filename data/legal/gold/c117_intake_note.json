@@ -1,0 +1,116 @@
+{
+  "doc_id": "b97d6788033b9cb7",
+  "text": "Intake note - Commercial team\nDate: 6 May 2025\nClient: Bhavana Ghosh, a 28-year-old civil engineer from Kochi.\nAddress: House No. 22, Edappally, Kochi 682005\nPhone: +91 81404 68834. Email: bhavana.ghosh@example.in. PAN ZLTPG1598D.\nMatter: aircraft lease repossession (Project Pelican)\nOpposing party: M/s Skyline Airways Ltd\nFacts: The aircraft lease repossession against M/s Skyline Airways Ltd concerns arrears of ₹1,97,65,00,000; the airline has stopped paying lease rentals.\nThe matter was filed as CS(COMM) 2864/2025 before the Kerala High Court on 4 November 2025.",
+  "spans": [
+    {
+      "text": "6 May 2025",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Bhavana Ghosh",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "28-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 98
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 109
+    },
+    {
+      "text": "House No. 22, Edappally, Kochi 682005",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 157
+    },
+    {
+      "text": "+91 81404 68834",
+      "category": "PHONE",
+      "start": 165,
+      "end": 180
+    },
+    {
+      "text": "bhavana.ghosh@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 213
+    },
+    {
+      "text": "ZLTPG1598D",
+      "category": "ID_NUMBER",
+      "start": 219,
+      "end": 229
+    },
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 239,
+      "end": 266
+    },
+    {
+      "text": "Project Pelican",
+      "category": "MATTER_CODENAME",
+      "start": 268,
+      "end": 283
+    },
+    {
+      "text": "Skyline Airways Ltd",
+      "category": "ORGANIZATION",
+      "start": 305,
+      "end": 324
+    },
+    {
+      "text": "Skyline Airways Ltd",
+      "category": "ORGANIZATION",
+      "start": 376,
+      "end": 395
+    },
+    {
+      "text": "₹1,97,65,00,000",
+      "category": "MONEY",
+      "start": 416,
+      "end": 431
+    },
+    {
+      "text": "CS(COMM) 2864/2025",
+      "category": "CASE_NUMBER",
+      "start": 503,
+      "end": 521
+    },
+    {
+      "text": "Kerala High Court",
+      "category": "COURT",
+      "start": 533,
+      "end": 550
+    },
+    {
+      "text": "4 November 2025",
+      "category": "DATE",
+      "start": 554,
+      "end": 569
+    },
+    {
+      "text": "age (28) + occupation (civil engineer) + city (Kochi) + issue (aircraft lease repossession)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

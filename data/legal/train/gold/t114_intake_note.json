@@ -1,0 +1,122 @@
+{
+  "doc_id": "7904c5894cb2b4a3",
+  "text": "Intake note - Commercial team\nDate: 5 March 2023\nClient: Suresh Qureshi, a 40-year-old shopkeeper from Madurai.\nAddress: House No. 110, KK Nagar, Madurai 625026\nPhone: 72191 41098. Email: suresh.qureshi52@example.in. PAN HUYPQ9785G.\nMatter: cheque bounce\nOpposing party: Gaurav Kulkarni\nFacts: A cheque for ₹20,30,000 issued by Gaurav Kulkarni bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 23679745574 (IFSC KKBK0614170).\nThe matter was filed as CC/608/2023 before the Judicial Magistrate First Class Court at Madurai on 25 August 2023.",
+  "spans": [
+    {
+      "text": "5 March 2023",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Suresh Qureshi",
+      "category": "NAME",
+      "start": 57,
+      "end": 71
+    },
+    {
+      "text": "40-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 97
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 110
+    },
+    {
+      "text": "House No. 110, KK Nagar, Madurai 625026",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 160
+    },
+    {
+      "text": "72191 41098",
+      "category": "PHONE",
+      "start": 168,
+      "end": 179
+    },
+    {
+      "text": "suresh.qureshi52@example.in",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 215
+    },
+    {
+      "text": "HUYPQ9785G",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 241,
+      "end": 254
+    },
+    {
+      "text": "Gaurav Kulkarni",
+      "category": "NAME",
+      "start": 271,
+      "end": 286
+    },
+    {
+      "text": "₹20,30,000",
+      "category": "MONEY",
+      "start": 307,
+      "end": 317
+    },
+    {
+      "text": "Gaurav Kulkarni",
+      "category": "NAME",
+      "start": 328,
+      "end": 343
+    },
+    {
+      "text": "23679745574",
+      "category": "FINANCIAL",
+      "start": 461,
+      "end": 472
+    },
+    {
+      "text": "KKBK0614170",
+      "category": "FINANCIAL",
+      "start": 479,
+      "end": 490
+    },
+    {
+      "text": "CC/608/2023",
+      "category": "CASE_NUMBER",
+      "start": 517,
+      "end": 528
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Madurai",
+      "category": "COURT",
+      "start": 540,
+      "end": 588
+    },
+    {
+      "text": "25 August 2023",
+      "category": "DATE",
+      "start": 592,
+      "end": 606
+    },
+    {
+      "text": "age (40) + occupation (shopkeeper) + city (Madurai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "c4232467aacd27d6",
+  "text": "Case note: Complaint No. 1646/2020\nClient: Sameer Shinde (schoolteacher, Mumbai)\nOpposing party: M/s Sai Industries\nCourt: Mumbai Labour Court\nFiled on: 27 June 2020\nClaim amount: ₹15,80,000\nIssue: wrongful termination. The employee was dismissed without any enquiry.\nAdvice given: Claim reinstatement with full back wages.\nOutcome: Reinstatement was ordered with back wages.\nRecommended next step: Report for duty within the time fixed.",
+  "spans": [
+    {
+      "text": "Complaint No. 1646/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 34
+    },
+    {
+      "text": "Sameer Shinde",
+      "category": "NAME",
+      "start": 43,
+      "end": 56
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 73,
+      "end": 79
+    },
+    {
+      "text": "Sai Industries",
+      "category": "ORGANIZATION",
+      "start": 101,
+      "end": 115
+    },
+    {
+      "text": "Mumbai Labour Court",
+      "category": "COURT",
+      "start": 123,
+      "end": 142
+    },
+    {
+      "text": "27 June 2020",
+      "category": "DATE",
+      "start": 153,
+      "end": 165
+    },
+    {
+      "text": "₹15,80,000",
+      "category": "MONEY",
+      "start": 180,
+      "end": 190
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 198,
+      "end": 218
+    },
+    {
+      "text": "occupation (schoolteacher) + city (Mumbai) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

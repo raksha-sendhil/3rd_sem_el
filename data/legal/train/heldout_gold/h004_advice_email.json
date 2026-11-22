@@ -1,0 +1,50 @@
+{
+  "doc_id": "63bfb19c6c232b1b",
+  "text": "Subject: Your wrongful termination matter\n\nDear Mr. Sandhu,\n\nThank you for meeting us on 28 April 2025 about your dispute with M/s Sai Technologies Pvt Ltd. As we understand it, the employer withheld the last salary. The matter is listed before the Warangal Labour Court.\n\nOur advice is to file a claim for unpaid wages before the labour authority. Please collect the attendance record and the salary slips and send copies to this office. We will pursue the full claim of ₹45,50,000.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Sandhu",
+      "category": "NAME",
+      "start": 52,
+      "end": 58
+    },
+    {
+      "text": "28 April 2025",
+      "category": "DATE",
+      "start": 89,
+      "end": 102
+    },
+    {
+      "text": "Sai Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 131,
+      "end": 155
+    },
+    {
+      "text": "Warangal Labour Court",
+      "category": "COURT",
+      "start": 249,
+      "end": 270
+    },
+    {
+      "text": "₹45,50,000",
+      "category": "MONEY",
+      "start": 472,
+      "end": 482
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 499,
+      "end": 511
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

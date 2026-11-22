@@ -1,0 +1,116 @@
+{
+  "doc_id": "49100dd452916b4d",
+  "text": "Intake note - Criminal team\nDate: 3 March 2021\nClient: Harish Bhandari, a 63-year-old farmer from Coimbatore.\nAddress: Flat 4D, Peelamedu, Coimbatore 641056\nPhone: 06544618367. Email: harish.bhandari@example.in. PAN FRVPB4068R, Aadhaar 8388 6798 3050.\nMatter: anticipatory bail\nOpposing party: Sujata More\nFacts: The anticipatory bail matter arises from a complaint by Sujata More about INR 64,40,000/-; the complaint turns a business disagreement into a criminal case.\nThe matter was filed as Anticipatory Bail Application No. 2376/2021 before the Coimbatore Sessions Court on 23 March 2021.",
+  "spans": [
+    {
+      "text": "3 March 2021",
+      "category": "DATE",
+      "start": 34,
+      "end": 46
+    },
+    {
+      "text": "Harish Bhandari",
+      "category": "NAME",
+      "start": 55,
+      "end": 70
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 92
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 98,
+      "end": 108
+    },
+    {
+      "text": "Flat 4D, Peelamedu, Coimbatore 641056",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 156
+    },
+    {
+      "text": "06544618367",
+      "category": "PHONE",
+      "start": 164,
+      "end": 175
+    },
+    {
+      "text": "harish.bhandari@example.in",
+      "category": "EMAIL",
+      "start": 184,
+      "end": 210
+    },
+    {
+      "text": "FRVPB4068R",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "8388 6798 3050",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 250
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 260,
+      "end": 277
+    },
+    {
+      "text": "Sujata More",
+      "category": "NAME",
+      "start": 294,
+      "end": 305
+    },
+    {
+      "text": "Sujata More",
+      "category": "NAME",
+      "start": 369,
+      "end": 380
+    },
+    {
+      "text": "INR 64,40,000/-",
+      "category": "MONEY",
+      "start": 387,
+      "end": 402
+    },
+    {
+      "text": "Anticipatory Bail Application No. 2376/2021",
+      "category": "CASE_NUMBER",
+      "start": 494,
+      "end": 537
+    },
+    {
+      "text": "Coimbatore Sessions Court",
+      "category": "COURT",
+      "start": 549,
+      "end": 574
+    },
+    {
+      "text": "23 March 2021",
+      "category": "DATE",
+      "start": 578,
+      "end": 591
+    },
+    {
+      "text": "age (63) + occupation (farmer) + city (Coimbatore) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,116 @@
+{
+  "doc_id": "aa9ef11909cf551f",
+  "text": "Intake note (Commercial team, 31 January 2023). Our client Gayatri Sandhu is a 72-year-old bank manager who lives at Plot 47, College Road, Nashik 422007 and can be reached on 08635911965 or gayatri.sandhu@example.com. The client's PAN KBXPS6926Y, Aadhaar 3530 3939 4328.\nThe client consulted us about a cheque bounce matter against Madhuri Gill. A cheque for 17.5 lakh rupees issued by Madhuri Gill bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 474635027377 (IFSC SBIN0830005).\nThe matter was filed as CC/2922/2023 before the Judicial Magistrate First Class Court at Nashik on 16 August 2023.",
+  "spans": [
+    {
+      "text": "31 January 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Gayatri Sandhu",
+      "category": "NAME",
+      "start": 59,
+      "end": 73
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 103
+    },
+    {
+      "text": "Plot 47, College Road, Nashik 422007",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 153
+    },
+    {
+      "text": "08635911965",
+      "category": "PHONE",
+      "start": 176,
+      "end": 187
+    },
+    {
+      "text": "gayatri.sandhu@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 217
+    },
+    {
+      "text": "KBXPS6926Y",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 246
+    },
+    {
+      "text": "3530 3939 4328",
+      "category": "ID_NUMBER",
+      "start": 256,
+      "end": 270
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 304,
+      "end": 317
+    },
+    {
+      "text": "Madhuri Gill",
+      "category": "NAME",
+      "start": 333,
+      "end": 345
+    },
+    {
+      "text": "17.5 lakh rupees",
+      "category": "MONEY",
+      "start": 360,
+      "end": 376
+    },
+    {
+      "text": "Madhuri Gill",
+      "category": "NAME",
+      "start": 387,
+      "end": 399
+    },
+    {
+      "text": "474635027377",
+      "category": "FINANCIAL",
+      "start": 526,
+      "end": 538
+    },
+    {
+      "text": "SBIN0830005",
+      "category": "FINANCIAL",
+      "start": 545,
+      "end": 556
+    },
+    {
+      "text": "CC/2922/2023",
+      "category": "CASE_NUMBER",
+      "start": 583,
+      "end": 595
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nashik",
+      "category": "COURT",
+      "start": 607,
+      "end": 654
+    },
+    {
+      "text": "16 August 2023",
+      "category": "DATE",
+      "start": 658,
+      "end": 672
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

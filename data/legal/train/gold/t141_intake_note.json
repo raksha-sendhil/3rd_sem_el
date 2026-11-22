@@ -1,0 +1,110 @@
+{
+  "doc_id": "4aa04e2aca3e60a1",
+  "text": "Intake note - Commercial team\nDate: 17 November 2024\nClient: Swati Kamath, a 26-year-old cardiologist from Pune.\nAddress: Bungalow 17, Baner, Pune 411035\nPhone: +91 82078 30175. Email: swati.kamath94@example.com. PAN KAKPK3866K.\nMatter: geographical-indication dispute\nOpposing party: Crescent Exports\nFacts: The geographical-indication dispute with Crescent Exports involves sales of Rs. 6,55,00,000; the rival product uses the protected regional name on its label.\nThe matter was filed as CS(COMM) 120/2024 before the Bombay High Court on 15/12/2024.",
+  "spans": [
+    {
+      "text": "17 November 2024",
+      "category": "DATE",
+      "start": 36,
+      "end": 52
+    },
+    {
+      "text": "Swati Kamath",
+      "category": "NAME",
+      "start": 61,
+      "end": 73
+    },
+    {
+      "text": "26-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 101
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 111
+    },
+    {
+      "text": "Bungalow 17, Baner, Pune 411035",
+      "category": "ADDRESS",
+      "start": 122,
+      "end": 153
+    },
+    {
+      "text": "+91 82078 30175",
+      "category": "PHONE",
+      "start": 161,
+      "end": 176
+    },
+    {
+      "text": "swati.kamath94@example.com",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 211
+    },
+    {
+      "text": "KAKPK3866K",
+      "category": "ID_NUMBER",
+      "start": 217,
+      "end": 227
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 237,
+      "end": 268
+    },
+    {
+      "text": "Crescent Exports",
+      "category": "ORGANIZATION",
+      "start": 285,
+      "end": 301
+    },
+    {
+      "text": "Crescent Exports",
+      "category": "ORGANIZATION",
+      "start": 350,
+      "end": 366
+    },
+    {
+      "text": "Rs. 6,55,00,000",
+      "category": "MONEY",
+      "start": 385,
+      "end": 400
+    },
+    {
+      "text": "CS(COMM) 120/2024",
+      "category": "CASE_NUMBER",
+      "start": 491,
+      "end": 508
+    },
+    {
+      "text": "Bombay High Court",
+      "category": "COURT",
+      "start": 520,
+      "end": 537
+    },
+    {
+      "text": "15/12/2024",
+      "category": "DATE",
+      "start": 541,
+      "end": 551
+    },
+    {
+      "text": "age (26) + occupation (cardiologist) + city (Pune) + issue (geographical-indication dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

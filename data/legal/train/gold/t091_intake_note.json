@@ -1,0 +1,98 @@
+{
+  "doc_id": "0e583196ead52ec9",
+  "text": "Intake note (Property team, 14 May 2022). Our client Nandini Bhosale is a 55-year-old hardware dealer who lives at Bungalow 20, Saibaba Colony, Coimbatore 641037 and can be reached on 69024 62302 or nandini.bhosale@example.com. The client's PAN KYXPB4560C.\nThe client consulted us about a consumer complaint matter against Crescent Realty. The consumer complaint against M/s Crescent Realty concerns a flat bought for ₹9,31,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 2991/2022 before the Coimbatore District Consumer Disputes Redressal Commission on 29 June 2022.",
+  "spans": [
+    {
+      "text": "14 May 2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 39
+    },
+    {
+      "text": "Nandini Bhosale",
+      "category": "NAME",
+      "start": 53,
+      "end": 68
+    },
+    {
+      "text": "55-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 101
+    },
+    {
+      "text": "Bungalow 20, Saibaba Colony, Coimbatore 641037",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 161
+    },
+    {
+      "text": "69024 62302",
+      "category": "PHONE",
+      "start": 184,
+      "end": 195
+    },
+    {
+      "text": "nandini.bhosale@example.com",
+      "category": "EMAIL",
+      "start": 199,
+      "end": 226
+    },
+    {
+      "text": "KYXPB4560C",
+      "category": "ID_NUMBER",
+      "start": 245,
+      "end": 255
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 289,
+      "end": 307
+    },
+    {
+      "text": "Crescent Realty",
+      "category": "ORGANIZATION",
+      "start": 323,
+      "end": 338
+    },
+    {
+      "text": "Crescent Realty",
+      "category": "ORGANIZATION",
+      "start": 375,
+      "end": 390
+    },
+    {
+      "text": "₹9,31,00,000",
+      "category": "MONEY",
+      "start": 418,
+      "end": 430
+    },
+    {
+      "text": "C.C. No. 2991/2022",
+      "category": "CASE_NUMBER",
+      "start": 496,
+      "end": 514
+    },
+    {
+      "text": "Coimbatore District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 526,
+      "end": 584
+    },
+    {
+      "text": "29 June 2022",
+      "category": "DATE",
+      "start": 588,
+      "end": 600
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

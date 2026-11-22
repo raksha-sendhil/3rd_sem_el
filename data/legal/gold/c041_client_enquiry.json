@@ -1,0 +1,68 @@
+{
+  "doc_id": "6c5000f324851cd5",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Anjali Natarajan. I am a 71-year-old architect living in Kochi. Patil Traders gave me a cheque for ₹31,30,000 to repay a loan, but the cheque came back with the remark account closed. Can your firm advise me on what to do next? You can call me on +91 67813 62211 or email anjali.natarajan@example.in.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Anjali Natarajan",
+      "category": "NAME",
+      "start": 64,
+      "end": 80
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 101,
+      "end": 110
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 121,
+      "end": 126
+    },
+    {
+      "text": "Patil Traders",
+      "category": "ORGANIZATION",
+      "start": 128,
+      "end": 141
+    },
+    {
+      "text": "₹31,30,000",
+      "category": "MONEY",
+      "start": 163,
+      "end": 173
+    },
+    {
+      "text": "+91 67813 62211",
+      "category": "PHONE",
+      "start": 311,
+      "end": 326
+    },
+    {
+      "text": "anjali.natarajan@example.in",
+      "category": "EMAIL",
+      "start": 336,
+      "end": 363
+    },
+    {
+      "text": "age (71) + occupation (architect) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

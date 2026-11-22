@@ -1,0 +1,56 @@
+{
+  "doc_id": "824b3b586d519565",
+  "text": "Subject: Your land dispute matter - O.S. No. 1118/2023\n\nDear Mr. Khan,\n\nThank you for meeting us on 5 April 2023 about your dispute with Ajay Mukherjee. As we understand it, relatives dispute who owns the ancestral land. The matter is listed before the Bengaluru District Court.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office. We will pursue the full claim of INR 4,19,00,000/-.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 1118/2023",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 65,
+      "end": 69
+    },
+    {
+      "text": "5 April 2023",
+      "category": "DATE",
+      "start": 100,
+      "end": 112
+    },
+    {
+      "text": "Ajay Mukherjee",
+      "category": "NAME",
+      "start": 137,
+      "end": 151
+    },
+    {
+      "text": "Bengaluru District Court",
+      "category": "COURT",
+      "start": 253,
+      "end": 277
+    },
+    {
+      "text": "INR 4,19,00,000/-",
+      "category": "MONEY",
+      "start": 496,
+      "end": 513
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 530,
+      "end": 546
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

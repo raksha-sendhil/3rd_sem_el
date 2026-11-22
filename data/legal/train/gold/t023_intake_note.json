@@ -1,0 +1,116 @@
+{
+  "doc_id": "b366a81bfd0eabf3",
+  "text": "Intake note - Commercial team\nDate: 29 August 2021\nClient: Anirudh Deshpande, a 40-year-old shopkeeper from Thane.\nAddress: Bungalow 22, Naupada, Thane 400632\nPhone: 70979 33769. Email: anirudh.deshpande@example.com. PAN MZJPD6909C, Aadhaar 9376 7979 4799.\nMatter: wrongful termination\nOpposing party: Pai Pharma Ltd\nFacts: The wrongful termination claim against M/s Pai Pharma Ltd is for Rs 3,10,000; the dismissal followed a one-sided domestic enquiry.\nThe matter was filed as Complaint No. 1730/2021 before the Thane Labour Court on 17/11/2021.",
+  "spans": [
+    {
+      "text": "29 August 2021",
+      "category": "DATE",
+      "start": 36,
+      "end": 50
+    },
+    {
+      "text": "Anirudh Deshpande",
+      "category": "NAME",
+      "start": 59,
+      "end": 76
+    },
+    {
+      "text": "40-year-old",
+      "category": "AGE",
+      "start": 80,
+      "end": 91
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 92,
+      "end": 102
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 113
+    },
+    {
+      "text": "Bungalow 22, Naupada, Thane 400632",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 158
+    },
+    {
+      "text": "70979 33769",
+      "category": "PHONE",
+      "start": 166,
+      "end": 177
+    },
+    {
+      "text": "anirudh.deshpande@example.com",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 215
+    },
+    {
+      "text": "MZJPD6909C",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "9376 7979 4799",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 255
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 265,
+      "end": 285
+    },
+    {
+      "text": "Pai Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 302,
+      "end": 316
+    },
+    {
+      "text": "Pai Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 367,
+      "end": 381
+    },
+    {
+      "text": "Rs 3,10,000",
+      "category": "MONEY",
+      "start": 389,
+      "end": 400
+    },
+    {
+      "text": "Complaint No. 1730/2021",
+      "category": "CASE_NUMBER",
+      "start": 479,
+      "end": 502
+    },
+    {
+      "text": "Thane Labour Court",
+      "category": "COURT",
+      "start": 514,
+      "end": 532
+    },
+    {
+      "text": "17/11/2021",
+      "category": "DATE",
+      "start": 536,
+      "end": 546
+    },
+    {
+      "text": "age (40) + occupation (shopkeeper) + city (Thane) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

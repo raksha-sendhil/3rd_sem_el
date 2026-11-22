@@ -1,0 +1,104 @@
+{
+  "doc_id": "ba77523280db3ee0",
+  "text": "Intake note (Commercial team, 9 August 2025). Our client Sunanda Banerjee is a 52-year-old civil engineer who lives at Bungalow 16, Satellite, Ahmedabad 380042 and can be reached on 99799 83871 or sunanda.banerjee@example.in. The client's PAN DFMPB3367U.\nThe client consulted us about a breach of contract matter (Project Pelican) against M/s Lotus Industries. The breach of contract claim against M/s Lotus Industries is for ₹3.5 crore; the counterparty has not paid the invoices for delivered goods.\nThe matter was filed as Com. S. No. 2624/2025 before the Ahmedabad Commercial Court on 31 August 2025.",
+  "spans": [
+    {
+      "text": "9 August 2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 43
+    },
+    {
+      "text": "Sunanda Banerjee",
+      "category": "NAME",
+      "start": 57,
+      "end": 73
+    },
+    {
+      "text": "52-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 105
+    },
+    {
+      "text": "Bungalow 16, Satellite, Ahmedabad 380042",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 159
+    },
+    {
+      "text": "99799 83871",
+      "category": "PHONE",
+      "start": 182,
+      "end": 193
+    },
+    {
+      "text": "sunanda.banerjee@example.in",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 224
+    },
+    {
+      "text": "DFMPB3367U",
+      "category": "ID_NUMBER",
+      "start": 243,
+      "end": 253
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 287,
+      "end": 305
+    },
+    {
+      "text": "Project Pelican",
+      "category": "MATTER_CODENAME",
+      "start": 314,
+      "end": 329
+    },
+    {
+      "text": "Lotus Industries",
+      "category": "ORGANIZATION",
+      "start": 343,
+      "end": 359
+    },
+    {
+      "text": "Lotus Industries",
+      "category": "ORGANIZATION",
+      "start": 402,
+      "end": 418
+    },
+    {
+      "text": "₹3.5 crore",
+      "category": "MONEY",
+      "start": 426,
+      "end": 436
+    },
+    {
+      "text": "Com. S. No. 2624/2025",
+      "category": "CASE_NUMBER",
+      "start": 526,
+      "end": 547
+    },
+    {
+      "text": "Ahmedabad Commercial Court",
+      "category": "COURT",
+      "start": 559,
+      "end": 585
+    },
+    {
+      "text": "31 August 2025",
+      "category": "DATE",
+      "start": 589,
+      "end": 603
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

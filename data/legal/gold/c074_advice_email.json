@@ -1,0 +1,56 @@
+{
+  "doc_id": "0472628a4eb612fd",
+  "text": "Subject: Your land dispute matter - O.S. No. 2027/2019\n\nDear Ms. Mishra,\n\nThank you for meeting us on 20/05/2019 about your dispute with Radhika Agarwal. As we understand it, the occupant claims ownership by adverse possession. The matter is listed before the Kochi District Court.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office. We will pursue the full claim of ₹2,87,00,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2027/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Mishra",
+      "category": "NAME",
+      "start": 65,
+      "end": 71
+    },
+    {
+      "text": "20/05/2019",
+      "category": "DATE",
+      "start": 102,
+      "end": 112
+    },
+    {
+      "text": "Radhika Agarwal",
+      "category": "NAME",
+      "start": 137,
+      "end": 152
+    },
+    {
+      "text": "Kochi District Court",
+      "category": "COURT",
+      "start": 260,
+      "end": 280
+    },
+    {
+      "text": "₹2,87,00,000",
+      "category": "MONEY",
+      "start": 527,
+      "end": 539
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 556,
+      "end": 568
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

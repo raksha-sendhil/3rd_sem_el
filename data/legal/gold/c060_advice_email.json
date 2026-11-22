@@ -1,0 +1,50 @@
+{
+  "doc_id": "d1ed83b61aea378d",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2245/2025\n\nDear Ms. Shinde,\n\nThank you for meeting us on 14 May 2025 about your dispute with Emerald Builders Pvt Ltd. As we understand it, the builder keeps promising possession by email but never delivers. The matter is listed before the Thiruvananthapuram District Consumer Disputes Redressal Commission.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 2245/2025",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Shinde",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "14 May 2025",
+      "category": "DATE",
+      "start": 108,
+      "end": 119
+    },
+    {
+      "text": "Emerald Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 144,
+      "end": 168
+    },
+    {
+      "text": "Thiruvananthapuram District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 291,
+      "end": 357
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 635,
+      "end": 651
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

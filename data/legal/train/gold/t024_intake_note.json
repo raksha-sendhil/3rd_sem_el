@@ -1,0 +1,110 @@
+{
+  "doc_id": "7f2d8e634898e461",
+  "text": "Intake note - Property team\nDate: 26 August 2020\nClient: Anjali Bhandari, a 67-year-old truck driver from Vadodara.\nAddress: Plot 115, Fatehgunj, Vadodara 390041\nPhone: 06194445151. Email: anjali.bhandari@example.in. PAN AJKPB9516M.\nMatter: land dispute\nOpposing party: Farhan Chandran\nFacts: The land dispute with Farhan Chandran concerns agricultural land valued at ₹4.5 crore; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as R.C.S. No. 2680/2020 before the Vadodara District Court on 23 November 2020.",
+  "spans": [
+    {
+      "text": "26 August 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 48
+    },
+    {
+      "text": "Anjali Bhandari",
+      "category": "NAME",
+      "start": 57,
+      "end": 72
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 100
+    },
+    {
+      "text": "Vadodara",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 114
+    },
+    {
+      "text": "Plot 115, Fatehgunj, Vadodara 390041",
+      "category": "ADDRESS",
+      "start": 125,
+      "end": 161
+    },
+    {
+      "text": "06194445151",
+      "category": "PHONE",
+      "start": 169,
+      "end": 180
+    },
+    {
+      "text": "anjali.bhandari@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 215
+    },
+    {
+      "text": "AJKPB9516M",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 241,
+      "end": 253
+    },
+    {
+      "text": "Farhan Chandran",
+      "category": "NAME",
+      "start": 270,
+      "end": 285
+    },
+    {
+      "text": "Farhan Chandran",
+      "category": "NAME",
+      "start": 315,
+      "end": 330
+    },
+    {
+      "text": "₹4.5 crore",
+      "category": "MONEY",
+      "start": 368,
+      "end": 378
+    },
+    {
+      "text": "R.C.S. No. 2680/2020",
+      "category": "CASE_NUMBER",
+      "start": 462,
+      "end": 482
+    },
+    {
+      "text": "Vadodara District Court",
+      "category": "COURT",
+      "start": 494,
+      "end": 517
+    },
+    {
+      "text": "23 November 2020",
+      "category": "DATE",
+      "start": 521,
+      "end": 537
+    },
+    {
+      "text": "age (67) + occupation (truck driver) + city (Vadodara) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

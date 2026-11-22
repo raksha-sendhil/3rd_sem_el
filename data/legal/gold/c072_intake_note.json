@@ -1,0 +1,116 @@
+{
+  "doc_id": "6e6c9e5bc338f4c2",
+  "text": "Intake note - Property team\nDate: 31/10/2025\nClient: Sanjay Rajan, a 58-year-old taxi driver from Pune.\nAddress: Flat 10B, Baner, Pune 411039\nPhone: +91 89245 88958. Email: sanjay.rajan13@example.in. PAN ZDKPR4152L, Aadhaar 5758 8648 0605.\nMatter: land dispute\nOpposing party: Varun Srivastava\nFacts: The land dispute with Varun Srivastava concerns agricultural land valued at ₹1.7 crore; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 1325/2025 before the Pune District Court on 27 November 2025.",
+  "spans": [
+    {
+      "text": "31/10/2025",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Sanjay Rajan",
+      "category": "NAME",
+      "start": 53,
+      "end": 65
+    },
+    {
+      "text": "58-year-old",
+      "category": "AGE",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 81,
+      "end": 92
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 98,
+      "end": 102
+    },
+    {
+      "text": "Flat 10B, Baner, Pune 411039",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 141
+    },
+    {
+      "text": "+91 89245 88958",
+      "category": "PHONE",
+      "start": 149,
+      "end": 164
+    },
+    {
+      "text": "sanjay.rajan13@example.in",
+      "category": "EMAIL",
+      "start": 173,
+      "end": 198
+    },
+    {
+      "text": "ZDKPR4152L",
+      "category": "ID_NUMBER",
+      "start": 204,
+      "end": 214
+    },
+    {
+      "text": "5758 8648 0605",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 238
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 248,
+      "end": 260
+    },
+    {
+      "text": "Varun Srivastava",
+      "category": "NAME",
+      "start": 277,
+      "end": 293
+    },
+    {
+      "text": "Varun Srivastava",
+      "category": "NAME",
+      "start": 323,
+      "end": 339
+    },
+    {
+      "text": "₹1.7 crore",
+      "category": "MONEY",
+      "start": 377,
+      "end": 387
+    },
+    {
+      "text": "O.S. No. 1325/2025",
+      "category": "CASE_NUMBER",
+      "start": 471,
+      "end": 489
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 501,
+      "end": 520
+    },
+    {
+      "text": "27 November 2025",
+      "category": "DATE",
+      "start": 524,
+      "end": 540
+    },
+    {
+      "text": "age (58) + occupation (taxi driver) + city (Pune) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

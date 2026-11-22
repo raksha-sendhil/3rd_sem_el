@@ -1,0 +1,110 @@
+{
+  "doc_id": "06374c6a393bf5cc",
+  "text": "Intake note - Property team\nDate: 29 September 2020\nClient: Smita DSouza, a 62-year-old government clerk from Thiruvananthapuram.\nAddress: House No. 54, Kowdiar, Thiruvananthapuram 695021\nPhone: +91 81489 06590. Email: smita.dsouza37@example.in. PAN SRTPD8572R.\nMatter: tenancy eviction\nOpposing party: Pallavi Desai\nFacts: The tenancy dispute with Pallavi Desai concerns rent arrears of INR 5,05,000/-; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.A. No. 780/2021 before the Thiruvananthapuram District Court on 11 March 2021.",
+  "spans": [
+    {
+      "text": "29 September 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 51
+    },
+    {
+      "text": "Smita DSouza",
+      "category": "NAME",
+      "start": 60,
+      "end": 72
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 128
+    },
+    {
+      "text": "House No. 54, Kowdiar, Thiruvananthapuram 695021",
+      "category": "ADDRESS",
+      "start": 139,
+      "end": 187
+    },
+    {
+      "text": "+91 81489 06590",
+      "category": "PHONE",
+      "start": 195,
+      "end": 210
+    },
+    {
+      "text": "smita.dsouza37@example.in",
+      "category": "EMAIL",
+      "start": 219,
+      "end": 244
+    },
+    {
+      "text": "SRTPD8572R",
+      "category": "ID_NUMBER",
+      "start": 250,
+      "end": 260
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 270,
+      "end": 286
+    },
+    {
+      "text": "Pallavi Desai",
+      "category": "NAME",
+      "start": 303,
+      "end": 316
+    },
+    {
+      "text": "Pallavi Desai",
+      "category": "NAME",
+      "start": 349,
+      "end": 362
+    },
+    {
+      "text": "INR 5,05,000/-",
+      "category": "MONEY",
+      "start": 388,
+      "end": 402
+    },
+    {
+      "text": "R.C.A. No. 780/2021",
+      "category": "CASE_NUMBER",
+      "start": 480,
+      "end": 499
+    },
+    {
+      "text": "Thiruvananthapuram District Court",
+      "category": "COURT",
+      "start": 511,
+      "end": 544
+    },
+    {
+      "text": "11 March 2021",
+      "category": "DATE",
+      "start": 548,
+      "end": 561
+    },
+    {
+      "text": "age (62) + occupation (government clerk) + city (Thiruvananthapuram) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

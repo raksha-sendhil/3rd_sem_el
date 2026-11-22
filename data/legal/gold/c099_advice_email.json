@@ -1,0 +1,44 @@
+{
+  "doc_id": "76a938935d7c9daa",
+  "text": "Subject: Your breach of contract matter (Project Eagle)\n\nDear Mr. Fernandes,\n\nThank you for meeting us on 3 March 2023 about your dispute with M/s Aravali Infotech Pvt Ltd. As we understand it, the claim must be filed as a commercial suit.\n\nOur advice is to complete pre-institution mediation before filing the commercial suit. Please collect the mediation request and the statement of accounts and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Eagle",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 54
+    },
+    {
+      "text": "Fernandes",
+      "category": "NAME",
+      "start": 66,
+      "end": 75
+    },
+    {
+      "text": "3 March 2023",
+      "category": "DATE",
+      "start": 106,
+      "end": 118
+    },
+    {
+      "text": "Aravali Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 147,
+      "end": 171
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 442,
+      "end": 454
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

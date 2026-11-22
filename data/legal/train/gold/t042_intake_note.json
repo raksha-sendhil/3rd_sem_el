@@ -1,0 +1,122 @@
+{
+  "doc_id": "5ff29a2465c08274",
+  "text": "Intake note - Commercial team\nDate: 6 February 2025\nClient: Vivek Kulkarni, a 36-year-old civil engineer from Lucknow.\nAddress: Bungalow 2, Aliganj, Lucknow 226041\nPhone: +91 73281 67725. Email: vivek.kulkarni71@example.com. PAN RMGPK3608A.\nMatter: cheque bounce\nOpposing party: Meera Bansal\nFacts: A cheque for INR 5,85,000/- issued by Meera Bansal bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 24253742410 (IFSC UTIB0779001).\nThe matter was filed as S.C.C. No. 779/2025 before the Judicial Magistrate First Class Court at Lucknow on 24/08/2025.",
+  "spans": [
+    {
+      "text": "6 February 2025",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Vivek Kulkarni",
+      "category": "NAME",
+      "start": 60,
+      "end": 74
+    },
+    {
+      "text": "36-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 104
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 117
+    },
+    {
+      "text": "Bungalow 2, Aliganj, Lucknow 226041",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 163
+    },
+    {
+      "text": "+91 73281 67725",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "vivek.kulkarni71@example.com",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 223
+    },
+    {
+      "text": "RMGPK3608A",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 239
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 249,
+      "end": 262
+    },
+    {
+      "text": "Meera Bansal",
+      "category": "NAME",
+      "start": 279,
+      "end": 291
+    },
+    {
+      "text": "INR 5,85,000/-",
+      "category": "MONEY",
+      "start": 312,
+      "end": 326
+    },
+    {
+      "text": "Meera Bansal",
+      "category": "NAME",
+      "start": 337,
+      "end": 349
+    },
+    {
+      "text": "24253742410",
+      "category": "FINANCIAL",
+      "start": 475,
+      "end": 486
+    },
+    {
+      "text": "UTIB0779001",
+      "category": "FINANCIAL",
+      "start": 493,
+      "end": 504
+    },
+    {
+      "text": "S.C.C. No. 779/2025",
+      "category": "CASE_NUMBER",
+      "start": 531,
+      "end": 550
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Lucknow",
+      "category": "COURT",
+      "start": 562,
+      "end": 610
+    },
+    {
+      "text": "24/08/2025",
+      "category": "DATE",
+      "start": 614,
+      "end": 624
+    },
+    {
+      "text": "age (36) + occupation (civil engineer) + city (Lucknow) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

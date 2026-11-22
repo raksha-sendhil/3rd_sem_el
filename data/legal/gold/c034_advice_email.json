@@ -1,0 +1,50 @@
+{
+  "doc_id": "0965e43accfebdf1",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 459/2019\n\nDear Mr. Ghosh,\n\nThank you for meeting us on 18 October 2019 about your dispute with Shalini Chatterjee. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of Rs 1,95,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 459/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 67,
+      "end": 72
+    },
+    {
+      "text": "18 October 2019",
+      "category": "DATE",
+      "start": 103,
+      "end": 118
+    },
+    {
+      "text": "Shalini Chatterjee",
+      "category": "NAME",
+      "start": 143,
+      "end": 161
+    },
+    {
+      "text": "Rs 1,95,000",
+      "category": "MONEY",
+      "start": 504,
+      "end": 515
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 532,
+      "end": 544
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

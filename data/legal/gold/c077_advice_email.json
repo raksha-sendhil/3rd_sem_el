@@ -1,0 +1,38 @@
+{
+  "doc_id": "2282e67a39b81b86",
+  "text": "Subject: Your land dispute matter\n\nDear Mr. Nambiar,\n\nThank you for meeting us on 03/03/2021 about your dispute with Radhika Jadhav. As we understand it, relatives dispute who owns the ancestral land.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "Nambiar",
+      "category": "NAME",
+      "start": 44,
+      "end": 51
+    },
+    {
+      "text": "03/03/2021",
+      "category": "DATE",
+      "start": 82,
+      "end": 92
+    },
+    {
+      "text": "Radhika Jadhav",
+      "category": "NAME",
+      "start": 117,
+      "end": 131
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 400,
+      "end": 412
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

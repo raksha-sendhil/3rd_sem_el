@@ -1,0 +1,38 @@
+{
+  "doc_id": "1042fe50d4be7651",
+  "text": "Subject: Your tenancy eviction matter\n\nDear Mr. Deshpande,\n\nThank you for meeting us on 30 March 2025 about your dispute with Mohan Natarajan. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "Deshpande",
+      "category": "NAME",
+      "start": 48,
+      "end": 57
+    },
+    {
+      "text": "30 March 2025",
+      "category": "DATE",
+      "start": 88,
+      "end": 101
+    },
+    {
+      "text": "Mohan Natarajan",
+      "category": "NAME",
+      "start": 126,
+      "end": 141
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 470,
+      "end": 482
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

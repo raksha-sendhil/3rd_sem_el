@@ -1,0 +1,98 @@
+{
+  "doc_id": "490c170bc86b1cd3",
+  "text": "Intake note (Property team, 22/03/2020). Our client Sneha Trivedi is a 47-year-old nurse who lives at Bungalow 27, College Road, Nashik 422021 and can be reached on +91 86378 60364 or sneha.trivedi@example.com. The client's PAN MYAPT7912B.\nThe client consulted us about a tenancy eviction matter against Nandini Dalvi. The tenancy dispute with Nandini Dalvi concerns rent arrears of 4.5 lakh rupees; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.S. No. 1899/2020 before the Nashik District Court on 1 September 2020.",
+  "spans": [
+    {
+      "text": "22/03/2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Sneha Trivedi",
+      "category": "NAME",
+      "start": 52,
+      "end": 65
+    },
+    {
+      "text": "47-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 88
+    },
+    {
+      "text": "Bungalow 27, College Road, Nashik 422021",
+      "category": "ADDRESS",
+      "start": 102,
+      "end": 142
+    },
+    {
+      "text": "+91 86378 60364",
+      "category": "PHONE",
+      "start": 165,
+      "end": 180
+    },
+    {
+      "text": "sneha.trivedi@example.com",
+      "category": "EMAIL",
+      "start": 184,
+      "end": 209
+    },
+    {
+      "text": "MYAPT7912B",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 272,
+      "end": 288
+    },
+    {
+      "text": "Nandini Dalvi",
+      "category": "NAME",
+      "start": 304,
+      "end": 317
+    },
+    {
+      "text": "Nandini Dalvi",
+      "category": "NAME",
+      "start": 344,
+      "end": 357
+    },
+    {
+      "text": "4.5 lakh rupees",
+      "category": "MONEY",
+      "start": 383,
+      "end": 398
+    },
+    {
+      "text": "R.C.S. No. 1899/2020",
+      "category": "CASE_NUMBER",
+      "start": 482,
+      "end": 502
+    },
+    {
+      "text": "Nashik District Court",
+      "category": "COURT",
+      "start": 514,
+      "end": 535
+    },
+    {
+      "text": "1 September 2020",
+      "category": "DATE",
+      "start": 539,
+      "end": 555
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

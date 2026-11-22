@@ -1,0 +1,7 @@
+{
+  "doc_id": "9353412924937c92",
+  "source": "synthetic-legal-train",
+  "template": "intake_note",
+  "person_id": "t070",
+  "text": "Intake note - Commercial team\nDate: 20/05/2020\nClient: Varun Subramanian, a 25-year-old architect from Chennai.\nAddress: Flat 1D, Adyar, Chennai 600050\nPhone: +91 94872 66753. Email: varun.subramanian@example.in. PAN XHGPS3139E, Aadhaar 7817 5319 0247.\nMatter: cheque bounce\nOpposing party: Lotus Enterprises\nFacts: A cheque for INR 8,25,000/- issued by Lotus Enterprises bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 30900637495 (IFSC KKBK0192542).\nThe matter was filed as CC/425/2020 before the Judicial Magistrate First Class Court at Chennai on 3 October 2020."
+}

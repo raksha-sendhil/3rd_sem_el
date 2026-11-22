@@ -1,0 +1,68 @@
+{
+  "doc_id": "befb389e791032f0",
+  "text": "Case note: R.C.S. No. 2123/2020\nClient: Neha Karve (schoolteacher, Mysuru)\nOpposing party: Revathi Shetty\nCourt: Mysuru District Court\nFiled on: 02/04/2020\nClaim amount: INR 8,25,000/-\nIssue: tenancy eviction. The tenant has sublet the flat without permission.\nAdvice given: Collect evidence of unauthorised subletting such as utility bills in the occupant's name.\nOutcome: The tenant admitted the subletting and agreed to vacate.\nRecommended next step: Record the compromise before the court.",
+  "spans": [
+    {
+      "text": "R.C.S. No. 2123/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Neha Karve",
+      "category": "NAME",
+      "start": 40,
+      "end": 50
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 52,
+      "end": 65
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 67,
+      "end": 73
+    },
+    {
+      "text": "Revathi Shetty",
+      "category": "NAME",
+      "start": 91,
+      "end": 105
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "start": 113,
+      "end": 134
+    },
+    {
+      "text": "02/04/2020",
+      "category": "DATE",
+      "start": 145,
+      "end": 155
+    },
+    {
+      "text": "INR 8,25,000/-",
+      "category": "MONEY",
+      "start": 170,
+      "end": 184
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 192,
+      "end": 208
+    },
+    {
+      "text": "occupation (schoolteacher) + city (Mysuru) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

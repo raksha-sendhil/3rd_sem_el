@@ -1,0 +1,110 @@
+{
+  "doc_id": "9a7b48a5510ac9bc",
+  "text": "Intake note - Property team\nDate: 24 August 2023\nClient: Leena Khan, a 60-year-old civil engineer from Mysuru.\nAddress: House No. 4, Kuvempunagar, Mysuru 570037\nPhone: +91 61582 44323. Email: leena.khan44@example.com. PAN TZEPK8480N.\nMatter: tenancy eviction\nOpposing party: Thomas Mishra\nFacts: The tenancy dispute with Thomas Mishra concerns rent arrears of ₹5,85,000; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.A. No. 2876/2023 before the Mysuru District Court on 23 December 2023.",
+  "spans": [
+    {
+      "text": "24 August 2023",
+      "category": "DATE",
+      "start": 34,
+      "end": 48
+    },
+    {
+      "text": "Leena Khan",
+      "category": "NAME",
+      "start": 57,
+      "end": 67
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 97
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 109
+    },
+    {
+      "text": "House No. 4, Kuvempunagar, Mysuru 570037",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 160
+    },
+    {
+      "text": "+91 61582 44323",
+      "category": "PHONE",
+      "start": 168,
+      "end": 183
+    },
+    {
+      "text": "leena.khan44@example.com",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 216
+    },
+    {
+      "text": "TZEPK8480N",
+      "category": "ID_NUMBER",
+      "start": 222,
+      "end": 232
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 242,
+      "end": 258
+    },
+    {
+      "text": "Thomas Mishra",
+      "category": "NAME",
+      "start": 275,
+      "end": 288
+    },
+    {
+      "text": "Thomas Mishra",
+      "category": "NAME",
+      "start": 321,
+      "end": 334
+    },
+    {
+      "text": "₹5,85,000",
+      "category": "MONEY",
+      "start": 360,
+      "end": 369
+    },
+    {
+      "text": "R.C.A. No. 2876/2023",
+      "category": "CASE_NUMBER",
+      "start": 453,
+      "end": 473
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "start": 485,
+      "end": 506
+    },
+    {
+      "text": "23 December 2023",
+      "category": "DATE",
+      "start": 510,
+      "end": 526
+    },
+    {
+      "text": "age (60) + occupation (civil engineer) + city (Mysuru) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

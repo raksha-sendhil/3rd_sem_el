@@ -1,0 +1,50 @@
+{
+  "doc_id": "998f11550b41c2fe",
+  "text": "Subject: Your land dispute matter - O.S. No. 144/2023\n\nDear Mr. Menon,\n\nThank you for meeting us on 5 December 2023 about your dispute with Joseph Trivedi. As we understand it, relatives dispute who owns the ancestral land.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office. We will pursue the full claim of 86.5 lakh rupees.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 144/2023",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 53
+    },
+    {
+      "text": "Menon",
+      "category": "NAME",
+      "start": 64,
+      "end": 69
+    },
+    {
+      "text": "5 December 2023",
+      "category": "DATE",
+      "start": 100,
+      "end": 115
+    },
+    {
+      "text": "Joseph Trivedi",
+      "category": "NAME",
+      "start": 140,
+      "end": 154
+    },
+    {
+      "text": "86.5 lakh rupees",
+      "category": "MONEY",
+      "start": 441,
+      "end": 457
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 474,
+      "end": 493
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

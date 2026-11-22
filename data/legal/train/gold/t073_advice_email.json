@@ -1,0 +1,50 @@
+{
+  "doc_id": "e8efe2930ebab58a",
+  "text": "Subject: Your consumer complaint matter - CC/57/2022\n\nDear Mr. Sandhu,\n\nThank you for meeting us on 11/10/2022 about your dispute with Goyal Developers. As we understand it, the builder keeps promising possession by email but never delivers.\n\nOur advice is to keep every written promise of possession because each one extends the period of limitation. Please collect the allotment letter, the builder-buyer agreement, payment receipts and all emails promising possession and send copies to this office. We will pursue the full claim of ₹3.3 crore.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "CC/57/2022",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 52
+    },
+    {
+      "text": "Sandhu",
+      "category": "NAME",
+      "start": 63,
+      "end": 69
+    },
+    {
+      "text": "11/10/2022",
+      "category": "DATE",
+      "start": 100,
+      "end": 110
+    },
+    {
+      "text": "Goyal Developers",
+      "category": "ORGANIZATION",
+      "start": 135,
+      "end": 151
+    },
+    {
+      "text": "₹3.3 crore",
+      "category": "MONEY",
+      "start": 536,
+      "end": 546
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 563,
+      "end": 578
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

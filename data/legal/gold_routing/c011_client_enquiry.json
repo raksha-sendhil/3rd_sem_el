@@ -1,0 +1,52 @@
+{
+  "doc_id": "c459b9d950c7b4a0",
+  "routing": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "Pooja Khan",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "41-year-old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Das Traders",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "₹12,00,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "+91 71729 68809",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "pooja.khan@example.in",
+      "category": "EMAIL",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

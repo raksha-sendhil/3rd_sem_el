@@ -1,0 +1,44 @@
+{
+  "doc_id": "62acdc50db93ca05",
+  "text": "Subject: Your divorce by mutual consent matter\n\nDear Ms. Jadhav,\n\nThank you for meeting us on 04/11/2021 about your dispute with Swati Tiwari. As we understand it, the wife wants her jewellery and gifts returned. The matter is listed before the Family Court at Kozhikode.\n\nOur advice is to list the stridhan items to be returned in the settlement deed. Please collect the list of jewellery and gifts with any receipts and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Jadhav",
+      "category": "NAME",
+      "start": 57,
+      "end": 63
+    },
+    {
+      "text": "04/11/2021",
+      "category": "DATE",
+      "start": 94,
+      "end": 104
+    },
+    {
+      "text": "Swati Tiwari",
+      "category": "NAME",
+      "start": 129,
+      "end": 141
+    },
+    {
+      "text": "Family Court at Kozhikode",
+      "category": "COURT",
+      "start": 245,
+      "end": 270
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 465,
+      "end": 477
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

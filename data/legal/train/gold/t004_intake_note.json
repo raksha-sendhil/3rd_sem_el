@@ -1,0 +1,110 @@
+{
+  "doc_id": "edc25406dc24644b",
+  "text": "Intake note - Commercial team\nDate: 29 October 2021\nClient: Meera Shah, a 50-year-old bank manager from Ahmedabad.\nAddress: Bungalow 20, Satellite, Ahmedabad 380051\nPhone: 08692132446. Email: meera.shah@example.in. PAN CRAPS2817X.\nMatter: cheque bounce\nOpposing party: Shruti More\nFacts: A cheque for 32.9 lakh rupees issued by Shruti More bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/1706/2021 before the Judicial Magistrate First Class Court at Ahmedabad on 28 December 2021.",
+  "spans": [
+    {
+      "text": "29 October 2021",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Meera Shah",
+      "category": "NAME",
+      "start": 60,
+      "end": 70
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 98
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 113
+    },
+    {
+      "text": "Bungalow 20, Satellite, Ahmedabad 380051",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 164
+    },
+    {
+      "text": "08692132446",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "meera.shah@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 213
+    },
+    {
+      "text": "CRAPS2817X",
+      "category": "ID_NUMBER",
+      "start": 219,
+      "end": 229
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 239,
+      "end": 252
+    },
+    {
+      "text": "Shruti More",
+      "category": "NAME",
+      "start": 269,
+      "end": 280
+    },
+    {
+      "text": "32.9 lakh rupees",
+      "category": "MONEY",
+      "start": 301,
+      "end": 317
+    },
+    {
+      "text": "Shruti More",
+      "category": "NAME",
+      "start": 328,
+      "end": 339
+    },
+    {
+      "text": "CC/1706/2021",
+      "category": "CASE_NUMBER",
+      "start": 426,
+      "end": 438
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 450,
+      "end": 500
+    },
+    {
+      "text": "28 December 2021",
+      "category": "DATE",
+      "start": 504,
+      "end": 520
+    },
+    {
+      "text": "age (50) + occupation (bank manager) + city (Ahmedabad) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

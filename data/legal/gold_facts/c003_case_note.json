@@ -1,0 +1,79 @@
+{
+  "doc_id": "053ce64aa6558755",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Sanjay Patil",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "software engineer",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "Hyderabad",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "consumer complaint",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Karve Constructions",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "INR 8,29,00,000/-",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Hyderabad District Consumer Disputes Redressal Commission",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "CC/2745/2025",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_on",
+      "value": "26 April 2025",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "advised",
+      "value": "Keep every written promise of possession because each one extends the period of limitation",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "outcome",
+      "value": "The complaint was admitted and notice was issued to the builder",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "next_step",
+      "value": "File the evidence affidavit",
+      "importance": "high"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

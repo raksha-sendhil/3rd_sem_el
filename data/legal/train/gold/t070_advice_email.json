@@ -1,0 +1,44 @@
+{
+  "doc_id": "e45b627afae0a095",
+  "text": "Subject: Your cheque bounce matter - CC/425/2020\n\nDear Mr. Subramanian,\n\nThank you for meeting us on 06/05/2021 about your dispute with Lotus Enterprises. As we understand it, the cheque came back with the remark account closed.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "CC/425/2020",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 48
+    },
+    {
+      "text": "Subramanian",
+      "category": "NAME",
+      "start": 59,
+      "end": 70
+    },
+    {
+      "text": "06/05/2021",
+      "category": "DATE",
+      "start": 101,
+      "end": 111
+    },
+    {
+      "text": "Lotus Enterprises",
+      "category": "ORGANIZATION",
+      "start": 136,
+      "end": 153
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 513,
+      "end": 528
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

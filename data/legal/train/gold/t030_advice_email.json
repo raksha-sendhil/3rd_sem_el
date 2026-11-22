@@ -1,0 +1,50 @@
+{
+  "doc_id": "c0707530737800a6",
+  "text": "Subject: Your land dispute matter - O.S. No. 2655/2022\n\nDear Mr. Pillai,\n\nThank you for meeting us on 28/09/2022 about your dispute with Vivek Bose. As we understand it, relatives dispute who owns the ancestral land.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office. We will pursue the full claim of ₹4.6 crore.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2655/2022",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Pillai",
+      "category": "NAME",
+      "start": 65,
+      "end": 71
+    },
+    {
+      "text": "28/09/2022",
+      "category": "DATE",
+      "start": 102,
+      "end": 112
+    },
+    {
+      "text": "Vivek Bose",
+      "category": "NAME",
+      "start": 137,
+      "end": 147
+    },
+    {
+      "text": "₹4.6 crore",
+      "category": "MONEY",
+      "start": 434,
+      "end": 444
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 461,
+      "end": 473
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,80 @@
+{
+  "doc_id": "38aec35acddcbb49",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Meera Shah. I am a 50-year-old bank manager living in Ahmedabad. Shruti More gave me a cheque for Rs 32,90,000 to repay a loan, but the cheque came back with the remark account closed. My case number is CC/1706/2021 in the Judicial Magistrate First Class Court at Ahmedabad. Can your firm advise me on what to do next? You can call me on 08692132446 or email meera.shah@example.in.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Meera Shah",
+      "category": "NAME",
+      "start": 64,
+      "end": 74
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 83,
+      "end": 94
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 95,
+      "end": 107
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 118,
+      "end": 127
+    },
+    {
+      "text": "Shruti More",
+      "category": "NAME",
+      "start": 129,
+      "end": 140
+    },
+    {
+      "text": "Rs 32,90,000",
+      "category": "MONEY",
+      "start": 162,
+      "end": 174
+    },
+    {
+      "text": "CC/1706/2021",
+      "category": "CASE_NUMBER",
+      "start": 267,
+      "end": 279
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 287,
+      "end": 337
+    },
+    {
+      "text": "08692132446",
+      "category": "PHONE",
+      "start": 402,
+      "end": 413
+    },
+    {
+      "text": "meera.shah@example.in",
+      "category": "EMAIL",
+      "start": 423,
+      "end": 444
+    },
+    {
+      "text": "age (50) + occupation (bank manager) + city (Ahmedabad) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

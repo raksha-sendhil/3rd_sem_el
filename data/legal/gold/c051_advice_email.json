@@ -1,0 +1,50 @@
+{
+  "doc_id": "2874f700d2d34b7b",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 1916/2022\n\nDear Mr. Ghosh,\n\nThank you for meeting us on 26/12/2022 about your dispute with Charulata Sandhu. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Nagpur District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 1916/2022",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 71,
+      "end": 76
+    },
+    {
+      "text": "26/12/2022",
+      "category": "DATE",
+      "start": 107,
+      "end": 117
+    },
+    {
+      "text": "Charulata Sandhu",
+      "category": "NAME",
+      "start": 142,
+      "end": 158
+    },
+    {
+      "text": "Nagpur District Court",
+      "category": "COURT",
+      "start": 265,
+      "end": 286
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 538,
+      "end": 555
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

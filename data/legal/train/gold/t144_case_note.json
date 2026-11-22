@@ -1,0 +1,68 @@
+{
+  "doc_id": "a4c11ba567734142",
+  "text": "Case note: O.S. No. 2855/2023\nClient: Gayatri Menon (hardware dealer, Lucknow)\nOpposing party: Naveen Kulkarni\nCourt: Lucknow District Court\nFiled on: 24/07/2023\nClaim amount: 58 lakh rupees\nIssue: land dispute. The neighbour has encroached on the boundary of the plot.\nAdvice given: Apply for a court commissioner to measure the boundary.\nOutcome: The court commissioner confirmed the encroachment.\nRecommended next step: Seek removal of the encroachment.",
+  "spans": [
+    {
+      "text": "O.S. No. 2855/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Gayatri Menon",
+      "category": "NAME",
+      "start": 38,
+      "end": 51
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 53,
+      "end": 68
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 70,
+      "end": 77
+    },
+    {
+      "text": "Naveen Kulkarni",
+      "category": "NAME",
+      "start": 95,
+      "end": 110
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 118,
+      "end": 140
+    },
+    {
+      "text": "24/07/2023",
+      "category": "DATE",
+      "start": 151,
+      "end": 161
+    },
+    {
+      "text": "58 lakh rupees",
+      "category": "MONEY",
+      "start": 176,
+      "end": 190
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 198,
+      "end": 210
+    },
+    {
+      "text": "occupation (hardware dealer) + city (Lucknow) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

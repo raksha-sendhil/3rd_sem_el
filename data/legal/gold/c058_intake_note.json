@@ -1,0 +1,110 @@
+{
+  "doc_id": "fcea7f690158ca39",
+  "text": "Intake note - Property team\nDate: 30 November 2020\nClient: Yogesh Ranade, a 50-year-old shopkeeper from Hyderabad.\nAddress: Flat 2B, Madhapur, Hyderabad 500007\nPhone: +91 94525 65261. Email: yogesh.ranade28@example.com. PAN HVYPR4991T.\nMatter: consumer complaint\nOpposing party: Harbour Realty\nFacts: The consumer complaint against Harbour Realty concerns a flat bought for ₹7.3 crore; the builder never obtained the occupancy certificate.\nThe matter was filed as C.C. No. 2707/2021 before the Hyderabad District Consumer Disputes Redressal Commission on 13 June 2021.",
+  "spans": [
+    {
+      "text": "30 November 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 50
+    },
+    {
+      "text": "Yogesh Ranade",
+      "category": "NAME",
+      "start": 59,
+      "end": 72
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 98
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 113
+    },
+    {
+      "text": "Flat 2B, Madhapur, Hyderabad 500007",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 159
+    },
+    {
+      "text": "+91 94525 65261",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "yogesh.ranade28@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 218
+    },
+    {
+      "text": "HVYPR4991T",
+      "category": "ID_NUMBER",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 244,
+      "end": 262
+    },
+    {
+      "text": "Harbour Realty",
+      "category": "ORGANIZATION",
+      "start": 279,
+      "end": 293
+    },
+    {
+      "text": "Harbour Realty",
+      "category": "ORGANIZATION",
+      "start": 332,
+      "end": 346
+    },
+    {
+      "text": "₹7.3 crore",
+      "category": "MONEY",
+      "start": 374,
+      "end": 384
+    },
+    {
+      "text": "C.C. No. 2707/2021",
+      "category": "CASE_NUMBER",
+      "start": 464,
+      "end": 482
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 494,
+      "end": 551
+    },
+    {
+      "text": "13 June 2021",
+      "category": "DATE",
+      "start": 555,
+      "end": 567
+    },
+    {
+      "text": "age (50) + occupation (shopkeeper) + city (Hyderabad) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

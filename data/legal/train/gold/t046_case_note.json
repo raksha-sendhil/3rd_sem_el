@@ -1,0 +1,68 @@
+{
+  "doc_id": "9de5c03be2f7bdb4",
+  "text": "Case note: Petition No. 2736/2019\nClient: Mohan Menon (nurse, Madurai)\nOpposing party: Anjali Fernandes\nCourt: Family Court at Madurai\nFiled on: 08/03/2019\nClaim amount: ₹8,20,000\nIssue: divorce by mutual consent. The wife wants her jewellery and gifts returned.\nAdvice given: List the stridhan items to be returned in the settlement deed.\nOutcome: The stridhan items were returned before the decree.\nRecommended next step: Sign the receipt for the returned items.",
+  "spans": [
+    {
+      "text": "Petition No. 2736/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 33
+    },
+    {
+      "text": "Mohan Menon",
+      "category": "NAME",
+      "start": 42,
+      "end": 53
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 60
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 62,
+      "end": 69
+    },
+    {
+      "text": "Anjali Fernandes",
+      "category": "NAME",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Family Court at Madurai",
+      "category": "COURT",
+      "start": 111,
+      "end": 134
+    },
+    {
+      "text": "08/03/2019",
+      "category": "DATE",
+      "start": 145,
+      "end": 155
+    },
+    {
+      "text": "₹8,20,000",
+      "category": "MONEY",
+      "start": 170,
+      "end": 179
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 187,
+      "end": 212
+    },
+    {
+      "text": "occupation (nurse) + city (Madurai) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

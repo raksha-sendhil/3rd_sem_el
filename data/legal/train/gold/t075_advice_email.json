@@ -1,0 +1,44 @@
+{
+  "doc_id": "5a928a5d890bcf9f",
+  "text": "Subject: Your land dispute matter\n\nDear Ms. Mukherjee,\n\nThank you for meeting us on 25 November 2025 about your dispute with Priyanka DSouza. As we understand it, the occupant claims ownership by adverse possession.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office. We will pursue the full claim of ₹3.9 crore.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "Mukherjee",
+      "category": "NAME",
+      "start": 44,
+      "end": 53
+    },
+    {
+      "text": "25 November 2025",
+      "category": "DATE",
+      "start": 84,
+      "end": 100
+    },
+    {
+      "text": "Priyanka DSouza",
+      "category": "NAME",
+      "start": 125,
+      "end": 140
+    },
+    {
+      "text": "₹3.9 crore",
+      "category": "MONEY",
+      "start": 461,
+      "end": 471
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 488,
+      "end": 503
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

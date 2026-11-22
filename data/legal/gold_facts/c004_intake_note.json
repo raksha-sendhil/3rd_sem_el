@@ -1,0 +1,85 @@
+{
+  "doc_id": "e7db6b3b14fc762c",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Bhavana Bansal",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "age",
+      "value": "38-year-old",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "dentist",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "Flat 17A, Sitabuldi, Nagpur 440001",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "+91 99698 94961",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "bhavana.bansal99@example.com",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "JQGPB3805U",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Gayatri Hegde",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "₹37,40,000",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Judicial Magistrate First Class Court at Nagpur",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "S.C.C. No. 2009/2021",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_on",
+      "value": "30 November 2021",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

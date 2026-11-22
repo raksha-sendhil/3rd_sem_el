@@ -1,0 +1,98 @@
+{
+  "doc_id": "2e5d31e63bd283fb",
+  "text": "Intake note (Commercial team, 5 July 2023). Our client Asha Bansal is a 46-year-old professor who lives at Flat 10C, Dharampeth, Nagpur 440016 and can be reached on 86193 26114 or asha.bansal@example.com. The client's PAN DXPPB6337D.\nThe client consulted us about a cheque bounce matter against Karve Traders. A cheque for ₹36,50,000 issued by Karve Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as CC/1336/2023 before the Judicial Magistrate First Class Court at Nagpur on 13 August 2023.",
+  "spans": [
+    {
+      "text": "5 July 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 41
+    },
+    {
+      "text": "Asha Bansal",
+      "category": "NAME",
+      "start": 55,
+      "end": 66
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "professor",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 93
+    },
+    {
+      "text": "Flat 10C, Dharampeth, Nagpur 440016",
+      "category": "ADDRESS",
+      "start": 107,
+      "end": 142
+    },
+    {
+      "text": "86193 26114",
+      "category": "PHONE",
+      "start": 165,
+      "end": 176
+    },
+    {
+      "text": "asha.bansal@example.com",
+      "category": "EMAIL",
+      "start": 180,
+      "end": 203
+    },
+    {
+      "text": "DXPPB6337D",
+      "category": "ID_NUMBER",
+      "start": 222,
+      "end": 232
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 266,
+      "end": 279
+    },
+    {
+      "text": "Karve Traders",
+      "category": "ORGANIZATION",
+      "start": 295,
+      "end": 308
+    },
+    {
+      "text": "₹36,50,000",
+      "category": "MONEY",
+      "start": 323,
+      "end": 333
+    },
+    {
+      "text": "Karve Traders",
+      "category": "ORGANIZATION",
+      "start": 344,
+      "end": 357
+    },
+    {
+      "text": "CC/1336/2023",
+      "category": "CASE_NUMBER",
+      "start": 446,
+      "end": 458
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 470,
+      "end": 517
+    },
+    {
+      "text": "13 August 2023",
+      "category": "DATE",
+      "start": 521,
+      "end": 535
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

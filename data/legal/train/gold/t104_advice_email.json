@@ -1,0 +1,38 @@
+{
+  "doc_id": "f9768e1d8fa4b5ea",
+  "text": "Subject: Your consumer complaint matter\n\nDear Mr. Gill,\n\nThank you for meeting us on 27 May 2021 about your dispute with M/s Deccan Constructions. As we understand it, the flat was handed over with serious construction defects.\n\nOur advice is to commission a structural audit report on the defects before the first hearing. Please collect photographs of the defects and a structural audit report and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Gill",
+      "category": "NAME",
+      "start": 50,
+      "end": 54
+    },
+    {
+      "text": "27 May 2021",
+      "category": "DATE",
+      "start": 85,
+      "end": 96
+    },
+    {
+      "text": "Deccan Constructions",
+      "category": "ORGANIZATION",
+      "start": 125,
+      "end": 145
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 443,
+      "end": 459
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

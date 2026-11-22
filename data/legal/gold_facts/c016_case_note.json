@@ -1,0 +1,79 @@
+{
+  "doc_id": "5a417d86c9e2cc9e",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Tushar Shinde",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "fashion designer",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "Kochi",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Saffron Enterprises",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "INR 20,00,000/-",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Judicial Magistrate First Class Court at Kochi",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "S.C.C. No. 2242/2021",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_on",
+      "value": "29 March 2021",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "advised",
+      "value": "Treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "outcome",
+      "value": "The court issued summons and the drawer offered a settlement",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "next_step",
+      "value": "Insist on payment of the full amount with costs",
+      "importance": "high"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

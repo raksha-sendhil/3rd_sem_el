@@ -1,0 +1,116 @@
+{
+  "doc_id": "4e2c85fc28bf2568",
+  "text": "Intake note - Commercial team\nDate: 14 February 2023\nClient: Swati Desai, a 48-year-old cardiologist from Nashik.\nAddress: House No. 45, Gangapur Road, Nashik 422041\nPhone: 08274055243. Email: swati.desai@example.in. PAN TDGPD5751T, Aadhaar 4628 8073 4559.\nMatter: cross-border insolvency\nOpposing party: M/s Goyal Holdings Ltd\nFacts: The cross-border insolvency matter involving Goyal Holdings Ltd concerns claims of ₹81.4 crore; the foreign administrator wants control of the assets in this country.\nThe matter was filed as C.P.(IB) No. 2033/2023 before the NCLT Mumbai on 28 May 2023.",
+  "spans": [
+    {
+      "text": "14 February 2023",
+      "category": "DATE",
+      "start": 36,
+      "end": 52
+    },
+    {
+      "text": "Swati Desai",
+      "category": "NAME",
+      "start": 61,
+      "end": 72
+    },
+    {
+      "text": "48-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 100
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 112
+    },
+    {
+      "text": "House No. 45, Gangapur Road, Nashik 422041",
+      "category": "ADDRESS",
+      "start": 123,
+      "end": 165
+    },
+    {
+      "text": "08274055243",
+      "category": "PHONE",
+      "start": 173,
+      "end": 184
+    },
+    {
+      "text": "swati.desai@example.in",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 215
+    },
+    {
+      "text": "TDGPD5751T",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "4628 8073 4559",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 255
+    },
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 265,
+      "end": 288
+    },
+    {
+      "text": "Goyal Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 309,
+      "end": 327
+    },
+    {
+      "text": "Goyal Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 380,
+      "end": 398
+    },
+    {
+      "text": "₹81.4 crore",
+      "category": "MONEY",
+      "start": 418,
+      "end": 429
+    },
+    {
+      "text": "C.P.(IB) No. 2033/2023",
+      "category": "CASE_NUMBER",
+      "start": 526,
+      "end": 548
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 560,
+      "end": 571
+    },
+    {
+      "text": "28 May 2023",
+      "category": "DATE",
+      "start": 575,
+      "end": 586
+    },
+    {
+      "text": "age (48) + occupation (cardiologist) + city (Nashik) + issue (cross-border insolvency)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

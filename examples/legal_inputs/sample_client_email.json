@@ -1,0 +1,7 @@
+{
+  "_comment": "FICTIONAL EXAMPLE of the .json input format: 'text' is required; 'title', 'must_hide' and 'must_keep' are optional spot checks.",
+  "title": "Client email about a tenancy dispute (fictional)",
+  "text": "From: Priya Menon <priya.menon82@example.in>\nTo: Adv. Suresh Pillai\nDate: 3 November 2026\nSubject: Eviction notice from my landlord\n\nDear Sir,\n\nI am 34 and work as a nurse at Lakeshore Hospital, Kochi. Since 2021 I have rented the ground floor of House No. 27/1140, Panampilly Nagar, Kochi 682036 from Mr. Thomas Varghese at Rs. 18,000 a month. On 28 October he gave me a notice to vacate within 15 days, saying his son is returning from Dubai. My rent is paid up to date and the agreement runs until March 2027. My Aadhaar is 4521 8890 1234 if you need it for the vakalatnama.\n\nCan he evict me before the agreement ends? Please call me on 94470 55321.\n\nRegards,\nPriya",
+  "must_hide": ["Priya Menon", "priya.menon82@example.in", "Thomas Varghese", "27/1140", "4521 8890 1234", "94470 55321", "Lakeshore Hospital"],
+  "must_keep": ["evict", "notice", "agreement"]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "f9f52e3d3f0eca4b",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2771/2020\n\nDear Ms. Rane,\n\nThank you for meeting us on 27/09/2020 about your dispute with Charulata Kulkarni. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Nagpur District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office. We will pursue the full claim of Rs 8,70,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 2771/2020",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Rane",
+      "category": "NAME",
+      "start": 71,
+      "end": 75
+    },
+    {
+      "text": "27/09/2020",
+      "category": "DATE",
+      "start": 106,
+      "end": 116
+    },
+    {
+      "text": "Charulata Kulkarni",
+      "category": "NAME",
+      "start": 141,
+      "end": 159
+    },
+    {
+      "text": "Nagpur District Court",
+      "category": "COURT",
+      "start": 266,
+      "end": 287
+    },
+    {
+      "text": "Rs 8,70,000",
+      "category": "MONEY",
+      "start": 557,
+      "end": 568
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 585,
+      "end": 597
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

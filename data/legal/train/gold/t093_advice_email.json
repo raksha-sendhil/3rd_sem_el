@@ -1,0 +1,50 @@
+{
+  "doc_id": "875b6e305e0e7b8b",
+  "text": "Subject: Your land dispute matter - O.S. No. 2996/2019\n\nDear Ms. Khan,\n\nThank you for meeting us on 14 January 2020 about your dispute with Sameer Bhatt. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Nagpur District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2996/2019",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 65,
+      "end": 69
+    },
+    {
+      "text": "14 January 2020",
+      "category": "DATE",
+      "start": 100,
+      "end": 115
+    },
+    {
+      "text": "Sameer Bhatt",
+      "category": "NAME",
+      "start": 140,
+      "end": 152
+    },
+    {
+      "text": "Nagpur District Court",
+      "category": "COURT",
+      "start": 265,
+      "end": 286
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 475,
+      "end": 494
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

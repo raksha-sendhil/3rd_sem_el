@@ -1,0 +1,128 @@
+{
+  "doc_id": "7ebb116147a7eea0",
+  "text": "Intake note - Commercial team\nDate: 04/05/2022\nClient: Farhan Tiwari, a 70-year-old college lecturer from Kolkata.\nAddress: Flat 4B, Ballygunge, Kolkata 700055\nPhone: +91 75651 22469. Email: farhan.tiwari@example.com. PAN KWPPT6851J, Aadhaar 3503 2200 4183.\nMatter: cheque bounce\nOpposing party: M/s Trident Traders\nFacts: A cheque for Rs 31,00,000 issued by Trident Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 665732105031 (IFSC KKBK0918990).\nThe matter was filed as S.C.C. No. 2222/2022 before the Judicial Magistrate First Class Court at Kolkata on 6 November 2022.",
+  "spans": [
+    {
+      "text": "04/05/2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Farhan Tiwari",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 100
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 113
+    },
+    {
+      "text": "Flat 4B, Ballygunge, Kolkata 700055",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 159
+    },
+    {
+      "text": "+91 75651 22469",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "farhan.tiwari@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 216
+    },
+    {
+      "text": "KWPPT6851J",
+      "category": "ID_NUMBER",
+      "start": 222,
+      "end": 232
+    },
+    {
+      "text": "3503 2200 4183",
+      "category": "ID_NUMBER",
+      "start": 242,
+      "end": 256
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 266,
+      "end": 279
+    },
+    {
+      "text": "Trident Traders",
+      "category": "ORGANIZATION",
+      "start": 300,
+      "end": 315
+    },
+    {
+      "text": "Rs 31,00,000",
+      "category": "MONEY",
+      "start": 336,
+      "end": 348
+    },
+    {
+      "text": "Trident Traders",
+      "category": "ORGANIZATION",
+      "start": 359,
+      "end": 374
+    },
+    {
+      "text": "665732105031",
+      "category": "FINANCIAL",
+      "start": 500,
+      "end": 512
+    },
+    {
+      "text": "KKBK0918990",
+      "category": "FINANCIAL",
+      "start": 519,
+      "end": 530
+    },
+    {
+      "text": "S.C.C. No. 2222/2022",
+      "category": "CASE_NUMBER",
+      "start": 557,
+      "end": 577
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kolkata",
+      "category": "COURT",
+      "start": 589,
+      "end": 637
+    },
+    {
+      "text": "6 November 2022",
+      "category": "DATE",
+      "start": 641,
+      "end": 656
+    },
+    {
+      "text": "age (70) + occupation (college lecturer) + city (Kolkata) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

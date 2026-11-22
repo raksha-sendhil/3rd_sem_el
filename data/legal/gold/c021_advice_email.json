@@ -1,0 +1,50 @@
+{
+  "doc_id": "01d21bd4638d662b",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 1034/2019\n\nDear Mr. Shah,\n\nThank you for meeting us on 9 November 2019 about your dispute with Asha Saxena. As we understand it, the cheque came back with the remark account closed. The matter is listed before the Judicial Magistrate First Class Court at Kolkata.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 1034/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Shah",
+      "category": "NAME",
+      "start": 68,
+      "end": 72
+    },
+    {
+      "text": "9 November 2019",
+      "category": "DATE",
+      "start": 103,
+      "end": 118
+    },
+    {
+      "text": "Asha Saxena",
+      "category": "NAME",
+      "start": 143,
+      "end": 154
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kolkata",
+      "category": "COURT",
+      "start": 262,
+      "end": 310
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 596,
+      "end": 613
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

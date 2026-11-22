@@ -1,0 +1,98 @@
+{
+  "doc_id": "eae82c670d079d1e",
+  "text": "Intake note (Commercial team, 27 September 2024). Our client Kiran Sandhu is a 27-year-old electrician who lives at Bungalow 1, Hanamkonda, Warangal 506007 and can be reached on 88020 44344 or kiran.sandhu@example.in. The client's PAN HKEPS5419D.\nThe client consulted us about a wrongful termination matter against M/s Sai Technologies Pvt Ltd. The wrongful termination claim against M/s Sai Technologies Pvt Ltd is for Rs 45,50,000; the employer withheld the last salary.\nThe matter was filed as Complaint No. 1793/2024 before the Warangal Labour Court on 31/10/2024.",
+  "spans": [
+    {
+      "text": "27 September 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 47
+    },
+    {
+      "text": "Kiran Sandhu",
+      "category": "NAME",
+      "start": 61,
+      "end": 73
+    },
+    {
+      "text": "27-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 102
+    },
+    {
+      "text": "Bungalow 1, Hanamkonda, Warangal 506007",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 155
+    },
+    {
+      "text": "88020 44344",
+      "category": "PHONE",
+      "start": 178,
+      "end": 189
+    },
+    {
+      "text": "kiran.sandhu@example.in",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 216
+    },
+    {
+      "text": "HKEPS5419D",
+      "category": "ID_NUMBER",
+      "start": 235,
+      "end": 245
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 279,
+      "end": 299
+    },
+    {
+      "text": "Sai Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 319,
+      "end": 343
+    },
+    {
+      "text": "Sai Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 388,
+      "end": 412
+    },
+    {
+      "text": "Rs 45,50,000",
+      "category": "MONEY",
+      "start": 420,
+      "end": 432
+    },
+    {
+      "text": "Complaint No. 1793/2024",
+      "category": "CASE_NUMBER",
+      "start": 497,
+      "end": 520
+    },
+    {
+      "text": "Warangal Labour Court",
+      "category": "COURT",
+      "start": 532,
+      "end": 553
+    },
+    {
+      "text": "31/10/2024",
+      "category": "DATE",
+      "start": 557,
+      "end": 567
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

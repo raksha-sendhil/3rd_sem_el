@@ -1,0 +1,56 @@
+{
+  "doc_id": "167d2e8789f3fe56",
+  "text": "Subject: Your consumer complaint matter - C.C. No. 2707/2021\n\nDear Mr. Ranade,\n\nThank you for meeting us on 5 April 2022 about your dispute with M/s Harbour Realty. As we understand it, the builder never obtained the occupancy certificate. The matter is listed before the Hyderabad District Consumer Disputes Redressal Commission.\n\nOur advice is to seek a full refund with interest because the builder failed to obtain the occupancy certificate. Please collect the builder-buyer agreement, payment receipts and the municipal reply on the occupancy certificate and send copies to this office. We will pursue the full claim of Rs 7,29,00,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "C.C. No. 2707/2021",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "Ranade",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "5 April 2022",
+      "category": "DATE",
+      "start": 108,
+      "end": 120
+    },
+    {
+      "text": "Harbour Realty",
+      "category": "ORGANIZATION",
+      "start": 149,
+      "end": 163
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 272,
+      "end": 329
+    },
+    {
+      "text": "Rs 7,29,00,000",
+      "category": "MONEY",
+      "start": 625,
+      "end": 639
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 656,
+      "end": 673
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

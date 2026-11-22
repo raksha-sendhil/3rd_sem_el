@@ -1,0 +1,98 @@
+{
+  "doc_id": "1aa0fcb65e1eda4e",
+  "text": "Intake note (Family team, 24 August 2024). Our client Vivek Sandhu is a 36-year-old journalist who lives at Bungalow 31, Anna Nagar, Chennai 600032 and can be reached on +91 71224 41206 or vivek.sandhu28@example.in. The client's PAN EVWPS8004Z.\nThe client consulted us about a divorce by mutual consent matter against Shruti Karve. The divorce by mutual consent with Shruti Karve includes a settlement of ₹79,60,000; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 1258/2024 before the Family Court at Chennai on 11 December 2024.",
+  "spans": [
+    {
+      "text": "24 August 2024",
+      "category": "DATE",
+      "start": 26,
+      "end": 40
+    },
+    {
+      "text": "Vivek Sandhu",
+      "category": "NAME",
+      "start": 54,
+      "end": 66
+    },
+    {
+      "text": "36-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 94
+    },
+    {
+      "text": "Bungalow 31, Anna Nagar, Chennai 600032",
+      "category": "ADDRESS",
+      "start": 108,
+      "end": 147
+    },
+    {
+      "text": "+91 71224 41206",
+      "category": "PHONE",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "vivek.sandhu28@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 214
+    },
+    {
+      "text": "EVWPS8004Z",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 302
+    },
+    {
+      "text": "Shruti Karve",
+      "category": "NAME",
+      "start": 318,
+      "end": 330
+    },
+    {
+      "text": "Shruti Karve",
+      "category": "NAME",
+      "start": 367,
+      "end": 379
+    },
+    {
+      "text": "₹79,60,000",
+      "category": "MONEY",
+      "start": 405,
+      "end": 415
+    },
+    {
+      "text": "Petition No. 1258/2024",
+      "category": "CASE_NUMBER",
+      "start": 490,
+      "end": 512
+    },
+    {
+      "text": "Family Court at Chennai",
+      "category": "COURT",
+      "start": 524,
+      "end": 547
+    },
+    {
+      "text": "11 December 2024",
+      "category": "DATE",
+      "start": 551,
+      "end": 567
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,104 @@
+{
+  "doc_id": "690d043e0f4fa056",
+  "text": "Intake note (Commercial team, 10 August 2021). Our client Lakshmi Natarajan is a 54-year-old orthopaedic surgeon who lives at Flat 6A, Hanamkonda, Warangal 506042 and can be reached on +91 89996 21045 or lakshmi.natarajan@example.in. The client's PAN CWGPN9843K.\nThe client consulted us about a breach of contract matter (Project Eagle) against Saffron Industries. The breach of contract claim against Saffron Industries is for INR 16,92,00,000/-; the goods supplied were defective.\nThe matter was filed as CS(COMM) 2734/2021 before the Warangal Commercial Court on 14/12/2021.",
+  "spans": [
+    {
+      "text": "10 August 2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 44
+    },
+    {
+      "text": "Lakshmi Natarajan",
+      "category": "NAME",
+      "start": 58,
+      "end": 75
+    },
+    {
+      "text": "54-year-old",
+      "category": "AGE",
+      "start": 81,
+      "end": 92
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 93,
+      "end": 112
+    },
+    {
+      "text": "Flat 6A, Hanamkonda, Warangal 506042",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 162
+    },
+    {
+      "text": "+91 89996 21045",
+      "category": "PHONE",
+      "start": 185,
+      "end": 200
+    },
+    {
+      "text": "lakshmi.natarajan@example.in",
+      "category": "EMAIL",
+      "start": 204,
+      "end": 232
+    },
+    {
+      "text": "CWGPN9843K",
+      "category": "ID_NUMBER",
+      "start": 251,
+      "end": 261
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 295,
+      "end": 313
+    },
+    {
+      "text": "Project Eagle",
+      "category": "MATTER_CODENAME",
+      "start": 322,
+      "end": 335
+    },
+    {
+      "text": "Saffron Industries",
+      "category": "ORGANIZATION",
+      "start": 345,
+      "end": 363
+    },
+    {
+      "text": "Saffron Industries",
+      "category": "ORGANIZATION",
+      "start": 402,
+      "end": 420
+    },
+    {
+      "text": "INR 16,92,00,000/-",
+      "category": "MONEY",
+      "start": 428,
+      "end": 446
+    },
+    {
+      "text": "CS(COMM) 2734/2021",
+      "category": "CASE_NUMBER",
+      "start": 507,
+      "end": 525
+    },
+    {
+      "text": "Warangal Commercial Court",
+      "category": "COURT",
+      "start": 537,
+      "end": 562
+    },
+    {
+      "text": "14/12/2021",
+      "category": "DATE",
+      "start": 566,
+      "end": 576
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

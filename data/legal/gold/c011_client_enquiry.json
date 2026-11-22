@@ -1,0 +1,68 @@
+{
+  "doc_id": "c459b9d950c7b4a0",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Pooja Khan. I am a 41-year-old retired bank officer living in Nagpur. Das Traders gave me a cheque for ₹12,00,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. Can your firm advise me on what to do next? You can call me on +91 71729 68809 or email pooja.khan@example.in.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Pooja Khan",
+      "category": "NAME",
+      "start": 64,
+      "end": 74
+    },
+    {
+      "text": "41-year-old",
+      "category": "AGE",
+      "start": 83,
+      "end": 94
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 95,
+      "end": 115
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 126,
+      "end": 132
+    },
+    {
+      "text": "Das Traders",
+      "category": "ORGANIZATION",
+      "start": 134,
+      "end": 145
+    },
+    {
+      "text": "₹12,00,000",
+      "category": "MONEY",
+      "start": 167,
+      "end": 177
+    },
+    {
+      "text": "+91 71729 68809",
+      "category": "PHONE",
+      "start": 325,
+      "end": 340
+    },
+    {
+      "text": "pooja.khan@example.in",
+      "category": "EMAIL",
+      "start": 350,
+      "end": 371
+    },
+    {
+      "text": "age (41) + occupation (retired bank officer) + city (Nagpur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

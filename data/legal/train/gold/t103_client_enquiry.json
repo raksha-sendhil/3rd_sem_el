@@ -1,0 +1,68 @@
+{
+  "doc_id": "e0dd8d3e9b583d2e",
+  "text": "Subject: Need help with a anticipatory bail case\n\nHello, my name is Radhika Mishra. I am a 49-year-old orthopaedic surgeon living in Mangaluru. Swati Shinde has filed a police complaint against me over 55.7 lakh rupees, and the complaint turns a business disagreement into a criminal case. Can your firm advise me on what to do next? You can call me on 06650615460 or email radhika.mishra48@example.in.",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 43
+    },
+    {
+      "text": "Radhika Mishra",
+      "category": "NAME",
+      "start": 68,
+      "end": 82
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 91,
+      "end": 102
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 103,
+      "end": 122
+    },
+    {
+      "text": "Mangaluru",
+      "category": "LOCATION",
+      "start": 133,
+      "end": 142
+    },
+    {
+      "text": "Swati Shinde",
+      "category": "NAME",
+      "start": 144,
+      "end": 156
+    },
+    {
+      "text": "55.7 lakh rupees",
+      "category": "MONEY",
+      "start": 202,
+      "end": 218
+    },
+    {
+      "text": "06650615460",
+      "category": "PHONE",
+      "start": 353,
+      "end": 364
+    },
+    {
+      "text": "radhika.mishra48@example.in",
+      "category": "EMAIL",
+      "start": 374,
+      "end": 401
+    },
+    {
+      "text": "age (49) + occupation (orthopaedic surgeon) + city (Mangaluru) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

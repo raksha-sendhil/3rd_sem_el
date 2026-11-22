@@ -1,0 +1,80 @@
+{
+  "doc_id": "c033859cedec14de",
+  "text": "Case note: A.S. No. 113/2021\nClient: Harpreet Rathore (software engineer, Kolkata)\nOpposing party: Iyer Marine Ltd\nCourt: Calcutta High Court, before Justice Sudhir Dhingra\nFiled on: 21 September 2021\nClaim amount: Rs. 14,03,00,000\nIssue: maritime salvage claim. The vessel is about to leave port.\nAdvice given: Arrest the vessel to secure the salvage claim.\nOutcome: The vessel was arrested until security was furnished.\nRecommended next step: Negotiate the salvage award.\nMatter code: Project Ibis",
+  "spans": [
+    {
+      "text": "A.S. No. 113/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 28
+    },
+    {
+      "text": "Harpreet Rathore",
+      "category": "NAME",
+      "start": 37,
+      "end": 53
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 72
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 74,
+      "end": 81
+    },
+    {
+      "text": "Iyer Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 99,
+      "end": 114
+    },
+    {
+      "text": "Calcutta High Court",
+      "category": "COURT",
+      "start": 122,
+      "end": 141
+    },
+    {
+      "text": "Sudhir Dhingra",
+      "category": "NAME",
+      "start": 158,
+      "end": 172
+    },
+    {
+      "text": "21 September 2021",
+      "category": "DATE",
+      "start": 183,
+      "end": 200
+    },
+    {
+      "text": "Rs. 14,03,00,000",
+      "category": "MONEY",
+      "start": 215,
+      "end": 231
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 239,
+      "end": 261
+    },
+    {
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 487,
+      "end": 499
+    },
+    {
+      "text": "occupation (software engineer) + city (Kolkata) + issue (maritime salvage claim)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

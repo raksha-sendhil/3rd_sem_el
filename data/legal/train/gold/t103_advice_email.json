@@ -1,0 +1,50 @@
+{
+  "doc_id": "8418a7b471a84bde",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Ms. Mishra,\n\nThank you for meeting us on 11 July 2021 about your dispute with Swati Shinde. As we understand it, the complaint turns a business disagreement into a criminal case. The matter is listed before the Mangaluru Sessions Court.\n\nOur advice is to argue that the dispute is civil in nature and offer to cooperate with the investigation. Please collect the partnership papers and the correspondence with the complainant and send copies to this office. We will pursue the full claim of INR 55,70,000/-.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Mishra",
+      "category": "NAME",
+      "start": 49,
+      "end": 55
+    },
+    {
+      "text": "11 July 2021",
+      "category": "DATE",
+      "start": 86,
+      "end": 98
+    },
+    {
+      "text": "Swati Shinde",
+      "category": "NAME",
+      "start": 123,
+      "end": 135
+    },
+    {
+      "text": "Mangaluru Sessions Court",
+      "category": "COURT",
+      "start": 256,
+      "end": 280
+    },
+    {
+      "text": "INR 55,70,000/-",
+      "category": "MONEY",
+      "start": 536,
+      "end": 551
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 568,
+      "end": 583
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

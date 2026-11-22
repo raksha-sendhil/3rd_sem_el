@@ -1,0 +1,98 @@
+{
+  "doc_id": "819f9bf38230264e",
+  "text": "Intake note (Property team, 18/01/2019). Our client Thomas Patel is a 65-year-old mechanical engineer who lives at Bungalow 29, Andheri West, Mumbai 400035 and can be reached on +91 89330 32665 or thomas.patel78@example.in. The client's PAN WVTPP5194Q.\nThe client consulted us about a land dispute matter against Vandana Mittal. The land dispute with Vandana Mittal concerns agricultural land valued at ₹3,29,00,000; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 2212/2019 before the Mumbai District Court on 19/05/2019.",
+  "spans": [
+    {
+      "text": "18/01/2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Thomas Patel",
+      "category": "NAME",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "65-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 101
+    },
+    {
+      "text": "Bungalow 29, Andheri West, Mumbai 400035",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 155
+    },
+    {
+      "text": "+91 89330 32665",
+      "category": "PHONE",
+      "start": 178,
+      "end": 193
+    },
+    {
+      "text": "thomas.patel78@example.in",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 222
+    },
+    {
+      "text": "WVTPP5194Q",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 251
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 285,
+      "end": 297
+    },
+    {
+      "text": "Vandana Mittal",
+      "category": "NAME",
+      "start": 313,
+      "end": 327
+    },
+    {
+      "text": "Vandana Mittal",
+      "category": "NAME",
+      "start": 351,
+      "end": 365
+    },
+    {
+      "text": "₹3,29,00,000",
+      "category": "MONEY",
+      "start": 403,
+      "end": 415
+    },
+    {
+      "text": "O.S. No. 2212/2019",
+      "category": "CASE_NUMBER",
+      "start": 488,
+      "end": 506
+    },
+    {
+      "text": "Mumbai District Court",
+      "category": "COURT",
+      "start": 518,
+      "end": 539
+    },
+    {
+      "text": "19/05/2019",
+      "category": "DATE",
+      "start": 543,
+      "end": 553
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

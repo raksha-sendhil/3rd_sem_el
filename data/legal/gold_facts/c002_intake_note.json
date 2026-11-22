@@ -1,0 +1,85 @@
+{
+  "doc_id": "c20e20a26f6d4ade",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Neha Karve",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "age",
+      "value": "44-year-old",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "schoolteacher",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "Plot 110, Kuvempunagar, Mysuru 570028",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "91976 38376",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "neha.karve@example.com",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "SBKPK9209U",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "tenancy eviction",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Revathi Shetty",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "Rs 8,25,000",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Mysuru District Court",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "R.C.S. No. 2123/2020",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_on",
+      "value": "2 April 2020",
+      "importance": "medium"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "4f61c11b01e85de8",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Sanjay Kamath. I am a 25-year-old paediatrician living in New Delhi. Deepa Kapoor gave me a cheque for Rs 11,10,000 to repay a loan, but the cheque was dishonoured because the signature did not match. Can your firm advise me on what to do next? You can call me on +91 79762 77208 or email sanjay.kamath@example.in.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Sanjay Kamath",
+      "category": "NAME",
+      "start": 64,
+      "end": 77
+    },
+    {
+      "text": "25-year-old",
+      "category": "AGE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 98,
+      "end": 111
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 122,
+      "end": 131
+    },
+    {
+      "text": "Deepa Kapoor",
+      "category": "NAME",
+      "start": 133,
+      "end": 145
+    },
+    {
+      "text": "Rs 11,10,000",
+      "category": "MONEY",
+      "start": 167,
+      "end": 179
+    },
+    {
+      "text": "+91 79762 77208",
+      "category": "PHONE",
+      "start": 328,
+      "end": 343
+    },
+    {
+      "text": "sanjay.kamath@example.in",
+      "category": "EMAIL",
+      "start": 353,
+      "end": 377
+    },
+    {
+      "text": "age (25) + occupation (paediatrician) + city (New Delhi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

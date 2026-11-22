@@ -1,0 +1,68 @@
+{
+  "doc_id": "28449adc1fa75fb7",
+  "text": "Case note: C.C. No. 1013/2023\nClient: Harpreet Rajan (retired bank officer, Thiruvananthapuram)\nOpposing party: Chatterjee Builders Pvt Ltd\nCourt: Thiruvananthapuram District Consumer Disputes Redressal Commission\nFiled on: 22/04/2023\nClaim amount: INR 6,76,00,000/-\nIssue: consumer complaint. Possession of the flat is long overdue.\nAdvice given: Claim interest on the amount paid for every month of delay in possession.\nOutcome: The commission directed the builder to pay interest for the delay.\nRecommended next step: File for execution if the builder does not pay.",
+  "spans": [
+    {
+      "text": "C.C. No. 1013/2023",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Harpreet Rajan",
+      "category": "NAME",
+      "start": 38,
+      "end": 52
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 74
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 76,
+      "end": 94
+    },
+    {
+      "text": "Chatterjee Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 112,
+      "end": 139
+    },
+    {
+      "text": "Thiruvananthapuram District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 147,
+      "end": 213
+    },
+    {
+      "text": "22/04/2023",
+      "category": "DATE",
+      "start": 224,
+      "end": 234
+    },
+    {
+      "text": "INR 6,76,00,000/-",
+      "category": "MONEY",
+      "start": 249,
+      "end": 266
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 274,
+      "end": 292
+    },
+    {
+      "text": "occupation (retired bank officer) + city (Thiruvananthapuram) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

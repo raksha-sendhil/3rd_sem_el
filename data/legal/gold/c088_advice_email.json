@@ -1,0 +1,50 @@
+{
+  "doc_id": "117c33bf44cab3f6",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 2215/2020\n\nDear Ms. Kulkarni,\n\nThank you for meeting us on 2 January 2021 about your dispute with Harish Jadhav. As we understand it, the couple has a young child. The matter is listed before the Family Court at Coimbatore.\n\nOur advice is to agree a joint parenting plan before the second motion. Please collect the school records of the child and the draft parenting plan and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 2215/2020",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 71
+    },
+    {
+      "text": "Kulkarni",
+      "category": "NAME",
+      "start": 82,
+      "end": 90
+    },
+    {
+      "text": "2 January 2021",
+      "category": "DATE",
+      "start": 121,
+      "end": 135
+    },
+    {
+      "text": "Harish Jadhav",
+      "category": "NAME",
+      "start": 160,
+      "end": 173
+    },
+    {
+      "text": "Family Court at Coimbatore",
+      "category": "COURT",
+      "start": 258,
+      "end": 284
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 482,
+      "end": 499
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

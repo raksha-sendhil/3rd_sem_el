@@ -1,0 +1,82 @@
+{
+  "doc_id": "e7cb3ded70abf760",
+  "routing": [
+    {
+      "text": "20/07/2023",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Karthik Kamath",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "53-year-old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "House No. 166, Naupada, Thane 400616",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "+91 90751 42487",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "karthik.kamath75@example.in",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "CWAPK8842U",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "Pioneer Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Rs 28,40,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "Pioneer Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "S.C.C. No. 310/2023",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "21 August 2023",
+      "category": "DATE",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

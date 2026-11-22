@@ -1,0 +1,79 @@
+{
+  "doc_id": "befb389e791032f0",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Neha Karve",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "schoolteacher",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "Mysuru",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "tenancy eviction",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Revathi Shetty",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "INR 8,25,000/-",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Mysuru District Court",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "R.C.S. No. 2123/2020",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_on",
+      "value": "02/04/2020",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "advised",
+      "value": "Collect evidence of unauthorised subletting such as utility bills in the occupant's name",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "outcome",
+      "value": "The tenant admitted the subletting and agreed to vacate",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "next_step",
+      "value": "Record the compromise before the court",
+      "importance": "high"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

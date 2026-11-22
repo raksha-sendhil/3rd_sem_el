@@ -1,0 +1,7 @@
+{
+  "doc_id": "7ebb116147a7eea0",
+  "source": "synthetic-legal-train",
+  "template": "intake_note",
+  "person_id": "h014",
+  "text": "Intake note - Commercial team\nDate: 04/05/2022\nClient: Farhan Tiwari, a 70-year-old college lecturer from Kolkata.\nAddress: Flat 4B, Ballygunge, Kolkata 700055\nPhone: +91 75651 22469. Email: farhan.tiwari@example.com. PAN KWPPT6851J, Aadhaar 3503 2200 4183.\nMatter: cheque bounce\nOpposing party: M/s Trident Traders\nFacts: A cheque for Rs 31,00,000 issued by Trident Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 665732105031 (IFSC KKBK0918990).\nThe matter was filed as S.C.C. No. 2222/2022 before the Judicial Magistrate First Class Court at Kolkata on 6 November 2022."
+}

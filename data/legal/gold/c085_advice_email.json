@@ -1,0 +1,50 @@
+{
+  "doc_id": "c4d0910885f1387c",
+  "text": "Subject: Your divorce by mutual consent matter - Petition No. 2234/2024\n\nDear Mr. Rao,\n\nThank you for meeting us on 09/11/2024 about your dispute with Pranav DSouza. As we understand it, both spouses have lived apart for a long time.\n\nOur advice is to apply to waive the statutory cooling-off period. Please collect proof of separate residence and the consent terms and send copies to this office. We will pursue the full claim of 10.2 lakh rupees.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Petition No. 2234/2024",
+      "category": "CASE_NUMBER",
+      "start": 49,
+      "end": 71
+    },
+    {
+      "text": "Rao",
+      "category": "NAME",
+      "start": 82,
+      "end": 85
+    },
+    {
+      "text": "09/11/2024",
+      "category": "DATE",
+      "start": 116,
+      "end": 126
+    },
+    {
+      "text": "Pranav DSouza",
+      "category": "NAME",
+      "start": 151,
+      "end": 164
+    },
+    {
+      "text": "10.2 lakh rupees",
+      "category": "MONEY",
+      "start": 431,
+      "end": 447
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 464,
+      "end": 476
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

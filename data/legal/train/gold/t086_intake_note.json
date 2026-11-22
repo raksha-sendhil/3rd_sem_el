@@ -1,0 +1,104 @@
+{
+  "doc_id": "039a4f0cd98c0a35",
+  "text": "Intake note (Commercial team, 21 February 2021). Our client Suresh Patel is a 61-year-old government clerk who lives at Bungalow 21, Tallakulam, Madurai 625051 and can be reached on +91 66615 15115 or suresh.patel@example.in. The client's PAN EXJPP4308B.\nThe client consulted us about a breach of contract matter (Project Kingfisher) against Ranade Logistics Ltd. The breach of contract claim against Ranade Logistics Ltd is for Rs 10,50,00,000; the counterparty terminated the contract without notice.\nThe matter was filed as Com. S. No. 1658/2021 before the Madurai Commercial Court on 26 May 2021.",
+  "spans": [
+    {
+      "text": "21 February 2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Suresh Patel",
+      "category": "NAME",
+      "start": 60,
+      "end": 72
+    },
+    {
+      "text": "61-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 106
+    },
+    {
+      "text": "Bungalow 21, Tallakulam, Madurai 625051",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 159
+    },
+    {
+      "text": "+91 66615 15115",
+      "category": "PHONE",
+      "start": 182,
+      "end": 197
+    },
+    {
+      "text": "suresh.patel@example.in",
+      "category": "EMAIL",
+      "start": 201,
+      "end": 224
+    },
+    {
+      "text": "EXJPP4308B",
+      "category": "ID_NUMBER",
+      "start": 243,
+      "end": 253
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 287,
+      "end": 305
+    },
+    {
+      "text": "Project Kingfisher",
+      "category": "MATTER_CODENAME",
+      "start": 314,
+      "end": 332
+    },
+    {
+      "text": "Ranade Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 342,
+      "end": 362
+    },
+    {
+      "text": "Ranade Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 401,
+      "end": 421
+    },
+    {
+      "text": "Rs 10,50,00,000",
+      "category": "MONEY",
+      "start": 429,
+      "end": 444
+    },
+    {
+      "text": "Com. S. No. 1658/2021",
+      "category": "CASE_NUMBER",
+      "start": 527,
+      "end": 548
+    },
+    {
+      "text": "Madurai Commercial Court",
+      "category": "COURT",
+      "start": 560,
+      "end": 584
+    },
+    {
+      "text": "26 May 2021",
+      "category": "DATE",
+      "start": 588,
+      "end": 599
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

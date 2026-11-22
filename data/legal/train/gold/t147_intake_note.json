@@ -1,0 +1,98 @@
+{
+  "doc_id": "207d366d133e23de",
+  "text": "Intake note (Commercial team, 05/01/2025). Our client Priyanka Saxena is a 66-year-old dentist who lives at Plot 15, Baner, Pune 411007 and can be reached on 06580306043 or priyanka.saxena81@example.in. The client's PAN TKYPS4908G.\nThe client consulted us about a cheque bounce matter against Harpreet Shah. A cheque for ₹38,50,000 issued by Harpreet Shah bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 786/2025 before the Judicial Magistrate First Class Court at Pune on 9 April 2025.",
+  "spans": [
+    {
+      "text": "05/01/2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Priyanka Saxena",
+      "category": "NAME",
+      "start": 54,
+      "end": 69
+    },
+    {
+      "text": "66-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 94
+    },
+    {
+      "text": "Plot 15, Baner, Pune 411007",
+      "category": "ADDRESS",
+      "start": 108,
+      "end": 135
+    },
+    {
+      "text": "06580306043",
+      "category": "PHONE",
+      "start": 158,
+      "end": 169
+    },
+    {
+      "text": "priyanka.saxena81@example.in",
+      "category": "EMAIL",
+      "start": 173,
+      "end": 201
+    },
+    {
+      "text": "TKYPS4908G",
+      "category": "ID_NUMBER",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 264,
+      "end": 277
+    },
+    {
+      "text": "Harpreet Shah",
+      "category": "NAME",
+      "start": 293,
+      "end": 306
+    },
+    {
+      "text": "₹38,50,000",
+      "category": "MONEY",
+      "start": 321,
+      "end": 331
+    },
+    {
+      "text": "Harpreet Shah",
+      "category": "NAME",
+      "start": 342,
+      "end": 355
+    },
+    {
+      "text": "S.C.C. No. 786/2025",
+      "category": "CASE_NUMBER",
+      "start": 442,
+      "end": 461
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 473,
+      "end": 518
+    },
+    {
+      "text": "9 April 2025",
+      "category": "DATE",
+      "start": 522,
+      "end": 534
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,110 @@
+{
+  "doc_id": "3539acbb20c673de",
+  "text": "Intake note - Property team\nDate: 13/05/2020\nClient: Neha Nambiar, a 50-year-old hardware dealer from Mysuru.\nAddress: Bungalow 28, Kuvempunagar, Mysuru 570011\nPhone: +91 69079 35518. Email: neha.nambiar50@example.com. PAN LYKPN8191R.\nMatter: consumer complaint\nOpposing party: Pillai Constructions\nFacts: The consumer complaint against Pillai Constructions concerns a flat bought for INR 1,39,00,000/-; the builder never obtained the occupancy certificate.\nThe matter was filed as C.C. No. 2928/2020 before the Mysuru District Consumer Disputes Redressal Commission on 6 August 2020.",
+  "spans": [
+    {
+      "text": "13/05/2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Neha Nambiar",
+      "category": "NAME",
+      "start": 53,
+      "end": 65
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 81,
+      "end": 96
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 102,
+      "end": 108
+    },
+    {
+      "text": "Bungalow 28, Kuvempunagar, Mysuru 570011",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 159
+    },
+    {
+      "text": "+91 69079 35518",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "neha.nambiar50@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 217
+    },
+    {
+      "text": "LYKPN8191R",
+      "category": "ID_NUMBER",
+      "start": 223,
+      "end": 233
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 243,
+      "end": 261
+    },
+    {
+      "text": "Pillai Constructions",
+      "category": "ORGANIZATION",
+      "start": 278,
+      "end": 298
+    },
+    {
+      "text": "Pillai Constructions",
+      "category": "ORGANIZATION",
+      "start": 337,
+      "end": 357
+    },
+    {
+      "text": "INR 1,39,00,000/-",
+      "category": "MONEY",
+      "start": 385,
+      "end": 402
+    },
+    {
+      "text": "C.C. No. 2928/2020",
+      "category": "CASE_NUMBER",
+      "start": 482,
+      "end": 500
+    },
+    {
+      "text": "Mysuru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 512,
+      "end": 566
+    },
+    {
+      "text": "6 August 2020",
+      "category": "DATE",
+      "start": 570,
+      "end": 583
+    },
+    {
+      "text": "age (50) + occupation (hardware dealer) + city (Mysuru) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

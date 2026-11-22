@@ -1,0 +1,44 @@
+{
+  "doc_id": "c921dedb5aa91dfc",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Shah,\n\nThank you for meeting us on 30 August 2022 about your dispute with Shruti More. As we understand it, the cheque came back with the remark account closed. The matter is listed before the Judicial Magistrate First Class Court at Ahmedabad.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Shah",
+      "category": "NAME",
+      "start": 45,
+      "end": 49
+    },
+    {
+      "text": "30 August 2022",
+      "category": "DATE",
+      "start": 80,
+      "end": 94
+    },
+    {
+      "text": "Shruti More",
+      "category": "NAME",
+      "start": 119,
+      "end": 130
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Ahmedabad",
+      "category": "COURT",
+      "start": 238,
+      "end": 288
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 574,
+      "end": 590
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

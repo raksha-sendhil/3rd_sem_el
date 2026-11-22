@@ -1,0 +1,44 @@
+{
+  "doc_id": "8eaccce074bdd871",
+  "text": "Subject: Your wrongful termination matter\n\nDear Mr. Goyal,\n\nThank you for meeting us on 4 September 2022 about your dispute with M/s Hegde Technologies Pvt Ltd. As we understand it, the employee was dismissed without any enquiry.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office. We will pursue the full claim of 48.9 lakh rupees.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Goyal",
+      "category": "NAME",
+      "start": 52,
+      "end": 57
+    },
+    {
+      "text": "4 September 2022",
+      "category": "DATE",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Hegde Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 133,
+      "end": 159
+    },
+    {
+      "text": "48.9 lakh rupees",
+      "category": "MONEY",
+      "start": 434,
+      "end": 450
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 467,
+      "end": 482
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

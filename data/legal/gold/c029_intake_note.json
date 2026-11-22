@@ -1,0 +1,104 @@
+{
+  "doc_id": "69ac6ebd45a1bf8c",
+  "text": "Intake note (Commercial team, 14 October 2021). Our client Ramesh Iyer is a 31-year-old general physician who lives at Plot 95, Madhapur, Hyderabad 500032 and can be reached on 93386 45861 or ramesh.iyer@example.in. The client's PAN YESPI3300R, Aadhaar 4055 6374 1498.\nThe client consulted us about a cheque bounce matter against M/s Fernandes Traders. A cheque for 15.4 lakh rupees issued by Fernandes Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as S.C.C. No. 2388/2021 before the Judicial Magistrate First Class Court at Hyderabad on 05/12/2021.",
+  "spans": [
+    {
+      "text": "14 October 2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 45
+    },
+    {
+      "text": "Ramesh Iyer",
+      "category": "NAME",
+      "start": 59,
+      "end": 70
+    },
+    {
+      "text": "31-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 105
+    },
+    {
+      "text": "Plot 95, Madhapur, Hyderabad 500032",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 154
+    },
+    {
+      "text": "93386 45861",
+      "category": "PHONE",
+      "start": 177,
+      "end": 188
+    },
+    {
+      "text": "ramesh.iyer@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 214
+    },
+    {
+      "text": "YESPI3300R",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "4055 6374 1498",
+      "category": "ID_NUMBER",
+      "start": 253,
+      "end": 267
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 301,
+      "end": 314
+    },
+    {
+      "text": "Fernandes Traders",
+      "category": "ORGANIZATION",
+      "start": 334,
+      "end": 351
+    },
+    {
+      "text": "15.4 lakh rupees",
+      "category": "MONEY",
+      "start": 366,
+      "end": 382
+    },
+    {
+      "text": "Fernandes Traders",
+      "category": "ORGANIZATION",
+      "start": 393,
+      "end": 410
+    },
+    {
+      "text": "S.C.C. No. 2388/2021",
+      "category": "CASE_NUMBER",
+      "start": 499,
+      "end": 519
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hyderabad",
+      "category": "COURT",
+      "start": 531,
+      "end": 581
+    },
+    {
+      "text": "05/12/2021",
+      "category": "DATE",
+      "start": 585,
+      "end": 595
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

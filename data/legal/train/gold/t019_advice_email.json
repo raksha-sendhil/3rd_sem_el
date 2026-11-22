@@ -1,0 +1,56 @@
+{
+  "doc_id": "336a95d7a9eace07",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 763/2022\n\nDear Mr. Bansal,\n\nThank you for meeting us on 2 January 2023 about your dispute with Shetty Technologies Pvt Ltd. As we understand it, the dismissal followed a one-sided domestic enquiry. The matter is listed before the Ahmedabad Labour Court.\n\nOur advice is to demand the domestic enquiry report and challenge it for breach of natural justice. Please collect the charge sheet, the enquiry report and the reply to the charge sheet and send copies to this office. We will pursue the full claim of Rs 21,40,000.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 763/2022",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 66
+    },
+    {
+      "text": "Bansal",
+      "category": "NAME",
+      "start": 77,
+      "end": 83
+    },
+    {
+      "text": "2 January 2023",
+      "category": "DATE",
+      "start": 114,
+      "end": 128
+    },
+    {
+      "text": "Shetty Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 153,
+      "end": 180
+    },
+    {
+      "text": "Ahmedabad Labour Court",
+      "category": "COURT",
+      "start": 288,
+      "end": 310
+    },
+    {
+      "text": "Rs 21,40,000",
+      "category": "MONEY",
+      "start": 564,
+      "end": 576
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 593,
+      "end": 610
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

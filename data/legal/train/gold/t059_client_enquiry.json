@@ -1,0 +1,80 @@
+{
+  "doc_id": "75373da95394e995",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Smita DSouza. I am a 62-year-old government clerk living in Thiruvananthapuram. I have a tenancy problem with Pallavi Desai involving 5 lakh rupees in rent, and the tenant has stopped paying rent for many months. My case number is R.C.A. No. 780/2021 in the Thiruvananthapuram District Court. Can your firm advise me on what to do next? You can call me on +91 81489 06590 or email smita.dsouza37@example.in.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Smita DSouza",
+      "category": "NAME",
+      "start": 67,
+      "end": 79
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 88,
+      "end": 99
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 100,
+      "end": 116
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 127,
+      "end": 145
+    },
+    {
+      "text": "Pallavi Desai",
+      "category": "NAME",
+      "start": 177,
+      "end": 190
+    },
+    {
+      "text": "5 lakh rupees",
+      "category": "MONEY",
+      "start": 201,
+      "end": 214
+    },
+    {
+      "text": "R.C.A. No. 780/2021",
+      "category": "CASE_NUMBER",
+      "start": 298,
+      "end": 317
+    },
+    {
+      "text": "Thiruvananthapuram District Court",
+      "category": "COURT",
+      "start": 325,
+      "end": 358
+    },
+    {
+      "text": "+91 81489 06590",
+      "category": "PHONE",
+      "start": 423,
+      "end": 438
+    },
+    {
+      "text": "smita.dsouza37@example.in",
+      "category": "EMAIL",
+      "start": 448,
+      "end": 473
+    },
+    {
+      "text": "age (62) + occupation (government clerk) + city (Thiruvananthapuram) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "f320e7325628979e",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Smita Desai. I am a 25-year-old electrician living in Chennai. I have a tenancy problem with Debashish More involving INR 4,80,000/- in rent, and the tenant has stopped paying rent for many months. Can your firm advise me on what to do next? You can call me on 08131867094 or email smita.desai@example.in.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Smita Desai",
+      "category": "NAME",
+      "start": 67,
+      "end": 78
+    },
+    {
+      "text": "25-year-old",
+      "category": "AGE",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 99,
+      "end": 110
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 121,
+      "end": 128
+    },
+    {
+      "text": "Debashish More",
+      "category": "NAME",
+      "start": 160,
+      "end": 174
+    },
+    {
+      "text": "INR 4,80,000/-",
+      "category": "MONEY",
+      "start": 185,
+      "end": 199
+    },
+    {
+      "text": "08131867094",
+      "category": "PHONE",
+      "start": 328,
+      "end": 339
+    },
+    {
+      "text": "smita.desai@example.in",
+      "category": "EMAIL",
+      "start": 349,
+      "end": 371
+    },
+    {
+      "text": "age (25) + occupation (electrician) + city (Chennai) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

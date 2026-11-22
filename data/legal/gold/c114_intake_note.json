@@ -1,0 +1,98 @@
+{
+  "doc_id": "38fe00087ad80d47",
+  "text": "Intake note (Commercial team, 26/10/2021). Our client Bhavana Mehra is a 67-year-old textile trader who lives at Flat 16C, Fatehgunj, Vadodara 390056 and can be reached on +91 67612 71642 or bhavana.mehra@example.in. The client's PAN HZHPM7633S.\nThe client consulted us about a geographical-indication dispute matter against Das Exports. The geographical-indication dispute with Das Exports involves sales of Rs. 2,96,00,000; the rival product uses the protected regional name on its label.\nThe matter was filed as CS(COMM) 1138/2022 before the Gujarat High Court on 19/03/2022.",
+  "spans": [
+    {
+      "text": "26/10/2021",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Bhavana Mehra",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 99
+    },
+    {
+      "text": "Flat 16C, Fatehgunj, Vadodara 390056",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 149
+    },
+    {
+      "text": "+91 67612 71642",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "bhavana.mehra@example.in",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 215
+    },
+    {
+      "text": "HZHPM7633S",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 278,
+      "end": 309
+    },
+    {
+      "text": "Das Exports",
+      "category": "ORGANIZATION",
+      "start": 325,
+      "end": 336
+    },
+    {
+      "text": "Das Exports",
+      "category": "ORGANIZATION",
+      "start": 379,
+      "end": 390
+    },
+    {
+      "text": "Rs. 2,96,00,000",
+      "category": "MONEY",
+      "start": 409,
+      "end": 424
+    },
+    {
+      "text": "CS(COMM) 1138/2022",
+      "category": "CASE_NUMBER",
+      "start": 515,
+      "end": 533
+    },
+    {
+      "text": "Gujarat High Court",
+      "category": "COURT",
+      "start": 545,
+      "end": 563
+    },
+    {
+      "text": "19/03/2022",
+      "category": "DATE",
+      "start": 567,
+      "end": 577
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

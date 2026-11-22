@@ -1,0 +1,80 @@
+{
+  "doc_id": "36ae59414f59b08f",
+  "text": "Case note: CS(COMM) 1714/2025\nClient: Manoj Reddy (chartered accountant, Madurai)\nOpposing party: Skyline Foods Pvt Ltd\nCourt: Madras High Court, before Justice Lalitha Sundaram\nFiled on: 05/11/2025\nClaim amount: ₹5,97,00,000\nIssue: geographical-indication dispute. A conflicting trademark was registered.\nAdvice given: File a rectification petition against the conflicting trademark.\nOutcome: The conflicting trademark was removed from the register.\nRecommended next step: Monitor new trademark applications.\nWitness: Rekha Mittal",
+  "spans": [
+    {
+      "text": "CS(COMM) 1714/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Manoj Reddy",
+      "category": "NAME",
+      "start": 38,
+      "end": 49
+    },
+    {
+      "text": "chartered accountant",
+      "category": "OCCUPATION",
+      "start": 51,
+      "end": 71
+    },
+    {
+      "text": "Madurai",
+      "category": "LOCATION",
+      "start": 73,
+      "end": 80
+    },
+    {
+      "text": "Skyline Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 98,
+      "end": 119
+    },
+    {
+      "text": "Madras High Court",
+      "category": "COURT",
+      "start": 127,
+      "end": 144
+    },
+    {
+      "text": "Lalitha Sundaram",
+      "category": "NAME",
+      "start": 161,
+      "end": 177
+    },
+    {
+      "text": "05/11/2025",
+      "category": "DATE",
+      "start": 188,
+      "end": 198
+    },
+    {
+      "text": "₹5,97,00,000",
+      "category": "MONEY",
+      "start": 213,
+      "end": 225
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 233,
+      "end": 264
+    },
+    {
+      "text": "Rekha Mittal",
+      "category": "NAME",
+      "start": 519,
+      "end": 531
+    },
+    {
+      "text": "occupation (chartered accountant) + city (Madurai) + issue (geographical-indication dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

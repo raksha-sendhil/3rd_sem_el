@@ -1,0 +1,74 @@
+{
+  "doc_id": "f9e8f26e2fad9022",
+  "text": "Case note: Complaint No. 2692/2020\nClient: Yogesh Bhosale (nurse, Vadodara)\nOpposing party: Kulkarni Technologies Pvt Ltd\nCourt: Vadodara Labour Court\nFiled on: 5 February 2020\nClaim amount: ₹4,00,000\nIssue: wrongful termination. The dismissal followed a one-sided domestic enquiry.\nAdvice given: Demand the domestic enquiry report and challenge it for breach of natural justice.\nOutcome: The enquiry was set aside for breach of natural justice.\nRecommended next step: Attend the fresh enquiry.\nWitness: Harpreet Iyer",
+  "spans": [
+    {
+      "text": "Complaint No. 2692/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 34
+    },
+    {
+      "text": "Yogesh Bhosale",
+      "category": "NAME",
+      "start": 43,
+      "end": 57
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 59,
+      "end": 64
+    },
+    {
+      "text": "Vadodara",
+      "category": "LOCATION",
+      "start": 66,
+      "end": 74
+    },
+    {
+      "text": "Kulkarni Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 92,
+      "end": 121
+    },
+    {
+      "text": "Vadodara Labour Court",
+      "category": "COURT",
+      "start": 129,
+      "end": 150
+    },
+    {
+      "text": "5 February 2020",
+      "category": "DATE",
+      "start": 161,
+      "end": 176
+    },
+    {
+      "text": "₹4,00,000",
+      "category": "MONEY",
+      "start": 191,
+      "end": 200
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 208,
+      "end": 228
+    },
+    {
+      "text": "Harpreet Iyer",
+      "category": "NAME",
+      "start": 504,
+      "end": 517
+    },
+    {
+      "text": "occupation (nurse) + city (Vadodara) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,122 @@
+{
+  "doc_id": "08c2cf619d7218dc",
+  "text": "Intake note - Commercial team\nDate: 03/07/2024\nClient: Harish Srivastava, a 53-year-old government clerk from Pune.\nAddress: Plot 35, Kothrud, Pune 411009\nPhone: +91 87694 21184. Email: harish.srivastava@example.in. PAN QPEPS3767L.\nMatter: cheque bounce\nOpposing party: Crescent Traders\nFacts: A cheque for INR 28,40,000/- issued by M/s Crescent Traders bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 798418146245 (IFSC KKBK0125946).\nThe matter was filed as CC/24/2024 before the Judicial Magistrate First Class Court at Pune on 26 August 2024.",
+  "spans": [
+    {
+      "text": "03/07/2024",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Harish Srivastava",
+      "category": "NAME",
+      "start": 55,
+      "end": 72
+    },
+    {
+      "text": "53-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 114
+    },
+    {
+      "text": "Plot 35, Kothrud, Pune 411009",
+      "category": "ADDRESS",
+      "start": 125,
+      "end": 154
+    },
+    {
+      "text": "+91 87694 21184",
+      "category": "PHONE",
+      "start": 162,
+      "end": 177
+    },
+    {
+      "text": "harish.srivastava@example.in",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 214
+    },
+    {
+      "text": "QPEPS3767L",
+      "category": "ID_NUMBER",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 240,
+      "end": 253
+    },
+    {
+      "text": "Crescent Traders",
+      "category": "ORGANIZATION",
+      "start": 270,
+      "end": 286
+    },
+    {
+      "text": "INR 28,40,000/-",
+      "category": "MONEY",
+      "start": 307,
+      "end": 322
+    },
+    {
+      "text": "Crescent Traders",
+      "category": "ORGANIZATION",
+      "start": 337,
+      "end": 353
+    },
+    {
+      "text": "798418146245",
+      "category": "FINANCIAL",
+      "start": 469,
+      "end": 481
+    },
+    {
+      "text": "KKBK0125946",
+      "category": "FINANCIAL",
+      "start": 488,
+      "end": 499
+    },
+    {
+      "text": "CC/24/2024",
+      "category": "CASE_NUMBER",
+      "start": 526,
+      "end": 536
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 548,
+      "end": 593
+    },
+    {
+      "text": "26 August 2024",
+      "category": "DATE",
+      "start": 597,
+      "end": 611
+    },
+    {
+      "text": "age (53) + occupation (government clerk) + city (Pune) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "2424f78b91de275b",
+  "text": "Intake note (Property team, 02/12/2019). Our client Sanjay Pandey is a 71-year-old government clerk who lives at Plot 28, Banjara Hills, Hyderabad 500036 and can be reached on 87409 66750 or sanjay.pandey@example.in. The client's PAN YNDPP8970V.\nThe client consulted us about a consumer complaint matter against Subramanian Builders Pvt Ltd. The consumer complaint against Subramanian Builders Pvt Ltd concerns a flat bought for ₹8,52,00,000; possession of the flat is long overdue.\nThe matter was filed as C.C. No. 2471/2020 before the Hyderabad District Consumer Disputes Redressal Commission on 25/04/2020.",
+  "spans": [
+    {
+      "text": "02/12/2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Sanjay Pandey",
+      "category": "NAME",
+      "start": 52,
+      "end": 65
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 99
+    },
+    {
+      "text": "Plot 28, Banjara Hills, Hyderabad 500036",
+      "category": "ADDRESS",
+      "start": 113,
+      "end": 153
+    },
+    {
+      "text": "87409 66750",
+      "category": "PHONE",
+      "start": 176,
+      "end": 187
+    },
+    {
+      "text": "sanjay.pandey@example.in",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 215
+    },
+    {
+      "text": "YNDPP8970V",
+      "category": "ID_NUMBER",
+      "start": 234,
+      "end": 244
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 278,
+      "end": 296
+    },
+    {
+      "text": "Subramanian Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 312,
+      "end": 340
+    },
+    {
+      "text": "Subramanian Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 373,
+      "end": 401
+    },
+    {
+      "text": "₹8,52,00,000",
+      "category": "MONEY",
+      "start": 429,
+      "end": 441
+    },
+    {
+      "text": "C.C. No. 2471/2020",
+      "category": "CASE_NUMBER",
+      "start": 507,
+      "end": 525
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 537,
+      "end": 594
+    },
+    {
+      "text": "25/04/2020",
+      "category": "DATE",
+      "start": 598,
+      "end": 608
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

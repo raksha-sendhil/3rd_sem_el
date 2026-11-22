@@ -1,0 +1,110 @@
+{
+  "doc_id": "384393c8dfc5b4b9",
+  "text": "Intake note (Commercial team, 01/03/2019). Our client Abhishek Saxena is a 53-year-old shopkeeper who lives at Plot 65, Lajpat Nagar, New Delhi 110029 and can be reached on +91 89941 89927 or abhishek.saxena@example.com. The client's PAN DCGPS1569Z.\nThe client consulted us about a cheque bounce matter against Nikhil Subramanian. A cheque for INR 28,50,000/- issued by Nikhil Subramanian bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 186432930048 (IFSC UTIB0433558).\nThe matter was filed as CC/2573/2019 before the Judicial Magistrate First Class Court at New Delhi on 12 September 2019.",
+  "spans": [
+    {
+      "text": "01/03/2019",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Abhishek Saxena",
+      "category": "NAME",
+      "start": 54,
+      "end": 69
+    },
+    {
+      "text": "53-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 97
+    },
+    {
+      "text": "Plot 65, Lajpat Nagar, New Delhi 110029",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 150
+    },
+    {
+      "text": "+91 89941 89927",
+      "category": "PHONE",
+      "start": 173,
+      "end": 188
+    },
+    {
+      "text": "abhishek.saxena@example.com",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 219
+    },
+    {
+      "text": "DCGPS1569Z",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 248
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 282,
+      "end": 295
+    },
+    {
+      "text": "Nikhil Subramanian",
+      "category": "NAME",
+      "start": 311,
+      "end": 329
+    },
+    {
+      "text": "INR 28,50,000/-",
+      "category": "MONEY",
+      "start": 344,
+      "end": 359
+    },
+    {
+      "text": "Nikhil Subramanian",
+      "category": "NAME",
+      "start": 370,
+      "end": 388
+    },
+    {
+      "text": "186432930048",
+      "category": "FINANCIAL",
+      "start": 506,
+      "end": 518
+    },
+    {
+      "text": "UTIB0433558",
+      "category": "FINANCIAL",
+      "start": 525,
+      "end": 536
+    },
+    {
+      "text": "CC/2573/2019",
+      "category": "CASE_NUMBER",
+      "start": 563,
+      "end": 575
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at New Delhi",
+      "category": "COURT",
+      "start": 587,
+      "end": 637
+    },
+    {
+      "text": "12 September 2019",
+      "category": "DATE",
+      "start": 641,
+      "end": 658
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

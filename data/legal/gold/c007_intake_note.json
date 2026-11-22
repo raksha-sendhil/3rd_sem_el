@@ -1,0 +1,110 @@
+{
+  "doc_id": "c1ba13ae4467bd9f",
+  "text": "Intake note - Commercial team\nDate: 14 April 2021\nClient: Harish Subramanian, a 70-year-old retired bank officer from Nashik.\nAddress: Bungalow 12, Gangapur Road, Nashik 422024\nPhone: +91 77499 92467. Email: harish.subramanian4@example.com. PAN KLAPS9582Q.\nMatter: cheque bounce\nOpposing party: Sujata Sathe\nFacts: A cheque for INR 15,10,000/- issued by Sujata Sathe bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as S.C.C. No. 2572/2021 before the Judicial Magistrate First Class Court at Nashik on 11 July 2021.",
+  "spans": [
+    {
+      "text": "14 April 2021",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Harish Subramanian",
+      "category": "NAME",
+      "start": 58,
+      "end": 76
+    },
+    {
+      "text": "70-year-old",
+      "category": "AGE",
+      "start": 80,
+      "end": 91
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 92,
+      "end": 112
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 118,
+      "end": 124
+    },
+    {
+      "text": "Bungalow 12, Gangapur Road, Nashik 422024",
+      "category": "ADDRESS",
+      "start": 135,
+      "end": 176
+    },
+    {
+      "text": "+91 77499 92467",
+      "category": "PHONE",
+      "start": 184,
+      "end": 199
+    },
+    {
+      "text": "harish.subramanian4@example.com",
+      "category": "EMAIL",
+      "start": 208,
+      "end": 239
+    },
+    {
+      "text": "KLAPS9582Q",
+      "category": "ID_NUMBER",
+      "start": 245,
+      "end": 255
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 265,
+      "end": 278
+    },
+    {
+      "text": "Sujata Sathe",
+      "category": "NAME",
+      "start": 295,
+      "end": 307
+    },
+    {
+      "text": "INR 15,10,000/-",
+      "category": "MONEY",
+      "start": 328,
+      "end": 343
+    },
+    {
+      "text": "Sujata Sathe",
+      "category": "NAME",
+      "start": 354,
+      "end": 366
+    },
+    {
+      "text": "S.C.C. No. 2572/2021",
+      "category": "CASE_NUMBER",
+      "start": 464,
+      "end": 484
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nashik",
+      "category": "COURT",
+      "start": 496,
+      "end": 543
+    },
+    {
+      "text": "11 July 2021",
+      "category": "DATE",
+      "start": 547,
+      "end": 559
+    },
+    {
+      "text": "age (70) + occupation (retired bank officer) + city (Nashik) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

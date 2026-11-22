@@ -1,0 +1,50 @@
+{
+  "doc_id": "1d49c40e001ba20e",
+  "text": "Subject: Your land dispute matter\n\nDear Ms. Bhandari,\n\nThank you for meeting us on 06/05/2021 about your dispute with Farhan Chandran. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Vadodara District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of ₹4,53,00,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "Bhandari",
+      "category": "NAME",
+      "start": 44,
+      "end": 52
+    },
+    {
+      "text": "06/05/2021",
+      "category": "DATE",
+      "start": 83,
+      "end": 93
+    },
+    {
+      "text": "Farhan Chandran",
+      "category": "NAME",
+      "start": 118,
+      "end": 133
+    },
+    {
+      "text": "Vadodara District Court",
+      "category": "COURT",
+      "start": 246,
+      "end": 269
+    },
+    {
+      "text": "₹4,53,00,000",
+      "category": "MONEY",
+      "start": 476,
+      "end": 488
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 505,
+      "end": 520
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

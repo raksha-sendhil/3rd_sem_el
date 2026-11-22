@@ -1,0 +1,44 @@
+{
+  "doc_id": "f43b2e009b516e03",
+  "text": "Subject: Your consumer complaint matter\n\nDear Ms. Jadhav,\n\nThank you for meeting us on 30 December 2021 about your dispute with Coastal Constructions. As we understand it, possession of the flat is long overdue. The matter is listed before the Hyderabad District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Jadhav",
+      "category": "NAME",
+      "start": 50,
+      "end": 56
+    },
+    {
+      "text": "30 December 2021",
+      "category": "DATE",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Coastal Constructions",
+      "category": "ORGANIZATION",
+      "start": 128,
+      "end": 149
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 244,
+      "end": 301
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 533,
+      "end": 552
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

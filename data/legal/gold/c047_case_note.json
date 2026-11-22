@@ -1,0 +1,68 @@
+{
+  "doc_id": "f64b1b99b9d4dd13",
+  "text": "Case note: R.C.S. No. 2439/2025\nClient: Arjun Deshpande (architect, Hubballi)\nOpposing party: Mohan Natarajan\nCourt: Hubballi District Court\nFiled on: 19 January 2025\nClaim amount: ₹7,30,000\nIssue: tenancy eviction. The landlord is trying to evict the tenant after a rent increase was refused.\nAdvice given: Deposit the admitted rent in court to avoid an order striking off the defence.\nOutcome: The tenant's defence was kept on record and the suit continues.\nRecommended next step: Keep depositing the rent every month.",
+  "spans": [
+    {
+      "text": "R.C.S. No. 2439/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Arjun Deshpande",
+      "category": "NAME",
+      "start": 40,
+      "end": 55
+    },
+    {
+      "text": "architect",
+      "category": "OCCUPATION",
+      "start": 57,
+      "end": 66
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 68,
+      "end": 76
+    },
+    {
+      "text": "Mohan Natarajan",
+      "category": "NAME",
+      "start": 94,
+      "end": 109
+    },
+    {
+      "text": "Hubballi District Court",
+      "category": "COURT",
+      "start": 117,
+      "end": 140
+    },
+    {
+      "text": "19 January 2025",
+      "category": "DATE",
+      "start": 151,
+      "end": 166
+    },
+    {
+      "text": "₹7,30,000",
+      "category": "MONEY",
+      "start": 181,
+      "end": 190
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 198,
+      "end": 214
+    },
+    {
+      "text": "occupation (architect) + city (Hubballi) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

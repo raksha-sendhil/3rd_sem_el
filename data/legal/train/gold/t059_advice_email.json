@@ -1,0 +1,50 @@
+{
+  "doc_id": "93dc0d14a2005aef",
+  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 780/2021\n\nDear Ms. DSouza,\n\nThank you for meeting us on 17 July 2021 about your dispute with Pallavi Desai. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Thiruvananthapuram District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.A. No. 780/2021",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 59
+    },
+    {
+      "text": "DSouza",
+      "category": "NAME",
+      "start": 70,
+      "end": 76
+    },
+    {
+      "text": "17 July 2021",
+      "category": "DATE",
+      "start": 107,
+      "end": 119
+    },
+    {
+      "text": "Pallavi Desai",
+      "category": "NAME",
+      "start": 144,
+      "end": 157
+    },
+    {
+      "text": "Thiruvananthapuram District Court",
+      "category": "COURT",
+      "start": 264,
+      "end": 297
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 549,
+      "end": 564
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

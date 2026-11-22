@@ -1,0 +1,116 @@
+{
+  "doc_id": "58468b34a5d13c56",
+  "text": "Intake note - Property team\nDate: 23 June 2020\nClient: Prakash Khan, a 69-year-old orthopaedic surgeon from Panaji.\nAddress: Bungalow 13, Miramar, Panaji 403012\nPhone: 84838 40947. Email: prakash.khan@example.in. PAN AFAPK9276L, Aadhaar 6609 0627 7078.\nMatter: land dispute\nOpposing party: Rahul Reddy\nFacts: The land dispute with Rahul Reddy concerns agricultural land valued at Rs. 4,60,00,000; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as R.C.S. No. 940/2020 before the Panaji District Court on 16 July 2020.",
+  "spans": [
+    {
+      "text": "23 June 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 46
+    },
+    {
+      "text": "Prakash Khan",
+      "category": "NAME",
+      "start": 55,
+      "end": 67
+    },
+    {
+      "text": "69-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 102
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 114
+    },
+    {
+      "text": "Bungalow 13, Miramar, Panaji 403012",
+      "category": "ADDRESS",
+      "start": 125,
+      "end": 160
+    },
+    {
+      "text": "84838 40947",
+      "category": "PHONE",
+      "start": 168,
+      "end": 179
+    },
+    {
+      "text": "prakash.khan@example.in",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 211
+    },
+    {
+      "text": "AFAPK9276L",
+      "category": "ID_NUMBER",
+      "start": 217,
+      "end": 227
+    },
+    {
+      "text": "6609 0627 7078",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 251
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 261,
+      "end": 273
+    },
+    {
+      "text": "Rahul Reddy",
+      "category": "NAME",
+      "start": 290,
+      "end": 301
+    },
+    {
+      "text": "Rahul Reddy",
+      "category": "NAME",
+      "start": 331,
+      "end": 342
+    },
+    {
+      "text": "Rs. 4,60,00,000",
+      "category": "MONEY",
+      "start": 380,
+      "end": 395
+    },
+    {
+      "text": "R.C.S. No. 940/2020",
+      "category": "CASE_NUMBER",
+      "start": 479,
+      "end": 498
+    },
+    {
+      "text": "Panaji District Court",
+      "category": "COURT",
+      "start": 510,
+      "end": 531
+    },
+    {
+      "text": "16 July 2020",
+      "category": "DATE",
+      "start": 535,
+      "end": 547
+    },
+    {
+      "text": "age (69) + occupation (orthopaedic surgeon) + city (Panaji) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

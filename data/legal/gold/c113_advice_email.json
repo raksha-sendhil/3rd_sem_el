@@ -1,0 +1,56 @@
+{
+  "doc_id": "f52e80c0088ff885",
+  "text": "Subject: Your maritime salvage claim matter (Project Osprey)\n\nDear Mr. Tiwari,\n\nThank you for meeting us on 14 November 2021 about your dispute with Crescent Shipping Pvt Ltd. As we understand it, the vessel is about to leave port. The matter is listed before the Delhi High Court.\n\nOur advice is to arrest the vessel to secure the salvage claim. Please collect the salvage agreement and the logbook entries and send copies to this office. We will pursue the full claim of Rs. 5,09,00,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 36
+    },
+    {
+      "text": "Project Osprey",
+      "category": "MATTER_CODENAME",
+      "start": 45,
+      "end": 59
+    },
+    {
+      "text": "Tiwari",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "14 November 2021",
+      "category": "DATE",
+      "start": 108,
+      "end": 124
+    },
+    {
+      "text": "Crescent Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 149,
+      "end": 174
+    },
+    {
+      "text": "Delhi High Court",
+      "category": "COURT",
+      "start": 264,
+      "end": 280
+    },
+    {
+      "text": "Rs. 5,09,00,000",
+      "category": "MONEY",
+      "start": 473,
+      "end": 488
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 505,
+      "end": 520
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,110 @@
+{
+  "doc_id": "cd3243c07f20f911",
+  "text": "Intake note - Criminal team\nDate: 17 April 2020\nClient: Vandana Mukherjee, a 37-year-old mechanical engineer from Nashik.\nAddress: Bungalow 22, Gangapur Road, Nashik 422058\nPhone: 76531 77894. Email: vandana.mukherjee58@example.com. PAN ZUYPM3577B.\nMatter: anticipatory bail\nOpposing party: Harish More\nFacts: The anticipatory bail matter arises from a complaint by Harish More about ₹74,80,000; the complainant alleges cheating over a failed deal.\nThe matter was filed as Anticipatory Bail Application No. 2883/2020 before the Nashik Sessions Court on 31 August 2020.",
+  "spans": [
+    {
+      "text": "17 April 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 47
+    },
+    {
+      "text": "Vandana Mukherjee",
+      "category": "NAME",
+      "start": 56,
+      "end": 73
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 108
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 114,
+      "end": 120
+    },
+    {
+      "text": "Bungalow 22, Gangapur Road, Nashik 422058",
+      "category": "ADDRESS",
+      "start": 131,
+      "end": 172
+    },
+    {
+      "text": "76531 77894",
+      "category": "PHONE",
+      "start": 180,
+      "end": 191
+    },
+    {
+      "text": "vandana.mukherjee58@example.com",
+      "category": "EMAIL",
+      "start": 200,
+      "end": 231
+    },
+    {
+      "text": "ZUYPM3577B",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 257,
+      "end": 274
+    },
+    {
+      "text": "Harish More",
+      "category": "NAME",
+      "start": 291,
+      "end": 302
+    },
+    {
+      "text": "Harish More",
+      "category": "NAME",
+      "start": 366,
+      "end": 377
+    },
+    {
+      "text": "₹74,80,000",
+      "category": "MONEY",
+      "start": 384,
+      "end": 394
+    },
+    {
+      "text": "Anticipatory Bail Application No. 2883/2020",
+      "category": "CASE_NUMBER",
+      "start": 473,
+      "end": 516
+    },
+    {
+      "text": "Nashik Sessions Court",
+      "category": "COURT",
+      "start": 528,
+      "end": 549
+    },
+    {
+      "text": "31 August 2020",
+      "category": "DATE",
+      "start": 553,
+      "end": 567
+    },
+    {
+      "text": "age (37) + occupation (mechanical engineer) + city (Nashik) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

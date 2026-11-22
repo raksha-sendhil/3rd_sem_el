@@ -1,0 +1,122 @@
+{
+  "doc_id": "97e0125ae39a9829",
+  "text": "Intake note - Commercial team\nDate: 17/12/2018\nClient: Meera Iyer, a 60-year-old journalist from Nagpur.\nAddress: Bungalow 35, Dharampeth, Nagpur 440018\nPhone: 61394 67542. Email: meera.iyer@example.in. PAN KKTPI5196B.\nMatter: cheque bounce\nOpposing party: Ramesh Mishra\nFacts: A cheque for Rs 44,40,000 issued by Ramesh Mishra bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 675102993471 (IFSC KKBK0773640).\nThe matter was filed as S.C.C. No. 2493/2019 before the Judicial Magistrate First Class Court at Nagpur on 8 January 2019.",
+  "spans": [
+    {
+      "text": "17/12/2018",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Meera Iyer",
+      "category": "NAME",
+      "start": 55,
+      "end": 65
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 81,
+      "end": 91
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 97,
+      "end": 103
+    },
+    {
+      "text": "Bungalow 35, Dharampeth, Nagpur 440018",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 152
+    },
+    {
+      "text": "61394 67542",
+      "category": "PHONE",
+      "start": 160,
+      "end": 171
+    },
+    {
+      "text": "meera.iyer@example.in",
+      "category": "EMAIL",
+      "start": 180,
+      "end": 201
+    },
+    {
+      "text": "KKTPI5196B",
+      "category": "ID_NUMBER",
+      "start": 207,
+      "end": 217
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 227,
+      "end": 240
+    },
+    {
+      "text": "Ramesh Mishra",
+      "category": "NAME",
+      "start": 257,
+      "end": 270
+    },
+    {
+      "text": "Rs 44,40,000",
+      "category": "MONEY",
+      "start": 291,
+      "end": 303
+    },
+    {
+      "text": "Ramesh Mishra",
+      "category": "NAME",
+      "start": 314,
+      "end": 327
+    },
+    {
+      "text": "675102993471",
+      "category": "FINANCIAL",
+      "start": 453,
+      "end": 465
+    },
+    {
+      "text": "KKBK0773640",
+      "category": "FINANCIAL",
+      "start": 472,
+      "end": 483
+    },
+    {
+      "text": "S.C.C. No. 2493/2019",
+      "category": "CASE_NUMBER",
+      "start": 510,
+      "end": 530
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Nagpur",
+      "category": "COURT",
+      "start": 542,
+      "end": 589
+    },
+    {
+      "text": "8 January 2019",
+      "category": "DATE",
+      "start": 593,
+      "end": 607
+    },
+    {
+      "text": "age (60) + occupation (journalist) + city (Nagpur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

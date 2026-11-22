@@ -1,0 +1,44 @@
+{
+  "doc_id": "68f1c9719b79dd9f",
+  "text": "Subject: Your wrongful termination matter\n\nDear Mr. Pai,\n\nThank you for meeting us on 22 December 2020 about your dispute with Emerald Technologies Pvt Ltd. As we understand it, the dismissal followed a one-sided domestic enquiry. The matter is listed before the Panaji Labour Court.\n\nOur advice is to demand the domestic enquiry report and challenge it for breach of natural justice. Please collect the charge sheet, the enquiry report and the reply to the charge sheet and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Pai",
+      "category": "NAME",
+      "start": 52,
+      "end": 55
+    },
+    {
+      "text": "22 December 2020",
+      "category": "DATE",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Emerald Technologies Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 127,
+      "end": 155
+    },
+    {
+      "text": "Panaji Labour Court",
+      "category": "COURT",
+      "start": 263,
+      "end": 282
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 518,
+      "end": 530
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

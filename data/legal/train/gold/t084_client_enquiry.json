@@ -1,0 +1,80 @@
+{
+  "doc_id": "8469e85512692cab",
+  "text": "Subject: Need help with a breach of contract case\n\nHello, my name is Divya Qureshi. I am a 62-year-old general physician living in Kochi. Our company has a breach of contract claim of ₹17,35,00,000 against Coastal Industries, and the goods supplied were defective. My case number is CS(COMM) 1469/2020 in the Kochi Commercial Court. Can your firm advise me on what to do next? You can call me on 08013563997 or email divya.qureshi@example.in.",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Divya Qureshi",
+      "category": "NAME",
+      "start": 69,
+      "end": 82
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 91,
+      "end": 102
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 103,
+      "end": 120
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 131,
+      "end": 136
+    },
+    {
+      "text": "₹17,35,00,000",
+      "category": "MONEY",
+      "start": 184,
+      "end": 197
+    },
+    {
+      "text": "Coastal Industries",
+      "category": "ORGANIZATION",
+      "start": 206,
+      "end": 224
+    },
+    {
+      "text": "CS(COMM) 1469/2020",
+      "category": "CASE_NUMBER",
+      "start": 283,
+      "end": 301
+    },
+    {
+      "text": "Kochi Commercial Court",
+      "category": "COURT",
+      "start": 309,
+      "end": 331
+    },
+    {
+      "text": "08013563997",
+      "category": "PHONE",
+      "start": 396,
+      "end": 407
+    },
+    {
+      "text": "divya.qureshi@example.in",
+      "category": "EMAIL",
+      "start": 417,
+      "end": 441
+    },
+    {
+      "text": "age (62) + occupation (general physician) + city (Kochi) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

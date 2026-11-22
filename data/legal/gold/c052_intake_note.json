@@ -1,0 +1,110 @@
+{
+  "doc_id": "136c10d0fa7f31c9",
+  "text": "Intake note - Property team\nDate: 15 October 2022\nClient: Ananya Shinde, a 69-year-old general physician from New Delhi.\nAddress: Flat 5C, Lajpat Nagar, New Delhi 110032\nPhone: 09345664067. Email: ananya.shinde@example.com. PAN MVNPS1807D.\nMatter: tenancy eviction\nOpposing party: Anirudh Gaikwad\nFacts: The tenancy dispute with Anirudh Gaikwad concerns rent arrears of 7.3 lakh rupees; the landlord needs the premises for the family's own use.\nThe matter was filed as R.C.S. No. 2697/2023 before the New Delhi District Court on 18 March 2023.",
+  "spans": [
+    {
+      "text": "15 October 2022",
+      "category": "DATE",
+      "start": 34,
+      "end": 49
+    },
+    {
+      "text": "Ananya Shinde",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "69-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 104
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 119
+    },
+    {
+      "text": "Flat 5C, Lajpat Nagar, New Delhi 110032",
+      "category": "ADDRESS",
+      "start": 130,
+      "end": 169
+    },
+    {
+      "text": "09345664067",
+      "category": "PHONE",
+      "start": 177,
+      "end": 188
+    },
+    {
+      "text": "ananya.shinde@example.com",
+      "category": "EMAIL",
+      "start": 197,
+      "end": 222
+    },
+    {
+      "text": "MVNPS1807D",
+      "category": "ID_NUMBER",
+      "start": 228,
+      "end": 238
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 248,
+      "end": 264
+    },
+    {
+      "text": "Anirudh Gaikwad",
+      "category": "NAME",
+      "start": 281,
+      "end": 296
+    },
+    {
+      "text": "Anirudh Gaikwad",
+      "category": "NAME",
+      "start": 329,
+      "end": 344
+    },
+    {
+      "text": "7.3 lakh rupees",
+      "category": "MONEY",
+      "start": 370,
+      "end": 385
+    },
+    {
+      "text": "R.C.S. No. 2697/2023",
+      "category": "CASE_NUMBER",
+      "start": 469,
+      "end": 489
+    },
+    {
+      "text": "New Delhi District Court",
+      "category": "COURT",
+      "start": 501,
+      "end": 525
+    },
+    {
+      "text": "18 March 2023",
+      "category": "DATE",
+      "start": 529,
+      "end": 542
+    },
+    {
+      "text": "age (69) + occupation (general physician) + city (New Delhi) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

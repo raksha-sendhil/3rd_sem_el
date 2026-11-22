@@ -1,0 +1,110 @@
+{
+  "doc_id": "a1cf396280bab15e",
+  "text": "Intake note - Commercial team\nDate: 13 August 2019\nClient: Pooja Bhandari, a 59-year-old government clerk from Jaipur.\nAddress: House No. 195, Vaishali Nagar, Jaipur 302008\nPhone: +91 63036 19186. Email: pooja.bhandari@example.in. PAN XALPB1154U.\nMatter: cheque bounce\nOpposing party: Anand Menon\nFacts: A cheque for 19.4 lakh rupees issued by Anand Menon bounced: the cheque was dishonoured because the signature did not match.\nThe matter was filed as CC/185/2019 before the Judicial Magistrate First Class Court at Jaipur on 29 October 2019.",
+  "spans": [
+    {
+      "text": "13 August 2019",
+      "category": "DATE",
+      "start": 36,
+      "end": 50
+    },
+    {
+      "text": "Pooja Bhandari",
+      "category": "NAME",
+      "start": 59,
+      "end": 73
+    },
+    {
+      "text": "59-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 105
+    },
+    {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 111,
+      "end": 117
+    },
+    {
+      "text": "House No. 195, Vaishali Nagar, Jaipur 302008",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 172
+    },
+    {
+      "text": "+91 63036 19186",
+      "category": "PHONE",
+      "start": 180,
+      "end": 195
+    },
+    {
+      "text": "pooja.bhandari@example.in",
+      "category": "EMAIL",
+      "start": 204,
+      "end": 229
+    },
+    {
+      "text": "XALPB1154U",
+      "category": "ID_NUMBER",
+      "start": 235,
+      "end": 245
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 255,
+      "end": 268
+    },
+    {
+      "text": "Anand Menon",
+      "category": "NAME",
+      "start": 285,
+      "end": 296
+    },
+    {
+      "text": "19.4 lakh rupees",
+      "category": "MONEY",
+      "start": 317,
+      "end": 333
+    },
+    {
+      "text": "Anand Menon",
+      "category": "NAME",
+      "start": 344,
+      "end": 355
+    },
+    {
+      "text": "CC/185/2019",
+      "category": "CASE_NUMBER",
+      "start": 453,
+      "end": 464
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Jaipur",
+      "category": "COURT",
+      "start": 476,
+      "end": 523
+    },
+    {
+      "text": "29 October 2019",
+      "category": "DATE",
+      "start": 527,
+      "end": 542
+    },
+    {
+      "text": "age (59) + occupation (government clerk) + city (Jaipur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

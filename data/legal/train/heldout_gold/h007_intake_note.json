@@ -1,0 +1,116 @@
+{
+  "doc_id": "243298c254db1427",
+  "text": "Intake note - Family team\nDate: 14 February 2021\nClient: Shalini Khan, a 38-year-old railway employee from Kolhapur.\nAddress: Plot 36, Rajarampuri, Kolhapur 416054\nPhone: 97993 78962. Email: shalini.khan@example.com. PAN ZZZPK8739Z, Aadhaar 6593 3547 0213.\nMatter: divorce by mutual consent\nOpposing party: Ishita Gowda\nFacts: The divorce by mutual consent with Ishita Gowda includes a settlement of 48.9 lakh rupees; both spouses have lived apart for a long time.\nThe matter was filed as Petition No. 860/2021 before the Family Court at Kolhapur on 13 April 2021.",
+  "spans": [
+    {
+      "text": "14 February 2021",
+      "category": "DATE",
+      "start": 32,
+      "end": 48
+    },
+    {
+      "text": "Shalini Khan",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "38-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 101
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 115
+    },
+    {
+      "text": "Plot 36, Rajarampuri, Kolhapur 416054",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 163
+    },
+    {
+      "text": "97993 78962",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "shalini.khan@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 215
+    },
+    {
+      "text": "ZZZPK8739Z",
+      "category": "ID_NUMBER",
+      "start": 221,
+      "end": 231
+    },
+    {
+      "text": "6593 3547 0213",
+      "category": "ID_NUMBER",
+      "start": 241,
+      "end": 255
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 265,
+      "end": 290
+    },
+    {
+      "text": "Ishita Gowda",
+      "category": "NAME",
+      "start": 307,
+      "end": 319
+    },
+    {
+      "text": "Ishita Gowda",
+      "category": "NAME",
+      "start": 362,
+      "end": 374
+    },
+    {
+      "text": "48.9 lakh rupees",
+      "category": "MONEY",
+      "start": 400,
+      "end": 416
+    },
+    {
+      "text": "Petition No. 860/2021",
+      "category": "CASE_NUMBER",
+      "start": 489,
+      "end": 510
+    },
+    {
+      "text": "Family Court at Kolhapur",
+      "category": "COURT",
+      "start": 522,
+      "end": 546
+    },
+    {
+      "text": "13 April 2021",
+      "category": "DATE",
+      "start": 550,
+      "end": 563
+    },
+    {
+      "text": "age (38) + occupation (railway employee) + city (Kolhapur) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,80 @@
+{
+  "doc_id": "d4f9efa1e04f73be",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Nandini Pawar. I am a 30-year-old truck driver living in Kozhikode. Emerald Traders gave me a cheque for Rs 37,00,000 to repay a loan, but the cheque came back with the remark account closed. My case number is S.C.C. No. 2625/2024 in the Judicial Magistrate First Class Court at Kozhikode. Can your firm advise me on what to do next? You can call me on +91 71888 74107 or email nandini.pawar47@example.com.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Nandini Pawar",
+      "category": "NAME",
+      "start": 64,
+      "end": 77
+    },
+    {
+      "text": "30-year-old",
+      "category": "AGE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 98,
+      "end": 110
+    },
+    {
+      "text": "Kozhikode",
+      "category": "LOCATION",
+      "start": 121,
+      "end": 130
+    },
+    {
+      "text": "Emerald Traders",
+      "category": "ORGANIZATION",
+      "start": 132,
+      "end": 147
+    },
+    {
+      "text": "Rs 37,00,000",
+      "category": "MONEY",
+      "start": 169,
+      "end": 181
+    },
+    {
+      "text": "S.C.C. No. 2625/2024",
+      "category": "CASE_NUMBER",
+      "start": 274,
+      "end": 294
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kozhikode",
+      "category": "COURT",
+      "start": 302,
+      "end": 352
+    },
+    {
+      "text": "+91 71888 74107",
+      "category": "PHONE",
+      "start": 417,
+      "end": 432
+    },
+    {
+      "text": "nandini.pawar47@example.com",
+      "category": "EMAIL",
+      "start": 442,
+      "end": 469
+    },
+    {
+      "text": "age (30) + occupation (truck driver) + city (Kozhikode) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

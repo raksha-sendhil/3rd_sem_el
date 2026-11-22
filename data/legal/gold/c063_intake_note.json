@@ -1,0 +1,110 @@
+{
+  "doc_id": "1b16dc577c482ea2",
+  "text": "Intake note - Property team\nDate: 25 December 2024\nClient: Sameer Dutta, a 46-year-old bank manager from Ahmedabad.\nAddress: House No. 42, Satellite, Ahmedabad 380050\nPhone: 07490747725. Email: sameer.dutta@example.in. PAN DFVPD9429Q.\nMatter: consumer complaint\nOpposing party: Krishnan Constructions\nFacts: The consumer complaint against Krishnan Constructions concerns a flat bought for Rs 3,69,00,000; the flat was handed over with serious construction defects.\nThe matter was filed as CC/1328/2025 before the Ahmedabad District Consumer Disputes Redressal Commission on 26 March 2025.",
+  "spans": [
+    {
+      "text": "25 December 2024",
+      "category": "DATE",
+      "start": 34,
+      "end": 50
+    },
+    {
+      "text": "Sameer Dutta",
+      "category": "NAME",
+      "start": 59,
+      "end": 71
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 99
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 105,
+      "end": 114
+    },
+    {
+      "text": "House No. 42, Satellite, Ahmedabad 380050",
+      "category": "ADDRESS",
+      "start": 125,
+      "end": 166
+    },
+    {
+      "text": "07490747725",
+      "category": "PHONE",
+      "start": 174,
+      "end": 185
+    },
+    {
+      "text": "sameer.dutta@example.in",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 217
+    },
+    {
+      "text": "DFVPD9429Q",
+      "category": "ID_NUMBER",
+      "start": 223,
+      "end": 233
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 243,
+      "end": 261
+    },
+    {
+      "text": "Krishnan Constructions",
+      "category": "ORGANIZATION",
+      "start": 278,
+      "end": 300
+    },
+    {
+      "text": "Krishnan Constructions",
+      "category": "ORGANIZATION",
+      "start": 339,
+      "end": 361
+    },
+    {
+      "text": "Rs 3,69,00,000",
+      "category": "MONEY",
+      "start": 389,
+      "end": 403
+    },
+    {
+      "text": "CC/1328/2025",
+      "category": "CASE_NUMBER",
+      "start": 489,
+      "end": 501
+    },
+    {
+      "text": "Ahmedabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 513,
+      "end": 570
+    },
+    {
+      "text": "26 March 2025",
+      "category": "DATE",
+      "start": 574,
+      "end": 587
+    },
+    {
+      "text": "age (46) + occupation (bank manager) + city (Ahmedabad) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

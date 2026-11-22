@@ -1,0 +1,44 @@
+{
+  "doc_id": "88052bfe1cb75e87",
+  "text": "Subject: Your wrongful termination matter\n\nDear Ms. Khan,\n\nThank you for meeting us on 2 September 2019 about your dispute with M/s Harbour Pharma Ltd. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Hubballi Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Khan",
+      "category": "NAME",
+      "start": 52,
+      "end": 56
+    },
+    {
+      "text": "2 September 2019",
+      "category": "DATE",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Harbour Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 132,
+      "end": 150
+    },
+    {
+      "text": "Hubballi Labour Court",
+      "category": "COURT",
+      "start": 253,
+      "end": 274
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 462,
+      "end": 478
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

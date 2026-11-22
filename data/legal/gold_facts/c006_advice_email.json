@@ -1,0 +1,43 @@
+{
+  "doc_id": "39e86bdf4ed69664",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Kamath",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Pioneer Textiles Pvt Ltd",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "S.C.C. No. 310/2023",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "advised",
+      "value": "argue that a stop-payment instruction does not protect the drawer when the debt is admitted",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "documents_requested",
+      "value": "the written acknowledgement of the debt and the stop-payment memo",
+      "importance": "high"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

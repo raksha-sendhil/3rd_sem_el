@@ -1,0 +1,50 @@
+{
+  "doc_id": "82fff4f2e5a24250",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 995/2024\n\nDear Mr. Bose,\n\nThank you for meeting us on 12/02/2025 about your dispute with M/s Emerald Enterprises. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Pune.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 995/2024",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Bose",
+      "category": "NAME",
+      "start": 67,
+      "end": 71
+    },
+    {
+      "text": "12/02/2025",
+      "category": "DATE",
+      "start": 102,
+      "end": 112
+    },
+    {
+      "text": "Emerald Enterprises",
+      "category": "ORGANIZATION",
+      "start": 141,
+      "end": 160
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 278,
+      "end": 323
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 564,
+      "end": 583
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

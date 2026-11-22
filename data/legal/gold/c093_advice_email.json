@@ -1,0 +1,50 @@
+{
+  "doc_id": "a0bf28acfb66e2e8",
+  "text": "Subject: Your anticipatory bail matter - Anticipatory Bail Application No. 2328/2022\n\nDear Mr. Rajan,\n\nThank you for meeting us on 11/03/2023 about your dispute with Thomas Desai. As we understand it, the complaint alleges negligence during treatment. The matter is listed before the Mangaluru Sessions Court.\n\nOur advice is to rely on the expert committee opinion that there was no gross negligence. Please collect the treatment records and the expert committee opinion and send copies to this office.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Anticipatory Bail Application No. 2328/2022",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 84
+    },
+    {
+      "text": "Rajan",
+      "category": "NAME",
+      "start": 95,
+      "end": 100
+    },
+    {
+      "text": "11/03/2023",
+      "category": "DATE",
+      "start": 131,
+      "end": 141
+    },
+    {
+      "text": "Thomas Desai",
+      "category": "NAME",
+      "start": 166,
+      "end": 178
+    },
+    {
+      "text": "Mangaluru Sessions Court",
+      "category": "COURT",
+      "start": 284,
+      "end": 308
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 518,
+      "end": 530
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

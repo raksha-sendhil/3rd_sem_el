@@ -1,0 +1,104 @@
+{
+  "doc_id": "fd55aa8558351782",
+  "text": "Intake note (Criminal team, 20 November 2019). Our client Thomas Shinde is a 50-year-old electrician who lives at Plot 62, Adyar, Chennai 600008 and can be reached on 07861097007 or thomas.shinde35@example.in. The client's PAN KEAPS8384Y, Aadhaar 9259 1174 8756.\nThe client consulted us about a anticipatory bail matter against Yogesh Shetty. The anticipatory bail matter arises from a complaint by Yogesh Shetty about ₹37,90,000; the complaint alleges negligence during treatment.\nThe matter was filed as Anticipatory Bail Application No. 1015/2020 before the Chennai Sessions Court on 14 February 2020.",
+  "spans": [
+    {
+      "text": "20 November 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Thomas Shinde",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "electrician",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "Plot 62, Adyar, Chennai 600008",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 144
+    },
+    {
+      "text": "07861097007",
+      "category": "PHONE",
+      "start": 167,
+      "end": 178
+    },
+    {
+      "text": "thomas.shinde35@example.in",
+      "category": "EMAIL",
+      "start": 182,
+      "end": 208
+    },
+    {
+      "text": "KEAPS8384Y",
+      "category": "ID_NUMBER",
+      "start": 227,
+      "end": 237
+    },
+    {
+      "text": "9259 1174 8756",
+      "category": "ID_NUMBER",
+      "start": 247,
+      "end": 261
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 295,
+      "end": 312
+    },
+    {
+      "text": "Yogesh Shetty",
+      "category": "NAME",
+      "start": 328,
+      "end": 341
+    },
+    {
+      "text": "Yogesh Shetty",
+      "category": "NAME",
+      "start": 399,
+      "end": 412
+    },
+    {
+      "text": "₹37,90,000",
+      "category": "MONEY",
+      "start": 419,
+      "end": 429
+    },
+    {
+      "text": "Anticipatory Bail Application No. 1015/2020",
+      "category": "CASE_NUMBER",
+      "start": 506,
+      "end": 549
+    },
+    {
+      "text": "Chennai Sessions Court",
+      "category": "COURT",
+      "start": 561,
+      "end": 583
+    },
+    {
+      "text": "14 February 2020",
+      "category": "DATE",
+      "start": 587,
+      "end": 603
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

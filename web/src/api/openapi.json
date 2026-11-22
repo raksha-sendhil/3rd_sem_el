@@ -789,7 +789,9 @@
       "enum": [
        "context_dump",
        "stepwise",
-       "interception"
+       "interception",
+       "direct",
+       "linkage"
       ],
       "title": "Kind"
      },
@@ -1575,7 +1577,8 @@
       "type": "string",
       "enum": [
        "ledger",
-       "off"
+       "off",
+       "pool"
       ],
       "title": "Monitor"
      },

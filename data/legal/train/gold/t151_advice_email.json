@@ -1,0 +1,50 @@
+{
+  "doc_id": "1effbc6cac32a46a",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 2253/2024\n\nDear Mr. Gokhale,\n\nThank you for meeting us on 11/07/2024 about your dispute with Everest Pharma Ltd. As we understand it, the employer offered to settle.\n\nOur advice is to negotiate a settlement of gratuity and notice pay. Please collect the salary slips and the gratuity calculation and send copies to this office. We will pursue the full claim of ₹26,50,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 2253/2024",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 67
+    },
+    {
+      "text": "Gokhale",
+      "category": "NAME",
+      "start": 78,
+      "end": 85
+    },
+    {
+      "text": "11/07/2024",
+      "category": "DATE",
+      "start": 116,
+      "end": 126
+    },
+    {
+      "text": "Everest Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 151,
+      "end": 169
+    },
+    {
+      "text": "₹26,50,000",
+      "category": "MONEY",
+      "start": 419,
+      "end": 429
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 446,
+      "end": 461
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

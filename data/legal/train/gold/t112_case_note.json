@@ -1,0 +1,74 @@
+{
+  "doc_id": "a9c169020fd359e1",
+  "text": "Case note: Petition No. 1041/2024\nClient: Sanjay Natarajan (schoolteacher, Ahmedabad)\nOpposing party: Madhuri Joshi\nCourt: Family Court at Ahmedabad\nFiled on: 12 October 2024\nClaim amount: ₹7,05,000\nIssue: divorce by mutual consent. The spouses agree on a single payment instead of maintenance.\nAdvice given: Record the one-time alimony settlement in the consent terms.\nOutcome: The settlement was recorded and the divorce granted.\nRecommended next step: Transfer the settlement amount before the decree.\nWitness: Karthik Rane",
+  "spans": [
+    {
+      "text": "Petition No. 1041/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 33
+    },
+    {
+      "text": "Sanjay Natarajan",
+      "category": "NAME",
+      "start": 42,
+      "end": 58
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 60,
+      "end": 73
+    },
+    {
+      "text": "Ahmedabad",
+      "category": "LOCATION",
+      "start": 75,
+      "end": 84
+    },
+    {
+      "text": "Madhuri Joshi",
+      "category": "NAME",
+      "start": 102,
+      "end": 115
+    },
+    {
+      "text": "Family Court at Ahmedabad",
+      "category": "COURT",
+      "start": 123,
+      "end": 148
+    },
+    {
+      "text": "12 October 2024",
+      "category": "DATE",
+      "start": 159,
+      "end": 174
+    },
+    {
+      "text": "₹7,05,000",
+      "category": "MONEY",
+      "start": 189,
+      "end": 198
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 206,
+      "end": 231
+    },
+    {
+      "text": "Karthik Rane",
+      "category": "NAME",
+      "start": 514,
+      "end": 526
+    },
+    {
+      "text": "occupation (schoolteacher) + city (Ahmedabad) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

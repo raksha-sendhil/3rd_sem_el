@@ -1,0 +1,68 @@
+{
+  "doc_id": "0b05e80efad1838d",
+  "text": "Case note: CC/2899/2019\nClient: Swati Naidu (journalist, Jaipur)\nOpposing party: Vindhya Enterprises\nCourt: Judicial Magistrate First Class Court at Jaipur\nFiled on: 29 September 2019\nClaim amount: ₹21,60,000\nIssue: cheque bounce. The cheque was returned unpaid for insufficient funds.\nAdvice given: Send a statutory demand notice to the drawer and file the complaint if the drawer does not pay.\nOutcome: The drawer paid the full cheque amount after the first hearing.\nRecommended next step: Withdraw the complaint once the payment clears.",
+  "spans": [
+    {
+      "text": "CC/2899/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 23
+    },
+    {
+      "text": "Swati Naidu",
+      "category": "NAME",
+      "start": 32,
+      "end": 43
+    },
+    {
+      "text": "journalist",
+      "category": "OCCUPATION",
+      "start": 45,
+      "end": 55
+    },
+    {
+      "text": "Jaipur",
+      "category": "LOCATION",
+      "start": 57,
+      "end": 63
+    },
+    {
+      "text": "Vindhya Enterprises",
+      "category": "ORGANIZATION",
+      "start": 81,
+      "end": 100
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Jaipur",
+      "category": "COURT",
+      "start": 108,
+      "end": 155
+    },
+    {
+      "text": "29 September 2019",
+      "category": "DATE",
+      "start": 166,
+      "end": 183
+    },
+    {
+      "text": "₹21,60,000",
+      "category": "MONEY",
+      "start": 198,
+      "end": 208
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 216,
+      "end": 229
+    },
+    {
+      "text": "occupation (journalist) + city (Jaipur) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

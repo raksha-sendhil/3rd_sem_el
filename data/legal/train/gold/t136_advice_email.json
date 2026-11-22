@@ -1,0 +1,56 @@
+{
+  "doc_id": "da025abe1468d98a",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 571/2022\n\nDear Ms. Pillai,\n\nThank you for meeting us on 21 September 2022 about your dispute with Tushar Goyal. As we understand it, the tenant has stopped paying rent for many months. The matter is listed before the Pune District Court.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office. We will pursue the full claim of INR 4,90,000/-.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 571/2022",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 59
+    },
+    {
+      "text": "Pillai",
+      "category": "NAME",
+      "start": 70,
+      "end": 76
+    },
+    {
+      "text": "21 September 2022",
+      "category": "DATE",
+      "start": 107,
+      "end": 124
+    },
+    {
+      "text": "Tushar Goyal",
+      "category": "NAME",
+      "start": 149,
+      "end": 161
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 268,
+      "end": 287
+    },
+    {
+      "text": "INR 4,90,000/-",
+      "category": "MONEY",
+      "start": 557,
+      "end": 571
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 588,
+      "end": 600
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

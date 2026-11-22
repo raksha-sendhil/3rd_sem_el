@@ -1,0 +1,50 @@
+{
+  "doc_id": "34298a8e1064af4f",
+  "text": "Subject: Your cheque bounce matter\n\nDear Mr. Iyer,\n\nThank you for meeting us on 2 February 2022 about your dispute with Fernandes Traders. As we understand it, the cheque was returned unpaid for insufficient funds. The matter is listed before the Judicial Magistrate First Class Court at Hyderabad.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of ₹15,40,000.\n\nRegards,\nAdv. Tejas Oberoi",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Iyer",
+      "category": "NAME",
+      "start": 45,
+      "end": 49
+    },
+    {
+      "text": "2 February 2022",
+      "category": "DATE",
+      "start": 80,
+      "end": 95
+    },
+    {
+      "text": "Fernandes Traders",
+      "category": "ORGANIZATION",
+      "start": 120,
+      "end": 137
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hyderabad",
+      "category": "COURT",
+      "start": 247,
+      "end": 297
+    },
+    {
+      "text": "₹15,40,000",
+      "category": "MONEY",
+      "start": 594,
+      "end": 604
+    },
+    {
+      "text": "Tejas Oberoi",
+      "category": "NAME",
+      "start": 621,
+      "end": 633
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

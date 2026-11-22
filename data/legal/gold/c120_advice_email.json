@@ -1,0 +1,50 @@
+{
+  "doc_id": "f2076c4ef751ffa1",
+  "text": "Subject: Your cross-border insolvency matter - C.P.(IB) No. 2834/2025\n\nDear Ms. Chatterjee,\n\nThank you for meeting us on 16 May 2025 about your dispute with M/s Skyline Holdings Ltd. As we understand it, the debtor is in insolvency proceedings in two countries. The matter is listed before the NCLT Mumbai.\n\nOur advice is to file the claim with the resolution professional before the deadline. Please collect the loan documents and the statement of the amount due and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 37
+    },
+    {
+      "text": "C.P.(IB) No. 2834/2025",
+      "category": "CASE_NUMBER",
+      "start": 47,
+      "end": 69
+    },
+    {
+      "text": "Chatterjee",
+      "category": "NAME",
+      "start": 80,
+      "end": 90
+    },
+    {
+      "text": "16 May 2025",
+      "category": "DATE",
+      "start": 121,
+      "end": 132
+    },
+    {
+      "text": "Skyline Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 161,
+      "end": 181
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 294,
+      "end": 305
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 511,
+      "end": 523
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

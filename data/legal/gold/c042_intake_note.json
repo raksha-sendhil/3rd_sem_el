@@ -1,0 +1,110 @@
+{
+  "doc_id": "a2224b96532af93d",
+  "text": "Intake note (Commercial team, 19 June 2025). Our client Tanvi Shetty is a 26-year-old software engineer who lives at House No. 102, Peelamedu, Coimbatore 641055 and can be reached on 91977 13549 or tanvi.shetty@example.in. The client's PAN PEVPS3567G.\nThe client consulted us about a cheque bounce matter against Fernandes Textiles Pvt Ltd. A cheque for INR 14,10,000/- issued by Fernandes Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 152329384230 (IFSC SBIN0593907).\nThe matter was filed as S.C.C. No. 1817/2025 before the Judicial Magistrate First Class Court at Coimbatore on 28 November 2025.",
+  "spans": [
+    {
+      "text": "19 June 2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Tanvi Shetty",
+      "category": "NAME",
+      "start": 56,
+      "end": 68
+    },
+    {
+      "text": "26-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 103
+    },
+    {
+      "text": "House No. 102, Peelamedu, Coimbatore 641055",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 160
+    },
+    {
+      "text": "91977 13549",
+      "category": "PHONE",
+      "start": 183,
+      "end": 194
+    },
+    {
+      "text": "tanvi.shetty@example.in",
+      "category": "EMAIL",
+      "start": 198,
+      "end": 221
+    },
+    {
+      "text": "PEVPS3567G",
+      "category": "ID_NUMBER",
+      "start": 240,
+      "end": 250
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 284,
+      "end": 297
+    },
+    {
+      "text": "Fernandes Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 313,
+      "end": 339
+    },
+    {
+      "text": "INR 14,10,000/-",
+      "category": "MONEY",
+      "start": 354,
+      "end": 369
+    },
+    {
+      "text": "Fernandes Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 380,
+      "end": 406
+    },
+    {
+      "text": "152329384230",
+      "category": "FINANCIAL",
+      "start": 522,
+      "end": 534
+    },
+    {
+      "text": "SBIN0593907",
+      "category": "FINANCIAL",
+      "start": 541,
+      "end": 552
+    },
+    {
+      "text": "S.C.C. No. 1817/2025",
+      "category": "CASE_NUMBER",
+      "start": 579,
+      "end": 599
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 611,
+      "end": 662
+    },
+    {
+      "text": "28 November 2025",
+      "category": "DATE",
+      "start": 666,
+      "end": 682
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

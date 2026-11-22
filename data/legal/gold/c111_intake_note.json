@@ -1,0 +1,116 @@
+{
+  "doc_id": "9001f5ce510d70b5",
+  "text": "Intake note - Commercial team\nDate: 2 June 2021\nClient: Harpreet Rathore, a 73-year-old software engineer from Kolkata.\nAddress: Plot 52, Ballygunge, Kolkata 700039\nPhone: 83118 42458. Email: harpreet.rathore@example.in. PAN ZXTPR3135L.\nMatter: maritime salvage claim (Project Ibis)\nOpposing party: Iyer Marine Ltd\nFacts: The maritime salvage claim against Iyer Marine Ltd is for Rs. 14,03,00,000; the vessel is about to leave port.\nThe matter was filed as A.S. No. 113/2021 before the Calcutta High Court on 21 September 2021.",
+  "spans": [
+    {
+      "text": "2 June 2021",
+      "category": "DATE",
+      "start": 36,
+      "end": 47
+    },
+    {
+      "text": "Harpreet Rathore",
+      "category": "NAME",
+      "start": 56,
+      "end": 72
+    },
+    {
+      "text": "73-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 105
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 111,
+      "end": 118
+    },
+    {
+      "text": "Plot 52, Ballygunge, Kolkata 700039",
+      "category": "ADDRESS",
+      "start": 129,
+      "end": 164
+    },
+    {
+      "text": "83118 42458",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "harpreet.rathore@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 219
+    },
+    {
+      "text": "ZXTPR3135L",
+      "category": "ID_NUMBER",
+      "start": 225,
+      "end": 235
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 245,
+      "end": 267
+    },
+    {
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 269,
+      "end": 281
+    },
+    {
+      "text": "Iyer Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 299,
+      "end": 314
+    },
+    {
+      "text": "Iyer Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 357,
+      "end": 372
+    },
+    {
+      "text": "Rs. 14,03,00,000",
+      "category": "MONEY",
+      "start": 380,
+      "end": 396
+    },
+    {
+      "text": "A.S. No. 113/2021",
+      "category": "CASE_NUMBER",
+      "start": 457,
+      "end": 474
+    },
+    {
+      "text": "Calcutta High Court",
+      "category": "COURT",
+      "start": 486,
+      "end": 505
+    },
+    {
+      "text": "21 September 2021",
+      "category": "DATE",
+      "start": 509,
+      "end": 526
+    },
+    {
+      "text": "age (73) + occupation (software engineer) + city (Kolkata) + issue (maritime salvage claim)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

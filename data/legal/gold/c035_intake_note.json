@@ -1,0 +1,122 @@
+{
+  "doc_id": "7f64fbbcb0f49660",
+  "text": "Intake note - Commercial team\nDate: 29 March 2020\nClient: Prakash Rajan, a 60-year-old government clerk from Surat.\nAddress: Flat 15D, Adajan, Surat 395008\nPhone: +91 60882 85881. Email: prakash.rajan@example.com. PAN XPNPR8671A.\nMatter: cheque bounce\nOpposing party: Ghosh Enterprises\nFacts: A cheque for ₹6,10,000 issued by Ghosh Enterprises bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 399307095915 (IFSC KKBK0215173).\nThe matter was filed as S.C.C. No. 702/2020 before the Judicial Magistrate First Class Court at Surat on 31 August 2020.",
+  "spans": [
+    {
+      "text": "29 March 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Prakash Rajan",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 109,
+      "end": 114
+    },
+    {
+      "text": "Flat 15D, Adajan, Surat 395008",
+      "category": "ADDRESS",
+      "start": 125,
+      "end": 155
+    },
+    {
+      "text": "+91 60882 85881",
+      "category": "PHONE",
+      "start": 163,
+      "end": 178
+    },
+    {
+      "text": "prakash.rajan@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 212
+    },
+    {
+      "text": "XPNPR8671A",
+      "category": "ID_NUMBER",
+      "start": 218,
+      "end": 228
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 251
+    },
+    {
+      "text": "Ghosh Enterprises",
+      "category": "ORGANIZATION",
+      "start": 268,
+      "end": 285
+    },
+    {
+      "text": "₹6,10,000",
+      "category": "MONEY",
+      "start": 306,
+      "end": 315
+    },
+    {
+      "text": "Ghosh Enterprises",
+      "category": "ORGANIZATION",
+      "start": 326,
+      "end": 343
+    },
+    {
+      "text": "399307095915",
+      "category": "FINANCIAL",
+      "start": 461,
+      "end": 473
+    },
+    {
+      "text": "KKBK0215173",
+      "category": "FINANCIAL",
+      "start": 480,
+      "end": 491
+    },
+    {
+      "text": "S.C.C. No. 702/2020",
+      "category": "CASE_NUMBER",
+      "start": 518,
+      "end": 537
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Surat",
+      "category": "COURT",
+      "start": 549,
+      "end": 595
+    },
+    {
+      "text": "31 August 2020",
+      "category": "DATE",
+      "start": 599,
+      "end": 613
+    },
+    {
+      "text": "age (60) + occupation (government clerk) + city (Surat) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

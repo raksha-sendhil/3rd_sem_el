@@ -1,0 +1,44 @@
+{
+  "doc_id": "abcdf98d7500ecfe",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 2572/2021\n\nDear Mr. Subramanian,\n\nThank you for meeting us on 3 April 2022 about your dispute with Sujata Sathe. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 2572/2021",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 57
+    },
+    {
+      "text": "Subramanian",
+      "category": "NAME",
+      "start": 68,
+      "end": 79
+    },
+    {
+      "text": "3 April 2022",
+      "category": "DATE",
+      "start": 110,
+      "end": 122
+    },
+    {
+      "text": "Sujata Sathe",
+      "category": "NAME",
+      "start": 147,
+      "end": 159
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 521,
+      "end": 538
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

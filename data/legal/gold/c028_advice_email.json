@@ -1,0 +1,56 @@
+{
+  "doc_id": "a0bdd2892305aee6",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 831/2019\n\nDear Ms. Dalvi,\n\nThank you for meeting us on 28 February 2019 about your dispute with Arjun Rajan. As we understand it, the cheque was returned unpaid for insufficient funds. The matter is listed before the Judicial Magistrate First Class Court at Coimbatore.\n\nOur advice is to send a statutory demand notice to the drawer and file the complaint if the drawer does not pay. Please collect the original dishonoured cheque, the bank return memo and proof that the demand notice was delivered and send copies to this office. We will pursue the full claim of Rs 27,60,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 831/2019",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Dalvi",
+      "category": "NAME",
+      "start": 67,
+      "end": 72
+    },
+    {
+      "text": "28 February 2019",
+      "category": "DATE",
+      "start": 103,
+      "end": 119
+    },
+    {
+      "text": "Arjun Rajan",
+      "category": "NAME",
+      "start": 144,
+      "end": 155
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 265,
+      "end": 316
+    },
+    {
+      "text": "Rs 27,60,000",
+      "category": "MONEY",
+      "start": 613,
+      "end": 625
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 642,
+      "end": 657
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

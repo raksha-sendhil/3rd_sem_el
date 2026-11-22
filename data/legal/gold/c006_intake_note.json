@@ -1,0 +1,98 @@
+{
+  "doc_id": "e7cb3ded70abf760",
+  "text": "Intake note (Commercial team, 20/07/2023). Our client Karthik Kamath is a 53-year-old nurse who lives at House No. 166, Naupada, Thane 400616 and can be reached on +91 90751 42487 or karthik.kamath75@example.in. The client's PAN CWAPK8842U.\nThe client consulted us about a cheque bounce matter against Pioneer Textiles Pvt Ltd. A cheque for Rs 28,40,000 issued by Pioneer Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe matter was filed as S.C.C. No. 310/2023 before the Judicial Magistrate First Class Court at Thane on 21 August 2023.",
+  "spans": [
+    {
+      "text": "20/07/2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Karthik Kamath",
+      "category": "NAME",
+      "start": 54,
+      "end": 68
+    },
+    {
+      "text": "53-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 91
+    },
+    {
+      "text": "House No. 166, Naupada, Thane 400616",
+      "category": "ADDRESS",
+      "start": 105,
+      "end": 141
+    },
+    {
+      "text": "+91 90751 42487",
+      "category": "PHONE",
+      "start": 164,
+      "end": 179
+    },
+    {
+      "text": "karthik.kamath75@example.in",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 210
+    },
+    {
+      "text": "CWAPK8842U",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 239
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 273,
+      "end": 286
+    },
+    {
+      "text": "Pioneer Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 302,
+      "end": 326
+    },
+    {
+      "text": "Rs 28,40,000",
+      "category": "MONEY",
+      "start": 341,
+      "end": 353
+    },
+    {
+      "text": "Pioneer Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 364,
+      "end": 388
+    },
+    {
+      "text": "S.C.C. No. 310/2023",
+      "category": "CASE_NUMBER",
+      "start": 485,
+      "end": 504
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "start": 516,
+      "end": 562
+    },
+    {
+      "text": "21 August 2023",
+      "category": "DATE",
+      "start": 566,
+      "end": 580
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

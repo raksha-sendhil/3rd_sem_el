@@ -1,0 +1,68 @@
+{
+  "doc_id": "6da8c41ac5226518",
+  "text": "Case note: O.S. No. 1325/2025\nClient: Sanjay Rajan (taxi driver, Pune)\nOpposing party: Varun Srivastava\nCourt: Pune District Court\nFiled on: 27 November 2025\nClaim amount: Rs 1,66,00,000\nIssue: land dispute. The neighbour has encroached on the boundary of the plot.\nAdvice given: Apply for a court commissioner to measure the boundary.\nOutcome: The court commissioner confirmed the encroachment.\nRecommended next step: Seek removal of the encroachment.",
+  "spans": [
+    {
+      "text": "O.S. No. 1325/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Sanjay Rajan",
+      "category": "NAME",
+      "start": 38,
+      "end": 50
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 52,
+      "end": 63
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 65,
+      "end": 69
+    },
+    {
+      "text": "Varun Srivastava",
+      "category": "NAME",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 111,
+      "end": 130
+    },
+    {
+      "text": "27 November 2025",
+      "category": "DATE",
+      "start": 141,
+      "end": 157
+    },
+    {
+      "text": "Rs 1,66,00,000",
+      "category": "MONEY",
+      "start": 172,
+      "end": 186
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 194,
+      "end": 206
+    },
+    {
+      "text": "occupation (taxi driver) + city (Pune) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

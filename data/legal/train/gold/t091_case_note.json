@@ -1,0 +1,68 @@
+{
+  "doc_id": "7ab4d172d905af34",
+  "text": "Case note: C.C. No. 2991/2022\nClient: Nandini Bhosale (hardware dealer, Coimbatore)\nOpposing party: Crescent Realty\nCourt: Coimbatore District Consumer Disputes Redressal Commission\nFiled on: 29/06/2022\nClaim amount: INR 9,31,00,000/-\nIssue: consumer complaint. Possession of the flat is long overdue.\nAdvice given: Claim interest on the amount paid for every month of delay in possession.\nOutcome: The commission directed the builder to pay interest for the delay.\nRecommended next step: File for execution if the builder does not pay.",
+  "spans": [
+    {
+      "text": "C.C. No. 2991/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Nandini Bhosale",
+      "category": "NAME",
+      "start": 38,
+      "end": 53
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 70
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 72,
+      "end": 82
+    },
+    {
+      "text": "Crescent Realty",
+      "category": "ORGANIZATION",
+      "start": 100,
+      "end": 115
+    },
+    {
+      "text": "Coimbatore District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 123,
+      "end": 181
+    },
+    {
+      "text": "29/06/2022",
+      "category": "DATE",
+      "start": 192,
+      "end": 202
+    },
+    {
+      "text": "INR 9,31,00,000/-",
+      "category": "MONEY",
+      "start": 217,
+      "end": 234
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 242,
+      "end": 260
+    },
+    {
+      "text": "occupation (hardware dealer) + city (Coimbatore) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

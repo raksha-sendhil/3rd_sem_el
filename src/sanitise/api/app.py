@@ -7,6 +7,8 @@
     GET  /v1/health   -> { status, ollama_reachable, model, pipeline_version }
     POST /v1/ingest   { filename, content_base64 | text } -> IngestResult (file -> text)
     POST /v1/ingest/sanitise  (same body)              -> SanitisedRecord
+    /legal/...        the legal pipeline (src/sanitise_legal, its own API), same paths; files
+                      are read by this API's step 0 (POST /legal/v1/ingest)
 
 Every ``PipelineError`` becomes the spec 8.5 error envelope with an HTTP status
 from the error class (413 DOC_TOO_LONG, 502 SCHEMA_VALIDATION_FAILED, 503
@@ -25,8 +27,9 @@ from __future__ import annotations
 import asyncio
 import base64
 import binascii
+import logging
 from collections.abc import AsyncIterator
-from contextlib import asynccontextmanager
+from contextlib import AsyncExitStack, asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, Request
@@ -100,6 +103,25 @@ from sanitise.schemas import (
     SpanMetrics,
 )
 
+log = logging.getLogger(__name__)
+
+
+def legal_app(settings: Settings) -> FastAPI | None:
+    """The legal pipeline's own API (``sanitise_legal``, imported from the legal branch with
+    tools/import_legal.py), always on its legal profile; None when switched off or missing."""
+    if not settings.legal_enabled:
+        return None
+    try:
+        from sanitise_legal.api.app import create_app as create_legal_app
+        from sanitise_legal.config import Settings as LegalSettings
+    except ImportError as exc:
+        log.warning("legal pipeline not available, healthcare only: %s", exc)
+        return None
+    overrides: dict = {"domain": "legal"}
+    if settings.llm_backend == "mock":
+        overrides["llm_backend"] = "mock"
+    return create_legal_app(LegalSettings(**overrides))
+
 
 def create_app(
     settings: Settings | None = None,
@@ -121,7 +143,11 @@ def create_app(
         # the vision model for scanned pages and images (PDF / image input)
         app.state.vision = make_reader(settings)  # mock, local model or Gemini
         try:
-            yield
+            async with AsyncExitStack() as stack:
+                legal = getattr(app.state, "legal", None)
+                if legal is not None:  # a mounted app's start-up does not run by itself
+                    await stack.enter_async_context(legal.router.lifespan_context(legal))
+                yield
         finally:
             await app.state.vision.aclose()
             if owned:
@@ -438,5 +464,24 @@ def create_app(
             model=str(getattr(llm, "model", "unknown")),
             pipeline_version=PIPELINE_VERSION,
         )
+
+    # ---- the legal pipeline under /legal (the dashboard's Legal toggle). Healthcare keeps every
+    # path above; legal requests go to sanitise_legal's own API, except the two it does not have:
+    # file reading (step 0 is the same for every domain) and the monitor panel's ledger.
+    app.state.legal = legal_app(settings)
+    if app.state.legal is not None:
+
+        @app.post("/legal/v1/ingest", response_model=IngestResult)
+        async def post_legal_ingest(body: IngestRequest, request: Request) -> IngestResult:
+            """A file to text for the legal agents: the same reader as /v1/ingest."""
+            return await read_upload(body, request)
+
+        @app.get("/legal/v1/sessions/{session_id}/monitor", response_model=MonitorLedger)
+        async def get_legal_monitor(session_id: str) -> MonitorLedger:
+            """The legal monitor counts candidates over the client table and keeps no ledger of
+            kinds of detail; its verdicts come with every answer."""
+            return MonitorLedger(session_id=session_id, monitor="pool", k=5)
+
+        app.mount("/legal", app.state.legal)
 
     return app

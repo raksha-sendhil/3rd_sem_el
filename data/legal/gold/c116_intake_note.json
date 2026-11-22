@@ -1,0 +1,98 @@
+{
+  "doc_id": "74d31a00371b10a0",
+  "text": "Intake note (Commercial team, 20/06/2025). Our client Sneha Naidu is a 71-year-old insurance agent who lives at Plot 48, Tallakulam, Madurai 625052 and can be reached on +91 96880 50947 or sneha.naidu27@example.in. The client's PAN PBGPN2593K.\nThe client consulted us about a geographical-indication dispute matter against Zenith Foods Pvt Ltd. The geographical-indication dispute with M/s Zenith Foods Pvt Ltd involves sales of ₹5,34,00,000; the rival product uses the protected regional name on its label.\nThe matter was filed as CS(COMM) 1125/2025 before the Madras High Court on 4 October 2025.",
+  "spans": [
+    {
+      "text": "20/06/2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Sneha Naidu",
+      "category": "NAME",
+      "start": 54,
+      "end": 65
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "insurance agent",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 98
+    },
+    {
+      "text": "Plot 48, Tallakulam, Madurai 625052",
+      "category": "ADDRESS",
+      "start": 112,
+      "end": 147
+    },
+    {
+      "text": "+91 96880 50947",
+      "category": "PHONE",
+      "start": 170,
+      "end": 185
+    },
+    {
+      "text": "sneha.naidu27@example.in",
+      "category": "EMAIL",
+      "start": 189,
+      "end": 213
+    },
+    {
+      "text": "PBGPN2593K",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 276,
+      "end": 307
+    },
+    {
+      "text": "Zenith Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 323,
+      "end": 343
+    },
+    {
+      "text": "Zenith Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 390,
+      "end": 410
+    },
+    {
+      "text": "₹5,34,00,000",
+      "category": "MONEY",
+      "start": 429,
+      "end": 441
+    },
+    {
+      "text": "CS(COMM) 1125/2025",
+      "category": "CASE_NUMBER",
+      "start": 532,
+      "end": 550
+    },
+    {
+      "text": "Madras High Court",
+      "category": "COURT",
+      "start": 562,
+      "end": 579
+    },
+    {
+      "text": "4 October 2025",
+      "category": "DATE",
+      "start": 583,
+      "end": 597
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

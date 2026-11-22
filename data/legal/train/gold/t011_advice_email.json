@@ -1,0 +1,50 @@
+{
+  "doc_id": "91c747254741a418",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Sethi,\n\nThank you for meeting us on 24/03/2019 about your dispute with Pooja Goyal. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Coimbatore.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of Rs 13,90,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Sethi",
+      "category": "NAME",
+      "start": 45,
+      "end": 50
+    },
+    {
+      "text": "24/03/2019",
+      "category": "DATE",
+      "start": 81,
+      "end": 91
+    },
+    {
+      "text": "Pooja Goyal",
+      "category": "NAME",
+      "start": 116,
+      "end": 127
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 246,
+      "end": 297
+    },
+    {
+      "text": "Rs 13,90,000",
+      "category": "MONEY",
+      "start": 592,
+      "end": 604
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 621,
+      "end": 633
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

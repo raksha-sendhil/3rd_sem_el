@@ -1,0 +1,44 @@
+{
+  "doc_id": "5d9d1d9fb28a6036",
+  "text": "Subject: Your divorce by mutual consent matter\n\nDear Ms. Shinde,\n\nThank you for meeting us on 16 February 2023 about your dispute with Simran Natarajan. As we understand it, the spouses agree on a single payment instead of maintenance. The matter is listed before the Family Court at Mysuru.\n\nOur advice is to record the one-time alimony settlement in the consent terms. Please collect income tax returns and the draft consent terms and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 39
+    },
+    {
+      "text": "Shinde",
+      "category": "NAME",
+      "start": 57,
+      "end": 63
+    },
+    {
+      "text": "16 February 2023",
+      "category": "DATE",
+      "start": 94,
+      "end": 110
+    },
+    {
+      "text": "Simran Natarajan",
+      "category": "NAME",
+      "start": 135,
+      "end": 151
+    },
+    {
+      "text": "Family Court at Mysuru",
+      "category": "COURT",
+      "start": 268,
+      "end": 290
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 480,
+      "end": 495
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

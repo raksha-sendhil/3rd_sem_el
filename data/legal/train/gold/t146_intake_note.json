@@ -1,0 +1,110 @@
+{
+  "doc_id": "d5dc0f993f56d8c4",
+  "text": "Intake note (Commercial team, 18 May 2022). Our client Simran Mishra is a 24-year-old restaurant owner who lives at Bungalow 14, Dharampeth, Nagpur 440011 and can be reached on +91 70636 60075 or simran.mishra@example.com. The client's PAN NMSPM3268C, Aadhaar 3973 3824 5940.\nThe client consulted us about a maritime salvage claim matter (Project Ibis) against Sunrise Marine Ltd. The maritime salvage claim against Sunrise Marine Ltd is for Rs. 43,51,00,000; the owners dispute the value of the salvage.\nThe matter was filed as A.S. No. 2764/2022 before the Bombay High Court on 30 June 2022.",
+  "spans": [
+    {
+      "text": "18 May 2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 41
+    },
+    {
+      "text": "Simran Mishra",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "24-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Bungalow 14, Dharampeth, Nagpur 440011",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 154
+    },
+    {
+      "text": "+91 70636 60075",
+      "category": "PHONE",
+      "start": 177,
+      "end": 192
+    },
+    {
+      "text": "simran.mishra@example.com",
+      "category": "EMAIL",
+      "start": 196,
+      "end": 221
+    },
+    {
+      "text": "NMSPM3268C",
+      "category": "ID_NUMBER",
+      "start": 240,
+      "end": 250
+    },
+    {
+      "text": "3973 3824 5940",
+      "category": "ID_NUMBER",
+      "start": 260,
+      "end": 274
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 308,
+      "end": 330
+    },
+    {
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 339,
+      "end": 351
+    },
+    {
+      "text": "Sunrise Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 361,
+      "end": 379
+    },
+    {
+      "text": "Sunrise Marine Ltd",
+      "category": "ORGANIZATION",
+      "start": 416,
+      "end": 434
+    },
+    {
+      "text": "Rs. 43,51,00,000",
+      "category": "MONEY",
+      "start": 442,
+      "end": 458
+    },
+    {
+      "text": "A.S. No. 2764/2022",
+      "category": "CASE_NUMBER",
+      "start": 529,
+      "end": 547
+    },
+    {
+      "text": "Bombay High Court",
+      "category": "COURT",
+      "start": 559,
+      "end": 576
+    },
+    {
+      "text": "30 June 2022",
+      "category": "DATE",
+      "start": 580,
+      "end": 592
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

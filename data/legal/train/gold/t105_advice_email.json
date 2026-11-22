@@ -1,0 +1,56 @@
+{
+  "doc_id": "aa8a124bda4bba6d",
+  "text": "Subject: Your land dispute matter - O.S. No. 1494/2020\n\nDear Mr. Ghosh,\n\nThank you for meeting us on 14 December 2020 about your dispute with Vandana Kurian. As we understand it, the occupant claims ownership by adverse possession. The matter is listed before the Lucknow District Court.\n\nOur advice is to rebut the adverse possession claim with tax receipts showing continuous ownership. Please collect tax receipts showing continuous ownership and electricity bills and send copies to this office. We will pursue the full claim of Rs 1,86,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 1494/2020",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Ghosh",
+      "category": "NAME",
+      "start": 65,
+      "end": 70
+    },
+    {
+      "text": "14 December 2020",
+      "category": "DATE",
+      "start": 101,
+      "end": 117
+    },
+    {
+      "text": "Vandana Kurian",
+      "category": "NAME",
+      "start": 142,
+      "end": 156
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 264,
+      "end": 286
+    },
+    {
+      "text": "Rs 1,86,00,000",
+      "category": "MONEY",
+      "start": 533,
+      "end": 547
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 564,
+      "end": 580
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

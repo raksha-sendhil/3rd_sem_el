@@ -1,0 +1,68 @@
+{
+  "doc_id": "0faea9f14c8ea6cd",
+  "text": "Case note: C.P.(IB) No. 2834/2025\nClient: Pallavi Chatterjee (paediatrician, Hyderabad)\nOpposing party: Skyline Holdings Ltd\nCourt: NCLT Mumbai\nFiled on: 2 February 2025\nClaim amount: ₹73.1 crore\nIssue: cross-border insolvency. The debtor is in insolvency proceedings in two countries.\nAdvice given: File the claim with the resolution professional before the deadline.\nOutcome: The claim was admitted in full.\nRecommended next step: Vote on the resolution plan.",
+  "spans": [
+    {
+      "text": "C.P.(IB) No. 2834/2025",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 33
+    },
+    {
+      "text": "Pallavi Chatterjee",
+      "category": "NAME",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 62,
+      "end": 75
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 77,
+      "end": 86
+    },
+    {
+      "text": "Skyline Holdings Ltd",
+      "category": "ORGANIZATION",
+      "start": 104,
+      "end": 124
+    },
+    {
+      "text": "NCLT Mumbai",
+      "category": "COURT",
+      "start": 132,
+      "end": 143
+    },
+    {
+      "text": "2 February 2025",
+      "category": "DATE",
+      "start": 154,
+      "end": 169
+    },
+    {
+      "text": "₹73.1 crore",
+      "category": "MONEY",
+      "start": 184,
+      "end": 195
+    },
+    {
+      "text": "cross-border insolvency",
+      "category": "LEGAL_ISSUE",
+      "start": 203,
+      "end": 226
+    },
+    {
+      "text": "occupation (paediatrician) + city (Hyderabad) + issue (cross-border insolvency)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

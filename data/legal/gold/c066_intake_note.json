@@ -1,0 +1,104 @@
+{
+  "doc_id": "68dacafeb0d972b4",
+  "text": "Intake note (Property team, 23 December 2021). Our client Pooja Hegde is a 75-year-old schoolteacher who lives at Plot 17, Fatehgunj, Vadodara 390042 and can be reached on 62338 99901 or pooja.hegde@example.com. The client's PAN LYPPH8637T, Aadhaar 7448 2976 1273.\nThe client consulted us about a consumer complaint matter against Rao Builders Pvt Ltd. The consumer complaint against Rao Builders Pvt Ltd concerns a flat bought for INR 6,65,00,000/-; possession of the flat is long overdue.\nThe matter was filed as CC/2260/2022 before the Vadodara District Consumer Disputes Redressal Commission on 9 March 2022.",
+  "spans": [
+    {
+      "text": "23 December 2021",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Pooja Hegde",
+      "category": "NAME",
+      "start": 58,
+      "end": 69
+    },
+    {
+      "text": "75-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 100
+    },
+    {
+      "text": "Plot 17, Fatehgunj, Vadodara 390042",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 149
+    },
+    {
+      "text": "62338 99901",
+      "category": "PHONE",
+      "start": 172,
+      "end": 183
+    },
+    {
+      "text": "pooja.hegde@example.com",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 210
+    },
+    {
+      "text": "LYPPH8637T",
+      "category": "ID_NUMBER",
+      "start": 229,
+      "end": 239
+    },
+    {
+      "text": "7448 2976 1273",
+      "category": "ID_NUMBER",
+      "start": 249,
+      "end": 263
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 297,
+      "end": 315
+    },
+    {
+      "text": "Rao Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 331,
+      "end": 351
+    },
+    {
+      "text": "Rao Builders Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 384,
+      "end": 404
+    },
+    {
+      "text": "INR 6,65,00,000/-",
+      "category": "MONEY",
+      "start": 432,
+      "end": 449
+    },
+    {
+      "text": "CC/2260/2022",
+      "category": "CASE_NUMBER",
+      "start": 515,
+      "end": 527
+    },
+    {
+      "text": "Vadodara District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 539,
+      "end": 595
+    },
+    {
+      "text": "9 March 2022",
+      "category": "DATE",
+      "start": 599,
+      "end": 611
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

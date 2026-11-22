@@ -1,0 +1,110 @@
+{
+  "doc_id": "f59089ab954f19cc",
+  "text": "Intake note - Property team\nDate: 10/12/2018\nClient: Asha Kurian, a 49-year-old retired bank officer from Kolkata.\nAddress: Flat 9C, Ballygunge, Kolkata 700049\nPhone: 07349571674. Email: asha.kurian58@example.in. PAN VUBPK6307P.\nMatter: tenancy eviction\nOpposing party: Ravi Rajan\nFacts: The tenancy dispute with Ravi Rajan concerns rent arrears of ₹2,25,000; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.A. No. 2240/2019 before the Kolkata District Court on 3 February 2019.",
+  "spans": [
+    {
+      "text": "10/12/2018",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Asha Kurian",
+      "category": "NAME",
+      "start": 53,
+      "end": 64
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 68,
+      "end": 79
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 80,
+      "end": 100
+    },
+    {
+      "text": "Kolkata",
+      "category": "LOCATION",
+      "start": 106,
+      "end": 113
+    },
+    {
+      "text": "Flat 9C, Ballygunge, Kolkata 700049",
+      "category": "ADDRESS",
+      "start": 124,
+      "end": 159
+    },
+    {
+      "text": "07349571674",
+      "category": "PHONE",
+      "start": 167,
+      "end": 178
+    },
+    {
+      "text": "asha.kurian58@example.in",
+      "category": "EMAIL",
+      "start": 187,
+      "end": 211
+    },
+    {
+      "text": "VUBPK6307P",
+      "category": "ID_NUMBER",
+      "start": 217,
+      "end": 227
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 237,
+      "end": 253
+    },
+    {
+      "text": "Ravi Rajan",
+      "category": "NAME",
+      "start": 270,
+      "end": 280
+    },
+    {
+      "text": "Ravi Rajan",
+      "category": "NAME",
+      "start": 313,
+      "end": 323
+    },
+    {
+      "text": "₹2,25,000",
+      "category": "MONEY",
+      "start": 349,
+      "end": 358
+    },
+    {
+      "text": "R.C.A. No. 2240/2019",
+      "category": "CASE_NUMBER",
+      "start": 462,
+      "end": 482
+    },
+    {
+      "text": "Kolkata District Court",
+      "category": "COURT",
+      "start": 494,
+      "end": 516
+    },
+    {
+      "text": "3 February 2019",
+      "category": "DATE",
+      "start": 520,
+      "end": 535
+    },
+    {
+      "text": "age (49) + occupation (retired bank officer) + city (Kolkata) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

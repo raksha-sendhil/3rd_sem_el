@@ -1,0 +1,37 @@
+{
+  "doc_id": "39e86bdf4ed69664",
+  "routing": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "S.C.C. No. 310/2023",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Kamath",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "31/01/2024",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Pioneer Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "action": "placeholder"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

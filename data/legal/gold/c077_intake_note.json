@@ -1,0 +1,116 @@
+{
+  "doc_id": "1e8a49ac8e15c9f1",
+  "text": "Intake note - Property team\nDate: 29 August 2020\nClient: Karthik Nambiar, a 28-year-old restaurant owner from Mumbai.\nAddress: House No. 92, Powai, Mumbai 400048\nPhone: +91 66097 74256. Email: karthik.nambiar5@example.in. PAN GDSPN4311Y, Aadhaar 3820 0851 2924.\nMatter: land dispute\nOpposing party: Radhika Jadhav\nFacts: The land dispute with Radhika Jadhav concerns agricultural land valued at Rs 4,33,00,000; relatives dispute who owns the ancestral land.\nThe matter was filed as O.S. No. 2545/2020 before the Mumbai District Court on 26 November 2020.",
+  "spans": [
+    {
+      "text": "29 August 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 48
+    },
+    {
+      "text": "Karthik Nambiar",
+      "category": "NAME",
+      "start": 57,
+      "end": 72
+    },
+    {
+      "text": "28-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 104
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 116
+    },
+    {
+      "text": "House No. 92, Powai, Mumbai 400048",
+      "category": "ADDRESS",
+      "start": 127,
+      "end": 161
+    },
+    {
+      "text": "+91 66097 74256",
+      "category": "PHONE",
+      "start": 169,
+      "end": 184
+    },
+    {
+      "text": "karthik.nambiar5@example.in",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 220
+    },
+    {
+      "text": "GDSPN4311Y",
+      "category": "ID_NUMBER",
+      "start": 226,
+      "end": 236
+    },
+    {
+      "text": "3820 0851 2924",
+      "category": "ID_NUMBER",
+      "start": 246,
+      "end": 260
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 270,
+      "end": 282
+    },
+    {
+      "text": "Radhika Jadhav",
+      "category": "NAME",
+      "start": 299,
+      "end": 313
+    },
+    {
+      "text": "Radhika Jadhav",
+      "category": "NAME",
+      "start": 343,
+      "end": 357
+    },
+    {
+      "text": "Rs 4,33,00,000",
+      "category": "MONEY",
+      "start": 395,
+      "end": 409
+    },
+    {
+      "text": "O.S. No. 2545/2020",
+      "category": "CASE_NUMBER",
+      "start": 482,
+      "end": 500
+    },
+    {
+      "text": "Mumbai District Court",
+      "category": "COURT",
+      "start": 512,
+      "end": 533
+    },
+    {
+      "text": "26 November 2020",
+      "category": "DATE",
+      "start": 537,
+      "end": 553
+    },
+    {
+      "text": "age (28) + occupation (restaurant owner) + city (Mumbai) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

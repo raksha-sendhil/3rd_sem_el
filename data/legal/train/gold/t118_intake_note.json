@@ -1,0 +1,98 @@
+{
+  "doc_id": "ae4d8730f153800e",
+  "text": "Intake note (Family team, 17 August 2022). Our client Sneha Shinde is a 71-year-old paediatrician who lives at Bungalow 8, Kuvempunagar, Mysuru 570031 and can be reached on +91 90062 56759 or sneha.shinde16@example.com. The client's PAN VVRPS8715P.\nThe client consulted us about a divorce by mutual consent matter against Simran Natarajan. The divorce by mutual consent with Simran Natarajan includes a settlement of INR 60,30,000/-; the spouses agree on a single payment instead of maintenance.\nThe matter was filed as Petition No. 452/2023 before the Family Court at Mysuru on 19/01/2023.",
+  "spans": [
+    {
+      "text": "17 August 2022",
+      "category": "DATE",
+      "start": 26,
+      "end": 40
+    },
+    {
+      "text": "Sneha Shinde",
+      "category": "NAME",
+      "start": 54,
+      "end": 66
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 97
+    },
+    {
+      "text": "Bungalow 8, Kuvempunagar, Mysuru 570031",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 150
+    },
+    {
+      "text": "+91 90062 56759",
+      "category": "PHONE",
+      "start": 173,
+      "end": 188
+    },
+    {
+      "text": "sneha.shinde16@example.com",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 218
+    },
+    {
+      "text": "VVRPS8715P",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 281,
+      "end": 306
+    },
+    {
+      "text": "Simran Natarajan",
+      "category": "NAME",
+      "start": 322,
+      "end": 338
+    },
+    {
+      "text": "Simran Natarajan",
+      "category": "NAME",
+      "start": 375,
+      "end": 391
+    },
+    {
+      "text": "INR 60,30,000/-",
+      "category": "MONEY",
+      "start": 417,
+      "end": 432
+    },
+    {
+      "text": "Petition No. 452/2023",
+      "category": "CASE_NUMBER",
+      "start": 520,
+      "end": 541
+    },
+    {
+      "text": "Family Court at Mysuru",
+      "category": "COURT",
+      "start": 553,
+      "end": 575
+    },
+    {
+      "text": "19/01/2023",
+      "category": "DATE",
+      "start": 579,
+      "end": 589
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

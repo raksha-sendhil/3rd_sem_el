@@ -1,0 +1,74 @@
+{
+  "doc_id": "03dd22ac29000aab",
+  "text": "Case note: Anticipatory Bail Application No. 2883/2020\nClient: Vandana Mukherjee (mechanical engineer, Nashik)\nOpposing party: Harish More\nCourt: Nashik Sessions Court\nFiled on: 31 August 2020\nClaim amount: INR 74,80,000/-\nIssue: anticipatory bail. The complainant alleges cheating over a failed deal.\nAdvice given: Produce the contract and payment records to show there was no intent to cheat at the outset.\nOutcome: Bail was granted because the dispute was about performance of a contract.\nRecommended next step: Seek quashing of the complaint.\nWitness: Uma Menon",
+  "spans": [
+    {
+      "text": "Anticipatory Bail Application No. 2883/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 54
+    },
+    {
+      "text": "Vandana Mukherjee",
+      "category": "NAME",
+      "start": 63,
+      "end": 80
+    },
+    {
+      "text": "mechanical engineer",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 101
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 109
+    },
+    {
+      "text": "Harish More",
+      "category": "NAME",
+      "start": 127,
+      "end": 138
+    },
+    {
+      "text": "Nashik Sessions Court",
+      "category": "COURT",
+      "start": 146,
+      "end": 167
+    },
+    {
+      "text": "31 August 2020",
+      "category": "DATE",
+      "start": 178,
+      "end": 192
+    },
+    {
+      "text": "INR 74,80,000/-",
+      "category": "MONEY",
+      "start": 207,
+      "end": 222
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 230,
+      "end": 247
+    },
+    {
+      "text": "Uma Menon",
+      "category": "NAME",
+      "start": 556,
+      "end": 565
+    },
+    {
+      "text": "occupation (mechanical engineer) + city (Nashik) + issue (anticipatory bail)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

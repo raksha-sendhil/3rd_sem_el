@@ -1,0 +1,74 @@
+{
+  "doc_id": "3ec1d91e432e1151",
+  "text": "Case note: R.C.S. No. 2771/2020\nClient: Neha Rane (dentist, Nagpur)\nOpposing party: Charulata Kulkarni\nCourt: Nagpur District Court\nFiled on: 30 August 2020\nClaim amount: ₹8,70,000\nIssue: tenancy eviction. The tenant has stopped paying rent for many months.\nAdvice given: Issue a notice terminating the tenancy and claim mesne profits for the period of occupation.\nOutcome: The court passed an eviction decree with arrears.\nRecommended next step: File for execution of the decree.\nWitness: Radhika Chauhan",
+  "spans": [
+    {
+      "text": "R.C.S. No. 2771/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Neha Rane",
+      "category": "NAME",
+      "start": 40,
+      "end": 49
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 51,
+      "end": 58
+    },
+    {
+      "text": "Nagpur",
+      "category": "LOCATION",
+      "start": 60,
+      "end": 66
+    },
+    {
+      "text": "Charulata Kulkarni",
+      "category": "NAME",
+      "start": 84,
+      "end": 102
+    },
+    {
+      "text": "Nagpur District Court",
+      "category": "COURT",
+      "start": 110,
+      "end": 131
+    },
+    {
+      "text": "30 August 2020",
+      "category": "DATE",
+      "start": 142,
+      "end": 156
+    },
+    {
+      "text": "₹8,70,000",
+      "category": "MONEY",
+      "start": 171,
+      "end": 180
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 188,
+      "end": 204
+    },
+    {
+      "text": "Radhika Chauhan",
+      "category": "NAME",
+      "start": 490,
+      "end": 505
+    },
+    {
+      "text": "occupation (dentist) + city (Nagpur) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

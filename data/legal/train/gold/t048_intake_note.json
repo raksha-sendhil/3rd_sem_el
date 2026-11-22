@@ -1,0 +1,116 @@
+{
+  "doc_id": "a8142ccea17a860b",
+  "text": "Intake note (Commercial team, 29 April 2025). Our client Divya Tiwari is a 71-year-old dentist who lives at Plot 115, Vartak Nagar, Thane 400648 and can be reached on +91 91238 98629 or divya.tiwari99@example.com. The client's PAN VDZPT6281V, Aadhaar 8410 8389 2362.\nThe client consulted us about a cheque bounce matter against Trident Enterprises. A cheque for ₹20,40,000 issued by Trident Enterprises bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 168015502238 (IFSC ICIC0026236).\nThe matter was filed as CC/1880/2025 before the Judicial Magistrate First Class Court at Thane on 29/05/2025.",
+  "spans": [
+    {
+      "text": "29 April 2025",
+      "category": "DATE",
+      "start": 30,
+      "end": 43
+    },
+    {
+      "text": "Divya Tiwari",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "71-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 94
+    },
+    {
+      "text": "Plot 115, Vartak Nagar, Thane 400648",
+      "category": "ADDRESS",
+      "start": 108,
+      "end": 144
+    },
+    {
+      "text": "+91 91238 98629",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "divya.tiwari99@example.com",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 212
+    },
+    {
+      "text": "VDZPT6281V",
+      "category": "ID_NUMBER",
+      "start": 231,
+      "end": 241
+    },
+    {
+      "text": "8410 8389 2362",
+      "category": "ID_NUMBER",
+      "start": 251,
+      "end": 265
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 299,
+      "end": 312
+    },
+    {
+      "text": "Trident Enterprises",
+      "category": "ORGANIZATION",
+      "start": 328,
+      "end": 347
+    },
+    {
+      "text": "₹20,40,000",
+      "category": "MONEY",
+      "start": 362,
+      "end": 372
+    },
+    {
+      "text": "Trident Enterprises",
+      "category": "ORGANIZATION",
+      "start": 383,
+      "end": 402
+    },
+    {
+      "text": "168015502238",
+      "category": "FINANCIAL",
+      "start": 529,
+      "end": 541
+    },
+    {
+      "text": "ICIC0026236",
+      "category": "FINANCIAL",
+      "start": 548,
+      "end": 559
+    },
+    {
+      "text": "CC/1880/2025",
+      "category": "CASE_NUMBER",
+      "start": 586,
+      "end": 598
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thane",
+      "category": "COURT",
+      "start": 610,
+      "end": 656
+    },
+    {
+      "text": "29/05/2025",
+      "category": "DATE",
+      "start": 660,
+      "end": 670
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

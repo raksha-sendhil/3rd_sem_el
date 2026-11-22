@@ -1,0 +1,116 @@
+{
+  "doc_id": "4b76674b3c6e112b",
+  "text": "Intake note - Commercial team\nDate: 22 September 2020\nClient: Shruti Patil, a 37-year-old college lecturer from Thane.\nAddress: Bungalow 3, Naupada, Thane 400634\nPhone: +91 86242 13800. Email: shruti.patil@example.com. PAN MXWPP5839G.\nMatter: breach of contract (Project Pelican)\nOpposing party: M/s Sai Infotech Pvt Ltd\nFacts: The breach of contract claim against M/s Sai Infotech Pvt Ltd is for INR 4,93,00,000/-; the counterparty has not paid the invoices for delivered goods.\nThe matter was filed as Com. S. No. 2997/2021 before the Thane Commercial Court on 7 January 2021.",
+  "spans": [
+    {
+      "text": "22 September 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 53
+    },
+    {
+      "text": "Shruti Patil",
+      "category": "NAME",
+      "start": 62,
+      "end": 74
+    },
+    {
+      "text": "37-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 106
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 112,
+      "end": 117
+    },
+    {
+      "text": "Bungalow 3, Naupada, Thane 400634",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 161
+    },
+    {
+      "text": "+91 86242 13800",
+      "category": "PHONE",
+      "start": 169,
+      "end": 184
+    },
+    {
+      "text": "shruti.patil@example.com",
+      "category": "EMAIL",
+      "start": 193,
+      "end": 217
+    },
+    {
+      "text": "MXWPP5839G",
+      "category": "ID_NUMBER",
+      "start": 223,
+      "end": 233
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 243,
+      "end": 261
+    },
+    {
+      "text": "Project Pelican",
+      "category": "MATTER_CODENAME",
+      "start": 263,
+      "end": 278
+    },
+    {
+      "text": "Sai Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 300,
+      "end": 320
+    },
+    {
+      "text": "Sai Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 369,
+      "end": 389
+    },
+    {
+      "text": "INR 4,93,00,000/-",
+      "category": "MONEY",
+      "start": 397,
+      "end": 414
+    },
+    {
+      "text": "Com. S. No. 2997/2021",
+      "category": "CASE_NUMBER",
+      "start": 504,
+      "end": 525
+    },
+    {
+      "text": "Thane Commercial Court",
+      "category": "COURT",
+      "start": 537,
+      "end": 559
+    },
+    {
+      "text": "7 January 2021",
+      "category": "DATE",
+      "start": 563,
+      "end": 577
+    },
+    {
+      "text": "age (37) + occupation (college lecturer) + city (Thane) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

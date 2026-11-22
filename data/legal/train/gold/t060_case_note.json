@@ -1,0 +1,80 @@
+{
+  "doc_id": "c6bca5209a999307",
+  "text": "Case note: A.S. No. 1810/2024\nClient: Abhishek Gaikwad (truck driver, Kochi)\nOpposing party: Swamy Shipping Pvt Ltd\nCourt: Kerala High Court, before Justice Arvind Bhargava\nFiled on: 9 November 2024\nClaim amount: Rs 41,13,00,000\nIssue: maritime salvage claim. The vessel is about to leave port.\nAdvice given: Arrest the vessel to secure the salvage claim.\nOutcome: The vessel was arrested until security was furnished.\nRecommended next step: Negotiate the salvage award.\nMatter code: Project Heron",
+  "spans": [
+    {
+      "text": "A.S. No. 1810/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Abhishek Gaikwad",
+      "category": "NAME",
+      "start": 38,
+      "end": 54
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 56,
+      "end": 68
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 70,
+      "end": 75
+    },
+    {
+      "text": "Swamy Shipping Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 93,
+      "end": 115
+    },
+    {
+      "text": "Kerala High Court",
+      "category": "COURT",
+      "start": 123,
+      "end": 140
+    },
+    {
+      "text": "Arvind Bhargava",
+      "category": "NAME",
+      "start": 157,
+      "end": 172
+    },
+    {
+      "text": "9 November 2024",
+      "category": "DATE",
+      "start": 183,
+      "end": 198
+    },
+    {
+      "text": "Rs 41,13,00,000",
+      "category": "MONEY",
+      "start": 213,
+      "end": 228
+    },
+    {
+      "text": "maritime salvage claim",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 258
+    },
+    {
+      "text": "Project Heron",
+      "category": "MATTER_CODENAME",
+      "start": 484,
+      "end": 497
+    },
+    {
+      "text": "occupation (truck driver) + city (Kochi) + issue (maritime salvage claim)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

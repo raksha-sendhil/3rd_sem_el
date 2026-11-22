@@ -1,0 +1,80 @@
+{
+  "doc_id": "d8a7f5256e25e7c1",
+  "text": "Subject: Need help with a consumer complaint case\n\nHello, my name is Ashok Naidu. I am a 63-year-old textile trader living in Mumbai. I paid Dalvi Constructions ₹8.8 crore for a flat, and possession of the flat is long overdue. My case number is CC/2220/2024 in the Mumbai District Consumer Disputes Redressal Commission. Can your firm advise me on what to do next? You can call me on 07239671188 or email ashok.naidu@example.com.",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 44
+    },
+    {
+      "text": "Ashok Naidu",
+      "category": "NAME",
+      "start": 69,
+      "end": 80
+    },
+    {
+      "text": "63-year-old",
+      "category": "AGE",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 101,
+      "end": 115
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 126,
+      "end": 132
+    },
+    {
+      "text": "Dalvi Constructions",
+      "category": "ORGANIZATION",
+      "start": 141,
+      "end": 160
+    },
+    {
+      "text": "₹8.8 crore",
+      "category": "MONEY",
+      "start": 161,
+      "end": 171
+    },
+    {
+      "text": "CC/2220/2024",
+      "category": "CASE_NUMBER",
+      "start": 246,
+      "end": 258
+    },
+    {
+      "text": "Mumbai District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 266,
+      "end": 320
+    },
+    {
+      "text": "07239671188",
+      "category": "PHONE",
+      "start": 385,
+      "end": 396
+    },
+    {
+      "text": "ashok.naidu@example.com",
+      "category": "EMAIL",
+      "start": 406,
+      "end": 429
+    },
+    {
+      "text": "age (63) + occupation (textile trader) + city (Mumbai) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

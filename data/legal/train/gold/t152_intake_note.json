@@ -1,0 +1,110 @@
+{
+  "doc_id": "30f699482e0bea01",
+  "text": "Intake note - Property team\nDate: 17/10/2022\nClient: Rupali Ranade, a 55-year-old fashion designer from Surat.\nAddress: Bungalow 19, Vesu, Surat 395033\nPhone: +91 75642 98712. Email: rupali.ranade43@example.com. PAN QSSPR9444F.\nMatter: tenancy eviction\nOpposing party: Sneha Shah\nFacts: The tenancy dispute with Sneha Shah concerns rent arrears of ₹1,65,000; the tenant has stopped paying rent for many months.\nThe matter was filed as R.C.A. No. 2222/2022 before the Surat District Court on 10 December 2022.",
+  "spans": [
+    {
+      "text": "17/10/2022",
+      "category": "DATE",
+      "start": 34,
+      "end": 44
+    },
+    {
+      "text": "Rupali Ranade",
+      "category": "NAME",
+      "start": 53,
+      "end": 66
+    },
+    {
+      "text": "55-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 98
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 109
+    },
+    {
+      "text": "Bungalow 19, Vesu, Surat 395033",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 151
+    },
+    {
+      "text": "+91 75642 98712",
+      "category": "PHONE",
+      "start": 159,
+      "end": 174
+    },
+    {
+      "text": "rupali.ranade43@example.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 210
+    },
+    {
+      "text": "QSSPR9444F",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 252
+    },
+    {
+      "text": "Sneha Shah",
+      "category": "NAME",
+      "start": 269,
+      "end": 279
+    },
+    {
+      "text": "Sneha Shah",
+      "category": "NAME",
+      "start": 312,
+      "end": 322
+    },
+    {
+      "text": "₹1,65,000",
+      "category": "MONEY",
+      "start": 348,
+      "end": 357
+    },
+    {
+      "text": "R.C.A. No. 2222/2022",
+      "category": "CASE_NUMBER",
+      "start": 435,
+      "end": 455
+    },
+    {
+      "text": "Surat District Court",
+      "category": "COURT",
+      "start": 467,
+      "end": 487
+    },
+    {
+      "text": "10 December 2022",
+      "category": "DATE",
+      "start": 491,
+      "end": 507
+    },
+    {
+      "text": "age (55) + occupation (fashion designer) + city (Surat) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

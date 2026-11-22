@@ -1,0 +1,104 @@
+{
+  "doc_id": "1ab279bd3af1438f",
+  "text": "Intake note (Commercial team, 07/09/2019). Our client Bhavana Fernandes is a 44-year-old civil engineer who lives at Flat 13C, Fatehgunj, Vadodara 390051 and can be reached on +91 89321 53608 or bhavana.fernandes68@example.in. The client's PAN KCRPF3813T.\nThe client consulted us about a breach of contract matter (Project Flamingo) against Lotus Motors Ltd. The breach of contract claim against M/s Lotus Motors Ltd is for Rs. 7,89,00,000; the counterparty has not paid the invoices for delivered goods.\nThe matter was filed as Com. S. No. 475/2019 before the Vadodara Commercial Court on 16 November 2019.",
+  "spans": [
+    {
+      "text": "07/09/2019",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Bhavana Fernandes",
+      "category": "NAME",
+      "start": 54,
+      "end": 71
+    },
+    {
+      "text": "44-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 103
+    },
+    {
+      "text": "Flat 13C, Fatehgunj, Vadodara 390051",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 153
+    },
+    {
+      "text": "+91 89321 53608",
+      "category": "PHONE",
+      "start": 176,
+      "end": 191
+    },
+    {
+      "text": "bhavana.fernandes68@example.in",
+      "category": "EMAIL",
+      "start": 195,
+      "end": 225
+    },
+    {
+      "text": "KCRPF3813T",
+      "category": "ID_NUMBER",
+      "start": 244,
+      "end": 254
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 288,
+      "end": 306
+    },
+    {
+      "text": "Project Flamingo",
+      "category": "MATTER_CODENAME",
+      "start": 315,
+      "end": 331
+    },
+    {
+      "text": "Lotus Motors Ltd",
+      "category": "ORGANIZATION",
+      "start": 341,
+      "end": 357
+    },
+    {
+      "text": "Lotus Motors Ltd",
+      "category": "ORGANIZATION",
+      "start": 400,
+      "end": 416
+    },
+    {
+      "text": "Rs. 7,89,00,000",
+      "category": "MONEY",
+      "start": 424,
+      "end": 439
+    },
+    {
+      "text": "Com. S. No. 475/2019",
+      "category": "CASE_NUMBER",
+      "start": 529,
+      "end": 549
+    },
+    {
+      "text": "Vadodara Commercial Court",
+      "category": "COURT",
+      "start": 561,
+      "end": 586
+    },
+    {
+      "text": "16 November 2019",
+      "category": "DATE",
+      "start": 590,
+      "end": 606
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

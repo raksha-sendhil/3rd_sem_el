@@ -1,0 +1,98 @@
+{
+  "doc_id": "653db363a618ea03",
+  "text": "Intake note (Criminal team, 6 February 2019). Our client Madhuri Bhandari is a 44-year-old textile trader who lives at Bungalow 28, Banjara Hills, Hyderabad 500010 and can be reached on 08148423302 or madhuri.bhandari12@example.in. The client's PAN ESNPB1125M.\nThe client consulted us about a anticipatory bail matter against Rajesh Tiwari. The anticipatory bail matter arises from a complaint by Rajesh Tiwari about ₹15,10,000; the complaint was filed during a matrimonial dispute.\nThe matter was filed as Anticipatory Bail Application No. 2135/2019 before the Hyderabad Sessions Court on 29/07/2019.",
+  "spans": [
+    {
+      "text": "6 February 2019",
+      "category": "DATE",
+      "start": 28,
+      "end": 43
+    },
+    {
+      "text": "Madhuri Bhandari",
+      "category": "NAME",
+      "start": 57,
+      "end": 73
+    },
+    {
+      "text": "44-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 105
+    },
+    {
+      "text": "Bungalow 28, Banjara Hills, Hyderabad 500010",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 163
+    },
+    {
+      "text": "08148423302",
+      "category": "PHONE",
+      "start": 186,
+      "end": 197
+    },
+    {
+      "text": "madhuri.bhandari12@example.in",
+      "category": "EMAIL",
+      "start": 201,
+      "end": 230
+    },
+    {
+      "text": "ESNPB1125M",
+      "category": "ID_NUMBER",
+      "start": 249,
+      "end": 259
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 293,
+      "end": 310
+    },
+    {
+      "text": "Rajesh Tiwari",
+      "category": "NAME",
+      "start": 326,
+      "end": 339
+    },
+    {
+      "text": "Rajesh Tiwari",
+      "category": "NAME",
+      "start": 397,
+      "end": 410
+    },
+    {
+      "text": "₹15,10,000",
+      "category": "MONEY",
+      "start": 417,
+      "end": 427
+    },
+    {
+      "text": "Anticipatory Bail Application No. 2135/2019",
+      "category": "CASE_NUMBER",
+      "start": 507,
+      "end": 550
+    },
+    {
+      "text": "Hyderabad Sessions Court",
+      "category": "COURT",
+      "start": 562,
+      "end": 586
+    },
+    {
+      "text": "29/07/2019",
+      "category": "DATE",
+      "start": 590,
+      "end": 600
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

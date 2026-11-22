@@ -1,0 +1,116 @@
+{
+  "doc_id": "266b23c217a3449b",
+  "text": "Intake note - Family team\nDate: 27 April 2025\nClient: Harish DSouza, a 72-year-old hardware dealer from Nashik.\nAddress: Plot 61, Gangapur Road, Nashik 422037\nPhone: 99076 54030. Email: harish.dsouza@example.in. PAN EZZPD7244J, Aadhaar 5200 5735 1123.\nMatter: divorce by mutual consent\nOpposing party: Kavya Bhosale\nFacts: The divorce by mutual consent with Kavya Bhosale includes a settlement of ₹88,40,000; the wife wants her jewellery and gifts returned.\nThe matter was filed as Petition No. 273/2025 before the Family Court at Nashik on 25 August 2025.",
+  "spans": [
+    {
+      "text": "27 April 2025",
+      "category": "DATE",
+      "start": 32,
+      "end": 45
+    },
+    {
+      "text": "Harish DSouza",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "72-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "hardware dealer",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 98
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 104,
+      "end": 110
+    },
+    {
+      "text": "Plot 61, Gangapur Road, Nashik 422037",
+      "category": "ADDRESS",
+      "start": 121,
+      "end": 158
+    },
+    {
+      "text": "99076 54030",
+      "category": "PHONE",
+      "start": 166,
+      "end": 177
+    },
+    {
+      "text": "harish.dsouza@example.in",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 210
+    },
+    {
+      "text": "EZZPD7244J",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "5200 5735 1123",
+      "category": "ID_NUMBER",
+      "start": 236,
+      "end": 250
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 260,
+      "end": 285
+    },
+    {
+      "text": "Kavya Bhosale",
+      "category": "NAME",
+      "start": 302,
+      "end": 315
+    },
+    {
+      "text": "Kavya Bhosale",
+      "category": "NAME",
+      "start": 358,
+      "end": 371
+    },
+    {
+      "text": "₹88,40,000",
+      "category": "MONEY",
+      "start": 397,
+      "end": 407
+    },
+    {
+      "text": "Petition No. 273/2025",
+      "category": "CASE_NUMBER",
+      "start": 482,
+      "end": 503
+    },
+    {
+      "text": "Family Court at Nashik",
+      "category": "COURT",
+      "start": 515,
+      "end": 537
+    },
+    {
+      "text": "25 August 2025",
+      "category": "DATE",
+      "start": 541,
+      "end": 555
+    },
+    {
+      "text": "age (72) + occupation (hardware dealer) + city (Nashik) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

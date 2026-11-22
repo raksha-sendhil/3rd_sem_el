@@ -1,0 +1,44 @@
+{
+  "doc_id": "9fe7355bfc9e6c04",
+  "text": "Subject: Your consumer complaint matter\n\nDear Ms. Pandey,\n\nThank you for meeting us on 2 July 2023 about your dispute with Vindhya Constructions. As we understand it, possession of the flat is long overdue. The matter is listed before the Bengaluru District Consumer Disputes Redressal Commission.\n\nOur advice is to claim interest on the amount paid for every month of delay in possession. Please collect the allotment letter, the builder-buyer agreement and every payment receipt and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Pandey",
+      "category": "NAME",
+      "start": 50,
+      "end": 56
+    },
+    {
+      "text": "2 July 2023",
+      "category": "DATE",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "Vindhya Constructions",
+      "category": "ORGANIZATION",
+      "start": 123,
+      "end": 144
+    },
+    {
+      "text": "Bengaluru District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 239,
+      "end": 296
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 528,
+      "end": 543
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

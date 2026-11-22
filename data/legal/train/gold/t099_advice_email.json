@@ -1,0 +1,50 @@
+{
+  "doc_id": "b90d39e825ab4c48",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2651/2023\n\nDear Ms. Deshpande,\n\nThank you for meeting us on 13 December 2023 about your dispute with Sameer Chandran. As we understand it, the tenant has stopped paying rent for many months.\n\nOur advice is to issue a notice terminating the tenancy and claim mesne profits for the period of occupation. Please collect the rent agreement, the rent receipts and the notice terminating the tenancy and send copies to this office. We will pursue the full claim of Rs 1,45,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 2651/2023",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Deshpande",
+      "category": "NAME",
+      "start": 71,
+      "end": 80
+    },
+    {
+      "text": "13 December 2023",
+      "category": "DATE",
+      "start": 111,
+      "end": 127
+    },
+    {
+      "text": "Sameer Chandran",
+      "category": "NAME",
+      "start": 152,
+      "end": 167
+    },
+    {
+      "text": "Rs 1,45,000",
+      "category": "MONEY",
+      "start": 510,
+      "end": 521
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 538,
+      "end": 553
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

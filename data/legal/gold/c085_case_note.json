@@ -1,0 +1,74 @@
+{
+  "doc_id": "939731d95436c212",
+  "text": "Case note: Petition No. 2234/2024\nClient: Manoj Rao (farmer, Thiruvananthapuram)\nOpposing party: Pranav DSouza\nCourt: Family Court at Thiruvananthapuram\nFiled on: 16 February 2024\nClaim amount: Rs 10,20,000\nIssue: divorce by mutual consent. Both spouses have lived apart for a long time.\nAdvice given: Apply to waive the statutory cooling-off period.\nOutcome: The cooling-off period was waived.\nRecommended next step: Attend the second motion hearing.\nWitness: Gayatri Kapoor",
+  "spans": [
+    {
+      "text": "Petition No. 2234/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 33
+    },
+    {
+      "text": "Manoj Rao",
+      "category": "NAME",
+      "start": 42,
+      "end": 51
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 53,
+      "end": 59
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 61,
+      "end": 79
+    },
+    {
+      "text": "Pranav DSouza",
+      "category": "NAME",
+      "start": 97,
+      "end": 110
+    },
+    {
+      "text": "Family Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 118,
+      "end": 152
+    },
+    {
+      "text": "16 February 2024",
+      "category": "DATE",
+      "start": 163,
+      "end": 179
+    },
+    {
+      "text": "Rs 10,20,000",
+      "category": "MONEY",
+      "start": 194,
+      "end": 206
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 214,
+      "end": 239
+    },
+    {
+      "text": "Gayatri Kapoor",
+      "category": "NAME",
+      "start": 461,
+      "end": 475
+    },
+    {
+      "text": "occupation (farmer) + city (Thiruvananthapuram) + issue (divorce by mutual consent)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

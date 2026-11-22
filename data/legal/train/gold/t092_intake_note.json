@@ -1,0 +1,98 @@
+{
+  "doc_id": "831674ebcc19db6e",
+  "text": "Intake note (Property team, 06/11/2022). Our client Karthik Khan is a 48-year-old nurse who lives at Plot 29, Indiranagar, Bengaluru 560028 and can be reached on 07399866892 or karthik.khan@example.com. The client's PAN LCJPK1913G.\nThe client consulted us about a land dispute matter against Ajay Mukherjee. The land dispute with Ajay Mukherjee concerns agricultural land valued at Rs 4,19,00,000; relatives dispute who owns the ancestral land.\nThe matter was filed as O.S. No. 1118/2023 before the Bengaluru District Court on 11/02/2023.",
+  "spans": [
+    {
+      "text": "06/11/2022",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Karthik Khan",
+      "category": "NAME",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "48-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "nurse",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 87
+    },
+    {
+      "text": "Plot 29, Indiranagar, Bengaluru 560028",
+      "category": "ADDRESS",
+      "start": 101,
+      "end": 139
+    },
+    {
+      "text": "07399866892",
+      "category": "PHONE",
+      "start": 162,
+      "end": 173
+    },
+    {
+      "text": "karthik.khan@example.com",
+      "category": "EMAIL",
+      "start": 177,
+      "end": 201
+    },
+    {
+      "text": "LCJPK1913G",
+      "category": "ID_NUMBER",
+      "start": 220,
+      "end": 230
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 264,
+      "end": 276
+    },
+    {
+      "text": "Ajay Mukherjee",
+      "category": "NAME",
+      "start": 292,
+      "end": 306
+    },
+    {
+      "text": "Ajay Mukherjee",
+      "category": "NAME",
+      "start": 330,
+      "end": 344
+    },
+    {
+      "text": "Rs 4,19,00,000",
+      "category": "MONEY",
+      "start": 382,
+      "end": 396
+    },
+    {
+      "text": "O.S. No. 1118/2023",
+      "category": "CASE_NUMBER",
+      "start": 469,
+      "end": 487
+    },
+    {
+      "text": "Bengaluru District Court",
+      "category": "COURT",
+      "start": 499,
+      "end": 523
+    },
+    {
+      "text": "11/02/2023",
+      "category": "DATE",
+      "start": 527,
+      "end": 537
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

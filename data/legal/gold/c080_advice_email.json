@@ -1,0 +1,50 @@
+{
+  "doc_id": "a8cb7159aa471105",
+  "text": "Subject: Your land dispute matter - R.C.S. No. 129/2024\n\nDear Ms. Gaikwad,\n\nThank you for meeting us on 4 May 2025 about your dispute with Venkat Menon. As we understand it, relatives dispute who owns the ancestral land.\n\nOur advice is to trace the chain of title through the mutation entries. Please collect the mutation entries, the partition deed and the old sale deeds and send copies to this office. We will pursue the full claim of Rs. 3,55,00,000.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "R.C.S. No. 129/2024",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 55
+    },
+    {
+      "text": "Gaikwad",
+      "category": "NAME",
+      "start": 66,
+      "end": 73
+    },
+    {
+      "text": "4 May 2025",
+      "category": "DATE",
+      "start": 104,
+      "end": 114
+    },
+    {
+      "text": "Venkat Menon",
+      "category": "NAME",
+      "start": 139,
+      "end": 151
+    },
+    {
+      "text": "Rs. 3,55,00,000",
+      "category": "MONEY",
+      "start": 438,
+      "end": 453
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 470,
+      "end": 486
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

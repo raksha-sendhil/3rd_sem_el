@@ -1,0 +1,50 @@
+{
+  "doc_id": "13cf6e6e66b34dca",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Bose,\n\nThank you for meeting us on 2 March 2025 about your dispute with Sai Textiles Pvt Ltd. As we understand it, the drawer stopped the cheque with a stop-payment instruction. The matter is listed before the Judicial Magistrate First Class Court at Panaji.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office. We will pursue the full claim of ₹21,60,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Bose",
+      "category": "NAME",
+      "start": 45,
+      "end": 49
+    },
+    {
+      "text": "2 March 2025",
+      "category": "DATE",
+      "start": 80,
+      "end": 92
+    },
+    {
+      "text": "Sai Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 117,
+      "end": 137
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Panaji",
+      "category": "COURT",
+      "start": 255,
+      "end": 302
+    },
+    {
+      "text": "₹21,60,000",
+      "category": "MONEY",
+      "start": 561,
+      "end": 571
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 588,
+      "end": 603
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

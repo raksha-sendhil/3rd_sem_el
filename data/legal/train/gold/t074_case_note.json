@@ -1,0 +1,68 @@
+{
+  "doc_id": "d0cbbad894b22b85",
+  "text": "Case note: R.C.S. No. 2871/2022\nClient: Shalini Karve (truck driver, New Delhi)\nOpposing party: Rahul Shetty\nCourt: New Delhi District Court\nFiled on: 9 February 2022\nClaim amount: INR 74,80,000/-\nIssue: land dispute. The occupant claims ownership by adverse possession.\nAdvice given: Rebut the adverse possession claim with tax receipts showing continuous ownership.\nOutcome: The adverse possession claim was dismissed.\nRecommended next step: Seek possession of the land.",
+  "spans": [
+    {
+      "text": "R.C.S. No. 2871/2022",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Shalini Karve",
+      "category": "NAME",
+      "start": 40,
+      "end": 53
+    },
+    {
+      "text": "truck driver",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 67
+    },
+    {
+      "text": "New Delhi",
+      "category": "LOCATION",
+      "start": 69,
+      "end": 78
+    },
+    {
+      "text": "Rahul Shetty",
+      "category": "NAME",
+      "start": 96,
+      "end": 108
+    },
+    {
+      "text": "New Delhi District Court",
+      "category": "COURT",
+      "start": 116,
+      "end": 140
+    },
+    {
+      "text": "9 February 2022",
+      "category": "DATE",
+      "start": 151,
+      "end": 166
+    },
+    {
+      "text": "INR 74,80,000/-",
+      "category": "MONEY",
+      "start": 181,
+      "end": 196
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 204,
+      "end": 216
+    },
+    {
+      "text": "occupation (truck driver) + city (New Delhi) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

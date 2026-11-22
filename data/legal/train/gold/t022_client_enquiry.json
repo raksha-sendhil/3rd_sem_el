@@ -1,0 +1,80 @@
+{
+  "doc_id": "3119db52c32708c2",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Varun Hegde. I am a 59-year-old railway employee living in Nashik. I have a tenancy problem with Madhuri Kurian involving ₹2,55,000 in rent, and the landlord is trying to evict the tenant after a rent increase was refused. My case number is R.C.S. No. 2056/2020 in the Nashik District Court. Can your firm advise me on what to do next? You can call me on 07404299127 or email varun.hegde@example.in.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Varun Hegde",
+      "category": "NAME",
+      "start": 67,
+      "end": 78
+    },
+    {
+      "text": "59-year-old",
+      "category": "AGE",
+      "start": 87,
+      "end": 98
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 99,
+      "end": 115
+    },
+    {
+      "text": "Nashik",
+      "category": "LOCATION",
+      "start": 126,
+      "end": 132
+    },
+    {
+      "text": "Madhuri Kurian",
+      "category": "NAME",
+      "start": 164,
+      "end": 178
+    },
+    {
+      "text": "₹2,55,000",
+      "category": "MONEY",
+      "start": 189,
+      "end": 198
+    },
+    {
+      "text": "R.C.S. No. 2056/2020",
+      "category": "CASE_NUMBER",
+      "start": 308,
+      "end": 328
+    },
+    {
+      "text": "Nashik District Court",
+      "category": "COURT",
+      "start": 336,
+      "end": 357
+    },
+    {
+      "text": "07404299127",
+      "category": "PHONE",
+      "start": 422,
+      "end": 433
+    },
+    {
+      "text": "varun.hegde@example.in",
+      "category": "EMAIL",
+      "start": 443,
+      "end": 465
+    },
+    {
+      "text": "age (59) + occupation (railway employee) + city (Nashik) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

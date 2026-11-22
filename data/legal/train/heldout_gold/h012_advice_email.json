@@ -1,0 +1,44 @@
+{
+  "doc_id": "981559777f1bf133",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Ms. Chauhan,\n\nThank you for meeting us on 7 December 2020 about your dispute with Suresh Naidu. As we understand it, the complaint turns a business disagreement into a criminal case.\n\nOur advice is to argue that the dispute is civil in nature and offer to cooperate with the investigation. Please collect the partnership papers and the correspondence with the complainant and send copies to this office. We will pursue the full claim of 20.2 lakh rupees.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Chauhan",
+      "category": "NAME",
+      "start": 49,
+      "end": 56
+    },
+    {
+      "text": "7 December 2020",
+      "category": "DATE",
+      "start": 87,
+      "end": 102
+    },
+    {
+      "text": "Suresh Naidu",
+      "category": "NAME",
+      "start": 127,
+      "end": 139
+    },
+    {
+      "text": "20.2 lakh rupees",
+      "category": "MONEY",
+      "start": 482,
+      "end": 498
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 515,
+      "end": 532
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

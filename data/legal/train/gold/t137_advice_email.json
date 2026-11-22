@@ -1,0 +1,56 @@
+{
+  "doc_id": "b0ec906d1fc39f2a",
+  "text": "Subject: Your breach of contract matter (Project Flamingo)\n\nDear Ms. Natarajan,\n\nThank you for meeting us on 24/12/2022 about your dispute with Qureshi Motors Ltd. As we understand it, the claim must be filed as a commercial suit. The matter is listed before the Panaji Commercial Court.\n\nOur advice is to complete pre-institution mediation before filing the commercial suit. Please collect the mediation request and the statement of accounts and send copies to this office. We will pursue the full claim of ₹9.4 crore.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Project Flamingo",
+      "category": "MATTER_CODENAME",
+      "start": 41,
+      "end": 57
+    },
+    {
+      "text": "Natarajan",
+      "category": "NAME",
+      "start": 69,
+      "end": 78
+    },
+    {
+      "text": "24/12/2022",
+      "category": "DATE",
+      "start": 109,
+      "end": 119
+    },
+    {
+      "text": "Qureshi Motors Ltd",
+      "category": "ORGANIZATION",
+      "start": 144,
+      "end": 162
+    },
+    {
+      "text": "Panaji Commercial Court",
+      "category": "COURT",
+      "start": 263,
+      "end": 286
+    },
+    {
+      "text": "₹9.4 crore",
+      "category": "MONEY",
+      "start": 508,
+      "end": 518
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 535,
+      "end": 554
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

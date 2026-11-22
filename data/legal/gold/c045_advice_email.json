@@ -1,0 +1,44 @@
+{
+  "doc_id": "b06abde56f01bc26",
+  "text": "Subject: Your tenancy eviction matter - R.C.A. No. 390/2019\n\nDear Ms. Sathe,\n\nThank you for meeting us on 16 February 2019 about your dispute with Arjun Sandhu. As we understand it, the landlord needs the premises for the family's own use.\n\nOur advice is to plead bona fide personal need with proof of the family's housing requirement. Please collect proof of the family's housing requirement and the property tax records and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.A. No. 390/2019",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 59
+    },
+    {
+      "text": "Sathe",
+      "category": "NAME",
+      "start": 70,
+      "end": 75
+    },
+    {
+      "text": "16 February 2019",
+      "category": "DATE",
+      "start": 106,
+      "end": 122
+    },
+    {
+      "text": "Arjun Sandhu",
+      "category": "NAME",
+      "start": 147,
+      "end": 159
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 469,
+      "end": 484
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

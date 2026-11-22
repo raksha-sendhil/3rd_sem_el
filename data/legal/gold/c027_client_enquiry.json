@@ -1,0 +1,68 @@
+{
+  "doc_id": "80ef28346b17a2d5",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Ishita Ranade. I am a 32-year-old taxi driver living in Chennai. M/s Everest Traders gave me a cheque for ₹9,90,000 to repay a loan, but the cheque was returned unpaid for insufficient funds. Can your firm advise me on what to do next? You can call me on +91 62055 23008 or email ishita.ranade@example.com.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Ishita Ranade",
+      "category": "NAME",
+      "start": 64,
+      "end": 77
+    },
+    {
+      "text": "32-year-old",
+      "category": "AGE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "taxi driver",
+      "category": "OCCUPATION",
+      "start": 98,
+      "end": 109
+    },
+    {
+      "text": "Chennai",
+      "category": "LOCATION",
+      "start": 120,
+      "end": 127
+    },
+    {
+      "text": "Everest Traders",
+      "category": "ORGANIZATION",
+      "start": 133,
+      "end": 148
+    },
+    {
+      "text": "₹9,90,000",
+      "category": "MONEY",
+      "start": 170,
+      "end": 179
+    },
+    {
+      "text": "+91 62055 23008",
+      "category": "PHONE",
+      "start": 319,
+      "end": 334
+    },
+    {
+      "text": "ishita.ranade@example.com",
+      "category": "EMAIL",
+      "start": 344,
+      "end": 369
+    },
+    {
+      "text": "age (32) + occupation (taxi driver) + city (Chennai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

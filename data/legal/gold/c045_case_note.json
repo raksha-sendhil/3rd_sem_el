@@ -1,0 +1,68 @@
+{
+  "doc_id": "884c4d5a4630cc5f",
+  "text": "Case note: R.C.A. No. 390/2019\nClient: Pallavi Sathe (textile trader, Hubballi)\nOpposing party: Arjun Sandhu\nCourt: Hubballi District Court\nFiled on: 5 January 2019\nClaim amount: ₹6,30,000\nIssue: tenancy eviction. The landlord needs the premises for the family's own use.\nAdvice given: Plead bona fide personal need with proof of the family's housing requirement.\nOutcome: The eviction was granted on the ground of personal need.\nRecommended next step: Give the tenant time to vacate under the decree.",
+  "spans": [
+    {
+      "text": "R.C.A. No. 390/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 30
+    },
+    {
+      "text": "Pallavi Sathe",
+      "category": "NAME",
+      "start": 39,
+      "end": 52
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 54,
+      "end": 68
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 70,
+      "end": 78
+    },
+    {
+      "text": "Arjun Sandhu",
+      "category": "NAME",
+      "start": 96,
+      "end": 108
+    },
+    {
+      "text": "Hubballi District Court",
+      "category": "COURT",
+      "start": 116,
+      "end": 139
+    },
+    {
+      "text": "5 January 2019",
+      "category": "DATE",
+      "start": 150,
+      "end": 164
+    },
+    {
+      "text": "₹6,30,000",
+      "category": "MONEY",
+      "start": 179,
+      "end": 188
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 196,
+      "end": 212
+    },
+    {
+      "text": "occupation (textile trader) + city (Hubballi) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

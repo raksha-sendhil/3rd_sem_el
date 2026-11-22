@@ -1,0 +1,50 @@
+{
+  "doc_id": "95a515f5d526bf50",
+  "text": "Subject: Your wrongful termination matter - Complaint No. 2451/2020\n\nDear Ms. Chauhan,\n\nThank you for meeting us on 21/06/2021 about your dispute with M/s Goyal Industries. As we understand it, the employee was dismissed without any enquiry. The matter is listed before the Pune Labour Court.\n\nOur advice is to claim reinstatement with full back wages. Please collect the appointment letter, the termination letter and salary slips and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 34
+    },
+    {
+      "text": "Complaint No. 2451/2020",
+      "category": "CASE_NUMBER",
+      "start": 44,
+      "end": 67
+    },
+    {
+      "text": "Chauhan",
+      "category": "NAME",
+      "start": 78,
+      "end": 85
+    },
+    {
+      "text": "21/06/2021",
+      "category": "DATE",
+      "start": 116,
+      "end": 126
+    },
+    {
+      "text": "Goyal Industries",
+      "category": "ORGANIZATION",
+      "start": 155,
+      "end": 171
+    },
+    {
+      "text": "Pune Labour Court",
+      "category": "COURT",
+      "start": 274,
+      "end": 291
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 479,
+      "end": 491
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

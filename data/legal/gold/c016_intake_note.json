@@ -1,0 +1,128 @@
+{
+  "doc_id": "495b4e8cf4b4efcc",
+  "text": "Intake note - Commercial team\nDate: 16 October 2020\nClient: Tushar Shinde, a 60-year-old fashion designer from Kochi.\nAddress: Flat 13A, Kakkanad, Kochi 682041\nPhone: +91 64678 45264. Email: tushar.shinde35@example.in. PAN JMBPS7825L, Aadhaar 9534 8109 8598.\nMatter: cheque bounce\nOpposing party: Saffron Enterprises\nFacts: A cheque for ₹20,00,000 issued by M/s Saffron Enterprises bounced: the cheque came back with the remark account closed.\nThe cheque was deposited in the client's account no. 343132672115 (IFSC HDFC0372832).\nThe matter was filed as S.C.C. No. 2242/2021 before the Judicial Magistrate First Class Court at Kochi on 29 March 2021.",
+  "spans": [
+    {
+      "text": "16 October 2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 51
+    },
+    {
+      "text": "Tushar Shinde",
+      "category": "NAME",
+      "start": 60,
+      "end": 73
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 105
+    },
+    {
+      "text": "Kochi",
+      "category": "LOCATION",
+      "start": 111,
+      "end": 116
+    },
+    {
+      "text": "Flat 13A, Kakkanad, Kochi 682041",
+      "category": "ADDRESS",
+      "start": 127,
+      "end": 159
+    },
+    {
+      "text": "+91 64678 45264",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "tushar.shinde35@example.in",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 217
+    },
+    {
+      "text": "JMBPS7825L",
+      "category": "ID_NUMBER",
+      "start": 223,
+      "end": 233
+    },
+    {
+      "text": "9534 8109 8598",
+      "category": "ID_NUMBER",
+      "start": 243,
+      "end": 257
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 267,
+      "end": 280
+    },
+    {
+      "text": "Saffron Enterprises",
+      "category": "ORGANIZATION",
+      "start": 297,
+      "end": 316
+    },
+    {
+      "text": "₹20,00,000",
+      "category": "MONEY",
+      "start": 337,
+      "end": 347
+    },
+    {
+      "text": "Saffron Enterprises",
+      "category": "ORGANIZATION",
+      "start": 362,
+      "end": 381
+    },
+    {
+      "text": "343132672115",
+      "category": "FINANCIAL",
+      "start": 497,
+      "end": 509
+    },
+    {
+      "text": "HDFC0372832",
+      "category": "FINANCIAL",
+      "start": 516,
+      "end": 527
+    },
+    {
+      "text": "S.C.C. No. 2242/2021",
+      "category": "CASE_NUMBER",
+      "start": 554,
+      "end": 574
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Kochi",
+      "category": "COURT",
+      "start": 586,
+      "end": 632
+    },
+    {
+      "text": "29 March 2021",
+      "category": "DATE",
+      "start": 636,
+      "end": 649
+    },
+    {
+      "text": "age (60) + occupation (fashion designer) + city (Kochi) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

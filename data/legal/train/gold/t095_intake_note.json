@@ -1,0 +1,98 @@
+{
+  "doc_id": "180efe828afa86aa",
+  "text": "Intake note (Property team, 25 March 2025). Our client Tanvi Ranade is a 34-year-old railway employee who lives at Plot 93, Peelamedu, Coimbatore 641006 and can be reached on +91 80987 31948 or tanvi.ranade45@example.in. The client's PAN ZCFPR8579W.\nThe client consulted us about a land dispute matter against Asha Fernandes. The land dispute with Asha Fernandes concerns agricultural land valued at ₹5,99,00,000; the neighbour has encroached on the boundary of the plot.\nThe matter was filed as O.S. No. 2445/2025 before the Coimbatore District Court on 13 August 2025.",
+  "spans": [
+    {
+      "text": "25 March 2025",
+      "category": "DATE",
+      "start": 28,
+      "end": 41
+    },
+    {
+      "text": "Tanvi Ranade",
+      "category": "NAME",
+      "start": 55,
+      "end": 67
+    },
+    {
+      "text": "34-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 101
+    },
+    {
+      "text": "Plot 93, Peelamedu, Coimbatore 641006",
+      "category": "ADDRESS",
+      "start": 115,
+      "end": 152
+    },
+    {
+      "text": "+91 80987 31948",
+      "category": "PHONE",
+      "start": 175,
+      "end": 190
+    },
+    {
+      "text": "tanvi.ranade45@example.in",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 219
+    },
+    {
+      "text": "ZCFPR8579W",
+      "category": "ID_NUMBER",
+      "start": 238,
+      "end": 248
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 282,
+      "end": 294
+    },
+    {
+      "text": "Asha Fernandes",
+      "category": "NAME",
+      "start": 310,
+      "end": 324
+    },
+    {
+      "text": "Asha Fernandes",
+      "category": "NAME",
+      "start": 348,
+      "end": 362
+    },
+    {
+      "text": "₹5,99,00,000",
+      "category": "MONEY",
+      "start": 400,
+      "end": 412
+    },
+    {
+      "text": "O.S. No. 2445/2025",
+      "category": "CASE_NUMBER",
+      "start": 496,
+      "end": 514
+    },
+    {
+      "text": "Coimbatore District Court",
+      "category": "COURT",
+      "start": 526,
+      "end": 551
+    },
+    {
+      "text": "13 August 2025",
+      "category": "DATE",
+      "start": 555,
+      "end": 569
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

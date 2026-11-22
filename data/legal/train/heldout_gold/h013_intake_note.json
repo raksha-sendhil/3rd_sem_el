@@ -1,0 +1,98 @@
+{
+  "doc_id": "2f544503e43d186d",
+  "text": "Intake note (Property team, 19 February 2020). Our client Deepak Shinde is a 50-year-old farmer who lives at Bungalow 8, Ballygunge, Kolkata 700037 and can be reached on 90885 58609 or deepak.shinde77@example.in. The client's PAN PNPPS8106A.\nThe client consulted us about a tenancy eviction matter against Suresh Das. The tenancy dispute with Suresh Das concerns rent arrears of INR 7,05,000/-; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.A. No. 1436/2020 before the Kolkata District Court on 20 August 2020.",
+  "spans": [
+    {
+      "text": "19 February 2020",
+      "category": "DATE",
+      "start": 28,
+      "end": 44
+    },
+    {
+      "text": "Deepak Shinde",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 95
+    },
+    {
+      "text": "Bungalow 8, Ballygunge, Kolkata 700037",
+      "category": "ADDRESS",
+      "start": 109,
+      "end": 147
+    },
+    {
+      "text": "90885 58609",
+      "category": "PHONE",
+      "start": 170,
+      "end": 181
+    },
+    {
+      "text": "deepak.shinde77@example.in",
+      "category": "EMAIL",
+      "start": 185,
+      "end": 211
+    },
+    {
+      "text": "PNPPS8106A",
+      "category": "ID_NUMBER",
+      "start": 230,
+      "end": 240
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 274,
+      "end": 290
+    },
+    {
+      "text": "Suresh Das",
+      "category": "NAME",
+      "start": 306,
+      "end": 316
+    },
+    {
+      "text": "Suresh Das",
+      "category": "NAME",
+      "start": 343,
+      "end": 353
+    },
+    {
+      "text": "INR 7,05,000/-",
+      "category": "MONEY",
+      "start": 379,
+      "end": 393
+    },
+    {
+      "text": "R.C.A. No. 1436/2020",
+      "category": "CASE_NUMBER",
+      "start": 497,
+      "end": 517
+    },
+    {
+      "text": "Kolkata District Court",
+      "category": "COURT",
+      "start": 529,
+      "end": 551
+    },
+    {
+      "text": "20 August 2020",
+      "category": "DATE",
+      "start": 555,
+      "end": 569
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

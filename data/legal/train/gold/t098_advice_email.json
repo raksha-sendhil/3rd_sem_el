@@ -1,0 +1,44 @@
+{
+  "doc_id": "976aa9adeb2337cc",
+  "text": "Subject: Your anticipatory bail matter\n\nDear Mr. Patil,\n\nThank you for meeting us on 2 July 2020 about your dispute with Simran Menon. As we understand it, the complaint was filed during a matrimonial dispute. The matter is listed before the Ahmedabad Sessions Court.\n\nOur advice is to seek interim protection and offer to attend mediation. Please collect the marriage certificate and messages showing attempts to settle and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "Patil",
+      "category": "NAME",
+      "start": 49,
+      "end": 54
+    },
+    {
+      "text": "2 July 2020",
+      "category": "DATE",
+      "start": 85,
+      "end": 96
+    },
+    {
+      "text": "Simran Menon",
+      "category": "NAME",
+      "start": 121,
+      "end": 133
+    },
+    {
+      "text": "Ahmedabad Sessions Court",
+      "category": "COURT",
+      "start": 242,
+      "end": 266
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 468,
+      "end": 483
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

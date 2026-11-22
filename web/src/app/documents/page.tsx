@@ -15,6 +15,7 @@ import { AgentViews } from "@/components/documents/AgentViews";
 import { ReadView, type Upload as FileUpload } from "@/components/documents/ReadView";
 import { UploadBox } from "@/components/documents/UploadBox";
 import { ErrorNote, Legend, PageHead } from "@/components/PageHead";
+import { useDomain } from "@/components/Providers";
 
 const KINDS = {
   patient: { title: "Patient message", icon: MessageSquare, accent: "#FF4D3D" },
@@ -23,9 +24,23 @@ const KINDS = {
 };
 const OWN = "own"; // the selector entry for an uploaded document
 
+// the legal corpus: fictional client files, named by how each starts
+const LEGAL_KINDS = {
+  intake: { title: "Intake note", icon: FileText, accent: "#6D4AFF" },
+  case: { title: "Case note", icon: FileText, accent: "#0FB5A0" },
+  email: { title: "Advice email", icon: Mail, accent: "#2D8CFF" },
+  client: { title: "Client file", icon: MessageSquare, accent: "#FF4D3D" },
+};
+
 /** What a record is, from how its text starts. */
-function kindOf(d: DocumentSummary) {
+function kindOf(d: DocumentSummary, legal = false) {
   const first = d.preview.trim().split("\n")[0];
+  if (legal) {
+    if (/^intake note/i.test(first)) return LEGAL_KINDS.intake;
+    if (/^case note/i.test(first)) return LEGAL_KINDS.case;
+    if (/^(from|to|subject|dear)\b/i.test(first)) return LEGAL_KINDS.email;
+    return LEGAL_KINDS.client;
+  }
   if (!/^(from|subject):/i.test(first)) return KINDS.patient;
   return /\b(hr|leave)\b/i.test(d.preview) ? KINDS.hr : KINDS.email;
 }
@@ -87,6 +102,7 @@ const Option = ({
 );
 
 export default function Documents() {
+  const { domain } = useDomain();
   const [docs, setDocs] = useState<DocumentSummary[]>([]);
   const [docId, setDocId] = useState<string | null>(null);
   const [view, setView] = useState<DocumentView | null>(null);
@@ -200,7 +216,7 @@ export default function Documents() {
           onClick={() => !running && setDocId(OWN)}
         />
         {docs.map((d) => {
-          const k = kindOf(d);
+          const k = kindOf(d, domain.id === "legal");
           return (
             <Option
               key={d.doc_id}

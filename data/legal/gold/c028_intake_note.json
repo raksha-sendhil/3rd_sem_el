@@ -1,0 +1,122 @@
+{
+  "doc_id": "e79b053355f7dbf1",
+  "text": "Intake note - Commercial team\nDate: 21 July 2018\nClient: Anjali Dalvi, a 49-year-old software engineer from Coimbatore.\nAddress: House No. 196, Peelamedu, Coimbatore 641027\nPhone: 08423460614. Email: anjali.dalvi22@example.com. PAN CTKPD1130C.\nMatter: cheque bounce\nOpposing party: Arjun Rajan\nFacts: A cheque for 27.6 lakh rupees issued by Arjun Rajan bounced: the cheque was returned unpaid for insufficient funds.\nThe cheque was deposited in the client's account no. 627079436943 (IFSC SBIN0395486).\nThe matter was filed as S.C.C. No. 831/2019 before the Judicial Magistrate First Class Court at Coimbatore on 2 January 2019.",
+  "spans": [
+    {
+      "text": "21 July 2018",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Anjali Dalvi",
+      "category": "NAME",
+      "start": 57,
+      "end": 69
+    },
+    {
+      "text": "49-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "software engineer",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 102
+    },
+    {
+      "text": "Coimbatore",
+      "category": "LOCATION",
+      "start": 108,
+      "end": 118
+    },
+    {
+      "text": "House No. 196, Peelamedu, Coimbatore 641027",
+      "category": "ADDRESS",
+      "start": 129,
+      "end": 172
+    },
+    {
+      "text": "08423460614",
+      "category": "PHONE",
+      "start": 180,
+      "end": 191
+    },
+    {
+      "text": "anjali.dalvi22@example.com",
+      "category": "EMAIL",
+      "start": 200,
+      "end": 226
+    },
+    {
+      "text": "CTKPD1130C",
+      "category": "ID_NUMBER",
+      "start": 232,
+      "end": 242
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 252,
+      "end": 265
+    },
+    {
+      "text": "Arjun Rajan",
+      "category": "NAME",
+      "start": 282,
+      "end": 293
+    },
+    {
+      "text": "27.6 lakh rupees",
+      "category": "MONEY",
+      "start": 314,
+      "end": 330
+    },
+    {
+      "text": "Arjun Rajan",
+      "category": "NAME",
+      "start": 341,
+      "end": 352
+    },
+    {
+      "text": "627079436943",
+      "category": "FINANCIAL",
+      "start": 470,
+      "end": 482
+    },
+    {
+      "text": "SBIN0395486",
+      "category": "FINANCIAL",
+      "start": 489,
+      "end": 500
+    },
+    {
+      "text": "S.C.C. No. 831/2019",
+      "category": "CASE_NUMBER",
+      "start": 527,
+      "end": 546
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 558,
+      "end": 609
+    },
+    {
+      "text": "2 January 2019",
+      "category": "DATE",
+      "start": 613,
+      "end": 627
+    },
+    {
+      "text": "age (49) + occupation (software engineer) + city (Coimbatore) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "2e473c91e41d79e9",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Kurian,\n\nThank you for meeting us on 22 April 2021 about your dispute with M/s Zenith Traders. As we understand it, the cheque was dishonoured because the signature did not match.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office. We will pursue the full claim of 9.5 lakh rupees.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Kurian",
+      "category": "NAME",
+      "start": 45,
+      "end": 51
+    },
+    {
+      "text": "22 April 2021",
+      "category": "DATE",
+      "start": 82,
+      "end": 95
+    },
+    {
+      "text": "Zenith Traders",
+      "category": "ORGANIZATION",
+      "start": 124,
+      "end": 138
+    },
+    {
+      "text": "9.5 lakh rupees",
+      "category": "MONEY",
+      "start": 518,
+      "end": 533
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 550,
+      "end": 567
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

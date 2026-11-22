@@ -1,0 +1,116 @@
+{
+  "doc_id": "f75643871945d10b",
+  "text": "Intake note - Commercial team\nDate: 21 June 2022\nClient: Pranav Fernandes, a 42-year-old insurance agent from Bengaluru.\nAddress: House No. 85, Jayanagar, Bengaluru 560015\nPhone: +91 82722 93017. Email: pranav.fernandes@example.com. PAN ACRPF8718F.\nMatter: breach of contract (Project Eagle)\nOpposing party: Aravali Infotech Pvt Ltd\nFacts: The breach of contract claim against M/s Aravali Infotech Pvt Ltd is for ₹16.8 crore; the claim must be filed as a commercial suit.\nThe matter was filed as CS(COMM) 2796/2022 before the Bengaluru Commercial Court on 29 July 2022.",
+  "spans": [
+    {
+      "text": "21 June 2022",
+      "category": "DATE",
+      "start": 36,
+      "end": 48
+    },
+    {
+      "text": "Pranav Fernandes",
+      "category": "NAME",
+      "start": 57,
+      "end": 73
+    },
+    {
+      "text": "42-year-old",
+      "category": "AGE",
+      "start": 77,
+      "end": 88
+    },
+    {
+      "text": "insurance agent",
+      "category": "OCCUPATION",
+      "start": 89,
+      "end": 104
+    },
+    {
+      "text": "Bengaluru",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 119
+    },
+    {
+      "text": "House No. 85, Jayanagar, Bengaluru 560015",
+      "category": "ADDRESS",
+      "start": 130,
+      "end": 171
+    },
+    {
+      "text": "+91 82722 93017",
+      "category": "PHONE",
+      "start": 179,
+      "end": 194
+    },
+    {
+      "text": "pranav.fernandes@example.com",
+      "category": "EMAIL",
+      "start": 203,
+      "end": 231
+    },
+    {
+      "text": "ACRPF8718F",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 257,
+      "end": 275
+    },
+    {
+      "text": "Project Eagle",
+      "category": "MATTER_CODENAME",
+      "start": 277,
+      "end": 290
+    },
+    {
+      "text": "Aravali Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 308,
+      "end": 332
+    },
+    {
+      "text": "Aravali Infotech Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 381,
+      "end": 405
+    },
+    {
+      "text": "₹16.8 crore",
+      "category": "MONEY",
+      "start": 413,
+      "end": 424
+    },
+    {
+      "text": "CS(COMM) 2796/2022",
+      "category": "CASE_NUMBER",
+      "start": 496,
+      "end": 514
+    },
+    {
+      "text": "Bengaluru Commercial Court",
+      "category": "COURT",
+      "start": 526,
+      "end": 552
+    },
+    {
+      "text": "29 July 2022",
+      "category": "DATE",
+      "start": 556,
+      "end": 568
+    },
+    {
+      "text": "age (42) + occupation (insurance agent) + city (Bengaluru) + issue (breach of contract)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

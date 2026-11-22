@@ -1,0 +1,68 @@
+{
+  "doc_id": "5e8a7f49bba31655",
+  "text": "Case note: Complaint No. 1791/2020\nClient: Fatima Rathore (college lecturer, Kolhapur)\nOpposing party: Mehra Pharma Ltd\nCourt: Kolhapur Labour Court\nFiled on: 26 November 2020\nClaim amount: ₹9,50,000\nIssue: wrongful termination. The dismissal followed a one-sided domestic enquiry.\nAdvice given: Demand the domestic enquiry report and challenge it for breach of natural justice.\nOutcome: The enquiry was set aside for breach of natural justice.\nRecommended next step: Attend the fresh enquiry.",
+  "spans": [
+    {
+      "text": "Complaint No. 1791/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 34
+    },
+    {
+      "text": "Fatima Rathore",
+      "category": "NAME",
+      "start": 43,
+      "end": 57
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 59,
+      "end": 75
+    },
+    {
+      "text": "Kolhapur",
+      "category": "LOCATION",
+      "start": 77,
+      "end": 85
+    },
+    {
+      "text": "Mehra Pharma Ltd",
+      "category": "ORGANIZATION",
+      "start": 103,
+      "end": 119
+    },
+    {
+      "text": "Kolhapur Labour Court",
+      "category": "COURT",
+      "start": 127,
+      "end": 148
+    },
+    {
+      "text": "26 November 2020",
+      "category": "DATE",
+      "start": 159,
+      "end": 175
+    },
+    {
+      "text": "₹9,50,000",
+      "category": "MONEY",
+      "start": 190,
+      "end": 199
+    },
+    {
+      "text": "wrongful termination",
+      "category": "LEGAL_ISSUE",
+      "start": 207,
+      "end": 227
+    },
+    {
+      "text": "occupation (college lecturer) + city (Kolhapur) + issue (wrongful termination)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,110 @@
+{
+  "doc_id": "14e428423a3f3935",
+  "text": "Intake note - Property team\nDate: 24 January 2020\nClient: Leena Iyer, a 35-year-old general physician from Hubballi.\nAddress: Plot 75, Vidyanagar, Hubballi 580039\nPhone: 81087 08291. Email: leena.iyer@example.com. PAN DHWPI3773V.\nMatter: tenancy eviction\nOpposing party: Anjali Patil\nFacts: The tenancy dispute with Anjali Patil concerns rent arrears of INR 65,000/-; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.S. No. 2463/2020 before the Hubballi District Court on 29 February 2020.",
+  "spans": [
+    {
+      "text": "24 January 2020",
+      "category": "DATE",
+      "start": 34,
+      "end": 49
+    },
+    {
+      "text": "Leena Iyer",
+      "category": "NAME",
+      "start": 58,
+      "end": 68
+    },
+    {
+      "text": "35-year-old",
+      "category": "AGE",
+      "start": 72,
+      "end": 83
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 84,
+      "end": 101
+    },
+    {
+      "text": "Hubballi",
+      "category": "LOCATION",
+      "start": 107,
+      "end": 115
+    },
+    {
+      "text": "Plot 75, Vidyanagar, Hubballi 580039",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 162
+    },
+    {
+      "text": "81087 08291",
+      "category": "PHONE",
+      "start": 170,
+      "end": 181
+    },
+    {
+      "text": "leena.iyer@example.com",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 212
+    },
+    {
+      "text": "DHWPI3773V",
+      "category": "ID_NUMBER",
+      "start": 218,
+      "end": 228
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 238,
+      "end": 254
+    },
+    {
+      "text": "Anjali Patil",
+      "category": "NAME",
+      "start": 271,
+      "end": 283
+    },
+    {
+      "text": "Anjali Patil",
+      "category": "NAME",
+      "start": 316,
+      "end": 328
+    },
+    {
+      "text": "INR 65,000/-",
+      "category": "MONEY",
+      "start": 354,
+      "end": 366
+    },
+    {
+      "text": "R.C.S. No. 2463/2020",
+      "category": "CASE_NUMBER",
+      "start": 470,
+      "end": 490
+    },
+    {
+      "text": "Hubballi District Court",
+      "category": "COURT",
+      "start": 502,
+      "end": 525
+    },
+    {
+      "text": "29 February 2020",
+      "category": "DATE",
+      "start": 529,
+      "end": 545
+    },
+    {
+      "text": "age (35) + occupation (general physician) + city (Hubballi) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

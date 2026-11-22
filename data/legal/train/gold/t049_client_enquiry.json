@@ -1,0 +1,68 @@
+{
+  "doc_id": "8fd1b89aac6bcc81",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Gaurav Pawar. I am a 67-year-old government clerk living in Pune. M/s Sterling Traders gave me a cheque for Rs 22,10,000 to repay a loan, but the cheque was returned unpaid for insufficient funds. Can your firm advise me on what to do next? You can call me on +91 69625 03203 or email gaurav.pawar@example.in.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Gaurav Pawar",
+      "category": "NAME",
+      "start": 64,
+      "end": 76
+    },
+    {
+      "text": "67-year-old",
+      "category": "AGE",
+      "start": 85,
+      "end": 96
+    },
+    {
+      "text": "government clerk",
+      "category": "OCCUPATION",
+      "start": 97,
+      "end": 113
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 124,
+      "end": 128
+    },
+    {
+      "text": "Sterling Traders",
+      "category": "ORGANIZATION",
+      "start": 134,
+      "end": 150
+    },
+    {
+      "text": "Rs 22,10,000",
+      "category": "MONEY",
+      "start": 172,
+      "end": 184
+    },
+    {
+      "text": "+91 69625 03203",
+      "category": "PHONE",
+      "start": 324,
+      "end": 339
+    },
+    {
+      "text": "gaurav.pawar@example.in",
+      "category": "EMAIL",
+      "start": 349,
+      "end": 372
+    },
+    {
+      "text": "age (67) + occupation (government clerk) + city (Pune) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

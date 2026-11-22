@@ -1,0 +1,50 @@
+{
+  "doc_id": "c1463ea16ce800c4",
+  "text": "Subject: Your land dispute matter - O.S. No. 2322/2021\n\nDear Mr. Sen,\n\nThank you for meeting us on 29 May 2021 about your dispute with Sujata Rajan. As we understand it, construction has started on the disputed plot.\n\nOur advice is to seek a temporary injunction to stop construction on the plot. Please collect photographs of the construction and the land records and send copies to this office. We will pursue the full claim of Rs 4,39,00,000.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2322/2021",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Sen",
+      "category": "NAME",
+      "start": 65,
+      "end": 68
+    },
+    {
+      "text": "29 May 2021",
+      "category": "DATE",
+      "start": 99,
+      "end": 110
+    },
+    {
+      "text": "Sujata Rajan",
+      "category": "NAME",
+      "start": 135,
+      "end": 147
+    },
+    {
+      "text": "Rs 4,39,00,000",
+      "category": "MONEY",
+      "start": 430,
+      "end": 444
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 461,
+      "end": 476
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

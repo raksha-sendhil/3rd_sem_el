@@ -1,0 +1,98 @@
+{
+  "doc_id": "2103c834fe16f1d9",
+  "text": "Intake note (Commercial team, 1 January 2023). Our client Kiran Goyal is a 50-year-old railway employee who lives at Bungalow 9, Kothrud, Pune 411019 and can be reached on +91 82820 85231 or kiran.goyal@example.com. The client's PAN BEUPG5989B.\nThe client consulted us about a cheque bounce matter against M/s Coastal Traders. A cheque for 37.9 lakh rupees issued by Coastal Traders bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as CC/2522/2023 before the Judicial Magistrate First Class Court at Pune on 14 April 2023.",
+  "spans": [
+    {
+      "text": "1 January 2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 44
+    },
+    {
+      "text": "Kiran Goyal",
+      "category": "NAME",
+      "start": 58,
+      "end": 69
+    },
+    {
+      "text": "50-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "railway employee",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Bungalow 9, Kothrud, Pune 411019",
+      "category": "ADDRESS",
+      "start": 117,
+      "end": 149
+    },
+    {
+      "text": "+91 82820 85231",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "kiran.goyal@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 214
+    },
+    {
+      "text": "BEUPG5989B",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 290
+    },
+    {
+      "text": "Coastal Traders",
+      "category": "ORGANIZATION",
+      "start": 310,
+      "end": 325
+    },
+    {
+      "text": "37.9 lakh rupees",
+      "category": "MONEY",
+      "start": 340,
+      "end": 356
+    },
+    {
+      "text": "Coastal Traders",
+      "category": "ORGANIZATION",
+      "start": 367,
+      "end": 382
+    },
+    {
+      "text": "CC/2522/2023",
+      "category": "CASE_NUMBER",
+      "start": 471,
+      "end": 483
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "start": 495,
+      "end": 540
+    },
+    {
+      "text": "14 April 2023",
+      "category": "DATE",
+      "start": 544,
+      "end": 557
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

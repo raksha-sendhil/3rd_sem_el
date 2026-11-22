@@ -1,0 +1,44 @@
+{
+  "doc_id": "066588730ef2831a",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Ahuja,\n\nThank you for meeting us on 17/08/2022 about your dispute with Deepak Bhosale. As we understand it, the cheque was dishonoured because the signature did not match. The matter is listed before the Judicial Magistrate First Class Court at Thiruvananthapuram.\n\nOur advice is to obtain the bank's certificate on the signature mismatch and treat it as a dishonour under the cheque-bounce law. Please collect the bank's certificate on the signature mismatch and the drawer's earlier cheques and send copies to this office.\n\nRegards,\nAdv. Hema Lakshmanan",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Ahuja",
+      "category": "NAME",
+      "start": 45,
+      "end": 50
+    },
+    {
+      "text": "17/08/2022",
+      "category": "DATE",
+      "start": 81,
+      "end": 91
+    },
+    {
+      "text": "Deepak Bhosale",
+      "category": "NAME",
+      "start": 116,
+      "end": 130
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 249,
+      "end": 308
+    },
+    {
+      "text": "Hema Lakshmanan",
+      "category": "NAME",
+      "start": 585,
+      "end": 600
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

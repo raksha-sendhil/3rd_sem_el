@@ -1,0 +1,98 @@
+{
+  "doc_id": "5604176c9c5c61bb",
+  "text": "Intake note (Family team, 14/12/2023). Our client Manoj Rao is a 51-year-old farmer who lives at House No. 12, Pattom, Thiruvananthapuram 695021 and can be reached on +91 65226 07064 or manoj.rao3@example.com. The client's PAN JKRPR4989E.\nThe client consulted us about a divorce by mutual consent matter against Pranav DSouza. The divorce by mutual consent with Pranav DSouza includes a settlement of 10.2 lakh rupees; both spouses have lived apart for a long time.\nThe matter was filed as Petition No. 2234/2024 before the Family Court at Thiruvananthapuram on 16 February 2024.",
+  "spans": [
+    {
+      "text": "14/12/2023",
+      "category": "DATE",
+      "start": 26,
+      "end": 36
+    },
+    {
+      "text": "Manoj Rao",
+      "category": "NAME",
+      "start": 50,
+      "end": 59
+    },
+    {
+      "text": "51-year-old",
+      "category": "AGE",
+      "start": 65,
+      "end": 76
+    },
+    {
+      "text": "farmer",
+      "category": "OCCUPATION",
+      "start": 77,
+      "end": 83
+    },
+    {
+      "text": "House No. 12, Pattom, Thiruvananthapuram 695021",
+      "category": "ADDRESS",
+      "start": 97,
+      "end": 144
+    },
+    {
+      "text": "+91 65226 07064",
+      "category": "PHONE",
+      "start": 167,
+      "end": 182
+    },
+    {
+      "text": "manoj.rao3@example.com",
+      "category": "EMAIL",
+      "start": 186,
+      "end": 208
+    },
+    {
+      "text": "JKRPR4989E",
+      "category": "ID_NUMBER",
+      "start": 227,
+      "end": 237
+    },
+    {
+      "text": "divorce by mutual consent",
+      "category": "LEGAL_ISSUE",
+      "start": 271,
+      "end": 296
+    },
+    {
+      "text": "Pranav DSouza",
+      "category": "NAME",
+      "start": 312,
+      "end": 325
+    },
+    {
+      "text": "Pranav DSouza",
+      "category": "NAME",
+      "start": 362,
+      "end": 375
+    },
+    {
+      "text": "10.2 lakh rupees",
+      "category": "MONEY",
+      "start": 401,
+      "end": 417
+    },
+    {
+      "text": "Petition No. 2234/2024",
+      "category": "CASE_NUMBER",
+      "start": 490,
+      "end": 512
+    },
+    {
+      "text": "Family Court at Thiruvananthapuram",
+      "category": "COURT",
+      "start": 524,
+      "end": 558
+    },
+    {
+      "text": "16 February 2024",
+      "category": "DATE",
+      "start": 562,
+      "end": 578
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

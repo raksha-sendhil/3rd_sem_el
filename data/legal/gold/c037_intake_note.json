@@ -1,0 +1,98 @@
+{
+  "doc_id": "b43060079ae51c9b",
+  "text": "Intake note (Commercial team, 19/10/2023). Our client Ashok Rajan is a 25-year-old dentist who lives at Flat 17B, Keshwapur, Hubballi 580050 and can be reached on 06731581375 or ashok.rajan69@example.com. The client's PAN EQVPR5002F.\nThe client consulted us about a cheque bounce matter against Sunanda Khan. A cheque for INR 37,10,000/- issued by Sunanda Khan bounced: the cheque was returned unpaid for insufficient funds.\nThe matter was filed as S.C.C. No. 1017/2024 before the Judicial Magistrate First Class Court at Hubballi on 6 April 2024.",
+  "spans": [
+    {
+      "text": "19/10/2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Ashok Rajan",
+      "category": "NAME",
+      "start": 54,
+      "end": 65
+    },
+    {
+      "text": "25-year-old",
+      "category": "AGE",
+      "start": 71,
+      "end": 82
+    },
+    {
+      "text": "dentist",
+      "category": "OCCUPATION",
+      "start": 83,
+      "end": 90
+    },
+    {
+      "text": "Flat 17B, Keshwapur, Hubballi 580050",
+      "category": "ADDRESS",
+      "start": 104,
+      "end": 140
+    },
+    {
+      "text": "06731581375",
+      "category": "PHONE",
+      "start": 163,
+      "end": 174
+    },
+    {
+      "text": "ashok.rajan69@example.com",
+      "category": "EMAIL",
+      "start": 178,
+      "end": 203
+    },
+    {
+      "text": "EQVPR5002F",
+      "category": "ID_NUMBER",
+      "start": 222,
+      "end": 232
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 266,
+      "end": 279
+    },
+    {
+      "text": "Sunanda Khan",
+      "category": "NAME",
+      "start": 295,
+      "end": 307
+    },
+    {
+      "text": "INR 37,10,000/-",
+      "category": "MONEY",
+      "start": 322,
+      "end": 337
+    },
+    {
+      "text": "Sunanda Khan",
+      "category": "NAME",
+      "start": 348,
+      "end": 360
+    },
+    {
+      "text": "S.C.C. No. 1017/2024",
+      "category": "CASE_NUMBER",
+      "start": 449,
+      "end": 469
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Hubballi",
+      "category": "COURT",
+      "start": 481,
+      "end": 530
+    },
+    {
+      "text": "6 April 2024",
+      "category": "DATE",
+      "start": 534,
+      "end": 546
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

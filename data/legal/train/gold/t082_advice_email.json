@@ -1,0 +1,44 @@
+{
+  "doc_id": "c4b09c537ccb6c10",
+  "text": "Subject: Your aircraft lease repossession matter (Project Ibis)\n\nDear Ms. Pai,\n\nThank you for meeting us on 4 July 2020 about your dispute with M/s Meridian Airways Ltd. As we understand it, the airline has stopped paying lease rentals.\n\nOur advice is to seek deregistration of the aircraft under the international lease convention. Please collect the lease agreement and the irrevocable deregistration authorisation and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 41
+    },
+    {
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 50,
+      "end": 62
+    },
+    {
+      "text": "Pai",
+      "category": "NAME",
+      "start": 74,
+      "end": 77
+    },
+    {
+      "text": "4 July 2020",
+      "category": "DATE",
+      "start": 108,
+      "end": 119
+    },
+    {
+      "text": "Meridian Airways Ltd",
+      "category": "ORGANIZATION",
+      "start": 148,
+      "end": 168
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 464,
+      "end": 476
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

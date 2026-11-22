@@ -1,0 +1,92 @@
+{
+  "doc_id": "8a1b0b4ce44f35e5",
+  "routing": [
+    {
+      "text": "9 September 2024",
+      "category": "DATE",
+      "action": "generalise"
+    },
+    {
+      "text": "Joseph Bose",
+      "category": "NAME",
+      "action": "placeholder"
+    },
+    {
+      "text": "52-year-old",
+      "category": "AGE",
+      "action": "generalise"
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "action": "generalise"
+    },
+    {
+      "text": "House No. 159, Aundh, Pune 411005",
+      "category": "ADDRESS",
+      "action": "placeholder"
+    },
+    {
+      "text": "07556653413",
+      "category": "PHONE",
+      "action": "placeholder"
+    },
+    {
+      "text": "joseph.bose6@example.in",
+      "category": "EMAIL",
+      "action": "placeholder"
+    },
+    {
+      "text": "APGPB9213Q",
+      "category": "ID_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "action": "keep"
+    },
+    {
+      "text": "Emerald Enterprises",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "₹24,40,000",
+      "category": "MONEY",
+      "action": "generalise"
+    },
+    {
+      "text": "Emerald Enterprises",
+      "category": "ORGANIZATION",
+      "action": "generalise"
+    },
+    {
+      "text": "955735154280",
+      "category": "FINANCIAL",
+      "action": "placeholder"
+    },
+    {
+      "text": "UTIB0848537",
+      "category": "FINANCIAL",
+      "action": "placeholder"
+    },
+    {
+      "text": "S.C.C. No. 995/2024",
+      "category": "CASE_NUMBER",
+      "action": "placeholder"
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Pune",
+      "category": "COURT",
+      "action": "generalise"
+    },
+    {
+      "text": "19 December 2024",
+      "category": "DATE",
+      "action": "generalise"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "dea96bca21ff1b11",
+  "text": "Case note: R.C.A. No. 2408/2019\nClient: Girish Krishnan (college lecturer, Mysuru)\nOpposing party: Naveen Subramanian\nCourt: Mysuru District Court\nFiled on: 30 September 2019\nClaim amount: 6.2 lakh rupees\nIssue: tenancy eviction. The landlord needs the premises for the family's own use.\nAdvice given: Plead bona fide personal need with proof of the family's housing requirement.\nOutcome: The eviction was granted on the ground of personal need.\nRecommended next step: Give the tenant time to vacate under the decree.",
+  "spans": [
+    {
+      "text": "R.C.A. No. 2408/2019",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Girish Krishnan",
+      "category": "NAME",
+      "start": 40,
+      "end": 55
+    },
+    {
+      "text": "college lecturer",
+      "category": "OCCUPATION",
+      "start": 57,
+      "end": 73
+    },
+    {
+      "text": "Mysuru",
+      "category": "LOCATION",
+      "start": 75,
+      "end": 81
+    },
+    {
+      "text": "Naveen Subramanian",
+      "category": "NAME",
+      "start": 99,
+      "end": 117
+    },
+    {
+      "text": "Mysuru District Court",
+      "category": "COURT",
+      "start": 125,
+      "end": 146
+    },
+    {
+      "text": "30 September 2019",
+      "category": "DATE",
+      "start": 157,
+      "end": 174
+    },
+    {
+      "text": "6.2 lakh rupees",
+      "category": "MONEY",
+      "start": 189,
+      "end": 204
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 212,
+      "end": 228
+    },
+    {
+      "text": "occupation (college lecturer) + city (Mysuru) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

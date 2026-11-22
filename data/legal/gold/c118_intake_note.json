@@ -1,0 +1,104 @@
+{
+  "doc_id": "283aa3db7c5f71e7",
+  "text": "Intake note (Commercial team, 19/08/2023). Our client Nikhil Pillai is a 32-year-old bank manager who lives at Plot 56, Madhapur, Hyderabad 500012 and can be reached on 72710 50362 or nikhil.pillai@example.in. The client's PAN NTXPP2618L.\nThe client consulted us about a aircraft lease repossession matter (Project Ibis) against Khan Aviation Ltd. The aircraft lease repossession against Khan Aviation Ltd concerns arrears of Rs. 91,00,00,000; the airline sought protection from its creditors.\nThe matter was filed as CS(COMM) 1418/2023 before the Telangana High Court on 20/10/2023.",
+  "spans": [
+    {
+      "text": "19/08/2023",
+      "category": "DATE",
+      "start": 30,
+      "end": 40
+    },
+    {
+      "text": "Nikhil Pillai",
+      "category": "NAME",
+      "start": 54,
+      "end": 67
+    },
+    {
+      "text": "32-year-old",
+      "category": "AGE",
+      "start": 73,
+      "end": 84
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 85,
+      "end": 97
+    },
+    {
+      "text": "Plot 56, Madhapur, Hyderabad 500012",
+      "category": "ADDRESS",
+      "start": 111,
+      "end": 146
+    },
+    {
+      "text": "72710 50362",
+      "category": "PHONE",
+      "start": 169,
+      "end": 180
+    },
+    {
+      "text": "nikhil.pillai@example.in",
+      "category": "EMAIL",
+      "start": 184,
+      "end": 208
+    },
+    {
+      "text": "NTXPP2618L",
+      "category": "ID_NUMBER",
+      "start": 227,
+      "end": 237
+    },
+    {
+      "text": "aircraft lease repossession",
+      "category": "LEGAL_ISSUE",
+      "start": 271,
+      "end": 298
+    },
+    {
+      "text": "Project Ibis",
+      "category": "MATTER_CODENAME",
+      "start": 307,
+      "end": 319
+    },
+    {
+      "text": "Khan Aviation Ltd",
+      "category": "ORGANIZATION",
+      "start": 329,
+      "end": 346
+    },
+    {
+      "text": "Khan Aviation Ltd",
+      "category": "ORGANIZATION",
+      "start": 388,
+      "end": 405
+    },
+    {
+      "text": "Rs. 91,00,00,000",
+      "category": "MONEY",
+      "start": 426,
+      "end": 442
+    },
+    {
+      "text": "CS(COMM) 1418/2023",
+      "category": "CASE_NUMBER",
+      "start": 518,
+      "end": 536
+    },
+    {
+      "text": "Telangana High Court",
+      "category": "COURT",
+      "start": 548,
+      "end": 568
+    },
+    {
+      "text": "20/10/2023",
+      "category": "DATE",
+      "start": 572,
+      "end": 582
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

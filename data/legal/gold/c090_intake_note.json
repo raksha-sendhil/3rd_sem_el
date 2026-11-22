@@ -1,0 +1,98 @@
+{
+  "doc_id": "52d5f3f7e7a80748",
+  "text": "Intake note (Criminal team, 29/03/2025). Our client Rahul Mittal is a 76-year-old cardiologist who lives at Bungalow 16, Rajarampuri, Kolhapur 416022 and can be reached on +91 63700 53488 or rahul.mittal@example.in. The client's PAN HJEPM7522H.\nThe client consulted us about a anticipatory bail matter against Ashok Dutta. The anticipatory bail matter arises from a complaint by Ashok Dutta about 63.8 lakh rupees; the complaint turns a business disagreement into a criminal case.\nThe matter was filed as FIR No. 2475/2025 before the Kolhapur Sessions Court on 19/06/2025.",
+  "spans": [
+    {
+      "text": "29/03/2025",
+      "category": "DATE",
+      "start": 28,
+      "end": 38
+    },
+    {
+      "text": "Rahul Mittal",
+      "category": "NAME",
+      "start": 52,
+      "end": 64
+    },
+    {
+      "text": "76-year-old",
+      "category": "AGE",
+      "start": 70,
+      "end": 81
+    },
+    {
+      "text": "cardiologist",
+      "category": "OCCUPATION",
+      "start": 82,
+      "end": 94
+    },
+    {
+      "text": "Bungalow 16, Rajarampuri, Kolhapur 416022",
+      "category": "ADDRESS",
+      "start": 108,
+      "end": 149
+    },
+    {
+      "text": "+91 63700 53488",
+      "category": "PHONE",
+      "start": 172,
+      "end": 187
+    },
+    {
+      "text": "rahul.mittal@example.in",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 214
+    },
+    {
+      "text": "HJEPM7522H",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 294
+    },
+    {
+      "text": "Ashok Dutta",
+      "category": "NAME",
+      "start": 310,
+      "end": 321
+    },
+    {
+      "text": "Ashok Dutta",
+      "category": "NAME",
+      "start": 379,
+      "end": 390
+    },
+    {
+      "text": "63.8 lakh rupees",
+      "category": "MONEY",
+      "start": 397,
+      "end": 413
+    },
+    {
+      "text": "FIR No. 2475/2025",
+      "category": "CASE_NUMBER",
+      "start": 505,
+      "end": 522
+    },
+    {
+      "text": "Kolhapur Sessions Court",
+      "category": "COURT",
+      "start": 534,
+      "end": 557
+    },
+    {
+      "text": "19/06/2025",
+      "category": "DATE",
+      "start": 561,
+      "end": 571
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

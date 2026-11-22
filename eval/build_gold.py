@@ -444,7 +444,7 @@ def main(out_dir: Path, docs: dict) -> None:
             "name": name,
             "text": text,
             "spans": gold,
-            "annotator": "claude-draft",
+            "annotator": "model-draft",
             "reviewed_by": None,
         }
         (out_dir / f"{name}.json").write_text(json.dumps(doc, indent=2, ensure_ascii=False))

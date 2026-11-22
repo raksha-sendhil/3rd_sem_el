@@ -1,0 +1,80 @@
+{
+  "doc_id": "f6f89edf69ac20a4",
+  "text": "Subject: Need help with a tenancy eviction case\n\nHello, my name is Pallavi Sethi. I am a 41-year-old paediatrician living in Lucknow. I have a tenancy problem with Arjun Sathe involving Rs 1,95,000 in rent, and the tenant has stopped paying rent for many months. My case number is R.C.A. No. 999/2019 in the Lucknow District Court. Can your firm advise me on what to do next? You can call me on +91 79982 66993 or email pallavi.sethi@example.in.",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 42
+    },
+    {
+      "text": "Pallavi Sethi",
+      "category": "NAME",
+      "start": 67,
+      "end": 80
+    },
+    {
+      "text": "41-year-old",
+      "category": "AGE",
+      "start": 89,
+      "end": 100
+    },
+    {
+      "text": "paediatrician",
+      "category": "OCCUPATION",
+      "start": 101,
+      "end": 114
+    },
+    {
+      "text": "Lucknow",
+      "category": "LOCATION",
+      "start": 125,
+      "end": 132
+    },
+    {
+      "text": "Arjun Sathe",
+      "category": "NAME",
+      "start": 164,
+      "end": 175
+    },
+    {
+      "text": "Rs 1,95,000",
+      "category": "MONEY",
+      "start": 186,
+      "end": 197
+    },
+    {
+      "text": "R.C.A. No. 999/2019",
+      "category": "CASE_NUMBER",
+      "start": 281,
+      "end": 300
+    },
+    {
+      "text": "Lucknow District Court",
+      "category": "COURT",
+      "start": 308,
+      "end": 330
+    },
+    {
+      "text": "+91 79982 66993",
+      "category": "PHONE",
+      "start": 395,
+      "end": 410
+    },
+    {
+      "text": "pallavi.sethi@example.in",
+      "category": "EMAIL",
+      "start": 420,
+      "end": 444
+    },
+    {
+      "text": "age (41) + occupation (paediatrician) + city (Lucknow) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

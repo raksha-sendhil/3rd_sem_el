@@ -1,0 +1,110 @@
+{
+  "doc_id": "c38459f5857e5177",
+  "text": "Intake note (Commercial team, 30 July 2024). Our client Madhuri Rane is a 26-year-old textile trader who lives at Bungalow 4, Lajpat Nagar, New Delhi 110019 and can be reached on 06385849901 or madhuri.rane@example.com. The client's PAN XYJPR4477H.\nThe client consulted us about a cheque bounce matter against M/s Skyline Traders. A cheque for ₹9,85,000 issued by Skyline Traders bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 470179897272 (IFSC HDFC0781908).\nThe matter was filed as CC/672/2024 before the Judicial Magistrate First Class Court at New Delhi on 10 September 2024.",
+  "spans": [
+    {
+      "text": "30 July 2024",
+      "category": "DATE",
+      "start": 30,
+      "end": 42
+    },
+    {
+      "text": "Madhuri Rane",
+      "category": "NAME",
+      "start": 56,
+      "end": 68
+    },
+    {
+      "text": "26-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "textile trader",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 100
+    },
+    {
+      "text": "Bungalow 4, Lajpat Nagar, New Delhi 110019",
+      "category": "ADDRESS",
+      "start": 114,
+      "end": 156
+    },
+    {
+      "text": "06385849901",
+      "category": "PHONE",
+      "start": 179,
+      "end": 190
+    },
+    {
+      "text": "madhuri.rane@example.com",
+      "category": "EMAIL",
+      "start": 194,
+      "end": 218
+    },
+    {
+      "text": "XYJPR4477H",
+      "category": "ID_NUMBER",
+      "start": 237,
+      "end": 247
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 281,
+      "end": 294
+    },
+    {
+      "text": "Skyline Traders",
+      "category": "ORGANIZATION",
+      "start": 314,
+      "end": 329
+    },
+    {
+      "text": "₹9,85,000",
+      "category": "MONEY",
+      "start": 344,
+      "end": 353
+    },
+    {
+      "text": "Skyline Traders",
+      "category": "ORGANIZATION",
+      "start": 364,
+      "end": 379
+    },
+    {
+      "text": "470179897272",
+      "category": "FINANCIAL",
+      "start": 505,
+      "end": 517
+    },
+    {
+      "text": "HDFC0781908",
+      "category": "FINANCIAL",
+      "start": 524,
+      "end": 535
+    },
+    {
+      "text": "CC/672/2024",
+      "category": "CASE_NUMBER",
+      "start": 562,
+      "end": 573
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at New Delhi",
+      "category": "COURT",
+      "start": 585,
+      "end": 635
+    },
+    {
+      "text": "10 September 2024",
+      "category": "DATE",
+      "start": 639,
+      "end": 656
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

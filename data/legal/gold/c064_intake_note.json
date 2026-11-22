@@ -1,0 +1,110 @@
+{
+  "doc_id": "cfa49a61db69b612",
+  "text": "Intake note - Property team\nDate: 14 April 2023\nClient: Charulata Tiwari, a 38-year-old retired bank officer from Thane.\nAddress: Plot 93, Naupada, Thane 400629\nPhone: +91 90449 99186. Email: charulata.tiwari@example.in. PAN DHHPT5016W.\nMatter: consumer complaint\nOpposing party: M/s Orchid Constructions\nFacts: The consumer complaint against Orchid Constructions concerns a flat bought for INR 9,29,00,000/-; the flat was handed over with serious construction defects.\nThe matter was filed as C.C. No. 2608/2023 before the Thane District Consumer Disputes Redressal Commission on 22/09/2023.",
+  "spans": [
+    {
+      "text": "14 April 2023",
+      "category": "DATE",
+      "start": 34,
+      "end": 47
+    },
+    {
+      "text": "Charulata Tiwari",
+      "category": "NAME",
+      "start": 56,
+      "end": 72
+    },
+    {
+      "text": "38-year-old",
+      "category": "AGE",
+      "start": 76,
+      "end": 87
+    },
+    {
+      "text": "retired bank officer",
+      "category": "OCCUPATION",
+      "start": 88,
+      "end": 108
+    },
+    {
+      "text": "Thane",
+      "category": "LOCATION",
+      "start": 114,
+      "end": 119
+    },
+    {
+      "text": "Plot 93, Naupada, Thane 400629",
+      "category": "ADDRESS",
+      "start": 130,
+      "end": 160
+    },
+    {
+      "text": "+91 90449 99186",
+      "category": "PHONE",
+      "start": 168,
+      "end": 183
+    },
+    {
+      "text": "charulata.tiwari@example.in",
+      "category": "EMAIL",
+      "start": 192,
+      "end": 219
+    },
+    {
+      "text": "DHHPT5016W",
+      "category": "ID_NUMBER",
+      "start": 225,
+      "end": 235
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 245,
+      "end": 263
+    },
+    {
+      "text": "Orchid Constructions",
+      "category": "ORGANIZATION",
+      "start": 284,
+      "end": 304
+    },
+    {
+      "text": "Orchid Constructions",
+      "category": "ORGANIZATION",
+      "start": 343,
+      "end": 363
+    },
+    {
+      "text": "INR 9,29,00,000/-",
+      "category": "MONEY",
+      "start": 391,
+      "end": 408
+    },
+    {
+      "text": "C.C. No. 2608/2023",
+      "category": "CASE_NUMBER",
+      "start": 494,
+      "end": 512
+    },
+    {
+      "text": "Thane District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 524,
+      "end": 577
+    },
+    {
+      "text": "22/09/2023",
+      "category": "DATE",
+      "start": 581,
+      "end": 591
+    },
+    {
+      "text": "age (38) + occupation (retired bank officer) + city (Thane) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

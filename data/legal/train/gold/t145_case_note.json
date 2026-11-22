@@ -1,0 +1,74 @@
+{
+  "doc_id": "6dde6c6158e88b46",
+  "text": "Case note: R.C.S. No. 2642/2021\nClient: Manoj Bhosale (general physician, Pune)\nOpposing party: Charulata Sen\nCourt: Pune District Court\nFiled on: 14 January 2021\nClaim amount: ₹4,65,000\nIssue: tenancy eviction. The landlord is trying to evict the tenant after a rent increase was refused.\nAdvice given: Deposit the admitted rent in court to avoid an order striking off the defence.\nOutcome: The tenant's defence was kept on record and the suit continues.\nRecommended next step: Keep depositing the rent every month.\nWitness: Asha Menon",
+  "spans": [
+    {
+      "text": "R.C.S. No. 2642/2021",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Manoj Bhosale",
+      "category": "NAME",
+      "start": 40,
+      "end": 53
+    },
+    {
+      "text": "general physician",
+      "category": "OCCUPATION",
+      "start": 55,
+      "end": 72
+    },
+    {
+      "text": "Pune",
+      "category": "LOCATION",
+      "start": 74,
+      "end": 78
+    },
+    {
+      "text": "Charulata Sen",
+      "category": "NAME",
+      "start": 96,
+      "end": 109
+    },
+    {
+      "text": "Pune District Court",
+      "category": "COURT",
+      "start": 117,
+      "end": 136
+    },
+    {
+      "text": "14 January 2021",
+      "category": "DATE",
+      "start": 147,
+      "end": 162
+    },
+    {
+      "text": "₹4,65,000",
+      "category": "MONEY",
+      "start": 177,
+      "end": 186
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 194,
+      "end": 210
+    },
+    {
+      "text": "Asha Menon",
+      "category": "NAME",
+      "start": 526,
+      "end": 536
+    },
+    {
+      "text": "occupation (general physician) + city (Pune) + issue (tenancy eviction)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

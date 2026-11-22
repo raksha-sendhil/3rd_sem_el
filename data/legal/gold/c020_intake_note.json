@@ -1,0 +1,122 @@
+{
+  "doc_id": "0a3071fad1e98ac7",
+  "text": "Intake note - Commercial team\nDate: 22 March 2019\nClient: Sneha Chatterjee, a 62-year-old civil engineer from Warangal.\nAddress: Flat 15C, Kazipet, Warangal 506023\nPhone: 62046 56670. Email: sneha.chatterjee@example.com. PAN ZVLPC7664X.\nMatter: cheque bounce\nOpposing party: M/s Aravali Textiles Pvt Ltd\nFacts: A cheque for Rs 35,70,000 issued by Aravali Textiles Pvt Ltd bounced: the drawer stopped the cheque with a stop-payment instruction.\nThe cheque was deposited in the client's account no. 827449401710 (IFSC ICIC0246618).\nThe matter was filed as CC/239/2019 before the Judicial Magistrate First Class Court at Warangal on 22 September 2019.",
+  "spans": [
+    {
+      "text": "22 March 2019",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Sneha Chatterjee",
+      "category": "NAME",
+      "start": 58,
+      "end": 74
+    },
+    {
+      "text": "62-year-old",
+      "category": "AGE",
+      "start": 78,
+      "end": 89
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 90,
+      "end": 104
+    },
+    {
+      "text": "Warangal",
+      "category": "LOCATION",
+      "start": 110,
+      "end": 118
+    },
+    {
+      "text": "Flat 15C, Kazipet, Warangal 506023",
+      "category": "ADDRESS",
+      "start": 129,
+      "end": 163
+    },
+    {
+      "text": "62046 56670",
+      "category": "PHONE",
+      "start": 171,
+      "end": 182
+    },
+    {
+      "text": "sneha.chatterjee@example.com",
+      "category": "EMAIL",
+      "start": 191,
+      "end": 219
+    },
+    {
+      "text": "ZVLPC7664X",
+      "category": "ID_NUMBER",
+      "start": 225,
+      "end": 235
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 245,
+      "end": 258
+    },
+    {
+      "text": "Aravali Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 279,
+      "end": 303
+    },
+    {
+      "text": "Rs 35,70,000",
+      "category": "MONEY",
+      "start": 324,
+      "end": 336
+    },
+    {
+      "text": "Aravali Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 347,
+      "end": 371
+    },
+    {
+      "text": "827449401710",
+      "category": "FINANCIAL",
+      "start": 497,
+      "end": 509
+    },
+    {
+      "text": "ICIC0246618",
+      "category": "FINANCIAL",
+      "start": 516,
+      "end": 527
+    },
+    {
+      "text": "CC/239/2019",
+      "category": "CASE_NUMBER",
+      "start": 554,
+      "end": 565
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Warangal",
+      "category": "COURT",
+      "start": 577,
+      "end": 626
+    },
+    {
+      "text": "22 September 2019",
+      "category": "DATE",
+      "start": 630,
+      "end": 647
+    },
+    {
+      "text": "age (62) + occupation (civil engineer) + city (Warangal) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

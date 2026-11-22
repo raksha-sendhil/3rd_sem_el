@@ -1,0 +1,116 @@
+{
+  "doc_id": "c813126542edc137",
+  "text": "Intake note - Commercial team\nDate: 19 March 2023\nClient: Prakash Ghosh, a 48-year-old restaurant owner from Mumbai.\nAddress: Flat 3C, Powai, Mumbai 400018\nPhone: 08025523458. Email: prakash.ghosh11@example.in. PAN VHKPG7269S, Aadhaar 2377 1738 5033.\nMatter: cheque bounce\nOpposing party: Deepa Qureshi\nFacts: A cheque for ₹25,40,000 issued by Deepa Qureshi bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/2200/2023 before the Judicial Magistrate First Class Court at Mumbai on 24 April 2023.",
+  "spans": [
+    {
+      "text": "19 March 2023",
+      "category": "DATE",
+      "start": 36,
+      "end": 49
+    },
+    {
+      "text": "Prakash Ghosh",
+      "category": "NAME",
+      "start": 58,
+      "end": 71
+    },
+    {
+      "text": "48-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 103
+    },
+    {
+      "text": "Mumbai",
+      "category": "LOCATION",
+      "start": 109,
+      "end": 115
+    },
+    {
+      "text": "Flat 3C, Powai, Mumbai 400018",
+      "category": "ADDRESS",
+      "start": 126,
+      "end": 155
+    },
+    {
+      "text": "08025523458",
+      "category": "PHONE",
+      "start": 163,
+      "end": 174
+    },
+    {
+      "text": "prakash.ghosh11@example.in",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 209
+    },
+    {
+      "text": "VHKPG7269S",
+      "category": "ID_NUMBER",
+      "start": 215,
+      "end": 225
+    },
+    {
+      "text": "2377 1738 5033",
+      "category": "ID_NUMBER",
+      "start": 235,
+      "end": 249
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 259,
+      "end": 272
+    },
+    {
+      "text": "Deepa Qureshi",
+      "category": "NAME",
+      "start": 289,
+      "end": 302
+    },
+    {
+      "text": "₹25,40,000",
+      "category": "MONEY",
+      "start": 323,
+      "end": 333
+    },
+    {
+      "text": "Deepa Qureshi",
+      "category": "NAME",
+      "start": 344,
+      "end": 357
+    },
+    {
+      "text": "CC/2200/2023",
+      "category": "CASE_NUMBER",
+      "start": 444,
+      "end": 456
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Mumbai",
+      "category": "COURT",
+      "start": 468,
+      "end": 515
+    },
+    {
+      "text": "24 April 2023",
+      "category": "DATE",
+      "start": 519,
+      "end": 532
+    },
+    {
+      "text": "age (48) + occupation (restaurant owner) + city (Mumbai) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

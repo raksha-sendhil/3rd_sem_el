@@ -1,0 +1,98 @@
+{
+  "doc_id": "64a8e223327da153",
+  "text": "Intake note (Property team, 20 September 2024). Our client Priyanka Pillai is a 55-year-old bank manager who lives at Flat 15D, Kowdiar, Thiruvananthapuram 695043 and can be reached on +91 61798 50192 or priyanka.pillai@example.in. The client's PAN XKPPP9435B.\nThe client consulted us about a tenancy eviction matter against Divya Chandran. The tenancy dispute with Divya Chandran concerns rent arrears of 1.4 lakh rupees; the landlord is trying to evict the tenant after a rent increase was refused.\nThe matter was filed as R.C.A. No. 2794/2025 before the Thiruvananthapuram District Court on 11 March 2025.",
+  "spans": [
+    {
+      "text": "20 September 2024",
+      "category": "DATE",
+      "start": 28,
+      "end": 45
+    },
+    {
+      "text": "Priyanka Pillai",
+      "category": "NAME",
+      "start": 59,
+      "end": 74
+    },
+    {
+      "text": "55-year-old",
+      "category": "AGE",
+      "start": 80,
+      "end": 91
+    },
+    {
+      "text": "bank manager",
+      "category": "OCCUPATION",
+      "start": 92,
+      "end": 104
+    },
+    {
+      "text": "Flat 15D, Kowdiar, Thiruvananthapuram 695043",
+      "category": "ADDRESS",
+      "start": 118,
+      "end": 162
+    },
+    {
+      "text": "+91 61798 50192",
+      "category": "PHONE",
+      "start": 185,
+      "end": 200
+    },
+    {
+      "text": "priyanka.pillai@example.in",
+      "category": "EMAIL",
+      "start": 204,
+      "end": 230
+    },
+    {
+      "text": "XKPPP9435B",
+      "category": "ID_NUMBER",
+      "start": 249,
+      "end": 259
+    },
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 293,
+      "end": 309
+    },
+    {
+      "text": "Divya Chandran",
+      "category": "NAME",
+      "start": 325,
+      "end": 339
+    },
+    {
+      "text": "Divya Chandran",
+      "category": "NAME",
+      "start": 366,
+      "end": 380
+    },
+    {
+      "text": "1.4 lakh rupees",
+      "category": "MONEY",
+      "start": 406,
+      "end": 421
+    },
+    {
+      "text": "R.C.A. No. 2794/2025",
+      "category": "CASE_NUMBER",
+      "start": 525,
+      "end": 545
+    },
+    {
+      "text": "Thiruvananthapuram District Court",
+      "category": "COURT",
+      "start": 557,
+      "end": 590
+    },
+    {
+      "text": "11 March 2025",
+      "category": "DATE",
+      "start": 594,
+      "end": 607
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

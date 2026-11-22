@@ -192,9 +192,9 @@ def step_build() -> None:
 
 
 def _context(name: str):
-    from sanitise.rag.answer import RagContext
-    from sanitise.rag.dense import build_retriever
-    from sanitise.rag.store import SqliteDocumentStore
+    RagContext = D.mod("rag.answer").RagContext
+    build_retriever = D.mod("rag.dense").build_retriever
+    SqliteDocumentStore = D.mod("rag.store").SqliteDocumentStore
 
     path = WORK / "stores" / f"{name}.sqlite"
     if not path.exists():
@@ -225,7 +225,7 @@ CONCURRENCY = max(1, int(os.environ.get("EVAL_CONCURRENCY", "2")))
 
 
 async def _pair(ctx, llm, query: str, session: str) -> dict:
-    from sanitise.rag.answer import answer
+    answer = D.mod("rag.answer").answer
 
     base, prot = await asyncio.gather(
         answer(ctx, query, "baseline", session, llm, D.k),
@@ -282,7 +282,7 @@ def _ollama_up() -> bool:
 
 
 async def _with_llm(work) -> None:
-    from sanitise.llm.factory import close_llm_client
+    close_llm_client = D.mod("llm.factory").close_llm_client
 
     # health answers on Ollama (legal may answer on Gemini, so it is not checked here)
     if D.name == "health" and not os.environ.get("EVAL_MOCK") and not _ollama_up():

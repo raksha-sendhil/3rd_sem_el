@@ -1,0 +1,56 @@
+{
+  "doc_id": "0d0d963a8c59f80a",
+  "text": "Subject: Your tenancy eviction matter - R.C.S. No. 2767/2022\n\nDear Mr. Tiwari,\n\nThank you for meeting us on 8 December 2022 about your dispute with Suresh Joshi. As we understand it, the landlord is trying to evict the tenant after a rent increase was refused. The matter is listed before the Panaji District Court.\n\nOur advice is to deposit the admitted rent in court to avoid an order striking off the defence. Please collect all rent receipts and the bank record of the rent deposited in court and send copies to this office. We will pursue the full claim of ₹4,65,000.\n\nRegards,\nAdv. Kunal Bhagat",
+  "spans": [
+    {
+      "text": "tenancy eviction",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 30
+    },
+    {
+      "text": "R.C.S. No. 2767/2022",
+      "category": "CASE_NUMBER",
+      "start": 40,
+      "end": 60
+    },
+    {
+      "text": "Tiwari",
+      "category": "NAME",
+      "start": 71,
+      "end": 77
+    },
+    {
+      "text": "8 December 2022",
+      "category": "DATE",
+      "start": 108,
+      "end": 123
+    },
+    {
+      "text": "Suresh Joshi",
+      "category": "NAME",
+      "start": 148,
+      "end": 160
+    },
+    {
+      "text": "Panaji District Court",
+      "category": "COURT",
+      "start": 293,
+      "end": 314
+    },
+    {
+      "text": "₹4,65,000",
+      "category": "MONEY",
+      "start": 562,
+      "end": 571
+    },
+    {
+      "text": "Kunal Bhagat",
+      "category": "NAME",
+      "start": 588,
+      "end": 600
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

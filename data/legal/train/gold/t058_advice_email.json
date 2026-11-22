@@ -1,0 +1,50 @@
+{
+  "doc_id": "b96d6aabcf9d078d",
+  "text": "Subject: Your breach of contract matter - Com. S. No. 1642/2025\n\nDear Ms. Varghese,\n\nThank you for meeting us on 14 September 2025 about your dispute with M/s Sai Logistics Ltd. As we understand it, the counterparty terminated the contract without notice. The matter is listed before the Jaipur Commercial Court.\n\nOur advice is to send a notice of breach giving the cure period required by the contract. Please collect the contract, the termination letter and the board minutes and send copies to this office.\n\nRegards,\nAdv. Aditi Ranganathan",
+  "spans": [
+    {
+      "text": "breach of contract",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 32
+    },
+    {
+      "text": "Com. S. No. 1642/2025",
+      "category": "CASE_NUMBER",
+      "start": 42,
+      "end": 63
+    },
+    {
+      "text": "Varghese",
+      "category": "NAME",
+      "start": 74,
+      "end": 82
+    },
+    {
+      "text": "14 September 2025",
+      "category": "DATE",
+      "start": 113,
+      "end": 130
+    },
+    {
+      "text": "Sai Logistics Ltd",
+      "category": "ORGANIZATION",
+      "start": 159,
+      "end": 176
+    },
+    {
+      "text": "Jaipur Commercial Court",
+      "category": "COURT",
+      "start": 288,
+      "end": 311
+    },
+    {
+      "text": "Aditi Ranganathan",
+      "category": "NAME",
+      "start": 525,
+      "end": 542
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,74 @@
+{
+  "doc_id": "742d24311b125584",
+  "text": "Case note: S.C.C. No. 1946/2024\nClient: Farhan Chatterjee (fashion designer, Surat)\nOpposing party: Priyanka Sen\nCourt: Judicial Magistrate First Class Court at Surat\nFiled on: 4 November 2024\nClaim amount: INR 6,30,000/-\nIssue: cheque bounce. The drawer stopped the cheque with a stop-payment instruction.\nAdvice given: Argue that a stop-payment instruction does not protect the drawer when the debt is admitted.\nOutcome: The drawer's application to discharge the complaint was rejected.\nRecommended next step: Press for an early date for cross-examination.\nWitness: Kavya Pillai",
+  "spans": [
+    {
+      "text": "S.C.C. No. 1946/2024",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 31
+    },
+    {
+      "text": "Farhan Chatterjee",
+      "category": "NAME",
+      "start": 40,
+      "end": 57
+    },
+    {
+      "text": "fashion designer",
+      "category": "OCCUPATION",
+      "start": 59,
+      "end": 75
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 77,
+      "end": 82
+    },
+    {
+      "text": "Priyanka Sen",
+      "category": "NAME",
+      "start": 100,
+      "end": 112
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Surat",
+      "category": "COURT",
+      "start": 120,
+      "end": 166
+    },
+    {
+      "text": "4 November 2024",
+      "category": "DATE",
+      "start": 177,
+      "end": 192
+    },
+    {
+      "text": "INR 6,30,000/-",
+      "category": "MONEY",
+      "start": 207,
+      "end": 221
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 229,
+      "end": 242
+    },
+    {
+      "text": "Kavya Pillai",
+      "category": "NAME",
+      "start": 568,
+      "end": 580
+    },
+    {
+      "text": "occupation (fashion designer) + city (Surat) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,68 @@
+{
+  "doc_id": "be7879f8981b42ef",
+  "text": "Case note: C.C. No. 2701/2020\nClient: Shruti Rao (restaurant owner, Hyderabad)\nOpposing party: Saxena Developers\nCourt: Hyderabad District Consumer Disputes Redressal Commission\nFiled on: 9 April 2020\nClaim amount: ₹9,39,00,000\nIssue: consumer complaint. Possession of the flat is long overdue.\nAdvice given: Claim interest on the amount paid for every month of delay in possession.\nOutcome: The commission directed the builder to pay interest for the delay.\nRecommended next step: File for execution if the builder does not pay.",
+  "spans": [
+    {
+      "text": "C.C. No. 2701/2020",
+      "category": "CASE_NUMBER",
+      "start": 11,
+      "end": 29
+    },
+    {
+      "text": "Shruti Rao",
+      "category": "NAME",
+      "start": 38,
+      "end": 48
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 50,
+      "end": 66
+    },
+    {
+      "text": "Hyderabad",
+      "category": "LOCATION",
+      "start": 68,
+      "end": 77
+    },
+    {
+      "text": "Saxena Developers",
+      "category": "ORGANIZATION",
+      "start": 95,
+      "end": 112
+    },
+    {
+      "text": "Hyderabad District Consumer Disputes Redressal Commission",
+      "category": "COURT",
+      "start": 120,
+      "end": 177
+    },
+    {
+      "text": "9 April 2020",
+      "category": "DATE",
+      "start": 188,
+      "end": 200
+    },
+    {
+      "text": "₹9,39,00,000",
+      "category": "MONEY",
+      "start": 215,
+      "end": 227
+    },
+    {
+      "text": "consumer complaint",
+      "category": "LEGAL_ISSUE",
+      "start": 235,
+      "end": 253
+    },
+    {
+      "text": "occupation (restaurant owner) + city (Hyderabad) + issue (consumer complaint)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "d911e18bd5de9209",
+  "text": "Subject: Your land dispute matter - O.S. No. 2445/2025\n\nDear Ms. Ranade,\n\nThank you for meeting us on 26 December 2025 about your dispute with Asha Fernandes. As we understand it, the neighbour has encroached on the boundary of the plot. The matter is listed before the Coimbatore District Court.\n\nOur advice is to apply for a court commissioner to measure the boundary. Please collect the sale deed, the survey map and the land records and send copies to this office. We will pursue the full claim of INR 5,99,00,000/-.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 26
+    },
+    {
+      "text": "O.S. No. 2445/2025",
+      "category": "CASE_NUMBER",
+      "start": 36,
+      "end": 54
+    },
+    {
+      "text": "Ranade",
+      "category": "NAME",
+      "start": 65,
+      "end": 71
+    },
+    {
+      "text": "26 December 2025",
+      "category": "DATE",
+      "start": 102,
+      "end": 118
+    },
+    {
+      "text": "Asha Fernandes",
+      "category": "NAME",
+      "start": 143,
+      "end": 157
+    },
+    {
+      "text": "Coimbatore District Court",
+      "category": "COURT",
+      "start": 270,
+      "end": 295
+    },
+    {
+      "text": "INR 5,99,00,000/-",
+      "category": "MONEY",
+      "start": 502,
+      "end": 519
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 536,
+      "end": 555
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,50 @@
+{
+  "doc_id": "025dbdcf3122b635",
+  "text": "Subject: Your geographical-indication dispute matter - CS(COMM) 1565/2019\n\nDear Ms. Rajan,\n\nThank you for meeting us on 15 September 2019 about your dispute with M/s Sunrise Foods Pvt Ltd. As we understand it, the rival product uses the protected regional name on its label. The matter is listed before the Bombay High Court.\n\nOur advice is to rely on the registered GI certificate and seek an injunction against the infringing label. Please collect the registered GI certificate and samples of the infringing label and send copies to this office.\n\nRegards,\nAdv. Rohit Wadhwa",
+  "spans": [
+    {
+      "text": "geographical-indication dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 45
+    },
+    {
+      "text": "CS(COMM) 1565/2019",
+      "category": "CASE_NUMBER",
+      "start": 55,
+      "end": 73
+    },
+    {
+      "text": "Rajan",
+      "category": "NAME",
+      "start": 84,
+      "end": 89
+    },
+    {
+      "text": "15 September 2019",
+      "category": "DATE",
+      "start": 120,
+      "end": 137
+    },
+    {
+      "text": "Sunrise Foods Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 166,
+      "end": 187
+    },
+    {
+      "text": "Bombay High Court",
+      "category": "COURT",
+      "start": 307,
+      "end": 324
+    },
+    {
+      "text": "Rohit Wadhwa",
+      "category": "NAME",
+      "start": 563,
+      "end": 575
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

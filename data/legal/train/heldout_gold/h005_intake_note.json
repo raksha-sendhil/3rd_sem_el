@@ -1,0 +1,122 @@
+{
+  "doc_id": "9bdae4440627f7c5",
+  "text": "Intake note - Commercial team\nDate: 17/06/2020\nClient: Prakash Bhandari, a 66-year-old orthopaedic surgeon from Surat.\nAddress: Bungalow 2, Adajan, Surat 395056\nPhone: 06149684306. Email: prakash.bhandari@example.com. PAN PSCPB5266P.\nMatter: cheque bounce\nOpposing party: Mehra Enterprises\nFacts: A cheque for ₹8,95,000 issued by Mehra Enterprises bounced: the cheque was dishonoured because the signature did not match.\nThe cheque was deposited in the client's account no. 698979579649 (IFSC KKBK0571891).\nThe matter was filed as S.C.C. No. 2792/2020 before the Judicial Magistrate First Class Court at Surat on 12 August 2020.",
+  "spans": [
+    {
+      "text": "17/06/2020",
+      "category": "DATE",
+      "start": 36,
+      "end": 46
+    },
+    {
+      "text": "Prakash Bhandari",
+      "category": "NAME",
+      "start": 55,
+      "end": 71
+    },
+    {
+      "text": "66-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "orthopaedic surgeon",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 106
+    },
+    {
+      "text": "Surat",
+      "category": "LOCATION",
+      "start": 112,
+      "end": 117
+    },
+    {
+      "text": "Bungalow 2, Adajan, Surat 395056",
+      "category": "ADDRESS",
+      "start": 128,
+      "end": 160
+    },
+    {
+      "text": "06149684306",
+      "category": "PHONE",
+      "start": 168,
+      "end": 179
+    },
+    {
+      "text": "prakash.bhandari@example.com",
+      "category": "EMAIL",
+      "start": 188,
+      "end": 216
+    },
+    {
+      "text": "PSCPB5266P",
+      "category": "ID_NUMBER",
+      "start": 222,
+      "end": 232
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 242,
+      "end": 255
+    },
+    {
+      "text": "Mehra Enterprises",
+      "category": "ORGANIZATION",
+      "start": 272,
+      "end": 289
+    },
+    {
+      "text": "₹8,95,000",
+      "category": "MONEY",
+      "start": 310,
+      "end": 319
+    },
+    {
+      "text": "Mehra Enterprises",
+      "category": "ORGANIZATION",
+      "start": 330,
+      "end": 347
+    },
+    {
+      "text": "698979579649",
+      "category": "FINANCIAL",
+      "start": 474,
+      "end": 486
+    },
+    {
+      "text": "KKBK0571891",
+      "category": "FINANCIAL",
+      "start": 493,
+      "end": 504
+    },
+    {
+      "text": "S.C.C. No. 2792/2020",
+      "category": "CASE_NUMBER",
+      "start": 531,
+      "end": 551
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Surat",
+      "category": "COURT",
+      "start": 563,
+      "end": 609
+    },
+    {
+      "text": "12 August 2020",
+      "category": "DATE",
+      "start": 613,
+      "end": 627
+    },
+    {
+      "text": "age (66) + occupation (orthopaedic surgeon) + city (Surat) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

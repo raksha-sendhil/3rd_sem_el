@@ -1,0 +1,98 @@
+{
+  "doc_id": "5349c278fd7af3ea",
+  "text": "Intake note (Commercial team, 10 December 2020). Our client Vandana Gowda is a 46-year-old civil engineer who lives at Bungalow 32, Peelamedu, Coimbatore 641012 and can be reached on +91 72369 63857 or vandana.gowda15@example.in. The client's PAN YWEPG2193Z.\nThe client consulted us about a cheque bounce matter against Vindhya Traders. A cheque for ₹12,10,000 issued by M/s Vindhya Traders bounced: the cheque came back with the remark account closed.\nThe matter was filed as CC/1668/2021 before the Judicial Magistrate First Class Court at Coimbatore on 29 April 2021.",
+  "spans": [
+    {
+      "text": "10 December 2020",
+      "category": "DATE",
+      "start": 30,
+      "end": 46
+    },
+    {
+      "text": "Vandana Gowda",
+      "category": "NAME",
+      "start": 60,
+      "end": 73
+    },
+    {
+      "text": "46-year-old",
+      "category": "AGE",
+      "start": 79,
+      "end": 90
+    },
+    {
+      "text": "civil engineer",
+      "category": "OCCUPATION",
+      "start": 91,
+      "end": 105
+    },
+    {
+      "text": "Bungalow 32, Peelamedu, Coimbatore 641012",
+      "category": "ADDRESS",
+      "start": 119,
+      "end": 160
+    },
+    {
+      "text": "+91 72369 63857",
+      "category": "PHONE",
+      "start": 183,
+      "end": 198
+    },
+    {
+      "text": "vandana.gowda15@example.in",
+      "category": "EMAIL",
+      "start": 202,
+      "end": 228
+    },
+    {
+      "text": "YWEPG2193Z",
+      "category": "ID_NUMBER",
+      "start": 247,
+      "end": 257
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 291,
+      "end": 304
+    },
+    {
+      "text": "Vindhya Traders",
+      "category": "ORGANIZATION",
+      "start": 320,
+      "end": 335
+    },
+    {
+      "text": "₹12,10,000",
+      "category": "MONEY",
+      "start": 350,
+      "end": 360
+    },
+    {
+      "text": "Vindhya Traders",
+      "category": "ORGANIZATION",
+      "start": 375,
+      "end": 390
+    },
+    {
+      "text": "CC/1668/2021",
+      "category": "CASE_NUMBER",
+      "start": 477,
+      "end": 489
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Coimbatore",
+      "category": "COURT",
+      "start": 501,
+      "end": 552
+    },
+    {
+      "text": "29 April 2021",
+      "category": "DATE",
+      "start": 556,
+      "end": 569
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

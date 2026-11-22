@@ -1,0 +1,98 @@
+{
+  "doc_id": "77ddc88740638365",
+  "text": "Intake note (Commercial team, 3 June 2022). Our client Fatima Saxena is a 54-year-old restaurant owner who lives at Flat 4C, Aliganj, Lucknow 226020 and can be reached on +91 79563 08204 or fatima.saxena@example.in. The client's PAN WDPPS7030K.\nThe client consulted us about a cheque bounce matter against Mehra Textiles Pvt Ltd. A cheque for 15.8 lakh rupees issued by M/s Mehra Textiles Pvt Ltd bounced: the cheque came back with the remark account closed.\nThe matter was filed as S.C.C. No. 364/2022 before the Judicial Magistrate First Class Court at Lucknow on 28 July 2022.",
+  "spans": [
+    {
+      "text": "3 June 2022",
+      "category": "DATE",
+      "start": 30,
+      "end": 41
+    },
+    {
+      "text": "Fatima Saxena",
+      "category": "NAME",
+      "start": 55,
+      "end": 68
+    },
+    {
+      "text": "54-year-old",
+      "category": "AGE",
+      "start": 74,
+      "end": 85
+    },
+    {
+      "text": "restaurant owner",
+      "category": "OCCUPATION",
+      "start": 86,
+      "end": 102
+    },
+    {
+      "text": "Flat 4C, Aliganj, Lucknow 226020",
+      "category": "ADDRESS",
+      "start": 116,
+      "end": 148
+    },
+    {
+      "text": "+91 79563 08204",
+      "category": "PHONE",
+      "start": 171,
+      "end": 186
+    },
+    {
+      "text": "fatima.saxena@example.in",
+      "category": "EMAIL",
+      "start": 190,
+      "end": 214
+    },
+    {
+      "text": "WDPPS7030K",
+      "category": "ID_NUMBER",
+      "start": 233,
+      "end": 243
+    },
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 277,
+      "end": 290
+    },
+    {
+      "text": "Mehra Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 306,
+      "end": 328
+    },
+    {
+      "text": "15.8 lakh rupees",
+      "category": "MONEY",
+      "start": 343,
+      "end": 359
+    },
+    {
+      "text": "Mehra Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 374,
+      "end": 396
+    },
+    {
+      "text": "S.C.C. No. 364/2022",
+      "category": "CASE_NUMBER",
+      "start": 483,
+      "end": 502
+    },
+    {
+      "text": "Judicial Magistrate First Class Court at Lucknow",
+      "category": "COURT",
+      "start": 514,
+      "end": 562
+    },
+    {
+      "text": "28 July 2022",
+      "category": "DATE",
+      "start": 566,
+      "end": 578
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

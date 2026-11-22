@@ -1,0 +1,44 @@
+{
+  "doc_id": "f3e40c0a0f23aea9",
+  "text": "Subject: Your cheque bounce matter\n\nDear Ms. Saxena,\n\nThank you for meeting us on 19/09/2023 about your dispute with Sterling Textiles Pvt Ltd. As we understand it, the cheque came back with the remark account closed.\n\nOur advice is to treat the closure of the account as evidence of dishonest intent and oppose any compounding below the full cheque amount. Please collect the cheque, the return memo showing the account was closed and the loan agreement and send copies to this office. We will pursue the full claim of Rs 35,20,000.\n\nRegards,\nAdv. Mrinalini Saraf",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "Saxena",
+      "category": "NAME",
+      "start": 45,
+      "end": 51
+    },
+    {
+      "text": "19/09/2023",
+      "category": "DATE",
+      "start": 82,
+      "end": 92
+    },
+    {
+      "text": "Sterling Textiles Pvt Ltd",
+      "category": "ORGANIZATION",
+      "start": 117,
+      "end": 142
+    },
+    {
+      "text": "Rs 35,20,000",
+      "category": "MONEY",
+      "start": 520,
+      "end": 532
+    },
+    {
+      "text": "Mrinalini Saraf",
+      "category": "NAME",
+      "start": 549,
+      "end": 564
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

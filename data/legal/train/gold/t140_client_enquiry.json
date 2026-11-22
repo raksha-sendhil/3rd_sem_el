@@ -1,0 +1,68 @@
+{
+  "doc_id": "d30cdd78aab94c3c",
+  "text": "Subject: Need help with a cheque bounce case\n\nHello, my name is Priyanka Rane. I am a 40-year-old schoolteacher living in Thiruvananthapuram. Farhan Khan gave me a cheque for ₹16,20,000 to repay a loan, but the drawer stopped the cheque with a stop-payment instruction. Can your firm advise me on what to do next? You can call me on 83019 89885 or email priyanka.rane@example.in.",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 26,
+      "end": 39
+    },
+    {
+      "text": "Priyanka Rane",
+      "category": "NAME",
+      "start": 64,
+      "end": 77
+    },
+    {
+      "text": "40-year-old",
+      "category": "AGE",
+      "start": 86,
+      "end": 97
+    },
+    {
+      "text": "schoolteacher",
+      "category": "OCCUPATION",
+      "start": 98,
+      "end": 111
+    },
+    {
+      "text": "Thiruvananthapuram",
+      "category": "LOCATION",
+      "start": 122,
+      "end": 140
+    },
+    {
+      "text": "Farhan Khan",
+      "category": "NAME",
+      "start": 142,
+      "end": 153
+    },
+    {
+      "text": "₹16,20,000",
+      "category": "MONEY",
+      "start": 175,
+      "end": 185
+    },
+    {
+      "text": "83019 89885",
+      "category": "PHONE",
+      "start": 333,
+      "end": 344
+    },
+    {
+      "text": "priyanka.rane@example.in",
+      "category": "EMAIL",
+      "start": 354,
+      "end": 378
+    },
+    {
+      "text": "age (40) + occupation (schoolteacher) + city (Thiruvananthapuram) + issue (cheque bounce)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

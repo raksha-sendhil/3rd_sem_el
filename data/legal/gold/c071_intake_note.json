@@ -1,0 +1,110 @@
+{
+  "doc_id": "a418adee5192e120",
+  "text": "Intake note - Property team\nDate: 2 August 2019\nClient: Sunanda Nambiar, a 60-year-old shopkeeper from Panaji.\nAddress: Flat 3B, Altinho, Panaji 403034\nPhone: +91 82121 43974. Email: sunanda.nambiar@example.com. PAN NRHPN2004G.\nMatter: land dispute\nOpposing party: Siddharth Patel\nFacts: The land dispute with Siddharth Patel concerns agricultural land valued at INR 1,28,00,000/-; construction has started on the disputed plot.\nThe matter was filed as O.S. No. 1157/2019 before the Panaji District Court on 16 November 2019.",
+  "spans": [
+    {
+      "text": "2 August 2019",
+      "category": "DATE",
+      "start": 34,
+      "end": 47
+    },
+    {
+      "text": "Sunanda Nambiar",
+      "category": "NAME",
+      "start": 56,
+      "end": 71
+    },
+    {
+      "text": "60-year-old",
+      "category": "AGE",
+      "start": 75,
+      "end": 86
+    },
+    {
+      "text": "shopkeeper",
+      "category": "OCCUPATION",
+      "start": 87,
+      "end": 97
+    },
+    {
+      "text": "Panaji",
+      "category": "LOCATION",
+      "start": 103,
+      "end": 109
+    },
+    {
+      "text": "Flat 3B, Altinho, Panaji 403034",
+      "category": "ADDRESS",
+      "start": 120,
+      "end": 151
+    },
+    {
+      "text": "+91 82121 43974",
+      "category": "PHONE",
+      "start": 159,
+      "end": 174
+    },
+    {
+      "text": "sunanda.nambiar@example.com",
+      "category": "EMAIL",
+      "start": 183,
+      "end": 210
+    },
+    {
+      "text": "NRHPN2004G",
+      "category": "ID_NUMBER",
+      "start": 216,
+      "end": 226
+    },
+    {
+      "text": "land dispute",
+      "category": "LEGAL_ISSUE",
+      "start": 236,
+      "end": 248
+    },
+    {
+      "text": "Siddharth Patel",
+      "category": "NAME",
+      "start": 265,
+      "end": 280
+    },
+    {
+      "text": "Siddharth Patel",
+      "category": "NAME",
+      "start": 310,
+      "end": 325
+    },
+    {
+      "text": "INR 1,28,00,000/-",
+      "category": "MONEY",
+      "start": 363,
+      "end": 380
+    },
+    {
+      "text": "O.S. No. 1157/2019",
+      "category": "CASE_NUMBER",
+      "start": 453,
+      "end": 471
+    },
+    {
+      "text": "Panaji District Court",
+      "category": "COURT",
+      "start": 483,
+      "end": 504
+    },
+    {
+      "text": "16 November 2019",
+      "category": "DATE",
+      "start": 508,
+      "end": 524
+    },
+    {
+      "text": "age (60) + occupation (shopkeeper) + city (Panaji) + issue (land dispute)",
+      "category": "QUASI_COMBO",
+      "start": null,
+      "end": null
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

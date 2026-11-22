@@ -1,0 +1,50 @@
+{
+  "doc_id": "cc6cc450b21596ae",
+  "text": "Subject: Your anticipatory bail matter - FIR No. 1647/2019\n\nDear Ms. Patel,\n\nThank you for meeting us on 6 December 2019 about your dispute with Harish Kulkarni. As we understand it, the complaint was filed during a matrimonial dispute. The matter is listed before the Thane Sessions Court.\n\nOur advice is to seek interim protection and offer to attend mediation. Please collect the marriage certificate and messages showing attempts to settle and send copies to this office.\n\nRegards,\nAdv. Sharmila Venkatesan",
+  "spans": [
+    {
+      "text": "anticipatory bail",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 31
+    },
+    {
+      "text": "FIR No. 1647/2019",
+      "category": "CASE_NUMBER",
+      "start": 41,
+      "end": 58
+    },
+    {
+      "text": "Patel",
+      "category": "NAME",
+      "start": 69,
+      "end": 74
+    },
+    {
+      "text": "6 December 2019",
+      "category": "DATE",
+      "start": 105,
+      "end": 120
+    },
+    {
+      "text": "Harish Kulkarni",
+      "category": "NAME",
+      "start": 145,
+      "end": 160
+    },
+    {
+      "text": "Thane Sessions Court",
+      "category": "COURT",
+      "start": 269,
+      "end": 289
+    },
+    {
+      "text": "Sharmila Venkatesan",
+      "category": "NAME",
+      "start": 491,
+      "end": 510
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "756252b89d1a38fe",
+  "text": "Subject: Your cheque bounce matter - S.C.C. No. 779/2025\n\nDear Mr. Kulkarni,\n\nThank you for meeting us on 10 December 2025 about your dispute with Meera Bansal. As we understand it, the drawer stopped the cheque with a stop-payment instruction.\n\nOur advice is to argue that a stop-payment instruction does not protect the drawer when the debt is admitted. Please collect the written acknowledgement of the debt and the stop-payment memo and send copies to this office.\n\nRegards,\nAdv. Zubin Contractor",
+  "spans": [
+    {
+      "text": "cheque bounce",
+      "category": "LEGAL_ISSUE",
+      "start": 14,
+      "end": 27
+    },
+    {
+      "text": "S.C.C. No. 779/2025",
+      "category": "CASE_NUMBER",
+      "start": 37,
+      "end": 56
+    },
+    {
+      "text": "Kulkarni",
+      "category": "NAME",
+      "start": 67,
+      "end": 75
+    },
+    {
+      "text": "10 December 2025",
+      "category": "DATE",
+      "start": 106,
+      "end": 122
+    },
+    {
+      "text": "Meera Bansal",
+      "category": "NAME",
+      "start": 147,
+      "end": 159
+    },
+    {
+      "text": "Zubin Contractor",
+      "category": "NAME",
+      "start": 484,
+      "end": 500
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}

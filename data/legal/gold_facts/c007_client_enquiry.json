@@ -1,0 +1,73 @@
+{
+  "doc_id": "fe3f2d2b62d7e0f4",
+  "facts": [
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "Harish Subramanian",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "age",
+      "value": "70-year-old",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "works_as",
+      "value": "retired bank officer",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "lives_in",
+      "value": "Nashik",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "+91 77499 92467",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "contact",
+      "value": "harish.subramanian4@example.com",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "has_legal_issue",
+      "value": "cheque bounce",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "opposing_party",
+      "value": "Sujata Sathe",
+      "importance": "low"
+    },
+    {
+      "subject": "client",
+      "relation": "claim_amount",
+      "value": "₹15,10,000",
+      "importance": "medium"
+    },
+    {
+      "subject": "client",
+      "relation": "filed_in",
+      "value": "Judicial Magistrate First Class Court at Nashik",
+      "importance": "high"
+    },
+    {
+      "subject": "client",
+      "relation": "identifier",
+      "value": "S.C.C. No. 2572/2021",
+      "importance": "low"
+    }
+  ],
+  "annotator": "generator",
+  "reviewed_by": null
+}
