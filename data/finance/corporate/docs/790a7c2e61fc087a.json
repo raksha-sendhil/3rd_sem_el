@@ -1,0 +1,19 @@
+{
+ "doc_id": "790a7c2e61fc087a",
+ "text": "From: smarra@isda.org\nTo: alan.aronowitz@enron.com, mowbray.laura@enron.com, pickel.robert@enron.com\nDate: 2001-11-15\nSubject: NYMEX Closing\n\nISDA International Swaps and Derivatives Association, Inc.\n600 Fifth Avenue\nRockefeller Center - 27th floor\nNew York, NY 10020\nU.S.A.\nPhone: (212) 332-1200\nFacsimilie: (212) 332-1212\nWebsite: www.isda.org\n\nOn November 9, we sent out a draft statement of market practice addressing\nthe closing of NYMEX on November 23, 2001.  We asked for feedback to that\ndraft statement, and to date, the firms responding back to ISDA have\nindicated a preference for not proceeding with publication of the statement.\nThe reason cited is that the NYMEX announcement was made before most swaps\nbegan to price out.  Accordingly, there was no perceived need to move\nforward with the statement.\n\nIf you have any questions, please do not hesitate to contact Kimberly Summe\nat 212-332-1203.",
+ "source": "corporate",
+ "private": [
+  "smarra@isda.org",
+  "alan.aronowitz@enron.com",
+  "mowbray.laura@enron.com",
+  "pickel.robert@enron.com",
+  "(212) 332-1200",
+  "(212) 332-1212",
+  "212-332-1203"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "taylor-m/inbox/317.",
+  "message_id": "<25461795.1075861983660.JavaMail.evans@thyme>"
+ }
+}

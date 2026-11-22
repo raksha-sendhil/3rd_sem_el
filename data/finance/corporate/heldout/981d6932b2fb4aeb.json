@@ -1,0 +1,16 @@
+{
+ "doc_id": "981d6932b2fb4aeb",
+ "text": "From: r..shepperd@enron.com\nTo: steve.woods@enron.com, susan.lopez@enron.com, janelle.duree@enron.com\nDate: 2001-11-16\nSubject: Security access\n\nAttached is the list of employees who should be allowed access to ECS on Sunday afternoon to test trading applications and for access to the Office of the Chair.\n\nThanks!\nTammy",
+ "source": "corporate",
+ "private": [
+  "r..shepperd@enron.com",
+  "steve.woods@enron.com",
+  "susan.lopez@enron.com",
+  "janelle.duree@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "arnold-j/inbox/146.",
+  "message_id": "<16106569.1075861675764.JavaMail.evans@thyme>"
+ }
+}

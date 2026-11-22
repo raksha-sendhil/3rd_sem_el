@@ -1,0 +1,12 @@
+{
+ "doc_id": "b6eb095799727d08",
+ "text": "Remaining Performance Obligations (RPO) are comprised of deferred revenue plus unbilled contract revenue. As of July 27, 2019, the aggregate amount of RPO was $25.3 billion, comprised of $18.5 billion of deferred revenue and $6.8 billion of unbilled contract revenue. We expect approximately 56% of this amount to be recognized as revenue over the next year. Unbilled contract revenue represents non-cancelable contracts for which we have not invoiced, have an obligation to perform, and revenue has not yet been recognized in the financial statements.\nInfrastructure Platforms consist of our core networking technologies of switching, routing, wireless, and data center products that are designed to work together to deliver networking capabilities and transport and/or store data. These technologies consist of both hardware and software offerings, including software licenses and software-as-a-service (SaaS), that help our customers build networks, automate, orchestrate, integrate, and digitize data. We are shifting and expanding more of our business to software and subscriptions across our core networking portfolio. Our hardware and perpetual software in this category are distinct performance obligations where revenue is recognized upfront upon transfer of control. Term software licenses are multiple performance obligations where the term license is recognized upfront upon transfer of control with the associated software maintenance revenue recognized ratably over the contract term. SaaS arrangements in this category have one distinct performance obligation which is satisfied over time with revenue recognized ratably over the contract term.\n(d) Capitalized Contract Acquisition Costs",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "273642694aa288fdb17b1f7de9957eaf",
+  "page": 1,
+  "report": "cisco-systems-inc_2019.pdf"
+ }
+}

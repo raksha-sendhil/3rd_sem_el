@@ -1,0 +1,16 @@
+{
+ "doc_id": "8a68234507bb3adb",
+ "text": "From: bill.iii@enron.com\nTo: ryan.slinger@enron.com, eric.linder@enron.com, david.porter@enron.com\nDate: 2001-04-02\nSubject: Saguaro Length\n\nWe have the possiblity of using the Saguaro plant in NevP system for HE 7-22 \non 04/03/01.  You need to buy transmission from Saguaro to MEAD 230 from \nNEVP.  Saguaro's cost is $135, we will agree on a split with services later. \nPlease put deals under ST-Whourly.\nThanks,\nBill",
+ "source": "corporate",
+ "private": [
+  "bill.iii@enron.com",
+  "ryan.slinger@enron.com",
+  "eric.linder@enron.com",
+  "david.porter@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/54.",
+  "message_id": "<7650416.1075841262623.JavaMail.evans@thyme>"
+ }
+}

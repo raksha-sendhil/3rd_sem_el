@@ -1,0 +1,12 @@
+{
+ "doc_id": "939822ab0d19a9a7",
+ "text": "Table of Contents\n30\n(4) In addition to the results reported in accordance with accounting principles generally accepted in the United States (“US\nGAAP” or “GAAP”), we also use certain non-GAAP measures such as EBITDA and adjusted EBITDA to evaluate operating performance and to facilitate the comparison of our historical results and trends. These financial measures are not a measure of financial performance under US GAAP and should not be considered in isolation or as a substitute for net income (loss) as a measure of performance and net cash provided by operating activities as a measure of liquidity. They are not, on their own, necessarily indicative of cash available to fund cash needs as determined in accordance with GAAP. The calculation of these non-GAAP measures may not be comparable to similarly titled measures used by other companies. Reconciliations of these non-GAAP measures to the most directly comparable financial measures presented in accordance with GAAP are provided below.\nEBITDA is defined as net earnings before interest expense, income taxes, and depreciation and amortization. Adjusted EBITDA is comprised of EBITDA, adjusted for certain items as permitted or required under our credit facility as described in the reconciliations below. These measures are a common measure of operating performance in the telecommunications industry and are useful, with other data, as a means to evaluate our ability to fund our estimated uses of cash.\nThe following tables are a reconciliation of net income (loss) to Adjusted EBITDA:\nYear Ended December 31,\n(In millions, unaudited) 2019 2018 2017 2016 2015\nNet income (loss) $ (20.0) $ (50.5) $ 65.3 $ 15.2 $ (0.7)\nAdd (subtract):\nInterest expense, net of interest income 136.7 134.5 129.8 76.8 79.6\nIncome tax expense (benefit) (3.7) (24.1) (124.9) 23.0 2.8\nDepreciation and amortization 381.2 432.6 291.8 174.0 179.9",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "06f4135ecdf57596ac473ab26bbe4b21",
+  "page": 1,
+  "report": "consolidated-communications-holdings-inc_2019.pdf"
+ }
+}

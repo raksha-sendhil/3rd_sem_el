@@ -1,0 +1,14 @@
+{
+ "doc_id": "440fcbec5318f183",
+ "text": "From: amy.fitzpatrick@enron.com\nTo: portland.desk@enron.com\nDate: 2001-05-01\nSubject: Welcome - Mo Elafandi!\n\nWe have another new addition to the Portland West Desk:\n\nBeginning today, Mohamed Elafandi (Mo) has joined the Real-Time Trading group.\n\nPrior to Enron, Mo worked in Charlotte, North Carolina as an Associate in \nCorporate Finance at First Union Securities - Capital Markets. He graduated \nfrom the United States Naval Academy in Annapolis, Maryland with a Bachelor's \nDegree in Marine Engineering, and received his MBA from the Fuqua School of \nBusiness at Duke University.\n\nPlease welcome Mo to our Portland office!",
+ "source": "corporate",
+ "private": [
+  "amy.fitzpatrick@enron.com",
+  "portland.desk@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/532.",
+  "message_id": "<17849978.1075841274530.JavaMail.evans@thyme>"
+ }
+}

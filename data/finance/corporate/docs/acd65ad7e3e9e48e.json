@@ -1,0 +1,14 @@
+{
+ "doc_id": "acd65ad7e3e9e48e",
+ "text": "From: michael.jacobson@enron.com\nTo: larry.campbell@enron.com\nDate: 2000-12-04\nSubject: PJM\n\nLarry, \nI changed the index on deal number 470915.1 from NYPP-E to PJM Western Hub \nand the delivery point from PJM to NYPP-E to Financial R1A - PJM.   Please \nlet me know if you do not agree with these changes.\n\nThanks,\nMichael",
+ "source": "corporate",
+ "private": [
+  "michael.jacobson@enron.com",
+  "larry.campbell@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "campbell-l/notes_inbox/171.",
+  "message_id": "<15118580.1075857877537.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "doc_id": "3543ca7b2a1b4b93",
+ "text": "From: pete.davis@enron.com\nTo: pete.davis@enron.com\nDate: 2001-04-30\nSubject: Start Date: 4/30/01; HourAhead hour: 6; <CODESITE>\n\nStart Date: 4/30/01; HourAhead hour: 6;  No ancillary schedules awarded.  No \nvariances detected.\n\n    LOG MESSAGES:\n\nPARSING FILE -->> O:\\Portland\\WestDesk\\California Scheduling\\ISO Final \nSchedules\\2001043006.txt\nError: Invalid variant type conversion\n\n---- Energy Import/Export Schedule ----\n*** Final schedule not found for preferred schedule.\n     Details:\n\n  TRANS_TYPE: FINAL\n  SC_ID: ECTstCA\n  MKT_TYPE: 2\n  TRANS_DATE: 4/30/01\n  TIE_POINT: PVERDE_5_DEVERS\n  INTERCHG_ID: EPMI_CISO_5001\n  ENGY_TYPE: FIRM\n\n\n\n---- SC Trades Schedule ----\n*** Final schedule not found for preferred schedule.\n     Details:\n\n  TRANS_TYPE: FINAL\n  SC_ID: EPMI\n  MKT_TYPE: 2\n  TRANS_DATE: 4/30/01\n  TRADING_SC: CALP\n  PNT_OF_INTRC: SP15\n  SCHED_TYPE: ENGY\n  PURCH_SALE: 1\n  DEAL_NO: 1",
+ "source": "corporate",
+ "private": [
+  "pete.davis@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/497.",
+  "message_id": "<3390197.1075841273647.JavaMail.evans@thyme>"
+ }
+}

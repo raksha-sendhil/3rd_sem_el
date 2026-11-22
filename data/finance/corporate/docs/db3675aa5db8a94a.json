@@ -1,0 +1,12 @@
+{
+ "doc_id": "db3675aa5db8a94a",
+ "text": "Assumptions used The last triennial actuarial valuation of the Scheme was performed by an independent professional actuary at 30 April 2018 using the projected unit method of valuation. For the purposes of IAS 19 (revised) the actuarial valuation as at 30 April 2018 has been updated on an approximate basis to 31 March 2019. There have been no changes in the valuation methodology adopted for this year’s disclosures compared to the prior year’s disclosures.\nThe principal financial assumptions used to calculate the liabilities under IAS 19 (revised) are as follows:\n2019 % 2018 %\nDiscount rate for scheme liabilities 2.45 2.60\nCPI inflation 2.35 2.25\nRPI inflation 3.45 3.35\nPension increases\nPre 1988 GMP – –\nPost 1988 GMP 2.10 2.10\nPre 2004 non GMP 5.00 5.00\nPost 2004 3.35 3.25\nThe financial assumptions reflect the nature and term of the Scheme’s liabilities.\nThe Group has assumed that mortality will be in line with nationally published mortality table S2NA with CMI 2018 projections related to members’ years of birth with long-term rate of improvement of 1.5% per annum. These tables translate into an average life expectancy for a pensioner retiring at age 65 as follows:\n2019 2018\nMen Years Women Years Men Years Women Years\nMember aged 65 (current life expectancy) 86.8 88.9 87.3 89.3\nMember aged 45 (life expectancy at age 65) 88.5 90.7 89.0 91.1\nIt is assumed that 50% of non-retired members of the Scheme will commute the maximum amount of cash at retirement (2018: 50% of non-retired members of the Scheme will commute the maximum amount of cash at retirement).",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "501300d80a1eb16d367a9dbb8ba0360e",
+  "page": 1,
+  "report": "Auto-Trader_2019.pdf"
+ }
+}

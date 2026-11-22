@@ -1,0 +1,12 @@
+{
+ "doc_id": "39c51337f8b9b5f5",
+ "text": "Operating Expenses Operating expenses increased to approximately $19.1 million for the year ended December 31, 2019, from approximately $12.0 million for the year ended December 31, 2018, an increase of approximately 60%. The detail by major category is reflected in the table below. Years Ended December 31\n2019 2018\nSalaries, Wages and Benefits $ 8,471,278 $ 5,823,057\nProfessional Fees 850,086 362,678\nAcquisition Related Costs 799,623 607,670\nBoard Compensation 137,000 144,125\nInvestor Relations 105,639 113,059\nConsultants 245,386 167,694\nAdvertising and Promotion 709,006 299,955\nDepreciation and Amortization 1,282,786 316,502\nResearch, Development, and Maintenance 2,672,406 675,660\nIntegration Incentives 208,855 132,500\nOffice, Facility and Other 695,493 472,250\nTravel 695,283 390,563\nSubtotal 16,872,841 9,505,713\nStock-based Compensation 2,260,298 2,520,852\nTotal Operating Expense $ 19,133,139 $ 12,026,565",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "2eb70b081b9d6349d0c5a5c667689fbd",
+  "page": 1,
+  "report": "optimizerx-corporation_2019.pdf"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "doc_id": "56710a2d462d965a",
+ "text": "From: sara.shackleton@enron.com\nTo: .taylor@enron.com\nDate: 2001-11-21\nSubject: margin calls\n\nThe names I have for margin calculations are:\n\nGreg Whiting - accounting [reports to Georganne Hodges] and Todd Warwick who reports to Greg\n\nKevin White\n\nSara Shackleton\nEnron Wholesale Services\n1400 Smith Street, EB3801a\nHouston, TX  77002\nPh:  (713) 853-5620\nFax: (713) 646-3490",
+ "source": "corporate",
+ "private": [
+  "sara.shackleton@enron.com",
+  ".taylor@enron.com",
+  "Sara Shackleton",
+  "(713) 853-5620",
+  "(713) 646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "taylor-m/inbox/344.",
+  "message_id": "<8669349.1075861984466.JavaMail.evans@thyme>"
+ }
+}

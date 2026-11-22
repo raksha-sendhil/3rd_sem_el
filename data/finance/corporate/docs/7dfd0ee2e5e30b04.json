@@ -1,0 +1,12 @@
+{
+ "doc_id": "7dfd0ee2e5e30b04",
+ "text": "80\n81\nThe provision for income taxes differs from the amount computed by applying the statutory federal income tax rate as follows (in millions): Year Ended\nThe components of our deferred tax assets and liabilities are as follows (in millions):\nApril 26, 2019 April 27, 2018 April 28, 2017\nApril 26, 2019 April 27, 2018\nTax computed at federal statutory rate $ 266 $ 366 $ 218\nDeferred tax assets:\nState income taxes, net of federal benefit 16 18 8\nReserves and accruals $ 50 $ 57\nForeign earnings in lower tax jurisdictions (84 ) (108 ) (100 )\nNet operating loss and credit carryforwards 139 131\nStock-based compensation (19 ) (23 ) 16\nStock-based compensation 16 22\nResearch and development credits (17 ) (10 ) (8 )\nDeferred revenue 205 156\nResolution of income tax examinations (48 ) — —\nOther 16 29\nDomestic production activities deduction (13 ) (7 ) (4 )\nGross deferred tax assets 426 395\nGlobal minimum tax on intangible income 22 — —\nValuation allowance (123 ) (109 )\nTax rate changes — 108 5\nDeferred tax assets, net of valuation allowance 303 286\nNon-taxable gain on joint venture formation (14 ) — —\nDeferred tax liabilities:\nTransition tax (5 ) 732 —\nPrepaids and accruals 31 21\nOther (5 ) 7 5\nAcquired intangibles 32 29\nProvision for income taxes $ 99 $ 1,083 $ 140\nProperty and equipment 31 25\nWe generated foreign earnings in lower tax jurisdictions primarily related to income from our European operations.\nOther 10 14\nIn February 2019, the Internal Revenue Service completed the examination of our fiscal 2012 to fiscal 2013 income tax returns. During fiscal 2019, we recognized a tax benefit of $48 million attributable to the effective settlement and the release of related tax reserves.\nTotal deferred tax liabilities 104 89",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "58b58094569a43f8804e831c5cda5189",
+  "page": 2,
+  "report": "netapp-inc_2019.pdf"
+ }
+}

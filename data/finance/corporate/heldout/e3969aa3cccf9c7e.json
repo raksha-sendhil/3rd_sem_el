@@ -1,0 +1,14 @@
+{
+ "doc_id": "e3969aa3cccf9c7e",
+ "text": "From: kam.keiser@enron.com\nTo: r..brackett@enron.com\nDate: 2002-01-10\nSubject: Non-terminated deals\n\nDebbie,\n\nThe credit committee needs to get some information from us that I could use your help with.  Can I get a dump of the non-terminated deals into excel and I will format it from there.  The information they need to see are the counterparty name, cash flows (MTM value) and positions.\nAs always, they need it by 11:00 this morning so if you could let me know if this is something your group could provide me with I would appreciate it. \n\nThanks\n\nKam\n\nx3-5781",
+ "source": "corporate",
+ "private": [
+  "kam.keiser@enron.com",
+  "r..brackett@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/sent_items/241.",
+  "message_id": "<15748500.1075840196931.JavaMail.evans@thyme>"
+ }
+}

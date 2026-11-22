@@ -1,0 +1,14 @@
+{
+ "doc_id": "30a76a02bf1b5222",
+ "text": "From: kam.keiser@enron.com\nTo: greg.couch@enron.com\nDate: 2002-02-04\nSubject: ECC deals\n\nGreg,\n\nThere are still about 2,000 deals between ECC and Riskmantra that need to be moved to the Bankruptcy books.  IT did all ECC to ENA deals, they need to change the script to ECC and Riskmantra.  We started to move some of the deals manually but there are too many to do.  Sanjeev Gupta has been doing this for us in the past.   I left a message with him but you might want someone to follow up with him to make sure it happens before calcing time today.\n\n\nHere is a list of the deals if you guys are looking for work to do.\n\n \nThanks\n\nKK",
+ "source": "corporate",
+ "private": [
+  "kam.keiser@enron.com",
+  "greg.couch@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/sent_items/26.",
+  "message_id": "<10632504.1075840191972.JavaMail.evans@thyme>"
+ }
+}

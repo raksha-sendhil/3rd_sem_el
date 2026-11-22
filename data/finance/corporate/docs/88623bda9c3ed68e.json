@@ -1,0 +1,16 @@
+{
+ "doc_id": "88623bda9c3ed68e",
+ "text": "From: barry.tycholiz@enron.com\nTo: tbrowderi@czn.com\nDate: 2001-03-01\nSubject: Monthly Prices\n\nTom, further to our conversation, please find attached ENA's fixed price and \nbasis numbers, Month on Month. As discussed these numbers are indicative \nonly, subject to change and are not PV'd as a swap. Please review and call me \nif there are any questions.  \n\n713-853-1587\n\nBarry Tycholiz",
+ "source": "corporate",
+ "private": [
+  "barry.tycholiz@enron.com",
+  "tbrowderi@czn.com",
+  "Barry Tycholiz",
+  "713-853-1587"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ward-k/all_documents/175.",
+  "message_id": "<17601795.1075851852010.JavaMail.evans@thyme>"
+ }
+}

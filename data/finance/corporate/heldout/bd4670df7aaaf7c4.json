@@ -1,0 +1,17 @@
+{
+ "doc_id": "bd4670df7aaaf7c4",
+ "text": "From: veronica.espinoza@enron.com\nTo: r..brackett@enron.com, s..bradford@enron.com, r..conner@enron.com\nDate: 2001-11-19\nSubject: Credit Watch List--Week of 11/19/01\n\nAttached is a revised Credit Watch listing for the week of 11/19/01.   The Yuma Companies (Inc.) has been added to this week's \"Call Credit\" column.\nIf there are any personnel in your group that were not included in this distribution, please insure that they receive a copy of this report.\nTo add additional people to this distribution, or if this report has been sent to you in error, please contact Veronica Espinoza at x6-6002.\n\nFor other questions, please contact Jason R. Williams at x5-3923,  Veronica Espinoza at x6-6002 or Darren Vanek at x3-1436.",
+ "source": "corporate",
+ "private": [
+  "veronica.espinoza@enron.com",
+  "r..brackett@enron.com",
+  "s..bradford@enron.com",
+  "r..conner@enron.com",
+  "Veronica Espinoza"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ring-a/deleted_items/105.",
+  "message_id": "<6895171.1075861156078.JavaMail.evans@thyme>"
+ }
+}

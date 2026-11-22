@@ -1,0 +1,16 @@
+{
+ "doc_id": "2f638929653f0d59",
+ "text": "From: scottw@mathworks.com\nTo: vkamins@enron.com\nDate: 2000-08-09\nSubject: MATLAB at Enron\n\nHello Vince :\n\nI'm the Territory Manager for the MathWorks, we develop MATLAB technical\nsoftware. We've recently developed tools well suited for Energy Trading\nIndustry.\n\nEnron has used our products in the past, but all of those end-users have\nleft Enron.\n\nRisk Management and Research groups at Southern Energy, TXU, Dynegy, El\nPaso Energy, Koch, Calpine, Reliant and others have recently started using\nour products in the following ways.\n\n1. Create sophisticated option pricing models, risk analysis models, and\nstress analysis models. Creating GUI front ends for the end-users.\n2. Pull in Data from ODBC, Corba, and SAS databases to evaluate.\n3. Visualize the results and quantify the solution.\n4. Compile these models and distribute these applications to their\nTraders, Analysists and Managers with no distribution costs.\n\nWho should I contact at your company to discuss Enron's situation to see if\nour can help Enron as it has with our other Energy customers?\n\n\nThank you for your time and help.\n==================================\nScott Wakefield\nThe MathWorks, Inc.\nPhone: (508) 647-7282\nFax: (508) 647-4275\nE-mail: swakefield@mathworks.com\nhttp://www.mathworks.com\n==================================\nMATLAB News Group:\nnews:comp.soft-sys.matlab\n==================================\nVisit the new MathWorks Store and buy MATLAB, Simulink\nand all of our products online\nhttp://www.mathworks.com/store/",
+ "source": "corporate",
+ "private": [
+  "scottw@mathworks.com",
+  "vkamins@enron.com",
+  "(508) 647-7282",
+  "(508) 647-4275"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "kaminski-v/discussion_threads/619.",
+  "message_id": "<19588436.1075856340505.JavaMail.evans@thyme>"
+ }
+}

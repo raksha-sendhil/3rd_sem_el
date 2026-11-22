@@ -1,0 +1,14 @@
+{
+ "doc_id": "3fdb1a1615014c15",
+ "text": "From: kbusch@energyargus.com\nTo: john.arnold@enron.com\nDate: 2001-11-27\nSubject: keeping the lights on\n\nJohn-\nWas lovely meeting  you this weekend. Sorry I was...less then effusive by Sullivan's. It wasn't  the company -- I assure you.\n \nAnd what about this  white elepha...trading floor? I want to get it while it  lasts.\n \nlook forward to  it\n \n-Kelly\n \n \nKelly C. Busch\nMarket Analyst\nEnergy Argus\n713 622 3996 x109kbusch@energyargus.com",
+ "source": "corporate",
+ "private": [
+  "kbusch@energyargus.com",
+  "john.arnold@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "arnold-j/inbox/166.",
+  "message_id": "<14163285.1075861676333.JavaMail.evans@thyme>"
+ }
+}

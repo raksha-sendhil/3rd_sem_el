@@ -1,0 +1,12 @@
+{
+ "doc_id": "c4db3df6ae21eae9",
+ "text": "16\nItem 6. Selected Financial Data\nThe selected financial data presented for each of the five years ended December 31, 2019 is derived from our audited consolidated financial statements. The selected financial data presented should be read in conjunction with our consolidated financial statements, the notes to our consolidated financial statements and Item 7 “Management's Discussion and Analysis of Financial Condition and Results of Operations.”\nYear Ended December 31, 2019 (1) 2018 (2) 2017 (3) 2016 2015 (in thousands, except per share amounts) Statement of Income Data: Revenues $ 2,222,559 $ 1,958,557 $ 1,717,018 $ 1,601,596 $ 1,550,117 Operating income $ 138,325 $ 112,742 $ 98,194 $ 90,963 $ 84,886 Net income $ 113,890 $ 82,097 $ 114,141 $ 56,391 $ 51,127 Basic earnings per share (Class A and B) $ 2.85 $ 2.08 $ 2.94 $ 1.48 $ 1.36 Diluted earnings per share (Class A and B) $ 2.83 $ 2.06 $ 2.91 $ 1.47 $ 1.36 Dividend per share $ 1.08 $ 1.00 $ 0.84 $ 0.84 $ 0.84\nBalance Sheet Data:\nWorking capital $ 154,753 $ 196,652 $ 138,879 $ 229,659 $ 189,276 Goodwill (4) $ 1,191,259 $ 1,085,806 $ 1,084,560 $ 955,874 $ 919,591 Total assets $ 2,107,914 $ 1,803,871 $ 1,744,475 $ 1,598,464 $ 1,506,424 Long-term debt $ 36,500 $ 7,500 $ 31,000 $ — $ —",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "930920fe5224bbd051390e4e332fb0cc",
+  "page": 1,
+  "report": "mantech-international-corp_2019.pdf"
+ }
+}

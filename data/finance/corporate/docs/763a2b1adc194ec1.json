@@ -1,0 +1,14 @@
+{
+ "doc_id": "763a2b1adc194ec1",
+ "text": "From: drew.fossum@enron.com\nTo: norma.hasenjager@enron.com\nDate: 2000-01-06\nSubject: Tony Pryor\n\nAs I mentioned in my voice mail, please check up on the signing bonus we \nagreed to pay Tony Pryor.  He didn't get it and we need to get that fixed \nasap.  I'll be at 37555 tomorrow and back in Omaha Monday.  If you learn \nsomething tomorrow and can't get ahold of me, please leave me a voice mail.  \nThanks.  DF",
+ "source": "corporate",
+ "private": [
+  "drew.fossum@enron.com",
+  "norma.hasenjager@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "fossum-d/discussion_threads/1147.",
+  "message_id": "<27304961.1075863617301.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "doc_id": "4ebdcf1b04ddb15c",
+ "text": "From: andrew.edison@enron.com\nTo: dan.hyvl@enron.com\nDate: 2001-03-08\nSubject: settlement language\n\nPer our discussion earlier today, here is some generic settlement language \nyou might want to use:\n\nIn further consideration of the agreements, covenants and releases set forth \nherein, _____ hereby releases, acquits and discharges ___ and __________, \ntogether with their directors, officers, employees, agents, attorneys, \nrepresentatives, heirs, assigns, affiliates, and subsidiary and parent \norganizations from and against any and all claims, demands, obligations, \nliabilities, for causes of action, of any nature whatsoever, at law or in \nequity, relating to or arising out of the subject matter of the Pending \nLitigation, including but not limited to, any and all claims, demands, \nliabilities or causes of action asserted in the Pending Litigation or arising \nunder any contract or agreement, or in connection with any project, which is \nthe subject of the Pending Litigation.\n\nIf no lawsuit has been filed, you will need to make some minor adjustments.  \nI hope this helps.  Let me know if I can be of further assistance.",
+ "source": "corporate",
+ "private": [
+  "andrew.edison@enron.com",
+  "dan.hyvl@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/hpl_customers/58.",
+  "message_id": "<8328845.1075842260259.JavaMail.evans@thyme>"
+ }
+}

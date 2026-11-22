@@ -1,0 +1,14 @@
+{
+ "doc_id": "f1471b24edaa77d2",
+ "text": "From: mark.breese@enron.com\nTo: dan.hyvl@enron.com\nDate: 2001-02-15\nSubject: PEAK bid\n\nWe had a brief meeting w/ Joe Dephner on this deal yesterday.  Apparently, \nEnron probably only company that could get bonds for this deal (5 years \nonly).  Joe will be calling PEAK to discuss the lack of 10 year bonds and \nsome of our proposals for alternatives.  based on their response we will \ndecide to Go or NO GO.  I will keep you informed.",
+ "source": "corporate",
+ "private": [
+  "mark.breese@enron.com",
+  "dan.hyvl@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/peak/2.",
+  "message_id": "<27696448.1075842261621.JavaMail.evans@thyme>"
+ }
+}

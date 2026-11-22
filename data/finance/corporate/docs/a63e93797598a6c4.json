@@ -1,0 +1,12 @@
+{
+ "doc_id": "a63e93797598a6c4",
+ "text": "Results of Continuing Operations\nThe analysis presented below is organized to provide the information we believe will facilitate an understanding of our historical performance and relevant trends going forward, and should be read in conjunction with our Consolidated Financial Statements, including the notes thereto, in Item 8 \"Financial Statements and Supplementary Data\" of this Annual Report on Form 10 - K.\nThe following table sets forth, for the periods indicated, certain data derived from our Consolidated Statements of Operations (in thousands):\nYear Ended December 31, 2019 2018\nSales . $ 788,948 $ 718,892 Gross profit . 315,652 365,607 Operating expenses . 261,264 194,054 Operating income from continuing operations . 54,388 171,553 Other income (expense), net . 12,806 823 Income from continuing operations before income taxes . 67,194 172,376 Provision for income taxes . 10,699 25,227 Income from continuing operations, net of income taxes . $ 56,495 $ 147,149",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "5f9e7b09281aad0e829b4ac500bbc419",
+  "page": 1,
+  "report": "advanced-energy_2019.pdf"
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "doc_id": "2ac2e9255417b15b",
+ "text": "From: jason.williams@enron.com\nTo: dan.hyvl@enron.com, craig.breslau@enron.com, john.hodge@enron.com\nDate: 2000-09-29\nSubject: Ormet - credit worksheet\n\nAttached is the Credit Worksheet for Ormet Primary Aluminum Corp.  Please let \nme know if you have any questions/comments.\n\n\nThanks,\n\nJay Williams",
+ "source": "corporate",
+ "private": [
+  "jason.williams@enron.com",
+  "dan.hyvl@enron.com",
+  "craig.breslau@enron.com",
+  "john.hodge@enron.com",
+  "Jay Williams"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/ormet/1.",
+  "message_id": "<13018955.1075842260629.JavaMail.evans@thyme>"
+ }
+}

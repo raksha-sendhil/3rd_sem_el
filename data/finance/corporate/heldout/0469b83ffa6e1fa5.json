@@ -1,0 +1,12 @@
+{
+ "doc_id": "0469b83ffa6e1fa5",
+ "text": "56\nNon-GAAP Financial Measures\nTo complement our Consolidated Statements of Operations and Cash Flows, we use non-GAAP financial measures of\nAdjusted gross margin, Adjusted operating income, Adjusted net income, and Adjusted EBITDA. We believe that Adjusted gross margin, Adjusted operating income, Adjusted net income, and Adjusted EBITDA are complements to U.S. GAAP amounts and such measures are useful to investors. The presentation of these non-GAAP measures is not meant to be considered in isolation or as an alternative to net income as an indicator of our performance, or as an alternative to cash flows from operating activities as a measure of liquidity.\nThe following table provides a reconciliation from U.S. GAAP Gross margin to non-GAAP Adjusted gross margin\n(amounts in thousands):\nFiscal Years Ended March 31,\n2019 2018 2017\nNet sales (1) $1,382,818 $1,200,181 $ 757,338\nCost of sales (1) 924,276 860,744 571,944\nGross Margin (GAAP) (1) 458,542 339,437 185,394\nGross margin as a % of net sales 33.2% 28.3% 24.5%\nNon-GAAP adjustments:\nPlant start-up costs (2) (927) 929 427\nStock-based compensation expense 2,756 1,519 1,384\nAdjusted gross margin (non-GAAP) (1) $ 460,371 $ 341,885 $ 187,205\nAdjusted gross margin as a % of net sales 33.3% 28.5% 24.7%\n_______________________________________________________________________________ (1) Fiscal years ending March 31, 2018 and 2017 adjusted due to the adoption of ASC 606. (2) $0.9 million in costs incurred during fiscal year 2018 related to the relocation of the Company's tantalum powder facility equipment from Carson City, Nevada to its existing Matamoros, Mexico plant were reclassified from “Plant start-up costs” to “Restructuring charges” during fiscal year 2019.\nThe following table provides reconciliation from U.S. GAAP Operating income to non-GAAP Adjusted operating\nincome (amounts in thousands):",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "d34b054dc1d89d6d35611bc6ca8d3f84",
+  "page": 1,
+  "report": "kemet-corporation_2019.pdf"
+ }
+}

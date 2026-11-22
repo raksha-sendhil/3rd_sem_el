@@ -1,0 +1,12 @@
+{
+ "doc_id": "a63b31415886c48e",
+ "text": "Item 6: Selected Financial Data\nThe following selected consolidated financial data is derived from our consolidated financial statements. This data should be read in conjunction with our consolidated financial statements and the related notes, and Item 7: Management's Discussion and Analysis of Financial Condition and Results of Operations contained elsewhere in this Annual Report on Form 10-K.\nFiscal 2019 (2)\nFiscal 2018 (1)(2)\nFiscal 2017 (2)\nFiscal 2016\n(2)(3)(5)\nFiscal 2015 (2)(4)\n(Dollars in thousands, except per share data)\nConsolidated Statements of Operations Data:\nRevenues $ 589,464 $ 529,675 $ 548,441 $ 383,881 $ 282,358\nGross profit 237,496 210,339 215,597 102,682 85,738\nNet income (loss) 39,346 104,036 40,913 (6,557) (1,523)\nBasic net income (loss) per share 0.52 1.42 0.57 (0.10) (0.03)\nDiluted net income (loss) per share 0.51 1.38 0.55 (0.10) (0.03)\nConsolidated Balance Sheets Data:\nCash, cash equivalents and marketable securities $ 220,872 $ 149,003 $ 140,172 $ 108,905 $ 187,589\nWorking capital 282,483 235,302 213,693 172,002 214,437\nTotal assets 839,882 728,222 646,574 618,982 342,723\nTerm loan, net of current portion 15,639 34,971 87,228 125,475 —\nTotal stockholders' equity 640,997 580,164 458,637 401,056 294,681\nNumber of employees 1,836 1,676 1,685 1,571 958\n(1) Fiscal 2018 net income includes an income tax benefit of $75.8 million from a valuation allowance release against certain U.S. deferred tax assets. See Note\n13 of Notes to Consolidated Financial Statements.\n(2) Fiscal 2019, 2018, 2017, 2016, and 2015 net income (loss) includes restructuring charges, net, of $0.5 million, $0.2 million, $0.8 million, $7.3 million and\n$0.6 million, respectively.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "a70e7b04b9667116a9dd83ba84596055",
+  "page": 1,
+  "report": "formfactor_2019.pdf"
+ }
+}

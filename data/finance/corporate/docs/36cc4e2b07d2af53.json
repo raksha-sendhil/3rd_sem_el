@@ -1,0 +1,17 @@
+{
+ "doc_id": "36cc4e2b07d2af53",
+ "text": "From: sherry.dawson@enron.com\nTo: stacey.vallejo@enron.com\nDate: 2001-04-24\nSubject: Vacation in May\n\nStacey, I will out of the office from May the 2nd to May the 21st. Amy \nCavazos will be flipping out all Canada deals while I am out. Amy knows how \nto run the macro report to insure all deals have been flipped out.   You may \nreach Amy at 713-345-4074 if she is unavailable you may reach Laura Vargas at \n713-345-8197 and Errol 713-345-8274.  \nThank You,\nSherry",
+ "source": "corporate",
+ "private": [
+  "sherry.dawson@enron.com",
+  "stacey.vallejo@enron.com",
+  "713-345-4074",
+  "713-345-8197",
+  "713-345-8274"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "mclaughlin-e/all_documents/929.",
+  "message_id": "<30596694.1075857388284.JavaMail.evans@thyme>"
+ }
+}

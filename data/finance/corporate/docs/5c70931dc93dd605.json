@@ -1,0 +1,14 @@
+{
+ "doc_id": "5c70931dc93dd605",
+ "text": "From: russell.diamond@enron.com\nTo: dan.hyvl@enron.com\nDate: 2000-08-21\nSubject: Huish\n\nDan,\n\nPlease see attached Credit Worksheet for Huish.  As discussed this Agreement \nmust be signed in conjunction with Mike Morris's proposed transaction.\n\nThank you,\n\nRussell",
+ "source": "corporate",
+ "private": [
+  "russell.diamond@enron.com",
+  "dan.hyvl@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/hpl_customers/9.",
+  "message_id": "<4679915.1075842259128.JavaMail.evans@thyme>"
+ }
+}

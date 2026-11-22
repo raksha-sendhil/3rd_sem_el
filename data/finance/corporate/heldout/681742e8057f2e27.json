@@ -1,0 +1,16 @@
+{
+ "doc_id": "681742e8057f2e27",
+ "text": "From: scott.neal@enron.com\nTo: andrea.ring@enron.com, chuck.ames@enron.com, judy.townsend@enron.com\nDate: 2002-01-31\nSubject: trading plan and products, etc meeting\n\nI would like to get together Monday, February 4 at 9:30am to discuss the startup of our business\nincluding products, points, responsibilities etc.\n\nAmanda will notify you with the location.\n\nThanks, \n\nScott",
+ "source": "corporate",
+ "private": [
+  "scott.neal@enron.com",
+  "andrea.ring@enron.com",
+  "chuck.ames@enron.com",
+  "judy.townsend@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ring-a/deleted_items/24.",
+  "message_id": "<20955026.1075841482125.JavaMail.evans@thyme>"
+ }
+}

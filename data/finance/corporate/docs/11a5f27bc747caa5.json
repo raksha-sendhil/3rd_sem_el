@@ -1,0 +1,15 @@
+{
+ "doc_id": "11a5f27bc747caa5",
+ "text": "From: mcesario@ormet.com\nTo: craig.breslau@enron.com, dan.j.hyvl@enron.com\nDate: 2000-12-12\nSubject: Ormet Documents\n\nAttached is a marked-up draft of the Enron standard confidentiality \nagreement.  Please review it and get back to me with your comments.\n\nAdditionally, I have attached a copy of the Firm Purchase/Sale Agreement that \nmakes Ormet's changes to the Guarantee Agreement on Exhibit D consistent on \nthe Exhibit C Guarantee Agreement.\n\nPending your comments on the Confidentialty Agreement, the only item \noutstanding is the $1.5 million collateral threshhold.\n\nI look forward to hearing from you as soon as possible.\n\nThanks,\nMike\n\n - Enron_CA.doc\n - Enron_Agreement.doc",
+ "source": "corporate",
+ "private": [
+  "mcesario@ormet.com",
+  "craig.breslau@enron.com",
+  "dan.j.hyvl@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/ormet/18.",
+  "message_id": "<2409609.1075842261017.JavaMail.evans@thyme>"
+ }
+}

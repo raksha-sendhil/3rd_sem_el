@@ -1,0 +1,15 @@
+{
+ "doc_id": "fe3af7d4bf64bcee",
+ "text": "From: keenonc@yahoo.com\nTo: dsmith3@enron.com\nDate: 2001-07-25\nSubject: Keenon Wilborn's Resume'\n\nDear Mr. Gilbert-Smith,\nI was referred to you by Mrs. Gwen Fisher, who advised\nme to forward this resume' for a potential opportunity\nwithin your 24hr trading group. Please contact me at\n(713)822-4595. Thanks in advance for any assistance\nyou may be able to provide.\n\nKind Regards,\n\nKeenon Wilborn\n\n__________________________________________________\nDo You Yahoo!?\nMake international calls for as low as $.04/minute with Yahoo! Messenger\nhttp://phonecard.yahoo.com/\n - Keenon's Enron Resume.doc",
+ "source": "corporate",
+ "private": [
+  "keenonc@yahoo.com",
+  "dsmith3@enron.com",
+  "(713)822-4595"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "gilbertsmith-d/personal/15.",
+  "message_id": "<6854582.1075840548477.JavaMail.evans@thyme>"
+ }
+}

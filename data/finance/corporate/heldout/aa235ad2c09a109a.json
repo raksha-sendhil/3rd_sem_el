@@ -1,0 +1,14 @@
+{
+ "doc_id": "aa235ad2c09a109a",
+ "text": "From: klarnold@flash.net\nTo: john.arnold@enron.com\nDate: 2001-11-28\nSubject: Book list\n\nNeed your book list from amazon.com!!!!   May sleet and snow tonight but I\nthink the ground is too warm to  stick or get icy.  Although I could use a\nday off work!  Send me your christmas list!  Also, I see that Enron and\nDynegy have been negotiating for days.....this concerns me.  they cannot\nseem to come up with a new price.  Are you continuing to lose trading?\nwhat % of normal trades are you now doing a day?  I just hope you and\nMatthew are OK.  And Jeannie.  Let me know.  Love you, Mom.",
+ "source": "corporate",
+ "private": [
+  "klarnold@flash.net",
+  "john.arnold@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "arnold-j/inbox/177.",
+  "message_id": "<12926226.1075861676675.JavaMail.evans@thyme>"
+ }
+}

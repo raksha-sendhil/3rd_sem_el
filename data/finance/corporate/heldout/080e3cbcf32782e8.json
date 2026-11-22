@@ -1,0 +1,12 @@
+{
+ "doc_id": "080e3cbcf32782e8",
+ "text": "Significant components of Teradyne’s deferred tax assets (liabilities) as of December 31, 2019 and 2018 were as follows:\n2019 2018\n(in thousands) Deferred tax assets Tax credits . $ 79,480 $ 69,091 Accruals . 25,424 23,449 Pension liabilities . 24,459 20,826 Inventory valuations . 18,572 18,514 Deferred revenue . 7,622 9,130 Equity compensation . 7,042 7,190 Vacation accrual . 4,768 4,772 Investment impairment . 3,292 — Net operating loss carryforwards . 2,705 3,658 Marketable securities . — 962 Other . 1,472 685\nGross deferred tax assets . 174,836 158,277 Less: valuation allowance . (77,177) (69,852)\nTotal deferred tax assets . $ 97,659 $ 88,425\nDeferred tax liabilities: Depreciation . $ (18,238) $ (14,028) Intangible assets . (16,705) (24,211) Marketable securities . (1,601) —\nTotal deferred tax liabilities . $ (36,544) $ (38,239)\nNet deferred assets . $ 61,115 $ 50,186\nAs of December 31, 2019 and 2018, Teradyne evaluated the likelihood that it would realize deferred income taxes to offset future taxable income and concluded that it is more likely than not that a substantial majority of its deferred tax assets will be realized through consideration of both the positive and negative evidence. At December 31, 2019 and 2018, Teradyne maintained a valuation allowance for certain deferred tax assets of $77.2 million and $69.9 million, respectively, primarily related to state net operating losses and state tax credit carryforwards, due to the uncertainty regarding their realization. Adjustments could be required in the future if Teradyne estimates that the amount of deferred tax assets to be realized is more or less than the net amount recorded.\nAt December 31, 2019, Teradyne had operating loss carryforwards that expire in the following years:\nState Operating Loss Carryforwards\nFederal Operating Loss Carryforwards\nForeign Operating Loss Carryforwards",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "78442b3ac80feaa89e377fd7f73c1c2b",
+  "page": 1,
+  "report": "teradyne-inc_2019.pdf"
+ }
+}

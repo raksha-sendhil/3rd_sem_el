@@ -1,0 +1,14 @@
+{
+ "doc_id": "b4970f97cc101751",
+ "text": "From: drew.fossum@enron.com\nTo: dan.fancler@enron.com\nDate: 2001-03-12\nSubject: Trading Policy\n\nPls route Mary Kay and I on the next draft of the policy.  Rod mentioned this \nmorning that a new version would be coming out soon.  Thanks df",
+ "source": "corporate",
+ "private": [
+  "drew.fossum@enron.com",
+  "dan.fancler@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "fossum-d/discussion_threads/1106.",
+  "message_id": "<8117802.1075842545957.JavaMail.evans@thyme>"
+ }
+}

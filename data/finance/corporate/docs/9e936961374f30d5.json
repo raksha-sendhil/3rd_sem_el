@@ -1,0 +1,16 @@
+{
+ "doc_id": "9e936961374f30d5",
+ "text": "From: errol.mclaughlin@enron.com\nTo: sue.vasan@enron.com\nDate: 2001-04-19\nSubject: El Paso Status in the Exotic Files\n\nSue,\n\nI am sending you this e-mail because I received your voice message well after \nyou left it today.  I reviewed the text files that are sent out by the book \nadministrators on my desks and none of them contain any deals booked to the \ncounterparty El Paso Gas Marketing.  All of the deals from people on my desk \nare booked to the valid El Paso counterparty per our conversations.\n\nI will be out of the office tomorrow, but I will be checking my voicemail \nfrequently and communicating with my group.  If the same problem arises \ntomorrow, please call me at 713-305-1502 so that we can discuss, because \nthere has to be some other explanation for the erroneous counterparty showing \nup on your report.\n\nThank you,\n\nErrol McLaughlin, X5-8274",
+ "source": "corporate",
+ "private": [
+  "errol.mclaughlin@enron.com",
+  "sue.vasan@enron.com",
+  "Errol Mclaughlin",
+  "713-305-1502"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "mclaughlin-e/all_documents/917.",
+  "message_id": "<13404629.1075857388009.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "doc_id": "559be5682b01e3ad",
+ "text": "MAXLINEAR, INC.\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (in thousands, except per share amounts and percentage data)\nThe components of the deferred income tax assets are as follows:\nDecember 31,\n2019 2018\n(in thousands)\nDeferred tax assets:\nNet operating loss carryforwards $ 65,477 $ 64,887\nResearch and development credits 80,404 75,032\nAccrued expenses and other 7,768 7,965\nLease obligation 2,047 —\nAccrued compensation 1,441 2,504\nStock-based compensation 3,460 2,550\n160,597 152,938\nLess valuation allowance (77,957 ) (79,196 )\n82,640 73,742\nDeferred tax liabilities:\nFixed assets (246 ) (1,391)\nLeased right-of-use assets (1,483) —\nIntangible assets (13,627 ) (20,833 )\nNet deferred tax assets $ 67,284 $ 51,518\nAt December 31, 2019, the Company had federal, state and foreign tax net operating loss carryforwards of approximately $269.3 million, $86.4 million and $11.7\nmillion, respectively. The federal, state and foreign tax loss carryforwards will begin to expire in 2020, 2020 and 2026 respectively, unless previously utilized.\nAt December 31, 2019, the Company had federal, state and foreign tax credit carryforwards of approximately $41.8 million, $86.3 million and $5.7 million,\nrespectively. The federal and foreign tax credit carryforwards will begin to expire in 2023 and 2024 respectively, unless previously utilized. The state tax credit carryforwards do not expire. The Company also has foreign incentive deductions of approximately $24.5 million that do not expire.\nIn addition, the Company has $0.3 million of federal alternative minimum tax credit carryforwards that will be refundable in future years, due to the Tax Cuts and Jobs\nAct described below.\nThe Company utilizes the asset and liability method of accounting for income taxes, under which deferred taxes are determined based on temporary differences",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "4bca637fa8d11fd4333c8c9844dd4727",
+  "page": 1,
+  "report": "maxlinear-inc_2019.pdf"
+ }
+}

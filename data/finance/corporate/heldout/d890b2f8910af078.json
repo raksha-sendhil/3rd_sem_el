@@ -1,0 +1,14 @@
+{
+ "doc_id": "d890b2f8910af078",
+ "text": "From: kam.keiser@enron.com\nTo: ed.mcmichael@enron.com\nDate: 2002-01-10\nSubject: Performance book\n\nEd,\n\nThis book has been set up and should be ready to go.  Can you let me know what deals you would like moved into that book and we will take care of it.\n\nThanks\n\nKam\nx3-5781",
+ "source": "corporate",
+ "private": [
+  "kam.keiser@enron.com",
+  "ed.mcmichael@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/sent_items/243.",
+  "message_id": "<10732982.1075840196975.JavaMail.evans@thyme>"
+ }
+}

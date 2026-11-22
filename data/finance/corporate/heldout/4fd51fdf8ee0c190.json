@@ -1,0 +1,14 @@
+{
+ "doc_id": "4fd51fdf8ee0c190",
+ "text": "From: bill.iii@enron.com\nTo: portland.shift@enron.com\nDate: 2001-04-04\nSubject: California Schedules\n\nGroup,\n\nWhen doing an import or an export from California there are a few important \nguidelines to remember.\n\nIMPORT-This must be FIRM.  A firm import is required so that we provide the \nspinning reserves to California (we do this by buying firm energy for the \nimport).  If the import is non-firm, California will charge us their price \nfor spinning reserve margins.  This could easily be $400 per mw come this \nsummer.\n\n\nEXPORT-This must be NON-FIRM.  A non-firm export allows us to provide \nspinning reserves to our bilat trading partners (or to simply sell the energy \nwithout spinning reserves as \"non-firm\"), and NOT have to pay the California \nprice for spinning reserve margins.  Conversely if we do a firm export, we \nwould have to pay for California to supply spinning reserves.  And because \nCalifornia will sometime use actual purchased energy for spinning reserves, \nthis could easily be $400 per mw this summer.\nCalifornia has also proposed cutting firm exports this summer, so a \"firm\" \nexport does not imply that the energy would actually be exported anymore than \nnonfirm.\n\nIF you have other questions.  Please let me know.\n\nThanks,\nBill",
+ "source": "corporate",
+ "private": [
+  "bill.iii@enron.com",
+  "portland.shift@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/60.",
+  "message_id": "<22467695.1075841262778.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "doc_id": "c66606194c4ef358",
+ "text": "TABLE OF CONTENTS\nIntrinsic value is calculated as the difference between the per-share market price of our common stock on the last trading day of 2019, which was $3.80 and the exercise price of the options. For options exercised, the intrinsic value is the difference between market price and the exercise price on the date of exercise. We received cash proceeds of $816 and $135 from stock options exercised in 2019 and 2018, respectively. The total intrinsic value of options exercised was $2,473 and $46 during the years ended December 31, 2019 and 2018, respectively.\nStock-based compensation expense is included in general and administrative expense for each period as follows:\nStock-Based Compensation by Type of Award\nYear Ended\nDecember 31, 2019\nYear Ended\nDecember 31, 2018\nStock options $ 2,756 $ 2,926\nRSUs 955 1,129\nTotal stock-based compensation expense $ 3,711 $ 4,055\nAs of December 31, 2019, there was $4,801 of unrecognized stock-based compensation expense related to unvested employee stock options and $1,882 of unrecognized stock-based compensation expense related to unvested RSUs. These costs are expected to be recognized over a weighted-average period of 2.13 and 2.33 years, respectively.\nThe fair value of each option grant was estimated on the date of grant using the Black-Scholes option pricing model using the following weighted average assumptions:\nYear Ended\nDecember 31, 2019\nYear Ended\nDecember 31, 2018\nExpected stock price volatility 92.34% 85.26%\nRisk-free interest rate 2.09% 2.73%\nExpected life term 6.14 years 6.02 years\nExpected dividends 0% 0%\nBased on the Black-Scholes option pricing model, the weighted average estimated fair value of employee stock options granted was $4.63 and $2.58 per share during the years ended December 31, 2019 and 2018, respectively.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "36d1468e2be20ccc765f76c712ed5e1e",
+  "page": 1,
+  "report": "virnetx-holding-corp_2019.pdf"
+ }
+}

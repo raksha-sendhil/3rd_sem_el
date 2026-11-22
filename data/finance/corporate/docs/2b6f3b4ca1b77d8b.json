@@ -1,0 +1,12 @@
+{
+ "doc_id": "2b6f3b4ca1b77d8b",
+ "text": "Total revenues 9,556 9,664 8,347\nNet revenues by market channel (2)\nOriginal Equipment Manufacturers (“OEM”) 6,720 6,325 5,549\nDistribution 2,836 3,339 2,798\nTotal revenues 9,556 9,664 8,347\n(1) Net revenues by geographical region of shipment are classified by location of customer invoiced or reclassified by shipment destination in line with customer demand. For example, products ordered by U.S.-based companies to be invoiced to Asia Pacific affiliates are classified as Asia Pacific revenues.\n(2) Original Equipment Manufacturers (“OEM”) are the end-customers to which the Company provides direct marketing application engineering support, while Distribution customers refers to the distributors and representatives that the Company engages to distribute its products around the world.\nAs of January 1, 2018, the Company adopted the converged guidance on revenue from contract with customers with no material impact on the Company’s recognition practices as substantially similar performance conditions exist under the new guidance and past practice.\nThe Company does not disclose the value of unsatisfied performance obligations for (i) contracts with an original expected length of one year or less and (ii) contracts for which the Company recognizes revenue at the amount to which the Company has the right to invoice for services performed.\n19. SEGMENT INFORMATION\nThe Company designs, develops, manufactures and markets a broad range of products, including discrete and standard commodity components, application-specific integrated circuits (“ASICs”), full custom devices and semi-custom devices and application-specific standard products (“ASSPs”) for analog, digital, and mixed-signal applications. In addition, the Company further participates in the manufacturing value chain of Smartcard products, which includes the production and sale of both silicon chips and Smartcards.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "9b052593abb4e1f04a1e3c0e46895388",
+  "page": 1,
+  "report": "stmicroelectronics_2019.pdf"
+ }
+}

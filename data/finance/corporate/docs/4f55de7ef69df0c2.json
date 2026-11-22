@@ -1,0 +1,16 @@
+{
+ "doc_id": "4f55de7ef69df0c2",
+ "text": "From: richard.sanders@enron.com\nTo: gfergus@brobeck.com\nDate: 2001-02-26\nSubject: Information requested by the Press\n\nEnron's press flak is Eric Thode 713-853-9053\n\n\n\n\t\"Fergus, Gary S.\" <GFergus@brobeck.com>\n\t02/23/2001 11:26 AM\n\t\t \n\t\t To: \"'richard.b.sanders@enron.com'\" <richard.b.sanders@enron.com>\n\t\t cc: \"Molland, Michael E.\" <MMolland@brobeck.com>\n\t\t Subject: Information requested by the Press\n\n\nI assume that Enron public relations will deal with a request like this. She\nis inquiring about the City of San Francisco removal filed on Wednesday.\n\nVivian Chen\nBloomberg Business News\n415-743-3506\n\nThanks.\nGary\n\n\n\n\n=======================================================\nThis email message is for the sole use of the intended recipient(s) and may \ncontain confidential and privileged information. Any unauthorized review, \nuse, disclosure or distribution is prohibited. If you are not the intended \nrecipient, please contact the sender by reply email and destroy all copies of \nthe original message.\n\nTo reply to our email administrator directly, send an email to \npostmaster@brobeck.com\nBROBECK PHLEGER & HARRISON LLP\nhttp://www.brobeck.com",
+ "source": "corporate",
+ "private": [
+  "richard.sanders@enron.com",
+  "gfergus@brobeck.com",
+  "713-853-9053",
+  "415-743-3506"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "sanders-r/sent/831.",
+  "message_id": "<2712810.1075853272384.JavaMail.evans@thyme>"
+ }
+}

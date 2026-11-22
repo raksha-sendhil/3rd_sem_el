@@ -1,0 +1,14 @@
+{
+ "doc_id": "4d258fb3f28ab1a2",
+ "text": "From: bill.iii@enron.com\nTo: portland.shift@enron.com\nDate: 2001-04-30\nSubject: EES Power Settlements\n\nGroup,\nPlease send EES models to the following address from now on: \"EES Power \nSettlements\".  More folks at EES would like to see our work.  \nThanks,\nBill",
+ "source": "corporate",
+ "private": [
+  "bill.iii@enron.com",
+  "portland.shift@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/517.",
+  "message_id": "<27091347.1075841274135.JavaMail.evans@thyme>"
+ }
+}

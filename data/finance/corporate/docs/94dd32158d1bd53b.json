@@ -1,0 +1,14 @@
+{
+ "doc_id": "94dd32158d1bd53b",
+ "text": "From: posta_mailer.1-5631804-5608569-crc0a0c0@tumble2.datek.com\nTo: lcampbel@enron.com\nDate: 2000-12-06\nSubject: Trade Confirmation\n\nUserName: CAMPB54792\n\nYou have an electronic trade confirmation in your Inbox.  To retrieve your\ntrade confirmation you may login to Datek Online and choose Document Delivery\nfrom the Account Services menu, or you may click on the link below:\n\nhttps://tumble2.datek.com/posta?x=1-5631804-5608569-CRC0A0C0\n\nYou have received this message because you subscribed to electronic delivery\nfor your Datek Online account.  If you wish to stop receiving account\ndocuments via electronic delivery, you may cancel your subscription by\nlogging into Datek Online and choosing \"Settings\" from the\nAccount Services menu.\n\nFor more information please call Customer Support at 1-888-U2-DATEK, or send\nemail to support@datek.com.\n\nThank you for trading with us.\n\nDatek Online Brokerage Services\nMember NASD / SIPC",
+ "source": "corporate",
+ "private": [
+  "posta_mailer.1-5631804-5608569-crc0a0c0@tumble2.datek.com",
+  "lcampbel@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "campbell-l/notes_inbox/142.",
+  "message_id": "<20328235.1075857876820.JavaMail.evans@thyme>"
+ }
+}

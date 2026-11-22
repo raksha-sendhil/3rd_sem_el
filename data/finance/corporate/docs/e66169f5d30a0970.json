@@ -1,0 +1,12 @@
+{
+ "doc_id": "e66169f5d30a0970",
+ "text": "2018\nDecember 31,\n2019\nExercise price 1.25 1.25\nRisk free interest rate 2.46% 1.59%\nDividend yield 0.00% 0.00%\nExpected volatility 152% 133%\nContractual term 2.15 Years 1.15 Years\nRisk-free interest rate: The Company uses the risk-free interest rate of a U.S. Treasury Note with a similar expected term on the date of measurement. Dividend yield: The Company uses a 0% expected dividend yield as the Company has not paid dividends to date and does not anticipate declaring dividends in the\nnear future.\nVolatility: The Company calculates the expected volatility of the stock price based on the corresponding volatility of the Company’s peer group stock price for a\nperiod consistent with the warrants’ expected term.\nExpected term: The Company’s expected term is based on the remaining contractual maturity of the warrants. During the year ended December 31, 2019 and 2018, the Company marked the derivative feature of the warrants to fair value and recorded a loss of $343,857 and a gain\nof $250,241 relating to the change in fair value, respectively. Derivative Liability\nThe Company evaluates its options, warrants or other contracts, if any, to determine if those contracts or embedded components of those contracts qualify as\nderivatives to be separately accounted for in accordance with ASC 815-10-05-4 and 815-40-25. The result of this accounting treatment is that the fair value of the embedded derivative is marked-to-market each balance sheet date and recorded as either an asset or a liability. In the event that the fair value is recorded as a liability, the change in fair value is recorded in the consolidated statement of operations as other income or expense. Upon conversion, exercise or cancellation of a derivative instrument, the instrument is marked to fair value at the date of conversion, exercise or cancellation and then the related fair value is reclassified to equity.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "bf16cbd8b1756a7bc0eee67b70efc4f3",
+  "page": 1,
+  "report": "protagenic-therapeutics-inc_2019.pdf"
+ }
+}

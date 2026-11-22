@@ -1,0 +1,12 @@
+{
+ "doc_id": "ed1922e87551c677",
+ "text": "with ordinary and ongoing operations of the acquired company and facilitates analysis of revenue growth and business trends. The acquired deferred revenue adjustment was not included in prior periods because it was immaterial or zero.\nAdjusted Revenue has limitations as a financial measure, should be considered as supplemental in nature, and is not meant as a substitute for the related financial information prepared in accordance with GAAP. These limitations include the following:\n• Adjusted Revenue is net of transaction-based costs, which is our largest cost of revenue item;\n• Adjusted Revenue is net of bitcoin costs, which could be a significant cost;\n• The deferred revenue adjustment that is added back to Adjusted Revenue will never be recognized as revenue by the Company; and\n• other companies, including companies in our industry, may calculate Adjusted Revenue differently or not at all, which reduces its usefulness as a comparative measure.\nBecause of these limitations, you should consider Adjusted Revenue alongside other financial performance measures, including total net revenue and our financial results presented in accordance with GAAP.\nThe following table presents a reconciliation of total net revenue to Adjusted Revenue for each of the periods indicated:\nYear Ended December 31,\n2018 2017 2016 2015 2014\n(in thousands) Total net revenue $3,298,177 $2,214,253 $1,708,721 $1,267,118 $850,192 Less: Starbucks transaction-based revenue — — 78,903 142,283 123,024 Less: transaction-based costs 1,558,562 1,230,290 943,200 672,667 450,858 Less: bitcoin costs 164,827 — — — — Add: deferred revenue adjustment related to purchase accounting $ 12,853 $ — $ — $ — $ —\nAdjusted Revenue $1,587,641 $ 983,963 $ 686,618 $ 452,168 $276,310\nAdjusted EBITDA and Adjusted Net Income (Loss) Per Share (Adjusted EPS)",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "bb0dbe68ed92d4dccf6674b82b976f98",
+  "page": 1,
+  "report": "square-inc_2019.pdf"
+ }
+}

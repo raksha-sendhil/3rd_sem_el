@@ -1,0 +1,16 @@
+{
+ "doc_id": "b9a8fe06a4066637",
+ "text": "From: terri.greenlee@enron.com\nTo: vince.kaminski@enron.com\nDate: 2001-02-12\nSubject: Credit Reserve Model Meeting\n\nVince,\n\nThe number you will need to call-in for the Credit Reserve Model Meeting on \nTuesday, February 13 at 4:00 is 713.345.3324.\n\nIf you have any questions, please do not hestitate to call me at x33565.\n\nThank you.\n\nTerri Greenlee",
+ "source": "corporate",
+ "private": [
+  "terri.greenlee@enron.com",
+  "vince.kaminski@enron.com",
+  "Terri Greenlee",
+  "713.345.3324"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "kaminski-v/discussion_threads/3048.",
+  "message_id": "<32793923.1075856401051.JavaMail.evans@thyme>"
+ }
+}

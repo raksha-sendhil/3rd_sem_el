@@ -1,0 +1,19 @@
+{
+ "doc_id": "7a15cbd04a18e48a",
+ "text": "From: michael.garberding@enron.com\nTo: timothy.swanson@ssmb.com, 'wagman@enron.com, steve.wagman@ssmb.com\nDate: 2001-06-29\nSubject: Final Confirmations for Cit & Delta\n\nIncluded is the final Citi and Delta Confirmations with regard to the Prepay.  The only remaining information that is required is the named Collateral Custodian for Delta; otherwise, the confirms are complete.  We are getting these cofirms signed, with the remaining Delta information coming soon.  Please let me know if you have any comments or questions.  These same confirms will be faxed to both Citi and Delta for signature.  I will coordinate with Citi on the signed copies of the guaranties.  Thanks again for everyone's help.\n\nMichael Garberding\nEnron Americas Global Finance\nWork:  (713) 853-1864\nFax:    (713) 646-3602\nE-mail: michael.garberding@enron.com",
+ "source": "corporate",
+ "private": [
+  "michael.garberding@enron.com",
+  "timothy.swanson@ssmb.com",
+  "'wagman@enron.com",
+  "steve.wagman@ssmb.com",
+  "Michael Garberding",
+  "(713) 853-1864",
+  "(713) 646-3602"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "weldon-c/citibank/2.",
+  "message_id": "<18213548.1075841975945.JavaMail.evans@thyme>"
+ }
+}

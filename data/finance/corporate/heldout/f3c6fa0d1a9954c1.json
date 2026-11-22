@@ -1,0 +1,14 @@
+{
+ "doc_id": "f3c6fa0d1a9954c1",
+ "text": "From: bill.iii@enron.com\nTo: portland.shift@enron.com\nDate: 2001-04-23\nSubject: Length for 04/24/01\n\nWe have length again in NP (on-peak) for 04/24/01 and EES long/short in SDG1 \nto take care of as well.  There is 25 mws of ST-WBOM length at $266 in \nNP-15...there is also 50 mws of ST-Cali length(50/50 over $266) in NP-15.  \nEES2 is alternatively long off-peak and short on-peak in SDG1.  Enpower deals \nneed to be made under the appropriate books in NP (buy from imbalance/sell to \n?...) and with a $5 spread as normal for EES.  If you have questions, please \nlet me know.\n\nThank you,\n\nBill",
+ "source": "corporate",
+ "private": [
+  "bill.iii@enron.com",
+  "portland.shift@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "linder-e/all_documents/728.",
+  "message_id": "<2665979.1075841014772.JavaMail.evans@thyme>"
+ }
+}

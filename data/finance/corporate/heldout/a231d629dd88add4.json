@@ -1,0 +1,16 @@
+{
+ "doc_id": "a231d629dd88add4",
+ "text": "From: kam.keiser@enron.com\nTo: d..winfree@enron.com, c..giron@enron.com, john.valdes@enron.com\nDate: 2002-01-09\nSubject: estate files\n\nHere are the files that use ERMS that the estate will be using.  Some of these directories will have files that are saved with a new name daily, you can pick the latest date to change.\n\n\nO:\\erms\\erms_adm\\firmtrad\\Benchmark\\2002\\Jan-02\nO:\\erms\\erms_adm\\firmtrad\\2002\\0102\\regions\nO:\\erms\\Excel Queries\\ (Netco will need a copy of these files moved with them)\nO:\\Transport\\Central Transport\\2002\\Jan02\nO:\\TDS\\TDS Curve\\Central\nO:\\TDS\\TDS Curve\\East\nO:\\TDS\\TDS Curve\\GD-Central\nO:\\TDS\\TDS Curve\\NY\nO:\\TDS\\TDS Curve\\NYMarket\nO:\\TDS\\TDS Curve\\Southeast\nO:\\TDS\\TDS Curve\\Central\\Texas\nO:\\TDS\\TDS Curve\\Central\\West\nO:\\TDS\\TDS Curve\\East\\Intramonth & Gas Daily files\\eastprodnew style & eastmktnewstyle.xls\nO:\\TDS\\TDS Curve\\East\\GDI - East.xls\nO:\\TDS\\TDS Curve\\EAST\\FTEAST.xls\nO:\\erms\\1intra\\1report\\2002\\0102phy\\regions\\EATP0102.xls\nO:\\erms\\erms_adm\\firmtrad\\2002\\0102\\regions\\intra-east transport 0102.xls\nO:\\Global_trading\\Financial|trading\\Texas Trading\\Curves Bass.....\n\t\tft_tx0326\n\t\twaha_perm_0326\n\t\tindexCurves\n\t\ttexasnewstyle\n\t\ttexas gas daily index curves\nO:\\Bridgeline\\BRMS\\Risk\\Benchmark\nO:\\Bridgeline\\BRMS\\Risk\\P&L\nO:\\ECT_trading\\Pos_curves\\BasisCurves\\2002Curves\\Jan2002\nO:\\ECT_trading\\Pos_curves\\IntMonCurves\\2002Curves\\Jan2002\n\n\nI will send more if I find them.\n\nThanks\n\nKK",
+ "source": "corporate",
+ "private": [
+  "kam.keiser@enron.com",
+  "d..winfree@enron.com",
+  "c..giron@enron.com",
+  "john.valdes@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/sent_items/253.",
+  "message_id": "<31597898.1075840197210.JavaMail.evans@thyme>"
+ }
+}

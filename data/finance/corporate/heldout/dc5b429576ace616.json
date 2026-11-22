@@ -1,0 +1,14 @@
+{
+ "doc_id": "dc5b429576ace616",
+ "text": "From: creditprocessing@buy.com\nTo: jarnold@enron.com\nDate: 2001-10-10\nSubject: credit from buy.com\n\nHello John,\n\nThank you for shopping at buy.com.\n\nWe guarantee your satisfaction with our high quality products\nand customer support. Since your experience with order #11673325\ndid not live up to our high standards, we have issued you a credit in\nthe amount of $101.47.\n\nPlease allow 3-5 days for your bank to apply this credit to\nyour account.\n\nIf you have any questions, please visit customer support at\nhttps://www.us.buy.com/corp/support.\n\nThank you again for shopping with us. We look forward to serving\nyou in the future.\n\nSincerely,\n\nbuy.com\nhttp://www.buy.com\n\n================================================\nPlease use the link below for your Customer Support questions. Please\ndo not reply to the buy.com email address.  For anytime Help click:\n\nwww.us.buy.com/corp/support.\n================================================",
+ "source": "corporate",
+ "private": [
+  "creditprocessing@buy.com",
+  "jarnold@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "arnold-j/inbox/20.",
+  "message_id": "<27845794.1075852727345.JavaMail.evans@thyme>"
+ }
+}

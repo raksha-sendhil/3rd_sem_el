@@ -1,0 +1,17 @@
+{
+ "doc_id": "7227a740940d5c73",
+ "text": "From: michael.garberding@enron.com\nTo: pushkar.shahi@enron.com\nDate: 2001-06-22\nSubject: Citibank Prepay\n\nPushkar -\n\nJust wanted to get you up-to-date on the $250 million Citibank prepay (see attached diagram).  The prepay is being structured as two financially settled forward swaps (one with Citi and one with Delta).  \n\nThese swaps are Jan. '02 Nymex contracts to be settled December 27, 2001 and paid December 28, 2001.  These positions are usually paid on Jan. 5, 2002 for these contracts.  The cash flows are expected to be (1) $250 million cash at closing (assumed to be June 28), and (2) $250 million plus interest at expiry (assumed to be Dec. 28, 2001).  We will have the same Libor exposure in this prepay as in the others.  The individuals at Citi mentioned that they would be willing to \"set\" the Libor rate within the transaction described above to the quoted six-month Libor rate rather than using floating Libor - let me know your thoughts on this.\n\nAgain, the expected timing for the transaction is for close on June 28 (after setting Nymex and Libor that afternoon).  Please let me know if you have any questions.  Finally, the model that is included (see tab \"Prepay\") will detail the cash flow for both of the swaps.  Thanks again for all your help.\n\n \t\t \n\n\nMichael Garberding\nEnron Americas Global Finance\nWork:    (713) 853-1864\nFax:      (713) 646-3602\nE-mail:  michael.garberding@enron.com",
+ "source": "corporate",
+ "private": [
+  "michael.garberding@enron.com",
+  "pushkar.shahi@enron.com",
+  "Michael Garberding",
+  "(713) 853-1864",
+  "(713) 646-3602"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "weldon-c/citibank/7.",
+  "message_id": "<5050394.1075841976069.JavaMail.evans@thyme>"
+ }
+}

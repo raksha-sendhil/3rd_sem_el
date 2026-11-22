@@ -1,0 +1,12 @@
+{
+ "doc_id": "a890de97bbf05fd1",
+ "text": "F-16\n5. Receivables, net\n(In thousands) December 31,\n2019 2018\nGross accounts receivables $ 21,193 $ 14,135\nAllowance for returns and doubtful accounts (265 ) (277 )\nUnpaid portion of deferred revenue (10,847 ) (10,670 )\nNote receivable 458 458\nAllowance for note receivable (458 ) (458 )\nReceivables, net $ 10,081 $ 3,188\nThe allowance for doubtful accounts includes all specific accounts receivable which we believe are likely not collectable based on known information. The reduction for the unpaid portion of deferred revenue represents future customer service or maintenance obligations which have been billed to customers, but remain unpaid as of the respective balance sheet dates. Deferred revenue on our consolidated balance sheets represents future customer service or maintenance obligations which have been billed and collected as of the respective balance sheet dates.\nThe note receivable represents the remaining outstanding balance of an original note related to the sale of a product line in 2005 in the amount of $540 thousand. This was fully reserved at the time of the sale as the note’s collectability was not assured. The note receivable is fully reserved at December 31, 2019 and 2018. 6. Prepaid and other current assets\n(In thousands) December 31,\n2019 2018\nPrepaid insurance, maintenance, software licenses and other $ 4,881 $ 2,460\nTax-related 103 716\nPrepaid and other current assets $ 4,984 $ 3,176\n7. Property and Equipment\n(In thousands) December 31,\n2019 2018\nComputer and office equipment and software $ 30,335 $ 26,762\nLeasehold improvements 7,794 6,834\nFurniture and fixtures 2,733 2,181\nFinance lease right-of-use assets 3,362 $ —\n44,224 35,777\nLess accumulated depreciation (35,633 ) (31,853 )\nProperty and equipment, net $ 8,591 $ 3,924",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "fed3ce526008faeb1ce01e1602cd077f",
+  "page": 1,
+  "report": "zix-corporation_2019.pdf"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "doc_id": "ad59ea6d037304cc",
+ "text": "From: craig.breslau@enron.com\nTo: dan.hyvl@enron.com, jeffrey.hodge@enron.com\nDate: 2000-11-15\nSubject: Ormet\n\nDan and Jeff,\n\nOrmet would like to finalize this transaction by the end of this week \n(Friday, Nov 17).  Could you please make every effort to get with Amy Baird \nto resolve those two legal issues from her Oct 13th memo (items 3&4).  \nRegarding Item 2 we agreed to a $1mm cap for the entire contract term.    \nAlso, the contract does not address any of the pricing terms of the deal.  \nI'm assuming that this would be covered in the confirmation rather than the \nbase of the contract   Could you please send a draft of the confirmation to \nMike Cesario by tomorrow morning.  \nI've sent you a copy of my proposal so you know the terms.  There's a few \nadditional items that need to be included.\nPlease DO NOT include the pricing (NYMEX + .055) .  That's still being \nnegotiated.\n\n1.  Enron will warrant that we will have 15,000 of FT on Koch\n2. Ormet pays the demand charge ($.05) on the transport on any volumes below \n15,000/d\n3.  Volumes above 15,000/d up to 22/d will be supplied on IT.  We will \nutilize the same receipt/delivery path as the FT volumes in order to get the \ndiscounted transport rate.  If Koch cuts our IT, we will use best efforts to \nget the gas there on another path or on Cypress.  We will pass thru the \nactual transport costs if they are above the discounted FT rate.\n4.  Ormet must supply us with accurate and timely consumption information\n\n5.   If Koch declares Force Majeure on our FT,  we must use best efforts to \nget gas and transport on Cypress before we declare FM\n\n6. This is a full requirements contract (we supply all the gas that they \nconsume)\n7.  If Koch's tariff changes and they go away from monthly balancing, then we \nwill have a price re-opener.\n8.  If Ormet's loads change significantly (i.e. new cogen) we will have a \nprice re-opener.",
+ "source": "corporate",
+ "private": [
+  "craig.breslau@enron.com",
+  "dan.hyvl@enron.com",
+  "jeffrey.hodge@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/ormet/4.",
+  "message_id": "<29691039.1075842260702.JavaMail.evans@thyme>"
+ }
+}

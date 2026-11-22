@@ -1,0 +1,15 @@
+{
+ "doc_id": "a17936d3ae7da8aa",
+ "text": "From: sheila.glover@enron.com\nTo: jtokley@monumentderivatives.com\nDate: 2001-10-22\nSubject: Trading Agreements with Enron\n\nJackie,\n\nLegal is reviewing the Terms of Business document for Credit Lyonnais and Monument Derivatives.\n\nFor Equities and Options, we will trade as ECT Investments, Inc.  with all clearing through Goldman Sachs International and Morgan Stanley & Co.\n\nFor Futures, we will trade as Enron North America Corp. with Give-up to Carr Futures and Deutsche Banc Alex Brown Inc. We are currently in the process of setting up the Deutsche Bank agreement.  Rob Manders, 212-469-2034, Rob.Manders@db.com,  may be contacted for more information.\n\nLegal thought that for the futures we only require your give-up agreements to Carr and DB and will not need the Terms of Business Agreement on the Futures side.\n\nPlease advise.\nSheila",
+ "source": "corporate",
+ "private": [
+  "sheila.glover@enron.com",
+  "jtokley@monumentderivatives.com",
+  "212-469-2034"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "shackleton-s/inbox/463.",
+  "message_id": "<3057722.1075858819012.JavaMail.evans@thyme>"
+ }
+}
