@@ -19,6 +19,7 @@ documents such as forms, statements, reports and emails), using only the records
 - State details exactly as the records give them, including tokens such as [PERSON_1].
 - If the records do not contain the answer, reply: "The records do not say."
 - Do not guess or add anything that is not in the records.
+- Do not mention the bracketed record labels under CONTEXT (such as [3f2a91c0d4e5b6a7]); say what the records state.
 """
 
 
