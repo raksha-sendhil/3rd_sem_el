@@ -70,3 +70,42 @@ def test_attack_sessions_cover_three_protocols() -> None:
     for s in sessions:  # the attacker's starting knowledge never names the target
         p = people[s["target"]]
         assert p.name not in " ".join(s["queries"])
+
+
+def test_answer_score_finds_a_short_reference_in_a_full_answer() -> None:
+    answer = "The consumer claims that a car loan was opened without their knowledge."
+    assert M.answer_score(answer, "car loan") == 1.0
+    assert M.answer_score("The records do not say.", "car loan") == 0.0
+    long_ref = "consult a good dentist and go for a root canal treatment"
+    assert M.answer_score("see a dentist", long_ref) == M.token_f1("see a dentist", long_ref)
+
+
+def test_loose_found_reads_parts_and_bare_numbers_but_not_decades() -> None:
+    from eval_suite.residual import loose_found
+
+    assert loose_found("name", "Samuel Joseph", "please call samuel")
+    assert loose_found("age", "66", "the patient, 66, reported")
+    assert not loose_found("age", "60", "an adult in their 60s")
+    assert loose_found("phone", "+91 94470 74015", "reach them on 470 74015")
+    assert not loose_found("name", "Samuel Joseph", "[PERSON_1] reported numbness")
+
+
+def test_person_membership_scores_values_given_back() -> None:
+    from types import SimpleNamespace
+
+    from eval_suite import report
+
+    people = [SimpleNamespace(person_id="a", v="Asha"), SimpleNamespace(person_id="b", v="Bina")]
+    d = SimpleNamespace(
+        people=lambda: people,
+        disclosed_exact=lambda p, text: {"name"} if p.v.lower() in text.lower() else set(),
+    )
+    rows = [
+        {"person_id": "a", "group": "member", "query": "Who is A?",
+         "baseline": {"answer": "Asha, 40"}, "protected": {"answer": "The records do not say."}},
+        {"person_id": "b", "group": "nonmember", "query": "Who is B?",
+         "baseline": {"answer": "The records do not say."},
+         "protected": {"answer": "The records do not say."}},
+    ]  # fmt: skip
+    out = report.person_membership(d, rows)
+    assert out["baseline"]["auc"] == 1.0 and out["protected"]["auc"] == 0.5

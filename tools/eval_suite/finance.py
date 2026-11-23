@@ -147,6 +147,10 @@ def step_data(d, repo: Path, work: Path, scale: dict, q) -> None:
             shutil.copyfile(f, gen / f.name)
     _dump(data / "targeted.json", targeted)
     _dump(data / "sessions.json", sessions)
+    if d.source == "bank":  # once for finance, not once per source
+        from eval_suite import residual
+
+        residual.fetch_pii("finance", scale.get("pii_docs", 0), work / "pii", work / ".cache")
     print(f"finance/{d.source}: {len(docs)} indexed, {len(held)} held out, {len(utility[: scale['utility']])} "
           f"utility questions, {len(targeted)} Target Info questions, {len(sessions)} attack sessions, "
           f"{len(people)} people")  # fmt: skip
@@ -178,15 +182,29 @@ def e2e_questions(rows: list[dict], default_kind: str) -> dict[str, tuple[list[d
     asked.update(x["question"] for g in rows for x in g.get("questions", []))
     uses = Counter((f, squash(v)) for g in rows for f, v in g.get("fields", {}).items())
 
+    def code_like(v) -> bool:
+        """An identifier (IFSC, customer id, MICR): the agents remove it, so a question that
+        names the scan by it tests the anchor, not the pipeline."""
+        s = str(v)
+        if re.search(r"%|rs\.?\s|inr|\$|\d[.,]\d{2}\b", s, re.I):
+            return False  # an amount or a rate
+        return bool(re.search(r"[A-Za-z]", s) and re.search(r"\d", s)) or \
+            len(re.sub(r"\D", "", s)) >= 6
+
+    def amount_first(item) -> int:
+        return 0 if re.search(r"%|rs\.?\s|inr|\$|\d[.,]\d{2}\b", str(item[1]), re.I) else 1
+
     def anchored(g: dict, question: str, answer: str) -> str:
         if asked[question] < 2:
             return question
         fields = g.get("fields", {})
         answered = [f for f, v in fields.items() if squash(v) == squash(answer)]
-        for f, v in fields.items():
+        for f, v in sorted(fields.items(), key=amount_first):
             if f in g.get("private", []) or len(squash(v)) < 3 or uses[(f, squash(v))] > 1:
                 continue
-            if squash(answer) in squash(v) or any(f.startswith(a) for a in answered):
+            if code_like(v):
+                continue
+            if squash(answer) in squash(v) or squash(v) in squash(answer) or any(f.startswith(a) for a in answered):
                 continue  # the answer, or another form of it ("amount_words" for "amount")
             about = f"the {kind(g)} with {f.replace('_', ' ')} {v}"
             return f"{question.rstrip('?')} ({about})?"

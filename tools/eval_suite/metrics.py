@@ -69,6 +69,22 @@ def rouge_l(candidate: str, reference: str, beta: float = 1.0) -> float:
     return (1 + beta**2) * rec * p / (rec + beta**2 * p)
 
 
+SHORT_REFERENCE = 5  # words
+
+
+def answer_score(prediction: str, reference: str) -> float:
+    """Utility of one answer. A reference of at most SHORT_REFERENCE words ("car loan",
+    "savings account") is a span to find: the share of its words in the answer (a full-sentence
+    answer that contains it scores 1, where token F1 would give it about 0.3). A longer reference
+    (a doctor's reply) is compared by token F1."""
+    p, r = tokens(prediction), tokens(reference)
+    if not p or not r:
+        return 0.0
+    if len(r) > SHORT_REFERENCE:
+        return token_f1(prediction, reference)
+    return sum((Counter(p) & Counter(r)).values()) / len(r)
+
+
 def token_f1(prediction: str, reference: str) -> float:
     """SQuAD token F1 (Rajpurkar et al. 2016): harmonic mean of token precision and recall."""
     p, r = tokens(prediction), tokens(reference)

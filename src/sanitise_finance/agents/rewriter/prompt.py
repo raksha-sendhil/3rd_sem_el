@@ -25,6 +25,7 @@ The few-shot example is written for this prompt and must never be taken from
 from __future__ import annotations
 
 import re
+from contextvars import ContextVar
 
 from sanitise_finance.agents.rewriter import fidelity, leakcheck, ontology
 from sanitise_finance.casefile import CASE_FILE
@@ -204,10 +205,10 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
         # last resort: a distinctive word of a removed name or place still in the value
         # ("a hospital, Kengeri" when "Blossom Hospital, Kengeri branch" was removed) means the
         # value is that detail in another form, so the whole value becomes its replacement
-        if d.category in _NAMED and _leftover(value, d.span_text):
+        if d.category in _NAMED and _leftover(value, d.span_text, removed):
             assert d.replacement is not None
             if re.search(r"\d", TOKEN.sub(" ", value)):  # only the words go, the figure stays
-                value = _without_leftover(value, d.span_text, d.replacement)
+                value = _without_leftover(value, d.span_text, d.replacement, removed)
             else:
                 value = d.replacement
     value = DOUBLE_ARTICLE.sub(r"\1", value)  # "in a Pune branch" -> "in a branch"
@@ -237,22 +238,42 @@ _GENERIC_PLACE_WORDS = {
 }  # fmt: skip
 
 
-def _distinctive(span_text: str) -> set[str]:
+# The document being rewritten (set by ``agents.pipeline.sanitise``), so the leftover check
+# below can tell a word of a removed name from the same word used elsewhere in the document.
+SOURCE_TEXT: ContextVar[str | None] = ContextVar("source_text", default=None)
+
+
+def _used_elsewhere(word: str, removed) -> bool:
+    """True when the document also uses ``word`` outside every removed detail: "Imaging" in the
+    title "Diagnostic Imaging Report" when the clinic "North Valley Imaging Center" was removed.
+    Such a word is ordinary vocabulary of this document, not a trace of the removed name; a
+    word found only inside removed details ("Valley", "Kengeri") still counts."""
+    text = SOURCE_TEXT.get()
+    if not text:
+        return False
+    cuts = [(d.start, d.end) for d in removed if d.start is not None and d.end is not None]
+    for m in re.finditer(rf"(?<![A-Za-z]){re.escape(word)}(?![A-Za-z])", text):
+        if not any(a <= m.start() < b for a, b in cuts):
+            return True
+    return False
+
+
+def _distinctive(span_text: str, removed=()) -> set[str]:
     return {
         w
         for w in re.findall(r"[A-Z][A-Za-z'-]{3,}", span_text)
-        if w.lower() not in _GENERIC_PLACE_WORDS
+        if w.lower() not in _GENERIC_PLACE_WORDS and not _used_elsewhere(w, removed)
     }
 
 
-def _without_leftover(value: str, span_text: str, replacement: str) -> str:
-    for word in sorted(_distinctive(span_text), key=len, reverse=True):
+def _without_leftover(value: str, span_text: str, replacement: str, removed=()) -> str:
+    for word in sorted(_distinctive(span_text, removed), key=len, reverse=True):
         value = re.sub(rf"(?<![A-Za-z\[]){re.escape(word)}(?![A-Za-z])", replacement, value)
     return value
 
 
-def _leftover(value: str, span_text: str) -> bool:
-    words = _distinctive(span_text)
+def _leftover(value: str, span_text: str, removed=()) -> bool:
+    words = _distinctive(span_text, removed)
     outside = TOKEN.sub(" ", value)
     return any(re.search(rf"(?<![A-Za-z]){re.escape(w)}(?![A-Za-z])", outside) for w in words)
 

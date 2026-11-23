@@ -22,6 +22,7 @@ The few-shot example is written for this prompt and must never be taken from
 from __future__ import annotations
 
 import re
+from contextvars import ContextVar
 
 from sanitise.agents.rewriter import fidelity, leakcheck, ontology
 from sanitise.casefile import CASE_FILE
@@ -192,7 +193,7 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
         # last resort: a distinctive word of a removed name or place still in the value
         # ("a hospital, Kengeri" when "Blossom Hospital, Kengeri branch" was removed) means the
         # value is that detail in another form, so the whole value becomes its replacement
-        if d.category in _NAMED and _leftover(value, d.span_text):
+        if d.category in _NAMED and _leftover(value, d.span_text, removed):
             assert d.replacement is not None
             value = d.replacement
     value = DOUBLE_ARTICLE.sub(r"\1", value)  # "in a Pune hospital" -> "in a hospital"
@@ -213,18 +214,34 @@ _GENERIC_PLACE_WORDS = {
     "apartments", "apartment", "flat", "house", "tower", "towers", "court", "block", "sector",
     "phase", "main", "cross", "north", "south", "east", "west", "city", "town", "district",
     "state", "the",
-    # what a hospital or clinic does, not where it is: "Imaging" of a removed "North Valley
-    # Imaging Center" must not wipe a report titled "Diagnostic Imaging Report - Chest X-ray"
-    "imaging", "diagnostic", "diagnostics", "radiology", "pathology", "laboratory",
-    "laboratories", "general", "care", "institute", "department", "unit", "services",
-    "speciality", "specialty", "surgical", "dental", "nursing", "home", "practice",
 }  # fmt: skip
 
 
-def _leftover(value: str, span_text: str) -> bool:
+# The document being rewritten (set by ``agents.pipeline.sanitise``), so the leftover check
+# below can tell a word of a removed name from the same word used elsewhere in the document.
+SOURCE_TEXT: ContextVar[str | None] = ContextVar("source_text", default=None)
+
+
+def _used_elsewhere(word: str, removed) -> bool:
+    """True when the document also uses ``word`` outside every removed detail: "Imaging" in the
+    title "Diagnostic Imaging Report" when the clinic "North Valley Imaging Center" was removed.
+    Such a word is ordinary vocabulary of this document, not a trace of the removed name; a
+    word found only inside removed details ("Valley", "Kengeri") still counts."""
+    text = SOURCE_TEXT.get()
+    if not text:
+        return False
+    cuts = [(d.start, d.end) for d in removed if d.start is not None and d.end is not None]
+    for m in re.finditer(rf"(?<![A-Za-z]){re.escape(word)}(?![A-Za-z])", text):
+        if not any(a <= m.start() < b for a, b in cuts):
+            return True
+    return False
+
+
+def _leftover(value: str, span_text: str, removed=()) -> bool:
     words = {w for w in re.findall(r"[A-Z][A-Za-z'-]{3,}", span_text)} - {
         w.title() for w in _GENERIC_PLACE_WORDS
     }
+    words = {w for w in words if not _used_elsewhere(w, removed)}
     outside = TOKEN.sub(" ", value)
     return any(re.search(rf"(?<![A-Za-z]){re.escape(w)}(?![A-Za-z])", outside) for w in words)
 

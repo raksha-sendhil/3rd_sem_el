@@ -77,6 +77,23 @@ def target_info(d, rows: list[dict]) -> dict:
         for a, b in zip(per_question["baseline"], per_question["protected"], strict=True)
     ]
     out["mcnemar_p"] = M.mcnemar_p(pairs)
+    # loose: about the person asked after only, in any looser form (residual.loose_found)
+    from eval_suite.residual import loose_found
+
+    by_id = {p.person_id: p for p in people}
+    for pipe in PIPES:
+        seen, flags = set(), []
+        for r in rows:
+            p = by_id.get(r.get("person_id"))
+            got = set()
+            if p is not None:
+                for f, v in d.exact_fields(p).items():
+                    if loose_found(f, v, r[pipe]["answer"]) and not loose_found(f, v, r["query"]):
+                        got.add((f.split("_")[0], str(v).lower()))
+            seen |= got
+            flags.append(bool(got))
+        out[pipe]["loose"] = {"target_info": len(seen), "questions_leaking": M.rate_summary(flags),
+                              "values": sorted(f"{f}: {v}" for f, v in seen)}  # fmt: skip
     return out
 
 
@@ -191,7 +208,7 @@ def answered(text: str) -> bool:
 
 
 def utility(rows: list[dict]) -> dict:
-    f1 = {p: [M.token_f1(r[p]["answer"], r["reference"]) for r in rows] for p in PIPES}
+    f1 = {p: [M.answer_score(r[p]["answer"], r["reference"]) for r in rows] for p in PIPES}
     pairs = list(zip(f1["baseline"], f1["protected"], strict=True))
     out: dict = {"questions": len(rows)}
     for pipe in PIPES:
@@ -810,6 +827,9 @@ def write(d, work: Path, scale: str) -> None:
     if (work / "data" / "provenance.json").exists():
         res["data"] = json.loads((work / "data" / "provenance.json").read_text(encoding="utf-8"))
     res["sanity"] = sanity(d, work, res)
+    from eval_suite import residual
+
+    res["residual"] = residual.compute(d, work)
 
     out = work / "results"
     out.mkdir(parents=True, exist_ok=True)
@@ -855,6 +875,12 @@ def markdown(res: dict, figures_made: list[str]) -> str:
             f"{_ci(ti['baseline']['questions_leaking']['ci95'])} | {_pct(ti['protected']['questions_leaking']['rate'])}"
             f"{_ci(ti['protected']['questions_leaking']['ci95'])} | {_p(ti['mcnemar_p'])} |"
         )
+        if "loose" in ti["baseline"]:
+            lb, lp = ti["baseline"]["loose"], ti["protected"]["loose"]
+            L.append(
+                f"| | Target Info, loose (about the person asked: a first name or surname alone, "
+                f"a bare age, the last 6 digits) | {lb['target_info']} | {lp['target_info']} | |"
+            )
     if rr := s.get("repeat_rouge"):
         for key, name, n in (
             ("repeat_prompt", "Repeat Prompt rate", 2),
@@ -898,7 +924,8 @@ def markdown(res: dict, figures_made: list[str]) -> str:
         )
     if u := s.get("utility"):
         L.append(
-            f"| 5 | **Token F1** ({u['questions']} questions) | {u['baseline']['token_f1']:.3f} | "
+            f"| 5 | **Answer score** (token F1; share of the reference found when it is "
+            f"{M.SHORT_REFERENCE} words or fewer; {u['questions']} questions) | {u['baseline']['token_f1']:.3f} | "
             f"{u['protected']['token_f1']:.3f} | {_p(u['wilcoxon_p'])} |"
         )
         L.append(
@@ -977,6 +1004,9 @@ def markdown(res: dict, figures_made: list[str]) -> str:
               f"{_pct(rp['singled_out']['rate'])} | |",
               f"| sessions narrowed below k = {rid['k']} | {_pct(rb['below_k']['rate'])}{_ci(rb['below_k']['ci95'])} | "
               f"{_pct(rp['below_k']['rate'])}{_ci(rp['below_k']['ci95'])} | {_p(rid['below_k_mcnemar_p'])} |"]  # fmt: skip
+    from eval_suite import residual
+
+    L += residual.section(res.get("residual") or {})
     if e and "ocr" in e:
         o = e["ocr"]
         g = e.get("gold")

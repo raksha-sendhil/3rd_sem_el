@@ -11,6 +11,7 @@ import time
 from sanitise.agents.detector.pipeline import detect
 from sanitise.agents.extractor.pipeline import extract
 from sanitise.agents.rewriter.pipeline import rewrite_with_trace
+from sanitise.agents.rewriter.prompt import SOURCE_TEXT
 from sanitise.llm.base import LLMClient, track_calls
 from sanitise.loader import sha256_hex
 from sanitise.schemas import SanitisedRecord, SanitiseMeta
@@ -30,7 +31,11 @@ async def sanitise(doc_id: str, text: str, llm: LLMClient) -> SanitisedRecord:
         subs, extracted = await extract(doc_id, text, detected.output, llm)
         extract_ms = _ms(t)
         t = time.perf_counter()
-        trace = await rewrite_with_trace(doc_id, detected.output, extracted, llm)
+        token = SOURCE_TEXT.set(text)
+        try:
+            trace = await rewrite_with_trace(doc_id, detected.output, extracted, llm)
+        finally:
+            SOURCE_TEXT.reset(token)
         rewrite_ms = _ms(t)
     return SanitisedRecord(
         doc_id=doc_id,

@@ -42,19 +42,19 @@ MAIN_REPO = HERE.parents[1]
 SCALES = {
     "full": {"indexed": 500, "heldout": 250, "targeted": 250, "repeat": 250, "members": 500,
              "nonmembers": 250, "utility": 250, "targets": 60, "e2e": 50, "gen_docs": None,
-             "e2e_parts": 2, "asked_people": None, "person_members": 30},
+             "e2e_parts": 2, "asked_people": None, "person_members": 30, "pii_docs": 200},
     "high": {"indexed": 300, "heldout": 150, "targeted": 200, "repeat": 200, "members": 200,
              "nonmembers": 150, "utility": 200, "targets": 40, "e2e": 50, "gen_docs": 300,
-             "e2e_parts": 1, "asked_people": 70, "person_members": 30},
+             "e2e_parts": 1, "asked_people": 70, "person_members": 30, "pii_docs": 200},
     "5h": {"indexed": 150, "heldout": 100, "targeted": 100, "repeat": 100, "members": 100,
            "nonmembers": 100, "utility": 100, "targets": 20, "e2e": 25, "gen_docs": 150,
-           "e2e_parts": 1, "asked_people": 35, "person_members": 20},
+           "e2e_parts": 1, "asked_people": 35, "person_members": 20, "pii_docs": 100},
     "2h": {"indexed": 100, "heldout": 60, "targeted": 60, "repeat": 60, "members": 60,
            "nonmembers": 60, "utility": 60, "targets": 10, "e2e": 20, "gen_docs": 100,
-           "e2e_parts": 1, "asked_people": 20, "person_members": 10},
+           "e2e_parts": 1, "asked_people": 20, "person_members": 10, "pii_docs": 50},
     "quick": {"indexed": 12, "heldout": 6, "targeted": 5, "repeat": 5, "members": 5,
               "nonmembers": 5, "utility": 5, "targets": 1, "e2e": 2, "gen_docs": 15,
-              "e2e_parts": 1, "asked_people": 3, "person_members": 3},
+              "e2e_parts": 1, "asked_people": 3, "person_members": 3, "pii_docs": 4},
 }  # fmt: skip
 PIPELINES = ("baseline", "protected")
 
@@ -70,7 +70,7 @@ def _args() -> argparse.Namespace:
     p.add_argument("--main-repo", type=Path, default=MAIN_REPO)
     p.add_argument("--scale", choices=list(SCALES), default="high")
     p.add_argument("--people-file", type=Path, help="the clean test's people (population.py)")
-    p.add_argument("--stores", default="gen,real,e2e_gold,e2e_ocr")
+    p.add_argument("--stores", default="gen,real,e2e_gold,e2e_ocr,pii")
     p.add_argument("--only", default="target_info,repeat,membership,person_membership,utility",
                    help="single: which question sets to ask")  # fmt: skip
     return p.parse_args()
@@ -207,11 +207,15 @@ def step_data() -> None:
         f"real corpus: {len(real['indexed'])} indexed, {len(real['heldout'])} held out; "
         f"{len(real['utility'][: SCALE['utility']])} utility questions"
     )
+    from eval_suite import residual  # unseen annotated documents: what the agents leave
+
+    residual.fetch_pii(D.name, SCALE.get("pii_docs", 0), WORK / "pii", WORK / ".cache")
 
 
 # ---------------------------------------------------------------- step: build
 
-STORE_DATA = {"gen": "data/gen", "real": "data/real", "e2e_gold": "e2e/gold", "e2e_ocr": "e2e/ocr"}
+STORE_DATA = {"gen": "data/gen", "real": "data/real", "e2e_gold": "e2e/gold", "e2e_ocr": "e2e/ocr",
+              "pii": "pii"}
 
 
 def step_build() -> None:
