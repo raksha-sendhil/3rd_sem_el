@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-FREEZE = "eval-freeze-1"  # the clean test's code: change nothing after it has been run
+FREEZE = "eval-freeze-2"  # the clean test's code: change nothing after it has been run
 REPO_URL = "https://github.com/raksha-sendhil/3rd_sem_el.git"
 
 
@@ -44,7 +44,7 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 * **Session options**: Accelerator **GPU T4 x2**, Internet **On**.
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
 
-**This is the clean test.** The code is frozen at the tag `eval-freeze-1`, the real data is
+**This is the clean test.** The code is frozen at the tag `eval-freeze-2`, the real data is
 unseen and the people are new (`data/eval_clean/clean_people.json` on main). Run it once and
 report what comes out.
 
@@ -78,7 +78,7 @@ SCALE = "high"   # "high" (~8 h) | "5h" | "2h" | "quick" (set-up check on seen d
 MODEL = "llama3:8b"                       # answers, both pipelines (as the dashboard)
 GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-3.1-flash-lite"   # Agents 1-3 (fallback order)
 OCR_MODEL = "qwen3-vl:8b-instruct"        # reads the scans (end-to-end check)
-FREEZE = "eval-freeze-1"   # the frozen code: do not change it for the clean test
+FREEZE = "eval-freeze-2"   # the frozen code: do not change it for the clean test
 
 import os, subprocess, sys
 from pathlib import Path
@@ -315,8 +315,8 @@ def build_rerun() -> dict:
 FINANCE_INTRO = """
 # Evaluation, finance domain (Kaggle): one source per run
 
-Finance has four sources (docs/finance_plan.md); each owner runs **their** source on **their**
-Kaggle account, so the runs go in parallel: set `SOURCE` in cell 1.
+Finance has four sources (docs/finance_plan.md), one run each: set `SOURCE` in cell 1. Runs on
+different Kaggle accounts can go in parallel.
 
 | SOURCE | Owner | Data (fetched into `data/finance/<source>/`) | Metrics |
 |---|---|---|---|
@@ -326,8 +326,8 @@ Kaggle account, so the runs go in parallel: set `SOURCE` in cell 1.
 | `cheques` | C | IDRBT handwritten cheques (real scans) | end to end (handwriting OCR) |
 
 **Before running:** GPU **T4 x2**, Internet **On**, secret **GEMINI_API_KEY** attached. For
-`cheques`, also add your private Kaggle dataset with the IDRBT zip as an input and set
-`CHEQUES_ZIP`. Then **Save Version -> Save & Run All (Commit)** and close Kaggle; the version's
+`cheques`, also add the private Kaggle dataset with the IDRBT zip and the typed `labels.csv`
+as an input and set `CHEQUES_ZIP`. Then **Save Version -> Save & Run All (Commit)** and close Kaggle; the version's
 **Output** holds `eval_results_finance_<source>_<scale>.zip`.
 
 Steps a source does not have are skipped (`cheques` has only scans; only `bank` has attack
@@ -364,6 +364,7 @@ run("data")
 """
     cells = [md(FINANCE_INTRO), code(setup), code(fetch)]
     for step, note in (
+        ("utility-questions", "2b Utility questions asked about several documents are rewritten after their own (Gemini)"),
         ("e2e-prep", "3 End to end: the source's scans through OCR (labels from the dataset's fields)"),
         ("build", "4 Build: the finance agents over the source's documents (resumes)"),
         ("single", "5 Single-question attacks and utility"),

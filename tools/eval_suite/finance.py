@@ -94,8 +94,20 @@ def step_data(d, repo: Path, work: Path, scale: dict, q) -> None:
             u = {**u, "doc_id": by_old.get(u.get("doc_id"), u.get("doc_id"))}
             if u.get("doc_id") in indexed or u.get("doc_id") is None:
                 utility.append(u)
+    # a question whose answer is not in its document measures nothing: neither pipeline can
+    # answer it (some sources cut long pages to 2,000 characters after writing the question)
+    from eval_suite.metrics import tokens
+
+    text = {x["doc_id"]: " " + " ".join(tokens(x["text"])) + " " for x in docs}
     n_utility = len(utility)
-    utility = list({u["query"]: u for u in reversed(utility)}.values())[::-1]  # each question once
+    utility = [u for u in utility if u.get("doc_id") in text
+               and f" {' '.join(tokens(u['reference']))} " in text[u["doc_id"]]]  # fmt: skip
+    if n_utility > len(utility):
+        print(f"{n_utility - len(utility)} utility questions whose answer is not in their document: left out")
+    # the same question about several documents cannot say which is meant: the
+    # utility-questions step rewrites those after their own document (utility_questions.py)
+    n_utility = len(utility)
+    utility = list({(u["query"], u["doc_id"]): u for u in reversed(utility)}.values())[::-1]
     if n_utility > len(utility):
         print(f"{n_utility - len(utility)} repeated utility questions: left out")
     _dump(data / "utility.json", utility[: scale["utility"]])

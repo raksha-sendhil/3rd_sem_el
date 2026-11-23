@@ -462,8 +462,8 @@ def main() -> None:
             utility_questions.rewrite_health(WORK)
         elif D.name == "legal":
             utility_questions.rewrite_legal(WORK)
-        else:
-            print("finance: each source writes its utility questions about content already")
+        else:  # questions shared by several documents are rewritten after their own
+            utility_questions.rewrite_finance(WORK)
         if (WORK / "e2e" / "labels.json").exists():
             e2e.relabel_utility(WORK)
     elif step == "e2e":

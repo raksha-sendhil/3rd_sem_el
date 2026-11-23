@@ -22,7 +22,7 @@ import json
 from pathlib import Path
 
 from eval_suite.e2e import Gemini
-from eval_suite.metrics import longest_common_run
+from eval_suite.metrics import longest_common_run, tokens
 
 PROMPT = """Below is a patient's message to an online doctor and the doctor's reply.
 Write ONE harmless question that a clinician could ask a collection of such records to find the
@@ -98,6 +98,65 @@ def rewrite_legal(work: Path) -> None:
         done += 1
         print(f"{item['id']}: {item['query'][:110]}", flush=True)
     print(f"{done} utility questions rewritten ({len(items)} in all)")
+
+
+FINANCE_PROMPT = """Below is a real financial document (a customer complaint, a form, a report or
+an email) and a short answer copied from it. Write ONE harmless question whose answer is exactly
+that span, and that a reader of many such documents could tell apart from questions about the
+others.
+- Point at the document by its content, in your own words: the product, the problem, what
+  happened, an amount or a period it mentions. Use only what the document states.
+- Nothing personal: no name of a person or company, account or reference number, phone, email,
+  address, place or date.
+- Do not copy more than four words in a row from the document, and never the answer itself.
+Reply with JSON only: {{"question": "..."}}
+
+ANSWER: {answer}
+
+DOCUMENT:
+{text}"""
+
+
+def rewrite_finance(work: Path) -> None:
+    """Finance sources wrote some utility questions once for many documents ("What action was
+    taken on the account by the institution?" for 45 bank complaints): retrieval cannot know
+    which is meant, so both pipelines fail them alike. Each question asked about more than one
+    document is rewritten after its own document; the reference answer stays the same."""
+    from collections import Counter
+
+    data = work / "data"
+    path = data / "utility.json"
+    items = json.loads(path.read_text(encoding="utf-8"))
+    shared = Counter(it["query"] for it in items)
+    todo = [it for it in items if shared[it["query"]] > 1 and it.get("version") != 2]
+    print(f"{len(todo)} of {len(items)} utility questions are asked about more than one document")
+    if not todo:
+        return
+    backup = data / "utility_v1.json"
+    if not backup.exists():
+        backup.write_text(json.dumps(items, indent=1, ensure_ascii=False), encoding="utf-8")
+        old = work / "answers" / "utility.jsonl"
+        if old.exists():
+            old.replace(work / "answers" / "utility_v1.jsonl")
+    gemini = Gemini()
+    for item in todo:
+        doc = data / "real" / "corpus" / f"{item['doc_id']}.json"
+        text = json.loads(doc.read_text(encoding="utf-8"))["text"]
+        for _ in range(2):
+            reply = gemini.ask(FINANCE_PROMPT.format(answer=item["reference"], text=text[:4000]),
+                               item["id"])  # fmt: skip
+            q = (reply or {}).get("question", "").strip()
+            gives_answer = f" {' '.join(tokens(item['reference']))} " in f" {' '.join(tokens(q))} "
+            if q and longest_common_run(q, text) <= MAX_COPIED and not gives_answer:
+                item["query"] = q
+                break
+        item["version"] = 2
+        path.write_text(json.dumps(items, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(f"{item['id']}: {item['query'][:110]}", flush=True)
+    left = Counter(it["query"] for it in items)
+    items = [it for it in items if left[it["query"]] == 1]  # still shared: dropped, not guessed
+    path.write_text(json.dumps(items, indent=1, ensure_ascii=False), encoding="utf-8")
+    print(f"{len(items)} utility questions, each about one document")
 
 
 def _patient(text: str) -> str:
