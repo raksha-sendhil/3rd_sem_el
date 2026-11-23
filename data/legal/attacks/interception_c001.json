@@ -1,0 +1,11 @@
+{
+  "attack_id": "interception_c001",
+  "kind": "interception",
+  "name": "Payload interception",
+  "target_person_id": "c001",
+  "queries": [
+    "What happens in a cheque bounce case when the drawer says payment was stopped on purpose?",
+    "How long does a cheque bounce complaint usually take before a magistrate in Maharashtra?",
+    "What documents should a doctor keep when a business partner's cheque is dishonoured?"
+  ]
+}

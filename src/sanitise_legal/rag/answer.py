@@ -81,6 +81,7 @@ async def answer(
         )
     except PipelineError as exc:
         raise exc.with_stage("answer") from None
+    draft = text if pipeline == "protected" else None
     if verdict.verdict == "blocked":
         text = "This question cannot be answered: it would narrow the records down too far."
     elif verdict.verdict == "generalised" and verdict.revised_answer:
@@ -93,6 +94,7 @@ async def answer(
         payload=user,
         monitor=verdict,
         latency_ms=_ms(t),
+        draft_answer=draft,
     )
 
 
