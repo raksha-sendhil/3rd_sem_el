@@ -13,9 +13,13 @@ is copied as it is into ``src/sanitise_legal`` with only two kinds of change:
 
 Its data (``data/legal``), profile (``config/domains.json``), tests, tools, docs and notebooks
 come along with the same renames. The API serves it under ``/legal`` (``sanitise.api.app``) and
-the dashboard's Healthcare / Legal toggle picks between the two. Run this again to take newer
-legal-branch work; ``src/sanitise_legal`` is replaced as a whole, so make legal changes on the
-legal branch (or here, then copy them back) rather than in both places.
+the dashboard's Healthcare / Legal toggle picks between the two.
+
+**Retired.** Since commit a8b5a5f of the legal branch (2026-11-23), ``main`` is the only home of
+the legal pipeline: edit ``src/sanitise_legal`` here. ``law-pipeline-final`` is kept as history
+and is behind main from now on, so this script refuses to run: it would replace
+``src/sanitise_legal`` as a whole and wipe every change made on main since. ``--force`` runs it
+anyway, for a deliberate re-import only.
 """
 
 from __future__ import annotations
@@ -121,7 +125,15 @@ def rename(text: str) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--ref", default="origin/law-pipeline-final")
+    ap.add_argument("--force", action="store_true",
+                    help="re-import even though main is now the only home of the legal code")
     args = ap.parse_args()
+    if not args.force:
+        raise SystemExit(
+            "import_legal.py is retired: main is the only home of the legal pipeline, so edit "
+            "src/sanitise_legal here. Re-importing would replace it as a whole and wipe the "
+            "changes made on main. Pass --force only for a deliberate re-import."
+        )
     commit = _git("rev-parse", "--short", args.ref).decode().strip()
     files = _git("ls-tree", "-r", "--name-only", args.ref).decode().splitlines()
     for folder in REPLACED:

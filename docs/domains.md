@@ -36,16 +36,11 @@ legal branch into its own package:
 * One small patch, listed in the script, so the legal loader skips main's Target Info query
   list in `data/attacks`.
 
-`src/sanitise_legal/IMPORTED_FROM` records the branch and commit. To take newer legal work:
-
-```bash
-git fetch origin
-python tools/import_legal.py --ref origin/law-pipeline-final
-python -m pytest tests/legal tests/integration/test_legal_mount.py -q
-```
-
-`src/sanitise_legal` is replaced as a whole on every import. Make legal changes on the legal
-branch, or here and copy them back, never in both places.
+`src/sanitise_legal/IMPORTED_FROM` records the last import (law-pipeline-final a8b5a5f,
+2026-11-23). **Since then main is the only home of the legal pipeline:** edit
+`src/sanitise_legal` here. The legal branch is kept as history and falls behind main, so
+`tools/import_legal.py` refuses to run (it would replace `src/sanitise_legal` as a whole and wipe
+the changes made on main); `--force` runs it for a deliberate re-import only.
 
 ## How the app serves both
 
