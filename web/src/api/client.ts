@@ -60,10 +60,15 @@ function withDomain(path: string): string {
   return prefix + path + (path.includes("?") ? "&" : "?") + "domain=" + encodeURIComponent(requestDomain);
 }
 
-async function call<T>(method: "GET" | "POST", path: string, body?: unknown): Promise<T> {
+async function call<T>(
+  method: "GET" | "POST",
+  path: string,
+  body?: unknown,
+  routed = true,
+): Promise<T> {
   let res: Response;
   try {
-    res = await fetch(API_URL + withDomain(path), {
+    res = await fetch(API_URL + (routed ? withDomain(path) : path), {
       method,
       // the header skips ngrok's warning page for free accounts; other hosts ignore it
       headers: {
@@ -87,21 +92,63 @@ async function call<T>(method: "GET" | "POST", path: string, body?: unknown): Pr
   return res.json() as Promise<T>;
 }
 
+type Job = { status: "running" | "done"; http_status?: number; body?: any };
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// A request that can take minutes (reading a scan, an agent waiting on a busy model) runs as a
+// background job in the API; this asks for its result every 2 s, so no single request is long
+// enough for a tunnel or the browser to drop it. An API without jobs is called directly.
+async function callLong<T>(method: "GET" | "POST", path: string, body?: unknown): Promise<T> {
+  let job: { job_id: string };
+  try {
+    job = await call<{ job_id: string }>("POST", "/v1/jobs", { method, path: withDomain(path), body }, false);
+  } catch (e) {
+    if (e instanceof ApiError && e.status === 404) return call<T>(method, path, body);
+    throw e;
+  }
+  let misses = 0;
+  for (;;) {
+    await sleep(2000);
+    let state: Job;
+    try {
+      state = await call<Job>("GET", `/v1/jobs/${job.job_id}`, undefined, false);
+      misses = 0;
+    } catch (e) {
+      // a moment without the tunnel: keep asking for a while before giving up
+      if (e instanceof ApiError && e.code === "UNREACHABLE" && ++misses < 30) continue;
+      throw e;
+    }
+    if (state.status !== "done") continue;
+    const status = state.http_status ?? 500;
+    if (status >= 400) {
+      const err = state.body?.error;
+      throw new ApiError(
+        status,
+        err?.code ?? "HTTP_" + status,
+        err?.detail ?? (typeof state.body?.detail === "string" ? state.body.detail : "request failed"),
+      );
+    }
+    return state.body as T;
+  }
+}
+
 const documentCache = new Map<string, Promise<DocumentView>>();
 
 export const api = {
   health: () => call<S["HealthResponse"]>("GET", "/v1/health"),
   // the three agents one at a time, so each one's output can be shown as it finishes
-  detect: (text: string) => call<DetectorResult>("POST", "/v1/detect", { text }),
+  // (each runs as a background job: a busy model can make one take minutes)
+  detect: (text: string) => callLong<DetectorResult>("POST", "/v1/detect", { text }),
   // spans: Agent 1's result for this text, so Agent 1 does not run again with a different one
   extract: (doc_id: string, text: string, spans?: SensitiveSpan[]) =>
-    call<ExtractorOutput>("POST", "/v1/extract", { doc_id, text, spans }),
+    callLong<ExtractorOutput>("POST", "/v1/extract", { doc_id, text, spans }),
   rewrite: (doc_id: string, spans: SensitiveSpan[], facts: FactTuple[]) =>
-    call<RewriterOutput>("POST", "/v1/rewrite", { doc_id, spans, facts }),
+    callLong<RewriterOutput>("POST", "/v1/rewrite", { doc_id, spans, facts }),
   // a file to text: PDF (text layers read directly, scans through the vision model), photo,
-  // or health record (HL7 / FHIR / CDA)
+  // or health record (HL7 / FHIR / CDA); a background job, as scans take minutes
   ingest: (filename: string, content_base64: string) =>
-    call<IngestResult>("POST", "/v1/ingest", { filename, content_base64 }),
+    callLong<IngestResult>("POST", "/v1/ingest", { filename, content_base64 }),
   createSession: () => call<{ session_id: string }>("POST", "/v1/sessions", {}),
   query: (query: string, pipeline: Pipeline, session_id: string) =>
     call<RagAnswer>("POST", "/v1/query", { query, pipeline, session_id }),

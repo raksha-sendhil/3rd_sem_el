@@ -29,6 +29,7 @@ import asyncio
 import base64
 import binascii
 import logging
+import uuid
 from collections.abc import AsyncIterator
 from contextlib import AsyncExitStack, asynccontextmanager
 from pathlib import Path
@@ -487,6 +488,56 @@ def create_app(
     # ---- the legal pipeline under /legal (the dashboard's Legal toggle). Healthcare keeps every
     # path above; legal requests go to sanitise_legal's own API, except the two it does not have:
     # file reading (step 0 is the same for every domain) and the monitor panel's ledger.
+    # ---- Background jobs: a long request (reading a scan, an agent waiting on a busy model) is
+    # run inside the API while the dashboard asks for its result every few seconds, so no single
+    # HTTP request lasts minutes (a tunnel or a browser can drop one that does). Works for every
+    # path, /legal and /finance included: the job calls this app in-process.
+    jobs: dict[str, dict] = {}
+    running: set[asyncio.Task] = set()
+
+    @app.post("/v1/jobs")
+    async def start_job(body: dict, request: Request) -> dict:
+        method = str(body.get("method", "POST")).upper()
+        path = str(body.get("path", ""))
+        if method not in ("GET", "POST") or path.startswith("/v1/jobs") or not path.startswith(
+            ("/v1/", "/legal/v1/", "/finance/v1/")
+        ):
+            return JSONResponse({"error": {"code": "BAD_JOB", "detail": "path not allowed"}}, 400)
+        job_id = uuid.uuid4().hex[:16]
+        jobs[job_id] = {"status": "running"}
+        target = request.app
+
+        async def work() -> None:
+            import httpx
+
+            try:
+                transport = httpx.ASGITransport(app=target)
+                async with httpx.AsyncClient(transport=transport, base_url="http://api",
+                                             timeout=None) as client:  # fmt: skip
+                    response = await client.request(method, path, json=body.get("body"))
+                try:
+                    data = response.json()
+                except ValueError:
+                    data = None
+                jobs[job_id] = {"status": "done", "http_status": response.status_code, "body": data}
+            except Exception as exc:  # the job itself broke: reported like an error response
+                jobs[job_id] = {"status": "done", "http_status": 500,
+                                "body": {"error": {"code": "JOB_FAILED", "detail": str(exc)}}}  # fmt: skip
+
+        task = asyncio.create_task(work())
+        running.add(task)
+        task.add_done_callback(running.discard)
+        return {"job_id": job_id}
+
+    @app.get("/v1/jobs/{job_id}")
+    async def get_job(job_id: str) -> dict:
+        job = jobs.get(job_id)
+        if job is None:
+            return JSONResponse({"error": {"code": "NO_JOB", "detail": "no such job"}}, 404)
+        if job["status"] == "done":
+            jobs.pop(job_id, None)  # handed over once
+        return job
+
     app.state.legal = legal_app(settings)
     if app.state.legal is not None:
 
