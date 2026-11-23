@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-FREEZE = "eval-freeze-13"  # the clean test's code: change nothing after it has been run
+FREEZE = "eval-freeze-14"  # the clean test's code: change nothing after it has been run
 REPO_URL = "https://github.com/raksha-sendhil/3rd_sem_el.git"
 
 
@@ -44,7 +44,7 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 * **Session options**: Accelerator **GPU T4 x2**, Internet **On**.
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
 
-**This is the clean test.** The code is frozen at the tag `eval-freeze-13`, the real data is
+**This is the clean test.** The code is frozen at the tag `eval-freeze-14`, the real data is
 unseen and the people are new (`data/eval_clean/clean_people.json` on main). Run it once and
 report what comes out.
 
@@ -76,9 +76,9 @@ HEALTH_SETUP = """
 # 1 Setup (run at the start of every session)
 SCALE = "high"   # "high" (~8 h) | "5h" | "2h" | "quick" (set-up check on seen data, 10-20 min)
 MODEL = "llama3:8b"                       # answers, both pipelines (as the dashboard)
-GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-3.1-flash-lite"   # Agents 1-3 (fallback order)
+GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-flash-lite-latest,gemini-3.5-flash"   # Agents 1-3 (fallback order)
 OCR_MODEL = "qwen3-vl:8b-instruct"        # reads the scans (end-to-end check)
-FREEZE = "eval-freeze-13"   # the frozen code: do not change it for the clean test
+FREEZE = "eval-freeze-14"   # the frozen code: do not change it for the clean test
 
 import os, subprocess, sys
 from pathlib import Path
