@@ -128,9 +128,14 @@ def repeat_rouge(rows: list[dict], store) -> dict:
 def membership(rows: list[dict]) -> dict:
     out: dict = {"members": sum(r["group"] == "member" for r in rows),
                  "nonmembers": sum(r["group"] == "nonmember" for r in rows)}  # fmt: skip
+    def score(text: str, rest: str) -> float:
+        # a refusal tells the attacker nothing: 0, not the chance overlap of "the records do
+        # not say" with the record (which put always-refusing at an AUC of 0.08)
+        return M.rouge_l(text, rest) if answered(text) else 0.0
+
     for pipe in PIPES:
-        pos = [M.rouge_l(r[pipe]["answer"], r["rest"]) for r in rows if r["group"] == "member"]
-        neg = [M.rouge_l(r[pipe]["answer"], r["rest"]) for r in rows if r["group"] == "nonmember"]
+        pos = [score(r[pipe]["answer"], r["rest"]) for r in rows if r["group"] == "member"]
+        neg = [score(r[pipe]["answer"], r["rest"]) for r in rows if r["group"] == "nonmember"]
         pairs = [(1, s) for s in pos] + [(0, s) for s in neg]
 
         def stat(sample, _pairs=pairs):
