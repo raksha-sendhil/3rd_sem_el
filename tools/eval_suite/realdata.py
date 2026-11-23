@@ -53,7 +53,7 @@ def _get(url: str, cache: Path | None = None) -> bytes:
     if cache is not None and cache.exists():
         return cache.read_bytes()
     last: Exception | None = None
-    for attempt in range(6):
+    for attempt in range(10):  # about 7 minutes in all: the Hugging Face server has 503 spells
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=180) as resp:
@@ -64,7 +64,7 @@ def _get(url: str, cache: Path | None = None) -> bytes:
             return data
         except Exception as exc:  # network hiccups and rate limits: wait and retry
             last = exc
-            time.sleep(3 * (attempt + 1))
+            time.sleep(min(60, 5 * 2**attempt))
     raise RuntimeError(f"could not download {url}: {last}")
 
 
@@ -92,7 +92,11 @@ def chatdoctor(n_indexed: int, n_heldout: int, cache: Path, seed: int = 2026,
             break
         q = urllib.parse.urlencode({"dataset": CHATDOCTOR, "config": "default", "split": "train",
                                     "offset": off, "length": 100})  # fmt: skip
-        rows = json.loads(_get(f"{HF_ROWS}?{q}", cache / f"chatdoctor_{off}.json"))["rows"]
+        try:
+            rows = json.loads(_get(f"{HF_ROWS}?{q}", cache / f"chatdoctor_{off}.json"))["rows"]
+        except RuntimeError as exc:  # one block still unavailable: take the next shuffled block
+            print(f"skipped rows {off}-{off + 99}: {exc}", flush=True)
+            continue
         for r in rows:
             patient, doctor = _clean(r["row"]["input"]), _clean(r["row"]["output"])
             text = f"Patient: {patient}\nDoctor: {doctor}"
