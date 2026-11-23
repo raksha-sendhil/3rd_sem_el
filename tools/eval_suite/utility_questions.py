@@ -139,7 +139,17 @@ def rewrite_finance(work: Path) -> None:
         if old.exists():
             old.replace(work / "answers" / "utility_v1.jsonl")
     gemini = Gemini()
+    import os
+    import time
+
+    deadline = os.environ.get("EVAL_DEADLINE")
+    # up to 25 minutes, less on a short run: the build needs most of the time
+    span = min(25 * 60, max(0.0, (float(deadline) - time.time()) * 0.15)) if deadline else None
+    stop_at = time.time() + span if span is not None else float("inf")
     for item in todo:
+        if time.time() > stop_at:  # the time limit: questions still shared are dropped below
+            print("utility questions: time limit, the rest left as they were", flush=True)
+            break
         doc = data / "real" / "corpus" / f"{item['doc_id']}.json"
         text = json.loads(doc.read_text(encoding="utf-8"))["text"]
         for _ in range(2):

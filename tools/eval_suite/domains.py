@@ -81,8 +81,9 @@ class Domain:
             return self.mod("domain").use_domain("legal")
         return contextlib.nullcontext()
 
-    def build(self, data_dir: Path, store: Path) -> None:
-        """Agents 1-3 over ``data_dir/corpus/*.json`` into ``store`` (resumes)."""
+    def build(self, data_dir: Path, store: Path, timeout: float | None = None) -> None:
+        """Agents 1-3 over ``data_dir/corpus/*.json`` into ``store`` (resumes). ``timeout``
+        seconds: stopped then; every document finished by then is already in the store."""
         if self.name == "legal":
             cmd = [sys.executable, "-m", f"{self.pkg}.legal", "build", "--data", str(data_dir),
                    "--store", str(store), "--out", str(data_dir / "results")]  # fmt: skip
@@ -92,7 +93,10 @@ class Domain:
         if os.environ.get("EVAL_MOCK"):  # no model: the rule pass and the canned rewrite
             cmd.append("--mock")
         env = {**os.environ, "PYTHONPATH": str(self.repo / "src")}
-        subprocess.run(cmd, cwd=self.repo, env=env, check=False)  # failed documents retry next run
+        try:  # failed documents retry next run
+            subprocess.run(cmd, cwd=self.repo, env=env, check=False, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            print(f"  time limit: building stopped ({store.stem})", flush=True)
 
     def answer_llm(self):
         if os.environ.get("EVAL_MOCK"):

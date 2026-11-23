@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-FREEZE = "eval-freeze-17"  # the clean test's code: change nothing after it has been run
+FREEZE = "eval-freeze-18"  # the clean test's code: change nothing after it has been run
 REPO_URL = "https://github.com/raksha-sendhil/3rd_sem_el.git"
 
 
@@ -44,7 +44,7 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 * **Session options**: Accelerator **GPU T4 x2**, Internet **On**.
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
 
-**This is the clean test.** The code is frozen at the tag `eval-freeze-17`, the real data is
+**This is the clean test.** The code is frozen at the tag `eval-freeze-18`, the real data is
 unseen and the people are new (`data/eval_clean/clean_people.json` on main). Run it once and
 report what comes out.
 
@@ -74,11 +74,12 @@ and run again: every step skips what is already on disk in the same session.
 
 HEALTH_SETUP = """
 # 1 Setup (run at the start of every session)
-SCALE = "high"   # "high" (~8 h) | "5h" | "2h" | "quick" (set-up check on seen data, 10-20 min)
+SCALE = "high"   # "high" (~8 h) | "5h" | "2h" | "night" (~3 h, finance bank in one night) | "quick" (set-up check on seen data, 10-20 min)
+HOURS = 0        # stop after this many hours and report what was done (0 = no limit)
 MODEL = "llama3:8b"                       # answers, both pipelines (as the dashboard)
 GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.5-flash,gemini-3.8-flash,gemini-3.7-flash,gemini-3-flash-preview,gemini-4-hydrogen,gemini-3.1-flash-lite"   # Agents 1-3 (fallback order)
 OCR_MODEL = "qwen3-vl:8b-instruct"        # reads the scans (end-to-end check)
-FREEZE = "eval-freeze-17"   # the frozen code: do not change it for the clean test
+FREEZE = "eval-freeze-18"   # the frozen code: do not change it for the clean test
 
 import os, subprocess, sys
 from pathlib import Path
@@ -128,6 +129,10 @@ os.environ.update({
     "SANITISE_GEMINI_API_KEY": key, "GEMINI_API_KEYS": key,
     "SANITISE_MONITOR_DB_PATH": str(WORK / "stores" / "monitor.sqlite"),
 })
+if HOURS and "EVAL_DEADLINE" not in os.environ:  # fixed once, at the first run of this cell
+    import time as _time
+    os.environ["EVAL_DEADLINE"] = str(_time.time() + HOURS * 3600)
+    print(f"time limit: the run stops and reports by {_time.strftime('%H:%M', _time.localtime(float(os.environ['EVAL_DEADLINE'])))} (UTC)")
 RUN = f"python tools/eval_suite/run.py {{step}} --domain health --work {WORK} --scale {SCALE} --people-file {PEOPLE_FILE}"
 def run(step, extra=""):
     colab_cache.start_ollama()  # back up if it stopped (e.g. a cell was interrupted)

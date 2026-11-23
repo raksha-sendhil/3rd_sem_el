@@ -52,6 +52,9 @@ SCALES = {
     "2h": {"indexed": 100, "heldout": 60, "targeted": 60, "repeat": 60, "members": 60,
            "nonmembers": 60, "utility": 60, "targets": 10, "e2e": 20, "gen_docs": 100,
            "e2e_parts": 1, "asked_people": 20, "person_members": 10, "pii_docs": 50},
+    "night": {"indexed": 60, "heldout": 40, "targeted": 40, "repeat": 40, "members": 40,
+              "nonmembers": 40, "utility": 40, "targets": 8, "e2e": 10, "gen_docs": 60,
+              "e2e_parts": 1, "asked_people": 15, "person_members": 10, "pii_docs": 30},
     "quick": {"indexed": 12, "heldout": 6, "targeted": 5, "repeat": 5, "members": 5,
               "nonmembers": 5, "utility": 5, "targets": 1, "e2e": 2, "gen_docs": 15,
               "e2e_parts": 1, "asked_people": 3, "person_members": 3, "pii_docs": 4},
@@ -95,6 +98,27 @@ CLEAN = ARGS.scale != "quick" and D.name != "finance"  # finance: each source's 
 if CLEAN:  # the clean population replaces the development corpus and its person table
     D.people_path = WORK / "data" / "population" / "people.json"
     D.corpus_dir = WORK / "data" / "population" / "docs"
+
+
+# ---------------------------------------------------------------- time limit
+# EVAL_DEADLINE (a Unix time, set by the notebook) ends the run at a fixed time: the build stops
+# early enough to leave ANSWER_RESERVE_S for the questions and the report; question steps skip
+# what they cannot ask before REPORT_RESERVE_S; the report says what was built and skipped.
+ANSWER_RESERVE_S = 75 * 60
+REPORT_RESERVE_S = 10 * 60
+
+
+def _left() -> float:
+    """Seconds until EVAL_DEADLINE; infinity without one."""
+    deadline = os.environ.get("EVAL_DEADLINE")
+    return float(deadline) - time.time() if deadline else float("inf")
+
+
+def _note_skipped(label: str, asked: int, skipped: int) -> None:
+    path = WORK / "answers" / "skipped.json"
+    old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    old[label] = {"to_ask": asked, "skipped": skipped}
+    _dump(path, old)
 
 
 def _dump(path: Path, data) -> None:
@@ -235,15 +259,26 @@ def step_build() -> None:
         missing = {k: v for k, v in todo.items() if _built(v[1]) < v[2]}
         if not missing:
             break
+        if pause and _left() - ANSWER_RESERVE_S < pause + 120:
+            break  # no time for another pass
         if pause:
             left = ", ".join(f"{k} {_built(v[1])}/{v[2]}" for k, v in missing.items())
             print(f"build pass {attempt + 1}: {left}; trying the failed documents again in "
                   f"{pause // 60} min", flush=True)  # fmt: skip
             time.sleep(pause)
+        left_docs = {k: v[2] - _built(v[1]) for k, v in missing.items()}
         for name, (data_dir, store, n) in missing.items():
-            print(f"{name}: Agents 1-3 over {n} documents (resumes)", flush=True)
+            budget = _left() - ANSWER_RESERVE_S
+            if budget <= 60:
+                print(f"{name}: time limit reached, not built further", flush=True)
+                continue
+            share = left_docs[name] / max(sum(left_docs.values()), 1)
+            limit = None if budget == float("inf") else max(60.0, budget * share)
+            left_docs[name] = 0
+            print(f"{name}: Agents 1-3 over {n} documents (resumes)"
+                  + (f", up to {limit / 60:.0f} min" if limit else ""), flush=True)  # fmt: skip
             t = time.perf_counter()
-            D.build(data_dir, store)
+            D.build(data_dir, store, timeout=limit)
             minutes = (time.perf_counter() - t) / 60
             print(f"{name}: {_built(store)} of {n} built, done in {minutes:.0f} min", flush=True)
     # the run goes on with what was built: a document missing from a store is missing for both
@@ -326,9 +361,14 @@ async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
     finished = 0
     with path.open("a", encoding="utf-8") as f:
 
+        skipped = 0
+
         async def one(item: dict) -> None:
-            nonlocal finished
+            nonlocal finished, skipped
             async with sem:
+                if _left() < REPORT_RESERVE_S:  # the time limit: leave room for the report
+                    skipped += 1
+                    return
                 try:
                     row = await play(item)
                 except Exception as exc:  # a model error: skipped now, asked again next run
@@ -345,7 +385,11 @@ async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
                 print(f"  {label}: {finished}/{len(todo)}", flush=True)
 
         await asyncio.gather(*(one(it) for it in todo))
-    failed = len(todo) - finished
+    if skipped or _left() != float("inf"):
+        _note_skipped(label, len(todo), skipped)
+    if skipped:
+        print(f"  {label}: {skipped} of {len(todo)} skipped at the time limit", flush=True)
+    failed = len(todo) - finished - skipped
     if failed:
         print(f"  {label}: {failed} of {len(todo)} failed (see the lines above); run this step "
               "again, it asks only those", flush=True)

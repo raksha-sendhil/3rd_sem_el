@@ -774,9 +774,14 @@ def build_note(res: dict) -> list[str]:
         return []
     parts = [f"{k} {c['built']} of {c['documents']}" for k, c in b.items()]
     short = any(c["built"] < c["documents"] for c in b.values())
-    lead = ("**Not every document was built** (Gemini busy); the missing ones are absent for "
-            "both pipelines alike, so each metric has fewer items. " if short else "")
-    return ["", f"{lead}Documents built per store: {', '.join(parts)}."]
+    lead = ("**Not every document was built** (Gemini busy or the time limit); the missing ones "
+            "are absent for both pipelines alike, so each metric has fewer items. " if short else "")
+    out = ["", f"{lead}Documents built per store: {', '.join(parts)}."]
+    if s := res.get("skipped"):
+        bits = [f"{k} {v['to_ask'] - v['skipped']} of {v['to_ask']}" for k, v in s.items()]
+        if any(v["skipped"] for v in s.values()):
+            out.append(f"**Stopped at the time limit**: questions asked per set: {', '.join(bits)}.")
+    return out
 
 
 def data_note(res: dict) -> list[str]:
@@ -839,6 +844,8 @@ def write(d, work: Path, scale: str) -> None:
     if (work / "data" / "provenance.json").exists():
         res["data"] = json.loads((work / "data" / "provenance.json").read_text(encoding="utf-8"))
     res["sanity"] = sanity(d, work, res)
+    if (work / "answers" / "skipped.json").exists():
+        res["skipped"] = json.loads((work / "answers" / "skipped.json").read_text(encoding="utf-8"))
     if (work / "stores" / "build.json").exists():
         res["build"] = json.loads((work / "stores" / "build.json").read_text(encoding="utf-8"))
     from eval_suite import residual
