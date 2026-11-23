@@ -201,7 +201,9 @@ class GeminiClient(BaseJSONClient):
                 if in_a_row >= 2 and self._next_model(f"server error {response.status_code}"):
                     in_a_row = 0
                     continue
-                delay = min(60.0, 10.0 * 2 ** (in_a_row - 1))
+                # grows with every busy reply of this call, across model switches: a busy spell at
+                # peak hours lasts minutes, and ten-second retries used up all tries within two
+                delay = min(300.0, 10.0 * 2 ** (server_errors - 1))
                 log.warning(
                     "Gemini %s returned %d (busy); retrying in %.0f s",
                     self.model,

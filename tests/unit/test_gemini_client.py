@@ -184,7 +184,7 @@ async def test_a_busy_single_model_backs_off_then_fails(no_sleep: list[float]) -
     gemini = client(lambda _: error(503, "high demand"), max_server_errors=5)
     with pytest.raises(LLMUnreachable, match="503"):
         await gemini.text_call("s", "u")
-    assert no_sleep == [10.0, 20.0, 40.0, 60.0, 60.0]
+    assert no_sleep == [10.0, 20.0, 40.0, 80.0, 160.0]
 
 
 async def test_daily_limit_on_every_key_moves_to_the_next_model() -> None:
