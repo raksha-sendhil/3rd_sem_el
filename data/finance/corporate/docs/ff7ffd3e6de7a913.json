@@ -1,0 +1,20 @@
+{
+ "doc_id": "ff7ffd3e6de7a913",
+ "text": "From: jae.black@enron.com\nTo: claudette.harvey@enron.com, chaun.roberts@enron.com, judy.martinez@enron.com\nDate: 2001-10-18\nSubject: Disaster Recovery Equipment\n\nAs a reminder...there are several pieces of equipment that are set up on the 30th Floor, as well as on our floor, for the Disaster Recovery Team.  PLEASE DO NOT TAKE, BORROW OR USE this equipment.  Should you need to use another computer system, other than yours, or make conference calls please work with your Assistant to help find or set up equipment for you to use.\n\nThanks for your understanding in this matter.\n\nT.Jae Black\nEast Power Trading\nAssistant to Kevin Presto\noff. 713-853-5800\nfax 713-646-8272\ncell 713-539-4760",
+ "source": "corporate",
+ "private": [
+  "jae.black@enron.com",
+  "claudette.harvey@enron.com",
+  "chaun.roberts@enron.com",
+  "judy.martinez@enron.com",
+  "Jae Black",
+  "713-853-5800",
+  "713-646-8272",
+  "713-539-4760"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "gilbertsmith-d/personal/4.",
+  "message_id": "<23569152.1075840548210.JavaMail.evans@thyme>"
+ }
+}

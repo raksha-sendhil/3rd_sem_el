@@ -1,0 +1,14 @@
+{
+ "doc_id": "154e819df777b229",
+ "text": "From: enron.announcements@enron.com\nTo: all.worldwide@enron.com\nDate: 2001-04-29\nSubject: \"Take This Job and Shovel It\"\n\nRead about how PGE is making methane out of manure in this issue of eBiz.\n\nAlso in this issue:\nEnron's first quarter earnings overview\nOnline energy trading will reach $3.6 trillion by 2005\nTom White becomes U.S. Secretary of the Army\nA U.K. offshore wind farm\nThe PGE sale terminates\nHow a fuel cell works\nA little bit of poetry\n\nIt's all in the latest eBiz.  Go to home.enron.com, click Publications, then \nclick eBiz, and \"eBiz April 27, 2001.\"",
+ "source": "corporate",
+ "private": [
+  "enron.announcements@enron.com",
+  "all.worldwide@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/483.",
+  "message_id": "<30601245.1075841273299.JavaMail.evans@thyme>"
+ }
+}

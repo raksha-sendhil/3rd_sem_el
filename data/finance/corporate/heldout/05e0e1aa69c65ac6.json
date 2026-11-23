@@ -1,0 +1,12 @@
+{
+ "doc_id": "05e0e1aa69c65ac6",
+ "text": "Table of Contents\nCOGENT COMMUNICATIONS HOLDINGS, INC., AND SUBSIDIARIES\nNOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Continued)\n63\n5. Income taxes: (Continued)\nOur consolidated temporary differences comprising our net deferred tax assets are as follows (in thousands):\nDecember 31, 2019 2018 Deferred Tax Assets: Net operating loss carry-forwards $ 255,269 $ 255,235 Tax credits 2,261 2,458 Equity-based compensation 4,116 3,322 Operating leases 32,289 — Total gross deferred tax assets 293,935 261,015 Valuation allowance (131,069) (126,579) 162,866 134,436 Deferred Tax Liabilities: Depreciation and amortization 34,884 29,769 Accrued liabilities and other 107,711 101,934 Right-of-use assets 29,670 — Gross deferred tax liabilities 172,265 131,703 Net deferred tax (liabilities) assets $ (9,399) $ 2,733\nAt each balance sheet date, the Company assesses the likelihood that it will be able to realize its deferred tax assets. The Company considers all available positive and negative evidence in assessing the need for a valuation allowance. The Company maintains a full valuation allowance against certain of its deferred tax assets consisting primarily of net operating loss carryforwards related to its foreign operations in Canada, Europe, Asia, Latin America and Australia and net operating losses in the United States that are limited for use under Section 382 of the Internal Revenue Code.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "b9dea5093a6d0a12ce4165c54a90b7bb",
+  "page": 1,
+  "report": "cogent-communications-group-inc_2019.pdf"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "doc_id": "07a17c91740c7595",
+ "text": "From: iris.mack@enron.com\nTo: iris.mack@enron.com, john.arnold@enron.com, mike.maggi@enron.com\nDate: 2001-10-16\nSubject: Spark Spread Options\n\nHi,\n\n\t \tThe power options trading desk is beginning to structure deals and to make markets in spark spread options ( options on the spreads between power prices and natural gas prices).  Please refer to the attached file for further information.   \n\t\n\n \t   \tIt would be most helpful to meet with the relevant individuals  on the Gas desk  who would be interested in spark spread options.\n\n   \t\n\t \t Thank you in advance for your assistance.\n    \nKind regards,\nIris Mack, MBA/PhD\nEnron Power Options Trading Desk\nx3-6711",
+ "source": "corporate",
+ "private": [
+  "iris.mack@enron.com",
+  "john.arnold@enron.com",
+  "mike.maggi@enron.com",
+  "Iris Mack"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "arnold-j/inbox/26.",
+  "message_id": "<11503836.1075852727493.JavaMail.evans@thyme>"
+ }
+}

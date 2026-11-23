@@ -1,0 +1,16 @@
+{
+ "doc_id": "d3870e9205cedd39",
+ "text": "From: richard.friedman@enron.com\nTo: sara.shackleton@enron.com\nDate: 2001-10-19\nSubject: Orlando ISDA\n\nHave you received the credit update from Rudwell Johnson? Is this close to being ready to send back out to them?\n\nRich Friedman\nEnron Global Markets LLC\nrichard.friedman@enron.com\n713-853-5137",
+ "source": "corporate",
+ "private": [
+  "richard.friedman@enron.com",
+  "sara.shackleton@enron.com",
+  "Rich Friedman",
+  "713-853-5137"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "shackleton-s/inbox/456.",
+  "message_id": "<17665393.1075858818842.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "doc_id": "6fab75dce9e9072d",
+ "text": "From: pete.davis@enron.com\nTo: pete.davis@enron.com\nDate: 2001-04-22\nSubject: Start Date: 4/22/01; HourAhead hour: 24; <CODESITE>\n\nStart Date: 4/22/01; HourAhead hour: 24;  No ancillary schedules awarded.  \nVariances detected.\nVariances detected in SC Trades schedule.\nVariances detected in Load schedule.\n\n    LOG MESSAGES:\n\nPARSING FILE -->> O:\\Portland\\WestDesk\\California Scheduling\\ISO Final \nSchedules\\2001042224.txt\n\n---- SC Trades Schedule ----\n+++ Hour 24 - bad data from ISO.\n  TRANS_TYPE: FINAL\n  SC_ID: EPMI\n  MKT_TYPE: 2\n  TRANS_DATE: 4/22/01\n  TRADING_SC: ECH1\n  PNT_OF_INTRC: NP15\n  SCHED_TYPE: ENGY\n  PURCH_SALE: 2\n  DEAL_NO: 1\n\n\n\n---- Load Schedule ----\n$$$ Variance found in table tblLoads.\n     Details: (Hour: 24 / Preferred:  70.85 / Final:  70.82)\n  TRANS_TYPE: FINAL\n  LOAD_ID: PGE3\n  MKT_TYPE: 2\n  TRANS_DATE: 4/22/01\n  SC_ID: EPMI",
+ "source": "corporate",
+ "private": [
+  "pete.davis@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "linder-e/all_documents/703.",
+  "message_id": "<31327933.1075841014134.JavaMail.evans@thyme>"
+ }
+}

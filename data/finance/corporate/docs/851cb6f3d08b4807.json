@@ -1,0 +1,12 @@
+{
+ "doc_id": "851cb6f3d08b4807",
+ "text": "($ in millions)\nFor the year ended December 31: 2019 2018 2017\nCost $ 100 $ 82 $ 91\nSelling, general and administrative 453 361 384\nResearch, development and engineering 126 67 59\nPre-tax stock-based compensation cost 679 510 534\nIncome tax benefits (155) (116) (131)\nNet stock-based compensation cost $ 524 $ 393 $ 403\nTotal unrecognized compensation cost related to non-vested awards at December 31, 2019 was $1.2 billion and is expected to be recognized over a weighted-average period of approximately 2.5 years.\nCapitalized stock-based compensation cost was not material at December 31, 2019, 2018 and 2017.\nIncentive Awards Stock-based incentive awards are provided to employees under the terms of the company’s long-term performance plans (the Plans). The Plans are administered by the Executive Compensation and Management Resources Committee of the Board of Directors. Awards available under the Plans principally include restricted stock units, performance share units, stock options or any combination thereof.\nThere were 273 million shares originally authorized to be awarded under the company’s existing Plans and 66 million shares granted under previous plans that, if and when those awards were cancelled, could be reissued under the existing Plans. At December 31, 2019, 94 million unused shares were available to be granted.\nStock Awards Stock awards are made in the form of Restricted Stock Units (RSUs), including Retention Restricted Stock Units (RRSUs), or Performance Share Units (PSUs).\nThe following table summarizes RSU and PSU activity under the Plans during the years ended December 31, 2019, 2018 and 2017.\nRSUs PSUs\nWeighted-Average Grant Price Number of Units Weighted-Average Grant Price Number of Units\nBalance at January 1, 2017 $147 8,899,092 $155 2,874,758\nAwards granted 137 3,540,949 137 824,875\nAwards released 153 (3,032,531) 175 (293,236)",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "a9345e3ab3e157170a8765bc3f34d628",
+  "page": 1,
+  "report": "international-business-machines-corp_2019.pdf"
+ }
+}

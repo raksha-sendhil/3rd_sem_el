@@ -1,0 +1,16 @@
+{
+ "doc_id": "fbbbf05d40495fd7",
+ "text": "From: russell.diamond@enron.com\nTo: jeffrey.hodge@enron.com, dan.hyvl@enron.com, stacy.dickson@enron.com\nDate: 2000-10-11\nSubject: National Steel -Credit W/S\n\nTo All:\n\nAttached is a credit worksheet required for a transaction with National Steel \nCorp that is being structured by the contacts listed on the worksheet.  This \nparticular transaction is being executed in conjunction with prior long dated \ntransaction with National Steel (TAGG#E79260).  A prepay  of the in-the-money \nposition to the counterparty has been structured for part of the remaining \nyears left on the contract.  In addition to this, a new transaction will be \nentered into in which ENA sells additional volume of nat gas to the \ncounterparty along with what is already being delivered from the remaining \ncontract.  A Master Firm Purchase Sale is required for this new transaction \nand the existing transaction MUST be assigned over to this Master in order to \noffset the existing MTM with the sales volumes.  The execution of this new \ntransaction is dependent on the assignment of the existing transaction to the \nMaster.\n\nRegards,\nRussell",
+ "source": "corporate",
+ "private": [
+  "russell.diamond@enron.com",
+  "jeffrey.hodge@enron.com",
+  "dan.hyvl@enron.com",
+  "stacy.dickson@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/national_steel/1.",
+  "message_id": "<22287210.1075842260606.JavaMail.evans@thyme>"
+ }
+}

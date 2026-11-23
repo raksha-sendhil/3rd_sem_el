@@ -1,0 +1,19 @@
+{
+ "doc_id": "664118c312849d8d",
+ "text": "From: sara.shackleton@enron.com\nTo: mark.taylor@enron.com, mary.cook@enron.com, brent.hendry@enron.com\nDate: 2001-02-27\nSubject: R.V.I. Guaranty Co., Ltd., a Bermuda reinsurance company and Continental Insurance Company\n\nIs anyone familiar with an ISDA Master Agreement executed between ENA and the \nabove company?  I have received a Security Agreement executed by this party \nseeking ENA's signature and the document references the Endorsement (to a \npolicy  - what policy?) issued to ENA on 10/19/00 which defines the ISDA \nagreement.  This could be related to credit activity in London.  I am waiting \nto hear from Jeff Kinneman and Denis O'Connell.\n\nSara Shackleton\nEnron North America Corp.\n1400 Smith Street, EB 3801a\nHouston, Texas  77002\n713-853-5620 (phone)\n713-646-3490 (fax)\nsara.shackleton@enron.com",
+ "source": "corporate",
+ "private": [
+  "sara.shackleton@enron.com",
+  "mark.taylor@enron.com",
+  "mary.cook@enron.com",
+  "brent.hendry@enron.com",
+  "Sara Shackleton",
+  "713-853-5620",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "jones-t/notes_inbox/3190.",
+  "message_id": "<23254262.1075847403451.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "doc_id": "e4ece30b7635ca5f",
+ "text": "Exercise Price\n105\nWeighted-Average\nRemaining Contract Term\n(in years)\nAggregate\nIntrinsic Value (1)\n(in millions)\nVested 146 $ 32.13 3.32 $ 2,698\nExpected to vest (2) 42 $ 46.95 6.47 181\nTotal 188 $ 35.45 4.02 $ 2,879\n(1) The aggregate intrinsic value was calculated based on the gross difference between our closing stock price on the last trading day of fiscal 2019 of $50.60 and the exercise prices for all “in-the-money” options outstanding, excluding tax effects.\n(2) The unrecognized compensation expense calculated under the fair value method for shares expected to vest (unvested shares net of expected forfeitures) as of May 31, 2019 was approximately $254 million and is expected to be recognized over a weighted-average period of 2.74 years. Approximately 34 million shares outstanding as of May 31, 2019 were not expected to vest.\nStock-Based Compensation Expense and Valuations of Stock Awards\nWe estimated the fair values of our restricted stock-based awards that are solely subject to service-based vesting requirements based upon their market values as of the grant dates, discounted for the present values of expected dividends.\nThe fair values of our PSUs were also measured based upon their market values as of their respective grant dates, discounted for the present values of expected dividends. The vesting conditions and related terms of our PSUs were communicated to each participating employee as of their respective grant dates and included attainment metrics that were defined, fixed and based upon consistent U.S. GAAP metrics or internal metrics that are defined, fixed and consistently determined, and that require the employee to render service. Therefore, these awards met the performance-based award classification criteria as defined within ASC 718.\n104",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "ab3188758e9fa578b1396c5e74de50b2",
+  "page": 2,
+  "report": "oracle-corporation_2019.pdf"
+ }
+}

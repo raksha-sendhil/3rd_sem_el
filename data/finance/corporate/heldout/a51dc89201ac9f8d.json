@@ -1,0 +1,17 @@
+{
+ "doc_id": "a51dc89201ac9f8d",
+ "text": "From: daniel.diamond@enron.com\nTo: k..allen@enron.com, tim.belden@enron.com, robert.benson@enron.com\nDate: 2002-02-01\nSubject: Waiting on your reply -Stack Users\n\nIf you're receiving this email its because we're still waiting on a response from you.  Please reply to this message ASAP.  See below for details.\n\nThanks,\n\nDan\n\nWe are in the process of confirming that all traders are set up correctly and ready to trade when the system goes live. \n\nWe need to make sure that your Stack Managers are accessing the correct database. In order to do this, we need to know how you access Stack Manager:\n\n1) Through Terminal Server (the one that opens up a desktop within a desktop and it actually appears that you have two Start buttons). \nor\n2) By opening the Stack Manager directly from your \"native\" desktop (stand alone computer).\n\nPlease reply to this message with either a corresponding \"1\" or a \"2\" in the subject field.\n\nIf you're not sure which one you have, please contact myself x39673, Teresa Mandola x39807 or Jennifer McQuade x53614 and we'll come by your desk to help you.\n\nThank you,\n\nDan Diamond",
+ "source": "corporate",
+ "private": [
+  "daniel.diamond@enron.com",
+  "k..allen@enron.com",
+  "tim.belden@enron.com",
+  "robert.benson@enron.com",
+  "Dan Diamond"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ring-a/deleted_items/17.",
+  "message_id": "<19479646.1075841481922.JavaMail.evans@thyme>"
+ }
+}

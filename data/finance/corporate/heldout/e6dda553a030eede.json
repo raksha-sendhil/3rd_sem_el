@@ -1,0 +1,14 @@
+{
+ "doc_id": "e6dda553a030eede",
+ "text": "From: andrea.ring@enron.com\nTo: terri.fiandt@enron.com\nDate: 2000-11-10\nSubject: Hey\n\nHi!\n\n             I gave his resume to Scott Neal.  He is going to look at it and \npass it on to the appropriate people.  It looks like his backround includes \nmore origination experience than trading.  \n\n                                                                            \nTake care!",
+ "source": "corporate",
+ "private": [
+  "andrea.ring@enron.com",
+  "terri.fiandt@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ring-a/all_documents/92.",
+  "message_id": "<16333684.1075857082725.JavaMail.evans@thyme>"
+ }
+}

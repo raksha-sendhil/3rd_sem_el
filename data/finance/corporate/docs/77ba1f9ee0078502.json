@@ -1,0 +1,12 @@
+{
+ "doc_id": "77ba1f9ee0078502",
+ "text": "Non-deductible acquisition costs — 1,270 270\nDomestic production activity deduction — — (1,370)\nPermanent differences and others 918 666 484\nChange in valuation allowance (61) (6,092) —\nTotal provision for (benefit from) income taxes $ (8,280) $ 18,467 $ 10,454\nThe tax effects of temporary differences that gave rise to significant portions of deferred tax assets and liabilities are as follows (in thousands):\nAs of July 31,\n2019 2018\nAccruals and reserves $ 7,870 $ 12,129\nStock-based compensation 6,353 7,658\nDeferred revenue 2,316 4,023\nProperty and equipment — 1,268\nNet operating loss carryforwards 55,881 56,668\nTax credits 74,819 60,450\nTotal deferred tax assets 147,239 142,196\nLess valuation allowance 31,421 28,541\nNet deferred tax assets 115,818 113,655\nLess deferred tax liabilities:\nIntangible assets 7,413 11,461\nConvertible debt 10,274 11,567\nProperty and equipment 1,435 —\nUnremitted foreign earnings 302 258\nCapitalized commissions 6,086 —\nTotal deferred tax liabilities 25,510 23,286\nDeferred tax assets, net 90,308 90,369\nLess foreign deferred revenue — 69\nLess foreign capitalized commissions 906 —\nTotal net deferred tax assets 89,402 90,300\nThe Company considered both positive and negative evidence, including future reversals of existing taxable temporary differences, projected future taxable\nincome, tax planning strategies, historic book profit/loss, prior taxable income/loss, and results of future operations, and determined that a valuation allowance was not required for a significant portion of its deferred tax assets. A valuation allowance of $31.4 million and $28.5 million remained as of July 31, 2019 and 2018, respectively. The increase of $2.9 million in the valuation allowance in the current fiscal year relates primarily to net operating losses and income tax credits incurred in certain tax jurisdictions for which no tax benefit was recognized.\n84",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "fa6d3bb564fd09c1211f53e9836af30d",
+  "page": 1,
+  "report": "guidewire-software-inc_2019.pdf"
+ }
+}

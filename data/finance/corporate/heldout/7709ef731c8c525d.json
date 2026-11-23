@@ -1,0 +1,15 @@
+{
+ "doc_id": "7709ef731c8c525d",
+ "text": "From: michelle.cash@enron.com\nTo: mary.mckendree@enron.com\nDate: 2000-10-27\nSubject: language\n\nHow about this:\n\nAny future grant/payment described on this worksheet is subject to \nappropriate committee approvals and previously-defined performance standards; \nthe use of the term \"guaranteed\" on this worksheet does not modify the terms \nand conditions of any such payment/grant.\n\nToo wordy?\n\nMichelle\n\n\n\n\n\n\n\nMary McKendree@ENRON\n10/26/2000 04:56 PM\nTo: Michelle Cash/HOU/ECT@ECT\ncc:  \nSubject: language\n\nMichelle --\n\nPer our conversation, the term sheets list any future grants/bonus payments \nas outlined in employment agreements.  The description that prints along with \nthe amount may say \"Guaranteed Grant\".  Of course we all know that it's \ncontingent upon Admin/Comp Committee approval.  However, to keep down any \nquestion, we thought about adding an asterick and saying:\n\n\"Any future referenced payments are contingent upon attaining appropriate \napprovals.\"\n\nPlease word-smith as appropriate.\n\nI appreciate your help.\n\nMary",
+ "source": "corporate",
+ "private": [
+  "michelle.cash@enron.com",
+  "mary.mckendree@enron.com",
+  "Michelle Cash"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "cash-m/all_documents/501.",
+  "message_id": "<5553681.1075860488552.JavaMail.evans@thyme>"
+ }
+}

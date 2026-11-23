@@ -1,0 +1,12 @@
+{
+ "doc_id": "a55bb511d48a24f5",
+ "text": "Year Ended December 31,\n2019 2018 2017\n(In millions)\nNet cash from operating activities $ 1,869 $ 1,845 $ 1,677\nNet cash used in investing activities (1,172) (1,212) (1,468)\nExcluding:\nPayment for purchase and proceeds from sale of marketable securities, and net cash variation for joint ventures deconsolidation (200) (100) 99\nPayment for purchase and proceeds from sale of tangible and intangible assets, payment for business acquisitions (1) (1,372) (1,312) (1,369)\nFree Cash Flow (non-U.S. GAAP measure) $ 497 $ 533 $ 308\n(1) Reflects the total of the following line items reconciled with our Consolidated Statements of Cash Flows relating to the investing activities: Payment for purchase of tangible assets, Proceeds from sale of tangible assets, Payment for purchase of intangible assets, Payment for purchase of financial assets, Proceeds from sale of financial assets, Payment for disposal of equity investment, Proceeds received in sale of businesses, Payment for business acquisitions, net of cash and cash equivalents acquired.\nFree Cash Flow was positive $497 million in 2019, compared to positive $533 million and positive $308 million in 2018 and 2017, respectively.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "0069c940cfca223b2789cbbcc846b038",
+  "page": 1,
+  "report": "stmicroelectronics_2019.pdf"
+ }
+}

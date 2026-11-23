@@ -1,0 +1,12 @@
+{
+ "doc_id": "b132ad46214c4cd6",
+ "text": "Impact of tax reform re-measurement — — (81.6)\nInternal restructure — (9.1) (0.6)\nNoncontrolling interests (0.5) (0.5) (0.6)\nNon-deductible goodwill 0.1 4.7 1.0\nOther, net\nEffective income tax rate\n(0.7) (0.6) (2.0)\n13.0% 18.3% (48.3)%\n2019 Annual Report Notes to Consolidated Financial Statements continued\nThe effective income tax rate for 2019 was 13.0% compared to 18.3% for 2018. The decrease in the effective income tax rate and the provision for income taxes was primarily due to the recognition of approximately $2.2 billion of a non-recurring tax benefit in connection with the disposition of preferred stock, representing a minority interest in a foreign affiliate in 2019 compared to the non-recurring deferred tax benefit of approximately $2.1 billion, as a result of an internal reorganization of legal entities within the historical Wireless business, which was offset by a goodwill charge that is not deductible for tax purposes in 2018.\nThe effective income tax rate for 2018 was 18.3% compared to (48.3)% for 2017. The increase in the effective income tax rate and the provision for income taxes was primarily due to the non-recurring, non-cash income tax benefit of $16.8 billion recorded in 2017 for the re-measurement of U.S. deferred tax liabilities at the lower 21% U.S. federal corporate income tax rate, as a result of the enactment of the TCJA on December 22, 2017. In addition, the provision for income taxes for 2018 includes the tax impact of the Media goodwill impairment charge not deductible for tax purposes, offset by the reduction in the statutory U.S federal corporate income tax rate from 35% to 21%, effective January 1, 2018 under the TCJA and a non-recurring deferred tax benefit of approximately $2.1 billion as a result of an internal reorganization of legal entities within the historical Wireless business.",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "adaad2efcb109915eb3a70e2d992555c",
+  "page": 1,
+  "report": "verizon-communications-inc_2019.pdf"
+ }
+}

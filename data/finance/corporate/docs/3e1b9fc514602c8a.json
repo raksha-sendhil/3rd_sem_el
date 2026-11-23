@@ -1,0 +1,19 @@
+{
+ "doc_id": "3e1b9fc514602c8a",
+ "text": "From: holly.keiser@enron.com\nTo: susan.bailey@enron.com, samantha.boyd@enron.com, robert.bruce@enron.com\nDate: 2001-02-22\nSubject: SWAP Calendars\n\nAttached are the latest SWAP group calendars.  Let me know if you have any \nrevisions.\n\n\n\n\n\nThanks!\nHolly Keiser\nEnron Americas\nLegal Department - EB 3887\n713-345-7893 (ph)\n713-646-3490 (fx)\nHolly.Keiser@enron.com",
+ "source": "corporate",
+ "private": [
+  "holly.keiser@enron.com",
+  "susan.bailey@enron.com",
+  "samantha.boyd@enron.com",
+  "robert.bruce@enron.com",
+  "Holly Keiser",
+  "713-345-7893",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "jones-t/notes_inbox/3120.",
+  "message_id": "<5911673.1075847401367.JavaMail.evans@thyme>"
+ }
+}

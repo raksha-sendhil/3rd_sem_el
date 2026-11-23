@@ -1,0 +1,16 @@
+{
+ "doc_id": "2fd5ec78f8ae868b",
+ "text": "From: ray.alvarez@enron.com\nTo: tim.belden@enron.com, mike.swerzbin@enron.com, michael.driscoll@enron.com\nDate: 2001-05-18\nSubject: FERC Weekly Electric Report\n\nPlease find attached the captioned report for the week ending May 4.  A topic \n/ key word index follows below, in order to facilitate coming up to date on \ntopics of interest to you.  If you wish to add or delete names from the \ndistribution, please advise.   Should you have any question on any of the \nitems, or require additional information, please do not hesitate to contact \nus.  Thanks.  Ray \n\n\nData request: 4,11\nExchange Agreement: 33\nFinancial: 16,29,44\nInterconnect Agreement: 14,26,27,28,30,38,40,41\nMeter Service Agreement: 10\nOperating Agreement: 8,32\nParticipation Agreement: 3\nPower Sale Agreement: 7,24\nPower Sale Tariff: D,F,12,17,18,23,25\nQF's: A ,C\nRefunds: 4,5,6,11,15,21,22,34,35,36,37,49,50\nRTO: 9\nSettlement: 1\nTechnical Conference (P/L capacity to/in CA): B\nTransmission Service Agreement: 2,14,19,20,30,31,32,41,45,46\nTransmission Tariff: E,13,19,20,42,43,47",
+ "source": "corporate",
+ "private": [
+  "ray.alvarez@enron.com",
+  "tim.belden@enron.com",
+  "mike.swerzbin@enron.com",
+  "michael.driscoll@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "dasovich-j/all_documents/12748.",
+  "message_id": "<14824057.1075843507618.JavaMail.evans@thyme>"
+ }
+}

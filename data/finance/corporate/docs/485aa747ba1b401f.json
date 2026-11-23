@@ -1,0 +1,16 @@
+{
+ "doc_id": "485aa747ba1b401f",
+ "text": "From: ryan.williams@enron.com\nTo: doug.gilbert-smith@enron.com\nDate: 2002-01-30\nSubject: BES Prices\n\nM:\\Electric\\ERCOT\\ERCOT 2002\\Data\\ERCOT ISO\\ERCOT ISO BES Reports\\Balancing Check 2002.xls\n \n_________________\nRyan Williams\nEast Power Trading\nEnron North America\n(713) 853-4793",
+ "source": "corporate",
+ "private": [
+  "ryan.williams@enron.com",
+  "doug.gilbert-smith@enron.com",
+  "Ryan Williams",
+  "(713) 853-4793"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "gilbertsmith-d/inbox/84.",
+  "message_id": "<5180027.1075840546270.JavaMail.evans@thyme>"
+ }
+}

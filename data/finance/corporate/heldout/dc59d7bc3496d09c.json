@@ -1,0 +1,13 @@
+{
+ "doc_id": "dc59d7bc3496d09c",
+ "text": "From: pete.davis@enron.com\nTo: pete.davis@enron.com\nDate: 2001-04-22\nSubject: Start Date: 4/22/01; HourAhead hour: 12; <CODESITE>\n\nStart Date: 4/22/01; HourAhead hour: 12;  No ancillary schedules awarded.  \nVariances detected.\nVariances detected in Energy Import/Export schedule.\nVariances detected in SC Trades schedule.\nVariances detected in Load schedule.\n\n    LOG MESSAGES:\n\nPARSING FILE -->> O:\\Portland\\WestDesk\\California Scheduling\\ISO Final \nSchedules\\2001042212.txt\n\n---- Energy Import/Export Schedule ----\n$$$ Variance found in table tblINTCHG_IMPEXP.\n     Details: (Hour: 12 / Preferred:  12.00 / Final:  11.98)\n  TRANS_TYPE: FINAL\n  SC_ID: ECTRT\n  MKT_TYPE: 2\n  TRANS_DATE: 4/22/01\n  TIE_POINT: PVERDE_5_DEVERS\n  INTERCHG_ID: EPMI_CISO_ERNIE\n  ENGY_TYPE: WHEEL\n\n\n\n---- SC Trades Schedule ----\n*** Final schedule not found for preferred schedule.\n     Details:\n\n  TRANS_TYPE: FINAL\n  SC_ID: EPMI\n  MKT_TYPE: 2\n  TRANS_DATE: 4/22/01\n  TRADING_SC: CRLP\n  PNT_OF_INTRC: SP15\n  SCHED_TYPE: ENGY\n  PURCH_SALE: 1\n  DEAL_NO: 1\n$$$ Variance found in table tblInt_Interchange.\n     Details: (Hour: 12 / Preferred: -100.00 / Final: -99.97)\n  TRANS_TYPE: FINAL\n  SC_ID: EPMI\n  MKT_TYPE: 2\n  TRANS_DATE: 4/22/01\n  TRADING_SC: EPPS\n  PNT_OF_INTRC: NP15\n  SCHED_TYPE: ENGY\n  PURCH_SALE: 1\n  DEAL_NO: 1\n\n\n\n---- Load Schedule ----\n$$$ Variance found in table tblLoads.\n     Details: (Hour: 12 / Preferred:  64.64 / Final:  64.59)\n  TRANS_TYPE: FINAL\n  LOAD_ID: PGE3\n  MKT_TYPE: 2\n  TRANS_DATE: 4/22/01\n  SC_ID: EPMI",
+ "source": "corporate",
+ "private": [
+  "pete.davis@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "linder-e/all_documents/689.",
+  "message_id": "<3334380.1075841013779.JavaMail.evans@thyme>"
+ }
+}

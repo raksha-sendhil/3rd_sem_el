@@ -152,20 +152,38 @@ def make_labels(zip_path: str) -> None:
           f"{sum(bool(r['account_number']) for r in rows)} with an account number typed")  # fmt: skip
 
 
-def read_labels() -> list[dict]:
-    if not LABELS.exists():
-        sys.exit(f"no labels: type the cheques into {LABELS} (columns: file,{','.join(FIELDS)})")
-    with LABELS.open(encoding="utf-8-sig", newline="") as fh:
-        rows = [{k.strip(): (v or "").strip() for k, v in r.items()} for r in csv.DictReader(fh)]
+def find_labels(given: str | None, source: str) -> Path:
+    """The labels to use: --labels, else a labels.csv uploaded with the images (the private
+    Kaggle dataset holds the copy with the typed account numbers and dates), else the repo's."""
+    if given:
+        return Path(given)
+    if Path(source).is_dir():
+        found = sorted(Path(source).rglob("labels.csv"))
+        if found:
+            return found[0]
+    return LABELS
+
+
+def read_labels(path: Path) -> list[dict]:
+    if not path.exists():
+        sys.exit(f"no labels: type the cheques into {path} (columns: {','.join(COLUMNS)})")
+    with path.open(encoding="utf-8-sig", newline="") as fh:
+        rows = [
+            {k.strip(): (v or "").strip() for k, v in r.items() if k} for r in csv.DictReader(fh)
+        ]
     rows = [r for r in rows if r.get("file") and any(r.get(k) for k in FIELDS)]
+    typed = sum(bool(r.get("account_number") or r.get("date")) for r in rows)
+    print(f"labels: {path} ({len(rows)} cheques, {typed} with an account number or date typed)")
+    # the cheques with typed values first, so a run of N cheques uses them
+    rows.sort(key=lambda r: not (r.get("account_number") or r.get("date")))
     missing = [r["file"] for r in rows if not (r.get("payee") and r.get("amount"))]
     if missing:
         print(f"warning: no payee or amount for {missing}; those fields are left out")
     return rows
 
 
-def fetch_cheques(f: Folder, zip_path: str, limit: int) -> None:
-    labels = read_labels()
+def fetch_cheques(f: Folder, zip_path: str, limit: int | None, labels_path: Path) -> None:
+    labels = read_labels(labels_path)
     with zipfile.ZipFile(zip_path) as z:
         images = {PurePosixPath(n).name.lower(): n for n in z.namelist()
                   if PurePosixPath(n).suffix.lower() in IMAGE_SUFFIXES}  # fmt: skip
@@ -193,16 +211,55 @@ def fetch_cheques(f: Folder, zip_path: str, limit: int) -> None:
     print(f"cheques: {used} labelled cheques written")
 
 
+def make_sheet(zip_path: str, out: Path, n: int = 50) -> None:
+    """A local page with the first ``n`` cheques of labels.csv, each with its row number, to
+    type the account number and date from. Kept on this computer only (the images have no
+    licence)."""
+    from PIL import Image
+
+    rows = read_labels(LABELS)[:n]
+    out.mkdir(parents=True, exist_ok=True)
+    items = []
+    with zipfile.ZipFile(zip_path) as z:
+        images = {PurePosixPath(k).name.lower(): k for k in z.namelist()}
+        for i, r in enumerate(rows, 1):
+            name = images.get(r["file"].lower())
+            if not name:
+                continue
+            img = Image.open(io.BytesIO(z.read(name))).convert("RGB")
+            img.thumbnail((1400, 1400))
+            jpg = f"{i:02d}.jpg"
+            img.save(out / jpg, quality=85)
+            items.append(f"<h2>{i}. {html.escape(r['file'])} ({html.escape(r['bank'])})</h2>"
+                         f"<p>payee: {html.escape(r['payee'])} / {html.escape(r.get('payee_2', ''))}, "
+                         f"amount: {html.escape(r['amount'])}</p><img src='{jpg}' width='100%'>")  # fmt: skip
+    page = out / "index.html"
+    page.write_text("<!doctype html><meta charset='utf-8'><title>Cheques to label</title>"
+                    "<body style='font-family:sans-serif;max-width:1400px;margin:auto'>"
+                    "<p>For each cheque, type the printed account number and the date into the "
+                    "row with the same file name in labels.csv.</p>" + "".join(items), encoding="utf-8")  # fmt: skip
+    print(f"{len(items)} cheques -> {page}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--zip", required=True,
                     help="the IDRBT zip, or the folder Kaggle unpacked it into")  # fmt: skip
-    ap.add_argument("--limit", type=int, default=30)
+    ap.add_argument("--limit", type=int, default=None, help="at most this many cheques")
+    ap.add_argument(
+        "--labels", help="labels.csv to use (default: one next to the images, else the repo's)"
+    )
+    ap.add_argument("--sheet", metavar="FOLDER",
+                    help="write a page of the first 50 cheques to type account numbers and dates from")  # fmt: skip
     ap.add_argument("--list", action="store_true", help="only list the images in the zip")
     ap.add_argument("--make-labels", action="store_true",
                     help="write labels.csv from the zip's DATA.xlsx (typed columns are kept)")  # fmt: skip
     args = ap.parse_args()
+    labels_path = find_labels(args.labels, args.zip)
     args.zip = as_zip(args.zip)
+    if args.sheet:
+        make_sheet(args.zip, Path(args.sheet))
+        return
     if args.make_labels:
         make_labels(args.zip)
         return
@@ -214,7 +271,7 @@ def main() -> None:
         return
     f = Folder("cheques")
     f.reset()
-    fetch_cheques(f, args.zip, args.limit)
+    fetch_cheques(f, args.zip, args.limit, labels_path)
     f.save()
 
 

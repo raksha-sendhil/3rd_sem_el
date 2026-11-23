@@ -1,0 +1,14 @@
+{
+ "doc_id": "2be27097f1d7dbba",
+ "text": "From: sarah.wesner-soong@enron.com\nTo: john.arnold@enron.com\nDate: 2001-11-26\nSubject: Fimat/Soc Gen\n\nJohn - you may have already heard this but on Friday, NYMEX increased margins for clearing brokers posting for Enron by 50%.  Also Soc Gen cancelled their margin line on Friday (Warren wants to make it very clear that it was Soc Gen and not Fimat.)  So far, Fimat is not reducing its trading limit with us but is passing through the NYMEX requirement.  All of our brokers will have the right to do this and I expect them to do so.  Sarah",
+ "source": "corporate",
+ "private": [
+  "sarah.wesner-soong@enron.com",
+  "john.arnold@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "arnold-j/inbox/156.",
+  "message_id": "<17442484.1075861676030.JavaMail.evans@thyme>"
+ }
+}

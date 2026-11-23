@@ -1,0 +1,17 @@
+{
+ "doc_id": "98cff228f40debf0",
+ "text": "From: sara.shackleton@enron.com\nTo: tana.jones@enron.com\nDate: 2001-02-23\nSubject: Financial Trading Database link\n\nTana:\n\nTheresa Brogan needs a link to the database.  She works in Gary Hickerson's \ngroup.  Thanks.  \n\n\nSara Shackleton\nEnron North America Corp.\n1400 Smith Street, EB 3801a\nHouston, Texas  77002\n713-853-5620 (phone)\n713-646-3490 (fax)\nsara.shackleton@enron.com",
+ "source": "corporate",
+ "private": [
+  "sara.shackleton@enron.com",
+  "tana.jones@enron.com",
+  "Sara Shackleton",
+  "713-853-5620",
+  "713-646-3490"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "jones-t/notes_inbox/3134.",
+  "message_id": "<6992137.1075847401758.JavaMail.evans@thyme>"
+ }
+}

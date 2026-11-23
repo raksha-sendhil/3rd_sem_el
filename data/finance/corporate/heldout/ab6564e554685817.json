@@ -1,0 +1,14 @@
+{
+ "doc_id": "ab6564e554685817",
+ "text": "From: denver.plachy@enron.com\nTo: john.arnold@enron.com\nDate: 2001-07-18\nSubject: LNG\n\nJohn:\n\nThe Enron deal at Elba Island amounts to a sendoout capacity of 160mmcf/d for 17 years. This will be tough to fill as the majority of existing supply exceeds the max heat rate-I would look for Enron to get out of this in some way.  Enron is currently having discussions with El Paso as to whether this contract goes into effect Oct 1st 2001 or Jan 1st 2002. Elba Island has recently said that they will be running in Q4 although many still doubt it.\n\nAttached is a file that lists the terminals, their capacity owners, facility owners, expansion plans, and supply situation.  Let me know if you have any more questions.",
+ "source": "corporate",
+ "private": [
+  "denver.plachy@enron.com",
+  "john.arnold@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "arnold-j/inbox/5.",
+  "message_id": "<6551177.1075852726948.JavaMail.evans@thyme>"
+ }
+}

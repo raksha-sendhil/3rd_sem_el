@@ -1,0 +1,15 @@
+{
+ "doc_id": "88d9a1106fa158f4",
+ "text": "From: bridgette.anderson@enron.com\nTo: dan.hyvl@enron.com\nDate: 2001-01-08\nSubject: Transaction Agreement - Ormet Primary Aluminum Corp.\n\nDan,\n\nOn 12/29/00 deal # 548711 was entered into Sitara for a contract to be \nattached.  Within this deal there were Special Handling Instructions which \nread: \"This is a firm, full requirements sale to Ormet.  Also served to \nCypress.  Please use the Transaction Agreement prepared by Dan Hyvl already \nexecuted by Ormet, rather than generate a new confirm.\"  \n\nI created a GTC Sale Firm for this deal because the agreement mentioned in \nred could not be found in the Global database.  Since the notes mentioned \nthat this particular agreement was prepard by you, I was hoping that you \ncould clarify if this agreement was circulated our way (meaning if it had \nbeen sent to the Global Contracts group).  Please Advise.\n\nRegards,\nBridgette Anderson\n3-3818",
+ "source": "corporate",
+ "private": [
+  "bridgette.anderson@enron.com",
+  "dan.hyvl@enron.com",
+  "Bridgette Anderson"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/ormet/25.",
+  "message_id": "<33384804.1075842261176.JavaMail.evans@thyme>"
+ }
+}

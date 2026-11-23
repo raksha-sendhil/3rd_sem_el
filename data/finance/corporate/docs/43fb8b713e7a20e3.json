@@ -1,0 +1,16 @@
+{
+ "doc_id": "43fb8b713e7a20e3",
+ "text": "From: richard.sanders@enron.com\nTo: angela.davis@enron.com\nDate: 2001-02-01\nSubject: ENA Opinion\n\nYou can give the opinion.\n\n\n\n\tAngela Davis@ENRON\n\t01/29/2001 08:15 AM\n\t\t \n\t\t To: Richard B Sanders/HOU/ECT@ECT\n\t\t cc: \n\t\t Subject: ENA Opinion\n\nENA will be delivering a legal opinion in connection with entering into an \nISDA Master Agreement with Cooperatieve Centrale Raiffeisen-Boerenleenbank \nB.A.  The opinion will include the typical opinion that to the opinor's \nknowledge, no action, proceeding etc. should affect the ability of ENA to \nperform under the Swap.  Please let me know if you know of any reason why we \ncould not give this opinion. \n\n\n\n\nAngela D. Davis\nEnron North America Corp.\n1400 Smith, Suite 3842\nHouston, Texas 77002\nTele. (713) 345-8347\nFax:  (713) 646-3393\ne-mail:  angela.davis@enron.com",
+ "source": "corporate",
+ "private": [
+  "richard.sanders@enron.com",
+  "angela.davis@enron.com",
+  "(713) 345-8347",
+  "(713) 646-3393"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "sanders-r/sent/750.",
+  "message_id": "<10491352.1075853270474.JavaMail.evans@thyme>"
+ }
+}

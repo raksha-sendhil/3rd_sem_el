@@ -1,0 +1,15 @@
+{
+ "doc_id": "ba17e256bcde21d7",
+ "text": "From: enron.announcements@enron.com\nTo: all.users@enron.com\nDate: 2001-06-21\nSubject: Outage for Applications Residing on R: Drive\n\nAll applications residing on the R: drive will be temporarily unavailable \nfrom Friday, June 22, 2001 at 10:30 P.M. until Saturday June 23, 2001 at 2:30 \nA.M. for users logging into the CORP domain serviced by Enron Net Works.  The \noutage is needed to perform required system maintenance updates and increase \nthe storage capacity of the general application servers hosting the \napplications managed by the Enron Net Works Distributed Application \nManagement group.  \n\nAny questions or concerns regarding this system outage can be directed to \nChris Jeska, (713) 345-7004.  \n\nThe following have been identified as business critical applications that \nwill be affected by the outage:\n\nSitara\nCMS\nEquity trading systems (eqpm directory)\nAdaytum\nCQG\nTMS\nPowerMap Europe\nPowerDat Europe\nMapInfo Professional \nSecretariat",
+ "source": "corporate",
+ "private": [
+  "enron.announcements@enron.com",
+  "all.users@enron.com",
+  "(713) 345-7004"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hain-m/notes_inbox/33.",
+  "message_id": "<8920769.1075860432264.JavaMail.evans@thyme>"
+ }
+}

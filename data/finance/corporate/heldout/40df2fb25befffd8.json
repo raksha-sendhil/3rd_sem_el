@@ -1,0 +1,14 @@
+{
+ "doc_id": "40df2fb25befffd8",
+ "text": "From: enron.announcements@enron.com\nTo: all.states@enron.com\nDate: 2001-04-03\nSubject: iBuyit is Here!\n\nBy now you have probably seen Rick Causey\u0001,s announcement of the iBuyit \ninitiative.  iBuyit is Enron\u0001,s new procurement and payment tool and is now \nlive for those who previously requested IT hardware from IT Central.  For \nothers, iBuyit will be coming your way during the year.  To learn more, visit \nhttp://ibuyit.enron.com.\n\nThe iBuyit team will continue to work with your business unit to customize \nthe tool to meet your needs and to prepare for its phased roll-out:\nMay 2001:  iBuyit Payables for those organizations supported by the \nHouston-based accounts payable processing center\nJuly 2001:  iBuyit eProcurement for ETS, Corporate, and EWS\nOctober 2001:  iBuyit eProcurement for EES and EBS\nDecember 2001:  iBuyit eProcurement and Payables for Europe\n\nWe look forward to your questions and comments about iBuyit.  E-mail us at <\nmailto:ibuyit@enron.com>",
+ "source": "corporate",
+ "private": [
+  "enron.announcements@enron.com",
+  "all.states@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/59.",
+  "message_id": "<5070337.1075841262740.JavaMail.evans@thyme>"
+ }
+}

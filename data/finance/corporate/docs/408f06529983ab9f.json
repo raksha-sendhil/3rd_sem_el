@@ -1,0 +1,12 @@
+{
+ "doc_id": "408f06529983ab9f",
+ "text": "2019 Form 10-K 71\n2019 Form 10-K 72\nThe following table summarizes the changes in the carrying amount of goodwill during the fiscal years ended January 31, 2019 and 2018:\nAutodesk determines the grant date fair value of its share-based payment awards using a Black-Scholes Merton (\"BSM\") option pricing model or the quoted stock price on the date of grant, unless the awards are subject to market conditions, in which case Autodesk uses a binomial-lattice model (e.g., Monte Carlo simulation model). The Monte Carlo simulation model utilizes multiple input variables to estimate the probability that market conditions will be achieved. Autodesk uses the following assumptions to estimate the fair value of stock-based awards:\nJanuary 31, 2019 January 31, 2018\nFiscal Year Ended Fiscal Year Ended Fiscal Year Ended\nGoodwill, beginning of the year $ 1,769.4 $ 1,710.3\nJanuary 31, 2019 January 31, 2018 January 31, 2017\nLess: accumulated impairment losses, beginning of the year (149.2) (149.2)\nStock Option Plans Performance Stock Unit ESPP Performance Stock Unit ESPP Performance Stock Unit ESPP Range of expected volatilities 37 - 42% 36% 33 - 38% 32% 31 - 34% 38 - 39% 30 - 40% Range of expected lives (in years) 0.5 - 3.8 N/A 0.5 - 2.0 N/A 0.5 - 2.0 N/A 0.5 - 2.0 Expected dividends —% —% —% —% —% —% —% Range of risk-free interest rates 2.3 - 2.7% 2.0% 1.9 - 2.8% 1.0 - 1.2% 0.9 - 1.4% 0.6 - 0.7% 0.5 - 0.9%\nAdditions arising from acquisitions during the year 866.9 —",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "08d181cb5431f91d9495afa4989d0906",
+  "page": 2,
+  "report": "autodesk-inc_2019.pdf"
+ }
+}

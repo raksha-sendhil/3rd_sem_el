@@ -1,0 +1,14 @@
+{
+ "doc_id": "59a884cb4de421ee",
+ "text": "From: virginia.thompson@enron.com\nTo: portland.shift@enron.com\nDate: 2001-04-04\nSubject: Trade Logs\n\nDear Real-Timers,\n\nI just wanted to drop you guys a line to say thanks for keeping better notes \nand more complete trade logs.  I can't tell you how much more efficiently I \nget things done when I find the counterparty trader's name, time of a \nconversation, and a confirm of MW and price values.\n\nI really appreciate your efforts.\n\nSincerely,\n\nVirginia",
+ "source": "corporate",
+ "private": [
+  "virginia.thompson@enron.com",
+  "portland.shift@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "merriss-s/discussion_threads/63.",
+  "message_id": "<29109290.1075841262846.JavaMail.evans@thyme>"
+ }
+}

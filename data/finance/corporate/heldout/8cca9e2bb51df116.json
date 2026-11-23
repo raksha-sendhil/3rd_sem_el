@@ -1,0 +1,14 @@
+{
+ "doc_id": "8cca9e2bb51df116",
+ "text": "From: kam.keiser@enron.com\nTo: susan.trevino@enron.com\nDate: 2002-01-09\nSubject: physical books\n\nSusan,\n\nCan I please get a copy of the physical  Portfolio Request form from you so in the future we get these physical books set up correctly.\nCould you also tell me what needs to be done differently from all other books.  \n\nWe created our own Data Codes and sent them to global counterparties, is there anything else different?\n\nKK\n\nalso, can you tell me when the PERFORMANCE book will be ready.  Ed McMicheal needs to value those deals today.\n\n\nThanks",
+ "source": "corporate",
+ "private": [
+  "kam.keiser@enron.com",
+  "susan.trevino@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/sent_items/248.",
+  "message_id": "<25330010.1075840197095.JavaMail.evans@thyme>"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "doc_id": "4b79cbb1a31ef721",
+ "text": "From: syed@ruf.rice.edu\nTo: kamins@enron.com\nDate: 2001-05-30\nSubject: Rice Student - Summer Internship\n\nDear Mr. Kaminsky,\n\nAs a first year MBA student at Rice University I am searching for a summer\ninternship.  Peter Veruki informed me that you were impressed with the Rice\nALP students working at Enron and may have further opportunities available\nfor this summer.  Similar to the Enron ALP, I worked on an Action Learning\nProject with Phillips Petroleum which involved a pension fund analysis along\nwith recommendations delivered to senior management.\nPrior to beginning my studies at Rice,  I worked as a programmer with El\nPaso Energy, working on a proprietary energy trading system\nI would like to speak with you concerning opportunities at Enron for this\nsummer.  Please call me at your earliest convenience.  I can be reached at\nhome at (281) 480-4894.  I have attached my resume for your consideration.\n\nThank you,\nAijaz Syed\n\n - Aijaz Syed Resume.doc",
+ "source": "corporate",
+ "private": [
+  "syed@ruf.rice.edu",
+  "kamins@enron.com",
+  "Aijaz Syed",
+  "(281) 480-4894"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "kaminski-v/inbox/321.",
+  "message_id": "<7995728.1075858462539.JavaMail.evans@thyme>"
+ }
+}

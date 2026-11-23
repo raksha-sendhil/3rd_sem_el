@@ -1,0 +1,15 @@
+{
+ "doc_id": "c9c8747768909f6d",
+ "text": "From: ipayit@enron.com\nTo: .taylor@enron.com\nDate: 2001-09-24\nSubject: Action Requested: Invoice Requires Coding/Issue Resolution/Approval for User: MARK TAYLOR\n\nPlease do not reply to this e-mail.\n\nYou are receiving this message because an invoice(s) requiring coding, issue resolution, or approval has been submitted to your iPayit inbox.  This requires your action through iPayit.\n\nTo launch iPayit, click on the link below:\nhttp://iPayit.enron.com\n\nNote:  Log into iPayit using the same Employee PID (P-Number) and Password you use to enter the eHRonline system and/or SAP.\n\nFirst time iPayit user?  For training materials, click on the link below:\nhttp://sap.enron.com/sap_doclib/user/file_list.asp?cabinet_id=265\n\nNeed help?\nPlease contact the ISC Call Center at (713) 345-4727.\n\nIf you are in Europe, please contact European Accounts Payable at +44 20 7783 7520.",
+ "source": "corporate",
+ "private": [
+  "ipayit@enron.com",
+  ".taylor@enron.com",
+  "(713) 345-4727"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "taylor-m/inbox/61.",
+  "message_id": "<17114310.1075858612651.JavaMail.evans@thyme>"
+ }
+}

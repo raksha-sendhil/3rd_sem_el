@@ -1,0 +1,14 @@
+{
+ "doc_id": "b4f9a25297c45cd3",
+ "text": "From: clement@netactive.co.za\nTo: jeff.skilling@enron.com\nDate: 2000-11-28\nSubject: Airfreight\n\nDear Jeffrey\nAirfreight to Houston airport will cost R 2 744.00.  This cost is for the \nservice of delivery to the airport and excludes US customs  and duty. South \nAfrica is on the?US list of  developing countries and therefore you might pay \nlittle or no duty if you tell  US customs that the goods are from South \nAfrica?and that they are for  personal use. If you wish to pay by credit card\nwe will need the last 3 digits at the back of the  same credit card that you \nused to pay for your goods.\nRegards\nHilary",
+ "source": "corporate",
+ "private": [
+  "clement@netactive.co.za",
+  "jeff.skilling@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "skilling-j/discussion_threads/283.",
+  "message_id": "<30386533.1075840090226.JavaMail.evans@thyme>"
+ }
+}

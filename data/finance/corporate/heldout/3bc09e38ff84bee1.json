@@ -1,0 +1,14 @@
+{
+ "doc_id": "3bc09e38ff84bee1",
+ "text": "From: kam.keiser@enron.com\nTo: torrey.moorer@enron.com\nDate: 2002-01-14\nSubject: EOL id's\n\nTorrey,\n\nHere are the new mappings for the EOL products, except for the central desk.  Hunter is still working on his but I wanted to get you something.\n\nfor physical rest of month deals we attached the physical book id\nfor prompt month physical deals we attached the TAGG book id\n\nis that correct?\n\n\nI will send the finished product when Hunter is done.  Keep in mind it will probably change again.\nKam",
+ "source": "corporate",
+ "private": [
+  "kam.keiser@enron.com",
+  "torrey.moorer@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "keiser-k/sent_items/200.",
+  "message_id": "<4684622.1075840196001.JavaMail.evans@thyme>"
+ }
+}

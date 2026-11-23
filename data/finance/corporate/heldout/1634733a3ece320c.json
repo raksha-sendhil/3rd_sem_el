@@ -1,0 +1,17 @@
+{
+ "doc_id": "1634733a3ece320c",
+ "text": "From: karen.buckley@enron.com\nTo: k..allen@enron.com, john.arnold@enron.com, harry.arora@enron.com\nDate: 2001-10-26\nSubject: Reminder:Interivews Thursday Trading Track\n\nAll\n\nA reminder that you are scheduled to interview for the Trading Track Thursday,  November 1st, from 2.00 pm onwards.   Resumes and schedules will be forwarded to you shortly.\n\nRegards,\n\nKaren Buckley",
+ "source": "corporate",
+ "private": [
+  "karen.buckley@enron.com",
+  "k..allen@enron.com",
+  "john.arnold@enron.com",
+  "harry.arora@enron.com",
+  "Karen Buckley"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "arnold-j/inbox/47.",
+  "message_id": "<15585631.1075852729164.JavaMail.evans@thyme>"
+ }
+}

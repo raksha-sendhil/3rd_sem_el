@@ -1,0 +1,16 @@
+{
+ "doc_id": "30ed334ba28c0cf9",
+ "text": "From: travis.winfrey@enron.com\nTo: adamk@ml.com\nDate: 2001-10-16\nSubject: Yen CLN follow-up\n\nAdam,\n\nTo follow-up on our discussion from last week:\n\nWith regards to the need for equity/certificates at the Trust level, this is really a function of the requirements posed by the investors.  Our tax group would defer to the underwriters. If the note investors can tolerate equity treatment (for tax purposes), then there should be no need for certificates in the structure.  In previous transactions, the presence of certificates has allowed the notes to be treated as debt for tax purposes and therefore the payments treated as interest income.\n\nWith regards to cross-default, a default in the Enron note does not result in a default of the swap between Enron and the third party entity or a default of the swap between Enron and the financial institution.\n\n\nAttached is a diagram of the prepay structure, as discussed last week.\n\n \n\n\nFeel free to call with any questions.\n\nRegards,\nTravis Winfrey\nEnron Global Finance\n713-345-8404\nTravis.Winfrey@enron.com",
+ "source": "corporate",
+ "private": [
+  "travis.winfrey@enron.com",
+  "adamk@ml.com",
+  "Travis Winfrey",
+  "713-345-8404"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "shackleton-s/inbox/415.",
+  "message_id": "<6097861.1075858817810.JavaMail.evans@thyme>"
+ }
+}

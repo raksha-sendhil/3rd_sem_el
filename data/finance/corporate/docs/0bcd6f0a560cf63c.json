@@ -1,0 +1,14 @@
+{
+ "doc_id": "0bcd6f0a560cf63c",
+ "text": "From: ruth.concannon@enron.com\nTo: dan.hyvl@enron.com\nDate: 2000-10-31\nSubject: Sithe MW Turndown --- End of Quarter True-Up Calculation\n\nDan,\n\nWould you please review a draft side letter that would cover the end of \nquarter\ntrue-up calculation?  With the uncertainty of the prices in the power market, \nwe would\nlike to just have a side letter to address the end of quarter true-up \npayment.  It also\nis possible that we may want to have multilple on-peak  or off-peak agreements\nthat will be executed.\n\nFeel free to change as needed.\n\nRuth",
+ "source": "corporate",
+ "private": [
+  "ruth.concannon@enron.com",
+  "dan.hyvl@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/sithe/12.",
+  "message_id": "<8868543.1075842262178.JavaMail.evans@thyme>"
+ }
+}

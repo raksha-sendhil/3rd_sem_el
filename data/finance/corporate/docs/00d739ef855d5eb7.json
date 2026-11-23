@@ -1,0 +1,15 @@
+{
+ "doc_id": "00d739ef855d5eb7",
+ "text": "From: mcesario@ormet.com\nTo: dan.j.hyvl@enron.com, ina.rangel@enron.com\nDate: 2000-12-20\nSubject: Ormet Agreement\n\nAt Craig's request, I am forwarding the final revsion to the Ormet Firm \nPurchase/Sale agreement.  The last change is additional language in Section \n4.3 and is the result of discussions between Enron and Ormet credit.  The new \nlanguage is in blue.\n\nPlease get back to me with any comments as quickly as possible so that Enron \ncan move forward with Koch Gateway.\n\nIna, Craig asked that you forward a copy to Jay in credit so that he can \nreview the new language as well.\n\nThanks to you both,\nMike\n\n - Enron_Agreement.doc",
+ "source": "corporate",
+ "private": [
+  "mcesario@ormet.com",
+  "dan.j.hyvl@enron.com",
+  "ina.rangel@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/ormet/21.",
+  "message_id": "<31597448.1075842261086.JavaMail.evans@thyme>"
+ }
+}

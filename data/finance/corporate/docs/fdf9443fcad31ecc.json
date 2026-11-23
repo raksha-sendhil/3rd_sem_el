@@ -1,0 +1,14 @@
+{
+ "doc_id": "fdf9443fcad31ecc",
+ "text": "From: enron_update@concureworkplace.com\nTo: larry.campbell@enron.com\nDate: 2001-11-21\nSubject: <<Concur Expense Document>> - lc110101\n\nThe Approval status has changed on the following report:\n\nStatus last changed by:  Automated Administrator\nExpense Report Name: lc110101\nReport Total: $3,411.65\nAmount Due Employee: $3,411.65\nAmount Approved: $3,411.65\nAmount Paid: $0.00\nApproval Status: Pending\nPayment Status: Pending\n\n\nTo review this expense report, click on the following link for Concur Expense.\nhttp://expensexms.enron.com",
+ "source": "corporate",
+ "private": [
+  "enron_update@concureworkplace.com",
+  "larry.campbell@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "campbell-l/notes_inbox/17.",
+  "message_id": "<8784967.1075851911301.JavaMail.evans@thyme>"
+ }
+}

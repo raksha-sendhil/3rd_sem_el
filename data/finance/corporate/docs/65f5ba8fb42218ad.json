@@ -1,0 +1,17 @@
+{
+ "doc_id": "65f5ba8fb42218ad",
+ "text": "From: michael.garberding@enron.com\nTo: timothy.swanson@ssmb.com, wagman@enron.com, steve.wagman@ssmb.com\nDate: 2001-06-27\nSubject: Prepay Diagram\n\nIncluded is a schematic that details the structure of the prepay.  The amounts including in the structure include the following items:\n\nThe Nymex Mid for Jan. '02 contract was priced as of close today (6/27/01)\nThe assumption that the deal began on 6/28/01 and settled on 12/27/01\nThe assumption that six-month libor rate plus spread would be used for the interest component\n\nPlease let me know if you have any questions or other comments.  Thanks again for your help.\n\nMichael\n713-853-1864",
+ "source": "corporate",
+ "private": [
+  "michael.garberding@enron.com",
+  "timothy.swanson@ssmb.com",
+  "wagman@enron.com",
+  "steve.wagman@ssmb.com",
+  "713-853-1864"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "weldon-c/citibank/6.",
+  "message_id": "<25928271.1075841976044.JavaMail.evans@thyme>"
+ }
+}

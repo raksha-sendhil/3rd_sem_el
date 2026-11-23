@@ -1,0 +1,16 @@
+{
+ "doc_id": "228936b00f9066a7",
+ "text": "From: w..cantrell@enron.com\nTo: p..south@enron.com, k..allen@enron.com, don.black@enron.com\nDate: 2001-09-26\nSubject: NGI Article: Kern River Shippers to See Rate Decrease Oct. 1, More in 2002\n\nNGI's Daily Gas Price Index \npublished : September 26, 2001\nKern River Shippers to See Rate Decrease Oct. 1, More in 2002 \nFinally, some good news: a unit of Williams said Tuesday that firm transportation rates will drop by as much as 36.5% for all original shippers on its Kern River natural gas transmission system beginning Monday (Oct. 1). The lower rates will be implemented under Kern River's previously approved extended-term rate program. Williams, which developed a strategy to lower rates in response to customer requests as part of its rate-reduction settlement in 1999, projects more rate reductions next May, when the costs and revenues of the 2002 expansion are reflected in rates. \n\"The extended-term rate program was designed to provide long-term, firm shippers with an option to pay lower, more market-responsive rates today in return for extending their contract terms,\" said Kirk Morgan, director of business development. \nBruce Warner, manager of rates and planning for Tulsa-based Williams, said the company had looked at its \"financial situation and found that if customers could live with longer contracts, we could live with lower rates. The lower rates will be offset by lower depreciation expenses and will not negatively impact Kern River's financial performance.\" \nWilliams' gas pipeline unit is one of the largest-volume transporters of natural gas in the United States. Its gas pipeline unit's Kern River Gas Transmission, based in Salt Lake City, operates a 922-mile system delivering Rocky Mountain and Canadian natural gas to markets in California, Nevada and Utah.",
+ "source": "corporate",
+ "private": [
+  "w..cantrell@enron.com",
+  "p..south@enron.com",
+  "k..allen@enron.com",
+  "don.black@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "dasovich-j/deleted_items/1609.",
+  "message_id": "<6149984.1075861468936.JavaMail.evans@thyme>"
+ }
+}

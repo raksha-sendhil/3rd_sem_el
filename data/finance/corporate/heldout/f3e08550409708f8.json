@@ -1,0 +1,15 @@
+{
+ "doc_id": "f3e08550409708f8",
+ "text": "From: drew.fossum@enron.com\nTo: lee.huber@enron.com\nDate: 2001-01-31\nSubject: Capillo Peak Radio Tower\n\nThanks Lee.  df\n\n\n\n\nLee Huber\n01/31/2001 02:35 PM\nTo: Keith Petersen/ET&S/Enron@ENRON, James Centilli/ET&S/Enron@ENRON, Bob \nChandler/ET&S/Enron@ENRON\ncc:  (bcc: Drew Fossum/ET&S/Enron)\n\nSubject: Capillo Peak Radio Tower\n\nWe are finalizing a purchase and sale agreement to sell TW's radio tower in \nTorrance County, New Mexico, to an individual for the grand sum of $15,000.  \nI assume that there are no regulatory implications? Also when the deal \ncloses, I will notify you.  Can you think of anyone else I need to notify?",
+ "source": "corporate",
+ "private": [
+  "drew.fossum@enron.com",
+  "lee.huber@enron.com",
+  "Drew Fossum"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "fossum-d/_sent_mail/854.",
+  "message_id": "<6665877.1075842567365.JavaMail.evans@thyme>"
+ }
+}

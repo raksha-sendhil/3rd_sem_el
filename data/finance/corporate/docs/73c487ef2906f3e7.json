@@ -1,0 +1,14 @@
+{
+ "doc_id": "73c487ef2906f3e7",
+ "text": "From: drew.fossum@enron.com\nTo: et&s.office@enron.com\nDate: 2000-03-16\nSubject: Confidentiality Regarding Acquisitions\n\nI'm sure that many of you are aware that there has been a great deal of \nactivity lately related to Enron's evaluation of possible acquisitions.  John \nGoodpasture's group has kept a large number of ET&S people engaged in looking \nat a number of potential deals.  While these deal evaluation projects have \nbecome routine around here, we all must remember that these projects are \nextremely confidential.  Even after a potential seller has announced that it \nis up for sale, the fact that Enron is looking at a potential deal, as well \nas any of our internal analysis of the deal, remains strictly confidential.  \n\nI realize that many of you have ongoing business relationships with employees \nof some of the companies that we have evaluated or may evaluate in the \nfuture.  If you find yourself in such a situation, and a business contact at \nthe target company asks whether Enron is evaluating the contact's company or \nassets, the only appropriate response is that Enron personnel are not \npermitted to discuss potential acquisitions.  Please be aware that the \nconfidentiality agreements that we typically sign as part of the acquisition \nevaluation process preclude any communication by Enron people with employees \nof the target company.  \n\nIf you have any questions or concerns regarding this requirement, please do \nnot hesitate to give me a call.  Thank you for your assistance.  \nDF",
+ "source": "corporate",
+ "private": [
+  "drew.fossum@enron.com",
+  "et&s.office@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "fossum-d/discussion_threads/113.",
+  "message_id": "<22963971.1075842456457.JavaMail.evans@thyme>"
+ }
+}

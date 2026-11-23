@@ -1,0 +1,12 @@
+{
+ "doc_id": "3e86a50539de2431",
+ "text": "Table of Contents\n2019 2018\nEmployee\nGrants\nEmployee\nGrants\nWeighted-average Black-Scholes option pricing model assumptions:\nVolatility 73.01 % 82.00 %\nExpected term (in years) 6 6\nRisk-free rate 2.22 % 2.24 %\nExpected dividend yield 0.0 % 0.0 %\nWeighted average grant date fair value per share $ 2.10 $ 2.22\nThe risk-free interest rate is the United States Treasury rate for the day of the grant having a term equal to the life of the equity instrument. The volatility is a measure of the amount by which the Company’s share price has fluctuated or is expected to fluctuate; the Company used its common stock volatility along with the average of historic volatilities of comparative companies. The dividend yield is zero as the Company has not made any dividend payment and has no plans to pay dividends in the foreseeable future. The Company determines the expected term of its stock option awards by using the simplified method, which assumes each vesting tranche of the award has a term equal to average of the contractual term and the vesting period.\nAs of December 31, 2019, total compensation cost not yet recognized related to unvested stock options was approximately $0.8 million, which is expected to be recognized over a weighted-average period of 2.3 years.\nRESTRICTED STOCK UNITS\nThe following is a summary of RSUs award activity for the years ended December 31, 2019 and 2018:\n2019 2018\nNumber of\nShares\nWeighted Average\nGrant Date Fair Value\nNumber of\nShares\nWeighted Average\nGrant Date Fair Value\nNon-vested at beginning of year 315,292 $ 2.26 438,712 $ 2.28\nShares granted 253,113 2.17 200,000 3.16\nShares vested 82,270 2.28 323,420 2.84\nNon-vested at end of year 486,135 $ 2.53 315,292 $ 2.26",
+ "source": "corporate",
+ "private": [],
+ "meta": {
+  "dataset": "next-tat/TAT-DQA",
+  "uid": "2f953cd75c08f708a2e239ce7a81bdd7",
+  "page": 1,
+  "report": "finjan-holding-inc_2019.pdf"
+ }
+}

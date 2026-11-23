@@ -1,0 +1,14 @@
+{
+ "doc_id": "496a923559910f15",
+ "text": "From: gracie.presas@enron.com\nTo: michelle.cash@enron.com\nDate: 2000-11-21\nSubject: Patterson Agreement Updates\n\nMichelle,\n\nTim want the following added to this agreement.  \n\n Payment to Consultant.\nWellhead to BurnerTip & Basics of Risk Management total: $35,000\n25% - $8,750  At time of signing  contract\n25% - $8,750  Year 1 (Nov, 2001)\n25% - $8,750  Year 2 (Nov. 2002)\n25% - $8,750  Year 3 (Nov. 2003)\n\nWellhead to BurnerTip Modules\n$4,500 paid at 1st delivery of modules\n\nGracie",
+ "source": "corporate",
+ "private": [
+  "gracie.presas@enron.com",
+  "michelle.cash@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "cash-m/all_documents/554.",
+  "message_id": "<20035487.1075860489783.JavaMail.evans@thyme>"
+ }
+}

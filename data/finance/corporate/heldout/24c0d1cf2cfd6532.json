@@ -1,0 +1,14 @@
+{
+ "doc_id": "24c0d1cf2cfd6532",
+ "text": "From: andrea.ring@enron.com\nTo: michael.mousteiko@enron.com\nDate: 2001-02-01\nSubject: 12/00 Purchase from Louis Dreyfus (Sitara Deal #453380 & 454386)\n\nThe deals should have been corrected in Sitara by now - if not please check \nwith Beverly.\n\n                                                                     Thank \nYou!",
+ "source": "corporate",
+ "private": [
+  "andrea.ring@enron.com",
+  "michael.mousteiko@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ring-a/all_documents/65.",
+  "message_id": "<28370286.1075857082136.JavaMail.evans@thyme>"
+ }
+}

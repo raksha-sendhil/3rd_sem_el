@@ -1,0 +1,15 @@
+{
+ "doc_id": "ad78f1cc8d714f04",
+ "text": "From: ruth.concannon@enron.com\nTo: mrosenberg@sithe.com, joliver@sithe.com\nDate: 2000-10-06\nSubject: Sithe / Independence MW Turndown for Off-Peak & On-Peak Periods\n\nAttached are draft documents that address entering into separate transactions \nfor\nthe off-peak and on-peak periods.  As you can see, these documents are \nsimilar to\nthe draft round-the-clock MW Turndown transactions that we have been \ndiscussing.\nWe are proposing to paper these transactions as if the off-peak each month is \nexecuted\nfirst and then at a later date the on-peak transactions are executed when the \ngas and \npower prices allow us both to make money.  We have also included language in \nthe\ntransaction agreements to allow negative values in the keep whole and revenue \nsharing\nformulas to be carried forward to the end of each quarter and included as a \ntrue-up in\nthe last payment of each quarter.  Below is a brief description of the other \nchanges:\n\nOff-Peak Transaction:\n\nDifferent physical plant burns for weekdays or weekends & holidays\nBaseload resale of gas back to ENA\nENA's balancing capabilities in Canada will level out varying plant burns\nENA's balancing charges, if any, are included in the keep whole formula\nNo obligation to sell incremental gas supply into Empire ( i.e. No Part II )\nHourly average of the off-peak LBMP's is used in pricing formula\n\nOn-Peak Transaction:\n\nOn-peak LBMP's is used in pricing formulas\nENA obligation to sell incremental gas supply into Empire under Part II\n\n\nPlase call me with your comments,\n\nRuth",
+ "source": "corporate",
+ "private": [
+  "ruth.concannon@enron.com",
+  "mrosenberg@sithe.com",
+  "joliver@sithe.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "hyvl-d/gas/sithe/8.",
+  "message_id": "<27874913.1075842262087.JavaMail.evans@thyme>"
+ }
+}

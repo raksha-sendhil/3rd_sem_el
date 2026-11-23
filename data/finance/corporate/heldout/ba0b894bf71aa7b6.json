@@ -1,0 +1,14 @@
+{
+ "doc_id": "ba0b894bf71aa7b6",
+ "text": "From: andrea.ring@enron.com\nTo: barbara.keen@enron.com\nDate: 2001-01-08\nSubject: deal #550927 with Altrade\n\nSorry,\n    \n\n                    I changed the deal ticket to $10.50.\n\n\n                                                                              \n      Thank You!",
+ "source": "corporate",
+ "private": [
+  "andrea.ring@enron.com",
+  "barbara.keen@enron.com"
+ ],
+ "meta": {
+  "dataset": "corbt/enron-emails",
+  "file_name": "ring-a/all_documents/69.",
+  "message_id": "<5844775.1075857082226.JavaMail.evans@thyme>"
+ }
+}
