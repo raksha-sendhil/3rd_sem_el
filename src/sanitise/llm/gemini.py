@@ -45,6 +45,7 @@ from sanitise.errors import LLMTimeout, LLMUnreachable
 from sanitise.llm.base import BaseJSONClient, Message
 
 log = logging.getLogger(__name__)
+MAX_BUSY_WAIT_S = 600.0  # longest one call waits out busy replies (503) before failing
 
 BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 
@@ -170,6 +171,7 @@ class GeminiClient(BaseJSONClient):
         max_tokens: int | None = None,
     ) -> str:
         waits = server_errors = in_a_row = 0
+        busy_waited = 0.0
         while True:
             body = self._body(messages, json_schema, temperature, top_p, max_tokens)
             response = await self._post(body)
@@ -204,6 +206,11 @@ class GeminiClient(BaseJSONClient):
                 # grows with every busy reply of this call, across model switches: a busy spell at
                 # peak hours lasts minutes, and ten-second retries used up all tries within two
                 delay = min(300.0, 10.0 * 2 ** (server_errors - 1))
+                if busy_waited + delay > MAX_BUSY_WAIT_S:  # give this call up: the document fails
+                    raise LLMUnreachable(
+                        f"Gemini stayed busy for {busy_waited / 60:.0f} min ({self.model}): {detail}"
+                    )
+                busy_waited += delay
                 log.warning(
                     "Gemini %s returned %d (busy); retrying in %.0f s",
                     self.model,
