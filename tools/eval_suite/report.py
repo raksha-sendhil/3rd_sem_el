@@ -767,6 +767,18 @@ def export_rewrites(d, work: Path, out: Path) -> None:
             store.close()
 
 
+def build_note(res: dict) -> list[str]:
+    """How many documents each store holds, loudly when one is short (Gemini busy)."""
+    b = res.get("build") or {}
+    if not b:
+        return []
+    parts = [f"{k} {c['built']} of {c['documents']}" for k, c in b.items()]
+    short = any(c["built"] < c["documents"] for c in b.values())
+    lead = ("**Not every document was built** (Gemini busy); the missing ones are absent for "
+            "both pipelines alike, so each metric has fewer items. " if short else "")
+    return ["", f"{lead}Documents built per store: {', '.join(parts)}."]
+
+
 def data_note(res: dict) -> list[str]:
     p = res.get("data") or {}
     if res["domain"] == "finance":
@@ -827,6 +839,8 @@ def write(d, work: Path, scale: str) -> None:
     if (work / "data" / "provenance.json").exists():
         res["data"] = json.loads((work / "data" / "provenance.json").read_text(encoding="utf-8"))
     res["sanity"] = sanity(d, work, res)
+    if (work / "stores" / "build.json").exists():
+        res["build"] = json.loads((work / "stores" / "build.json").read_text(encoding="utf-8"))
     from eval_suite import residual
 
     res["residual"] = residual.compute(d, work)
@@ -855,7 +869,7 @@ def markdown(res: dict, figures_made: list[str]) -> str:
          "with the session monitor. Brackets are 95% bootstrap intervals; p-values are McNemar "
          "(yes/no per question or session) or Wilcoxon (paired scores). Definitions: "
          "docs/evaluation_metrics.md.", "",
-         *data_note(res), "",
+         *data_note(res), *build_note(res), "",
          "## Single-question attacks", "",
          "| # | Metric | No privacy | Ours | p |", "|---|---|---:|---:|---:|"]  # fmt: skip
     if tv := s.get("target_info_values"):

@@ -313,7 +313,7 @@ Every scale but `quick` is the clean test: evaluate once, on data development ne
   `python tools/eval_suite/population.py data/eval_clean/clean_people.json`. Anyone in a table,
   a development corpus or the code is dropped; the records come from new templates. Legal uses
   the same people with matters outside its vocabulary.
-* **Frozen code**: the notebooks clone the tag `eval-freeze-11`. Only data (the people, finance's
+* **Frozen code**: the notebooks clone the tag `eval-freeze-12`. Only data (the people, finance's
   source folders) is taken from main afterwards. A change to the pipeline after seeing a result
   needs a new tag and new people.
 * **Always refuse**: the report sets every leak score beside a system that answers "The records

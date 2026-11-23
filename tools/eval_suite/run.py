@@ -246,17 +246,21 @@ def step_build() -> None:
             D.build(data_dir, store)
             minutes = (time.perf_counter() - t) / 60
             print(f"{name}: {_built(store)} of {n} built, done in {minutes:.0f} min", flush=True)
-    short = [f"{k} {_built(v[1])}/{v[2]}" for k, v in todo.items()
-             if v[2] - _built(v[1]) > max(1, MAX_UNBUILT * v[2])]  # fmt: skip
-    if short:  # answers over a partly built store would be reported as the pipeline's
-        raise SystemExit(
-            f"BUILD INCOMPLETE ({', '.join(short)}): under 95% built. Usually the Gemini quota: add "
-            "keys from other projects or wait for the reset, then run this step again (it resumes)."
-        )
+    # the run goes on with what was built: a document missing from a store is missing for both
+    # pipelines alike (they read the same store), so the comparison stays fair with fewer items;
+    # the counts go to the report so a short store is never mistaken for a full one
+    counts = {k: {"built": _built(v[1]), "documents": v[2]} for k, v in todo.items()}
+    path = WORK / "stores" / "build.json"
+    old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    _dump(path, {**old, **counts})
+    short = [f"{k} {c['built']}/{c['documents']}" for k, c in counts.items()
+             if c["built"] < c["documents"]]  # fmt: skip
+    if short:
+        print(f"NOT EVERY DOCUMENT BUILT ({', '.join(short)}): the run goes on without them; the "
+              "report says so. Run this step again later to add them (it resumes).", flush=True)
 
 
-MAX_UNBUILT = 0.05
-BUILD_RETRY_PAUSES_S = [120, 300, 600, 900]  # between passes over the documents that failed
+BUILD_RETRY_PAUSES_S = [120]  # one more pass over the documents that failed, after a pause
 MAX_FAILED = 0.05  # questions a step may fail before it stops the notebook
 
 
