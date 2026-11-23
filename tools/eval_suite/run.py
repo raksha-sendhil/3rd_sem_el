@@ -244,6 +244,7 @@ def step_build() -> None:
 
 
 MAX_UNBUILT = 0.05
+MAX_FAILED = 0.05  # questions a step may fail before it stops the notebook
 
 
 def _built(store: Path) -> int:
@@ -327,6 +328,12 @@ async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
                 print(f"  {label}: {finished}/{len(todo)}", flush=True)
 
         await asyncio.gather(*(one(it) for it in todo))
+    failed = len(todo) - finished
+    if failed:
+        print(f"  {label}: {failed} of {len(todo)} failed (see the lines above); run this step "
+              "again, it asks only those", flush=True)
+        if failed > MAX_FAILED * len(todo):  # stop the notebook: the numbers would be missing
+            raise SystemExit(f"{label}: {failed} of {len(todo)} questions failed")
 
 
 async def _ask(ctx, llm, items: list[dict], path: Path) -> None:
@@ -445,6 +452,25 @@ def step_e2e() -> None:
     asyncio.run(_with_llm(work))
 
 
+def _unload_vision() -> None:
+    """Free the GPU once the scans are read: the vision model otherwise stays loaded for an
+    hour beside the answer model."""
+    import urllib.request
+
+    model = os.environ.get("SANITISE_OCR_MODEL")
+    url = os.environ.get("SANITISE_OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
+    if not model or os.environ.get("EVAL_MOCK"):
+        return
+    body = json.dumps({"model": model, "keep_alive": 0}).encode()
+    try:
+        req = urllib.request.Request(f"{url}/api/generate", data=body,
+                                     headers={"Content-Type": "application/json"})  # fmt: skip
+        urllib.request.urlopen(req, timeout=60).read()
+        print(f"{model} unloaded", flush=True)
+    except Exception as exc:  # Ollama not running here: nothing to free
+        print(f"could not unload {model}: {exc}", flush=True)
+
+
 def main() -> None:
     step = ARGS.step
     if step == "data" and D.name == "finance":
@@ -468,6 +494,7 @@ def main() -> None:
             finance.prepare_e2e(D, ARGS.repo, WORK, SCALE["e2e"], SCALE["e2e_parts"])
         else:
             e2e.prepare(D.name, ARGS.main_repo, WORK, SCALE["e2e"], SCALE["e2e_parts"], CLEAN)
+        _unload_vision()
     elif step == "e2e-label":
         from eval_suite import e2e
 

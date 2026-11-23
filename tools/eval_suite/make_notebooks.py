@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-FREEZE = "eval-freeze-6"  # the clean test's code: change nothing after it has been run
+FREEZE = "eval-freeze-7"  # the clean test's code: change nothing after it has been run
 REPO_URL = "https://github.com/raksha-sendhil/3rd_sem_el.git"
 
 
@@ -44,7 +44,7 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 * **Session options**: Accelerator **GPU T4 x2**, Internet **On**.
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
 
-**This is the clean test.** The code is frozen at the tag `eval-freeze-6`, the real data is
+**This is the clean test.** The code is frozen at the tag `eval-freeze-7`, the real data is
 unseen and the people are new (`data/eval_clean/clean_people.json` on main). Run it once and
 report what comes out.
 
@@ -78,7 +78,7 @@ SCALE = "high"   # "high" (~8 h) | "5h" | "2h" | "quick" (set-up check on seen d
 MODEL = "llama3:8b"                       # answers, both pipelines (as the dashboard)
 GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-3.1-flash-lite"   # Agents 1-3 (fallback order)
 OCR_MODEL = "qwen3-vl:8b-instruct"        # reads the scans (end-to-end check)
-FREEZE = "eval-freeze-6"   # the frozen code: do not change it for the clean test
+FREEZE = "eval-freeze-7"   # the frozen code: do not change it for the clean test
 
 import os, subprocess, sys
 from pathlib import Path
@@ -134,8 +134,9 @@ def run(step, extra=""):
     cmd = RUN.format(step=step) + " " + extra
     print("$", cmd, flush=True)
     code = subprocess.run(cmd, shell=True, check=False).returncode
-    if code and step in ("data", "build"):  # stop here: later numbers would be wrong
-        raise RuntimeError(f"{step} failed: read the last lines above")
+    if code and step != "report":  # stop here: later numbers would be wrong or missing
+        raise RuntimeError(f"{step} failed: read the last lines above, then run this cell again "
+                           "(every step resumes where it stopped)")
 print(f"ready: answers {MODEL} | Agents 1-3 {GEMINI_MODEL} ({len(key.split(','))} key(s)) | "
       f"OCR {OCR_MODEL} | results in {WORK}")
 """

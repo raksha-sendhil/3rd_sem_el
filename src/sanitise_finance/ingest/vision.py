@@ -23,7 +23,7 @@ PROMPT = """Transcribe all the text in this document image exactly as it is writ
 
 Rules:
 - Copy every word, name, number, date, code, dose and abbreviation exactly as written. Do not correct spelling, expand abbreviations, translate, summarise or add anything.
-- Put each "Label: value" pair on its own line, for example "Name: ..." or "Date: ...".
+- For a form, write each field on its own line as its printed name, a colon and what is filled in, for example "Name: Asha Rao" or "Date of birth: 12/03/1980". Always copy the filled-in value, typed or handwritten; leave it empty only when the field is blank.
 - Write tables as Markdown tables, one table row per line, keeping every cell.
 - Transcribe handwritten text too. If a word cannot be read, write [illegible] instead of guessing.
 - For a signature write [signature]. For a stamp or seal write [stamp: its readable text]. Skip logos, photos and barcodes.
@@ -88,6 +88,13 @@ class VisionReader:
         }
         if self.seed is not None:
             options["seed"] = self.seed
+        text = await self._ask(image, prompt, options)
+        if not text:  # an empty reply happens now and then: once more, sampled differently
+            text = await self._ask(image, prompt, {**options, "temperature": 0.3, "seed": None})
+        return text
+
+    async def _ask(self, image: bytes, prompt: str, options: dict[str, Any]) -> str:
+        options = {k: v for k, v in options.items() if v is not None}
         payload = {
             "model": self.model,
             "messages": [
