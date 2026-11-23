@@ -47,6 +47,10 @@ from sanitise.llm.base import BaseJSONClient, Message
 log = logging.getLogger(__name__)
 
 KEY_NAMES = ("GEMINI_API_KEY", *(f"GEMINI_API_KEY_{i}" for i in range(2, 10)))
+_BAD_KEY = re.compile(
+    r"API.?key not valid|API_KEY_INVALID|UNAUTHENTICATED|ACCESS_TOKEN_TYPE_UNSUPPORTED"
+    r"|API_KEY_SERVICE_BLOCKED"
+)
 _RATE_LIMITED = re.compile(r"\b429\b|RESOURCE_EXHAUSTED|rate.?limit|quota", re.IGNORECASE)
 _DAILY = re.compile(r"per.?day|PerDay|daily", re.IGNORECASE)
 _OVERLOADED = re.compile(
@@ -166,6 +170,13 @@ class KeyPool:
             f"all {len(self._keys)} Gemini keys are rate-limited or over their daily budget"
             + (f"; the first is free again in {soonest:.0f} s" if soonest > 0 else "")
         )
+
+    def drop(self, entry: _Key) -> None:
+        """A key Google refuses (mistyped, revoked, not an API key): left out from now on."""
+        if entry in self._keys:
+            self._keys.remove(entry)
+            self._next = self._next % len(self._keys) if self._keys else 0
+            log.warning("Gemini refused key %s; %d key(s) left", entry.id, len(self._keys))
 
     def wake(self) -> None:
         """Limits are per model: every key may be tried again on another model."""
@@ -344,6 +355,9 @@ class GeminiClient(BaseJSONClient):
                     f"{self.model} did not answer within {self.timeout_s:.0f}s"
                 ) from None
             except Exception as exc:  # the SDK raises its own error types
+                if _BAD_KEY.search(str(exc)) and len(self.pool) > 1:
+                    self.pool.drop(entry)
+                    continue  # the next key
                 if _RATE_LIMITED.search(str(exc)):
                     self.pool.rest(entry, str(exc))
                     rate_limited += 1
