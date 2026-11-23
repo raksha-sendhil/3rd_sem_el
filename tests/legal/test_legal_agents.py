@@ -402,7 +402,7 @@ def test_api_switches_domain_per_request(monkeypatch) -> None:
         medical = {a["kind"] for a in client.get("/v1/attacks?domain=medical").json()}
         header = client.get("/v1/attacks", headers={"X-Sanitise-Domain": "legal"}).json()
         bad = client.get("/v1/attacks?domain=astrology")
-    assert legal == {"direct", "linkage", "stepwise"}
+    assert legal == {"context_dump", "direct", "interception", "linkage", "stepwise"}
     assert medical == {"context_dump", "stepwise", "interception"}
     assert {a["kind"] for a in header} == legal
     assert bad.status_code == 400 and bad.json()["error"]["code"] == "UNKNOWN_DOMAIN"
@@ -440,4 +440,4 @@ def test_api_lists_the_legal_attacks_in_legal_mock_mode(monkeypatch) -> None:
     get_settings.cache_clear()
     with TestClient(create_app()) as client:
         kinds = {a["kind"] for a in client.get("/v1/attacks").json()}
-    assert kinds == {"direct", "linkage", "stepwise"}
+    assert kinds == {"context_dump", "direct", "interception", "linkage", "stepwise"}

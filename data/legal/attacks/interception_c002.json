@@ -1,0 +1,11 @@
+{
+  "attack_id": "interception_c002",
+  "kind": "interception",
+  "name": "Payload interception",
+  "target_person_id": "c002",
+  "queries": [
+    "Can a landlord evict a tenant for subletting part of the house without permission?",
+    "What notice is needed before filing a tenancy eviction case in Karnataka?",
+    "Which papers help a teacher prove the tenant sublet the premises?"
+  ]
+}

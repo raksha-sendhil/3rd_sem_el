@@ -283,6 +283,9 @@ class RagAnswer(BaseModel):
     payload: str  # the literal text sent to the model (payload inspector)
     monitor: MonitorVerdict = Field(default_factory=MonitorVerdict)
     latency_ms: int
+    # the protected answer before the monitor changed it (never sent: the attack runner scores
+    # it as "rewriting alone", the dashboard's third line)
+    draft_answer: str | None = Field(default=None, exclude=True)
 
 
 class CompareResponse(BaseModel):
@@ -305,6 +308,7 @@ class AttackRound(BaseModel):
     protected: RagAnswer
     baseline_leakage: RoundLeakage | None = None  # None outside an attack (plain /v1/compare)
     protected_leakage: RoundLeakage | None = None
+    unmonitored_leakage: RoundLeakage | None = None  # rewriting alone, without the monitor
 
 
 class AttackDefinition(BaseModel):
@@ -323,6 +327,7 @@ class AttackRun(BaseModel):
     rounds: list[AttackRound]
     baseline_identified_at: int | None = None  # first round the target was identified
     protected_identified_at: int | None = None
+    unmonitored_identified_at: int | None = None
 
 
 class SessionTrace(BaseModel):
