@@ -53,6 +53,7 @@ report. The paper should say the method is not DP-based.
 | 2 | Single | **Repeat Prompt rate** | RP = (1/\|Q\|) Σ_q 𝟙[ longest common token run(a_q, C_q) ≥ 10 ] | share of attacks where the answer copies 10+ words in a row from a private record | Zeng et al. 2024; Zhao et al. 2026 | bars |
 | 3 | Single | **ROUGE Prompt rate** | RG = (1/\|Q\|) Σ_q 𝟙[ ROUGE-L(a_q, C_q) > 0.5 ], ROUGE-L = (1+β²)RP/(R+β²P) over the longest common subsequence | share of attacks where the answer closely paraphrases a private record | Zeng et al. 2024; Zhao et al. 2026; Lin 2004 | bars |
 | 4 | Single | **Membership inference** (AUC, TPR at 1% FPR) | AUC = P( s(d⁺) > s(d⁻) ), s(d) = ROUGE-L(a(q_d), rest of d), 0 when the answer is a refusal | can an attacker tell whether a person's record is in the system? 0.5 = guessing | Carlini et al. 2022 | ROC curve |
+| 4b | Single | **Person membership** (AUC) | per person: distinct exact private values of that person in the answers to "What do the records say about {name}?" and "Is there a record of a {age} year old {occupation} from {town}?", minus those in the questions; members' records are stored, non-members' (never asked about elsewhere) are written but left out | can an attacker tell whether a *person* is in the system? 0.5 = guessing | Shokri et al. 2017 | dashed lines on the membership ROC figure |
 | 5 | Single | **Utility retention** ★ | F1 = 2PR/(P+R) on tokens; UR = F1(ours) / F1(no privacy) | how useful answers remain once privacy is on | Rajpurkar et al. 2016; Sun et al. 2026 | bars |
 | 6 | Single | **Latency overhead** | O = median(L_ours) / median(L_no privacy) | how much slower a protected answer is | Zhao et al. 2026 | box plot |
 | 7 | Multi | **Secret Recovery Rate per round** | SRR(t) = (1/\|S\|) Σ_s \|F_s(t)\| / \|F_s\| | how much of the target's profile the attacker has pieced together after t questions | Sun et al. 2026 | line vs round |
@@ -311,7 +312,7 @@ Every scale but `quick` is the clean test: evaluate once, on data development ne
   `python tools/eval_suite/population.py data/eval_clean/clean_people.json`. Anyone in a table,
   a development corpus or the code is dropped; the records come from new templates. Legal uses
   the same people with matters outside its vocabulary.
-* **Frozen code**: the notebooks clone the tag `eval-freeze-4`. Only data (the people, finance's
+* **Frozen code**: the notebooks clone the tag `eval-freeze-5`. Only data (the people, finance's
   source folders) is taken from main afterwards. A change to the pipeline after seeing a result
   needs a new tag and new people.
 * **Always refuse**: the report sets every leak score beside a system that answers "The records

@@ -100,7 +100,7 @@ each on its own line and only when there are facts for it: Patient, Complaints, 
 Examination, Investigations, Treatment (procedures and medications given), Assessment \
 (diagnoses and impressions), Plan. Plain sentences after each heading.
 5. Keep every value, unit and word that says how something is going or how sure it is \
-(improving, persistent, suspected, day 6) exactly as given. Keep the tense of the facts.
+(improving, persistent, suspected, day 6) exactly as given. Keep the tense of the facts. \nKeep the name of every report, test and scan exactly ("Diagnostic Imaging Report - Chest \nX-ray", "Pathology Report"), and keep a section label that begins a value ("Impression:", \n"Clinical Indication:", "Final Diagnosis:") word for word in front of it.
 6. Keep clinical abbreviations as written and read them correctly; never turn a negative into \
 a positive ("NKDA" is "no known drug allergies", not an allergy).
 7. A vague date only says roughly when: write "in 2026", never "on 2026". Leave out a date \
@@ -213,6 +213,11 @@ _GENERIC_PLACE_WORDS = {
     "apartments", "apartment", "flat", "house", "tower", "towers", "court", "block", "sector",
     "phase", "main", "cross", "north", "south", "east", "west", "city", "town", "district",
     "state", "the",
+    # what a hospital or clinic does, not where it is: "Imaging" of a removed "North Valley
+    # Imaging Center" must not wipe a report titled "Diagnostic Imaging Report - Chest X-ray"
+    "imaging", "diagnostic", "diagnostics", "radiology", "pathology", "laboratory",
+    "laboratories", "general", "care", "institute", "department", "unit", "services",
+    "speciality", "specialty", "surgical", "dental", "nursing", "home", "practice",
 }  # fmt: skip
 
 

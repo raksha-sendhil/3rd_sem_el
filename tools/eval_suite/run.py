@@ -42,19 +42,19 @@ MAIN_REPO = HERE.parents[1]
 SCALES = {
     "full": {"indexed": 500, "heldout": 250, "targeted": 250, "repeat": 250, "members": 500,
              "nonmembers": 250, "utility": 250, "targets": 60, "e2e": 50, "gen_docs": None,
-             "e2e_parts": 2, "asked_people": None},
+             "e2e_parts": 2, "asked_people": None, "person_members": 30},
     "high": {"indexed": 300, "heldout": 150, "targeted": 200, "repeat": 200, "members": 200,
              "nonmembers": 150, "utility": 200, "targets": 40, "e2e": 50, "gen_docs": 300,
-             "e2e_parts": 1, "asked_people": 70},
+             "e2e_parts": 1, "asked_people": 70, "person_members": 30},
     "5h": {"indexed": 150, "heldout": 100, "targeted": 100, "repeat": 100, "members": 100,
            "nonmembers": 100, "utility": 100, "targets": 20, "e2e": 25, "gen_docs": 150,
-           "e2e_parts": 1, "asked_people": 35},
+           "e2e_parts": 1, "asked_people": 35, "person_members": 20},
     "2h": {"indexed": 100, "heldout": 60, "targeted": 60, "repeat": 60, "members": 60,
            "nonmembers": 60, "utility": 60, "targets": 10, "e2e": 20, "gen_docs": 100,
-           "e2e_parts": 1, "asked_people": 20},
+           "e2e_parts": 1, "asked_people": 20, "person_members": 10},
     "quick": {"indexed": 12, "heldout": 6, "targeted": 5, "repeat": 5, "members": 5,
               "nonmembers": 5, "utility": 5, "targets": 1, "e2e": 2, "gen_docs": 15,
-              "e2e_parts": 1, "asked_people": 3},
+              "e2e_parts": 1, "asked_people": 3, "person_members": 3},
 }  # fmt: skip
 PIPELINES = ("baseline", "protected")
 
@@ -71,7 +71,7 @@ def _args() -> argparse.Namespace:
     p.add_argument("--scale", choices=list(SCALES), default="high")
     p.add_argument("--people-file", type=Path, help="the clean test's people (population.py)")
     p.add_argument("--stores", default="gen,real,e2e_gold,e2e_ocr")
-    p.add_argument("--only", default="target_info,repeat,membership,utility",
+    p.add_argument("--only", default="target_info,repeat,membership,person_membership,utility",
                    help="single: which question sets to ask")  # fmt: skip
     return p.parse_args()
 
@@ -150,11 +150,17 @@ def step_data() -> None:
     gen = data / "gen" / "corpus"
     gen.mkdir(parents=True, exist_ok=True)
     by_id = {_load(f)["doc_id"]: f for f in sorted(D.corpus_dir.glob("*.json"))}
-    files = list(by_id.values())
+    wanted = set(targets) | {t["person_id"] for t in targeted}
+    # person-level membership: people never asked about whose records are kept out of the store
+    spare = sorted((p for p in people if p.person_id not in wanted), key=lambda p: p.person_id)
+    random.Random("person-membership").shuffle(spare)
+    outsiders = spare[: SCALE.get("person_members", 0)]
+    out_ids = {p.person_id for p in outsiders}
+    left_out = {d for p in outsiders for d in p.doc_ids}
+    files = [f for i, f in by_id.items() if i not in left_out]
     if SCALE["gen_docs"]:
-        wanted = set(targets) | {t["person_id"] for t in targeted}
         order = [p for p in people if p.person_id in wanted]
-        others = [p for p in people if p.person_id not in wanted]
+        others = [p for p in people if p.person_id not in wanted and p.person_id not in out_ids]
         random.Random("decoys").shuffle(others)
         keep: list[Path] = []
         for p in order + others:
@@ -164,6 +170,11 @@ def step_data() -> None:
         files = keep
     for f in files:
         shutil.copyfile(f, gen / f.name)
+    stored = {_load(f)["doc_id"] for f in files}
+    insiders = [p for p in people if p.doc_ids and set(p.doc_ids) <= stored]
+    random.Random("person-membership-members").shuffle(insiders)
+    _dump(data / "person_membership.json",
+          Q.person_membership_probes(insiders[: len(outsiders)], outsiders))  # fmt: skip
     print(
         f"generated corpus: {len(files)} documents, {len(people)} people; "
         f"{len(targeted)} Target Info questions; {len(sessions)} attack sessions"
@@ -187,6 +198,7 @@ def step_data() -> None:
     _dump(data / "provenance.json", {
         "clean": CLEAN, **made, "generated_documents_indexed": len(files),
         "attack_sessions": len(sessions), "target_info_questions": len(targeted),
+        "person_membership_each_group": len(outsiders),
         "real_indexed": len(real["indexed"]), "real_heldout": len(real["heldout"]),
         "utility_questions": len(real["utility"][: SCALE["utility"]]),
         "seed": options.get("seed", 2026), "excluded_as_seen": len(options.get("exclude", ())),
@@ -367,6 +379,11 @@ def step_single() -> None:
                 part = [t for t in targeted if t.get("store", "gen") == store]
                 if part and (WORK / "stores" / f"{store}.sqlite").exists():
                     await _ask(_context(store), llm, part, WORK / "answers" / "target_info.jsonl")
+        pm = data / "person_membership.json"
+        if "person_membership" in only and pm.exists() and _load(pm) and (
+            WORK / "stores" / "gen.sqlite"
+        ).exists():
+            await _ask(_context("gen"), llm, _load(pm), WORK / "answers" / "person_membership.jsonl")
         sets = [n for n in ("repeat", "membership", "utility")
                 if n in only and (data / f"{n}.json").exists() and _load(data / f"{n}.json")]  # fmt: skip
         if sets and (WORK / "stores" / "real.sqlite").exists():

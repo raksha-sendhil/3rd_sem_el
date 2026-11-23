@@ -373,7 +373,7 @@ Clinical records (case sheets, clinic notes, discharge summaries) are written by
 about a patient: their facts belong to "the patient" in SUBJECTS, and a relative listed there \
 is the patient's. Read the abbreviations (C/O complaints, H/O history, K/c/o known case of, \
 O/E on examination, Inv investigations, Imp impression, NKDA no known drug allergies, SOS when \
-needed) and list every complaint, finding, result, medication, assessment and plan.
+needed) and list every complaint, finding, result, medication, assessment and plan. A \nreport (imaging, pathology, laboratory) says in its title what it is ("Diagnostic Imaging \nReport - Chest X-ray (2 views)", "Pathology Report"): list that title as had_procedure, in \nits own words. Each finding is still its own short fact; one under a labelled section of a \nreport (Clinical Indication, Findings, Impression, Final Diagnosis, Microscopic Description, \nComments) begins its value with that label as written: has_symptom "Clinical Indication: \nPersistent cough", assessment "Impression: No acute cardiopulmonary process", test_result \n"Microscopic Description: tumor involves approximately 60% of the core tissue examined", \ntest_result "Microscopic Description: perineural invasion is identified".
 
 Rules:
 - Names, ID numbers, phone numbers, email addresses and family relationships are handled \
