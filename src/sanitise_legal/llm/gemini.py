@@ -333,6 +333,7 @@ class GeminiClient(BaseJSONClient):
             config["response_json_schema"] = json_schema
 
         rate_limited = overloaded = key_waits = switches = 0
+        busy_switches = 0  # models tried in this round of busy replies, before any wait
         while True:
             free_in = self.pool.free_in()
             if 0 < free_in <= self.max_key_wait_s and key_waits < self.overload_retries:
@@ -369,6 +370,14 @@ class GeminiClient(BaseJSONClient):
                         self.pool.wake()
                         rate_limited = 0
                     continue  # the next key
+                if _OVERLOADED.search(str(exc)) and busy_switches < len(self.models) - 1:
+                    # another model may answer at once: try each configured model before waiting
+                    busy_switches += 1
+                    at = self.models.index(self.model)
+                    self.model = self.models[(at + 1) % len(self.models)]
+                    log.warning("Gemini is overloaded: switching to %s", self.model)
+                    continue
+                busy_switches = 0
                 if _OVERLOADED.search(str(exc)) and overloaded < self.overload_retries:
                     wait = min(self.overload_wait_s * 2**overloaded, OVERLOAD_MAX_WAIT_S)
                     overloaded += 1

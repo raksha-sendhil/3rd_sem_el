@@ -284,7 +284,7 @@ def test_the_factory_builds_gemini_for_every_agent(tmp_path: Path) -> None:
     s = settings_for(base, "legal")
     agents = build_llm_client(s)
     assert isinstance(agents, GeminiClient) and agents.model == "gemini-3.5-flash-lite"
-    assert agents.models[1] == "gemini-3.1-flash-lite"
+    assert agents.models[1] == "gemini-3.6-flash" and agents.models[-1] == "gemini-3.1-flash-lite"
     assert build_agent1_llm(s, agents) is agents
     assert build_answer_llm(s, agents).model == "llama3:8b"
 

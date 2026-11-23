@@ -175,8 +175,8 @@ async def test_a_busy_model_is_retried_then_the_next_model_is_used(no_sleep: lis
 
     gemini = client(handler, model="gemini-a,gemini-b")
     assert await gemini.text_call("s", "u") == "ok"
-    assert models == ["gemini-a", "gemini-a", "gemini-b"]
-    assert no_sleep == [10.0]  # one wait, then the switch
+    assert models == ["gemini-a", "gemini-b"]  # the next model at once, no wait
+    assert no_sleep == []  # no wait: another model was free
     assert await gemini.text_call("s", "u") == "ok" and models[-1] == "gemini-b"  # stays
 
 

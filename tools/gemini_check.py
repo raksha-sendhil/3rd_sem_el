@@ -59,8 +59,9 @@ def ask(key: str, model: str, prompt: str) -> tuple[int, float, str]:
     t = time.perf_counter()
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
-            resp.read()
-            return resp.status, time.perf_counter() - t, ""
+            data = json.loads(resp.read() or b"{}")
+            # the model that really answered: an alias or a redirected name shows here
+            return resp.status, time.perf_counter() - t, data.get("modelVersion", "")
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", "replace")
         try:
@@ -87,12 +88,14 @@ def main() -> None:
     rows = []
     for key in keys:
         for model in models:
-            codes, times, notes = [], [], set()
+            codes, times, notes, served = [], [], set(), set()
             for i in range(args.rounds + 1):
                 code, secs, note = ask(key, model, LARGE if i == args.rounds else SMALL)
                 codes.append(code)
                 if code == 200:
                     times.append(secs)
+                    if note:
+                        served.add(note)
                 elif note:
                     notes.add(f"{code}: {note}")
                 time.sleep(args.pause)
@@ -106,7 +109,8 @@ def main() -> None:
             med = f"{statistics.median(times):.1f} s" if times else "-"
             rows.append((fingerprint(key), model, ok, len(codes), busy, limit, refused, missing, med))
             print(f"{fingerprint(key)}  {model:24s} ok {ok}/{len(codes)}  busy(503) {busy}  "
-                  f"quota(429) {limit}  bad key {refused}  no model {missing}  median {med}",
+                  f"quota(429) {limit}  bad key {refused}  no model {missing}  median {med}"
+                  + (f"  answered by {', '.join(sorted(served))}" if served - {model} else ""),
                   flush=True)  # fmt: skip
             for n in sorted(notes)[:2]:
                 print(f"    {n}")

@@ -170,58 +170,54 @@ class GeminiClient(BaseJSONClient):
         top_p: float | None = None,
         max_tokens: int | None = None,
     ) -> str:
-        waits = server_errors = in_a_row = 0
+        waits = server_errors = 0
         busy_waited = 0.0
+        tried = {self.model}  # models asked in this round; a wait comes only after all of them
         while True:
             body = self._body(messages, json_schema, temperature, top_p, max_tokens)
             response = await self._post(body)
             if response.status_code == 200:
                 return _text(response.json(), self.model)
-            if response.status_code < 500:
-                in_a_row = 0
             full = response.text
             detail = full[:600]
-            if response.status_code == 400 and self._drop_optional(full, json_schema):
+            code = response.status_code
+            if code == 400 and self._drop_optional(full, json_schema):
                 continue
-            if response.status_code in (401, 403) and _bad_key(full):
+            if code in (401, 403) and _bad_key(full):
                 self._drop_key(detail)
                 continue
-            if response.status_code == 429:
-                if _daily_limit(full):
-                    self._next_key(detail)
+            if code == 404 and len(self.models) > 1:  # this key cannot use this model
+                self.exhausted.add(self.model)
+                if self._next_model("not available to this key", tried):
                     continue
-                waits += 1
-                if waits > self.max_waits:
-                    raise LLMUnreachable(f"Gemini kept rate-limiting {self.model}: {detail}")
-                delay = _retry_delay(full)
-                log.warning("Gemini per-minute limit; waiting %.0f s", delay)
-                await asyncio.sleep(delay)
+            if code == 429 and _daily_limit(full):
+                self._next_key(detail)
                 continue
-            if response.status_code >= 500 and server_errors < self.max_server_errors:
-                server_errors += 1
-                in_a_row += 1
-                if in_a_row >= 2 and self._next_model(f"server error {response.status_code}"):
-                    in_a_row = 0
+            if code == 429 or code >= 500:
+                # busy or at its per-minute limit: another model can answer at once, so try each
+                # configured model before waiting at all
+                why = "per-minute limit" if code == 429 else f"busy ({code})"
+                if self._next_model(why, tried):
                     continue
-                # grows with every busy reply of this call, across model switches: a busy spell at
-                # peak hours lasts minutes, and ten-second retries used up all tries within two
-                delay = min(300.0, 10.0 * 2 ** (server_errors - 1))
+                tried = {self.model}  # every model asked: wait, then a new round
+                if code == 429:
+                    waits += 1
+                    if waits > self.max_waits:
+                        raise LLMUnreachable(f"Gemini kept rate-limiting {self.model}: {detail}")
+                    delay = _retry_delay(full)
+                else:
+                    server_errors += 1
+                    # grows with every round of busy replies, so a busy spell is waited out
+                    delay = min(300.0, 10.0 * 2 ** (server_errors - 1))
                 if busy_waited + delay > MAX_BUSY_WAIT_S:  # give this call up: the document fails
                     raise LLMUnreachable(
-                        f"Gemini stayed busy for {busy_waited / 60:.0f} min ({self.model}): {detail}"
+                        f"Gemini stayed busy for {busy_waited / 60:.0f} min on every model: {detail}"
                     )
                 busy_waited += delay
-                log.warning(
-                    "Gemini %s returned %d (busy); retrying in %.0f s",
-                    self.model,
-                    response.status_code,
-                    delay,
-                )
+                log.warning("Gemini: every model %s; retrying in %.0f s", why, delay)
                 await asyncio.sleep(delay)
                 continue
-            raise LLMUnreachable(
-                f"Gemini returned {response.status_code} for {self.model}: {detail}"
-            )
+            raise LLMUnreachable(f"Gemini returned {code} for {self.model}: {detail}")
 
     def _drop_optional(self, detail: str, json_schema: dict[str, Any] | None) -> bool:
         """After a 400: stop sending an optional field the API rejected. True to retry."""
@@ -236,15 +232,20 @@ class GeminiClient(BaseJSONClient):
             return True
         return False
 
-    def _next_model(self, why: str) -> bool:
-        """Move on to the next configured model that has not hit its daily limit."""
-        others = [m for m in self.models if m != self.model and m not in self.exhausted]
+    def _next_model(self, why: str, tried: set[str] | None = None) -> bool:
+        """Move on to the next configured model that has not hit its daily limit (nor, given
+        ``tried``, been asked in this round; the new one is added to it)."""
+        skip = tried or set()
+        others = [m for m in self.models
+                  if m != self.model and m not in self.exhausted and m not in skip]  # fmt: skip
         if not others:
             return False
         after = self.models[self.models.index(self.model) + 1 :] + self.models
         nxt = next(m for m in after if m in others)
         log.warning("Gemini %s: %s; switching to %s", self.model, why, nxt)
         self.model = nxt
+        if tried is not None:
+            tried.add(nxt)
         return True
 
     def _drop_key(self, detail: str) -> None:
