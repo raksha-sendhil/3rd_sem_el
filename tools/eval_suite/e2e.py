@@ -244,6 +244,12 @@ class Gemini:
                     self.models.pop(0)
                     continue
                 print(f"  {what}: {self.model}: {exc} (retrying)", flush=True)
+                if exc.code >= 500 and len(self.models) > 1:
+                    # the model is overloaded: another key cannot help, another model can
+                    self.models.append(self.models.pop(0))
+                    print(f"  {what}: {self.model} is busy, trying {self.models[0]}", flush=True)
+                    time.sleep(5)
+                    continue
             except Exception as exc:  # network or broken JSON
                 print(f"  {what}: {self.model}: {str(exc)[:120]} (retrying)", flush=True)
             self.key_i += 1  # rate limit or a hiccup: next key, wait, retry
