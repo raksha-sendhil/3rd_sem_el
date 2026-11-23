@@ -206,7 +206,7 @@ class GeminiClient(BaseJSONClient):
         cooldown_s: float = 60.0,
         daily_token_budget: int = 0,
         max_key_wait_s: float = 0.0,
-        overload_retries: int = 8,
+        overload_retries: int = 5,  # 15+30+60+120+240 s: under 10 min of busy replies per call
         overload_wait_s: float = 15.0,
         sdk_client: Any = None,
         sdk_factory: Callable[[str], Any] | None = None,
