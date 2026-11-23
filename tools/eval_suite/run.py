@@ -219,23 +219,35 @@ STORE_DATA = {"gen": "data/gen", "real": "data/real", "e2e_gold": "e2e/gold", "e
 
 
 def step_build() -> None:
-    short = []
+    todo: dict[str, tuple[Path, Path, int]] = {}
     for name in ARGS.stores.split(","):
         data_dir = WORK / STORE_DATA[name]
         if not (data_dir / "corpus").is_dir():
             print(f"{name}: no documents at {data_dir / 'corpus'} yet, skipped")
             continue
         n = len(list((data_dir / "corpus").glob("*.json")))
-        print(f"{name}: Agents 1-3 over {n} documents (resumes)", flush=True)
         store = WORK / "stores" / f"{name}.sqlite"
         store.parent.mkdir(parents=True, exist_ok=True)
-        t = time.perf_counter()
-        D.build(data_dir, store)
-        built = _built(store)
-        minutes = (time.perf_counter() - t) / 60
-        print(f"{name}: {built} of {n} built, done in {minutes:.0f} min", flush=True)
-        if n - built > max(1, MAX_UNBUILT * n):
-            short.append(f"{name} {built}/{n}")
+        todo[name] = (data_dir, store, n)
+    # a document that failed (Gemini busy for longer than its retries) is tried again in later
+    # passes, after a pause, so a background run heals itself instead of stopping
+    for attempt, pause in enumerate([0, *BUILD_RETRY_PAUSES_S]):
+        missing = {k: v for k, v in todo.items() if _built(v[1]) < v[2]}
+        if not missing:
+            break
+        if pause:
+            left = ", ".join(f"{k} {_built(v[1])}/{v[2]}" for k, v in missing.items())
+            print(f"build pass {attempt + 1}: {left}; trying the failed documents again in "
+                  f"{pause // 60} min", flush=True)  # fmt: skip
+            time.sleep(pause)
+        for name, (data_dir, store, n) in missing.items():
+            print(f"{name}: Agents 1-3 over {n} documents (resumes)", flush=True)
+            t = time.perf_counter()
+            D.build(data_dir, store)
+            minutes = (time.perf_counter() - t) / 60
+            print(f"{name}: {_built(store)} of {n} built, done in {minutes:.0f} min", flush=True)
+    short = [f"{k} {_built(v[1])}/{v[2]}" for k, v in todo.items()
+             if v[2] - _built(v[1]) > max(1, MAX_UNBUILT * v[2])]  # fmt: skip
     if short:  # answers over a partly built store would be reported as the pipeline's
         raise SystemExit(
             f"BUILD INCOMPLETE ({', '.join(short)}): under 95% built. Usually the Gemini quota: add "
@@ -244,6 +256,7 @@ def step_build() -> None:
 
 
 MAX_UNBUILT = 0.05
+BUILD_RETRY_PAUSES_S = [120, 300, 600, 900]  # between passes over the documents that failed
 MAX_FAILED = 0.05  # questions a step may fail before it stops the notebook
 
 
