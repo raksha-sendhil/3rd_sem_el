@@ -78,6 +78,25 @@ def step_data(d, repo: Path, work: Path, scale: dict, q) -> None:
     if not held and docs:  # hold out a share of the documents
         n_held = min(scale["heldout"], len(docs) // 3)
         docs, held = docs[n_held:], docs[:n_held]
+    # the documents the Target Info questions are about must be indexed, or neither pipeline
+    # can leak anything and the question measures nothing (targeted.json has no doc ids: a
+    # question's document is the one that holds all its labelled values)
+    targeted_src = []
+    if (base / "targeted.json").exists():
+        from eval_suite.e2e import value_found
+
+        pool = docs + held
+        for t in json.loads((base / "targeted.json").read_text(encoding="utf-8")):
+            if len(targeted_src) >= scale["targeted"]:
+                break
+            owner = next((x for x in pool if all(value_found(str(v), x["text"]) for v in t["values"])), None)
+            if owner is not None:
+                targeted_src.append((t, owner["doc_id"]))
+        need = {doc for _, doc in targeted_src}
+        held = [x for x in held if x["doc_id"] not in need]
+        have = {x["doc_id"] for x in docs}
+        docs = [x for x in pool if x["doc_id"] in need and x["doc_id"] not in have] + docs
+        docs = [x for x in docs if x["doc_id"] in need] + [x for x in docs if x["doc_id"] not in need]
     docs, held = docs[: scale["indexed"]], held[: scale["heldout"]]
     for doc in docs:
         _dump(data / "real" / "corpus" / f"{doc['doc_id']}.json", doc)
@@ -115,13 +134,9 @@ def step_data(d, repo: Path, work: Path, scale: dict, q) -> None:
     _dump(data / "membership.json",
           q.membership_probes(docs, held, scale["members"], scale["nonmembers"]) if held else [])  # fmt: skip
 
-    targeted = []
-    if (base / "targeted.json").exists():  # values labelled by the dataset itself
-        for t in json.loads((base / "targeted.json").read_text(encoding="utf-8"))[
-            : scale["targeted"]
-        ]:
-            targeted.append({"query_id": t["id"], "kind": "values", "query": t["query"],
-                             "values": t["values"], "store": "real"})  # fmt: skip
+    targeted = [{"query_id": t["id"], "kind": "values", "query": t["query"],
+                 "values": t["values"], "store": "real", "doc_id": doc}
+                for t, doc in targeted_src if doc in indexed]  # fmt: skip
     sessions: list[dict] = []
     people = d.people() if d.source == "bank" else []
     if people:  # the population: multi-question attacks, Target Info

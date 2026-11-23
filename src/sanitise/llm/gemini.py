@@ -181,6 +181,9 @@ class GeminiClient(BaseJSONClient):
             detail = full[:600]
             if response.status_code == 400 and self._drop_optional(full, json_schema):
                 continue
+            if response.status_code in (401, 403) and _bad_key(full):
+                self._drop_key(detail)
+                continue
             if response.status_code == 429:
                 if _daily_limit(full):
                     self._next_key(detail)
@@ -234,6 +237,16 @@ class GeminiClient(BaseJSONClient):
         log.warning("Gemini %s: %s; switching to %s", self.model, why, nxt)
         self.model = nxt
         return True
+
+    def _drop_key(self, detail: str) -> None:
+        """A key Google refuses (mistyped, revoked, not an API key) is left out for the rest of
+        the run; the others carry on. LLMUnreachable when none is left."""
+        bad = self.api_keys.pop(self.key_index)
+        log.warning("Gemini refused API key %d (...%s); %d key(s) left",
+                    self.key_index + 1, bad[-4:], len(self.api_keys))  # fmt: skip
+        if not self.api_keys:
+            raise LLMUnreachable(f"Gemini refused every API key: {detail}")
+        self.key_index %= len(self.api_keys)
 
     def _next_key(self, detail: str) -> None:
         if self.key_index + 1 >= len(self.api_keys):
@@ -292,3 +305,8 @@ def _daily_limit(detail: str) -> bool:
 def _retry_delay(detail: str) -> float:
     m = re.search(r'"retryDelay":\s*"(\d+(?:\.\d+)?)s"', detail)
     return float(m.group(1)) + 1.0 if m else 30.0
+
+
+def _bad_key(detail: str) -> bool:
+    return bool(re.search(r"API.?key not valid|API_KEY_INVALID|UNAUTHENTICATED|"
+                          r"ACCESS_TOKEN_TYPE_UNSUPPORTED|API_KEY_SERVICE_BLOCKED", detail))

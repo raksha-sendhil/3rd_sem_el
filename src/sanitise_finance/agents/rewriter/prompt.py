@@ -53,13 +53,17 @@ in your record.
 the words that say what it is. Never round, convert, total or drop one, however many there are.
 4. Keep vague phrases vague. You may change their grammar, but never make them more specific.
 5. Write in the third person throughout, never "I", "my", "we" or "you". In a customer's \
-message, complaint or email say "the writer" or "the customer" and what they reported or asked.
+message, complaint or email say "the writer" or "the customer" and what they reported or asked. \
+A company's report, filing or statement is not a message: write what it states ("The report \
+states that ...", "The company ..."), never "the writer reported".
 6. Keep who said what. A fact marked "(said by the agent)" is what the agent told the customer: \
 write "The agent advised ..." or "The agent explained ...". Never turn it into something the \
 customer said, did or plans.
-7. Put the words around figures and product names in your own phrasing: never copy ten or \
-more words in a row from a fact. Use as many short sentences as the facts need. Say each \
-detail once.
+7. Keep the document's own words for every figure's label, line item, product, term and \
+condition ("total income", "deferred income taxes", "services revenue", "our partners", "if the \
+shareholders fail to vote"); put only the connecting words in your own phrasing, and otherwise \
+never copy ten or more words in a row from a fact. Use as many short sentences as the facts \
+need. Say each detail once.
 8. Return only the rewritten record.
 
 EXAMPLE 1
@@ -204,13 +208,17 @@ def safe_value(value: str, decisions: list[RoutingDecision]) -> str:
     for d in removed:
         # last resort: a distinctive word of a removed name or place still in the value
         # ("a hospital, Kengeri" when "Blossom Hospital, Kengeri branch" was removed) means the
-        # value is that detail in another form, so the whole value becomes its replacement
+        # value is that detail in another form. When the name is most of the value, the whole
+        # value becomes its replacement; otherwise only the name's words go, so a sentence that
+        # mentions it ("the committee will reconsider whether to retain KPMG") keeps the rest
         if d.category in _NAMED and _leftover(value, d.span_text, removed):
             assert d.replacement is not None
-            if re.search(r"\d", TOKEN.sub(" ", value)):  # only the words go, the figure stays
-                value = _without_leftover(value, d.span_text, d.replacement, removed)
-            else:
+            words = len(_WORD.findall(TOKEN.sub(" ", value)))
+            mostly = 2 * len(_distinctive(d.span_text, removed)) >= words
+            if mostly and not re.search(r"\d", TOKEN.sub(" ", value)):
                 value = d.replacement
+            else:
+                value = _without_leftover(value, d.span_text, d.replacement, removed)
     value = DOUBLE_ARTICLE.sub(r"\1", value)  # "in a Pune branch" -> "in a branch"
     if not CASE_FILE.get():
         return value
@@ -243,19 +251,34 @@ _GENERIC_PLACE_WORDS = {
 SOURCE_TEXT: ContextVar[str | None] = ContextVar("source_text", default=None)
 
 
+_CAP_RUN = re.compile(r"[A-Z][\w'’.&-]*(?:[ \t]+[A-Z][\w'’.&-]*)*")
+
+
 def _used_elsewhere(word: str, removed) -> bool:
-    """True when the document also uses ``word`` outside every removed detail: "Imaging" in the
-    title "Diagnostic Imaging Report" when the clinic "North Valley Imaging Center" was removed.
-    Such a word is ordinary vocabulary of this document, not a trace of the removed name; a
-    word found only inside removed details ("Valley", "Kengeri") still counts."""
+    """True when the document uses ``word`` outside the removed details, and every such use is
+    inside a *different* name or phrase: "Imaging" of a removed "North Valley Imaging Center"
+    in the title "Diagnostic Imaging Report". Such a word is ordinary vocabulary of this
+    document. It is still a trace of the removed name when any use outside stands alone or with
+    the name's own words ("retain KPMG" after "KPMG LLP" was removed: a mention Agent 1 missed),
+    when every use sits inside removed details, or when the only other uses are in a heading
+    in capitals."""
     text = SOURCE_TEXT.get()
     if not text:
         return False
     cuts = [(d.start, d.end) for d in removed if d.start is not None and d.end is not None]
+    own = {w.lower() for d in removed for w in re.findall(r"[A-Za-z]+", d.span_text or "")}
+    seen = False
     for m in re.finditer(rf"(?<![A-Za-z]){re.escape(word)}(?![A-Za-z])", text):
-        if not any(a <= m.start() < b for a, b in cuts):
-            return True
-    return False
+        if any(a <= m.start() < b for a, b in cuts):
+            continue
+        run = next((r for r in _CAP_RUN.finditer(text) if r.start() <= m.start() < r.end()), None)
+        words = re.findall(r"[A-Za-z]+", run.group(0)) if run else []
+        if run is None or run.group(0).isupper() and len(words) > 1:
+            return False  # lower case or a heading: no evidence either way, so keep the guard
+        if not any(w.lower() not in own and w.lower() != word.lower() for w in words):
+            return False  # alone, or with the removed name's own words: the name again
+        seen = True
+    return seen
 
 
 def _distinctive(span_text: str, removed=()) -> set[str]:

@@ -222,19 +222,34 @@ _GENERIC_PLACE_WORDS = {
 SOURCE_TEXT: ContextVar[str | None] = ContextVar("source_text", default=None)
 
 
+_CAP_RUN = re.compile(r"[A-Z][\w'’.&-]*(?:[ \t]+[A-Z][\w'’.&-]*)*")
+
+
 def _used_elsewhere(word: str, removed) -> bool:
-    """True when the document also uses ``word`` outside every removed detail: "Imaging" in the
-    title "Diagnostic Imaging Report" when the clinic "North Valley Imaging Center" was removed.
-    Such a word is ordinary vocabulary of this document, not a trace of the removed name; a
-    word found only inside removed details ("Valley", "Kengeri") still counts."""
+    """True when the document uses ``word`` outside the removed details, and every such use is
+    inside a *different* name or phrase: "Imaging" of a removed "North Valley Imaging Center"
+    in the title "Diagnostic Imaging Report". Such a word is ordinary vocabulary of this
+    document. It is still a trace of the removed name when any use outside stands alone or with
+    the name's own words ("retain KPMG" after "KPMG LLP" was removed: a mention Agent 1 missed),
+    when every use sits inside removed details, or when the only other uses are in a heading
+    in capitals."""
     text = SOURCE_TEXT.get()
     if not text:
         return False
     cuts = [(d.start, d.end) for d in removed if d.start is not None and d.end is not None]
+    own = {w.lower() for d in removed for w in re.findall(r"[A-Za-z]+", d.span_text or "")}
+    seen = False
     for m in re.finditer(rf"(?<![A-Za-z]){re.escape(word)}(?![A-Za-z])", text):
-        if not any(a <= m.start() < b for a, b in cuts):
-            return True
-    return False
+        if any(a <= m.start() < b for a, b in cuts):
+            continue
+        run = next((r for r in _CAP_RUN.finditer(text) if r.start() <= m.start() < r.end()), None)
+        words = re.findall(r"[A-Za-z]+", run.group(0)) if run else []
+        if run is None or run.group(0).isupper() and len(words) > 1:
+            return False  # lower case or a heading: no evidence either way, so keep the guard
+        if not any(w.lower() not in own and w.lower() != word.lower() for w in words):
+            return False  # alone, or with the removed name's own words: the name again
+        seen = True
+    return seen
 
 
 def _leftover(value: str, span_text: str, removed=()) -> bool:

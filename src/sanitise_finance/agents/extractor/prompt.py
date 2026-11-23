@@ -200,6 +200,11 @@ Leave company names out of values too, except in employer.
 - Only what the record states.
 - In an agent's or the bank's reply every explanation, reason, instruction, condition and offer \
 is an "other" or "plan" fact, each on its own. Only greetings and sign-offs are left out.
+- In a company's report, filing or agreement, every statement of what something consists of, \
+why it happened, what follows if something happens, and what a term means is an "other" fact, \
+each on its own and in the record's words ("services revenue consists primarily of fees for \
+customer support services", "if the shareholders fail to vote in favour, the Audit Committee \
+will reconsider whether to retain the auditor"). Such a record gives many facts.
 - What the writer asks about, disputes or refuses is a fact ("asks whether the fee is legal").
 - Only if the record has no content at all, return {"facts": []}.
 

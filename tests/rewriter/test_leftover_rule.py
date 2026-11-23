@@ -36,3 +36,18 @@ def test_word_found_only_inside_the_removed_name_still_counts() -> None:
     finally:
         prompt.SOURCE_TEXT.reset(token)
     assert "Imaging" not in value
+
+
+def test_a_missed_mention_of_the_name_alone_still_counts() -> None:
+    text = "The committee appointed KPMG LLP as auditor. If shareholders object it may not retain KPMG."
+    start = text.index("KPMG LLP")
+    d = RoutingDecision(
+        span_text="KPMG LLP", category=PIICategory.LOCATION, action=Action.GENERALISE,
+        replacement="a company", reason="test", start=start, end=start + len("KPMG LLP"),
+    )  # fmt: skip
+    token = prompt.SOURCE_TEXT.set(text)
+    try:
+        value = prompt.safe_value("may not retain KPMG", [d])
+    finally:
+        prompt.SOURCE_TEXT.reset(token)
+    assert "KPMG" not in value
