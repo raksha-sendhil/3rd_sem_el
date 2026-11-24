@@ -163,18 +163,12 @@ export default function ResultsPage() {
       {r.utility && (
         <Card
           title="Usefulness"
-          sub={`How much of the right answer each side gives (${r.utility.questions} questions).`}
+          sub={`Ordinary questions about the records (${r.utility.questions}): how good ours' answers are next to standard RAG's.`}
           testid="results-utility"
         >
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <div className="mb-2 text-sm font-semibold text-[#17162B]">Utility kept by ours</div>
-              <div className="font-display text-4xl font-extrabold" style={{ color: OURS.color }}>
-                {pct(r.utility.retention)}
-              </div>
-            </div>
-            <div>
-              <div className="mb-2 text-sm font-semibold text-[#17162B]">Kept, where ours answered</div>
+              <div className="mb-2 text-sm font-semibold text-[#17162B]">Answer quality where ours answered</div>
               <div className="font-display text-4xl font-extrabold" style={{ color: OURS.color }}>
                 {pct(r.utility.retentionAnswered)}
               </div>
