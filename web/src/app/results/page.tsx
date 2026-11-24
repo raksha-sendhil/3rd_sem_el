@@ -163,7 +163,7 @@ export default function ResultsPage() {
       {r.utility && (
         <Card
           title="Utility retention (token F1)"
-          sub={`UR = F1(ours) / F1(standard RAG) on benign queries (n = ${r.utility.questions}); answer rate = share not refused.`}
+          sub={`UR = F1(ours) / F1(standard RAG) on benign queries ; answer rate = share not refused.`}
           testid="results-utility"
         >
           <div className="grid gap-8 lg:grid-cols-2">
