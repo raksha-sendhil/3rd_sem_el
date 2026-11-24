@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, FileText, Landmark, Lock, Stethoscope, Swords, Workflow } from "lucide-react";
+import { BarChart3, Briefcase, FileText, Landmark, Lock, Stethoscope, Swords, Workflow } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -12,6 +12,7 @@ const NAV = [
   { to: "/", label: "Overview", icon: Workflow, color: "#6D4AFF", id: "overview" },
   { to: "/attacks", label: "Attacks", icon: Swords, color: "#FF4D3D", id: "attacks" },
   { to: "/documents", label: "Documents", icon: FileText, color: "#0FB5A0", id: "documents" },
+  { to: "/results", label: "Results", icon: BarChart3, color: "#2D8CFF", id: "results" },
 ];
 
 export const Logo = () => (
