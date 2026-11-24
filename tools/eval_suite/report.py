@@ -25,6 +25,23 @@ def _rows(path: Path) -> list[dict]:
     return [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x.strip()]
 
 
+def _stored_ids(d, work: Path, store: str) -> set[str] | None:
+    """Documents a store holds: from the store, else from results/rewrites.jsonl (a run unpacked
+    from its zip has no stores); None when neither is there."""
+    path = work / "stores" / f"{store}.sqlite"
+    if path.exists():
+        opened = d.mod("rag.store").SqliteDocumentStore(path)
+        try:
+            return set(opened.ids())
+        finally:
+            opened.close()
+    dump = work / "results" / "rewrites.jsonl"
+    if dump.exists():
+        ids = {r["doc_id"] for r in _rows(dump) if r.get("store") == store}
+        return ids or None
+    return None
+
+
 def _pct(x: float) -> str:
     return "n/a" if x != x else f"{100 * x:.1f}%"
 
@@ -755,6 +772,8 @@ def sanity(d, work: Path, res: dict) -> dict:
 def export_rewrites(d, work: Path, out: Path) -> None:
     """Every rewrite, for the results zip. Sanitised text only."""
     stores = sorted((work / "stores").glob("*.sqlite"))
+    if not stores:  # a run unpacked from its zip: keep the file it came with
+        return
     with (out / "rewrites.jsonl").open("w", encoding="utf-8") as f:
         for path in stores:
             if path.stem == "monitor":
@@ -824,12 +843,19 @@ def write(d, work: Path, scale: str) -> None:
         single["repeat_rouge"] = repeat_rouge(
             rows, SqliteDocumentStore(work / "stores" / "real.sqlite")
         )
+    # a member or utility document the build never reached is in neither pipeline's store: as a
+    # "member" it would be scored as present, and its question has no answer on either side
+    in_store = _stored_ids(d, work, "real")
     if rows := _rows(a / "membership.jsonl"):
-        single["membership"] = membership(rows)
+        kept = [r for r in rows if r["group"] != "member" or in_store is None or r["doc_id"] in in_store]
+        single["membership"] = membership(kept)
+        single["membership"]["members_not_built"] = len(rows) - len(kept)
     if rows := _rows(a / "person_membership.jsonl"):
         single["person_membership"] = person_membership(d, rows)
     if rows := _rows(a / "utility.jsonl"):
-        single["utility"] = utility(rows)
+        kept = [r for r in rows if in_store is None or not r.get("doc_id") or r["doc_id"] in in_store]
+        single["utility"] = utility(kept)
+        single["utility"]["not_built"] = len(rows) - len(kept)
     every = [
         r
         for n in ("target_info", "repeat", "membership", "person_membership", "utility")
@@ -919,7 +945,9 @@ def markdown(res: dict, figures_made: list[str]) -> str:
         )
     if mi := s.get("membership"):
         L.append(
-            f"| 4 | **Membership inference AUC** ({mi['members']} members, {mi['nonmembers']} non-members) | "
+            f"| 4 | **Membership inference AUC** ({mi['members']} members, {mi['nonmembers']} non-members"
+            + (f"; {mi['members_not_built']} members never built, left out" if mi.get("members_not_built") else "")
+            + ") | "
             f"{mi['baseline']['auc']:.3f} | {mi['protected']['auc']:.3f} | |"
         )
         L.append(
@@ -946,7 +974,9 @@ def markdown(res: dict, figures_made: list[str]) -> str:
     if u := s.get("utility"):
         L.append(
             f"| 5 | **Answer score** (token F1; share of the reference found when it is "
-            f"{M.SHORT_REFERENCE} words or fewer; {u['questions']} questions) | {u['baseline']['token_f1']:.3f} | "
+            f"{M.SHORT_REFERENCE} words or fewer; {u['questions']} questions"
+            + (f"; {u['not_built']} about documents never built, left out" if u.get("not_built") else "")
+            + f") | {u['baseline']['token_f1']:.3f} | "
             f"{u['protected']['token_f1']:.3f} | {_p(u['wilcoxon_p'])} |"
         )
         L.append(
