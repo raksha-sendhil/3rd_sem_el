@@ -143,8 +143,8 @@ def rewrite_finance(work: Path) -> None:
     import time
 
     deadline = os.environ.get("EVAL_DEADLINE")
-    # up to 25 minutes, less on a short run: the build needs most of the time
-    span = min(25 * 60, max(0.0, (float(deadline) - time.time()) * 0.15)) if deadline else None
+    # up to an hour, less on a short run: the build needs most of the time
+    span = min(60 * 60, max(0.0, (float(deadline) - time.time()) * 0.15)) if deadline else None
     stop_at = time.time() + span if span is not None else float("inf")
     for item in todo:
         if time.time() > stop_at:  # the time limit: questions still shared are dropped below

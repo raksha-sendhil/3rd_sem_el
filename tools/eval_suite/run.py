@@ -104,8 +104,18 @@ if CLEAN:  # the clean population replaces the development corpus and its person
 # EVAL_DEADLINE (a Unix time, set by the notebook) ends the run at a fixed time: the build stops
 # early enough to leave ANSWER_RESERVE_S for the questions and the report; question steps skip
 # what they cannot ask before REPORT_RESERVE_S; the report says what was built and skipped.
-ANSWER_RESERVE_S = 75 * 60
+ANSWER_RESERVE_S = 75 * 60  # the smallest scales; _answer_reserve() grows it with the questions
 REPORT_RESERVE_S = 10 * 60
+
+
+def _answer_reserve() -> float:
+    """Time kept back from the build for the questions, sessions, scans and the report, from the
+    speeds of earlier runs on a T4 (about 2.5 s per single question with two at a time, 1 s per
+    session turn, 2 s per scan question), with half again as margin; at least 75 minutes."""
+    single = SCALE["targeted"] + SCALE["repeat"] + SCALE["members"] + SCALE["nonmembers"] +         SCALE["utility"] + 4 * SCALE.get("person_members", 0)
+    turns = SCALE["targets"] * 3 * 8
+    scans = SCALE["e2e"] * 6
+    return max(ANSWER_RESERVE_S, 1.5 * (2.5 * single + 1.0 * turns + 2.0 * scans) + 600)
 
 
 def _left() -> float:
@@ -254,12 +264,26 @@ def step_build() -> None:
         store.parent.mkdir(parents=True, exist_ok=True)
         todo[name] = (data_dir, store, n)
     # a document that failed (Gemini busy for longer than its retries) is tried again in later
-    # passes, after a pause, so a background run heals itself instead of stopping
-    for attempt, pause in enumerate([0, *BUILD_RETRY_PAUSES_S]):
-        missing = {k: v for k, v in todo.items() if _built(v[1]) < v[2]}
+    # passes, after growing pauses, while a store is under GOOD_ENOUGH built; retrying stops when
+    # two passes in a row add nothing (Gemini down: waiting longer will not help) or time runs
+    # short, and the run then scores what was built
+    pauses = QUICK_RETRY_PAUSES_S if ARGS.scale == "quick" else BUILD_RETRY_PAUSES_S
+    stalled, before = 0, None
+    for attempt, pause in enumerate([0, *pauses]):
+        first = attempt == 0
+        missing = {k: v for k, v in todo.items()
+                   if _built(v[1]) < v[2] and (first or _built(v[1]) < GOOD_ENOUGH * v[2])}  # fmt: skip
         if not missing:
             break
-        if pause and _left() - ANSWER_RESERVE_S < pause + 120:
+        now = sum(_built(v[1]) for v in todo.values())
+        if before is not None:
+            stalled = stalled + 1 if now == before else 0
+            if stalled >= 2:
+                print("build: two retry passes in a row added nothing; scoring what was built",
+                      flush=True)  # fmt: skip
+                break
+        before = now
+        if pause and _left() - _answer_reserve() < pause + 120:
             break  # no time for another pass
         if pause:
             left = ", ".join(f"{k} {_built(v[1])}/{v[2]}" for k, v in missing.items())
@@ -268,7 +292,7 @@ def step_build() -> None:
             time.sleep(pause)
         left_docs = {k: v[2] - _built(v[1]) for k, v in missing.items()}
         for name, (data_dir, store, n) in missing.items():
-            budget = _left() - ANSWER_RESERVE_S
+            budget = _left() - _answer_reserve()
             if budget <= 60:
                 print(f"{name}: time limit reached, not built further", flush=True)
                 continue
@@ -295,7 +319,10 @@ def step_build() -> None:
               "report says so. Run this step again later to add them (it resumes).", flush=True)
 
 
-BUILD_RETRY_PAUSES_S = [120]  # one more pass over the documents that failed, after a pause
+# passes over the documents that failed, each after a pause (see step_build for when they stop)
+BUILD_RETRY_PAUSES_S = [120, 300, 600, 900, 1200, 1800, 1800]  # at most about 2 h of pauses
+QUICK_RETRY_PAUSES_S = [120, 300]
+GOOD_ENOUGH = 0.95  # a store this full is not retried: the last few are not worth hours
 MAX_FAILED = 0.05  # questions a step may fail before it stops the notebook
 
 

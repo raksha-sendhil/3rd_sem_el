@@ -229,7 +229,7 @@ class Gemini:
         self.model = ""
 
     def ask(self, prompt: str, what: str) -> dict | None:
-        for attempt in range(8):
+        for attempt in range(24):  # labels decide how many scans count: patience over speed
             if not self.models:
                 raise SystemExit("no Gemini model this key can use: set EVAL_LABEL_MODEL")
             self.model = self.models[0]
@@ -253,7 +253,7 @@ class Gemini:
             except Exception as exc:  # network or broken JSON
                 print(f"  {what}: {self.model}: {str(exc)[:120]} (retrying)", flush=True)
             self.key_i += 1  # rate limit or a hiccup: next key, wait, retry
-            time.sleep(min(60, 5 * (attempt + 1)))
+            time.sleep(min(120, 5 * (attempt + 1)))
         return None
 
 
