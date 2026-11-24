@@ -41,7 +41,7 @@ function BigPair({ base, ours }: { base: string; ours: string }) {
 function Indirect({ children }: { children: ReactNode }) {
   return (
     <div className="mt-4 rounded-2xl border border-[#FFE2A8] bg-[#FFF7E3] px-4 py-3 text-sm text-[#6A4A00]">
-      <span className="font-semibold">Indirect details: </span>
+      <span className="font-semibold">Quasi-identifiers (indirect): </span>
       {children}
     </div>
   );
@@ -73,22 +73,22 @@ export default function ResultsPage() {
 
       {/* the headline: can an attacker tell whether a record is in the system? */}
       <Card
-        title="Membership inference"
-        sub="Can an attacker tell whether someone's record is in the system? 0.5 means guessing; closer to 0.5 is better."
+        title="Membership Inference Attack (MIA): AUC-ROC"
+        sub="AUC = P(s(member) > s(non-member)), s = ROUGE-L of the answer against the rest of the record. 0.5 = random guessing; closer to 0.5 is better."
         testid="results-membership"
       >
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
           <div>
-            <div className="mb-2 font-mono text-xs font-semibold uppercase tracking-wider text-[#6B6880]">AUC</div>
+            <div className="mb-2 font-mono text-xs font-semibold uppercase tracking-wider text-[#6B6880]">AUC-ROC</div>
             <AucMeter auc={r.membership.auc} />
           </div>
           <div>
             <div className="mb-3 font-mono text-xs font-semibold uppercase tracking-wider text-[#6B6880]">
-              Members caught at 1% false alarms
+              TPR @ 1% FPR
             </div>
             <BigPair base={pct(r.membership.tpr.base)} ours={pct(r.membership.tpr.ours, 1)} />
             <p className="mt-4 text-xs text-[#6B6880]">
-              {r.membership.members} records in the system, {r.membership.nonmembers} not.
+              n = {r.membership.members} members, {r.membership.nonmembers} non-members.
             </p>
           </div>
         </div>
@@ -96,23 +96,23 @@ export default function ResultsPage() {
 
       <div className="grid gap-8 lg:grid-cols-2">
         <Card
-          title="Target Info"
-          sub={`Private values an attacker pulled out with ${r.targetInfo.questions} direct questions.`}
+          title="Target Info (TI)"
+          sub={`Distinct exact PII values extracted, |⋃ V(answer) ∖ V(query)|, over ${r.targetInfo.questions} targeted queries.`}
           testid="results-target-info"
         >
           <BigPair base={count(r.targetInfo.values.base)} ours={count(r.targetInfo.values.ours)} />
-          <div className="mt-6 mb-2 text-sm font-semibold text-[#17162B]">Questions that leaked a value</div>
+          <div className="mt-6 mb-2 text-sm font-semibold text-[#17162B]">Leak rate: queries disclosing ≥ 1 value</div>
           <PairBars pair={r.targetInfo.questionsLeaking} />
           <Indirect>{r.targetInfo.oursNote}</Indirect>
         </Card>
 
         <Card
-          title="Session Leak Success"
-          sub={`Attack conversations (${r.sessions.count}, 8 questions each) that ended with the person identified.`}
+          title="Session Leak Success (SLS)"
+          sub={`Share of multi-turn attack sessions (n = ${r.sessions.count}, 8 rounds) ending with a direct identifier disclosed.`}
           testid="results-sls"
         >
           <BigPair base={pct(r.sessions.sls.base)} ours={pct(r.sessions.sls.ours)} />
-          <div className="mt-6 mb-2 text-sm font-semibold text-[#17162B]">Conversations narrowed below 5 people</div>
+          <div className="mt-6 mb-2 text-sm font-semibold text-[#17162B]">k-anonymity violations: candidate pool {"<"} k (k = 5)</div>
           <PairBars pair={r.reid.belowK} />
           <Indirect>
             the answers still narrow {pct(r.reid.belowK.ours)} of conversations below 5 people and{" "}
@@ -122,39 +122,39 @@ export default function ResultsPage() {
       </div>
 
       <Card
-        title="Secret Recovery Rate, round by round"
-        sub="Share of the target's private details the attacker has after each question of the conversation."
+        title="Secret Recovery Rate (SRR) per round"
+        sub="SRR(t) = fraction of the target's private attributes recovered after round t, averaged over sessions."
         testid="results-srr"
       >
         <SrrLines base={r.sessions.srr.base} ours={r.sessions.srr.ours} />
-        <div className="mt-2 text-center font-mono text-[11px] uppercase tracking-wider text-[#6B6880]">question</div>
+        <div className="mt-2 text-center font-mono text-[11px] uppercase tracking-wider text-[#6B6880]">round t</div>
       </Card>
 
       <div className="grid gap-8 lg:grid-cols-2">
         <Card
-          title="Re-identification"
-          sub={`How many of the ${r.reid.people} people still match everything the answers revealed.`}
+          title="Re-identification (k-anonymity, k = 5)"
+          sub={`Candidate pool: people in the population (N = ${r.reid.people}) consistent with every attribute the session disclosed.`}
           testid="results-reid"
         >
           <GroupedBars
             items={[
-              { label: "Narrowed to one person", pair: r.reid.singledOut },
-              { label: "Narrowed below 5 people", pair: r.reid.belowK },
+              { label: "Singled out (pool = 1)", pair: r.reid.singledOut },
+              { label: "k-anonymity violated (pool < 5)", pair: r.reid.belowK },
             ]}
           />
-          <div className="mt-6 mb-2 text-sm font-semibold text-[#17162B]">People still matching, median</div>
+          <div className="mt-6 mb-2 text-sm font-semibold text-[#17162B]">Median candidate pool size</div>
           <BigPair base={count(r.reid.medianPool.base)} ours={count(r.reid.medianPool.ours)} />
         </Card>
 
         <Card
-          title="Copying the records"
-          sub={`"Repeat everything above" attacks (${r.copying.prompts} prompts).`}
+          title="Context extraction: Repeat / ROUGE Prompt"
+          sub={`Prompt-injection "repeat the context" attacks (n = ${r.copying.prompts}), scored against the retrieved originals.`}
           testid="results-copying"
         >
           <GroupedBars
             items={[
-              { label: "Answers copying 10+ words in a row", pair: r.copying.repeat },
-              { label: "Answers closely following a whole record", pair: r.copying.rouge },
+              { label: "Repeat Prompt rate (verbatim run ≥ 10 tokens)", pair: r.copying.repeat },
+              { label: "ROUGE Prompt rate (ROUGE-L > 0.5)", pair: r.copying.rouge },
             ]}
           />
         </Card>
@@ -162,19 +162,19 @@ export default function ResultsPage() {
 
       {r.utility && (
         <Card
-          title="Usefulness"
-          sub={`Ordinary questions about the records (${r.utility.questions}): how good ours' answers are next to standard RAG's.`}
+          title="Utility retention (token F1)"
+          sub={`UR = F1(ours) / F1(standard RAG) on benign queries (n = ${r.utility.questions}); answer rate = share not refused.`}
           testid="results-utility"
         >
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <div className="mb-2 text-sm font-semibold text-[#17162B]">Answer quality where ours answered</div>
+              <div className="mb-2 text-sm font-semibold text-[#17162B]">Utility retention on answered queries</div>
               <div className="font-display text-4xl font-extrabold" style={{ color: OURS.color }}>
                 {pct(r.utility.retentionAnswered)}
               </div>
             </div>
             <div>
-              <div className="mb-2 text-sm font-semibold text-[#17162B]">Questions answered</div>
+              <div className="mb-2 text-sm font-semibold text-[#17162B]">Answer rate</div>
               <PairBars pair={r.utility.answered} />
             </div>
           </div>
@@ -183,8 +183,8 @@ export default function ResultsPage() {
 
       <div className="grid gap-8 lg:grid-cols-2">
         <Card
-          title="Scanned documents, end to end"
-          sub={`Real scans read by OCR, then sanitised (${r.scans.documents} documents): private values the answers gave out.`}
+          title="End-to-end: OCR → sanitisation → RAG"
+          sub={`Labelled PII values disclosed in answers over real scanned documents (n = ${r.scans.documents}).`}
           testid="results-scans"
         >
           <GroupedBars
@@ -203,11 +203,11 @@ export default function ResultsPage() {
           </div>
         </Card>
 
-        <Card title="Speed" sub="Median seconds per answer." testid="results-latency">
+        <Card title="Latency overhead" sub="Median end-to-end response time (s)." testid="results-latency">
           <GroupedBars
             items={[
-              { label: "Single question", pair: r.latency.single },
-              { label: "Each turn of a conversation", pair: r.latency.turn },
+              { label: "Single query", pair: r.latency.single },
+              { label: "Per session turn (with monitor)", pair: r.latency.turn },
             ]}
             max={Math.max(r.latency.single.base, r.latency.single.ours, r.latency.turn.base, r.latency.turn.ours)}
             format={(v) => `${v.toFixed(2)} s`}
@@ -217,8 +217,8 @@ export default function ResultsPage() {
 
       {r.leftover && (
         <Card
-          title="What is left in the stored documents"
-          sub={`Every rewrite checked for private details, no questions asked: ${r.leftoverSource}.`}
+          title="Residual PII in the sanitised store"
+          sub={`Annotated PII values still present in the rewritten documents (no queries): ${r.leftoverSource}.`}
           testid="results-leftover"
         >
           <div className="space-y-3">

@@ -55,6 +55,7 @@ export const RESULTS: Record<DomainId, DomainResults> = {
     },
     copying: { repeat: { base: 0.32, ours: 0.3 }, rouge: { base: 0.3, ours: 0 }, prompts: 100 },
     latency: { single: { base: 5.2, ours: 4.94 }, turn: { base: 1.2, ours: 0.88 } },
+    utility: { retention: 0.822, retentionAnswered: 0.822, answered: { base: 1, ours: 1 }, questions: 5 },
     scans: {
       documents: 25,
       leaked: [
@@ -62,9 +63,9 @@ export const RESULTS: Record<DomainId, DomainResults> = {
         { label: "Scan + OCR", base: 31, ours: 0 },
       ],
       ocr: [
-        { label: "Character error, clinical scans (vision model)", value: "3.6%" },
-        { label: "Character error, electronic PDFs (text layer)", value: "0.0%" },
-        { label: "Median reading time per scanned document", value: "22 s" },
+        { label: "CER, clinical scans (vision model)", value: "3.6%" },
+        { label: "CER, electronic PDFs (text layer)", value: "0.0%" },
+        { label: "OCR latency, median per document", value: "22 s" },
       ],
     },
     leftover: [
@@ -105,9 +106,9 @@ export const RESULTS: Record<DomainId, DomainResults> = {
       ],
       oursNote: "Ours let through a date and a reference number.",
       ocr: [
-        { label: "Character error, contract scans (vision model)", value: "2.8%" },
-        { label: "Character error, contracts as PDF (text layer)", value: "0.3%" },
-        { label: "Median reading time per document", value: "0.8 s" },
+        { label: "CER, contract scans (vision model)", value: "2.8%" },
+        { label: "CER, contracts as PDF (text layer)", value: "0.3%" },
+        { label: "OCR latency, median per document", value: "0.8 s" },
       ],
     },
   },
@@ -140,8 +141,8 @@ export const RESULTS: Record<DomainId, DomainResults> = {
       documents: 10,
       leaked: [{ label: "Bank statements, scan + OCR", base: 10, ours: 0 }],
       ocr: [
-        { label: "Labelled fields read correctly", value: "100% of 60" },
-        { label: "Median reading time per page", value: "1.8 s" },
+        { label: "Field-level OCR accuracy", value: "100% (60/60)" },
+        { label: "OCR latency, median per page", value: "1.8 s" },
       ],
     },
     leftover: [
