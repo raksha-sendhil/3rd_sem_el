@@ -288,6 +288,7 @@ def prepare_e2e(d, repo: Path, work: Path, n: int, max_parts: int) -> None:
             entry = {"id": g["id"], "path": str(path), "type": g.get("type", d.source),
                      "source": d.source, "gold_text": "\n\n".join(gold_parts),
                      "ocr_text": "\n\n".join(ocr_parts), "ocr_seconds": round(seconds, 1),
+                     "page_notes": [f"{p.method}: {p.note}" for p in res.pages if p.note or p.method == "failed"],
                      "pages": len(res.pages), "private_count": len(private), "fields": fields,
                      "gold_parts": [], "ocr_parts": []}  # fmt: skip
             for side, parts in (("gold", gold_parts), ("ocr", ocr_parts)):
@@ -300,7 +301,8 @@ def prepare_e2e(d, repo: Path, work: Path, n: int, max_parts: int) -> None:
             done[g["id"]] = entry
             _dump(manifest_path, list(done.values()))
             print(
-                f"[{i}/{len(rows)}] {g['id']}: {len(entry['ocr_text'])} characters read in {seconds:.0f} s",
+                f"[{i}/{len(rows)}] {g['id']}: {len(entry['ocr_text'])} characters read in {seconds:.0f} s"
+                + "".join(f"\n    page {n}" for n in entry["page_notes"]),
                 flush=True,
             )
 

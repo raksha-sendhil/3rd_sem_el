@@ -83,6 +83,21 @@ async def test_daily_limit_moves_to_the_next_key_then_says_so() -> None:
         await gemini.text_call("s", "u")
 
 
+async def test_an_invalid_key_answering_400_is_dropped_and_the_next_key_used() -> None:
+    keys: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        keys.append(request.headers["x-goog-api-key"])
+        if keys[-1] == "key-1":
+            return error(400, "API key not valid. Please pass a valid API key.")
+        return answer("ok")
+
+    gemini = client(handler, api_keys=["key-1", "key-2"])
+    assert await gemini.text_call("s", "u") == "ok"
+    assert await gemini.text_call("s", "u") == "ok"
+    assert keys == ["key-1", "key-2", "key-2"]  # the bad key is never tried again
+
+
 async def test_a_rejected_schema_falls_back_to_plain_json() -> None:
     bodies: list[dict] = []
 

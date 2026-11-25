@@ -147,6 +147,7 @@ def prepare(domain: str, main_repo: Path, work: Path, n: int, max_parts: int = M
             quality = score_text(ocr_text, gold_text) if ocr_text else None
             entry = {**{k: v for k, v in d.items() if k != "gold"}, "gold_text": gold_text,
                      "ocr_text": ocr_text, "ocr_seconds": round(seconds, 1), "pages": len(res.pages),
+                     "page_notes": [f"{p.method}: {p.note}" for p in res.pages if p.note or p.method == "failed"],
                      "ocr_quality": _as_dict(quality),
                      "gold_parts": [], "ocr_parts": []}  # fmt: skip
             for side, parts in (("gold", gold_parts), ("ocr", ocr_parts)):
@@ -163,7 +164,8 @@ def prepare(domain: str, main_repo: Path, work: Path, n: int, max_parts: int = M
                 json.dumps(list(done.values()), indent=1, ensure_ascii=False), encoding="utf-8"
             )
             print(
-                f"[{i}/{len(docs)}] {d['id']}: {len(ocr_text)} characters read in {seconds:.0f} s",
+                f"[{i}/{len(docs)}] {d['id']}: {len(ocr_text)} characters read in {seconds:.0f} s"
+                + "".join(f"\n    page {n}" for n in entry["page_notes"]),
                 flush=True,
             )
 

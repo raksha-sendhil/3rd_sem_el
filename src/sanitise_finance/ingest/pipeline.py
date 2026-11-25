@@ -38,25 +38,37 @@ class Reader(Protocol):
     async def read(self, image: bytes) -> str: ...
 
 
+RETRY_MAX_SIDE = 1400  # px, the second try at a page
+
+
 async def _vision(
     reader: Reader | None, img: Image.Image, index: int, note: str | None, settings: Settings
 ) -> PageResult:
     if reader is None:
         return PageResult(index=index, method="failed", text="", note=f"{note}; no vision model")
-    prepared = images.prepare(img, max_side=settings.ocr_max_side, min_side=settings.ocr_min_side)
     start = time.perf_counter()
-    try:
-        text = await reader.read(prepared)
-    except PipelineError as exc:
-        return PageResult(
-            index=index,
-            method="failed",
-            text="",
-            note=f"{note}; vision model failed: {exc.detail}",
-            seconds=time.perf_counter() - start,
-        )
+    failure = ""
+    # a failed or empty page is read once more from a smaller image: less memory on the GPU and
+    # fewer image tokens in the model's context (a dense, 300 dpi form failed at full size)
+    for side in dict.fromkeys((settings.ocr_max_side, min(settings.ocr_max_side, RETRY_MAX_SIDE))):
+        prepared = images.prepare(img, max_side=side, min_side=min(settings.ocr_min_side, side))
+        try:
+            text = await reader.read(prepared)
+        except PipelineError as exc:
+            failure = f"vision model failed at {side} px: {exc.detail}"
+            continue
+        if text.strip():
+            retried = f"read at {side} px after: {failure or 'an empty reply'}" if side != settings.ocr_max_side else None
+            return PageResult(index=index, method="vision", text=text,
+                              note="; ".join(x for x in (note, retried) if x) or None,
+                              seconds=time.perf_counter() - start)  # fmt: skip
+        failure = failure or f"empty reply at {side} px"
     return PageResult(
-        index=index, method="vision", text=text, note=note, seconds=time.perf_counter() - start
+        index=index,
+        method="failed",
+        text="",
+        note="; ".join(x for x in (note, failure) if x),
+        seconds=time.perf_counter() - start,
     )
 
 

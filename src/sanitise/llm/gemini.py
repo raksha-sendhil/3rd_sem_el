@@ -183,7 +183,7 @@ class GeminiClient(BaseJSONClient):
             code = response.status_code
             if code == 400 and self._drop_optional(full, json_schema):
                 continue
-            if code in (401, 403) and _bad_key(full):
+            if code in (400, 401, 403) and _bad_key(full):  # an invalid key comes back as 400
                 self._drop_key(detail)
                 continue
             if code == 404 and len(self.models) > 1:  # this key cannot use this model
