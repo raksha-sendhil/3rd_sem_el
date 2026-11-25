@@ -156,8 +156,9 @@ def bootstrap_ci(
         return (float("nan"), float("nan"))
     rng = random.Random(seed)
     k = len(items)
-    values = sorted(stat([items[rng.randrange(k)] for _ in range(k)]) for _ in range(n))
-    values = [v for v in values if not math.isnan(v)]
+    # resamples where the statistic is undefined (nan) are left out, before sorting
+    values = sorted(v for v in (stat([items[rng.randrange(k)] for _ in range(k)]) for _ in range(n))
+                    if not math.isnan(v))
     if not values:
         return (float("nan"), float("nan"))
     return (values[int(0.025 * (len(values) - 1))], values[int(0.975 * (len(values) - 1))])

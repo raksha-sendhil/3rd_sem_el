@@ -234,9 +234,11 @@ def utility(rows: list[dict]) -> dict:
                      "rouge_l": M.mean([M.rouge_l(r[pipe]["answer"], r["reference"]) for r in rows])}  # fmt: skip
     base = out["baseline"]["token_f1"]
     out["utility_retention"] = out["protected"]["token_f1"] / base if base else float("nan")
-    out["retention_ci95"] = M.bootstrap_ci(
-        pairs, lambda s: M.mean([b for _, b in s]) / max(M.mean([a for a, _ in s]), 1e-9)
-    )
+    def ratio(s):  # undefined (left out) when no-privacy scored 0 on every resampled question
+        base = M.mean([a for a, _ in s])
+        return M.mean([b for _, b in s]) / base if base else float("nan")
+
+    out["retention_ci95"] = M.bootstrap_ci(pairs, ratio)
     out["wilcoxon_p"] = M.wilcoxon_p(pairs)
     # how often each pipeline gives an answer at all, and F1 where ours did answer
     for pipe in PIPES:
@@ -989,8 +991,9 @@ def markdown(res: dict, figures_made: list[str]) -> str:
         )
         a = u["answered"]
         L.append(
-            f"| | utility retention where ours answered ({a['questions']} questions) | 100% | "
-            f"{_pct(a['retention'])} | |"
+            f"| | answer score where ours answered ({a['questions']} questions; retention "
+            f"{_pct(a['retention'])}, above 100% when ours answered what no privacy did not) | "
+            f"{a['baseline_f1']:.3f} | {a['protected_f1']:.3f} | |"
         )
     if lat := s.get("latency"):
         L.append(

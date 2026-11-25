@@ -88,10 +88,16 @@ class VisionReader:
         }
         if self.seed is not None:
             options["seed"] = self.seed
-        text = await self._ask(image, prompt, options)
-        if not text:  # an empty reply happens now and then: once more, sampled differently
-            text = await self._ask(image, prompt, {**options, "temperature": 0.3, "seed": None})
-        return text
+        # an empty reply, or a read Ollama aborted because the model kept repeating itself (dotted
+        # lines on a form start such a loop), is tried once more: sampled, with a stronger penalty
+        retry = {**options, "temperature": 0.3, "seed": None, "repeat_penalty": 1.15}
+        try:
+            text = await self._ask(image, prompt, options)
+        except LLMUnreachable as exc:
+            if "repeat limit" not in str(exc):
+                raise
+            return await self._ask(image, prompt, retry)
+        return text or await self._ask(image, prompt, retry)
 
     async def _ask(self, image: bytes, prompt: str, options: dict[str, Any]) -> str:
         options = {k: v for k, v in options.items() if v is not None}

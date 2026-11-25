@@ -221,6 +221,29 @@ async def test_vision_reader_sends_the_image_to_ollama() -> None:
     await http.aclose()
 
 
+async def test_a_read_aborted_for_repetition_is_tried_once_more_sampled() -> None:
+    import json
+
+    import httpx
+
+    from sanitise.ingest import VisionReader
+
+    sent: list[dict] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        sent.append(json.loads(request.content)["options"])
+        if len(sent) == 1:
+            return httpx.Response(500, json={"error": "prediction aborted, token repeat limit reached"})
+        return httpx.Response(200, json={"message": {"content": "Name: Ravi Kumar"}})
+
+    http = httpx.AsyncClient(base_url="http://ollama", transport=httpx.MockTransport(handler))
+    reader = VisionReader(model="qwen3-vl:8b-instruct", http=http)
+    assert await reader.read(b"jpeg-bytes") == "Name: Ravi Kumar"
+    assert sent[1]["temperature"] > 0 and sent[1]["repeat_penalty"] > sent[0]["repeat_penalty"]
+    assert "seed" not in sent[1]
+    await http.aclose()
+
+
 def test_word_f1_ignores_order_and_hyphenation() -> None:
     gold = "INVOICE NO PEGIV-1030765\nTOTAL 193.00"
     s = score_text("TOTAL 193.00\nINVOICE NO PEGIV-1030765", gold)
