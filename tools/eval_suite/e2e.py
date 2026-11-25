@@ -202,7 +202,10 @@ UTILITY_RULES = (
     'biopsy report", "the chest X-ray", "the software licence agreement", "the supply agreement '
     'for medical devices"): never by a hospital, clinic, department, company, party, person, '
     "reference number or date, and never by a section heading (Impression, Final Diagnosis, "
-    "Tumor Summary, Findings, Schedule A); ask about the content itself."
+    "Tumor Summary, Findings, Schedule A); ask about the content itself. The answer is content "
+    "too: never a date, a person's, company's or party's name, a place or address, a website, "
+    "email or reference number, which the privacy step removes or generalises by design (a "
+    "question about them measures privacy, not usefulness)."
 )
 
 UTILITY_PROMPT = """Write {n_u} questions about the useful, non-private content of this real
@@ -323,7 +326,7 @@ def label(work: Path, n_targeted: int = 2, n_utility: int = 2) -> None:
     for m in manifest:
         if m["id"] in labels or not m["gold_text"].strip():
             continue
-        prompt = LABEL_PROMPT.format(n_t=n_targeted, n_u=n_utility, text=m["gold_text"][:6000],
+        prompt = LABEL_PROMPT.format(n_t=n_targeted, n_u=n_utility + 2, text=m["gold_text"][:6000],
                                      utility_rules=UTILITY_RULES)  # fmt: skip
         data = gemini.ask(prompt, m["id"])
         if data is None:
@@ -343,6 +346,24 @@ def label(work: Path, n_targeted: int = 2, n_utility: int = 2) -> None:
               f"{n_u} utility questions", flush=True)  # fmt: skip
 
 
+_MONTH = r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*"
+_DATE = re.compile(rf"\b\d{{1,2}}(?:st|nd|rd|th)?\s+(?:day\s+of\s+)?{_MONTH}\b|\b{_MONTH}\s+\d{{1,2}}\b"
+                   r"|\b\d{1,2}[/.-]\d{1,2}[/.-]\d{2,4}\b|\b(?:19|20)\d{2}\b", re.IGNORECASE)
+_WEB = re.compile(r"@|www\.|\.(?:com|org|net|in|co|gov|edu)\b|\bweb ?site\b", re.IGNORECASE)
+
+
+def _private_kind(answer: str) -> bool:
+    """An answer that is a date, a website or email, or a bare reference number."""
+    a = answer.strip()
+    return bool(_DATE.search(a) or _WEB.search(a) or re.fullmatch(r"[A-Z]{0,4}[-/ ]?\d{3,}", a))
+
+
+def _names_a_party(question: str) -> bool:
+    """A question that names its document by a company in capitals ("UNION DENTAL CORP.")."""
+    return bool(re.search(r"\b[A-Z]{2,}(?:[ &.,-]+[A-Z]{2,})+\b", question)
+                and not re.search(r"\b(?:MRI|CT|ECG|EEG|HIV|PSA|CBC|USG|X-RAY)\b", question))
+
+
 def _utility(data: dict, gold: str, n: int, private: list[dict]) -> list[dict]:
     """Utility questions whose answer is in the document and which name no private value."""
     out = []
@@ -351,6 +372,8 @@ def _utility(data: dict, gold: str, n: int, private: list[dict]) -> list[dict]:
             continue
         if any(value_found(v["value"], q["question"]) for v in private):
             continue
+        if _private_kind(q["answer"]) or _names_a_party(q["question"]):
+            continue  # asks for what privacy removes, or names the document by a party
         out.append({"question": q["question"], "answer": q["answer"]})
     return out[:n]
 
@@ -374,7 +397,7 @@ def relabel_utility(work: Path, n_utility: int = 2) -> None:
         if lab.get("utility_version") == 2 or doc not in manifest:
             continue
         gold = manifest[doc]["gold_text"]
-        prompt = UTILITY_PROMPT.format(n_u=n_utility, text=gold[:6000], utility_rules=UTILITY_RULES)
+        prompt = UTILITY_PROMPT.format(n_u=n_utility + 2, text=gold[:6000], utility_rules=UTILITY_RULES)
         data = gemini.ask(prompt, doc)
         if data is None:
             continue

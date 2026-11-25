@@ -109,3 +109,14 @@ def test_person_membership_scores_values_given_back() -> None:
     ]  # fmt: skip
     out = report.person_membership(d, rows)
     assert out["baseline"]["auc"] == 1.0 and out["protected"]["auc"] == 0.5
+
+
+def test_scan_utility_questions_never_ask_for_what_privacy_removes() -> None:
+    from eval_suite.e2e import _names_a_party, _private_kind
+
+    for answer in ("October 15, 2004", "30th day of June 1999", "healthcentral.com", "952"):
+        assert _private_kind(answer)
+    for answer in ("30 days", "No acute cardiopulmonary process", "Rs. 21661.82"):
+        assert not _private_kind(answer)
+    assert _names_a_party("What state corporation is UNION DENTAL CORP. in the agreement?")
+    assert not _names_a_party("What did the CT SCAN show?")
