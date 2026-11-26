@@ -45,7 +45,8 @@ from sanitise.errors import LLMTimeout, LLMUnreachable
 from sanitise.llm.base import BaseJSONClient, Message
 
 log = logging.getLogger(__name__)
-MAX_BUSY_WAIT_S = 600.0  # longest one call waits out busy replies (503) before failing
+MAX_BUSY_WAIT_S = 600.0
+REQUEST_TIMEOUT_MAX_S = 180.0  # one request; a model slower than this is treated as hanging  # longest one call waits out busy replies (503) before failing
 
 BASE_URL = "https://generativelanguage.googleapis.com/v1beta"
 
@@ -90,13 +91,13 @@ class GeminiClient(BaseJSONClient):
         self.thinking_level = thinking_level
         self.fixed_temperature = temperature  # None: the model's default (recommended)
         self.max_output_tokens = max_output_tokens
-        self.timeout_s = timeout_s
+        self.timeout_s = min(timeout_s, REQUEST_TIMEOUT_MAX_S)
         self.min_interval_s = min_interval_s
         self.max_waits = max_waits
         self.max_server_errors = max_server_errors
         self.use_json_schema = True
         self._owns_http = http is None
-        self._http = http or httpx.AsyncClient(base_url=BASE_URL, timeout=timeout_s)
+        self._http = http or httpx.AsyncClient(base_url=BASE_URL, timeout=self.timeout_s)
 
     @classmethod
     def from_settings(
@@ -176,7 +177,15 @@ class GeminiClient(BaseJSONClient):
         tried = {self.model}  # models asked in this round; a wait comes only after all of them
         while True:
             body = self._body(messages, json_schema, temperature, top_p, max_tokens)
-            response = await self._post(body)
+            try:
+                response = await self._post(body)
+            except LLMTimeout:
+                # a model that does not answer in time is hanging: like a busy reply, another
+                # model may answer at once; the time spent counts toward MAX_BUSY_WAIT_S
+                busy_waited += self.timeout_s
+                if busy_waited <= MAX_BUSY_WAIT_S and self._next_model("did not answer in time", tried):
+                    continue
+                raise
             if response.status_code == 200:
                 return _text(response.json(), self.model)
             full = response.text

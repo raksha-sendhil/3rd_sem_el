@@ -261,3 +261,57 @@ def test_question_writer_moves_on_from_a_model_that_times_out(monkeypatch) -> No
     g.models = ["slow", "fast"]
     assert g.ask("p", "q") == {"ok": 1}
     assert asked == ["slow", "fast"]  # one timeout, then the next model: not the same one again
+
+
+# ------------------------------------------------------------------ a model that hangs
+
+
+@pytest.mark.parametrize("pkg", ["sanitise", "sanitise_finance"])
+async def test_agents_client_moves_on_from_a_hanging_model(pkg, monkeypatch) -> None:
+    """A model that never answers used to fail every document after the full timeout, and the
+    next document went back to it."""
+    import importlib
+
+    mod = importlib.import_module(f"{pkg}.llm.gemini")
+
+    async def no_sleep(_: float) -> None:
+        pass
+
+    monkeypatch.setattr(mod.asyncio, "sleep", no_sleep)
+    asked: list[str] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        model = request.url.path.split("/models/")[1].split(":")[0]
+        asked.append(model)
+        if model == "hangs":
+            raise httpx.ReadTimeout("timed out", request=request)
+        return httpx.Response(200, json={"candidates": [{"content": {"parts": [{"text": "ok"}]},
+                                                         "finishReason": "STOP"}]})
+
+    http = httpx.AsyncClient(base_url="https://gemini.test/v1beta", transport=httpx.MockTransport(handler))
+    client = mod.GeminiClient(api_keys=["k1"], model="hangs,fine", min_interval_s=0.0, timeout_s=600, http=http)
+    assert client.timeout_s <= 180  # the notebook's 600 s is for Ollama, not one Gemini request
+    for _ in range(5):
+        assert await client.text_call("s", "u") == "ok"
+    assert asked == ["hangs", "fine", "fine", "fine", "fine", "fine"]  # it stays on the model that answers
+    await http.aclose()
+
+
+async def test_legal_client_moves_on_from_a_hanging_model(tmp_path) -> None:
+    from sanitise_legal.llm import gemini as mod
+
+    asked: list[str] = []
+
+    class Models:
+        async def generate_content(self, *, model: str, contents: list, config: dict):
+            asked.append(model)
+            if model == "hangs":
+                raise TimeoutError
+            return SimpleNamespace(text="ok", usage_metadata=None)
+
+    client = mod.GeminiClient(model="hangs,fine", api_keys=["k1"], cache_dir=tmp_path, rpm=60000,
+                              timeout_s=600, sdk_factory=lambda k: SimpleNamespace(aio=SimpleNamespace(models=Models())))
+    assert client.timeout_s <= 180
+    for i in range(4):
+        assert await client.text_call("s", f"d{i}") == "ok"
+    assert asked == ["hangs", "fine", "fine", "fine", "fine"]

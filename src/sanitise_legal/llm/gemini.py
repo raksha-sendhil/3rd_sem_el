@@ -58,6 +58,8 @@ _OVERLOADED = re.compile(
     r"\b50[0234] [A-Z_]+|\bUNAVAILABLE\b|\bDEADLINE_EXCEEDED\b|overloaded|high demand"
 )
 OVERLOAD_MAX_WAIT_S = 300.0
+REQUEST_TIMEOUT_MAX_S = 180.0  # one request; a model slower than this is treated as hanging
+MAX_TIMEOUTS = 3  # timed-out requests one call may make before it fails
 DAY_S = 24 * 3600.0
 
 
@@ -232,7 +234,7 @@ class GeminiClient(BaseJSONClient):
         self._sdk_client = sdk_client
         self._sdk_factory = sdk_factory
         self.min_interval = 60.0 / max(rpm, 1)
-        self.timeout_s = timeout_s
+        self.timeout_s = min(timeout_s, REQUEST_TIMEOUT_MAX_S)
         self.max_key_wait_s = max_key_wait_s
         self.overload_retries = overload_retries
         self.overload_wait_s = overload_wait_s
@@ -336,7 +338,7 @@ class GeminiClient(BaseJSONClient):
             config["response_mime_type"] = "application/json"
             config["response_json_schema"] = json_schema
 
-        overloaded = key_waits = limited = 0
+        overloaded = key_waits = limited = timeouts = 0
         busy_switches = 0  # models tried in this round of busy replies, before any wait
         while True:
             self.pool.model = self.model
@@ -358,6 +360,14 @@ class GeminiClient(BaseJSONClient):
                     timeout=self.timeout_s,
                 )
             except TimeoutError:
+                # a hanging model: the next model may answer at once (like an overloaded one)
+                timeouts += 1
+                if timeouts < MAX_TIMEOUTS and len(self.models) > 1:
+                    at = self.models.index(self.model)
+                    self.model = self.models[(at + 1) % len(self.models)]
+                    log.warning("Gemini did not answer within %.0f s: switching to %s",
+                                self.timeout_s, self.model)
+                    continue
                 raise LLMTimeout(
                     f"{self.model} did not answer within {self.timeout_s:.0f}s"
                 ) from None
