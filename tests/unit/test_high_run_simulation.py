@@ -315,3 +315,52 @@ async def test_legal_client_moves_on_from_a_hanging_model(tmp_path) -> None:
     for i in range(4):
         assert await client.text_call("s", f"d{i}") == "ok"
     assert asked == ["hangs", "fine", "fine", "fine", "fine"]
+
+
+# ------------------------------------------------------------------ a dropped connection
+
+
+@pytest.mark.parametrize("pkg", ["sanitise", "sanitise_finance"])
+async def test_agents_client_survives_a_dropped_connection(pkg, monkeypatch) -> None:
+    import importlib
+
+    mod = importlib.import_module(f"{pkg}.llm.gemini")
+
+    async def no_sleep(_: float) -> None:
+        pass
+
+    monkeypatch.setattr(mod.asyncio, "sleep", no_sleep)
+    drops = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        if drops["n"] < 2:
+            drops["n"] += 1
+            raise httpx.RemoteProtocolError("Server disconnected without sending a response")
+        return httpx.Response(200, json={"candidates": [{"content": {"parts": [{"text": "ok"}]},
+                                                         "finishReason": "STOP"}]})
+
+    http = httpx.AsyncClient(base_url="https://gemini.test/v1beta", transport=httpx.MockTransport(handler))
+    client = mod.GeminiClient(api_keys=["k1"], model="m1", min_interval_s=0.0, http=http)
+    assert await client.text_call("s", "u") == "ok"  # used to fail the document at once
+    await http.aclose()
+
+
+async def test_legal_client_survives_a_dropped_connection(tmp_path, monkeypatch) -> None:
+    from sanitise_legal.llm import gemini as mod
+
+    async def no_sleep(_: float) -> None:
+        pass
+
+    monkeypatch.setattr(mod.asyncio, "sleep", no_sleep)
+    drops = {"n": 0}
+
+    class Models:
+        async def generate_content(self, *, model: str, contents: list, config: dict):
+            if drops["n"] < 2:
+                drops["n"] += 1
+                raise RuntimeError("Server disconnected without sending a response.")
+            return SimpleNamespace(text="ok", usage_metadata=None)
+
+    client = mod.GeminiClient(model="m1,m2", api_keys=["k1"], cache_dir=tmp_path, rpm=60000,
+                              sdk_factory=lambda k: SimpleNamespace(aio=SimpleNamespace(models=Models())))
+    assert await client.text_call("s", "u") == "ok"

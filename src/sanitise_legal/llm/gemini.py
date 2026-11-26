@@ -56,6 +56,8 @@ _DAILY = re.compile(r"per.?day|PerDay|daily", re.IGNORECASE)
 _NOT_FOUND = re.compile(r"\b404\b|NOT_FOUND|is not found|not supported for generateContent")
 _OVERLOADED = re.compile(
     r"\b50[0234] [A-Z_]+|\bUNAVAILABLE\b|\bDEADLINE_EXCEEDED\b|overloaded|high demand"
+    r"|Server disconnected|Connection(?:Error|Reset| reset| refused| aborted)|RemoteProtocolError"
+    r"|ReadError|ConnectError"
 )
 OVERLOAD_MAX_WAIT_S = 300.0
 REQUEST_TIMEOUT_MAX_S = 180.0  # one request; a model slower than this is treated as hanging

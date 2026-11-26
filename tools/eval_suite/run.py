@@ -131,6 +131,26 @@ def _note_skipped(label: str, asked: int, skipped: int, failed: int = 0) -> None
     _dump(path, old)
 
 
+def _fetch_embedder(tries: int = 6) -> None:
+    """Download the retrieval embedding model now, with retries: it is first needed by the
+    question steps hours later, when a HuggingFace failure would leave every question unasked.
+    A failure here stops the data step, early and cheaply."""
+    if os.environ.get("EVAL_MOCK") or os.environ.get("SANITISE_RETRIEVAL_MODE", "hybrid") != "hybrid":
+        return
+    for attempt in range(tries):
+        try:
+            from huggingface_hub import snapshot_download
+
+            snapshot_download("BAAI/bge-m3")
+            print("embedding model BAAI/bge-m3 ready", flush=True)
+            return
+        except Exception as exc:  # noqa: BLE001
+            wait = min(300, 20 * 2**attempt)
+            print(f"embedding model download failed ({exc}); again in {wait} s", flush=True)
+            time.sleep(wait)
+    raise SystemExit("could not download the embedding model BAAI/bge-m3 from HuggingFace")
+
+
 def _gemini_budget(most_s: float, share: float) -> None:
     """A step that writes questions with Gemini (labels, utility questions) stops asking after
     ``most_s`` or ``share`` of the time left, whichever is less, so the build keeps its time
@@ -602,8 +622,10 @@ def main() -> None:
         from eval_suite import finance
 
         finance.step_data(D, ARGS.repo, WORK, SCALE, Q)
+        _fetch_embedder()
     elif step == "data":
         step_data()
+        _fetch_embedder()
     elif step == "build":
         step_build()
     elif step == "single":

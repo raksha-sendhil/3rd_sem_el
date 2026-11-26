@@ -179,6 +179,16 @@ class GeminiClient(BaseJSONClient):
             body = self._body(messages, json_schema, temperature, top_p, max_tokens)
             try:
                 response = await self._post(body)
+            except LLMUnreachable as exc:
+                if "cannot reach" not in str(exc):
+                    raise
+                # a dropped connection: like a busy reply, wait a little (counted) and go on
+                busy_waited += 15.0
+                if busy_waited > MAX_BUSY_WAIT_S:
+                    raise
+                if not self._next_model("connection dropped", tried):
+                    await asyncio.sleep(15.0)
+                continue
             except LLMTimeout:
                 # a model that does not answer in time is hanging: like a busy reply, another
                 # model may answer at once; the time spent counts toward MAX_BUSY_WAIT_S
