@@ -234,9 +234,12 @@ class Gemini:
         self.model = ""
 
     def ask(self, prompt: str, what: str) -> dict | None:
-        for attempt in range(24):  # labels decide how many scans count: patience over speed
+        limited = 0  # 429 replies in this call
+        for attempt in range(max(24, 2 * len(self.keys) * len(self.models))):
             if not self.models:
                 raise SystemExit("no Gemini model this key can use: set EVAL_LABEL_MODEL")
+            if not self.keys:
+                raise SystemExit("Gemini refused every API key")
             self.model = self.models[0]
             key = self.keys[self.key_i % len(self.keys)]
             try:
@@ -244,11 +247,33 @@ class Gemini:
                 time.sleep(4.5)  # free tier: 15 requests a minute
                 return data
             except urllib.error.HTTPError as exc:
+                body = ""
+                try:
+                    body = exc.read().decode("utf-8", "replace")
+                except Exception:
+                    pass
                 if exc.code == 404:  # the key has no such model: the next one, at once
                     print(f"  {self.model}: not available to this key, trying the next model")
                     self.models.pop(0)
                     continue
+                if exc.code in (400, 401, 403) and re.search(r"API.?key not valid|API_KEY_INVALID", body):
+                    print(f"  {what}: Gemini refused key {self.key_i % len(self.keys) + 1}; left out", flush=True)
+                    self.keys.pop(self.key_i % len(self.keys))
+                    continue
                 print(f"  {what}: {self.model}: {exc} (retrying)", flush=True)
+                if exc.code == 429:
+                    # this key is at its limit on this model: the next key; after every key, the
+                    # next model (limits are per model); a wait only after every key and model
+                    limited += 1
+                    self.key_i += 1
+                    if limited % len(self.keys) == 0 and len(self.models) > 1:
+                        self.models.append(self.models.pop(0))
+                        print(f"  {what}: every key at its limit on {self.model}, trying {self.models[0]}", flush=True)
+                    if limited % (len(self.keys) * len(self.models)) == 0:
+                        time.sleep(min(120, 10 * limited // (len(self.keys) * len(self.models))))
+                    else:
+                        time.sleep(1)
+                    continue
                 if exc.code >= 500 and len(self.models) > 1:
                     # the model is overloaded: another key cannot help, another model can
                     self.models.append(self.models.pop(0))
@@ -257,7 +282,7 @@ class Gemini:
                     continue
             except Exception as exc:  # network or broken JSON
                 print(f"  {what}: {self.model}: {str(exc)[:120]} (retrying)", flush=True)
-            self.key_i += 1  # rate limit or a hiccup: next key, wait, retry
+            self.key_i += 1  # a hiccup: next key, wait, retry
             time.sleep(min(120, 5 * (attempt + 1)))
         return None
 

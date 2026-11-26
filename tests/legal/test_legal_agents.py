@@ -189,6 +189,36 @@ async def test_a_rate_limited_key_hands_over_to_the_next(tmp_path: Path) -> None
     assert "k2" not in json.dumps(usage)  # fingerprints only, never the key
 
 
+async def test_keys_spent_one_call_at_a_time_move_the_next_call_to_another_model(
+    tmp_path: Path,
+) -> None:
+    """Each key reaches its daily limit on model A during a different call; the next call must go
+    to model B (limits are per model) instead of failing with 'every key is resting'."""
+    calls: list[tuple[str, str]] = []
+    left = {"k1": 1, "k2": 3}  # requests each key has left on model A today
+
+    class Models:
+        def __init__(self, key: str) -> None:
+            self.key = key
+
+        async def generate_content(self, *, model: str, contents: list, config: dict):
+            calls.append((self.key, model))
+            if model == "model-a":
+                if left[self.key] == 0:
+                    raise RuntimeError("429 RESOURCE_EXHAUSTED: GenerateRequestsPerDayPerProjectPerModel")
+                left[self.key] -= 1
+            return SimpleNamespace(text=f"{model} {self.key}", usage_metadata=None)
+
+    client = GeminiClient(
+        model="model-a,model-b", api_keys=["k1", "k2"], cache_dir=tmp_path, rpm=6000,
+        sdk_factory=lambda k: SimpleNamespace(aio=SimpleNamespace(models=Models(k))),
+    )
+    # k1 runs out during call 3, k2 during call 5: never both in one call
+    answers = [await client.text_call("s", f"u{i}") for i in range(6)]
+    assert [a.split()[0] for a in answers] == ["model-a"] * 4 + ["model-b"] * 2
+    assert {k for k, m in calls if m == "model-b"} == {"k1", "k2"}  # rested on A, fresh on B
+
+
 async def test_daily_quota_and_token_budget_rest_a_key_for_the_day(tmp_path: Path) -> None:
     from sanitise_legal.errors import LLMUnreachable
 

@@ -802,6 +802,9 @@ def build_note(res: dict) -> list[str]:
         bits = [f"{k} {v['to_ask'] - v['skipped']} of {v['to_ask']}" for k, v in s.items()]
         if any(v["skipped"] for v in s.values()):
             out.append(f"**Stopped at the time limit**: questions asked per set: {', '.join(bits)}.")
+        if fails := [f"{k} {v['failed']} of {v['to_ask']}" for k, v in s.items() if v.get("failed")]:
+            out.append(f"**Questions that failed twice** (a model error; left out of both pipelines' "
+                       f"numbers): {', '.join(fails)}.")
     return out
 
 

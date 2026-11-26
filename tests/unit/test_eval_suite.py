@@ -120,3 +120,27 @@ def test_scan_utility_questions_never_ask_for_what_privacy_removes() -> None:
         assert not _private_kind(answer)
     assert _names_a_party("What state corporation is UNION DENTAL CORP. in the agreement?")
     assert not _names_a_party("What did the CT SCAN show?")
+
+
+def test_question_writer_moves_to_the_next_model_when_every_key_is_limited(monkeypatch) -> None:
+    import io
+    import urllib.error
+
+    from eval_suite import e2e
+
+    asked: list[tuple[str, str]] = []
+
+    def fake(prompt: str, model: str, key: str) -> str:
+        asked.append((model, key))
+        if model == "m1":
+            raise urllib.error.HTTPError("u", 429, "Too Many Requests", {}, io.BytesIO(b"per day"))
+        return '{"ok": true}'
+
+    monkeypatch.setattr(e2e, "_gemini", fake)
+    monkeypatch.setattr(e2e.time, "sleep", lambda s: None)
+    monkeypatch.setenv("GEMINI_API_KEYS", "k1,k2")
+    monkeypatch.setenv("EVAL_LABEL_MODEL", "m1")
+    monkeypatch.setenv("SANITISE_AGENTS_MODEL", "m2")
+    g = e2e.Gemini()
+    assert g.ask("p", "q1") == {"ok": True}
+    assert asked[:3] == [("m1", "k1"), ("m1", "k2"), ("m2", "k1")]  # not m1 again and again

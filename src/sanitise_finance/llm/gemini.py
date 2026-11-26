@@ -84,6 +84,7 @@ class GeminiClient(BaseJSONClient):
         super().__init__(model=models[0], retries=retries, temperature=temperature or 0.0)
         self.models = models
         self.exhausted: set[str] = set()  # models whose daily limit every key has reached
+        self.spent: set[tuple[str, str]] = set()  # (model, key) pairs at their daily limit
         self.api_keys = keys
         self.key_index = 0
         self.thinking_level = thinking_level
@@ -246,7 +247,19 @@ class GeminiClient(BaseJSONClient):
         self.model = nxt
         if tried is not None:
             tried.add(nxt)
+        self._fresh_key()
         return True
+
+    def _fresh_key(self) -> bool:
+        """Use a key that has not reached its daily limit on the current model (limits are per
+        model and key): the current one if it has not, else the next. False when none is left."""
+        n = len(self.api_keys)
+        for step in range(n):
+            k = (self.key_index + step) % n
+            if (self.model, self.api_keys[k]) not in self.spent:
+                self.key_index = k
+                return True
+        return False
 
     def _drop_key(self, detail: str) -> None:
         """A key Google refuses (mistyped, revoked, not an API key) is left out for the rest of
@@ -259,19 +272,20 @@ class GeminiClient(BaseJSONClient):
         self.key_index %= len(self.api_keys)
 
     def _next_key(self, detail: str) -> None:
-        if self.key_index + 1 >= len(self.api_keys):
+        self.spent.add((self.model, self.api_keys[self.key_index]))
+        was = self.key_index
+        if not self._fresh_key():
             self.exhausted.add(self.model)
             if self._next_model("daily limit on every key"):
-                self.key_index = 0
                 return
             raise LLMUnreachable(
                 f"Gemini daily limit reached on all {len(self.api_keys)} API key(s) for "
                 f"{', '.join(self.models)}. Add a key from a different Google Cloud project, or "
                 f"wait until tomorrow. {detail}"
             )
-        self.key_index += 1
         log.warning(
-            "Gemini daily limit on key %d; switching to key %d", self.key_index, self.key_index + 1
+            "Gemini daily limit on key %d for %s; switching to key %d",
+            was + 1, self.model, self.key_index + 1,
         )
 
     async def _post(self, body: dict[str, Any]) -> httpx.Response:

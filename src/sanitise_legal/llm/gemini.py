@@ -92,8 +92,12 @@ def fingerprint(key: str) -> str:
 @dataclass
 class _Key:
     key: str
-    rest_until: float = 0.0
+    rests: dict[str, float] = field(default_factory=dict)  # model -> resting until (limits are per model)
     sdk: Any = None
+
+    @property
+    def rest_until(self) -> float:
+        return max(self.rests.values(), default=0.0)
 
     @property
     def id(self) -> str:
@@ -109,6 +113,7 @@ class KeyPool:
     daily_token_budget: int = 0  # per key; 0 = none
     usage_path: Path | None = None
     clock: Callable[[], float] = time.time
+    model: str = ""  # the model calls go to now; a key rests per model
     _keys: list[_Key] = field(init=False)
     _next: int = field(default=0, init=False)
 
@@ -144,13 +149,15 @@ class KeyPool:
             bool(self.daily_token_budget) and self.used_today(entry.id) >= self.daily_token_budget
         )
 
-    def _available(self, entry: _Key) -> bool:
-        return entry.rest_until <= self.clock() and not self._over_budget(entry)
+    def _available(self, entry: _Key, model: str | None = None) -> bool:
+        until = entry.rests.get(self.model if model is None else model, 0.0)
+        return until <= self.clock() and not self._over_budget(entry)
 
-    def free_in(self) -> float:
-        """Seconds until a key can be used: 0 if one can now, infinity if none can today."""
-        now = self.clock()
-        waits = [max(k.rest_until - now, 0.0) for k in self._keys if not self._over_budget(k)]
+    def free_in(self, model: str | None = None) -> float:
+        """Seconds until a key can be used on ``model`` (default: the current one): 0 if one can
+        now, infinity if none can today."""
+        now, m = self.clock(), self.model if model is None else model
+        waits = [max(k.rests.get(m, 0.0) - now, 0.0) for k in self._keys if not self._over_budget(k)]
         return min(waits, default=float("inf"))
 
     def acquire(self) -> _Key:
@@ -165,7 +172,7 @@ class KeyPool:
             if self._available(entry):
                 self._next = (self._next + i + 1) % len(self._keys)
                 return entry
-        soonest = min(k.rest_until for k in self._keys) - self.clock()
+        soonest = min(k.rests.get(self.model, 0.0) for k in self._keys) - self.clock()
         raise LLMUnreachable(
             f"all {len(self._keys)} Gemini keys are rate-limited or over their daily budget"
             + (f"; the first is free again in {soonest:.0f} s" if soonest > 0 else "")
@@ -178,18 +185,14 @@ class KeyPool:
             self._next = self._next % len(self._keys) if self._keys else 0
             log.warning("Gemini refused key %s; %d key(s) left", entry.id, len(self._keys))
 
-    def wake(self) -> None:
-        """Limits are per model: every key may be tried again on another model."""
-        for entry in self._keys:
-            entry.rest_until = 0.0
-
     def rest(self, entry: _Key, message: str) -> None:
         daily = bool(_DAILY.search(message))
-        entry.rest_until = self.clock() + (DAY_S if daily else self.cooldown_s)
+        entry.rests[self.model] = self.clock() + (DAY_S if daily else self.cooldown_s)
         log.warning(
-            "Gemini key %s hit its %s; switching key",
+            "Gemini key %s hit its %s on %s; switching key",
             entry.id,
             "daily quota" if daily else "rate limit",
+            self.model,
         )
 
 
@@ -332,17 +335,19 @@ class GeminiClient(BaseJSONClient):
             config["response_mime_type"] = "application/json"
             config["response_json_schema"] = json_schema
 
-        rate_limited = overloaded = key_waits = switches = 0
+        overloaded = key_waits = limited = 0
         busy_switches = 0  # models tried in this round of busy replies, before any wait
         while True:
-            free_in = self.pool.free_in()
-            if 0 < free_in <= self.max_key_wait_s and key_waits < self.overload_retries:
-                key_waits += 1
-                log.warning("Every Gemini key is resting; waiting %.0f s", free_in)
-                await asyncio.sleep(free_in)
-            elif rate_limited >= max(len(self.pool), 1) * (key_waits + 1):
-                break
-            entry = self.pool.acquire()
+            self.pool.model = self.model
+            if self.pool.free_in() > 0 and not self._to_free_model():
+                # every key rests on every model: wait when the soonest is free shortly
+                free_in = min(self.pool.free_in(m) for m in self.models)
+                if free_in <= self.max_key_wait_s and key_waits < self.overload_retries:
+                    key_waits += 1
+                    log.warning("Every Gemini key is resting on every model; waiting %.0f s", free_in)
+                    await asyncio.sleep(free_in)
+                    self._to_free_model()
+            entry = self.pool.acquire()  # raises with the reason when no key can be used
             await self._throttle()
             try:
                 response = await asyncio.wait_for(
@@ -360,16 +365,11 @@ class GeminiClient(BaseJSONClient):
                     self.pool.drop(entry)
                     continue  # the next key
                 if _RATE_LIMITED.search(str(exc)):
-                    self.pool.rest(entry, str(exc))
-                    rate_limited += 1
-                    if rate_limited >= len(self.pool) and switches < len(self.models) - 1:
-                        switches += 1
-                        at = self.models.index(self.model)
-                        self.model = self.models[(at + 1) % len(self.models)]
-                        log.warning("Every key is at its limit: switching to %s", self.model)
-                        self.pool.wake()
-                        rate_limited = 0
-                    continue  # the next key
+                    self.pool.rest(entry, str(exc))  # this key, on this model only
+                    limited += 1
+                    if limited > 3 * max(len(self.pool), 1) * len(self.models):  # never cycle forever
+                        raise LLMUnreachable(f"Gemini kept rate-limiting every key and model: {exc}") from None
+                    continue  # the next key; the next model when no key is left on this one
                 if _OVERLOADED.search(str(exc)) and busy_switches < len(self.models) - 1:
                     # another model may answer at once: try each configured model before waiting
                     busy_switches += 1
@@ -396,5 +396,14 @@ class GeminiClient(BaseJSONClient):
             if text:  # an empty reply (blocked, cut off) must not come back on every re-run
                 self._store(cache_key, text)
             return text
-        self.pool.acquire()  # every key just rested: raises with the reason
-        raise AssertionError("unreachable")  # pragma: no cover
+
+    def _to_free_model(self) -> bool:
+        """Switch to the next configured model on which some key can be used now. Each key's
+        limits are per model, so a key at its limit on one model is tried on the others."""
+        at = self.models.index(self.model) if self.model in self.models else -1
+        for m in self.models[at + 1 :] + self.models[: at + 1]:
+            if m != self.model and self.pool.free_in(m) == 0:
+                log.warning("Every key is at its limit on %s: switching to %s", self.model, m)
+                self.model = self.pool.model = m
+                return True
+        return False

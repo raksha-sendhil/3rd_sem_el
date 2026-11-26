@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-FREEZE = "eval-freeze-23"  # the clean test's code: change nothing after it has been run
+FREEZE = "eval-freeze-24"  # the clean test's code: change nothing after it has been run
 REPO_URL = "https://github.com/raksha-sendhil/3rd_sem_el.git"
 
 
@@ -44,7 +44,7 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 * **Session options**: Accelerator **GPU T4 x2**, Internet **On**.
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
 
-**This is the clean test.** The code is frozen at the tag `eval-freeze-23`, the real data is
+**This is the clean test.** The code is frozen at the tag `eval-freeze-24`, the real data is
 unseen and the people are new (`data/eval_clean/clean_people.json` on main). Run it once and
 report what comes out.
 
@@ -79,7 +79,7 @@ HOURS = 11       # the run stops and reports by then; Kaggle ends any run at 12 
 MODEL = "llama3:8b"                       # answers, both pipelines (as the dashboard)
 GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.5-flash,gemini-3.8-flash,gemini-3.7-flash,gemini-3-flash-preview,gemini-4-hydrogen,gemini-3.1-flash-lite"   # Agents 1-3 (fallback order)
 OCR_MODEL = "qwen3-vl:8b-instruct"        # reads the scans (end-to-end check)
-FREEZE = "eval-freeze-23"   # the frozen code: do not change it for the clean test
+FREEZE = "eval-freeze-24"   # the frozen code: do not change it for the clean test
 
 import os, subprocess, sys
 from pathlib import Path
@@ -138,7 +138,10 @@ def run(step, extra=""):
     colab_cache.start_ollama()  # back up if it stopped (e.g. a cell was interrupted)
     cmd = RUN.format(step=step) + " " + extra
     print("$", cmd, flush=True)
-    code = subprocess.run(cmd, shell=True, check=False).returncode
+    (WORK / "results").mkdir(parents=True, exist_ok=True)  # every step's output also kept in run.log
+    log_file = str(WORK / "results" / "run.log")
+    code = subprocess.run(["bash", "-o", "pipefail", "-c", "(" + cmd + ") 2>&1 | tee -a '" + log_file + "'"],
+                          check=False, env={**os.environ, "PYTHONUNBUFFERED": "1"}).returncode
     if code and step != "report":  # stop here: later numbers would be wrong or missing
         raise RuntimeError(f"{step} failed: read the last lines above, then run this cell again "
                            "(every step resumes where it stopped)")

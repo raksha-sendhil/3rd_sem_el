@@ -214,7 +214,29 @@ async def test_daily_limit_on_every_key_moves_to_the_next_model() -> None:
 
     gemini = client(handler, model="gemini-a,gemini-b", api_keys=["k1", "k2"])
     assert await gemini.text_call("s", "u") == "ok"
-    assert seen == [("gemini-a", "k1"), ("gemini-a", "k2"), ("gemini-b", "k1")]
+    assert seen == [("gemini-a", "k1"), ("gemini-a", "k2"), ("gemini-b", "k2")]  # k2 is fresh on b
+
+
+async def test_a_key_spent_on_one_model_is_still_tried_on_the_others(no_sleep: list[float]) -> None:
+    """k1 hits a's daily limit, k2 a's per-minute limit (so the client moves to b with k2), then
+    k2 hits b's daily limit. k1 has never been tried on b: b must not be crossed off (it used to
+    be, leaving only a, retried on its 429s again and again)."""
+    seen: list[tuple[str, str]] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        model = request.url.path.split("/models/")[1].split(":")[0]
+        key = request.headers["x-goog-api-key"]
+        seen.append((model, key))
+        if (model, key) in (("gemini-a", "k1"), ("gemini-b", "k2")):
+            return error(429, "Quota exceeded: GenerateRequestsPerDayPerProjectPerModel")
+        if model == "gemini-a":
+            return error(429, "Quota exceeded: requests per minute", retry="0s")
+        return answer("ok")
+
+    gemini = client(handler, model="gemini-a,gemini-b", api_keys=["k1", "k2"])
+    assert await gemini.text_call("s", "u") == "ok"
+    assert seen[-1] == ("gemini-b", "k1")
+    assert "gemini-b" not in gemini.exhausted and not no_sleep  # no waiting either
 
 
 async def test_agent1_llm_pass_uses_gemini_unless_switched_off(

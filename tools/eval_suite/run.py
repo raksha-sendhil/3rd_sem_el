@@ -124,10 +124,10 @@ def _left() -> float:
     return float(deadline) - time.time() if deadline else float("inf")
 
 
-def _note_skipped(label: str, asked: int, skipped: int) -> None:
+def _note_skipped(label: str, asked: int, skipped: int, failed: int = 0) -> None:
     path = WORK / "answers" / "skipped.json"
     old = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
-    old[label] = {"to_ask": asked, "skipped": skipped}
+    old[label] = {"to_ask": asked, "skipped": skipped, **({"failed": failed} if failed else {})}
     _dump(path, old)
 
 
@@ -389,6 +389,7 @@ async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
     with path.open("a", encoding="utf-8") as f:
 
         skipped = 0
+        failures: list[dict] = []
 
         async def one(item: dict) -> None:
             nonlocal finished, skipped
@@ -399,7 +400,8 @@ async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
                 try:
                     row = await play(item)
                 except Exception as exc:  # a model error: skipped now, asked again next run
-                    print(f"  {item['id']}: {str(exc)[:160]} (again on the next run)", flush=True)
+                    print(f"  {item['id']}: {str(exc)[:160]} (asked again later)", flush=True)
+                    failures.append(item)
                     if os.environ.get("EVAL_DEBUG"):  # the whole traceback, to find a bug
                         import traceback
 
@@ -412,15 +414,24 @@ async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
                 print(f"  {label}: {finished}/{len(todo)}", flush=True)
 
         await asyncio.gather(*(one(it) for it in todo))
-    if skipped or _left() != float("inf"):
-        _note_skipped(label, len(todo), skipped)
+        timed = _left() != float("inf")
+        if failures and timed and _left() > REPORT_RESERVE_S + 120:
+            # a timed (unattended) run asks the failed questions once more, after a pause
+            again, failures[:] = list(failures), []
+            print(f"  {label}: asking the {len(again)} failed questions once more in 60 s", flush=True)
+            await asyncio.sleep(60)
+            await asyncio.gather(*(one(it) for it in again))
+    failed = len(todo) - finished - skipped
+    if skipped or failed or timed:
+        _note_skipped(label, len(todo), skipped, failed)
     if skipped:
         print(f"  {label}: {skipped} of {len(todo)} skipped at the time limit", flush=True)
-    failed = len(todo) - finished - skipped
     if failed:
         print(f"  {label}: {failed} of {len(todo)} failed (see the lines above); run this step "
               "again, it asks only those", flush=True)
-        if failed > MAX_FAILED * len(todo):  # stop the notebook: the numbers would be missing
+        # an attended run stops so the step can be re-run; a timed run carries on to the report,
+        # which states how many failed: metrics from what there is beat no metrics at all
+        if failed > MAX_FAILED * len(todo) and not timed:
             raise SystemExit(f"{label}: {failed} of {len(todo)} questions failed")
 
 
