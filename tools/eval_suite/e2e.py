@@ -304,9 +304,24 @@ class Gemini:
                     continue
             except Exception as exc:  # network or broken JSON
                 print(f"  {what}: {self.model}: {str(exc)[:120]} (retrying)", flush=True)
+                if _timed_out(exc) and len(self.models) > 1:
+                    # a model that does not answer in time is hanging: another key will not
+                    # help, another model may
+                    self.models.append(self.models.pop(0))
+                    print(f"  {what}: {self.model} did not answer in time, trying {self.models[0]}", flush=True)
+                    continue
             self.key_i += 1  # a hiccup: next key, wait, retry
             time.sleep(min(120, 5 * (attempt + 1)))
         return None
+
+
+CALL_TIMEOUT_S = 90  # one request; a model that takes longer is treated as hanging
+
+
+def _timed_out(exc: Exception) -> bool:
+    import socket
+
+    return isinstance(exc, (TimeoutError, socket.timeout)) or "timed out" in str(exc).lower()
 
 
 def _norm(text: str) -> str:
@@ -361,7 +376,7 @@ def _gemini(prompt: str, model: str, key: str) -> str:
     req = urllib.request.Request(url, data=body, method="POST",
                                  headers={"content-type": "application/json",
                                           "x-goog-api-key": key})  # fmt: skip
-    with urllib.request.urlopen(req, timeout=180) as resp:
+    with urllib.request.urlopen(req, timeout=CALL_TIMEOUT_S) as resp:
         reply = json.loads(resp.read())
     return reply["candidates"][0]["content"]["parts"][0]["text"]
 

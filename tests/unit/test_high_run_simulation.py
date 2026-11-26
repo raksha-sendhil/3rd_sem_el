@@ -240,3 +240,24 @@ async def test_an_unexpected_error_fails_one_document_not_the_build(pkg) -> None
     report = await build.build_store(docs, store, None, sanitiser=sanitiser)
     assert store.put_ids == ["one", "two"]
     assert "KeyError" in report.failed["bad"]
+
+
+def test_question_writer_moves_on_from_a_model_that_times_out(monkeypatch) -> None:
+    from eval_suite import e2e
+
+    asked: list[str] = []
+
+    def fake(prompt: str, model: str, key: str) -> str:
+        asked.append(model)
+        if model == "slow":
+            raise TimeoutError("The read operation timed out")
+        return '{"ok": 1}'
+
+    monkeypatch.setattr(e2e, "_gemini", fake)
+    monkeypatch.setattr(e2e.time, "sleep", lambda s: None)
+    monkeypatch.setenv("GEMINI_API_KEYS", "k1,k2")
+    monkeypatch.delenv("EVAL_GEMINI_STOP_AT", raising=False)
+    g = e2e.Gemini()
+    g.models = ["slow", "fast"]
+    assert g.ask("p", "q") == {"ok": 1}
+    assert asked == ["slow", "fast"]  # one timeout, then the next model: not the same one again
