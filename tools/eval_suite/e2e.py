@@ -137,9 +137,16 @@ def prepare(domain: str, main_repo: Path, work: Path, n: int, max_parts: int = M
         for i, d in enumerate(docs, 1):
             if d["id"] in done:
                 continue
+            if time.time() > float(os.environ.get("EVAL_STEP_STOP_AT") or "inf"):
+                print(f"OCR: this step's time is spent; {len(docs) - i + 1} scans left out", flush=True)
+                break
             path = Path(d["path"])
             t = time.perf_counter()
-            res = await ingest_bytes(path.read_bytes(), path.name, reader=reader, settings=settings)
+            try:
+                res = await ingest_bytes(path.read_bytes(), path.name, reader=reader, settings=settings)
+            except Exception as exc:  # noqa: BLE001 - one unreadable scan is left out, not the step
+                print(f"[{i}/{len(docs)}] {d['id']}: not read ({type(exc).__name__}: {exc}); left out", flush=True)
+                continue
             seconds = time.perf_counter() - t
             ocr_parts = split_parts(res.text, PART_CHARS)[:max_parts]
             gold_parts = split_parts(d["gold"], PART_CHARS)[:max_parts]
@@ -233,9 +240,24 @@ class Gemini:
         self.key_i = 0
         self.model = ""
 
+    MAX_CALL_S = 10 * 60  # one question never waits longer than this
+
     def ask(self, prompt: str, what: str) -> dict | None:
+        """The model's JSON reply, or None: after every key and model failed, after MAX_CALL_S,
+        or once the step's time budget (EVAL_GEMINI_STOP_AT, set by run.py) is spent, when every
+        later call returns None at once so the step finishes and the build keeps its time."""
+        stop_at = float(os.environ.get("EVAL_GEMINI_STOP_AT") or "inf")
+        if time.time() >= stop_at:
+            if not getattr(self, "_told", False):
+                print("Gemini: this step's time budget is spent; the rest are skipped", flush=True)
+                self._told = True
+            return None
+        give_up = min(stop_at, time.time() + self.MAX_CALL_S)
         limited = 0  # 429 replies in this call
         for attempt in range(max(24, 2 * len(self.keys) * len(self.models))):
+            if time.time() >= give_up:
+                print(f"  {what}: no answer within the time allowed; skipped", flush=True)
+                return None
             if not self.models:
                 raise SystemExit("no Gemini model this key can use: set EVAL_LABEL_MODEL")
             if not self.keys:

@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-FREEZE = "eval-freeze-24"  # the clean test's code: change nothing after it has been run
+FREEZE = "eval-freeze-25"  # the clean test's code: change nothing after it has been run
 REPO_URL = "https://github.com/raksha-sendhil/3rd_sem_el.git"
 
 
@@ -44,7 +44,7 @@ Step-by-step guide: `docs/evaluation_metrics.md`, section "Running it".
 * **Session options**: Accelerator **GPU T4 x2**, Internet **On**.
 * **Add-ons -> Secrets**: {secrets} Tick each as attached to this notebook.
 
-**This is the clean test.** The code is frozen at the tag `eval-freeze-24`, the real data is
+**This is the clean test.** The code is frozen at the tag `eval-freeze-25`, the real data is
 unseen and the people are new (`data/eval_clean/clean_people.json` on main). Run it once and
 report what comes out.
 
@@ -79,7 +79,7 @@ HOURS = 11       # the run stops and reports by then; Kaggle ends any run at 12 
 MODEL = "llama3:8b"                       # answers, both pipelines (as the dashboard)
 GEMINI_MODEL = "gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.5-flash,gemini-3.8-flash,gemini-3.7-flash,gemini-3-flash-preview,gemini-4-hydrogen,gemini-3.1-flash-lite"   # Agents 1-3 (fallback order)
 OCR_MODEL = "qwen3-vl:8b-instruct"        # reads the scans (end-to-end check)
-FREEZE = "eval-freeze-24"   # the frozen code: do not change it for the clean test
+FREEZE = "eval-freeze-25"   # the frozen code: do not change it for the clean test
 
 import os, subprocess, sys
 from pathlib import Path
@@ -142,7 +142,13 @@ def run(step, extra=""):
     log_file = str(WORK / "results" / "run.log")
     code = subprocess.run(["bash", "-o", "pipefail", "-c", "(" + cmd + ") 2>&1 | tee -a '" + log_file + "'"],
                           check=False, env={**os.environ, "PYTHONUNBUFFERED": "1"}).returncode
-    if code and step != "report":  # stop here: later numbers would be wrong or missing
+    if code and step != "report":
+        if HOURS and step != "data":
+            # a timed (unattended) run never stops before the report: the report states what is
+            # missing, and the answers and run.log are packed either way
+            print(f"!!! {step} failed (see the lines above); carrying on so the report and the zip "
+                  "are still made", flush=True)
+            return
         raise RuntimeError(f"{step} failed: read the last lines above, then run this cell again "
                            "(every step resumes where it stopped)")
 print(f"ready: answers {MODEL} | Agents 1-3 {GEMINI_MODEL} ({len(key.split(','))} key(s)) | "
@@ -205,9 +211,12 @@ run("e2e")
 # 9 Report: every metric, REPORT.md and the figures
 run("report")
 from IPython.display import Image, Markdown, display
-display(Markdown((WORK / "results" / "REPORT.md").read_text()))
-for fig in sorted((WORK / "results" / "figures").glob("*.png")):
-    display(Image(str(fig)))
+try:  # nothing here may stop the next cell: it packs whatever exists
+    display(Markdown((WORK / "results" / "REPORT.md").read_text()))
+    for fig in sorted((WORK / "results" / "figures").glob("*.png")):
+        display(Image(str(fig)))
+except Exception as exc:
+    print(f"no report to show ({exc}); the next cell still packs the answers and the log")
 """,
     "pack": """
 # 10 Pack the results to download (Output tab, or Save Version) and commit to the repo

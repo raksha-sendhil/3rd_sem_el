@@ -131,6 +131,18 @@ def _note_skipped(label: str, asked: int, skipped: int, failed: int = 0) -> None
     _dump(path, old)
 
 
+def _gemini_budget(most_s: float, share: float) -> None:
+    """A step that writes questions with Gemini (labels, utility questions) stops asking after
+    ``most_s`` or ``share`` of the time left, whichever is less, so the build keeps its time
+    even when every model is at its limit. No limit on an untimed run."""
+    if _left() == float("inf"):
+        os.environ.pop("EVAL_GEMINI_STOP_AT", None)
+        return
+    span = max(0.0, min(most_s, (_left() - _answer_reserve()) * share))
+    os.environ["EVAL_GEMINI_STOP_AT"] = str(time.time() + span)
+    print(f"Gemini question writing: at most {span / 60:.0f} min for this step", flush=True)
+
+
 def _dump(path: Path, data) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=1, ensure_ascii=False), encoding="utf-8")
@@ -326,6 +338,14 @@ GOOD_ENOUGH = 0.95  # a store this full is not retried: the last few are not wor
 MAX_FAILED = 0.05  # questions a step may fail before it stops the notebook
 
 
+def _has(name: str) -> bool:
+    """A store with at least one document (an empty one has nothing to search)."""
+    has = _built(WORK / "stores" / f"{name}.sqlite") > 0
+    if not has:
+        print(f"{name}: no documents built, so its questions are left out", flush=True)
+    return has
+
+
 def _built(store: Path) -> int:
     if not store.exists():
         return 0
@@ -420,6 +440,14 @@ async def _run_all(todo: list[dict], play, path: Path, label: str) -> None:
             again, failures[:] = list(failures), []
             print(f"  {label}: asking the {len(again)} failed questions once more in 60 s", flush=True)
             await asyncio.sleep(60)
+            if not os.environ.get("EVAL_MOCK") and not _ollama_up():  # it stopped mid-step: start it
+                try:
+                    import colab_cache
+
+                    colab_cache.start_ollama()
+                    print("  Ollama had stopped: started again", flush=True)
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  Ollama had stopped and could not be started: {exc}", flush=True)
             await asyncio.gather(*(one(it) for it in again))
     failed = len(todo) - finished - skipped
     if skipped or failed or timed:
@@ -487,16 +515,14 @@ def step_single() -> None:
         if "target_info" in only:  # each question on the store it is about (finance: two)
             for store in ("gen", "real"):
                 part = [t for t in targeted if t.get("store", "gen") == store]
-                if part and (WORK / "stores" / f"{store}.sqlite").exists():
+                if part and _has(store):
                     await _ask(_context(store), llm, part, WORK / "answers" / "target_info.jsonl")
         pm = data / "person_membership.json"
-        if "person_membership" in only and pm.exists() and _load(pm) and (
-            WORK / "stores" / "gen.sqlite"
-        ).exists():
+        if "person_membership" in only and pm.exists() and _load(pm) and _has("gen"):
             await _ask(_context("gen"), llm, _load(pm), WORK / "answers" / "person_membership.jsonl")
         sets = [n for n in ("repeat", "membership", "utility")
                 if n in only and (data / f"{n}.json").exists() and _load(data / f"{n}.json")]  # fmt: skip
-        if sets and (WORK / "stores" / "real.sqlite").exists():
+        if sets and _has("real"):
             real = _context("real")
             for name in sets:
                 await _ask(
@@ -509,7 +535,7 @@ def step_single() -> None:
 def step_multi() -> None:
     file = WORK / "data" / "sessions.json"
     sessions = _load(file) if file.exists() else []
-    if not sessions or not (WORK / "stores" / "gen.sqlite").exists():
+    if not sessions or not _has("gen"):
         print("no attack sessions for this run (finance: only the bank source has a population)")
         return
     path = WORK / "answers" / "sessions.jsonl"
@@ -543,7 +569,7 @@ def step_e2e() -> None:
 
     async def work(llm) -> None:
         for side in ("gold", "ocr"):  # run A only where the dataset has full transcriptions
-            if (WORK / "stores" / f"e2e_{side}.sqlite").exists():
+            if _has(f"e2e_{side}"):
                 await _ask(
                     _context(f"e2e_{side}"), llm, rows, WORK / "answers" / f"e2e_{side}.jsonl"
                 )
@@ -587,6 +613,9 @@ def main() -> None:
     elif step == "e2e-prep":
         from eval_suite import e2e
 
+        if _left() != float("inf"):  # reading the scans may take at most 90 min (or 15% of the time)
+            span = max(0.0, min(90 * 60, (_left() - _answer_reserve()) * 0.15))
+            os.environ["EVAL_STEP_STOP_AT"] = str(time.time() + span)
         if D.name == "finance":  # the source's scans, labelled by the dataset's own fields
             from eval_suite import finance
 
@@ -597,6 +626,7 @@ def main() -> None:
     elif step == "e2e-label":
         from eval_suite import e2e
 
+        _gemini_budget(45 * 60, 0.10)
         if D.name == "finance":
             print("finance: the end-to-end labels come from the dataset's fields (e2e-prep)")
         else:
@@ -605,6 +635,7 @@ def main() -> None:
         # utility questions about content, not wording (eval_suite.utility_questions, e2e)
         from eval_suite import e2e, utility_questions
 
+        _gemini_budget(60 * 60, 0.15)
         if D.name == "health":
             utility_questions.rewrite_health(WORK)
         elif D.name == "legal":

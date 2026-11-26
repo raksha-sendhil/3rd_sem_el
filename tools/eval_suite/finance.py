@@ -25,6 +25,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import os
 import random
 import re
 import shutil
@@ -279,9 +280,17 @@ def prepare_e2e(d, repo: Path, work: Path, n: int, max_parts: int) -> None:
             }  # fmt: skip
             if g["id"] in done:
                 continue
+            if time.time() > float(os.environ.get("EVAL_STEP_STOP_AT") or "inf"):
+                labels.pop(g["id"], None)  # not read: no questions about it
+                continue
             path = base / g["file"]
             t = time.perf_counter()
-            res = await ingest_bytes(path.read_bytes(), path.name, reader=reader, settings=settings)
+            try:
+                res = await ingest_bytes(path.read_bytes(), path.name, reader=reader, settings=settings)
+            except Exception as exc:  # noqa: BLE001 - one unreadable scan is left out, not the step
+                print(f"[{i}/{len(rows)}] {g['id']}: not read ({type(exc).__name__}: {exc}); left out", flush=True)
+                labels.pop(g["id"], None)
+                continue
             seconds = time.perf_counter() - t
             ocr_parts = split_parts(res.text, 1900)[:max_parts]
             gold_parts = split_parts(g["text"], 1900)[:max_parts] if g.get("text") else []

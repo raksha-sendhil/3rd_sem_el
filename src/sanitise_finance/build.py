@@ -75,11 +75,12 @@ async def build_store(
             continue
         try:
             record = await sanitiser(doc.doc_id, doc.text, llm)
-        except PipelineError as exc:
-            report.failed[doc.doc_id] = str(exc)
-            log.warning("%s (%s): %s", doc.doc_id, doc.source, exc)
+        except Exception as exc:  # noqa: BLE001 - any error fails this document only, never the build
+            message = str(exc) if isinstance(exc, PipelineError) else f"{type(exc).__name__}: {exc}"
+            report.failed[doc.doc_id] = message
+            log.warning("%s (%s): %s", doc.doc_id, doc.source, message)
             if progress:
-                progress(i, doc, str(exc))
+                progress(i, doc, message)
             continue
         store.put(doc.doc_id, doc.text, record)
         if out is not None:

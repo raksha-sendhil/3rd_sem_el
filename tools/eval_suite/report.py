@@ -838,64 +838,93 @@ def write(d, work: Path, scale: str) -> None:
     model = a / "answer_model.json"
     if model.exists():
         res.update(json.loads(model.read_text(encoding="utf-8")))
+    errors: dict[str, str] = {}
+
+    def safe(label: str, fn, *args):
+        """One metric that fails (partial data, an odd row) is noted; the others still come out."""
+        try:
+            return fn(*args)
+        except Exception as exc:  # noqa: BLE001
+            errors[label] = f"{type(exc).__name__}: {exc}"
+            print(f"report: {label} could not be computed ({errors[label]})", flush=True)
+            return None
+
+    def put(where: dict, key: str, value) -> None:
+        if value is not None:
+            where[key] = value
+
     single: dict = {}
     if rows := _rows(a / "target_info.jsonl"):
         if people_rows := [r for r in rows if "values" not in r]:
-            single["target_info"] = target_info(d, people_rows)
+            put(single, "target_info", safe("target_info", target_info, d, people_rows))
         if value_rows := [r for r in rows if "values" in r]:
-            single["target_info_values"] = target_info_values(value_rows)
+            put(single, "target_info_values", safe("target_info_values", target_info_values, value_rows))
     if (rows := _rows(a / "repeat.jsonl")) and (work / "stores" / "real.sqlite").exists():
-        single["repeat_rouge"] = repeat_rouge(
-            rows, SqliteDocumentStore(work / "stores" / "real.sqlite")
-        )
+        put(single, "repeat_rouge", safe("repeat_rouge", lambda: repeat_rouge(
+            rows, SqliteDocumentStore(work / "stores" / "real.sqlite"))))
     # a member or utility document the build never reached is in neither pipeline's store: as a
     # "member" it would be scored as present, and its question has no answer on either side
-    in_store = _stored_ids(d, work, "real")
+    in_store = safe("stored_ids", _stored_ids, d, work, "real")
     if rows := _rows(a / "membership.jsonl"):
         kept = [r for r in rows if r["group"] != "member" or in_store is None or r["doc_id"] in in_store]
-        single["membership"] = membership(kept)
-        single["membership"]["members_not_built"] = len(rows) - len(kept)
+        if (m := safe("membership", membership, kept)) is not None:
+            m["members_not_built"] = len(rows) - len(kept)
+            single["membership"] = m
     if rows := _rows(a / "person_membership.jsonl"):
-        single["person_membership"] = person_membership(d, rows)
+        put(single, "person_membership", safe("person_membership", person_membership, d, rows))
     if rows := _rows(a / "utility.jsonl"):
         kept = [r for r in rows if in_store is None or not r.get("doc_id") or r["doc_id"] in in_store]
-        single["utility"] = utility(kept)
-        single["utility"]["not_built"] = len(rows) - len(kept)
+        if kept and (u := safe("utility", utility, kept)) is not None:
+            u["not_built"] = len(rows) - len(kept)
+            single["utility"] = u
     every = [
         r
         for n in ("target_info", "repeat", "membership", "person_membership", "utility")
         for r in _rows(a / f"{n}.jsonl")
     ]
     if every:
-        single["latency"] = latency(every)
+        put(single, "latency", safe("latency", latency, every))
     res["single"] = single
     if rows := _rows(a / "sessions.jsonl"):
-        res["multi"] = sessions(d, rows)
-    res["e2e"] = e2e(work)
+        put(res, "multi", safe("sessions", sessions, d, rows))
+    res["e2e"] = safe("e2e", e2e, work)
     if (work / "data" / "provenance.json").exists():
         res["data"] = json.loads((work / "data" / "provenance.json").read_text(encoding="utf-8"))
-    res["sanity"] = sanity(d, work, res)
+    res["sanity"] = safe("sanity", sanity, d, work, res) or {}
     if (work / "answers" / "skipped.json").exists():
         res["skipped"] = json.loads((work / "answers" / "skipped.json").read_text(encoding="utf-8"))
     if (work / "stores" / "build.json").exists():
         res["build"] = json.loads((work / "stores" / "build.json").read_text(encoding="utf-8"))
     from eval_suite import residual
 
-    res["residual"] = residual.compute(d, work)
+    res["residual"] = safe("residual", residual.compute, d, work)
 
     out = work / "results"
     out.mkdir(parents=True, exist_ok=True)
-    export_rewrites(d, work, out)
+    safe("rewrites export", export_rewrites, d, work, out)
     try:
         made = figures(res, out / "figures")
-    except ImportError:  # matplotlib missing: the numbers are still written
-        print("matplotlib is not installed: no figures (pip install matplotlib)")
+    except Exception as exc:  # noqa: BLE001 - matplotlib missing or a figure failed: numbers still written
+        print(f"no figures ({type(exc).__name__}: {exc})")
         made = []
+    if errors:
+        res["errors"] = errors
     (out / "results.json").write_text(
-        json.dumps(_strip(res), indent=1, ensure_ascii=False), encoding="utf-8"
+        json.dumps(_strip(res), indent=1, ensure_ascii=False, default=str), encoding="utf-8"
     )
-    (out / "REPORT.md").write_text(markdown(res, made), encoding="utf-8")
-    print((out / "REPORT.md").read_text(encoding="utf-8"))
+    try:
+        text = markdown(res, made)
+    except Exception as exc:  # noqa: BLE001 - never leave a run without a report
+        print(f"report: the formatted report failed ({type(exc).__name__}: {exc}); writing the raw numbers")
+        raw = json.dumps(_strip(res), indent=1, ensure_ascii=False, default=str)
+        text = (f"# Evaluation results (raw)\n\nThe formatted report failed "
+                f"({type(exc).__name__}: {exc}); every number is below and in results.json.\n\n"
+                f"```json\n{raw}\n```\n")
+    if errors:
+        text += "\n## Metrics that could not be computed\n\n" + "".join(
+            f"* {k}: {v}\n" for k, v in errors.items())
+    (out / "REPORT.md").write_text(text, encoding="utf-8")
+    print(text)
 
 
 def markdown(res: dict, figures_made: list[str]) -> str:

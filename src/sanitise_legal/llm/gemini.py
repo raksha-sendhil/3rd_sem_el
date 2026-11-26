@@ -53,6 +53,7 @@ _BAD_KEY = re.compile(
 )
 _RATE_LIMITED = re.compile(r"\b429\b|RESOURCE_EXHAUSTED|rate.?limit|quota", re.IGNORECASE)
 _DAILY = re.compile(r"per.?day|PerDay|daily", re.IGNORECASE)
+_NOT_FOUND = re.compile(r"\b404\b|NOT_FOUND|is not found|not supported for generateContent")
 _OVERLOADED = re.compile(
     r"\b50[0234] [A-Z_]+|\bUNAVAILABLE\b|\bDEADLINE_EXCEEDED\b|overloaded|high demand"
 )
@@ -364,6 +365,15 @@ class GeminiClient(BaseJSONClient):
                 if _BAD_KEY.search(str(exc)) and len(self.pool) > 1:
                     self.pool.drop(entry)
                     continue  # the next key
+                if _NOT_FOUND.search(str(exc)):
+                    # this key cannot use this model (unknown, or not offered to it): never again
+                    # on this key; other keys and models carry on
+                    entry.rests[self.model] = float("inf")
+                    log.warning("Gemini key %s cannot use %s; left out for it", entry.id, self.model)
+                    limited += 1
+                    if limited > 3 * max(len(self.pool), 1) * len(self.models):
+                        raise LLMUnreachable(f"Gemini: no configured model is usable: {exc}") from None
+                    continue
                 if _RATE_LIMITED.search(str(exc)):
                     self.pool.rest(entry, str(exc))  # this key, on this model only
                     limited += 1
